@@ -150,5 +150,130 @@ progress 1.0, damage 0. Initial matched matrix command hit the external shell's
 is excluded from complete-episode denominators; do not count this operational
 interruption as a simulator failure. The partial directory is preserved.
 
-Current action: finish the remaining seven matrix cases in fresh directories,
-then verify all 20 configurations twice more with the same frozen controller.
+Remaining seven cases completed in fresh directories, yielding **20/20 complete
+episodes finished on all 20/20 configurations**, with no collisions or damage.
+
+```bash
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 3 --seeds 4 5 --output runs/avoidance_matrix_remaining3
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 4 --output runs/avoidance_matrix_remaining4
+python oracle_report.py runs/avoidance_matrix runs/avoidance_matrix_remaining3 runs/avoidance_matrix_remaining4
+```
+
+The combined report explicitly shows original 13/20 summaries, one interrupted
+trace, six unstarted cases, and seven completed replacements. The interrupted
+trace is retained but excluded. Summary counting does not silently relabel a
+partial matrix as complete. Duplicate report directory arguments are rejected.
+
+### Matched Per-Road Results
+
+Baseline is 0/1 finished on every row; avoidance is 1/1 finished on every row.
+First impact location uses the post-action centerline segment index. `stuck`
+means collision followed by zero terminal speed and negative-reward retirement;
+`damage` means damage=1 retirement, not necessarily five different obstacles.
+
+| ID | Seed | Baseline Failure | First Impact Step / Segment | Avoidance Actions | Lap ms | Max Center Error |
+| ---: | ---: | --- | --- | ---: | ---: | ---: |
+| 1 | 1 | stuck | 494 / 134 | 1006 | 80400 | 3.531 |
+| 1 | 2 | stuck | 466 / 126 | 1232 | 98420 | 2.635 |
+| 1 | 3 | stuck | 114 / 30 | 998 | 79740 | 2.965 |
+| 1 | 4 | damage | 425 / 116 | 1010 | 80680 | 3.289 |
+| 1 | 5 | damage | 473 / 129 | 1210 | 96700 | 2.728 |
+| 2 | 1 | stuck | 399 / 108 | 1009 | 80640 | 1.551 |
+| 2 | 2 | stuck | 147 / 39 | 1234 | 98640 | 3.504 |
+| 2 | 3 | stuck | 410 / 111 | 997 | 79660 | 3.544 |
+| 2 | 4 | stuck | 261 / 70 | 1015 | 81080 | 3.009 |
+| 2 | 5 | stuck | 217 / 58 | 1212 | 96840 | 3.367 |
+| 3 | 1 | damage | 359 / 97 | 1014 | 81040 | 3.506 |
+| 3 | 2 | damage | 221 / 60 | 1228 | 98120 | 3.315 |
+| 3 | 3 | damage | 122 / 33 | 997 | 79680 | 3.273 |
+| 3 | 4 | stuck | 414 / 112 | 1008 | 80540 | 3.699 |
+| 3 | 5 | stuck | 191 / 51 | 1214 | 97040 | 3.093 |
+| 4 | 1 | stuck | 144 / 38 | 1012 | 80880 | 3.591 |
+| 4 | 2 | stuck | 312 / 84 | 1233 | 98540 | 3.287 |
+| 4 | 3 | stuck | 275 / 74 | 987 | 78860 | 3.493 |
+| 4 | 4 | stuck | 198 / 53 | 1012 | 80840 | 3.382 |
+| 4 | 5 | stuck | 251 / 68 | 1208 | 96500 | 3.473 |
+
+All avoidance runs reached progress 1.0 **and** confirmed the finish gate. Lap
+range: 78.86-98.64 s; action range: 987-1,234, below the unchanged 2,000 limit.
+Across 21,836 actions, no collision-positive action and no commanded steering
+target at/above physical +/-0.4 rad. Maximum absolute command: 0.384628 rad.
+Maximum sampled speed: 14.912719 (target 12); maximum sampled reference-path
+error: 1.078458. Centerline error up to 3.699 is intentional obstacle clearance,
+not failure to follow the shifted path. Events are sampled every wrapper action;
+we do not claim raw-tick maxima between those samples.
+
+Artifact comparison also verifies identical centerline/obstacle data for all
+20 baseline-versus-avoidance pairs. The report correctly flags two execution
+fingerprints for that comparison (baseline versus changed path), but just one
+fingerprint across the resumed avoidance matrix. Fingerprints compare source
+hashes, controller/wrapper arguments, Python and installed package versions,
+rather than relying only on a Git revision that may contain uncommitted files.
+
+### Frozen Repetitions
+
+Controller and runner frozen at `bf85da7`; two additional full episodes per
+configuration, in independent track-ID processes:
+
+```bash
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 1 --repeats 2 --output runs/verification_track1
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 2 --repeats 2 --output runs/verification_track2
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 3 --repeats 2 --output runs/verification_track3
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 4 --repeats 2 --output runs/verification_track4
+python oracle_report.py runs/verification_track1 runs/verification_track2 runs/verification_track3 runs/verification_track4
+```
+
+Use a sufficiently long shell budget (tested execution allowance 1,200 seconds
+per command) rather than a 600-second allowance for the full serial 20-road
+matrix. Simulated time and finish conditions are unchanged by wall-clock budget.
+Repetition results: **40/40 complete episodes finished on all 20/20
+configurations**, two further successes per configuration. No incomplete/missing
+verification episodes, no collisions, no damage, progress 1.0 and actual finish
+confirmation in every episode. Each road's two verification traces are byte-
+identical; they also match that road's first-matrix trace exactly.
+
+Combined main evaluation: **60/60 complete episodes finished, 20/20
+configurations each successful 3/3 times**. This excludes the separate successful
+single-road probe (1/1) and the explicitly preserved externally interrupted
+attempt. All seven main-result directories share one execution fingerprint:
+identical controller/runner/environment source hashes, control settings and
+Python/package versions. Actual geometry/obstacles match on 20/20 roads; there
+are five unique base geometries. Exact repeated trace hashes match on 20/20
+roads. Across 65,508 actions: zero collision-positive actions and zero commanded
+steering targets reaching physical +/-0.4 rad. Step/lap/error maxima remain
+identical to the first-matrix table above.
+
+```bash
+python oracle_report.py runs/avoidance_matrix runs/avoidance_matrix_remaining3 runs/avoidance_matrix_remaining4 runs/verification_track1 runs/verification_track2 runs/verification_track3 runs/verification_track4
+```
+
+Decision: Phase 1-2 local success target met. The simple privileged system
+actually produces repeatable complete laps on the requested set. No further
+parameter tuning, broader-road claims, or transition to learning is justified
+by this task. Stop here with the controller available as a future reference.
+
+## Validation and Limits
+
+```bash
+python -m unittest tests.test_local_contract tests.test_oracle_controller tests.test_oracle_runner tests.test_oracle_report -v
+git diff dfb7a2d --exit-code -- env_wrapper.py damage.py core/ agent.py local_runner.py requirements.txt
+```
+
+27 local tests pass. Original environment, sample Agent, official local runner
+and dependency requirements remain unchanged. An independent review found two
+reporting pitfalls (silent partial runs and repeated directory arguments); both
+were fixed and tested. No controller/termination issue invalidating the current
+20-road evidence was found.
+
+This demonstrates successful local behavior using privileged geometry and state,
+not pixel-only observability or submission eligibility. All five geometry seeds
+and 20 obstacle configurations are exposed evaluation. Deterministic repetitions
+do not establish generalization, robustness to perturbed starts/physics, or
+private-track performance. Global nearest-path projection may jump on sufficiently
+close nonadjacent road sections; the simple offset path is not a formal swept-
+vehicle clearance guarantee. No such failure was observed on the declared set,
+so additional mechanisms or broader experiments are not introduced speculatively.
+
+No RL/BC model, Phase 3 bulk observation dataset, official submission, or model
+confirmation has been created. The local diagnostic traces are retained for
+reproduction/failure inspection, with images represented only by hashes/statistics.

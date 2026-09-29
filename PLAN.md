@@ -88,9 +88,21 @@ Do not include unrelated pre-existing changes without authorization.
 - Phase 2: unchanged centerline baseline finished 0/20 configurations; all failed
   after obstacle collision (15 stalled, 5 damage retirement). Added only smooth
   obstacle-offset reference geometry, retaining speed and steering parameters.
-- Candidate first matrix has 13/13 completed episodes finished, zero damage;
-  a 600-second shell timeout interrupted the next case, not the environment.
-  Preserve partial `runs/avoidance_matrix`; finish remaining ID3/seeds4-5 and
-  ID4/seeds1-5 in fresh directories, then repeat all20 twice with frozen code.
+- Candidate first matrix is complete: 20/20 episodes on 20/20 configurations
+  finished with zero damage/collision. Partial `runs/avoidance_matrix` (13 cases)
+  plus `runs/avoidance_matrix_remaining3` (2) and `remaining4` (5) reconciles one
+  preserved external-timeout trace. No simulator failure was hidden by timeout.
+- Controller/runner frozen at `bf85da7`; two further episodes per configuration
+  completed in `runs/verification_track1` through `track4`: 40/40 finished.
+- Final main evaluation: **60/60 episodes, all 20/20 configurations successful
+  3/3 times**, zero collision/damage. Each road's three full traces have identical
+  hashes; all runs share one source/settings/package fingerprint. Five distinct
+  base geometries verified. Initial single-road success probe is separate (1/1).
+- Lap range 78.86-98.64 simulation seconds; 987-1,234 actions, unchanged cap2,000.
+  27 local tests pass; all supplied environment files and sample Agent unchanged.
+- **Phase 1-2 gate met; stop at this scope.** This is exposed local oracle
+  evidence, not unseen-track generalization or a submission-ready policy. Do not
+  automatically begin Phase 3 trajectory collection, BC, or RL in a later session.
+  Read this file and `EXPERIMENTS.md` before continuing under a new user request.
 - Phase 1/2 evidence and reproduction commands are in `EXPERIMENTS.md`. No
   learning work or Phase 3 bulk observation collection has started.
