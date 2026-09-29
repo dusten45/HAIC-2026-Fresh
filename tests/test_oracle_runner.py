@@ -6,6 +6,7 @@ from pathlib import Path
 import tempfile
 from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 import numpy as np
 
@@ -61,7 +62,7 @@ class TestOracleRunner(unittest.TestCase):
             with self.subTest(limit=limit), tempfile.TemporaryDirectory() as temporary:
                 output = Path(temporary) / "run"
                 with contextlib.redirect_stdout(io.StringIO()):
-                    main(["--output", str(output), "--track-ids", "1", "--seeds", "1",
+                    main(["--output", str(output), "--track-ids", "5", "--seeds", "10",
                           "--max-steps", "1", *extra])
                 summary = json.loads((output / "summary.json").read_text())
                 episode = summary["episodes"][0]
@@ -72,13 +73,26 @@ class TestOracleRunner(unittest.TestCase):
                 self.assertFalse(episode["finished"])
                 self.assertEqual(summary["episode_count"], 1)
                 self.assertEqual(summary["road_count"], 1)
-                trace = [json.loads(line) for line in (output / "track1_seed1_repeat1.jsonl").read_text().splitlines()]
+                trace = [json.loads(line) for line in (output / "track5_seed10_repeat1.jsonl").read_text().splitlines()]
                 self.assertEqual(len(trace), expected_steps + 1)
                 self.assertEqual(trace[0]["state"]["raw_frame"], 51)
                 if expected_steps:
                     self.assertEqual(trace[1]["pre_state"], trace[0]["state"])
                     self.assertEqual(trace[1]["post_state"]["raw_frame"], 55)
                     self.assertIs(trace[1]["info"]["finished"], False)
+
+    def test_default_grid_is_fifty_configurations(self):
+        def episode(args, output, track_id, seed, repeat):
+            return {"track_id": track_id, "geometry_seed": seed, "finished": False}
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "run"
+            with patch("oracle_runner.run_episode", side_effect=episode) as rollout:
+                main(["--output", str(output)])
+            summary = json.loads((output / "summary.json").read_text())
+            self.assertEqual(rollout.call_count, 50)
+            self.assertEqual(summary["road_count"], 50)
+            self.assertEqual({(e["track_id"], e["geometry_seed"]) for e in summary["episodes"]},
+                             {(t, s) for t in range(1, 6) for s in range(1, 11)})
 
 
 if __name__ == "__main__":

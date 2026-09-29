@@ -201,8 +201,8 @@ def run_episode(args, output, track_id, seed, repeat):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--mode", choices=("noop", "random", "manual", "oracle"), default="noop")
-    parser.add_argument("--track-ids", type=int, nargs="+", default=[1, 2, 3, 4])
-    parser.add_argument("--seeds", type=int, nargs="+", default=[1, 2, 3, 4, 5])
+    parser.add_argument("--track-ids", type=int, nargs="+", default=[1, 2, 3, 4, 5])
+    parser.add_argument("--seeds", type=int, nargs="+", default=list(range(1, 11)))
     parser.add_argument("--repeats", type=int, default=1)
     parser.add_argument("--max-steps", type=int, default=2000)
     parser.add_argument("--frame-skip", type=int, default=4)
@@ -220,8 +220,8 @@ def main(argv=None):
         parser.error("manual-steering must be in [-1,1]; target-speed must be finite and positive")
     if args.timeout_seconds is not None and (not np.isfinite(args.timeout_seconds) or args.timeout_seconds <= 0):
         parser.error("timeout-seconds must be finite and positive")
-    if any(t not in (1, 2, 3, 4) for t in args.track_ids) or any(not 0 <= s <= 0xFFFFFFFF for s in args.seeds):
-        parser.error("track-ids must be 1..4 and seeds 0..4294967295")
+    if any(t not in (1, 2, 3, 4, 5) for t in args.track_ids) or any(not 0 <= s <= 0xFFFFFFFF for s in args.seeds):
+        parser.error("track-ids must be 1..5 and seeds 0..4294967295")
     if len(set(args.track_ids)) != len(args.track_ids) or len(set(args.seeds)) != len(args.seeds) or args.action_seed < 0:
         parser.error("track-ids/seeds must be unique; action-seed must be nonnegative")
     if not args.output.parent.is_dir() or args.output.exists():

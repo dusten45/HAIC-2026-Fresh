@@ -81,10 +81,12 @@ References: `core/vendor/car_racing.py:57-66,276-456,523-533`.
 
 ## Declared Conditions
 
-The experiment uses IDs 1-4 x seeds 1-5, all exposed for development. With default
+The initial experiment used IDs 1-4 x seeds 1-5. The user expanded the declared
+scope to IDs 1-5 x seeds 1-10 on 2026-09-29, all exposed for development. With default
 `domain_randomize=False`, seed determines road geometry; ID additionally changes
-obstacle placement. This is **20 geometry/obstacle configurations, five base
-geometries**, not 20 independent base geometries. No holdout claim is made.
+obstacle placement. The expanded set is **50 geometry/obstacle configurations,
+10 base geometry seeds**, not 50 independent base geometries. The original set
+contained 20 configurations / five geometries. No holdout claim is made.
 
 Each has six physical circular obstacles of radius 1.2. Placement excludes the
 first 10% and last 5% of waypoints, with at least 20 indices between obstacles.

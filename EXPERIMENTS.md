@@ -6,8 +6,10 @@ All observations in this log come from this independent restart. No earlier
 research code/results were imported. Only local diagnostics and privileged
 geometry control are in scope; no training or official submission is performed.
 
-- Exposed evaluation configurations: track IDs 1-4, geometry seeds 1-5.
-- Denominators: 20 road/obstacle configurations, five distinct base geometries.
+- Initial exposed evaluation configurations: track IDs 1-4, geometry seeds 1-5.
+- Initial denominators: 20 road/obstacle configurations, five base geometries.
+- Expanded scope (2026-09-29 user request): track IDs 1-5, seeds 1-10, 50
+  configurations / 10 base geometry seeds; see the expansion record below.
 - Unmodified official `variables-6` environment, initial source `dfb7a2d`.
 - Python 3.11.14, Gymnasium 0.29.1, Box2D 2.3.5, NumPy 1.26.0, OpenCV 4.8.1.
 - `continuous=True`, `domain_randomize=False`, physical obstacles enabled by
@@ -32,6 +34,9 @@ are not being collected as a Phase 3 imitation dataset.
 
 Create the artifact parent once with `mkdir -p runs`. Commands below are run
 from the repository root. Use a new output name when repeating an experiment.
+Historical commands below now explicitly select the original grid because the
+runner defaults were expanded to 50 configurations. Original invocation strings
+remain unchanged in the saved run metadata.
 
 ## Phase 1 Verification
 
@@ -115,7 +120,7 @@ learning based on incomplete episodes or high tile-visit percentage alone.
 ### Unchanged Centerline Matrix
 
 ```bash
-python oracle_runner.py --mode oracle --output runs/centerline_matrix
+python oracle_runner.py --mode oracle --track-ids 1 2 3 4 --seeds 1 2 3 4 5 --output runs/centerline_matrix
 python oracle_report.py runs/centerline_matrix --events
 ```
 
@@ -140,7 +145,7 @@ with `--avoid-obstacles`; omitting that flag preserves the negative baseline.
 
 ```bash
 python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 1 --seeds 1 --output runs/avoidance_initial
-python oracle_runner.py --mode oracle --avoid-obstacles --output runs/avoidance_matrix
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 1 2 3 4 --seeds 1 2 3 4 5 --output runs/avoidance_matrix
 ```
 
 Single-road probe: 1/1 full episode finished (track 1 / seed 1), 1,006 actions,
@@ -155,7 +160,7 @@ episodes finished on all 20/20 configurations**, with no collisions or damage.
 
 ```bash
 python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 3 --seeds 4 5 --output runs/avoidance_matrix_remaining3
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 4 --output runs/avoidance_matrix_remaining4
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 4 --seeds 1 2 3 4 5 --output runs/avoidance_matrix_remaining4
 python oracle_report.py runs/avoidance_matrix runs/avoidance_matrix_remaining3 runs/avoidance_matrix_remaining4
 ```
 
@@ -216,10 +221,10 @@ Controller and runner frozen at `bf85da7`; two additional full episodes per
 configuration, in independent track-ID processes:
 
 ```bash
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 1 --repeats 2 --output runs/verification_track1
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 2 --repeats 2 --output runs/verification_track2
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 3 --repeats 2 --output runs/verification_track3
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 4 --repeats 2 --output runs/verification_track4
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 1 --seeds 1 2 3 4 5 --repeats 2 --output runs/verification_track1
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 2 --seeds 1 2 3 4 5 --repeats 2 --output runs/verification_track2
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 3 --seeds 1 2 3 4 5 --repeats 2 --output runs/verification_track3
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 4 --seeds 1 2 3 4 5 --repeats 2 --output runs/verification_track4
 python oracle_report.py runs/verification_track1 runs/verification_track2 runs/verification_track3 runs/verification_track4
 ```
 
@@ -277,3 +282,18 @@ so additional mechanisms or broader experiments are not introduced speculatively
 No RL/BC model, Phase 3 bulk observation dataset, official submission, or model
 confirmation has been created. The local diagnostic traces are retained for
 reproduction/failure inspection, with images represented only by hashes/statistics.
+
+## Expansion: IDs 1-5, Seeds 1-10
+
+User-authorized expansion on 2026-09-29. Retain the existing controller from
+`bf85da7` and all physics/wrapper/control parameters. Only change runner CLI
+defaults and permit ID 5. The 30 added configurations join the 20 previously
+exposed ones; none are claimed as an untouched holdout once examined.
+
+First run all 50 configurations with explicit track/seed arguments in bounded
+five-episode batches. Inspect failures before considering a controller change.
+If all finish, repeat the same 50 once with frozen code, for a balanced 100
+complete episodes across 50 configurations. This remains Phase 1-2 only.
+
+Expansion results pending. CLI grid regression and actual ID5/seed10 reset and
+external-limit tests pass; full local suite now has 28 passing tests.

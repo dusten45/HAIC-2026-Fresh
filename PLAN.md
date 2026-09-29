@@ -14,9 +14,11 @@ allowed for this local oracle. Do not modify `env_wrapper.py`, `damage.py`, or
 
 ## Declared Evaluation Roads
 
-- Track IDs: 1, 2, 3, 4.
-- Geometry seeds: 1, 2, 3, 4, 5 for each track ID.
-- Total: 20 explicitly exposed development/evaluation roads, not a holdout.
+- Track IDs: 1, 2, 3, 4, 5.
+- Geometry seeds: 1 through 10 for each track ID.
+- Total: 50 explicitly exposed development/evaluation configurations (10 base
+  geometries), not a holdout. Expanded by user request on 2026-09-29 after the
+  initial 20-configuration evaluation; preserve those historical results.
 - Record actual reset arguments and all environment conditions per episode.
 - Use matched conditions across controller comparisons; change one variable at
   a time. Repeat complete episodes to check reproducibility and disclose episode
@@ -42,14 +44,14 @@ execution before claiming controller performance.
 
 1. Implement a minimal waypoint/centerline controller using privileged pose,
    speed, and geometry, beginning with simple pursuit and conservative speed.
-2. Evaluate an initial full episode, then the declared 20-road matrix.
+2. Evaluate an initial full episode, then the declared 50-configuration matrix.
 3. Classify each failure (overshoot, oscillation, insufficient steering, excessive
    speed, stuck, collision, waypoint progression, reset/termination, or another
    evidenced cause). Locate the earliest trajectory departure, not just the
    terminal symptom. Label causal explanations as hypotheses until tested.
 4. If needed, make a single targeted change and run matched comparisons. Preserve
    negative results. Avoid blind multi-parameter searches.
-5. Aim for 90-100% complete-episode finishes over all 20 roads and verify the
+5. Aim for 90-100% complete-episode finishes over all 50 configurations and verify the
    chosen controller with repeated matched full-episode evaluation. If this is
    not achieved, continue until a concrete fundamental blocker is evidenced.
 
@@ -100,9 +102,14 @@ Do not include unrelated pre-existing changes without authorization.
   base geometries verified. Initial single-road success probe is separate (1/1).
 - Lap range 78.86-98.64 simulation seconds; 987-1,234 actions, unchanged cap2,000.
   27 local tests pass; all supplied environment files and sample Agent unchanged.
-- **Phase 1-2 gate met; stop at this scope.** This is exposed local oracle
-  evidence, not unseen-track generalization or a submission-ready policy. Do not
-  automatically begin Phase 3 trajectory collection, BC, or RL in a later session.
-  Read this file and `EXPERIMENTS.md` before continuing under a new user request.
+- The initial 20-configuration Phase 1-2 gate was met. The user now authorizes
+  expansion to IDs 1-5 / seeds 1-10, still Phase 1-2 only. First evaluate all 50
+  with the unchanged `bf85da7` controller and original environment settings.
+  Adjust only the external runner's permitted/default grid. Preserve all traces.
+- If failures appear, inspect earliest adverse events and change one evidenced
+  controller variable at a time. Otherwise repeat the full expanded matrix once
+  (100 complete episodes over 50 configurations total) with frozen code.
+- This is exposed local oracle evidence, not unseen-track generalization or a
+  submission-ready policy. Do not automatically begin Phase 3, BC, or RL.
 - Phase 1/2 evidence and reproduction commands are in `EXPERIMENTS.md`. No
   learning work or Phase 3 bulk observation collection has started.
