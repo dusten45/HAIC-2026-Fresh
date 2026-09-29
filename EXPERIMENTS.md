@@ -295,5 +295,105 @@ five-episode batches. Inspect failures before considering a controller change.
 If all finish, repeat the same 50 once with frozen code, for a balanced 100
 complete episodes across 50 configurations. This remains Phase 1-2 only.
 
-Expansion results pending. CLI grid regression and actual ID5/seed10 reset and
+CLI grid regression and actual ID 5 / seed 10 reset and
 external-limit tests pass; full local suite now has 28 passing tests.
+
+### Expansion Protocol and First Observation
+
+Evaluation checkpoint: `27d9656`. Controller still byte-identical to `bf85da7`;
+no speed, lookahead, clearance, physics or episode-limit change. Each of IDs
+1-5 is evaluated in two batches with explicit seeds `1 2 3 4 5` and
+`6 7 8 9 10`, output directories `runs/expanded_first_t<ID>_low` / `_high`.
+Each batch uses normal full episodes and a generous external shell allowance,
+not a shortened simulation horizon. Example commands:
+
+```bash
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 5 --seeds 1 2 3 4 5 --output runs/expanded_first_t5_low
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 5 --seeds 6 7 8 9 10 --output runs/expanded_first_t5_high
+python oracle_report.py runs/expanded_first_t5_low runs/expanded_first_t5_high
+```
+
+First completed ID: track 5, **10/10 full episodes finished** on seeds 1-10.
+Actions 926-1,236, laps 73.94-98.80 s. Unlike the original 20-case result,
+this includes one collision-positive action on ID 5 / seed 3: action 754, segment 206,
+post-position (43.6545, -74.8166), damage 0.2. Obstacle center is
+(46.6393, -73.4063). Before impact, path error increased from 0.007 at action 751
+to 0.194, 0.347, then 0.540 at action 754 near a bend; command steer remained
+unsaturated. All four wheels remained on-road in these samples, and speed did
+not collapse (11.568 before impact, 12.559 afterward). It finished at action 995,
+79.50 s, without another collision or stall. This is a **completed episode with
+damage**, not a failure or evidence of zero-collision generalization. The
+mechanism is consistent with insufficient vehicle clearance near the curved
+reference path, but that causal explanation has not been isolated experimentally.
+Keep the controller unchanged while completing the rest of the expanded matrix.
+
+### Expanded First-Pass Result
+
+**50/50 complete episodes finished on 50/50 configurations**, including all 30
+added configurations. No interrupted traces or unstarted/missing episodes.
+All 50 reached progress 1.0 and actual finish confirmation. Forty-nine had no
+damage; only ID 5 / seed 3 had one collision-positive action and final damage 0.2.
+
+| Track ID | Finishes / Episodes | Damaged Episodes | Action Range | Lap Range (ms) |
+| ---: | ---: | ---: | --- | --- |
+| 1 | 10/10 | 0/10 | 926-1232 | 73960-98420 |
+| 2 | 10/10 | 0/10 | 925-1234 | 73900-98640 |
+| 3 | 10/10 | 0/10 | 923-1228 | 73760-98120 |
+| 4 | 10/10 | 0/10 | 927-1233 | 74080-98540 |
+| 5 | 10/10 | 1/10 | 926-1236 | 73940-98800 |
+
+Ten unique base geometries verified from actual geometry data. All 10 batch
+directories share one source/settings/package fingerprint. Across 53,757 actions:
+one collision-positive action, zero steering targets reaching +/-0.4, no hull-
+center departure beyond road half-width. Sampled maxima: speed 14.927980,
+absolute command steer 0.384628, reference-path error 1.293480. Largest centerline
+error 4.125 occurred on ID 4 / seed 9; this is measured against the road centerline,
+not the intentionally shifted reference path.
+
+Decision: no controller change is warranted to achieve the requested finish
+objective on this evidence. Retain the nonzero-damage case explicitly instead
+of tuning unrelated parameters or claiming collision-free performance. Run one
+additional full episode for each of the same 50 configurations, under identical
+conditions, and compare complete trace hashes.
+
+```bash
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 1 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t1
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 2 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t2
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 3 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t3
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 4 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t4
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 5 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t5
+```
+
+### Expanded Repetition and Final Decision
+
+The repeat pass finished **50/50 complete episodes**. Combined expanded result:
+**100/100 episodes finished on all 50 configurations, each successful 2/2 times**.
+No incomplete traces or missing episodes in either pass. Historical 60-episode
+initial-set results are kept separate, not added into this balanced denominator.
+
+All 50 roads have identical full trace hashes across the two executions,
+including the collision on ID 5 / seed 3 at action 754. That configuration has
+final damage 0.2 in each episode but finishes both; the other 49 configurations
+are damage-free in both episodes. Thus **98/100 episodes were damage-free**,
+not 100/100. There were two collision-positive actions across 107,514 actions.
+There was no hull-center road departure or commanded steer reaching +/-0.4.
+
+All 15 run directories share one execution fingerprint (source hashes, control
+settings, Python/packages), actual geometry/obstacles match on 50/50 roads, and
+10 distinct base geometries are present. Episode length remains 923-1,236
+actions; actual finish lap range 73.76-98.80 simulation seconds. Sampled maxima
+are unchanged from the first-pass report.
+
+```bash
+python oracle_report.py runs/expanded_first_t1_low runs/expanded_first_t1_high runs/expanded_first_t2_low runs/expanded_first_t2_high runs/expanded_first_t3_low runs/expanded_first_t3_high runs/expanded_first_t4_low runs/expanded_first_t4_high runs/expanded_first_t5_low runs/expanded_first_t5_high runs/expanded_repeat_t1 runs/expanded_repeat_t2 runs/expanded_repeat_t3 runs/expanded_repeat_t4 runs/expanded_repeat_t5
+```
+
+Final validation: 28 local tests passed. `oracle_controller.py` is unchanged
+from `bf85da7`; protected environment, original Agent/runner and requirements
+are unchanged from `dfb7a2d`. The only executable change for expansion is CLI
+grid defaults and ID validation in the external `oracle_runner.py`.
+
+Expanded local finish target met without retuning. Stop at Phase 1-2. These are
+exposed evaluation roads and deterministic repeatability results, not an
+untouched holdout, collision-free guarantee, submission policy or evidence of
+private-track generalization. No BC/RL, Phase 3 collection or submission began.

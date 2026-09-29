@@ -101,14 +101,24 @@ Do not include unrelated pre-existing changes without authorization.
   hashes; all runs share one source/settings/package fingerprint. Five distinct
   base geometries verified. Initial single-road success probe is separate (1/1).
 - Lap range 78.86-98.64 simulation seconds; 987-1,234 actions, unchanged cap2,000.
-  27 local tests pass; all supplied environment files and sample Agent unchanged.
-- The initial 20-configuration Phase 1-2 gate was met. The user now authorizes
-  expansion to IDs 1-5 / seeds 1-10, still Phase 1-2 only. First evaluate all 50
-  with the unchanged `bf85da7` controller and original environment settings.
-  Adjust only the external runner's permitted/default grid. Preserve all traces.
-- If failures appear, inspect earliest adverse events and change one evidenced
-  controller variable at a time. Otherwise repeat the full expanded matrix once
-  (100 complete episodes over 50 configurations total) with frozen code.
+  At that checkpoint, 27 local tests passed; supplied environment and Agent unchanged.
+- The user then expanded scope to IDs 1-5 / seeds 1-10, still Phase 1-2 only.
+  Evaluated all 50 with the unchanged `bf85da7` controller and original settings;
+  adjusted only the external runner's permitted/default grid. All traces retained.
+- Expansion checkpoint `27d9656`: new CLI grid tested (28 local tests pass),
+  controller unchanged. First-pass artifacts: `runs/expanded_first_t<ID>_low`
+  (seeds 1-5) and `_high` (seeds 6-10). First pass finished 50/50, with 49/50
+  without damage. Repeat pass completed in `runs/expanded_repeat_t1` through `t5`.
+- **Expanded result: 100/100 complete episodes, all 50 configurations successful
+  2/2 times.** No incomplete or missing episodes. Ten distinct base geometries,
+  one execution fingerprint, and identical repeated trace hashes on all 50 roads.
+  Episode range: 923-1,236 actions, lap 73.76-98.80 simulation seconds.
+- ID5/seed3 had one collision at action 754 and final damage 0.2 in each repeat,
+  but finished both. Other 49 configurations were damage-free in both repeats.
+  Expanded collision-free reliability is NOT established: 98/100 episodes had
+  no damage, 2/100 had damage. Controller parameters have not been tuned.
+- Expanded Phase 1-2 gate met; stop here. The 100-episode expanded result excludes
+  the historical 60-episode initial-set evaluation. All 28 local tests pass.
 - This is exposed local oracle evidence, not unseen-track generalization or a
   submission-ready policy. Do not automatically begin Phase 3, BC, or RL.
 - Phase 1/2 evidence and reproduction commands are in `EXPERIMENTS.md`. No
