@@ -83,4 +83,9 @@ Do not include unrelated pre-existing changes without authorization.
 
 - 2026-09-29: plan established before implementation. Local repository has an
   untracked pre-existing `AGENTS.md`; leave it untouched and out of task commits.
-- Phase 1 in progress; controller and performance are not yet established.
+- Phase 1 complete: source contract in `ENVIRONMENT.md`; real no-op/random/manual
+  diagnostics in `EXPERIMENTS.md`, including measured steering convention.
+- Phase 2 initial centerline oracle implemented. First track 1 / seed 1 episode
+  failed after collision/stall at 50.18% progress; earliest onset action 494.
+  Next: unchanged 20-road baseline, then an isolated geometry-path obstacle
+  avoidance change and matched matrix evaluation. No learning work started.
