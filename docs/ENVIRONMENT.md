@@ -1,5 +1,7 @@
 # Environment Contract (Phase 1)
 
+Verified interface and environment behavior from official template sources and local code.
+
 Inspected 2026-09-29. Official Participants `main` was
 `dfb7a2de2178825ca5c5ce20bab01ba67052ba31`, matching the local starting revision.
 Environment version: `variables-6`. Source files below are unmodified.

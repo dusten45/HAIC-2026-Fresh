@@ -1,5 +1,7 @@
 # Independent Restart: Finish First
 
+Research scope, phase gates, declared evaluation roads, and current checkpoint.
+
 ## Research Contract
 
 Start independently from the official Participants template. Do not import code or
@@ -83,8 +85,9 @@ Do not include unrelated pre-existing changes without authorization.
 
 ## Current Status
 
-- 2026-09-29: plan established before implementation. Local repository has an
-  untracked pre-existing `AGENTS.md`; leave it untouched and out of task commits.
+- 2026-09-29: plan established before implementation. `AGENTS.md` began as a
+  pre-existing untracked guide and was later updated at user request with this
+  repository guide and links to the major documents.
 - Phase 1 complete: source contract in `ENVIRONMENT.md`; real no-op/random/manual
   diagnostics in `EXPERIMENTS.md`, including measured steering convention.
 - Phase 2: unchanged centerline baseline finished 0/20 configurations; all failed
