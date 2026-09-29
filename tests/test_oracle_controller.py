@@ -21,6 +21,22 @@ class TestTrackPath(unittest.TestCase):
 
 
 class TestOracleController(unittest.TestCase):
+    def test_obstacle_path_offset_is_local_and_clears_center(self):
+        points = [(0, y) for y in range(0, 101, 5)] + [(-100, 100), (-100, 0)]
+        env = SimpleNamespace(
+            track=[(0, 0, x, y) for x, y in points],
+            track_variables=SimpleNamespace(obstacles=[
+                SimpleNamespace(position=(0, 50), radius=1.2)]),
+        )
+        baseline = OracleController(env)
+        avoided = OracleController(env, avoid_obstacles=True)
+        np.testing.assert_array_equal(baseline.path.points, points)
+        np.testing.assert_allclose(avoided.path.points[10], [3.8, 50])
+        np.testing.assert_array_equal(avoided.path.points[0], points[0])
+        np.testing.assert_array_equal(avoided.path.points[20], points[20])
+        _, clearance, _ = avoided.path.project([0, 50])
+        self.assertGreater(abs(clearance), 3.7)
+
     def test_steering_sign_and_speed_feedback(self):
         # Facing +y, with the path to the right: positive action must turn right.
         hull = SimpleNamespace(position=(0, 10), linearVelocity=(0, 0), angle=0)

@@ -85,7 +85,12 @@ Do not include unrelated pre-existing changes without authorization.
   untracked pre-existing `AGENTS.md`; leave it untouched and out of task commits.
 - Phase 1 complete: source contract in `ENVIRONMENT.md`; real no-op/random/manual
   diagnostics in `EXPERIMENTS.md`, including measured steering convention.
-- Phase 2 initial centerline oracle implemented. First track 1 / seed 1 episode
-  failed after collision/stall at 50.18% progress; earliest onset action 494.
-  Next: unchanged 20-road baseline, then an isolated geometry-path obstacle
-  avoidance change and matched matrix evaluation. No learning work started.
+- Phase 2: unchanged centerline baseline finished 0/20 configurations; all failed
+  after obstacle collision (15 stalled, 5 damage retirement). Added only smooth
+  obstacle-offset reference geometry, retaining speed and steering parameters.
+- Candidate first matrix has 13/13 completed episodes finished, zero damage;
+  a 600-second shell timeout interrupted the next case, not the environment.
+  Preserve partial `runs/avoidance_matrix`; finish remaining ID3/seeds4-5 and
+  ID4/seeds1-5 in fresh directories, then repeat all20 twice with frozen code.
+- Phase 1/2 evidence and reproduction commands are in `EXPERIMENTS.md`. No
+  learning work or Phase 3 bulk observation collection has started.

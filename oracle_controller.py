@@ -42,12 +42,28 @@ class OracleController:
     def __init__(self, base_env, target_speed=12.0, avoid_obstacles=False):
         if not math.isfinite(target_speed) or target_speed <= 0:
             raise ValueError("target_speed must be finite and positive")
-        if avoid_obstacles:
-            raise ValueError("Obstacle avoidance has not yet been implemented")
         self.env = base_env
         self.target_speed = float(target_speed)
         self.centerline = TrackPath(np.asarray(base_env.track)[:, 2:4])
         self.path = self.centerline
+        if avoid_obstacles:
+            tangents = self.centerline.delta + np.roll(self.centerline.delta, 1, axis=0)
+            tangents /= np.linalg.norm(tangents, axis=1)[:, None]
+            normals = np.column_stack([-tangents[:, 1], tangents[:, 0]])
+            offsets = np.zeros(len(self.centerline.points))
+            for obstacle in base_env.track_variables.obstacles:
+                arc, lateral, _ = self.centerline.project(obstacle.position)
+                # Radius + vehicle half-width + tracking margin. Pass on the
+                # centerline's opposite side, blending back over 25 units.
+                clearance = obstacle.radius + 1.4 + 1.2
+                shift = (min(0.0, lateral - clearance) if lateral >= 0
+                         else max(0.0, lateral + clearance))
+                distance = (self.centerline.cumulative[:-1] - arc
+                            + self.centerline.length / 2) % self.centerline.length
+                distance -= self.centerline.length / 2
+                blend = 0.5 * (1 + np.cos(np.pi * np.clip(np.abs(distance) / 25.0, 0, 1)))
+                offsets += shift * blend
+            self.path = TrackPath(self.centerline.points + offsets[:, None] * normals)
 
     def act(self):
         hull = self.env.car.hull
@@ -57,6 +73,7 @@ class OracleController:
         right = np.array([forward[1], -forward[0]])
         speed = float(np.linalg.norm(velocity))
         arc, lateral, index = self.centerline.project(position)
+        _, path_error, _ = self.path.project(position)
         rear = position - 1.64 * forward
         rear_arc, _, _ = self.path.project(rear)
         lookahead = 6.0 + 0.25 * speed
@@ -77,6 +94,7 @@ class OracleController:
         action = np.array([np.clip(steer, -1, 1), gas, brake], dtype=np.float32)
         return action, {
             "arc_length": arc, "center_error": lateral, "waypoint_index": index,
+            "path_error": path_error,
             "curvature": curvature, "heading_error": heading_error,
             "target": target.tolist(), "target_speed": self.target_speed,
             "lookahead": lookahead, "steer_saturated": abs(steer) >= 0.4,

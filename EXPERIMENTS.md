@@ -111,3 +111,44 @@ unchanged centerline baseline across all 20 configurations.
 
 All negative results remain in this log and local artifacts. Do not advance to
 learning based on incomplete episodes or high tile-visit percentage alone.
+
+### Unchanged Centerline Matrix
+
+```bash
+python oracle_runner.py --mode oracle --output runs/centerline_matrix
+python oracle_report.py runs/centerline_matrix --events
+```
+
+At code checkpoint `073cb4f`: **0/20 episodes, 0/20 configurations finished**.
+All 20 encountered collisions. Fifteen terminated via collision-associated
+stall/negative-reward streak; five via damage retirement (1/4, 1/5, 3/1, 3/2,
+3/3). No hull center left the road half-width. Episodes lasted 128-612 actions.
+First-collision and terminal windows were inspected for every failure. This
+supports changing obstacle handling rather than adjusting road-following speed
+or steering gain. The first collision is the earliest directly observed adverse
+event, not a claim to identify the earliest sub-frame causal deviation.
+
+### Single Change: Obstacle-Offset Reference Path
+
+Keep target speed, gas/brake gains, pursuit wheelbase/lookahead, physics and
+evaluation conditions unchanged. Only change the reference path: project each
+obstacle onto centerline, choose the opposite side, and shift waypoints to give
+radius + 1.4 vehicle half-width + 1.2 tracking margin (3.8 total for radius 1.2).
+Blend displacement with a raised cosine over +/-25 arc-length units; unchanged
+centerline elsewhere. This is not MPC or learned planning. Explicitly select
+with `--avoid-obstacles`; omitting that flag preserves the negative baseline.
+
+```bash
+python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 1 --seeds 1 --output runs/avoidance_initial
+python oracle_runner.py --mode oracle --avoid-obstacles --output runs/avoidance_matrix
+```
+
+Single-road probe: 1/1 full episode finished (track 1 / seed 1), 1,006 actions,
+progress 1.0, damage 0. Initial matched matrix command hit the external shell's
+600-second wall limit after 13 completed episodes, all finished with zero damage
+(IDs 1-2/seeds 1-5 and ID 3/seeds 1-3). ID 3/seed 4 trace was interrupted and
+is excluded from complete-episode denominators; do not count this operational
+interruption as a simulator failure. The partial directory is preserved.
+
+Current action: finish the remaining seven matrix cases in fresh directories,
+then verify all 20 configurations twice more with the same frozen controller.
