@@ -3,7 +3,7 @@ from types import SimpleNamespace
 
 import numpy as np
 
-from oracle_controller import OracleController, TrackPath
+from oracle.oracle_controller import OracleController, TrackPath
 
 
 class TestTrackPath(unittest.TestCase):

@@ -76,11 +76,12 @@ def vehicle_state(base):
 
 
 def provenance(args):
-    root = Path(__file__).resolve().parent
+    root = Path(__file__).resolve().parent.parent
     def git(*command):
         return subprocess.check_output(["git", *command], cwd=root, text=True).strip()
     sources = [root / name for name in
-               ("env_wrapper.py", "damage.py", "local_runner.py", "oracle_runner.py", "oracle_controller.py")]
+               ("env_wrapper.py", "damage.py", "local_runner.py", "oracle/oracle_runner.py",
+                "oracle/oracle_controller.py")]
     sources += sorted((root / "core").rglob("*.py"))
     status = git("status", "--porcelain", "--untracked-files=all")
     return {"args": vars(args), "command": sys.argv, "git_revision": git("rev-parse", "HEAD"),
@@ -111,7 +112,7 @@ def run_episode(args, output, track_id, seed, repeat):
             raise ValueError("Reset observation does not match declared observation space")
         controller = None
         if args.mode == "oracle":
-            from oracle_controller import OracleController
+            from .oracle_controller import OracleController
             controller = OracleController(base, target_speed=args.target_speed,
                                           avoid_obstacles=args.avoid_obstacles)
         rng = np.random.default_rng(args.action_seed)

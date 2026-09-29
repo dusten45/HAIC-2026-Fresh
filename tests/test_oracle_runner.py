@@ -10,7 +10,7 @@ from unittest.mock import patch
 
 import numpy as np
 
-from oracle_runner import encode, main, observation_summary, vehicle_state
+from oracle.oracle_runner import encode, main, observation_summary, vehicle_state
 
 
 class TestOracleRunner(unittest.TestCase):
@@ -86,7 +86,7 @@ class TestOracleRunner(unittest.TestCase):
             return {"track_id": track_id, "geometry_seed": seed, "finished": False}
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary) / "run"
-            with patch("oracle_runner.run_episode", side_effect=episode) as rollout:
+            with patch("oracle.oracle_runner.run_episode", side_effect=episode) as rollout:
                 main(["--output", str(output)])
             summary = json.loads((output / "summary.json").read_text())
             self.assertEqual(rollout.call_count, 50)

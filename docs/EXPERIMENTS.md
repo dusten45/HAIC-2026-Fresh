@@ -1,5 +1,7 @@
 # Oracle Experiments: Phase 1-2
 
+Experiment protocol, reproduction commands, full-episode evidence, and limitations.
+
 ## Scope and Fixed Conditions
 
 All observations in this log come from this independent restart. No earlier
@@ -24,7 +26,7 @@ geometry control are in scope; no training or official submission is performed.
 
 ## Artifacts and Reproduction
 
-`oracle_runner.py` creates a fresh output directory, saves run/source/package
+`oracle/oracle_runner.py` creates a fresh output directory, saves run/source/package
 metadata, actual centerline and obstacle conditions, per-action JSONL traces,
 and a summary. Existing output directories are rejected to preserve evidence.
 Generated artifacts live under ignored `runs/`; this compact log is versioned.
@@ -68,11 +70,11 @@ runner cap without environment termination/truncation, first leaving road width
 at action 12. No changes to steering sign are needed.
 
 ```bash
-python oracle_runner.py --mode noop --track-ids 1 --seeds 1 --output runs/phase1_noop_track1_seed1
-python oracle_runner.py --mode random --track-ids 1 --seeds 1 --output runs/phase1_random_track1_seed1
-python oracle_runner.py --mode manual --track-ids 1 --seeds 1 --output runs/phase1_manual_track1_seed1
-python oracle_runner.py --mode manual --manual-steering 0.2 --max-steps 20 --track-ids 1 --seeds 1 --output runs/phase1_manual_right_track1_seed1
-python oracle_runner.py --mode manual --manual-steering -0.2 --max-steps 20 --track-ids 1 --seeds 1 --output runs/phase1_manual_left_track1_seed1
+python -m oracle.oracle_runner --mode noop --track-ids 1 --seeds 1 --output runs/phase1_noop_track1_seed1
+python -m oracle.oracle_runner --mode random --track-ids 1 --seeds 1 --output runs/phase1_random_track1_seed1
+python -m oracle.oracle_runner --mode manual --track-ids 1 --seeds 1 --output runs/phase1_manual_track1_seed1
+python -m oracle.oracle_runner --mode manual --manual-steering 0.2 --max-steps 20 --track-ids 1 --seeds 1 --output runs/phase1_manual_right_track1_seed1
+python -m oracle.oracle_runner --mode manual --manual-steering -0.2 --max-steps 20 --track-ids 1 --seeds 1 --output runs/phase1_manual_left_track1_seed1
 ```
 
 These artifacts and the first oracle episode predate diagnostic-only additions
@@ -97,8 +99,8 @@ geometry, but centerline obstacles may cause collision/stall failures.
 ### Initial Single-Road Probe
 
 ```bash
-python oracle_runner.py --mode oracle --track-ids 1 --seeds 1 --output runs/centerline_initial
-python oracle_report.py runs/centerline_initial --events
+python -m oracle.oracle_runner --mode oracle --track-ids 1 --seeds 1 --output runs/centerline_initial
+python -m oracle.oracle_report runs/centerline_initial --events
 ```
 
 0/1 complete episodes finished on 0/1 road. At step 612, progress 0.501818,
@@ -120,8 +122,8 @@ learning based on incomplete episodes or high tile-visit percentage alone.
 ### Unchanged Centerline Matrix
 
 ```bash
-python oracle_runner.py --mode oracle --track-ids 1 2 3 4 --seeds 1 2 3 4 5 --output runs/centerline_matrix
-python oracle_report.py runs/centerline_matrix --events
+python -m oracle.oracle_runner --mode oracle --track-ids 1 2 3 4 --seeds 1 2 3 4 5 --output runs/centerline_matrix
+python -m oracle.oracle_report runs/centerline_matrix --events
 ```
 
 At code checkpoint `073cb4f`: **0/20 episodes, 0/20 configurations finished**.
@@ -144,8 +146,8 @@ centerline elsewhere. This is not MPC or learned planning. Explicitly select
 with `--avoid-obstacles`; omitting that flag preserves the negative baseline.
 
 ```bash
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 1 --seeds 1 --output runs/avoidance_initial
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 1 2 3 4 --seeds 1 2 3 4 5 --output runs/avoidance_matrix
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 1 --seeds 1 --output runs/avoidance_initial
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 1 2 3 4 --seeds 1 2 3 4 5 --output runs/avoidance_matrix
 ```
 
 Single-road probe: 1/1 full episode finished (track 1 / seed 1), 1,006 actions,
@@ -159,9 +161,9 @@ Remaining seven cases completed in fresh directories, yielding **20/20 complete
 episodes finished on all 20/20 configurations**, with no collisions or damage.
 
 ```bash
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 3 --seeds 4 5 --output runs/avoidance_matrix_remaining3
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 4 --seeds 1 2 3 4 5 --output runs/avoidance_matrix_remaining4
-python oracle_report.py runs/avoidance_matrix runs/avoidance_matrix_remaining3 runs/avoidance_matrix_remaining4
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 3 --seeds 4 5 --output runs/avoidance_matrix_remaining3
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 4 --seeds 1 2 3 4 5 --output runs/avoidance_matrix_remaining4
+python -m oracle.oracle_report runs/avoidance_matrix runs/avoidance_matrix_remaining3 runs/avoidance_matrix_remaining4
 ```
 
 The combined report explicitly shows original 13/20 summaries, one interrupted
@@ -221,11 +223,11 @@ Controller and runner frozen at `bf85da7`; two additional full episodes per
 configuration, in independent track-ID processes:
 
 ```bash
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 1 --seeds 1 2 3 4 5 --repeats 2 --output runs/verification_track1
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 2 --seeds 1 2 3 4 5 --repeats 2 --output runs/verification_track2
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 3 --seeds 1 2 3 4 5 --repeats 2 --output runs/verification_track3
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 4 --seeds 1 2 3 4 5 --repeats 2 --output runs/verification_track4
-python oracle_report.py runs/verification_track1 runs/verification_track2 runs/verification_track3 runs/verification_track4
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 1 --seeds 1 2 3 4 5 --repeats 2 --output runs/verification_track1
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 2 --seeds 1 2 3 4 5 --repeats 2 --output runs/verification_track2
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 3 --seeds 1 2 3 4 5 --repeats 2 --output runs/verification_track3
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 4 --seeds 1 2 3 4 5 --repeats 2 --output runs/verification_track4
+python -m oracle.oracle_report runs/verification_track1 runs/verification_track2 runs/verification_track3 runs/verification_track4
 ```
 
 Use a sufficiently long shell budget (tested execution allowance 1,200 seconds
@@ -249,7 +251,7 @@ steering targets reaching physical +/-0.4 rad. Step/lap/error maxima remain
 identical to the first-matrix table above.
 
 ```bash
-python oracle_report.py runs/avoidance_matrix runs/avoidance_matrix_remaining3 runs/avoidance_matrix_remaining4 runs/verification_track1 runs/verification_track2 runs/verification_track3 runs/verification_track4
+python -m oracle.oracle_report runs/avoidance_matrix runs/avoidance_matrix_remaining3 runs/avoidance_matrix_remaining4 runs/verification_track1 runs/verification_track2 runs/verification_track3 runs/verification_track4
 ```
 
 Decision: Phase 1-2 local success target met. The simple privileged system
@@ -308,9 +310,9 @@ Each batch uses normal full episodes and a generous external shell allowance,
 not a shortened simulation horizon. Example commands:
 
 ```bash
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 5 --seeds 1 2 3 4 5 --output runs/expanded_first_t5_low
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 5 --seeds 6 7 8 9 10 --output runs/expanded_first_t5_high
-python oracle_report.py runs/expanded_first_t5_low runs/expanded_first_t5_high
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 5 --seeds 1 2 3 4 5 --output runs/expanded_first_t5_low
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 5 --seeds 6 7 8 9 10 --output runs/expanded_first_t5_high
+python -m oracle.oracle_report runs/expanded_first_t5_low runs/expanded_first_t5_high
 ```
 
 First completed ID: track 5, **10/10 full episodes finished** on seeds 1-10.
@@ -357,11 +359,11 @@ additional full episode for each of the same 50 configurations, under identical
 conditions, and compare complete trace hashes.
 
 ```bash
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 1 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t1
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 2 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t2
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 3 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t3
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 4 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t4
-python oracle_runner.py --mode oracle --avoid-obstacles --track-ids 5 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t5
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 1 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t1
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 2 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t2
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 3 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t3
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 4 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t4
+python -m oracle.oracle_runner --mode oracle --avoid-obstacles --track-ids 5 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/expanded_repeat_t5
 ```
 
 ### Expanded Repetition and Final Decision
@@ -385,13 +387,13 @@ actions; actual finish lap range 73.76-98.80 simulation seconds. Sampled maxima
 are unchanged from the first-pass report.
 
 ```bash
-python oracle_report.py runs/expanded_first_t1_low runs/expanded_first_t1_high runs/expanded_first_t2_low runs/expanded_first_t2_high runs/expanded_first_t3_low runs/expanded_first_t3_high runs/expanded_first_t4_low runs/expanded_first_t4_high runs/expanded_first_t5_low runs/expanded_first_t5_high runs/expanded_repeat_t1 runs/expanded_repeat_t2 runs/expanded_repeat_t3 runs/expanded_repeat_t4 runs/expanded_repeat_t5
+python -m oracle.oracle_report runs/expanded_first_t1_low runs/expanded_first_t1_high runs/expanded_first_t2_low runs/expanded_first_t2_high runs/expanded_first_t3_low runs/expanded_first_t3_high runs/expanded_first_t4_low runs/expanded_first_t4_high runs/expanded_first_t5_low runs/expanded_first_t5_high runs/expanded_repeat_t1 runs/expanded_repeat_t2 runs/expanded_repeat_t3 runs/expanded_repeat_t4 runs/expanded_repeat_t5
 ```
 
-Final validation: 28 local tests passed. `oracle_controller.py` is unchanged
+Final validation: 28 local tests passed. `oracle/oracle_controller.py` is unchanged
 from `bf85da7`; protected environment, original Agent/runner and requirements
 are unchanged from `dfb7a2d`. The only executable change for expansion is CLI
-grid defaults and ID validation in the external `oracle_runner.py`.
+grid defaults and ID validation in the external `oracle/oracle_runner.py`.
 
 Expanded local finish target met without retuning. Stop at Phase 1-2. These are
 exposed evaluation roads and deterministic repeatability results, not an

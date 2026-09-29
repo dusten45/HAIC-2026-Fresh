@@ -1,4 +1,4 @@
-"""Summarize saved oracle episodes and inspect the first adverse events."""
+"""Summarize saved local oracle episodes and inspect the first adverse events."""
 
 import argparse
 import hashlib

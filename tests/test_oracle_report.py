@@ -5,7 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from oracle_report import report
+from oracle.oracle_report import report
 
 
 class TestOracleReport(unittest.TestCase):
