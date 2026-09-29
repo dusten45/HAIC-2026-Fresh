@@ -9,10 +9,11 @@ conclusions from previous HAIC research repositories. The immediate goal is the
 simplest driving system that reliably finishes complete episodes, not reward,
 speed, submission eligibility, or a particular learning algorithm.
 
-Current scope is **Phase 1 and Phase 2 only**. No RL, neural policy, behavior
-cloning, DAgger, or complex MPC. Privileged vehicle state and track geometry are
-allowed for this local oracle. Do not modify `env_wrapper.py`, `damage.py`, or
-`core/`. Keep instrumentation and control external to the supplied environment.
+Current scope is **Phase 3 and Phase 4** after the user-authorized 2026-09-29
+oracle gate. No RL, world model, offline RL, reward shaping, or speculative oracle
+tuning. Privileged vehicle state and track geometry remain allowed only for local
+teacher generation and analysis, never as a learned policy input. Do not modify
+`env_wrapper.py`, `damage.py`, or `core/`. Keep instrumentation external.
 
 ## Declared Evaluation Roads
 
@@ -63,13 +64,40 @@ termination/truncation, and step/time/track identifiers. Oracle-policy action
 difference is not applicable until a learned policy exists. Bulk observation
 trajectory collection belongs to Phase 3 and is not started implicitly.
 
-## Later Phases (Not Authorized Now)
+## Phase 3: Frozen Oracle and Trajectories
 
-- Phase 3: after reliable oracle finishes, collect successful trajectories with
-  observations, actions, privileged/track-relative state and metadata.
-- Phase 4: simple behavior cloning diagnostics: training fit, held-out prediction,
-  closed-loop tracking, first deviation, and recovery.
-- Phase 5: consider learning only in response to measured failure hypotheses.
+- `oracle-v1` points at `a70b35950414a930d5ddaad4ac15733e65774345` before
+  BC work; do not tune its control parameters absent a demonstrated defect.
+- Preserve the already exposed IDs 1-5 x seeds 1-10 as oracle validation only.
+  Repeated deterministic traces are not independent learning examples. Geometry
+  seeds 11-30 are the BC training pool, 31-35 validation, and 36-40 final local
+  test, each with track IDs 1-5 / physical obstacles and original wrapper settings.
+  Splitting by *seed* prevents one geometry shared by different IDs crossing splits.
+- Collect at most one successful trajectory per selected road, preserve true
+  pre-action policy observation and teacher action, and keep vehicle/track state
+  strictly in separate analysis records. Failed teacher rollouts are recorded but
+  ineligible for successful-action training. Log exact tested subsets and missing
+  roads; do not silently claim complete split coverage.
+- Final local test seeds must not influence model design, epoch selection, or
+  tuning. Collect/evaluate them only after fixing the candidate using validation.
+
+## Phase 4: Simple BC and Closed Loop
+
+1. Fit a small supervised image-stack-to-action model on training roads. Track
+   both training and held-out validation error by steer/gas/brake. Select using
+   validation only; attractive loss alone is not evidence of reliable driving.
+2. Run complete closed-loop episodes in the unchanged wrapped environment.
+   Record finish counts with episode and road denominators, oracle reference,
+   student-state teacher labels, earliest component mismatch, earliest pose
+   divergence, curvature/speed/obstacle context, and termination reasons.
+3. Diagnose poor offline prediction as observation/representation/encoding first;
+   good offline prediction but progressive divergence as distribution shift; and
+   concentrated failures as possible data-coverage/recovery problems. These are
+   hypotheses to test, not automatic causal claims.
+4. If validation closed-loop shows distribution shift, *then* collect labels on
+   actually visited student states and retrain (DAgger/recovery). Do not duplicate
+   deterministic oracle trajectories. If BC succeeds, freeze its baseline and
+   reconsider whether any RL is needed. No RL work is authorized at this gate.
 
 Never represent local results as official submission performance. Obtain fresh
 explicit user authorization before any official submission/model confirmation.
@@ -120,9 +148,29 @@ Do not include unrelated pre-existing changes without authorization.
   but finished both. Other 49 configurations were damage-free in both repeats.
   Expanded collision-free reliability is NOT established: 98/100 episodes had
   no damage, 2/100 had damage. Controller parameters have not been tuned.
-- Expanded Phase 1-2 gate met; stop here. The 100-episode expanded result excludes
+- Expanded Phase 1-2 gate met. The 100-episode expanded result excludes
   the historical 60-episode initial-set evaluation. All 28 local tests pass.
 - This is exposed local oracle evidence, not unseen-track generalization or a
-  submission-ready policy. Do not automatically begin Phase 3, BC, or RL.
-- Phase 1/2 evidence and reproduction commands are in `EXPERIMENTS.md`. No
-  learning work or Phase 3 bulk observation collection has started.
+  submission-ready policy. The user explicitly authorized Phase 3/4; not RL.
+- `oracle-v1` tag created from clean `a70b359` before BC changes. BC evidence and
+  decisions are recorded separately in `docs/BC.md`.
+- Phase 3 collected 50/50 successful unique training roads (IDs 1-5 x seeds
+  11-20, 55,363 frames) and 15/15 successful validation roads (IDs 1-5 x
+  seeds 31-33). No privileged feature entered BC inference. Train on CUDA when
+  available; submitted-style inference stays on CPU.
+- Phase 4: initial CNN failed 0/1 validation episode; low aggregate prediction
+  loss masked rare high-gas failure. Targeted gas weighting, image-only motion
+  features and student-visited steering/control recovery were evaluated.
+  Best-progress split-head diagnostic still failed 0/3 validation roads (ID 1
+  x seeds 31-33); no BC finisher baseline was established.
+- Freeze that diagnostic before the untouched local test: student **0/10
+  episodes on 0/10 roads** versus oracle **10/10 on 10/10**, IDs 1-5 x seeds
+  36-37 (two geometries). All student runs encountered an obstacle collision;
+  8 retired from collision-associated off_track streak and 2 from damage.
+  The first measured action mismatch was gas at step 0 on all 10 roads.
+  Seeds 36-37 are now exposed and cannot be used to tune an untouched test;
+  38-40 remain unexamined. No change was made from final-test results.
+- The conditional DAgger/recovery gate was met by observed student-state shift,
+  but sampled recovery did not produce a reliable finisher. Remain in BC
+  diagnosis; no RL, official submission, or model confirmation. Complete
+  evidence, commands, negative variants and checkpoints are in `docs/BC.md`.

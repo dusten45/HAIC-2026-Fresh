@@ -17,6 +17,8 @@
 
 ## Working Safely
 
+- Prioritize implementing and improving the learned driving model over exhaustive defensive checks or repeated verification. This is a research agent, not a general-purpose public service; run only checks needed to substantiate a decision and avoid redundant safeguards.
+- While asynchronous data collection or training runs, do not use `sleep` to wait. Do independent useful work; if no work remains, schedule a wakeup for the next meaningful check-in and resume then.
 - Keep changes and experiment records small and task-relevant. Check Git status before edits, coordinate overlapping work, and never discard another person's changes or run artifacts.
 - Before committing, inspect status and diff; exclude secrets, model weights, generated runs, and unrelated changes. Verify `git var GIT_AUTHOR_IDENT` and `git var GIT_COMMITTER_IDENT` identify `dusten45`.
 - Before authenticated Git operations, verify `gh api user --jq .login` is `dusten45` and check the actual remote and credential helper. Push only to private `origin`, never to official `upstream`.
@@ -27,5 +29,6 @@
 - [`docs/PLAN.md`](docs/PLAN.md): current research scope, phase gates, exposed-road declaration, and status checkpoint.
 - [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md): verified observation/action/reset/termination and local environment contracts, with source references.
 - [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md): diagnostic and oracle evaluation protocols, reproduction commands, artifacts, results, and limitations.
+- [`docs/BC.md`](docs/BC.md): behavior cloning splits, trajectory protocol, offline and closed-loop evidence and decisions.
 - [`oracle/`](oracle/): privileged local-only oracle runner, controller, and report utility; none is the submission `Agent`.
 - [`tests/`](tests/): local interface, environment parity, and oracle-tool regression tests.

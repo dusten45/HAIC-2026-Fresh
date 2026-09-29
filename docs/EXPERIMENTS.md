@@ -399,3 +399,13 @@ Expanded local finish target met without retuning. Stop at Phase 1-2. These are
 exposed evaluation roads and deterministic repeatability results, not an
 untouched holdout, collision-free guarantee, submission policy or evidence of
 private-track generalization. No BC/RL, Phase 3 collection or submission began.
+
+## Subsequent User-Authorized BC Phase
+
+The 2026-09-29 request accepted the replicated oracle result, tagged the exact
+unchanged controller as `oracle-v1` (`a70b359`), and authorized trajectory
+collection and simple supervised BC, but not RL or an official submission.
+Earlier "stop" and "no BC" statements above describe the historical Phase 1/2
+checkpoint; the new phase protocol and results are in [`BC.md`](BC.md). The
+50 previously examined roads remain exposed and are not repurposed as an
+untouched test set.
