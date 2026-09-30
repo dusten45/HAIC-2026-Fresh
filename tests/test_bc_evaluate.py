@@ -5,9 +5,13 @@ import tempfile
 import unittest
 from unittest.mock import Mock, patch
 
+import numpy as np
+import torch
+
 from bc.evaluate import ACTION_THRESHOLDS, POSITION_THRESHOLD, compare, main, rollout
 from bc.contracts import BASELINE_CONDITIONS
-from oracle.recording import execution_fingerprint
+from bc.model import BCPolicy
+from oracle.recording import encode, execution_fingerprint
 
 
 class TestDeviation(unittest.TestCase):
@@ -71,6 +75,52 @@ class TestDeviation(unittest.TestCase):
         self.assertIsNone(result["reference_action"])
         self.assertEqual(result["on_state_action"]["step"], 1)
 
+    def test_prefix_advances_policy_and_separates_prediction_from_execution(self):
+        reference_samples = []
+        reference, _ = rollout(1, 31, 8, samples=reference_samples)
+        policy = BCPolicy(history_frames=8)
+        policy.reset = Mock(wraps=policy.reset)
+        policy.act = Mock(wraps=policy.act)
+        policy.forward = Mock(return_value=torch.zeros(1, 3))
+        samples = []
+        student, _ = rollout(1, 31, 8, policy, samples=samples, oracle_prefix_steps=4)
+        policy.reset.assert_called_once()
+        self.assertEqual(policy.act.call_count, len(student))
+        self.assertEqual([row["oracle_prefix"] for row in student], [True] * 4 + [False] * 4)
+        history = [reference_samples[0][0][-1]] * 7
+        for index, row in enumerate(student):
+            self.assertEqual(row["predicted_action"], [0., 0., 0.])
+            self.assertEqual(row["action"], row["oracle_action"] if index < 4 else row["predicted_action"])
+            np.testing.assert_array_equal(policy.act.call_args_list[index].args[0], samples[index][0])
+            history.append(samples[index][0][-1])
+            np.testing.assert_array_equal(policy.forward.call_args_list[index].args[0][0].numpy(),
+                                          np.stack(history[-8:]))
+            if index <= 4:
+                np.testing.assert_array_equal(samples[index][0], reference_samples[index][0])
+                self.assertEqual(encode(row["pre_state"]), encode(reference[index]["pre_state"]))
+        result = compare(reference, student)
+        self.assertEqual(result["on_state_action"]["step"], 0)
+        self.assertTrue(result["on_state_action"]["oracle_prefix"])
+        self.assertEqual(result["handoff"]["step"], 4)
+        self.assertEqual(result["handoff"]["student_action"], student[4]["predicted_action"])
+        self.assertEqual(result["handoff"]["executed_action"], student[4]["action"])
+        np.testing.assert_allclose(result["handoff"]["same_state_absolute_error"],
+                                   np.abs(student[4]["oracle_action"]))
+        self.assertEqual(result["after_handoff"]["on_state_action"]["step"], 4)
+        self.assertFalse(result["after_handoff"]["on_state_action"]["oracle_prefix"])
+
+    def test_full_prefix_has_no_handoff_but_keeps_prediction_errors(self):
+        policy = Mock()
+        policy.act.return_value = np.zeros(3, dtype=np.float32)
+        student, _ = rollout(1, 31, 2, policy, oracle_prefix_steps=4)
+        result = compare(student, student)
+        self.assertEqual(policy.act.call_count, 2)
+        self.assertIsNone(result["handoff"])
+        self.assertEqual(result["after_handoff"],
+                         {"reference_action": None, "on_state_action": None, "position": None})
+        self.assertEqual(result["on_state_action"]["step"], 0)
+        self.assertIsNone(result["position"])
+
 
 class TestResume(unittest.TestCase):
     def setUp(self):
@@ -109,7 +159,7 @@ class TestResume(unittest.TestCase):
             (self.output / f"track1_seed32.{side}.jsonl").write_text(f"interrupted {side}\n")
         policy = Mock()
 
-        def fake_rollout(track_id, seed, max_steps, policy=None, trace_path=None, samples=None):
+        def fake_rollout(track_id, seed, max_steps, policy=None, trace_path=None, samples=None, oracle_prefix_steps=0):
             self.assertEqual((track_id, seed), (1, 32))
             self.assertEqual(self.summary_path.read_bytes(), original)
             assert trace_path is not None
@@ -131,6 +181,8 @@ class TestResume(unittest.TestCase):
         self.assertEqual(updated["reference_finish_count"], 2)
         self.assertEqual(updated["track_ids"], [1])
         self.assertEqual(updated["seeds"], [31, 32])
+        self.assertEqual(updated["oracle_prefix_steps"], 0)
+        self.assertFalse(updated["diagnostic_only"])
         archives = list((self.output / "interrupted_attempts").iterdir())
         self.assertEqual(len(archives), 1)
         self.assertEqual((archives[0] / "summary.json").read_bytes(), original)
@@ -148,7 +200,8 @@ class TestResume(unittest.TestCase):
                     {"thresholds": {}}, {"track_ids": [1, 2], "seeds": [31, 32]},
                     {"track_ids": [1], "seeds": [31]},
                     {"results": [self.result, self.result]},
-                    {"results": [{**self.result, "track_id": 2}]}, {"collect_recovery": True}]
+                    {"results": [{**self.result, "track_id": 2}]}, {"collect_recovery": True},
+                    {"oracle_prefix_steps": 4}]
         for changes in variants:
             with self.subTest(changes=changes):
                 self.summary_path.write_text(json.dumps({**self.summary, **changes}))
@@ -160,6 +213,40 @@ class TestResume(unittest.TestCase):
                 load.assert_not_called()
                 run.assert_not_called()
                 self.assertEqual({p.name: p.read_bytes() for p in self.output.iterdir()}, before)
+
+    def test_nonzero_prefix_cannot_resume_legacy_default_zero(self):
+        before = self.summary_path.read_bytes()
+        with patch("bc.model.BCPolicy.from_checkpoint") as load, \
+                patch("bc.evaluate.rollout") as run, self.assertRaises(SystemExit):
+            main([*self.argv, "--oracle-prefix-steps", "4"])
+        load.assert_not_called()
+        run.assert_not_called()
+        self.assertEqual(self.summary_path.read_bytes(), before)
+
+    def test_matching_prefix_resume_forwarded_only_to_student(self):
+        self.summary_path.write_text(json.dumps({**self.summary, "oracle_prefix_steps": 4}))
+
+        def complete(track_id, seed, max_steps, policy=None, **kwargs):
+            return [], {"track_id": track_id, "geometry_seed": seed,
+                        "finished": policy is None, "progress": .2}
+
+        with patch("bc.model.BCPolicy.from_checkpoint", return_value=Mock()), \
+                patch("bc.evaluate.rollout", side_effect=complete) as run:
+            main([*self.argv, "--oracle-prefix-steps", "4"])
+        self.assertNotIn("oracle_prefix_steps", run.call_args_list[0].kwargs)
+        self.assertEqual(run.call_args_list[1].kwargs["oracle_prefix_steps"], 4)
+        summary = json.loads(self.summary_path.read_text())
+        self.assertEqual(summary["oracle_prefix_steps"], 4)
+        self.assertTrue(summary["diagnostic_only"])
+
+    def test_negative_prefix_and_prefix_recovery_rejected_before_loading(self):
+        for arguments in (["--oracle-prefix-steps", "-1"],
+                          ["--oracle-prefix-steps", "4", "--collect-recovery", "--split", "train", "--seeds", "11"]):
+            with self.subTest(arguments=arguments), patch("bc.model.BCPolicy.from_checkpoint") as load, \
+                    patch("bc.evaluate.rollout") as run, self.assertRaises(SystemExit):
+                main([*self.argv, *arguments])
+            load.assert_not_called()
+            run.assert_not_called()
 
     def test_existing_output_refused_by_default_and_resume_recovery_refused(self):
         before = self.summary_path.read_bytes()

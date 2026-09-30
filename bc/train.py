@@ -15,13 +15,15 @@ import numpy as np
 import torch
 
 from bc.model import BCPolicy
-from bc.contracts import BASELINE_CONDITIONS, OBSERVATION_SHAPE, SIMULATOR_FPS, SPLIT_SEEDS
+from bc.contracts import (OBSERVATION_SHAPE, SIMULATOR_FPS, SPLIT_SEEDS,
+                          verify_environment_conditions)
 from oracle.recording import execution_fingerprint, snapshot_sources
 
 
 ROAD_NAME = re.compile(r"track[1-5]_seed(\d+)\.npz\Z")
 ACTION_NAMES = ("steer", "gas", "brake")
 ACTIVE_GAS_WEIGHT = 1.0
+MODE_NAMES = ("accelerate", "coast", "brake")
 
 
 def action_weights(target, gas_weight=ACTIVE_GAS_WEIGHT, brake_weight=1):
@@ -98,7 +100,8 @@ def assemble_history(observations, indices, history_frames=4):
     return observations[history_indices, 3]
 
 
-def evaluate(model, paths, batch_size, gas_weight=ACTIVE_GAS_WEIGHT, brake_weight=1):
+def evaluate(model, paths, batch_size, gas_weight=ACTIVE_GAS_WEIGHT, brake_weight=1,
+             include_startup=False):
     model.eval()
     squared = np.zeros(3, dtype=np.float64)
     absolute = np.zeros(3, dtype=np.float64)
@@ -106,6 +109,12 @@ def evaluate(model, paths, batch_size, gas_weight=ACTIVE_GAS_WEIGHT, brake_weigh
     weight_sum = np.zeros(3, dtype=np.float64)
     conditional_sums = {name: np.zeros(5, dtype=np.float64)
                         for name in ("large_steer", "high_gas", "high_brake")}
+    longitudinal_sums = {name: np.zeros(5, dtype=np.float64)
+                         for name in ("all", "high_gas", "high_brake")}
+    startup_sums = np.zeros((10, 4, 5), dtype=np.float64)
+    mode_confusion = np.zeros((11, 3, 3), dtype=np.int64)
+    magnitude_sums = np.zeros((11, 3, 2), dtype=np.float64)
+    small_brake_sums = np.zeros((11, 3), dtype=np.int64)
     count = 0
     device = next(model.parameters()).device
     history_frames = getattr(model, "history_frames", 4)
@@ -117,13 +126,60 @@ def evaluate(model, paths, batch_size, gas_weight=ACTIVE_GAS_WEIGHT, brake_weigh
                 target = torch.from_numpy(actions[offset:end]).to(device)
                 images = (assemble_history(observations, np.arange(offset, min(end, len(actions))), 8)
                           if history_frames == 8 else observations[offset:end])
-                predictions = model(torch.from_numpy(images).to(device))
+                inputs = torch.from_numpy(images).to(device)
+                mode_model = getattr(model, "mode_longitudinal", False)
+                controls = model(inputs, decode=False) if mode_model else model(inputs)
+                predictions = BCPolicy.decode_mode(controls) if mode_model else controls
                 errors = predictions - target
+                signed_target = target[:, 1] - target[:, 2]
+                signed_prediction = predictions[:, 1] - predictions[:, 2]
+                signed_error = signed_prediction - signed_target
+                target_mode = torch.where(signed_target > 0, 0, torch.where(signed_target < 0, 2, 1))
+                predicted_mode = (controls[:, 1:4].argmax(dim=1) if mode_model else
+                                  torch.where(signed_prediction > 0, 0, torch.where(signed_prediction < 0, 2, 1)))
+                magnitude = controls[:, 4] if mode_model else signed_prediction.abs()
+                magnitude_error = (magnitude - signed_target.abs()).abs().double().cpu().numpy()
+                targets = target_mode.cpu().numpy()
+                modes = predicted_mode.cpu().numpy()
+                small_brakes = ((target[:, 2] > 0) & (target[:, 2] <= .1)).cpu().numpy()
+
+                def accumulate_modes(index, rows):
+                    t, p = targets[rows], modes[rows]
+                    mode_confusion[index] += np.bincount(t * 3 + p, minlength=9).reshape(3, 3)
+                    for active in (0, 2):
+                        mask = t == active
+                        magnitude_sums[index, active] += (mask.sum(), magnitude_error[rows][mask].sum())
+                    small = small_brakes[rows]
+                    small_brake_sums[index] += (small.sum(), (small & (p == 2)).sum(),
+                                                (small & (p == 0)).sum())
+
+                accumulate_modes(0, slice(None))
+                if include_startup and offset < 10:
+                    for local in range(min(10 - offset, len(target))):
+                        accumulate_modes(1 + offset + local, slice(local, local + 1))
+                for name, totals in longitudinal_sums.items():
+                    mask = (torch.ones_like(signed_target, dtype=torch.bool) if name == "all" else
+                            target[:, 1 if name == "high_gas" else 2] > .1)
+                    selected_errors = signed_error[mask].double()
+                    totals += np.array([
+                        mask.sum().item(), selected_errors.abs().sum().item(),
+                        selected_errors.square().sum().item(),
+                        signed_target[mask].double().sum().item(),
+                        signed_prediction[mask].double().sum().item()])
                 weight = action_weights(target, gas_weight, brake_weight)
                 squared += errors.square().sum(dim=0).double().cpu().numpy()
                 absolute += errors.abs().sum(dim=0).double().cpu().numpy()
                 weighted_squared += (weight * errors.square()).sum(dim=0).double().cpu().numpy()
                 weight_sum += weight.sum(dim=0).double().cpu().numpy()
+                if include_startup and offset < 10:
+                    length = min(10 - offset, len(target))
+                    initial_errors = torch.cat((errors[:length], signed_error[:length, None]), dim=1).double()
+                    startup_sums[offset:offset + length] += np.stack((
+                        np.ones((length, 4)),
+                        initial_errors.abs().cpu().numpy(),
+                        initial_errors.square().cpu().numpy(),
+                        torch.cat((target[:length], signed_target[:length, None]), dim=1).double().cpu().numpy(),
+                        torch.cat((predictions[:length], signed_prediction[:length, None]), dim=1).double().cpu().numpy()), axis=-1)
                 for component, totals in enumerate(conditional_sums.values()):
                     mask = target[:, component].abs() > .1
                     selected_errors = errors[mask, component].double()
@@ -142,13 +198,55 @@ def evaluate(model, paths, batch_size, gas_weight=ACTIVE_GAS_WEIGHT, brake_weigh
             metric: float(value / totals[0]) if totals[0] else None
             for metric, value in zip(("mae", "mse", "target_mean", "prediction_mean"), totals[1:])}}
         for name, totals in conditional_sums.items()}
-    return {"samples": count, "mse": dict(zip(ACTION_NAMES, mse.tolist())),
+    result = {"samples": count, "mse": dict(zip(ACTION_NAMES, mse.tolist())),
             "mae": dict(zip(ACTION_NAMES, mae.tolist())), "mean_mse": float(mse.mean()),
             "weighted_mse": dict(zip(ACTION_NAMES, weighted_mse.tolist())),
-            "weighted_mean_mse": float(weighted_mse.mean()), "conditional": conditional}
+              "weighted_mean_mse": float(weighted_mse.mean()), "conditional": conditional}
+    result["longitudinal"] = {
+        name: {"count": int(totals[0]), **{
+            metric: float(value / totals[0]) if totals[0] else None
+            for metric, value in zip(("mae", "mse", "target_mean", "prediction_mean"), totals[1:])}}
+        for name, totals in longitudinal_sums.items()}
+    def mode_metrics(confusion, magnitude_totals, small):
+        counts = confusion.sum(axis=1)
+        def ratio(value, total):
+            return float(value / total) if total else None
+        active_count, active_error = magnitude_totals[[0, 2]].sum(axis=0)
+        return {"names": list(MODE_NAMES), "confusion": confusion.tolist(),
+                "count": int(counts.sum()), "accuracy": ratio(np.trace(confusion), counts.sum()),
+                "brake_recall": ratio(confusion[2, 2], counts[2]),
+                "accelerate_to_brake": {"count": int(confusion[0, 2]), "total": int(counts[0]),
+                                        "rate": ratio(confusion[0, 2], counts[0])},
+                "brake_to_accelerate": {"count": int(confusion[2, 0]), "total": int(counts[2]),
+                                        "rate": ratio(confusion[2, 0], counts[2])},
+                "active_magnitude": {"count": int(active_count), "mae": ratio(active_error, active_count),
+                    "by_mode": {MODE_NAMES[i]: {"count": int(magnitude_totals[i, 0]),
+                                                "mae": ratio(magnitude_totals[i, 1], magnitude_totals[i, 0])}
+                                for i in (0, 2)}},
+                "small_brake": {"count": int(small[0]), "recall": ratio(small[1], small[0]),
+                                "accelerate_confusion_count": int(small[2])}}
+    result["longitudinal_mode"] = mode_metrics(mode_confusion[0], magnitude_sums[0], small_brake_sums[0])
+    if include_startup:
+        def initial_metrics(totals):
+            return {name: {"count": int(values[0]), **{
+                metric: float(value / values[0]) if values[0] else None
+                for metric, value in zip(("mae", "mse", "target_mean", "prediction_mean"), values[1:])}}
+                for name, values in zip((*ACTION_NAMES, "longitudinal"), totals)}
+        result["startup"] = {
+            "indexing": "zero-based pre-action steps 0..9 (first ten actions)",
+            "first_10": initial_metrics(startup_sums.sum(axis=0)),
+            "by_step": [{"step": step, **initial_metrics(totals)}
+                         for step, totals in enumerate(startup_sums)]}
+        result["startup"]["mode"] = {
+            "first_10": mode_metrics(mode_confusion[1:].sum(axis=0), magnitude_sums[1:].sum(axis=0),
+                                      small_brake_sums[1:].sum(axis=0)),
+            "by_step": [{"step": step, **mode_metrics(mode_confusion[step + 1],
+                          magnitude_sums[step + 1], small_brake_sums[step + 1])} for step in range(10)]}
+    return result
 
 
-def training_batches(plan, rng, batch_size, continuous=False, history_frames=4):
+def training_batches(plan, rng, batch_size, continuous=False, history_frames=4,
+                     balanced_actions=False):
     """Stream the same sampled rows, optionally carrying one partial batch across roads."""
     if history_frames not in (4, 8):
         raise ValueError("history_frames must be 4 or 8")
@@ -158,11 +256,26 @@ def training_batches(plan, rng, batch_size, continuous=False, history_frames=4):
             raise ValueError("history8 cannot be combined with recovery")
         if continuous and is_recovery:
             raise ValueError("continuous-batches cannot be combined with recovery")
+        if balanced_actions and is_recovery:
+            raise ValueError("balanced-actions cannot be combined with recovery")
         if not limit:
             continue
         observations, actions = read_road(path)
-        indices = (rng.choice(len(actions), size=limit, replace=limit > len(actions))
-                   if is_recovery else rng.permutation(len(actions))[:limit])
+        if balanced_actions:
+            # Replay rare labels, not trajectories; chronological pixels stay intact.
+            selected = []
+            for component in (1, 2):
+                candidates = np.flatnonzero(actions[:, component] > .1)
+                quota = limit // 8 if len(candidates) else 0
+                selected.append(rng.choice(candidates, size=quota, replace=quota > len(candidates)))
+            natural_count = limit - sum(len(indices) for indices in selected)
+            selected.append(rng.choice(len(actions), size=natural_count, replace=True)
+                            if natural_count > len(actions) else rng.permutation(len(actions))[:natural_count])
+            indices = np.concatenate(selected)
+            rng.shuffle(indices)
+        else:
+            indices = (rng.choice(len(actions), size=limit, replace=limit > len(actions))
+                       if is_recovery else rng.permutation(len(actions))[:limit])
         offset = 0
         while offset < len(indices):
             needed = batch_size - (len(pending[1]) if pending is not None else 0)
@@ -184,6 +297,15 @@ def training_batches(plan, rng, batch_size, continuous=False, history_frames=4):
 
 
 def train(args):
+    if args.mode_longitudinal and (args.history_frames != 8 or args.signed_longitudinal
+                                  or args.recovery_dataset is not None
+                                  or args.active_gas_weight != 1 or args.active_brake_weight != 1):
+        raise ValueError("mode-longitudinal requires history8, unit weights, no signed or recovery")
+    if args.signed_longitudinal and (args.history_frames != 8 or args.recovery_dataset is not None
+                                    or args.active_gas_weight != 1 or args.active_brake_weight != 1):
+        raise ValueError("signed-longitudinal trial requires history8, unit weights and no recovery")
+    if args.balanced_actions and args.recovery_dataset is not None:
+        raise ValueError("balanced-actions cannot be combined with recovery")
     if args.history_frames == 8 and (args.motion_features or args.recovery_dataset is not None):
         raise ValueError("history8 cannot be combined with motion features or recovery")
     if args.epochs < 1 or args.batch_size < 1 or args.max_train_samples < 1 or args.num_threads < 1:
@@ -228,11 +350,9 @@ def train(args):
             provenance = json.loads(provenance_path.read_text())
         except (OSError, ValueError) as error:
             raise ValueError(f"Cannot verify {label} collector provenance: {error}") from error
-        actual = provenance.get("conditions", {})
-        deviations = {key: {"expected": value, "actual": actual.get(key)}
-                      for key, value in BASELINE_CONDITIONS.items() if actual.get(key) != value}
-        if deviations:
-            raise ValueError(f"{label} collector conditions deviate from BC baseline: {deviations}")
+        actual = verify_environment_conditions(provenance, label)
+        if provenance.get("kind") == "matched_teacher_view" and args.history_frames != 4:
+            raise ValueError("Matched teacher views contain stored four-frame inputs, not chronological roads")
         if conditions is not None and actual != conditions:
             raise ValueError(f"{label} collector conditions differ across training/validation datasets")
         conditions = actual
@@ -270,7 +390,9 @@ def train(args):
         raise ValueError("CUDA requested but unavailable")
     device = torch.device("cuda" if args.device == "cuda" or
                           args.device == "auto" and torch.cuda.is_available() else "cpu")
-    model = BCPolicy(motion=args.motion_features, history_frames=args.history_frames).to(device)
+    model = BCPolicy(motion=args.motion_features, history_frames=args.history_frames,
+                      signed_longitudinal=args.signed_longitudinal,
+                      mode_longitudinal=args.mode_longitudinal).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
     best_loss = float("inf")
     history = []
@@ -291,12 +413,16 @@ def train(args):
         total_squared = np.zeros(3, dtype=np.float64)
         trained = 0
         optimizer_steps = 0
+        sampled_conditional = np.zeros(3, dtype=np.int64)
         for observations, actions, is_recovery in training_batches(
-                plan, rng, args.batch_size, args.continuous_batches, args.history_frames):
+                plan, rng, args.batch_size, args.continuous_batches, args.history_frames,
+                args.balanced_actions):
             x = torch.from_numpy(observations).to(device)
             y = torch.from_numpy(actions).to(device)
             optimizer.zero_grad(set_to_none=True)
-            errors = model(x) - y
+            controls = model(x, decode=False) if args.signed_longitudinal or args.mode_longitudinal else model(x)
+            errors = (BCPolicy.decode_mode(controls) if args.mode_longitudinal else
+                      BCPolicy.decode_signed(controls) if args.signed_longitudinal else controls) - y
             weight = action_weights(y, args.active_gas_weight, args.active_brake_weight)
             if is_recovery and args.recovery_steering_only:
                 weight[:, 0] = 3
@@ -304,18 +430,32 @@ def train(args):
             if is_recovery and args.recovery_controls_only:
                 weight[:, 0] = 0
                 weight[:, 1:] *= 1.5
-            loss = (weight * errors.square()).mean()
+            # Keep steering's original 1/3 coefficient when two controls become one.
+            loss = ((errors[:, 0].square() + (controls[:, 1] - (y[:, 1] - y[:, 2])).square()).mean() / 3
+                     if args.signed_longitudinal else (weight * errors.square()).mean())
+            if args.mode_longitudinal:
+                modes, magnitude = BCPolicy.longitudinal_targets(y)
+                active = modes != 1
+                magnitude_loss = ((controls[active, 4] - magnitude[active]).square().mean()
+                                  if active.any() else controls[:, 4].sum() * 0)
+                loss = (errors[:, 0].square().mean()
+                        + torch.nn.functional.cross_entropy(controls[:, 1:4], modes)
+                        + magnitude_loss) / 3
             loss.backward()
             optimizer.step()
             optimizer_steps += 1
             total_squared += errors.detach().square().sum(dim=0).double().cpu().numpy()
             trained += len(actions)
+            sampled_conditional += (np.abs(actions) > .1).sum(axis=0)
         if not trained:
             raise ValueError("No training samples available")
         validation = evaluate(model, paths["val"], args.batch_size,
-                              args.active_gas_weight, args.active_brake_weight)
+                               args.active_gas_weight, args.active_brake_weight,
+                               include_startup=args.mode_longitudinal)
         record = {"epoch": epoch, "train_samples": trained,
-                  "optimizer_steps": optimizer_steps,
+                   "optimizer_steps": optimizer_steps,
+                   "sampled_conditional_counts": dict(zip(
+                       ("large_steer", "high_gas", "high_brake"), sampled_conditional.tolist())),
                   "recovery_samples": recovery_budget,
                   "train_mse": dict(zip(ACTION_NAMES, (total_squared / trained).tolist())),
                   "val": validation}
@@ -323,7 +463,9 @@ def train(args):
         selection = selection_score(validation, args.recovery_steering_only, args.recovery_controls_only)
         if selection < best_loss:
             best_loss = selection
-            torch.save({"model": ("BCPolicy-history8-v3" if args.history_frames == 8 else
+            torch.save({"model": ("BCPolicy-mode-history8-v5" if args.mode_longitudinal else
+                                  "BCPolicy-signed-history8-v4" if args.signed_longitudinal else
+                                  "BCPolicy-history8-v3" if args.history_frames == 8 else
                                   "BCPolicy-motion-v2" if args.motion_features else "BCPolicy-v1"),
                         "history_frames": args.history_frames,
                         "state_dict": {key: value.cpu() for key, value in model.state_dict().items()},
@@ -333,13 +475,23 @@ def train(args):
 
     best = BCPolicy.from_checkpoint(args.output / "best.pt")
     train_prediction = evaluate(best, paths["train"], args.batch_size,
-                                args.active_gas_weight, args.active_brake_weight)
+                                 args.active_gas_weight, args.active_brake_weight,
+                                 include_startup=args.mode_longitudinal)
     result = {**run_provenance, "seed": args.seed, "train_roads": [p.name for p in paths["train"]],
                "val_roads": [p.name for p in paths["val"]],
                "recovery_roads": [p.name for p in recovery_paths],
                "max_train_samples_per_epoch": args.max_train_samples,
                "config": {"epochs": args.epochs, "batch_size": args.batch_size,
-                           "continuous_batches": args.continuous_batches,
+                            "continuous_batches": args.continuous_batches,
+                            "balanced_actions": args.balanced_actions,
+                             "signed_longitudinal": args.signed_longitudinal,
+                             "mode_longitudinal": args.mode_longitudinal,
+                             "training_objective": ("(steer_mse+mode_ce+active_magnitude_mse)/3"
+                                                    if args.mode_longitudinal else
+                                                    "(steer_mse+signed_longitudinal_mse)/3"
+                                                   if args.signed_longitudinal else "weighted_action_mean_mse"),
+                            "sampling": ("per_road_1/8_high_gas_1/8_high_brake_3/4_natural"
+                                         if args.balanced_actions else "natural_per_road"),
                           "learning_rate": args.lr, "num_threads": args.num_threads,
                           "device": str(device), "active_gas_weight": args.active_gas_weight,
                           "active_brake_weight": args.active_brake_weight,
@@ -385,7 +537,13 @@ def main(argv=None):
     parser.add_argument("--epochs", type=int, default=5)
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--continuous-batches", action="store_true",
-                        help="Carry partial batches across roads; incompatible with recovery")
+                         help="Carry partial batches across roads; incompatible with recovery")
+    diagnostic.add_argument("--balanced-actions", action="store_true",
+                          help="Sample 1/8 high-gas + 1/8 high-brake per road; missing bins revert to natural")
+    diagnostic.add_argument("--signed-longitudinal", action="store_true",
+                           help="History8 trial: fit gas-minus-brake with tanh, decode mutually exclusive controls")
+    diagnostic.add_argument("--mode-longitudinal", action="store_true",
+                            help="Final BC trial: accelerate/coast/brake logits and active magnitude")
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--num-threads", type=int, default=2)

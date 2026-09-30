@@ -114,6 +114,30 @@ class TestBCHistory(unittest.TestCase):
         self.assertTrue(torch.isfinite(gradient).all())
         self.assertTrue(torch.all(gradient.abs().sum(dim=(0, 2, 3)) > 0))
 
+    def test_signed_control_preserves_shared_initialization_and_decodes_without_overlap(self):
+        torch.manual_seed(0)
+        original = BCPolicy(history_frames=8)
+        original_rng = torch.get_rng_state().clone()
+        torch.manual_seed(0)
+        signed = BCPolicy(history_frames=8, signed_longitudinal=True)
+        self.assertTrue(torch.equal(torch.get_rng_state(), original_rng))
+        self.assertEqual(signed.head[-1].out_features, 2)
+        for name, value in signed.state_dict().items():
+            expected = original.state_dict()[name]
+            if name.startswith("head.2."):
+                expected = expected[:2]
+            self.assertTrue(torch.equal(value, expected), name)
+        images = torch.rand((3, 8, 84, 84))
+        with torch.inference_mode():
+            controls = signed(images, decode=False)
+            actions = signed(images)
+            torch.testing.assert_close(actions[:, 0], original(images)[:, 0])
+            torch.testing.assert_close(actions[:, 1] - actions[:, 2], controls[:, 1])
+            self.assertTrue(torch.all(actions[:, 1] * actions[:, 2] == 0))
+        controls = torch.tensor([[.2, .4], [-.1, -.3], [0., 0.]])
+        torch.testing.assert_close(BCPolicy.decode_signed(controls),
+                                   torch.tensor([[.2, .4, 0.], [-.1, 0., .3], [0., 0., 0.]]))
+
     def test_shuffled_batches_keep_road_history_before_cross_road_carry(self):
         roads = {
             "first": (chronological_observations(9), np.arange(9).reshape(-1, 1)),
@@ -160,19 +184,21 @@ class TestBCHistory(unittest.TestCase):
 
     def test_checkpoint_roundtrip_and_both_legacy_formats(self):
         formats = [("BCPolicy-v1", {}), ("BCPolicy-motion-v2", {"motion": True}),
-                   ("BCPolicy-history8-v3", {"history_frames": 8})]
+                   ("BCPolicy-history8-v3", {"history_frames": 8}),
+                   ("BCPolicy-signed-history8-v4", {"history_frames": 8, "signed_longitudinal": True})]
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "checkpoint.pt"
             for version, kwargs in formats:
                 with self.subTest(version=version):
                     policy = BCPolicy(**kwargs)
                     checkpoint = {"model": version, "state_dict": policy.state_dict()}
-                    if version == "BCPolicy-history8-v3":
+                    if kwargs.get("history_frames") == 8:
                         checkpoint["history_frames"] = 8
                     torch.save(checkpoint, path)
                     loaded = BCPolicy.from_checkpoint(path)
                     self.assertEqual(loaded.history_frames, kwargs.get("history_frames", 4))
                     self.assertEqual(loaded.motion, kwargs.get("motion", False))
+                    self.assertEqual(loaded.signed_longitudinal, kwargs.get("signed_longitudinal", False))
                     self.assertFalse(loaded.training)
                     self.assertIsNone(loaded._history)
                     for name, value in policy.state_dict().items():

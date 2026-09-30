@@ -12,7 +12,8 @@ import torch
 from bc.model import BCPolicy
 from bc.contracts import BASELINE_CONDITIONS
 from bc.dataset import _provenance
-from bc.train import action_weights, evaluate, main, road_paths, selection_score, training_batches
+from bc.train import (action_weights, assemble_history, evaluate, main, road_paths,
+                      selection_score, training_batches)
 
 
 class TestBCTraining(unittest.TestCase):
@@ -53,6 +54,8 @@ class TestBCTraining(unittest.TestCase):
                 self.assertEqual(result["val_roads"], manifest["val"])
                 self.assertEqual(len(result["history"]), 2)
                 self.assertEqual(result["history"][0]["train_samples"], 6)
+                self.assertEqual(result["history"][0]["sampled_conditional_counts"]["high_gas"], 6)
+                self.assertFalse(result["config"]["balanced_actions"])
                 self.assertEqual([row["optimizer_steps"] for row in result["history"]], [2, 2])
                 self.assertNotIn("extra_train_manifest_sha256", result)
                 self.assertFalse(result["config"]["continuous_batches"])
@@ -203,6 +206,59 @@ class TestBCTraining(unittest.TestCase):
             self.assertEqual(metrics, expected)
         self.assertEqual(json.loads(json.dumps(result, allow_nan=False)), result)
 
+    def test_signed_errors_use_gas_minus_brake_and_original_tail_masks(self):
+        model = torch.nn.Linear(1, 3)
+        with torch.no_grad():
+            model.weight.zero_()
+            model.bias.copy_(torch.tensor([0., .2, .1]))
+        actions = np.array([[0, .4, 0], [0, 0, .3], [0, .1, 0]], dtype=np.float32)
+        signed_target = actions[:, 1] - actions[:, 2]
+        with patch("bc.train.read_road", return_value=(np.zeros((3, 1), dtype=np.float32), actions)):
+            result = evaluate(model, [Path("road")], 2, include_startup=True)
+        for name, mask in (("all", np.ones(3, dtype=bool)),
+                           ("high_gas", actions[:, 1] > .1), ("high_brake", actions[:, 2] > .1)):
+            metrics = result["longitudinal"][name]
+            self.assertEqual(metrics["count"], int(mask.sum()))
+            self.assertAlmostEqual(metrics["mae"], np.abs(.1 - signed_target[mask]).mean())
+        self.assertAlmostEqual(result["startup"]["by_step"][0]["longitudinal"]["mae"], .3)
+        self.assertAlmostEqual(result["startup"]["by_step"][1]["longitudinal"]["mae"], .4)
+
+    def test_signed_training_roundtrip_and_unchanged_selection(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            dataset, _ = self.make_dataset(directory)
+            result = main(["--dataset", str(dataset), "--output", str(directory / "signed"),
+                           "--device", "cpu", "--epochs", "1", "--max-train-samples", "8",
+                           "--num-threads", "1", "--history-frames", "8", "--signed-longitudinal",
+                           "--balanced-actions", "--continuous-batches"])
+            self.assertEqual(result["selection_metric"], "weighted_mean_mse")
+            self.assertEqual(result["config"]["training_objective"], "(steer_mse+signed_longitudinal_mse)/3")
+            self.assertEqual(result["history"][0]["train_samples"], 8)
+            self.assertEqual(result["best_val_selection_score"], result["history"][0]["val"]["mean_mse"])
+            policy = BCPolicy.from_checkpoint(directory / "signed" / "best.pt")
+            self.assertTrue(policy.signed_longitudinal)
+            action = policy.act(np.zeros((4, 84, 84), dtype=np.float32))
+            self.assertEqual(action[1] * action[2], 0)
+
+    def test_startup_metrics_reset_each_road_and_stop_at_ten(self):
+        model = torch.nn.Linear(1, 3)
+        with torch.no_grad():
+            model.weight.zero_()
+            model.bias.fill_(.2)
+        actions = np.zeros((12, 3), dtype=np.float32)
+        actions[0, 1] = .4
+        actions[10:, 1] = 1
+        with patch("bc.train.read_road", return_value=(np.zeros((12, 1), dtype=np.float32), actions)):
+            result = evaluate(model, [Path("one"), Path("two")], 3, include_startup=True)
+        startup = result["startup"]
+        self.assertEqual(startup["first_10"]["gas"]["count"], 20)
+        self.assertAlmostEqual(startup["first_10"]["gas"]["target_mean"], .04)
+        self.assertAlmostEqual(startup["first_10"]["gas"]["mae"], .2)
+        self.assertEqual(len(startup["by_step"]), 10)
+        self.assertEqual(startup["by_step"][0]["gas"]["count"], 2)
+        self.assertAlmostEqual(startup["by_step"][0]["gas"]["target_mean"], .4)
+        self.assertAlmostEqual(startup["by_step"][9]["gas"]["target_mean"], 0)
+
     def test_continuous_batches_preserve_sample_order_and_flush_once(self):
         roads = {
             "first": (np.arange(5).reshape(-1, 1), np.arange(5).reshape(-1, 1)),
@@ -259,7 +315,55 @@ class TestBCTraining(unittest.TestCase):
     def test_continuous_batches_reject_recovery_before_reading_data(self):
         with self.assertRaisesRegex(ValueError, "continuous-batches cannot be combined with recovery"):
             main(["--dataset", "unused", "--output", "unused", "--recovery-dataset", "unused",
-                  "--continuous-batches"])
+                   "--continuous-batches"])
+
+    def test_balanced_sampling_replays_tails_without_corrupting_history(self):
+        observations = np.broadcast_to(
+            np.arange(16, dtype=np.float32)[:, None, None, None] / 16, (16, 4, 84, 84)).copy()
+        actions = np.zeros((16, 3), dtype=np.float32)
+        actions[:, 0] = np.arange(16) / 16
+        actions[0, 1] = .4
+        actions[4, 2] = .3
+        results = []
+        for _ in range(2):
+            rng = np.random.default_rng(0)
+            with patch("bc.train.read_road", return_value=(observations, actions)):
+                batches = list(training_batches([(Path("road"), 16, False)], rng, 5,
+                                                continuous=True, history_frames=8, balanced_actions=True))
+            self.assertEqual([len(y) for _, y, _ in batches], [5, 5, 5, 1])
+            x = np.concatenate([x for x, _, _ in batches])
+            y = np.concatenate([y for _, y, _ in batches])
+            self.assertGreaterEqual(np.count_nonzero(y[:, 1] > .1), 2)
+            self.assertGreaterEqual(np.count_nonzero(y[:, 2] > .1), 2)
+            indices = (y[:, 0] * 16).astype(int)
+            np.testing.assert_array_equal(x, assemble_history(observations, indices, 8))
+            results.append((indices, rng.integers(100000)))
+        np.testing.assert_array_equal(results[0][0], results[1][0])
+        self.assertEqual(results[0][1], results[1][1])
+
+    def test_balanced_missing_bins_reallocate_budget_and_keep_313_updates(self):
+        arrays = (np.zeros((200, 1), dtype=np.float32), np.full((200, 3), .1, dtype=np.float32))
+        plan = [(Path(f"road{index}"), 200, False) for index in range(100)]
+        with patch("bc.train.read_road", return_value=arrays):
+            batches = list(training_batches(plan, np.random.default_rng(0), 64,
+                                            continuous=True, balanced_actions=True))
+        self.assertEqual(len(batches), 313)
+        self.assertEqual(sum(len(y) for _, y, _ in batches), 20000)
+        self.assertTrue(all(np.all(y == .1) for _, y, _ in batches))
+
+    def test_balanced_opt_out_preserves_natural_rng_and_recovery_is_rejected(self):
+        observations = np.arange(16).reshape(-1, 1)
+        actions = np.zeros((16, 3))
+        expected_rng = np.random.default_rng(42)
+        expected = expected_rng.permutation(16)[:12]
+        rng = np.random.default_rng(42)
+        with patch("bc.train.read_road", return_value=(observations, actions)):
+            batches = list(training_batches([(Path("road"), 12, False)], rng, 5, balanced_actions=False))
+        np.testing.assert_array_equal(np.concatenate([x for x, _, _ in batches])[:, 0], expected)
+        self.assertEqual(rng.integers(100000), expected_rng.integers(100000))
+        with self.assertRaisesRegex(ValueError, "balanced-actions cannot be combined"):
+            main(["--dataset", "unused", "--output", "unused", "--balanced-actions",
+                  "--recovery-dataset", "unused"])
 
     def test_recovery_states_are_explicit_budget_not_validation(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -283,9 +387,9 @@ class TestBCTraining(unittest.TestCase):
             dataset, _ = self.make_dataset(directory)
             path = dataset / "provenance.json"
             original = json.loads(path.read_text())
-            changes = {"frame_skip": 2, "warmup": 0, "target_speed": 13,
+            changes = {"frame_skip": 2, "warmup": 0,
                        "stack_frames": 8, "domain_randomize": True, "max_steps": 1000,
-                       "raw_frame_budget": 4200, "render_mode": "human", "avoid_obstacles": False}
+                       "raw_frame_budget": 4200, "render_mode": "human"}
             for field, value in changes.items():
                 with self.subTest(field=field):
                     path.write_text(json.dumps({**original, "conditions": {
@@ -320,6 +424,40 @@ class TestBCTraining(unittest.TestCase):
                         main(["--dataset", str(dataset), flag, str(other),
                               "--output", str(directory / "unused")])
                     reader.assert_not_called()
+
+    def test_legacy_v1_and_v2_teacher_configs_are_not_environment_conditions(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            dataset, manifest = self.make_dataset(directory)
+            path = dataset / "provenance.json"
+            original = json.loads(path.read_text())
+            legacy = {**original, "conditions": {**original["conditions"],
+                                                 "target_speed": 12.0, "avoid_obstacles": True}}
+            legacy.pop("teacher")
+            path.write_text(json.dumps(legacy))
+            val = directory / "validation"
+            val.mkdir()
+            (val / "split_manifest.json").write_text(json.dumps({"val": manifest["val"]}))
+            (val / "provenance.json").write_text(json.dumps({
+                **original, "teacher": {"name": "v2", "stage": "pace", "config": {"straight_limit": 30}}}))
+            # Stop after condition checks; no model, optimizer or trajectory is executed.
+            with patch("bc.train.execution_fingerprint", side_effect=RuntimeError("conditions verified")), \
+                    self.assertRaisesRegex(RuntimeError, "conditions verified"):
+                main(["--dataset", str(dataset), "--val-dataset", str(val),
+                      "--output", str(directory / "unused")])
+
+    def test_sampled_teacher_views_reject_reconstructed_history(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            dataset, _ = self.make_dataset(directory)
+            path = dataset / "provenance.json"
+            provenance = json.loads(path.read_text())
+            path.write_text(json.dumps({**provenance, "kind": "matched_teacher_view"}))
+            with patch("bc.train.BCPolicy") as policy, self.assertRaisesRegex(
+                    ValueError, "stored four-frame inputs"):
+                main(["--dataset", str(dataset), "--output", str(directory / "unused"),
+                      "--history-frames", "8"])
+            policy.assert_not_called()
 
     def test_plain_defaults_and_legacy_weighting_selection_are_preserved(self):
         for options, expected in (([], 1), (["--active-gas-weight", "40"], 40)):
