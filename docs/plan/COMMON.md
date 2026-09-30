@@ -1,6 +1,12 @@
-# Independent Restart: Finish First
+# Independent Restart: Shared Research Contract
 
-Research scope, phase gates, declared evaluation roads, and current checkpoint.
+Shared research scope, original phase gates, declared oracle evaluation roads,
+and frozen oracle-v1 checkpoint. Read this document first, then the plan for the
+assigned task: [BC.md](BC.md) for learned-policy work or
+[ORACLE_V2.md](ORACLE_V2.md) for the separate high-speed teacher experiment.
+Task-specific plans own their current status; this shared document is not a
+concurrent progress log. This reorganization does not authorize new experiments,
+resume paused work, or change any research gate.
 
 ## Research Contract
 
@@ -9,13 +15,14 @@ conclusions from previous HAIC research repositories. The immediate goal is the
 simplest driving system that reliably finishes complete episodes, not reward,
 speed, submission eligibility, or a particular learning algorithm.
 
-Current scope is **Phase 3 and Phase 4** after the user-authorized 2026-09-29
-oracle gate. No RL, world model, offline RL, reward shaping, or speculative oracle
-tuning. Privileged vehicle state and track geometry remain allowed only for local
+Privileged vehicle state and track geometry remain allowed only for local
 teacher generation and analysis, never as a learned policy input. Do not modify
 `env_wrapper.py`, `damage.py`, or `core/`. Keep instrumentation external.
+No RL, world model, offline RL, official submission, or model confirmation is
+authorized by these plans. Obtain fresh explicit user authorization before any
+official submission/model confirmation.
 
-## Declared Evaluation Roads
+## Declared Oracle Evaluation Roads
 
 - Track IDs: 1, 2, 3, 4, 5.
 - Geometry seeds: 1 through 10 for each track ID.
@@ -28,6 +35,8 @@ teacher generation and analysis, never as a learned policy input. Do not modify
   and distinct-road denominators separately.
 - Prioritize finish count. Reward, progress, damage, speed, and diagnostics are
   internal proxies, not official ranking scores.
+- BC training, validation, and local test splits are declared in [BC.md](BC.md);
+  the oracle evaluation grid is not a learned-policy holdout.
 
 ## Phase 1: Understand and Exercise the Environment
 
@@ -64,44 +73,6 @@ termination/truncation, and step/time/track identifiers. Oracle-policy action
 difference is not applicable until a learned policy exists. Bulk observation
 trajectory collection belongs to Phase 3 and is not started implicitly.
 
-## Phase 3: Frozen Oracle and Trajectories
-
-- `oracle-v1` points at `a70b35950414a930d5ddaad4ac15733e65774345` before
-  BC work; do not tune its control parameters absent a demonstrated defect.
-- Preserve the already exposed IDs 1-5 x seeds 1-10 as oracle validation only.
-  Repeated deterministic traces are not independent learning examples. Geometry
-  seeds 11-30 are the BC training pool, 31-35 validation, and 36-40 final local
-  test, each with track IDs 1-5 / physical obstacles and original wrapper settings.
-  Splitting by *seed* prevents one geometry shared by different IDs crossing splits.
-- Collect at most one successful trajectory per selected road, preserve true
-  pre-action policy observation and teacher action, and keep vehicle/track state
-  strictly in separate analysis records. Failed teacher rollouts are recorded but
-  ineligible for successful-action training. Log exact tested subsets and missing
-  roads; do not silently claim complete split coverage.
-- Final local test seeds must not influence model design, epoch selection, or
-  tuning. Collect/evaluate them only after fixing the candidate using validation.
-
-## Phase 4: Simple BC and Closed Loop
-
-1. Fit a small supervised image-stack-to-action model on training roads. Track
-   both training and held-out validation error by steer/gas/brake. Select using
-   validation only; attractive loss alone is not evidence of reliable driving.
-2. Run complete closed-loop episodes in the unchanged wrapped environment.
-   Record finish counts with episode and road denominators, oracle reference,
-   student-state teacher labels, earliest component mismatch, earliest pose
-   divergence, curvature/speed/obstacle context, and termination reasons.
-3. Diagnose poor offline prediction as observation/representation/encoding first;
-   good offline prediction but progressive divergence as distribution shift; and
-   concentrated failures as possible data-coverage/recovery problems. These are
-   hypotheses to test, not automatic causal claims.
-4. If validation closed-loop shows distribution shift, *then* collect labels on
-   actually visited student states and retrain (DAgger/recovery). Do not duplicate
-   deterministic oracle trajectories. If BC succeeds, freeze its baseline and
-   reconsider whether any RL is needed. No RL work is authorized at this gate.
-
-Never represent local results as official submission performance. Obtain fresh
-explicit user authorization before any official submission/model confirmation.
-
 ## Reproducibility and Checkpoints
 
 Keep environment-contract documentation, compact experiment summaries, commands,
@@ -111,13 +82,14 @@ Git. Inspect status/diff before commits, verify author and committer are
 remote, and private origin before pushing. Never push to official upstream.
 Do not include unrelated pre-existing changes without authorization.
 
-## Current Status
+## Completed Phase 1-2 Checkpoint
 
 - 2026-09-29: plan established before implementation. `AGENTS.md` began as a
   pre-existing untracked guide and was later updated at user request with this
   repository guide and links to the major documents.
-- Phase 1 complete: source contract in `ENVIRONMENT.md`; real no-op/random/manual
-  diagnostics in `EXPERIMENTS.md`, including measured steering convention.
+- Phase 1 complete: source contract in [../ENVIRONMENT.md](../ENVIRONMENT.md);
+  real no-op/random/manual diagnostics in [../EXPERIMENTS.md](../EXPERIMENTS.md),
+  including measured steering convention.
 - Phase 2: unchanged centerline baseline finished 0/20 configurations; all failed
   after obstacle collision (15 stalled, 5 damage retirement). Added only smooth
   obstacle-offset reference geometry, retaining speed and steering parameters.
@@ -152,25 +124,3 @@ Do not include unrelated pre-existing changes without authorization.
   the historical 60-episode initial-set evaluation. All 28 local tests pass.
 - This is exposed local oracle evidence, not unseen-track generalization or a
   submission-ready policy. The user explicitly authorized Phase 3/4; not RL.
-- `oracle-v1` tag created from clean `a70b359` before BC changes. BC evidence and
-  decisions are recorded separately in `docs/BC.md`.
-- Phase 3 collected 50/50 successful unique training roads (IDs 1-5 x seeds
-  11-20, 55,363 frames) and 15/15 successful validation roads (IDs 1-5 x
-  seeds 31-33). No privileged feature entered BC inference. Train on CUDA when
-  available; submitted-style inference stays on CPU.
-- Phase 4: initial CNN failed 0/1 validation episode; low aggregate prediction
-  loss masked rare high-gas failure. Targeted gas weighting, image-only motion
-  features and student-visited steering/control recovery were evaluated.
-  Best-progress split-head diagnostic still failed 0/3 validation roads (ID 1
-  x seeds 31-33); no BC finisher baseline was established.
-- Freeze that diagnostic before the untouched local test: student **0/10
-  episodes on 0/10 roads** versus oracle **10/10 on 10/10**, IDs 1-5 x seeds
-  36-37 (two geometries). All student runs encountered an obstacle collision;
-  8 retired from collision-associated off_track streak and 2 from damage.
-  The first measured action mismatch was gas at step 0 on all 10 roads.
-  Seeds 36-37 are now exposed and cannot be used to tune an untouched test;
-  38-40 remain unexamined. No change was made from final-test results.
-- The conditional DAgger/recovery gate was met by observed student-state shift,
-  but sampled recovery did not produce a reliable finisher. Remain in BC
-  diagnosis; no RL, official submission, or model confirmation. Complete
-  evidence, commands, negative variants and checkpoints are in `docs/BC.md`.

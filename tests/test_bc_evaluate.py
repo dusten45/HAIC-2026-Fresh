@@ -1,6 +1,13 @@
+import hashlib
+import json
+from pathlib import Path
+import tempfile
 import unittest
+from unittest.mock import Mock, patch
 
-from bc.evaluate import compare, rollout
+from bc.evaluate import ACTION_THRESHOLDS, POSITION_THRESHOLD, compare, main, rollout
+from bc.contracts import BASELINE_CONDITIONS
+from oracle.recording import execution_fingerprint
 
 
 class TestDeviation(unittest.TestCase):
@@ -25,7 +32,12 @@ class TestDeviation(unittest.TestCase):
         class OracleReplay:
             def __init__(self, actions):
                 self.actions = actions
+                self.step = len(actions)
+                self.reset_count = 0
+
+            def reset(self, observation):
                 self.step = 0
+                self.reset_count += 1
 
             def act(self, observation):
                 action = self.actions[self.step]
@@ -34,8 +46,9 @@ class TestDeviation(unittest.TestCase):
 
         reference, teacher = rollout(1, 11, 8)
         samples = []
-        student, learner = rollout(1, 11, 8, OracleReplay([r["action"] for r in reference]),
-                                   samples=samples)
+        policy = OracleReplay([r["action"] for r in reference])
+        student, learner = rollout(1, 11, 8, policy, samples=samples)
+        self.assertEqual(policy.reset_count, 1)
         self.assertEqual(len(samples), 8)
         self.assertEqual(samples[0][0].shape, (4, 84, 84))
         self.assertEqual(samples[0][1].tolist(), reference[0]["action"])
@@ -57,6 +70,155 @@ class TestDeviation(unittest.TestCase):
         result = compare(reference, student)
         self.assertIsNone(result["reference_action"])
         self.assertEqual(result["on_state_action"]["step"], 1)
+
+
+class TestResume(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        root = Path(self.temp.name)
+        self.checkpoint = root / "best.pt"
+        self.checkpoint.write_bytes(b"mock checkpoint")
+        self.output = root / "evaluation"
+        self.output.mkdir()
+        episode = {"track_id": 1, "geometry_seed": 31, "finished": False, "progress": .2}
+        self.result = {"track_id": 1, "geometry_seed": 31,
+                       "reference": {**episode, "finished": True}, "student": episode,
+                       "first_deviations": {}}
+        self.summary = {"checkpoint": str(self.checkpoint),
+                        **execution_fingerprint(("bc/evaluate.py", "bc/model.py", "bc/contracts.py",
+                                                 "oracle/recording.py", "oracle/oracle_controller.py",
+                                                 "env_wrapper.py", "damage.py")),
+                        "checkpoint_sha256": hashlib.sha256(self.checkpoint.read_bytes()).hexdigest(),
+                        "steer_checkpoint_sha256": None, "split": "val", "max_steps": 2000,
+                        "frame_skip": 4, "warmup": 50,
+                        "conditions": dict(BASELINE_CONDITIONS),
+                        "thresholds": {"action": list(ACTION_THRESHOLDS), "position": POSITION_THRESHOLD},
+                        "episode_count": 1, "road_count": 1, "finish_count": 0,
+                        "reference_finish_count": 1, "results": [self.result]}
+        self.summary_path = self.output / "summary.json"
+        self.summary_path.write_text(json.dumps(self.summary))
+        for side in ("oracle", "student"):
+            (self.output / f"track1_seed31.{side}.jsonl").write_text("completed trace\n")
+        self.argv = ["--checkpoint", str(self.checkpoint), "--split", "val", "--track-ids", "1",
+                     "--seeds", "31", "32", "--output", str(self.output), "--resume"]
+
+    def test_completed_pairs_skipped_and_interrupted_traces_archived(self):
+        original = self.summary_path.read_bytes()
+        for side in ("oracle", "student"):
+            (self.output / f"track1_seed32.{side}.jsonl").write_text(f"interrupted {side}\n")
+        policy = Mock()
+
+        def fake_rollout(track_id, seed, max_steps, policy=None, trace_path=None, samples=None):
+            self.assertEqual((track_id, seed), (1, 32))
+            self.assertEqual(self.summary_path.read_bytes(), original)
+            assert trace_path is not None
+            with trace_path.open("x") as stream:
+                stream.write("new trace\n")
+            return [], {"track_id": track_id, "geometry_seed": seed,
+                        "finished": policy is None, "progress": .3}
+
+        with patch("bc.model.BCPolicy.from_checkpoint", return_value=policy), \
+                patch("bc.evaluate.rollout", side_effect=fake_rollout) as run:
+            main(self.argv)
+        self.assertEqual(run.call_count, 2)
+        self.assertIs(run.call_args_list[1].kwargs["policy"], policy)
+        updated = json.loads(self.summary_path.read_text())
+        self.assertEqual(updated["results"][0], self.result)
+        self.assertEqual(updated["episode_count"], 2)
+        self.assertEqual(updated["road_count"], 2)
+        self.assertEqual(updated["finish_count"], 0)
+        self.assertEqual(updated["reference_finish_count"], 2)
+        self.assertEqual(updated["track_ids"], [1])
+        self.assertEqual(updated["seeds"], [31, 32])
+        archives = list((self.output / "interrupted_attempts").iterdir())
+        self.assertEqual(len(archives), 1)
+        self.assertEqual((archives[0] / "summary.json").read_bytes(), original)
+        for side in ("oracle", "student"):
+            self.assertEqual((archives[0] / f"track1_seed32.{side}.jsonl").read_text(),
+                             f"interrupted {side}\n")
+            self.assertEqual((self.output / f"track1_seed31.{side}.jsonl").read_text(), "completed trace\n")
+
+    def test_incompatible_resume_rejected_without_changes(self):
+        variants = [{"checkpoint_sha256": "different"}, {"steer_checkpoint_sha256": "different"},
+                    {"source_sha256": {"bc/model.py": "different"}},
+                    {"packages": {"torch": "different"}}, {"python": "different"},
+                    {"conditions": {**BASELINE_CONDITIONS, "target_speed": 13}},
+                    {"split": "train"}, {"max_steps": 100}, {"frame_skip": 1}, {"warmup": 0},
+                    {"thresholds": {}}, {"track_ids": [1, 2], "seeds": [31, 32]},
+                    {"track_ids": [1], "seeds": [31]},
+                    {"results": [self.result, self.result]},
+                    {"results": [{**self.result, "track_id": 2}]}, {"collect_recovery": True}]
+        for changes in variants:
+            with self.subTest(changes=changes):
+                self.summary_path.write_text(json.dumps({**self.summary, **changes}))
+                before = {p.name: p.read_bytes() for p in self.output.iterdir()}
+                with patch("bc.model.BCPolicy.from_checkpoint") as load, \
+                        patch("bc.evaluate.rollout") as run, self.assertRaises(SystemExit) as error:
+                    main(self.argv)
+                self.assertEqual(error.exception.code, 2)
+                load.assert_not_called()
+                run.assert_not_called()
+                self.assertEqual({p.name: p.read_bytes() for p in self.output.iterdir()}, before)
+
+    def test_existing_output_refused_by_default_and_resume_recovery_refused(self):
+        before = self.summary_path.read_bytes()
+        for argv in (self.argv[:-1], self.argv + ["--collect-recovery"]):
+            with self.subTest(argv=argv), patch("bc.evaluate.rollout") as run, \
+                    self.assertRaises(SystemExit) as error:
+                main(argv)
+            self.assertEqual(error.exception.code, 2)
+            run.assert_not_called()
+            self.assertEqual(self.summary_path.read_bytes(), before)
+            self.assertFalse((self.output / "interrupted_attempts").exists())
+
+    def test_legacy_summary_without_fingerprint_requires_new_output_and_is_preserved(self):
+        legacy = {key: value for key, value in self.summary.items()
+                  if key not in ("source_sha256", "packages", "python")}
+        self.summary_path.write_text(json.dumps(legacy))
+        before = self.summary_path.read_bytes()
+        with patch("bc.evaluate.rollout") as run, patch("bc.model.BCPolicy.from_checkpoint") as load, \
+                patch("sys.stderr") as stderr, self.assertRaises(SystemExit):
+            main(self.argv)
+        message = "".join(call.args[0] for call in stderr.write.call_args_list)
+        self.assertIn("verification impossible, use a new output directory", message)
+        run.assert_not_called()
+        load.assert_not_called()
+        self.assertEqual(self.summary_path.read_bytes(), before)
+
+    def test_interruption_before_first_pair_leaves_resumable_empty_summary(self):
+        output = Path(self.temp.name) / "first_pair"
+        argv = ["--checkpoint", str(self.checkpoint), "--split", "val", "--track-ids", "1",
+                "--seeds", "31", "--output", str(output)]
+
+        def interrupt(track_id, seed, max_steps, **kwargs):
+            summary = json.loads((output / "summary.json").read_text())
+            self.assertEqual(summary["results"], [])
+            self.assertEqual(summary["episode_count"], 0)
+            self.assertTrue((output / summary["source_snapshot"]).is_dir())
+            kwargs["trace_path"].write_text("interrupted first oracle\n")
+            raise RuntimeError("interrupted before first pair")
+
+        with patch("bc.model.BCPolicy.from_checkpoint", return_value=Mock()), \
+                patch("bc.evaluate.rollout", side_effect=interrupt):
+            with self.assertRaisesRegex(RuntimeError, "before first pair"):
+                main(argv)
+        initial = (output / "summary.json").read_bytes()
+
+        def complete(track_id, seed, max_steps, policy=None, **kwargs):
+            kwargs["trace_path"].write_text("new trace\n")
+            return [], {"track_id": track_id, "geometry_seed": seed,
+                        "finished": policy is None, "progress": .2}
+
+        with patch("bc.model.BCPolicy.from_checkpoint", return_value=Mock()), \
+                patch("bc.evaluate.rollout", side_effect=complete), \
+                patch("bc.evaluate.snapshot_sources") as snapshot:
+            main([*argv, "--resume"])
+        snapshot.assert_not_called()
+        archive = next((output / "interrupted_attempts").iterdir())
+        self.assertEqual((archive / "summary.json").read_bytes(), initial)
+        self.assertEqual((archive / "track1_seed31.oracle.jsonl").read_text(), "interrupted first oracle\n")
+        self.assertEqual(json.loads((output / "summary.json").read_text())["episode_count"], 1)
 
 
 if __name__ == "__main__":

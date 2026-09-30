@@ -2,6 +2,21 @@
 
 Experiment protocol, reproduction commands, full-episode evidence, and limitations.
 
+## Current Entry Points
+
+This is a chronological evidence log. Read [plan/COMMON.md](plan/COMMON.md) for
+the frozen v1 contract and [plan/ORACLE_V2.md](plan/ORACLE_V2.md) for v2 status.
+The latest v2 evidence is [Selected Teacher And Repeated Matrix](#selected-teacher-and-repeated-matrix).
+Historical stop/resume statements below apply only to their recorded checkpoint.
+The [run catalog](RUNS.json) lists retained artifact directories and decisions;
+refresh it with `python -m oracle.catalog`, which reads only saved summaries.
+
+New BC/v2 tools use independent `oracle/recording.py` helpers and save source
+snapshots alongside hashes. Frozen v1 files and historical artifacts are unchanged.
+V2 reporting separates execution/stage groups and flags unverifiable or unmatched
+conditions. Planner-limited and local-centerline straight-speed metrics are
+distinct; historical keys are adapted when reading, not rewritten in saved runs.
+
 ## Scope and Fixed Conditions
 
 All observations in this log come from this independent restart. No earlier
@@ -408,4 +423,179 @@ collection and simple supervised BC, but not RL or an official submission.
 Earlier "stop" and "no BC" statements above describe the historical Phase 1/2
 checkpoint; the new phase protocol and results are in [`BC.md`](BC.md). The
 50 previously examined roads remain exposed and are not repurposed as an
-untouched test set.
+  untouched test set.
+
+## Separate High-Speed Oracle-v2
+
+The 2026-09-29 user request freezes `oracle-v1` and authorizes only a separate
+privileged teacher experiment. `oracle/v2_controller.py` subclasses v1 without
+editing it; `oracle/v2_runner.py` is a separate full-episode entry point. This
+v2 work changes no environment or BC/RL model, collects no training dataset,
+and performs no official submission.
+Evaluation remains IDs 1-5 x geometry seeds 1-10, all already exposed. Original
+wrapper settings, rendering, physical obstacles, finish gate and 2,000-action
+budget remain unchanged. These are local teacher results, not ranking scores.
+
+### Mechanisms And Decisions
+
+- Start with v1's obstacle path and rear-axle pursuit. Sample actual reference
+  curvature every 2.5 units using points +/-6 units. Limit speed by
+  `sqrt(lateral_acceleration / abs(curvature))`, with low apex and high straight
+  caps rather than raising one global target speed.
+- Preview 110 units and limit current speed by each future point's reachable
+  braking envelope, `sqrt(apex_speed^2 + 2*5*max(distance-3,0))`.
+- Initial aggressive gas/brake feedback caused large longitudinal oscillations,
+  inward tracking errors and obstacle impacts. At the focal four roads, pre-hit
+  speed jumps reached 4.34-4.74 units per 0.08s, versus <=0.88 in matched v1
+  spatial windows. A forward acceleration-limited profile alone was rejected:
+  13/15 finished, with slower laps. Lowering gas/brake gains to .025/.015 while
+  retaining the same path/pursuit/braking plan removed all collisions in 50/50
+  complete episodes. This `control` baseline averages 61.7812s versus matched
+  v1 85.9108s, a 28.0868% ratio-of-means reduction, zero damage.
+- Curvature/speed-adaptive lookahead (6-17 units, changes <=.35/action) was .136s
+  slower on matched 15 roads but reduced pooled reference-error RMS 32.7% and
+  maximum error 19.4%. Steering-command delta RMS increased 21.4%; no saturation
+  or collision occurred. It is a tracking tradeoff, not a lap-time improvement.
+- Independent out-in-out corner offsets were slower and are not the selected
+  method. The linked planner instead minimizes whole-loop squared geometric
+  curvature within a lateral corridor. It couples successive corners, so an
+  early exit does not automatically return outside before the next turn.
+- Joint obstacle constraints reserve the opposite-side corridor with a +/-4
+  unit plateau around the obstacle and 30-unit transitions. Clearance allowance
+  is radius +1.4 vehicle allowance +1.6 tracking margin; lateral offsets are
+  bounded at +/-4.2 and fixed to zero within 20 units of the finish/start gate.
+  Initial integration failed because a zero blend incorrectly constrained remote
+  points; that 3/15 result is retained. Applying constraints only to active local
+  intervals fixes that implementation defect, with a regression test.
+- Geometry-based speed planning uses the resulting obstacle/racing line, without
+  a universal obstacle speed cap. Falling exit curvature releases the throttle
+  constraint, while coupled future corners still impose predictive braking.
+  This is a minimum-curvature heuristic, not an optimal lap-time or swept-body
+  safety guarantee. Grip/damage robustness and perturbed starts remain untested.
+
+Artifacts include actual geometry, obstacle conditions, source/package hashes,
+planned reference points, curvature/speed arrays, state/action JSONL and finish
+summaries. `oracle/v2_report.py` compares matched saved v1 roads and reports
+success-only lap statistics, collisions/damage, true local straight max speed,
+coarse corner entry/apex/exit speed, braking landmarks and commanded steering
+saturation. Brake onset uses .002 because the accepted controller's brake gain
+is low; old .05 reports missed its braking. Corner landmarks are centerline
+heuristics (+/-8-unit curvature), not exact racing-line apexes; wrapper sampling
+can miss extrema. Diagnostic traces contain no saved policy images and are not
+yet BC training trajectories.
+
+### Stage Comparisons
+
+Matched IDs 1-5 x seeds 1-3, one complete episode per road per stage. Lap
+statistics below include successful episodes only; failed variants' means are
+selection-biased and must not outrank a reliable teacher. Negative variants and
+the integration defect are preserved rather than silently excluded.
+
+| Stage | Finishes / Episodes / Roads | Damaged Episodes | Collision-Positive Actions | Mean Successful Lap (s) |
+| --- | --- | ---: | ---: | ---: |
+| Curvature speed only | 13 / 15 / 15 | 4 | 14 | 59.777 |
+| Add predictive braking | 14 / 15 / 15 | 4 | 13 | 66.591 |
+| Add forward acceleration profile, rejected | 13 / 15 / 15 | 4 | 13 | 76.034 |
+| Gentle longitudinal feedback | 15 / 15 / 15 | 0 | 0 | 62.999 |
+| Adaptive lookahead | 15 / 15 / 15 | 0 | 0 | 63.135 |
+| Independent out-in-out, rejected | 15 / 15 / 15 | 0 | 0 | 71.748 |
+| Coupled curvature planning | 15 / 15 / 15 | 0 | 0 | 61.621 |
+| Integrated corridor, implementation defect | 3 / 15 / 15 | 12 | 27 | 53.040 |
+| Corrected integrated corridor | 15 / 15 / 15 | 0 | 0 | 60.297 |
+| Straight cap 30, same corner envelope (`fast`) | 15 / 15 / 15 | 0 | 0 | 58.315 |
+| Lateral envelope 8, same straight cap (`pace`) | 15 / 15 / 15 | 0 | 0 | 52.055 |
+
+The `pace` 15-road median/best is 46.780/43.360s, with true sampled straight
+maximum 29.9993 units/s, corner entry/apex/exit means 17.269/15.408/18.972,
+zero command steering saturation over 9,771 actions, and pre-action reference
+error RMS/max .154447/.671244. At brake onset >.002, mean planner limiting-point
+distance is 34.936 units (217 onsets); these are preview constraints, not exact
+physical braking locations or causal corner assignments. At matched v1 roads it
+is faster 15/15, mean per-road reduction 40.0689%; this initial subset is not the
+full-matrix selection result.
+
+Corrected integrated planning was also expanded to all 50 exposed roads:
+50/50 finished without collisions/damage, mean/median/best 58.9708/57.470/47.600s.
+Full numerical stage reports: `runs/v2_pace_t123/stage_reports.json`. Earlier
+baseline 50-road report: `runs/v2_control_t123/combined_report.json`. Individual
+stage run directories retain raw traces; `integrated_t123/t45` are the defect
+version, `integrated_fixed_t123/t45` are the corrected 15-road comparison.
+
+### Selected Teacher And Repeated Matrix
+
+`V2Controller(base_env)` and the v2 runner now default to **`pace`**: joint
+linked-corner/obstacle curvature planning, lateral envelope 8, straight cap 30,
+apex floor 9, nominal braking acceleration 5, and gentle .025/.015 feedback.
+The failed forward-acceleration profile and independent out-in-out method are
+explicit ablation stages only; the selected teacher does not stack them.
+
+| Metric | Frozen v1 | Selected v2 |
+| --- | ---: | ---: |
+| Finished episodes / distinct roads | 100/100 / 50/50 | 100/100 / 50/50 |
+| Damaged episodes / collision-positive actions | 2/100 / 2 | 0/100 / 0 |
+| Mean / median / best lap (s) | 85.9108 / 83.400 / 73.760 | 50.8052 / 49.570 / 40.840 |
+| Command steering saturation | 0/107,514 actions | 0/63,584 actions |
+
+Both passes match each of IDs 1-5 x seeds 1-10 with six physical obstacles and
+original conditions. V2 is faster on **50/50 roads**, mean delta -35.1056s;
+ratio-of-mean-laps reduction **40.8628%**, mean per-road reduction **41.0623%**
+(range 33.4889-45.8094%). V1's two damaged episodes are ID5/seed3, one collision
+at action 754 and damage .2 each, not two different damaged roads.
+
+V2 sampled straight max is 29.999966 units/s. Coarse centerline-corner
+entry/apex/exit speeds average 16.844720/14.942513/17.998070, 980 matched samples
+per phase across both passes. Reference error max/RMS .671244/.152741, with all
+63,584 pre- and post-action samples having four wheels on-road. At 1,316 brake
+onsets >.002, mean planner limiting-point distance is 37.535485 units; nominal
+required braking distance averages 36.080019. These are model-based preview
+distances, not measured physical stopping distances.
+
+Full JSONL hashes are **byte-identical on 50/50 repeated road pairs**, including
+all saved states/actions/diagnostics. There are two source versions: first50
+before changing defaults and removing unused independent-racing initialization,
+repeat50 with final code. Only the two v2 source files differ; package provenance
+is identical, and all current recorded source hashes match the repeat. Thus
+**final source has 50/50 clean episodes**, with 100/100 behavior-equivalent
+episodes across two source versions, not one frozen-source 100-episode claim.
+These deterministic repetitions cover 50 exposed road/obstacle configurations
+and ten base geometries, not 100 independent roads or private-track robustness.
+
+Behavior examples on ID1/seed1: an isolated left turn has reference lateral
+offsets -.305 at entry arc54, +1.516 at apex64, -.224 at exit74 (v1 centerline
+offset zero there). An S pair with only a four-unit gap retains +.487 at the
+first exit392, then crosses to -.182 at the second entry396 and -1.419 at
+apex404, rather than forcing an independent outside return. At actions43/52/59
+around an isolated corner, |steer| falls .13372/.11079/.04376, gas recovers
+0/.05902/.23422, speed rises 13.983/14.561/20.631. In a linked pair the first
+exit still brakes for the next apex; final exit restores gas. These examples
+show observed behavior, not optimality or causal isolation of each component.
+Positive speed jumps >2 units per action still occurred on the initial pace15;
+acceleration is not uniformly gentle even though collision-associated ripple
+and all observed failures are absent in the selected matrix.
+
+Reproduce a full 50-road pass (serial) or split it into five track-ID processes:
+
+```bash
+python -m oracle.v2_runner --stage pace --track-ids 1 2 3 4 5 --seeds 1 2 3 4 5 6 7 8 9 10 --output runs/v2_new_pass
+python -m oracle.v2_report runs/v2_selected_first_t{1,2,3,4,5} runs/v2_selected_repeat_t{1,2,3,4,5} --baseline runs/expanded_first_t{1,2,3,4,5}_{low,high} runs/expanded_repeat_t{1,2,3,4,5} --output runs/v2_new_report.json
+python -m unittest tests.test_v2_controller tests.test_v2_report tests.test_oracle_controller tests.test_local_contract -v
+git diff oracle-v1 --exit-code -- oracle/oracle_controller.py oracle/oracle_runner.py env_wrapper.py damage.py core/ agent.py
+```
+
+Saved final report with repetition/source checks:
+`runs/v2_selected_repeat_t1/combined_report.json`; first-pass report:
+`runs/v2_selected_first_t1/combined_report.json`. Protected files remain
+byte-unchanged from `oracle-v1`; 34 targeted v2/oracle/local-contract tests pass.
+No commit, tag, push or submission was made.
+
+### Future Dataset Use
+
+V2 is a local high-speed teacher candidate alongside frozen v1, not a confirmed
+student policy. Future collection can keep v1 stable-driving and v2 fast-driving
+trajectories distinct, using the existing seed-level train/validation/test split.
+Record teacher version/stage/source digest, road seed/ID, exact pre-action policy
+images and actions; keep privileged geometry/state in separate analysis only.
+Do not turn the identical evaluation repeats into independent training examples
+or move these exposed evaluation roads into an untouched split. No mixing ratio
+or student-imitation benefit has been validated; the current BC collector was
+not changed and no v2 image dataset, BC, DAgger or RL run was started here.

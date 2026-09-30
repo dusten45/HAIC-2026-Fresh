@@ -2,12 +2,13 @@
 
 import argparse
 import hashlib
-import importlib.metadata
+import json
 import os
 from pathlib import Path
 import platform
 import subprocess
 import sys
+from uuid import uuid4
 
 os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
 os.environ.setdefault("SDL_AUDIODRIVER", "dummy")
@@ -18,40 +19,28 @@ from gymnasium.wrappers.time_limit import TimeLimit
 from core.vendor.car_racing import CarRacing
 from env_wrapper import CarEnvironment
 from oracle.oracle_controller import OracleController
-from oracle.oracle_runner import encode, vehicle_state
+from oracle.recording import encode, execution_fingerprint, snapshot_sources, vehicle_state
+from bc.contracts import BASELINE_CONDITIONS, EXPOSED_SEEDS, OBSERVATION_SHAPE, SPLIT_SEEDS, TRACK_IDS
 
 
-SPLIT_SEEDS = {"train": list(range(11, 31)), "val": list(range(31, 36)),
-               "test": list(range(36, 41))}
-EXPOSED_SEEDS = list(range(1, 11))
-TRACK_IDS = (1, 2, 3, 4, 5)
-OBSERVATION_SHAPE = (4, 84, 84)
-
-
-def _write_json(path, value):
-    with path.open("x") as stream:
+def _write_json(path, value, mode="x"):
+    with path.open(mode) as stream:
         stream.write(encode(value) + "\n")
 
 
 def _provenance(args):
     root = Path(__file__).resolve().parent.parent
-    sources = [root / name for name in
-               ("bc/dataset.py", "env_wrapper.py", "damage.py", "local_runner.py",
-                "oracle/oracle_runner.py", "oracle/oracle_controller.py")]
-    sources += sorted((root / "core").rglob("*.py"))
+    fingerprint = execution_fingerprint(
+        ("bc/dataset.py", "bc/contracts.py", "env_wrapper.py", "damage.py", "local_runner.py",
+         "oracle/oracle_runner.py", "oracle/oracle_controller.py", "oracle/recording.py"))
     return {
         "schema_version": 1, "command": ["python", "-m", "bc.dataset", *sys.argv[1:]],
         "arguments": vars(args),
         "git_revision": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip(),
-        "source_sha256": {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest()
-                          for path in sources},
-        "packages": {name: importlib.metadata.version(name)
-                     for name in ("numpy", "gymnasium", "opencv-python", "box2d-py")},
-        "python": sys.version, "platform": platform.platform(),
-        "conditions": {"render_mode": "rgb_array", "domain_randomize": False,
-                       "frame_skip": args.frame_skip, "warmup": args.warmup,
-                       "stack_frames": 4, "target_speed": args.target_speed,
-                       "avoid_obstacles": True, "max_steps": args.max_steps,
+        **fingerprint, "platform": platform.platform(),
+        "conditions": {**BASELINE_CONDITIONS,
+                        "frame_skip": args.frame_skip, "warmup": args.warmup,
+                        "target_speed": args.target_speed, "max_steps": args.max_steps,
                        "raw_frame_budget": args.max_steps * args.frame_skip + 200},
         "observation": "pre-action float32 (4,84,84), exact wrapper pixels in [0,1]",
         "model_inputs": ["observations"], "model_targets": ["actions"],
@@ -84,12 +73,15 @@ def collect_episode(args, output, track_id, seed):
     name = f"track{track_id}_seed{seed}"
     raw_path = output / f"{name}.partial.float32"
     npz_path = output / f"{name}.npz"
-    base = CarRacing(continuous=True, render_mode="rgb_array", domain_randomize=False)
+    base = CarRacing(continuous=True, render_mode=BASELINE_CONDITIONS["render_mode"],
+                     domain_randomize=BASELINE_CONDITIONS["domain_randomize"])
     env = CarEnvironment(TimeLimit(base, max_episode_steps=args.max_steps * args.frame_skip + 200),
-                         skip_frames=args.frame_skip, no_operation=args.warmup)
+                         skip_frames=args.frame_skip, no_operation=args.warmup,
+                         stack_frames=BASELINE_CONDITIONS["stack_frames"])
     try:
         observation, reset_info = env.reset(seed=seed, options={"track_id": track_id})
-        controller = OracleController(base, target_speed=args.target_speed, avoid_obstacles=True)
+        controller = OracleController(base, target_speed=args.target_speed,
+                                      avoid_obstacles=BASELINE_CONDITIONS["avoid_obstacles"])
         _write_json(output / f"{name}.episode.json", {
             "track_id": track_id, "geometry_seed": seed,
             "reset": {"seed": seed, "options": {"track_id": track_id}, "info": reset_info},
@@ -147,7 +139,7 @@ def collect_episode(args, output, track_id, seed):
         finish_time = base.finish_time_s
         summary = {"track_id": track_id, "geometry_seed": seed, "split": _seed_split(seed),
                    "trajectory": npz_path.name, "analysis": f"{name}.jsonl",
-                   "steps": steps, "complete": bool(terminated or truncated),
+                    "steps": steps, "attempt_finalized": True, "complete": bool(terminated or truncated),
                    "finished": finished, "finish_time_s": finish_time,
                    "lap_time_ms": round((finish_time - start_t) * 1000) if finish_time is not None else None,
                    "progress": env._calculate_progress(), "damage": env.damage.damage,
@@ -163,15 +155,16 @@ def collect_episode(args, output, track_id, seed):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", required=True, type=Path, help="New directory; parent must exist")
+    parser.add_argument("--output", required=True, type=Path, help="New directory; existing only with --resume")
+    parser.add_argument("--resume", action="store_true", help="Resume an existing compatible collection")
     parser.add_argument("--split", required=True, choices=tuple(SPLIT_SEEDS))
     parser.add_argument("--track-ids", type=int, nargs="+", default=list(TRACK_IDS))
     parser.add_argument("--seeds", type=int, nargs="+", required=True,
                         help="Bounded subset of the selected split's geometry seeds")
-    parser.add_argument("--max-steps", type=int, default=2000)
-    parser.add_argument("--frame-skip", type=int, default=4)
-    parser.add_argument("--warmup", type=int, default=50)
-    parser.add_argument("--target-speed", type=float, default=12.0)
+    parser.add_argument("--max-steps", type=int, default=BASELINE_CONDITIONS["max_steps"])
+    parser.add_argument("--frame-skip", type=int, default=BASELINE_CONDITIONS["frame_skip"])
+    parser.add_argument("--warmup", type=int, default=BASELINE_CONDITIONS["warmup"])
+    parser.add_argument("--target-speed", type=float, default=BASELINE_CONDITIONS["target_speed"])
     args = parser.parse_args(argv)
     if (not args.track_ids or len(set(args.track_ids)) != len(args.track_ids)
             or any(track not in TRACK_IDS for track in args.track_ids)):
@@ -179,14 +172,72 @@ def main(argv=None):
     if (not args.seeds or len(set(args.seeds)) != len(args.seeds)
             or any(seed not in SPLIT_SEEDS[args.split] for seed in args.seeds)):
         parser.error("seeds must be unique and belong to the selected split (never exposed 1..10)")
-    if (args.max_steps < 1 or args.max_steps > 2000 or args.frame_skip < 1
+    if (args.max_steps < 1 or args.max_steps > BASELINE_CONDITIONS["max_steps"] or args.frame_skip < 1
             or args.warmup < 0 or not np.isfinite(args.target_speed) or args.target_speed <= 0):
         parser.error("max-steps must be 1..2000, frame-skip positive, warmup nonnegative, speed positive")
-    if not args.output.parent.is_dir() or args.output.exists():
-        parser.error("output must not exist and its parent directory must already exist")
-    args.output.mkdir()
-    _write_json(args.output / "provenance.json", _provenance(args))
-    episodes = [collect_episode(args, args.output, track, seed)
+    if args.resume:
+        if not args.output.is_dir():
+            parser.error("resume output must be an existing collection directory")
+        provenance_path = args.output / "provenance.json"
+        try:
+            original = json.loads(provenance_path.read_text())
+        except (OSError, ValueError) as error:
+            parser.error(f"cannot read resume provenance: {error}")
+        provenance = _provenance(args)
+        previous = original.get("arguments", {})
+        if (previous.get("split") != args.split
+                or set(previous.get("track_ids", [])) != set(args.track_ids)
+                or set(previous.get("seeds", [])) != set(args.seeds)
+                or original.get("conditions") != provenance["conditions"]):
+            parser.error("resume requires the same grid and conditions as original provenance")
+        frozen = lambda hashes: {name: digest for name, digest in hashes.items()
+                                 if name != "bc/dataset.py"}
+        old_hashes = frozen(original.get("source_sha256", {}))
+        current_hashes = frozen(provenance["source_sha256"])
+        added_helpers = {"bc/contracts.py", "oracle/recording.py"} - old_hashes.keys()
+        if (not old_hashes or old_hashes != {name: digest for name, digest in current_hashes.items()
+                                             if name not in added_helpers}):
+            parser.error("resume requires unchanged frozen teacher and environment source hashes")
+        provenance["original_provenance_sha256"] = hashlib.sha256(provenance_path.read_bytes()).hexdigest()
+        provenance["collector_source_change"] = {
+            "original": original["source_sha256"].get("bc/dataset.py"),
+            "current": provenance["source_sha256"]["bc/dataset.py"]}
+        if added_helpers:
+            provenance["source_fingerprint_migration"] = {
+                "verification": "Original frozen hashes verified; added helpers describe this resume only",
+                "added_source_sha256": {name: current_hashes[name] for name in sorted(added_helpers)}}
+        _write_json(args.output / f"resume_{uuid4().hex}.json", provenance)
+    else:
+        if not args.output.parent.is_dir() or args.output.exists():
+            parser.error("output must not exist and its parent directory must already exist")
+        args.output.mkdir()
+        provenance = _provenance(args)
+        provenance["source_snapshot"] = snapshot_sources(args.output, provenance)
+        _write_json(args.output / "provenance.json", provenance)
+    for track in args.track_ids:
+        for seed in args.seeds:
+            name = f"track{track}_seed{seed}"
+            summary_path = args.output / f"{name}.summary.json"
+            if args.resume:
+                try:
+                    summary = json.loads(summary_path.read_text())
+                except (OSError, ValueError):
+                    summary = {}
+                # Old collectors wrote a summary only after finalizing the NPZ, including caps.
+                finalized = summary.get("attempt_finalized", bool(summary.get("trajectory")))
+                if finalized and (args.output / f"{name}.npz").is_file():
+                    continue
+                artifacts = [args.output / f"{name}{suffix}" for suffix in
+                             (".episode.json", ".jsonl", ".partial.float32", ".npz", ".summary.json")]
+                artifacts = [path for path in artifacts if path.exists()]
+                if artifacts:
+                    archive = args.output / "interrupted_attempts" / uuid4().hex
+                    archive.mkdir(parents=True)
+                    for path in artifacts:
+                        path.rename(archive / path.name)
+            collect_episode(args, args.output, track, seed)
+    # Read the full grid, including roads completed before this invocation.
+    episodes = [json.loads((args.output / f"track{track}_seed{seed}.summary.json").read_text())
                 for track in args.track_ids for seed in args.seeds]
     manifest = {"schema_version": 1, "split_seeds": SPLIT_SEEDS,
                 "exposed_seeds_excluded": EXPOSED_SEEDS, "track_ids": list(TRACK_IDS),
@@ -196,11 +247,11 @@ def main(argv=None):
     for episode in episodes:
         if episode["complete"] and episode["finished"]:
             manifest[_seed_split(episode["geometry_seed"])].append(episode["trajectory"])
-    _write_json(args.output / "split_manifest.json", manifest)
+    _write_json(args.output / "split_manifest.json", manifest, mode="w" if args.resume else "x")
     _write_json(args.output / "manifest.json", {"episodes": episodes,
                 "episode_count": len(episodes), "finished_count": sum(e["finished"] for e in episodes),
                 "eligible_count": sum(len(manifest[split]) for split in SPLIT_SEEDS),
-                "road_count": len(episodes)})
+                "road_count": len(episodes)}, mode="w" if args.resume else "x")
 
 
 if __name__ == "__main__":

@@ -2,8 +2,11 @@
 
 import argparse
 import hashlib
+import json
 import os
 from pathlib import Path
+import shutil
+from uuid import uuid4
 
 os.environ.setdefault("SDL_VIDEODRIVER", "dummy")
 os.environ.setdefault("SDL_AUDIODRIVER", "dummy")
@@ -14,7 +17,8 @@ from gymnasium.wrappers.time_limit import TimeLimit
 from core.vendor.car_racing import CarRacing
 from env_wrapper import CarEnvironment
 from oracle.oracle_controller import OracleController
-from oracle.oracle_runner import encode, vehicle_state
+from oracle.recording import encode, execution_fingerprint, snapshot_sources, vehicle_state
+from bc.contracts import BASELINE_CONDITIONS, SPLIT_SEEDS, TRACK_IDS
 
 
 ACTION_THRESHOLDS = (0.08, 0.12, 0.08)
@@ -50,13 +54,17 @@ def first_deviations(records):
 
 def rollout(track_id, seed, max_steps, policy=None, trace_path=None, samples=None):
     """Run original wrapped environment; policy sees only the actual image stack."""
-    base = CarRacing(continuous=True, render_mode="rgb_array")
-    env = CarEnvironment(TimeLimit(base, max_episode_steps=max_steps * 4 + 200),
-                         skip_frames=4, no_operation=50)
+    base = CarRacing(continuous=True, render_mode=BASELINE_CONDITIONS["render_mode"],
+                     domain_randomize=BASELINE_CONDITIONS["domain_randomize"])
+    env = CarEnvironment(TimeLimit(base, max_episode_steps=max_steps * BASELINE_CONDITIONS["frame_skip"] + 200),
+                         skip_frames=BASELINE_CONDITIONS["frame_skip"],
+                         no_operation=BASELINE_CONDITIONS["warmup"],
+                         stack_frames=BASELINE_CONDITIONS["stack_frames"])
     rows = []
     try:
         obs, info = env.reset(seed=seed, options={"track_id": track_id})
-        teacher = OracleController(base, target_speed=12.0, avoid_obstacles=True)
+        teacher = OracleController(base, target_speed=BASELINE_CONDITIONS["target_speed"],
+                                   avoid_obstacles=BASELINE_CONDITIONS["avoid_obstacles"])
         if base.track_variables is None:
             raise RuntimeError("Reset did not generate track variables")
         if policy is not None and hasattr(policy, "reset"):
@@ -131,29 +139,76 @@ def compare(reference, student):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    diagnostic = parser.add_argument_group("Historical diagnostic options", "Explicit opt-in; not the plain BC baseline")
     parser.add_argument("--checkpoint", type=Path, required=True)
-    parser.add_argument("--steer-checkpoint", type=Path,
+    diagnostic.add_argument("--steer-checkpoint", type=Path,
                         help="Diagnostic: take steering from another observation-only BC policy")
-    parser.add_argument("--track-ids", type=int, nargs="+", default=[1, 2, 3, 4, 5])
+    parser.add_argument("--track-ids", type=int, nargs="+", default=list(TRACK_IDS))
     parser.add_argument("--seeds", type=int, nargs="+", required=True)
-    parser.add_argument("--max-steps", type=int, default=2000)
+    parser.add_argument("--max-steps", type=int, default=BASELINE_CONDITIONS["max_steps"])
     parser.add_argument("--split", choices=("train", "val", "test"), required=True)
-    parser.add_argument("--collect-recovery", action="store_true",
+    diagnostic.add_argument("--collect-recovery", action="store_true",
                         help="Store oracle labels on visited student states on training roads")
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--resume", action="store_true",
+                        help="Continue compatible paired evaluation, without recovery collection")
     args = parser.parse_args(argv)
     if (args.max_steps < 1 or not args.seeds or len(set(args.seeds)) != len(args.seeds)
-            or len(set(args.track_ids)) != len(args.track_ids)
-            or any(t not in (1, 2, 3, 4, 5) for t in args.track_ids)
+            or not args.track_ids or len(set(args.track_ids)) != len(args.track_ids)
+            or any(t not in TRACK_IDS for t in args.track_ids)
             or any(s < 0 or s > 0xFFFFFFFF for s in args.seeds)):
         parser.error("invalid track IDs, seeds or max steps")
-    allowed = {"train": range(11, 31), "val": range(31, 36), "test": range(36, 41)}
-    if any(seed not in allowed[args.split] for seed in args.seeds):
+    if any(seed not in SPLIT_SEEDS[args.split] for seed in args.seeds):
         parser.error("seeds do not belong to selected geometry split")
     if args.collect_recovery and args.split != "train":
         parser.error("recovery labels may only be collected on training geometry")
-    if args.output.exists() or not args.output.parent.is_dir():
+    if args.resume and args.collect_recovery:
+        parser.error("resume does not support recovery collection")
+    if not args.resume and (args.output.exists() or not args.output.parent.is_dir()):
         parser.error("output must be a new directory with an existing parent")
+    if args.resume and not (args.output / "summary.json").is_file():
+        parser.error("resume requires an existing summary.json")
+    settings = {
+        **execution_fingerprint(("bc/evaluate.py", "bc/model.py", "bc/contracts.py",
+                                  "oracle/recording.py", "oracle/oracle_controller.py",
+                                  "env_wrapper.py", "damage.py")),
+        "checkpoint_sha256": hashlib.sha256(args.checkpoint.read_bytes()).hexdigest(),
+        "steer_checkpoint_sha256": (hashlib.sha256(args.steer_checkpoint.read_bytes()).hexdigest()
+                                    if args.steer_checkpoint is not None else None),
+        "split": args.split, "max_steps": args.max_steps,
+        "frame_skip": BASELINE_CONDITIONS["frame_skip"], "warmup": BASELINE_CONDITIONS["warmup"],
+        "conditions": {**BASELINE_CONDITIONS, "max_steps": args.max_steps,
+                       "raw_frame_budget": args.max_steps * BASELINE_CONDITIONS["frame_skip"] + 200},
+        "thresholds": {"action": list(ACTION_THRESHOLDS), "position": POSITION_THRESHOLD},
+    }
+    grid = {(track_id, seed) for track_id in args.track_ids for seed in args.seeds}
+    results = []
+    completed = set()
+    previous = {}
+    if args.resume:
+        previous = json.loads((args.output / "summary.json").read_text())
+        if not previous.get("source_sha256") or not previous.get("packages") or not previous.get("python"):
+            parser.error("legacy summary has no execution fingerprint; verification impossible, use a new output directory")
+        for key, value in settings.items():
+            if key not in previous or previous[key] != value:
+                parser.error(f"resume incompatible {key}")
+        for key, value in (("track_ids", args.track_ids), ("seeds", args.seeds)):
+            if key in previous and sorted(previous[key]) != sorted(value):
+                parser.error(f"resume incompatible {key} grid")
+        if previous.get("collect_recovery"):
+            parser.error("resume does not support recovery collection")
+        results = previous["results"]
+        for result in results:
+            road = (result["track_id"], result["geometry_seed"])
+            if road not in grid or road in completed:
+                parser.error("resume results must be a unique subset of the requested grid")
+            for side in ("reference", "student"):
+                episode = result[side]
+                if (episode.get("track_id"), episode.get("geometry_seed")) != road or not isinstance(episode.get("finished"), bool):
+                    parser.error("resume requires complete paired results")
+                if "recovery_file" in episode:
+                    parser.error("resume does not support recovery collection")
+            completed.add(road)
     from bc.model import BCPolicy
     policy = BCPolicy.from_checkpoint(args.checkpoint)
     if args.steer_checkpoint is not None:
@@ -161,16 +216,48 @@ def main(argv=None):
         steering_policy = BCPolicy.from_checkpoint(args.steer_checkpoint)
 
         class SplitHeads:
+            def reset(self, observation):
+                for head in (controls_policy, steering_policy):
+                    if hasattr(head, "reset"):
+                        head.reset(observation)
+
             def act(self, observation):
                 action = controls_policy.act(observation)
                 action[0] = steering_policy.act(observation)[0]
                 return action
 
         policy = SplitHeads()
-    args.output.mkdir()
-    results = []
+    if args.resume:
+        archive = args.output / "interrupted_attempts" / uuid4().hex
+        archive.mkdir(parents=True)
+        shutil.copy2(args.output / "summary.json", archive / "summary.json")
+        for track_id, seed in sorted(grid - completed):
+            for side in ("oracle", "student"):
+                trace = args.output / f"track{track_id}_seed{seed}.{side}.jsonl"
+                if trace.exists():
+                    trace.rename(archive / trace.name)
+    else:
+        args.output.mkdir()
+    source_snapshot = (previous.get("source_snapshot") if args.resume
+                       else snapshot_sources(args.output, settings))
+
+    def write_summary():
+        summary_path = args.output / "summary.json.tmp"
+        summary_path.write_text(encode({"checkpoint": str(args.checkpoint), **settings,
+            "source_snapshot": source_snapshot,
+            "track_ids": args.track_ids, "seeds": args.seeds,
+            "collect_recovery": args.collect_recovery,
+            "episode_count": len(results), "finish_count": sum(r["student"]["finished"] for r in results),
+            "reference_finish_count": sum(r["reference"]["finished"] for r in results),
+            "road_count": len(results), "results": results}) + "\n")
+        summary_path.replace(args.output / "summary.json")
+
+    if not args.resume:
+        write_summary()
     for track_id in args.track_ids:
         for seed in args.seeds:
+            if (track_id, seed) in completed:
+                continue
             name = f"track{track_id}_seed{seed}"
             reference, reference_summary = rollout(track_id, seed, args.max_steps,
                                                      trace_path=args.output / f"{name}.oracle.jsonl")
@@ -190,15 +277,7 @@ def main(argv=None):
             results.append(result)
             print(f"{name}: oracle={reference_summary['finished']} student={student_summary['finished']} "
                   f"progress={student_summary['progress']:.4f} deviations={result['first_deviations']}", flush=True)
-            (args.output / "summary.json").write_text(encode({"checkpoint": str(args.checkpoint),
-                "checkpoint_sha256": hashlib.sha256(args.checkpoint.read_bytes()).hexdigest(),
-                "steer_checkpoint_sha256": (hashlib.sha256(args.steer_checkpoint.read_bytes()).hexdigest()
-                                            if args.steer_checkpoint is not None else None),
-                "split": args.split, "max_steps": args.max_steps, "frame_skip": 4, "warmup": 50,
-                "thresholds": {"action": ACTION_THRESHOLDS, "position": POSITION_THRESHOLD},
-                "episode_count": len(results), "finish_count": sum(r["student"]["finished"] for r in results),
-                "reference_finish_count": sum(r["reference"]["finished"] for r in results),
-                "road_count": len(results), "results": results}) + "\n")
+            write_summary()
 
 
 if __name__ == "__main__":

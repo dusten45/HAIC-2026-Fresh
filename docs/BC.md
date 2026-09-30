@@ -1,5 +1,21 @@
 # Behavior Cloning: Reproduction and Evidence
 
+## Current Entry Point
+
+Current scope and next gates live in [plan/BC.md](plan/BC.md); the sections below
+are chronological evidence, not concurrent instructions. The latest recorded
+comparison is [History8 Closed Loop and Decision](#history8-closed-loop-and-decision).
+Older pending/restart statements describe their checkpoint dates, not current jobs.
+The compact [run catalog](RUNS.json) indexes preserved artifacts; regenerate it
+with `python -m oracle.catalog` without rerunning experiments.
+
+Tooling maintenance now uses unit action-loss weights by default. Historical
+weighted/motion/recovery/split-head options remain explicit diagnostic settings,
+not the current baseline. Historical commands below now spell out their recorded
+gas weight of 40 instead of relying on the old default; saved invocation strings
+and artifacts remain unchanged. New train/evaluation runs record source fingerprints
+and recoverable snapshots. Old records are not retroactively source-certified.
+
 ## Frozen Teacher and Split
 
 `oracle-v1` tags `a70b35950414a930d5ddaad4ac15733e65774345`, the
@@ -27,7 +43,9 @@ and at most 2,000 actions in the original unmodified supplied environment.
 
 ## Data Contract
 
-`python -m bc.dataset` creates a new directory and refuses existing outputs.
+`python -m bc.dataset` creates a new directory; compatible existing collections
+require `--resume`. Saved attempts are distinct from environment termination and
+training eligibility, so finalized step-limit failures are retained, not rerun.
 For each selected `(track_id, seed)` it stores one complete attempt: an `.npz`
 with exact pre-action wrapper `float32` grayscale image stacks and the oracle
 `float32` `[steer, gas, brake]` targets, plus a per-step JSONL analysis sidecar,
@@ -127,7 +145,7 @@ CUDA forward/backward and CPU unit smoke tests passed; no long auxiliary
 verification. Run and result:
 
 ```bash
-python -m bc.train --dataset runs/bc_train_v1 --val-dataset runs/bc_val_v1 --output runs/bc_model_weighted_v2 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device auto
+python -m bc.train --dataset runs/bc_train_v1 --val-dataset runs/bc_val_v1 --output runs/bc_model_weighted_v2 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device auto --active-gas-weight 40
 ```
 
 The weighted CUDA model selected epoch 5 (checkpoint SHA-256
@@ -155,7 +173,7 @@ are not duplicated, and validation seeds never enter recovery training:
 
 ```bash
 python -m bc.evaluate --checkpoint runs/bc_model_weighted_v2/best.pt --split train --track-ids 1 2 3 --seeds 11 12 --output runs/bc_recovery_v2_train --collect-recovery
-python -m bc.train --dataset runs/bc_train_v1 --val-dataset runs/bc_val_v1 --recovery-dataset runs/bc_recovery_v2_train --output runs/bc_model_recovery_v3 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device auto
+python -m bc.train --dataset runs/bc_train_v1 --val-dataset runs/bc_val_v1 --recovery-dataset runs/bc_recovery_v2_train --output runs/bc_model_recovery_v3 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device auto --active-gas-weight 40
 ```
 
 The same validation probe must be rerun after this targeted recovery pass.
@@ -188,7 +206,7 @@ states, training budget and action loss remain fixed. This is still simple
 supervised BC, not privileged speed input or a world model:
 
 ```bash
-python -m bc.train --dataset runs/bc_train_v1 --val-dataset runs/bc_val_v1 --recovery-dataset runs/bc_recovery_v2_train --output runs/bc_model_motion_v4 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device auto --motion-features
+python -m bc.train --dataset runs/bc_train_v1 --val-dataset runs/bc_val_v1 --recovery-dataset runs/bc_recovery_v2_train --output runs/bc_model_motion_v4 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device auto --motion-features --active-gas-weight 40
 ```
 
 Motion+recovery v4 also failed **0/1 episode on 0/1 validation road** (ID 1,
@@ -207,7 +225,7 @@ To isolate recovery contamination from temporal representation, v5 keeps
 the motion features and all other settings but removes recovery sampling:
 
 ```bash
-python -m bc.train --dataset runs/bc_train_v1 --val-dataset runs/bc_val_v1 --output runs/bc_model_motion_no_recovery_v5 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device auto --motion-features
+python -m bc.train --dataset runs/bc_train_v1 --val-dataset runs/bc_val_v1 --output runs/bc_model_motion_no_recovery_v5 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device auto --motion-features --active-gas-weight 40
 ```
 
 Motion-only v5 reduced ordinary held-out steering MSE to 0.000142 but still
@@ -267,7 +285,7 @@ weight (rare on successful normal trajectories) and select by held-out
 gas/brake weighted MSE. No more normal oracle trajectory collection:
 
 ```bash
-python -m bc.train --dataset runs/bc_train_v1 --val-dataset runs/bc_val_v1 --recovery-dataset runs/bc_recovery_split_heads_v6_train --output runs/bc_model_controls_recovery_v8 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device auto --motion-features --active-brake-weight 10 --recovery-controls-only
+python -m bc.train --dataset runs/bc_train_v1 --val-dataset runs/bc_val_v1 --recovery-dataset runs/bc_recovery_split_heads_v6_train --output runs/bc_model_controls_recovery_v8 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device auto --motion-features --active-gas-weight 40 --active-brake-weight 10 --recovery-controls-only
 ```
 
 Controls-recovery v8 was worse: **0/1 validation episode on 0/1 road**, after
@@ -368,3 +386,292 @@ preserve a fresh untouched final geometry group, and benchmark component-
 conditional offline errors plus full laps before considering any different
 algorithm. RL fine-tuning is **not started or authorized** on these results.
 No official submission or model confirmation was made.
+
+## Geometry Versus Observability Gate (v10 Onward)
+
+The 2026-09-29 user instruction supersedes the earlier suggestion to collect
+more recovery states first. Do not retry v1-v9 weighting, recovery proportions,
+motion features, or split-head combinations. New training collection is exactly
+IDs 1-5 x seeds 21-30, once per road, with the frozen oracle and original
+environment settings. Combine eligible trajectories with existing seeds 11-20;
+the intended pool is 100 roads / 20 geometries, not 100 independent geometries.
+Validation remains IDs 1-5 x seeds 31-33. Seeds 34-35 and 38-40 stay unopened;
+36-37 remain exposed historical evidence and are not used in this comparison.
+
+Predeclared geometry-only comparison: plain `BCPolicy-v1`, no motion feature,
+no recovery, unit action-loss weights, Adam learning rate 0.001, seed 0,
+5 epochs, batch size 64, 20,000 training samples per epoch, CUDA for both arms.
+The old road-local batching would give 350 versus 400 optimizer steps for 50
+versus 100 roads. Both new arms instead carry partial batches across road
+boundaries, giving 313 updates per epoch. A fresh 10-geometry matched control
+is therefore necessary; historical CPU v1 is context, not the causal control.
+Keep validation checkpoint selection unchanged (unweighted mean component MSE)
+to avoid mixing data diversity with a selection change, but judge the comparison
+by conditional errors and closed-loop finishes, not that aggregate loss.
+
+Report gas >0.1, brake >0.1, and absolute steer >0.1 conditional counts, MAE,
+MSE, target means and prediction means; empty bins are explicitly unavailable.
+Evaluate both selected checkpoints on IDs 1-5 x seeds 31-33, one complete
+episode per road (15 roads / three development geometries). Zero finishes in
+both arms is insufficient evidence of meaningful reliability improvement even
+if progress or offline errors improve. A gain on this one training seed is
+provisional, not replicated causal proof or an unseen generalization estimate.
+If neither arm finishes, proceed to a single longer-history pixel comparison
+with identical data/loss/budget before auxiliary targets or other changes.
+This tests diversity under a fixed sample budget: doubling roads halves samples
+per road per epoch. A null result does not rule out more diverse data with more
+training, nor establish partial observability as the cause. Changing history is
+a next diagnostic intervention, not a conclusion inferred from two failures.
+
+Collection:
+
+```bash
+python -m bc.dataset --output runs/bc_train_geometry_v10 --split train --track-ids 1 2 3 4 5 --seeds 21 22 23 24 25 26 27 28 29 30
+```
+
+Matched training and evaluation commands (run each training output once):
+
+```bash
+python -m bc.train --dataset runs/bc_train_v1 --val-dataset runs/bc_val_v1 --output runs/bc_model_geometry_control_v10 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device cuda --active-gas-weight 1 --active-brake-weight 1 --continuous-batches
+python -m bc.train --dataset runs/bc_train_v1 --extra-train-dataset runs/bc_train_geometry_v10 --val-dataset runs/bc_val_v1 --output runs/bc_model_geometry_expanded_v10 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device cuda --active-gas-weight 1 --active-brake-weight 1 --continuous-batches
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python -m bc.evaluate --checkpoint runs/bc_model_geometry_control_v10/best.pt --split val --track-ids 1 2 3 4 5 --seeds 31 32 33 --output runs/bc_closed_geometry_control_v10
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python -m bc.evaluate --checkpoint runs/bc_model_geometry_expanded_v10/best.pt --split val --track-ids 1 2 3 4 5 --seeds 31 32 33 --output runs/bc_closed_geometry_expanded_v10
+```
+
+Historical launch checkpoint (superseded by the completed results below):
+results pending; launching a run is not evidence of completion. Tooling checks:
+13 trainer tests passed, including exact sampled-row order/RNG preservation,
+20,000 samples / 313 updates for each road count, manifest separation and
+conditional metrics. Another 22 dataset, rollout and local-contract tests passed.
+
+### Restart Checkpoint
+
+Kilo was closed and restarted during v10. At 2026-09-29 21:17 UTC the plain
+10-geometry control had completed all five epochs, each with 20,000 samples and
+313 updates. Its selected epoch is 5; checkpoint SHA-256 is
+`3c0baf4bb17d1771024e06a79d0de6e1680f346721c6adcbb12b08c2ad8f661c`.
+Its validation conditional MAE is high gas 0.243083 (105/15,676 actions), high
+brake 0.215553 (15/15,676), and large steer 0.007834 (2,386/15,676).
+These are offline results, not driving success. The partial closed-loop record
+contains 0/5 student finishes on 0/5 roads versus 5/5 oracle finishes; the
+planned 15-road comparison is not complete.
+
+New-road collection had 17 completed road summaries and one interrupted
+attempt (ID 2 / seed 28), not a completed 50-road dataset. Completed roads must
+not be recollected; interrupted artifacts are retained separately when resumed.
+Do not train the expanded arm before the full collection manifest is finalized.
+Remaining work resumes from stored artifacts, not from original commands that
+would overwrite/repeat output directories. Long-running jobs launched after
+this restart use the process manager's persistent lifetime.
+
+Validation resume was launched with persistent lifetime after compatible
+checkpoint/settings checks and six evaluator tests (14 subtests) passed:
+
+```bash
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python -m bc.evaluate --checkpoint runs/bc_model_geometry_control_v10/best.pt --split val --track-ids 1 2 3 4 5 --seeds 31 32 33 --output runs/bc_closed_geometry_control_v10 --resume
+```
+
+Resume preserves the prior summary and interrupted traces, skips completed
+paired roads, and atomically updates each new paired result. Its launch does
+not imply the remaining ten roads have finished.
+
+Collection also resumed persistently, with the original frozen teacher and
+environment hashes verified; completed roads were skipped and the interrupted
+ID 2 / seed 28 files archived instead of discarded:
+
+```bash
+python -m bc.dataset --output runs/bc_train_geometry_v10 --split train --track-ids 1 2 3 4 5 --seeds 21 22 23 24 25 26 27 28 29 30 --resume
+```
+
+Integrated dataset/trainer/evaluator/local-contract suite: 40 tests passed after
+the restart changes. The manifests are finalized only after the full grid runs.
+
+### Matched Control Result
+
+The 10-geometry control evaluation is complete: **0/15 student complete-episode
+finishes on 0/15 distinct roads**, versus **15/15 oracle finishes on 15/15 roads**
+(IDs 1-5 x seeds 31-33; three exposed development geometries). No result is
+missing or externally interrupted in the resumed final summary. Student
+termination was `off_track` on 13 roads and `crash` on two roads (IDs 3 and 5,
+seed 31). Progress ranged 0.1131-0.6678, an internal diagnostic only. The first
+recorded action mismatch was gas at step 0 and first >2-unit pose divergence
+was step 4 on every road. This is not a reliable finisher baseline.
+
+| Track ID | Seed 31 Progress | Seed 32 Progress | Seed 33 Progress |
+| ---: | ---: | ---: | ---: |
+| 1 | 0.2993 | 0.2203 | 0.2721 |
+| 2 | 0.5730 | 0.1797 | 0.6678 |
+| 3 | 0.1350 | 0.1729 | 0.3145 |
+| 4 | 0.1131 | 0.1390 | 0.2120 |
+| 5 | 0.3650 | 0.1661 | 0.5618 |
+
+Historical control-only checkpoint: expanded-data model results remain pending;
+the control alone cannot distinguish
+the two hypotheses. New collection is now complete: **50/50 full oracle episodes
+on 50/50 roads**, IDs 1-5 x seeds 21-30, ten new base geometries and **56,031**
+pre-action image/action rows. All 50 trajectories are eligible. ID 3 / seed 25
+finished with damage 0.2; the other 49 finished without damage. No incomplete
+episode remains in the finalized manifest; the restart-interrupted attempt is
+retained separately, not counted as another successful learning trajectory.
+Combined with the original 55,363 rows, training contains **111,394 unique
+rows on 100 roads / 20 geometries**. At 21:53 UTC expanded CNN training followed
+by the full 15-road validation evaluation was launched persistently.
+
+### Expanded CNN Offline Result
+
+The 20-geometry CNN completed all five epochs, each with 20,000 samples and
+313 updates, identical to the control. Selected epoch 5 checkpoint SHA-256:
+`ced7e5232c1090d42fd4423d06e00af9b328e71bffbb0374ec2ae391e191fa6d`.
+Validation uses exactly the same 15,676 teacher-state action rows in both arms.
+
+| Conditional Metric | Validation Count | 10 Geometries MAE / MSE | 20 Geometries MAE / MSE |
+| --- | ---: | ---: | ---: |
+| Gas >0.1 | 105 | 0.243083 / 0.077312 | 0.242314 / 0.076909 |
+| Brake >0.1 | 15 | 0.215553 / 0.046463 | 0.214889 / 0.046177 |
+| Absolute steer >0.1 | 2,386 | 0.007834 / 0.000101 | 0.010273 / 0.000202 |
+
+High-gas prediction means are 0.029054/0.029823 against target 0.272136;
+high-brake means are 0.017819/0.018484 against target 0.233372. Tail gas/brake
+underprediction is essentially unchanged, and conditional steering worsened.
+The gas/brake tails are tiny, especially 15 brake rows; do not overstate small
+numerical differences as replicated effects. Mean component MSE is
+0.000569686/0.000575290, but is not the primary success criterion.
+Expanded closed-loop evaluation is now complete: **0/15 student full-episode
+finishes on 0/15 roads**, versus **15/15 oracle finishes on 15/15 roads**, IDs
+1-5 x seeds 31-33. Fourteen students terminated `off_track`; ID 3 / seed 31
+terminated `crash`. Every road's first recorded action mismatch was gas at
+step 0, with first >2-unit pose divergence at step 4. There are no missing
+episodes. Progress ranged 0.1131-0.8248; farther progress on ID 1 / seed 31
+does not rescue the unchanged zero finish count, and other roads regressed.
+
+| Track ID | Expanded Seed 31 Progress | Expanded Seed 32 Progress | Expanded Seed 33 Progress |
+| ---: | ---: | ---: | ---: |
+| 1 | 0.8248 | 0.2203 | 0.2756 |
+| 2 | 0.1752 | 0.1797 | 0.4028 |
+| 3 | 0.2044 | 0.1729 | 0.5795 |
+| 4 | 0.1131 | 0.1390 | 0.2085 |
+| 5 | 0.2518 | 0.1661 | 0.3286 |
+
+**Geometry gate:** expanding 10 to 20 training geometries alone did not improve
+complete-episode reliability under this fixed budget and one training seed.
+This rejects the sufficiency of this specific intervention, not geometry
+diversity in general; reduced samples per road and limited training remain
+alternative explanations. It does not prove partial observability. Proceed to
+the predeclared longer-history comparison, without reweighting or recovery.
+
+### Conditional Temporal Protocol
+
+If the completed geometry comparison has no meaningful finish improvement,
+test an eight-frame early-fusion CNN on exactly the expanded training roads.
+The wrapper appends one image per decision, normally four simulator ticks
+(80 ms), so four frames span 240 ms and eight span 560 ms. Reconstruct row `t`
+from `observations[max(0, t-lag), 3]` for lags 7 through 0, then sample/shuffle
+the target rows. Repeat the reset image for missing history; never cross roads,
+include future frames, or concatenate overlapping four-frame stacks as if
+their channels were independent timestamps. Online history must match this
+reconstruction exactly and reset between episodes.
+
+Change only the first convolution input from four to eight channels; retain
+the remaining CNN/head, action transforms, loss and selection. Initialize from
+the same fresh seed-0 four-frame CNN used by the expanded control: copy shared
+parameters, copy its first-layer weights into the newest four channels and
+zero the older four channels. This preserves the initial function, rather than
+warm-starting from a trained checkpoint. Parameter count rises from 31,659 to
+33,707 (6.5%); disclose this modest capacity confound. Keep five epochs,
+20,000 samples / 313 updates per epoch, unit loss weights, no recovery or motion
+features, and the same validation roads. This is a bounded test of additional
+causal pixel history, not a complete observability diagnosis. Auxiliary targets
+and recurrent encoders are separate possible later interventions, not mixed
+into this first history comparison.
+
+### History8 Implementation and Run
+
+Implemented the above reconstruction and episode-reset semantics with only
+the first convolution widened. Tests verify exact seeded shared parameters
+and RNG preservation, equal initial function within numerical tolerance,
+nonzero older-channel gradients, causal indexed batches, online/offline history
+equality, episode isolation, and checkpoint compatibility. The new checkpoint
+format is `BCPolicy-history8-v3`. Thirty-five targeted BC tests passed; supplied
+environment and submission `agent.py` remain unchanged.
+
+After the completed geometry gate, history8 training and full validation were
+launched persistently at 22:19 UTC:
+
+```bash
+python -m bc.train --dataset runs/bc_train_v1 --extra-train-dataset runs/bc_train_geometry_v10 --val-dataset runs/bc_val_v1 --output runs/bc_model_history8_v11 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device cuda --active-gas-weight 1 --active-brake-weight 1 --continuous-batches --history-frames 8
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python -m bc.evaluate --checkpoint runs/bc_model_history8_v11/best.pt --split val --track-ids 1 2 3 4 5 --seeds 31 32 33 --output runs/bc_closed_history8_v11
+```
+
+Validation seeds 34-35 and final-local seeds 38-40 remain unexamined. No RL,
+auxiliary-target trial, submission or model confirmation.
+
+### History8 Offline Result
+
+History8 completed five epochs, each 20,000 samples / 313 optimizer updates,
+with the same expanded roads and sampled-row RNG as the four-frame model.
+Selected epoch 5 checkpoint SHA-256:
+`79e05ca13082bb0d41f27e02f7824bee14e90fba70865d425d6ca7001581cec7`.
+
+| Conditional Metric | Validation Count | Expanded Four Frames MAE / MSE | Expanded Eight Frames MAE / MSE |
+| --- | ---: | ---: | ---: |
+| Gas >0.1 | 105 | 0.242314 / 0.076909 | 0.243393 / 0.077436 |
+| Brake >0.1 | 15 | 0.214889 / 0.046177 | 0.215610 / 0.046488 |
+| Absolute steer >0.1 | 2,386 | 0.010273 / 0.000202 | 0.013617 / 0.000288 |
+
+High-gas mean prediction is 0.028743 versus target 0.272136; high-brake mean is
+0.017762 versus target 0.233372. Mean component MSE is 0.000578268. Longer
+history did not improve the action tails; large-steer conditional error worsened.
+The integrated BC/local-contract suite passed 50 tests after history changes.
+
+### History8 Closed Loop and Decision
+
+History8 full evaluation completed **0/15 student full-episode finishes on
+0/15 distinct roads**, versus **15/15 oracle finishes on 15/15 roads**, IDs
+1-5 x seeds 31-33 (three exposed development geometries). All 15 student
+episodes reached environment termination; none is missing or interrupted.
+Every student road had at least one collision-positive action. Twelve students
+terminated `off_track`; three terminated `crash` (IDs 2, 3 and 5 / seed 31).
+Every road's first recorded action mismatch remained gas at step 0, and first
+>2-unit pose divergence at step 4. The later collision is not the earliest
+recorded departure. Progress ranged 0.1131-0.5051, not an official score.
+
+| Track ID | History8 Seed 31 Progress | History8 Seed 32 Progress | History8 Seed 33 Progress |
+| ---: | ---: | ---: | ---: |
+| 1 | 0.2993 | 0.2203 | 0.2721 |
+| 2 | 0.3613 | 0.3797 | 0.4028 |
+| 3 | 0.4818 | 0.5051 | 0.3145 |
+| 4 | 0.1131 | 0.1390 | 0.2933 |
+| 5 | 0.3650 | 0.3424 | 0.3286 |
+
+| Comparison | Training Geometries | Pixel History | Student Finishes / Episodes | Successful Roads / Roads | Paired Oracle Finishes / Episodes |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| v10 matched control | 10 | 4 | 0/15 | 0/15 | 15/15 |
+| v10 expanded data | 20 | 4 | 0/15 | 0/15 | 15/15 |
+| v11 history8 | 20 | 8 | 0/15 | 0/15 | 15/15 |
+
+**Evidence-limited conclusion:** neither doubling training geometry alone nor
+doubling causal image history with this CNN established a finisher, and neither
+improved the high-gas/high-brake conditional fit materially. The interventions
+are separated, but each comparison uses only training seed 0, five epochs and
+an equal 100,000 sample presentations; these are not replicated negative results
+for all BC models. More geometries at the same budget reduce exposure per road;
+history8 adds 6.5% parameters. Validation is exposed development evidence, not
+an untouched estimate. Fifteen high-brake rows limit that conditional estimate.
+
+At reset, all historical frames repeat the same image: history8 provides no
+additional startup information, so its failure to correct the step-0 gas
+underprediction does not diagnose whether speed/curvature/obstacle information
+later in a lap is observable. We have not directly probed those latent quantities
+or demonstrated observational aliasing. It would be incorrect to claim that
+four-frame privileged-action imitation is fundamentally impossible, or that
+partial observability is proven from zero finishes. Representation, optimization
+and rare-action fit remain unresolved alongside off-policy state coverage.
+
+Do not revisit v1-v9 small loss/recovery changes. A next discriminating BC
+intervention can measure speed/curvature/lateral-error/obstacle-proximity decoding
+from pixels, then test one lightweight temporal encoder or one auxiliary target
+with matched action-training conditions. Privileged values must remain training
+targets/diagnostics only, never policy inputs. Those trials are **not started**
+in this comparison; no RL or successful submission candidate is established.
+Protected seeds 34-35 and 38-40 remain unopened. All commands, conditional counts,
+hashes, complete traces and negative results are retained in the named artifacts.
