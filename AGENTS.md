@@ -3,7 +3,7 @@
 ## Mission and Rules
 
 - Build the strongest 2026 HAIC CarRacing agent from this official Participants template. Prioritize reliable full-episode finishes before lap time; treat all design choices as provisional.
-- Treat `docs/plan/COMMON.md` plus the plan for your assigned task as the research contract: `docs/plan/BC.md` for trajectory collection, learned-policy training, and BC diagnosis; `docs/plan/ORACLE_V2.md` for the separate high-speed teacher experiment; `docs/plan/CLEANUP.md` for authorized tooling maintenance only. Follow the selected plan's current phase and gates; do not skip stages without evidence, substitute a preferred algorithm, or expand the research scope on your own.
+- Treat `docs/plan/COMMON.md` plus the plan for your assigned task as the research contract: `docs/plan/BC.md` for trajectory collection, learned-policy training, and BC diagnosis; `docs/plan/ORACLE_V2.md` for the separate high-speed teacher experiment; `docs/plan/ORACLE_V3.md` for the frozen leaderboard-targeted teacher checkpoint; `docs/plan/ORACLE_V4.md` for coupled-grip planning and feedforward teacher improvement; `docs/plan/CLEANUP.md` for authorized tooling maintenance only. Follow the selected plan's current phase and gates; do not skip stages without evidence, substitute a preferred algorithm, or expand the research scope on your own.
 - For competition facts, prefer the current [competition website](https://scholarships-hardwood-headers-influenced.trycloudflare.com/), then the [official Participants repository](https://github.com/2026-HAIC/Participants), then local notes. Recheck official sources before submission or model confirmation; resolve conflicts before acting.
 - Do not modify the supplied environment (`env_wrapper.py`, `damage.py`, `core/`) to improve performance. Keep diagnostic instrumentation external to the supplied environment; measure all reported performance in the unmodified official environment. Implement the `agent.py` contract and keep submitted inference within official CPU, time, memory, and package limits.
 
@@ -30,6 +30,8 @@
 - [`docs/plan/COMMON.md`](docs/plan/COMMON.md): shared research contract, original Phase 1-2 gates, exposed oracle evaluation roads, and frozen oracle-v1 checkpoint; read before the task-specific plan.
 - [`docs/plan/BC.md`](docs/plan/BC.md): Phase 3/4 splits and gates, geometry/observability diagnosis, and BC status; update for learned-policy work only.
 - [`docs/plan/ORACLE_V2.md`](docs/plan/ORACLE_V2.md): separate high-speed local teacher scope and v2 checkpoints; update for oracle-v2 work only.
+- [`docs/plan/ORACLE_V3.md`](docs/plan/ORACLE_V3.md): frozen leaderboard-targeted teacher checkpoint on the three designated exposed roads.
+- [`docs/plan/ORACLE_V4.md`](docs/plan/ORACLE_V4.md): separate coupled-grip planning and feedforward teacher improvement, preserving frozen v3.
 - [`docs/plan/CLEANUP.md`](docs/plan/CLEANUP.md): user-authorized research-tool maintenance scope and validation gate; does not resume research experiments.
 - [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md): verified observation/action/reset/termination and local environment contracts, with source references.
 - [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md): diagnostic and oracle evaluation protocols, reproduction commands, artifacts, results, and limitations.

@@ -599,3 +599,85 @@ Do not turn the identical evaluation repeats into independent training examples
 or move these exposed evaluation roads into an untouched split. No mixing ratio
 or student-imitation benefit has been validated; the current BC collector was
 not changed and no v2 image dataset, BC, DAgger or RL run was started here.
+
+## Separate Oracle-v3 Leader-Targeted Checkpoint
+
+2026-09-30 user-authorized local teacher improvement on the exposed paired roads
+(track1, seed516237), (track2, seed644062), (track3, seed1007). Details, official
+timing verification, all six exploratory stages, retained failures and next
+gate: [plan/ORACLE_V3.md](plan/ORACLE_V3.md). V1/v2, supplied environment and
+submission Agent remain unchanged. No BC/RL, submission or confirmation.
+
+Selected `oracle/v3_controller.py` / `oracle/v3_runner.py` default `responsive`:
+v2 integrated line, straight cap95, lateral envelope160, nominal braking120,
+full-loop braking preview with one-action reaction margin, physical nominal
+acceleration-to-actuator conversion, and responsive curvature preview.
+
+| Track / seed | V2 pace (s) | V3, both fixed-source repeats (s) | Leader target (s) |
+| --- | --- | --- | --- |
+| 1 / 516237 | 46.200 | 13.680 | 11.940 |
+| 2 / 644062 | 60.780 | 17.920 | 15.500 |
+| 3 / 1007 | 54.440 | 15.940 | 13.920 |
+
+Final artifacts `runs/v3_selected_designated_repeat`: **6/6 full episodes on
+3/3 roads**, two identical full traces per road, zero collision/damage. Final
+source fingerprints match; geometry/obstacles/reference points match v2.
+Exploratory artifacts `runs/v3_<stage>_designated_first` preserve all stages:
+envelope, drive, grip, responsive, limit, steer_limit. Exploratory finish count
+is 16/18 over three repeatedly exposed roads, separate from final-source repeats.
+Rejected limit (lateral190) finishes only 1/3; its faster surviving track-3 lap
+is not the selected teacher. Leader target is **not met**: selected laps remain
+14.5-15.6% slower. Public API verifies leader times and simulation units but
+does not disclose deployed seeds/revisions, so local-versus-server matching is
+conditional on the user-provided mappings. No private-track claim is made.
+
+```bash
+python -m oracle.v3_runner --stage responsive --repeats 2 --output runs/v3_reproduction
+```
+
+39 targeted contract/controller/runner tests and 15 subtests pass. Next planned
+mechanism is coupled tire-budget/engine reachability and acceleration feedforward,
+not another scalar-cap increase; it has not been implemented or evaluated yet.
+
+## Oracle-v3 Freeze and Separate Oracle-v4
+
+2026-09-30 05:35 UTC user freezes v3's selected responsive controller/runner and
+authorizes a separate v4 for coupled-grip reachability and feedforward. V3's
+execution hashes remain unchanged and are recorded in [plan/ORACLE_V3.md](plan/ORACLE_V3.md).
+V4 details, negative comparisons, model assumptions and next gate:
+[plan/ORACLE_V4.md](plan/ORACLE_V4.md). No environment, Agent, BC or submission change.
+
+`oracle/v4_controller.py` / `oracle/v4_runner.py` default midpoint: same v3 path,
+steering and95/160/120 caps, cyclic coupled braking/engine acceleration profile,
+separate standing launch, action-interval-averaged acceleration feedforward,
+runtime yaw-aware grip approximation, original v3 braking guard, and midpoint
+gas inverse. No steering feedforward or line optimization has been applied yet.
+
+| Track / seed | Frozen v3 (s) | V4, both fixed-source repeats (s) | Leader target (s) |
+| --- | --- | --- | --- |
+| 1 / 516237 | 13.680 | 13.620 | 11.940 |
+| 2 / 644062 | 17.920 | 17.900 | 15.500 |
+| 3 / 1007 | 15.940 | 15.940 | 13.920 |
+
+Final `runs/v4_selected_designated_repeat`: **6/6 full episodes on3/3 exposed
+roads**, two byte-identical traces per road, no collision/damage. Geometry,
+obstacles and reference points match v3; source fingerprints match final files.
+Improvement is only0.060/0.020/0.000s, mean0.026667s (0.168%); leader target
+remains unmet. This is deterministic local teacher evidence, not private-track
+robustness or a confirmed competition model.
+
+Retain all four exploratory runs `runs/v4_<stage>_designated_first`: profile,
+feedforward, guarded, midpoint; **12/12 exploratory finishes on three repeatedly
+exposed roads**, zero collision/damage, separate from final-source repetitions.
+Profile and initial buffered feedforward were slower than v3; better target-error
+RMS alone did not improve pace. Runtime braking guard reduced that conservatism;
+midpoint inverse then corrected measured launch acceleration29.442 ->42.532
+units/s^2 for the same43.774 command. Earlier source snapshots remain preserved.
+
+```bash
+python -m oracle.v4_runner --stage midpoint --repeats 2 --output runs/v4_reproduction
+```
+
+54 focused tests and35 subtests pass. Coupled profile inequalities are verified
+on the saved three roads; v1/v2/v3 and supplied physics remain unchanged. No
+commit/tag/push, image dataset, BC/RL, official submission or confirmation.
