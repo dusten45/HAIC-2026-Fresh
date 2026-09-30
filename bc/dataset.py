@@ -1,6 +1,7 @@
 """Collect local oracle trajectories; privileged annotations are never model inputs."""
 
 import argparse
+from dataclasses import asdict
 import hashlib
 import json
 import os
@@ -19,8 +20,10 @@ from gymnasium.wrappers.time_limit import TimeLimit
 from core.vendor.car_racing import CarRacing
 from env_wrapper import CarEnvironment
 from oracle.oracle_controller import OracleController
+from oracle.v2_controller import STAGE_CONFIG, V2Controller
 from oracle.recording import encode, execution_fingerprint, snapshot_sources, vehicle_state
-from bc.contracts import BASELINE_CONDITIONS, EXPOSED_SEEDS, OBSERVATION_SHAPE, SPLIT_SEEDS, TRACK_IDS
+from bc.contracts import (BASELINE_CONDITIONS, EXPOSED_SEEDS, OBSERVATION_SHAPE,
+                          SPLIT_SEEDS, TRACK_IDS, environment_conditions)
 
 
 def _write_json(path, value, mode="x"):
@@ -28,19 +31,42 @@ def _write_json(path, value, mode="x"):
         stream.write(encode(value) + "\n")
 
 
+def _teacher(args):
+    if getattr(args, "teacher", "v1") == "v2":
+        stage = getattr(args, "v2_stage", "pace")
+        return {"name": "v2", "stage": stage, "config": asdict(STAGE_CONFIG[stage])}
+    return {"name": "v1", "config": {"target_speed": args.target_speed,
+                                      "avoid_obstacles": True}}
+
+
+def _teacher_from_provenance(provenance):
+    # Original v1 collections predate explicit teacher metadata.
+    return provenance.get("teacher", {"name": "v1", "config": {
+        key: provenance.get("conditions", {}).get(key, BASELINE_CONDITIONS[key])
+        for key in ("target_speed", "avoid_obstacles")}})
+
+
+def _controller(base, args):
+    if getattr(args, "teacher", "v1") == "v2":
+        return V2Controller(base, stage=args.v2_stage)
+    return OracleController(base, target_speed=args.target_speed, avoid_obstacles=True)
+
+
 def _provenance(args):
     root = Path(__file__).resolve().parent.parent
     fingerprint = execution_fingerprint(
         ("bc/dataset.py", "bc/contracts.py", "env_wrapper.py", "damage.py", "local_runner.py",
-         "oracle/oracle_runner.py", "oracle/oracle_controller.py", "oracle/recording.py"))
+         "oracle/oracle_runner.py", "oracle/oracle_controller.py", "oracle/recording.py",
+         *(("oracle/v2_controller.py",) if getattr(args, "teacher", "v1") == "v2" else ())))
     return {
         "schema_version": 1, "command": ["python", "-m", "bc.dataset", *sys.argv[1:]],
         "arguments": vars(args),
         "git_revision": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip(),
         **fingerprint, "platform": platform.platform(),
-        "conditions": {**BASELINE_CONDITIONS,
+        "teacher": _teacher(args),
+        "conditions": {**environment_conditions(BASELINE_CONDITIONS),
                         "frame_skip": args.frame_skip, "warmup": args.warmup,
-                        "target_speed": args.target_speed, "max_steps": args.max_steps,
+                         "max_steps": args.max_steps,
                        "raw_frame_budget": args.max_steps * args.frame_skip + 200},
         "observation": "pre-action float32 (4,84,84), exact wrapper pixels in [0,1]",
         "model_inputs": ["observations"], "model_targets": ["actions"],
@@ -80,16 +106,16 @@ def collect_episode(args, output, track_id, seed):
                          stack_frames=BASELINE_CONDITIONS["stack_frames"])
     try:
         observation, reset_info = env.reset(seed=seed, options={"track_id": track_id})
-        controller = OracleController(base, target_speed=args.target_speed,
-                                      avoid_obstacles=BASELINE_CONDITIONS["avoid_obstacles"])
+        controller = _controller(base, args)
+        teacher = _teacher(args)
         _write_json(output / f"{name}.episode.json", {
             "track_id": track_id, "geometry_seed": seed,
             "reset": {"seed": seed, "options": {"track_id": track_id}, "info": reset_info},
             "track_point_columns": ["alpha", "beta", "x", "y"],
             "track_points": base.track, "track_variables": base.track_variables,
-            "start_t": base.t, "conditions": {"frame_skip": args.frame_skip,
-                "warmup": args.warmup, "target_speed": args.target_speed,
-                "avoid_obstacles": True, "domain_randomize": False,
+            "start_t": base.t, "teacher": teacher,
+            "conditions": {"frame_skip": args.frame_skip,
+                "warmup": args.warmup, "domain_randomize": False,
                 "max_steps": args.max_steps}})
         start_t = base.t
         steps = 0
@@ -113,7 +139,8 @@ def collect_episode(args, output, track_id, seed):
                 state["off_track_counter"] = env.off_track_counter
                 trace.write(encode({"track_id": track_id, "geometry_seed": seed,
                                     "step": steps - 1, "pre": pre, "action": action,
-                                    "oracle_diagnostics": diagnostics, "reward": reward,
+                                     "teacher": teacher["name"],
+                                     "oracle_diagnostics": diagnostics, "reward": reward,
                                     "post": _analysis(state, info["progress"], info["damage"]),
                                     "info": info, "finished": info["finished"],
                                     "terminated": terminated, "truncated": truncated}) + "\n")
@@ -145,7 +172,7 @@ def collect_episode(args, output, track_id, seed):
                    "progress": env._calculate_progress(), "damage": env.damage.damage,
                    "terminated": terminated, "truncated": truncated, "reason": reason,
                    "start_t": start_t, "end_t": base.t,
-                   "sha256": digest.hexdigest()}
+                    "teacher": teacher, "sha256": digest.hexdigest()}
         _write_json(output / f"{name}.summary.json", summary)
         print(f"{name}: finish={finished} steps={steps} reason={reason}", flush=True)
         return summary
@@ -164,7 +191,10 @@ def main(argv=None):
     parser.add_argument("--max-steps", type=int, default=BASELINE_CONDITIONS["max_steps"])
     parser.add_argument("--frame-skip", type=int, default=BASELINE_CONDITIONS["frame_skip"])
     parser.add_argument("--warmup", type=int, default=BASELINE_CONDITIONS["warmup"])
-    parser.add_argument("--target-speed", type=float, default=BASELINE_CONDITIONS["target_speed"])
+    parser.add_argument("--teacher", choices=("v1", "v2"), default="v1")
+    parser.add_argument("--v2-stage", choices=V2Controller.STAGES, default="pace")
+    parser.add_argument("--target-speed", type=float, default=BASELINE_CONDITIONS["target_speed"],
+                        help="v1 target speed only; v2 uses its stage configuration")
     args = parser.parse_args(argv)
     if (not args.track_ids or len(set(args.track_ids)) != len(args.track_ids)
             or any(track not in TRACK_IDS for track in args.track_ids)):
@@ -175,6 +205,8 @@ def main(argv=None):
     if (args.max_steps < 1 or args.max_steps > BASELINE_CONDITIONS["max_steps"] or args.frame_skip < 1
             or args.warmup < 0 or not np.isfinite(args.target_speed) or args.target_speed <= 0):
         parser.error("max-steps must be 1..2000, frame-skip positive, warmup nonnegative, speed positive")
+    if args.teacher == "v2" and args.target_speed != BASELINE_CONDITIONS["target_speed"]:
+        parser.error("--target-speed is v1-only; select v2 speed with --v2-stage")
     if args.resume:
         if not args.output.is_dir():
             parser.error("resume output must be an existing collection directory")
@@ -188,7 +220,8 @@ def main(argv=None):
         if (previous.get("split") != args.split
                 or set(previous.get("track_ids", [])) != set(args.track_ids)
                 or set(previous.get("seeds", [])) != set(args.seeds)
-                or original.get("conditions") != provenance["conditions"]):
+                or environment_conditions(original.get("conditions", {})) != provenance["conditions"]
+                or _teacher_from_provenance(original) != provenance["teacher"]):
             parser.error("resume requires the same grid and conditions as original provenance")
         frozen = lambda hashes: {name: digest for name, digest in hashes.items()
                                  if name != "bc/dataset.py"}

@@ -12,3 +12,19 @@ BASELINE_CONDITIONS = {
     "target_speed": 12.0, "avoid_obstacles": True, "max_steps": 2000,
     "raw_frame_budget": 8200,
 }
+
+
+def environment_conditions(conditions):
+    """Separate environment settings from legacy v1 teacher settings."""
+    return {key: value for key, value in conditions.items()
+            if key not in ("target_speed", "avoid_obstacles")}
+
+
+def verify_environment_conditions(provenance, label):
+    actual = environment_conditions(provenance.get("conditions", {}))
+    deviations = {key: {"expected": value, "actual": actual.get(key)}
+                  for key, value in environment_conditions(BASELINE_CONDITIONS).items()
+                  if actual.get(key) != value}
+    if deviations:
+        raise ValueError(f"{label} collector conditions deviate from BC baseline: {deviations}")
+    return actual
