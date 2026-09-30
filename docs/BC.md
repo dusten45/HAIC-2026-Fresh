@@ -3,8 +3,8 @@
 ## Current Entry Point
 
 Current scope and next gates live in [plan/BC.md](plan/BC.md); the sections below
-are chronological evidence, not concurrent instructions. The latest recorded
-comparison is [History8 Closed Loop and Decision](#history8-closed-loop-and-decision).
+are chronological evidence, not concurrent instructions. The latest diagnosis is
+[Train Fit and Prefix Gate](#train-fit-and-prefix-gate).
 Older pending/restart statements describe their checkpoint dates, not current jobs.
 The compact [run catalog](RUNS.json) indexes preserved artifacts; regenerate it
 with `python -m oracle.catalog` without rerunning experiments.
@@ -675,3 +675,566 @@ targets/diagnostics only, never policy inputs. Those trials are **not started**
 in this comparison; no RL or successful submission candidate is established.
 Protected seeds 34-35 and 38-40 remain unopened. All commands, conditional counts,
 hashes, complete traces and negative results are retained in the named artifacts.
+
+## Train Fit and Prefix Gate
+
+The 2026-09-30 user instruction pauses more data and simple frame-stack increases.
+First distinguish poor fitting on training roads from a train/validation gap,
+then intervene on startup with a fixed student, before choosing one next change.
+No privileged state may become a learned-policy input. No RL or official action.
+
+### Fixed-Checkpoint Offline Diagnosis
+
+No new training: evaluated the selected expanded four-frame v10 and history8 v11
+checkpoints, unchanged hashes above, on all **111,394 train rows / 100 roads /
+20 geometries** (IDs 1-5 x seeds 11-30) and **15,676 validation rows / 15 roads /
+three exposed geometries** (IDs 1-5 x seeds 31-33). Same conditional thresholds,
+metrics, model eval mode and causal history in both splits. The first ten actions
+are indexed 0-9, restart per road and are reported individually plus pooled.
+These are the full training-source datasets, not a claim that every row was
+sampled during the five budgeted epochs. CUDA evaluation can differ minutely
+from saved CPU evaluation through numerical kernels; no model was changed.
+
+```bash
+python -m bc.diagnose --checkpoint runs/bc_model_geometry_expanded_v10/best.pt runs/bc_model_history8_v11/best.pt --dataset runs/bc_train_v1 --extra-train-dataset runs/bc_train_geometry_v10 --val-dataset runs/bc_val_v1 --device cuda --output runs/bc_offline_fit_v12
+```
+
+| Condition | Train Count | Val Count | Four Frames Train / Val MAE | Eight Frames Train / Val MAE |
+| --- | ---: | ---: | ---: | ---: |
+| Gas >0.1 | 700 | 105 | 0.242433 / 0.242314 | 0.243509 / 0.243393 |
+| Brake >0.1 | 100 | 15 | 0.214812 / 0.214889 | 0.215563 / 0.215610 |
+| Absolute steer >0.1 | 20,735 | 2,386 | 0.009576 / 0.010273 | 0.012463 / 0.013617 |
+
+History8 startup is equally poor on training roads. At step 0, gas MAE is
+**0.371257 train / 0.371200 val**: target 0.4 versus prediction
+0.028743 / 0.028800. The pooled first-ten-action MAE is steer
+0.003601 / 0.005544, gas **0.174403 / 0.174365**, brake 0.043446 / 0.043449
+(1,000 train / 150 val action rows). At action 4, brake MAE is
+0.215563 / 0.215610; the student stays near 0.018 while the oracle asks for
+about 0.233. It fails both acceleration and the early brake pulse, not just
+the first gas command. Full per-step target/prediction means and MSE are in
+`runs/bc_offline_fit_v12/summary.json` with checkpoint/manifest hashes and a
+recoverable diagnostic source snapshot.
+
+**Offline finding:** poor tail fitting already exists on the training pool,
+with no material train/val gas/brake gap. A held-out-only generalization failure
+is not supported; optimization/sampling/action representation must be checked
+before privileging a state-decoding experiment. This does not prove that
+observability is sufficient, or isolate which fitting mechanism is responsible.
+The prefix outcomes and single selected intervention follow below.
+
+### Fixed-Model Prefix Intervention
+
+Executed oracle actions only for the first N actions, then handed control to the
+unchanged history8 student. The student predicted on every observation, including
+teacher-forced steps, so its causal history was not reset at handoff. Traces
+separate prediction from execution; action errors during forced steps are not
+mistaken for executed student controls. Same baseline wrapped environment,
+physical obstacles, one complete episode per ID 1-5 x seed 31-33 per condition.
+
+| Oracle Prefix | Student Finishes / Episodes | Successful Roads / Roads | Oracle Finishes / Episodes | First Post-Handoff Same-State Mismatch | First >2-Unit Pose Difference |
+| ---: | ---: | ---: | ---: | --- | --- |
+| 0 (v11 baseline) | 0/15 | 0/15 | 15/15 | Gas, step 0 | Step 4 |
+| 1 | 0/15 | 0/15 | 15/15 | Gas, step 1 | Step 8 |
+| 4 | 0/15 | 0/15 | 15/15 | Brake, step 4 | Steps 13-14 |
+| 16 | 0/15 | 0/15 | 15/15 | Steer, steps 28-36 | Steps 117-140 |
+
+All **45/45 diagnostic student episodes terminated without a finish on the same
+15 roads / three geometries**, oracle **45/45**. These are three interventions,
+not three independent geometries or reliability replicates. Prefix16 handoff
+mean absolute errors steer/gas/brake are 0.003961/0.028523/0.040110, all below
+the operational thresholds at handoff; nevertheless same-state steering differs
+by >0.08 after only 12-20 autonomous actions. Delaying pose separation is a real
+early-trajectory effect, not improved full-lap reliability. This establishes
+that bypassing the first 16 actions is insufficient; it does not prove startup
+never matters or isolate the later steering/state-shift mechanism.
+
+Artifacts: `runs/bc_closed_prefix1_v12`, `bc_closed_prefix4_v12`, and
+`bc_closed_prefix16_v12`. Commands use the same checkpoint and settings:
+
+```bash
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python -m bc.evaluate --checkpoint runs/bc_model_history8_v11/best.pt --split val --track-ids 1 2 3 4 5 --seeds 31 32 33 --oracle-prefix-steps 1 --output runs/bc_closed_prefix1_v12
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python -m bc.evaluate --checkpoint runs/bc_model_history8_v11/best.pt --split val --track-ids 1 2 3 4 5 --seeds 31 32 33 --oracle-prefix-steps 4 --output runs/bc_closed_prefix4_v12
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python -m bc.evaluate --checkpoint runs/bc_model_history8_v11/best.pt --split val --track-ids 1 2 3 4 5 --seeds 31 32 33 --oracle-prefix-steps 16 --output runs/bc_closed_prefix16_v12
+```
+
+### Single Selected Intervention: Balanced Sampling
+
+Both diagnoses support fixing training-pool tail fit before claiming a
+held-out-only representation bottleneck; a startup override alone also failed.
+Choose sampling only, not another historical weighted-loss variant. Keep the
+history8 architecture/action transforms, fresh seed0 initialization, Adam
+0.001, unit MSE and ordinary validation selection, five epochs, batch64,
+20,000 presentations / 313 updates each, and the same 100 training roads.
+Per road reserve floor(budget/8) high-gas and high-brake labels each, sample
+with replacement only when needed, fill the remaining 3/4 from natural rows,
+and shuffle target indices without reordering the chronological pixel source.
+Missing bins return their budget to natural rows. Natural rows can also include
+tails, so actual counts may slightly exceed the reserved fractions. These are
+replayed original labels, not added trajectories or independent new evidence.
+
+No loss weights, additional history, state auxiliary targets, recovery or new
+model head are combined with this trial. Plain closed loop has no privileged
+prefix. A source snapshot records concurrently added teacher-provenance tooling;
+this run still uses the same frozen-v1 chronological datasets, not teacher views.
+Completed outcomes are recorded below, after training and evaluation.
+
+Sampler/startup/history/prefix/recording integration validation passed **49 tests
+and 49 subtests**. Default sampling preserves its seeded natural-row order and
+RNG, rare sampling preserves causal history, missing/threshold-equal bins return
+their budget, and 100 roads still give 20,000 samples / 313 updates. The single
+trial was launched persistently after the completed prefix gate, training then
+plain evaluation and fixed-checkpoint offline diagnosis:
+
+```bash
+python -m bc.train --dataset runs/bc_train_v1 --extra-train-dataset runs/bc_train_geometry_v10 --val-dataset runs/bc_val_v1 --output runs/bc_model_balanced_v13 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device cuda --active-gas-weight 1 --active-brake-weight 1 --continuous-batches --history-frames 8 --balanced-actions
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python -m bc.evaluate --checkpoint runs/bc_model_balanced_v13/best.pt --split val --track-ids 1 2 3 4 5 --seeds 31 32 33 --output runs/bc_closed_balanced_v13
+python -m bc.diagnose --checkpoint runs/bc_model_balanced_v13/best.pt --dataset runs/bc_train_v1 --extra-train-dataset runs/bc_train_geometry_v10 --val-dataset runs/bc_val_v1 --device cuda --output runs/bc_offline_balanced_v13
+```
+
+### Balanced Sampling Outcome and Gate Decision
+
+Completed all five epochs, each **20,000 presentations / 313 updates**. Totals
+are 100,000 presentations / 1,565 updates, with **12,976 high-gas** and
+**12,560 high-brake** presentations, including natural draws. These are repeated
+draws from the original 700/100 tail rows, not extra unique labels. Selected
+epoch **4** by the unchanged ordinary validation mean MSE (0.000914352;
+baseline 0.000578268). Checkpoint SHA-256:
+`59d61c48c6da61c1d0f4fd82bd261c51aad27e23b7b7d35d6e6c765890a433a4`.
+All three train/extra-train/val manifest hashes are identical to the previous
+diagnosis. No road, action target, model input or controller was added/changed.
+
+The same CUDA/batch128 fixed-checkpoint diagnosis provides the matched table:
+
+| Metric | Train / Val Count | Natural Sampling Train / Val MAE | Balanced Sampling Train / Val MAE |
+| --- | ---: | ---: | ---: |
+| Gas >0.1 | 700 / 105 | 0.243509 / 0.243393 | 0.171502 / 0.172743 |
+| Brake >0.1 | 100 / 15 | 0.215563 / 0.215610 | 0.154961 / 0.157208 |
+| Absolute steer >0.1 | 20,735 / 2,386 | 0.012463 / 0.013617 | 0.017518 / 0.018576 |
+| Step0 gas | 100 / 15 | 0.371257 / 0.371200 | 0.288174 / 0.291879 |
+| First10 steer | 1,000 / 150 | 0.003601 / 0.005544 | 0.010884 / 0.011194 |
+| First10 gas | 1,000 / 150 | 0.174403 / 0.174365 | 0.158636 / 0.159099 |
+| First10 brake | 1,000 / 150 | 0.043446 / 0.043449 | 0.067862 / 0.066875 |
+
+Gas/brake conditional errors improved on both splits, but neither fits the
+training tails well. High-gas mean prediction is train 0.100679 / val 0.099393
+versus targets 0.272180 / 0.272136. High-brake means are 0.078285 / 0.076164
+versus 0.233247 / 0.233372. Step0 val still predicts gas **0.108121** instead
+of 0.4, simultaneously predicting brake **0.078999** instead of 0. Full initial
+0-9 component metrics are in `runs/bc_offline_balanced_v13/summary.json`.
+Improved conditional tails alongside worse early pooled brake and steering is
+not successful startup fitting. Raising both control baselines rather than
+resolving the teacher's alternating pulses is consistent with these observations;
+its underlying optimization/encoding cause is still a hypothesis.
+
+Plain, **zero-prefix** closed loop completed **0/15 student full-episode finishes
+on 0/15 successful roads**, versus **15/15 oracle on 15/15 roads**, IDs 1-5 x
+seeds 31-33. All 15 terminated, none interrupted or missing; nine `off_track`,
+six `crash`, and all 15 ended with nonzero damage. First same-state action
+mismatch remains gas at step0 on every road; first >2-unit pose divergence is
+step5 on every road (baseline step4). All traces are preserved in
+`runs/bc_closed_balanced_v13`.
+
+| Track ID | Seed31 Progress / Reason | Seed32 Progress / Reason | Seed33 Progress / Reason |
+| ---: | --- | --- | --- |
+| 1 | 0.3942 / off_track | 0.2237 / crash | 0.2792 / crash |
+| 2 | 0.3650 / off_track | 0.1797 / off_track | 0.4064 / off_track |
+| 3 | 0.1350 / crash | 0.3458 / off_track | 0.9505 / off_track |
+| 4 | 0.6496 / crash | 0.4203 / off_track | 0.2120 / crash |
+| 5 | 0.2518 / off_track | 0.1695 / crash | 0.3286 / off_track |
+
+Progress is an internal proxy: even 0.9505 was an incomplete episode, not a
+finisher. This is a **partially improved offline fit but negative reliability
+result** for this bounded sampling trial, not evidence against every balanced
+sampler. Only one training seed/budget was tested, rare brake has 15 val rows,
+ordinary checkpoint selection can trade off tail fit, and these validation
+roads are exposed development roads, not an untouched estimate or official score.
+
+**Gate decision:** retain the diagnosis that training-pool rare-action fitting
+is inadequate and no material gas/brake train/val gap has been established.
+Startup alone is insufficient, and sampling alone at this fixed budget was
+insufficient. Do not label the bottleneck proven partial observability or begin
+privileged state decoding from these results. Action-mode/signed-longitudinal
+parameterization or additional optimization remain possible later fitting
+interventions, not experiments performed here. The requested diagnoses plus
+exactly one selected intervention are complete; no second intervention, new
+data, longer history, RL, protected seeds 34-35/38-40, submission or model
+confirmation was started.
+
+## Signed Longitudinal Only Trial (v14)
+
+This historical user-authorized intervention changes longitudinal representation only.
+First audited only `actions` arrays named by the training manifests, not
+observations or validation/test data: `bc_train_v1` has 55,363 rows / 50 roads /
+seeds 11-20; `bc_train_geometry_v10` has 56,031 rows / 50 roads / seeds 21-30.
+Together these are **111,394 rows / 100 roads / 20 training geometries**, IDs 1-5.
+
+| Strict Threshold | Gas Above | Brake Above | Both Above |
+| --- | ---: | ---: | ---: |
+| >0 | 55,777 | 55,617 | 0 |
+| >0.01 | 55,674 | 55,513 | 0 |
+| >0.05 | 54,940 | 1,500 | 0 |
+| >0.1 | 700 | 100 | 0 |
+
+No road had overlapping controls; `max(min(gas, brake))` is exactly zero.
+Encoding `u = gas - brake` and decoding `gas=max(u,0), brake=max(-u,0)` therefore
+preserves every audited training action, not just meaningfully active targets.
+Both tail conditions occur on all 100 training roads. This verifies target
+compatibility, not successful fitting or driving.
+
+### Controlled Implementation
+
+Keep the history8 CNN, 20 training geometries, unchanged per-road balanced
+sampling, fresh seed0, Adam 0.001, batch64/continuous batches, five epochs and
+20,000 draws / 313 updates per epoch. Build the original seeded architecture
+before narrowing only its final linear layer to `[steer, signed_longitudinal]`,
+copying its original first two rows without advancing initialization RNG.
+All shared weights and the steering row initialize exactly as v13; steering
+still uses tanh. Signed longitudinal uses tanh in [-1,1]. No classification head,
+privileged inference input, recovery, new data or longer history is introduced.
+
+Train directly on signed-control error, including incorrect direction, rather
+than decoded gas/brake error. Loss is `(steer_MSE + signed_longitudinal_MSE)/3`,
+preserving the original steering coefficient 1/3; a two-output mean would
+silently increase it. This intentionally changes the longitudinal objective as
+part of the representation intervention. Ordinary decoded three-action
+validation mean MSE still selects the checkpoint; no tail-based selection or
+extra loss weights. `BCPolicy-signed-history8-v4` retains image-only CPU `act`
+and loads alongside the three existing saved formats. Train/validation metrics
+now also report `prediction_gas - prediction_brake` error for all models using
+the same original gas>0.1/brake>0.1 masks, plus signed startup errors at steps0-9.
+
+Validation remains **IDs 1-5 x seeds 31-33**, unchanged physical obstacles,
+frame_skip4, warmup50, cap2,000, domain_randomize false and official environment.
+Seeds 34-35 and 38-40 remain unopened. These are exposed development roads, not
+an untouched holdout or official ranking estimate.
+
+Implementation checks: **48 tests passed** with
+`python -m unittest tests.test_bc_history tests.test_bc_train tests.test_bc_evaluate`;
+`git diff --check` passed. Covered shared/steering seeded initialization and RNG,
+exclusive decoding, signed tail/startup arithmetic, trainer roundtrip, ordinary
+selection and legacy saved checkpoints. The supplied environment and `agent.py`
+are unchanged. Existing unrelated working-tree changes are preserved.
+
+### Execution
+
+Launched a persistent sequential pipeline: train, immediately evaluate plain
+zero-prefix closed loop, then diagnose both fixed checkpoints with the same
+CUDA/batch128 settings. No prefix intervention is used in this trial.
+
+```bash
+python -m bc.train --dataset runs/bc_train_v1 --extra-train-dataset runs/bc_train_geometry_v10 --val-dataset runs/bc_val_v1 --output runs/bc_model_signed_v14 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device cuda --active-gas-weight 1 --active-brake-weight 1 --continuous-batches --history-frames 8 --balanced-actions --signed-longitudinal
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python -m bc.evaluate --checkpoint runs/bc_model_signed_v14/best.pt --split val --track-ids 1 2 3 4 5 --seeds 31 32 33 --output runs/bc_closed_signed_v14
+python -m bc.diagnose --checkpoint runs/bc_model_balanced_v13/best.pt runs/bc_model_signed_v14/best.pt --dataset runs/bc_train_v1 --extra-train-dataset runs/bc_train_geometry_v10 --val-dataset runs/bc_val_v1 --device cuda --output runs/bc_offline_signed_v14
+```
+
+At launch, outcomes were pending, not a candidate confirmation. The completed
+outcome below still establishes no finisher. Accelerate/coast/brake classification
+plus active magnitude remains only a subsequent candidate for consideration;
+it was not started in parallel or automatically after this trial.
+
+Training completed all five epochs with 20,000 draws / 313 updates each.
+All train/extra-train/val manifest and collector-provenance hashes, road lists,
+seed and budget match v13. Every epoch's sampled conditional counts match
+v13 exactly: totals **12,976 high-gas / 12,560 high-brake / 13,984 large-steer**
+presentations, not extra unique labels. Only the representation/objective
+metadata differ in configuration. The chosen checkpoint is **epoch5**, ordinary
+decoded val mean MSE **0.000467832** (v13 0.000914352), SHA-256
+`efd671cd9c362185757742202455026499997ef1bf59792865952a8be1bdb518`.
+Training artifact evaluates its fixed CPU checkpoint over the full training
+pool: gas>0.1 MAE 0.010099, brake>0.1 MAE 0.001643, large-steer MAE 0.010690.
+These are not a closed-loop claim; the complete paired evaluation and matched
+CUDA startup/signed diagnosis are still pending at this checkpoint. Recorded
+source hashes for `core/`, wrapper, damage and oracle-v1 controller match v13.
+
+### Plain Closed-Loop Outcome
+
+All planned **15 episodes on 15 roads** completed evaluation, IDs 1-5 x seeds
+31-33, same baseline conditions/grid as v13, **oracle prefix0**. Student finished
+**0/15 episodes on 0/15 roads**; paired oracle finished **15/15 on 15/15 roads**.
+Every student episode terminated `off_track`; no missing/interrupted episodes.
+Fourteen ended without damage, ID5/seed33 had one collision and damage0.2.
+Across all **7,498 student actions**, simultaneous positive gas/brake count is
+zero, as guaranteed by the decoder. Damage reduction is not finish reliability.
+
+| Geometry Seed | Track IDs | First Same-State Action Mismatch | First >2-Unit Pose Divergence | Student Progress / Reason |
+| ---: | --- | --- | ---: | --- |
+| 31 | 1-5 | step3 gas | 11 | 0.109489 / off_track (all five) |
+| 32 | 1-5 | step6 brake | 12 | 0.098305 / off_track (all five) |
+| 33 | 1-4 | step3 gas | 11 | 0.120141 / off_track (all four) |
+| 33 | 5 | step3 gas | 11 | 0.113074 / off_track (damage0.2) |
+
+v13 first same-state mismatch was step0 gas on all 15 roads and pose divergence
+step5 on all 15. v14 delays both without a prefix, but still no full lap; mean
+progress fell from 0.354085 to 0.108841. Progress is an internal proxy, not a
+score. Repeated IDs share base geometry and are not independent training-seed
+replications. This is one training seed/budget on exposed validation.
+
+Closed-loop first-ten-action analysis uses teacher labels on **each model's own
+visited states**, not offline reference labels or a claim of matched states.
+v13 unnecessarily brakes at **150/150** steps where that same-state teacher
+brake is zero (mean brake0.078105); v14 does so at **0/60** such steps (mean0).
+The denominators differ because v13 stays slow while v14 reaches teacher speed.
+However, v14 misses braking entirely at **75/90** first-ten steps requiring
+positive same-state brake, often accelerating instead. Same-state signed MAE
+over all 150 initial actions falls from 0.372893 to 0.185217, still large.
+
+Concrete example ID1/seed31: at step0 v14 executes gas0.404554/brake0 versus
+teacher0.4/0. At step3, pre-speed12.2638, it executes gas0.146115/brake0 versus
+teacher0/0.021103. At step4 it brakes0.232461 versus student-state teacher0.301238.
+At step6, pre-speed14.3445, it accelerates0.100142 versus teacher brake0.187563;
+by step9 pre-speed16.7786 it still accelerates0.065535 versus brake0.382288.
+These traces substantiate an excessive-speed / missing-needed-braking pattern,
+not proof of its underlying optimization, observability or distribution-shift
+cause. Matched offline startup/signed results below distinguish these errors
+from the teacher-trajectory fitting results.
+
+### Matched Offline Outcome
+
+Completed fixed v13/v14 diagnosis on the identical **111,394 train rows / 100
+roads / 20 geometries** and **15,676 val rows / 15 roads / three geometries**,
+CUDA/batch128, causal history8, no retraining. Tiny CPU/CUDA differences do not
+change these conclusions; use this paired CUDA table rather than mixing devices.
+Signed-control error is `abs((predicted_gas-predicted_brake)-(gas-brake))` and
+tail masks remain exactly gas>0.1 and brake>0.1.
+
+| Metric | Train / Val Count | Balanced v13 Train / Val MAE | Signed v14 Train / Val MAE |
+| --- | ---: | ---: | ---: |
+| Signed error on gas>0.1 | 700 / 105 | 0.245347 / 0.245581 | **0.010052 / 0.016039** |
+| Signed error on brake>0.1 | 100 / 15 | 0.260821 / 0.260140 | **0.001643 / 0.001415** |
+| Decoded gas error on gas>0.1 | 700 / 105 | 0.171502 / 0.172743 | **0.010052 / 0.016039** |
+| Decoded brake error on brake>0.1 | 100 / 15 | 0.154961 / 0.157208 | **0.001643 / 0.001415** |
+| Absolute steer>0.1 | 20,735 / 2,386 | 0.017518 / 0.018576 | **0.010704 / 0.009591** |
+| All-row signed error | 111,394 / 15,676 | 0.045933 / 0.046352 | 0.041767 / 0.042266 |
+| Step0 signed error | 100 / 15 | 0.370302 / 0.370878 | **0.012927 / 0.008249** |
+| First10 signed error | 1,000 / 150 | 0.214279 / 0.214291 | **0.045471 / 0.059069** |
+| First10 steer error | 1,000 / 150 | 0.010884 / 0.011194 | 0.004572 / 0.005052 |
+| First10 gas error | 1,000 / 150 | 0.158636 / 0.159099 | 0.028241 / 0.042376 |
+| First10 brake error | 1,000 / 150 | 0.067862 / 0.066875 | 0.017230 / 0.016693 |
+
+Step0 mean targets are gas0.4/brake0 on every road. Predictions:
+v13 train0.111826/0.082128, val0.108121/0.078999; v14
+**train0.412927/0, val0.408249/0**. There is no unnecessary braking in the
+matched reference first-ten steps requiring zero teacher brake: v14 predicted
+brake is zero at every step0/1/2/5/7/9, **600/600 train and 90/90 val** rows.
+This does not imply that required braking is correctly learned.
+
+Even on teacher-trajectory pixels, small/moderate braking remains misfit:
+
+| Pre-Action Step | Target Signed Train / Val Mean | v14 Prediction Train / Val Mean | v13 Signed Train / Val MAE | v14 Signed Train / Val MAE |
+| ---: | ---: | ---: | ---: | ---: |
+| 3 | -0.021038 / -0.020980 | +0.030986 / +0.117461 | 0.049115 / 0.048210 | 0.065902 / 0.138440 |
+| 4 | -0.233247 / -0.233372 | -0.232048 / -0.233488 | 0.260821 / 0.260140 | **0.001643 / 0.001415** |
+| 6 | -0.077305 / -0.077168 | +0.130443 / +0.154385 | 0.103770 / 0.103073 | **0.207748 / 0.231553** |
+| 8 | -0.067458 / -0.067362 | +0.055711 / +0.050567 | 0.092418 / 0.092204 | 0.123170 / 0.117929 |
+
+Counts are 100 train / 15 val rows at each listed step. Full steps0-9, MSE,
+means and counts remain in `runs/bc_offline_signed_v14/summary.json`. These
+errors on training reference pixels prevent diagnosing failure as solely
+student-state distribution shift or a held-out-only perception problem.
+The large brake pulse fits, but surrounding smaller required brakes have the
+wrong direction, including train. It is also incorrect to say the entire
+longitudinal representation bottleneck is resolved merely from the rare tails.
+
+### Gate Decision
+
+This isolated one-seed intervention **substantially improves rare-action fit,
+step0, early pooled error and large-steer fit**, structurally removes overlapping
+controls, and delays divergence without any privileged prefix. It **does not
+improve full-episode finishes: both v13 and v14 remain 0/15 episodes on 0/15
+roads**, and v14 progress is worse. Thus the old independent regression was a
+material fitting limitation in this comparison, but signed representation alone
+is insufficient for reliable driving; it is not a confirmed model or an
+official performance result. Loss/head nonlinearity changes are part of this
+single representation intervention, not a proof that every improvement was
+caused exclusively by preventing simultaneous controls.
+
+Remain at the longitudinal fitting/diagnosis gate. High-brake validation has
+only 15 rows; no extra training seed/budget was tested. Do not reflexively add
+data/history/recovery/RL, switch to privileged inference or open protected
+seeds. A mode-classification plus magnitude head may be discussed as a later
+directional-control candidate, with the evidenced small-brake sign errors as
+the target, but its efficacy is untested and no second intervention was run.
+Preserved all negative results, source snapshots and existing artifacts.
+The requested signed-only experiment is complete. Updated `docs/plan/BC.md`
+and regenerated the summary-only run catalog; no official submission or model
+confirmation.
+
+## Final BC Architecture Experiment: Mode and Magnitude (v15)
+
+User-authorized on 2026-09-30 as exactly one last BC architecture trial, not
+another search for BC15/15. Signed v14 fitted startup and large control tails but
+still accelerated on training oracle small-brake states (notably steps6/8),
+and mean closed-loop progress worsened 0.354085 -> 0.108841. Tail fitting and
+a good closed-loop policy are distinct outcomes, not interchangeable gates.
+
+Change only longitudinal output to three logits (accelerate/coast/brake) and one
+sigmoid magnitude. Steering remains tanh regression with identical seeded shared
+weights and steering row. Exact labels: gas>0 -> accelerate, brake>0 -> brake,
+both zero -> coast. No epsilon/deadband discards small targets. Existing audited
+training actions have 0 overlapping controls and **0 coast samples**, a limitation
+of this lossless label definition; coast generalization is not established.
+Inference uses hard argmax: accelerate emits gas magnitude, brake emits brake
+magnitude, coast emits neither. The model still consumes only causal images.
+
+Objective is `(steer_MSE + mode_CE + active_magnitude_MSE)/3`, no class weights;
+active magnitude loss averages over non-coast targets regardless of predicted
+mode. Steering retains its original 1/3 coefficient, but classification changes
+the shared gradient scale, so this is a representation/objective intervention,
+not a claim that only head shape matters. `BCPolicy-mode-history8-v5` checkpoint
+retains CPU `act` and the existing evaluator without inference overrides.
+
+Keep frozen-v1 train IDs1-5 x seeds11-30 / 100 roads / 20 geometries and validation
+IDs1-5 x seeds31-33 / 15 roads / three exposed geometries. Fresh seed0, history8,
+Adam0.001, batch64/continuous batches, five epochs, 20,000 draws / 313 updates
+each, unchanged per-road 1/8 high-gas + 1/8 high-brake + 3/4 natural sampling.
+Keep checkpoint selection by ordinary decoded steer/gas/brake validation mean
+MSE to avoid combining another selection intervention. Prioritize reported mode
+confusion, brake recall, accelerate/brake direction errors, first10 accuracy,
+small-brake recall and steps6/8, plus raw magnitude MAE on active target modes
+even when mode is incorrect. Baseline v14 mode is inferred from signed output;
+its magnitude is absolute signed output. Confusion rows are target, columns
+prediction, ordered accelerate/coast/brake. Null rates denote empty denominators.
+
+Execution order is train -> matched fixed-checkpoint offline diagnosis -> plain
+zero-prefix closed loop in the unchanged official environment, physical obstacles,
+frame_skip4, warmup50, cap2,000, domain_randomize false:
+
+```bash
+python -m bc.train --dataset runs/bc_train_v1 --extra-train-dataset runs/bc_train_geometry_v10 --val-dataset runs/bc_val_v1 --output runs/bc_model_mode_v15 --epochs 5 --batch-size 64 --seed 0 --max-train-samples 20000 --device cuda --active-gas-weight 1 --active-brake-weight 1 --continuous-batches --history-frames 8 --balanced-actions --mode-longitudinal
+python -m bc.diagnose --checkpoint runs/bc_model_signed_v14/best.pt runs/bc_model_mode_v15/best.pt --dataset runs/bc_train_v1 --extra-train-dataset runs/bc_train_geometry_v10 --val-dataset runs/bc_val_v1 --device cuda --output runs/bc_offline_mode_v15
+OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python -m bc.evaluate --checkpoint runs/bc_model_mode_v15/best.pt --split val --track-ids 1 2 3 4 5 --seeds 31 32 33 --output runs/bc_closed_mode_v15
+```
+
+Seeds34-35 and38-40 remain unopened. No extra data, longer history, recovery,
+environment changes or official action. Regardless of outcome, this concludes
+BC architecture exploration; next stage is review of RL fine-tuning, not another
+BC fitting variant. RL training itself is not executed in this bounded trial.
+Implementation validation: existing BC history/train/evaluate **48/48 tests**
+and new mode regression **6/6 tests** passed. Covers lossless strict targets,
+exclusive hard decoding, raw logits, shared/steer RNG initialization, checkpoint
+CPU inference, unchanged selection and confusion/magnitude/startup arithmetic.
+Training, matched offline diagnosis and closed-loop evaluation completed in that
+order using persistent processes. Completed artifacts are recorded below.
+
+### Training and Matched Offline Outcome
+
+Completed five epochs, each 20,000 draws / 313 updates, training seed0. The
+sampled high-gas/high-brake/large-steer counts match v14 exactly across all five
+epochs: totals 12,976 / 12,560 / 13,984, not additional unique labels. Selected
+**epoch5** by unchanged decoded validation mean MSE **0.001574630** (v14
+0.000467832). Checkpoint SHA-256:
+`75cd1ae4954c7f4497c40dce46929ef388443b3766ce42cf12f6946730924a12`.
+Train/extra-train/val road and manifest contracts are unchanged; full configs,
+collector/source hashes and snapshots are retained in the model artifact.
+
+Matched CUDA/batch128 diagnosis uses **111,394 train rows / 100 roads / 20
+geometries** and **15,676 val rows / 15 roads / three exposed geometries**.
+Use the matched diagnostic below, not mixed CPU/CUDA aggregates: hard argmax
+changes a few near-boundary mode decisions across CPU/batch64 versus CUDA/batch128
+(v15 train counts differ by tens of rows); the key step6/8 failure is unchanged.
+
+| Metric | v14 Train / Val | v15 Train / Val |
+| --- | ---: | ---: |
+| Overall mode accuracy | 52.843% / 52.858% | 53.084% / 52.941% |
+| Brake recall (55,617 / 7,828 target rows) | 5.685% / 5.621% | 36.748% / 34.581% |
+| Brake -> accelerate rate | 94.315% / 94.379% | 63.252% / 65.419% |
+| Accelerate -> brake rate (55,777 / 7,848 target rows) | 0.134% / 0.025% | 30.627% / 28.746% |
+| Small-brake recall, 0<brake<=0.1 (55,517 / 7,813 rows) | 5.515% / 5.440% | 36.634% / 34.455% |
+| Raw active-target magnitude MAE, all rows | 0.021554 / 0.021979 | 0.031653 / 0.032250 |
+| Raw magnitude MAE on accelerate targets | 0.029954 / 0.030446 | 0.024549 / 0.024928 |
+| Raw magnitude MAE on brake targets | 0.013129 / 0.013490 | 0.038778 / 0.039591 |
+| First10 mode accuracy (1,000 / 150 rows) | 71.0% / 70.0% | 80.0% / 80.0% |
+| First10 brake recall (400 / 60 rows) | 27.5% / 25.0% | 50.0% / 50.0% |
+| First10 brake -> accelerate count | 290/400 / 45/60 | 200/400 / 30/60 |
+| First10 accelerate -> brake count | 0/600 / 0/90 | 0/600 / 0/90 |
+| First10 active magnitude MAE | 0.015087 / 0.029326 | 0.155336 / 0.154864 |
+| First10 signed-control MAE | 0.045471 / 0.059069 | 0.183513 / 0.182611 |
+| Step0 gas MAE (100 / 15 rows) | 0.012927 / 0.008249 | 0.335840 / 0.334148 |
+| Gas>0.1 decoded MAE (700 / 105 rows) | 0.010052 / 0.016039 | 0.201180 / 0.201859 |
+| Brake>0.1 decoded MAE (100 / 15 rows) | 0.001643 / 0.001415 | 0.054766 / 0.060295 |
+| Absolute steer>0.1 MAE (20,735 / 2,386 rows) | 0.010704 / 0.009591 | 0.026854 / 0.023116 |
+
+Full target-row / prediction-column confusion matrices, order A/C/B:
+
+| Model / Split | Accelerate Row | Coast Row | Brake Row |
+| --- | --- | --- | --- |
+| v14 train | [55,702, 0, 75] | [0, 0, 0] | [52,455, 0, 3,162] |
+| v15 train | [38,694, 0, 17,083] | [0, 0, 0] | [35,179, 0, 20,438] |
+| v14 val | [7,846, 0, 2] | [0, 0, 0] | [7,388, 0, 440] |
+| v15 val | [5,592, 0, 2,256] | [0, 0, 0] | [5,121, 0, 2,707] |
+
+Overall brake recall alone would falsely suggest the direction issue was fixed:
+it also greatly increases false braking on accelerate targets. Crucially,
+**step6 and step8 still classify accelerate on every train and val road**:
+brake recall **0/100 train and 0/15 val at EACH step**, same as v14. First10's
+accuracy gain comes from step3 becoming brake on all roads, not fixing6/8.
+First10 small-brake recall is v15 100/300 train and15/45 val versus v14 10/300
+and0/45; all these v15 correct small brakes are step3. Their magnitude is too
+large: step3 train target brake0.021038 versus prediction0.121973.
+
+| Training Pre-Action Step | Target Signed Mean | v14 Signed Prediction Mean | v15 Signed Prediction Mean | v15 Brake Recall |
+| ---: | ---: | ---: | ---: | ---: |
+| 0 | +0.400000 | +0.412927 | +0.064160 | N/A (accelerate100/100) |
+| 3 | -0.021038 | +0.030986 | -0.121973 | 100/100 |
+| 4 | -0.233247 | -0.232048 | -0.178480 | 100/100 |
+| 6 | -0.077305 | +0.130443 | +0.075680 | 0/100 |
+| 8 | -0.067458 | +0.055711 | +0.079023 | 0/100 |
+
+Step0 val similarly predicts gas0.065852 instead of0.4 (mode accelerate is
+correct). At step6/8 val, raw magnitude MAE is only0.006377/0.011333, but mode
+is wrong15/15 each: fitting a magnitude does not ensure correct direction.
+No coast labels or predictions occur in these source pools. Under this single
+seed/five-epoch budget the primary small-brake direction gate remains unmet on
+training pixels, and signed-v14 tail/startup/steering fitting gains regress.
+Classification/objective shared-gradient interference is a hypothesis, not a
+proven cause or authorization for another loss/architecture search. The result
+does not substantiate purely distribution shift or proven partial observability.
+All negative results and per-step metrics remain in the saved artifacts.
+
+### Closed Loop and BC Closure
+
+Completed all **15/15 planned paired evaluations**, IDs1-5 x seeds31-33,
+three exposed geometries, unchanged conditions above and **oracle prefix0**.
+Student finished **0/15 episodes on 0/15 roads**; reference oracle finished
+**15/15 episodes on 15/15 roads**. All student episodes terminated `off_track`,
+seven ended with damage (six0.2, one0.4); no missing/interrupted episodes. This
+is one training seed and one rollout per road, not replicated learning evidence.
+
+| Track ID | Seed31 Progress / Damage | Seed32 Progress / Damage | Seed33 Progress / Damage |
+| ---: | --- | --- | --- |
+| 1 | 0.160584 / 0 | 0.576271 / 0.2 | 0.250883 / 0 |
+| 2 | 0.160584 / 0 | 0.633898 / 0.2 | 0.250883 / 0 |
+| 3 | 0.135036 / 0.2 | 0.152542 / 0.4 | 0.250883 / 0 |
+| 4 | 0.113139 / 0.2 | 0.237288 / 0 | 0.190813 / 0.2 |
+| 5 | 0.160584 / 0 | 0.305085 / 0.2 | 0.204947 / 0 |
+
+Mean progress is v13 **0.354085**, v14 **0.108841**, v15 **0.252228**. v15
+improves this proxy relative to v14 but not v13, and none finishes a lap. It is
+not an official ranking score or reason to call v15 successful. First same-state
+action mismatch is **step0 gas on all15 roads** (v14 step3/6); >2-unit pose
+divergence is **step6 on all15** (v14 step11/12). Online step0 gas predictions
+are0.068086/0.062891/0.066589 for seeds31/32/33 instead of0.4, consistent with
+the offline magnitude regression, not a held-out-only startup failure.
+
+**Decision: close BC architecture exploration.** The intended final diagnostic
+did not fix small-brake direction at steps6/8 even on training oracle states.
+Higher aggregate brake recall and initial mode accuracy do not mean the fitting
+gate passed: false braking increased, startup magnitude and tail/steering fit
+regressed, and full-episode finishes remain0/15. Do not present this as having
+removed every supervised fitting defect or isolated purely distribution shift.
+This is a bounded negative result, not proof against all classification policies.
+
+Per the user's stopping rule, do not tune CE weights, optimizer, history, recovery
+or add data to chase BC15/15. The next research stage is **RL fine-tuning review**
+using actual closed-loop reward, not another BC loss/architecture trial. v15 is
+not automatically chosen as the RL initialization; retain v13/v14/v15 checkpoints
+and justify that choice in the subsequent RL scope. No RL training, official
+submission or model confirmation has run. Seeds34-35/38-40 remain unopened.
+
+Evidence: `runs/bc_model_mode_v15/history.json`,
+`runs/bc_offline_mode_v15/summary.json`,
+`runs/bc_closed_mode_v15/summary.json` and its complete paired traces/source
+snapshots. Updated this task's plan and summary-only catalog, preserving all
+historical negative runs. Supplied environment and `agent.py` remain unchanged;
+54 targeted BC tests passed before execution. No further experiment follows.
