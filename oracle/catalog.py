@@ -22,7 +22,8 @@ def catalog(runs, previous=()):
         manifest = read_json(directory / "manifest.json")
         metadata = read_json(directory / "metadata.json") or read_json(directory / "provenance.json")
         paired = bool(summary.get("results") and "student" in summary["results"][0])
-        kind = ("bc_model" if history else "bc_dataset" if manifest else
+        kind = ("bc_offline_diagnosis" if summary.get("kind") == "bc_offline_diagnosis" else
+                "bc_model" if history else "bc_dataset" if manifest else
                 "bc_evaluation" if paired or directory.name.startswith("bc_closed_") else "oracle_run")
         episodes = (manifest.get("episodes", []) if manifest else summary.get("results", summary.get("episodes", [])))
         episodes = episodes if isinstance(episodes, list) else []
@@ -43,15 +44,22 @@ def catalog(runs, previous=()):
                   "evidence": "docs/BC.md" if kind.startswith("bc_") else "docs/EXPERIMENTS.md",
                   "source_record": "snapshot" if (directory / "source_snapshot").is_dir() else
                                    "hashes_only" if source_hashes else "unrecorded"}
-        record["conditions"] = {key: settings[key] for key in ("track_ids", "seeds", "stage", "split")
-                                if key in settings}
+        record["conditions"] = {key: settings[key] for key in ("track_ids", "seeds", "stage", "split", "oracle_prefix_steps")
+                                 if key in settings}
+        if summary.get("diagnostic_only"):
+            record["diagnostic_only"] = True
+            record["decision"] = "bc_prefix_diagnosis"
         record["conditions"].update({key: conditions[key] for key in ("frame_skip", "warmup", "target_speed")
                                      if key in conditions})
         if kind == "bc_model":
             record["checkpoint_sha256"] = history.get("best_checkpoint_sha256")
             record["conditions"].update({key: value for key, value in history.get("config", {}).items()
-                                         if key in ("epochs", "history_frames", "active_gas_weight", "active_brake_weight")})
+                                            if key in ("epochs", "history_frames", "active_gas_weight", "active_brake_weight", "balanced_actions", "signed_longitudinal", "mode_longitudinal")})
             record["status"] = "recorded" if history and (directory / "best.pt").is_file() else "partial"
+        elif kind == "bc_offline_diagnosis":
+            record.update(status="recorded", models=len(summary["models"]),
+                          roads={split: len(paths) for split, paths in summary["roads"].items()})
+            record["decision"] = "bc_fit_diagnosis"
         else:
             record.update(episodes=count, roads=len(roads), finishes=finishes,
                           status="recorded" if summary or manifest else "partial")
@@ -67,8 +75,13 @@ def catalog(runs, previous=()):
             record["decision"] = "local_teacher_candidate"
         elif directory.name.startswith(("expanded_first_", "expanded_repeat_")):
             record["decision"] = "frozen_v1_reference"
-        elif directory.name in ("bc_model_geometry_control_v10", "bc_model_geometry_expanded_v10", "bc_model_history8_v11"):
+        elif directory.name in ("bc_model_geometry_control_v10", "bc_model_geometry_expanded_v10", "bc_model_history8_v11",
+                                "bc_model_balanced_v13"):
             record["decision"] = "negative_bc_comparison"
+        elif directory.name == "bc_model_signed_v14":
+            record["decision"] = "bc_fit_improved_no_finisher"
+        elif directory.name == "bc_model_mode_v15":
+            record["decision"] = "final_bc_direction_gate_unmet"
         elif directory.name.startswith(("v2_profile_", "v2_racing_")):
             record["decision"] = "rejected_variant"
         records.append(record)

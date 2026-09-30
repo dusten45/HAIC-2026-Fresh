@@ -50,6 +50,36 @@ class RecordingTests(unittest.TestCase):
             self.assertEqual(indexed["partial"]["episodes"], 1)
             self.assertEqual(indexed["partial"]["status"], "partial")
 
+    def test_offline_diagnosis_is_not_an_episode_evaluation(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            runs = Path(temporary)
+            directory = runs / "bc_offline_fit"
+            directory.mkdir()
+            (directory / "summary.json").write_text(json.dumps({
+                "kind": "bc_offline_diagnosis", "models": [{"checkpoint": "unused.pt"}],
+                "roads": {"train": ["train.npz"], "val": ["val.npz"]}}))
+            record, = catalog(runs)
+            self.assertEqual(record["kind"], "bc_offline_diagnosis")
+            self.assertEqual(record["models"], 1)
+            self.assertEqual(record["roads"], {"train": 1, "val": 1})
+            self.assertNotIn("finishes", record)
+
+    def test_prefix_evaluation_is_explicitly_assisted_in_catalog(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            runs = Path(temporary)
+            directory = runs / "bc_closed_prefix"
+            directory.mkdir()
+            (directory / "summary.json").write_text(json.dumps({
+                "oracle_prefix_steps": 16, "diagnostic_only": True,
+                "results": [{"track_id": 1, "geometry_seed": 31,
+                             "student": {"finished": False}, "reference": {"finished": True}}]}))
+            record, = catalog(runs)
+            self.assertTrue(record["diagnostic_only"])
+            self.assertEqual(record["decision"], "bc_prefix_diagnosis")
+            self.assertEqual(record["conditions"]["oracle_prefix_steps"], 16)
+            self.assertEqual(record["finishes"], 0)
+            self.assertEqual(record["oracle_finishes"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()
