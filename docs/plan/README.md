@@ -11,6 +11,7 @@ authorize starting or resuming any task.
 
 ## Task Plans
 
+- [JOINT_LOCAL_PLAN.md](JOINT_LOCAL_PLAN.md): closed, not-promoted joint path/speed candidate; separates conditional matched-lap gains, the 0/15 learned endpoint, checked six-point linkage, and unverified dense-path resampling; preserves champion and other research lines.
 - [BC.md](BC.md): trajectory collection, learned-policy training, and BC diagnosis; includes Phase 3/4 splits and gates, geometry/observability diagnosis, and BC status. Update for learned-policy work only.
 - [ORACLE_V2.md](ORACLE_V2.md): separate high-speed local teacher experiment and v2 checkpoints. Update for oracle-v2 work only.
 - [ORACLE_V3.md](ORACLE_V3.md): frozen leaderboard-targeted teacher checkpoint on the three designated exposed roads.
