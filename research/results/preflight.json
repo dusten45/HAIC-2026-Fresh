@@ -1,0 +1,21 @@
+{
+  "date_utc": "2026-10-07",
+  "repository": "dusten45/HAIC-2026-Fresh",
+  "initial_branch": "work",
+  "initial_tracked_and_untracked_status": "clean",
+  "official_baseline_commit": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+  "local_main_commit_count": 18,
+  "verified_remote_main": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+  "verified_remote_backup_ref": "backup/main-before-participants-restore-20261007T113855Z",
+  "verified_remote_backup_commit": "62447fcc67518697bf83c2f5286015cb9dd387c5",
+  "initial_ignored_directories_preserved": [".pytest_cache", ".venv", "__pycache__", "bc", "core/__pycache__", "core/vendor/__pycache__", "joint_plan", "oracle", "tests/__pycache__"],
+  "instructions": {"applicable_AGENTS_md_found": false, "workspace_agents_directory_empty": true, "repository_agents_skills_present": false},
+  "existing_unittest_run": {"command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv/bin/python -m unittest discover -s tests -v", "ran": 16, "passed": 15, "failed": 0, "skipped": 1, "skip_reason": "server repository is not available", "reported_test_wall_s": 0.031, "exit_code": 0},
+  "separate_starter_import_probe": {"import_and_init_wall_s": 0.0719363659999317, "process_peak_rss_kib": 27556, "includes_torch_import": false},
+  "separate_torch_probe": {"cuda_available": false, "torch_version": "2.1.0+cpu", "torch_num_threads_with_OMP_1": 1},
+  "initial_document_gate": {"state": "blocked_tool_unavailable", "full_documents_read": 0, "local_source_files_verified": 0, "available_library_actions": ["create_library_file", "replace_library_file", "prepare_uploads", "finalize_uploads"], "unavailable_required_actions": ["list", "search", "read", "find", "prepare_materialize"], "materialization_attempts": 0, "path_retry_attempts": 0, "other_executor_used": false},
+  "training_runs": 0,
+  "continuous_seven_day_run_started": false,
+  "authorized_execution_days": 7,
+  "extension_up_to_days_requires_user_decision": 14
+}

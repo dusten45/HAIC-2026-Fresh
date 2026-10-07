@@ -1,0 +1,24 @@
+{
+  "input_sha256": "8fc3c0e26c25356b87fb5772e2433f72677b6c57037e2d4e1716753453b4f964",
+  "episodes": 18,
+  "agent_steps": 1472,
+  "raw_action_ticks": 5870,
+  "raw_ticks_with_reset": 6788,
+  "observed_peak_simulator_process_rss_mib": 69.3984375,
+  "serial_action_steps_per_env_step_wall_s": 34.1302133216975,
+  "worker_speedups_vs_one": {
+    "1": 1.0,
+    "2": 1.1150553452517196,
+    "4": 1.937358934298167
+  },
+  "cross_worker_trajectories_identical": true,
+  "source_hashes_match": true,
+  "all_cases_are_dev": true,
+  "correct_raw_tick_bound_verified": "4 * (agent_steps - 1) < raw_action_ticks <= 4 * agent_steps",
+  "failed_analysis_assumption": "The first analysis asserted raw_action_ticks == 4 * agent_steps for every episode; this failed because the wrapper stops early within a frame-skip interval on termination.",
+  "corrected_interpretation": "170 ticks / 43 actions is valid: the final action ended after 2 raw ticks. No environment change was made.",
+  "training_runs": 0,
+  "holdout_runs": 0,
+  "sealed_runs": 0,
+  "verification": "PASS with corrected early-termination accounting"
+}
