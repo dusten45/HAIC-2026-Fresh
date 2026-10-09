@@ -95,3 +95,9 @@ constitute the eight-case DEV gate. `temporal_boundary` checks a separately
 preregistered remaining-case startup cohort. The temporal submission path is
 available with `submission_probe --candidate temporal` only after its boundary
 passes. All numeric speed calibration and experimental manifests remain private.
+
+`protected_eval` evaluates the original locked HOLDOUT once using the passing
+DEV candidate's exact archive. It shares the original evaluator's exclusive
+split-opening marker, checks the upstream decision and archive hashes, and saves
+metrics without simulator-truth diagnostics or pixel traces. It cannot open SEALED
+or tune a candidate, and a failed run does not authorize a second opening.
