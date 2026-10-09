@@ -46,6 +46,16 @@ class MeasuredAgent:
                 str(c["coefficient_speed_per_intensity"]), str(c["intercept"]),
                 str(p["speed_cap"]), str(p["lateral_fast"]), str(p["lateral_safe"])]
             self.child = Participant(python, command_override=command)
+        elif job["kind"] == "bar_feedback":
+            for name, expected in job["new_policy_sources_sha256"].items():
+                assert digest(root / name) == expected
+            table = directory / job["bar_table"]
+            assert digest(table) == job["bar_table_sha256"]
+            c, p = freeze["calibration"], job["parameters"]
+            command = [str(python), "-m", "retry.bar_feedback_worker",
+                str(c["coefficient_speed_per_intensity"]), str(c["intercept"]),
+                str(p["speed_cap"]), str(p["lateral_fast"]), str(p["lateral_safe"]), str(table)]
+            self.child = Participant(python, command_override=command)
         elif job["kind"] in ["separated", "slow"]:
             for name, expected in job["new_policy_sources_sha256"].items():
                 assert digest(root / name) == expected

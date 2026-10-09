@@ -230,3 +230,16 @@ original longitudinal action as a local shadow comparison. Later cross-branch
 observation and steering differences are closed-loop effects. Only registered
 short outcome differences permit a terminal followup; neither branch is a new
 eligible policy, and all physics prefix replays count against the shared budget.
+
+`bar_feedback_agent` reads only the interior of the official white speed bar.
+Its monotone inverse table must be derived from the official renderer without
+fitting DEV scenes. The original pixel speed continues to govern hazard
+scheduling, path lookahead and tracking motion; only gas/brake feedback uses
+the bar reading. Steering, target speed and controller coefficients remain
+inherited. Reward invariance and paired speed error are offline gates before
+`bar_feedback_branch` runs actual matched legal-history continuations. Only
+passing branches permit a separately registered full-reset pilot through
+`bar_feedback_worker` and `parameter_probe`. The worker receives current pixels
+and a fixed renderer-derived table, never simulator state. Tables, calibration,
+seeds and experiment results stay private. A successful DEV pilot is a research
+decision and does not replace the selected archive or open protected splits.
