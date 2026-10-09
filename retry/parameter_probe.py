@@ -46,6 +46,13 @@ class MeasuredAgent:
                 str(c["coefficient_speed_per_intensity"]), str(c["intercept"]),
                 str(p["speed_cap"]), str(p["lateral_fast"]), str(p["lateral_safe"])]
             self.child = Participant(python, command_override=command)
+        elif job["kind"] == "chord":
+            assert job["chord_source_sha256"] == digest(root / "retry/chord_agent.py")
+            c, p = freeze["calibration"], job["parameters"]
+            command = [str(python), "-m", "retry.chord_worker",
+                str(c["coefficient_speed_per_intensity"]), str(c["intercept"]),
+                str(p["speed_cap"]), str(p["lateral_fast"]), str(p["lateral_safe"])]
+            self.child = Participant(python, command_override=command)
         else:
             assert job["kind"] == "frozen_challenger"
             frozen = directory / job["freeze_file"]

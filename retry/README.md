@@ -163,3 +163,20 @@ registered full DEV gates; it does not authorize adoption. `parameter_probe`
 can measure this worker, and `submission_probe --candidate schedule` packages
 only the policy after its fresh validation gate. Its trusted worker and branch
 harness are excluded from the archive.
+
+`information_contrast` reconstructs the exact frozen policy history before
+substituting obstacle positions or semantic road support inside the image ROI.
+Speed observations, hazard-dependent speed law and the controller stay fixed.
+The semantic substitute can reveal occluded geometry; these are privileged DEV
+diagnostics, never official driving scores or deployable policies. An observed
+continuation must reproduce every saved action, state and observation hash.
+
+`projection_agent` and `chord_agent` are separate structural hypotheses. The
+former tests a registered pixel-centre convention without fitting offsets; the
+latter prevents a target chord from skipping an obstacle detour when a shorter
+clear chord exists. Both inherit the speed law and memory. `structural_branch`
+tests bounded matched branches before any full-reset cohort, and `chord_worker`
+provides a separate pixel-only process for a qualifying full DEV pilot.
+Coordinate accuracy, local contact reduction and full completion/lap improvement
+are distinct gates. Report damage separately as robustness, not official ranking.
+Neither prototype changes the root entrypoint or an already frozen archive.
