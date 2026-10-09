@@ -129,3 +129,25 @@ Run `--mode baseline` and `--mode challenger` independently, then `--mode decide
 The locked query ledger charges an episode before reset, including a crash, and
 exclusive role markers prevent retries. It records metrics without diagnostic
 truth or images, never reopens an earlier pool, and never opens SEALED.
+
+`parameter_agent` exposes only the speed ceiling and curvature-dependent lateral
+acceleration in the reference controller. Perception, obstacle memory, grid route,
+lookahead and steering remain inherited. `parameter_analysis` verifies exact
+default-action equivalence and measures which speed limits actually bind on a
+fresh DEV cohort. `parameter_search` shares one-factor observations between a
+small fixed-kernel surrogate search and uniform random search. Both have the same
+number of new configurations, cases and maximum episode lengths; consumed actions
+and wall time are reported separately because completion changes episode cost.
+
+`parameter_promote` tests method winners on remaining DEV cases, then only one
+chosen version on a separately reserved validation cohort. It requires full
+completion preservation before packaging and another full original-DEV check
+on the actual archive. `parameter_falsify` reconstructs legal observed/action
+history and full-precision controller state before changing one speed-law factor
+in a bounded branch. Such branches do not replace full race results.
+
+The paired protected evaluator also accepts an explicitly named fresh pool,
+additional upstream gates, independent query ledger and registered lap-ratio
+criteria. Its opening can require remaining action and wall reserves. Previous
+protected outcomes and scenes are never inputs to these DEV workflows, and all
+seed reservations, selected constants, archives and result records stay private.

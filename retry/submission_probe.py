@@ -41,16 +41,20 @@ def validate_source(name, source):
             assert node.func.id not in {"compile", "eval", "exec", "__import__"}, name
 
 
-def make_package(output, calibration, candidate="arc"):
+def make_package(output, calibration, candidate="arc", parameters=None):
     root = Path(__file__).resolve().parents[1]
     module, class_name = {"arc": ("arc_agent", "ArcAgent"), "temporal": ("temporal_agent", "TemporalRouteAgent"),
-        "connected": ("connected_agent", "ConnectedTemporalAgent")}[candidate]
+        "connected": ("connected_agent", "ConnectedTemporalAgent"),
+        "parameter": ("parameter_agent", "ParameterizedConnectedAgent")}[candidate]
     policy_files = POLICY_FILES + (["ridge_agent.py", "route_agent.py", "temporal_agent.py"] if candidate != "arc" else [])
-    if candidate == "connected":
+    if candidate in ["connected", "parameter"]:
         policy_files.append("connected_agent.py")
+    if candidate == "parameter":
+        policy_files.append("parameter_agent.py")
+    extra = f", {parameters['speed_cap']!r}, {parameters['lateral_acceleration']!r}" if candidate == "parameter" else ""
     entry = (f"from retry.{module} import {class_name}\n\nclass Agent({class_name}):\n"
              "    def __init__(self):\n"
-             f"        super().__init__({calibration['coefficient_speed_per_intensity']!r}, {calibration['intercept']!r})\n")
+             f"        super().__init__({calibration['coefficient_speed_per_intensity']!r}, {calibration['intercept']!r}{extra})\n")
     members = {"agent.py": entry.encode(), "LICENSE": (root / "LICENSE").read_bytes(),
                **{f"retry/{name}": (root / "retry" / name).read_bytes() for name in policy_files}}
     for name, content in members.items():
@@ -83,7 +87,7 @@ def stack(frames, index):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--plan", type=Path, required=True)
-    parser.add_argument("--candidate", choices=["arc", "temporal", "connected"], default="arc")
+    parser.add_argument("--candidate", choices=["arc", "temporal", "connected", "parameter"], default="arc")
     args = parser.parse_args()
     plan = json.loads(args.plan.read_text())
     check_window(plan)
@@ -96,13 +100,20 @@ def main():
         verify_reference(plan, args.plan.parent)
         assert json.loads((args.plan.parent / "component/decision.json").read_text())["local_gate_pass"]
         assert digest(Path("retry/connected_agent.py")) == plan["challenger_source_sha256"]
+    if args.candidate == "parameter":
+        from retry.parameter_probe import guard_reference
+        guard_reference(plan, args.plan.parent)
+        validation = args.plan.parent / plan["validation_decision"]
+        assert digest(validation) == plan["validation_decision_sha256"]
+        assert json.loads(validation.read_text())["validation_gate_pass"]
+        assert digest(Path("retry/parameter_agent.py")) == plan["parameter_source_sha256"]
     output = args.plan.parent / plan.get("submission_output", "submission")
     output.mkdir(exist_ok=False)
     sources = output / "sources"
     sources.mkdir()
     for source in Path(__file__).parent.glob("*.py"):
         (sources / source.name).write_bytes(source.read_bytes())
-    package_root, manifest = make_package(output, plan["pixel_speed_calibration"], args.candidate)
+    package_root, manifest = make_package(output, plan["pixel_speed_calibration"], args.candidate, plan.get("parameters"))
     root = Path(__file__).resolve().parents[1]
     python = root / ".venv/bin/python"
     source_trace = (args.plan.parent / plan["submission_trace"]).resolve() if "submission_trace" in plan else args.plan.parent / "boundaries" / f"case-{plan['submission_check']['local_runner_case_index']}-arc_corrected"

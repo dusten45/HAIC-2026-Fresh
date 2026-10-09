@@ -149,7 +149,7 @@ def trace(case, variant, budget, output, max_steps=400, healthy=False, factory=N
             assert state(env) == expected[prefix - 1]["state_after"]
         policy.reset(observation)
         if replay_source is not None:
-            policy.controller.previous_steer = float(recorded[prefix - 1][0])
+            policy.controller.previous_steer = getattr(policy, "replayed_previous_steer", float(recorded[prefix - 1][0]))
         frames.append(np.rint(observation[-1] * 255).astype(np.uint8))
         local_stop = None
         for step in range(1, max_steps + 1):
