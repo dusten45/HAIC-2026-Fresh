@@ -180,3 +180,18 @@ provides a separate pixel-only process for a qualifying full DEV pilot.
 Coordinate accuracy, local contact reduction and full completion/lap improvement
 are distinct gates. Report damage separately as robustness, not official ranking.
 Neither prototype changes the root entrypoint or an already frozen archive.
+
+`tracking_diagnostic` replays saved DEV observations without environment steps,
+verifies the frozen actions, and labels detection births, pre-association motion,
+and remembered outputs against the same physical obstacle at the same time.
+Truth is diagnostic only. Repeated frame counts do not establish independent
+sample sizes, visibility, collision causality, or driving improvement.
+
+`memory_agent` provides a fresh-only ablation and one Boolean confirmation
+hypothesis: fresh detections are used immediately, but persistence requires
+confirmation across observations within the inherited association radius.
+The motion estimator, lifetime, routing, controller and speed settings stay
+fixed. `memory_branch` reconstructs each estimator from the same legal history
+and restores the exact frozen controller state; `memory_worker` supplies only
+pixels to the separate policy process for qualifying full-reset DEV probes.
+Short branches, full completion/lap results and robustness gates remain separate.

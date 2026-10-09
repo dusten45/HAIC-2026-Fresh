@@ -46,6 +46,14 @@ class MeasuredAgent:
                 str(c["coefficient_speed_per_intensity"]), str(c["intercept"]),
                 str(p["speed_cap"]), str(p["lateral_fast"]), str(p["lateral_safe"])]
             self.child = Participant(python, command_override=command)
+        elif job["kind"] in ["fresh", "minimal"]:
+            assert job["memory_source_sha256"] == digest(root / "retry/memory_agent.py")
+            assert job["worker_source_sha256"] == digest(root / "retry/memory_worker.py")
+            c, p = freeze["calibration"], job["parameters"]
+            command = [str(python), "-m", "retry.memory_worker", job["kind"],
+                str(c["coefficient_speed_per_intensity"]), str(c["intercept"]),
+                str(p["speed_cap"]), str(p["lateral_fast"]), str(p["lateral_safe"])]
+            self.child = Participant(python, command_override=command)
         elif job["kind"] == "chord":
             assert job["chord_source_sha256"] == digest(root / "retry/chord_agent.py")
             c, p = freeze["calibration"], job["parameters"]
