@@ -16,7 +16,7 @@ from retry.evaluate import check_window, digest, percentiles
 
 
 class Participant:
-    def __init__(self, python, variant="basic", fault="none", calibration=None, package_root=None):
+    def __init__(self, python, variant="basic", fault="none", calibration=None, package_root=None, command_override=None):
         env = {**os.environ, "OPENBLAS_NUM_THREADS": "1", "OMP_NUM_THREADS": "1"}
         root = Path(__file__).resolve().parents[1]
         started = time.perf_counter()
@@ -25,33 +25,79 @@ class Participant:
             command.extend([str(calibration["coefficient_speed_per_intensity"]), str(calibration["intercept"])])
         if package_root is not None:
             command = [str(python), str(root / "retry/package_worker.py"), str(package_root)]
+        if command_override is not None:
+            command = list(command_override)
         self.process = subprocess.Popen(command,
             cwd=package_root or root, env=env, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-            text=True, bufsize=1, start_new_session=True)
+            bufsize=0, start_new_session=True)
+        os.set_blocking(self.process.stdin.fileno(), False)
+        os.set_blocking(self.process.stdout.fileno(), False)
+        self.buffer = bytearray()
+        self.closed = False
         self.selector = selectors.DefaultSelector()
         self.selector.register(self.process.stdout, selectors.EVENT_READ)
-        self.ready = self.read(10)
+        try:
+            self.ready = self.read(10)
+            assert self.ready["ready"] and not self.ready["simulator_imported"]
+        except Exception:
+            self.close()
+            raise
         self.import_init_s = time.perf_counter() - started
-        assert self.ready["ready"] and not self.ready["simulator_imported"]
 
     def read(self, timeout):
-        if not self.selector.select(timeout):
-            self.close()
-            raise TimeoutError("Participant response deadline")
-        line = self.process.stdout.readline()
-        if not line:
-            raise RuntimeError(f"Participant exited {self.process.poll()}")
+        return self.read_until(time.monotonic() + timeout)
+
+    def read_until(self, deadline):
+        while b"\n" not in self.buffer:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0 or not self.selector.select(remaining):
+                self.close()
+                raise TimeoutError("Participant response deadline")
+            try:
+                chunk = os.read(self.process.stdout.fileno(), 65536)
+            except BlockingIOError:
+                continue
+            if not chunk:
+                self.close()
+                raise RuntimeError(f"Participant exited {self.process.returncode}")
+            self.buffer.extend(chunk)
+            if len(self.buffer) > 1024 * 1024:
+                self.close()
+                raise RuntimeError("Participant response exceeds bounded protocol size")
+        line, _, rest = self.buffer.partition(b"\n")
+        self.buffer = bytearray(rest)
         return json.loads(line)
 
     def call(self, op, observation, timeout=5):
-        request = {"op": op, "observation": base64.b64encode(observation.tobytes()).decode("ascii")}
         started = time.perf_counter()
-        self.process.stdin.write(json.dumps(request) + "\n")
-        self.process.stdin.flush()
-        response = self.read(timeout)
+        deadline = time.monotonic() + timeout
+        request = {"op": op, "observation": base64.b64encode(observation.tobytes()).decode("ascii")}
+        payload = (json.dumps(request) + "\n").encode("utf-8")
+        writer = selectors.DefaultSelector()
+        writer.register(self.process.stdin, selectors.EVENT_WRITE)
+        offset = 0
+        try:
+            while offset < len(payload):
+                remaining = deadline - time.monotonic()
+                if remaining <= 0 or not writer.select(remaining):
+                    self.close()
+                    raise TimeoutError("Participant request deadline")
+                try:
+                    offset += os.write(self.process.stdin.fileno(), payload[offset:offset + 65536])
+                except BlockingIOError:
+                    continue
+                except BrokenPipeError as error:
+                    self.close()
+                    raise RuntimeError("Participant exited during request") from error
+        finally:
+            writer.close()
+        response = self.read_until(deadline)
         return response, time.perf_counter() - started
 
     def close(self):
+        if self.closed:
+            return
+        self.closed = True
         if self.process.poll() is None:
             self.process.kill()
         self.process.wait(timeout=2)

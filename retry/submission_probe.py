@@ -43,8 +43,11 @@ def validate_source(name, source):
 
 def make_package(output, calibration, candidate="arc"):
     root = Path(__file__).resolve().parents[1]
-    module, class_name = ("arc_agent", "ArcAgent") if candidate == "arc" else ("temporal_agent", "TemporalRouteAgent")
-    policy_files = POLICY_FILES + (["ridge_agent.py", "route_agent.py", "temporal_agent.py"] if candidate == "temporal" else [])
+    module, class_name = {"arc": ("arc_agent", "ArcAgent"), "temporal": ("temporal_agent", "TemporalRouteAgent"),
+        "connected": ("connected_agent", "ConnectedTemporalAgent")}[candidate]
+    policy_files = POLICY_FILES + (["ridge_agent.py", "route_agent.py", "temporal_agent.py"] if candidate != "arc" else [])
+    if candidate == "connected":
+        policy_files.append("connected_agent.py")
     entry = (f"from retry.{module} import {class_name}\n\nclass Agent({class_name}):\n"
              "    def __init__(self):\n"
              f"        super().__init__({calibration['coefficient_speed_per_intensity']!r}, {calibration['intercept']!r})\n")
@@ -80,7 +83,7 @@ def stack(frames, index):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--plan", type=Path, required=True)
-    parser.add_argument("--candidate", choices=["arc", "temporal"], default="arc")
+    parser.add_argument("--candidate", choices=["arc", "temporal", "connected"], default="arc")
     args = parser.parse_args()
     plan = json.loads(args.plan.read_text())
     check_window(plan)
@@ -88,6 +91,11 @@ def main():
         assert json.loads((args.plan.parent / "boundary/decision.json").read_text())["gate_pass"]
         for name, expected in plan["candidate_source_sha256"].items():
             assert digest(Path(name)) == expected
+    if args.candidate == "connected":
+        from retry.connectivity_probe import verify_reference
+        verify_reference(plan, args.plan.parent)
+        assert json.loads((args.plan.parent / "component/decision.json").read_text())["local_gate_pass"]
+        assert digest(Path("retry/connected_agent.py")) == plan["challenger_source_sha256"]
     output = args.plan.parent / plan.get("submission_output", "submission")
     output.mkdir(exist_ok=False)
     sources = output / "sources"

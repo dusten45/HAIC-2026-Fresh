@@ -101,3 +101,31 @@ DEV candidate's exact archive. It shares the original evaluator's exclusive
 split-opening marker, checks the upstream decision and archive hashes, and saves
 metrics without simulator-truth diagnostics or pixel traces. It cannot open SEALED
 or tune a candidate, and a failed run does not authorize a second opening.
+
+`connected_agent` constrains the safe-grid endpoint to the start's connected
+component. Four-connected labels match the existing eight-neighbor search's
+prohibition on crossing blocked diagonal corners. `connectivity_probe` first
+reconstructs the exact reference actions, then compares branches with identical
+physics prefixes and observed-image history. It preserves the reference policy
+and requires a separate full reset-to-finish preservation gate before adoption.
+
+`motion_model`, `model_probe`, `finite_horizon_agent`, and `alternative_probe`
+provide a separate attainable-motion contrast. Model fitting uses DEV-only
+diagnostics; the candidate receives pixels and its own action history. Short
+prediction accuracy is a prerequisite for a small driving pilot, not evidence
+that the planner can complete a race. A failed pilot blocks deeper evaluation.
+
+The trusted `process_probe` transport bounds the entire request/response call,
+including pipe writes and partial lines. `runtime_audit` checks a stopped actual
+archive worker and repeated complete recorded observation streams.
+`python -m unittest retry.test_transport -v` checks partial, oversized and
+fragmented responses. These local checks still do not certify official server
+memory accounting or execution parity.
+
+`paired_protected_eval` supports one separately reserved fresh protected pool.
+Register and hash the case reservation, selected two frozen archives, completion
+preservation criteria, action/wall budgets and query caps before `--mode prepare`.
+Run `--mode baseline` and `--mode challenger` independently, then `--mode decide`.
+The locked query ledger charges an episode before reset, including a crash, and
+exclusive role markers prevent retries. It records metrics without diagnostic
+truth or images, never reopens an earlier pool, and never opens SEALED.
