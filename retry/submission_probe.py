@@ -41,13 +41,15 @@ def validate_source(name, source):
             assert node.func.id not in {"compile", "eval", "exec", "__import__"}, name
 
 
-def make_package(output, calibration):
+def make_package(output, calibration, candidate="arc"):
     root = Path(__file__).resolve().parents[1]
-    entry = ("from retry.arc_agent import ArcAgent\n\nclass Agent(ArcAgent):\n"
+    module, class_name = ("arc_agent", "ArcAgent") if candidate == "arc" else ("temporal_agent", "TemporalRouteAgent")
+    policy_files = POLICY_FILES + (["ridge_agent.py", "route_agent.py", "temporal_agent.py"] if candidate == "temporal" else [])
+    entry = (f"from retry.{module} import {class_name}\n\nclass Agent({class_name}):\n"
              "    def __init__(self):\n"
              f"        super().__init__({calibration['coefficient_speed_per_intensity']!r}, {calibration['intercept']!r})\n")
     members = {"agent.py": entry.encode(), "LICENSE": (root / "LICENSE").read_bytes(),
-               **{f"retry/{name}": (root / "retry" / name).read_bytes() for name in POLICY_FILES}}
+               **{f"retry/{name}": (root / "retry" / name).read_bytes() for name in policy_files}}
     for name, content in members.items():
         if name.endswith(".py"):
             validate_source(name, content.decode())
@@ -78,19 +80,24 @@ def stack(frames, index):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--plan", type=Path, required=True)
+    parser.add_argument("--candidate", choices=["arc", "temporal"], default="arc")
     args = parser.parse_args()
     plan = json.loads(args.plan.read_text())
     check_window(plan)
-    output = args.plan.parent / "submission"
+    if args.candidate == "temporal":
+        assert json.loads((args.plan.parent / "boundary/decision.json").read_text())["gate_pass"]
+        for name, expected in plan["candidate_source_sha256"].items():
+            assert digest(Path(name)) == expected
+    output = args.plan.parent / plan.get("submission_output", "submission")
     output.mkdir(exist_ok=False)
     sources = output / "sources"
     sources.mkdir()
     for source in Path(__file__).parent.glob("*.py"):
         (sources / source.name).write_bytes(source.read_bytes())
-    package_root, manifest = make_package(output, plan["pixel_speed_calibration"])
+    package_root, manifest = make_package(output, plan["pixel_speed_calibration"], args.candidate)
     root = Path(__file__).resolve().parents[1]
     python = root / ".venv/bin/python"
-    source_trace = args.plan.parent / "boundaries" / f"case-{plan['submission_check']['local_runner_case_index']}-arc_corrected"
+    source_trace = (args.plan.parent / plan["submission_trace"]).resolve() if "submission_trace" in plan else args.plan.parent / "boundaries" / f"case-{plan['submission_check']['local_runner_case_index']}-arc_corrected"
     until = time.monotonic() + 120
     while not (source_trace / "pixels-actions.npz").exists():
         check_window(plan)
@@ -126,7 +133,8 @@ def main():
         assert original == (root / name).read_bytes()
         target.write_bytes(original)
     cap = plan["submission_check"]["max_steps"]
-    budget = Budget(args.plan, "submission_path")
+    budget_stage = plan.get("submission_budget_stage", "submission_path")
+    budget = Budget(args.plan, budget_stage)
     for _ in range(cap):
         budget.step(Reservation(), None)
     case = plan["cases"][plan["submission_check"]["local_runner_case_index"]]
@@ -161,7 +169,7 @@ def main():
             fcntl.flock(handle, fcntl.LOCK_EX)
             ledger = json.load(handle)
             ledger["actions"] -= cap - used
-            ledger["stages"]["submission_path"] -= cap - used
+            ledger["stages"][budget_stage] -= cap - used
             handle.seek(0)
             json.dump(ledger, handle)
             handle.truncate()

@@ -67,3 +67,31 @@ address-space limits. Fault probes exercise timeout/reaping, invalid responses,
 crash handling and memory allocation failure. These checks do not establish
 parity with the official server/container, RSS accounting or submission packaging.
 The worker, diagnostics and all private records must be excluded from submissions.
+
+`submission_probe` builds a private deterministic policy archive, imports its actual
+`Agent` entrypoint in a separate process, and compares its actions and the original
+local runner with saved research prefixes. `full_dev` evaluates an exactly frozen
+archive through the same participant process. Full reset-to-retirement results must
+be distinguished from startup boundaries and branches after shared action prefixes.
+
+`failure_probe`, `anchored_probe`, `visible_oracle_probe`, and `route_probe` support
+small preregistered failure contrasts. A true-geometry diagnostic can include a
+different field of view or distant track segments; its gain alone does not isolate
+pixel-estimation error. Match visible geometric support and retain the observed
+speed feature when testing that interpretation. Passing an offline center-error
+check does not replace a driving gate.
+
+The additional observation-only prototypes `anchored_agent`, `ridge_agent`,
+`waypoint_agent`, and `route_agent` are separate experiments. They do not replace
+the frozen Arc candidate or the root entrypoint. The route prototype searches a
+road grid with a vehicle/obstacle margin, using an endpoint on the actual visible
+road. Its static vertex clearance is not a guarantee about the swept vehicle hull
+or the controller's tracking. Gate each version before allocating full episodes.
+
+`temporal_agent` retains recently detected obstacles using image motion for a
+bounded interval, while keeping the route cost and controller unchanged.
+`case_followup` labels a single full-case diagnostic explicitly; it does not
+constitute the eight-case DEV gate. `temporal_boundary` checks a separately
+preregistered remaining-case startup cohort. The temporal submission path is
+available with `submission_probe --candidate temporal` only after its boundary
+passes. All numeric speed calibration and experimental manifests remain private.

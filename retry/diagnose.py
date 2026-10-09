@@ -157,8 +157,8 @@ def trace(case, variant, budget, output, max_steps=400, healthy=False, factory=N
             before = state(env)
             truth = truth_features(env)
             pixels = pixel_features(PixelAgent(), observation)
-            if input_source == "oracle":
-                action = policy.act_features(truth)
+            if input_source in ("oracle", "oracle_geometry"):
+                action = policy.act_features(truth, observation) if input_source == "oracle_geometry" else policy.act_features(truth)
             else:
                 action = np.asarray(policy.act(observation), dtype=np.float32)
             assert action.shape == (3,) and np.isfinite(action).all()

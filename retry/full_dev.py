@@ -36,10 +36,10 @@ def main():
     args = parser.parse_args()
     plan = json.loads(args.plan.read_text())
     check_window(plan)
-    freeze_path = args.plan.parent / "freeze-v1.json"
+    freeze_path = args.plan.parent / plan.get("freeze_file", "freeze-v1.json")
     freeze = json.loads(freeze_path.read_text())
     assert digest(freeze_path) == plan["freeze_sha256"]
-    package = args.plan.parent / "submission"
+    package = args.plan.parent / plan.get("submission_output", "submission")
     assert digest(package / "candidate.zip") == freeze["zip_sha256"]
     for name, sha in freeze["members_sha256"].items():
         assert digest(package / "extracted" / name) == sha
@@ -52,14 +52,14 @@ def main():
     (output / "metadata.json").write_text(json.dumps({"plan_sha256": digest(args.plan), "freeze_sha256": digest(freeze_path),
         "source_sha256": {p.name: digest(p) for p in sources.glob("*.py")},
         "scope": "Full reset->normal finish/retire/max2000; candidate uses extracted ZIP in isolated participant process."}, indent=2) + "\n")
-    budget = Budget(args.plan, "full_DEV" if args.mode == "candidate" else "full_controls")
+    budget = Budget(args.plan, plan.get("full_DEV_stage", "full_DEV") if args.mode == "candidate" else "full_controls")
     indices = range(8) if args.mode == "candidate" else plan["control_indices"]
     calibration = freeze["calibration"]
     records = []
     for index in indices:
         factory = (lambda: PackagedAgent(package / "extracted")) if args.mode == "candidate" else lambda: ClearanceAgent(
             calibration["coefficient_speed_per_intensity"], calibration["intercept"])
-        rows, summary = trace(plan["cases"][index], "frozen_arc" if args.mode == "candidate" else "fixed_corrected_full",
+        rows, summary = trace(plan["cases"][index], freeze.get("candidate", "frozen_arc") if args.mode == "candidate" else "fixed_corrected_full",
             budget, output / f"case-{index}", max_steps=plan["full_DEV_max_steps"], factory=factory)
         if summary["steps"] == plan["full_DEV_max_steps"] and not summary["completed"]:
             summary["retire_reason"] = "max_steps"
