@@ -243,3 +243,13 @@ passing branches permit a separately registered full-reset pilot through
 and a fixed renderer-derived table, never simulator state. Tables, calibration,
 seeds and experiment results stay private. A successful DEV pilot is a research
 decision and does not replace the selected archive or open protected splits.
+
+`fresh_dev_pair` compares two frozen archives on a privately registered new DEV
+cohort. The registered road geometry is checked against each actual reset, and
+both roles must have identical initial pixel observations. Shared action and
+wall budgets cover both workers. Each pair is classified as preserved, new,
+lost or common-failure completion before common-completion lap ratios are used;
+early gates and incomplete horizons are reported separately as censored.
+Preregistered robustness violations stop the remaining cohort. This development
+validation does not open a protected split or select a champion. Archives,
+splits, raw metrics and decisions remain private.
