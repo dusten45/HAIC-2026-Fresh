@@ -221,3 +221,12 @@ while retaining recorded estimator history, path targets, steering and pixel
 speed feedback. It reports decision-local changes and HUD pixels rather than
 treating aggregate speed error as a driving gain. A sparse or irrelevant change
 blocks a privileged driving contrast; the offline actions are not policy scores.
+
+`feedback_branch` supplies privileged current speed only to the gas/brake
+feedback calculation after the original controller computes steering and its
+target from pixels. Hazard scheduling, target speed, path lookahead, tracking
+motion and coefficients remain inherited. Each actual frame also records the
+original longitudinal action as a local shadow comparison. Later cross-branch
+observation and steering differences are closed-loop effects. Only registered
+short outcome differences permit a terminal followup; neither branch is a new
+eligible policy, and all physics prefix replays count against the shared budget.
