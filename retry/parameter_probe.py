@@ -46,6 +46,14 @@ class MeasuredAgent:
                 str(c["coefficient_speed_per_intensity"]), str(c["intercept"]),
                 str(p["speed_cap"]), str(p["lateral_fast"]), str(p["lateral_safe"])]
             self.child = Participant(python, command_override=command)
+        elif job["kind"] in ["separated", "slow"]:
+            for name, expected in job["new_policy_sources_sha256"].items():
+                assert digest(root / name) == expected
+            c, p = freeze["calibration"], job["parameters"]
+            command = [str(python), "-m", "retry.separated_worker", job["kind"],
+                str(c["coefficient_speed_per_intensity"]), str(c["intercept"]),
+                str(p["speed_cap"]), str(p["lateral_fast"]), str(p["lateral_safe"])]
+            self.child = Participant(python, command_override=command)
         elif job["kind"] in ["fresh", "minimal"]:
             assert job["memory_source_sha256"] == digest(root / "retry/memory_agent.py")
             assert job["worker_source_sha256"] == digest(root / "retry/memory_worker.py")

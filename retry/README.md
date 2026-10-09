@@ -195,3 +195,22 @@ fixed. `memory_branch` reconstructs each estimator from the same legal history
 and restores the exact frozen controller state; `memory_worker` supplies only
 pixels to the separate policy process for qualifying full-reset DEV probes.
 Short branches, full completion/lap results and robustness gates remain separate.
+
+`factorial_agent` independently selects the obstacle history used by the fixed
+route and the recent hazard history used by the inherited speed schedule. Both
+estimators and the fresh detector observe each actual frame in every mode.
+`factorial_branch` reconstructs only the recorded past, then runs the registered
+information intervention on actual future observations. Exact continuations and
+terminal outcomes distinguish a first action difference from a closed-loop
+failure; these partial-race diagnostics are not deployable-policy scores.
+
+`separated_agent` gates persistence of path obstacles on confirmation while
+retaining fresh detections immediately and the original recent-risk channel.
+Its separate uniformly conservative speed control performs
+the same estimator calls per frame. `separated_worker` exposes only current
+pixels to these full-reset policies, and `parameter_probe` records their actual
+latency and memory. Matching calls does not guarantee identical running time on
+different trajectories. Completion, common-completion lap ratios, damage and
+stagnation remain separate preregistered gates; a slowdown's damage reduction
+alone does not establish perception improvement. These research prototypes do
+not replace the root entrypoint or a frozen selected archive.
