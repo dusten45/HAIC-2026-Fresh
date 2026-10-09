@@ -45,3 +45,25 @@ official isolated participant process, import deadline, or memory limit. Process
 RSS includes the harness and is only a local estimate. Never include the harness,
 tests, private plans, seed lists, run logs, or discarded research in a submission.
 Only the observation-only policy is intended as potential participant code.
+
+The additional research harnesses `diagnose`, `contrast`, `clearance_probe`, and
+`arc_probe` run only preregistered DEV diagnostics. `diagnose` records separate
+pixel estimates and simulator truth, exact action replay, snapshot fidelity,
+and damage-physics counterfactuals. Oracle inputs are confined to harness classes;
+participant candidates `geometry_agent`, `clearance_agent`, and `arc_agent` read
+only observations and frozen numeric speed calibration. Counterfactual/oracle
+results are diagnostic evidence, not official driving scores.
+
+These harnesses require a private stage plan with `cases`, `stage_budgets`,
+`max_actions`, `max_experiment_wall_s`, and the existing authorization fields.
+Their manifests must be fixed before the corresponding experiment. A shared,
+locked budget ledger counts actions and stops before the configured cap/deadline.
+Case logs contain per-action truth, estimates, observation hashes and compressed
+pixel/action traces, with exact source snapshots for reconstruction.
+
+`process_probe` and `isolated_worker` measure a separate persistent participant
+process, observation-only IPC, parent-enforced wall deadlines, child RSS, and
+address-space limits. Fault probes exercise timeout/reaping, invalid responses,
+crash handling and memory allocation failure. These checks do not establish
+parity with the official server/container, RSS accounting or submission packaging.
+The worker, diagnostics and all private records must be excluded from submissions.
