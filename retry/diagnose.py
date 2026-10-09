@@ -29,8 +29,9 @@ class BudgetStop(RuntimeError):
 
 class Budget:
     def __init__(self, plan_path, stage):
-        self.path = plan_path.parent / "budget.json"
         self.plan = json.loads(plan_path.read_text())
+        self.path = (plan_path.parent / self.plan.get("ledger_relative_path", "budget.json")).resolve()
+        assert self.path.is_relative_to(plan_path.parent.parent.resolve()), "Budget ledger must stay in private research area"
         self.stage = stage
         with self.path.open("a+") as handle:
             fcntl.flock(handle, fcntl.LOCK_EX)
@@ -184,7 +185,7 @@ def trace(case, variant, budget, output, max_steps=400, healthy=False, factory=N
             "replay_prefix_actions": prefix, "exact_prefix_verified": replay_source is not None,
             "steps": len(rows), "reset_s": reset_s, "wall_s": time.perf_counter() - start,
             "lap_ms": round((finish - 1.02) * 1000) if finish else None,
-            "retire_reason": local_stop or (rows[-1]["retire_reason"] or ("raw_terminated" if rows[-1]["terminated"] else "budget") if rows else "no_actions"),
+            "retire_reason": None if finish is not None else local_stop or (rows[-1]["retire_reason"] or ("raw_terminated" if rows[-1]["terminated"] else "budget") if rows else "no_actions"),
             "RSS_mib_harness": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024}
         output.mkdir(exist_ok=False)
         (output / "trace.jsonl").write_text("".join(json.dumps(row) + "\n" for row in rows))
@@ -194,6 +195,8 @@ def trace(case, variant, budget, output, max_steps=400, healthy=False, factory=N
         return rows, summary
     finally:
         env.close()
+        if hasattr(policy, "close"):
+            policy.close()
 
 
 def persistent_onset(rows, predicate, length=3):

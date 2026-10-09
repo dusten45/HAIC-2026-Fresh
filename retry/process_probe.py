@@ -16,15 +16,17 @@ from retry.evaluate import check_window, digest, percentiles
 
 
 class Participant:
-    def __init__(self, python, variant="basic", fault="none", calibration=None):
+    def __init__(self, python, variant="basic", fault="none", calibration=None, package_root=None):
         env = {**os.environ, "OPENBLAS_NUM_THREADS": "1", "OMP_NUM_THREADS": "1"}
         root = Path(__file__).resolve().parents[1]
         started = time.perf_counter()
         command = [str(python), "-m", "retry.isolated_worker", variant, fault]
         if calibration:
             command.extend([str(calibration["coefficient_speed_per_intensity"]), str(calibration["intercept"])])
+        if package_root is not None:
+            command = [str(python), str(root / "retry/package_worker.py"), str(package_root)]
         self.process = subprocess.Popen(command,
-            cwd=root, env=env, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+            cwd=package_root or root, env=env, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
             text=True, bufsize=1, start_new_session=True)
         self.selector = selectors.DefaultSelector()
         self.selector.register(self.process.stdout, selectors.EVENT_READ)
