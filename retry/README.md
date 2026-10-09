@@ -214,3 +214,10 @@ different trajectories. Completion, common-completion lap ratios, damage and
 stagnation remain separate preregistered gates; a slowdown's damage reduction
 alone does not establish perception improvement. These research prototypes do
 not replace the root entrypoint or a frozen selected archive.
+
+`risk_speed_diagnostic` reconstructs saved DEV actions without creating an
+environment. It substitutes aligned pre-action speed only in the hazard gate,
+while retaining recorded estimator history, path targets, steering and pixel
+speed feedback. It reports decision-local changes and HUD pixels rather than
+treating aggregate speed error as a driving gain. A sparse or irrelevant change
+blocks a privileged driving contrast; the offline actions are not policy scores.
