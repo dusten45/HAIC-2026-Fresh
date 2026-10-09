@@ -151,3 +151,15 @@ additional upstream gates, independent query ledger and registered lap-ratio
 criteria. Its opening can require remaining action and wall reserves. Previous
 protected outcomes and scenes are never inputs to these DEV workflows, and all
 seed reservations, selected constants, archives and result records stay private.
+
+`schedule_agent` provides a separate pixel-only hypothesis: select between two
+registered speed-law constants when an observed forward hazard falls inside the
+existing lookahead and vehicle/obstacle margin. The distance, tracking lifetime
+and steering law remain inherited. All constants are mandatory constructor
+arguments; experiments and selected values remain private. `schedule_branch`
+first reconstructs the reference's full observed history and controller state,
+then runs one bounded matched DEV contrast. Passing it permits the separately
+registered full DEV gates; it does not authorize adoption. `parameter_probe`
+can measure this worker, and `submission_probe --candidate schedule` packages
+only the policy after its fresh validation gate. Its trusted worker and branch
+harness are excluded from the archive.

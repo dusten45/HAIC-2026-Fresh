@@ -45,13 +45,18 @@ def make_package(output, calibration, candidate="arc", parameters=None):
     root = Path(__file__).resolve().parents[1]
     module, class_name = {"arc": ("arc_agent", "ArcAgent"), "temporal": ("temporal_agent", "TemporalRouteAgent"),
         "connected": ("connected_agent", "ConnectedTemporalAgent"),
-        "parameter": ("parameter_agent", "ParameterizedConnectedAgent")}[candidate]
+        "parameter": ("parameter_agent", "ParameterizedConnectedAgent"),
+        "schedule": ("schedule_agent", "HazardScheduledAgent")}[candidate]
     policy_files = POLICY_FILES + (["ridge_agent.py", "route_agent.py", "temporal_agent.py"] if candidate != "arc" else [])
-    if candidate in ["connected", "parameter"]:
+    if candidate in ["connected", "parameter", "schedule"]:
         policy_files.append("connected_agent.py")
-    if candidate == "parameter":
+    if candidate in ["parameter", "schedule"]:
         policy_files.append("parameter_agent.py")
+    if candidate == "schedule":
+        policy_files.append("schedule_agent.py")
     extra = f", {parameters['speed_cap']!r}, {parameters['lateral_acceleration']!r}" if candidate == "parameter" else ""
+    if candidate == "schedule":
+        extra = f", {parameters['speed_cap']!r}, {parameters['lateral_fast']!r}, {parameters['lateral_safe']!r}"
     entry = (f"from retry.{module} import {class_name}\n\nclass Agent({class_name}):\n"
              "    def __init__(self):\n"
              f"        super().__init__({calibration['coefficient_speed_per_intensity']!r}, {calibration['intercept']!r}{extra})\n")
@@ -87,7 +92,7 @@ def stack(frames, index):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--plan", type=Path, required=True)
-    parser.add_argument("--candidate", choices=["arc", "temporal", "connected", "parameter"], default="arc")
+    parser.add_argument("--candidate", choices=["arc", "temporal", "connected", "parameter", "schedule"], default="arc")
     args = parser.parse_args()
     plan = json.loads(args.plan.read_text())
     check_window(plan)
@@ -100,13 +105,15 @@ def main():
         verify_reference(plan, args.plan.parent)
         assert json.loads((args.plan.parent / "component/decision.json").read_text())["local_gate_pass"]
         assert digest(Path("retry/connected_agent.py")) == plan["challenger_source_sha256"]
-    if args.candidate == "parameter":
+    if args.candidate in ["parameter", "schedule"]:
         from retry.parameter_probe import guard_reference
         guard_reference(plan, args.plan.parent)
         validation = args.plan.parent / plan["validation_decision"]
         assert digest(validation) == plan["validation_decision_sha256"]
         assert json.loads(validation.read_text())["validation_gate_pass"]
         assert digest(Path("retry/parameter_agent.py")) == plan["parameter_source_sha256"]
+        if args.candidate == "schedule":
+            assert digest(Path("retry/schedule_agent.py")) == plan["schedule_source_sha256"]
     output = args.plan.parent / plan.get("submission_output", "submission")
     output.mkdir(exist_ok=False)
     sources = output / "sources"

@@ -39,6 +39,13 @@ class MeasuredAgent:
                 str(c["coefficient_speed_per_intensity"]), str(c["intercept"]),
                 str(p["speed_cap"]), str(p["lateral_acceleration"])]
             self.child = Participant(python, command_override=command)
+        elif job["kind"] == "schedule":
+            assert job["schedule_source_sha256"] == digest(root / "retry/schedule_agent.py")
+            c, p = freeze["calibration"], job["parameters"]
+            command = [str(python), "-m", "retry.schedule_worker",
+                str(c["coefficient_speed_per_intensity"]), str(c["intercept"]),
+                str(p["speed_cap"]), str(p["lateral_fast"]), str(p["lateral_safe"])]
+            self.child = Participant(python, command_override=command)
         else:
             assert job["kind"] == "frozen_challenger"
             frozen = directory / job["freeze_file"]
