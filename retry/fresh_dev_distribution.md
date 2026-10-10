@@ -49,6 +49,7 @@ window can coexist with substantial vehicle movement and a later finish, so that
 marker alone does not identify a failure. A contact can also follow a route whose
 sampled grid segments satisfy the policy's radial obstacle margin while its
 origin connector does not. This is a policy-model discrepancy, not a measured
-vehicle-footprint clearance. A signal observed only just before contact still
-needs an action-feasibility gate before proposing a preventive intervention. The
-pilot leaves the frozen policy unchanged.
+vehicle-footprint clearance. The same discrepancy also occurs on roads that finish
+without contact, so rejection alone does not identify a failure. A signal observed
+only just before contact still needs an action-feasibility gate before proposing a
+preventive intervention. The pilot leaves the frozen policy unchanged.
