@@ -196,6 +196,16 @@ and restores the exact frozen controller state; `memory_worker` supplies only
 pixels to the separate policy process for qualifying full-reset DEV probes.
 Short branches, full completion/lap results and robustness gates remain separate.
 
+`learned_memory_agent` accepts a frozen linear classifier as constructor
+configuration and applies it only to aged forward memory after fresh detection
+association. Fresh detections remain immediate. Features use current and birth
+pixels, the tracker’s own history and the preceding four returned actions.
+Inherited routing, hazard-speed scheduling, steering and fallback formulas stay
+fixed; deleting memory can change their later inputs and the actual trajectory.
+Model weights, training data, selected configurations and full-reset comparisons
+remain private. An offline gate requires a separate completion-preservation
+comparison against both the frozen champion and actual `MinimalMemoryAgent`.
+
 `factorial_agent` independently selects the obstacle history used by the fixed
 route and the recent hazard history used by the inherited speed schedule. Both
 estimators and the fresh detector observe each actual frame in every mode.
