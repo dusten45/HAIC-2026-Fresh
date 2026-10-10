@@ -287,3 +287,16 @@ ROI shadow checks action isolation at each branch's own state; divergent future
 steering across trajectories is expected. Damage, progress, counters, completion
 and censoring require separate gates. Plans, source traces and results remain
 private; the prototype does not change the root submission entrypoint.
+
+`oracle_teacher` is a research-only geometric planner and classical controller.
+It receives the current hull position, heading and world velocity plus the
+actual static road and obstacle circles. It plans smooth lateral detours and a
+periodic curve/braking speed profile, then tracks the reference with pure
+pursuit and speed feedback. It accepts no seed, episode clock, simulator object,
+recorded actions or future realized trajectory. Reference clearance is not a
+proof that the moving vehicle footprint stays on the road or avoids collisions.
+This privileged teacher is separate from the pixel submission. Its comparison
+with a different pixel controller does not isolate a perception effect. Plans,
+case identities, raw trajectories and outcome decisions remain private.
+`python -m unittest retry.test_oracle_teacher -v` checks geometry, steering sign,
+the periodic braking envelope and input rejection without simulator calls.
