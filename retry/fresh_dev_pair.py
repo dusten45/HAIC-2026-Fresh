@@ -13,6 +13,7 @@ import numpy as np
 
 from retry.diagnose import Budget, BudgetStop, make_env
 from retry.evaluate import check_window, digest, observation_contract, percentiles
+from retry.outcomes import pair_category, race_outcome
 from retry.process_probe import Participant, valid_action
 
 
@@ -43,6 +44,7 @@ def verify(plan_path, require_window=True):
         check_window(plan)
     assert plan["scope"] == "fresh_DEV_validation"
     assert digest(plan_path) == plan_path.with_suffix(".sha256").read_text().split()[0]
+    assert "retry/outcomes.py" in plan["source_sha256"], "Freeze the outcome-accounting dependency"
     directory, root = plan_path.parent, Path(__file__).resolve().parents[1]
     for name, expected in plan["source_sha256"].items():
         assert digest(root / name) == expected
@@ -74,6 +76,7 @@ def run(plan_path, plan, role, index):
         "plan_sha256": digest(plan_path), "archive_sha256": config["zip_sha256"]})
     child = env = None
     used, max_counter, stop, gate_reason = 0, 0, None, None
+    resource_stopped = False
     rows, actions, env_times, rss = [], [], [], []
     budget = Budget(plan_path, role)
     stage_before = stage_count(budget, role)
@@ -93,19 +96,20 @@ def run(plan_path, plan, role, index):
         ended = truncated = False
         for _ in range(plan["max_steps"]):
             if (directory / "stop.json").exists():
-                stop = "paired_gate_censored"
+                stop = "paired_gate_interrupted"
                 break
             response, elapsed = child.call("act", obs)
             if not valid_action(response) or not (np.all(np.asarray(response["action"]) >= [-1, 0, 0]) and np.all(np.asarray(response["action"]) <= [1, 1, 1])):
                 gate_reason = "invalid_action"
                 stop_pair(directory, gate_reason, index)
-                stop = "paired_gate_censored"
+                stop = "paired_gate_interrupted"
                 break
             before = time.perf_counter()
             try:
                 obs, _, ended, truncated, info = budget.step(env, np.asarray(response["action"], dtype=np.float32))
             except BudgetStop as error:
                 stop = str(error)
+                resource_stopped = True
                 break
             used += 1
             observation_contract(obs)
@@ -132,20 +136,26 @@ def run(plan_path, plan, role, index):
                 if gate_reason:
                     stop_pair(directory, gate_reason, index)
                     if not (ended or truncated):
-                        stop = "paired_gate_censored"
+                        stop = "paired_gate_interrupted"
                         break
             if ended or truncated:
                 break
         finish = env.unwrapped.finish_time_s
-        if finish is None and not (ended or truncated) and used == plan["max_steps"] and stop is None:
-            stop = "fixed_horizon_censored"
-        censored = stop is not None
+        outcome = race_outcome(completed=finish is not None,
+            physical_terminal=bool(ended or truncated), charged_steps=used,
+            planned_horizon=plan["max_steps"], stop_reason=stop,
+            resource_stopped=resource_stopped)
+        if outcome["indeterminate"] and stop is None:
+            stop = "short_diagnostic_horizon"
+            outcome["interruption_reason"] = stop
+        censored = outcome["censored"]
         reason = None if finish is not None else stop or ((rows[-1]["retire_reason"] if rows else None) or "max_steps")
         charged = stage_count(budget, role) - stage_before
         assert charged == used
         result = {"case_index": index, "role": role, "scope": "fresh_DEV_validation",
             "completed": finish is not None, "censored": censored,
             "terminal_observed": bool(ended or truncated),
+            **outcome,
             "steps": used, "charged_actions": charged, "progress": env._calculate_progress(),
             "damage": env.damage.damage, "max_off_track_counter": max_counter,
             "lap_ms": None if finish is None else round((finish - 1.02) * 1000),
@@ -179,7 +189,7 @@ def digest_track(track):
 
 def decide(plan_path, plan):
     directory = plan_path.parent
-    counts = {"preserved": [], "new_completion": [], "lost_completion": [], "common_failure": [], "censored": [], "pending": []}
+    counts = {"preserved": [], "new_completion": [], "lost_completion": [], "common_failure": [], "censored": [], "indeterminate": [], "pending": []}
     pairs, hard = [], []
     for index, case in enumerate(plan["cases"]):
         paths = [directory / "runs" / f"case-{index}" / r / "result.json" for r in ["baseline", "candidate"]]
@@ -192,11 +202,7 @@ def decide(plan_path, plan):
         violations = []
         if new["gate_reason"]:
             violations.append(new["gate_reason"])
-        if old["censored"] or new["censored"] or not (old["terminal_observed"] and new["terminal_observed"]):
-            category = "censored"
-        else:
-            category = {(True, True): "preserved", (False, True): "new_completion",
-                (True, False): "lost_completion", (False, False): "common_failure"}[(old["completed"], new["completed"])]
+        category = pair_category(old, new)
         counts[category].append(index)
         ratio = new["lap_ms"] / old["lap_ms"] if category == "preserved" else None
         if category == "lost_completion": violations.append("lost_baseline_completion")
@@ -210,11 +216,11 @@ def decide(plan_path, plan):
             "candidate": new, "lap_ratio": ratio, "violations": sorted(set(violations))})
     ratios = [p["lap_ratio"] for p in pairs if p["lap_ratio"] is not None]
     common = [p for p in pairs if p["category"] == "preserved"]
-    valid = [p for p in pairs if p["category"] != "censored"]
+    valid = [p for p in pairs if p["category"] not in ("censored", "indeterminate")]
     median_ratio = float(np.median(ratios)) if ratios else None
     damage = {r: float(np.median([p[r]["damage"] for p in valid])) if valid else None for r in ["baseline", "candidate"]}
     common_damage = {r: float(np.median([p[r]["damage"] for p in common])) if common else None for r in ["baseline", "candidate"]}
-    complete = not counts["pending"] and not counts["censored"]
+    complete = not counts["pending"] and not counts["censored"] and not counts["indeterminate"]
     checks = {"all_eight_pairs_terminal": complete, "no_lost_completion": not counts["lost_completion"],
         "candidate_completion_count_not_lower": len(counts["new_completion"]) >= len(counts["lost_completion"]),
         "minimum_common_completions": len(common) >= plan["minimum_common_completions"],
@@ -230,6 +236,7 @@ def decide(plan_path, plan):
         "completion_categories": counts, "common_completed_pairs": len(common),
         "completion_counts_terminal_pairs": {"baseline": len(counts["preserved"]) + len(counts["lost_completion"]),
             "candidate": len(counts["preserved"]) + len(counts["new_completion"])},
+        "completion_denominator_evaluation_terminal_pairs": len(valid),
         "median_common_lap_ratio": median_ratio, "median_damage_terminal_pairs": damage,
         "median_damage_common_completion": common_damage, "hard_violations": hard, "pairs": pairs,
         "protected_queries": 0, "champion_promotion": False, "policy_tuned": False}

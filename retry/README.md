@@ -248,8 +248,17 @@ decision and does not replace the selected archive or open protected splits.
 cohort. The registered road geometry is checked against each actual reset, and
 both roles must have identical initial pixel observations. Shared action and
 wall budgets cover both workers. Each pair is classified as preserved, new,
-lost or common-failure completion before common-completion lap ratios are used;
-early gates and incomplete horizons are reported separately as censored.
+lost or common-failure completion before common-completion lap ratios are used.
+An unfinished race after the normal 2,000-action horizon is DNF, included in the
+completion denominator and lost-completion checks even without a simulator
+terminal signal. Only a resource or authorization cutoff before that horizon is
+censored. Safety/technical interruptions and shorter diagnostic prefixes are
+indeterminate, and do not establish full-race completion outcomes. Physical
+terminal signals and evaluation-terminal outcomes are recorded separately.
+New paired-evaluation manifests must freeze `retry/outcomes.py` along with the
+harness source before running.
+`python -m unittest retry.test_outcomes -v` checks these boundaries without
+policy calls or simulator steps. Existing frozen result records are preserved.
 Preregistered robustness violations stop the remaining cohort. This development
 validation does not open a protected split or select a champion. Archives,
 splits, raw metrics and decisions remain private.
