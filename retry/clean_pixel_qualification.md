@@ -27,10 +27,13 @@ completions without observed completion loss, with roughly one-fifth longer
 lap times on common completions. Their denominators remain separate, and
 the small holdout sample does not establish broad completion probability.
 The original champion remains preserved for rollback and speed comparison.
-Its formal manifest is unchanged. The original sealed-evaluation gate and
-fresh-machine/official-runtime qualifications remain pending; provisional
-research status is not final adoption or broad generalization. No additional
-holdout or sealed evaluation followed.
+Its formal manifest is unchanged. Under the current application plan, G4 is
+the promotion and execution-qualification gate; fresh-machine and exact
+official-runtime qualifications remain unproved. G5 is the separate final
+sealed confirmation and stays closed. Opening the sealed split is not a
+current G4 prerequisite. Older experiment records retain their historical
+gate labels. Provisional research status is not final adoption or broad
+generalization. No additional holdout or sealed evaluation followed.
 
 One next speed investigation can use already saved development data: align
 the two policies' records by road progress, position, and heading, then locate
