@@ -43,3 +43,13 @@ equal visited-tile counts are not identical physical states. Cap-active
 duration alone is not the causal share of the lap-time cost. This diagnostic
 is proposed for later work; no alignment experiment or tuning was performed
 in the qualification stage.
+
+## Subsequent provisional baseline v2 qualification
+
+The unchanged current-detection-only additional-cap candidate passed a later saved development completion replay in the same-host clean CPU process. All saved float32 action bytes and full observation hashes matched. A second reset after the full stream restored the saved initial action prefix. Output shape, finite values, action bounds, observed cold-start/reset/act latency and peak participant RSS met the README limits.
+
+The existing supervisor now uses a conservative decimal interpretation of the README memory ceiling, with an address-space hard limit and sampled process RSS/HWM checks. It records actual kill/wait completion, absence of the child PID, and `waitpid` reporting no remaining child. Two narrow faults use the unchanged loaded candidate: stopping the process triggers the five-second request deadline; forced abnormal termination triggers protocol failure. All actual child processes were reaped. Detection timing includes local scheduler and accounting overhead.
+
+This evidence designates the candidate as provisional completion-first research baseline v2. Provisional v1 and the formal champion remain preserved for rollback. Frozen policy code and configuration were unchanged; only the external qualification harness was extended. Replay files remain with the parent on this cloud host, and only reset/act plus pixel observations cross the worker protocol. No environment reset or step, holdout trace/video opening, sealed evaluation, remote file attachment or off-cloud execution occurred.
+
+The earlier v1 probe above retains its narrower historical scope. The v2 probe establishes one saved stream, one reset boundary and two direct-child supervision cases. A fresh independent machine/environment, full official server/container/runtime enforcement parity, all-input resource guarantees and broad fault coverage remain unproved. This status does not alter the formal champion manifest or the closed final G5 SEALED gate.

@@ -17,7 +17,10 @@ root = Path(sys.argv[1]).resolve()
 clean = root.parent
 allowed = (clean, Path(sys.prefix).resolve(), Path(sys.base_prefix).resolve())
 denied = []
-resource.setrlimit(resource.RLIMIT_AS, (1024*1024*1024,)*2)
+# README says 1,024 MB; conservatively enforce decimal bytes locally.
+# This remains address-space enforcement, not official RSS/cgroup parity.
+memory_limit_bytes = 1_024_000_000
+resource.setrlimit(resource.RLIMIT_AS, (memory_limit_bytes,)*2)
 resource.setrlimit(resource.RLIMIT_CPU, (120,120))
 resource.setrlimit(resource.RLIMIT_NOFILE, (64,64))
 if hasattr(os, 'sched_getaffinity'):
@@ -59,6 +62,7 @@ print(json.dumps({'ready':True,'simulator_imported':False,'policy_modules':modul
                   'CPU_affinity':sorted(os.sched_getaffinity(0)) if hasattr(os,'sched_getaffinity') else None,
                   'numpy_version':np.__version__, 'opencv_version':getattr(sys.modules.get('cv2'),'__version__',None),
                   'python_version':sys.version.split()[0], 'python_audit_denied_events':denied,
+                  'address_space_limit_bytes':memory_limit_bytes,
                   'isolation_scope':'clean cwd + extracted package origins + isolated Python + sanitized env + separate CPU process + Python audit hooks; same host/runtime, not OS filesystem or network isolation'}),flush=True)
 for line in sys.stdin:
     request = json.loads(line)
