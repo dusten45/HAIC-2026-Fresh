@@ -2,7 +2,7 @@
 
 `action_mode_diagnostics.py` compares a student's executed action with a teacher label for the **same saved observation and actual action history**. Different policies' action numbers do not identify the same state.
 
-The utility reports steering, gas and brake errors in their actual units, distinguishes substantial steering opposition from small crossings near zero, and counts contiguous event runs using recorded action numbers and timestamps. Gas and brake independently define four valid modes: coast, gas only, brake only and both. Simultaneous gas and brake output is not classified as inherently wrong.
+The utility reports steering, gas and brake errors in their actual units, distinguishes steering opposition outside a deadband from sign differences involving the deadband, and counts contiguous event runs using recorded action numbers and timestamps. Gas and brake independently define four valid modes: coast, gas only, brake only and both. Simultaneous gas and brake output is not classified as inherently wrong. A sign difference involving a deadband value may still have a large absolute error; its magnitude is reported separately and is not automatically treated as minor.
 
 Freeze event thresholds and window definitions before comparing results. Report a fixed progressing window together with the window preceding the recorded failure onset. Keep first-contact timing separate when a long disagreement run crosses damage onset. This is a descriptive diagnostic and does not establish that the teacher's action would prevent failure.
 
