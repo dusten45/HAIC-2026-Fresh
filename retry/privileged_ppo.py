@@ -51,15 +51,18 @@ class PrivilegedPilotEnv(gym.Wrapper):
     ``execute`` may meter wrapper actions before delegating to env.step.
     ``observe`` receives audit rows outside the policy; it must not mutate the
     simulator. This adapter performs no teacher/controller/model calls.
+    An optional ``action_transform`` maps policy coordinates directly to the
+    executed three controls; custom coordinates are logged without clipping.
     """
     def __init__(self, env, reset_seed, reset_options, horizon=2000,
-                 execute=None, observe=None):
+                 execute=None, observe=None, action_transform=None):
         super().__init__(env)
         self.reset_seed = int(reset_seed)
         self.reset_options = dict(reset_options)
         self.horizon = int(horizon)
         self.execute = execute or (lambda env, action: env.step(action))
         self.observe = observe
+        self.action_transform = action_transform or control_action
         self.observation_space = gym.spaces.Box(-np.inf, np.inf,
                                                 (FEATURE_DIM,), np.float32)
         self.action_space = gym.spaces.Box(-1., 1., (2,), np.float32)
@@ -82,7 +85,7 @@ class PrivilegedPilotEnv(gym.Wrapper):
             raise RuntimeError("reset required before another episode action")
         features_before = self.last_features.copy()
         count_before = int(self.env.unwrapped.tile_visited_count)
-        actual_action = control_action(action)
+        actual_action = self.action_transform(action)
         _, official_reward, raw_terminal, raw_truncated, info = self.execute(self.env, actual_action)
         self.steps += 1
         raw = self.env.unwrapped
@@ -103,7 +106,10 @@ class PrivilegedPilotEnv(gym.Wrapper):
         if self.observe is not None:
             self.observe({"episode": self.episode, "step": self.steps,
                 "features_before": features_before.tolist(), "features_after": features_after.tolist(),
-                "normalized_applied_action": np.clip(np.asarray(action, np.float32), -1., 1.).tolist(),
+                "normalized_applied_action": np.clip(np.asarray(action, np.float32), -1., 1.).tolist()
+                    if self.action_transform is control_action else None,
+                "policy_action_coordinates": np.asarray(action, np.float32).tolist(),
+                "custom_action_transform": self.action_transform is not control_action,
                 "executed_action": actual_action.tolist(), "unique_tiles_before": count_before,
                 "unique_tiles_after": count_after, "learning_reward": reward,
                 "official_reward": float(official_reward), "completed": completed,
