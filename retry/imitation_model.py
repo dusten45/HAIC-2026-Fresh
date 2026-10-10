@@ -60,13 +60,17 @@ class SmallActionMLP:
         self.history = history
         return self
 
-    def predict(self, inputs):
+    def predict_unclipped(self, inputs):
+        """Three regression outputs, before an application-specific output clip."""
         x = (np.asarray(inputs, np.float32) - self.mean) / self.scale
         for i, (w, b) in enumerate(self.arrays):
             x = x @ w.T + b
             if i < len(self.arrays) - 1:
                 x = np.tanh(x)
-        return clip_actions(x * self.label_scale + self.label_mean)
+        return x * self.label_scale + self.label_mean
+
+    def predict(self, inputs):
+        return clip_actions(self.predict_unclipped(inputs))
 
     def save(self, path):
         values = {name: getattr(self, name) for name in ['mean', 'scale', 'label_mean', 'label_scale']}
