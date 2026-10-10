@@ -253,3 +253,18 @@ early gates and incomplete horizons are reported separately as censored.
 Preregistered robustness violations stop the remaining cohort. This development
 validation does not open a protected split or select a champion. Archives,
 splits, raw metrics and decisions remain private.
+
+`distance_target_agent` adds one target-speed limit to an inherited pixel ROI
+feedback policy. It uses the existing forward-hazard eligibility and Euclidean
+center distance minus the existing radius/buffer. This is a proximity heuristic,
+not distance along the route or a measured stopping-distance guarantee. Tracking,
+route selection, steering, speed estimation and feedback gains remain inherited.
+The uniform slow control applies the same minimum speed ceiling everywhere;
+it does not match mean speed or braking energy. `distance_target_worker` keeps
+the policy in a separate current-pixel-only process. `distance_target_probe`
+charges every physical prefix replay, checks frozen actions/observations/state,
+then activates the registered treatment on actual future observations. A local
+ROI shadow checks action isolation at each branch's own state; divergent future
+steering across trajectories is expected. Damage, progress, counters, completion
+and censoring require separate gates. Plans, source traces and results remain
+private; the prototype does not change the root submission entrypoint.
