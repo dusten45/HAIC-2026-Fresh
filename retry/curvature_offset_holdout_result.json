@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "comparison": {
+    "baseline": "Original hazard-scheduled pixel policy, global cap40",
+    "candidate": "Same policy with the additive curvature denominator term removed",
+    "policy_changes_after_DEV": 0
+  },
+  "cohort": {
+    "fresh_registered_geometries": 4,
+    "episodes_recorded": 8,
+    "complete": true,
+    "baseline_completions": 4,
+    "candidate_completions": 4,
+    "unexecuted_pairs": 0,
+    "inconclusive_pairs": 0,
+    "censored_pairs": 0,
+    "new_completion": 0,
+    "lost_completion": 0,
+    "common_dnf": 0,
+    "common_completed": 4
+  },
+  "performance_verdict": "COMPARISON_PASS_PAIRED_LAP_GAIN",
+  "common_completed_laps": {
+    "median_paired_delta_ms": -2870.0,
+    "mean_paired_ratio": 0.9491736638346087,
+    "candidate_faster": 3,
+    "tied": 0,
+    "candidate_slower": 1
+  },
+  "separate_damage_warning": {
+    "baseline_sum": 0.2,
+    "candidate_sum": 0.2,
+    "common_completion_pairs_with_increase": 1,
+    "maximum_common_completion_increase": 0.2,
+    "exposure_caveat": "Episode durations and completion exposure can differ."
+  },
+  "observed_latency_ms": {
+    "baseline_max_episode_p95": 10.706510692398297,
+    "candidate_max_episode_p95": 12.423155404394493,
+    "baseline_max_act": 52.61297899414785,
+    "candidate_max_act": 47.08669301180635
+  },
+  "native_cost": {
+    "episodes": 8,
+    "wrapper_actions": 4862,
+    "raw_step_ticks": 19436,
+    "raw_reset_ticks": 408,
+    "actor_act_calls": 4862,
+    "actor_reset_calls": 8,
+    "wall_s": 186.6863442620088,
+    "actor_CPU_s": 30.316645000000005,
+    "evaluator_CPU_s": 156.660375012,
+    "max_act_ms": 52.61297899414785,
+    "max_RSS_bytes": 47812608,
+    "automatic_retries": 0,
+    "all_actors_reaped": true
+  },
+  "same_host_qualification": {
+    "status": "PASS",
+    "cold_starts": 4,
+    "reset_calls": 6,
+    "act_calls": 1287,
+    "session_wall_sum_s": 17.9912682310096,
+    "parallel_sessions": true,
+    "actor_CPU_s": 8.25502,
+    "max_cold_ms": 464.36655199795496,
+    "max_reset_ms": 12.435184005880728,
+    "max_act_ms": 43.256616991129704,
+    "max_RSS_bytes": 47792128,
+    "new_native_calls": 0
+  },
+  "decision": {
+    "status": "ADOPTED",
+    "current_champion_updated": true,
+    "previous_champions_preserved": true
+  },
+  "limits": [
+    "Four fresh registered geometries, one run per policy; a descriptive adoption gate.",
+    "No zero failure probability, broad reliability or general safety claim.",
+    "Same-host process reproduction does not establish fresh-machine or server parity.",
+    "Damage and observed latency are separate warnings, not ranking replacements.",
+    "No prior protected details, sealed data, private identities or document excerpts are published."
+  ]
+}
