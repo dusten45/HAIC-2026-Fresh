@@ -1,6 +1,6 @@
 """Compare one frozen candidate against cached DEV endpoints, without rerunning baselines.
 
-The private plan supplies one or two fixed cases, arms={'A': candidate}, and
+The private plan supplies up to three fixed cases, arms={'A': candidate}, and
 cached_baselines={case_id: {result_path, result_sha256}}. Baseline archive and
 configuration hashes identify the reused policy. Only the explicit run entry
 point creates workers or environments; preparing this module executes nothing.
@@ -63,11 +63,11 @@ def run(plan_path):
     assert plan['no_promotion'] is True and plan['policy_frozen'] is True
     assert plan['automatic_next_candidate'] is False
     cases = plan['cases']
-    assert 1 <= len(cases) <= 2 and len({case['id'] for case in cases}) == len(cases)
+    assert 1 <= len(cases) <= 3 and len({case['id'] for case in cases}) == len(cases)
     assert list(plan['arms']) == ['A'] and plan['arms']['A']['type'] == 'champion'
     assert all(case['arm_order'] == ['A'] for case in cases)
     assert plan['max_steps'] == 2000
-    assert plan['max_actions'] == len(cases) * 2000 <= 4000
+    assert plan['max_actions'] == len(cases) * 2000 <= 6000
     roles = [case['id'] + '__A' for case in cases]
     assert plan['stage_budgets'] == {role: 2000 for role in roles}
     assert plan.get('ledger_relative_path', 'budget.json') == 'budget.json'

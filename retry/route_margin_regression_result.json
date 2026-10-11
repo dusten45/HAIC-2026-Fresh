@@ -1,0 +1,118 @@
+{
+  "stage": 124,
+  "decision": "COMPLETIONS_PRESERVED_WITH_TIME_COST_KEEP116",
+  "registered_at_utc": "2026-10-11T16:18:32.463623+00:00",
+  "candidate_archive_sha256": "51dda9c327a93b4969918571b8f3aa9ac571af8e2051971c32ef12afc2829db5",
+  "fixed_setting": "Exact frozen123 archive; connected-route obstacle exclusion =2.6+radius+1/1.3608. Extra one horizontal input pixel =0.7348618459729571m. No other policy change.",
+  "baseline": "Original116 cached normal endpoints from121; no native reruns",
+  "registered_runs": 3,
+  "cases": [
+    {
+      "condition": "completed_DEV_0",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 46100,
+        "damage": 0.6000000000000001,
+        "charged_wrapper_actions": 577
+      },
+      "candidate": {
+        "completed": true,
+        "lap_ms": 46540,
+        "damage": 0.0,
+        "charged_wrapper_actions": 582
+      },
+      "lap_delta_ms": 440,
+      "damage_delta": -0.6000000000000001,
+      "action_stream_unchanged": false,
+      "observation_stream_unchanged": false
+    },
+    {
+      "condition": "completed_DEV_1",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 43820,
+        "damage": 0.0,
+        "charged_wrapper_actions": 548
+      },
+      "candidate": {
+        "completed": true,
+        "lap_ms": 44580,
+        "damage": 0.0,
+        "charged_wrapper_actions": 558
+      },
+      "lap_delta_ms": 760,
+      "damage_delta": 0.0,
+      "action_stream_unchanged": false,
+      "observation_stream_unchanged": false
+    },
+    {
+      "condition": "completed_DEV_2",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 45300,
+        "damage": 0.8,
+        "charged_wrapper_actions": 567
+      },
+      "candidate": {
+        "completed": true,
+        "lap_ms": 45740,
+        "damage": 0.0,
+        "charged_wrapper_actions": 572
+      },
+      "lap_delta_ms": 440,
+      "damage_delta": -0.8,
+      "action_stream_unchanged": false,
+      "observation_stream_unchanged": false
+    }
+  ],
+  "aggregate": {
+    "lost_completions": 0,
+    "common_completions": 3,
+    "median_lap_delta_ms": 440.0,
+    "mean_lap_ratio": 1.01220039050491,
+    "damage_sum_baseline": 1.4000000000000001,
+    "damage_sum_candidate": 0.0,
+    "slower_conditions": [
+      "completed_DEV_0",
+      "completed_DEV_1",
+      "completed_DEV_2"
+    ],
+    "unchanged_damage_conditions": [
+      "completed_DEV_1"
+    ],
+    "directional_lap_verdict": "KEEP_CHAMPION_MIXED_OR_NO_LAP_GAIN"
+  },
+  "combined123_124_descriptive": "On these four cached DEV cases, baseline116 completed3/4; fixed123 candidate completed4/4. The three common completions were all slower. This is selected DEV evidence, not a general reliability estimate.",
+  "cost": {
+    "native_wrapper_actions": 1712,
+    "returned_episode_record_actions": 1712,
+    "raw_step_ticks": 6847,
+    "raw_reset_ticks": 153,
+    "wall_including_records_s": 74.1592316289898,
+    "evaluator_CPU_including_records_s": 62.497234356,
+    "actor_CPU_s": 11.899401,
+    "registered_native_cap": 6000,
+    "baseline_reruns": 0,
+    "extra_saved_policy_model_calls": 0
+  },
+  "native_total_after": 600893,
+  "research_remaining": 13107,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "validation": {
+    "recorded_reset_fields_exact": true,
+    "record_streams_exact": true,
+    "all_actors_reaped": true,
+    "all_runs_exact_frozen123_archive": true,
+    "independent_endpoint_and_receipt_review_pass": true
+  },
+  "runner_change": "Only the cached comparison limit expanded to three cases/6000 actions; per-episode limit2000 and execution/scoring logic retained.",
+  "post_result_margin_adjustment": false,
+  "champion116_and_rollbacks_unchanged": true,
+  "protected_HOLDOUT_details_or_SEALED_opened": false,
+  "automatic_followup": false,
+  "new_paid_resources": 0,
+  "plan_sha256": "b94291fdeb94c2a65c930334574567581b3ff964557d34323da247793dc73381",
+  "contract_sha256": "0dd8f5028ec9459b0ccc6342778ed13500dbeeee5b86e2ef341b9b0634a23d31",
+  "limits": "Completion regression not observed in these three cases, but every common lap increased. Damage is descriptive and exposure-dependent. Champion116 remains current; no parameter adjustment or official-server verification."
+}
