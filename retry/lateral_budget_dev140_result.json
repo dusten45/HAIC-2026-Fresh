@@ -1,0 +1,130 @@
+{
+  "stage": 140,
+  "status": "RETAIN_UNCHANGED8_FOR_FRESH_HOLDOUT_CONFIRMATION",
+  "split": "DEV",
+  "candidate_unchanged_since139": true,
+  "candidate_archive_sha256": "24dd264a5c5a472196e5324ef655b3bbd8b3da208058a34e1fbc364488a018d5",
+  "candidate": "134 with only normal lateral budget8; safe5 and cap40 unchanged",
+  "method": "P7 small parameter comparison and frozen-candidate DEV confirmation under current user instruction",
+  "new_candidate_runs": 2,
+  "cached_candidate139_runs_reused": 2,
+  "cached134_baselines_reused": 4,
+  "full_DEV_cases": 4,
+  "baseline_completed": 4,
+  "candidate_completed": 4,
+  "counts": {
+    "new_completion": 0,
+    "lost_completion": 0,
+    "common_dnf": 0,
+    "common_completed": 4
+  },
+  "cohort_complete": true,
+  "comparisons": [
+    {
+      "anonymous_DEV": 0,
+      "candidate_source_stage": 139,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 52700,
+      "candidate_lap_ms": 51140,
+      "common_lap_delta_ms": -1560,
+      "baseline_damage": 0.6,
+      "candidate_damage": 0.2,
+      "candidate_native_actions": 640
+    },
+    {
+      "anonymous_DEV": 1,
+      "candidate_source_stage": 139,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 48940,
+      "candidate_lap_ms": 46840,
+      "common_lap_delta_ms": -2100,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "candidate_native_actions": 586
+    },
+    {
+      "anonymous_DEV": 2,
+      "candidate_source_stage": 140,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 38400,
+      "candidate_lap_ms": 37120,
+      "common_lap_delta_ms": -1280,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "candidate_native_actions": 465
+    },
+    {
+      "anonymous_DEV": 3,
+      "candidate_source_stage": 140,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 43900,
+      "candidate_lap_ms": 42340,
+      "common_lap_delta_ms": -1560,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "candidate_native_actions": 530
+    }
+  ],
+  "common_sum_lap_delta_ms": -6500.0,
+  "common_median_lap_delta_ms": -1560.0,
+  "common_mean_lap_ratio": 0.9646550389485107,
+  "remaining_two_common_sum_delta_ms": -2840,
+  "faster_common_count": 4,
+  "damage_diagnostic": {
+    "sums": {
+      "baseline": 0.6000000000000001,
+      "candidate": 0.2
+    },
+    "observed_record_counts": {
+      "baseline": 4,
+      "candidate": 4
+    },
+    "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+  },
+  "gate": "All4 baseline completions retained and full4 common medianlapdelta<0 plus meanlapratio<1, with negative sumlapdelta on remaining2 to confirm continued time direction. No minimum percent or all-four-faster veto; damage independently diagnosed.",
+  "decision": "RETAIN_UNCHANGED8_FOR_FRESH_HOLDOUT_CONFIRMATION",
+  "cost": {
+    "stage": 140,
+    "native_cap": 4000,
+    "new_wrapper_actions": 995,
+    "raw_step_ticks": 3975,
+    "raw_reset_ticks": 102,
+    "wall_including_records_s": 40.90310172099271,
+    "evaluator_CPU_s": 33.69605832,
+    "actor_CPU_s": 7.740970000000001,
+    "new_offline_policy_or_model_calls": 0,
+    "baseline_reruns": 0,
+    "prior_two_candidate_reruns": 0,
+    "cached139_native_actions_reused_not_recharged": 1226,
+    "B_operating_cap": 722000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 622837,
+    "research_remaining": 15163,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "archive_rebuilds": 0,
+    "full_input_or_packaging_requalification": 0,
+    "HOLDOUT_case_details_reads": 0,
+    "SEALED_opened": false,
+    "champion_changed": false,
+    "rollback116_changed": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "scope": {
+    "claim": "Four development cases only; no population or fresh-HOLDOUT validation claim",
+    "champion134_changed": false,
+    "rollback116_changed": false,
+    "fresh_HOLDOUT_confirmation_started": false,
+    "HOLDOUT_case_details_reads": 0,
+    "SEALED_opened": false,
+    "higher_lateral_budget_or_simultaneous_change": false,
+    "private_data_published": false,
+    "official_server_behavior_verified": false,
+    "automatic_extension": false
+  }
+}
