@@ -1,0 +1,153 @@
+{
+  "stage": 125,
+  "decision": "KEEP_CHAMPION_COMPLETION_LOSS",
+  "split": "Four fresh paired HOLDOUT conditions,8roles; one final aggregate. Existing protected HOLDOUT details and SEALED stayed closed.",
+  "baseline_archive_sha256": "b8c40bcff8ad9eea60e21755950b77235c22a0d7df89eb74f08148bbb0c9890c",
+  "candidate_archive_sha256": "51dda9c327a93b4969918571b8f3aa9ac571af8e2051971c32ef12afc2829db5",
+  "fixed_setting": "Exact frozen123 one horizontal input pixel extra connected-route obstacle exclusion,1/1.3608=0.7348618459729571m; no other candidate change.",
+  "predeclared_rule": "Complete cohort; any lostcompletion keeps116; otherwise newcompletion passes regardless commonlap slowdown; otherwise>=2 common completions require medianlapdelta<0 and meanlapratio<1. Damage is a separate warning.",
+  "cases": [
+    {
+      "condition": "fresh_HOLDOUT_0",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 41320,
+        "damage": 0.0,
+        "retire_reason": null,
+        "charged_wrapper_actions": 517
+      },
+      "candidate": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 167
+      },
+      "category": "lost_completion",
+      "common_lap_delta_ms": null
+    },
+    {
+      "condition": "fresh_HOLDOUT_1",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 50040,
+        "damage": 0.2,
+        "retire_reason": null,
+        "charged_wrapper_actions": 626
+      },
+      "candidate": {
+        "completed": true,
+        "lap_ms": 51720,
+        "damage": 0.0,
+        "retire_reason": null,
+        "charged_wrapper_actions": 647
+      },
+      "category": "common_completed",
+      "common_lap_delta_ms": 1680
+    },
+    {
+      "condition": "fresh_HOLDOUT_2",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 46600,
+        "damage": 0.0,
+        "retire_reason": null,
+        "charged_wrapper_actions": 583
+      },
+      "candidate": {
+        "completed": true,
+        "lap_ms": 46980,
+        "damage": 0.0,
+        "retire_reason": null,
+        "charged_wrapper_actions": 588
+      },
+      "category": "common_completed",
+      "common_lap_delta_ms": 380
+    },
+    {
+      "condition": "fresh_HOLDOUT_3",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 44680,
+        "damage": 0.0,
+        "retire_reason": null,
+        "charged_wrapper_actions": 559
+      },
+      "candidate": {
+        "completed": true,
+        "lap_ms": 45520,
+        "damage": 0.0,
+        "retire_reason": null,
+        "charged_wrapper_actions": 570
+      },
+      "category": "common_completed",
+      "common_lap_delta_ms": 840
+    }
+  ],
+  "aggregate": {
+    "baseline_completed": 4,
+    "candidate_completed": 3,
+    "new_completion": 0,
+    "lost_completion": 1,
+    "common_completed": 3,
+    "median_common_lap_delta_ms": 840.0,
+    "mean_common_lap_ratio": 1.0201760020088793,
+    "damage_sum_baseline": 0.2,
+    "damage_sum_candidate": 1.0,
+    "damage_warning": "Candidate collision retirement on the lostcompletion; totaldamage is descriptive with unequal driving exposure. Damage did not determine the completion-first verdict."
+  },
+  "capacity_and_budget": {
+    "B_before": 698000,
+    "research_B_increment": 8000,
+    "B_after": 706000,
+    "research_before_increase": 13107,
+    "research_after_increase": 21107,
+    "recent_actions_per_wall_s": [
+      24.102298893163898,
+      23.08546033169466
+    ],
+    "conservative_actions_per_s": 11.54273016584733,
+    "max16000_estimated_s": 1386.1538622241085,
+    "authorization_remaining_at_registration_s": 408966.481029,
+    "cloud_CPU_quota": 4,
+    "cloud_memory_GiB": 16,
+    "reserve": 84000,
+    "new_paid_resources": 0,
+    "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+    "automatic_extension": false
+  },
+  "cost": {
+    "native_actions": 4257,
+    "registered_native_cap": 16000,
+    "raw_step_ticks": 17018,
+    "raw_reset_ticks": 408,
+    "native_wall_s": 174.54210009999224,
+    "evaluator_CPU_s": 146.668645458,
+    "actor_CPU_s": 28.034459000000002,
+    "new_saved_policy_model_calls": 0,
+    "automatic_retries": 0
+  },
+  "native_total_after": 605150,
+  "research_remaining": 16850,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "validation": {
+    "cohort_complete": true,
+    "all_paired_reset_records_exact": true,
+    "all_actors_reaped": true,
+    "qualification_reused": true,
+    "new_archive_full_replay": false,
+    "actual_loaded_archive_and_input_resource_checks": true,
+    "single_final_aggregate": true,
+    "failure_trace_or_frame_saved": false,
+    "independent_endpoint_artifact_resource_review_pass": true
+  },
+  "champion116_and_rollbacks_unchanged": true,
+  "frozen_candidate_preserved": true,
+  "post_result_parameter_change": false,
+  "old_HOLDOUT_details_or_SEALED_opened": false,
+  "automatic_followup": false,
+  "plan_sha256": "56af0cca2df816c9a114c5ca7b7676b8127415bf722b55e790539f764a412668",
+  "contract_sha256": "eeb178c1bd43044e528cb47271961ba65a6f0363b71007d77832dd2a011db777",
+  "limits": "Completion regression on one freshcondition blocks adoption. The selected DEV rescue remains recorded. No causal diagnosis or retuning from HOLDOUT outcomes; no broad failure-probability estimate or official-server verification."
+}
