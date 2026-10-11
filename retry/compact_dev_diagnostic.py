@@ -97,13 +97,14 @@ class ScalarStats:
             joint_label='abs(front-wheel joint_angle+action[0]) after action; wheels0/1, target=-action[0]; not vehicle-path error.')
 
 
-def compact_episode(plan_path, plan, case, initial_pairs, baseline_policy, arm='A'):
+def compact_episode(plan_path, plan, case, initial_pairs, baseline_policy, arm='A',
+                    *, pedal_error_transform=None, stats_factory=ScalarStats):
     from retry import diagnose, frozen_composite_runtime as runtime
     from retry.frozen_paired_evaluation import episode, write
     from retry.full_route_reproduction import truth
 
     original_factory,original_prepare=diagnose.make_env,runtime.prepare
-    stats=ScalarStats()
+    stats=stats_factory()
     directory=plan_path.parent/'runs'/(case['id']+'__'+arm)
     state={}
     observation_hash,action_hash=hashlib.sha256(),hashlib.sha256()
@@ -163,10 +164,13 @@ def compact_episode(plan_path, plan, case, initial_pairs, baseline_policy, arm='
                     expected=min(40.0,float(np.sqrt(expected_budget/k)))
                     law['max_target_error_m_s']=max(law['max_target_error_m_s'],abs(target-expected))
                     assert abs(target-expected)<1e-12
-                    def pedals(t):
+                    def pedals(t, transform=None):
                         feedback=cp['actual_feedback_speed_m_s']
-                        return [float(np.float32(np.clip(.08*(t-feedback),0,.5))),float(np.float32(np.clip(.04*(feedback-t),0,.5)))]
-                    assert response['action'][1:]==pedals(target)
+                        if transform is None:
+                            return [float(np.float32(np.clip(.08*(t-feedback),0,.5))),float(np.float32(np.clip(.04*(feedback-t),0,.5)))]
+                        error=transform(t-feedback)
+                        return [float(np.float32(np.clip(.08*error,0,.5))),float(np.float32(np.clip(-.04*error,0,.5)))]
+                    assert response['action'][1:]==pedals(target, pedal_error_transform)
                     same_base=min(40.0,float(np.sqrt((5.0 if cp['near'] else base_normal)/k)))
                     changed_target=target>same_base+1e-12
                     changed_pedals=response['action'][1:]!=pedals(same_base)
