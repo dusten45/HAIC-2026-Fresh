@@ -1,0 +1,100 @@
+{
+  "stage": 118,
+  "result": "LOCAL_PEDAL_FEEDBACK_CONTRIBUTION_CONFIRMED; KEEP_CHAMPION_113",
+  "scope": "One existing DEV contact diagnosis and one preregistered local fork; no new conditions.",
+  "saved_replay": {
+    "actions_exact": 1250,
+    "actions_checked": 1250,
+    "world_truth_to_actor": false,
+    "cold_starts": 2,
+    "wall_s": 9.936679398000706
+  },
+  "precontact": {
+    "alignment": "Nearest actual centerline-progress states; not matching timestep",
+    "nearest_contact_arc_gap_m": 0.038586964195587825,
+    "frozen116_speed_m_s": 6.205239524425694,
+    "champion113_speed_m_s": 5.851912732537489,
+    "frozen116_fixture_clearance_m": 0.20405771196070388,
+    "champion113_fixture_clearance_m": 0.5332664289289879,
+    "obstacle_still_tracked": true,
+    "explicit_policy_heading_estimate": false,
+    "conclusion": "Speed, lateral position, heading, target and steering differ before first damage. Speed-only attribution is not identified."
+  },
+  "counterfactual": {
+    "preregistration_sha256": "b2e8cd3527cde9ac1f18861dd6e84801778780bc3dd466a267741a2254b00165",
+    "single_change": "From act177, supply oldHUD as pedal_speed; preserve all other policy laws and original reset/history.",
+    "exact_prefix_actions_per_arm": 176,
+    "control_actions_exact_to_saved": 300,
+    "max_actions_per_arm": 300,
+    "actual_actions_total": 600,
+    "first_changed_steer_identical": true,
+    "first_changed_gas": [
+      0.1733795702457428,
+      0.0
+    ],
+    "first_changed_brake": [
+      0.0,
+      0.12868525087833405
+    ],
+    "control_first_contact_step": 187,
+    "control_collision_flagged_wrappers": 3,
+    "old_feedback_collision_flagged_wrappers": 0,
+    "damage_through_same_passage_gate": [
+      0.6000000000000001,
+      0.0
+    ],
+    "passage_observed_both": true,
+    "passage_criterion": "Centerline progress10m beyond the focus obstacle, evaluated only outside the actor",
+    "passage_time_delta_at_wrapper_boundary_s": 0.47999999999998977,
+    "both_full_race_endpoints_censored": true,
+    "interpretation": "The local pedal-feedback change prevented recorded contact while passing the obstacle. It also changed downstream observations, path and steering; no independently isolated planner cause or general safety/lap claim.",
+    "clearance_caveat": "Saved fixture-polygon minima use different precontact windows and omit raw contact/skin/impulse details. No monotone clearance-improvement claim."
+  },
+  "cost": {
+    "native_wrapper_actions": 600,
+    "native_raw_step_ticks": 2400,
+    "native_raw_reset_ticks": 102,
+    "native_wall_s": 24.414559947006637,
+    "native_evaluator_CPU_s": 20.560823077000002,
+    "native_actor_CPU_s": 3.9052309999999997,
+    "offline_policy_act_calls": 1250,
+    "offline_wall_s": 9.936679398000706,
+    "offline_evaluator_CPU_s": 2.738570421,
+    "offline_actor_CPU_s": 7.300792,
+    "all_workers_reaped": true,
+    "new_paid_resources": 0
+  },
+  "budget": {
+    "B": 682000,
+    "B_increment": 0,
+    "cumulative_native_actions": 590560,
+    "research_balance": 7440,
+    "final_reserve": 84000,
+    "reserve_used": 0,
+    "offline_calls_charged_as_native": 0,
+    "remaining_balance_is_stop_rule": false,
+    "capacity_policy": "Set a prospective campaign N using measured serial throughput, actual setup/analysis needs and session/deadline capacity. If needed, record B>=cumulative_native+84000+N before launch. Remaining authorization is not assumed to be continuous runtime.",
+    "native_serial_rate_actions_per_s": 24.575499263649984
+  },
+  "next_experiment_proposal": {
+    "policy": "Use oldHUD for pedals only while the unchanged existing near-hazard predicate is true; use frozen fixed-decoder pedals otherwise. No new threshold/gain/ROI.",
+    "comparison": "One paired DEV experiment, two fresh conditions, three arms:113 champion,116 frozen HUD candidate, and near-gated candidate.",
+    "prospective_native_cap": 12000,
+    "prospective_B_min_if_launched_now": 686560,
+    "native_wall_estimate_s": 488.29119894013274,
+    "gate": "Qualify the single changed path and freeze artifact/conditions first; use existing completion-first and paired-time decision, with damage reported separately. No new damage-acceptance threshold or promotion here.",
+    "status": "PROPOSED_ONLY; no next-stage candidate execution or B increase in118"
+  },
+  "boundaries": {
+    "champion113_unchanged": true,
+    "frozen116_unchanged": true,
+    "rollback_archives_preserved": true,
+    "HOLDOUT_details_or_SEALED_opened": false,
+    "new_damage_acceptance_gate": false,
+    "arbitrary_state_restore": false,
+    "fits_or_parameter_sweeps": 0,
+    "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+    "automatic_extension": false
+  },
+  "reproduction": "Generic observer, saved-input replayer, one-prefix intervention worker and paired runner are public. Private seed/settings/records and original documents remain outside this repository."
+}
