@@ -1,0 +1,154 @@
+{
+  "stage": 144,
+  "status": "LOCAL_NORMAL_LATERAL10_CHAMPION_ADOPTED",
+  "split": "FRESH_HOLDOUT",
+  "method": "Prospective frozen-candidate paired generalization confirmation; completion/common lap objective separated from damage diagnostic",
+  "candidate_unchanged_since142": true,
+  "baseline_archive_sha256": "24dd264a5c5a472196e5324ef655b3bbd8b3da208058a34e1fbc364488a018d5",
+  "candidate_archive_sha256": "a140aaa4b008838773c4ce83fead5b639d28ab777ac3eaac2493cad95353a68d",
+  "parameters": {
+    "baseline_normal_lateral": 8.0,
+    "candidate_normal_lateral": 10.0,
+    "near_lateral": 5.0,
+    "speed_cap": 40.0
+  },
+  "registered_pairs": 4,
+  "episodes": 8,
+  "arm_order_counts": {
+    "AB": 2,
+    "BA": 2
+  },
+  "registration": {
+    "before_performance": true,
+    "first_identity_valid_uniform_draw": true,
+    "prior_exclusion_counts": {
+      "known_seeds": 218,
+      "known_roads": 216,
+      "known_obstacle_specs": 228,
+      "known_physical_obstacles": 86,
+      "known_obstacle_RNG_lineages": 86,
+      "known_draw_families": 16
+    },
+    "identity_rejections": 0,
+    "parent_vector_rejections": 0,
+    "difficulty_or_performance_filter": false,
+    "protected_performance_reads": 0,
+    "historical_physical_hash_coverage_limit": "Historical missing physical/spec/RNG hashes are not reconstructed. All recorded seed and road identities are excluded, including stopped/unexecuted registered roads. Physical/spec/RNG exclusions additionally cover metadata-available identities; counts are domain identities, not episode counts."
+  },
+  "baseline_completed": 4,
+  "candidate_completed": 4,
+  "counts": {
+    "new_completion": 0,
+    "lost_completion": 0,
+    "common_dnf": 0,
+    "common_completed": 4
+  },
+  "cohort_complete": true,
+  "inconclusive_pairs": 0,
+  "unexecuted_pairs": 0,
+  "censored_pairs": 0,
+  "common_median_lap_delta_ms": -2320.0,
+  "common_sum_lap_delta_ms": -9580.0,
+  "common_mean_lap_ratio": 0.9469711992712158,
+  "faster_common_count": 4,
+  "damage_diagnostic": {
+    "sums": {
+      "baseline": 0.0,
+      "candidate": 0.0
+    },
+    "observed_record_counts": {
+      "baseline": 4,
+      "candidate": 4
+    },
+    "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ.",
+    "increased": false,
+    "automatic_veto": false
+  },
+  "prior_DEV_damage_increase_retained": {
+    "source_stage": 143,
+    "baseline": 0.2,
+    "candidate": 0.6,
+    "fresh_zero_damage_is_not_absence_of_contact_risk_proof": true
+  },
+  "pre_registered_adoption_rule": "Keep8 for any lost baseline completion or incomplete/censored cohort. Local10 promotion after complete cohort, no loss, at least2 common completions, common medianlapdelta<0 and meanlapratio<1. New completions reported separately, never cancel loss. No minimum percent or automatic damage veto.",
+  "performance_gate_passed": true,
+  "local_adoption_review": "PASS: four baseline completions retained and paired time direction improves; current fresh damage0→0, priorDEV contact risk retained",
+  "paired_reset_identity_matches": true,
+  "single_final_aggregate_look": true,
+  "qualification_reused": true,
+  "actual_native_worker_receipt": {
+    "workers": 8,
+    "all_reaped": true,
+    "simulator_imported_by_actors": false,
+    "each_actor_CPU_count": 1,
+    "each_actor_address_space_limit_bytes": 1024000000,
+    "actor_peak_RSS_bytes": 47878144,
+    "new_model_calls": 0,
+    "new_saved_GT_policy_trace_or_video_rows": 0
+  },
+  "prior142_143_remote_confirmations_reused": true,
+  "pre_native_recovery": {
+    "error": "Missing readiness receipt stopped before claim; publication repaired using reused qualification",
+    "extra_native_actions": 0,
+    "candidate_or_conditions_changed": false
+  },
+  "cost": {
+    "stage": 144,
+    "native_cap": 16000,
+    "new_wrapper_actions": 4389,
+    "raw_step_ticks": 17545,
+    "raw_reset_ticks": 408,
+    "wall_including_records_s": 174.50018988299416,
+    "evaluator_CPU_s": 143.348583721,
+    "evaluator_CPU_scope": "Sum of measured native episode CPU counters",
+    "actor_CPU_s": 31.355606,
+    "new_offline_policy_or_model_calls": 0,
+    "baseline_DEV_reruns": 0,
+    "prior_candidate_DEV_reruns": 0,
+    "B_before": 726000,
+    "B_increment": 4000,
+    "B_operating_cap": 730000,
+    "actual_cumulative_wrapper_actions": 633648,
+    "research_remaining": 12352,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "archive_rebuilds": 0,
+    "full_input_or_packaging_requalification": 0,
+    "pre_native_preparation_failure_count": 1,
+    "pre_native_preparation_failure_native_actions": 0,
+    "pre_native_preparation_failure_CPU_wall_s": null,
+    "HOLDOUT_case_details_reads_for_tuning": 0,
+    "old_HOLDOUT_case_details_reads": 0,
+    "new_saved_trace_or_video_rows": 0,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false,
+    "source_registration_wall_s": 0.011561516002984717,
+    "source_registration_CPU_s": 0.010043448999999982,
+    "source_registration_environment_policy_model_calls": 0
+  },
+  "capacity": {
+    "extra4000_estimated_wall_s": 153.78027274312882,
+    "worst16000_estimated_wall_s": 615.1210909725153,
+    "same_cloud_available": true,
+    "extra_paid_resources": 0
+  },
+  "scope": {
+    "local_champion": "Frozen normal10",
+    "immediate_rollback": "Preserved normal8",
+    "older_rollbacks": [
+      "Preserved134",
+      "Preserved116"
+    ],
+    "current_manifest_sha256": "9b163dfbc5afd55fbaab1e9ba4940e7390528271bda1e81c550458ebfee4a5f6",
+    "all_earlier_archives_manifests_backups_preserved": true,
+    "old_HOLDOUT_case_details_opened": false,
+    "HOLDOUT_trace_tuning": false,
+    "SEALED_opened": false,
+    "fresh_machine_or_official_server_equivalence_verified": false,
+    "claim": "Four prospectively registered same-cloud paired conditions; descriptive local gate, not population failure probability",
+    "private_conditions_frames_traces_plans_documents_published": false,
+    "automatic_next_experiment": false,
+    "automatic_extension": false
+  }
+}
