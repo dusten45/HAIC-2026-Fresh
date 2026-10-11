@@ -1,0 +1,307 @@
+{
+  "stage": 135,
+  "status": "COMPLETE_KEEP116_ROUTE_ONLY_NOT_IMPROVED",
+  "split": "DEV",
+  "champion_kept": 116,
+  "adopted": false,
+  "source_scope": {
+    "base116_archive_sha256": "b8c40bcff8ad9eea60e21755950b77235c22a0d7df89eb74f08148bbb0c9890c",
+    "feature134_archive_sha256": "c66e2f3bfc42543a8bdcdc821898eb0fd8377ab54929ebcc46708cbee0667d55",
+    "candidate135_archive_sha256": "2d445340d6c3338458012294403e4a311cf3a58c3cffe176af933818949f1669",
+    "changed_members": [
+      "retry/connected_agent.py",
+      "retry/schedule_agent.py"
+    ],
+    "unchanged_member_count": 12,
+    "detector_tracker_controller_and_pedal_feedback": "exact116; no128-132perception changes",
+    "134_vs116_members_changed": 4,
+    "134_perception_component": "clearance+temporal bundled edits",
+    "pure_route_component": "connected+schedule exactly from134; no tuning"
+  },
+  "pre_registered_continuation": {
+    "no_completion_loss_vs116": true,
+    "primary_gain_vs116": false,
+    "complementarity_vs134": true,
+    "faster_common_completion_vs134_ms": 1220,
+    "134_completes135_DNF": true,
+    "damage_is_automatic_rejection": false,
+    "remaining_phase_same_candidate": true,
+    "total_cap": 6000
+  },
+  "stored_equal_compute_control": {
+    "status": "PASS_SAME_WORK_BASELINE_RECONSTRUCTION",
+    "inputs": 42,
+    "zero_weight116_actions_exact": true,
+    "changed_actions_weight1": 1,
+    "scorer_calls": 84,
+    "controller_arithmetic_calls": 84,
+    "full_policy_detector_tracker_model_calls": 0,
+    "wall_s": 0.5193910220114049,
+    "CPU_s": 0.513228258,
+    "qualification": "Equal-compute control is stored-state comparison; cached116nativeendpoint is reused, not claimed equal historicalCPU. No standalone effect is inferred until native comparison."
+  },
+  "native_rows": [
+    {
+      "reference": "known_clean",
+      "phase": "known",
+      "cached116": {
+        "completed": true,
+        "lap_ms": 43820,
+        "damage": 0.0,
+        "charged_wrapper_actions": 548,
+        "unique_tiles": 279,
+        "total_tiles": 279
+      },
+      "frozen135": {
+        "completed": true,
+        "lap_ms": 43820,
+        "damage": 0.0,
+        "charged_wrapper_actions": 548,
+        "unique_tiles": 279,
+        "total_tiles": 279
+      },
+      "mechanism": {
+        "identical_input_action_prefix": 548,
+        "first_difference_1based": null,
+        "first_difference_same_pixel_input": null,
+        "same_controller_before": null,
+        "alternate_selected_steps": [],
+        "entire_actions_observations_identical": true
+      }
+    },
+    {
+      "reference": "known_failure",
+      "phase": "known",
+      "cached116": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "charged_wrapper_actions": 181,
+        "unique_tiles": 104,
+        "total_tiles": 300
+      },
+      "frozen135": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "charged_wrapper_actions": 180,
+        "unique_tiles": 104,
+        "total_tiles": 300
+      },
+      "mechanism": {
+        "identical_input_action_prefix": 163,
+        "first_difference_1based": 164,
+        "first_difference_same_pixel_input": true,
+        "same_controller_before": true,
+        "alternate_selected_steps": [
+          164
+        ],
+        "entire_actions_observations_identical": false
+      }
+    },
+    {
+      "reference": "remaining_A",
+      "phase": "remaining",
+      "cached116": {
+        "completed": true,
+        "lap_ms": 46100,
+        "damage": 0.6000000000000001,
+        "charged_wrapper_actions": 577,
+        "unique_tiles": 293,
+        "total_tiles": 293
+      },
+      "frozen135": {
+        "completed": true,
+        "lap_ms": 46140,
+        "damage": 0.4,
+        "charged_wrapper_actions": 577,
+        "unique_tiles": 293,
+        "total_tiles": 293
+      },
+      "mechanism": {
+        "identical_input_action_prefix": 387,
+        "first_difference_1based": 388,
+        "first_difference_same_pixel_input": true,
+        "same_controller_before": true,
+        "alternate_selected_steps": [
+          388
+        ],
+        "entire_actions_observations_identical": false
+      }
+    },
+    {
+      "reference": "remaining_B",
+      "phase": "remaining",
+      "cached116": {
+        "completed": true,
+        "lap_ms": 45300,
+        "damage": 0.8,
+        "charged_wrapper_actions": 567,
+        "unique_tiles": 288,
+        "total_tiles": 288
+      },
+      "frozen135": {
+        "completed": true,
+        "lap_ms": 45300,
+        "damage": 0.8,
+        "charged_wrapper_actions": 567,
+        "unique_tiles": 288,
+        "total_tiles": 288
+      },
+      "mechanism": {
+        "identical_input_action_prefix": 567,
+        "first_difference_1based": null,
+        "first_difference_same_pixel_input": null,
+        "same_controller_before": null,
+        "alternate_selected_steps": [],
+        "entire_actions_observations_identical": true
+      }
+    }
+  ],
+  "four_case_completion_first_summary": {
+    "expected_count": 4,
+    "counts": {
+      "new_completion": 0,
+      "lost_completion": 0,
+      "common_dnf": 1,
+      "common_completed": 3
+    },
+    "baseline_completed_count": 3,
+    "candidate_completed_count": 3,
+    "cohort_complete": true,
+    "common_completion_median_lap_delta_ms": 0.0,
+    "common_completion_mean_lap_ratio": 1.000289226319595,
+    "total_damage_diagnostic": {
+      "sums": {
+        "baseline": 2.4000000000000004,
+        "candidate": 2.2
+      },
+      "observed_record_counts": {
+        "baseline": 4,
+        "candidate": 4
+      },
+      "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+    }
+  },
+  "known_2x2_components": {
+    "known_clean": {
+      "A_116": {
+        "completed": true,
+        "lap_ms": 43820,
+        "damage": 0.0,
+        "charged_wrapper_actions": 548,
+        "unique_tiles": 279,
+        "total_tiles": 279
+      },
+      "P_131": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "charged_wrapper_actions": 423,
+        "unique_tiles": 212,
+        "total_tiles": 279
+      },
+      "R_135": {
+        "completed": true,
+        "lap_ms": 43820,
+        "damage": 0.0,
+        "charged_wrapper_actions": 548,
+        "unique_tiles": 279,
+        "total_tiles": 279
+      },
+      "PR_134": {
+        "completed": true,
+        "lap_ms": 45040,
+        "damage": 0.6000000000000001,
+        "charged_wrapper_actions": 564,
+        "unique_tiles": 279,
+        "total_tiles": 279
+      }
+    },
+    "known_failure": {
+      "A_116": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "charged_wrapper_actions": 181,
+        "unique_tiles": 104,
+        "total_tiles": 300
+      },
+      "P_131": {
+        "completed": true,
+        "lap_ms": 48500,
+        "damage": 0.2,
+        "charged_wrapper_actions": 607,
+        "unique_tiles": 300,
+        "total_tiles": 300
+      },
+      "R_135": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "charged_wrapper_actions": 180,
+        "unique_tiles": 104,
+        "total_tiles": 300
+      },
+      "PR_134": {
+        "completed": true,
+        "lap_ms": 48500,
+        "damage": 0.2,
+        "charged_wrapper_actions": 607,
+        "unique_tiles": 300,
+        "total_tiles": 300
+      }
+    }
+  },
+  "interpretation": "Route-only135does not rescue116failure or improve common completion time. Combined134retains its known-pair completion advantage, but is slower than116/135on known clean case. Route benefit depends on bundled perception context; this is not evidence of universal necessity or steering lag as sole cause.",
+  "limitations": [
+    "Four selected DEV, historical cached endpoints; no statistical/generalization claim.",
+    "Observed road/obstacle/state/image reset hashes match; hidden full-state identity or equal native historical CPU is not claimed.",
+    "P groups multiple detector/tracker changes; this is component removal, not a primitive-factor attribution.",
+    "135first route interventions match pixel input and controller state; subsequent trajectories diverge. Precontact metrics are auxiliary.",
+    "Damage is reported separately, never used as an automatic rejection criterion."
+  ],
+  "cost": {
+    "native_wrapper_actions": 1872,
+    "native_cap": 6000,
+    "raw_step_ticks": 7486,
+    "raw_reset_ticks": 204,
+    "wall_including_records_s": 81.6243397629878,
+    "evaluator_CPU_including_records_s": 66.826901505,
+    "actor_CPU_s": 14.939678,
+    "actor_act_calls": 1872,
+    "actor_reset_calls": 4,
+    "baseline_native_runs": 0,
+    "extra_native_calls": 0,
+    "automatic_retries": 0,
+    "all_processes_reaped": true,
+    "max_actor_RSS_bytes": 48619520,
+    "max_act_including_IPC_ms": 59.735869988799095
+  },
+  "budget_after": {
+    "actual_cumulative_wrapper_actions": 612629,
+    "research_remaining": 9371,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "preservation": {
+    "champion116_manifest_sha256_unchanged": "02d24b336e909039a30b7d0480d8822c77bda9ce44b80ce696145c81fefc941a",
+    "HOLDOUT_details_or_SEALED_opened": false,
+    "official_main_expected_sha256": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+    "private_archives_frames_traces_contracts_not_published": true,
+    "native_after_this_experiment": 0
+  },
+  "provenance": {
+    "contract_sha256": "cec4e2548c09d5444a73419834ec7d48460beb07f110ccc1b918f0374f2fc955",
+    "known_plan_sha256": "5a8444b73987c88ef6e4d365194c38b644668cdca955971b3f28c48e5a1783f0",
+    "remaining_plan_sha256": "fd45c4be2af8e31d956b4bc283709e3aae62efce23dce60a45a9ec54acdd27f4",
+    "known_report_sha256": "7c8f02e79fdc3194e7766525d1d686d4a5b18887038c66ca07e3718c9684010d",
+    "remaining_report_sha256": "9fd9119e89f47da6339ed394800538f447aeacda8bdfdec8ad88ce6f3abbdaba",
+    "private_cost_sha256": "77b8cf15ee6ebfcb71396ad59cec319d005a99f2529a5c0362c00d1d904ace35",
+    "budget106_sha256": "cca5cdb3adb1584bc5e34a8277086f95c073fe99c90f8f685a1c8d671da81897",
+    "builder_sha256": "37fe3de980ffcfc78bb017d53ae9101fcf70c8077e4dab2965bf90c4308e9ceb",
+    "reproduced_archive_sha256": "2d445340d6c3338458012294403e4a311cf3a58c3cffe176af933818949f1669"
+  },
+  "next_research_question": "Does the unchanged combined134retain its known-pair completion advantage on remaining DEV versus cached116? Not executed as part of135."
+}
