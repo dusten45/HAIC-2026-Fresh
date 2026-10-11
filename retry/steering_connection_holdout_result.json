@@ -1,0 +1,157 @@
+{
+  "stage": 137,
+  "status": "ADOPT134_CURRENT_LOCAL_RESEARCH_CHAMPION",
+  "candidate_archive_sha256": "c66e2f3bfc42543a8bdcdc821898eb0fd8377ab54929ebcc46708cbee0667d55",
+  "baseline116_archive_sha256": "b8c40bcff8ad9eea60e21755950b77235c22a0d7df89eb74f08148bbb0c9890c",
+  "policy_modified_in137": false,
+  "protocol": {
+    "fresh_HOLDOUT_cases": 4,
+    "same_seed_paired_episodes": 8,
+    "balanced_arm_order_AB_BA_counts": [
+      2,
+      2
+    ],
+    "performance_before_freeze": false,
+    "difficulty_or_performance_selection": false,
+    "registered_identity_collisions": 0,
+    "selection_calls_to_environment_physics_policy": 0,
+    "existing_registry_extended_with125_metadata_only": true,
+    "old_HOLDOUT_outcome_or_detail_reads": 0,
+    "prior_packaging_and_pixel_input_qualification_reused": true,
+    "ZIP_rebuilds": 0,
+    "full_source_or_ZIP_audit_stages": 0,
+    "source_document_access_gate_added": false,
+    "final_aggregate_looks": 1,
+    "trace_or_video_inspections": 0,
+    "automatic_retries": 0,
+    "SEALED_opened": false
+  },
+  "pre_registered_gate": {
+    "completion_first": true,
+    "lost_completion_rejects": true,
+    "no_loss_and_new_completion_supports_adoption": true,
+    "equal_completion_rule": "At least2commoncompleted; medianlapdelta<0 andmeanlapratio<1.",
+    "minimum_improvement_percent": null,
+    "damage_is_automatic_rejection": false,
+    "missing_censored_or_technical_are_inconclusive": true
+  },
+  "completion": {
+    "denominator": 4,
+    "baseline116_completed": 3,
+    "frozen134_completed": 4,
+    "maintained": 3,
+    "new_completion": 1,
+    "lost_completion": 0,
+    "common_dnf": 0,
+    "inconclusive": 0,
+    "cohort_complete": true,
+    "comparison_verdict": "COMPARISON_PASS_COMPLETION_GAIN"
+  },
+  "common_completion_time": {
+    "count": 3,
+    "median_lap_delta_ms": -360.0,
+    "mean_lap_ratio": 0.9903799760821855,
+    "mean_relative_lap_improvement_percent": 0.9620023917814469,
+    "sum_lap_delta_ms": -1340.0,
+    "min_lap_delta_ms": -1380.0,
+    "worst_lap_delay_ms": 400.0,
+    "qualification": "Common completions only. A rescuedDNFhas no baseline lap. One common completion is400ms slower; completiongainis the primary adoption criterion."
+  },
+  "damage_diagnostic": {
+    "sums": {
+      "baseline": 1.8,
+      "candidate": 0.0
+    },
+    "observed_record_counts": {
+      "baseline": 4,
+      "candidate": 4
+    },
+    "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+  },
+  "capacity_and_authorized_budget_expansion": {
+    "same_designated_cloud": true,
+    "B_before": 706000,
+    "authorized_B_increment": 16000,
+    "B_after": 722000,
+    "disk_free_bytes": 29582712832,
+    "memory_available_bytes": 17974214656,
+    "available_CPU_count": 5,
+    "prior_actions_per_s": 24.070663035787284,
+    "estimated_16000_native_minutes": 11.07849278061836,
+    "authorization_time_capacity_checked": true,
+    "paid_resources_added": 0
+  },
+  "cost": {
+    "stage": 137,
+    "native_wrapper_actions": 4543,
+    "native_cap": 16000,
+    "raw_step_ticks": 18159,
+    "raw_reset_ticks": 408,
+    "wall_s": 188.08557679399382,
+    "evaluator_CPU_s": 156.504121758,
+    "actor_CPU_s": 31.889114,
+    "paired_cases": 4,
+    "native_episodes": 8,
+    "new_offline_policy_calls": 0,
+    "new_qualification_native_calls": 0,
+    "automatic_retries": 0,
+    "saved_failure_trace_rows": 0,
+    "final_aggregate_looks": 1,
+    "simulator_concurrency": 1,
+    "ZIP_rebuilds": 0,
+    "full_source_or_ZIP_audit_stages": 0,
+    "new_paid_resources": 0
+  },
+  "budget_after": {
+    "B": 722000,
+    "actual_cumulative_wrapper_actions": 618314,
+    "research_remaining": 19686,
+    "stage137_expansion_remaining": 11457,
+    "prior_research_preserved": 8229,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "one_line_cost_ledger_recorded": true
+  },
+  "actual_native_resource_receipt": {
+    "actors": 8,
+    "all_reaped_and_absent": true,
+    "all_pixel_workers_no_simulator_import": true,
+    "all_one_CPU": true,
+    "all_address_space_limit_bytes_1024000000": true,
+    "all_ready_audit_denials_zero": true,
+    "actor_reset_calls": 8,
+    "actor_act_calls": 4543,
+    "student_model_calls": 0,
+    "saved_frames_trace_telemetry_rows": 0,
+    "oracle_inputs_to_policy": false
+  },
+  "adoption": {
+    "current_local_champion": "frozen134perception+steeringconnection",
+    "rollback": "exact116archive_and_prior_manifest_preserved",
+    "local_champion_manifest_sha256": "35ffddcafc2b76dc33b3809590cc31de012b776e33bcb3d66fa06d8cfbab54f2",
+    "previous116_manifest_sha256": "02d24b336e909039a30b7d0480d8822c77bda9ce44b80ce696145c81fefc941a",
+    "G4_current_user_local_scope": "PASS_REUSED_QUALIFICATION_AND_NATIVE137_RECEIPTS",
+    "fresh_machine_and_official_server_parity": "UNVERIFIED",
+    "G5_SEALED": "PENDING_CLOSED",
+    "no_automatic_next_experiment": true
+  },
+  "provenance": {
+    "evaluation_contract_sha256": "3aa73f053721b0dc7de76d319052abdc0a4a616b91b4010d86703e06f528c3d6",
+    "selection_contract_sha256": "f3dd0173e373f14be486bc8f362dba5ca3339cf668a88955e8c27a299ccb85b7",
+    "split_sha256": "91c38b79127dc72bccc1fb32fe82cd3fefb6fe4faffa6ed6e2ec991c6e39a2d0",
+    "evaluation_plan_sha256": "fd9c4b511deec9b7da7ac180cb79ce16cb9fd4d7168d78175db35e057538381b",
+    "aggregate_sha256": "25114f1ee2b54704f5ad9b953592914659f5f7ba627e913a39700ac8a445880d",
+    "qualification_reuse_sha256": "fb5d48d33c3e313b323c6cf077dd92df8fc339bb0bc9cd9792553cba10b5ac71",
+    "cost_sha256": "8c1dcbe9da3aa69f36ba3127e2004516be4b664bf0b3fd0063bfc6f2ac41fe50",
+    "budget109_sha256": "b8be60cc2c97ae704df9d4c34323f5d58da0a4e9042008fc6a8ecf6b4f33a36d",
+    "adoption_decision_sha256": "ff7e419477b4e0f9066d30adef64bb402e6452756cadc6036cf3ac4ee246881a"
+  },
+  "limits": [
+    "Four prospectively frozen fresh conditions, one run perarm; not a precise completion reliability estimate.",
+    "Historical physical identity fingerprints cover recorded metadata only; missing old identities were not reconstructed. All known seed/road identities and available obstacle lineages were excluded.",
+    "Known DEV contact risk remains despite freshcandidate damage0. Damage and the400ms time regression remain diagnostics.",
+    "Observed paired reset fingerprints match; hidden full-state or independent-machine/official-server equivalence is not claimed.",
+    "No protected condition identity, geometry, per-condition outcome, raw frame, trace, private plan or manifest is published."
+  ],
+  "next_action": "Preserve exact134localchampion and116rollback. SEALED stays closed; no further native experiment in137."
+}
