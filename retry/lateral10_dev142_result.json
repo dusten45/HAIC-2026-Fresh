@@ -1,0 +1,263 @@
+{
+  "stage": 142,
+  "status": "RETAIN_FIXED10_FOR_REMAINING_DEV_NEXT_CHOICE",
+  "split": "DEV",
+  "baseline": "Adopted141 normal8 champion; actual archived139 DEV records, no baseline rerun",
+  "candidate": "Only normal lateral8→10 m/s²; near5, cap40, path, tracking, steering and HUD fixed",
+  "baseline_archive_sha256": "24dd264a5c5a472196e5324ef655b3bbd8b3da208058a34e1fbc364488a018d5",
+  "candidate_archive_sha256": "a140aaa4b008838773c4ce83fead5b639d28ab777ac3eaac2493cad95353a68d",
+  "changed_archive_members": [
+    "agent.py"
+  ],
+  "other13_members_byte_identical": true,
+  "preregistered_gate": "Maintain both baseline completions and common median delta<0 plus mean ratio<1; any completion loss stops larger-budget line. Damage diagnosed separately, no automatic veto or minimum percent.",
+  "candidate_runs": 2,
+  "baseline_completed": 2,
+  "candidate_completed": 2,
+  "counts": {
+    "new_completion": 0,
+    "lost_completion": 0,
+    "common_completed": 2,
+    "common_dnf": 0
+  },
+  "comparisons": [
+    {
+      "anonymous_DEV": 0,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 51140,
+      "candidate_lap_ms": 48140,
+      "baseline_damage": 0.2,
+      "candidate_damage": 0.0,
+      "candidate_native_actions": 603,
+      "lap_delta_ms": -3000,
+      "lap_ratio": 0.9413375048885413
+    },
+    {
+      "anonymous_DEV": 1,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 46840,
+      "candidate_lap_ms": 44340,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.6000000000000001,
+      "candidate_native_actions": 555,
+      "lap_delta_ms": -2500,
+      "lap_ratio": 0.9466268146883006
+    }
+  ],
+  "common_sum_lap_delta_ms": -5500,
+  "common_median_lap_delta_ms": -2750.0,
+  "common_mean_lap_ratio": 0.9439821597884209,
+  "damage_diagnostic": {
+    "sums": {
+      "baseline": 0.2,
+      "candidate": 0.6000000000000001
+    },
+    "increased": true,
+    "automatic_veto": false,
+    "qualification": "Descriptive endpoints with different durations and trajectories; contact shifted between these two cases."
+  },
+  "actual_intervention_checks": {
+    "actual_rows": 1158,
+    "normal10_rows": 946,
+    "near5_rows": 212,
+    "target_none_rows_excluded": 0,
+    "target_increased_vs_same_input8_rows": 574,
+    "pedals_changed_vs_same_input8_rows": 555,
+    "gas_increased_rows": 325,
+    "brake_reduced_rows": 371,
+    "near_target_or_pedal_changes": 0,
+    "target_source_law_max_error_m_s": 0.0,
+    "pedals_match_source_exactly": true
+  },
+  "first_divergences": [
+    {
+      "anonymous_DEV": 0,
+      "first_changed_action_step": 8,
+      "same_input": true,
+      "same_path_HUD_hazards_route_selection_steer": true,
+      "baseline_target_m_s": 31.885038458944397,
+      "candidate_target_m_s": 35.648556729697404,
+      "baseline_action": [
+        0.02039186842739582,
+        0.45080307126045227,
+        0.0
+      ],
+      "candidate_action": [
+        0.02039186842739582,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "anonymous_DEV": 1,
+      "first_changed_action_step": 21,
+      "same_input": true,
+      "same_path_HUD_hazards_route_selection_steer": true,
+      "baseline_target_m_s": 31.885038458944397,
+      "candidate_target_m_s": 35.648556729697404,
+      "baseline_action": [
+        -0.02039186842739582,
+        0.0,
+        0.27459844946861267
+      ],
+      "candidate_action": [
+        -0.02039186842739582,
+        0.0,
+        0.12405773252248764
+      ]
+    }
+  ],
+  "pre_damage_diagnosis": {
+    "window_rule": "Exactly20 actual action rows strictly before the first positive damage increment; no window if undamaged.",
+    "joint_label": "abs(saved front-wheel joint angle + action[0]) after actual action, wheels0/1. GT label only, never policy input.",
+    "runs": [
+      {
+        "anonymous_DEV": 0,
+        "baseline_first_damage": {
+          "step": 272,
+          "elapsed_pre_s": 21.679999999999605,
+          "elapsed_post_s": 21.759999999999604,
+          "damage_before": 0.0,
+          "damage_after": 0.2,
+          "damage_increment": 0.2
+        },
+        "baseline_pre_damage_summary": {
+          "first_step": 252,
+          "last_step": 271,
+          "rows": 20,
+          "near_rows": 15,
+          "braking_rows": 10,
+          "actual_pre_speed_min_max_m_s": [
+            6.64413490917858,
+            40.185904783456685
+          ],
+          "target_min_max_m_s": [
+            6.6252018879153844,
+            40.0
+          ],
+          "steer_min_max_rad": [
+            -0.20541076362133026,
+            0.3352084159851074
+          ],
+          "joint_residual_mean_max_rad": [
+            4.0524216515791524e-08,
+            8.381903171539307e-08
+          ]
+        },
+        "candidate_first_damage": null,
+        "candidate_pre_damage_summary": null
+      },
+      {
+        "anonymous_DEV": 1,
+        "baseline_first_damage": null,
+        "baseline_pre_damage_summary": null,
+        "candidate_first_damage": {
+          "step": 135,
+          "elapsed_pre_s": 10.719999999999839,
+          "elapsed_post_s": 10.799999999999837,
+          "actual_pre_speed_m_s": 7.480125260742245,
+          "actual_post_speed_m_s": 10.926730760267397,
+          "feedback_pre_speed_m_s": 6.25,
+          "target_speed_m_s": 9.277690166912594,
+          "curvature": 0.11617703008613581,
+          "near": false,
+          "steer": 0.34981951117515564,
+          "gas": 0.24221521615982056,
+          "brake": 0.0,
+          "front_joint_residual_after_rad": [
+            0.0002402961254119873,
+            0.0002402961254119873
+          ],
+          "offtrack_before": 3,
+          "tracked_hazards": 1,
+          "damage_before": 0.0,
+          "damage_after": 0.2,
+          "damage_increment": 0.2,
+          "collision": true,
+          "action_dwell_s": 0.0799999999999983
+        },
+        "candidate_pre_damage_summary": {
+          "action_rows": 20,
+          "steps": [
+            115,
+            134
+          ],
+          "elapsed_interval_s": [
+            9.119999999999873,
+            10.719999999999839
+          ],
+          "actual_pre_speed_range_m_s": [
+            5.6748970911931504,
+            22.475540825620186
+          ],
+          "actual_pre_speed_first_last_m_s": [
+            14.030637680869612,
+            5.6748970911931504
+          ],
+          "target_range_m_s": [
+            6.681085638568758,
+            40.0
+          ],
+          "near_rows": 13,
+          "brake_rows": 12,
+          "gas_rows": 8,
+          "steer_range": [
+            -0.04105987399816513,
+            0.3209291994571686
+          ],
+          "after_front_joint_residual_mean_rad": 2.4790642783045767e-08,
+          "after_front_joint_residual_max_rad": 8.940696716308594e-08
+        }
+      }
+    ],
+    "interpretation": "Existing contactDEV became undamaged, while previously undamaged curvatureDEV acquired0.6damage. First event followed alternating braking/acceleration and near→normal switch; source signed wheel-joint tracking before event was almost exact. This is not proof of actuator delay, physical friction limit, or unique causal contact mechanism.",
+    "limitation": "Wheel-joint residual is not vehicle-path error. Windows from divergent trajectories do not isolate speed, perception, route clearance or contact cause."
+  },
+  "cost": {
+    "stage": 142,
+    "native_cap": 4000,
+    "new_wrapper_actions": 1158,
+    "raw_step_ticks": 4627,
+    "raw_reset_ticks": 102,
+    "wall_including_records_s": 48.501348053017864,
+    "evaluator_CPU_s": 39.782934659999995,
+    "actor_CPU_s": 8.862025000000001,
+    "new_offline_policy_or_model_calls": 0,
+    "baseline_reruns": 0,
+    "cached139_baseline_runs_reused": 2,
+    "cached139_native_actions_reused_not_recharged": 1226,
+    "B_operating_cap": 726000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 628317,
+    "research_remaining": 13683,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_fixed_candidate_archive_builds": 1,
+    "full_input_or_packaging_requalification": 0,
+    "HOLDOUT_case_details_reads": 0,
+    "SEALED_opened": false,
+    "champion8_changed": false,
+    "rollback134_changed": false,
+    "rollback116_changed": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "decision": "RETAIN_FIXED10_FOR_REMAINING_DEV_NEXT_CHOICE",
+  "next_choice": "Unchanged normal10 on remaining two138 DEV vs actual cached8 stage140 endpoints; no next run/reservation/adoption in142.",
+  "scope": {
+    "claim": "Two previously developed DEV cases only; no population, remainingDEV or freshHOLDOUT validation claim.",
+    "champion8_changed": false,
+    "rollback134_changed": false,
+    "rollback116_changed": false,
+    "HOLDOUT_case_details_reads": 0,
+    "SEALED_opened": false,
+    "old_other_policy_lateral10_results_used": false,
+    "official_server_behavior_verified": false,
+    "private_conditions_frames_traces_plans_published": false,
+    "larger_coefficient_sweep": false,
+    "automatic_next_experiment": false,
+    "automatic_extension": false
+  }
+}
