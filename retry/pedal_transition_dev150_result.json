@@ -1,6 +1,6 @@
 {
   "stage": 150,
-  "verdict": "STOP_CANDIDATE_NO_THRESHOLD_SWEEP",
+  "verdict": "RETAIN_UNCHANGED_CANDIDATE_FOR_AUTHORIZED_REMAINING_DEV",
   "champion_changed": false,
   "cohort_complete": true,
   "baseline_completion_count": 2,
@@ -17,7 +17,6 @@
     "actual_intervention_in_both": true,
     "no_individual_lap_regression": true,
     "common_sum_time_gain": true,
-    "damage_not_increased": false,
     "large_error_braking_unchanged": true
   },
   "comparisons": [
@@ -141,7 +140,7 @@
   "baseline_archive_sha256": "41b53b1a3cffea2053de1bc9ed1994a6a96d66f228b9a4818c32aeaf6f22c199",
   "law": "e=target-HUD; e_soft=e*min(abs(e)/2.5,1); gas=clip(.08*e_soft,0,.5); brake=clip(-.04*e_soft,0,.5)",
   "unchanged_components": "Route, tracker, HUD estimator, target law, normal16/near5/cap40, steering and no-target fallback. Only two pedal source lines change; 13other ZIP members byte-identical.",
-  "decision_rule": "No adoption. Retain this exact candidate for a separately authorized next gate only if both existing completions retained, both episodes have actual changed pedal commands, neither common lap slower, sum common lap delta<0 and aggregate damage<=baseline. Any failure, no intervention, censor or missing episode stops this candidate without a width/deadband sweep.",
+  "decision_rule": "Retain unchanged candidate: both baseline completions and both time gains are observed. Damage is reported separately and is not an automatic veto. User authorized151 remaining two fixed DEV; no sweep or adoption.",
   "native_action_cap": 4000,
   "saved_window_diagnosis": {
     "row_count": 20,
@@ -216,5 +215,19 @@
     "Same cloud only; fresh-machine/official-server unverified. HOLDOUT details and SEALED closed."
   ],
   "authorization_end_utc": "2026-10-16T10:01:55+00:00",
-  "automatic_extension": false
+  "automatic_extension": false,
+  "damage_diagnostic": {
+    "baseline_sum": 0.2,
+    "candidate_sum": 0.4,
+    "increase": 0.2,
+    "automatic_veto": false
+  },
+  "decision_correction": {
+    "corrected_in_stage": 151,
+    "superseded_verdict": "STOP_CANDIDATE_NO_THRESHOLD_SWEEP",
+    "unsupported_extra_damage_veto": true,
+    "observations_changed": false,
+    "reason": "The extra damage-not-increased veto imposed in150 conflicts with user instruction and application-plan sections8/10. Damage remains a separate diagnostic from official completion/time ranking.",
+    "damage_warning": "Observed first2DEV damage0.2→0.4 (+0.2) remains explicit; small-error braking is weaker, and contact cause is unresolved."
+  }
 }

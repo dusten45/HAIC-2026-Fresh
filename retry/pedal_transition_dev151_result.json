@@ -1,0 +1,208 @@
+{
+  "stage": 151,
+  "verdict": "RETAIN_EXACT150_CANDIDATE_FOR_FRESH_HOLDOUT",
+  "candidate_archive_sha256": "73a2013448e10dfadeaad4bba8c3539f6abe2e083e74182651c45eb7fe04fc35",
+  "candidate_unchanged_since150": true,
+  "damage_automatic_veto": false,
+  "champion_changed": false,
+  "cohort_complete": true,
+  "baseline_completed_count": 4,
+  "candidate_completed_count": 4,
+  "counts": {
+    "new_completion": 0,
+    "lost_completion": 0,
+    "common_dnf": 0,
+    "common_completed": 4
+  },
+  "common_median_delta_ms": -50.0,
+  "common_sum_delta_ms": -700.0,
+  "common_mean_lap_ratio": 0.9962251305763441,
+  "remaining_two_common_sum_delta_ms": 160.0,
+  "total_damage_diagnostic": {
+    "sums": {
+      "baseline": 0.2,
+      "candidate": 0.4
+    },
+    "observed_record_counts": {
+      "baseline": 4,
+      "candidate": 4
+    },
+    "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+  },
+  "comparisons": [
+    {
+      "DEV_index": 0,
+      "candidate_source_stage": 150,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 43780,
+      "candidate_lap_ms": 43040,
+      "delta_ms": -740,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "actual_changed_pedal_rows": 336,
+      "large_error_brake_rows": 61,
+      "large_error_brake_changed_rows": 0,
+      "candidate_active_pedal_switch_rate_s": 4.319554110543298,
+      "candidate_actual_speed_direction_switch_rate_s": 4.133766836971544,
+      "first_damage_step": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": true,
+      "actual_stream_hashes_match": true
+    },
+    {
+      "DEV_index": 1,
+      "candidate_source_stage": 150,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 39240,
+      "candidate_lap_ms": 39120,
+      "delta_ms": -120,
+      "baseline_damage": 0.2,
+      "candidate_damage": 0.4,
+      "actual_changed_pedal_rows": 302,
+      "large_error_brake_rows": 52,
+      "large_error_brake_changed_rows": 0,
+      "candidate_active_pedal_switch_rate_s": 3.934593765968251,
+      "candidate_actual_speed_direction_switch_rate_s": 3.679100664282001,
+      "first_damage_step": 131,
+      "first_damage_pre_summary": {
+        "rows": 20,
+        "steps": [
+          111,
+          130
+        ],
+        "native_elapsed_interval_s": [
+          8.79999999999988,
+          10.399999999999846
+        ],
+        "speed_range_m_s": [
+          6.680439894643313,
+          22.7873821134663
+        ],
+        "target_range_m_s": [
+          6.544626185422354,
+          40.0
+        ],
+        "near_rows": 16,
+        "gas_rows": 11,
+        "brake_rows": 9,
+        "active_pedal_opposite_switches": 9,
+        "actual_speed_direction_switches": 8,
+        "joint_residual_mean_rad": 4.5821070671081546e-08,
+        "joint_residual_max_rad": 1.7881393432617188e-07
+      },
+      "paired_initial_exact": true,
+      "actual_stream_hashes_match": true
+    },
+    {
+      "DEV_index": 2,
+      "candidate_source_stage": 151,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 32620,
+      "candidate_lap_ms": 32760,
+      "delta_ms": 140,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "actual_changed_pedal_rows": 268,
+      "large_error_brake_rows": 43,
+      "large_error_brake_changed_rows": 0,
+      "candidate_active_pedal_switch_rate_s": 4.4512195121951645,
+      "candidate_actual_speed_direction_switch_rate_s": 4.3902439024390665,
+      "first_damage_step": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": true,
+      "actual_stream_hashes_match": true
+    },
+    {
+      "DEV_index": 3,
+      "candidate_source_stage": 151,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 35120,
+      "candidate_lap_ms": 35140,
+      "delta_ms": 20,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "actual_changed_pedal_rows": 264,
+      "large_error_brake_rows": 51,
+      "large_error_brake_changed_rows": 0,
+      "candidate_active_pedal_switch_rate_s": 3.839590443686001,
+      "candidate_actual_speed_direction_switch_rate_s": 3.8964732650739418,
+      "first_damage_step": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": true,
+      "actual_stream_hashes_match": true
+    }
+  ],
+  "decision_rule": "Retain exact150 candidate for a separately authorized fresh HOLDOUT only if all4 comparable endpoints, no existing completion lost, >=2 common completions, median common lap delta<0 and mean common lap ratio<1. Damage increases are explicit separate diagnostics, never an automatic veto. No champion promotion. Completion loss, absent time improvement or censor/incomplete cohort means no expansion.",
+  "correction150": {
+    "unsupported_damage_veto_removed": true,
+    "raw_observations_changed": false,
+    "historical_contract_analysis_cost_preserved": true,
+    "first_two_time_gain_ms": -860,
+    "first_two_damage_baseline": 0.2,
+    "first_two_damage_candidate": 0.4,
+    "reason": "Damage is separate diagnostic under user instruction/application-plan8/10, not automatic rejection."
+  },
+  "native_cost": {
+    "stage": 151,
+    "at_utc": "2026-10-11T23:41:25.805697+00:00",
+    "native_cap": 4000,
+    "actual_episodes": 2,
+    "new_wrapper_actions": 850,
+    "raw_step_ticks": 3398,
+    "raw_reset_ticks": 102,
+    "wall_including_short_records_s": 38.66596422702423,
+    "evaluator_CPU_s": 31.410561107,
+    "actor_CPU_s": 7.333527999999999,
+    "B_operating_cap": 746000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 648631,
+    "research_remaining": 13369,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "cached_baseline16_actions_reused_not_recharged": 1887,
+    "cached_candidate150_actions_reused_not_recharged": 1029,
+    "baseline16_reruns": 0,
+    "first_two_candidate_reruns": 0,
+    "candidate_archive_rebuilds": 0,
+    "new_offline_policy_model_calls": 0,
+    "new_isolated_controller_calls": 0,
+    "full_requalification_replays": 0,
+    "new_full_pixels_GT_policy_video_streams": 0,
+    "HOLDOUT_case_details_reads": 0,
+    "SEALED_opened": false,
+    "current16_changed": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "verification": {
+    "exact150_archive_and_observer_reused": true,
+    "existing_component_and_input_checks_reused": true,
+    "no_new_controller_or_policy_replay": true,
+    "paired_reset_identity_matches": 4,
+    "actual_call_source_law_and_stream_hashes_match": true,
+    "all_new_actors_reaped": true,
+    "observed_peak_actor_RSS_bytes": 48553984,
+    "actual_new_actor_CPU_affinity_counts": [
+      1,
+      1
+    ],
+    "current_and_rollbacks_unchanged": true
+  },
+  "limits": [
+    "Four previously developed DEV conditions, one rollout each; cached148 baseline and150 first2 reused. No independent generalization claim.",
+    "The150 observed damage increase0.2→0.4 is preserved. Small-error braking is weaker and later trajectory/target/near exposure differ; contact cause is unresolved.",
+    "Completion/time determine the local gate. Damage and reversal statistics remain separate diagnostics, never automatic extra vetoes.",
+    "Fresh HOLDOUT candidate only, no adoption or fresh evaluation in151. HOLDOUT details/SEALED closed, official-server parity unverified."
+  ],
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_next_experiment": false,
+  "automatic_extension": false
+}
