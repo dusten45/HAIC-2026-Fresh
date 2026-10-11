@@ -1,0 +1,417 @@
+{
+  "stage": 152,
+  "verdict": "RETAIN_SELECTED_FROZEN_DEV_CANDIDATE_ONLY",
+  "fixed_candidate_values": [
+    20,
+    24
+  ],
+  "selected_normal_lateral": 24.0,
+  "baseline_archive_sha256": "41b53b1a3cffea2053de1bc9ed1994a6a96d66f228b9a4818c32aeaf6f22c199",
+  "candidate_archive_sha256": {
+    "20": "df7ad1fa6452dc256803ddf7625e59b8264fa314d153e8ec9ba9007d02576553",
+    "24": "2a43f47869fa234965081c68ed9b1bbfd320f71afb756e55c52471622dbd5825"
+  },
+  "screening": {
+    "20": {
+      "normal_lateral": 20.0,
+      "eligible": false,
+      "common_sum_delta_ms": -2400,
+      "common_median_delta_ms": -2400,
+      "common_mean_ratio": 0.9451804476930105,
+      "observed_loss": true,
+      "baseline_completed": 2,
+      "candidate_completed": 1,
+      "baseline_damage_sum": 0.2,
+      "candidate_damage_sum": 1.0,
+      "actual_endpoint_count": 2
+    },
+    "24": {
+      "normal_lateral": 24.0,
+      "eligible": true,
+      "common_sum_delta_ms": -7240,
+      "common_median_delta_ms": -3620.0,
+      "common_mean_ratio": 0.9129269272877221,
+      "observed_loss": false,
+      "baseline_completed": 2,
+      "candidate_completed": 2,
+      "baseline_damage_sum": 0.2,
+      "candidate_damage_sum": 0.2,
+      "actual_endpoint_count": 2
+    }
+  },
+  "selected_full4": {
+    "cohort_complete": true,
+    "baseline_completed_count": 4,
+    "candidate_completed_count": 4,
+    "counts": {
+      "new_completion": 0,
+      "lost_completion": 0,
+      "common_dnf": 0,
+      "common_completed": 4
+    },
+    "common_median_delta_ms": -2580.0,
+    "common_sum_delta_ms": -10540.0,
+    "common_mean_lap_ratio": 0.9321760594352547,
+    "remaining2_common_sum_delta_ms": -3300.0,
+    "total_damage_diagnostic": {
+      "sums": {
+        "baseline": 0.2,
+        "candidate": 0.2
+      },
+      "observed_record_counts": {
+        "baseline": 4,
+        "candidate": 4
+      },
+      "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+    }
+  },
+  "comparisons": [
+    {
+      "DEV_index": 0,
+      "normal_lateral": 20.0,
+      "phase": "SCREEN",
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 43780,
+      "candidate_lap_ms": 41380,
+      "delta_ms": -2400,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "actual_target_law": {
+        "rows": 518,
+        "excluded_target_none": 0,
+        "max_target_error_m_s": 0.0,
+        "pedals_match_source": true,
+        "target_increased_vs_same_input_baseline_rows": 174,
+        "pedals_changed_vs_same_input_baseline_rows": 158,
+        "near_target_or_pedal_changes": 0
+      },
+      "candidate_active_pedal_switch_rate_s": 5.314009661835617,
+      "first_damage_step": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": true,
+      "actual_stream_hashes_match": true
+    },
+    {
+      "DEV_index": 1,
+      "normal_lateral": 20.0,
+      "phase": "SCREEN",
+      "baseline_completed": true,
+      "candidate_completed": false,
+      "candidate_censored": false,
+      "baseline_lap_ms": 39240,
+      "candidate_lap_ms": null,
+      "delta_ms": null,
+      "baseline_damage": 0.2,
+      "candidate_damage": 1.0,
+      "actual_target_law": {
+        "rows": 203,
+        "excluded_target_none": 0,
+        "max_target_error_m_s": 0.0,
+        "pedals_match_source": true,
+        "target_increased_vs_same_input_baseline_rows": 59,
+        "pedals_changed_vs_same_input_baseline_rows": 53,
+        "near_target_or_pedal_changes": 0
+      },
+      "candidate_active_pedal_switch_rate_s": 4.926108374384321,
+      "first_damage_step": 125,
+      "first_damage_pre_summary": {
+        "rows": 20,
+        "steps": [
+          105,
+          124
+        ],
+        "native_elapsed_interval_s": [
+          8.31999999999989,
+          9.919999999999856
+        ],
+        "speed_range_m_s": [
+          5.796683493007806,
+          31.392520333160967
+        ],
+        "target_range_m_s": [
+          6.5443246742199985,
+          40.0
+        ],
+        "near_rows": 13,
+        "gas_rows": 11,
+        "brake_rows": 9,
+        "active_pedal_opposite_switches": 11,
+        "actual_speed_direction_switches": 11,
+        "joint_residual_mean_rad": 5.0599919632077214e-08,
+        "joint_residual_max_rad": 2.086162567138672e-07
+      },
+      "paired_initial_exact": true,
+      "actual_stream_hashes_match": true
+    },
+    {
+      "DEV_index": 0,
+      "normal_lateral": 24.0,
+      "phase": "SCREEN",
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 43780,
+      "candidate_lap_ms": 39860,
+      "delta_ms": -3920,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.2,
+      "actual_target_law": {
+        "rows": 499,
+        "excluded_target_none": 0,
+        "max_target_error_m_s": 0.0,
+        "pedals_match_source": true,
+        "target_increased_vs_same_input_baseline_rows": 172,
+        "pedals_changed_vs_same_input_baseline_rows": 154,
+        "near_target_or_pedal_changes": 0
+      },
+      "candidate_active_pedal_switch_rate_s": 5.015045135406119,
+      "first_damage_step": 228,
+      "first_damage_pre_summary": {
+        "rows": 20,
+        "steps": [
+          208,
+          227
+        ],
+        "native_elapsed_interval_s": [
+          16.559999999999715,
+          18.15999999999968
+        ],
+        "speed_range_m_s": [
+          5.546362182230093,
+          40.4723072232939
+        ],
+        "target_range_m_s": [
+          6.55419883916062,
+          40.0
+        ],
+        "near_rows": 16,
+        "gas_rows": 10,
+        "brake_rows": 10,
+        "active_pedal_opposite_switches": 12,
+        "actual_speed_direction_switches": 12,
+        "joint_residual_mean_rad": 4.6570508649423915e-08,
+        "joint_residual_max_rad": 9.313225746154785e-08
+      },
+      "paired_initial_exact": true,
+      "actual_stream_hashes_match": true
+    },
+    {
+      "DEV_index": 1,
+      "normal_lateral": 24.0,
+      "phase": "SCREEN",
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 39240,
+      "candidate_lap_ms": 35920,
+      "delta_ms": -3320,
+      "baseline_damage": 0.2,
+      "candidate_damage": 0.0,
+      "actual_target_law": {
+        "rows": 450,
+        "excluded_target_none": 0,
+        "max_target_error_m_s": 0.0,
+        "pedals_match_source": true,
+        "target_increased_vs_same_input_baseline_rows": 141,
+        "pedals_changed_vs_same_input_baseline_rows": 126,
+        "near_target_or_pedal_changes": 0
+      },
+      "candidate_active_pedal_switch_rate_s": 4.897050639955458,
+      "first_damage_step": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": true,
+      "actual_stream_hashes_match": true
+    },
+    {
+      "DEV_index": 2,
+      "normal_lateral": 24.0,
+      "phase": "CONFIRM",
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 32620,
+      "candidate_lap_ms": 31160,
+      "delta_ms": -1460,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "actual_target_law": {
+        "rows": 390,
+        "excluded_target_none": 0,
+        "max_target_error_m_s": 0.0,
+        "pedals_match_source": true,
+        "target_increased_vs_same_input_baseline_rows": 73,
+        "pedals_changed_vs_same_input_baseline_rows": 68,
+        "near_target_or_pedal_changes": 0
+      },
+      "candidate_active_pedal_switch_rate_s": 5.61257216164218,
+      "first_damage_step": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": true,
+      "actual_stream_hashes_match": true
+    },
+    {
+      "DEV_index": 3,
+      "normal_lateral": 24.0,
+      "phase": "CONFIRM",
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 35120,
+      "candidate_lap_ms": 33280,
+      "delta_ms": -1840,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "actual_target_law": {
+        "rows": 417,
+        "excluded_target_none": 0,
+        "max_target_error_m_s": 0.0,
+        "pedals_match_source": true,
+        "target_increased_vs_same_input_baseline_rows": 145,
+        "pedals_changed_vs_same_input_baseline_rows": 136,
+        "near_target_or_pedal_changes": 0
+      },
+      "candidate_active_pedal_switch_rate_s": 4.654654654654688,
+      "first_damage_step": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": true,
+      "actual_stream_hashes_match": true
+    }
+  ],
+  "first_declared_failure_evidence": {
+    "type": "OBSERVED_COMPLETION_LOSS",
+    "DEV_index": 1,
+    "normal_lateral": 20.0,
+    "candidate_outcome": "dnf",
+    "retire_reason": "crash",
+    "native_actions": 203,
+    "baseline_completed": true,
+    "candidate_damage": 1.0,
+    "last_actual_action": {
+      "step": 203,
+      "native_elapsed_pre_s": 16.159999999999723,
+      "native_elapsed_post_s": 16.23999999999972,
+      "dwell_s": 0.0799999999999983,
+      "native_absolute_pre_s": 17.179999999999723,
+      "native_absolute_post_s": 17.25999999999972,
+      "speed_before_m_s": 10.12744607102853,
+      "speed_after_m_s": 11.980096501675638,
+      "feedback_m_s": 11.25,
+      "target_m_s": 40.0,
+      "curvature": 0.0,
+      "near": false,
+      "selected_lateral_budget": 20.0,
+      "steer": -0.03540835157036781,
+      "gas": 0.5,
+      "brake": 0.0,
+      "front_joint_residual_after_rad": [
+        0.0013996623456478119,
+        0.0013996623456478119
+      ],
+      "offtrack_before": 4,
+      "offtrack_after": 0,
+      "damage_before": 0.8,
+      "damage_after": 1.0,
+      "collision": true
+    },
+    "strictly_previous_at_most20_summary": {
+      "rows": 20,
+      "steps": [
+        183,
+        202
+      ],
+      "native_elapsed_interval_s": [
+        14.559999999999757,
+        16.159999999999723
+      ],
+      "speed_range_m_s": [
+        7.32749391607007,
+        35.83319560481051
+      ],
+      "target_range_m_s": [
+        7.618874105539873,
+        40.0
+      ],
+      "near_rows": 14,
+      "gas_rows": 11,
+      "brake_rows": 9,
+      "active_pedal_opposite_switches": 8,
+      "actual_speed_direction_switches": 8,
+      "joint_residual_mean_rad": 0.0019277228595456109,
+      "joint_residual_max_rad": 0.07378223538398743
+    },
+    "exact_bounded_window_saved_privately": true,
+    "unique_cause_established": false
+  },
+  "skipped_roles": [],
+  "selection_rule": "Eligible only if both first2 baseline completions retained with comparable endpoints, paired medianlapdelta<0 and meanlapratio<1. Select most negative paired sumlapdelta; exact tie lower20. Damage/reversal statistics are independent diagnostics, never automatic vetoes or selection scores.",
+  "final_gate": "DEV candidate only if selected retains all4 completions in complete comparable cohort, full common medianlapdelta<0 and meanlapratio<1, remaining2 common sumlapdelta<0. No winner, completion loss, inconclusive or absent reproduced effect ends higher-coefficient testing for this stage. No promotion or HOLDOUT execution.",
+  "damage_automatic_veto": false,
+  "current16_changed": false,
+  "new_candidate_status": "DEV_ONLY_UNPROMOTED",
+  "weak_pedal_candidate": {
+    "status": "WEAK_HELD_NO_PROMOTION_OR_TUNING",
+    "full4_sum_delta_ms": -700,
+    "remaining2_sum_delta_ms": 160,
+    "damage_baseline": 0.2,
+    "damage_candidate": 0.4,
+    "blended_into152": false
+  },
+  "native_cost": {
+    "stage": 152,
+    "at_utc": "2026-10-11T23:51:22.664139+00:00",
+    "native_cap": 12000,
+    "max_conditional_episodes": 6,
+    "actual_episodes": 6,
+    "new_wrapper_actions": 2477,
+    "selected_arm_actions": 1756,
+    "unselected_arms_actions": 721,
+    "raw_step_ticks": 9897,
+    "raw_reset_ticks": 306,
+    "wall_including_short_records_s": 105.94999439298408,
+    "evaluator_CPU_s": 86.29385556199999,
+    "actor_CPU_s": 20.008383999999996,
+    "B_operating_cap": 746000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 651108,
+    "research_remaining": 10892,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "cached16_actions_reused_not_recharged": 1887,
+    "baseline16_reruns": 0,
+    "pedal_candidate_executions": 0,
+    "new_offline_policy_model_calls": 0,
+    "full_requalification_replays": 0,
+    "new_full_pixels_GT_policy_video_streams": 0,
+    "HOLDOUT_case_details_reads": 0,
+    "SEALED_opened": false,
+    "current16_changed": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "verification": {
+    "changed_archive_members": [
+      "agent.py"
+    ],
+    "copied_other_members_byte_for_byte": 13,
+    "original_current16_pedal_member_unchanged": true,
+    "observer_change_expected_lateral_only": true,
+    "paired_reset_identity_matches": 6,
+    "actual_source_law_and_stream_hashes_match": true,
+    "all_new_actors_reaped": true,
+    "observed_peak_actor_RSS_bytes": 48640000,
+    "current_rollbacks_and_weak_pedal_archive_unchanged": true,
+    "qualification_reused": true
+  },
+  "limits": [
+    "Existing4DEV and cached148 exact16 baseline, one rollout per arm; no population/generalization estimate.",
+    "Only normal lateral20/24, near5/cap40 and all other source members fixed. Later paths/target/HUD/near observations differ with trajectory.",
+    "Damage and reversal are diagnostic, separate from completion/time ranking; small joint residuals do not prove vehicle-path tracking or a unique failure cause.",
+    "No full baseline16 policy stream; actual source scope, same initial identity and per-current-input arithmetic verified, not full-policy prefix parity.",
+    "No promotion or HOLDOUT/SEALED opening; fresh-machine/official-server parity unverified."
+  ],
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_next_experiment": false,
+  "automatic_extension": false
+}
