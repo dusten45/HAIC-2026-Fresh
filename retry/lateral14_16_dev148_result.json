@@ -1,0 +1,364 @@
+{
+  "stage": 148,
+  "status": "FIXED16_SELECTED_AND_RETAINED_FOR_FRESH_HOLDOUT",
+  "split": "DEV",
+  "fixed_candidates_before_results": [
+    14.0,
+    16.0
+  ],
+  "baseline_archive_sha256": "05c0c6ff68bf3b31b49266605eda41e16ed98ae1f371347f9814c4dc8793a523",
+  "candidate_archive_sha256": {
+    "A": "fdbc524949ccd894076c7b398c7b5553b5ca2e67132d7208a5aa27bd7ddbc5de",
+    "B": "41b53b1a3cffea2053de1bc9ed1994a6a96d66f228b9a4818c32aeaf6f22c199"
+  },
+  "single_change": "Only normal12→14 or16; near5/cap40 and all other control/input code fixed",
+  "changed_archive_members": [
+    "agent.py"
+  ],
+  "other13_members_byte_identical": true,
+  "pre_registered_selection_rule": "Eligible only if both firsttwo baseline completions retained in comparable endpoints, paired medianlapdelta<0 and meanlapratio<1. Choose most negative paired sumlapdelta; exact tie chooses lower14. Damage/oscillation never selection scores.",
+  "pre_registered_loss_pruning": "Observed baseline completion lost: stop that candidate, skip its subsequent episodes. Censor/inconclusive at fixed cap: ineligible and skip unnecessary remainder, never label as observed DNF. Technical failure stops study without automatic retry.",
+  "pre_registered_single_continuation": "Only chosen unchanged candidate on predeclared DEV2/3. Any observed loss stops continuation; no fallback to runner-up, no higher coefficient.",
+  "pre_registered_final_gate": "FreshHOLDOUT candidate only if selected maintains all4 baseline completions in complete comparable cohort, full common medianlapdelta<0 and meanlapratio<1, remainingtwo sumlapdelta<0. No winner or failure/loss/absent effect ends this increase line; no coefficients beyond14/16 in this work.",
+  "screening": [
+    {
+      "arm": "A",
+      "normal_lateral": 14.0,
+      "eligible": true,
+      "baseline_completed": 2,
+      "candidate_completed": 2,
+      "counts": {
+        "new_completion": 0,
+        "lost_completion": 0,
+        "common_dnf": 0,
+        "common_completed": 2
+      },
+      "common_sum_lap_delta_ms": -4140.0,
+      "common_median_lap_delta_ms": -2070.0,
+      "common_mean_lap_ratio": 0.9531392703593293,
+      "damage": {
+        "sums": {
+          "baseline": 0.0,
+          "candidate": 0.0
+        },
+        "observed_record_counts": {
+          "baseline": 2,
+          "candidate": 2
+        },
+        "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+      },
+      "unexecuted": 0,
+      "inconclusive": 0,
+      "comparisons": [
+        {
+          "anonymous_DEV": 0,
+          "baseline_lap_ms": 46140,
+          "candidate_lap_ms": 43900,
+          "candidate_completed": true,
+          "baseline_damage": 0.0,
+          "candidate_damage": 0.0
+        },
+        {
+          "anonymous_DEV": 1,
+          "baseline_lap_ms": 42060,
+          "candidate_lap_ms": 40160,
+          "candidate_completed": true,
+          "baseline_damage": 0.0,
+          "candidate_damage": 0.0
+        }
+      ]
+    },
+    {
+      "arm": "B",
+      "normal_lateral": 16.0,
+      "eligible": true,
+      "baseline_completed": 2,
+      "candidate_completed": 2,
+      "counts": {
+        "new_completion": 0,
+        "lost_completion": 0,
+        "common_dnf": 0,
+        "common_completed": 2
+      },
+      "common_sum_lap_delta_ms": -5180.0,
+      "common_median_lap_delta_ms": -2590.0,
+      "common_mean_lap_ratio": 0.9409021232285044,
+      "damage": {
+        "sums": {
+          "baseline": 0.0,
+          "candidate": 0.2
+        },
+        "observed_record_counts": {
+          "baseline": 2,
+          "candidate": 2
+        },
+        "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+      },
+      "unexecuted": 0,
+      "inconclusive": 0,
+      "comparisons": [
+        {
+          "anonymous_DEV": 0,
+          "baseline_lap_ms": 46140,
+          "candidate_lap_ms": 43780,
+          "candidate_completed": true,
+          "baseline_damage": 0.0,
+          "candidate_damage": 0.0
+        },
+        {
+          "anonymous_DEV": 1,
+          "baseline_lap_ms": 42060,
+          "candidate_lap_ms": 39240,
+          "candidate_completed": true,
+          "baseline_damage": 0.0,
+          "candidate_damage": 0.2
+        }
+      ]
+    }
+  ],
+  "selected_normal_lateral": 16.0,
+  "selected_full_DEV": {
+    "normal_lateral": 16.0,
+    "baseline_completed": 4,
+    "candidate_completed": 4,
+    "counts": {
+      "new_completion": 0,
+      "lost_completion": 0,
+      "common_dnf": 0,
+      "common_completed": 4
+    },
+    "cohort_complete": true,
+    "common_sum_lap_delta_ms": -8720.0,
+    "common_median_lap_delta_ms": -2320.0,
+    "common_mean_lap_ratio": 0.9459128992418653,
+    "remaining_two_sum_delta_ms": -3540.0,
+    "damage": {
+      "sums": {
+        "baseline": 0.0,
+        "candidate": 0.2
+      },
+      "observed_record_counts": {
+        "baseline": 4,
+        "candidate": 4
+      },
+      "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+    },
+    "comparisons": [
+      {
+        "anonymous_DEV": 0,
+        "baseline_lap_ms": 46140,
+        "candidate_lap_ms": 43780,
+        "candidate_completed": true,
+        "baseline_damage": 0.0,
+        "candidate_damage": 0.0
+      },
+      {
+        "anonymous_DEV": 1,
+        "baseline_lap_ms": 42060,
+        "candidate_lap_ms": 39240,
+        "candidate_completed": true,
+        "baseline_damage": 0.0,
+        "candidate_damage": 0.2
+      },
+      {
+        "anonymous_DEV": 2,
+        "baseline_lap_ms": 33880,
+        "candidate_lap_ms": 32620,
+        "candidate_completed": true,
+        "baseline_damage": 0.0,
+        "candidate_damage": 0.0
+      },
+      {
+        "anonymous_DEV": 3,
+        "baseline_lap_ms": 37400,
+        "candidate_lap_ms": 35120,
+        "candidate_completed": true,
+        "baseline_damage": 0.0,
+        "candidate_damage": 0.0
+      }
+    ]
+  },
+  "selected_final_gate_passed": true,
+  "unselected14_remaining_DEV_executed": false,
+  "skipped_for_loss_or_inconclusive": [],
+  "coefficient_above16_tested": false,
+  "diagnostic_interpretation": "16 gained1040ms more than14 on the two screening DEV under frozen completion/time rule. Damage14=0,16=0.2 was not a selection score. Selected16 all4 completes/faster but damage0→0.2. First event step210 native16.72s; prewindow17/20 near5 and10 pedal/speed reversals, speed6.71–36.54m/s, frontjointresidual max2.16e-7rad. Near source unchanged; trajectories differ. Joint tracking is not vehicle-path error or physical-limit cause proof. No further coefficient attempted.",
+  "first_contacts": [
+    {
+      "anonymous_DEV": 1,
+      "normal_lateral": 16.0,
+      "first_damage_event": {
+        "step": 210,
+        "native_elapsed_pre_s": 16.71999999999971,
+        "native_elapsed_post_s": 16.79999999999971,
+        "dwell_s": 0.0799999999999983,
+        "native_absolute_pre_s": 17.73999999999971,
+        "native_absolute_post_s": 17.81999999999971,
+        "speed_before_m_s": 10.329574134248714,
+        "speed_after_m_s": 14.10802363956374,
+        "feedback_m_s": 11.25,
+        "target_m_s": 30.67368537782398,
+        "curvature": -0.01700544751529863,
+        "near": false,
+        "selected_lateral_budget": 16.0,
+        "steer": -0.08776339143514633,
+        "gas": 0.5,
+        "brake": 0.0,
+        "front_joint_residual_after_rad": [
+          0.000310264527797699,
+          0.000310264527797699
+        ],
+        "offtrack_before": 4,
+        "offtrack_after": 0,
+        "damage_before": 0.0,
+        "damage_after": 0.2,
+        "collision": true
+      },
+      "first_damage_pre_summary": {
+        "rows": 20,
+        "steps": [
+          190,
+          209
+        ],
+        "native_elapsed_interval_s": [
+          15.119999999999745,
+          16.71999999999971
+        ],
+        "speed_range_m_s": [
+          6.707862272633323,
+          36.53508364964947
+        ],
+        "target_range_m_s": [
+          7.550256720753057,
+          40.0
+        ],
+        "near_rows": 17,
+        "gas_rows": 10,
+        "brake_rows": 10,
+        "active_pedal_opposite_switches": 10,
+        "actual_speed_direction_switches": 10,
+        "joint_residual_mean_rad": 7.2503462433815e-08,
+        "joint_residual_max_rad": 2.1606683731079102e-07
+      },
+      "first_damage_begins_after_official_finish": false
+    }
+  ],
+  "pedal_and_speed_reversal_diagnostics": [
+    {
+      "anonymous_DEV": 0,
+      "normal_lateral": 14.0,
+      "active_pedal_opposite_switches": 238,
+      "active_pedal_switches_per_s": 5.4189435336974565,
+      "actual_speed_direction_switches": 236,
+      "actual_speed_switches_per_s": 5.37340619307815,
+      "baseline12_pedal_switches_per_s": 5.54592720970516,
+      "baseline12_speed_switches_per_s": 5.502599653379338
+    },
+    {
+      "anonymous_DEV": 1,
+      "normal_lateral": 14.0,
+      "active_pedal_opposite_switches": 208,
+      "active_pedal_switches_per_s": 5.176704828272665,
+      "actual_speed_direction_switches": 208,
+      "actual_speed_switches_per_s": 5.176704828272665,
+      "baseline12_pedal_switches_per_s": 5.2994296577945335,
+      "baseline12_speed_switches_per_s": 5.251901140684269
+    },
+    {
+      "anonymous_DEV": 0,
+      "normal_lateral": 16.0,
+      "active_pedal_opposite_switches": 234,
+      "active_pedal_switches_per_s": 5.340027384755648,
+      "actual_speed_direction_switches": 230,
+      "actual_speed_switches_per_s": 5.248744865358115,
+      "baseline12_pedal_switches_per_s": 5.54592720970516,
+      "baseline12_speed_switches_per_s": 5.502599653379338
+    },
+    {
+      "anonymous_DEV": 1,
+      "normal_lateral": 16.0,
+      "active_pedal_opposite_switches": 216,
+      "active_pedal_switches_per_s": 5.501782985226597,
+      "actual_speed_direction_switches": 218,
+      "actual_speed_switches_per_s": 5.552725420274991,
+      "baseline12_pedal_switches_per_s": 5.2994296577945335,
+      "baseline12_speed_switches_per_s": 5.251901140684269
+    },
+    {
+      "anonymous_DEV": 2,
+      "normal_lateral": 16.0,
+      "active_pedal_opposite_switches": 174,
+      "active_pedal_switches_per_s": 5.330882352941232,
+      "actual_speed_direction_switches": 174,
+      "actual_speed_switches_per_s": 5.330882352941232,
+      "baseline12_scalar_comparison_available": false
+    },
+    {
+      "anonymous_DEV": 3,
+      "normal_lateral": 16.0,
+      "active_pedal_opposite_switches": 178,
+      "active_pedal_switches_per_s": 5.065452475811035,
+      "actual_speed_direction_switches": 180,
+      "actual_speed_switches_per_s": 5.122367672168462,
+      "baseline12_scalar_comparison_available": false
+    }
+  ],
+  "actual_intervention": {
+    "actual_rows": 2939,
+    "target_increased_vs_same_input12_rows": 1309,
+    "pedals_changed_vs_same_input12_rows": 1116,
+    "near_target_or_pedal_changes": 0,
+    "target_source_law_max_error_m_s": 0.0,
+    "actual_stream_hashes_match": true,
+    "baseline_policy_replay_calls": 0,
+    "baseline_full_policy_stream_available": false,
+    "first_same_input_action_prefix_proof_claimed": false
+  },
+  "cost": {
+    "stage": 148,
+    "native_cap": 12000,
+    "max_conditional_episodes": 6,
+    "actual_episodes": 6,
+    "new_wrapper_actions": 2939,
+    "unselected14_actions": 1052,
+    "selected16_actions": 1887,
+    "raw_step_ticks": 11748,
+    "raw_reset_ticks": 306,
+    "wall_including_short_records_s": 123.46127086499473,
+    "evaluator_CPU_s": 100.777094886,
+    "actor_CPU_s": 22.946727000000003,
+    "new_offline_policy_or_model_calls": 0,
+    "baseline12_reruns": 0,
+    "cached12_native_actions_reused_not_recharged": 1995,
+    "B_operating_cap": 738000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 642878,
+    "research_remaining": 11122,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_fixed_candidate_archive_builds": 2,
+    "full_input_or_packaging_requalification": 0,
+    "new_full_pixels_GT_policy_video_streams": 0,
+    "clear_loss_pruning_rule_frozen": true,
+    "clear_loss_pruning_triggered": false,
+    "HOLDOUT_case_details_reads": 0,
+    "SEALED_opened": false,
+    "current12_changed": false,
+    "rollback10_8_134_116_changed": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "next_choice": "Fresh HOLDOUT confirmation of unchanged selected16 vs current12, with future protocol/conditions/budget frozen before execution; no draw, reservation, adoption or next native run here.",
+  "scope": {
+    "current12_changed": false,
+    "rollback10_8_134_116_changed": false,
+    "HOLDOUT_case_details_reads": 0,
+    "SEALED_opened": false,
+    "no_new_conditions": true,
+    "no_generalization_outside_these_DEV_claim": true,
+    "ten_second_lap_guarantee": false,
+    "private_conditions_pixels_GT_policy_streams_plans_documents_published": false,
+    "automatic_next_experiment": false,
+    "automatic_extension": false
+  }
+}

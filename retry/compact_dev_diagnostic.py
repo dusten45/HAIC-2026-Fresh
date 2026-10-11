@@ -97,21 +97,22 @@ class ScalarStats:
             joint_label='abs(front-wheel joint_angle+action[0]) after action; wheels0/1, target=-action[0]; not vehicle-path error.')
 
 
-def compact_episode(plan_path, plan, case, initial_pairs, baseline_policy):
+def compact_episode(plan_path, plan, case, initial_pairs, baseline_policy, arm='A'):
     from retry import diagnose, frozen_composite_runtime as runtime
     from retry.frozen_paired_evaluation import episode, write
     from retry.full_route_reproduction import truth
 
     original_factory,original_prepare=diagnose.make_env,runtime.prepare
     stats=ScalarStats()
-    directory=plan_path.parent/'runs'/(case['id']+'__A')
+    directory=plan_path.parent/'runs'/(case['id']+'__'+arm)
     state={}
     observation_hash,action_hash=hashlib.sha256(),hashlib.sha256()
     first_divergence=None
     law=dict(rows=0,excluded_target_none=0,max_target_error_m_s=0.0,
         pedals_match_source=True,target_increased_vs_same_input_baseline_rows=0,
         pedals_changed_vs_same_input_baseline_rows=0,near_target_or_pedal_changes=0)
-    normal=plan['diagnostic_normal_budget']
+    normal=(plan['diagnostic_normal_budgets'][arm] if 'diagnostic_normal_budgets' in plan
+            else plan['diagnostic_normal_budget'])
     base_normal=plan['diagnostic_baseline_normal_budget']
     started=time.perf_counter()
 
@@ -189,7 +190,7 @@ def compact_episode(plan_path, plan, case, initial_pairs, baseline_policy):
 
     diagnose.make_env,runtime.prepare=factory,prepare
     try:
-        result=episode(plan_path,plan,case,'A',initial_pairs)
+        result=episode(plan_path,plan,case,arm,initial_pairs)
     finally:
         diagnose.make_env,runtime.prepare=original_factory,original_prepare
     if 'error' not in result:
@@ -199,6 +200,7 @@ def compact_episode(plan_path, plan, case, initial_pairs, baseline_policy):
     diagnostic=stats.summary(result['completed'])
     finish=result.get('finish_time_s')
     diagnostic.update(actual_intervention=law,first_same_input_divergence=first_divergence,
+        baseline_full_policy_stream_available=bool(baseline_policy),
         official_lap_ms=result.get('lap_ms'),
         first_damage_begins_after_official_finish=bool(stats.first_damage and finish is not None and stats.first_damage['native_absolute_pre_s']>=finish),
         last_twenty_rows_begin_after_official_finish=sum(finish is not None and r['native_absolute_pre_s']>=finish for r in stats.window),
