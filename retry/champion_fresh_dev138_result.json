@@ -1,0 +1,181 @@
+{
+  "stage": 138,
+  "status": "FOUR_FRESH_DEV_COMPLETED_SPEED_PROFILE_RECORDED",
+  "split": "DEV",
+  "fresh_unseen_cases": 4,
+  "all_cases_are_development_conditions_now": true,
+  "champion": "Unchanged local research champion 134",
+  "archive_sha256": "c66e2f3bfc42543a8bdcdc821898eb0fd8377ab54929ebcc46708cbee0667d55",
+  "completed": 4,
+  "normal_DNF": 0,
+  "technical_failures": 0,
+  "outcomes": [
+    {
+      "anonymous_DEV": 0,
+      "completed": true,
+      "lap_ms": 52700,
+      "damage": 0.6,
+      "native_actions": 659
+    },
+    {
+      "anonymous_DEV": 1,
+      "completed": true,
+      "lap_ms": 48940,
+      "damage": 0.0,
+      "native_actions": 612
+    },
+    {
+      "anonymous_DEV": 2,
+      "completed": true,
+      "lap_ms": 38400,
+      "damage": 0.0,
+      "native_actions": 481
+    },
+    {
+      "anonymous_DEV": 3,
+      "completed": true,
+      "lap_ms": 43900,
+      "damage": 0.0,
+      "native_actions": 550
+    }
+  ],
+  "diagnosis_branch": "All completed: saved elapsed-time speed-constraint profiling",
+  "source_law": "min(40,sqrt(selected_lateral/max(abs(recorded_pursuit_curvature),1e-6))); selected_lateral=near?5:7",
+  "classification": "Obstacle only if near safe5 further tightens normal fast7; otherwise normal curvature or global cap",
+  "at_bound_rule": "Actual recorded HUD feedback >= recorded target-1m/s OR actual returned brake>0",
+  "denominator": "Finish-clipped action_dwell_s; zero-dwell terminal actions retained in counts",
+  "freshDEV_profile": {
+    "recorded_actions": 2302,
+    "execution_dwell_s": 183.94,
+    "categories": {
+      "curvature_fast7": {
+        "rows": 1163,
+        "dwell_s": 93.02,
+        "at_bound_or_braking_s": 56.54,
+        "transient_s": 36.48,
+        "braking_s": 48.06,
+        "fraction_of_total_dwell": 0.505708383
+      },
+      "obstacle_schedule_additional5": {
+        "rows": 324,
+        "dwell_s": 25.92,
+        "at_bound_or_braking_s": 20.0,
+        "transient_s": 5.92,
+        "braking_s": 15.76,
+        "fraction_of_total_dwell": 0.140915516
+      },
+      "global_cap40": {
+        "rows": 815,
+        "dwell_s": 65.0,
+        "at_bound_or_braking_s": 5.76,
+        "transient_s": 59.24,
+        "braking_s": 5.76,
+        "fraction_of_total_dwell": 0.353376101
+      },
+      "missing_target": {
+        "rows": 0,
+        "dwell_s": 0.0,
+        "at_bound_or_braking_s": 0.0,
+        "transient_s": 0.0,
+        "braking_s": 0.0,
+        "fraction_of_total_dwell": 0.0
+      }
+    }
+  },
+  "existingDEV134_profile_reused": {
+    "recorded_actions": 2313,
+    "execution_dwell_s": 184.8,
+    "categories": {
+      "curvature_fast7": {
+        "rows": 1120,
+        "dwell_s": 89.6,
+        "at_bound_or_braking_s": 54.08,
+        "transient_s": 35.52,
+        "braking_s": 44.96,
+        "fraction_of_total_dwell": 0.484848485
+      },
+      "obstacle_schedule_additional5": {
+        "rows": 358,
+        "dwell_s": 28.64,
+        "at_bound_or_braking_s": 21.12,
+        "transient_s": 7.52,
+        "braking_s": 17.12,
+        "fraction_of_total_dwell": 0.154978355
+      },
+      "global_cap40": {
+        "rows": 835,
+        "dwell_s": 66.56,
+        "at_bound_or_braking_s": 5.66,
+        "transient_s": 60.9,
+        "braking_s": 5.66,
+        "fraction_of_total_dwell": 0.36017316
+      },
+      "missing_target": {
+        "rows": 0,
+        "dwell_s": 0.0,
+        "at_bound_or_braking_s": 0.0,
+        "transient_s": 0.0,
+        "braking_s": 0.0,
+        "fraction_of_total_dwell": 0.0
+      }
+    }
+  },
+  "profile_validation": {
+    "action_and_observation": "PASS",
+    "target_law_max_error_m_s": 0.0,
+    "summed_dwell_matches_lap_times": true
+  },
+  "primary_bound_exposure": "Normal curvature fast7",
+  "interpretation": "Pursuit-curvature exposure is largest in both sets. The global40 category is mostly below target without braking. These classify constraints and do not identify recoverable lap time or prove the speed budget is too low.",
+  "remaining_uncertainties": [
+    "Exposure and binding proxy are not recoverable time or a causal effect.",
+    "Pursuit curvature contains lateral correction and perception effects, not only physical road curvature.",
+    "Transient does not distinguish acceleration, recovery, perception or steering error."
+  ],
+  "next_change_proposal": {
+    "status": "PROPOSAL_ONLY_NOT_IMPLEMENTED",
+    "one_change": "Normal (near=false) lateral acceleration budget 7 to 8 m/s^2; near safe5, cap40 and all other policy operations unchanged",
+    "uncertainty": "Whether the dominant normal-curvature speed budget is conservative or necessary to preserve completion. Exposure alone does not decide this.",
+    "information_value": "One scalar intervention directly tests the largest bound/braking exposure; a contact-bearing and a clean high-exposure freshDEV challenge its time/safety tradeoff. Global-cap exposure is mostly transient.",
+    "target_speed_upper_increase_fraction": 0.06904496764969759,
+    "target_increase_is_not_lap_prediction": true,
+    "comparison": "Saved arithmetic check, then candidate only on the contact-bearing freshDEV and the clean freshDEV with greatest curvature bound/braking dwell, compared against cached134.",
+    "native_cap_if_later_started": 4000,
+    "per_case_cap": 2000,
+    "stop": "Stop on first completion loss, censoring or technical/reset mismatch. No automatic retry, parameter change or case replacement.",
+    "advance": "Both completions retained and common completed lap-time sum lower than cached134: retain for remaining DEV comparison only. Otherwise stop this budget-increase line. Report per-case time and damage separately; no new damage/1-percent veto.",
+    "adoption": "No adoption from this two-DEV comparison; fresh confirmation remains a later distinct gate",
+    "executed_or_budget_reserved": false
+  },
+  "cost": {
+    "new_wrapper_actions": 2302,
+    "native_cap": 8000,
+    "raw_step_ticks": 9203,
+    "raw_reset_ticks": 204,
+    "wall_including_records_s": 95.11183960799826,
+    "evaluator_CPU_s": 78.18694584800001,
+    "actor_CPU_s": 17.205395999999997,
+    "new_native_simulation_step_wall_s": 70.62125086446758,
+    "new_offline_policy_calls": 0,
+    "new_model_calls": 0,
+    "extra_native_calls": 0,
+    "B_operating_cap": 722000,
+    "actual_cumulative_wrapper_actions": 620616,
+    "research_remaining": 17384,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "scope": {
+    "baseline_reruns": 0,
+    "packaging_qualification_reused": true,
+    "archive_rebuilds": 0,
+    "full_audit_stages": 0,
+    "champion_changed": false,
+    "HOLDOUT_detail_or_outcome_reads": 0,
+    "SEALED_opened": false,
+    "official_server_or_fresh_machine_validation": false,
+    "private_conditions_traces_frames_published": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  }
+}
