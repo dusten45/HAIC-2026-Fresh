@@ -1,0 +1,302 @@
+{
+  "stage": 134,
+  "decision": "COMPLETION_AND_MECHANISM_GAIN_COLLISION_FREE_FAIL_KEEP116_RETAIN_FROZEN_RESEARCH_CANDIDATE",
+  "adopted": false,
+  "champion_kept": 116,
+  "research_candidate_retained": true,
+  "completion_gate": "PASS_ONE_NEW_COMPLETION_NO_LOSS",
+  "collision_free_gate": "FAIL_CONTACT_REMAINS_IN_BOTH_DEV",
+  "single_intervention": "Legacy path cost plus nominal steering-transition length speed*abs(next_smoothed_steer-previous_command)/3; continuous per-input ranking, no passing-side lock.",
+  "candidate_family": "One identical family for zero/one-term score: original path plus shortest left/right crossing alternatives on the unchanged legal graph. Original wins base-cost ties.",
+  "frozen_components": "Detector/tracker/state estimates/radius/2.6m margin/grid/start/goal/edge costs/lookahead/controller/near schedule/speed/pedal law unchanged. Schedule passes existing speed and previous command only.12otherarchive members byte-preserved.",
+  "source_changed_members": [
+    "retry/connected_agent.py",
+    "retry/schedule_agent.py"
+  ],
+  "source_unchanged_member_count": 12,
+  "command_proxy_limit": "Previous commanded steering is legal existing state, not measured wheel angle. Source3rad/s is nominal requested motor rate, not achieved-time guarantee.",
+  "saved_comparison": {
+    "inputs": 63,
+    "zero_term_route_target_action_exact": true,
+    "identical_state_candidate_pool": true,
+    "valid_simple_paths_original_graph": true,
+    "GT_to_scoring": false,
+    "cases": [
+      {
+        "role": "failed131",
+        "inputs": 21,
+        "changes": {
+          "route": 1,
+          "target": 1,
+          "action": 1,
+          "selected_alternative": 1
+        },
+        "max_command_change_rad": [
+          0.6243398915283563,
+          0.6243398915283563
+        ],
+        "mean_command_change_rad": [
+          0.16862916171977663,
+          0.156426422935976
+        ]
+      },
+      {
+        "role": "rescued131",
+        "inputs": 21,
+        "changes": {
+          "route": 0,
+          "target": 0,
+          "action": 0,
+          "selected_alternative": 0
+        },
+        "max_command_change_rad": [
+          0.6399993925989522,
+          0.6399993925989522
+        ],
+        "mean_command_change_rad": [
+          0.07746907463823292,
+          0.07746907463823292
+        ]
+      },
+      {
+        "role": "clean116_reference",
+        "inputs": 21,
+        "changes": {
+          "route": 0,
+          "target": 0,
+          "action": 0,
+          "selected_alternative": 0
+        },
+        "max_command_change_rad": [
+          0.12569705889647032,
+          0.12569705889647032
+        ],
+        "mean_command_change_rad": [
+          0.05227342051734775,
+          0.05227342051734775
+        ]
+      }
+    ]
+  },
+  "native_comparison": {
+    "cases": [
+      {
+        "role": "failed_DEV",
+        "arms": [
+          {
+            "stage": 131,
+            "completed": false,
+            "native_actions": 423,
+            "lap_s": null,
+            "damage": 1.0,
+            "damage_bearing_wrapper_events": 5,
+            "first_contact_input": 416,
+            "selected_alternative_count": 0,
+            "fixed_precontact_window": {
+              "inputs": 21,
+              "route_side_labeled_inputs": 21,
+              "route_side_reversals": 8,
+              "target_curvature_reversals": 8,
+              "opposite_joint_command_inputs": 8,
+              "max_joint_error_before_rad": 0.6243399977684021,
+              "mean_joint_error_before_rad": 0.18890412080578417,
+              "clean_interval_joint_residual_above_0_01rad": 6,
+              "max_clean_interval_joint_residual_rad": 0.38434022665023804
+            },
+            "peak_actor_RSS_bytes": 48525312,
+            "act_including_IPC_ms": {
+              "count": 423,
+              "median": 7.681070972466841,
+              "p95": 11.902005519368684,
+              "max": 37.202906009042636
+            }
+          },
+          {
+            "stage": 134,
+            "completed": true,
+            "native_actions": 564,
+            "lap_s": 45.04,
+            "damage": 0.6000000000000001,
+            "damage_bearing_wrapper_events": 3,
+            "first_contact_input": 418,
+            "selected_alternative_count": 1,
+            "fixed_precontact_window": {
+              "inputs": 21,
+              "route_side_labeled_inputs": 21,
+              "route_side_reversals": 4,
+              "target_curvature_reversals": 4,
+              "opposite_joint_command_inputs": 5,
+              "max_joint_error_before_rad": 0.36181142926216125,
+              "mean_joint_error_before_rad": 0.07769141248371896,
+              "clean_interval_joint_residual_above_0_01rad": 1,
+              "max_clean_interval_joint_residual_rad": 0.12181118130683899
+            },
+            "peak_actor_RSS_bytes": 48615424,
+            "act_including_IPC_ms": {
+              "count": 564,
+              "median": 8.446788997389376,
+              "p95": 13.38565389887663,
+              "max": 23.053440992953256
+            }
+          }
+        ],
+        "exact_common_input_action_prefix": 403,
+        "first_action_divergence": 404,
+        "first_divergence_same_input_and_state": true,
+        "full_action_sequence_equal": false,
+        "full_observation_sequence_equal": false
+      },
+      {
+        "role": "rescued_DEV",
+        "arms": [
+          {
+            "stage": 131,
+            "completed": true,
+            "native_actions": 607,
+            "lap_s": 48.5,
+            "damage": 0.2,
+            "damage_bearing_wrapper_events": 1,
+            "first_contact_input": 177,
+            "selected_alternative_count": 0,
+            "fixed_precontact_window": {
+              "inputs": 21,
+              "route_side_labeled_inputs": 21,
+              "route_side_reversals": 2,
+              "target_curvature_reversals": 2,
+              "opposite_joint_command_inputs": 1,
+              "max_joint_error_before_rad": 0.6399993002414703,
+              "mean_joint_error_before_rad": 0.05842152734597524,
+              "clean_interval_joint_residual_above_0_01rad": 1,
+              "max_clean_interval_joint_residual_rad": 0.3999992907047272
+            },
+            "peak_actor_RSS_bytes": 48529408,
+            "act_including_IPC_ms": {
+              "count": 607,
+              "median": 8.282288006739691,
+              "p95": 12.181535101262847,
+              "max": 23.312998993787915
+            }
+          },
+          {
+            "stage": 134,
+            "completed": true,
+            "native_actions": 607,
+            "lap_s": 48.5,
+            "damage": 0.2,
+            "damage_bearing_wrapper_events": 1,
+            "first_contact_input": 177,
+            "selected_alternative_count": 0,
+            "fixed_precontact_window": {
+              "inputs": 21,
+              "route_side_labeled_inputs": 21,
+              "route_side_reversals": 2,
+              "target_curvature_reversals": 2,
+              "opposite_joint_command_inputs": 1,
+              "max_joint_error_before_rad": 0.6399993002414703,
+              "mean_joint_error_before_rad": 0.05842152734597524,
+              "clean_interval_joint_residual_above_0_01rad": 1,
+              "max_clean_interval_joint_residual_rad": 0.3999992907047272
+            },
+            "peak_actor_RSS_bytes": 48615424,
+            "act_including_IPC_ms": {
+              "count": 607,
+              "median": 7.557314995210618,
+              "p95": 15.533448592759665,
+              "max": 27.96725500957109
+            }
+          }
+        ],
+        "exact_common_input_action_prefix": 607,
+        "first_action_divergence": null,
+        "first_divergence_same_input_and_state": true,
+        "full_action_sequence_equal": true,
+        "full_observation_sequence_equal": true
+      }
+    ],
+    "candidate_completed_count": 2,
+    "baseline131_completed_count": 1,
+    "new_completion": 1,
+    "lost_completion": 0,
+    "baseline_native_runs": 0,
+    "reset_identity_equal": true,
+    "first_intervention_only_one_route_selection": true,
+    "failed_DEV_common_input_action_prefix": 403,
+    "failed_DEV_first_intervention_input": 404,
+    "rescued_DEV_full_behavior_exact": true
+  },
+  "mechanism_conclusion": "In the fixed21precontact inputs of failedDEV, route/target side reversals8->4, oppositejoint/command8->5, maxjoint error0.62434->0.36181rad, clean-interval residual>.01rad6->1. The one matched-input route ranking intervention at404 led to a completed native trajectory; no perfect causal-certainty prerequisite was used.",
+  "collision_conclusion": "FailedDEV damage-bearing wrapper events5->3, firstcontact416->418, damage1->.6 and DNF->45.040scompletion. Residual collisions remain. RescuedDEV unchanged607actions48.500sdamage.2 with1event. Event counts are not distinct physical encounters.",
+  "secondary_champion_safety": {
+    "same_failed_DEV_116_completed": true,
+    "same_failed_DEV_116_lap_s": 43.82,
+    "same_failed_DEV_116_damage": 0.0,
+    "candidate_lap_delta_s": 1.2199999999999989,
+    "candidate_damage_delta": 0.6,
+    "conclusion": "Both134complete and no completion loss vs116 on this pair, but134is1.220s slower and damaging on116cleanDEV. Keep116; pair alone cannot support adoption."
+  },
+  "causal_limits": [
+    "First404input, state and candidate pool are matched. Subsequent native trajectories differ; precontact mechanism counts are descriptive, not matched-state treatment estimates.",
+    "Same speed control law is frozen, but target curvature changes downstream target speed, gas and brake. Completion rescue is the total ranking intervention effect, not proof steering lag alone causes it.",
+    "One selected DEV pair and one effective route selection do not establish generalization or collision-free robustness. No HOLDOUT or SEALED result used."
+  ],
+  "source_review": "stage84_mask_boundary_review: no source blocker; original Dijkstra/corner/tie and state snapshot/controller once preserved. Read-only.",
+  "causal_review": "factorial_causal_review: single legal soft ranking term valid for native refutation; no new qualification/perfectphysics gate. Read-only.",
+  "cost": {
+    "stage": 134,
+    "native_wrapper_actions": 1171,
+    "returned_episode_record_actions": 1171,
+    "raw_step_ticks": 4680,
+    "raw_reset_ticks": 102,
+    "wall_including_records_s": 49.71001822897233,
+    "evaluator_CPU_including_records_s": 40.756272827,
+    "actor_CPU_s": 9.069685,
+    "registered_native_cap": 4000,
+    "baseline_native_reruns": 0,
+    "native_retries": 0,
+    "native_actor_reset_calls": 2,
+    "native_actor_act_calls": 1171,
+    "actors_reaped": true,
+    "saved_input_rows": 63,
+    "saved_base_route_calls": 63,
+    "saved_candidate_family_calls": 63,
+    "saved_zero_one_scorer_calls": 126,
+    "saved_source_controller_calls": 126,
+    "saved_graph_validation_calls": 63,
+    "new_saved_full_policy_tracker_detector_calls": 0,
+    "new_model_or_extra_env_render_calls": 0,
+    "saved_check_wall_s": 1.082943076005904,
+    "saved_check_CPU_s": 1.0763341670000002,
+    "native_summary_wall_s": 0.573374003986828,
+    "native_summary_CPU_s": 0.590471472,
+    "saved_scripts_wall_including_startup_s": 2.0714390580251347,
+    "technical_aborted_attempts": 0,
+    "timing_scope": "Native includes reset, actor/runtime, physics and records; saved timings cover the two scripts, excluding ordinary file reads/packaging/git. No simulation timing inferred from offline inference.",
+    "native_total_before": 609586,
+    "native_total_after": 610757,
+    "research_before": 12414,
+    "research_after": 11243,
+    "B_operating_cap": 706000,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "recorded_at_utc": "2026-10-11T19:09:39.747945+00:00"
+  },
+  "next_most_valuable_choice": "Preserve this exact134candidate without tuning. Next efficacy check is the remaining unused DEV cases with cached116comparison, at most4000actions; test whether completion benefit generalizes and116clean damage/lap regression persists. This successor is not launched in134.",
+  "need_larger_research_budget_now": false,
+  "source_archive_sha256": "c66e2f3bfc42543a8bdcdc821898eb0fd8377ab54929ebcc46708cbee0667d55",
+  "base131_archive_sha256": "945f9d04caf5a85efbfd33a7b56f6b8dc0bef688b202a7281659d516ff0c9cc2",
+  "contract_sha256": "10312f903ebfb5df26371021d141b82259a5c0a636af4121ad43efc48368190e",
+  "native_plan_sha256": "cf8ca7078885215a990dac5bcd56943c6a24df36a60e3b65fd7fe3a869536240",
+  "saved_check_sha256": "f6f0b7f8363b44862031d6ce6f9bb68aea68a34dc73962a6a0302f559732e903",
+  "native_report_sha256": "0816b86344ba29e1e326e65277a7891e61736f7b14412ff893e1b24c1b706625",
+  "native_summary_sha256": "134c5504b5e72f57b2b171e4934d6150bba3453b8dfb18a375158aa07e5f5326",
+  "builder_sha256": "6b56181799d32678da17f82aa50e35ee9a15da15e56e36c181cf085347a3a2da",
+  "official_pixel_runtime": "Existing clean isolated Python process, declared package origins, no simulator import/audit denial,1CPU/1.024GBlocal ceiling; same host, not fresh-machine or official-server verification.",
+  "GT_scope": "Post-run obstacle/joint/pose diagnostic labels only. Candidate/runtime has pixels/history and no GT/identity assets.",
+  "tracking_microrepair_line_closed": true,
+  "post_result_tuning": false,
+  "successor_experiment_launched": false,
+  "old_HOLDOUT_details_or_SEALED_opened": false,
+  "new_paid_resources": 0,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false
+}
