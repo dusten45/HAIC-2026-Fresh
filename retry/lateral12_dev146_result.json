@@ -1,0 +1,178 @@
+{
+  "stage": 146,
+  "status": "RETAIN_FIXED12_FOR_FRESH_HOLDOUT_CONFIRMATION",
+  "split": "DEV",
+  "candidate_unchanged_since145": true,
+  "candidate_archive_sha256": "05c0c6ff68bf3b31b49266605eda41e16ed98ae1f371347f9814c4dc8793a523",
+  "full_DEV_cases": 4,
+  "new_candidate_runs": 2,
+  "cached145_candidate_runs_reused": 2,
+  "cached10_baselines_reused": 4,
+  "baseline_completed": 4,
+  "candidate_completed": 4,
+  "counts": {
+    "new_completion": 0,
+    "lost_completion": 0,
+    "common_dnf": 0,
+    "common_completed": 4,
+    "unobserved": 0
+  },
+  "cohort_complete": true,
+  "comparisons": [
+    {
+      "anonymous_DEV": 0,
+      "candidate_source_stage": 145,
+      "baseline_completed": true,
+      "candidate_observed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 48140,
+      "candidate_lap_ms": 46140,
+      "common_lap_delta_ms": -2000,
+      "common_lap_ratio": 0.9584545076859161,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "candidate_retire_reason": null,
+      "candidate_censored": false,
+      "candidate_native_actions": 577
+    },
+    {
+      "anonymous_DEV": 1,
+      "candidate_source_stage": 145,
+      "baseline_completed": true,
+      "candidate_observed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 44340,
+      "candidate_lap_ms": 42060,
+      "common_lap_delta_ms": -2280,
+      "common_lap_ratio": 0.9485791610284168,
+      "baseline_damage": 0.6000000000000001,
+      "candidate_damage": 0.0,
+      "candidate_retire_reason": null,
+      "candidate_censored": false,
+      "candidate_native_actions": 526
+    },
+    {
+      "anonymous_DEV": 2,
+      "candidate_source_stage": 146,
+      "baseline_completed": true,
+      "candidate_observed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 35100,
+      "candidate_lap_ms": 33880,
+      "common_lap_delta_ms": -1220,
+      "common_lap_ratio": 0.9652421652421652,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "candidate_retire_reason": null,
+      "candidate_censored": false,
+      "candidate_native_actions": 424
+    },
+    {
+      "anonymous_DEV": 3,
+      "candidate_source_stage": 146,
+      "baseline_completed": true,
+      "candidate_observed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 40200,
+      "candidate_lap_ms": 37400,
+      "common_lap_delta_ms": -2800,
+      "common_lap_ratio": 0.9303482587064676,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "candidate_retire_reason": null,
+      "candidate_censored": false,
+      "candidate_native_actions": 468
+    }
+  ],
+  "common_sum_lap_delta_ms": -8300,
+  "common_median_lap_delta_ms": -2140.0,
+  "common_mean_lap_ratio": 0.9506560231657415,
+  "remaining_two_common_sum_delta_ms": -4020,
+  "faster_common_count": 4,
+  "damage_diagnostic": {
+    "sums": {
+      "baseline": 0.6000000000000001,
+      "candidate": 0.0
+    },
+    "increased": false,
+    "observed_record_counts": {
+      "baseline": 4,
+      "candidate": 4
+    },
+    "qualification": "Endpoint description only; durations and trajectories differ. Damage is separate from completion/time ranking, no automatic veto."
+  },
+  "gate": "Retain unchanged12 for freshHOLDOUT confirmation candidate only if complete comparable cohort, all4 baseline completions retained, full common medianlapdelta<0 and meanlapratio<1 and remainingtwo common sumlapdelta<0. Any loss stops higher coefficient expansion; no loss but time fails/censor/incomplete evidence keeps10. Damage separately; no automatic veto or minimum percent.",
+  "gate_passed": true,
+  "decision": "RETAIN_FIXED12_FOR_FRESH_HOLDOUT_CONFIRMATION",
+  "analysis_extra_native_or_saved_policy_or_model_calls": 0,
+  "method": "Unchanged145 fixed12 on remainingtwo already-developed DEV using existing endpoint-only clean CPU worker; previous12 two runs and10 four baselines reused.",
+  "baseline_archive_sha256": "a140aaa4b008838773c4ce83fead5b639d28ab777ac3eaac2493cad95353a68d",
+  "parameters": {
+    "normal_lateral": 12.0,
+    "near_lateral": 5.0,
+    "speed_cap": 40.0
+  },
+  "oscillation_diagnostic": {
+    "source_stage": 145,
+    "status": "UNRESOLVED_DIAGNOSTIC",
+    "pedal_reversals_per_native_s": {
+      "DEV0": {
+        "baseline10": 5.853051058530257,
+        "candidate12": 5.54592720970516
+      },
+      "DEV1": {
+        "baseline10": 5.094679891794238,
+        "candidate12": 5.2994296577945335
+      }
+    },
+    "qualification": "145 actual native exposure including terminal callbacks; DEV1 rate increased. No extra146 reversal measurement or causal/safety claim.",
+    "smoothing_or_other_control_change": false
+  },
+  "cost": {
+    "stage": 146,
+    "native_cap": 4000,
+    "new_wrapper_actions": 892,
+    "raw_step_ticks": 3566,
+    "raw_reset_ticks": 102,
+    "wall_including_records_s": 32.950638764014,
+    "evaluator_CPU_s": 27.359183908,
+    "actor_CPU_s": 6.070004,
+    "new_offline_policy_or_model_calls": 0,
+    "baseline10_reruns": 0,
+    "prior145_candidate_reruns": 0,
+    "cached145_native_actions_reused_not_recharged": 1103,
+    "cached10_baseline_native_actions_reused_not_recharged": 2100,
+    "B_operating_cap": 730000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 635643,
+    "research_remaining": 10357,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "archive_rebuilds": 0,
+    "full_input_or_packaging_requalification": 0,
+    "new_frame_GT_policy_video_streams": 0,
+    "post_native_contract_key_repair_extra_native": 0,
+    "HOLDOUT_case_details_reads": 0,
+    "SEALED_opened": false,
+    "champion10_changed": false,
+    "rollback8_134_116_changed": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "next_choice": "FreshHOLDOUT confirmation of exact12 vs current10, excluding all recordedDEV/HOLDOUT identities. Future protocol/cap/budget must be frozen before a later run; no new condition draw, reservation, evaluation or adoption in146.",
+  "scope": {
+    "claim": "Four previously developed DEV cases only; freshHOLDOUT confirmation not executed.",
+    "candidate_unchanged": true,
+    "qualification_reused": true,
+    "champion10_changed": false,
+    "rollback8_134_116_changed": false,
+    "HOLDOUT_case_details_reads": 0,
+    "SEALED_opened": false,
+    "smoothing_or_other_control_change": false,
+    "higher_coefficient_sweep": false,
+    "private_conditions_pixels_GT_policy_streams_plans_documents_published": false,
+    "official_server_behavior_verified": false,
+    "automatic_next_experiment": false,
+    "automatic_extension": false
+  }
+}
