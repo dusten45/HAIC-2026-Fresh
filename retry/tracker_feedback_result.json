@@ -1,0 +1,167 @@
+{
+  "stage": 131,
+  "decision": "SAVED_DRIFT_GAIN_NO_COMPLETION_RESCUE_KEEP116",
+  "champion_kept": 116,
+  "adopted": false,
+  "candidate_legal_pixel_only": true,
+  "contract_sha256": "be939aad89b6091f3f67fd950bb733eb2baa8ff4eacf70f658ee878f436f94ee",
+  "plan_sha256": "5544e0fa4dda3a4d189797cc76e206714340eabb561d6005813a0be0acc8c4b4",
+  "candidate_archive_sha256": "945f9d04caf5a85efbfd33a7b56f6b8dc0bef688b202a7281659d516ff0c9cc2",
+  "base130_archive_sha256": "6c1f87a9d5a19e67a85cc8c8b6a129720e9176dcc9644782d7775f8b6178d8c3",
+  "single_change": {
+    "member": "retry/temporal_agent.py",
+    "fallback_y_before": "y -= legacyHUDspeed * 0.08",
+    "fallback_y_after": "y -= existing_fixedHUD_decoder(image, legacyHUDspeed) * 0.08",
+    "other_archive_members_unchanged": 13,
+    "unchanged": "Optical origins/flow validity, x, dt, age8, merge2m, radius, margin, path, route, lookahead and control source",
+    "runtime_inputs": "Official pixels only; no GT, identity data, saved traces or privileged hook"
+  },
+  "saved_gate": {
+    "status": "PASS",
+    "fixed_sequential_steps": 5,
+    "same_initial_GT_seeded_research_history": true,
+    "GT_use": "Stored research labels and shared starting history only; no GT in native candidate.",
+    "baseline_exact_reproduction": true,
+    "same_fallback_branch": true,
+    "x_radius_age_count_unchanged": true,
+    "all_five_rows_improved": true,
+    "baseline_error_m": {
+      "n": 5,
+      "mean": 0.8629808266026016,
+      "median": 0.898223273134844,
+      "p95": 1.233115349602745,
+      "max": 1.2722686902535703,
+      "above_one_pixel": 4
+    },
+    "candidate_error_m": {
+      "n": 5,
+      "mean": 0.44792373634368243,
+      "median": 0.4235951188395363,
+      "p95": 0.7525521213777451,
+      "max": 0.7916002320713728,
+      "above_one_pixel": 1
+    },
+    "speed_RMSE_vs_current_physical_m_s": [
+      2.4100833970587643,
+      0.7886983301458999
+    ],
+    "observed_dt_s": 0.08,
+    "total_heading_change_rad": -0.2389063835144043,
+    "limit": "Unchanged x/omitted rotation and endpoint speed sampling leave a0.7916m maximum residual; no unique crash cause proven."
+  },
+  "native_cases": [
+    {
+      "role": "rescued_by128",
+      "baseline130_completed": true,
+      "candidate_completed": true,
+      "baseline130_actions": 606,
+      "candidate_actions": 607,
+      "baseline130_lap_ms": 48460,
+      "candidate_lap_ms": 48500,
+      "candidate_damage": 0.2,
+      "changed_counts_on_shared_steps": {
+        "memory": 180,
+        "current_detections": 87,
+        "selected_route": 291,
+        "target": 214,
+        "action": 339
+      },
+      "first_changed_action": {
+        "memory": 188,
+        "current_detections": 276,
+        "selected_route": 266,
+        "target": 266,
+        "action": 265
+      },
+      "first_contact_action": 177,
+      "action_stream_exactly_equal130": false,
+      "observation_stream_exactly_equal130": false,
+      "actor_reaped": true
+    },
+    {
+      "role": "lost_by128",
+      "baseline130_completed": false,
+      "candidate_completed": false,
+      "baseline130_actions": 423,
+      "candidate_actions": 423,
+      "baseline130_lap_ms": null,
+      "candidate_lap_ms": null,
+      "candidate_damage": 1.0,
+      "changed_counts_on_shared_steps": {
+        "memory": 23,
+        "current_detections": 0,
+        "selected_route": 0,
+        "target": 0,
+        "action": 0
+      },
+      "first_changed_action": {
+        "memory": 99,
+        "current_detections": null,
+        "selected_route": null,
+        "target": null,
+        "action": null
+      },
+      "first_contact_action": 416,
+      "action_stream_exactly_equal130": true,
+      "observation_stream_exactly_equal130": true,
+      "actor_reaped": true
+    }
+  ],
+  "primary_cached130_counts": {
+    "new_completion": 0,
+    "lost_completion": 0,
+    "common_dnf": 1,
+    "common_completed": 1
+  },
+  "secondary_cached116_counts": {
+    "new_completion": 1,
+    "lost_completion": 1,
+    "common_completed": 0,
+    "common_dnf": 0
+  },
+  "runtime_status": "PASS",
+  "observed_reset_identity_matches": true,
+  "normal_uncensored_endpoints": 2,
+  "native_memory_mechanism_active": true,
+  "common_completion_lap_delta_ms": 40.0,
+  "conclusion": "Existing fixed-HUD speed reduces saved fallback-y drift, but the selected failure retains exactly the130 action/observation streams and crash. The rescued DEV remains completed40ms slower, with its first contact before any intervention effect. Original116 clean completion is still lost; keep116 without advancement or retry.",
+  "next_action": "Close131; no other candidate, retuning, repeat or automatic follow-up.",
+  "cost": {
+    "native_wrapper_actions": 1030,
+    "returned_episode_record_actions": 1030,
+    "raw_step_ticks": 4118,
+    "raw_reset_ticks": 102,
+    "wall_including_records_s": 46.36982391201309,
+    "evaluator_CPU_including_records_s": 38.903744782,
+    "actor_CPU_s": 7.624585,
+    "registered_native_cap": 4000,
+    "native_actor_reset_calls": 2,
+    "native_actor_act_calls": 1030,
+    "new_saved_policy_act_calls": 0,
+    "new_saved_policy_reset_calls": 0,
+    "saved_original_tracker_calls": 5,
+    "saved_candidate_tracker_calls": 5,
+    "saved_candidate_pixel_decoder_calls": 10,
+    "saved_diagnosis_wall_s": 0.23484704000293277,
+    "saved_diagnosis_CPU_s": 0.232593725,
+    "new_model_calls": 0,
+    "new_saved_detector_calls": 0,
+    "new_label_raster_passes": 0,
+    "extra_env_render_calls": 0,
+    "baseline_native_reruns": 0,
+    "automatic_native_retries": 0,
+    "actors_reaped": true,
+    "native_total_before": 608556,
+    "native_total_after": 609586,
+    "research_before": 13444,
+    "research_after": 12414,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "old_HOLDOUT_details_or_SEALED_opened": false,
+  "post_result_tuning": false,
+  "automatic_followup": false,
+  "new_paid_resources": 0,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false
+}
