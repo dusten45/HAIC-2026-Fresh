@@ -1,0 +1,72 @@
+{
+  "stage": 121,
+  "collection_status": "PASS_4_REGISTERED_DEV_ROLES",
+  "policy": "Frozen116 HUD-feedback local champion, unchanged",
+  "archive_sha256": "b8c40bcff8ad9eea60e21755950b77235c22a0d7df89eb74f08148bbb0c9890c",
+  "comparison": "Single champion only; no paired policy comparison or promotion",
+  "cases": [
+    {
+      "condition": 1,
+      "completed": true,
+      "lap_ms": 46100,
+      "damage": 0.6000000000000001,
+      "charged_wrapper_actions": 577,
+      "retire_reason": null
+    },
+    {
+      "condition": 2,
+      "completed": true,
+      "lap_ms": 43820,
+      "damage": 0.0,
+      "charged_wrapper_actions": 548,
+      "retire_reason": null
+    },
+    {
+      "condition": 3,
+      "completed": true,
+      "lap_ms": 45300,
+      "damage": 0.8,
+      "charged_wrapper_actions": 567,
+      "retire_reason": null
+    },
+    {
+      "condition": 4,
+      "completed": false,
+      "lap_ms": null,
+      "damage": 1.0,
+      "charged_wrapper_actions": 181,
+      "retire_reason": "crash"
+    }
+  ],
+  "native_actions": 1873,
+  "native_cap": 8000,
+  "wall_s": 78.16214733399102,
+  "evaluator_CPU_s": 65.656020155,
+  "actor_CPU_s": 12.697063,
+  "raw_step_ticks": 7488,
+  "raw_reset_ticks": 204,
+  "extra_replay_or_policy_calls": 0,
+  "all_records_exact": true,
+  "first_failure_damage_action": 177,
+  "crash_action": 181,
+  "earliest_failure_cause": "UNIDENTIFIED",
+  "leading_evidence": "Before damage, target x alternated -2.887,+0.735,-4.898,+1.470m across actions163..166 with nonempty road/path/target. Pedal changes followed the actual target-speed law. A false obstacle born147 persisted through155 and was absent156, so it cannot be claimed as a directly retained cause at163.",
+  "single_next_hypothesis": "Persist the bypass side for the same nearby tracked obstacle while that side stays connected; release on lost connectivity or passing the obstacle. Hypothesis only, candidate not implemented or run.",
+  "next_preparation": "Cached-baseline runner and two-DEVcase specification, candidate-only maximum4000; no automatic run/adoption.",
+  "native_total_after": 597831,
+  "research_remaining": 16169,
+  "final_reserve": 84000,
+  "reserve_used": 0,
+  "champion_and_rollback_preserved": true,
+  "protected_HOLDOUT_and_SEALED_opened": false,
+  "new_paid_resources": 0,
+  "launch_recovery": "System Python lacked gymnasium; zero environment/policy/native calls. Preserved that record and launched the unchanged plan using the existing qualified repository venv. No episode replay.",
+  "connection_status": "Same designated workspace reachable; all saved121records verified after reported disconnect; no environment switch or rerun.",
+  "plan_sha256": "4c360561b43b5f0e8b3b9eef395c09aff77aec6a0c591bc1faa04a71faba89c0",
+  "selection_sha256": "feeeca66db98dba42733e790d40f13fe4e656a13f912cf1b624f023989a8bedf",
+  "limitations": [
+    "Four DEV conditions do not estimate a reliable general completion probability.",
+    "Observed path alternation precedes damage but does not establish the initiating cause.",
+    "Prior same-host observer/archive qualification reused; no new saved-action replay; fresh-machine/official-server parity remains unverified."
+  ]
+}
