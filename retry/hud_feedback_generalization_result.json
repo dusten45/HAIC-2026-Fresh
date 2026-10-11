@@ -1,0 +1,294 @@
+{
+  "stage": 117,
+  "status": "REGISTERED_DEV_COMPLETION_TIME_PASS_WITH_DAMAGE_WARNING",
+  "promotion": false,
+  "current_champion": "Stage113 cap40 with curvature offset removed",
+  "scope": "Two new identity-qualified DEV conditions, fresh A/B executions in AB/BA order; fully frozen Stage116 candidate, one execution per arm/condition",
+  "artifact_boundary": {
+    "baseline_archive_sha256": "6d162d961041333eeddfbb8fc749a5cbeb3e562c96b93144c2aa2816e3b7ea22",
+    "candidate_archive_sha256": "b8c40bcff8ad9eea60e21755950b77235c22a0d7df89eb74f08148bbb0c9890c",
+    "candidate_rebuilt_or_modified": false,
+    "changed_existing_source_members": 2,
+    "unchanged_existing_members": 11,
+    "added_decoder_modules": 1,
+    "source_templates": 65,
+    "changed_input": "Speed estimate used in gas/brake feedback only",
+    "original_speed_input_preserved_for": [
+      "perception/tracking",
+      "near predicate",
+      "lookahead",
+      "path/target selection",
+      "steering"
+    ],
+    "new_threshold_gain_ROI_search": false,
+    "candidate_decoder_fallback": "Original HUD estimate on an unmatched exact signature"
+  },
+  "preregistered_rules": {
+    "new_conditions": 2,
+    "native_episodes": 4,
+    "arm_orders": [
+      "AB",
+      "BA"
+    ],
+    "max_actions_each": 2000,
+    "max_native_actions": 8000,
+    "completion_first": true,
+    "time_rule": "Common completed pairs only; no minimum gain threshold; median paired time delta<0 and mean paired ratio<1 for lap-gain verdict",
+    "damage_is_separate_diagnostic_warning": true,
+    "damage_veto": false,
+    "normal_DNF_or_censor_continues": true,
+    "technical_error_stops": true,
+    "automatic_retry": false,
+    "condition_or_candidate_replacement_after_outcomes": false,
+    "promotion_allowed": false
+  },
+  "condition_registration": {
+    "fresh_roads": 2,
+    "fresh_obstacle_lineages": 2,
+    "source_road_constructor_calls": 2,
+    "new_environment_or_policy_calls_for_selection": 0,
+    "identity_rejections_or_redraws": 0,
+    "prior_registered_road_geometries": 190,
+    "prior_seed_or_generator_identities": 192,
+    "prior_recorded_obstacle_specs": 202,
+    "prior_recorded_physical_obstacle_hashes": 60,
+    "prior_recorded_obstacle_RNG_lineages": 60,
+    "all_recorded_comparison_identities_disjoint": true,
+    "difficulty_or_performance_filter": false,
+    "coverage_limit": "Recorded seed/road identities and available physical/spec/RNG fingerprints only; missing historical fingerprints were not reconstructed. Identity novelty does not guarantee difficulty coverage.",
+    "protected_HOLDOUT_details_or_SEALED_opened": false
+  },
+  "qualification": {
+    "same_host_prior_qualification_reused": true,
+    "exact_archive_config_worker_source_runtime_binding": true,
+    "new_offline_policy_act_calls": 0,
+    "new_offline_policy_reset_calls": 0,
+    "new_native_calls_before_registered_batch": 0,
+    "runner_mock_cases_passed": 8,
+    "same_host_scope_only": true
+  },
+  "result": {
+    "baseline_completed": 2,
+    "candidate_completed": 2,
+    "common_completed": 2,
+    "lost_completion": 0,
+    "new_completion": 0,
+    "censored": 0,
+    "inconclusive": 0,
+    "cohort_complete": true,
+    "baseline_mean_lap_s": 50.12,
+    "candidate_mean_lap_s": 45.77,
+    "median_paired_lap_delta_s": -4.35,
+    "paired_lap_delta_s_range": [
+      -5.62,
+      -3.08
+    ],
+    "mean_paired_lap_ratio": 0.9142987046683831,
+    "baseline_damage_sum": 0.0,
+    "candidate_damage_sum": 0.6000000000000001,
+    "candidate_runs_with_damage_increase": 1,
+    "candidate_positive_damage_increment_wrapper_rows": 3,
+    "candidate_collision_flag_wrapper_rows": 3,
+    "damage_increment_per_positive_row": 0.2,
+    "damage_interpretation": "Three consecutive charged-wrapper records, not a count of independent physical crashes; all completed. Cause and safety remain unresolved.",
+    "descriptive_performance_verdict": "COMPARISON_PASS_PAIRED_LAP_GAIN",
+    "technical_error": null,
+    "all_workers_reaped": true
+  },
+  "saved_record_checks": {
+    "paired_initial_states_pixels_geometry_obstacles_equal": true,
+    "pre_first_branch_action_pixel_truth_prefix_equal": true,
+    "first_branch_steering_equal": true,
+    "candidate_observations": 1146,
+    "candidate_exact_template_matches": 1146,
+    "candidate_fallback_rows": 0,
+    "old_full_ROI_candidate_own_observation_MAE_m_s": 2.2461360966184616,
+    "fixed_source_bar_candidate_own_observation_MAE_m_s": 0.6111202755299493,
+    "new_policy_env_model_renderer_calls": 0,
+    "limitation": "Clean worker did not record every target/internal memory value; no full-run same-input intervention rate or cross-arm same-step causal diagnosis is claimed."
+  },
+  "historical_risk_comparison": [
+    {
+      "stage": 15,
+      "finding": "The same core HUD ROI was already used only for longitudinal feedback. A25-level intensity interpolation decoder improved selected DEV while remaining research-only.",
+      "relation_to117": "The intervention channel is shared; current candidate uses65 exact18-byte source-raster signatures and fallback under the current113 controller context."
+    },
+    {
+      "stage": 16,
+      "finding": "The older frozen decoder lost one baseline completion in its fresh DEV comparison and was rejected under its registered contract.",
+      "relation_to117": "Historical generalization failure remains evidence of recurrence risk;117 two-road success does not cancel it."
+    },
+    {
+      "stage": 101,
+      "finding": "A saved-observation audit improved speed-error criteria but failed its target-relative false-acceleration criterion; no following native test was opened.",
+      "relation_to117": "Bin midpoint error can cross a target boundary. Lower speed MAE does not imply correct pedal direction, completion or safety."
+    }
+  ],
+  "cost": {
+    "native": {
+      "charged_wrapper_actions": 2400,
+      "successful_wrapper_steps": 2400,
+      "raw_step_ticks": 9593,
+      "raw_reset_ticks": 204,
+      "actor_act_calls": 2400,
+      "actor_reset_calls": 4,
+      "actor_cumulative_CPU_s": 14.92358,
+      "sum_sim_step_wall_s": 74.58349382778397,
+      "environment_reset_wall_s": 1.6186421450402122,
+      "native_environment_resets": 4,
+      "cold_starts": 4,
+      "wall_s_including_record_writes": 97.56778985401616,
+      "episode_wall_s_sum": 96.33959146705456,
+      "evaluator_CPU_s_including_record_writes": 82.849760162,
+      "all_workers_reaped": true,
+      "baseline_native_runs": 2,
+      "candidate_native_runs": 2,
+      "new_model_calls": 0
+    },
+    "offline_saved_policy": {
+      "act_calls": 0,
+      "policy_reset_calls": 0,
+      "cold_starts": 0,
+      "wall_s": 0.0,
+      "actor_CPU_s": 0.0,
+      "evaluator_CPU_s": 0.0,
+      "qualification_reused": true,
+      "prior_qualification_charged_again": false,
+      "new_native_environment_calls": 0,
+      "new_model_calls": 0
+    },
+    "other_non_native_measured_work": {
+      "known_measured_work_span_sum_s": 2.9326572509889957,
+      "known_measured_CPU_s_sum": 3.224062108,
+      "scope": "Recorded disjoint source/identity/qualification-reuse/mock/analysis blocks only; some parallel. Excludes unmetered source reading, agent reasoning, tool transport, report/git work and process startup outside timers. Not whole-stage elapsed time.",
+      "source_road_constructor_calls": 2,
+      "synthetic_HUD_raster_calls": 0,
+      "fits_or_optimizer_updates": 0,
+      "all_policy_env_model_calls": 0
+    },
+    "budget": {
+      "B": 682000,
+      "B_increment": 0,
+      "native_before": 587560,
+      "registered_max_native_actions": 8000,
+      "native_actual": 2400,
+      "registered_action_cap_unused": 5600,
+      "native_after": 589960,
+      "native_research_remaining": 8040,
+      "reserve_actions": 84000,
+      "reserve_used": 0,
+      "offline_calls_deducted_as_native": 0
+    },
+    "historical_known_coverage_after117": {
+      "accepted_cumulative_native_wrapper_actions": 589960,
+      "initial_accepted_native_anchor": 293383,
+      "native_full_raw_step_total": "UNKNOWN",
+      "offline_policy_act_recorded_lower_bound": 34600,
+      "offline_reported_work_span_sum_s": 273.977645977011,
+      "offline_reported_actor_CPU_s_lower_bound": 127.752231,
+      "offline_global_total_complete": false,
+      "native_span_covered_actions": 238785,
+      "native_span_groups": 48,
+      "native_reported_execution_span_sum_s": 9554.248421716302,
+      "native_actions_outside_wall_coverage": 351175,
+      "native_global_CPU_total": "UNKNOWN",
+      "span_sum_is_project_elapsed": false,
+      "mixed_native_and_offline_action_total_is_budget_unit": false
+    }
+  },
+  "capacity_after_run": {
+    "latest_native_wrapper_per_wall_s": 24.598281908311666,
+    "conditional_native_scenarios": {
+      "one_pair": {
+        "native_wrapper_actions": 4000,
+        "latest_117_serial_wall_s": 162.61298309002692,
+        "observed_112_114_115_116_117_wall_range_s": [
+          148.59927280173585,
+          162.61298309002692
+        ],
+        "latest_actor_CPU_s": 24.872633333333333,
+        "latest_evaluator_CPU_s": 138.08293360333332,
+        "latest_wall_with_previous_25percent_planning_headroom_s": 203.26622886253364,
+        "executed": false
+      },
+      "two_pairs": {
+        "native_wrapper_actions": 8000,
+        "latest_117_serial_wall_s": 325.22596618005383,
+        "observed_112_114_115_116_117_wall_range_s": [
+          297.1985456034717,
+          325.22596618005383
+        ],
+        "latest_actor_CPU_s": 49.745266666666666,
+        "latest_evaluator_CPU_s": 276.16586720666663,
+        "latest_wall_with_previous_25percent_planning_headroom_s": 406.5324577250673,
+        "executed": false
+      },
+      "remaining_research": {
+        "native_wrapper_actions": 8040,
+        "latest_117_serial_wall_s": 326.8520960109541,
+        "observed_112_114_115_116_117_wall_range_s": [
+          298.6845383314891,
+          326.8520960109541
+        ],
+        "latest_actor_CPU_s": 49.993992999999996,
+        "latest_evaluator_CPU_s": 277.5466965427,
+        "latest_wall_with_previous_25percent_planning_headroom_s": 408.5651200136926,
+        "executed": false
+      },
+      "preserved_reserve": {
+        "native_wrapper_actions": 84000,
+        "latest_117_serial_wall_s": 3414.8726448905654,
+        "observed_112_114_115_116_117_wall_range_s": [
+          3120.584728836453,
+          3414.8726448905654
+        ],
+        "latest_actor_CPU_s": 522.3253,
+        "latest_evaluator_CPU_s": 2899.7416056699994,
+        "latest_wall_with_previous_25percent_planning_headroom_s": 4268.590806113207,
+        "executed": false
+      }
+    },
+    "saved_replay_of_current_records": {
+      "proposed_policy_calls": 2400,
+      "conditional_wall_s": 18.921725120375708,
+      "conditional_actor_CPU_s": 14.266264988558353,
+      "conditional_evaluator_CPU_s": 4.902476333180778,
+      "native_actions": 0,
+      "executed": false,
+      "additional_work_excluded": "Observer implementation/qualification, analysis, reporting, startup differences and changed per-observation work"
+    },
+    "native_margin_after_another_max8000_packet": 40,
+    "time_estimates_are_guarantees": false,
+    "parallel_multiplier_assumed": false,
+    "authorization_end_utc": "2026-10-16T10:01:55Z",
+    "remaining_authorized_hours_at_cost_review": 115.36084983611111,
+    "authorization_hours_are_guaranteed_compute": false,
+    "new_paid_resources": 0,
+    "automatic_extension": false
+  },
+  "preservation": {
+    "opening_and_plan_source_runtime_hashes_verified": 60,
+    "record_file_hashes_verified": 16,
+    "official_noncache_files_verified": 18,
+    "current_champion_and_two_rollback_archives_unchanged": true,
+    "frozen_candidate_archive_unchanged": true,
+    "all_paired_initial_identities_equal": true,
+    "protected_HOLDOUT_details_or_SEALED_read": false
+  },
+  "next_question": "Use the existing117 records to investigate the damage-increase segment and controller/quantization interaction before choosing another native validation. No parameter search or further run was opened.",
+  "remaining_limits": [
+    "Two new DEV conditions add transfer evidence but do not establish broad generalization or safety.",
+    "Improved speed decoding and improved lap time are distinct measured outcomes; damage increased in one condition.",
+    "Official server and fresh-machine parity remain unverified.",
+    "Historical complete wall/CPU/raw-step totals remain unavailable; accepted ledger and known coverage are preserved."
+  ],
+  "provenance_sha256": {
+    "opening-contract.json": "39189caec60c54948e8eaa3fb0505db484d66c13559d118c61f5d79f35f3911e",
+    "evaluation/plan.json": "28b22b1e5d8420f32561d0dc0c460c7a975c506e9dd94bce2f728f14dd0dc6e7",
+    "artifact-and-history-review.json": "cdff637d0a1222d967e49bb1a866d8d9d7066fbed268d2f5cdb3f3fefc33dab1",
+    "selection-qualification.json": "5b5d91c9e4f67f5d7d771d496c5f3c57bf88f6c8312ce458ff4d6c1b40284671",
+    "native-result-review.json": "4b85c54c943dca32c63bf0c050f85b13c2e2464998471df993f40001685bdaae",
+    "cost.json": "6348bd0bfa702ce55f9b76fa1b1f5a92ddfd07d495b1b3f1e918f6d613e90c31",
+    "post-run-capacity.json": "05aa55286e2ae9da04d030ca7692f961887297b5048bd34e07b47256f0177fb4"
+  }
+}
