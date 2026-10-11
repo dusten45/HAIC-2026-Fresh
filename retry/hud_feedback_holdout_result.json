@@ -1,0 +1,64 @@
+{
+  "stage": 120,
+  "policy": "113champion vs fixed116HUDpedal candidate, unchanged;119near-condition variants stopped",
+  "split": "Four fresh paired HOLDOUT conditions;one aggregate after8roles;existingHOLDOUT details andSEALED closed",
+  "plan_sha256": "365d923c16b8a1578edbafee68c0f6fe1bb8916e6aa231a5961c793fff6854bf",
+  "candidate_archive_sha256": "b8c40bcff8ad9eea60e21755950b77235c22a0d7df89eb74f08148bbb0c9890c",
+  "decision": "ADOPT_FROZEN116_LOCAL_CHAMPION",
+  "counts": {
+    "new_completion": 1,
+    "lost_completion": 0,
+    "common_dnf": 1,
+    "common_completed": 2
+  },
+  "expected_count": 4,
+  "baseline_completed_count": 2,
+  "candidate_completed_count": 3,
+  "cohort_complete": true,
+  "common_completion_median_lap_delta_ms": -1800.0,
+  "common_completion_mean_lap_ratio": 0.9686505862830844,
+  "damage_warning": {
+    "sums": {
+      "baseline": 1.2,
+      "candidate": 1.8
+    },
+    "observed_record_counts": {
+      "baseline": 4,
+      "candidate": 4
+    },
+    "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+  },
+  "performance_verdict": "COMPARISON_PASS_COMPLETION_GAIN",
+  "paired_reset_identity_matches": true,
+  "technical_termination": null,
+  "qualification_reused_no_extra_replay": true,
+  "cost": {
+    "stage": 120,
+    "registered_native_max": 16000,
+    "native_actual": 4246,
+    "raw_step_ticks": 16976,
+    "raw_reset_ticks": 408,
+    "wall_s": 174.81796951999422,
+    "evaluator_CPU_s": 147.06754783399998,
+    "actor_CPU_s": 27.948107,
+    "new_offline_replay_calls": 0,
+    "qualification_reused": true,
+    "all_workers_reaped": true,
+    "B": 698000,
+    "B_increment_before_launch": 16000,
+    "native_before": 591712,
+    "native_after": 595958,
+    "research_remaining": 18042,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "local_adoption": true,
+  "rollback_113_and_prior_chain_preserved": true,
+  "damage_is_automatic_rejection": false,
+  "retuning": false,
+  "SEALED_opened": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false,
+  "local_manifest_updated_to_archive_sha256": "b8c40bcff8ad9eea60e21755950b77235c22a0d7df89eb74f08148bbb0c9890c"
+}
