@@ -1,0 +1,145 @@
+{
+  "stage": 126,
+  "decision": "INCONCLUSIVE_INACTIVE_CENTER_INTERVENTION_KEEP116",
+  "split": "Known failed DEV condition; cached116 control reused. Protected HOLDOUT details and SEALED unopened.",
+  "privileged_diagnostic": true,
+  "submission_candidate": false,
+  "archive_sha256": "b8c40bcff8ad9eea60e21755950b77235c22a0d7df89eb74f08148bbb0c9890c",
+  "intervention": "Existing current-visible detection centers only; original path/count/order/radii and tracker/controller source preserved. No hidden or new obstacle detections.",
+  "preregistered_matching": "Every original component pixel>=128 visible ownership; at least one255; single overlapping GT layer and reverse unique component. Otherwise unchanged.",
+  "preregistered_gate": "Zero replacements means inactive/inconclusive, regardless endpoint. No automatic retry or tuning.",
+  "endpoint": {
+    "completed": false,
+    "retire_reason": "crash",
+    "charged_wrapper_actions": 181,
+    "damage": 1.0,
+    "unique_tiles": 104,
+    "total_tiles": 300,
+    "first_damage_action": 177
+  },
+  "matching": {
+    "counts": {
+      "input_detections": 51,
+      "GT_layers": 60,
+      "hidden_GT_layers": 0,
+      "replaced_centers": 0,
+      "added_detections": 0,
+      "unchanged_unmatched": 5,
+      "unchanged_insufficient_visible_support": 46
+    },
+    "action_intervals_inclusive": {
+      "input_detections": [
+        [
+          23,
+          23
+        ],
+        [
+          66,
+          76
+        ],
+        [
+          138,
+          172
+        ]
+      ],
+      "unchanged_unmatched": [
+        [
+          23,
+          23
+        ],
+        [
+          143,
+          143
+        ],
+        [
+          147,
+          147
+        ],
+        [
+          162,
+          162
+        ],
+        [
+          164,
+          164
+        ]
+      ],
+      "GT_layers": [
+        [
+          65,
+          79
+        ],
+        [
+          137,
+          181
+        ]
+      ],
+      "unchanged_insufficient_visible_support": [
+        [
+          66,
+          76
+        ],
+        [
+          138,
+          172
+        ]
+      ]
+    },
+    "frames_with_detections": 47,
+    "ambiguous_matching_decisions": 0,
+    "first_damage_action": 177,
+    "first_damage_before_s": 15.099999999999767,
+    "first_damage_after_s": 15.179999999999765,
+    "all_original_and_corrected_detections_identical": true,
+    "all_original_detector_component_alignment_exact": true,
+    "actual_original_calls_once_per_action": true,
+    "same_action_and_observation_hashes_as_cached116": true,
+    "support_failure_scope": "46 decisions failed the conjunction all component pixels>=128 and at least one255; receipts do not separate the two predicates. No rerasterization was performed."
+  },
+  "position_hypothesis_resolved": false,
+  "path_or_tracking_clearance_hypothesis_resolved": false,
+  "runtime_execution_status": "PASS; not a causal or performance success",
+  "cost": {
+    "native_wrapper_actions": 181,
+    "registered_native_cap": 2000,
+    "raw_step_ticks": 724,
+    "raw_reset_ticks": 51,
+    "wall_including_records_s": 8.573737747996347,
+    "evaluator_CPU_including_records_s": 7.090412046,
+    "actor_CPU_s": 1.4998580000000001,
+    "new_saved_policy_act_calls": 1,
+    "new_saved_policy_reset_calls": 1,
+    "new_model_calls": 0,
+    "oracle_context_calls": 181,
+    "oracle_context_wall_s": 0.2926994719018694,
+    "oracle_label_raster_passes": 62,
+    "extra_env_render_calls": 0,
+    "extra_detector_component_extractions": 181,
+    "baseline_native_reruns": 0,
+    "automatic_retries": 0
+  },
+  "native_total_after": 605331,
+  "research_remaining": 16669,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "prechecks": "Seven pure helper checks and one saved first-action empty-GT packet smoke passed; these did not establish live matching coverage.",
+  "validation": {
+    "observed_initial_reset_hashes_match": true,
+    "all_frozen_source_hashes_unchanged": true,
+    "loaded_policy_module_bytes_match_baseline": true,
+    "actor_reaped": true,
+    "privileged_boundary_explicit": true
+  },
+  "global_one_pixel_margin_variant": "TERMINATED; archive preserved",
+  "champion116_and_rollbacks_unchanged": true,
+  "next_action": "Before another native center intervention, validate current-visible ownership/support matching using stored DEV evidence. No threshold adjustment, rerasterization or new experiment in stage126.",
+  "old_HOLDOUT_details_or_SEALED_opened": false,
+  "automatic_followup": false,
+  "post_result_tuning": false,
+  "new_paid_resources": 0,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false,
+  "plan_sha256": "3c2674faf5c91facbdeafabac5abf1f0b8a645c2f32e32c13da66c763334d7aa",
+  "contract_sha256": "190a1757d06a9cc424927670706317642f2e6f48ce0973e97be0f5310ef8517e",
+  "limits": "No effective intervention: same crash cannot reject center-error hypothesis or implicate path/tracking. Failure receipts do not identify which part of the support conjunction rejected each component. Official-server parity unverified."
+}
