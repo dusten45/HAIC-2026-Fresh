@@ -1,0 +1,91 @@
+{
+  "stage": 119,
+  "single_change": "pedal_speed=(speed if near else decode_feedback_speed(image,speed)); existing near predicate, thresholds, steer/path and all other speed inputs unchanged.",
+  "candidate_archive_sha256": "cba9a8b8cf605501b543572d748fb8082a98a1e39c63362fa17996ff9f6078ea",
+  "preregistration_sha256": "f53a6c81fe0fde92aaf8062c34632fe3beb3575a55059d51cc8943abc4777f70",
+  "scope": "Both existing117 DEV conditions;113 and116 full-lap endpoint records reused. This is not an unseen-condition evaluation.",
+  "max_registered_native_actions": 4000,
+  "pairs": [
+    {
+      "condition": 1,
+      "A_113_completed": true,
+      "B_116_completed": true,
+      "C_119_completed": true,
+      "A_113_lap_ms": 52740,
+      "B_116_lap_ms": 47120,
+      "C_119_lap_ms": 47920,
+      "C_minus_A_lap_ms": -4820,
+      "C_minus_B_lap_ms": 800,
+      "retained_116_time_gain_fraction": 0.8576512455516014,
+      "damage": [
+        0.0,
+        0.6000000000000001,
+        0.6000000000000001
+      ],
+      "C_terminal": true,
+      "C_censored": false,
+      "C_native_actions": 600
+    },
+    {
+      "condition": 2,
+      "A_113_completed": true,
+      "B_116_completed": true,
+      "C_119_completed": true,
+      "A_113_lap_ms": 47500,
+      "B_116_lap_ms": 44420,
+      "C_119_lap_ms": 44140,
+      "C_minus_A_lap_ms": -3360,
+      "C_minus_B_lap_ms": -280,
+      "retained_116_time_gain_fraction": 1.0909090909090908,
+      "damage": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "C_terminal": true,
+      "C_censored": false,
+      "C_native_actions": 552
+    }
+  ],
+  "aggregate": {
+    "C_completions": 2,
+    "planned_conditions": 2,
+    "median_C_minus_A_lap_ms": -4090.0,
+    "retained_116_total_time_gain_fraction": 0.9402298850574713,
+    "lost_completion": false,
+    "champion": "113 retained",
+    "affected_condition_damage_reduction": false,
+    "interpretation": "The near-only change retains94.0% of total116time gain on existing DEV, but the affected full-lap damage remains0.6. The118local rescue did not carry over to this policy. No retuning or promotion."
+  },
+  "cost": {
+    "stage": 119,
+    "registered_native_max": 4000,
+    "native_actual": 1152,
+    "raw_step_ticks": 4605,
+    "raw_reset_ticks": 102,
+    "native_environment_resets": 2,
+    "wall_s": 42.91892221200396,
+    "evaluator_CPU_s": 36.360067142000005,
+    "actor_CPU_s": 7.119762,
+    "all_workers_reaped": true,
+    "offline_saved_replay_calls": 0,
+    "cached_native_runs_reused": 4,
+    "cached_calls_charged_again": 0,
+    "B": 682000,
+    "B_increment": 0,
+    "native_before": 590560,
+    "native_after": 591712,
+    "research_remaining": 6288,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "boundaries": {
+    "near_threshold_steer_path_other_speed_inputs_unchanged": true,
+    "retuning_after_results": false,
+    "HOLDOUT_details_or_SEALED_opened": false,
+    "new_damage_acceptance_threshold": false,
+    "promotion": false,
+    "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+  }
+}
