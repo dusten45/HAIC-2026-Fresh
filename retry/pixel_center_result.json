@@ -1,0 +1,254 @@
+{
+  "stage": 128,
+  "decision": "KEEP_CHAMPION_COMPLETION_LOSS",
+  "champion_kept": 116,
+  "adopted": false,
+  "runtime_gate": "PASS",
+  "advancement_gate": "FAIL_COMPLETION_LOSS",
+  "candidate_archive_sha256": "3a18f8182003358c0ba3257b0b20696584850961af6a4d3c4818a36d0e3f89fb",
+  "baseline_archive_sha256": "b8c40bcff8ad9eea60e21755950b77235c22a0d7df89eb74f08148bbb0c9890c",
+  "contract_sha256": "d76e340d75a47d7065af23233041216e38759d149669e2af17c9aacb0126944a",
+  "plan_sha256": "72758276596c0d8f4aeeaed1353ae27662dd764cf9d6f2e7bc40c60fd3f8d5cd",
+  "single_change": {
+    "member": "retry/clearance_agent.py",
+    "old_origin_xy": [
+      42,
+      63
+    ],
+    "source_derived_origin_xy": [
+      41.542,
+      62.4475
+    ],
+    "body_delta_m": [
+      0.33656672545561317,
+      -0.32480893592004817
+    ],
+    "unchanged_other_archive_members": 13,
+    "detector_support_count_order_radius_preserved": true,
+    "path_tracker_route_control_unchanged": true,
+    "GT_or_identity_data_in_candidate": false
+  },
+  "predeclared_offline_gate": "For each road and pooled matched rows: mean and median 2D center error decrease; p95 and maximum do not increase (1e-9 numeric tolerance); error counts above one horizontal input pixel (1/1.3608m) do not increase. Report worsened-row count and largest increase. Any failure stops native, no alternative formula or threshold retry.",
+  "offline_error_unit": "metres; matched current detections only",
+  "offline_cases": [
+    {
+      "role": "selected_failed_DEV",
+      "baseline": {
+        "n": 46,
+        "mean": 0.5185828221968406,
+        "median": 0.5406475800571422,
+        "p95": 0.7155000852746629,
+        "max": 0.74909146723221,
+        "above_one_pixel": 2
+      },
+      "candidate": {
+        "n": 46,
+        "mean": 0.17649081859815882,
+        "median": 0.1614430177265025,
+        "p95": 0.32831299155470783,
+        "max": 0.35449256121568606,
+        "above_one_pixel": 0
+      },
+      "gate_pass": true,
+      "worsened_rows": 2,
+      "largest_increase_m": 0.17419636450686043,
+      "new_crossings_above_one_pixel": 0
+    },
+    {
+      "role": "previously_clean_completed_DEV",
+      "baseline": {
+        "n": 130,
+        "mean": 0.48674617712949075,
+        "median": 0.4870129027623648,
+        "p95": 0.6666055282748952,
+        "max": 0.7750920061186393,
+        "above_one_pixel": 1
+      },
+      "candidate": {
+        "n": 130,
+        "mean": 0.14009290659976031,
+        "median": 0.12253070682635792,
+        "p95": 0.29866854369916673,
+        "max": 0.4050672458163376,
+        "above_one_pixel": 0
+      },
+      "gate_pass": true,
+      "worsened_rows": 2,
+      "largest_increase_m": 0.12467339654590759,
+      "new_crossings_above_one_pixel": 0
+    }
+  ],
+  "offline_pooled": {
+    "baseline": {
+      "n": 176,
+      "mean": 0.49506711845391166,
+      "median": 0.4975539815589557,
+      "p95": 0.6822018691828737,
+      "max": 0.7750920061186393,
+      "above_one_pixel": 3
+    },
+    "candidate": {
+      "n": 176,
+      "mean": 0.14960599723570536,
+      "median": 0.13152541473454532,
+      "p95": 0.3108053466361194,
+      "max": 0.4050672458163376,
+      "above_one_pixel": 0
+    },
+    "gate_pass": true,
+    "worsened_rows": 4,
+    "largest_increase_m": 0.17419636450686043,
+    "new_crossings_above_one_pixel": 0
+  },
+  "cause_metrics": {
+    "old_mean_signed_error_m": [
+      -0.35867178902803326,
+      0.31751535036726186
+    ],
+    "new_mean_signed_error_m": [
+      -0.02210506357241996,
+      -0.007293585552786053
+    ],
+    "physical_pixel_origin_displacement_px": [
+      0.458,
+      0.5525
+    ],
+    "component_minus_true_pixel_mean": [
+      -0.03008057050934992,
+      0.012406389025286459
+    ],
+    "component_minus_true_pixel_L2_p95_max": [
+      0.4609193259566525,
+      0.5722202828497042
+    ],
+    "brightness_weighted_centroid_shift_px_median_p95_max": [
+      0.004480204075235901,
+      0.009341222512452734,
+      0.010544687344200849
+    ],
+    "noninteger_centroid_rows": 169,
+    "component_area_min_max": [
+      3,
+      7
+    ],
+    "touching_detector_edge_rows": 10,
+    "GT_center_outside_component_bbox_rows": 0
+  },
+  "offline_scope": {
+    "stored_original_actions": 729,
+    "frames_with_detections": 203,
+    "all_original_detections": 219,
+    "matched_error_rows": 176,
+    "unmatched_without_error_labels": 43,
+    "GT_research_labels_only": true,
+    "cohort_frozen_before_candidate_errors": true,
+    "all_original_paths_exact": true,
+    "all_count_order_radius_preserved": true,
+    "limitation": "Current matched detections only; no retained-track metric. Snapshot label reconstruction uses zero for unrecorded wheel phase. Source formula is continuous image geometry, not proof of exact raster kernel phase."
+  },
+  "legal_pixel_smoke": {
+    "saved_resets": 2,
+    "saved_acts": 2,
+    "official_pixels_only": true,
+    "passed": true,
+    "worker_reaped": true
+  },
+  "predeclared_native_gate": "Run both registered cases once unless technical/resource stop. Any completion loss blocks advancement; a restored failedDEV completion with retained control completion supports broader DEV testing only, never adoption here. Control damage and lap delta separately reported; no rescue does not advance.",
+  "native_pairs": [
+    {
+      "role": "selected_failed_DEV",
+      "baseline": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "retire_reason": "crash",
+        "unique_tiles": 104,
+        "total_tiles": 300,
+        "charged_wrapper_actions": 181,
+        "censored": false
+      },
+      "candidate": {
+        "completed": true,
+        "lap_ms": 48460,
+        "damage": 0.2,
+        "retire_reason": null,
+        "unique_tiles": 300,
+        "total_tiles": 300,
+        "charged_wrapper_actions": 606,
+        "censored": false
+      }
+    },
+    {
+      "role": "previously_clean_completed_DEV",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 43820,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 279,
+        "total_tiles": 279,
+        "charged_wrapper_actions": 548,
+        "censored": false
+      },
+      "candidate": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "retire_reason": "crash",
+        "unique_tiles": 212,
+        "total_tiles": 279,
+        "charged_wrapper_actions": 423,
+        "censored": false
+      }
+    }
+  ],
+  "native_counts": {
+    "new_completion": 1,
+    "lost_completion": 1,
+    "common_dnf": 0,
+    "common_completed": 0
+  },
+  "common_completion_median_lap_delta_ms": null,
+  "common_completion_mean_lap_ratio": null,
+  "native_runtime": {
+    "normal_uncensored_endpoints": 2,
+    "observed_reset_identity_matches": true,
+    "full_hidden_state_equivalence_claimed": false,
+    "oracle_inputs_to_policy": false,
+    "actors_reaped": true
+  },
+  "cost": {
+    "native_wrapper_actions": 1029,
+    "registered_native_cap": 4000,
+    "raw_step_ticks": 4116,
+    "raw_reset_ticks": 102,
+    "wall_including_records_s": 45.98840672298684,
+    "evaluator_CPU_including_records_s": 38.758571435,
+    "actor_CPU_s": 7.342807,
+    "new_saved_policy_act_calls": 2,
+    "new_saved_policy_reset_calls": 2,
+    "saved_candidate_detector_calls": 203,
+    "saved_label_context_calls": 203,
+    "saved_label_raster_passes": 182,
+    "saved_full_scene_renders": 0,
+    "offline_error_wall_s": 1.3794061410007998,
+    "offline_error_CPU_s": 2.087910153,
+    "saved_smoke_wall_s": 0.3274250490067061,
+    "saved_smoke_actor_CPU_s": 0.242815,
+    "baseline_native_reruns": 0,
+    "automatic_native_retries": 0,
+    "native_total_after": 606979,
+    "research_after": 15021,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "preflight_recovery": "Offline preflight rejected a workspace dependency hash before any detector, render, policy or native call. It then imported the exact dependency from the frozen archive; candidate formula and workspace dependency remained unchanged.",
+  "connection_alert_resolution": "Same environment accessible; evaluator had exited successfully, report persisted and actors were reaped. No duplicate or environment move.",
+  "causal_limit": "Source-derived origin correction improves saved matched current centers. Native regression cause unresolved; unmatched detections, new states and unchanged path/tracker coordinates are outside this error gate.",
+  "old_HOLDOUT_details_or_SEALED_opened": false,
+  "post_result_tuning": false,
+  "automatic_followup": false,
+  "new_paid_resources": 0,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false
+}
