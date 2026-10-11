@@ -1,0 +1,270 @@
+{
+  "stage": 145,
+  "status": "RETAIN_FIXED12_FOR_REMAINING_DEV_NEXT_CHOICE",
+  "split": "DEV",
+  "candidate": "Only normal10→12m/s²; near5/cap40 and all other control/source fixed",
+  "baseline_archive_sha256": "a140aaa4b008838773c4ce83fead5b639d28ab777ac3eaac2493cad95353a68d",
+  "candidate_archive_sha256": "05c0c6ff68bf3b31b49266605eda41e16ed98ae1f371347f9814c4dc8793a523",
+  "changed_archive_members": [
+    "agent.py"
+  ],
+  "other13_members_byte_identical": true,
+  "baseline_actual142_runs_reused": 2,
+  "new_candidate_runs": 2,
+  "selection_labels": "Same previously selected original8-contact DEV0 and original8-undamaged curvatureDEV1; actual10 baseline damage0/0.6 is explicit.",
+  "baseline_completed": 2,
+  "candidate_completed": 2,
+  "counts": {
+    "new_completion": 0,
+    "lost_completion": 0,
+    "common_completed": 2,
+    "common_dnf": 0,
+    "inconclusive": 0
+  },
+  "comparisons": [
+    {
+      "anonymous_DEV": 0,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 48140,
+      "candidate_lap_ms": 46140,
+      "common_lap_delta_ms": -2000,
+      "common_lap_ratio": 0.9584545076859161,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "candidate_native_actions": 577
+    },
+    {
+      "anonymous_DEV": 1,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 44340,
+      "candidate_lap_ms": 42060,
+      "common_lap_delta_ms": -2280,
+      "common_lap_ratio": 0.9485791610284168,
+      "baseline_damage": 0.6000000000000001,
+      "candidate_damage": 0.0,
+      "candidate_native_actions": 526
+    }
+  ],
+  "common_median_lap_delta_ms": -2140.0,
+  "common_sum_lap_delta_ms": -4280,
+  "common_mean_lap_ratio": 0.9535168343571665,
+  "damage_diagnostic": {
+    "sums": {
+      "baseline": 0.6000000000000001,
+      "candidate": 0.0
+    },
+    "automatic_veto": false,
+    "qualification": "Descriptive endpoint exposure on two different trajectories; no general contact-risk claim."
+  },
+  "actual_intervention_checks": {
+    "actual_rows": 1103,
+    "normal12_rows": 881,
+    "near5_rows": 222,
+    "target_increased_vs_same_input10_rows": 515,
+    "pedals_changed_vs_same_input10_rows": 462,
+    "near_target_or_pedal_changes": 0,
+    "target_source_law_max_error_m_s": 0.0,
+    "pedals_match_source_exactly": true,
+    "new_policy_replay_calls": 0
+  },
+  "compact_behavior_diagnostics": [
+    {
+      "anonymous_DEV": 0,
+      "baseline": {
+        "actual_rows": 603,
+        "observed_native_exposure_s": 48.18000000000209,
+        "normal_rows": 497,
+        "near5_rows": 106,
+        "gas_rows": 388,
+        "brake_rows": 215,
+        "active_pedal_opposite_switches": 282,
+        "active_pedal_switches_per_s": 5.853051058530257,
+        "actual_speed_direction_switches": 282,
+        "actual_speed_switches_per_s": 5.853051058530257,
+        "first_damage_event": null,
+        "first_damage_pre_summary": null,
+        "first_damage_begins_after_official_finish": false
+      },
+      "candidate": {
+        "actual_rows": 577,
+        "observed_native_exposure_s": 46.16000000000177,
+        "normal_rows": 454,
+        "near5_rows": 123,
+        "gas_rows": 364,
+        "brake_rows": 213,
+        "active_pedal_opposite_switches": 256,
+        "active_pedal_switches_per_s": 5.54592720970516,
+        "actual_speed_direction_switches": 254,
+        "actual_speed_switches_per_s": 5.502599653379338,
+        "first_damage_event": null,
+        "first_damage_pre_summary": null,
+        "first_damage_begins_after_official_finish": false
+      },
+      "first_same_input_divergence": {
+        "step": 25,
+        "same_input_path_HUD_tracking_route_and_steer": true,
+        "baseline_target_m_s": 35.648556729697404,
+        "candidate_target_m_s": 39.05103732671573,
+        "baseline_action": [
+          0.02039186842739582,
+          0.0,
+          0.22405773401260376
+        ],
+        "candidate_action": [
+          0.02039186842739582,
+          0.0,
+          0.08795850723981857
+        ]
+      }
+    },
+    {
+      "anonymous_DEV": 1,
+      "baseline": {
+        "actual_rows": 555,
+        "observed_native_exposure_s": 44.36000000000149,
+        "normal_rows": 449,
+        "near5_rows": 106,
+        "gas_rows": 370,
+        "brake_rows": 185,
+        "active_pedal_opposite_switches": 226,
+        "active_pedal_switches_per_s": 5.094679891794238,
+        "actual_speed_direction_switches": 224,
+        "actual_speed_switches_per_s": 5.049594229034997,
+        "first_damage_event": {
+          "step": 135,
+          "native_elapsed_pre_s": 10.719999999999839,
+          "native_elapsed_post_s": 10.799999999999837,
+          "dwell_s": 0.0799999999999983,
+          "native_absolute_pre_s": 11.739999999999839,
+          "native_absolute_post_s": 11.819999999999837,
+          "speed_before_m_s": 7.480125260742245,
+          "speed_after_m_s": 10.926730760267397,
+          "feedback_m_s": 6.25,
+          "target_m_s": 9.277690166912594,
+          "curvature": 0.11617703008613581,
+          "near": false,
+          "selected_lateral_budget": 10.0,
+          "steer": 0.34981951117515564,
+          "gas": 0.24221521615982056,
+          "brake": 0.0,
+          "front_joint_residual_after_rad": [
+            0.0002402961254119873,
+            0.0002402961254119873
+          ],
+          "offtrack_before": 3,
+          "offtrack_after": 4,
+          "damage_before": 0.0,
+          "damage_after": 0.2,
+          "collision": true
+        },
+        "first_damage_pre_summary": {
+          "rows": 20,
+          "steps": [
+            115,
+            134
+          ],
+          "native_elapsed_interval_s": [
+            9.119999999999873,
+            10.719999999999839
+          ],
+          "speed_range_m_s": [
+            5.6748970911931504,
+            22.475540825620186
+          ],
+          "target_range_m_s": [
+            6.681085638568758,
+            40.0
+          ],
+          "near_rows": 13,
+          "gas_rows": 8,
+          "brake_rows": 12,
+          "active_pedal_opposite_switches": 11,
+          "actual_speed_direction_switches": 11,
+          "joint_residual_mean_rad": 2.4790642783045767e-08,
+          "joint_residual_max_rad": 8.940696716308594e-08
+        },
+        "first_damage_begins_after_official_finish": false
+      },
+      "candidate": {
+        "actual_rows": 526,
+        "observed_native_exposure_s": 42.080000000001135,
+        "normal_rows": 427,
+        "near5_rows": 99,
+        "gas_rows": 346,
+        "brake_rows": 180,
+        "active_pedal_opposite_switches": 223,
+        "active_pedal_switches_per_s": 5.2994296577945335,
+        "actual_speed_direction_switches": 221,
+        "actual_speed_switches_per_s": 5.251901140684269,
+        "first_damage_event": null,
+        "first_damage_pre_summary": null,
+        "first_damage_begins_after_official_finish": false
+      },
+      "first_same_input_divergence": {
+        "step": 21,
+        "same_input_path_HUD_tracking_route_and_steer": true,
+        "baseline_target_m_s": 35.648556729697404,
+        "candidate_target_m_s": 39.05103732671573,
+        "baseline_action": [
+          -0.02039186842739582,
+          0.0,
+          0.12405773252248764
+        ],
+        "candidate_action": [
+          -0.02039186842739582,
+          0.024082986637949944,
+          0.0
+        ]
+      }
+    }
+  ],
+  "diagnostic_label_rule": "Successive nonneutral gas/brake command switches with pedal>1e-6. GT speed delta>0.1m/s labels acceleration/deceleration; count successive nonsteady direction switches. Rates per actual native observation exposure, including terminal callbacks, distinct from official lap endpoint.",
+  "diagnostic_interpretation": "Both new12 runs undamaged. Existing10 curvatureDEV first contact was step135 at native elapsed10.72s, with pre-event wheel-joint residual max8.94e-8rad. Whole-run pedal/speed reversals persist; their rate drops inDEV0 and rises inDEV1. Different trajectories; no unique causal mechanism, physical-limit or general safety claim.",
+  "pre_registered_gate": "Retain exact12 for remainingDEV next choice only if full comparable cohort, both baseline completions retained, common medianlapdelta<0 and meanlapratio<1. Any completion loss, effect absent/mixed, censor/incomplete evidence keeps10 and stops this direction of coefficient expansion. No percent threshold or damage veto.",
+  "cost": {
+    "stage": 145,
+    "native_cap": 4000,
+    "new_wrapper_actions": 1103,
+    "raw_step_ticks": 4412,
+    "raw_reset_ticks": 102,
+    "wall_including_short_records_s": 47.94910160798463,
+    "evaluator_CPU_s": 39.182986510999996,
+    "actor_CPU_s": 8.907250000000001,
+    "new_offline_policy_or_model_calls": 0,
+    "baseline10_reruns": 0,
+    "cached142_native_actions_reused_not_recharged": 1158,
+    "B_operating_cap": 730000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 634751,
+    "research_remaining": 11249,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_fixed_candidate_archive_builds": 1,
+    "full_input_or_packaging_requalification": 0,
+    "new_full_pixels_GT_policy_video_streams": 0,
+    "HOLDOUT_case_details_reads": 0,
+    "SEALED_opened": false,
+    "champion10_changed": false,
+    "rollback8_134_116_changed": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "decision": "RETAIN_FIXED12_FOR_REMAINING_DEV_NEXT_CHOICE",
+  "next_choice": "Unchanged12 on remainingtwo138 DEV vs cached10 stage143 endpoints; no extra coefficient increase, next native run, reservation or adoption here.",
+  "scope": {
+    "champion10_changed": false,
+    "rollback8_134_116_changed": false,
+    "HOLDOUT_case_details_reads": 0,
+    "SEALED_opened": false,
+    "full_input_or_packaging_requalification": 0,
+    "larger_coefficient_sweep": false,
+    "private_conditions_pixels_GT_policy_streams_plans_documents_published": false,
+    "no_generalization_outside_these_DEV_claim": true,
+    "ten_second_lap_guarantee": false,
+    "official_server_behavior_verified": false,
+    "automatic_next_experiment": false,
+    "automatic_extension": false
+  }
+}
