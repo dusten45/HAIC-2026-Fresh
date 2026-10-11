@@ -33,6 +33,28 @@ class GateTests(unittest.TestCase):
         with self.assertRaises(AssertionError):verify_readiness(self.path,now=self.now+dt.timedelta(seconds=101))
         claim_once(self.path)
         with self.assertRaises(AssertionError):claim_once(self.path)
+    def test_ready_entrypoint_claims_before_ordered_mocked_episodes(self):
+        from retry import road_keep_holdout_probe as runner
+        cases=[{'id':f'synthetic-{i}'} for i in range(8)]
+        self.plan['cases']=cases
+        publish_ready_plan(self.path,self.plan,self.receipt,now=self.now)
+        ordered=[]
+        def saved_episode(case,plan,path,initial):
+            self.assertTrue((path.parent/'opening-receipt.json').exists())
+            ordered.append(case['id'])
+            return {'id':case['id'],'status':'COMPLETE','charged_wrapper_actions':0},False
+        report={'aggregate':{'synthetic':True},'mechanical_receipt':{'pass':True}}
+        with patch.object(runner,'episode',side_effect=saved_episode), \
+             patch.object(runner.native,'make_env') as env, \
+             patch.object(runner,'SandboxWorker') as actor, \
+             patch('retry.road_keep_holdout_aggregate.aggregate',return_value=report) as aggregate, \
+             patch('sys.argv',['audit','--plan',str(self.path)]), patch('builtins.print'):
+            self.assertEqual(runner.main(),0)
+            env.assert_not_called();actor.assert_not_called()
+            aggregate.assert_called_once_with(self.path.parent,cases)
+        self.assertEqual(ordered,[c['id'] for c in cases])
+        self.assertEqual(json.loads((self.root/'aggregate.json').read_text()),report['aggregate'])
+
     def test_readiness_missing_failed_or_mismatched_has_zero_launches(self):
         from retry import road_keep_holdout_probe as runner
         self.path.write_text(json.dumps(self.plan))

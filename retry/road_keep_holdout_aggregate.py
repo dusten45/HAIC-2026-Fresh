@@ -30,6 +30,24 @@ def _stats(values):
             'max': float(values.max()) if len(values) else None}
 
 
+def _damage_summary(pairs):
+    deltas = [b['damage'] - a['damage'] for a, b in pairs]
+    return {'pairs': len(pairs),
+            'student_higher': sum(d > 0 for d in deltas),
+            'v2_higher': sum(d < 0 for d in deltas),
+            'equal': sum(d == 0 for d in deltas),
+            'student_minus_v2': _stats(deltas),
+            'scope': 'Diagnostic only; episode exposure may differ.'}
+
+
+def _progress_summary(pairs):
+    for a, b in pairs:
+        assert a['total_tiles'] == b['total_tiles'] and a['total_tiles'] > 0
+    return {'pairs': len(pairs),
+            'student_minus_v2_unique_tiles': _stats([b['unique_tiles'] - a['unique_tiles'] for a, b in pairs]),
+            'student_minus_v2_unique_progress': _stats([(b['unique_tiles'] - a['unique_tiles']) / a['total_tiles'] for a, b in pairs])}
+
+
 def _verify(directory, case, result):
     name = case['id']
     rows = [_read_line(line) for line in
@@ -158,6 +176,7 @@ def _aggregate(directory, cases):
         records[arm].append(result)
     table = Counter(dict.fromkeys(['both', 'student_only', 'v2_only', 'neither'], 0))
     deltas, ratios, unknown = [], [], 0
+    native_pairs, common_pairs, both_failed_pairs = [], [], []
     for pair, arms in grouped.items():
         assert set(arms) == {'v2', 'student'}
         if (pair, 'v2') in starts and (pair, 'student') in starts:
@@ -169,8 +188,12 @@ def _aggregate(directory, cases):
             unknown += 1
             continue
         ca, cb = a['completed'], b['completed']
+        native_pairs.append((a, b))
+        if not ca and not cb:
+            both_failed_pairs.append((a, b))
         table['both' if ca and cb else 'student_only' if cb else 'v2_only' if ca else 'neither'] += 1
         if ca and cb:
+            common_pairs.append((a, b))
             assert a['official_lap_ms'] > 0 and b['official_lap_ms'] > 0
             deltas.append(b['official_lap_ms'] - a['official_lap_ms'])
             ratios.append(b['official_lap_ms'] / a['official_lap_ms'])
@@ -179,6 +202,11 @@ def _aggregate(directory, cases):
         failed = [x for x in values if x['status'] == 'DNF']
         done = [x for x in values if x['status'] in ('COMPLETE', 'DNF')]
         laps = [x['official_lap_ms'] for x in values if x['status'] == 'COMPLETE']
+        censored = [x for x in values if x['status'] == 'RESOURCE_CENSORED']
+        gaps = [x['charged_wrapper_actions'] - x.get('successful_wrapper_steps', 0) for x in values]
+        assert all(g >= 0 for g in gaps)
+        def measured(key):
+            return _stats([x[key] for x in values if x.get(key) is not None])
         arms_summary[arm] = {
             'status_counts': dict(Counter(x['status'] for x in values)),
             'native_failure_count': len(failed),
@@ -188,10 +216,17 @@ def _aggregate(directory, cases):
             'completed_lap_ms': _stats(laps),
             'failed_unique_tiles': _stats([x['unique_tiles'] for x in failed]),
             'failed_unique_progress': _stats([x['unique_tiles'] / x['total_tiles'] for x in failed]),
+            'censored_observed_unique_progress': _stats([x['unique_tiles'] / x['total_tiles'] for x in censored
+                                                        if x.get('unique_tiles') is not None and x.get('total_tiles', 0) > 0]),
+            'censored_observed_unique_tiles': _stats([x['unique_tiles'] for x in censored if x.get('unique_tiles') is not None]),
             'damage_native_endpoints': _stats([x['damage'] for x in done]),
-            'damage_all_observed': _stats([x['damage'] for x in values if 'damage' in x]),
+            'damage_all_observed': _stats([x['damage'] for x in values if x.get('damage') is not None]),
             'charged_actions': sum(x['charged_wrapper_actions'] for x in values),
             'successful_steps': sum(x.get('successful_wrapper_steps', 0) for x in values),
+            'charged_minus_successful_steps': sum(gaps),
+            'incomplete_charged_action_count': sum(gaps),
+            'runs_with_incomplete_charged_actions': sum(g > 0 for g in gaps),
+            'charged_minus_successful_step_summary': _stats(gaps),
             'raw_step_ticks': sum(x.get('raw_step_ticks', 0) for x in values),
             'raw_reset_ticks': sum(x.get('raw_reset_ticks', 0) for x in values),
             'actor_CPU_s': sum(x.get('actor_CPU_s') or 0 for x in values),
@@ -201,12 +236,28 @@ def _aggregate(directory, cases):
             'episode_wall_s': sum(x.get('wall_s') or 0 for x in values),
             'episode_wall_measured_runs': sum(x.get('wall_s') is not None for x in values),
             'action_including_IPC_ms': _stats([x for a in audited if a['arm'] == arm for x in a['latency']]),
+            'cold_start_ms': measured('cold_start_ms'),
+            'reset_including_IPC_ms': measured('reset_including_IPC_ms'),
+            'reset_environment_wall_s': measured('reset_environment_wall_s'),
+            'package_initialization_ms': _stats([x['worker_ready']['package_init_ms'] for x in values
+                                                if (x.get('worker_ready') or {}).get('package_init_ms') is not None]),
+            'closing_ms': _stats([x['worker_reaping']['close_ms'] for x in values
+                                  if (x.get('worker_reaping') or {}).get('close_ms') is not None]),
+            'supervisor_peak_RSS_bytes': measured('supervisor_peak_rss_bytes'),
+            'actor_peak_RSS_MiB': measured('peak_actor_RSS_MiB'),
             'peak_actor_RSS_MiB': max((x.get('peak_actor_RSS_MiB') or 0 for x in values), default=0)}
     return {'aggregate': {'registered_pairs': len(grouped),
                          'normal_endpoint_pairs': sum(table.values()),
                          'indeterminate_pairs': unknown, 'completion_2x2': dict(table),
                          'common_completed_lap_delta_summary_ms': _stats(deltas),
                          'common_completed_lap_ratio_summary': _stats(ratios),
+                         'common_completed_absolute_lap_ms': {
+                             'v2': _stats([a['official_lap_ms'] for a, _ in common_pairs]),
+                             'student': _stats([b['official_lap_ms'] for _, b in common_pairs])},
+                         'paired_native_endpoint_damage_warnings': _damage_summary(native_pairs),
+                         'common_completed_damage_warnings': _damage_summary(common_pairs),
+                         'paired_native_endpoint_unique_progress_delta': _progress_summary(native_pairs),
+                         'both_failed_unique_progress_delta': _progress_summary(both_failed_pairs),
                          'arms': arms_summary,
                          'action_including_IPC_ms': _stats([x for a in audited for x in a['latency']]),
                          'interpretation': 'Descriptive paired outcomes; damage exposure unequal; censoring is not DNF.'},
