@@ -1,0 +1,138 @@
+{
+  "stage": 127,
+  "decision": "PRIORITIZE_PIXEL_CENTER_ESTIMATION_KEEP116",
+  "privileged_diagnostic": true,
+  "submission_candidate": false,
+  "archive_sha256": "b8c40bcff8ad9eea60e21755950b77235c22a0d7df89eb74f08148bbb0c9890c",
+  "split": "Same known failed DEV121 condition, cached original116 control; old HOLDOUT details and SEALED unopened.",
+  "sanity": {
+    "old126_replacements": 0,
+    "native_white255_after96to84_value": 253,
+    "old255_witness_impossible_in_measured_pipeline": true,
+    "saved_actions": [
+      164,
+      168,
+      172
+    ],
+    "supported_component_minmax_coverage": [
+      [
+        248,
+        253
+      ],
+      [
+        233,
+        253
+      ],
+      [
+        249,
+        253
+      ]
+    ],
+    "native_saved_gray_max_error_on_matched_components": [
+      1,
+      0,
+      0
+    ],
+    "new_replacements_per_stored_frame": [
+      1,
+      1,
+      1
+    ],
+    "frame_truth_before_alignment_exact": true,
+    "original_path_count_order_radius_preserved": true,
+    "scope": "Native renderer primitives on stored geometry/truth with uniform102 road, no curb/reward text and unrecorded wheel phase0. Compare only matched obstacle components; not whole-frame or temporal-history equivalence. Unmatched curb component remains unchanged.",
+    "saved_checker_recovery": "First164 comparison incorrectly used pre-intervention observer detections; core path/center/field assertions passed. Corrected check uses actual tracker return; continued168/172 without repeating164. No physics."
+  },
+  "definition_change": "v126 all>=128 AND any255 -> v127 all>0; exact same native ownership stencil, overlap/reverse uniqueness and original field constraints. Originalv126 source/results retained.",
+  "intervention": "Only current visible, existing detected obstacle centers before the unchanged tracker. No hidden/new detections; original pixels/path/count/order/radii/route/controller source unchanged. Retained-only tracks not freshly corrected.",
+  "baseline": {
+    "completed": false,
+    "actions": 181,
+    "damage": 1.0,
+    "retire_reason": "crash"
+  },
+  "diagnostic": {
+    "completed": true,
+    "lap_ms": 49480,
+    "damage": 0.0,
+    "unique_tiles": 300,
+    "total_tiles": 300,
+    "charged_wrapper_actions": 619,
+    "censored": false
+  },
+  "matching": {
+    "counts": {
+      "input_detections": 181,
+      "GT_layers": 185,
+      "replaced_centers": 122,
+      "added_detections": 0,
+      "hidden_GT_layers": 0,
+      "unchanged_unmatched": 59,
+      "matched_center_only": 122
+    },
+    "frames_with_replacements": 122,
+    "frames_with_detections": 170,
+    "ambiguity_count": 0,
+    "source_component_alignment_mismatches": 0,
+    "all_count_order_radius_unchanged": true,
+    "all_unmatched_detections_unchanged": true,
+    "original_calls_once_per_action": true,
+    "first_center_replacement_action": 66,
+    "first_action_difference_vs_cached116": 72,
+    "first_damage_action": null,
+    "center_correction_distance_m": {
+      "min": 0.18073179813459414,
+      "median": 0.48272027054518274,
+      "max": 0.8050692814658905
+    },
+    "detailed_intervals_retained_privately": true
+  },
+  "cost": {
+    "native_wrapper_actions": 619,
+    "registered_native_cap": 2000,
+    "raw_step_ticks": 2475,
+    "raw_reset_ticks": 51,
+    "wall_including_records_s": 27.839838523010258,
+    "evaluator_CPU_including_records_s": 23.449083364,
+    "actor_CPU_s": 4.484124,
+    "oracle_context_calls": 619,
+    "oracle_context_wall_s": 1.0434141011792235,
+    "oracle_label_raster_passes": 220,
+    "new_saved_policy_act_calls": 3,
+    "new_saved_policy_reset_calls": 3,
+    "new_model_calls": 0,
+    "saved_scene_draws": 3,
+    "saved_label_raster_passes": 3,
+    "saved_white_resample_calibrations": 1,
+    "baseline_native_reruns": 0,
+    "automatic_native_retries": 0,
+    "failed126_native_actions": 181,
+    "failed126_native_wall_s": 8.573737747996347,
+    "combined126_127_native_actions": 800,
+    "combined126_127_native_wall_s": 36.413576271006605
+  },
+  "native_total_after": 605950,
+  "research_remaining": 16050,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "validation": {
+    "initial_reset_hashes_match": true,
+    "loaded_policy_module_bytes_match116": true,
+    "frozen_sources_unchanged": true,
+    "actor_reaped": true,
+    "count_order_radius_preserved_all619_actions": true
+  },
+  "champion116_and_rollbacks_unchanged": true,
+  "global_one_pixel_margin_variant": "TERMINATED; archived unchanged",
+  "next_action": "Prioritize pixel-based obstacle center inverse-camera/centroid estimation on DEV; privileged ground-truth episode is not a submission candidate. This selected case does not establish generalization or isolate one contact frame.",
+  "old_HOLDOUT_details_or_SEALED_opened": false,
+  "post_result_cutoff_search": false,
+  "post_result_tuning": false,
+  "automatic_followup": false,
+  "new_paid_resources": 0,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false,
+  "plan_sha256": "752b56e41f765b3667e066ddee0d807792495ee5e02f6e37672b4936ae61b62d",
+  "contract_sha256": "7cada47af76b4743dbad62fc41e2bd12087b70624e68fa1a60d0a298eceb185c",
+  "limits": "One selected DEV rescue with privileged centers supports prioritizing position estimation. It does not qualify a pixel-only improvement or estimate generalization. First action change can precede the original contact region; unmatched and retained-only entries remain original."
+}
