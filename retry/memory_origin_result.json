@@ -1,0 +1,155 @@
+{
+  "stage": 130,
+  "decision": "NO_ACTION_EFFECT_VS128_ORIGINAL116_COMPLETION_LOSS_KEEP116",
+  "champion_kept": 116,
+  "adopted": false,
+  "candidate_legal_pixel_only": true,
+  "contract_sha256": "e6baa73013c363fb95bc4a74f0fe4c78d0c210f81a9e8b2d41c3525482968a88",
+  "plan_sha256": "296fb96d4f664d4a6dd8685ab2024ffd9ee0456e1b8dede8d28fbc89181f12e1",
+  "candidate_archive_sha256": "6c1f87a9d5a19e67a85cc8c8b6a129720e9176dcc9644782d7775f8b6178d8c3",
+  "base128_archive_sha256": "3a18f8182003358c0ba3257b0b20696584850961af6a4d3c4818a36d0e3f89fb",
+  "single_change": {
+    "member": "retry/temporal_agent.py",
+    "both_affine_projection_origins_before": [
+      42,
+      63
+    ],
+    "both_affine_projection_origins_after": [
+      41.542,
+      62.4475
+    ],
+    "other_archive_members_unchanged": 13,
+    "unchanged": "128center detector, affine estimation/validity, fallback motion,age8,merge2m,radius,margin,path,route,control",
+    "runtime_inputs": "Official pixels only; no GT, identity data, saved traces or privileged hook"
+  },
+  "source_diagnosis": {
+    "fresh_detections_enter_memory_unchanged": true,
+    "fresh_detection_double_motion": false,
+    "stale_pre_correction_coordinates_in_fresh_memory": false,
+    "direct_mismatch": "128current centers use41.542/62.4475 while optical memory roundtrip used42/63.",
+    "algebra": "Old-frame minus consistent prediction = D^-1(A-I)delta, D=diag(1.3608,-1.701),delta=(.458,.5525)px. Pure translation cancels.",
+    "original_tracker_reconstructions": 609,
+    "max_reconstruction_error": 0.0,
+    "accepted_affines_in128_precontact_prefixes": 212,
+    "one_step_origin_effect_m": {
+      "n_predicted_hazards": 305,
+      "median": 0.010506444670023141,
+      "max": 0.03117030022688901
+    },
+    "operative_retained_check_max_abs_change_m": 0.0020802689816221687,
+    "GT_use": "Research labels only; saved129 replay injects its already recorded current GT centers solely to reconstruct that privileged trace. Candidate never receives them.",
+    "stage129_retained_error_by_age_m": [
+      0.0,
+      0.2689771399989418,
+      0.7989330426262077,
+      0.898223273134844,
+      1.0765019869994443,
+      1.2722686902535703
+    ],
+    "stage129_retained_branch": "Fallback throughout ages1..5. The current GT detection enters age0 exactly; x then stays fixed and y uses oldHUDspeed*.08.",
+    "stage129_limit": "This large fallback drift is separate from the small optical-origin mismatch and remains unmodified.",
+    "saved_candidate_tracker_checks": 2,
+    "active_nonempty_retained_output_checks": 1,
+    "one_step_origin_effect_scope": "All examined affine predictions across the two128 prefixes and the short129 window; this is not a GT-error improvement metric."
+  },
+  "native_cases": [
+    {
+      "role": "rescued_by128",
+      "candidate_completed": true,
+      "candidate_actions": 606,
+      "candidate_lap_ms": 48460,
+      "candidate_damage": 0.2,
+      "same_endpoint_as128": true,
+      "changed_counts": {
+        "memory": 117,
+        "current_detections": 0,
+        "selected_route": 0,
+        "target": 0,
+        "action": 0
+      },
+      "first_changed_action": {
+        "memory": 78,
+        "current_detections": null,
+        "selected_route": null,
+        "target": null,
+        "action": null
+      },
+      "action_stream_exactly_equal128": true,
+      "observation_stream_exactly_equal128": true,
+      "actor_reaped": true
+    },
+    {
+      "role": "lost_by128",
+      "candidate_completed": false,
+      "candidate_actions": 423,
+      "candidate_lap_ms": null,
+      "candidate_damage": 1.0,
+      "same_endpoint_as128": true,
+      "changed_counts": {
+        "memory": 72,
+        "current_detections": 0,
+        "selected_route": 0,
+        "target": 0,
+        "action": 0
+      },
+      "first_changed_action": {
+        "memory": 96,
+        "current_detections": null,
+        "selected_route": null,
+        "target": null,
+        "action": null
+      },
+      "action_stream_exactly_equal128": true,
+      "observation_stream_exactly_equal128": true,
+      "actor_reaped": true
+    }
+  ],
+  "primary_cached128_counts": {
+    "new_completion": 0,
+    "lost_completion": 0,
+    "common_dnf": 1,
+    "common_completed": 1
+  },
+  "secondary_cached116_counts": {
+    "new_completion": 1,
+    "lost_completion": 1,
+    "common_completed": 0,
+    "common_dnf": 0
+  },
+  "runtime_status": "PASS",
+  "observed_reset_identity_matches": true,
+  "normal_uncensored_endpoints": 2,
+  "all_native_actions_and_observations_equal128": true,
+  "native_memory_mechanism_active": true,
+  "conclusion": "Direct optical memory coordinate mismatch fixed in one candidate, with native memory changes but exactly unchanged actions/observations on both selected128DEV. This does not rescue the original116 clean completion. The129 retained error growth is in fallback, which was not changed. Keep116; no tuning or another candidate.",
+  "next_action": "Close130. Fallback translation speed/omitted rotation remain a separate diagnosed memory limitation; no follow-up experiment or simultaneous repair.",
+  "cost": {
+    "native_wrapper_actions": 1029,
+    "registered_native_cap": 4000,
+    "raw_step_ticks": 4116,
+    "raw_reset_ticks": 102,
+    "wall_including_records_s": 43.11537066998426,
+    "evaluator_CPU_including_records_s": 36.144401863,
+    "actor_CPU_s": 7.078028,
+    "new_saved_policy_act_calls": 0,
+    "new_saved_policy_reset_calls": 0,
+    "saved_original_tracker_calls": 609,
+    "saved_candidate_tracker_calls": 2,
+    "saved_diagnosis_wall_s": 0.6989135330077261,
+    "saved_diagnosis_CPU_s": 0.688964973,
+    "new_saved_detector_calls": 0,
+    "new_label_raster_passes": 0,
+    "baseline_native_reruns": 0,
+    "automatic_native_retries": 0,
+    "native_total_after": 608556,
+    "research_after": 13444,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "old_HOLDOUT_details_or_SEALED_opened": false,
+  "post_result_tuning": false,
+  "automatic_followup": false,
+  "new_paid_resources": 0,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false
+}
