@@ -1,0 +1,185 @@
+{
+  "stage": 136,
+  "status": "RETAIN134_FOR_FRESH_HOLDOUT_NOT_ADOPTED",
+  "candidate": "unchanged134 combined perception+route",
+  "candidate_archive_sha256": "c66e2f3bfc42543a8bdcdc821898eb0fd8377ab54929ebcc46708cbee0667d55",
+  "candidate_configuration_sha256": "5f7eae8a90b40257359b9ccd39271919358fbe0396fb85b395d4776b231646fb",
+  "new_native_case_count": 2,
+  "reused116_case_count": 4,
+  "reused134_case_count": 2,
+  "qualification": "Reuse existing basic contract/packaging; essential cached eligibility and identical observed reset conditions checked. No rebuild, stored-policy replay, new source-access gate or full-file audit stage.",
+  "pre_registered_rule": "Retain unchanged134for freshHOLDOUT confirmation only when all prior116completions are maintained and its failure is rescued; any lostcompletion closes expansion. Completion first, common completion time second; damage separate.",
+  "completion": {
+    "baseline116_completed": 3,
+    "combined134_completed": 4,
+    "denominator": 4,
+    "maintained": 3,
+    "new_completion": 1,
+    "lost_completion": 0,
+    "common_dnf": 0,
+    "inconclusive": 0,
+    "retain_for_fresh_HOLDOUT": true
+  },
+  "DEV_rows": [
+    {
+      "reference": "known_clean",
+      "cached116": {
+        "completed": true,
+        "lap_ms": 43820,
+        "damage": 0.0,
+        "charged_wrapper_actions": 548,
+        "unique_tiles": 279,
+        "total_tiles": 279
+      },
+      "frozen134": {
+        "completed": true,
+        "lap_ms": 45040,
+        "damage": 0.6000000000000001,
+        "charged_wrapper_actions": 564,
+        "unique_tiles": 279,
+        "total_tiles": 279
+      },
+      "134_result_reused": true
+    },
+    {
+      "reference": "known_failure",
+      "cached116": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "charged_wrapper_actions": 181,
+        "unique_tiles": 104,
+        "total_tiles": 300
+      },
+      "frozen134": {
+        "completed": true,
+        "lap_ms": 48500,
+        "damage": 0.2,
+        "charged_wrapper_actions": 607,
+        "unique_tiles": 300,
+        "total_tiles": 300
+      },
+      "134_result_reused": true
+    },
+    {
+      "reference": "remaining_A",
+      "cached116": {
+        "completed": true,
+        "lap_ms": 46100,
+        "damage": 0.6000000000000001,
+        "charged_wrapper_actions": 577,
+        "unique_tiles": 293,
+        "total_tiles": 293
+      },
+      "frozen134": {
+        "completed": true,
+        "lap_ms": 46000,
+        "damage": 0.0,
+        "charged_wrapper_actions": 576,
+        "unique_tiles": 293,
+        "total_tiles": 293
+      },
+      "134_result_reused": false
+    },
+    {
+      "reference": "remaining_B",
+      "cached116": {
+        "completed": true,
+        "lap_ms": 45300,
+        "damage": 0.8,
+        "charged_wrapper_actions": 567,
+        "unique_tiles": 288,
+        "total_tiles": 288
+      },
+      "frozen134": {
+        "completed": true,
+        "lap_ms": 45260,
+        "damage": 0.0,
+        "charged_wrapper_actions": 566,
+        "unique_tiles": 288,
+        "total_tiles": 288
+      },
+      "134_result_reused": false
+    }
+  ],
+  "common_completion_time": {
+    "count": 3,
+    "lap_delta_ms": {
+      "remaining_A": -100.0,
+      "known_clean": 1220.0,
+      "remaining_B": -40.0
+    },
+    "median_lap_delta_ms": -40.0,
+    "mean_lap_ratio": 1.0082629896039266,
+    "sum_lap_delta_ms": 1080.0,
+    "qualification": "Three common completions only; rescued DNF has no baseline lap. Mean ratio remains adverse because known clean is1.220s slower. No posthoc time veto added."
+  },
+  "damage_diagnostic": {
+    "sums": {
+      "baseline": 2.4000000000000004,
+      "candidate": 0.8
+    },
+    "observed_record_counts": {
+      "baseline": 4,
+      "candidate": 4
+    },
+    "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+  },
+  "P8_interpretation": "135route-only did not improve116completion.134combined now preserves all three116completions and rescues its failedDEV. Prior known2x2 remains a context-dependent bundled-component comparison, not a primitive-factor or generalization proof. FreshHOLDOUT confirmation is pending.",
+  "cost": {
+    "native_wrapper_actions": 1142,
+    "returned_episode_record_actions": 1142,
+    "raw_step_ticks": 4566,
+    "raw_reset_ticks": 102,
+    "wall_including_records_s": 47.44364533299813,
+    "evaluator_CPU_including_records_s": 39.088545612,
+    "actor_CPU_s": 8.521228,
+    "stage": 136,
+    "registered_native_cap": 4000,
+    "prior134_native_actions_reused_not_recharged": 1171,
+    "baseline_native_runs": 0,
+    "extra_native_calls": 0,
+    "automatic_retries": 0,
+    "new_saved_policy_or_model_calls": 0,
+    "ZIP_rebuilds": 0,
+    "separate_full_file_audit_stages": 0,
+    "actors_reaped": 2,
+    "calls": {
+      "native_actor_reset": 2,
+      "native_actor_act": 1142,
+      "new_offline_policy_calls": 0,
+      "new_baseline_native_calls": 0,
+      "extra_native_calls": 0,
+      "automatic_retries": 0
+    }
+  },
+  "budget_after": {
+    "actual_cumulative_wrapper_actions": 613771,
+    "research_remaining": 8229,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "preservation": {
+    "champion116_unchanged": true,
+    "HOLDOUT_details_or_SEALED_opened": false,
+    "fresh_HOLDOUT_run_or_plan_created": false,
+    "private_archives_frames_traces_contracts_not_published": true,
+    "native_after136": 0
+  },
+  "provenance": {
+    "contract_sha256": "4c18853b2005decb45757fdedae28d132aa86a61d16122e1291b61461750e1a9",
+    "plan_sha256": "999ba5612ac39abb2dd8528ce33d4bf752c5572b125a32a126eb99230a0c1613",
+    "known134_report_sha256": "0816b86344ba29e1e326e65277a7891e61736f7b14412ff893e1b24c1b706625",
+    "remaining134_report_sha256": "9e35dce70a930d4aed399b8779ec08f2fd0d3df6b4c11d2131867227cf95e40c",
+    "budget107_sha256": "d1a2e116e906364ecd2d7288bf2ada5dc0f2bede84acae8543ff9fff2a0911be",
+    "champion_manifest_sha256_unchanged": "02d24b336e909039a30b7d0480d8822c77bda9ce44b80ce696145c81fefc941a"
+  },
+  "limitations": [
+    "Four DEVselectedduringdevelopment; no unbiased generalization or statistical claim.",
+    "Same observed road/obstacle/state/image reset fingerprints; hidden full-state or equal historical CPU not asserted.",
+    "Known134native cost already charged earlier; only two newDEVepisodes charged in136.",
+    "Collision risk remains on knownpair despite damage0on remainingtwo; damage diagnostic does not change retention gate."
+  ],
+  "next_action": "Later freshHOLDOUT confirmation of exact134; no further native here."
+}
