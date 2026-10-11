@@ -1,0 +1,257 @@
+{
+  "stage": 129,
+  "decision": "LOCAL_CENTERS_IMPROVED_ORACLE_COMPLETES_WITH_DAMAGE_KEEP116",
+  "champion_kept": 116,
+  "adopted": false,
+  "contract_sha256": "aad2c720f55cc02dadf3eaeb14fb6cdccdebebfcb4fc89c21040ce38020a318f",
+  "plan_sha256": "77c9dd440551a4035a187a1ef77622040521491ed81de61a764f4dac7227e42a",
+  "saved_gate": {
+    "passed": true,
+    "first_contact_action": 416,
+    "input_window": [
+      396,
+      416
+    ],
+    "immediate_input_window": [
+      412,
+      416
+    ],
+    "selection_frozen_before_errors": true,
+    "frame_truth_alignment": "frame[action-1], truth_before; includes input before first-contact action, excludes post-contact observations",
+    "risk_object_scope": "Unique nearest obstacle at first contact input; contact-pair ID was not recorded.",
+    "matched_current_risk_rows": 21,
+    "unmatched_or_retained_only_inputs": 0,
+    "risk_full_window": {
+      "baseline": {
+        "n": 21,
+        "mean": 0.5209423623156949,
+        "median": 0.5054084244213227,
+        "p95": 0.6644990317144006,
+        "max": 0.7809586191759753,
+        "above_one_pixel": 1
+      },
+      "candidate": {
+        "n": 21,
+        "mean": 0.1456974676304968,
+        "median": 0.1330912474302548,
+        "p95": 0.26699237787411406,
+        "max": 0.3287555565955867,
+        "above_one_pixel": 0
+      },
+      "gate_pass": true,
+      "worsened_rows": 0,
+      "largest_increase_m": 0.0,
+      "new_crossings_above_one_pixel": 0
+    },
+    "risk_immediate_window": {
+      "baseline": {
+        "n": 5,
+        "mean": 0.5271744344075027,
+        "median": 0.5054084244213227,
+        "p95": 0.5810459914967484,
+        "max": 0.5851098652104718,
+        "above_one_pixel": 0
+      },
+      "candidate": {
+        "n": 5,
+        "mean": 0.14160866689019863,
+        "median": 0.1330912474302548,
+        "p95": 0.24139825669040124,
+        "max": 0.26699237787411406,
+        "above_one_pixel": 0
+      },
+      "gate_pass": true,
+      "worsened_rows": 0,
+      "largest_increase_m": 0.0,
+      "new_crossings_above_one_pixel": 0
+    },
+    "immediate_rows": [
+      {
+        "action": 412,
+        "old_error_m": 0.5054084244213227,
+        "new_error_m": 0.09616271154071283,
+        "old_signed_error_xy_m": [
+          -0.42125423368425385,
+          0.2792535515962795
+        ],
+        "new_signed_error_xy_m": [
+          -0.08468750822864068,
+          -0.0455553843237686
+        ]
+      },
+      {
+        "action": 413,
+        "old_error_m": 0.5851098652104718,
+        "new_error_m": 0.26699237787411406,
+        "old_signed_error_xy_m": [
+          -0.5580861769813252,
+          0.1757651086791272
+        ],
+        "new_signed_error_xy_m": [
+          -0.22151945152571195,
+          -0.1490438272409209
+        ]
+      },
+      {
+        "action": 414,
+        "old_error_m": 0.48680003796349713,
+        "new_error_m": 0.13902177195555007,
+        "old_signed_error_xy_m": [
+          -0.43223365237975453,
+          0.2239382654030342
+        ],
+        "new_signed_error_xy_m": [
+          -0.09566692692414125,
+          -0.10087067051701393
+        ]
+      },
+      {
+        "action": 415,
+        "old_error_m": 0.5647904966418549,
+        "new_error_m": 0.1330912474302548,
+        "old_signed_error_xy_m": [
+          -0.46924415820658383,
+          0.31432184952043585
+        ],
+        "new_signed_error_xy_m": [
+          -0.13267743275097077,
+          -0.010487086399612267
+        ]
+      },
+      {
+        "action": 416,
+        "old_error_m": 0.4937633478003672,
+        "new_error_m": 0.07277522565036139,
+        "old_signed_error_xy_m": [
+          -0.40011010206203745,
+          0.2893339763300058
+        ],
+        "new_signed_error_xy_m": [
+          -0.0635433766064244,
+          -0.03547495959004232
+        ]
+      }
+    ],
+    "last_input_errors_m": {
+      "original_inverse": 0.4937633478003672,
+      "pixel128": 0.07277522565036139
+    },
+    "component_area_range": [
+      4,
+      6
+    ],
+    "GT_center_outside_component_bbox_rows": 0,
+    "detector_window_edge_rows": 0,
+    "actual_pixel128_centers_verified": true,
+    "GT_research_labels_only": true,
+    "snapshot_limitation": "Unrecorded wheel phase set to zero; opaque stripe inside wheel. No full-scene render or physics."
+  },
+  "native_diagnostic": {
+    "source": "Unchanged116 archive and frozen127 current-visible existing-center hook. No128 inverse added.",
+    "privileged_diagnostic": true,
+    "submission_candidate": false,
+    "archive_sha256": "b8c40bcff8ad9eea60e21755950b77235c22a0d7df89eb74f08148bbb0c9890c",
+    "worker_sha256": "98d910aa8ddcf1a51dd77d4e5b91ba080498aa0aeefcab176cf34b9e76c8bc7d",
+    "helper_sha256": "fd98d03f9704d72ba11b2286197c5d31374cee612edab294c4e092cbe70bfbce",
+    "outcomes": [
+      {
+        "role": "cached116",
+        "completed": true,
+        "actions": 548,
+        "lap_ms": 43820,
+        "damage": 0.0
+      },
+      {
+        "role": "cached_pixel128",
+        "completed": false,
+        "actions": 423,
+        "lap_ms": null,
+        "damage": 1.0
+      },
+      {
+        "role": "visible_center_oracle129",
+        "completed": true,
+        "actions": 548,
+        "lap_ms": 43800,
+        "damage": 0.4
+      }
+    ],
+    "counts": {
+      "input_detections": 150,
+      "GT_layers": 180,
+      "replaced_centers": 121,
+      "added_detections": 0,
+      "hidden_GT_layers": 0,
+      "unchanged_unmatched": 29,
+      "matched_center_only": 121
+    },
+    "ambiguity_count": 0,
+    "all_count_order_radius_and_unmatched_preserved": true,
+    "path_tracker_route_controller_source_preserved": true,
+    "all_original_calls_once_per_action": true,
+    "all_context_times_exact": true,
+    "first_center_replacement_action": 85,
+    "first_action_difference": {
+      "cached116": 92,
+      "pixel128": 93
+    },
+    "contact_actions": [
+      403,
+      405
+    ],
+    "contact_input_current_detections": [
+      0,
+      0
+    ],
+    "contact_input_retained_track_ages": [
+      [
+        7.0,
+        5.0
+      ],
+      [
+        7.0
+      ]
+    ],
+    "native_intervention_limit": "Current detected centers only. At both oracle contacts, no current detections were available and retained centers were not replaced with GT. Contact proximity points to the same obstacle as128, not a logged contact identity.",
+    "runtime_status": "PASS",
+    "normal_uncensored_endpoint": true,
+    "observed_reset_hashes_exact": true,
+    "hidden_full_state_equivalence_claimed": false,
+    "actor_reaped": true
+  },
+  "conclusion": "Stage128 center correction improved every matched current detection in the fixed21 pre-contact inputs. The exact-current-center oracle preserved completion but added damage versus original116; both oracle contacts occur without current detections, outside the current-center replacement boundary. Trajectories diverge early. No unique estimator, biased-controller or tracking cause is identified; keep116 and do not retune thresholds.",
+  "next_action": "Close129; do not tune128 or change another cause. Any later design must separately qualify current-center accuracy, detection/retained-track continuity and downstream response. No successor experiment launched.",
+  "cost": {
+    "native_wrapper_actions": 548,
+    "registered_native_cap": 2000,
+    "raw_step_ticks": 2191,
+    "raw_reset_ticks": 51,
+    "wall_including_records_s": 24.380732744990382,
+    "evaluator_CPU_including_records_s": 20.482035785,
+    "actor_CPU_s": 3.9715320000000003,
+    "new_saved_policy_act_calls": 0,
+    "new_saved_policy_reset_calls": 0,
+    "saved_label_context_calls": 21,
+    "saved_label_raster_passes": 21,
+    "saved_component_extractions": 42,
+    "saved_full_scene_renders": 0,
+    "saved_analysis_wall_s": 2.588770750007825,
+    "saved_analysis_CPU_s": 2.659846259,
+    "oracle_context_calls": 548,
+    "oracle_context_wall_s": 0.9702768690185621,
+    "oracle_label_raster_passes": 211,
+    "oracle_extra_component_extractions": 548,
+    "baseline_native_reruns": 0,
+    "automatic_native_retries": 0,
+    "native_total_after": 607527,
+    "research_after": 14473,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "old_HOLDOUT_details_or_SEALED_opened": false,
+  "post_result_tuning": false,
+  "automatic_followup": false,
+  "new_paid_resources": 0,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false
+}
