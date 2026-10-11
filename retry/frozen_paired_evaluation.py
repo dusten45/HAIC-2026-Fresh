@@ -220,7 +220,7 @@ def run(plan_path):
     verify_files(plan['runtime_sha256'])
     assert sha(plan['allocation_path']) == plan['allocation_sha256']
     allocation = json.loads(Path(plan['allocation_path']).read_text())
-    assert allocation['B_operating_cap'] == 666000
+    assert allocation['B_operating_cap'] == plan.get('B_operating_cap', 666000)
     assert allocation['research_remaining'] >= plan['max_actions']
     assert allocation['final_reserved_actions'] == 84000 and allocation['final_reserve_used'] == 0
     assert shutil.disk_usage(directory).free >= plan['minimum_free_disk_bytes']

@@ -1,0 +1,55 @@
+{
+  "experiment": "Frozen original hazard-scheduled policy, global target ceiling28 to40 only",
+  "scope": "Four new HOLDOUT roads; one paired run perarm after fixed DEV/artifact qualification",
+  "decision": "Adopt cap40 in current research champion manifest; preserve cap28 rollback",
+  "completion": {
+    "original": 4,
+    "candidate": 4,
+    "denominator_each": 4,
+    "preserved": 4,
+    "lost": 0,
+    "new": 0,
+    "common_DNF": 0,
+    "censored_or_invalid_pairs": 0
+  },
+  "laps": {
+    "common_completion_count": 4,
+    "candidate_faster_pairs": 4,
+    "median_candidate_minus_original_ms": -7880,
+    "mean_candidate_over_original_ratio": 0.8638997661885315,
+    "minimum_improvement_threshold": null
+  },
+  "damage_warning": {
+    "original_total": 1.2,
+    "candidate_total": 0.8,
+    "pairs_increased": 1,
+    "pairs_decreased": 2,
+    "pairs_equal": 1,
+    "largest_pair_increase": 0.2,
+    "damage_is_separate_from_adoption_threshold": true
+  },
+  "execution": {
+    "new_native_episodes": 8,
+    "wrapper_actions": 5543,
+    "raw_step_ticks": 22164,
+    "raw_reset_ticks": 408,
+    "native_wall_s": 205.92144228500547,
+    "actor_CPU_s": 33.425725,
+    "evaluator_CPU_s": 172.86572002100004,
+    "fresh_qualification_act_calls": 660,
+    "fresh_qualification_reset_calls": 3,
+    "fresh_qualification_native_calls": 0,
+    "fresh_qualification_wall_s": 4.79161089900299,
+    "all_actors_reaped": true,
+    "technical_failures": 0,
+    "automatic_retries": 0,
+    "unit_tests_passed": 11
+  },
+  "limits": [
+    "Small sample of four roads; not a precise generalization or reliability estimate",
+    "A candidate damage increase on one road remains a warning",
+    "Official server enforcement and fresh-machine equivalence unverified",
+    "SEALED remains closed"
+  ],
+  "privacy": "No seeds, road/obstacle identities, replay data, models, private manifests or individual endpoints published"
+}
