@@ -1,0 +1,154 @@
+{
+  "stage": 149,
+  "status": "LOCAL_NORMAL_LATERAL16_CHAMPION_ADOPTED",
+  "split": "FRESH_HOLDOUT",
+  "method": "Prospective frozen16 vs current12 same-seed paired generalization confirmation; formal completion/common time separated from damage diagnostic",
+  "candidate_unchanged_since148": true,
+  "baseline_archive_sha256": "05c0c6ff68bf3b31b49266605eda41e16ed98ae1f371347f9814c4dc8793a523",
+  "candidate_archive_sha256": "41b53b1a3cffea2053de1bc9ed1994a6a96d66f228b9a4818c32aeaf6f22c199",
+  "parameters": {
+    "baseline_normal_lateral": 12.0,
+    "candidate_normal_lateral": 16.0,
+    "near_lateral": 5.0,
+    "speed_cap": 40.0
+  },
+  "other_candidate_or_higher_coefficient_tested": false,
+  "registered_pairs": 4,
+  "episodes": 8,
+  "arm_order_counts": {
+    "AB": 2,
+    "BA": 2
+  },
+  "registration": {
+    "before_performance": true,
+    "first_identity_valid_uniform_draw": true,
+    "prior_exclusion_counts": {
+      "known_seeds": 226,
+      "known_roads": 224,
+      "known_obstacle_specs": 236,
+      "known_physical_obstacles": 94,
+      "known_obstacle_RNG_lineages": 94,
+      "known_draw_families": 18
+    },
+    "identity_rejections": 0,
+    "parent_vector_rejections": 0,
+    "difficulty_or_performance_filter": false,
+    "protected_performance_reads": 0,
+    "historical_physical_hash_coverage_limit": "Historical missing physical/spec/RNG hashes are not reconstructed. All recorded seed and road identities are excluded, including stopped/unexecuted registered roads. Physical/spec/RNG exclusions additionally cover metadata-available identities; counts are domain identities, not episode counts."
+  },
+  "baseline_completed": 4,
+  "candidate_completed": 4,
+  "counts": {
+    "new_completion": 0,
+    "lost_completion": 0,
+    "common_dnf": 0,
+    "common_completed": 4
+  },
+  "cohort_complete": true,
+  "inconclusive_pairs": 0,
+  "unexecuted_pairs": 0,
+  "censored_pairs": 0,
+  "common_median_lap_delta_ms": -2330.0,
+  "common_sum_lap_delta_ms": -9340.0,
+  "common_mean_lap_ratio": 0.9410574664196736,
+  "faster_common_count": 4,
+  "damage_diagnostic": {
+    "sums": {
+      "baseline": 0.6000000000000001,
+      "candidate": 0.0
+    },
+    "observed_record_counts": {
+      "baseline": 4,
+      "candidate": 4
+    },
+    "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ.",
+    "aggregate_increased": false,
+    "automatic_veto": false,
+    "qualification_limit": "Different trajectories/exposure and four pairs only; zero fresh candidate damage does not establish absence of contact risk."
+  },
+  "prior148_DEV_risk_retained": {
+    "baseline_damage": 0.0,
+    "candidate16_damage": 0.2,
+    "gas_brake_and_speed_reversals": "UNRESOLVED",
+    "new_detailed_cause_or_smoothing_work": false
+  },
+  "pre_registered_adoption_rule": "Keep12 for any lost baseline completion or incomplete/censored cohort. Local16 promotion after complete cohort, no loss, at least2 common completions, common medianlapdelta<0 and meanlapratio<1. New completion never cancels loss. No minimum percent or automatic damage veto.",
+  "performance_gate_passed": true,
+  "local_adoption_review": "PASS: four baseline completions retained and common time direction improves; fresh damage0.6→0, priorDEV risk retained",
+  "paired_reset_identity_matches": true,
+  "single_final_aggregate_look": true,
+  "qualification_reused": true,
+  "actual_native_worker_receipt": {
+    "workers": 8,
+    "all_reaped": true,
+    "simulator_imported_by_actors": false,
+    "each_actor_CPU_count": 1,
+    "each_actor_address_space_limit_bytes": 1024000000,
+    "actor_peak_RSS_bytes": 47861760,
+    "new_model_calls": 0,
+    "new_saved_GT_policy_trace_or_video_rows": 0
+  },
+  "cost": {
+    "stage": 149,
+    "native_cap": 16000,
+    "new_wrapper_actions": 3874,
+    "raw_step_ticks": 15484,
+    "raw_reset_ticks": 408,
+    "wall_including_records_s": 141.0855245690036,
+    "evaluator_CPU_s": 115.167081063,
+    "evaluator_CPU_scope": "Sum of measured native episode CPU counters",
+    "actor_CPU_s": 26.112143000000003,
+    "new_offline_policy_or_model_calls": 0,
+    "baseline_DEV_reruns": 0,
+    "candidate_DEV_reruns": 0,
+    "B_before": 738000,
+    "B_increment": 8000,
+    "B_operating_cap": 746000,
+    "actual_cumulative_wrapper_actions": 646752,
+    "research_remaining": 15248,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "archive_rebuilds": 0,
+    "full_input_or_packaging_requalification": 0,
+    "old_HOLDOUT_case_details_reads": 0,
+    "HOLDOUT_trace_tuning": 0,
+    "new_saved_trace_or_video_rows": 0,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false,
+    "source_registration_wall_s": 0.010395577002782375,
+    "source_registration_CPU_s": 0.008798962999999937,
+    "source_registration_environment_policy_model_calls": 0
+  },
+  "capacity": {
+    "extra8000_estimated_wall_s": 336.0633436270697,
+    "worst16000_estimated_wall_s": 672.1266872541394,
+    "same_cloud_available": true,
+    "new_paid_resources": 0
+  },
+  "remaining_bottlenecks": [
+    "Gas/brake/speed reversals and the precise contact mechanism remain unresolved; no trace tuning or cause identification here.",
+    "Fresh-machine/official-server equivalence unverified; SEALED closed.",
+    "Only four new paired conditions; no population or ten-second guarantee."
+  ],
+  "scope": {
+    "local_champion": "Frozen normal16",
+    "immediate_rollback": "Preserved normal12",
+    "older_rollbacks": [
+      "Preserved10",
+      "Preserved8",
+      "Preserved134",
+      "Preserved116"
+    ],
+    "current_manifest_sha256": "865f8b688bd6e6492f59fa3836aedc05a0c5203678351d4ff6f9a43d5bdadfb7",
+    "all_earlier_archives_manifests_backups_preserved": true,
+    "old_HOLDOUT_case_details_opened": false,
+    "HOLDOUT_trace_tuning": false,
+    "SEALED_opened": false,
+    "fresh_machine_or_official_server_equivalence_verified": false,
+    "private_conditions_frames_traces_plans_documents_published": false,
+    "ten_second_lap_guarantee": false,
+    "automatic_next_experiment": false,
+    "automatic_extension": false
+  }
+}
