@@ -17,7 +17,7 @@ from retry.frozen_paired_evaluation import episode, native_window, sha, verify_f
 from retry.paired_audit_gate import claim_once
 
 
-def recorded_episode(plan_path, plan, case):
+def recorded_episode(plan_path, plan, case, arm='B', initial_pairs=None):
     """Read-only evaluator records; neither observations nor actions are edited."""
     from retry import diagnose, frozen_composite_runtime as runtime
     from retry.full_route_reproduction import truth
@@ -80,10 +80,11 @@ def recorded_episode(plan_path, plan, case):
     diagnose.make_env, runtime.prepare = factory, prepare
     started = time.perf_counter()
     try:
-        result = episode(plan_path, plan, case, 'B', {})
+        result = episode(plan_path, plan, case, arm,
+                         initial_pairs if initial_pairs is not None else {})
     finally:
         diagnose.make_env, runtime.prepare = original_factory, original_prepare
-    directory = plan_path.parent / 'runs' / (case['id'] + '__B')
+    directory = plan_path.parent / 'runs' / (case['id'] + '__' + arm)
     frame_array = np.asarray(frames, dtype=np.uint8)
     action_array = np.asarray(actions, dtype=np.float32).reshape(-1, 3)
     if 'error' not in result:
