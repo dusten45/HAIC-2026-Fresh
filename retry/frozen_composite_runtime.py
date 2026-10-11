@@ -137,8 +137,25 @@ def validate_ready(worker, config):
         assert ready['privileged_diagnostic'] is False
         assert ready['input_contract'] == 'float32(4,84,84) grayscale only'
         assert ready['student_model_sha256'] == config['assets']['student.xml']['sha256']
-        assert ready['curve_source_sha256'] == config['assets']['curve.py']['sha256']
-        assert ready['curve_coefficient'] == config['constants']['curve-config.json']['coefficient']
+        if config.get('intervention') == 'road_mask_only':
+            mode = config['constants']['mask-config.json']
+            assert set(mode) == {'source'} and mode['source'] in ('student', 'original')
+            assert ready['intervention'] == 'road_mask_only'
+            assert ready['mask_source'] == mode['source']
+            assert ready['control_parameters'] == {
+                'speed_cap': 28.0, 'lateral_fast': 7.0, 'lateral_safe': 5.0,
+                'speed_gain': 11.4142485314592, 'speed_bias': -6.545558315185489}
+            assert ready['distance_cap_applied'] is False and ready['curve_applied'] is False
+            assert ready['observer_additional_model_calls'] == 0
+            assert not any('distance_cap' in name or 'curve' in name for name in hashes)
+            assert ready['student_source_sha256'] == config['assets']['student.py']['sha256']
+            assert ready['boundary_source_sha256'] == config['assets']['boundary.py']['sha256']
+            assert all(value['one_threshold_statement_replaced'] is True
+                       for value in ready['mask_boundary'].values())
+            assert set(ready['mask_boundary']) == {'routing_problem', 'ridge_path'}
+        else:
+            assert ready['curve_source_sha256'] == config['assets']['curve.py']['sha256']
+            assert ready['curve_coefficient'] == config['constants']['curve-config.json']['coefficient']
     worker.check_memory()
     return {'module_hashes_exact': True, 'loaded_module_count': len(hashes),
             'one_native_actor': True, 'one_CPU_and_one_thread': True,
@@ -169,6 +186,22 @@ def validate_response(response, config, obs, operation):
         assert receipt['original_P_cells'] == int(original.sum())
         assert receipt['kept_cells'] == int(mask.sum())
         assert receipt['deleted_cells'] == int(original.sum() - mask.sum())
+        if config.get('intervention') == 'road_mask_only':
+            source = config['constants']['mask-config.json']['source']
+            assert source in ('student', 'original')
+            assert response['intervention'] == receipt['intervention'] == 'road_mask_only'
+            assert response['mask_source'] == receipt['mask_source'] == source
+            assert response['distance_cap_applied'] is False and response['curve_applied'] is False
+            assert response['control_parameters'] == {
+                'speed_cap': 28.0, 'lateral_fast': 7.0, 'lateral_safe': 5.0,
+                'speed_gain': 11.4142485314592, 'speed_bias': -6.545558315185489}
+            assert receipt['input_shape'] == [4, 84, 84]
+            assert receipt['input_dtype'] == 'float32'
+            assert receipt['input_kind'] == 'official_grayscale_only'
+            assert receipt['mask_evaluations'] == 1
+            assert receipt['model_mask_calls'] == int(source == 'student')
+            if source == 'original':
+                assert np.array_equal(mask, original) and receipt['inference_ms'] == 0
     if operation == 'reset':
         assert response['ok'] is True
         return None
@@ -180,10 +213,18 @@ def validate_response(response, config, obs, operation):
         calls = response['original_calls']
         assert all(calls.get(name) == 1 for name in ('detection', 'tracker', 'ridge', 'route', 'target'))
         assert calls.get('action_target', 0) + calls.get('fallback_action', 0) == 1
-        curve = response['curve_diagnostic']
-        if curve is not None:
-            assert curve['coefficient'] == config['constants']['curve-config.json']['coefficient']
-            assert curve['steering_unchanged'] is True
+        if config.get('intervention') == 'road_mask_only':
+            assert response['cap_diagnostic'] is None and response['curve_diagnostic'] is None
+            telemetry = response['route_telemetry']
+            assert np.array_equal(action, np.asarray(telemetry['controller_output'], dtype=np.float32))
+            assert telemetry['controller_before']['speed_cap'] == 28.0
+            assert telemetry['controller_after']['speed_cap'] == 28.0
+            assert telemetry['controller_after']['previous_steer'] == response['previous_steer_after']
+        else:
+            curve = response['curve_diagnostic']
+            if curve is not None:
+                assert curve['coefficient'] == config['constants']['curve-config.json']['coefficient']
+                assert curve['steering_unchanged'] is True
     return action
 
 
