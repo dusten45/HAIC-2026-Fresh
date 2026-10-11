@@ -1,0 +1,198 @@
+{
+  "stage": 132,
+  "decision": "STOP_RISK_TAIL_AND_NO_FAILED_DEV_ACTION_EFFECT_CLOSE_TRACKER_LINE_KEEP116",
+  "adopted": false,
+  "champion_kept": 116,
+  "tracking_microrepair_line_closed": true,
+  "contract_sha256": "cce39ba48610f89db0ba8641ecda34466361f1d8238d3da64269d868e9793a6d",
+  "legal_saved_plan_sha256": "68fb2bb5b7b70545749184b3e1527acd9d73a679036e5e577444f06d99cee6dc",
+  "candidate_archive_sha256": "bc72f9b3f757a86aa126adcd4207d14694d20f423da169022936a63d24462cf2",
+  "base131_archive_sha256": "945f9d04caf5a85efbfd33a7b56f6b8dc0bef688b202a7281659d516ff0c9cc2",
+  "candidate_source_scope": "Existing LK correspondences and LMEDS fit in isotropic body coordinates, converted back to anisotropic pixels. All other13members and features/flow/validity/fallback131/detection/radius/lifetime/association/route/control source unchanged.",
+  "runtime_scope": "Source accepts official pixels/history only. No GT or identity assets. Native qualification not executed because saved gate failed.",
+  "coordinate_and_time_findings": {
+    "body_static_transport": "q_cur = R(theta_prev-theta_cur) q_prev + R(-theta_cur)(position_prev-position_cur)",
+    "pixel_origin": [
+      41.542,
+      62.4475
+    ],
+    "pixel_axis_scales": [
+      1.3608,
+      -1.701
+    ],
+    "model_limit": "Pixel-space similarity cannot exactly represent anisotropically scaled yaw; fit in body metric can express it.",
+    "input_dt_s": 0.08,
+    "indexing": "actionk sees framek-1/current truth_before, previous framek-2/previous truth_before.",
+    "time_limit": "Current endpoint scalar speed is not interval displacement; lateral motion and rotation matter."
+  },
+  "GT_movement_diagnosis": {
+    "actual_failure_retained_tail_m": {
+      "baseline131": {
+        "n": 6,
+        "p95": 4.822390004031931,
+        "max": 5.604478936282087,
+        "missing_required": 0,
+        "above_one_horizontal_pixel": 3
+      },
+      "GT_endpoint_scalar": {
+        "n": 6,
+        "p95": 4.822390004031931,
+        "max": 5.604478936282087,
+        "missing_required": 0,
+        "above_one_horizontal_pixel": 3
+      },
+      "GT_interval_translation": {
+        "n": 6,
+        "p95": 0.8167203730695127,
+        "max": 0.8928467799335648,
+        "missing_required": 0,
+        "above_one_horizontal_pixel": 1
+      },
+      "GT_interval_SE2": {
+        "n": 6,
+        "p95": 0.31368962968644093,
+        "max": 0.3136896296864415,
+        "missing_required": 0,
+        "above_one_horizontal_pixel": 0
+      }
+    },
+    "actual_failure_GT_SE2_changed_inputs": {
+      "memory": 6,
+      "route": 0,
+      "target": 0,
+      "near": 1,
+      "action": 1
+    },
+    "actual_rescue_GT_SE2_max_m": 0.29389299370245486,
+    "actual_rescue_GT_SE2_action_differences": 6,
+    "oracle_seeded_fallback_max_m": {
+      "baseline131": 0.7916002320713728,
+      "GT_endpoint_scalar": 0.8187775531993021,
+      "GT_interval_translation": 0.6477365107802238,
+      "GT_interval_SE2": 6.509969526829772e-15
+    },
+    "actual_native_windows_baseline_reconstruction": "Tracker/route/target/action exact on26stored inputs; oracle-seeded5input window is separate."
+  },
+  "GT_diagnostic_scope": "Tracker movement only on stored trajectory. Current centers unchanged. Same original controller sees resulting obstacle state. No simulator/GT-driven native policy.",
+  "GT_causal_limit": "Actual-failure retained interval occurs after first contact. Exact motion contributes late error/control difference, not proof of initial-contact prevention or a rescued native outcome.",
+  "legal_saved_gate": {
+    "status": "STOP_RISK_TAIL_GATE",
+    "tail_limit_m": 0.7348618459729571,
+    "actual_failure_controller_effect": false,
+    "native_authorized_by_saved_gate": false,
+    "cases": [
+      {
+        "role": "actual_failure",
+        "baseline131_tail_m": {
+          "n": 12,
+          "p95": 3.8838832853317404,
+          "max": 5.604478936282087,
+          "missing_required": 0,
+          "above_one_horizontal_pixel": 3
+        },
+        "candidate_tail_m": {
+          "n": 12,
+          "p95": 1.9765584022667593,
+          "max": 2.5279757249087296,
+          "missing_required": 0,
+          "above_one_horizontal_pixel": 3
+        },
+        "tail_gate_pass": false,
+        "changed_inputs": {
+          "memory": 6,
+          "route": 0,
+          "target": 0,
+          "near": 0,
+          "action": 0
+        }
+      },
+      {
+        "role": "actual_rescue",
+        "baseline131_tail_m": {
+          "n": 13,
+          "p95": 0.5917478958563481,
+          "max": 0.5940968296751555,
+          "missing_required": 0,
+          "above_one_horizontal_pixel": 0
+        },
+        "candidate_tail_m": {
+          "n": 13,
+          "p95": 0.26381572070957715,
+          "max": 0.29389299370245486,
+          "missing_required": 0,
+          "above_one_horizontal_pixel": 0
+        },
+        "tail_gate_pass": true,
+        "changed_inputs": {
+          "memory": 7,
+          "route": 1,
+          "target": 1,
+          "near": 0,
+          "action": 6
+        }
+      },
+      {
+        "role": "known_fallback_residual",
+        "baseline131_tail_m": {
+          "n": 5,
+          "p95": 0.7525521213777451,
+          "max": 0.7916002320713728,
+          "missing_required": 0,
+          "above_one_horizontal_pixel": 1
+        },
+        "candidate_tail_m": {
+          "n": 5,
+          "p95": 0.7525521213777451,
+          "max": 0.7916002320713728,
+          "missing_required": 0,
+          "above_one_horizontal_pixel": 1
+        },
+        "tail_gate_pass": false,
+        "changed_inputs": {
+          "memory": 0,
+          "route": 0,
+          "target": 0,
+          "near": 0,
+          "action": 0
+        }
+      }
+    ]
+  },
+  "native_status": "SKIPPED_SAVED_GATE_FAILED",
+  "conclusion": "Exact intervalSE2 changes late retained tracker input and one controller action after first contact, so motion estimation contributes to the tail. The sole legal body-metric fit reduces that tail but remains above the preregistered one-pixel bound and leaves failure route/target/near/action unchanged. The fixed fallback window also fails unchanged. Skip native and close the micro-tracking line; keep116. No initial-contact prevention or native rescue proven.",
+  "next_most_valuable_choice": "End micro-tracker tuning. The next separate question with more information value is whether the existing controller target before first contact yields a feasible collision-free hull/wheel footprint. Use existing saved scenes and keep detection/radius/margin/path/pedal source fixed for diagnosis; this is not reopening global-margin tuning. No successor work launched.",
+  "cost": {
+    "native_wrapper_actions": 0,
+    "registered_native_cap": 4000,
+    "completed_saved_diagnostic_tracker_calls": 124,
+    "completed_saved_legal_candidate_tracker_calls": 31,
+    "completed_saved_route_calls": 130,
+    "completed_saved_controller_calls": 130,
+    "new_saved_full_policy_act_reset_calls": 0,
+    "new_saved_detector_calls": 0,
+    "new_saved_ridge_calls": 0,
+    "new_model_calls": 0,
+    "new_label_raster_passes": 0,
+    "completed_saved_analysis_wall_s": 1.257843726023566,
+    "completed_saved_analysis_CPU_s": 1.239859011,
+    "all_saved_attempts_wall_including_startup_s": 3.290844185,
+    "technical_aborted_attempts": 2,
+    "aborted_saved_tracker_call_count_exact": null,
+    "aborted_saved_tracker_calls_conservative_upper_bound": 152,
+    "aborted_route_controller_calls_each_upper_bound": 152,
+    "aborted_CPU_s": null,
+    "cost_limit": "Aborted saved helper calls/CPU were not instrumented; bounds are explicit, never charged as native.",
+    "native_baseline_reruns": 0,
+    "native_retries": 0,
+    "native_total_after": 609586,
+    "research_after": 12414,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "old_HOLDOUT_details_or_SEALED_opened": false,
+  "post_result_tuning": false,
+  "automatic_followup": false,
+  "new_paid_resources": 0,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false
+}
