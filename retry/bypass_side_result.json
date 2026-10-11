@@ -1,0 +1,180 @@
+{
+  "stage": 122,
+  "decision": "REJECT_NO_NEW_COMPLETION",
+  "baseline": "Frozen116 local champion reused from121DEV records",
+  "candidate_archive_sha256": "dc2650c0c9c00c8298d3980093bceec850bea4cb3025f17de7a79813261ef476",
+  "fixed_rules": {
+    "identity": "Metadata-only persistent IDs mirror unchanged tracker prediction, retention and 2m detection association. On association inherit nearest matched ID; otherwise assign monotonic new ID. Numeric x/y/radius/age and observed calls unchanged.",
+    "acquire": "When unheld, use original connected route. Choose nearest positive-y tracked obstacle satisfying original near predicate and crossed by that path; side is sign(path x at obstacle y minus obstacle x). Preserve it beginning next frame.",
+    "hold": "For the matched obstacle, keep original road mask/clearance, original far goal and Dijkstra cost. On pixel row clip(round(63-1.701*y),24,56), forbid pixels on the opposite lateral side; original start criterion<=12px applies. Keep restricted route only if it crosses obstacle y on the retained side.",
+    "release": "Tracked ID absent, y<=0, or no retained-side connected crossing route. On release use original route and do not reacquire until next action.",
+    "thresholds": "Only existing2m association, existingnear/lookahead constants and existinggrid/clearance. No sweep or alternative setting."
+  },
+  "single_change": "Bypass-side persistence plus metadata IDs needed to remember the same tracked obstacle; perception numeric rules and speed/steering/HUD laws unchanged.",
+  "source_verification": "Exactly3changed archive members; original Dijkstra body AST and11other members byte-identical. Frozen116/observer qualifications reused, no saved-policy replay.",
+  "cases": [
+    {
+      "condition": "failed_DEV",
+      "baseline": {
+        "completed": false,
+        "terminal_observed": true,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 104,
+        "total_tiles": 300,
+        "retire_reason": "crash",
+        "successful_wrapper_steps": 181
+      },
+      "candidate": {
+        "completed": false,
+        "terminal_observed": true,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 104,
+        "total_tiles": 300,
+        "retire_reason": "crash",
+        "successful_wrapper_steps": 180
+      },
+      "lap_delta_ms": null,
+      "prefix_boundary": {
+        "first_action_difference_step": 164,
+        "prefix_actions_exact": true,
+        "pixel_frames_through_first_difference_input_exact": true,
+        "prefix_truth_before_after_exact": true,
+        "first_difference_truth_before_exact": true,
+        "first_difference_controller_before_exact": true,
+        "first_difference_old_HUD_exact": true,
+        "first_difference_feedback_exact": true,
+        "first_difference_tracker_numeric_after_exact": true,
+        "baseline_action": [
+          -0.0039805150590837,
+          0.5,
+          0.0
+        ],
+        "candidate_action": [
+          -0.39939823746681213,
+          0.1049298495054245,
+          0.0
+        ],
+        "baseline_target": [
+          0.7348618459729571,
+          7.058510429450346
+        ],
+        "candidate_target": [
+          -3.090256461196378,
+          4.703115814226925
+        ]
+      },
+      "baseline_mechanism": {
+        "first_damage": {
+          "step": 177,
+          "before_time_s": 15.099999999999767,
+          "after_time_s": 15.179999999999765,
+          "damage_after": 0.2
+        },
+        "first_target_reversal": {
+          "step": 164,
+          "before_time_s": 14.059999999999789,
+          "previous_target_x_m": -2.8865907082472075,
+          "target_x_m": 0.7348618459729571,
+          "before_first_damage": true
+        },
+        "target_reversal_count_before_first_damage": 4
+      },
+      "candidate_mechanism": {
+        "first_damage": {
+          "step": 173,
+          "before_time_s": 14.779999999999774,
+          "after_time_s": 14.859999999999772,
+          "damage_after": 0.2
+        },
+        "first_target_reversal": {
+          "step": 167,
+          "before_time_s": 14.299999999999784,
+          "previous_target_x_m": -4.15814100113465,
+          "target_x_m": 2.204585537918871,
+          "before_first_damage": true
+        },
+        "target_reversal_count_before_first_damage": 1
+      }
+    },
+    {
+      "condition": "completed_DEV_control",
+      "baseline": {
+        "completed": true,
+        "terminal_observed": true,
+        "censored": false,
+        "lap_ms": 43820,
+        "damage": 0.0,
+        "unique_tiles": 279,
+        "total_tiles": 279,
+        "retire_reason": null,
+        "successful_wrapper_steps": 548
+      },
+      "candidate": {
+        "completed": true,
+        "terminal_observed": true,
+        "censored": false,
+        "lap_ms": 43820,
+        "damage": 0.0,
+        "unique_tiles": 279,
+        "total_tiles": 279,
+        "retire_reason": null,
+        "successful_wrapper_steps": 548
+      },
+      "lap_delta_ms": 0,
+      "prefix_boundary": {
+        "first_action_difference_step": null,
+        "compared_actions_exact": 548,
+        "compared_frame_sequence_exact": true,
+        "compared_truth_before_after_exact": true
+      },
+      "baseline_mechanism": {
+        "first_damage": null,
+        "first_target_reversal": {
+          "step": 396,
+          "before_time_s": 32.6199999999995,
+          "previous_target_x_m": 2.9394473838918285,
+          "target_x_m": -2.4150798009012573,
+          "before_first_damage": true
+        },
+        "target_reversal_count_before_first_damage": 3
+      },
+      "candidate_mechanism": {
+        "first_damage": null,
+        "first_target_reversal": {
+          "step": 396,
+          "before_time_s": 32.6199999999995,
+          "previous_target_x_m": 2.9394473838918285,
+          "target_x_m": -2.4150798009012573,
+          "before_first_damage": true
+        },
+        "target_reversal_count_before_first_damage": 3
+      }
+    }
+  ],
+  "mechanism_summary": "On failedDEV, firsttarget reversal164→167, pre-firstdamage reversals4→1, firstdamage177→173(-0.32s), crash181→180. Firstaction difference164 with exact prior163actions and current input/truth/controller/HUD/feedback/tracker numeric state. Heldside−1 during160..166, disconnected release167, opposite side acquired168. Target signs are not obstacle-relative bypass sides; different precontact exposure and general curves limit count interpretation.",
+  "cost": {
+    "native_actions": 728,
+    "native_cap": 4000,
+    "baseline_new_native_actions": 0,
+    "native_wall_s": 29.843190162995597,
+    "evaluator_CPU_s": 24.840096947,
+    "actor_CPU_s": 5.08456,
+    "extra_saved_policy_model_calls": 0
+  },
+  "native_total_after": 598559,
+  "research_remaining": 15441,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "champion116_and_rollbacks_unchanged": true,
+  "protected_HOLDOUT_or_SEALED_opened": false,
+  "sweep_or_second_candidate": false,
+  "automatic_continuation": false,
+  "new_paid_resources": 0,
+  "plan_sha256": "58ff9344578b64adff2bc55dc762e6b4ed4be24c4b9f7bd533797895e215f5fe",
+  "contract_sha256": "c64d9dd24edc1624da0c3527bc1aaecccabbaf647b06aae5925a6ceca6a0a39e",
+  "limits": "This one fixed candidate was not a rescue on the selected failure. It neither identifies the original earliest cause nor rejects every bypass-persistence design. No general completion-probability claim."
+}
