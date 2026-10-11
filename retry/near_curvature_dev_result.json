@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "experiment": "near-only curvature denominator restoration, paired DEV",
+  "status": "COMPLETE_NO_PROMOTION",
+  "policies": {
+    "baseline": "Current cap40 policy with no additive curvature offset",
+    "candidate": "Baseline plus original 0.003 curvature denominator term only when existing near is true",
+    "other_policy_changes": 0
+  },
+  "protocol": {
+    "fresh_DEV_conditions": 2,
+    "paired_episodes": 4,
+    "arm_orders": [
+      "AB",
+      "BA"
+    ],
+    "max_actions_per_episode": 2000,
+    "max_native_actions": 8000,
+    "max_qualification_replay_act_calls": 4740,
+    "registered_max_native_plus_replay_act_calls": 12740,
+    "automatic_retries": false,
+    "post_outcome_case_replacement": false,
+    "post_outcome_policy_tuning": false,
+    "promotion_permitted": false,
+    "low_exposure_descriptive_fraction": 0.01,
+    "damage_is_separate_diagnostic": true,
+    "normal_DNF_or_censor_continues_collection": true,
+    "technical_failure_stops_without_retry": true
+  },
+  "endpoints": {
+    "baseline_completions": 2,
+    "candidate_completions": 2,
+    "common_completions": 2,
+    "completion_losses": 0,
+    "new_completions": 0,
+    "censored_pairs": 0,
+    "inconclusive_pairs": 0,
+    "candidate_faster_pairs": 0,
+    "candidate_slower_pairs": 2,
+    "candidate_tied_pairs": 0,
+    "common_completion_median_lap_delta_ms": 920.0,
+    "common_completion_mean_lap_ratio": 1.0166923115729998,
+    "total_damage_diagnostic": {
+      "baseline": 0.0,
+      "candidate": 0.0
+    },
+    "collision_flagged_actions_total": 0
+  },
+  "intervention_diagnostics": {
+    "definition": "Same observed inputs within each arm; analytical float32 nominal versus restored pedals, with action dwell clipped to final finish time",
+    "pooled_own_input_exposure": {
+      "baseline": {
+        "actions": 1469,
+        "near_actions": 233,
+        "target_active_actions": 1469,
+        "target_reduced_actions": 214,
+        "changed_pedal_actions": 178,
+        "fallback_actions": 0,
+        "elapsed_s": 117.42000000000733,
+        "near_s": 18.640000000001095,
+        "target_reduced_s": 17.120000000001,
+        "changed_pedal_s": 14.240000000000862,
+        "target_drop_integral_m": 16.15666310341406,
+        "gas_reduction_integral_s": 0.35718088030816364,
+        "brake_increase_integral_s": 0.19060476414860084,
+        "changed_pedal_fraction_pooled": 0.1211708645336964,
+        "per_episode_changed_pedal_fraction_min": 0.11538461538461539,
+        "per_episode_changed_pedal_fraction_max": 0.12610340479192939
+      },
+      "candidate": {
+        "actions": 1492,
+        "near_actions": 262,
+        "target_active_actions": 1492,
+        "target_reduced_actions": 233,
+        "changed_pedal_actions": 202,
+        "fallback_actions": 0,
+        "elapsed_s": 119.26000000000754,
+        "near_s": 20.960000000001145,
+        "target_reduced_s": 18.640000000001095,
+        "changed_pedal_s": 16.160000000000977,
+        "target_drop_integral_m": 12.730948297286517,
+        "gas_reduction_integral_s": 0.2803443816676886,
+        "brake_increase_integral_s": 0.1697665891796472,
+        "changed_pedal_fraction_pooled": 0.1353887399463807,
+        "per_episode_changed_pedal_fraction_min": 0.12931034482758622,
+        "per_episode_changed_pedal_fraction_max": 0.1407035175879397
+      }
+    },
+    "candidate_low_exposure_conditions": 0,
+    "first_native_branch_checks_passed": 2,
+    "first_branch_same_pixels_recorded_memory_near_and_steer": true,
+    "first_branch_pedal_change": "brake increase only in both pairs",
+    "extra_policy_or_model_calls_for_shadow": 0,
+    "whole_lap_time_causal_decomposition_claimed": false
+  },
+  "qualification": {
+    "status": "PASS",
+    "cold_starts": 4,
+    "reset_calls": 12,
+    "act_calls": 4740,
+    "wall_s": 32.55599299800815,
+    "actor_CPU_s": 25.669006,
+    "max_act_ms": 46.762819998548366,
+    "max_RSS_bytes": 48029696,
+    "native_calls": 0,
+    "model_calls": 0,
+    "all_actors_reaped": true
+  },
+  "native_cost": {
+    "episodes": 4,
+    "wrapper_actions": 2961,
+    "successful_wrapper_steps": 2961,
+    "raw_step_ticks": 11838,
+    "raw_reset_ticks": 204,
+    "actor_act_calls": 2961,
+    "actor_reset_calls": 4,
+    "model_calls": 0,
+    "wall_s_including_record_writes": 118.25670693202119,
+    "episode_evaluator_wall_s": 117.01261956900998,
+    "actor_CPU_s": 18.520083999999997,
+    "evaluator_CPU_s": 98.866730797,
+    "max_act_ms": 48.84977301117033,
+    "max_RSS_bytes": 48082944,
+    "automatic_retries": 0,
+    "all_actors_reaped": true,
+    "diagnostic_observer_included_in_cost": true,
+    "extra_policy_or_model_calls_for_shadow": 0
+  },
+  "latency_by_arm": {
+    "A": {
+      "max_episode_p95_ms": 10.709886599215677,
+      "max_act_ms": 48.84977301117033,
+      "max_RSS_bytes": 48037888
+    },
+    "B": {
+      "max_episode_p95_ms": 10.32814575228258,
+      "max_act_ms": 46.25904600834474,
+      "max_RSS_bytes": 48082944
+    }
+  },
+  "saved_record_analysis": {
+    "wall_s": 2.2216519359935774,
+    "CPU_s": 2.347483428,
+    "native_policy_model_replay_calls": 0
+  },
+  "budget": {
+    "native_plus_replay_act_calls": 7701,
+    "research_native_actions_remaining": 11747,
+    "remaining_if_this_stage_replay_counted_one_for_one": 7007,
+    "reserved_actions": 84000,
+    "reserved_actions_used": 0,
+    "increase": 0,
+    "new_paid_resources": false
+  },
+  "decision": "Keep current baseline and rollbacks unchanged; no promotion and no automatic next experiment",
+  "interpretation": "Completion was preserved in these two conditions. The candidate changed pedals and was slower in both, with no observed damage reduction; zero baseline damage limits assessment of a safety benefit.",
+  "limits": [
+    "Two fresh DEV conditions, one execution per arm; no generalization or safety guarantee",
+    "Both arms use own-input analytical shadows; divergent trajectories are not matched by action index to measure intervention dose",
+    "Observer overhead is included; same-host evidence does not establish official-server or fresh-machine parity",
+    "Previously protected HOLDOUT details and SEALED were not opened for this experiment"
+  ]
+}
