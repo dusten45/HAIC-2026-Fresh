@@ -1,0 +1,86 @@
+{
+  "stage": 123,
+  "decision": "PASS_NEW_COMPLETION_NEXT_DEV_ONLY",
+  "candidate_archive_sha256": "51dda9c327a93b4969918571b8f3aa9ac571af8e2051971c32ef12afc2829db5",
+  "baseline": "Frozen116; cached endpoint on the same failed DEV",
+  "diagnosis": {
+    "radius_error_supported": false,
+    "sampled_center_error_m": [
+      0.306,
+      0.616
+    ],
+    "step164_planner_clearance_observed_m": 0.021,
+    "step164_planner_clearance_GT_m": -0.329,
+    "planner_clearance_definition": "Signed margin relative to the existing2.6m planning envelope plus obstacle radius; not exact vehicle-fixture clearance",
+    "limitation": "Observed target chord was already unsafe at170; both localization and route/target tracking clearance remain possible contributors. GT used only for cached diagnosis."
+  },
+  "single_change": "Connected-route obstacle exclusion:2.6+radius becomes2.6+radius+1/1.3608. Fixed one horizontal input pixel =0.7348618459729571m. No sweep.",
+  "source_verification": "Only one expression in connected_agent.py changed;13other archive members byte-identical. Existing116/118 qualifications and runner reused; no policy replay.",
+  "comparison": {
+    "baseline": {
+      "completed": false,
+      "lap_ms": null,
+      "damage": 1.0,
+      "retire_reason": "crash",
+      "successful_wrapper_steps": 181
+    },
+    "candidate": {
+      "completed": true,
+      "lap_ms": 49680,
+      "damage": 0.0,
+      "retire_reason": null,
+      "successful_wrapper_steps": 622
+    },
+    "baseline_first_damage_action": 177,
+    "candidate_first_damage_action": null,
+    "first_action_difference": {
+      "first_action_difference_step": 72,
+      "preceding_actions_exact": true,
+      "frames_through_first_difference_input_exact": true,
+      "prefix_truth_before_after_exact": true,
+      "first_difference_truth_before_exact": true,
+      "baseline_action": [
+        -7.729984212744261e-19,
+        0.0,
+        0.05000000074505806
+      ],
+      "candidate_action": [
+        0.02039186842739582,
+        0.0,
+        0.5
+      ]
+    },
+    "new_completion": true
+  },
+  "cost": {
+    "native_wrapper_actions": 622,
+    "returned_episode_record_actions": 622,
+    "raw_step_ticks": 2486,
+    "raw_reset_ticks": 51,
+    "wall_including_records_s": 25.806666938995477,
+    "evaluator_CPU_including_records_s": 21.581899847000003,
+    "actor_CPU_s": 4.304827,
+    "registered_native_cap": 2000,
+    "authorized_native_ceiling": 3000,
+    "baseline_reruns": 0,
+    "extra_saved_policy_model_calls": 0
+  },
+  "native_total_after": 599181,
+  "research_remaining": 14819,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "validation": {
+    "recorded_reset_fields_exact": true,
+    "record_streams_exact": true,
+    "actor_reaped": true,
+    "independent_cached_comparison_pass": true
+  },
+  "champion116_and_rollbacks_unchanged": true,
+  "protected_HOLDOUT_details_or_SEALED_opened": false,
+  "sweep_or_second_candidate": false,
+  "automatic_continuation": false,
+  "new_paid_resources": 0,
+  "plan_sha256": "c2497474fa82082505f58ccb198b9f3f298a68d2215ccc8eb904927fdfb2d5a8",
+  "contract_sha256": "58a8178ce650503e32799f086e3f27e16a5bff7ed393b397a1f542b7448cc7a2",
+  "limits": "One selected failure rescued by a single routing-margin intervention. Action divergence starts72, so this does not isolate the local cause near164 or establish general completion reliability. Champion adoption requires further gates; official-server execution remains unverified."
+}
