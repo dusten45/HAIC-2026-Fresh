@@ -1,0 +1,266 @@
+{
+  "stage": 186,
+  "status": "CLOSED_LOCAL_CONTACT_DELAY_BUT_NO_COMPLETION_GAIN",
+  "precondition": {
+    "status": "PASS_LOCAL_ARC_CUT_AND_RISK_ORDER",
+    "source": "Saved185before52commonstate,notGTspeed-for-lookahead ornewnative.",
+    "original_target_path_distance_m": 12.331019830905257,
+    "simple_target_arc_length_m": 11.646812393979207,
+    "maximum_target_arc_distance_from_selected_path_m": 1.0806746199871984,
+    "positive_path_full_vehicle_bound_m": 0.029969630345203502,
+    "target_arc_vehicle_disk_bound_m": -0.6765190422874622,
+    "steering_arc_sampled_fullfixture_gaps_m": {
+      "B": 0.964723419442159,
+      "L": 0.029972788879547352,
+      "R": 1.744508294958505
+    },
+    "risk_order_worst_to_best": [
+      "L",
+      "B",
+      "R"
+    ],
+    "ordering_separated_beyond_sampling_error": true,
+    "limitation": "All sampled nominal arc fixture gaps are positive,including actual-contact arms;leftlowerbound is within samplingresolution. Not a validated dynamics/collision model. Nativepulse lasted4actions followedbyclosedloop,whereas illustration holds curvature over onegeometriclength."
+  },
+  "duplicate_audit": "Current target only uses clippedarc-length. Existinginactivechordprototypeusesstraightline and2.6inflation,not this arc/pathgeometry. No old experiment or old outcome reused.",
+  "candidate": {
+    "formula": "For each candidate q,use existing k(q)=2*qx/|q|\u00b2 and hull-origin ideal arc endingatq. Project each arc center A onto all segments ofthe selectedpath prefix endingatq to getQ. slack(Q)=min_j(|Q-Cj|-rj)-Rvehicle. Require slack(Q)-|A-Q|>=ds/2 on samples spaced<=0.05m. Triangleinequality and ds/2 cover continuousarc intervals within obstacle-clear balls centeredonthe selectedpath. This is sufficient geometricclearance,not dynamic/roadfeasibility.",
+    "vehicle_radius_m": 2.8735642124317535,
+    "arc_spacing_m": 0.05,
+    "selection": "Try original speed-dependent6..14m target first,thenexistingpathvertices beforeit in decreasing cumulativepathdistance. Return firstwithnonnegativecertificate. Ifnonecertified,returnoriginaltarget;no new braking/fallback/routeholding rule. Ifnohazards,returnoriginal.",
+    "changed_original_archive_member": "retry/schedule_agent.py",
+    "added_helper": "retry/path_envelope_target.py",
+    "other_original_members_unchanged": 13,
+    "connected_route_scoring_uses_original_target": true,
+    "perception_steering_and_pedal_equations_unchanged": true,
+    "no_fixed_direction_or_amplitude": true,
+    "no179_reference_correction": true,
+    "no_path_holding_state": true,
+    "same_saved52_target_path_distance_before_after_m": [
+      12.331019830905257,
+      9.40623162845385
+    ],
+    "same_saved52_certificate_before_after_m": [
+      -0.7567921115187196,
+      0.21143408200810862
+    ],
+    "pure_mirror_equivariance_check": true,
+    "no_threshold_sweep": true,
+    "limitation": "The certificate concerns an idealarc andobservedcircles. If no candidate certifies,originaltarget is retained;this is not an overall safety guarantee. A changed target also changesexistingcurvature-derivedspeed andfutureclosedloopstate."
+  },
+  "rows": [
+    {
+      "condition": 1,
+      "information_condition": "frozen184center+GTego_normal32",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 34160,
+        "damage": 0.0,
+        "unique_tiles": 314,
+        "total_tiles": 314,
+        "retire_reason": null,
+        "charged_wrapper_actions": 428
+      },
+      "candidate": {
+        "completed": true,
+        "lap_ms": 35420,
+        "damage": 0.0,
+        "unique_tiles": 314,
+        "total_tiles": 314,
+        "retire_reason": null,
+        "charged_wrapper_actions": 443
+      },
+      "official_lap_delta_ms": 1260,
+      "baseline_first_contact": null,
+      "candidate_first_contact": null,
+      "same_first_contact_obstacle": null,
+      "target_selection_counts": {
+        "rows": 443,
+        "changed": 31,
+        "original_clear": 156,
+        "no_hazards": 225,
+        "empty_path": 0,
+        "no_certified_target_original_fallback": 31,
+        "shorter_path_target": 31,
+        "first_change": 42
+      }
+    },
+    {
+      "condition": 2,
+      "information_condition": "frozen184center+GTego_normal32",
+      "baseline": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 223,
+        "total_tiles": 291,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 311
+      },
+      "candidate": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 188,
+        "total_tiles": 291,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 260
+      },
+      "official_lap_delta_ms": null,
+      "baseline_first_contact": {
+        "step": 62,
+        "elapsed_s": 4.96,
+        "speed_m_s": 12.482634028986164
+      },
+      "candidate_first_contact": {
+        "step": 255,
+        "elapsed_s": 20.4,
+        "speed_m_s": 14.62369610673882
+      },
+      "same_first_contact_obstacle": false,
+      "target_selection_counts": {
+        "rows": 260,
+        "changed": 17,
+        "original_clear": 67,
+        "no_hazards": 159,
+        "empty_path": 0,
+        "no_certified_target_original_fallback": 17,
+        "shorter_path_target": 17,
+        "first_change": 51
+      }
+    },
+    {
+      "condition": 3,
+      "information_condition": "legalpixels_normal24",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 33720,
+        "damage": 0.0,
+        "unique_tiles": 287,
+        "total_tiles": 287,
+        "retire_reason": null,
+        "charged_wrapper_actions": 422
+      },
+      "candidate": {
+        "completed": true,
+        "lap_ms": 33380,
+        "damage": 0.2,
+        "unique_tiles": 287,
+        "total_tiles": 287,
+        "retire_reason": null,
+        "charged_wrapper_actions": 418
+      },
+      "official_lap_delta_ms": -340,
+      "baseline_first_contact": null,
+      "candidate_first_contact": {
+        "step": 245,
+        "elapsed_s": 19.6,
+        "speed_m_s": 45.238325025774515
+      },
+      "same_first_contact_obstacle": null,
+      "target_selection_counts": {
+        "rows": 418,
+        "changed": 29,
+        "original_clear": 152,
+        "no_hazards": 210,
+        "empty_path": 0,
+        "no_certified_target_original_fallback": 27,
+        "shorter_path_target": 29,
+        "first_change": 53
+      }
+    }
+  ],
+  "information_condition_summaries": {
+    "oracle": {
+      "conditions": 2,
+      "baseline_completions": 1,
+      "candidate_completions": 1,
+      "common_completed": 1,
+      "all_lap_deltas_ms": [
+        1260
+      ],
+      "sum_ms": 1260,
+      "mean_ms": 1260.0,
+      "median_ms": 1260,
+      "baseline_damage": 1.0,
+      "candidate_damage": 1.0
+    },
+    "legal_pixel": {
+      "conditions": 1,
+      "baseline_completions": 1,
+      "candidate_completions": 1,
+      "common_completed": 1,
+      "all_lap_deltas_ms": [
+        -340
+      ],
+      "sum_ms": -340,
+      "mean_ms": -340.0,
+      "median_ms": -340,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.2
+    }
+  },
+  "information_conditions_pooled": false,
+  "interpretation": "The targetarc cuts the planned bend and geometry ranking agrees locally;target-only change removes the earlycontact butdoesnot rescue the failedoracle road. The completedoracle lap slows;onelegalcleanlap speedsupwithnewdamage. No general performance gain established.",
+  "oracle_remaining_first_contact_delayed_to_different_obstacle": true,
+  "failed_progress_is_not_lap_improvement": true,
+  "damage_is_independent_diagnostic": true,
+  "qualification": "4actualstaticinterfacecalls,mirror/no-hazard/officialsize checks,13originalmembersidentical. Actualnativecalls verifyfinaltargetaudit,sourceP/32or24/8/45 law,streamhashes,initialstates andactorcleanup. Oraclecenter/ego adapter remainsfrozen.",
+  "technical_recovery": "Preparation referenced an absentfresh174initial cache. Used the same completed174baseline result.initial,then completedonly theplan tail. Zero native calls or repeated qualification.",
+  "no_promotion": true,
+  "current_champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "next_action": "Targetgeometry is locally relevant,but fullroute completion andthe inheritedgoal-curvature-speed coupling remain unresolved. Close this fixedcandidate without extra tuning or native runs.",
+  "cost": {
+    "stage": 186,
+    "at_utc": "2026-10-12T09:09:41.174082+00:00",
+    "native_cap": 5000,
+    "new_wrapper_actions": 1121,
+    "native_episode_invocations": 3,
+    "per_episode_caps": [
+      2000,
+      1500,
+      1500
+    ],
+    "raw_step_ticks": 4482,
+    "raw_reset_ticks": 153,
+    "wall_s": 70.55871338499128,
+    "evaluator_CPU_s": 61.120291085,
+    "actor_CPU_s": 12.611956,
+    "timing_scope": "Three actual full episodes with bounded target/geometry/ego/compact diagnostics;excludes saved geometry,preparation,qualification andpublication.",
+    "cached_endpoint_actions_reused": 1161,
+    "new_full_baseline_replays": 0,
+    "new_separate_prefix_replays": 0,
+    "qualification_policy_calls": 4,
+    "qualification_reset_calls": 2,
+    "qualification_act_calls": 2,
+    "qualification_native_actions": 0,
+    "saved_geometry_native_actions": 0,
+    "extra_policy_calls_in_native": 0,
+    "archive_builds": 2,
+    "target_formulas": 1,
+    "threshold_sweeps": 0,
+    "new_full_pixel_GT_policy_streams": 0,
+    "native_oracle_component_extractions": 896,
+    "native_oracle_visible_context_calls": 193,
+    "native_oracle_label_raster_passes": 167,
+    "native_oracle_visible_context_wall_s": 1.2411822612339165,
+    "preparation_recovery_native_actions": 0,
+    "repeated_qualification_calls": 0,
+    "B_operating_cap": 800000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 709320,
+    "research_remaining": 6680,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "current_champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false
+}
