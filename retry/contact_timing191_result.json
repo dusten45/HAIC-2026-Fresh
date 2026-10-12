@@ -1,0 +1,490 @@
+{
+  "stage": 191,
+  "status": "INITIALIZATION_FIXED_P4_UNCONFIRMED_FEW_ADMISSIBLE_ACTIONS",
+  "raw_execution_status": "UNCONFIRMED_INSUFFICIENT_STATE_CONTRAST",
+  "repair": "0time contactstructure construction queues gameplaycallbacks. Firstpositive rawstep computesCarforces usingcapturedwheeltilehistory,then appliesendedcontacts andqueuedsourcecallbacks beforeworldsolve. No scalarcountercorrection.",
+  "official_physics_source_unchanged": true,
+  "regression": {
+    "status": "PASS",
+    "queries": 9,
+    "actual_reference_rows": 105,
+    "new_native": 0,
+    "per_step_event_mismatches": 0,
+    "max_position_change_vs190model_m": 0.0,
+    "max_velocity_change_vs190model_m_s": 0.0,
+    "max_position_error_vsactual_m": 1.1506012451184897e-05,
+    "max_speed_error_vsactual_m_s": 3.354715608416825e-05,
+    "affected_first_counter": {
+      "old_prediction": 3,
+      "revised_prediction": 0,
+      "actual": 0
+    },
+    "affected_final_counter": {
+      "old_prediction": 14,
+      "revised_prediction": 11,
+      "actual": 11
+    },
+    "physics_laws_unchanged": true,
+    "counter_offset_correction": false,
+    "former_stopped_cohort_still_uninformative": true
+  },
+  "states": {
+    "S1": {
+      "initial_speed_m_s": 28.477278856386977,
+      "status": "STOP_P4_LOCAL_RANK",
+      "raw_gate_reasons": [
+        "INSUFFICIENT_ACTUAL_RISK_OR_SAFE_COVERAGE",
+        "INSUFFICIENT_PREDICTED_COVERAGE_OR_UNSAFE_SELECTION",
+        "SELECTED_PROGRESS_REGRET",
+        "PROGRESS_ORDER_FAILURE_OR_NO_INFORMATIVE_PAIRS"
+      ],
+      "final_actual_risky": 1,
+      "final_actual_eligible": 0,
+      "final_predicted_eligible": 0,
+      "predicted_no_contact_count": 5,
+      "actual_contact_count_among_predicted_no_contact": 0,
+      "predicted_selected": null,
+      "actual_selected": null,
+      "selected_new_tile_regret": null,
+      "all_registered_candidate_tile_counts_exact": true,
+      "initialization_exact": true,
+      "model_query_speed_ratio": 22.589088106469227,
+      "horizons": [
+        {
+          "actions": 1,
+          "seconds": 0.08,
+          "actual_risky": 0,
+          "false_negatives": 0,
+          "false_positives": 0,
+          "actual_eligible": 6,
+          "predicted_eligible": 6,
+          "correct_pairs": 0,
+          "inversions": 0,
+          "missed_ties": 0,
+          "predicted_selected": "C00",
+          "actual_selected": "C00",
+          "regret": 0,
+          "position_error": {
+            "count": 6,
+            "mean": 1.2715657552083333e-06,
+            "max": 7.62939453125e-06
+          }
+        },
+        {
+          "actions": 3,
+          "seconds": 0.24,
+          "actual_risky": 0,
+          "false_negatives": 0,
+          "false_positives": 0,
+          "actual_eligible": 6,
+          "predicted_eligible": 6,
+          "correct_pairs": 9,
+          "inversions": 0,
+          "missed_ties": 0,
+          "predicted_selected": "C00",
+          "actual_selected": "C00",
+          "regret": 0,
+          "position_error": {
+            "count": 6,
+            "mean": 2.5431315104166665e-06,
+            "max": 7.62939453125e-06
+          }
+        },
+        {
+          "actions": 6,
+          "seconds": 0.48,
+          "actual_risky": 1,
+          "false_negatives": 0,
+          "false_positives": 0,
+          "actual_eligible": 5,
+          "predicted_eligible": 5,
+          "correct_pairs": 7,
+          "inversions": 0,
+          "missed_ties": 0,
+          "predicted_selected": "C08",
+          "actual_selected": "C08",
+          "regret": 0,
+          "position_error": {
+            "count": 6,
+            "mean": 2.5431315104166665e-06,
+            "max": 7.62939453125e-06
+          }
+        },
+        {
+          "actions": 9,
+          "seconds": 0.72,
+          "actual_risky": 1,
+          "false_negatives": 0,
+          "false_positives": 0,
+          "actual_eligible": 0,
+          "predicted_eligible": 0,
+          "correct_pairs": 0,
+          "inversions": 0,
+          "missed_ties": 0,
+          "predicted_selected": null,
+          "actual_selected": null,
+          "regret": null,
+          "position_error": {
+            "count": 6,
+            "mean": 2.5431315104166665e-06,
+            "max": 7.62939453125e-06
+          }
+        },
+        {
+          "actions": 12,
+          "seconds": 0.96,
+          "actual_risky": 1,
+          "false_negatives": 0,
+          "false_positives": 0,
+          "actual_eligible": 0,
+          "predicted_eligible": 0,
+          "correct_pairs": 0,
+          "inversions": 0,
+          "missed_ties": 0,
+          "predicted_selected": null,
+          "actual_selected": null,
+          "regret": null,
+          "position_error": {
+            "count": 6,
+            "mean": 2.5431315104166665e-06,
+            "max": 7.62939453125e-06
+          }
+        }
+      ],
+      "final_candidates": [
+        {
+          "candidate": "C00",
+          "predicted_contact": true,
+          "actual_contact": true,
+          "new_tiles": 3,
+          "damage": 0.4,
+          "speed_m_s": 0.07843745053994276,
+          "road_wheels": 4,
+          "max_offtrack": 8,
+          "eligible": false
+        },
+        {
+          "candidate": "C01",
+          "predicted_contact": false,
+          "actual_contact": false,
+          "new_tiles": 2,
+          "damage": 0.0,
+          "speed_m_s": 12.941244540730523,
+          "road_wheels": 4,
+          "max_offtrack": 6,
+          "eligible": false
+        },
+        {
+          "candidate": "C08",
+          "predicted_contact": false,
+          "actual_contact": false,
+          "new_tiles": 5,
+          "damage": 0.0,
+          "speed_m_s": 35.72868550980083,
+          "road_wheels": 0,
+          "max_offtrack": 4,
+          "eligible": false
+        },
+        {
+          "candidate": "C09",
+          "predicted_contact": false,
+          "actual_contact": false,
+          "new_tiles": 2,
+          "damage": 0.0,
+          "speed_m_s": 12.93959961664588,
+          "road_wheels": 4,
+          "max_offtrack": 6,
+          "eligible": false
+        },
+        {
+          "candidate": "C16",
+          "predicted_contact": false,
+          "actual_contact": false,
+          "new_tiles": 3,
+          "damage": 0.0,
+          "speed_m_s": 35.2268088981601,
+          "road_wheels": 0,
+          "max_offtrack": 7,
+          "eligible": false
+        },
+        {
+          "candidate": "C17",
+          "predicted_contact": false,
+          "actual_contact": false,
+          "new_tiles": 2,
+          "damage": 0.0,
+          "speed_m_s": 12.813006507990133,
+          "road_wheels": 4,
+          "max_offtrack": 6,
+          "eligible": false
+        }
+      ]
+    },
+    "S2": {
+      "initial_speed_m_s": 26.849019313890615,
+      "status": "STOP_P4_LOCAL_RANK",
+      "raw_gate_reasons": [
+        "INSUFFICIENT_ACTUAL_RISK_OR_SAFE_COVERAGE",
+        "INSUFFICIENT_PREDICTED_COVERAGE_OR_UNSAFE_SELECTION",
+        "PROGRESS_ORDER_FAILURE_OR_NO_INFORMATIVE_PAIRS"
+      ],
+      "final_actual_risky": 2,
+      "final_actual_eligible": 1,
+      "final_predicted_eligible": 1,
+      "predicted_no_contact_count": 4,
+      "actual_contact_count_among_predicted_no_contact": 0,
+      "predicted_selected": "C08",
+      "actual_selected": "C08",
+      "selected_new_tile_regret": 0,
+      "all_registered_candidate_tile_counts_exact": true,
+      "initialization_exact": true,
+      "model_query_speed_ratio": 26.241704521490252,
+      "horizons": [
+        {
+          "actions": 1,
+          "seconds": 0.08,
+          "actual_risky": 0,
+          "false_negatives": 0,
+          "false_positives": 0,
+          "actual_eligible": 6,
+          "predicted_eligible": 6,
+          "correct_pairs": 0,
+          "inversions": 0,
+          "missed_ties": 0,
+          "predicted_selected": "C16",
+          "actual_selected": "C16",
+          "regret": 0,
+          "position_error": {
+            "count": 6,
+            "mean": 0.0,
+            "max": 0.0
+          }
+        },
+        {
+          "actions": 3,
+          "seconds": 0.24,
+          "actual_risky": 1,
+          "false_negatives": 0,
+          "false_positives": 0,
+          "actual_eligible": 5,
+          "predicted_eligible": 5,
+          "correct_pairs": 6,
+          "inversions": 0,
+          "missed_ties": 0,
+          "predicted_selected": "C16",
+          "actual_selected": "C16",
+          "regret": 0,
+          "position_error": {
+            "count": 6,
+            "mean": 9.5367431640625e-07,
+            "max": 3.814697265625e-06
+          }
+        },
+        {
+          "actions": 6,
+          "seconds": 0.48,
+          "actual_risky": 2,
+          "false_negatives": 0,
+          "false_positives": 0,
+          "actual_eligible": 4,
+          "predicted_eligible": 4,
+          "correct_pairs": 4,
+          "inversions": 0,
+          "missed_ties": 0,
+          "predicted_selected": "C16",
+          "actual_selected": "C16",
+          "regret": 0,
+          "position_error": {
+            "count": 6,
+            "mean": 7.116776513446619e-06,
+            "max": 2.9114413304278845e-05
+          }
+        },
+        {
+          "actions": 9,
+          "seconds": 0.72,
+          "actual_risky": 2,
+          "false_negatives": 0,
+          "false_positives": 0,
+          "actual_eligible": 1,
+          "predicted_eligible": 1,
+          "correct_pairs": 0,
+          "inversions": 0,
+          "missed_ties": 0,
+          "predicted_selected": "C08",
+          "actual_selected": "C08",
+          "regret": 0,
+          "position_error": {
+            "count": 6,
+            "mean": 4.243567988291905e-05,
+            "max": 0.0002412626388678268
+          }
+        },
+        {
+          "actions": 12,
+          "seconds": 0.96,
+          "actual_risky": 2,
+          "false_negatives": 0,
+          "false_positives": 0,
+          "actual_eligible": 1,
+          "predicted_eligible": 1,
+          "correct_pairs": 0,
+          "inversions": 0,
+          "missed_ties": 0,
+          "predicted_selected": "C08",
+          "actual_selected": "C08",
+          "regret": 0,
+          "position_error": {
+            "count": 6,
+            "mean": 9.132396554864236e-05,
+            "max": 0.0005341155157039635
+          }
+        }
+      ],
+      "final_candidates": [
+        {
+          "candidate": "C00",
+          "predicted_contact": true,
+          "actual_contact": true,
+          "new_tiles": 5,
+          "damage": 0.6000000000000001,
+          "speed_m_s": 31.968074843113218,
+          "road_wheels": 0,
+          "max_offtrack": 4,
+          "eligible": false
+        },
+        {
+          "candidate": "C01",
+          "predicted_contact": true,
+          "actual_contact": true,
+          "new_tiles": 2,
+          "damage": 0.8,
+          "speed_m_s": 11.317984821491443,
+          "road_wheels": 4,
+          "max_offtrack": 7,
+          "eligible": false
+        },
+        {
+          "candidate": "C08",
+          "predicted_contact": false,
+          "actual_contact": false,
+          "new_tiles": 8,
+          "damage": 0.0,
+          "speed_m_s": 34.35477955678418,
+          "road_wheels": 4,
+          "max_offtrack": 1,
+          "eligible": true
+        },
+        {
+          "candidate": "C09",
+          "predicted_contact": false,
+          "actual_contact": false,
+          "new_tiles": 2,
+          "damage": 0.0,
+          "speed_m_s": 12.921499740504142,
+          "road_wheels": 4,
+          "max_offtrack": 6,
+          "eligible": false
+        },
+        {
+          "candidate": "C16",
+          "predicted_contact": false,
+          "actual_contact": false,
+          "new_tiles": 4,
+          "damage": 0.0,
+          "speed_m_s": 34.469953252882476,
+          "road_wheels": 0,
+          "max_offtrack": 6,
+          "eligible": false
+        },
+        {
+          "candidate": "C17",
+          "predicted_contact": false,
+          "actual_contact": false,
+          "new_tiles": 2,
+          "damage": 0.0,
+          "speed_m_s": 12.951897541460333,
+          "road_wheels": 4,
+          "max_offtrack": 7,
+          "eligible": false
+        }
+      ]
+    }
+  },
+  "state_selection": "Two fixedexistingDEVtracewindows;latestcurrentrow withspeed>=25m/s,damage0,abssteer<=.28,offtrack<=5. Newcounterfactualoutcomes unopened. No seed search or relabeling190stoppedcondition.",
+  "candidate_basis": "Six fixedthree-steeroffset/two-pedalprofiles. Explicitgas.1/brake0,or first6brake.25 then6gas.1;12actions/.96s. Allsixdistinct before prediction. Basis fixedbefore newresults;no physics/cost tuning.",
+  "information": "GT initialbody/wheel/joint state,contact/visitedhistory andfullstaticroad/obstacles. Pixelactor/estimatorunchanged.No futurepolicyreturn,fullcompletion,legalstateestimation oronlineplannerclaim.",
+  "limits": "Warm-startsolverimpulses,broadphase/manifoldhistory andislandorder stillnotcopied;notanarbitrarysimulatorsnapshot. HealthyexistingDEVstatesonly.Sharedhorizons/pairs notindependenttrials.",
+  "interpretation": "Bothstates nowhaveactualriskcontrasts andallregisteredrisk/progress predictionsmatch. At12actions eligiblecounts0/1 arebelowrequired2each,so finalsafe-order comparisons unavailable. No horizonshortening or gate relaxation. S1noselection/regretundefined,notapositive measuredregret;S2C08actuallyeligible withregret0. No fullP4promotion.",
+  "cost": {
+    "stage": 191,
+    "at_utc": "2026-10-12T10:52:07.769939+00:00",
+    "native_cap": 6000,
+    "new_wrapper_actions": 1518,
+    "prefix_actions": 1374,
+    "suffix_actions": 144,
+    "native_episode_invocations": 12,
+    "raw_step_ticks": 6072,
+    "raw_reset_ticks": 612,
+    "wall_s": 70.97235245801858,
+    "evaluator_CPU_s": 58.01380952000001,
+    "actor_CPU_s": 12.845975,
+    "regression_model_queries": 9,
+    "regression_model_physics_ticks": 420,
+    "regression_wall_s": 0.21917297699837945,
+    "regression_new_native": 0,
+    "prospective_model_queries": 12,
+    "prospective_model_physics_ticks": 576,
+    "total_model_physics_ticks": 996,
+    "total_zero_time_contact_structure_initializations": 21,
+    "model_batch_wall_s": {
+      "S1": 0.10574359999736771,
+      "S2": 0.08599397199577652
+    },
+    "snapshot_capture_wall_s": {
+      "S1": 0.012868059013271704,
+      "S2": 0.006811928004026413
+    },
+    "reconstruction_wall_s": {
+      "S1": 0.06263695200323127,
+      "S2": 0.0495531240303535
+    },
+    "integration_wall_s": {
+      "S1": 0.04308244094136171,
+      "S2": 0.036421110009541735
+    },
+    "actual_suffix_env_step_wall_s": {
+      "S1_C00": 0.3925096190068871,
+      "S1_C01": 0.36835632208385505,
+      "S1_C08": 0.5357413909514435,
+      "S1_C09": 0.32247983902925625,
+      "S1_C16": 0.3688755980110727,
+      "S1_C17": 0.4002231899939943,
+      "S2_C00": 0.3021104720828589,
+      "S2_C01": 0.3717873610148672,
+      "S2_C08": 0.39550595605396666,
+      "S2_C09": 0.3925957550527528,
+      "S2_C16": 0.37064960596035235,
+      "S2_C17": 0.4235135949566029
+    },
+    "worker_qualification_policy_calls": 14,
+    "worker_qualification_native": 0,
+    "model_CPU_included_in_evaluator": true,
+    "timing_scope": "Actual12episodes wall includesprefix,actor,andprospectiveforecast.Modelquerysplit reportsnewworld/body/contactreconstruction vsintegration.SnapshotGTextraction separate;legalstateestimation excluded.Regression/preparation/qualification/publication excluded fromnative-runwall.",
+    "B_operating_cap": 816000,
+    "actual_cumulative_wrapper_actions": 720013,
+    "research_remaining": 11987,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "automatic_next_experiment": false
+  },
+  "next_judgment": "Eventtimingdefectfixed. Remainingregisteredgateblocker is lackofmultipleadmissible12-actionchoices inthisfixedbasis. Distinguish actioncoverage fromtransitionerror;no automaticcandidate/horizon/planner expansion.",
+  "champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}

@@ -25,7 +25,9 @@ def predict_before_suffix(plan_path, plan, case, arm, initial_pairs, destination
         def step(action):
             index = state['steps'] + 1
             if index == start and destination is not None:
+                capture_start = time.perf_counter()
                 snapshot = capture(env)
+                capture_wall = time.perf_counter() - capture_start
                 anchor = state['response']['sequence_probe']['anchor_action']
                 assert anchor is not None
                 destination.mkdir(mode=0o700)
@@ -33,6 +35,7 @@ def predict_before_suffix(plan_path, plan, case, arm, initial_pairs, destination
                 prediction = predict(snapshot, anchor, specifications)
                 assert snapshot == capture(env), 'Prediction modified the actual source environment'
                 prediction.update(initial_state_digest=digest(snapshot),
+                    snapshot_capture_wall_s=capture_wall,
                     frozen_before_actual_suffix_at_utc=dt.datetime.now(dt.timezone.utc).isoformat(),
                     available_actual_suffix_steps=0)
                 write(destination / 'prediction.json', prediction, exclusive=True)

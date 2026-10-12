@@ -36,6 +36,8 @@ observed = {}
                 sequence_anchor = original_action.copy()
             phase = offset // sequence_config['block_actions']
             action = sequence_anchor.copy()
+            if 'explicit_pedals' in sequence_config:
+                action[1:] = sequence_config['explicit_pedals']
             action[0] = np.clip(float(sequence_anchor[0]) + sequence_config['steer_offsets'][phase], -.4, .4)
             if sequence_config['brake_first_block'] and phase == 0:
                 action[1:] = (0., sequence_config['brake_value'])

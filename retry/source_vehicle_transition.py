@@ -126,7 +126,14 @@ class SourceVehicleTransition:
             wheel.tiles = {by_index[index] for index in state['tiles']}
         old_contact = self.listener._contact
 
+        self._constructing_contacts = True
+        self._initial_contact_events = []
+
         def contact(c, begin):
+            if self._constructing_contacts:
+                # Build manifolds without advancing the game's event history.
+                self._initial_contact_events.append((c, begin))
+                return
             if begin:
                 body = self.listener._match_obstacle_contact(c)
                 if body is not None:
@@ -139,8 +146,27 @@ class SourceVehicleTransition:
         self._effects()
         self.off_track_counter = snapshot['off_track_counter']
         self.native_ticks = 0
-        # Zero-time contact discovery builds *new* manifolds, not cached impulses.
+        # Zero time constructs only contact structure. Gameplay callbacks wait
+        # until the collision phase of the first positive-time physics step.
         self.world.Step(0., 180, 60)
+        self._constructing_contacts = False
+        self._initial_geometric_tiles = [set() for _ in self.car.wheels]
+        for c, begin in self._initial_contact_events:
+            assert begin, 'New world unexpectedly emitted an initial EndContact'
+            first, second = c.fixtureA.body.userData, c.fixtureB.body.userData
+            for tile, wheel in ((first, second), (second, first)):
+                if (tile and 'road_friction' in tile.__dict__ and wheel
+                        and 'tiles' in wheel.__dict__):
+                    index = next(i for i, w in enumerate(self.car.wheels) if w == wheel)
+                    self._initial_geometric_tiles[index].add(tile)
+        self.initial_event_receipt = dict(
+            deferred_begin_callbacks=len(self._initial_contact_events),
+            deferred_road_contact_additions=sum(len(now - w.tiles) for w, now in
+                                                zip(self.car.wheels, self._initial_geometric_tiles)),
+            deferred_road_contact_removals=sum(len(w.tiles - now) for w, now in
+                                               zip(self.car.wheels, self._initial_geometric_tiles)),
+            counter_offset_correction=0)
+        self._initial_events_pending = True
         self.initial_tiles_exact = ([sorted(int(t.idx) for t in w.tiles) for w in self.car.wheels]
                                     == [w['tiles'] for w in snapshot['wheels']])
         self.initial_progress_exact = self.tile_visited_count == snapshot['unique_tiles']
@@ -164,6 +190,17 @@ class SourceVehicleTransition:
             self.car.gas(action[1])
             self.car.brake(action[2])
             self.car.step(1. / FPS)
+            if self._initial_events_pending:
+                # Car.step has just used the captured, previous-step tile set,
+                # exactly as in CarRacing.step. Reconcile contacts now, before
+                # the first positive-time world solve. Existing contact pairs
+                # that disappeared need the corresponding removal as well.
+                for wheel, geometric in zip(self.car.wheels, self._initial_geometric_tiles):
+                    wheel.tiles.intersection_update(geometric)
+                for contact, begin in self._initial_contact_events:
+                    self.listener._contact(contact, begin)
+                self._initial_contact_events.clear()
+                self._initial_events_pending = False
             self.world.Step(1. / FPS, 180, 60)
             self.native_ticks += 1
             collision |= bool(self._collision_this_step)
@@ -191,6 +228,8 @@ def controls(anchor, specification):
     result = []
     for phase in range(2):
         action = anchor.copy()
+        if 'explicit_pedals' in specification:
+            action[1:] = specification['explicit_pedals']
         action[0] = np.clip(float(anchor[0]) + specification['steer_offsets'][phase], -.4, .4)
         if phase == 0 and specification['brake_first_block']:
             action[1:] = (0., specification['brake_value'])
@@ -204,9 +243,11 @@ def predict(snapshot, anchor, specifications):
     for name, spec in specifications.items():
         before = time.perf_counter()
         model = SourceVehicleTransition(snapshot)
+        reconstruction_wall = time.perf_counter() - before
         restored = dict(tiles=model.initial_tiles_exact, progress=model.initial_progress_exact,
                         bodies=model.initial_bodies_exact)
         rows = []
+        integration_start = time.perf_counter()
         try:
             for action in controls(anchor, spec):
                 row = model.step(action)
@@ -216,6 +257,9 @@ def predict(snapshot, anchor, specifications):
         finally:
             model.close()
         result[name] = dict(rows=rows, initialization=restored, wall_s=time.perf_counter() - before,
+                            reconstruction_wall_s=reconstruction_wall,
+                            integration_wall_s=time.perf_counter() - integration_start,
+                            event_initialization=model.initial_event_receipt,
                             model_physics_ticks=model.native_ticks, zero_time_contact_initializations=1)
     return dict(candidates=result, batch_wall_s=time.perf_counter() - start,
         model_physics_ticks=sum(r['model_physics_ticks'] for r in result.values()),
