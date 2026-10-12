@@ -1,0 +1,293 @@
+{
+  "stage": 177,
+  "status": "RETIRED_FIXED_NEAR_STEERING_RATE_VARIANT_NO_TIME_GAIN",
+  "decision": "Keep current normal24/near8/cap45 champion. All4complete but paired lap total+400ms, including transfer3+140ms. Retire this fixed.18rad output limit; no coefficient sweep or successor run.",
+  "rule": "Only in existing pixel near mode, clip original_steer-previous_applied to+/-0.18rad per action; otherwise preserve original bytes. Copy pedals, update separate previous_applied only, leave source controller memory and path selection code unchanged.",
+  "bound_basis": "Single-road170 observed first requested change.262404rad and successful first pulse transition.182404rad, rounded once to.18. Source wheel nominal bound.24rad per4ticks differs from the stricter near-gated output bound. Empirical candidate, no validated new dynamics model.",
+  "not_171": "No route-side persistence, reranking or candidate exclusion. Wrapper acts after the unchanged source chooses a route and computes its action.",
+  "candidate_archive_sha256": "d859d458e80bff5aa3aaedac0d4deb96620dc74266a678f1a1f904c5119ecb41",
+  "modified_existing_member": "agent.py",
+  "added_member": "retry/steering_transition.py",
+  "unchanged_original_members": 13,
+  "baseline_completed": 4,
+  "candidate_completed": 4,
+  "completion_losses": 0,
+  "censors_in_full_runs": 0,
+  "rows": [
+    {
+      "label": "original_contact_DEV",
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 42060,
+      "candidate_lap_ms": 42320,
+      "delta_ms": 260,
+      "baseline_damage": 0.2,
+      "candidate_damage": 0.4,
+      "candidate_native": 530,
+      "changed_steering_rows": 7,
+      "first_change_step": 112,
+      "first_contact_step": 124,
+      "identical_full_action_hash": false,
+      "identical_full_observation_hash": false
+    },
+    {
+      "label": "transfer_contact_DEV0",
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 35840,
+      "candidate_lap_ms": 35980,
+      "delta_ms": 140,
+      "baseline_damage": 0.4,
+      "candidate_damage": 0.4,
+      "candidate_native": 450,
+      "changed_steering_rows": 1,
+      "first_change_step": 138,
+      "first_contact_step": 101,
+      "identical_full_action_hash": false,
+      "identical_full_observation_hash": false
+    },
+    {
+      "label": "transfer_contact_DEV1",
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 31120,
+      "candidate_lap_ms": 31120,
+      "delta_ms": 0,
+      "baseline_damage": 0.4,
+      "candidate_damage": 0.4,
+      "candidate_native": 390,
+      "changed_steering_rows": 0,
+      "first_change_step": null,
+      "first_contact_step": 219,
+      "identical_full_action_hash": true,
+      "identical_full_observation_hash": true
+    },
+    {
+      "label": "transfer_clean_DEV3",
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 33720,
+      "candidate_lap_ms": 33720,
+      "delta_ms": 0,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "candidate_native": 422,
+      "changed_steering_rows": 0,
+      "first_change_step": null,
+      "first_contact_step": null,
+      "identical_full_action_hash": true,
+      "identical_full_observation_hash": true
+    }
+  ],
+  "all4_time": {
+    "conditions": 4,
+    "delta_ms": [
+      260,
+      140,
+      0,
+      0
+    ],
+    "sum_ms": 400,
+    "mean_ms": 100,
+    "median_ms": 70.0,
+    "mean_lap_ratio": 1.002521973817166,
+    "faster": 0,
+    "ties": 2,
+    "slower": 2
+  },
+  "transfer3_time": {
+    "conditions": 3,
+    "delta_ms": [
+      140,
+      0,
+      0
+    ],
+    "sum_ms": 140,
+    "mean_ms": 46.666666666666664,
+    "median_ms": 0,
+    "mean_lap_ratio": 1.0013020833333333,
+    "faster": 0,
+    "ties": 2,
+    "slower": 1
+  },
+  "baseline_damage": 1.0,
+  "candidate_damage": 1.2000000000000002,
+  "damage_warning": "Full-lap damage total1.0->1.2; original contact road.2->.4. Damage is separate from the no-time-gain decision.",
+  "full_lap_transition_checks": {
+    "rows": 1792.0,
+    "near_rows": 351.0,
+    "changed_rows": 8.0,
+    "meaningful_changed_rows": 8.0,
+    "changed_outside_near": 0.0,
+    "pedal_changed_rows": 0.0,
+    "source_steering_mismatches": 0.0,
+    "near_applied_delta_max_rad": 0.18000000715255737,
+    "source_to_previous_applied_delta_max_rad": 0.6374892592430115,
+    "applied_correction_max_rad": 0.4574892520904541,
+    "joint_residual_max_rad": 0.20244234800338745
+  },
+  "sanity_and_contact_evidence": {
+    "first_same_input_change": {
+      "step": 112,
+      "original_action": [
+        0.31144431233406067,
+        0.0,
+        0.5
+      ],
+      "applied_action": [
+        0.2290399819612503,
+        0.0,
+        0.5
+      ],
+      "near": true,
+      "same_saved_input_and_original_action": true,
+      "original_controller_memory_preserved": true
+    },
+    "sanity_changed_rows": 5,
+    "sanity_differing_observations": 14,
+    "sanity_native": 125,
+    "sanity_damage": 0.4,
+    "sanity_censor": "Planned125-action diagnostic stop, not a failed full lap.",
+    "original_full_first125_matches_sanity": true,
+    "original_precontact_limited_steps": [
+      112,
+      117,
+      118,
+      119,
+      120
+    ],
+    "original_precontact_limited_samples": [
+      {
+        "step": 112,
+        "near": true,
+        "source_steer": 0.31144431233406067,
+        "previous_applied_steer": 0.04903997853398323,
+        "steer": 0.2290399819612503,
+        "requested_delta_rad": 0.26240433380007744,
+        "applied_correction_rad": -0.08240433037281036,
+        "damage_before": 0.0
+      },
+      {
+        "step": 117,
+        "near": true,
+        "source_steer": -0.24062767624855042,
+        "previous_applied_steer": 0.39686158299446106,
+        "steer": 0.2168615758419037,
+        "requested_delta_rad": -0.6374892592430115,
+        "applied_correction_rad": 0.4574892520904541,
+        "damage_before": 0.0
+      },
+      {
+        "step": 118,
+        "near": true,
+        "source_steer": -0.3681255280971527,
+        "previous_applied_steer": 0.2168615758419037,
+        "steer": 0.03686157613992691,
+        "requested_delta_rad": -0.5849871039390564,
+        "applied_correction_rad": 0.4049871042370796,
+        "damage_before": 0.0
+      },
+      {
+        "step": 119,
+        "near": true,
+        "source_steer": -0.3936251103878021,
+        "previous_applied_steer": 0.03686157613992691,
+        "steer": -0.14313842356204987,
+        "requested_delta_rad": -0.43048668652772903,
+        "applied_correction_rad": 0.25048668682575226,
+        "damage_before": 0.0
+      },
+      {
+        "step": 120,
+        "near": true,
+        "source_steer": -0.3987250328063965,
+        "previous_applied_steer": -0.14313842356204987,
+        "steer": -0.32313841581344604,
+        "requested_delta_rad": -0.2555866092443466,
+        "applied_correction_rad": 0.07558661699295044,
+        "damage_before": 0.0
+      }
+    ],
+    "original_first_contact_step": 124,
+    "cached_original_first_contact_step": 125,
+    "first_contact_scalar": {
+      "speed_before_m_s": 6.484972440621101,
+      "target_m_s": 6.824351008218762,
+      "near": true,
+      "source_steer": -0.3999979496002197,
+      "steer": -0.3999979496002197,
+      "gas": 0.0459480807185173,
+      "brake": 0.0,
+      "damage_before": 0.0,
+      "damage_after": 0.2
+    },
+    "precontact_summary": {
+      "rows": 20,
+      "steps": [
+        104,
+        123
+      ],
+      "native_elapsed_interval_s": [
+        8.239999999999892,
+        9.839999999999858
+      ],
+      "speed_range_m_s": [
+        5.317112221597163,
+        27.56321285965548
+      ],
+      "target_range_m_s": [
+        5.919754418476962,
+        35.58031005331579
+      ],
+      "near_rows": 12,
+      "gas_rows": 10,
+      "brake_rows": 10,
+      "active_pedal_opposite_switches": 8,
+      "actual_speed_direction_switches": 8,
+      "joint_residual_mean_rad": 5.047768354415894e-08,
+      "joint_residual_max_rad": 2.086162567138672e-07
+    },
+    "interpretation": "At112 the limit weakens the new positive command. At117/118 it keeps applied steering positive after the source request becomes negative. This differs from170 fixed pulses ending115. Early contact and slower lap are observed outcomes; these scalar records do not isolate a unique physical cause.",
+    "joint_scope": "Joint residual is relative to the applied limited target; reducing it does not by itself show improved tracking of the original selected path."
+  },
+  "inactive_transfer_scope": "ContactDEV1 and cleanDEV3 have zero intervention and exact whole-run action/observation hashes matching174. This was established by the registered native comparisons; no whole baseline policy streams were available for prior classification.",
+  "validation": "52isolated limiter calls and2actual wrapper-class calls on a scalar stub;13source archive members identical. Actual5actors pass source target/P, original controller memory, pedal equality, input/action hashes, initial-state matching and cleanup. Original full prefix reproduces sanity.",
+  "uncertainty": "Fixed candidate has no observed local or transfer time gain. Neither all steering-transition controls nor a unique crash/contact mechanism are established by these4conditions.",
+  "cost": {
+    "stage": 177,
+    "at_utc": "2026-10-12T06:04:12.669487+00:00",
+    "native_cap": 10000,
+    "planned_worst_case_native": 8125,
+    "candidate_sanity_native": 125,
+    "candidate_full_native": 1792,
+    "new_wrapper_actions": 1917,
+    "native_episode_invocations": 5,
+    "full_comparison_conditions": 4,
+    "raw_step_ticks": 7661,
+    "raw_reset_ticks": 255,
+    "wall_s": 83.93803686401225,
+    "evaluator_CPU_s": 68.110742031,
+    "actor_CPU_s": 15.996300999999999,
+    "timing_scope": "Candidate125-action sanity plus four candidate full laps, bounded diagnostics and checks; preparation, scalar tests, posthoc analysis and publication excluded. Evaluator/actor CPU separate.",
+    "baseline_cached_actions_reused": 1787,
+    "baseline_replays": 0,
+    "new_offline_policy_model_calls": 0,
+    "isolated_scalar_limiter_calls": 52,
+    "actual_wrapper_class_stub_act_calls": 2,
+    "new_full_frame_GT_policy_or_video_streams": 0,
+    "all_actors_reaped": true,
+    "B_operating_cap": 800000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 698588,
+    "research_remaining": 17412,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "HOLDOUT_detail_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "current_champion_changed": false,
+    "automatic_next_experiment": false
+  },
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false
+}
