@@ -1,0 +1,875 @@
+{
+  "stage": 195,
+  "status": "STOP_NO_RECOVERY_IN_FIXED18",
+  "privileged_GT_oracle": true,
+  "legal_pixel_policy": false,
+  "champion_promotion": false,
+  "frozen_state": {
+    "label": "D1",
+    "before_action": 160,
+    "reason": "First replan after the initial three full-brake actions in the previously observed 157..243 intervention run.",
+    "speed_m_s": 4.500605338853197e-08,
+    "no_new_tile_actions": 5,
+    "damage": 0,
+    "road_wheels": 4,
+    "nominal_action": [
+      -0.3759971559047699,
+      0.4435132145881653,
+      0.0
+    ],
+    "cached_actual_action": [
+      -0.27998584508895874,
+      0.0,
+      1.0
+    ]
+  },
+  "old_commands": {
+    "C00": {
+      "first_action": [
+        -0.4000000059604645,
+        0.10000000149011612,
+        0.0
+      ],
+      "second_block_action": [
+        -0.4000000059604645,
+        0.10000000149011612,
+        0.0
+      ],
+      "first_minus_nominal": [
+        -0.02400285005569458,
+        -0.34351322054862976,
+        0.0
+      ]
+    },
+    "C01": {
+      "first_action": [
+        -0.4000000059604645,
+        0.0,
+        0.25
+      ],
+      "second_block_action": [
+        -0.4000000059604645,
+        0.10000000149011612,
+        0.0
+      ],
+      "first_minus_nominal": [
+        -0.02400285005569458,
+        -0.4435132145881653,
+        0.25
+      ]
+    },
+    "C08": {
+      "first_action": [
+        -0.3759971559047699,
+        0.10000000149011612,
+        0.0
+      ],
+      "second_block_action": [
+        -0.3759971559047699,
+        0.10000000149011612,
+        0.0
+      ],
+      "first_minus_nominal": [
+        0.0,
+        -0.34351322054862976,
+        0.0
+      ]
+    },
+    "C09": {
+      "first_action": [
+        -0.3759971559047699,
+        0.0,
+        0.25
+      ],
+      "second_block_action": [
+        -0.3759971559047699,
+        0.10000000149011612,
+        0.0
+      ],
+      "first_minus_nominal": [
+        0.0,
+        -0.4435132145881653,
+        0.25
+      ]
+    },
+    "C16": {
+      "first_action": [
+        -0.2559971511363983,
+        0.10000000149011612,
+        0.0
+      ],
+      "second_block_action": [
+        -0.2559971511363983,
+        0.10000000149011612,
+        0.0
+      ],
+      "first_minus_nominal": [
+        0.12000000476837158,
+        -0.34351322054862976,
+        0.0
+      ]
+    },
+    "C17": {
+      "first_action": [
+        -0.2559971511363983,
+        0.0,
+        0.25
+      ],
+      "second_block_action": [
+        -0.2559971511363983,
+        0.10000000149011612,
+        0.0
+      ],
+      "first_minus_nominal": [
+        0.12000000476837158,
+        -0.4435132145881653,
+        0.25
+      ]
+    },
+    "E00": {
+      "first_action": [
+        -0.4000000059604645,
+        0.0,
+        1.0
+      ],
+      "second_block_action": [
+        -0.4000000059604645,
+        0.0,
+        1.0
+      ],
+      "first_minus_nominal": [
+        -0.02400285005569458,
+        -0.4435132145881653,
+        1.0
+      ]
+    },
+    "E08": {
+      "first_action": [
+        -0.3759971559047699,
+        0.0,
+        1.0
+      ],
+      "second_block_action": [
+        -0.3759971559047699,
+        0.0,
+        1.0
+      ],
+      "first_minus_nominal": [
+        0.0,
+        -0.4435132145881653,
+        1.0
+      ]
+    },
+    "E16": {
+      "first_action": [
+        -0.2559971511363983,
+        0.0,
+        1.0
+      ],
+      "second_block_action": [
+        -0.2559971511363983,
+        0.0,
+        1.0
+      ],
+      "first_minus_nominal": [
+        0.12000000476837158,
+        -0.4435132145881653,
+        1.0
+      ]
+    },
+    "R": {
+      "first_action": [
+        -0.27998584508895874,
+        0.0,
+        1.0
+      ],
+      "second_block_action": [
+        -0.27998584508895874,
+        0.0,
+        1.0
+      ],
+      "first_minus_nominal": [
+        0.09601131081581116,
+        -0.4435132145881653,
+        1.0
+      ]
+    }
+  },
+  "fixed_basis": {
+    "total": 18,
+    "existing": 10,
+    "new": 8,
+    "existing_definition": "C00/C01,C08/C09,C16/C17 use three nominal steering offsets -0.12,0,+0.12 clipped to +/-0.4. Even C candidates use gas0.1/brake0; odd C candidates first use gas0/brake0.25 for6, then gas0.1/brake0. E00/E08/E16 use gas0/brake1 for12 at the same steering anchors. R is the current retained suffix, padded to12 under the existing rule. All ten 12-action references extend to24 by holding their last command.",
+    "restart_definition": "L00..L03 use gas0.45 and L04..L07 gas0.9. Within each group first-six steering is -1,current_nominal,0,+1. Actions7..24 use frozen current nominal steering. Brake0 throughout. Thus L01/L05 retain nominal steering throughout. Commands are float32; no parameter/state retries.",
+    "horizon_actions": [
+      12,
+      24
+    ],
+    "horizon_simulated_seconds": [
+      0.96,
+      1.92
+    ],
+    "same_sequence_prefixes": true,
+    "gate": "At24 require cumulative no contact, nonterminal, endpoint road wheels>=2 and new tiles>=1. Existing relaxed ranking: tiles descending, speed descending, steering-offset L1, brake flag, ID. No maximum-stagnation<=5 filter.",
+    "stop": "If none eligible, stop without an actual suffix. Otherwise freeze one candidate, verify the same replay boundary and execute24 once; only a matched actual escape permits unchanged194 continuation to official finish/termination."
+  },
+  "replay_evidence": {
+    "prefix_actions": 159,
+    "actions_nominal_and_state_match": true,
+    "GT_boundary_identical": true,
+    "all_ten_original_12_action_scores_identical": true,
+    "candidate_forecasts": 18,
+    "selected": null,
+    "native_actual_restart_actions": 0,
+    "actual_confirmation_performed": false,
+    "continuation_performed": false,
+    "diagnostic_stop": "restart_prediction_sealed",
+    "terminal_observed": false,
+    "censored": true,
+    "limitation": "Intentional diagnostic stop, not an observed racing DNF. The new broad actions were not executed; their model contact predictions are unvalidated counterfactuals."
+  },
+  "horizon_summary": {
+    "12": {
+      "existing_eligible": [],
+      "restart_eligible": [],
+      "existing_risky": 6,
+      "restart_risky": 8
+    },
+    "24": {
+      "existing_eligible": [],
+      "restart_eligible": [],
+      "existing_risky": 6,
+      "restart_risky": 8
+    }
+  },
+  "candidates": {
+    "C00": {
+      "group": "existing",
+      "first_contact_action": 4,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.26650806636175256,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.2,
+          "displacement_m": 1.4619105544269957,
+          "contact_steps": 1
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.15772471397013796,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.2,
+          "displacement_m": 1.5388915916315131,
+          "contact_steps": 1
+        }
+      }
+    },
+    "C01": {
+      "group": "existing",
+      "first_contact_action": 10,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.4024581124320848,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.2,
+          "displacement_m": 1.4233350942844891,
+          "contact_steps": 1
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.2049549041905621,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.2,
+          "displacement_m": 1.5022581974048568,
+          "contact_steps": 1
+        }
+      }
+    },
+    "C08": {
+      "group": "existing",
+      "first_contact_action": 4,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.2824501639817325,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.2,
+          "displacement_m": 1.4725595128320694,
+          "contact_steps": 1
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.16709407129651402,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.2,
+          "displacement_m": 1.5609539973359232,
+          "contact_steps": 1
+        }
+      }
+    },
+    "C09": {
+      "group": "existing",
+      "first_contact_action": 10,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.4381276034586387,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.2,
+          "displacement_m": 1.4268886638310871,
+          "contact_steps": 1
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.2169636259870386,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.2,
+          "displacement_m": 1.518945462274386,
+          "contact_steps": 1
+        }
+      }
+    },
+    "C16": {
+      "group": "existing",
+      "first_contact_action": 4,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.36404790484447563,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.2,
+          "displacement_m": 1.5438210042522682,
+          "contact_steps": 1
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.2144369101043611,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.2,
+          "displacement_m": 1.6976793046238148,
+          "contact_steps": 1
+        }
+      }
+    },
+    "C17": {
+      "group": "existing",
+      "first_contact_action": 10,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.6244919102149615,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.2,
+          "displacement_m": 1.454417470129361,
+          "contact_steps": 1
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.2787515027199621,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.2,
+          "displacement_m": 1.6260769442956542,
+          "contact_steps": 1
+        }
+      }
+    },
+    "E00": {
+      "group": "existing",
+      "first_contact_action": null,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 8.603202148203643e-19,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.0,
+          "displacement_m": 0.0,
+          "contact_steps": 0
+        },
+        "24": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 9.951647625530971e-19,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.0,
+          "displacement_m": 0.0,
+          "contact_steps": 0
+        }
+      }
+    },
+    "E08": {
+      "group": "existing",
+      "first_contact_action": null,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 8.603195762122938e-19,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.0,
+          "displacement_m": 3.814697265625e-06,
+          "contact_steps": 0
+        },
+        "24": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 9.951625088615364e-19,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.0,
+          "displacement_m": 3.814697265625e-06,
+          "contact_steps": 0
+        }
+      }
+    },
+    "E16": {
+      "group": "existing",
+      "first_contact_action": null,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 8.404734527293042e-19,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.0,
+          "displacement_m": 0.0,
+          "contact_steps": 0
+        },
+        "24": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 7.977216379248515e-19,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.0,
+          "displacement_m": 0.0,
+          "contact_steps": 0
+        }
+      }
+    },
+    "R": {
+      "group": "existing",
+      "first_contact_action": null,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 5.6720484865443016e-11,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.0,
+          "displacement_m": 0.0,
+          "contact_steps": 0
+        },
+        "24": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 5.672022683803852e-11,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.0,
+          "displacement_m": 0.0,
+          "contact_steps": 0
+        }
+      }
+    },
+    "L00": {
+      "group": "restart",
+      "first_contact_action": 3,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.26329322334146427,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.2,
+          "displacement_m": 1.5271084641172061,
+          "contact_steps": 1
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.016434936805551227,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.2,
+          "displacement_m": 1.5706391200625283,
+          "contact_steps": 1
+        }
+      }
+    },
+    "L01": {
+      "group": "restart",
+      "first_contact_action": 3,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.28046644566070705,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.2,
+          "displacement_m": 1.5865095254735007,
+          "contact_steps": 1
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.01484865876907223,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.2,
+          "displacement_m": 1.6386966535966203,
+          "contact_steps": 1
+        }
+      }
+    },
+    "L02": {
+      "group": "restart",
+      "first_contact_action": 3,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.42766383601954744,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.2,
+          "displacement_m": 2.2836444555697297,
+          "contact_steps": 1
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.0009285915379082872,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.2,
+          "displacement_m": 2.375599219899638,
+          "contact_steps": 1
+        }
+      }
+    },
+    "L03": {
+      "group": "restart",
+      "first_contact_action": 3,
+      "first_new_tile_action": 7,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 1,
+          "speed_m_s": 0.24116584623513043,
+          "road_wheels": 3,
+          "maximum_off_track_counter": 11,
+          "observed_actions": 12,
+          "damage": 0.6000000000000001,
+          "displacement_m": 3.0198542837676827,
+          "contact_steps": 3
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 1,
+          "speed_m_s": 0.32371874201850936,
+          "road_wheels": 3,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 24,
+          "damage": 0.6000000000000001,
+          "displacement_m": 2.685047652294702,
+          "contact_steps": 3
+        }
+      }
+    },
+    "L04": {
+      "group": "restart",
+      "first_contact_action": 3,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.2302104504901496,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.2,
+          "displacement_m": 1.555803466710039,
+          "contact_steps": 1
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.03480517563108928,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.2,
+          "displacement_m": 1.5665208869598095,
+          "contact_steps": 1
+        }
+      }
+    },
+    "L05": {
+      "group": "restart",
+      "first_contact_action": 3,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.22778502010753038,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.2,
+          "displacement_m": 1.628638882469435,
+          "contact_steps": 1
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.04246595018455057,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.2,
+          "displacement_m": 1.6308264729755733,
+          "contact_steps": 1
+        }
+      }
+    },
+    "L06": {
+      "group": "restart",
+      "first_contact_action": 3,
+      "first_new_tile_action": null,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.17971276588316626,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 12,
+          "damage": 0.2,
+          "displacement_m": 2.4341860806601927,
+          "contact_steps": 1
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 0,
+          "speed_m_s": 0.11057929081086869,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 29,
+          "observed_actions": 24,
+          "damage": 0.2,
+          "displacement_m": 2.2772692520011986,
+          "contact_steps": 1
+        }
+      }
+    },
+    "L07": {
+      "group": "restart",
+      "first_contact_action": 3,
+      "first_new_tile_action": 7,
+      "horizons": {
+        "12": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 1,
+          "speed_m_s": 0.25990668589570787,
+          "road_wheels": 3,
+          "maximum_off_track_counter": 11,
+          "observed_actions": 12,
+          "damage": 0.8,
+          "displacement_m": 3.369787550613981,
+          "contact_steps": 4
+        },
+        "24": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 1,
+          "speed_m_s": 0.6973511932669755,
+          "road_wheels": 3,
+          "maximum_off_track_counter": 17,
+          "observed_actions": 24,
+          "damage": 0.8,
+          "displacement_m": 2.665702084693057,
+          "contact_steps": 4
+        }
+      }
+    }
+  },
+  "interpretation": {
+    "P4": "For this one state and these18 fixed sequences, extending the same prefixes from12 to24 adds no newly visited tile, removes no cumulative contact flag, and yields zero eligible candidates. All18 model rollouts reach24 without terminal. Four braking/retained sequences remain stationary; two +1 initial-steering sequences gain one tile but first predict contact at action3. This weakens waiting longer as a sufficient explanation within this finite set, not all longer or adaptive maneuvers.",
+    "P8": "The selected actual state after the first three brake interventions is at rest with four road wheels and five no-new-tile actions. The earlier194 trace separately recorded87 consecutive intervention actions without tile progress. No actual restart, post-escape state or new D1 completion was observed here.",
+    "chapter18": "The observed failure is finite-set model screening, not measured transition mismatch or demonstrated physical impossibility. Exact replay/current GT and ten old first12 scores check reproducibility only. If further work is authorized, a distinguishing question is whether the new action3 contacts reflect actual transitions or model reconstruction error; motion coverage and model error remain unresolved. No such follow-up was executed.",
+    "promotion": "No recovery candidate was selected and no policy or champion promotion is supported."
+  },
+  "cost": {
+    "stage": 195,
+    "at_utc": "2026-10-12T12:37:52.820952+00:00",
+    "native_cap": 1500,
+    "new_wrapper_actions": 159,
+    "query_replay_prefix_actions": 159,
+    "actual_restart_actions": 0,
+    "continuation_actions": 0,
+    "raw_step_ticks": 636,
+    "raw_reset_ticks": 51,
+    "wall_s": 19.64383227401413,
+    "evaluator_CPU_s": 15.285155803,
+    "actor_CPU_s": 4.119858,
+    "actual_env_step_wall_s": 11.703138617245713,
+    "reset_wall_s": 1.462559792009415,
+    "model_queries": 18,
+    "model_physics_ticks": 1728,
+    "zero_time_contact_initializations": 18,
+    "model_CPU_s": 0.6563973000000001,
+    "model_CPU_included_in_evaluator": true,
+    "capture_wall_s": 0.009812354983296245,
+    "reconstruction_wall_s": 0.30168385396245867,
+    "integration_wall_s": 0.35697882605018094,
+    "model_batch_wall_s": 0.6588076789921615,
+    "query_decision_wall_ms": 704.5907669817097,
+    "prefix_action_decision_ms": {
+      "count": 159,
+      "sum": 3983.2423480402213,
+      "median": 17.470582999521866,
+      "p95": 65.96654948953069,
+      "max": 149.1168189968448
+    },
+    "nominal_actor_IPC_ms": {
+      "count": 160,
+      "sum": 3552.908705896698,
+      "median": 16.038404501159675,
+      "p95": 53.573217203665756,
+      "max": 133.29651101958007
+    },
+    "feedback_IPC_ms": {
+      "count": 159,
+      "sum": 307.2753957530949,
+      "median": 0.8890139870345592,
+      "p95": 4.423544881865381,
+      "max": 73.54010100243613
+    },
+    "nominal_policy_calls": 160,
+    "actual_action_feedback_calls": 159,
+    "timing_scope": "One query decision includes current GT capture, 18 world reconstructions and 24-action integrations, ranking and current nominal call. Prefix decision distribution covers only 159 executed replay actions. Execution wall excludes preparation/publication. Model CPU is included in evaluator CPU, not added twice. The 160th nominal call was observed but its action was not executed.",
+    "B_operating_cap": 816000,
+    "actual_cumulative_wrapper_actions": 723322,
+    "research_remaining": 8678,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "automatic_next_experiment": false
+  },
+  "champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}

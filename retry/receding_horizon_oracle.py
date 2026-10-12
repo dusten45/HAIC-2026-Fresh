@@ -199,6 +199,8 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 row.update(predicted_collision=(bool(predicted['collision'] or predicted['contact_obstacle_ids']) if predicted else None),
                     predicted_unique_tiles=predicted['unique_tiles'] if predicted else None,
                     predicted_damage=predicted['damage'] if predicted else None,
+                    speed_error_m_s=(abs(predicted['speed_m_s']-after['speed_m_s'])
+                                     if predicted and row['raw_ticks'] == 4 else None),
                     position_error_m=(float(np.linalg.norm(np.asarray(predicted['position'])-after['position']))
                                       if predicted and row['raw_ticks'] == 4 else None))
                 state['selection_offset'] += 1
@@ -224,14 +226,26 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                         actual_maximum_no_new_tile_actions=max(r['off_track_counter'] for r in local),
                         predicted=counterfactual['scores'][counterfactual['selected']],
                         tile_mismatch_steps=sum(r['unique_tiles'] != r['predicted_unique_tiles'] for r in local),
+                        speed_error_m_s=distribution([r['speed_error_m_s'] for r in local if r['speed_error_m_s'] is not None]),
                         position_error_m=distribution([r['position_error_m'] for r in local if r['position_error_m'] is not None]))
+                    if replay.get('require_progress_match'):
+                        valid = (valid and gate['actual_new_tiles'] >= 1 and gate['tile_mismatch_steps'] == 0
+                                 and gate['position_error_m']['max'] is not None
+                                 and gate['position_error_m']['max'] <= .001
+                                 and gate['speed_error_m_s']['max'] <= .01)
+                        gate['valid'] = valid
                     state['local_gate'] = gate
                     directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
                     old_write(directory / 'local-intervention-result.json', gate, exclusive=True)
                     if valid:
                         state['replay_complete'] = True
+                        if replay.get('restart_probe'):
+                            # The one-off 24-action maneuver is not installed as
+                            # a recurring recovery mode or renewed retained plan.
+                            state['previous_plan'] = None
                     else:
-                        state['diagnostic_stop'] = 'local_predicted_safe_contact' if risk else 'local_safety_filter_mismatch'
+                        state['diagnostic_stop'] = ('local_predicted_safe_contact' if risk else
+                            'restart_progress_or_state_mismatch' if replay.get('require_progress_match') else 'local_safety_filter_mismatch')
                     print('Local intervention gate: ' + str(dict(valid=valid, actions=len(local), contact=risk,
                           new_tiles=gate['actual_new_tiles'], speed=gate['actual_speed_m_s'])), flush=True)
             return result
@@ -310,7 +324,55 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                                  prediction_rows=extra['rows'], selection_offset=0, mode='counterfactual_suffix')
                     directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
                     old_write(directory / 'counterfactual-prediction.json', counterfactual, exclusive=True)
-            if active_replay and replay.get('intervention') and state['calls'] == prefix_length+1:
+            if active_replay and replay.get('restart_probe') and state['calls'] == prefix_length+1:
+                t = time.perf_counter()
+                snapshot = capture(state['env'])
+                capture_wall = time.perf_counter()-t
+                assert digest(snapshot) == replay['snapshot_digest'], 'Restart GT boundary differs'
+                assert np.array_equal(nominal, np.asarray(replay['boundary_nominal'], np.float32))
+                state['road_count'] = snapshot['road_count']
+                if replay['restart_probe'] == 'query':
+                    cpu, wall = time.process_time(), time.perf_counter()
+                    queries = {n: predict_actions(snapshot, v['actions']) for n,v in replay['candidates'].items()}
+                    model_cpu, model_wall = time.process_time()-cpu, time.perf_counter()-wall
+                    assert all(all(q['initialization'].values()) for q in queries.values())
+                    scores12 = {n: endpoint(q['rows'], 12, snapshot['unique_tiles']) for n,q in queries.items()}
+                    scores24 = {n: endpoint(q['rows'], 24, snapshot['unique_tiles']) for n,q in queries.items()}
+                    assert {n:scores12[n] for n in replay['boundary_scores']} == replay['boundary_scores']
+                    rank_specs = {n:v['rank_spec'] for n,v in replay['candidates'].items()}
+                    eligible = relaxed_selection({n:s for n,s in scores24.items() if s['new_tiles'] >= 1}, rank_specs)
+                    chosen = eligible[0] if eligible else None
+                    counterfactual.update(snapshot=snapshot, initial_state_digest=digest(snapshot), prefix_actions=prefix_length,
+                        original_scores_identical=True, prediction=queries, scores12=scores12, scores=scores24,
+                        eligible=eligible, selected=chosen, candidate_controls=replay['candidates'],
+                        frozen_before_actual_suffix=True, native_actual_candidate_steps=0)
+                    decisions.append(dict(step=state['calls'], selected=chosen, eligible=eligible,
+                        capture_wall_s=capture_wall, model_CPU_s=model_cpu, model_batch_wall_s=model_wall,
+                        reconstruction_wall_s=sum(q['reconstruction_wall_s'] for q in queries.values()),
+                        integration_wall_s=sum(q['integration_wall_s'] for q in queries.values()),
+                        model_physics_ticks=sum(q['model_physics_ticks'] for q in queries.values()), model_queries=len(queries),
+                        full_decision_wall_ms=(time.perf_counter()-before)*1000))
+                    directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
+                    old_write(directory / 'restart-prediction.json', counterfactual, exclusive=True)
+                    state['diagnostic_stop'] = 'restart_prediction_sealed'
+                    raise DiagnosticStop(state['diagnostic_stop'])
+                assert replay['restart_probe'] == 'confirm'
+                frozen = replay['frozen_prediction']
+                assert frozen['initial_state_digest'] == digest(snapshot)
+                chosen = frozen['selected']
+                assert chosen is not None and chosen == frozen['eligible'][0]
+                counterfactual.update(frozen)
+                actions = [np.asarray(a, np.float32) for a in frozen['candidate_controls'][chosen]['actions']]
+                assert len(actions) == replay['suffix_length'] == 24
+                state.update(pending=actions, selection=chosen, prediction_rows=frozen['prediction'][chosen]['rows'],
+                    selection_offset=0, mode='local_intervention', progress_fallback_active=True, previous_plan=None)
+                decisions.append(dict(step=state['calls'], selected=chosen, eligible=frozen['eligible'],
+                    capture_wall_s=capture_wall, model_CPU_s=0., model_batch_wall_s=0.,
+                    reconstruction_wall_s=0., integration_wall_s=0., model_physics_ticks=0, model_queries=0))
+                directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
+                old_write(directory / 'restart-confirmation-boundary.json', dict(initial_state_digest=digest(snapshot),
+                    selected=chosen, frozen_prediction_digest=digest(frozen), before_actual_suffix=True), exclusive=True)
+            if active_replay and replay.get('intervention') and not replay.get('restart_probe') and state['calls'] == prefix_length+1:
                 t = time.perf_counter()
                 snapshot = capture(state['env'])
                 capture_wall = time.perf_counter()-t
