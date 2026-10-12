@@ -1,0 +1,305 @@
+{
+  "stage": 197,
+  "status": "STOP_D1_NOT_COMPLETED",
+  "privileged_GT_oracle": true,
+  "legal_pixel_policy": false,
+  "champion_promotion": false,
+  "frozen_change": "Only add N to194: full current nominal float32 action held12; no C pedal substitution or steering clipping, original legal bounds only. Steering-offset L1=0; brake flag follows nominal brake>0. Same filters/rank/horizon12/replan3/E/feedback/R expiry. Final ID ties C<E<N<R (E remains excluded from original selector). N is not adaptive future nominal.",
+  "stopped_by": "D1 official noncompletion. D2/D0 were not executed; no parameter sweep or recovery extension.",
+  "comparison": [
+    {
+      "label": "D1",
+      "normal32": {
+        "execution": "Cached from reset",
+        "result": {
+          "completed": false,
+          "terminal_observed": true,
+          "censored": false,
+          "lap_ms": null,
+          "damage": 1.0,
+          "retire_reason": "crash",
+          "successful_wrapper_steps": 162,
+          "unique_tiles": 124,
+          "total_tiles": 314
+        }
+      },
+      "baseline194": {
+        "execution": "From reset",
+        "result": {
+          "completed": false,
+          "terminal_observed": true,
+          "censored": false,
+          "lap_ms": null,
+          "damage": 0.2,
+          "retire_reason": "off_track",
+          "successful_wrapper_steps": 255,
+          "unique_tiles": 37,
+          "total_tiles": 314
+        }
+      },
+      "result197": {
+        "execution": "From reset",
+        "result": {
+          "completed": false,
+          "terminal_observed": true,
+          "censored": false,
+          "lap_ms": null,
+          "damage": 0.0,
+          "retire_reason": "off_track",
+          "successful_wrapper_steps": 512,
+          "unique_tiles": 298,
+          "total_tiles": 314
+        }
+      }
+    },
+    {
+      "label": "D2",
+      "normal32": {
+        "execution": "Cached from reset",
+        "result": {
+          "completed": false,
+          "terminal_observed": true,
+          "censored": false,
+          "lap_ms": null,
+          "damage": 1.0,
+          "retire_reason": "crash",
+          "successful_wrapper_steps": 312,
+          "unique_tiles": 224,
+          "total_tiles": 291
+        }
+      },
+      "baseline194": {
+        "execution": "Replay399+local12+continuation63",
+        "result": {
+          "completed": true,
+          "terminal_observed": true,
+          "censored": false,
+          "lap_ms": 37860,
+          "damage": 0.0,
+          "retire_reason": null,
+          "successful_wrapper_steps": 474,
+          "unique_tiles": 290,
+          "total_tiles": 291
+        }
+      },
+      "result197": {
+        "executed": false,
+        "reason": "D1 failed the preregistered completion gate"
+      }
+    },
+    {
+      "label": "D0",
+      "normal32": {
+        "execution": "Cached from reset",
+        "result": {
+          "completed": true,
+          "terminal_observed": true,
+          "censored": false,
+          "lap_ms": 33820,
+          "damage": 0.4,
+          "retire_reason": null,
+          "successful_wrapper_steps": 423,
+          "unique_tiles": 303,
+          "total_tiles": 303
+        }
+      },
+      "baseline194": {
+        "execution": "From reset",
+        "result": {
+          "completed": true,
+          "terminal_observed": true,
+          "censored": false,
+          "lap_ms": 39080,
+          "damage": 0.0,
+          "retire_reason": null,
+          "successful_wrapper_steps": 489,
+          "unique_tiles": 301,
+          "total_tiles": 303
+        }
+      },
+      "result197": {
+        "executed": false,
+        "reason": "D1 failed the preregistered completion gate"
+      }
+    }
+  ],
+  "counts": {
+    "replans": 171,
+    "N_primary_eligible": 37,
+    "N_relaxed_eligible_independent": 124,
+    "N_effectively_admitted": 64,
+    "N_selected": 21,
+    "N_selected_primary": 17,
+    "N_selected_relaxed": 4,
+    "N_direct_actions": 63,
+    "N_origin_R_decisions": 20,
+    "N_origin_R_actions": 60,
+    "N_and_retained_action_fraction": 0.240234375,
+    "N_selected_before_cached_stall63": [
+      1,
+      4,
+      7,
+      10,
+      16,
+      49
+    ],
+    "N_selected_before_cached_intervention157": [
+      1,
+      4,
+      7,
+      10,
+      16,
+      49,
+      115
+    ],
+    "N_selected_during_new_longest_streak": [
+      439,
+      481
+    ],
+    "N_risk_predictions": 2,
+    "N_terminal_predictions": 4,
+    "original_selector_empty": 42,
+    "relaxed_intervention_decisions": 38,
+    "nominal_fallback_actions": 11,
+    "count_semantics": "Independent relaxed admissibility is computed even when the original selector is nonempty. Effective admission uses the actually active selector. N-origin R actions retain the original expiry and are separate from direct N selections."
+  },
+  "first_action_divergence": {
+    "action_step": 1,
+    "nominal": [
+      0.0,
+      0.5,
+      0.0
+    ],
+    "new_action": [
+      0.0,
+      0.5,
+      0.0
+    ],
+    "cached194_action": [
+      0.0,
+      0.10000000149011612,
+      0.0
+    ],
+    "selected197": "N",
+    "selected194": "C08",
+    "same_initial_state": true,
+    "forecast_new_tiles_N": 6,
+    "forecast_new_tiles_C08": 3
+  },
+  "longest_no_new_tile_streak": {
+    "first_action": 412,
+    "last_action": 512,
+    "actions": 101,
+    "visited_tiles": 298,
+    "speed_min_m_s": 10.718309697368635,
+    "speed_max_m_s": 57.06999238449787,
+    "endpoint_speed_m_s": 31.04682004188344,
+    "road_wheels_min": 2,
+    "road_wheels_max": 4,
+    "endpoint_road_wheels": 4,
+    "progress_fallback_actions": 90,
+    "endpoint_no_new_tile_counter": 101,
+    "other_streaks_ge12": 0,
+    "interpretation": "No newly visited tiles while moving, not a stationary trap or proof of geometric road departure."
+  },
+  "selected_prefix_validation": {
+    "selected_actions": 501,
+    "contact_steps": 0,
+    "contact_false_negative_steps": 0,
+    "tile_mismatch_steps": 0,
+    "position_error_m": {
+      "count": 501,
+      "sum": 0.00034203121055741506,
+      "median": 0.0,
+      "p95": 7.62939453125e-06,
+      "max": 1.7059844799040144e-05
+    },
+    "N_action_and_retained_expiry_checks": true,
+    "scope": "Only actually selected prefixes, typically3 actions between replans. Unexecuted12-action N horizons are not fully validated."
+  },
+  "finish_qualification": {
+    "visited_tiles": 298,
+    "total_tiles": 314,
+    "visited_fraction": 0.9490445859872612,
+    "required_fraction": 0.95,
+    "minimum_integer_tiles": 299,
+    "qualification_reached": false,
+    "source": "core/finish_line.py and default CarRacing lap_complete_percent=0.95; diagnose.make_env uses that default.",
+    "caveat": "One more tile would meet qualification only; a valid forward finish-line crossing is also required. This is not evidence that one more tile alone would have completed the episode."
+  },
+  "interpretation": {
+    "P8": "At identical reset the first action changes only gas0.1 to the nominal0.5; N is selected six times before cached194 first prolonged stagnation at63. D1 coverage improves from37 to298 tiles versus194, yet completion remains false. Cached original normal32 fails at124 tiles. D2 cached194 is replay plus boundary intervention, not a194 fromreset comparison.",
+    "chapter18": "Selected executed prefixes show no contact/tile mismatch and tiny position error; observed failure is late no-new-tile retirement despite continued motion, not the old early stationary outcome. Adding the omitted full command materially changes candidate coverage but is insufficient to ensure completion for this case. Unexecuted predictions and all hidden state are not validated.",
+    "nominal_scope": "A rejected N forecast concerns holding one command12 actions, not the safety or capability of the adaptive pixel policy receiving future observations. Damage0 is diagnostic and does not override the failed completion gate."
+  },
+  "cost": {
+    "stage": 197,
+    "at_utc": "2026-10-12T13:08:12.054146+00:00",
+    "native_cap": 2000,
+    "new_wrapper_actions": 512,
+    "D1_actions": 512,
+    "D2_actions": 0,
+    "D0_actions": 0,
+    "raw_step_ticks": 2048,
+    "raw_reset_ticks": 51,
+    "wall_s": 93.92413617798593,
+    "evaluator_CPU_s": 87.559992054,
+    "actor_CPU_s": 6.259739,
+    "actual_env_step_wall_s": 28.209507830586517,
+    "reset_wall_s": 0.6440598440240137,
+    "model_queries": 1870,
+    "model_physics_ticks": 88828,
+    "model_CPU_s": 50.904829148999994,
+    "zero_time_contact_initializations": 1870,
+    "model_CPU_included_in_evaluator": true,
+    "component_wall_s": {
+      "capture_wall_s": 2.9533634429972153,
+      "reconstruction_wall_s": 31.849339147796854,
+      "integration_wall_s": 19.08205332106445,
+      "model_batch_wall_s": 50.98705603691633
+    },
+    "all_action_decision_ms": {
+      "count": 512,
+      "sum": 63968.46308463137,
+      "median": 17.64867549354676,
+      "p95": 418.2125567909677,
+      "max": 1101.290026010247
+    },
+    "replan_decision_ms": {
+      "count": 171,
+      "sum": 58763.14843673026,
+      "median": 300.9499720064923,
+      "p95": 580.76245248958,
+      "max": 1101.290026010247
+    },
+    "nominal_actor_IPC_ms": {
+      "count": 512,
+      "sum": 6878.646117373137,
+      "median": 12.144298991188407,
+      "p95": 23.813905805582177,
+      "max": 55.73349501355551
+    },
+    "feedback_IPC_ms": {
+      "count": 512,
+      "sum": 571.539565018611,
+      "median": 0.9088739898288622,
+      "p95": 2.188301511341706,
+      "max": 11.079214978963137
+    },
+    "timing_scope": "One reset episode. Ten fresh model candidates per replan, plus R when unexpired. All models/capture/ranking/nominal/feedback timing included; model CPU is already in evaluator CPU. No cached baseline reruns. Execution wall excludes preparation/publication.",
+    "B_operating_cap": 816000,
+    "actual_cumulative_wrapper_actions": 724101,
+    "research_remaining": 7899,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "automatic_next_experiment": false
+  },
+  "champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}

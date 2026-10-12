@@ -450,6 +450,16 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 cpu, wall = time.process_time(), time.perf_counter()
                 predicted = predict(snapshot, nominal, specs)
                 active_specs = dict(specs)
+                nominal_hold = None
+                if oracle.get('include_nominal_hold', False):
+                    # Hold today's entire float32 command, including its pedals.
+                    # This is not a forecast of future pixel-policy decisions.
+                    assert np.isfinite(nominal).all()
+                    assert np.all(nominal >= [-1, 0, 0]) and np.all(nominal <= [1, 1, 1])
+                    nominal_hold = [nominal.copy() for _ in range(horizon)]
+                    predicted['candidates']['N'] = predict_actions(snapshot, nominal_hold)
+                    predicted['model_physics_ticks'] += predicted['candidates']['N']['model_physics_ticks']
+                    active_specs['N'] = dict(steer_offsets=[0., 0.], brake_first_block=bool(nominal[2] > 0))
                 retained = (retained_candidate(state['previous_plan'], state['calls'], nominal, horizon)
                             if oracle.get('retain_suffix', False) else None)
                 if retained is not None:
@@ -472,9 +482,9 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                     assert retained['remaining_actions'] >= interval
                     selected_actions = retained['actions']
                 elif chosen is not None:
-                    selected_actions = controls(nominal, specs[chosen])
+                    selected_actions = nominal_hold if chosen == 'N' else controls(nominal, specs[chosen])
                     if oracle.get('retain_suffix', False):
-                        state['previous_plan'] = dict(start_step=state['calls'], actions=selected_actions)
+                        state['previous_plan'] = dict(start_step=state['calls'], actions=selected_actions, origin_candidate=chosen)
                 else:
                     selected_actions = []
                 state['pending'] = selected_actions[:interval]
@@ -485,8 +495,13 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                     initial_state_digest=digest(snapshot), current_damage=snapshot['damage'],
                     eligible=eligible, invalid_initializations=invalid, selected=chosen,
                     original_eligible=original, progress_fallback_intervention=state['progress_fallback_active'],
+                    nominal_hold_eligible_primary='N' in original,
+                    nominal_hold_eligible_relaxed=bool(relaxed_selection(
+                        {'N': scores['N']}, active_specs)) if 'N' in scores and 'N' not in invalid else False,
                     retained_remaining_actions=retained['remaining_actions'] if retained else 0,
                     retained_origin_step=retained['origin_step'] if retained else None,
+                    retained_origin_candidate=state['previous_plan'].get('origin_candidate')
+                        if chosen == 'R' else None,
                     fallback_reason=None if chosen else 'no_admissible_valid_candidate',
                     scores=scores, capture_wall_s=capture_wall, model_CPU_s=model_cpu,
                     model_batch_wall_s=predicted['batch_wall_s'],
