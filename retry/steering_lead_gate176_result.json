@@ -1,0 +1,105 @@
+{
+  "stage": 176,
+  "status": "STOP_BEFORE_BUILD_DIRECTION_MISMATCH",
+  "conclusion": "The successful170 negative pulse reduced the contemporaneous selected right-route steering request. It does not supply the required directional support for the proposed selected-path lead wrapper.",
+  "direction_evidence": {
+    "prefix_actions": 111,
+    "first_pulse_action": 112,
+    "previous_path_side": "left_of_tracked_obstacle",
+    "current_path_side": "right_of_tracked_obstacle",
+    "raw_selected_path_steer_rad": 0.3770453833402426,
+    "smoothed_original_action": 0.31144431233406067,
+    "successful_minus_applied_action": 0.2314443141222,
+    "plus_applied_action": 0.3914443254470825,
+    "nominal_minus_offset": -0.08,
+    "actual_float32_minus_offset": -0.07999999821186066,
+    "raw_command_gap_original_rad": 0.06560107100618195,
+    "raw_command_gap_minus_rad": 0.1456010692180426,
+    "raw_command_gap_plus_rad": 0.014398942106839896,
+    "selected_path_matches_both_initial_branches": true,
+    "direction_agrees": false
+  },
+  "steering_units": {
+    "source_chain": "env_wrapper forwards the action; continuous CarRacing calls car.steer(-action[0]); Car.steer assigns that value to both front-wheel angular targets.",
+    "action_to_front_joint_target_gain": -1.0,
+    "additional_scale": 1.0,
+    "physical_target_unit": "radian",
+    "nominal_action_minus_offset": -0.08,
+    "nominal_front_joint_target_increment_rad": 0.08,
+    "original_front_joint_target_rad": -0.31144431233406067,
+    "minus_front_joint_target_rad": -0.2314443141222,
+    "actual_joint_angle_not_instantaneous": true,
+    "source_joint_limits_rad": [
+      -0.4,
+      0.4
+    ],
+    "source_nominal_motor_speed_limit_rad_s": 3.0,
+    "motor_limit_scope": "Existing source law; damage steering multiplier and joint dynamics affect actual motion. No new or validated vehicle dynamics model is inferred.",
+    "positive_branch_saturation": "The positive170 branch clips at+.4 on actions113..115, so its applied offsets there are smaller than+.08. The initial112 sign mismatch requires no later-branch equivalence assumption."
+  },
+  "existing_function_review": {
+    "exact_four_action_once_per_obstacle_pulse_present": false,
+    "reviewed": "Actual frozen Agent inherits HazardScheduledAgent.act, whose output is directly SpeedController.action_target; reviewed schedule/controller/router/route_target members.",
+    "present": [
+      "speed-dependent6..14m pixel-path lookahead",
+      "pure-pursuit arctan(3.24*k) clipped to.4",
+      "0.8raw+0.2previous steering smoothing",
+      "route ranking with speed*abs(next_steer-previous_command)/3 nominal connection cost"
+    ],
+    "equivalence": "These are lookahead/smoothing/route-selection mechanisms, not the requested per-obstacle output pulse. Duplicate-feature gate does not cause the stop; direction mismatch does."
+  },
+  "reused_170_outcomes": {
+    "minus_contact_through157": false,
+    "minus_passed_fixed_obstacle_plane": true,
+    "plus_first_contact_action": 124,
+    "neither_branch_was_full_lap": true
+  },
+  "skipped": [
+    "approach threshold registration",
+    "wrapper/candidate construction",
+    "new111prefix replay",
+    "original-road full lap",
+    "transfer-road selection and3full-lap comparisons"
+  ],
+  "limitations": [
+    "This rejects the stated evidence-to-wrapper premise; it is not a test or disproof of all steering lead controllers.",
+    "Negative pulse retains a positive absolute action at112. The mismatch concerns the incremental correction: it weakens the selected right-route request.",
+    "Previous111 left passage and current112 right passage are distinct pixel selections; treating the negative pulse as preserving the previous side changes the hypothesis into route-side persistence. That closed line is not reopened.",
+    "No full-lap gain or cross-road transfer is established by the existing170 local avoidance result."
+  ],
+  "cost": {
+    "stage": 176,
+    "at_utc": "2026-10-12T05:42:19.980918+00:00",
+    "native_cap": 10000,
+    "new_wrapper_actions": 0,
+    "new_environment_resets": 0,
+    "raw_step_ticks": 0,
+    "raw_reset_ticks": 0,
+    "wall_s": 0.0,
+    "evaluator_CPU_s": 0.0,
+    "actor_CPU_s": 0.0,
+    "timing_scope": "Native simulation only; none executed.",
+    "saved_scalar_source_check_wall_s": 0.016260322998277843,
+    "saved_scalar_source_check_CPU_s": 0.014085754999999998,
+    "offline_timing_scope": "This saved-evidence/source/arithmetic check block; excludes earlier interactive reads, preparation, final records and publication.",
+    "new_policy_calls": 0,
+    "new_model_calls": 0,
+    "new_offline_policy_model_calls": 0,
+    "new_prefix_replays": 0,
+    "new_candidate_builds": 0,
+    "B_operating_cap": 800000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 696671,
+    "research_remaining": 19329,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "HOLDOUT_detail_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "current_champion_changed": false,
+    "automatic_next_experiment": false
+  },
+  "current_champion": "unchanged normal24 near8 cap45 original pedals/perception/route selection",
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false
+}
