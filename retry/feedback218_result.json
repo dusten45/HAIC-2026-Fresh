@@ -1,0 +1,564 @@
+{
+  "stage": 218,
+  "status": "ONE_F3_FIXED199T_ADDITION",
+  "baseline217": {
+    "completed": false,
+    "censored": false,
+    "lap_ms": null,
+    "unique_tiles": 235,
+    "total_tiles": 319,
+    "damage": 0.4,
+    "retire_reason": "off_track",
+    "native_actions": 358,
+    "stationary_actions": 0,
+    "longest_no_new_tile_actions": 101,
+    "last_new_tile_action": 257,
+    "new_gap_events": 0,
+    "new_gap_tiles": 0,
+    "gap_history": [],
+    "final_contiguous_tiles": 235
+  },
+  "candidate218": {
+    "completed": true,
+    "censored": false,
+    "lap_ms": 27400,
+    "unique_tiles": 319,
+    "total_tiles": 319,
+    "damage": 0.2,
+    "retire_reason": null,
+    "native_actions": 343,
+    "stationary_actions": 0,
+    "longest_no_new_tile_actions": 5,
+    "last_new_tile_action": 338,
+    "new_gap_events": 0,
+    "new_gap_tiles": 0,
+    "gap_history": [],
+    "final_contiguous_tiles": 319
+  },
+  "sole_change": "Existing199T24/8/45 modelstatefeedback appended everyreplan, no tuning/othercandidate/rank/eligibilitychange.",
+  "T_configuration": {
+    "speed_cap": 45.0,
+    "lateral_fast": 24.0,
+    "lateral_safe": 8.0,
+    "search_behind_m": 7.5,
+    "search_ahead_m": 30.0
+  },
+  "usage": {
+    "T_selected_replans": 22,
+    "T_executed_actions": 66,
+    "R_selected_replans": 27,
+    "R_from_T_selected_replans": 5,
+    "R_from_T_executed_actions": 15,
+    "selection_counts": {
+      "S12": 1,
+      "N": 18,
+      "R": 27,
+      "T": 22,
+      "S03": 11,
+      "C08": 8,
+      "S24": 9,
+      "S05": 6,
+      "S20": 2,
+      "C00": 1,
+      "C16": 2,
+      "S18": 3,
+      "S19": 2,
+      "S11": 1,
+      "S09": 1,
+      "C09": 1
+    },
+    "R_original_expiry_verified": true
+  },
+  "first_selection_change": {
+    "action": 13,
+    "old_selected": "C17",
+    "new_selected": "T",
+    "common_prefix_commands_identical": true
+  },
+  "first_actual_command_divergence_action": 13,
+  "first_T_selection": {
+    "action": 13,
+    "T_new_tiles": 10,
+    "T_contiguous_gain": 10,
+    "T_new_gaps": 0,
+    "T_terminal": false,
+    "non_T_max_new_tiles": 12,
+    "basic_fixed_CE_N_S_max_new_tiles": 12,
+    "non_T_max_contiguous_gain": 12,
+    "non_T_current_eligible": [
+      "C17",
+      "C09",
+      "C01"
+    ],
+    "all_non_T_predict_zero_new_tiles": false,
+    "R_origin": null,
+    "same_baseline_physical_state_digest": true,
+    "all_non_T_score_fields_identical": true,
+    "non_T_eligible_max_contiguous_gain": 5,
+    "reason": "Tcontiguous10vsbestadmissiblefixed5, allforward/gap0/nonterminal. Raw12tile R/S03 forecasts have0endpointroadwheels and areineligible."
+  },
+  "T_selection_events": [
+    {
+      "action": 13,
+      "T_new_tiles": 10,
+      "T_contiguous_gain": 10,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 12,
+      "basic_fixed_CE_N_S_max_new_tiles": 12,
+      "non_T_max_contiguous_gain": 12,
+      "non_T_current_eligible": [
+        "C17",
+        "C09",
+        "C01"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 28,
+      "T_new_tiles": 11,
+      "T_contiguous_gain": 11,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 15,
+      "basic_fixed_CE_N_S_max_new_tiles": 15,
+      "non_T_max_contiguous_gain": 15,
+      "non_T_current_eligible": [
+        "C09"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 37,
+      "T_new_tiles": 9,
+      "T_contiguous_gain": 9,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 13,
+      "basic_fixed_CE_N_S_max_new_tiles": 13,
+      "non_T_max_contiguous_gain": 13,
+      "non_T_current_eligible": [
+        "C09",
+        "C17"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 49,
+      "T_new_tiles": 11,
+      "T_contiguous_gain": 11,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 10,
+      "basic_fixed_CE_N_S_max_new_tiles": 10,
+      "non_T_max_contiguous_gain": 10,
+      "non_T_current_eligible": [
+        "C01",
+        "C09",
+        "C17"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 64,
+      "T_new_tiles": 11,
+      "T_contiguous_gain": 11,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 13,
+      "basic_fixed_CE_N_S_max_new_tiles": 10,
+      "non_T_max_contiguous_gain": 13,
+      "non_T_current_eligible": [
+        "C09"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 88,
+      "T_new_tiles": 8,
+      "T_contiguous_gain": 8,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 12,
+      "basic_fixed_CE_N_S_max_new_tiles": 12,
+      "non_T_max_contiguous_gain": 12,
+      "non_T_current_eligible": [
+        "C17",
+        "C09",
+        "S24"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 100,
+      "T_new_tiles": 10,
+      "T_contiguous_gain": 10,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 13,
+      "basic_fixed_CE_N_S_max_new_tiles": 10,
+      "non_T_max_contiguous_gain": 13,
+      "non_T_current_eligible": [
+        "S05",
+        "C01",
+        "C09",
+        "C17"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 115,
+      "T_new_tiles": 8,
+      "T_contiguous_gain": 8,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 12,
+      "basic_fixed_CE_N_S_max_new_tiles": 12,
+      "non_T_max_contiguous_gain": 12,
+      "non_T_current_eligible": [
+        "C09",
+        "C01"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 118,
+      "T_new_tiles": 7,
+      "T_contiguous_gain": 7,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 7,
+      "basic_fixed_CE_N_S_max_new_tiles": 7,
+      "non_T_max_contiguous_gain": 7,
+      "non_T_current_eligible": [
+        "C16",
+        "R",
+        "S24"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 142,
+      "T_new_tiles": 8,
+      "T_contiguous_gain": 8,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 12,
+      "basic_fixed_CE_N_S_max_new_tiles": 12,
+      "non_T_max_contiguous_gain": 12,
+      "non_T_current_eligible": [
+        "C17",
+        "C09",
+        "C01"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 160,
+      "T_new_tiles": 7,
+      "T_contiguous_gain": 7,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 11,
+      "basic_fixed_CE_N_S_max_new_tiles": 11,
+      "non_T_max_contiguous_gain": 11,
+      "non_T_current_eligible": [
+        "C09",
+        "C01"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 190,
+      "T_new_tiles": 9,
+      "T_contiguous_gain": 9,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 15,
+      "basic_fixed_CE_N_S_max_new_tiles": 15,
+      "non_T_max_contiguous_gain": 15,
+      "non_T_current_eligible": [
+        "C17"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 196,
+      "T_new_tiles": 9,
+      "T_contiguous_gain": 9,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 10,
+      "basic_fixed_CE_N_S_max_new_tiles": 8,
+      "non_T_max_contiguous_gain": 10,
+      "non_T_current_eligible": [
+        "C08"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 211,
+      "T_new_tiles": 9,
+      "T_contiguous_gain": 9,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 10,
+      "basic_fixed_CE_N_S_max_new_tiles": 10,
+      "non_T_max_contiguous_gain": 10,
+      "non_T_current_eligible": [
+        "C17",
+        "C09",
+        "S03"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 220,
+      "T_new_tiles": 9,
+      "T_contiguous_gain": 9,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 11,
+      "basic_fixed_CE_N_S_max_new_tiles": 11,
+      "non_T_max_contiguous_gain": 11,
+      "non_T_current_eligible": [
+        "C09",
+        "C17",
+        "S24",
+        "C00",
+        "S31",
+        "S15",
+        "S25",
+        "S29",
+        "S20",
+        "S26",
+        "S30",
+        "S09",
+        "S10",
+        "S14",
+        "S02",
+        "S08"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 241,
+      "T_new_tiles": 7,
+      "T_contiguous_gain": 7,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 11,
+      "basic_fixed_CE_N_S_max_new_tiles": 11,
+      "non_T_max_contiguous_gain": 11,
+      "non_T_current_eligible": [
+        "C17",
+        "C09"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 259,
+      "T_new_tiles": 9,
+      "T_contiguous_gain": 9,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 16,
+      "basic_fixed_CE_N_S_max_new_tiles": 9,
+      "non_T_max_contiguous_gain": 16,
+      "non_T_current_eligible": [
+        "C01"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 289,
+      "T_new_tiles": 11,
+      "T_contiguous_gain": 11,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 17,
+      "basic_fixed_CE_N_S_max_new_tiles": 12,
+      "non_T_max_contiguous_gain": 17,
+      "non_T_current_eligible": [],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 295,
+      "T_new_tiles": 11,
+      "T_contiguous_gain": 11,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 12,
+      "basic_fixed_CE_N_S_max_new_tiles": 11,
+      "non_T_max_contiguous_gain": 12,
+      "non_T_current_eligible": [
+        "N",
+        "C09",
+        "C01",
+        "C17"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 304,
+      "T_new_tiles": 12,
+      "T_contiguous_gain": 12,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 15,
+      "basic_fixed_CE_N_S_max_new_tiles": 15,
+      "non_T_max_contiguous_gain": 15,
+      "non_T_current_eligible": [
+        "C08",
+        "C17",
+        "C09"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 310,
+      "T_new_tiles": 9,
+      "T_contiguous_gain": 9,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 15,
+      "basic_fixed_CE_N_S_max_new_tiles": 15,
+      "non_T_max_contiguous_gain": 12,
+      "non_T_current_eligible": [
+        "S24",
+        "C09",
+        "C01",
+        "C17",
+        "C00"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    },
+    {
+      "action": 319,
+      "T_new_tiles": 7,
+      "T_contiguous_gain": 7,
+      "T_new_gaps": 0,
+      "T_terminal": false,
+      "non_T_max_new_tiles": 11,
+      "basic_fixed_CE_N_S_max_new_tiles": 10,
+      "non_T_max_contiguous_gain": 11,
+      "non_T_current_eligible": [
+        "C09",
+        "C01",
+        "C17"
+      ],
+      "all_non_T_predict_zero_new_tiles": false,
+      "R_origin": null
+    }
+  ],
+  "cached217_last_new_tile_action": 257,
+  "first_T_before_cached_stall": true,
+  "T_when_all_non_T_zero_progress_replans": 0,
+  "model_actual_comparison": {
+    "selected": {
+      "actual_actions": 343,
+      "matched_same_prefix_full4tick_actions": 342,
+      "raw_collision_mismatch_actions": [],
+      "contact_ID_mismatch_actions": [],
+      "damage_mismatch_actions": [],
+      "physical_terminal_mismatch_actions": [],
+      "tile_mismatch_actions": [],
+      "max_position_error_m": 1.5728399755926745e-05,
+      "unmatched_actions": [
+        343
+      ]
+    },
+    "nominal_fallback": {
+      "actual_actions": 0,
+      "matched_same_prefix_full4tick_actions": 0,
+      "raw_collision_mismatch_actions": [],
+      "contact_ID_mismatch_actions": [],
+      "damage_mismatch_actions": [],
+      "physical_terminal_mismatch_actions": [],
+      "tile_mismatch_actions": [],
+      "max_position_error_m": 0,
+      "unmatched_actions": []
+    }
+  },
+  "mismatch_details": [],
+  "online_cost": {
+    "replan_ms": {
+      "count": 115,
+      "sum": 119831.75686612958,
+      "median": 948.6749320058152,
+      "p95": 1529.3296682037178,
+      "max": 3247.0756369875744
+    },
+    "model_batch_ms": {
+      "count": 115,
+      "median": 900.0263930065557,
+      "p95": 1485.330647494993,
+      "max": 3184.5952139992733
+    },
+    "official5s_GT_warnings": [],
+    "official_act_limit_ms": 5000,
+    "official_timing_compliance_claim_allowed": false
+  },
+  "cost": {
+    "stage": 218,
+    "at_utc": "2026-10-12T18:07:30.566101+00:00",
+    "native_cap": 800,
+    "new_wrapper_actions": 343,
+    "control_new_native_actions": 0,
+    "wall_s": 136.89495857898146,
+    "raw_step_ticks": 1371,
+    "raw_reset_ticks": 51,
+    "evaluator_CPU_s": 133.517319378,
+    "actor_CPU_s": 3.1618169999999997,
+    "model_queries": 5056,
+    "model_physics_ticks": 242092,
+    "model_CPU_s": 114.39007668400004,
+    "model_CPU_included_in_evaluator": true,
+    "T_control_CPU_s": 0.6156601449998909,
+    "T_control_wall_s": 0.6202523285173811,
+    "T_total_wall_s": 5.091930537979351,
+    "T_reconstruction_wall_s": 3.283159328158945,
+    "T_integration_wall_s": 1.0974558241141494,
+    "GT_capture_wall_s": 1.0981302169675473,
+    "reconstruction_wall_s": 68.40489936675294,
+    "integration_wall_s": 43.87632486765506,
+    "forecast_retention_wall_s": 0.152377807040466,
+    "extra_comparison_model_queries": 0,
+    "B_operating_cap": 824000,
+    "actual_cumulative_wrapper_actions": 737405,
+    "research_remaining": 2595,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "accounting": "One F3reset, exact199T appended; unchangedothers andRexpiry. Cached217failure, no newcontrol/retry/tuning. Model/TcontrolCPU insideevaluator; Ttotalwall overlaps modelbatch,do notsumtwice. Matchexistingforecasts only."
+  },
+  "scope": "KnownDEVGTresetdiagnostic, notlegalpixel/realtime/independentvalidation. IfTchangesearliertrajectory, do notclaimmatchedinterventionatcached235tilestall. CurrentnonTforecastsdescribecurrentstate only. Sourcephysics/officialfinish/5slimitunchanged,GTwallwarningskept.",
+  "champion_changed": false,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_next_experiment": false,
+  "T_only_current_active_eligible_replans": 1,
+  "interpretation": "Tchangespathat13beforecached257stall; fixedadmissiblealternatives alreadypredict5tiles at13. No chosenTboundary has allnonTrawnewtiles0. One laterboundary onlyTpassescurrentactiveeligiblefilters. Notmatchedrescuefromcached235tilehalt."
+}
