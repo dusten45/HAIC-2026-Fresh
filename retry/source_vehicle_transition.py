@@ -167,6 +167,11 @@ class SourceVehicleTransition:
                                                zip(self.car.wheels, self._initial_geometric_tiles)),
             counter_offset_correction=0)
         self._initial_events_pending = True
+        # Joint motor setters wake attached bodies during reconstruction.
+        # Restore captured sleep state after joint and zero-time contact setup.
+        for body, state in [(self.car.hull, snapshot['hull'])] + [
+                (wheel, item['body']) for wheel, item in zip(self.car.wheels, snapshot['wheels'])]:
+            body.awake = state['flags']['awake']
         self.initial_tiles_exact = ([sorted(int(t.idx) for t in w.tiles) for w in self.car.wheels]
                                     == [w['tiles'] for w in snapshot['wheels']])
         self.initial_progress_exact = self.tile_visited_count == snapshot['unique_tiles']
