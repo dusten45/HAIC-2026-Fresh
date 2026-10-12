@@ -1,0 +1,457 @@
+{
+  "stage": 239,
+  "status": "FROZEN238_FRESH_HOLDOUT_PAIRED_CLOSED",
+  "aggregate": {
+    "executed_runs": 8,
+    "paired_initial_hash_matches": 4,
+    "champion_completed": 2,
+    "candidate_completed": 3,
+    "common_completed_pairs": 2,
+    "common_deltas_ms": [
+      -740,
+      -2800
+    ],
+    "mean_common_delta_ms": -1770.0,
+    "new_completions": [
+      "H3"
+    ],
+    "lost_completions": [],
+    "censored": 0,
+    "technical_error": null,
+    "unexecuted": []
+  },
+  "cases": {
+    "H0": {
+      "A": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 23960,
+        "damage": 0.4,
+        "retire_reason": null,
+        "unique_tiles": 290,
+        "total_tiles": 290,
+        "charged_wrapper_actions": 300,
+        "diagnostics": {
+          "unvisited_tiles": 0,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "steering_sign_changes": 18,
+          "max_no_new_reward_counter": 3,
+          "final_speed_m_s": 46.4847514888182,
+          "contiguous_tiles": 290,
+          "source_startline_crossings": [
+            {
+              "action": 300,
+              "physics_time_s": 24.979999999999556,
+              "progress": 1.0,
+              "forward_speed": 46.41871046333199,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 24.979999999999556
+        },
+        "timing": {
+          "full_Agent_compute_ms": {
+            "count": 300,
+            "median": 5.69016850204207,
+            "p95": 14.268443285254763,
+            "max": 25.619491992983967
+          },
+          "including_IPC_ms": {
+            "count": 300,
+            "median": 8.285381001769565,
+            "p95": 16.991160152247176,
+            "max": 33.88192999409512
+          },
+          "reset_including_IPC_ms": 4.182010015938431
+        }
+      },
+      "B": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 23220,
+        "damage": 0.8,
+        "retire_reason": null,
+        "unique_tiles": 286,
+        "total_tiles": 290,
+        "charged_wrapper_actions": 291,
+        "diagnostics": {
+          "unvisited_tiles": 4,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "steering_sign_changes": 27,
+          "max_no_new_reward_counter": 7,
+          "final_speed_m_s": 44.9138828037206,
+          "contiguous_tiles": 177,
+          "source_startline_crossings": [
+            {
+              "action": 291,
+              "physics_time_s": 24.239999999999572,
+              "progress": 0.9862068965517241,
+              "forward_speed": 44.61096033032661,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 24.239999999999572
+        },
+        "timing": {
+          "full_Agent_compute_ms": {
+            "count": 291,
+            "median": 5.372059997171164,
+            "p95": 11.750772508094087,
+            "max": 17.267193994484842
+          },
+          "including_IPC_ms": {
+            "count": 291,
+            "median": 7.845485990401357,
+            "p95": 14.453232011874206,
+            "max": 24.790149996988475
+          },
+          "reset_including_IPC_ms": 1.9838519801851362
+        }
+      },
+      "candidate_minus_champion_lap_ms": -740
+    },
+    "H1": {
+      "B": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "retire_reason": "crash",
+        "unique_tiles": 86,
+        "total_tiles": 271,
+        "charged_wrapper_actions": 82,
+        "diagnostics": {
+          "unvisited_tiles": 185,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "steering_sign_changes": 10,
+          "max_no_new_reward_counter": 2,
+          "final_speed_m_s": 40.86640628138796,
+          "contiguous_tiles": 86,
+          "source_startline_crossings": [],
+          "source_finish_time_s": null
+        },
+        "timing": {
+          "full_Agent_compute_ms": {
+            "count": 82,
+            "median": 5.027394989156164,
+            "p95": 9.598464802547824,
+            "max": 12.236682989168912
+          },
+          "including_IPC_ms": {
+            "count": 82,
+            "median": 7.622919001732953,
+            "p95": 11.860287304443773,
+            "max": 14.895306987455115
+          },
+          "reset_including_IPC_ms": 3.4436379792168736
+        }
+      },
+      "A": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "retire_reason": "crash",
+        "unique_tiles": 141,
+        "total_tiles": 271,
+        "charged_wrapper_actions": 149,
+        "diagnostics": {
+          "unvisited_tiles": 130,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "steering_sign_changes": 13,
+          "max_no_new_reward_counter": 2,
+          "final_speed_m_s": 32.00604000640712,
+          "contiguous_tiles": 141,
+          "source_startline_crossings": [],
+          "source_finish_time_s": null
+        },
+        "timing": {
+          "full_Agent_compute_ms": {
+            "count": 149,
+            "median": 5.433173006167635,
+            "p95": 11.122217593947425,
+            "max": 16.62799098994583
+          },
+          "including_IPC_ms": {
+            "count": 149,
+            "median": 8.067010989179835,
+            "p95": 14.038055209675804,
+            "max": 20.774827018612996
+          },
+          "reset_including_IPC_ms": 5.6696319952607155
+        }
+      },
+      "candidate_minus_champion_lap_ms": null
+    },
+    "H2": {
+      "A": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 22220,
+        "damage": 0.4,
+        "retire_reason": null,
+        "unique_tiles": 271,
+        "total_tiles": 271,
+        "charged_wrapper_actions": 278,
+        "diagnostics": {
+          "unvisited_tiles": 0,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "steering_sign_changes": 20,
+          "max_no_new_reward_counter": 3,
+          "final_speed_m_s": 45.330343250377005,
+          "contiguous_tiles": 271,
+          "source_startline_crossings": [
+            {
+              "action": 278,
+              "physics_time_s": 23.239999999999593,
+              "progress": 1.0,
+              "forward_speed": 45.29635056066005,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 23.239999999999593
+        },
+        "timing": {
+          "full_Agent_compute_ms": {
+            "count": 278,
+            "median": 4.9372335051884875,
+            "p95": 9.826153007452374,
+            "max": 15.718163980636746
+          },
+          "including_IPC_ms": {
+            "count": 278,
+            "median": 7.455469007254578,
+            "p95": 12.060074586770497,
+            "max": 18.145514011848718
+          },
+          "reset_including_IPC_ms": 4.142450983636081
+        }
+      },
+      "B": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 19420,
+        "damage": 0.2,
+        "retire_reason": null,
+        "unique_tiles": 271,
+        "total_tiles": 271,
+        "charged_wrapper_actions": 243,
+        "diagnostics": {
+          "unvisited_tiles": 0,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "steering_sign_changes": 25,
+          "max_no_new_reward_counter": 3,
+          "final_speed_m_s": 48.741290190130805,
+          "contiguous_tiles": 271,
+          "source_startline_crossings": [
+            {
+              "action": 243,
+              "physics_time_s": 20.439999999999653,
+              "progress": 1.0,
+              "forward_speed": 48.607963057733386,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 20.439999999999653
+        },
+        "timing": {
+          "full_Agent_compute_ms": {
+            "count": 243,
+            "median": 5.043130979174748,
+            "p95": 11.273150795022957,
+            "max": 14.636548003181815
+          },
+          "including_IPC_ms": {
+            "count": 243,
+            "median": 7.321463985135779,
+            "p95": 13.552503313985651,
+            "max": 23.648564994800836
+          },
+          "reset_including_IPC_ms": 4.70778500312008
+        }
+      },
+      "candidate_minus_champion_lap_ms": -2800
+    },
+    "H3": {
+      "B": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 24680,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 332,
+        "total_tiles": 336,
+        "charged_wrapper_actions": 309,
+        "diagnostics": {
+          "unvisited_tiles": 4,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "steering_sign_changes": 28,
+          "max_no_new_reward_counter": 11,
+          "final_speed_m_s": 39.812250143645656,
+          "contiguous_tiles": 52,
+          "source_startline_crossings": [
+            {
+              "action": 309,
+              "physics_time_s": 25.69999999999954,
+              "progress": 0.9880952380952381,
+              "forward_speed": 39.56514489850749,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 25.69999999999954
+        },
+        "timing": {
+          "full_Agent_compute_ms": {
+            "count": 309,
+            "median": 4.923610977130011,
+            "p95": 10.977388801984487,
+            "max": 15.325112995924428
+          },
+          "including_IPC_ms": {
+            "count": 309,
+            "median": 7.085722987540066,
+            "p95": 14.074895187513901,
+            "max": 18.678128020837903
+          },
+          "reset_including_IPC_ms": 6.607478979276493
+        }
+      },
+      "A": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 0.2,
+        "retire_reason": "off_track",
+        "unique_tiles": 51,
+        "total_tiles": 336,
+        "charged_wrapper_actions": 154,
+        "diagnostics": {
+          "unvisited_tiles": 285,
+          "stationary_actions": 51,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "steering_sign_changes": 4,
+          "max_no_new_reward_counter": 101,
+          "final_speed_m_s": 9.932842844259139e-06,
+          "contiguous_tiles": 51,
+          "source_startline_crossings": [],
+          "source_finish_time_s": null
+        },
+        "timing": {
+          "full_Agent_compute_ms": {
+            "count": 154,
+            "median": 5.783412489108741,
+            "p95": 10.725617439311462,
+            "max": 14.33377098874189
+          },
+          "including_IPC_ms": {
+            "count": 154,
+            "median": 8.094389515463263,
+            "p95": 13.736090244492514,
+            "max": 16.99831400765106
+          },
+          "reset_including_IPC_ms": 4.486210003960878
+        }
+      },
+      "candidate_minus_champion_lap_ms": null
+    }
+  },
+  "cost": {
+    "stage": 239,
+    "at_utc": "2026-10-12T23:08:20.910775+00:00",
+    "native_cap": 4400,
+    "new_wrapper_actions": 1806,
+    "wall_s": 79.14127017802093,
+    "evaluator_CPU_s": 64.58399283199999,
+    "actor_CPU_s": 14.526981000000001,
+    "raw_step_ticks": 7220,
+    "raw_reset_ticks": 408,
+    "full_Agent_compute_ms": {
+      "A": {
+        "count": 881,
+        "median": 5.413623992353678,
+        "p95": 11.887052998645231,
+        "max": 25.619491992983967
+      },
+      "B": {
+        "count": 925,
+        "median": 5.137272994033992,
+        "p95": 11.314968188526107,
+        "max": 17.267193994484842
+      }
+    },
+    "max_act_IPC_ms": 33.88192999409512,
+    "max_reset_IPC_ms": 6.607478979276493,
+    "source_only_selection_wall_s": 0.009610295004677027,
+    "source_only_selection_CPU_s": 0.008068469999999994,
+    "model_queries": 0,
+    "model_physics_ticks": 0,
+    "head_fits": 0,
+    "B_operating_cap": 856000,
+    "actual_cumulative_wrapper_actions": 769242,
+    "research_remaining": 2758,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "exact_theta": [
+    0.3453632574088313,
+    -0.20596924895119462
+  ],
+  "exact_scales": [
+    1.412502928638687,
+    0.8138581028883641
+  ],
+  "candidate_archive_sha256": "ae944d7d9e2fda02fc05936bcf245613a81fade5f2f3edc1f6ead68e9bed8d31",
+  "champion_archive_sha256": "247ba5f033ecc7ad5b0d92cf19f3408e15711b61ce8b3cfc2d223aba2df70239",
+  "policy_freeze_sha256": "4cb73ef04ba36bbbe3650271c6dfeacfe62e142aa2191e88542bd31bb1fb044f",
+  "selection": {
+    "conditions": 4,
+    "orders": [
+      "AB",
+      "BA",
+      "AB",
+      "BA"
+    ],
+    "initial_vector_durable_before_geometry": true,
+    "initial_vector_sha256": "ca17ab9405895f4431ecdc9ef714df704d6bd757061730161e07a3f006dbedbb",
+    "identity_rejections": 0,
+    "parent_vector_rejections": 0,
+    "prior_exclusion_counts": {
+      "excluded_seeds": 290,
+      "excluded_road_geometry_sha256": 288,
+      "excluded_obstacle_spec_sha256": 300,
+      "excluded_physical_obstacles_sha256": 158,
+      "excluded_obstacle_rng_entropy": 158,
+      "excluded_parent_entropy_vectors": 34
+    },
+    "physical_coverage_limit": "Historical missing physical/spec/RNG hashes are not reconstructed. All recorded seed and road identities are excluded, including stopped/unexecuted registered roads. Physical/spec/RNG exclusions additionally cover metadata-available identities; counts are domain identities, not episode counts.",
+    "difficulty_or_outcome_filter": false,
+    "policy_frozen_before_draw": true
+  },
+  "protocol": "Actual238 immutablearchive used, no roundedparameter reconstruction. Completionprimary, timesonlycommoncompleted. Same original95percent FinishLineTracker and5s; damage/direction/stationarydiagnostics notnewapprovalgates.",
+  "limitations": [
+    "Four new pairs only; no population reliability certificate.",
+    "Historicalphysical/spec/RNG metadata gaps retained; all recorded identities and geometry excluded.",
+    "Nearest-road tangent direction is diagnostic; official sourceFinishLineTracker defines completion."
+  ],
+  "champion_changed": false,
+  "champion_manifest_sha256": "b17aef1cee0d4d5fb35763be7cd9ec8748a6e060d79b529ca477c1efba5948bc",
+  "HOLDOUT_used": true,
+  "HOLDOUT_added_to_DEV": false,
+  "additional_candidate_selection": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
