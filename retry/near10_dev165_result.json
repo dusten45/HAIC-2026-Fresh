@@ -1,0 +1,374 @@
+{
+  "stage": 165,
+  "verdict": "STOP_FIXED_NEAR10_CONTRAST_NO_SWEEP",
+  "metrics": {
+    "baseline_completed_count": 4,
+    "candidate_completed_count": 1,
+    "executed_baseline_completed_count": 2,
+    "executed_candidate_completed_count": 1,
+    "counts": {
+      "new_completion": 0,
+      "lost_completion": 1,
+      "common_dnf": 0,
+      "common_completed": 1
+    },
+    "cohort_complete": false,
+    "common_median_delta_ms": -60.0,
+    "common_sum_delta_ms": -60.0,
+    "common_mean_ratio": 0.9981504315659679,
+    "pilot_sum_delta_ms": -60.0,
+    "remaining2_sum_delta_ms": null,
+    "slower_common_count": 0
+  },
+  "comparisons": [
+    {
+      "DEV_index": 0,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 32440,
+      "candidate_lap_ms": 32380,
+      "delta_ms": -60,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "actual_near_intervention": {
+        "rows": 405,
+        "excluded_target_none": 0,
+        "max_target_error_m_s": 0.0,
+        "pedals_match_source": true,
+        "target_increased_vs_same_input_baseline_rows": 74,
+        "pedals_changed_vs_same_input_baseline_rows": 60,
+        "near_target_or_pedal_changes": 74
+      },
+      "first_damage_event": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": true,
+      "actual_action_observation_hashes_match": true
+    },
+    {
+      "DEV_index": 1,
+      "baseline_completed": true,
+      "candidate_completed": false,
+      "candidate_censored": false,
+      "baseline_lap_ms": 28580,
+      "candidate_lap_ms": null,
+      "delta_ms": null,
+      "baseline_damage": 0.0,
+      "candidate_damage": 1.0,
+      "actual_near_intervention": {
+        "rows": 186,
+        "excluded_target_none": 0,
+        "max_target_error_m_s": 0.0,
+        "pedals_match_source": true,
+        "target_increased_vs_same_input_baseline_rows": 45,
+        "pedals_changed_vs_same_input_baseline_rows": 40,
+        "near_target_or_pedal_changes": 45
+      },
+      "first_damage_event": {
+        "step": 138,
+        "native_elapsed_pre_s": 10.959999999999834,
+        "native_elapsed_post_s": 11.039999999999832,
+        "dwell_s": 0.0799999999999983,
+        "native_absolute_pre_s": 11.979999999999833,
+        "native_absolute_post_s": 12.059999999999832,
+        "speed_before_m_s": 12.088283889518495,
+        "speed_after_m_s": 16.177254674936837,
+        "feedback_m_s": 11.25,
+        "target_m_s": 17.332972586608886,
+        "curvature": -0.03328540914679697,
+        "near": true,
+        "selected_lateral_budget": 10.0,
+        "steer": -0.12723959982395172,
+        "gas": 0.48663780093193054,
+        "brake": 0.0,
+        "front_joint_residual_after_rad": [
+          1.043081283569336e-07,
+          1.043081283569336e-07
+        ],
+        "offtrack_before": 1,
+        "offtrack_after": 2,
+        "damage_before": 0.0,
+        "damage_after": 0.2,
+        "collision": true
+      },
+      "first_damage_pre_summary": {
+        "rows": 20,
+        "steps": [
+          118,
+          137
+        ],
+        "native_elapsed_interval_s": [
+          9.359999999999868,
+          10.959999999999834
+        ],
+        "speed_range_m_s": [
+          10.224815523270802,
+          45.37477041948921
+        ],
+        "target_range_m_s": [
+          11.51128115889688,
+          45.0
+        ],
+        "near_rows": 12,
+        "gas_rows": 9,
+        "brake_rows": 11,
+        "active_pedal_opposite_switches": 9,
+        "actual_speed_direction_switches": 9,
+        "joint_residual_mean_rad": 4.089168601891943e-08,
+        "joint_residual_max_rad": 1.9371509552001953e-07
+      },
+      "paired_initial_exact": true,
+      "actual_action_observation_hashes_match": true
+    },
+    {
+      "DEV_index": 2,
+      "baseline_completed": true,
+      "candidate_completed": null,
+      "candidate_censored": null,
+      "baseline_lap_ms": 42060,
+      "candidate_lap_ms": null,
+      "delta_ms": null,
+      "baseline_damage": 0.2,
+      "candidate_damage": null,
+      "actual_near_intervention": null,
+      "first_damage_event": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": null,
+      "actual_action_observation_hashes_match": null
+    },
+    {
+      "DEV_index": 3,
+      "baseline_completed": true,
+      "candidate_completed": null,
+      "candidate_censored": null,
+      "baseline_lap_ms": 30580,
+      "candidate_lap_ms": null,
+      "delta_ms": null,
+      "baseline_damage": 0.0,
+      "candidate_damage": null,
+      "actual_near_intervention": null,
+      "first_damage_event": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": null,
+      "actual_action_observation_hashes_match": null
+    }
+  ],
+  "pilot_passed": false,
+  "stop_reason": "observed baseline completion loss",
+  "first_failure_evidence": {
+    "DEV_index": 1,
+    "type": "OBSERVED_COMPLETION_LOSS",
+    "retire_reason": "crash",
+    "last_actual_action": {
+      "step": 186,
+      "native_elapsed_pre_s": 14.799999999999752,
+      "native_elapsed_post_s": 14.87999999999975,
+      "dwell_s": 0.0799999999999983,
+      "native_absolute_pre_s": 15.819999999999752,
+      "native_absolute_post_s": 15.89999999999975,
+      "speed_before_m_s": 10.320201711244193,
+      "speed_after_m_s": 7.570948969869359,
+      "feedback_m_s": 11.25,
+      "target_m_s": 9.448481921440049,
+      "curvature": -0.11201493394955865,
+      "near": true,
+      "selected_lateral_budget": 10.0,
+      "steer": -0.358511745929718,
+      "gas": 0.0,
+      "brake": 0.072060726583004,
+      "front_joint_residual_after_rad": [
+        0.006222784519195557,
+        0.006222784519195557
+      ],
+      "offtrack_before": 3,
+      "offtrack_after": 4,
+      "damage_before": 0.8,
+      "damage_after": 1.0,
+      "collision": true
+    },
+    "previous_at_most20_summary": {
+      "rows": 20,
+      "steps": [
+        166,
+        185
+      ],
+      "native_elapsed_interval_s": [
+        13.199999999999786,
+        14.799999999999752
+      ],
+      "speed_range_m_s": [
+        6.267556977458209,
+        21.49149534785649
+      ],
+      "target_range_m_s": [
+        7.203668318482779,
+        21.35319244150369
+      ],
+      "near_rows": 15,
+      "gas_rows": 11,
+      "brake_rows": 9,
+      "active_pedal_opposite_switches": 11,
+      "actual_speed_direction_switches": 9,
+      "joint_residual_mean_rad": 0.024055871833115815,
+      "joint_residual_max_rad": 0.19751342944800854
+    },
+    "candidate_damage": 1.0,
+    "unique_cause_established": false
+  },
+  "unexecuted_DEV_indices": [
+    2,
+    3
+  ],
+  "single_change": "Near lateral budget8→10 only; normal24/cap45/originalP/path/perception/tracking/HUD/steering/near detection fixed",
+  "pilot_rule": "Both comparable baseline completions retained, common medianlapdelta<0 AND meanlapratio<1. If pass, same frozen candidate on remaining2 in this turn. Damage independent, no minimumpercent.",
+  "final_gate": "DEV candidate only with complete4 comparable cohort/no lost baseline completion/common medianlapdelta<0 AND meanlapratio<1; remaining2 separately reported. No damage veto or allpairs-faster rule.",
+  "damage_automatic_veto": false,
+  "total_damage_diagnostic": {
+    "sums": {
+      "baseline": 0.0,
+      "candidate": 1.0
+    },
+    "observed_record_counts": {
+      "baseline": 2,
+      "candidate": 2
+    },
+    "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+  },
+  "registered_cohort_damage_diagnostic": {
+    "sums": {
+      "baseline": 0.2,
+      "candidate": 1.0
+    },
+    "observed_record_counts": {
+      "baseline": 4,
+      "candidate": 2
+    },
+    "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+  },
+  "exposure_not_expected_gain": "Near bound/braking20.64s is not recoverable time; actual completion/common lap decides.",
+  "parameter_meaning": {
+    "parameter": "lateral_safe selected only with originalnear predicate",
+    "target_formula": "min(45,sqrt((near?10:24)/max(abs(pursuit_curvature),1e-6)))",
+    "baseline_near_budget": 8,
+    "candidate_near_budget": 10,
+    "uncapped_same_input_near_multiplier": 1.118033988749895,
+    "not_measured_physical_acceleration": true
+  },
+  "candidate_archive_sha256": "5841bff83686a61d670fc22b1b8a8733589c5034803f829e95b52e32af8ffdc3",
+  "baseline_archive_sha256": "b004fd5409914be5c2685569567f6b1d4d141bf67b3c311a8ee3b778bca9195e",
+  "candidate_status": "DEV_ONLY_CLOSED_NO_EXPANSION",
+  "actual_cost": {
+    "stage": 165,
+    "at_utc": "2026-10-12T02:42:30.159165+00:00",
+    "native_cap": 8000,
+    "actual_episodes": 2,
+    "new_wrapper_actions": 591,
+    "raw_step_ticks": 2364,
+    "raw_reset_ticks": 102,
+    "wall_s": 22.937745766015723,
+    "evaluator_CPU_s": 18.377412590000002,
+    "actor_CPU_s": 4.613721,
+    "B_operating_cap": 782000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 683405,
+    "research_remaining": 14595,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "cached163_baseline_actions_not_recharged": 1673,
+    "baseline_reruns": 0,
+    "new_offline_policy_model_calls": 0,
+    "full_requalification_replays": 0,
+    "new_full_pixels_GT_policy_video_streams": 0,
+    "duplicate_evaluations": 0,
+    "current_near8_changed": false,
+    "HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "actual_near_only_intervention_proof": [
+    {
+      "DEV_index": 0,
+      "near_mode_rows": 78,
+      "same_input_near_target_increase_rows": 74,
+      "same_input_pedal_change_rows": 60,
+      "outside_near_target_or_pedal_changes": 0
+    },
+    {
+      "DEV_index": 1,
+      "near_mode_rows": 49,
+      "same_input_near_target_increase_rows": 45,
+      "same_input_pedal_change_rows": 40,
+      "outside_near_target_or_pedal_changes": 0
+    }
+  ],
+  "verification": {
+    "single_constructor_near_literal_changed": true,
+    "other13archive_members_unchanged": true,
+    "observer_instrumentation_same_readiness_near8_to10_only": true,
+    "existing_optional_near_source_law_checks_reused": true,
+    "policy_input_action_untransformed": true,
+    "paired_initial_matches": 2,
+    "all_actual_source_law_and_stream_hashes_match": true,
+    "all_actors_reaped": true,
+    "current_near8_and_rollbacks_preserved": true
+  },
+  "prior_warnings": "164HOLDOUT damage0.4→1.0 and+1400ms slowerpair;163DEV2newcontact0→0.2;161DEV2+180ms/155DEV3+280ms/156contact/20-24 risks/160cap loss retained. Current164adoption local only; no automatic near sweep.",
+  "limits": [
+    "Existing154 DEV with cached163near8 baseline; one new candidate rollout each, not fresh independent generalization.",
+    "No monotonic safety assumption from increased near budget. Source intervention confined to near; later trajectories/HUD/near activation may differ.",
+    "No full163 baseline policy stream retained. Initial identity/source scope/current-input arithmetic checked, not full policy prefix parity.",
+    "Damage independent of completion/common lap. Brief endpoint/contact evidence does not establish unique cause.",
+    "DEV only; championnear8 maintained, HOLDOUT/SEALED closed; officialserver/fresh-machine parity unverified."
+  ],
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false,
+  "automatic_next_experiment": false,
+  "next_performance_bottleneck_proposal": {
+    "hypothesis": "Current speed target from one pursuit-curvature point lacks forward path preview, allowing rapid near-mode brake/reacceleration transitions that cost completion or time.",
+    "scope": "One next hypothesis only; proposed, not executed; keep currentnormal24/near8/cap45/originalP and frozen perception/path for a controlled DEV contrast.",
+    "saved_DEV_evidence": [
+      {
+        "source_stage": 163,
+        "DEV_index": 2,
+        "first_contact_step": 125,
+        "previous_rows": 20,
+        "near_rows": 13,
+        "target_range_m_s": [
+          5.919754418476962,
+          30.59616294745221
+        ],
+        "active_pedal_opposite_switches": 9
+      },
+      {
+        "source_stage": 165,
+        "DEV_index": 1,
+        "first_contact_step": 138,
+        "previous_rows": 20,
+        "near_rows": 12,
+        "target_range_m_s": [
+          11.51128115889688,
+          45.0
+        ],
+        "active_pedal_opposite_switches": 9,
+        "contact_target_m_s": 17.332972586608886,
+        "contact_feedback_m_s": 11.25,
+        "contact_gas": 0.48663780093193054,
+        "contact_brake": 0.0,
+        "previous_front_joint_residual_max_rad": 1.9371509552001953e-07
+      }
+    ],
+    "source_mechanism": "Original P is continuous; target=min(cap,sqrt(selected_budget/max(abs(current pursuit curvature),1e-6))). The speed decision uses this selected point; a forward curvature constraint would be a separate mechanism.",
+    "proposed_single_factor": "Include curvature preview from the already detected visible path in the speed-target calculation, keeping currentnear8/globalcap45 and all other settings. No GT, simulator state or hidden lookahead as policy input.",
+    "proposed_falsification_rule": "Require paired baseline completion preservation and common-lap improvement on fixedDEV. Pedal-switch reduction is diagnostic; smoother/slower behavior without time gain rejects the performance hypothesis.",
+    "limitations": [
+      "Saved 20-row prefixes and near acceleration commands are descriptive; they do not prove the contact cause or expected gain.",
+      "165 first-contact prefix front-joint error is tiny, so the163 transient steering gap is not a universal explanation.",
+      "Could reflect path/HUD/obstacle dynamics; causal discrimination requires the separate fixed comparison."
+    ],
+    "additional_experiments": 0,
+    "automatic_constant_increase": false,
+    "HOLDOUT_details_used": false,
+    "SEALED_opened": false
+  }
+}
