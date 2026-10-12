@@ -1,0 +1,161 @@
+{
+  "stage": 211,
+  "status": "PREDICTION_FIXED_F2_POLICY_AND_FAILURE_UNCHANGED",
+  "fixed_control_from208_209": true,
+  "only_source_change": "210contacthistoryrestoration",
+  "cached209": {
+    "completed": false,
+    "censored": false,
+    "lap_ms": null,
+    "unique_tiles": 92,
+    "total_tiles": 289,
+    "damage": 0.8,
+    "retire_reason": "off_track",
+    "native_actions": 223,
+    "stationary_actions": 89,
+    "longest_no_new_tile_actions": 101,
+    "last_new_tile_action": 122,
+    "moving_reverse_actions": 0,
+    "first_moving_reverse_action": null,
+    "direction_selection_changed_replans": 0
+  },
+  "candidate211": {
+    "completed": false,
+    "censored": false,
+    "lap_ms": null,
+    "unique_tiles": 92,
+    "total_tiles": 289,
+    "damage": 0.8,
+    "retire_reason": "off_track",
+    "native_actions": 223,
+    "stationary_actions": 89,
+    "longest_no_new_tile_actions": 101,
+    "last_new_tile_action": 122,
+    "moving_reverse_actions": 0,
+    "first_moving_reverse_action": null,
+    "direction_selection_changed_replans": 0
+  },
+  "initial_identical": true,
+  "all_actual_source_commands_and_states_identical": true,
+  "first_selection_change_action": null,
+  "first_actual_command_divergence_action": null,
+  "selection_explanation": "No selection/command divergence. Atpre85 Ndamage.4->.6 andnewtiles10->9,still outranksR/C08newtiles8. C09terminalFalse->True butwasunselected. ContactriskFP removal at217/220/223 doesnotchangecontactvetooff ranking; terminaleligibility remainsbinding.",
+  "first_changed_prediction_action": 85,
+  "pre85_highlights": [
+    {
+      "action": 85,
+      "candidate": "C09",
+      "selected": "N",
+      "old": {
+        "risk": true,
+        "terminal": false,
+        "damage": 0.8,
+        "new_tiles": 2,
+        "speed_m_s": 11.209282297618104
+      },
+      "new": {
+        "risk": true,
+        "terminal": true,
+        "damage": 1.0,
+        "new_tiles": 1,
+        "speed_m_s": 1.7949009258278874
+      }
+    },
+    {
+      "action": 85,
+      "candidate": "N",
+      "selected": "N",
+      "old": {
+        "risk": true,
+        "terminal": false,
+        "damage": 0.4,
+        "new_tiles": 10,
+        "speed_m_s": 44.932414783790676
+      },
+      "new": {
+        "risk": true,
+        "terminal": false,
+        "damage": 0.6000000000000001,
+        "new_tiles": 9,
+        "speed_m_s": 44.17037898651727
+      }
+    }
+  ],
+  "pre85_eligible_order": [
+    "N",
+    "R",
+    "C08"
+  ],
+  "changed_risk_terminal_damage_candidate_scores": 36,
+  "changed_score_boundary_actions": [
+    85,
+    217,
+    220,
+    223
+  ],
+  "model_actual_comparison": {
+    "selected": {
+      "actual_actions": 213,
+      "matched_same_prefix_full4tick_actions": 213,
+      "raw_collision_mismatch_actions": [],
+      "contact_ID_mismatch_actions": [],
+      "damage_mismatch_actions": [],
+      "physical_terminal_mismatch_actions": [],
+      "tile_mismatch_actions": [],
+      "max_position_error_m": 1.52587890625e-05,
+      "unmatched_actual_actions": []
+    },
+    "nominal_fallback": {
+      "actual_actions": 10,
+      "matched_same_prefix_full4tick_actions": 6,
+      "raw_collision_mismatch_actions": [],
+      "contact_ID_mismatch_actions": [],
+      "damage_mismatch_actions": [],
+      "physical_terminal_mismatch_actions": [],
+      "tile_mismatch_actions": [],
+      "max_position_error_m": 2.384185791015625e-07,
+      "unmatched_actual_actions": [
+        215,
+        216,
+        218,
+        219
+      ]
+    }
+  },
+  "remaining_model_limit": "All213selected and6same-prefixfallback4tick comparisons matchrawcollision/contactIDs/damage/physicalterminal/tiles. Other4fallback controls differ fromheldNforecast so no samecommandcomparison claim. SourceFinishLineTracker/warm-start/solverhistory omitted. ThisknownDEVGTfailureisnot legalpixelperformance or independentvalidation.",
+  "cost": {
+    "stage": 211,
+    "at_utc": "2026-10-12T16:55:40.305505+00:00",
+    "native_cap": 800,
+    "new_wrapper_actions": 223,
+    "control_new_native_actions": 0,
+    "wall_s": 35.674066432984546,
+    "raw_step_ticks": 892,
+    "raw_reset_ticks": 51,
+    "evaluator_CPU_s": 32.803103207,
+    "actor_CPU_s": 2.7844,
+    "model_queries": 821,
+    "model_physics_ticks": 37768,
+    "model_CPU_s": 18.470552889000007,
+    "model_CPU_included_in_evaluator": true,
+    "GT_capture_wall_s": 2.0852218759828247,
+    "reconstruction_wall_s": 10.781019448040752,
+    "integration_wall_s": 7.524066693207715,
+    "ranking_CPU_s": 0.28038088999999844,
+    "forecast_retention_wall_s": 0.018405101931421086,
+    "evaluator_peak_RSS_mib": 292.8515625,
+    "actor_peak_RSS_mib": 46.1796875,
+    "extra_comparison_model_queries": 0,
+    "accounting": "One F2reset; cached209control; no retries orofflinequeries. Matchexistingforecasts onlyonidenticalentireexecutedprefix,213selected+6fallback; exclude4fallback. ModelCPU included inevaluator; reset51ticks separate.",
+    "B_operating_cap": 820000,
+    "actual_cumulative_wrapper_actions": 734937,
+    "research_remaining": 1063,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "champion_changed": false,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
