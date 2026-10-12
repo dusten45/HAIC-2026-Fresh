@@ -1,0 +1,171 @@
+{
+  "stage": 170,
+  "status": "BOUNDED_CONTROLLABILITY_EVIDENCE_KEEP_CHAMPION_SELECT_ONE_NEXT_CANDIDATE",
+  "closed_line": "Curvature preview and distance envelope after169",
+  "anonymous_DEV_index": 2,
+  "baseline": {
+    "champion": "normal24 near8 cap45",
+    "first_contact_step": 125,
+    "damage_at_first_contact": 0.2,
+    "exact_saved_first_contact": true,
+    "exact_saved20_path_action_scalar_rows": true,
+    "precontact_analysis_steps": [
+      85,
+      124
+    ]
+  },
+  "precontact": {
+    "method": "Post-action hull origin and body-forward direction against the fixed pre-action world path; current-origin self-projection is not a tracking error.",
+    "matched_obstacle_center_error_range_m": [
+      0.06328060234033306,
+      0.4098581478376367
+    ],
+    "all_compatible_matches_age0": true,
+    "matching_limit": "Unambiguous current-position correspondence only; not track-lineage proof. Small errors can still affect a close candidate ranking.",
+    "route_side_switch_steps": [
+      112,
+      117
+    ],
+    "step112_candidate_score_gap_m": 0.03210140960176755,
+    "step117_source_command_change_rad": -0.6374892592430115,
+    "post_joint_goal_error_at_steps117_118_119_rad": [
+      0.397489458322525,
+      0.28498731553554535,
+      0.07048693299293518
+    ],
+    "one_interval_path_error_steps100_to124_m": [
+      0.09753632482726544,
+      0.2886686904294779
+    ],
+    "heading_error_abs_steps118_to124_rad": [
+      0.5110336408820396,
+      0.6067021399869185
+    ],
+    "late_heading_rows": 7,
+    "prior_ten_row_sustained_criterion_met": false,
+    "geometry_limit": "Grid circle-inflation and origin-connector proxies are separate and do not establish swept-body safety."
+  },
+  "diagnosis": {
+    "primary": "Path selection to steering connection: late left-right-left reversal is the earliest direct candidate in the inspected window.",
+    "secondary": "Transient actuator lag follows the command reversal; it resolves before the original first contact.",
+    "oracle_ladder_used": "Unmodified pixel baseline -> evidence inspection -> steering-only controllability pulse. No sufficiently identified wrong input justified a GT replacement; no explicit heading estimate exists to replace.",
+    "unproved": [
+      "Unique cause or causal sufficiency of route reversal",
+      "Small input errors affecting the near-tie",
+      "Full swept-body clearance",
+      "Benefit of a deployable continuity rule over full laps or unseen tracks"
+    ]
+  },
+  "contrast": {
+    "frozen_before_outcomes": true,
+    "prefix_actions": 111,
+    "offsets_rad": [
+      -0.08,
+      0.08
+    ],
+    "pulse_steps": [
+      112,
+      113,
+      114,
+      115
+    ],
+    "stop": "First contact/terminal or global action157",
+    "actor": "Original pixel actor runs once per current input; memory unmodified. Pulse modifies applied steering only; gas/brake bytes equal the actor output at that input. Future observations and outputs may diverge.",
+    "branch_truth_original_action_and_path_exact": true,
+    "oracle_inputs_to_actor": false,
+    "results": [
+      {
+        "offset": -0.08,
+        "prefix_actions": 111,
+        "pulse_applied_steering_changes": 4,
+        "first_contact": null,
+        "survived_through_global157": true,
+        "damage": 0.0,
+        "unique_tiles_gained": 21,
+        "endpoint_speed_m_s": 21.5776957394599,
+        "forward_advance_from_branch_m": 62.525288226593304,
+        "passed_fixed_obstacle_plane": true,
+        "min_focus_fixture_clearance_at_wrapper_endpoints_m": 0.19554348848760128,
+        "post_branch_offroad_wheel_rows": 0,
+        "max_post_joint_goal_error_rad": 0.3974894881248474,
+        "native_actions": 157
+      },
+      {
+        "offset": 0.08,
+        "prefix_actions": 111,
+        "pulse_applied_steering_changes": 4,
+        "first_contact": {
+          "global_step": 124,
+          "elapsed_pre_s": 9.839999999999858,
+          "elapsed_post_s": 9.919999999999856,
+          "actual_speed_before_m_s": 6.800448857885074,
+          "damage_after": 0.2
+        },
+        "survived_through_global157": false,
+        "damage": 0.2,
+        "unique_tiles_gained": 2,
+        "endpoint_speed_m_s": 4.143745920084518,
+        "forward_advance_from_branch_m": 7.961898600119147,
+        "passed_fixed_obstacle_plane": false,
+        "min_focus_fixture_clearance_at_wrapper_endpoints_m": -0.005461368704672509,
+        "post_branch_offroad_wheel_rows": 0,
+        "max_post_joint_goal_error_rad": 0.3974895030260086,
+        "native_actions": 124
+      }
+    ]
+  },
+  "interpretation": "A feasible local steering intervention avoided this contact through the bounded endpoint and passed the obstacle while making forward progress. The positive pulse contacted one action earlier. Both arms retained about0.397rad maximum joint lag, so peak lag alone does not identify the contact cause. This is not a full-lap performance comparison.",
+  "next_candidate": {
+    "change": "Retain the currently feasible avoidance side when alternative route scores are nearly tied.",
+    "one_axis": "Route-choice continuity only; keep the existing perception, tracker, steering and pedal laws.",
+    "status": "SELECTED_NOT_IMPLEMENTED_OR_RUN",
+    "reason": "The first side switch was a close ranking, preceded the large tracking demand, and a small intervention there demonstrated local avoidability. A continuity rule itself remains untested."
+  },
+  "checks": {
+    "frozen_source_hashes": true,
+    "exact111_action_and_observation_prefix_both_arms": true,
+    "pedals_unchanged_at_each_actor_input": true,
+    "all_actors_reaped": true,
+    "current_and_rollbacks_preserved": true,
+    "official_server_fresh_machine_parity": "UNVERIFIED"
+  },
+  "cost": {
+    "stage": 170,
+    "at_utc": "2026-10-12T04:12:11.148999+00:00",
+    "native_cap": 8000,
+    "scheduled_native_cap": 439,
+    "new_wrapper_actions": 406,
+    "baseline_prefix_capture_actions": 125,
+    "probe_prefix_replay_actions": 222,
+    "probe_post_branch_actions": 59,
+    "full_lap_runs": 0,
+    "full_reference_reruns": 0,
+    "new_offline_policy_model_calls": 0,
+    "extra_perception_calls": 0,
+    "raw_step_ticks": 1624,
+    "raw_reset_ticks": 153,
+    "wall_s": 18.37103921698872,
+    "evaluator_CPU_s": 14.635050566,
+    "actor_CPU_s": 3.751162,
+    "timing_scope": "Capture and two bounded native probes only; preparation, saved-row arithmetic and writing excluded. Evaluator and actor CPU reported separately.",
+    "B_operating_cap": 782000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 687379,
+    "research_remaining": 10621,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "private_precontact_rows": 40,
+    "private_bounded_probe_rows": 59,
+    "full_frames_saved": 0,
+    "full_lap_GT_or_policy_streams_saved": 0,
+    "all_actors_reaped": true,
+    "current_near8_changed": false,
+    "HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
