@@ -1,0 +1,595 @@
+{
+  "stage": 231,
+  "status": "FROZEN_SINGLE_HEAD_HOLDOUT_CLOSED",
+  "aggregate": {
+    "executed_runs": 8,
+    "paired_initial_matches": 4,
+    "champion_completed": 4,
+    "student_completed": 4,
+    "common_completed_pairs": 4,
+    "common_deltas_ms": [
+      -6680,
+      -6380,
+      -7000,
+      -10400
+    ],
+    "mean_common_delta_ms": -7615.0,
+    "median_common_delta_ms": -6840.0,
+    "new_completions": [],
+    "lost_completions": [],
+    "censored": 0,
+    "technical_error": null,
+    "unexecuted": []
+  },
+  "cases": {
+    "H0": {
+      "A": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 29100,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 268,
+        "total_tiles": 268,
+        "charged_wrapper_actions": 364,
+        "diagnostics": {
+          "unvisited": 0,
+          "contiguous_tiles": 268,
+          "final_speed_m_s": 44.80718588950113,
+          "max_no_new_reward_counter": 4,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "collision_actions": [],
+          "source_startline_crossings": [
+            {
+              "action": 364,
+              "physics_time_s": 30.119999999999447,
+              "progress": 1.0,
+              "forward_speed": 44.68560619746122,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 30.119999999999447
+        },
+        "timing": {
+          "total_compute_ms": {
+            "count": 364,
+            "median": 5.548511995584704,
+            "p95": 12.341450731037181,
+            "max": 19.623997999588028
+          },
+          "head_only_ms": null,
+          "act_including_IPC_ms": {
+            "count": 364,
+            "median": 8.198366514989175,
+            "p95": 15.183614034322083,
+            "max": 34.38583901152015
+          },
+          "reset_including_IPC_ms": 4.173352004727349,
+          "cold_start_ms": 213.80177899845876
+        }
+      },
+      "B": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 22420,
+        "damage": 0.2,
+        "retire_reason": null,
+        "unique_tiles": 268,
+        "total_tiles": 268,
+        "charged_wrapper_actions": 281,
+        "diagnostics": {
+          "unvisited": 0,
+          "contiguous_tiles": 268,
+          "final_speed_m_s": 46.01607759376039,
+          "max_no_new_reward_counter": 4,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "collision_actions": [
+            143
+          ],
+          "source_startline_crossings": [
+            {
+              "action": 281,
+              "physics_time_s": 23.43999999999959,
+              "progress": 1.0,
+              "forward_speed": 46.11068476807075,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 23.43999999999959
+        },
+        "timing": {
+          "total_compute_ms": {
+            "count": 281,
+            "median": 5.411726015154272,
+            "p95": 10.997692996170372,
+            "max": 16.213038004934788
+          },
+          "head_only_ms": {
+            "count": 281,
+            "median": 0.03165798261761665,
+            "p95": 0.11891999747604132,
+            "max": 0.265742011833936
+          },
+          "act_including_IPC_ms": {
+            "count": 281,
+            "median": 7.873686990933493,
+            "p95": 13.731775019550696,
+            "max": 19.351672002812847
+          },
+          "reset_including_IPC_ms": 2.5592079909984022,
+          "cold_start_ms": 217.86396601237357
+        }
+      },
+      "student_minus_champion_lap_ms": -6680
+    },
+    "H1": {
+      "B": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 22480,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 278,
+        "total_tiles": 278,
+        "charged_wrapper_actions": 282,
+        "diagnostics": {
+          "unvisited": 0,
+          "contiguous_tiles": 278,
+          "final_speed_m_s": 45.02687996762946,
+          "max_no_new_reward_counter": 4,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "collision_actions": [],
+          "source_startline_crossings": [
+            {
+              "action": 281,
+              "physics_time_s": 23.499999999999588,
+              "progress": 1.0,
+              "forward_speed": 45.00848172023939,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 23.499999999999588
+        },
+        "timing": {
+          "total_compute_ms": {
+            "count": 282,
+            "median": 5.462888497277163,
+            "p95": 11.39286555844592,
+            "max": 35.49237901461311
+          },
+          "head_only_ms": {
+            "count": 282,
+            "median": 0.03131700213998556,
+            "p95": 0.12046498013660305,
+            "max": 0.28893700800836086
+          },
+          "act_including_IPC_ms": {
+            "count": 282,
+            "median": 8.155516479746439,
+            "p95": 14.67283850215608,
+            "max": 40.26042699115351
+          },
+          "reset_including_IPC_ms": 2.6840200007427484,
+          "cold_start_ms": 183.60030101030134
+        }
+      },
+      "A": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 28860,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 278,
+        "total_tiles": 278,
+        "charged_wrapper_actions": 361,
+        "diagnostics": {
+          "unvisited": 0,
+          "contiguous_tiles": 278,
+          "final_speed_m_s": 44.951003479036714,
+          "max_no_new_reward_counter": 3,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "collision_actions": [],
+          "source_startline_crossings": [
+            {
+              "action": 361,
+              "physics_time_s": 29.879999999999452,
+              "progress": 1.0,
+              "forward_speed": 44.83428256374396,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 29.879999999999452
+        },
+        "timing": {
+          "total_compute_ms": {
+            "count": 361,
+            "median": 5.389482015743852,
+            "p95": 11.47394598228857,
+            "max": 17.77604900416918
+          },
+          "head_only_ms": null,
+          "act_including_IPC_ms": {
+            "count": 361,
+            "median": 7.754599995678291,
+            "p95": 13.670418004039675,
+            "max": 21.493161999387667
+          },
+          "reset_including_IPC_ms": 6.676258984953165,
+          "cold_start_ms": 200.94052600325085
+        }
+      },
+      "student_minus_champion_lap_ms": -6380
+    },
+    "H2": {
+      "A": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 31600,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 295,
+        "total_tiles": 295,
+        "charged_wrapper_actions": 396,
+        "diagnostics": {
+          "unvisited": 0,
+          "contiguous_tiles": 295,
+          "final_speed_m_s": 44.33371060879854,
+          "max_no_new_reward_counter": 4,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "collision_actions": [],
+          "source_startline_crossings": [
+            {
+              "action": 395,
+              "physics_time_s": 32.6199999999995,
+              "progress": 1.0,
+              "forward_speed": 44.13429850491689,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 32.6199999999995
+        },
+        "timing": {
+          "total_compute_ms": {
+            "count": 396,
+            "median": 5.009407512261532,
+            "p95": 11.478868480480742,
+            "max": 51.13823799183592
+          },
+          "head_only_ms": null,
+          "act_including_IPC_ms": {
+            "count": 396,
+            "median": 7.3284360114485025,
+            "p95": 14.156429744616617,
+            "max": 54.394865001086146
+          },
+          "reset_including_IPC_ms": 6.016169994836673,
+          "cold_start_ms": 173.58537900145166
+        }
+      },
+      "B": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 24600,
+        "damage": 0.4,
+        "retire_reason": null,
+        "unique_tiles": 295,
+        "total_tiles": 295,
+        "charged_wrapper_actions": 308,
+        "diagnostics": {
+          "unvisited": 0,
+          "contiguous_tiles": 295,
+          "final_speed_m_s": 46.81884750066874,
+          "max_no_new_reward_counter": 3,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "collision_actions": [
+            63,
+            64
+          ],
+          "source_startline_crossings": [
+            {
+              "action": 308,
+              "physics_time_s": 25.619999999999543,
+              "progress": 1.0,
+              "forward_speed": 46.76180320319628,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 25.619999999999543
+        },
+        "timing": {
+          "total_compute_ms": {
+            "count": 308,
+            "median": 5.398586989031173,
+            "p95": 10.41259775665821,
+            "max": 13.441010989481583
+          },
+          "head_only_ms": {
+            "count": 308,
+            "median": 0.03087701043114066,
+            "p95": 0.11829555151052762,
+            "max": 0.8931810152716935
+          },
+          "act_including_IPC_ms": {
+            "count": 308,
+            "median": 8.156718497048132,
+            "p95": 13.316204195143655,
+            "max": 38.240020017838106
+          },
+          "reset_including_IPC_ms": 4.516707005677745,
+          "cold_start_ms": 176.56933300895616
+        }
+      },
+      "student_minus_champion_lap_ms": -7000
+    },
+    "H3": {
+      "B": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 22940,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 268,
+        "total_tiles": 270,
+        "charged_wrapper_actions": 287,
+        "diagnostics": {
+          "unvisited": 2,
+          "contiguous_tiles": 44,
+          "final_speed_m_s": 46.36834733551663,
+          "max_no_new_reward_counter": 5,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "collision_actions": [],
+          "source_startline_crossings": [
+            {
+              "action": 287,
+              "physics_time_s": 23.959999999999578,
+              "progress": 0.9925925925925926,
+              "forward_speed": 46.25664743389138,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 23.959999999999578
+        },
+        "timing": {
+          "total_compute_ms": {
+            "count": 287,
+            "median": 5.464931979076937,
+            "p95": 12.30490828747861,
+            "max": 22.825708001619205
+          },
+          "head_only_ms": {
+            "count": 287,
+            "median": 0.03252900205552578,
+            "p95": 0.11873451585415747,
+            "max": 0.6567249947693199
+          },
+          "act_including_IPC_ms": {
+            "count": 287,
+            "median": 8.095616998616606,
+            "p95": 16.5606504160678,
+            "max": 27.084055996965617
+          },
+          "reset_including_IPC_ms": 3.9462200074922293,
+          "cold_start_ms": 197.46025200583972
+        }
+      },
+      "A": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 33340,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 270,
+        "total_tiles": 270,
+        "charged_wrapper_actions": 417,
+        "diagnostics": {
+          "unvisited": 0,
+          "contiguous_tiles": 270,
+          "final_speed_m_s": 44.36982089091855,
+          "max_no_new_reward_counter": 8,
+          "stationary_actions": 0,
+          "reverse_nearest_tangent_moving_actions": 0,
+          "collision_actions": [],
+          "source_startline_crossings": [
+            {
+              "action": 417,
+              "physics_time_s": 34.35999999999977,
+              "progress": 1.0,
+              "forward_speed": 44.242147413530226,
+              "direction": "forward",
+              "qualified": true
+            }
+          ],
+          "source_finish_time_s": 34.35999999999977
+        },
+        "timing": {
+          "total_compute_ms": {
+            "count": 417,
+            "median": 5.078968009911478,
+            "p95": 10.835724993376061,
+            "max": 28.063214995199814
+          },
+          "head_only_ms": null,
+          "act_including_IPC_ms": {
+            "count": 417,
+            "median": 7.2444309771526605,
+            "p95": 13.366067194147035,
+            "max": 30.291520000901073
+          },
+          "reset_including_IPC_ms": 2.9844630043953657,
+          "cold_start_ms": 158.17842798423953
+        }
+      },
+      "student_minus_champion_lap_ms": -10400
+    }
+  },
+  "cost": {
+    "stage": 231,
+    "at_utc": "2026-10-12T21:39:52.657278+00:00",
+    "native_cap": 4800,
+    "new_wrapper_actions": 2696,
+    "wall_s": 116.93266585399397,
+    "evaluator_CPU_s": 95.972335218,
+    "actor_CPU_s": 21.001863,
+    "raw_step_ticks": 10775,
+    "raw_reset_ticks": 408,
+    "model_queries": 0,
+    "model_physics_ticks": 0,
+    "model_CPU_s": 0,
+    "training_during_HOLDOUT": 0,
+    "fit_before_draw": {
+      "stage": 231,
+      "settings": {
+        "features": 16,
+        "pedal_coefficients": 34,
+        "L2_lambda": 1.0,
+        "bias_penalty": 0.0,
+        "old_fraction": 0.5,
+        "new_fraction": 0.5,
+        "road_fraction": 0.25,
+        "total_weight": "old DEV row count",
+        "normalization": "weighted DEV only",
+        "residual_clip": 0.5,
+        "action_clip": [
+          0.0,
+          1.0
+        ],
+        "steering": "originalnormal24",
+        "nominal_memory": "original",
+        "sweep": false
+      },
+      "old_rows": 1392,
+      "new_rows": 473,
+      "weight_mass": [
+        {
+          "population": "old",
+          "road": "F0",
+          "rows": 368,
+          "weight": 174.0
+        },
+        {
+          "population": "old",
+          "road": "F1",
+          "rows": 334,
+          "weight": 174.0
+        },
+        {
+          "population": "old",
+          "road": "F2",
+          "rows": 337,
+          "weight": 174.0
+        },
+        {
+          "population": "old",
+          "road": "F3",
+          "rows": 353,
+          "weight": 174.0
+        },
+        {
+          "population": "new",
+          "road": "F0",
+          "rows": 109,
+          "weight": 174.0
+        },
+        {
+          "population": "new",
+          "road": "F1",
+          "rows": 165,
+          "weight": 174.0
+        },
+        {
+          "population": "new",
+          "road": "F2",
+          "rows": 96,
+          "weight": 174.0
+        },
+        {
+          "population": "new",
+          "road": "F3",
+          "rows": 103,
+          "weight": 174.0
+        }
+      ],
+      "model_sha256": "2b853adb8ddbe7ff82d9dabf88a66b3621d0baf1fdeb547d08cb74d7fa2ee9b1",
+      "public_parameter_sha256": "3d1bc5a4ba3db61c45c89b06b307f883051860605d7d95139bfec62efd125baf",
+      "wall_s": 0.021088486013468355,
+      "CPU_s": 0.019221422999999987,
+      "native_actions": 0,
+      "condition_draws_before_fit": 0
+    },
+    "total_compute_ms": {
+      "A": {
+        "count": 1538,
+        "median": 5.211528507061303,
+        "p95": 11.40792944934219,
+        "max": 51.13823799183592
+      },
+      "B": {
+        "count": 1158,
+        "median": 5.444916489068419,
+        "p95": 11.39726250839885,
+        "max": 35.49237901461311
+      }
+    },
+    "head_only_ms": {
+      "count": 1158,
+      "median": 0.03156799357384443,
+      "p95": 0.12003179726889344,
+      "max": 0.8931810152716935
+    },
+    "max_act_IPC_ms": 54.394865001086146,
+    "max_reset_IPC_ms": 6.676258984953165,
+    "actor_peak_RSS_mib": 47.1171875,
+    "evaluator_peak_RSS_mib": 84.55859375,
+    "private_diagnostic_bytes": 4149142,
+    "cached_qualification_calls": 4,
+    "B_operating_cap": 842000,
+    "actual_cumulative_wrapper_actions": 755643,
+    "research_remaining": 2357,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "head_sha256": "2b853adb8ddbe7ff82d9dabf88a66b3621d0baf1fdeb547d08cb74d7fa2ee9b1",
+  "parameters_sha256": "3d1bc5a4ba3db61c45c89b06b307f883051860605d7d95139bfec62efd125baf",
+  "pre_draw_frozen_code_sha256": {
+    "retry/single231_fit.py": "6f629c4c5b4094df85213ccaf15d34851bbabfc0aa2a636f5eaacbe558e67ee3",
+    "retry/single231_run.py": "9166c48b0b6ad2a3a265f55cec326131ad7d8ebf8f27afdda498a622d2aac37b",
+    "retry/aggregate230_worker.py": "d1282991b371545b236dd3129da0e355be83b47db56a5574d5b5c65cb3c110d3",
+    "retry/single231_parameters.json": "3d1bc5a4ba3db61c45c89b06b307f883051860605d7d95139bfec62efd125baf"
+  },
+  "bookkeeping_correction": {
+    "before_sha256": "9166c48b0b6ad2a3a265f55cec326131ad7d8ebf8f27afdda498a622d2aac37b",
+    "after_sha256": "c9080e68d5fe9d40b4afe6be7a6914231758f174ec6ef56599e84318c71975e3",
+    "change": "Only final outcome HOLDOUT_used false->true; no model, selection, control, timing or execution change.",
+    "native_before": 0
+  },
+  "registration_recovery": {
+    "original_draw_preserved": true,
+    "new_random_draws": 0,
+    "identity_rejections": 0,
+    "native_actions": 0,
+    "note": "Missing output metadata repaired from frozen contract using the original durable draw. Original source-only geometry reconstruction repeated once; no simulator. Original freeze and draw retained."
+  },
+  "protocol": "Single DEV224+229 weighted affine pedal head frozen before new draw; four prospectively registered HOLDOUT roads, AB/BA/AB/BA, official95percent tracker and5s defaults. Primary completion count and common-completion times only. No new diagnostics gates.",
+  "limitations": "Four pairs only; no general superiority claim. Nearest-road tangent direction is diagnostic, source FinishLineTracker determines completion. Historic physical-obstacle exclusion metadata incomplete, all recorded identities and geometry excluded.",
+  "champion_changed": false,
+  "HOLDOUT_used": true,
+  "HOLDOUT_added_to_DEV": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
