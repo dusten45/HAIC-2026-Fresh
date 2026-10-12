@@ -2,7 +2,8 @@
 
 The pixel worker stays on the frozen nominal archive. The evaluator reads full
 current GT and selects source-model futures; only the executed action is sent
-back to the worker. Candidate generation and ranking are imported unchanged.
+back to the worker. Candidate generation is unchanged; an optional visited-prefix
+gain precedes the original ranking without changing candidate eligibility.
 """
 import copy
 from pathlib import Path
@@ -118,9 +119,36 @@ def relaxed_selection(scores, specifications):
         int(specifications[name]['brake_first_block']), name))
 
 
-def choose_with_fallback(scores, specifications, enabled):
+def contiguous_visited_tiles(visited, road_count):
+    """One forward prefix in source order 0,1,...,N-1, capped at one lap.
+
+    Tile i spans track[i-1] to track[i]. Reset visits on the back side of
+    tile 0 keep their IDs; they cannot bridge an earlier unvisited tile.
+    This is a ranking surrogate, never the official finish qualification.
+    """
+    return next((i for i in range(road_count) if i not in visited), road_count)
+
+
+def add_contiguous_scores(snapshot, predictions, scores):
+    visited = {r['idx'] for r in snapshot['roads'] if r['visited']}
+    count = snapshot['road_count']
+    before = contiguous_visited_tiles(visited, count)
+    for name, prediction in predictions.items():
+        for row in prediction['rows']:
+            row['contiguous_visited_tiles'] = contiguous_visited_tiles(
+                visited | set(row['newly_visited_tile_ids']), count)
+        after = prediction['rows'][-1]['contiguous_visited_tiles']
+        scores[name].update(contiguous_before_tiles=before,
+            contiguous_after_tiles=after, contiguous_gain_tiles=after-before)
+
+
+def choose_with_fallback(scores, specifications, enabled, contiguous_rank=False):
     original = select({n: s for n, s in scores.items() if not n.startswith('E')}, specifications)
     relaxed = relaxed_selection(scores, specifications) if enabled and not original else []
+    if contiguous_rank:
+        # Stable sorting prepends exactly one key to each unchanged old order.
+        original.sort(key=lambda n: -scores[n]['contiguous_gain_tiles'])
+        relaxed.sort(key=lambda n: -scores[n]['contiguous_gain_tiles'])
     return original, relaxed, original or relaxed
 
 
@@ -128,6 +156,9 @@ def forecast_pool(snapshot, nominal, oracle, step, previous_plan, track, previou
                   record_road_visits=False):
     """Keep the existing pool; optionally add one model-feedback T trajectory."""
     specs, horizon = oracle['specifications'], oracle['horizon_actions']
+    if oracle.get('contiguous_forward_rank', False):
+        assert not oracle.get('track_feedback'), 'Continuity comparison excludes T'
+        record_road_visits = True
     if record_road_visits:
         candidates = {n: predict_actions(snapshot, controls(nominal, s), True) for n,s in specs.items()}
         predicted = dict(candidates=candidates, model_physics_ticks=sum(q['model_physics_ticks'] for q in candidates.values()))
@@ -203,10 +234,16 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
             state['env'] = env
             if oracle.get('track_feedback'):
                 state['track'] = [list(map(float, point)) for point in env.unwrapped.track]
+            if oracle.get('contiguous_forward_rank', False):
+                road = env.unwrapped.road
+                assert [int(t.idx) for t in road] == list(range(len(road)))
+                state['reset_visited_tiles'] = sorted(int(t.idx) for t in road if t.road_visited)
+                assert 0 in state['reset_visited_tiles'], 'Expected reset contact at source start tile'
             if oracle.get('record_track_diagnostic', False):
                 directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
                 old_write(directory / 'track-diagnostic.json', dict(
                     track=[list(map(float, point)) for point in env.unwrapped.track],
+                    reset_visited_tiles=state.get('reset_visited_tiles'),
                     initial_finish_tracker=vars(env.unwrapped.finish_line_tracker)), exclusive=True)
             listener = env.unwrapped.world.contactListener_bug_workaround
             original_contact = listener._contact
@@ -247,6 +284,9 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                     finish_tracker={key: getattr(tracker, key) for key in (
                         'departed_start_area', 'crossing_from_back', 'previous_longitudinal',
                         'previous_lateral', 'qualified_time_s', 'candidate_crossing_time_s', 'finish_time_s')})
+            if oracle.get('contiguous_forward_rank', False):
+                row['contiguous_visited_tiles'] = contiguous_visited_tiles(
+                    {int(t.idx) for t in env.unwrapped.road if t.road_visited}, len(env.unwrapped.road))
             if state['selection'] is not None:
                 predicted = (state['prediction_rows'][state['selection_offset']]
                              if state['selection_offset'] < len(state['prediction_rows']) else None)
@@ -256,6 +296,7 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                     predicted_road_wheels=predicted['wheel_road_contacts'] if predicted else None,
                     predicted_no_new_tile_actions=predicted['off_track_counter'] if predicted else None,
                     predicted_terminal=predicted['terminal'] if predicted else None,
+                    predicted_contiguous_visited_tiles=predicted.get('contiguous_visited_tiles') if predicted else None,
                     angle_error_rad=(abs(predicted['angle']-after['angle'])
                                      if predicted and row['raw_ticks'] == 4 else None),
                     speed_error_m_s=(abs(predicted['speed_m_s']-after['speed_m_s'])
@@ -326,6 +367,17 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                         valid = valid and gate['required_tiles_visited'] and gate['visited_tile_set_mismatch_steps'] == 0
                         gate['valid'] = valid
                     state['local_gate'] = gate
+                    if replay.get('require_contiguous_match'):
+                        gate.update(
+                            contiguous_mismatch_steps=sum(r['contiguous_visited_tiles'] != r['predicted_contiguous_visited_tiles'] for r in local),
+                            contact_mismatch_steps=sum(bool(r['collision'] or r['contact_obstacle_ids']) != r['predicted_collision'] for r in local),
+                            road_wheel_mismatch_steps=sum(r['wheel_road_contacts'] != r['predicted_road_wheels'] for r in local),
+                            no_new_tile_counter_mismatch_steps=sum(r['off_track_counter'] != r['predicted_no_new_tile_actions'] for r in local),
+                            terminal_mismatch_steps=sum(r['terminal'] != r['predicted_terminal'] for r in local),
+                            actual_contiguous_gain_tiles=row['contiguous_visited_tiles']-gate['predicted']['contiguous_before_tiles'])
+                        valid = valid and all(gate[k] == 0 for k in ('contiguous_mismatch_steps', 'contact_mismatch_steps',
+                            'road_wheel_mismatch_steps', 'no_new_tile_counter_mismatch_steps', 'terminal_mismatch_steps'))
+                        gate['valid'] = valid
                     directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
                     old_write(directory / 'local-intervention-result.json', gate, exclusive=True)
                     if valid:
@@ -565,11 +617,19 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 predicted['batch_wall_s'] = time.perf_counter() - wall
                 scores = {name: endpoint(v['rows'], horizon, snapshot['unique_tiles'])
                           for name, v in predicted['candidates'].items()}
+                rank_cpu, rank_wall = time.process_time(), time.perf_counter()
+                contiguous_rank = oracle.get('contiguous_forward_rank', False)
+                if contiguous_rank:
+                    add_contiguous_scores(snapshot, predicted['candidates'], scores)
                 invalid = [name for name, v in predicted['candidates'].items()
                            if not all(v['initialization'].values())]
-                original, relaxed, eligible = choose_with_fallback(
+                _, _, old_order = choose_with_fallback(
                     {n: s for n, s in scores.items() if n not in invalid}, active_specs,
                     oracle.get('relax_progress_fallback', False))
+                original, relaxed, eligible = choose_with_fallback(
+                    {n: s for n, s in scores.items() if n not in invalid}, active_specs,
+                    oracle.get('relax_progress_fallback', False), contiguous_rank)
+                rank_cpu, rank_wall = time.process_time()-rank_cpu, time.perf_counter()-rank_wall
                 state['progress_fallback_active'] = bool(not original and eligible)
                 chosen = eligible[0] if eligible else None
                 state['selection'] = chosen
@@ -589,6 +649,10 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 decisions.append(dict(step=state['calls'], anchor=nominal.tolist(),
                     initial_state_digest=digest(snapshot), current_damage=snapshot['damage'],
                     eligible=eligible, invalid_initializations=invalid, selected=chosen,
+                    old_rank_selected=old_order[0] if old_order else None,
+                    contiguous_rank_enabled=contiguous_rank,
+                    continuity_rank_CPU_s=rank_cpu if contiguous_rank else 0.,
+                    continuity_rank_wall_s=rank_wall if contiguous_rank else 0.,
                     original_eligible=original, progress_fallback_intervention=state['progress_fallback_active'],
                     nominal_hold_eligible_primary='N' in original,
                     nominal_hold_eligible_relaxed=bool(relaxed_selection(
@@ -653,6 +717,8 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                                                 and r['predicted_collision'] is False for r in selected_rows),
         selected_prefix_tile_mismatch_steps=sum(r['unique_tiles'] != r['predicted_unique_tiles'] for r in selected_rows
                                                if r['predicted_unique_tiles'] is not None),
+        selected_prefix_contiguous_mismatch_steps=sum(r.get('contiguous_visited_tiles') != r['predicted_contiguous_visited_tiles']
+            for r in selected_rows if r.get('predicted_contiguous_visited_tiles') is not None and r['raw_ticks'] == 4),
         selected_prefix_position_error_m=distribution([r['position_error_m'] for r in selected_rows if r['position_error_m'] is not None]),
         GT_scope='Full current hull/wheels/actuators, damage, road fixture geometry/friction/visited state, obstacles and current wheel tile membership.',
         policy_scope='Frozen original normal32 archive sees actual pixels plus own executed action; only previous_steer command memory is replaced with actual float32 steering.',
