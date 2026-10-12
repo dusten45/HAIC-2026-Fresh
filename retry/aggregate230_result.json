@@ -1,0 +1,571 @@
+{
+  "stage": 230,
+  "status": "FOUR_FROZEN_AGGREGATE_HEAD_OFFICIAL_COMPLETIONS",
+  "aggregate": {
+    "registered_roads": 4,
+    "executed_roads": 4,
+    "student_completed": 4,
+    "historical_collector_completed": 3,
+    "historical_champion_completed": 4,
+    "new_completions_vs_collector": [
+      "F1"
+    ],
+    "lost_completions_vs_collector": [],
+    "common_completed_vs_collector": 3,
+    "common_collector_deltas_ms": [
+      3080,
+      1620,
+      2000
+    ],
+    "mean_common_collector_delta_ms": 2233.3333333333335,
+    "median_common_collector_delta_ms": 2000.0,
+    "common_completed_vs_champion": 4,
+    "common_champion_deltas_ms": [
+      -7900,
+      -10840,
+      -6960,
+      -8300
+    ],
+    "mean_common_champion_delta_ms": -8500.0,
+    "technical_error": null,
+    "unexecuted_roads": [],
+    "cap_unexecuted": [],
+    "censored": 0
+  },
+  "cases": {
+    "F0": {
+      "student": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 29100,
+        "damage": 0.2,
+        "retire_reason": null,
+        "unique_tiles": 326,
+        "total_tiles": 326
+      },
+      "historical_collector229": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 26020,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 326,
+        "total_tiles": 326
+      },
+      "historical_champion201": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 37000,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 326,
+        "total_tiles": 326
+      },
+      "historical_not_rerun": true,
+      "initial_and_nominal_archive_exact": true,
+      "student_minus_collector_lap_ms": 3080,
+      "student_minus_champion_lap_ms": -7900,
+      "native_actions": 364,
+      "endpoint": {
+        "action": 364,
+        "last_new_tile_action": 361,
+        "final_unvisited_tiles": 0,
+        "contiguous_tiles": 326,
+        "max_no_new_reward_counter": 3,
+        "final_no_new_reward_counter": 3,
+        "final_speed_m_s": 43.54121980951586,
+        "wheels_on_road": 4
+      },
+      "motion": {
+        "stationary_actions_speed_le001": 0,
+        "moving_actions": 364,
+        "nearest_road_reverse_moving_actions": 0,
+        "nearest_tangent_sign_changes": 0,
+        "actual_source_startline_crossings": [
+          {
+            "action": 364,
+            "physics_time_s": 30.119999999999447,
+            "progress": 1.0,
+            "forward_speed": 43.54405015787714,
+            "direction": "forward",
+            "qualified": true
+          }
+        ],
+        "proxy_scope": "Nearesttileforwardtangent atspeed>=1 isdiagnostic/notformalwholelapdirection; rawtrackerwidthcenterlinecrossings exact."
+      },
+      "collisions": [
+        {
+          "action": 133,
+          "visited_tiles": 124,
+          "damage": 0.2,
+          "speed_m_s": 31.10711704886444
+        }
+      ],
+      "official_finish_tracker": {
+        "qualified_time_s": 28.47999999999948,
+        "finish_time_s": 30.119999999999447,
+        "departed_start_area": true
+      },
+      "command_distribution": {
+        "channel_order": [
+          "steering",
+          "gas",
+          "brake"
+        ],
+        "mean": [
+          -0.02076735533773899,
+          0.3519446849822998,
+          0.06716130673885345
+        ],
+        "p10": [
+          -0.16350649297237396,
+          0.1934460759162903,
+          0.018429476208984854
+        ],
+        "p90": [
+          0.07374846711754798,
+          0.46689991354942323,
+          0.1265915021300316
+        ],
+        "simultaneous_positive_pedal_fraction": 0.989010989010989
+      },
+      "inference": {
+        "total_student_compute_ms": {
+          "count": 364,
+          "median": 6.6238144936505705,
+          "p95": 14.848210958007252,
+          "max": 27.92808899539523
+        },
+        "head_only_ms": {
+          "count": 364,
+          "median": 0.033575997804291546,
+          "p95": 0.15018135163700208,
+          "max": 1.0916810133494437
+        },
+        "including_IPC_ms": {
+          "count": 364,
+          "median": 9.781505999853835,
+          "p95": 18.043400060560085,
+          "max": 33.820406999439
+        },
+        "actor_CPU_s": 3.525146
+      },
+      "steering_and_nominal_memory_verified": true
+    },
+    "F1": {
+      "student": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 23240,
+        "damage": 0.6000000000000001,
+        "retire_reason": null,
+        "unique_tiles": 291,
+        "total_tiles": 299
+      },
+      "historical_collector229": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 0.0,
+        "retire_reason": "off_track",
+        "unique_tiles": 299,
+        "total_tiles": 299
+      },
+      "historical_champion201": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 34080,
+        "damage": 0.2,
+        "retire_reason": null,
+        "unique_tiles": 299,
+        "total_tiles": 299
+      },
+      "historical_not_rerun": true,
+      "initial_and_nominal_archive_exact": true,
+      "student_minus_collector_lap_ms": null,
+      "student_minus_champion_lap_ms": -10840,
+      "native_actions": 291,
+      "endpoint": {
+        "action": 291,
+        "last_new_tile_action": 288,
+        "final_unvisited_tiles": 8,
+        "contiguous_tiles": 32,
+        "max_no_new_reward_counter": 9,
+        "final_no_new_reward_counter": 3,
+        "final_speed_m_s": 47.24481788908215,
+        "wheels_on_road": 4
+      },
+      "motion": {
+        "stationary_actions_speed_le001": 0,
+        "moving_actions": 291,
+        "nearest_road_reverse_moving_actions": 0,
+        "nearest_tangent_sign_changes": 0,
+        "actual_source_startline_crossings": [
+          {
+            "action": 291,
+            "physics_time_s": 24.25999999999957,
+            "progress": 0.9732441471571907,
+            "forward_speed": 46.970828406789586,
+            "direction": "forward",
+            "qualified": true
+          }
+        ],
+        "proxy_scope": "Nearesttileforwardtangent atspeed>=1 isdiagnostic/notformalwholelapdirection; rawtrackerwidthcenterlinecrossings exact."
+      },
+      "collisions": [
+        {
+          "action": 203,
+          "visited_tiles": 204,
+          "damage": 0.2,
+          "speed_m_s": 35.11962004504253
+        },
+        {
+          "action": 238,
+          "visited_tiles": 242,
+          "damage": 0.4,
+          "speed_m_s": 44.883565716274305
+        },
+        {
+          "action": 239,
+          "visited_tiles": 243,
+          "damage": 0.6000000000000001,
+          "speed_m_s": 42.2859278421776
+        }
+      ],
+      "official_finish_tracker": {
+        "qualified_time_s": 23.41999999999959,
+        "finish_time_s": 24.25999999999957,
+        "departed_start_area": true
+      },
+      "command_distribution": {
+        "channel_order": [
+          "steering",
+          "gas",
+          "brake"
+        ],
+        "mean": [
+          -0.030697813257575035,
+          0.354057639837265,
+          0.0555415004491806
+        ],
+        "p10": [
+          -0.19719181954860687,
+          0.24773737788200378,
+          0.005501065403223038
+        ],
+        "p90": [
+          0.08165787905454636,
+          0.46638962626457214,
+          0.10439573228359222
+        ],
+        "simultaneous_positive_pedal_fraction": 0.9381443298969072
+      },
+      "inference": {
+        "total_student_compute_ms": {
+          "count": 291,
+          "median": 6.675170996459201,
+          "p95": 14.647183998022228,
+          "max": 24.549137015128508
+        },
+        "head_only_ms": {
+          "count": 291,
+          "median": 0.03221799852326512,
+          "p95": 0.13459351612254977,
+          "max": 0.18435899983160198
+        },
+        "including_IPC_ms": {
+          "count": 291,
+          "median": 9.756943007232621,
+          "p95": 17.572897486388683,
+          "max": 28.003133018501103
+        },
+        "actor_CPU_s": 2.823692
+      },
+      "steering_and_nominal_memory_verified": true
+    },
+    "F2": {
+      "student": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 24640,
+        "damage": 0.4,
+        "retire_reason": null,
+        "unique_tiles": 289,
+        "total_tiles": 289
+      },
+      "historical_collector229": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 23020,
+        "damage": 0.4,
+        "retire_reason": null,
+        "unique_tiles": 289,
+        "total_tiles": 289
+      },
+      "historical_champion201": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 31600,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 289,
+        "total_tiles": 289
+      },
+      "historical_not_rerun": true,
+      "initial_and_nominal_archive_exact": true,
+      "student_minus_collector_lap_ms": 1620,
+      "student_minus_champion_lap_ms": -6960,
+      "native_actions": 309,
+      "endpoint": {
+        "action": 309,
+        "last_new_tile_action": 305,
+        "final_unvisited_tiles": 0,
+        "contiguous_tiles": 289,
+        "max_no_new_reward_counter": 4,
+        "final_no_new_reward_counter": 4,
+        "final_speed_m_s": 44.47813119540368,
+        "wheels_on_road": 4
+      },
+      "motion": {
+        "stationary_actions_speed_le001": 0,
+        "moving_actions": 309,
+        "nearest_road_reverse_moving_actions": 0,
+        "nearest_tangent_sign_changes": 0,
+        "actual_source_startline_crossings": [
+          {
+            "action": 308,
+            "physics_time_s": 25.659999999999542,
+            "progress": 1.0,
+            "forward_speed": 44.29284478329841,
+            "direction": "forward",
+            "qualified": true
+          }
+        ],
+        "proxy_scope": "Nearesttileforwardtangent atspeed>=1 isdiagnostic/notformalwholelapdirection; rawtrackerwidthcenterlinecrossings exact."
+      },
+      "collisions": [
+        {
+          "action": 51,
+          "visited_tiles": 47,
+          "damage": 0.2,
+          "speed_m_s": 38.09894542026682
+        },
+        {
+          "action": 99,
+          "visited_tiles": 94,
+          "damage": 0.4,
+          "speed_m_s": 35.31670630592104
+        }
+      ],
+      "official_finish_tracker": {
+        "qualified_time_s": 24.199999999999573,
+        "finish_time_s": 25.659999999999542,
+        "departed_start_area": true
+      },
+      "command_distribution": {
+        "channel_order": [
+          "steering",
+          "gas",
+          "brake"
+        ],
+        "mean": [
+          -0.01965929940342903,
+          0.38532522320747375,
+          0.06663229316473007
+        ],
+        "p10": [
+          -0.16871517598628996,
+          0.2550418496131897,
+          0.031247811019420625
+        ],
+        "p90": [
+          0.052086053043603885,
+          0.45800289511680603,
+          0.11281671226024627
+        ],
+        "simultaneous_positive_pedal_fraction": 0.9967637540453075
+      },
+      "inference": {
+        "total_student_compute_ms": {
+          "count": 309,
+          "median": 6.247538985917345,
+          "p95": 14.947890810435636,
+          "max": 39.54788399278186
+        },
+        "head_only_ms": {
+          "count": 309,
+          "median": 0.03329000901430845,
+          "p95": 0.15963720506988402,
+          "max": 1.4889120066072792
+        },
+        "including_IPC_ms": {
+          "count": 309,
+          "median": 9.450618992559612,
+          "p95": 18.6041698034387,
+          "max": 48.015575972385705
+        },
+        "actor_CPU_s": 2.94869
+      },
+      "steering_and_nominal_memory_verified": true
+    },
+    "F3": {
+      "student": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 26680,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 319,
+        "total_tiles": 319
+      },
+      "historical_collector229": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 24680,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 319,
+        "total_tiles": 319
+      },
+      "historical_champion201": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 34980,
+        "damage": 0.4,
+        "retire_reason": null,
+        "unique_tiles": 319,
+        "total_tiles": 319
+      },
+      "historical_not_rerun": true,
+      "initial_and_nominal_archive_exact": true,
+      "student_minus_collector_lap_ms": 2000,
+      "student_minus_champion_lap_ms": -8300,
+      "native_actions": 334,
+      "endpoint": {
+        "action": 334,
+        "last_new_tile_action": 330,
+        "final_unvisited_tiles": 0,
+        "contiguous_tiles": 319,
+        "max_no_new_reward_counter": 4,
+        "final_no_new_reward_counter": 4,
+        "final_speed_m_s": 44.67085679337564,
+        "wheels_on_road": 4
+      },
+      "motion": {
+        "stationary_actions_speed_le001": 0,
+        "moving_actions": 334,
+        "nearest_road_reverse_moving_actions": 0,
+        "nearest_tangent_sign_changes": 0,
+        "actual_source_startline_crossings": [
+          {
+            "action": 334,
+            "physics_time_s": 27.6999999999995,
+            "progress": 1.0,
+            "forward_speed": 44.52044569466927,
+            "direction": "forward",
+            "qualified": true
+          }
+        ],
+        "proxy_scope": "Nearesttileforwardtangent atspeed>=1 isdiagnostic/notformalwholelapdirection; rawtrackerwidthcenterlinecrossings exact."
+      },
+      "collisions": [],
+      "official_finish_tracker": {
+        "qualified_time_s": 26.119999999999532,
+        "finish_time_s": 27.6999999999995,
+        "departed_start_area": true
+      },
+      "command_distribution": {
+        "channel_order": [
+          "steering",
+          "gas",
+          "brake"
+        ],
+        "mean": [
+          -0.02097504772245884,
+          0.38558530807495117,
+          0.07056023925542831
+        ],
+        "p10": [
+          -0.15202022939920426,
+          0.2327873319387436,
+          0.027403889596462252
+        ],
+        "p90": [
+          0.04162880778312679,
+          0.4808324038982391,
+          0.11048136726021766
+        ],
+        "simultaneous_positive_pedal_fraction": 1.0
+      },
+      "inference": {
+        "total_student_compute_ms": {
+          "count": 334,
+          "median": 6.400861995643936,
+          "p95": 11.968669861380477,
+          "max": 22.65294300741516
+        },
+        "head_only_ms": {
+          "count": 334,
+          "median": 0.032329000532627106,
+          "p95": 0.14181829610606636,
+          "max": 0.37735002115368843
+        },
+        "including_IPC_ms": {
+          "count": 334,
+          "median": 9.463940499699675,
+          "p95": 15.604719353723338,
+          "max": 30.421267001656815
+        },
+        "actor_CPU_s": 3.060431
+      },
+      "steering_and_nominal_memory_verified": true
+    }
+  },
+  "cost": {
+    "stage": 230,
+    "at_utc": "2026-10-12T21:18:02.629547+00:00",
+    "native_cap": 2000,
+    "new_wrapper_actions": 1298,
+    "wall_s": 68.78924542298773,
+    "evaluator_CPU_s": 56.39242262699999,
+    "actor_CPU_s": 12.357959,
+    "model_queries": 0,
+    "model_physics_ticks": 0,
+    "model_CPU_s": 0,
+    "training_updates": 0,
+    "raw_step_ticks": 5187,
+    "raw_reset_ticks": 204,
+    "student_total_compute_ms": {
+      "count": 1298,
+      "median": 6.522014504298568,
+      "p95": 13.975550288159846,
+      "max": 39.54788399278186
+    },
+    "head_only_compute_ms": {
+      "count": 1298,
+      "median": 0.032954500056803226,
+      "p95": 0.14529150939779353,
+      "max": 1.4889120066072792
+    },
+    "cached_qualification_calls": 16,
+    "qualification_native_actions": 0,
+    "qualification_wall_s": 1.1973589370027184,
+    "actor_peak_RSS_mib": 47.140625,
+    "evaluator_peak_RSS_mib": 82.78515625,
+    "private_command_feature_diagnostic_bytes": 2676777,
+    "B_operating_cap": 838000,
+    "actual_cumulative_wrapper_actions": 752947,
+    "research_remaining": 1053,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "accounting": "Fourfrozen229LOOheads once F0/F1/F2/F3 untilofficialterminal/shared2000cap. No500subcaps, no retraining/GTqueries/oldcontrolreruns. Readonlymotion/FinishLineTrackerdiagnosticsnotstudentinput."
+  },
+  "comparison_scope": "KnownDEVroad-specificLOOheads, historical201championand229collector references, sameexactreset/nominalarchive; controlsnotcontemporaneouslyrerun. Newnormalization/weighteddata/labelsjointchange,notisolateddataaggregationcause.",
+  "judgment": "KnownDEVcompletiongainF1 vsoldaffinepedalcollector, allthreecommonroads slower. Fourofficialfinishes inclF1with8unvisitedallowedbyoriginal95percentqualification. No universalperformance/championpromotion claim.",
+  "champion_changed": false,
+  "HOLDOUT_used": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
