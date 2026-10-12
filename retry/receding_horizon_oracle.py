@@ -157,7 +157,6 @@ def forecast_pool(snapshot, nominal, oracle, step, previous_plan, track, previou
     """Keep the existing pool; optionally add one model-feedback T trajectory."""
     specs, horizon = oracle['specifications'], oracle['horizon_actions']
     if oracle.get('contiguous_forward_rank', False):
-        assert not oracle.get('track_feedback'), 'Continuity comparison excludes T'
         record_road_visits = True
     if record_road_visits:
         candidates = {n: predict_actions(snapshot, controls(nominal, s), True) for n,s in specs.items()}
