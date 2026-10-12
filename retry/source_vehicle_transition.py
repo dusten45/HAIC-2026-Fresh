@@ -13,7 +13,7 @@ import numpy as np
 
 from core.vendor.car_dynamics import Car
 from core.vendor.car_racing import VariablesContactDetector, FPS
-from core.obstacle_contacts import ObstacleUserData
+from core.obstacle_contacts import ObstacleUserData, clear_obstacle_hit
 from damage import CollisionDamage
 
 
@@ -38,6 +38,20 @@ def fixture_state(fixture):
         groupIndex=int(fixture.filterData.groupIndex))
 
 
+def obstacle_contact_pair(contact, car, obstacles):
+    """Stable fixture identity for gameplay contact history, not solver state."""
+    car_bodies = (car.hull, *car.wheels)
+    for obstacle_fixture, car_fixture in ((contact.fixtureA, contact.fixtureB),
+                                          (contact.fixtureB, contact.fixtureA)):
+        obstacle, body = obstacle_fixture.body, car_fixture.body
+        if isinstance(obstacle.userData, ObstacleUserData) and any(body == b for b in car_bodies):
+            return (next(i for i, o in enumerate(obstacles) if o == obstacle),
+                    next(i for i, f in enumerate(obstacle.fixtures) if f == obstacle_fixture),
+                    next(i for i, b in enumerate(car_bodies) if b == body),
+                    next(i for i, f in enumerate(body.fixtures) if f == car_fixture))
+    return None
+
+
 def capture(env):
     """Read an actual pre-action boundary; never advance the source world."""
     raw = env.unwrapped
@@ -55,6 +69,8 @@ def capture(env):
         roads=[dict(body=body_state(t), fixture=fixture_state(t.fixtures[0]), idx=int(t.idx),
                     visited=bool(t.road_visited), friction=float(t.road_friction)) for t in raw.road],
         obstacles=[dict(body=body_state(o), fixture=fixture_state(o.fixtures[0]), hit=bool(o.userData.hit)) for o in raw.obstacles],
+        touching_obstacle_contacts=sorted(pair for c in raw.world.contacts if c.touching
+            and (pair := obstacle_contact_pair(c, raw.car, raw.obstacles)) is not None),
         world_flags={key: getattr(raw.world, key) for key in WORLD_FLAGS},
         grass_friction_multiplier=float(raw.car.grass_friction_multiplier),
         damage=float(env.damage.damage), off_track_counter=int(env.off_track_counter),
@@ -150,6 +166,11 @@ class SourceVehicleTransition:
         # until the collision phase of the first positive-time physics step.
         self.world.Step(0., 180, 60)
         self._constructing_contacts = False
+        self._restored_obstacle_contacts = {tuple(p) for p in snapshot.get('touching_obstacle_contacts', [])}
+        geometric_obstacle_contacts = {pair for c, begin in self._initial_contact_events
+            if begin and (pair := obstacle_contact_pair(c, self.car, self.obstacles)) is not None}
+        self._initial_obstacle_ends = (sorted(self._restored_obstacle_contacts - geometric_obstacle_contacts)
+            if 'touching_obstacle_contacts' in snapshot else [])
         self._initial_geometric_tiles = [set() for _ in self.car.wheels]
         for c, begin in self._initial_contact_events:
             assert begin, 'New world unexpectedly emitted an initial EndContact'
@@ -161,6 +182,8 @@ class SourceVehicleTransition:
                     self._initial_geometric_tiles[index].add(tile)
         self.initial_event_receipt = dict(
             deferred_begin_callbacks=len(self._initial_contact_events),
+            restored_obstacle_end_callbacks=len(self._initial_obstacle_ends),
+            suppressed_existing_obstacle_begin_callbacks=len(self._restored_obstacle_contacts & geometric_obstacle_contacts),
             deferred_road_contact_additions=sum(len(now - w.tiles) for w, now in
                                                 zip(self.car.wheels, self._initial_geometric_tiles)),
             deferred_road_contact_removals=sum(len(w.tiles - now) for w, now in
@@ -202,7 +225,17 @@ class SourceVehicleTransition:
                 # that disappeared need the corresponding removal as well.
                 for wheel, geometric in zip(self.car.wheels, self._initial_geometric_tiles):
                     wheel.tiles.intersection_update(geometric)
+                # A captured touching pair absent in the fresh geometric world
+                # would end at the next collision phase. Preserve its source
+                # EndContact bookkeeping, including clearing the hit flag.
+                for pair in self._initial_obstacle_ends:
+                    clear_obstacle_hit(self.obstacles[pair[0]])
+                self._initial_obstacle_ends.clear()
                 for contact, begin in self._initial_contact_events:
+                    pair = obstacle_contact_pair(contact, self.car, self.obstacles)
+                    if pair is not None and pair in self._restored_obstacle_contacts:
+                        # Reconstructing a persistent pair is not a new begin.
+                        continue
                     self.listener._contact(contact, begin)
                 self._initial_contact_events.clear()
                 self._initial_events_pending = False

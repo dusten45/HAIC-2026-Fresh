@@ -1,0 +1,113 @@
+{
+  "stage": 210,
+  "status": "TWO_CONTACT_HISTORY_ERRORS_FIXED_ON_MATCHED_COMMANDS",
+  "first_boundary_before_action": 85,
+  "initial_damage": 0.2,
+  "commands_identical": true,
+  "comparison_raw_ticks_per_action": 4,
+  "damage_before_model": [
+    0.2,
+    0.4,
+    0.4
+  ],
+  "damage_actual": [
+    0.4,
+    0.6000000000000001,
+    0.6000000000000001
+  ],
+  "damage_fixed": [
+    0.4,
+    0.6000000000000001,
+    0.6000000000000001
+  ],
+  "cause85": "Sourceexistingwheelobstaclecontact ends atfirstrawtick,clearing obstaclehit; freshworld has no touchingpair and missesEndContact. Subsequentnewwheelbegin atfourthtick inheritsstalehitTrue,so collision flag anddamageincrement suppressed. Aggregatecontactmetric OR IDs concealedrawcollisiondifference. Not a command/time-window or CollisionDamage formula difference.",
+  "cause223": "Freshworldzero-timeconstruction re-emitsBegin forsourcepersistent hullobstaclepair. HitTrue preventsdamageincrement but instrumentationaddscontactID, producingriskFP.",
+  "fix": "Capturetouchingobstaclefixturepairs. Atfirstpositivecollisionphase applymissingpairEnd bookkeeping and suppressreconstructedBegin ofsourcepersistentpair. Keep sourceCollisionDamage formula,physics,control,rank,horizon,tolerances unchanged. Legacy snapshots lackingcontactfield retainoldbehavior.",
+  "validation": {
+    "85": {
+      "initialization": {
+        "bodies": true,
+        "tiles": true,
+        "progress": true
+      },
+      "initial_event_receipt": {
+        "deferred_begin_callbacks": 10,
+        "restored_obstacle_end_callbacks": 1,
+        "suppressed_existing_obstacle_begin_callbacks": 0,
+        "deferred_road_contact_additions": 0,
+        "deferred_road_contact_removals": 3,
+        "counter_offset_correction": 0
+      },
+      "comparison": {
+        "actions": 3,
+        "commands_identical_to209": true,
+        "all_raw_ticks4": true,
+        "raw_collision_mismatch": 0,
+        "contact_ID_mismatch": 0,
+        "damage_mismatch": 0,
+        "tile_mismatch": 0,
+        "physical_terminal_mismatch": 0,
+        "max_position_error_m": 0.0,
+        "max_speed_error_m_s": 1.8287162681929203e-06
+      }
+    },
+    "223": {
+      "initialization": {
+        "bodies": true,
+        "tiles": true,
+        "progress": true
+      },
+      "initial_event_receipt": {
+        "deferred_begin_callbacks": 10,
+        "restored_obstacle_end_callbacks": 0,
+        "suppressed_existing_obstacle_begin_callbacks": 1,
+        "deferred_road_contact_additions": 0,
+        "deferred_road_contact_removals": 0,
+        "counter_offset_correction": 0
+      },
+      "comparison": {
+        "actions": 1,
+        "commands_identical_to209": true,
+        "all_raw_ticks4": true,
+        "raw_collision_mismatch": 0,
+        "contact_ID_mismatch": 0,
+        "damage_mismatch": 0,
+        "tile_mismatch": 0,
+        "physical_terminal_mismatch": 0,
+        "max_position_error_m": 0.0,
+        "max_speed_error_m_s": 1.3264743881080676e-07
+      }
+    }
+  },
+  "selection_terminal_impact": "At85..87samecommands physicalterminal remainsFalse but predictedcumulativedamage increases.2 toactual,removingonefalse collisionallowance. At223contactriskTrue->False,damage.8 andphysicalterminalTrue unchanged; thatNcandidate remains excluded byterminal. Fullpoolselection not re-evaluated; no policygain/full-lapclaim.",
+  "remaining_limit": "Observedtouchingpairs only, not solverwarm-start/manifold/broadphase/islandhistory or arbitraryfuturecallbackorder. Exactsame-boundary4actions validated; no universalcontactaccuracy claim. Previouslysaved snapshots withoutnewfield remain incomplete unless augmented fromsameboundarytrace.",
+  "cost": {
+    "stage": 210,
+    "at_utc": "2026-10-12T16:48:13.829051+00:00",
+    "native_cap": 600,
+    "new_wrapper_actions": 223,
+    "prefix_replays": 1,
+    "raw_step_ticks": 892,
+    "raw_reset_ticks": 51,
+    "native_wall_s": 13.835568973998306,
+    "wall_s": 14.036705893027829,
+    "evaluator_CPU_s": 11.159366499,
+    "actor_CPU_s": 2.62641,
+    "model_queries": 4,
+    "model_physics_ticks": 32,
+    "model_CPU_s": 0.19982976899999993,
+    "model_wall_s": 0.2011369190295227,
+    "model_CPU_included_in_evaluator": false,
+    "accounting": "One exact223actionprefix, capturespre85/pre223; no forecastpool inreplay. Offlineold/fixed3+1samecommands2querieseach,32ticks total. ModelCPU outside nativeevaluatorCPU. Trace-derivedcontactfield fromsameboundary; no secondreplay orfull-lap reset. Zero-nativepreflight importrepair.",
+    "B_operating_cap": 820000,
+    "actual_cumulative_wrapper_actions": 734714,
+    "research_remaining": 1286,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "champion_changed": false,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
