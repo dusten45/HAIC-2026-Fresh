@@ -1,0 +1,325 @@
+{
+  "stage": 190,
+  "status": "FIRST_STATE_P4_PASS_TRANSFER_NOT_QUALIFIED",
+  "raw_stop_status": "STOP_TRANSFER_P4_OR_COST_GATE",
+  "model": "One source-physics Box2D reconstruction with official Car,contact detector,damage law and staticfixtures;no renderer,track generation oractor;nofit/coefficientchange.",
+  "information": "PrivilegedinitialGT fullbody/wheel linear+angular velocities,steer/omega/gas/brake,joints,roadfriction/contact/visitedstate,staticgeometry andcurrentdamage. This is not legalstateestimation oronlineplanning.",
+  "omitted": "Joint/contact warm-start impulse caches,manifold/broadphase history andislandorder cannotberestored. Newcontacts initialized atzero time. No snapshotAPIassumption.No finish-line orclosed-loop pixelpolicyreturn prediction.",
+  "past_failures_reviewed": [
+    "21constantstartspeed/actuatorarc",
+    "40polynomialtransitionrisk-tailerror",
+    "41selectivecoverage/regret"
+  ],
+  "fixed189_basis_reused": true,
+  "first_native_actual_C16_suffix_exact": true,
+  "model_horizons_actions": [
+    1,
+    3,
+    6,
+    9,
+    12
+  ],
+  "policy_return_after_action12_predicted": false,
+  "first": {
+    "status": "PASS_P4_LOCAL_RANK",
+    "reasons": [],
+    "cheap_gate_pass": true,
+    "horizons": [
+      {
+        "horizon_actions": 1,
+        "seconds": 0.08,
+        "actual_risky": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "predicted_eligible": 18,
+        "actual_eligible": 18,
+        "predicted_selected": "C08",
+        "actual_selected": "C08",
+        "selected_new_tile_regret": 0,
+        "correctly_ordered_pairs": 0,
+        "inverted_pairs": 0,
+        "strict_pairs_predicted_tied": 0,
+        "secondary_position_error_m": {
+          "count": 18,
+          "mean": 1.5894571940104166e-07,
+          "max": 2.384185791015625e-07
+        }
+      },
+      {
+        "horizon_actions": 3,
+        "seconds": 0.24,
+        "actual_risky": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "predicted_eligible": 18,
+        "actual_eligible": 18,
+        "predicted_selected": "C08",
+        "actual_selected": "C08",
+        "selected_new_tile_regret": 0,
+        "correctly_ordered_pairs": 81,
+        "inverted_pairs": 0,
+        "strict_pairs_predicted_tied": 0,
+        "secondary_position_error_m": {
+          "count": 18,
+          "mean": 2.092371384302775e-07,
+          "max": 4.76837158203125e-07
+        }
+      },
+      {
+        "horizon_actions": 6,
+        "seconds": 0.48,
+        "actual_risky": 3,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "predicted_eligible": 15,
+        "actual_eligible": 15,
+        "predicted_selected": "C14",
+        "actual_selected": "C14",
+        "selected_new_tile_regret": 0,
+        "correctly_ordered_pairs": 63,
+        "inverted_pairs": 0,
+        "strict_pairs_predicted_tied": 0,
+        "secondary_position_error_m": {
+          "count": 18,
+          "mean": 2.781369141292566e-06,
+          "max": 7.925400800034838e-06
+        }
+      },
+      {
+        "horizon_actions": 9,
+        "seconds": 0.72,
+        "actual_risky": 3,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "predicted_eligible": 15,
+        "actual_eligible": 12,
+        "predicted_selected": "C14",
+        "actual_selected": "C14",
+        "selected_new_tile_regret": 0,
+        "correctly_ordered_pairs": 27,
+        "inverted_pairs": 0,
+        "strict_pairs_predicted_tied": 0,
+        "secondary_position_error_m": {
+          "count": 18,
+          "mean": 3.833507117617122e-06,
+          "max": 2.111586554096654e-05
+        }
+      },
+      {
+        "horizon_actions": 12,
+        "seconds": 0.96,
+        "actual_risky": 6,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "predicted_eligible": 9,
+        "actual_eligible": 8,
+        "predicted_selected": "C14",
+        "actual_selected": "C14",
+        "selected_new_tile_regret": 0,
+        "correctly_ordered_pairs": 17,
+        "inverted_pairs": 0,
+        "strict_pairs_predicted_tied": 0,
+        "secondary_position_error_m": {
+          "count": 15,
+          "mean": 2.8824164730015078e-06,
+          "max": 1.3353568997326322e-05
+        }
+      }
+    ]
+  },
+  "transfer": {
+    "status": "STOP_P4_LOCAL_RANK",
+    "reasons": [
+      "OBSERVABLE_INITIAL_STATE_NOT_EXACT",
+      "INSUFFICIENT_ACTUAL_RISK_OR_SAFE_COVERAGE",
+      "INSUFFICIENT_PREDICTED_COVERAGE_OR_UNSAFE_SELECTION",
+      "SELECTED_PROGRESS_REGRET",
+      "PROGRESS_ORDER_FAILURE_OR_NO_INFORMATIVE_PAIRS"
+    ],
+    "cheap_gate_pass": true,
+    "horizons": [
+      {
+        "horizon_actions": 1,
+        "seconds": 0.08,
+        "actual_risky": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "predicted_eligible": 6,
+        "actual_eligible": 6,
+        "predicted_selected": "C09",
+        "actual_selected": "C09",
+        "selected_new_tile_regret": 0,
+        "correctly_ordered_pairs": 0,
+        "inverted_pairs": 0,
+        "strict_pairs_predicted_tied": 0,
+        "secondary_position_error_m": {
+          "count": 6,
+          "mean": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "horizon_actions": 3,
+        "seconds": 0.24,
+        "actual_risky": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "predicted_eligible": 6,
+        "actual_eligible": 6,
+        "predicted_selected": "C01",
+        "actual_selected": "C01",
+        "selected_new_tile_regret": 0,
+        "correctly_ordered_pairs": 0,
+        "inverted_pairs": 0,
+        "strict_pairs_predicted_tied": 0,
+        "secondary_position_error_m": {
+          "count": 6,
+          "mean": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "horizon_actions": 6,
+        "seconds": 0.48,
+        "actual_risky": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "predicted_eligible": 0,
+        "actual_eligible": 6,
+        "predicted_selected": null,
+        "actual_selected": "C01",
+        "selected_new_tile_regret": null,
+        "correctly_ordered_pairs": 0,
+        "inverted_pairs": 0,
+        "strict_pairs_predicted_tied": 0,
+        "secondary_position_error_m": {
+          "count": 6,
+          "mean": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "horizon_actions": 9,
+        "seconds": 0.72,
+        "actual_risky": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "predicted_eligible": 0,
+        "actual_eligible": 0,
+        "predicted_selected": null,
+        "actual_selected": null,
+        "selected_new_tile_regret": null,
+        "correctly_ordered_pairs": 0,
+        "inverted_pairs": 0,
+        "strict_pairs_predicted_tied": 0,
+        "secondary_position_error_m": {
+          "count": 6,
+          "mean": 0.0,
+          "max": 0.0
+        }
+      },
+      {
+        "horizon_actions": 12,
+        "seconds": 0.96,
+        "actual_risky": 0,
+        "false_negatives": 0,
+        "false_positives": 0,
+        "predicted_eligible": 0,
+        "actual_eligible": 0,
+        "predicted_selected": null,
+        "actual_selected": null,
+        "selected_new_tile_regret": null,
+        "correctly_ordered_pairs": 0,
+        "inverted_pairs": 0,
+        "strict_pairs_predicted_tied": 0,
+        "secondary_position_error_m": {
+          "count": 6,
+          "mean": 0.0,
+          "max": 0.0
+        }
+      }
+    ]
+  },
+  "first_final_predicted_selected": "C14",
+  "first_final_actual_selected": "C14",
+  "first_final_selection_new_tile_regret": 0,
+  "first_C14_vs_C16": {
+    "C14": {
+      "new_tiles": 14,
+      "actual_speed_m_s": 49.23368724834883
+    },
+    "C16": {
+      "new_tiles": 14,
+      "actual_speed_m_s": 48.93331045740027
+    }
+  },
+  "selection_boundary": "At12bothgain14tiles;C14winsregisteredterminalspeedtie.189C16waschosenafter24actions including12futurepixelpolicyreturnactions. No claim to predictthatlaterorder or31.50sfullcompletion.",
+  "transfer_findings": {
+    "actual_contacts": 0,
+    "candidates": 6,
+    "all_actual_new_tiles": 1,
+    "all_stopped": true,
+    "final_actual_eligible": 0,
+    "final_predicted_eligible": 0,
+    "informative_progress_pairs": 0,
+    "initial_bodies_exact": true,
+    "initial_wheel_tiles_exact": false,
+    "initial_visited_progress_exact": false,
+    "zero_time_contact_discovery_preadvanced_one_tile": true,
+    "first_wrapper_actual_off_track": 0,
+    "first_wrapper_predicted_off_track": 3,
+    "final_actual_off_track": 11,
+    "final_predicted_off_track": 14,
+    "interpretation": "No risk orprogress-order coverage. Independently,zero-timecontactdiscovery advancedavisitbeforefirstwrapper andshiftedofftracktiming. No unsafecandidatewaschosen;therewasnoselection andregretisundefined,notameasuredpositivevalue. PositionaccuracydoesnotpassP4."
+  },
+  "split": "SecondroadwasalreadypermanentDEV;itsbaselinefailurewasknown. Sixnewcounterfactualoutcomeswereunopenedandallpredictionssealedbeforethefirstactualsuffix. Notblindnewroadpopulationvalidation.",
+  "cost": {
+    "stage": 190,
+    "at_utc": "2026-10-12T10:28:33.102568+00:00",
+    "native_cap": 8000,
+    "new_wrapper_actions": 1178,
+    "prefix_actions": 1094,
+    "suffix_actions": 84,
+    "native_episode_invocations": 7,
+    "raw_step_ticks": 4712,
+    "raw_reset_ticks": 357,
+    "wall_s": 63.17967934400076,
+    "evaluator_CPU_s": 52.194078080000004,
+    "actor_CPU_s": 10.884346999999998,
+    "model_queries": 24,
+    "model_physics_ticks": 1116,
+    "zero_time_model_contact_initializations": 24,
+    "synthetic_qualification_model_physics_ticks": 8,
+    "synthetic_reference_physics_ticks": 8,
+    "synthetic_zero_time_initializations": 2,
+    "synthetic_native_environment_steps": 0,
+    "model_batch_wall_s": {
+      "first": 0.46821168798487633,
+      "transfer": 0.1550179829937406
+    },
+    "model_CPU_included_in_evaluator": true,
+    "first_matched_query_speed_ratio": 38.422271203090155,
+    "transfer_total_query_speed_ratio": 16.674397491373316,
+    "speed_ratio_boundary": "Model includesnewworldbuild+sourcephysics;excludes initialGTcapture/stateestimation. Actualdenominator is matchedsuffixenv.step wall(physics/render/wrapper),excludingprefixandactor. Conditional onthishost;batch andperquery distinguished.",
+    "reused189_candidate_count": 18,
+    "reused189_intervention_rows": 207,
+    "reused_new_native_charge": 0,
+    "B_operating_cap": 816000,
+    "actual_cumulative_wrapper_actions": 718495,
+    "research_remaining": 13505,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "next_judgment": "Firstrepair/verifyinitialcontact-eventtimingboundary beforetrustingeligibility. Secondcohortcoveragewouldremaininsufficientevenaftercountercorrection. No model/basis/horizon expansion ornewnativeinthisstage.",
+  "champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "static_geometry_boundary": "Full ground-truth static road and obstacle geometry,including beyondcurrentpixelview. No future dynamic state input.",
+  "independence_boundary": "Horizons and pairs withinastate sharethesameinitialcondition;notindependenttrials."
+}
