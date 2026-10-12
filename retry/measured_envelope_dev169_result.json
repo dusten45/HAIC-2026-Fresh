@@ -1,0 +1,313 @@
+{
+  "stage": 169,
+  "status": "MEASUREMENT_AND_COMPARISON_COMPLETE_REJECT_CANDIDATE_KEEP_CHAMPION",
+  "calibration": {
+    "selection_rule": {
+      "DEV_indices": [
+        0,
+        2
+      ],
+      "speed_bands_HUD_m_s": {
+        "low": [
+          18.75,
+          26.25
+        ],
+        "high": [
+          33.75,
+          43.75
+        ]
+      },
+      "max_scout_native_per_DEV": 400,
+      "first_eligible_in_each_band": true,
+      "all_starts_fixed_before_any_braking_outcome": true,
+      "consecutive_eligible_states": 3,
+      "minimum_prefix_actions": 3,
+      "conditions": "Current champion; no prior collision or damage; near=false; |source steer|<=.06; |yaw rate|<=.15rad/s; all4 wheels on road tiles; lateral speed fraction<=.05 when speed>2; front joint angles<=.08rad. Eligibility labels remain evaluator-only."
+    },
+    "probe_rule": {
+      "max_native_after_prefix": 50,
+      "target_speed_m_s": 0,
+      "action": "Keep actual champion steering; gas=clip(.08*(0-HUD),0,.5), brake=clip(.04*(HUD-0),0,.5), float32. No GT speed to action. This target0 intervention is calibration only; deployment P unchanged.",
+      "stop": "At first wrapper endpoint speed<=1m/s (practical stop label), terminal, or any raw-step rotation/surface/contact contamination; otherwise50 actions.",
+      "clean_conditions": "Every raw substep: all4 road contacts, damage0, no collision, |yaw rate|<=.15, front joint angles<=.08, lateral fraction<=.05 above2m/s; commanded |steer|<=.08 and total heading change<=.08rad.",
+      "distance": "Sum of COM displacement lengths at actual raw50Hz ticks. Report practical stopping distance plus residual speed; do not label an unobserved full stop.",
+      "no_replacement_or_threshold_changes": true
+    },
+    "coefficient_rule": {
+      "valid_trials_required": 3,
+      "both_DEVs_required": true,
+      "both_speed_bands_required": true,
+      "consistency": "Positive speed loss and stop-equivalent a=(v_start^2-v_end^2)/(2*distance) in every valid trial; max(a)/min(a)<=2.",
+      "one_fixed_value": "a_eff=0.5*minimum valid stop-equivalent acceleration. No regression, output-dependent sweep, or alternate factor.",
+      "limitation": "Descriptive conservative estimate for measured straight, on-road, undamaged states and original HUD/P target0 braking; not a guaranteed bound under corners/damage/unseen surfaces."
+    },
+    "starts_fixed_before_any_probe_outcomes": true,
+    "selected_prefix_actions": {
+      "DEV0": {
+        "low": 5,
+        "high": 9
+      },
+      "DEV2": {
+        "low": 5,
+        "high": 9
+      }
+    },
+    "trials": [
+      {
+        "case_index": 0,
+        "band": "low",
+        "prefix_native_actions": 5,
+        "probe_native_actions": 2,
+        "start_speed_m_s": 19.268238910484637,
+        "end_speed_m_s": 0.8939583822132675,
+        "practical_stopping_distance_m": 1.8048768692112276,
+        "probe_duration_s": 0.16000000000000014,
+        "stop_equivalent_deceleration_m_s2": 102.62912541072313,
+        "valid_calibration_trial": true
+      },
+      {
+        "case_index": 0,
+        "band": "high",
+        "prefix_native_actions": 9,
+        "probe_native_actions": 4,
+        "start_speed_m_s": 33.275785872746425,
+        "end_speed_m_s": 0.4966552949891285,
+        "practical_stopping_distance_m": 3.8352439414073403,
+        "probe_duration_s": 0.3200000000000003,
+        "stop_equivalent_deceleration_m_s2": 144.3234479839378,
+        "valid_calibration_trial": true
+      },
+      {
+        "case_index": 2,
+        "band": "low",
+        "prefix_native_actions": 5,
+        "probe_native_actions": 2,
+        "start_speed_m_s": 19.268234616967874,
+        "end_speed_m_s": 0.8939575909356235,
+        "practical_stopping_distance_m": 1.8048758852201914,
+        "probe_duration_s": 0.16000000000000014,
+        "stop_equivalent_deceleration_m_s2": 102.6291359183769,
+        "valid_calibration_trial": true
+      },
+      {
+        "case_index": 2,
+        "band": "high",
+        "prefix_native_actions": 9,
+        "probe_native_actions": 4,
+        "start_speed_m_s": 33.27578078263208,
+        "end_speed_m_s": 0.49664737469157166,
+        "practical_stopping_distance_m": 3.8352373671236255,
+        "probe_duration_s": 0.3200000000000003,
+        "stop_equivalent_deceleration_m_s2": 144.32365224231953,
+        "valid_calibration_trial": true
+      }
+    ],
+    "valid_trials": 4,
+    "actual_brake_outputs_low": [
+      0.5,
+      0.5
+    ],
+    "actual_brake_outputs_high": [
+      0.5,
+      0.5,
+      0.3499999940395355,
+      0.05000000074505806
+    ],
+    "consistency_ratio": 1.406264076252568,
+    "frozen_a_eff_m_s2": 51.31456270536157,
+    "labels": "GT COM speed/displacement are evaluator measurement labels only. Pedals use HUD and unchanged P; steering copies actual pixel champion output. off_track_counter is progress-reward based, so raw wheel-road contacts were used for surface validity.",
+    "scope": "Two DEV roads with very similar initial straight dynamics, at two starting speed levels; not four independent operating regimes. v<=1m/s is a practical stop, not exact zero. Scalar is not a guaranteed bound for curves, damage, other surfaces, or all speed errors."
+  },
+  "model": {
+    "a_eff_m_s2": 51.31456270536157,
+    "curvature_total_support_m": 3.24,
+    "formula": "For unchanged167 preview centers j in[L,L+4], v_j^2=8/k_j and current bound=min_j sqrt(v_j^2+2*a_eff*d_j). d_j is distance along current selected pixel path from body origin. Apply only near and take min with original target.",
+    "unchanged": [
+      "normal24",
+      "near8",
+      "cap45",
+      "3.24m curvature",
+      "preview range",
+      "steering",
+      "path selection",
+      "perception",
+      "HUD",
+      "P"
+    ],
+    "changed_archive_members": [
+      "retry/visible_curvature_preview.py"
+    ],
+    "copied_other_members": 14,
+    "reference167_archive_sha256": "247de4c0d7080b4efd8920d42bc85205c373cd6270a25a36e007092b4d7d2b3c",
+    "candidate_archive_sha256": "258bd4c66a5532a1e82965e028a5676381099571995a5912d7dd232cbe3d540d"
+  },
+  "sanity": {
+    "curvature_outputs_exact": true,
+    "zero_deceleration_recovers167": true,
+    "formula_and_monotonicity": true,
+    "stored_champion_prefix_target_changes_vs167": 13,
+    "stored_champion_prefix_pedal_changes_vs167": 12,
+    "note": "Same-input arithmetic on saved current-champion pixel paths, not a replay of the actual167 trajectory or a measured performance gain."
+  },
+  "paired_rows": [
+    {
+      "anonymous_DEV_index": 2,
+      "completed_all_three": true,
+      "champion_lap_ms": 42060,
+      "immediate167_lap_ms": 49720,
+      "candidate_lap_ms": 42060,
+      "delta_vs_champion_ms": 0,
+      "delta_vs167_ms": -7660,
+      "ratio_vs_champion": 1.0,
+      "ratio_vs167": 0.8459372485921158,
+      "champion_damage": 0.2,
+      "immediate167_damage": 0.0,
+      "candidate_damage": 0.2,
+      "native_actions": 526,
+      "same_entire_action_sequence_as_champion": true,
+      "same_entire_observation_sequence_as_champion": true,
+      "actual_intervention_on_candidate_own_inputs": {
+        "rows": 526,
+        "target_lowered_rows": 2,
+        "pedal_changed_rows": 0,
+        "outside_near_changes": 0,
+        "target_drop_sum_m_s": 24.08048997934638,
+        "max_target_drop_m_s": 14.668867800556175,
+        "all_source_steering_and_P_checks_pass": true
+      },
+      "first_damage_event": {
+        "step": 125,
+        "native_elapsed_pre_s": 9.919999999999856,
+        "speed_before_m_s": 6.994666352181459,
+        "feedback_m_s": 6.25,
+        "target_m_s": 8.501277162486355,
+        "near": true,
+        "gas": 0.1801021695137024,
+        "brake": 0.0,
+        "damage_before": 0.0,
+        "damage_after": 0.2
+      },
+      "active_pedal_switches_per_s": 4.325095057034104
+    },
+    {
+      "anonymous_DEV_index": 0,
+      "completed_all_three": true,
+      "champion_lap_ms": 32440,
+      "immediate167_lap_ms": 43500,
+      "candidate_lap_ms": 32880,
+      "delta_vs_champion_ms": 440,
+      "delta_vs167_ms": -10620,
+      "ratio_vs_champion": 1.0135635018495683,
+      "ratio_vs167": 0.7558620689655172,
+      "champion_damage": 0.0,
+      "immediate167_damage": 0.0,
+      "candidate_damage": 0.4,
+      "native_actions": 412,
+      "same_entire_action_sequence_as_champion": false,
+      "same_entire_observation_sequence_as_champion": false,
+      "actual_intervention_on_candidate_own_inputs": {
+        "rows": 412,
+        "target_lowered_rows": 6,
+        "pedal_changed_rows": 2,
+        "outside_near_changes": 0,
+        "target_drop_sum_m_s": 41.820435838971065,
+        "max_target_drop_m_s": 11.57311293348954,
+        "all_source_steering_and_P_checks_pass": true
+      },
+      "first_damage_event": {
+        "step": 202,
+        "native_elapsed_pre_s": 16.079999999999725,
+        "speed_before_m_s": 14.139446261263029,
+        "feedback_m_s": 13.75,
+        "target_m_s": 30.25218666343249,
+        "near": false,
+        "gas": 0.5,
+        "brake": 0.0,
+        "damage_before": 0.0,
+        "damage_after": 0.2
+      },
+      "active_pedal_switches_per_s": 3.2522796352583883
+    }
+  ],
+  "comparisons": {
+    "champion": {
+      "common_completions": 2,
+      "lost_completion": 0,
+      "median_delta_ms": 220.0,
+      "sum_delta_ms": 440,
+      "mean_lap_ratio": 1.0067817509247843,
+      "time_gate_passed": false
+    },
+    "167": {
+      "common_completions": 2,
+      "lost_completion": 0,
+      "median_delta_ms": -9140.0,
+      "sum_delta_ms": -18280,
+      "mean_lap_ratio": 0.8008996587788165,
+      "time_gate_passed": true
+    }
+  },
+  "completed_each_arm": 2,
+  "damage_sums": {
+    "champion": 0.2,
+    "167": 0.0,
+    "169": 0.6000000000000001
+  },
+  "interpretation": "Distance propagation removes most immediate-preview delay, but does not improve the champion. ContactDEV action/observation streams are identical to champion; cleanDEV is440ms slower and incurs0.4damage. Reject this one frozen candidate; no coefficient sweep.",
+  "intervention_limit": "Changed-pedal counts compare original target/P arithmetic at each candidate input. They are not counts of all differences between diverged trajectories.",
+  "safety_and_causality": "Damage is diagnostic, separate from the failed time gate. No unique contact cause or guaranteed deceleration under unmeasured conditions claimed.",
+  "checks": {
+    "paired_initial_state_all_three": true,
+    "source_target_steering_P": true,
+    "input_action_hashes": true,
+    "all_actors_reaped": true,
+    "current_and_rollbacks_preserved": true,
+    "official_server_fresh_machine_parity": "UNVERIFIED"
+  },
+  "cost": {
+    "stage": 169,
+    "at_utc": "2026-10-12T03:47:49.650974+00:00",
+    "native_cap": 10000,
+    "new_wrapper_actions": 996,
+    "measurement_wrapper_actions": 58,
+    "selection_scout_actions": 18,
+    "replay_prefix_actions": 28,
+    "braking_probe_actions": 12,
+    "candidate_wrapper_actions": 938,
+    "measurement_short_runs": 6,
+    "full_candidate_episodes": 2,
+    "raw_step_ticks": 3981,
+    "raw_reset_ticks": 408,
+    "wall_s": 41.823395148006966,
+    "evaluator_CPU_s": 33.616816081,
+    "actor_CPU_s": 8.258177,
+    "timing_scope": "Executed measurement and comparison batches. Preparation, saved-path arithmetic and documentation not profiled. Actor and evaluator CPU separate.",
+    "B_operating_cap": 782000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 686973,
+    "research_remaining": 11027,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "cached_reference_historical_native_not_recharged": {
+      "champion163": 932,
+      "immediate167": 1166
+    },
+    "full_reference_reruns": 0,
+    "new_offline_policy_model_calls": 0,
+    "stored_path_helper_arithmetic_calls": 41,
+    "extra_perception_calls": 0,
+    "full_requalification_replays": 0,
+    "full_frame_GT_policy_streams_saved": 0,
+    "all_actors_reaped": true,
+    "current_near8_changed": false,
+    "HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false,
+    "measurement_report_sha256": "2340a01a883f6b844d33e89160f38f6583f148133d8cfa49fdb1b12da41703b9",
+    "comparison_report_sha256": "c5b7b677a8dbe1568070e0635a4480f58a27cbe5f6e402994053de1d0cf21839"
+  },
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
