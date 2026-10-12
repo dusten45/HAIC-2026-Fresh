@@ -142,6 +142,17 @@ def add_contiguous_scores(snapshot, predictions, scores):
             contiguous_after_tiles=after, contiguous_gain_tiles=after-before)
 
 
+def add_new_gap_scores(snapshot, predictions, scores):
+    """Count holes only beyond the current frontier in the same tile order."""
+    visited = {r['idx'] for r in snapshot['roads'] if r['visited']}
+    frontier = max(visited, default=-1)
+    for name, prediction in predictions.items():
+        after = visited | set(prediction['rows'][-1]['newly_visited_tile_ids'])
+        extended = max(after, default=frontier)
+        scores[name]['new_internal_gap_tiles'] = sum(
+            i not in after for i in range(frontier+1, extended+1))
+
+
 def forward_track_projection(track, position, velocity, road_indices=None):
     """Nearest source-tile tangent, using the direction reviewed in207.
 
@@ -172,9 +183,12 @@ def add_forward_scores(track, predictions, scores):
                             forward_projection_gap_m=projection['nonadjacent_distance_gap_m'])
 
 
-def choose_with_fallback(scores, specifications, enabled, contiguous_rank=False, filter_contact=True, forward_rank=False):
+def choose_with_fallback(scores, specifications, enabled, contiguous_rank=False, filter_contact=True, forward_rank=False, new_gap_rank=False):
     original = select({n: s for n, s in scores.items() if not n.startswith('E')}, specifications, filter_contact)
     relaxed = relaxed_selection(scores, specifications, filter_contact) if enabled and not original else []
+    if new_gap_rank:
+        original.sort(key=lambda n: scores[n]['new_internal_gap_tiles'])
+        relaxed.sort(key=lambda n: scores[n]['new_internal_gap_tiles'])
     if contiguous_rank:
         # Stable sorting prepends exactly one key to each unchanged old order.
         original.sort(key=lambda n: -scores[n]['contiguous_gain_tiles'])
@@ -669,6 +683,9 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 forward_rank = oracle.get('forward_direction_rank', False)
                 if forward_rank:
                     add_forward_scores(state['track'], predicted['candidates'], scores)
+                new_gap_rank = oracle.get('new_internal_gap_rank', False)
+                if new_gap_rank:
+                    add_new_gap_scores(snapshot, predicted['candidates'], scores)
                 invalid = [name for name, v in predicted['candidates'].items()
                            if not all(v['initialization'].values())]
                 _, _, old_order = choose_with_fallback(
@@ -683,6 +700,12 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                         {n: s for n, s in scores.items() if n not in invalid}, active_specs,
                         oracle.get('relax_progress_fallback', False), contiguous_rank,
                         oracle.get('filter_predicted_contact', True), True)
+                before_gap = eligible[0] if eligible else None
+                if new_gap_rank:
+                    original, relaxed, eligible = choose_with_fallback(
+                        {n: s for n, s in scores.items() if n not in invalid}, active_specs,
+                        oracle.get('relax_progress_fallback', False), contiguous_rank,
+                        oracle.get('filter_predicted_contact', True), forward_rank, True)
                 rank_cpu, rank_wall = time.process_time()-rank_cpu, time.perf_counter()-rank_wall
                 state['progress_fallback_active'] = bool(not original and eligible)
                 chosen = eligible[0] if eligible else None
@@ -707,6 +730,8 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                     contiguous_rank_enabled=contiguous_rank,
                     forward_direction_rank_enabled=forward_rank,
                     before_direction_selected=before_direction,
+                    new_internal_gap_rank_enabled=new_gap_rank,
+                    before_gap_selected=before_gap,
                     continuity_rank_CPU_s=rank_cpu if contiguous_rank else 0.,
                     continuity_rank_wall_s=rank_wall if contiguous_rank else 0.,
                     original_eligible=original, progress_fallback_intervention=state['progress_fallback_active'],
