@@ -188,7 +188,7 @@ def choose_with_fallback(scores, specifications, enabled, contiguous_rank=False,
 
 def forecast_pool(snapshot, nominal, oracle, step, previous_plan, track, previous_steer,
                   record_road_visits=False):
-    """Keep the existing pool; optionally add one model-feedback T trajectory."""
+    """Existing pool plus optional frozen controls or model-feedback T."""
     specs, horizon = oracle['specifications'], oracle['horizon_actions']
     if oracle.get('contiguous_forward_rank', False):
         record_road_visits = True
@@ -211,6 +211,18 @@ def forecast_pool(snapshot, nominal, oracle, step, previous_plan, track, previou
         predicted['candidates']['R'] = predict_actions(snapshot, actions['R'], record_road_visits)
         predicted['model_physics_ticks'] += predicted['candidates']['R']['model_physics_ticks']
         active_specs['R'] = retained['rank_spec']
+    for name, frozen in oracle.get('fixed_shooting_actions', {}).items():
+        assert name.startswith('S') and name not in active_specs
+        array = np.asarray(frozen, dtype=np.float32)
+        assert array.shape == (horizon, 3) and np.isfinite(array).all()
+        assert np.all(array >= [-1., 0., 0.]) and np.all(array <= [1., 1., 1.])
+        actions[name] = [row.copy() for row in array]
+        predicted['candidates'][name] = predict_actions(snapshot, actions[name], record_road_visits)
+        predicted['model_physics_ticks'] += predicted['candidates'][name]['model_physics_ticks']
+        active_specs[name] = dict(
+            steer_offsets=[float(np.mean(np.abs(block[:, 0]-float(nominal[0]))))
+                           for block in (array[:horizon//2], array[horizon//2:])],
+            brake_first_block=bool(np.any(array[:horizon//2, 2] > 0)))
     if oracle.get('track_feedback'):
         query = predict_track_feedback(snapshot, track, nominal, previous_steer, oracle['track_feedback'], horizon)
         predicted['candidates']['T'] = query
