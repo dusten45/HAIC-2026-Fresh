@@ -1,0 +1,83 @@
+{
+  "stage": 168,
+  "status": "STOP_MISSING_SUPPORTED_EFFECTIVE_DECELERATION",
+  "decision": "Retain the current champion. Honor the requested prerequisite stop; no forced deceleration coefficient or candidate.",
+  "reason": "No supported existing effective longitudinal deceleration applicable to the retained controller was found in the reviewed local records.",
+  "coefficient_provenance": [
+    {
+      "source": "retry/oracle_teacher.py",
+      "value_m_s2": 2.5,
+      "status": "fixed conservative planning parameter; measured provenance not found"
+    },
+    {
+      "source": "retry/distance_target_agent.py",
+      "value_m_s2": 5.0,
+      "status": "sqrt(10*d) proximity heuristic; documented hypothesis"
+    },
+    {
+      "source": "retry/fixed_cap_sensitivity.md",
+      "value_m_s2": 5.5,
+      "status": "sqrt(11*d) coefficient sensitivity; explicitly not a measured braking guarantee"
+    }
+  ],
+  "other_evidence": "HUD/image-anchor/yaw calibrations do not measure braking. Historical fixed-brake0.15 branch endpoint schema lacks speed-loss/stopping-distance estimates. Generic transition-regression code supplies no supported effective-deceleration scalar.",
+  "search_scope_limit": "No matching supported value found in the reviewed local code, calibration artifacts, brake-branch schema and named configuration/contract records; not a claim that all conceivable external evidence is absent.",
+  "proposed_formula_only": "v_now_cap=min_j sqrt(v_j^2+2*a_eff*d_j); retain original target min. Current selected pixel path supplies distance; unchanged167 curvature supplies v_j. This symbolic expression was not instantiated or run.",
+  "measured_deceleration_m_s2": null,
+  "coefficient_selected": false,
+  "candidate_implemented": false,
+  "stored_trace_target_effect": "UNOBSERVED_PREREQUISITE_STOP",
+  "closed_loop_effect": "UNOBSERVED_PREREQUISITE_STOP",
+  "planned_DEV_indices": [
+    2,
+    0
+  ],
+  "executed_DEV_cases": 0,
+  "performance_failure_claimed": false,
+  "cost": {
+    "stage": 168,
+    "at_utc": "2026-10-12T03:28:18.567520+00:00",
+    "native_cap": 6000,
+    "new_wrapper_actions": 0,
+    "raw_step_ticks": 0,
+    "raw_reset_ticks": 0,
+    "actual_candidate_episodes": 0,
+    "wall_s": 0.0,
+    "evaluator_CPU_s": 0.0,
+    "actor_CPU_s": 0.0,
+    "timing_scope": "No native batch or actor execution. Read-only inspection/recording wall and CPU were not profiled; zero fields are execution cost, not total assistant work.",
+    "B_operating_cap": 782000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 685977,
+    "research_remaining": 12023,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_offline_policy_model_calls": 0,
+    "extra_perception_calls": 0,
+    "new_deceleration_fits": 0,
+    "baseline_reruns": 0,
+    "full_requalification_replays": 0,
+    "candidate_implemented": false,
+    "current_near8_changed": false,
+    "HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "preserved": [
+    "current normal24/near8/cap45 champion",
+    "167 curvature archive",
+    "all rollback artifacts",
+    "steering",
+    "perception",
+    "path selection",
+    "P",
+    "official main",
+    "Participants"
+  ],
+  "current_champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "next_requirement_not_executed": "A separately scoped effective-deceleration or stopping-distance measurement matched to current pedal limits and speed/surface conditions. No measurement experiment or automatic follow-up in168."
+}
