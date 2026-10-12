@@ -1,0 +1,1020 @@
+{
+  "stage": 229,
+  "status": "ACTUAL_STATE_AGGREGATION_AND_WEIGHTED_LOO_OFFLINE_FINISHED",
+  "collection": {
+    "F1": {
+      "kind": "fixed_replay226",
+      "native_actions": 494,
+      "target_rows": 165,
+      "qualified": true,
+      "completed": false,
+      "lap_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.0,
+      "unique_tiles": 299,
+      "total_tiles": 299,
+      "replay_observation_and_recorded_states_exact": true,
+      "last_new_tile_action": 393,
+      "label_distribution": {
+        "teacher_gas_rows": 111,
+        "teacher_brake_rows": 54,
+        "teacher_coast_rows": 0,
+        "teacher_simultaneous_pedal_rows": 0,
+        "mean_teacher_command": [
+          0.0792880654335022,
+          0.30931705236434937,
+          0.2156548947095871
+        ],
+        "teacher_vs_collection_disagreement_by_channel": [
+          0.7696969696969697,
+          1.0,
+          0.9696969696969697
+        ],
+        "absolute_command_delta_p50": [
+          0.046065219677984715,
+          0.2972179055213928,
+          0.06592509150505066
+        ],
+        "absolute_command_delta_p90": [
+          0.22008268535337636,
+          0.5628963112831116,
+          0.9566644735634326
+        ]
+      },
+      "teacher_nominal_fallback_queries": 10,
+      "candidate_initialization_failure_queries": 0,
+      "privileged_query_over5s": [],
+      "legal_pixel_call_scope": "normal24feature/nominal_shadow_only,noaffineheaddecisionrepeated",
+      "legal_pixel_call_ms": {
+        "count": 494,
+        "sum": 4694.355143001303,
+        "median": 8.646375994430855,
+        "p95": 16.434032554388974,
+        "max": 27.4238939746283
+      },
+      "teacher_nominal32_call_ms": {
+        "count": 494,
+        "sum": 4633.796675858321,
+        "median": 8.418245502980426,
+        "p95": 16.083289205562323,
+        "max": 38.54453802341595
+      },
+      "privileged_H12_query_ms": {
+        "count": 165,
+        "sum": 155809.36786622624,
+        "median": 870.6566110195126,
+        "p95": 1312.4594560009405,
+        "max": 3408.286001998931
+      }
+    },
+    "F2": {
+      "kind": "fixed_replay226",
+      "native_actions": 288,
+      "target_rows": 96,
+      "qualified": true,
+      "completed": true,
+      "lap_ms": 23020,
+      "retire_reason": null,
+      "damage": 0.4,
+      "unique_tiles": 289,
+      "total_tiles": 289,
+      "replay_observation_and_recorded_states_exact": true,
+      "last_new_tile_action": 285,
+      "label_distribution": {
+        "teacher_gas_rows": 78,
+        "teacher_brake_rows": 18,
+        "teacher_coast_rows": 0,
+        "teacher_simultaneous_pedal_rows": 0,
+        "mean_teacher_command": [
+          -0.05087612196803093,
+          0.37326541543006897,
+          0.06409244239330292
+        ],
+        "teacher_vs_collection_disagreement_by_channel": [
+          0.78125,
+          1.0,
+          0.9895833333333334
+        ],
+        "absolute_command_delta_p50": [
+          0.017782911541502244,
+          0.23617306351661682,
+          0.04367094673216343
+        ],
+        "absolute_command_delta_p90": [
+          0.2031628731638193,
+          0.5560807138681412,
+          0.20974930003285408
+        ]
+      },
+      "teacher_nominal_fallback_queries": 1,
+      "candidate_initialization_failure_queries": 0,
+      "privileged_query_over5s": [],
+      "legal_pixel_call_scope": "normal24feature/nominal_shadow_only,noaffineheaddecisionrepeated",
+      "legal_pixel_call_ms": {
+        "count": 288,
+        "sum": 2648.7212010251824,
+        "median": 8.248334997915663,
+        "p95": 15.20080380432773,
+        "max": 25.18058300483972
+      },
+      "teacher_nominal32_call_ms": {
+        "count": 288,
+        "sum": 2549.518664018251,
+        "median": 8.094117016298696,
+        "p95": 13.856145793397438,
+        "max": 30.62279600999318
+      },
+      "privileged_H12_query_ms": {
+        "count": 96,
+        "sum": 86280.35250786343,
+        "median": 827.1745895035565,
+        "p95": 1008.339836007508,
+        "max": 4165.891601005569
+      }
+    },
+    "F0": {
+      "kind": "new_frozen_affine_pedal_collection",
+      "native_actions": 326,
+      "target_rows": 109,
+      "qualified": true,
+      "completed": true,
+      "lap_ms": 26020,
+      "retire_reason": null,
+      "damage": 0.0,
+      "unique_tiles": 326,
+      "total_tiles": 326,
+      "replay_observation_and_recorded_states_exact": false,
+      "last_new_tile_action": 322,
+      "label_distribution": {
+        "teacher_gas_rows": 97,
+        "teacher_brake_rows": 12,
+        "teacher_coast_rows": 0,
+        "teacher_simultaneous_pedal_rows": 0,
+        "mean_teacher_command": [
+          -0.03023647889494896,
+          0.4940831661224365,
+          0.030786944553256035
+        ],
+        "teacher_vs_collection_disagreement_by_channel": [
+          0.8899082568807339,
+          1.0,
+          0.9908256880733946
+        ],
+        "absolute_command_delta_p50": [
+          0.04198684284467591,
+          0.38101181387901306,
+          0.04318323731422424
+        ],
+        "absolute_command_delta_p90": [
+          0.14435780981439172,
+          0.5588771581649781,
+          0.1375603049993515
+        ]
+      },
+      "teacher_nominal_fallback_queries": 0,
+      "candidate_initialization_failure_queries": 0,
+      "privileged_query_over5s": [
+        {
+          "action": 154,
+          "wall_s": 5.4689291039831005
+        },
+        {
+          "action": 319,
+          "wall_s": 7.012371377000818
+        }
+      ],
+      "legal_pixel_call_scope": "fullfrozen226affinepedalpolicy",
+      "legal_pixel_call_ms": {
+        "count": 326,
+        "sum": 3520.062492985744,
+        "median": 9.446571508306079,
+        "p95": 19.366145264939405,
+        "max": 49.16786798276007
+      },
+      "teacher_nominal32_call_ms": {
+        "count": 326,
+        "sum": 3548.2879490300547,
+        "median": 9.323672493337654,
+        "p95": 20.195635748677887,
+        "max": 53.51500099641271
+      },
+      "privileged_H12_query_ms": {
+        "count": 109,
+        "sum": 126985.0325268053,
+        "median": 1026.370534003945,
+        "p95": 1437.9359756072517,
+        "max": 7012.371377000818
+      }
+    },
+    "F3": {
+      "kind": "new_frozen_affine_pedal_collection",
+      "native_actions": 309,
+      "target_rows": 103,
+      "qualified": true,
+      "completed": true,
+      "lap_ms": 24680,
+      "retire_reason": null,
+      "damage": 0.0,
+      "unique_tiles": 319,
+      "total_tiles": 319,
+      "replay_observation_and_recorded_states_exact": false,
+      "last_new_tile_action": 306,
+      "label_distribution": {
+        "teacher_gas_rows": 84,
+        "teacher_brake_rows": 19,
+        "teacher_coast_rows": 0,
+        "teacher_simultaneous_pedal_rows": 0,
+        "mean_teacher_command": [
+          -0.027908118441700935,
+          0.3847079277038574,
+          0.05999067798256874
+        ],
+        "teacher_vs_collection_disagreement_by_channel": [
+          0.7864077669902912,
+          1.0,
+          0.9902912621359223
+        ],
+        "absolute_command_delta_p50": [
+          0.041726081050001085,
+          0.2517505884170532,
+          0.048136208206415176
+        ],
+        "absolute_command_delta_p90": [
+          0.12141511291265487,
+          0.5393198072910309,
+          0.22003202289342877
+        ]
+      },
+      "teacher_nominal_fallback_queries": 0,
+      "candidate_initialization_failure_queries": 0,
+      "privileged_query_over5s": [],
+      "legal_pixel_call_scope": "fullfrozen226affinepedalpolicy",
+      "legal_pixel_call_ms": {
+        "count": 309,
+        "sum": 3417.857419961365,
+        "median": 9.65821900172159,
+        "p95": 18.454189389012754,
+        "max": 31.35080501670018
+      },
+      "teacher_nominal32_call_ms": {
+        "count": 309,
+        "sum": 3410.5243339727167,
+        "median": 9.561006008880213,
+        "p95": 18.23423519381322,
+        "max": 50.70983897894621
+      },
+      "privileged_H12_query_ms": {
+        "count": 103,
+        "sum": 110146.1205429805,
+        "median": 1049.86316699069,
+        "p95": 1306.6490341065216,
+        "max": 1551.8339730042499
+      }
+    }
+  },
+  "fit": {
+    "stage": 229,
+    "settings": {
+      "features": 16,
+      "pedal_coefficients": 34,
+      "L2_lambda": 1.0,
+      "bias_penalty": 0.0,
+      "old_group_fraction": 0.5,
+      "new_group_fraction": 0.5,
+      "road_fraction_within_group": 0.3333333333333333,
+      "total_weight": "old training row count",
+      "normalization": "weighted train populations/roads only",
+      "residual_clip": 0.5,
+      "action_clip": [
+        0.0,
+        1.0
+      ],
+      "steering": "nominal unchanged",
+      "sweep": false
+    },
+    "folds": [
+      {
+        "held_out": "F0",
+        "train_roads": [
+          "F1",
+          "F2",
+          "F3"
+        ],
+        "weight_mass": [
+          {
+            "population": "old",
+            "road": "F1",
+            "rows": 334,
+            "weight": 170.66666666666666
+          },
+          {
+            "population": "old",
+            "road": "F2",
+            "rows": 337,
+            "weight": 170.66666666666666
+          },
+          {
+            "population": "old",
+            "road": "F3",
+            "rows": 353,
+            "weight": 170.66666666666666
+          },
+          {
+            "population": "new",
+            "road": "F1",
+            "rows": 165,
+            "weight": 170.66666666666666
+          },
+          {
+            "population": "new",
+            "road": "F2",
+            "rows": 96,
+            "weight": 170.66666666666666
+          },
+          {
+            "population": "new",
+            "road": "F3",
+            "rows": 103,
+            "weight": 170.66666666666666
+          }
+        ],
+        "metrics": {
+          "all": {
+            "old224": {
+              "rows": 109,
+              "MAE": [
+                0.34007831539856187,
+                0.06687677417171013
+              ],
+              "RMSE": [
+                0.3944540020793455,
+                0.09741816269655812
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.981651376146789
+            },
+            "aggregated": {
+              "rows": 109,
+              "MAE": [
+                0.32476713679252417,
+                0.09366607214879552
+              ],
+              "RMSE": [
+                0.3657103592701618,
+                0.11009147436010343
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 1.0
+            },
+            "collection": {
+              "rows": 109,
+              "MAE": [
+                0.34007831539856187,
+                0.06687677417171013
+              ],
+              "RMSE": [
+                0.3944540020793455,
+                0.09741816269655812
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.981651376146789
+            }
+          },
+          "teacher_disagrees_with_collection": {
+            "old224": {
+              "rows": 109,
+              "MAE": [
+                0.34007831539856187,
+                0.06687677417171013
+              ],
+              "RMSE": [
+                0.3944540020793455,
+                0.09741816269655812
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.981651376146789
+            },
+            "aggregated": {
+              "rows": 109,
+              "MAE": [
+                0.32476713679252417,
+                0.09366607214879552
+              ],
+              "RMSE": [
+                0.3657103592701618,
+                0.11009147436010343
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 1.0
+            },
+            "collection": {
+              "rows": 109,
+              "MAE": [
+                0.34007831539856187,
+                0.06687677417171013
+              ],
+              "RMSE": [
+                0.3944540020793455,
+                0.09741816269655812
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.981651376146789
+            }
+          },
+          "teacher_agrees_with_collection": {
+            "old224": {
+              "rows": 0,
+              "MAE": null,
+              "RMSE": null,
+              "exact_pedal_disagreement_fraction": null,
+              "both_positive_fraction": null
+            },
+            "aggregated": {
+              "rows": 0,
+              "MAE": null,
+              "RMSE": null,
+              "exact_pedal_disagreement_fraction": null,
+              "both_positive_fraction": null
+            },
+            "collection": {
+              "rows": 0,
+              "MAE": null,
+              "RMSE": null,
+              "exact_pedal_disagreement_fraction": null,
+              "both_positive_fraction": null
+            }
+          }
+        },
+        "fit_wall_s": 0.016424800996901467,
+        "fit_CPU_s": 0.01579671499999999
+      },
+      {
+        "held_out": "F1",
+        "train_roads": [
+          "F0",
+          "F2",
+          "F3"
+        ],
+        "weight_mass": [
+          {
+            "population": "old",
+            "road": "F0",
+            "rows": 368,
+            "weight": 176.33333333333334
+          },
+          {
+            "population": "old",
+            "road": "F2",
+            "rows": 337,
+            "weight": 176.33333333333334
+          },
+          {
+            "population": "old",
+            "road": "F3",
+            "rows": 353,
+            "weight": 176.33333333333334
+          },
+          {
+            "population": "new",
+            "road": "F0",
+            "rows": 109,
+            "weight": 176.33333333333334
+          },
+          {
+            "population": "new",
+            "road": "F2",
+            "rows": 96,
+            "weight": 176.33333333333334
+          },
+          {
+            "population": "new",
+            "road": "F3",
+            "rows": 103,
+            "weight": 176.33333333333334
+          }
+        ],
+        "metrics": {
+          "all": {
+            "old224": {
+              "rows": 165,
+              "MAE": [
+                0.3288563706206553,
+                0.2299880826083774
+              ],
+              "RMSE": [
+                0.36242970385961226,
+                0.40281586827534516
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9515151515151515
+            },
+            "aggregated": {
+              "rows": 165,
+              "MAE": [
+                0.3270561014612516,
+                0.22984973331701689
+              ],
+              "RMSE": [
+                0.35416698281243447,
+                0.404129229896429
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9090909090909091
+            },
+            "collection": {
+              "rows": 165,
+              "MAE": [
+                0.3288563706206553,
+                0.2299880826083774
+              ],
+              "RMSE": [
+                0.36242970385961226,
+                0.40281586827534516
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9515151515151515
+            }
+          },
+          "teacher_disagrees_with_collection": {
+            "old224": {
+              "rows": 165,
+              "MAE": [
+                0.3288563706206553,
+                0.2299880826083774
+              ],
+              "RMSE": [
+                0.36242970385961226,
+                0.40281586827534516
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9515151515151515
+            },
+            "aggregated": {
+              "rows": 165,
+              "MAE": [
+                0.3270561014612516,
+                0.22984973331701689
+              ],
+              "RMSE": [
+                0.35416698281243447,
+                0.404129229896429
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9090909090909091
+            },
+            "collection": {
+              "rows": 165,
+              "MAE": [
+                0.3288563706206553,
+                0.2299880826083774
+              ],
+              "RMSE": [
+                0.36242970385961226,
+                0.40281586827534516
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9515151515151515
+            }
+          },
+          "teacher_agrees_with_collection": {
+            "old224": {
+              "rows": 0,
+              "MAE": null,
+              "RMSE": null,
+              "exact_pedal_disagreement_fraction": null,
+              "both_positive_fraction": null
+            },
+            "aggregated": {
+              "rows": 0,
+              "MAE": null,
+              "RMSE": null,
+              "exact_pedal_disagreement_fraction": null,
+              "both_positive_fraction": null
+            },
+            "collection": {
+              "rows": 0,
+              "MAE": null,
+              "RMSE": null,
+              "exact_pedal_disagreement_fraction": null,
+              "both_positive_fraction": null
+            }
+          }
+        },
+        "fit_wall_s": 0.009305492974817753,
+        "fit_CPU_s": 0.009109271999999974
+      },
+      {
+        "held_out": "F2",
+        "train_roads": [
+          "F0",
+          "F1",
+          "F3"
+        ],
+        "weight_mass": [
+          {
+            "population": "old",
+            "road": "F0",
+            "rows": 368,
+            "weight": 175.83333333333334
+          },
+          {
+            "population": "old",
+            "road": "F1",
+            "rows": 334,
+            "weight": 175.83333333333334
+          },
+          {
+            "population": "old",
+            "road": "F3",
+            "rows": 353,
+            "weight": 175.83333333333334
+          },
+          {
+            "population": "new",
+            "road": "F0",
+            "rows": 109,
+            "weight": 175.83333333333334
+          },
+          {
+            "population": "new",
+            "road": "F1",
+            "rows": 165,
+            "weight": 175.83333333333334
+          },
+          {
+            "population": "new",
+            "road": "F3",
+            "rows": 103,
+            "weight": 175.83333333333334
+          }
+        ],
+        "metrics": {
+          "all": {
+            "old224": {
+              "rows": 96,
+              "MAE": [
+                0.2817942075562314,
+                0.08712805321071453
+              ],
+              "RMSE": [
+                0.3302581632628061,
+                0.15704624362376918
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9895833333333334
+            },
+            "aggregated": {
+              "rows": 96,
+              "MAE": [
+                0.27772009038744727,
+                0.10962684109108523
+              ],
+              "RMSE": [
+                0.3185799993543168,
+                0.16187605916447567
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 1.0
+            },
+            "collection": {
+              "rows": 96,
+              "MAE": [
+                0.2817942075562314,
+                0.08712805321071453
+              ],
+              "RMSE": [
+                0.3302581632628061,
+                0.15704624362376918
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9895833333333334
+            }
+          },
+          "teacher_disagrees_with_collection": {
+            "old224": {
+              "rows": 96,
+              "MAE": [
+                0.2817942075562314,
+                0.08712805321071453
+              ],
+              "RMSE": [
+                0.3302581632628061,
+                0.15704624362376918
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9895833333333334
+            },
+            "aggregated": {
+              "rows": 96,
+              "MAE": [
+                0.27772009038744727,
+                0.10962684109108523
+              ],
+              "RMSE": [
+                0.3185799993543168,
+                0.16187605916447567
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 1.0
+            },
+            "collection": {
+              "rows": 96,
+              "MAE": [
+                0.2817942075562314,
+                0.08712805321071453
+              ],
+              "RMSE": [
+                0.3302581632628061,
+                0.15704624362376918
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9895833333333334
+            }
+          },
+          "teacher_agrees_with_collection": {
+            "old224": {
+              "rows": 0,
+              "MAE": null,
+              "RMSE": null,
+              "exact_pedal_disagreement_fraction": null,
+              "both_positive_fraction": null
+            },
+            "aggregated": {
+              "rows": 0,
+              "MAE": null,
+              "RMSE": null,
+              "exact_pedal_disagreement_fraction": null,
+              "both_positive_fraction": null
+            },
+            "collection": {
+              "rows": 0,
+              "MAE": null,
+              "RMSE": null,
+              "exact_pedal_disagreement_fraction": null,
+              "both_positive_fraction": null
+            }
+          }
+        },
+        "fit_wall_s": 0.009486377006396651,
+        "fit_CPU_s": 0.009282530000000011
+      },
+      {
+        "held_out": "F3",
+        "train_roads": [
+          "F0",
+          "F1",
+          "F2"
+        ],
+        "weight_mass": [
+          {
+            "population": "old",
+            "road": "F0",
+            "rows": 368,
+            "weight": 173.16666666666666
+          },
+          {
+            "population": "old",
+            "road": "F1",
+            "rows": 334,
+            "weight": 173.16666666666666
+          },
+          {
+            "population": "old",
+            "road": "F2",
+            "rows": 337,
+            "weight": 173.16666666666666
+          },
+          {
+            "population": "new",
+            "road": "F0",
+            "rows": 109,
+            "weight": 173.16666666666666
+          },
+          {
+            "population": "new",
+            "road": "F1",
+            "rows": 165,
+            "weight": 173.16666666666666
+          },
+          {
+            "population": "new",
+            "road": "F2",
+            "rows": 96,
+            "weight": 173.16666666666666
+          }
+        ],
+        "metrics": {
+          "all": {
+            "old224": {
+              "rows": 103,
+              "MAE": [
+                0.30230819708803325,
+                0.08812370731323524
+              ],
+              "RMSE": [
+                0.34357748500042995,
+                0.1388859691841647
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9902912621359223
+            },
+            "aggregated": {
+              "rows": 103,
+              "MAE": [
+                0.303269857992825,
+                0.10919810902074124
+              ],
+              "RMSE": [
+                0.3338294034768386,
+                0.14387892769277627
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 1.0
+            },
+            "collection": {
+              "rows": 103,
+              "MAE": [
+                0.30230819708803325,
+                0.08812370731323524
+              ],
+              "RMSE": [
+                0.34357748500042995,
+                0.1388859691841647
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9902912621359223
+            }
+          },
+          "teacher_disagrees_with_collection": {
+            "old224": {
+              "rows": 103,
+              "MAE": [
+                0.30230819708803325,
+                0.08812370731323524
+              ],
+              "RMSE": [
+                0.34357748500042995,
+                0.1388859691841647
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9902912621359223
+            },
+            "aggregated": {
+              "rows": 103,
+              "MAE": [
+                0.303269857992825,
+                0.10919810902074124
+              ],
+              "RMSE": [
+                0.3338294034768386,
+                0.14387892769277627
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 1.0
+            },
+            "collection": {
+              "rows": 103,
+              "MAE": [
+                0.30230819708803325,
+                0.08812370731323524
+              ],
+              "RMSE": [
+                0.34357748500042995,
+                0.1388859691841647
+              ],
+              "exact_pedal_disagreement_fraction": 1.0,
+              "both_positive_fraction": 0.9902912621359223
+            }
+          },
+          "teacher_agrees_with_collection": {
+            "old224": {
+              "rows": 0,
+              "MAE": null,
+              "RMSE": null,
+              "exact_pedal_disagreement_fraction": null,
+              "both_positive_fraction": null
+            },
+            "aggregated": {
+              "rows": 0,
+              "MAE": null,
+              "RMSE": null,
+              "exact_pedal_disagreement_fraction": null,
+              "both_positive_fraction": null
+            },
+            "collection": {
+              "rows": 0,
+              "MAE": null,
+              "RMSE": null,
+              "exact_pedal_disagreement_fraction": null,
+              "both_positive_fraction": null
+            }
+          }
+        },
+        "fit_wall_s": 0.007402125018415973,
+        "fit_CPU_s": 0.007405104999999995
+      }
+    ],
+    "wall_s": 0.05171125798369758,
+    "CPU_s": 0.04920027599999999,
+    "aggregated_head_closed_loop_runs": 0,
+    "scope": "Held-out student states, privileged teacher labels, offline only"
+  },
+  "offline_macro": {
+    "MAE": {
+      "old224": [
+        0.31325927266587045,
+        0.11802915432600933
+      ],
+      "aggregated": [
+        0.308203296658512,
+        0.1355851888944097
+      ]
+    },
+    "RMSE": {
+      "old224": [
+        0.3576798385505484,
+        0.1990415609449593
+      ],
+      "aggregated": [
+        0.3430716862284379,
+        0.20499392277844608
+      ]
+    }
+  },
+  "cost": {
+    "stage": 229,
+    "at_utc": "2026-10-12T21:02:04.190839+00:00",
+    "native_cap": 2400,
+    "new_wrapper_actions": 1417,
+    "wall_s": 603.5045332130103,
+    "evaluator_CPU_s": 576.9714027360001,
+    "actor_CPU_s": 25.818997,
+    "legal_pixel_CPU_s": 12.815359,
+    "teacher_nominal32_CPU_s": 13.003638,
+    "teacher_shadow_actual_state_queries": 473,
+    "model_queries": 20802,
+    "model_physics_ticks": 992216,
+    "model_CPU_s": 478.6739652239994,
+    "model_CPU_included_in_evaluator": true,
+    "privileged_query_wall_s": 479.22087344387546,
+    "capture_wall_s": 13.587798782769823,
+    "privileged_query_timing_ms": {
+      "count": 473,
+      "sum": 479220.87344387546,
+      "median": 928.0758359818719,
+      "p95": 1330.9975440031847,
+      "max": 7012.371377000818
+    },
+    "privileged_query_over5s": [
+      {
+        "road": "F0",
+        "action": 154,
+        "wall_s": 5.4689291039831005
+      },
+      {
+        "road": "F0",
+        "action": 319,
+        "wall_s": 7.012371377000818
+      }
+    ],
+    "privileged_time_not_legal_student_runtime": true,
+    "fit_wall_s": 0.05171125798369758,
+    "fit_CPU_s": 0.04920027599999999,
+    "weighted_ridge_fits": 4,
+    "new_target_rows": 473,
+    "old_target_rows": 1392,
+    "private_observation_feature_target_cache_bytes": 8962670,
+    "private_snapshot_score_bytes": 236813898,
+    "private_endpoint_bytes": 2713569,
+    "evaluator_peak_RSS_mib": 4759.4140625,
+    "legal_actor_peak_RSS_mib": 47.125,
+    "teacher_actor_peak_RSS_mib": 46.3515625,
+    "qualification_native_actions": 0,
+    "qualification_extra_model_queries": 0,
+    "qualification_wall_s": 3.2930510909936856,
+    "B_operating_cap": 838000,
+    "actual_cumulative_wrapper_actions": 751649,
+    "research_remaining": 2351,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "accounting": "F1/F2fixedreplay, F0/F3newfrozenaffinecollectiononly; teacherH12shadowatactual1mod3state,firsttargetonly. ModelCPUinsideevaluator,pixelactorsseparate. Fullsnapshot/scoreprovenanceprivate; noaggregatedheadclosedloop, noadditionalqueries/sweeps."
+  },
+  "new_native_closed_loop_collector_roads": [
+    "F0",
+    "F3"
+  ],
+  "replayed_collector_roads": [
+    "F1",
+    "F2"
+  ],
+  "aggregated_head_closed_loop_runs": 0,
+  "source_contract": "Frozen221 C/E/N/R+same32+T,horizon12/replan3, originalrank/contactveto/fallback. Nominal32 everyactualpixelhistory, actualexecutedcontrol feedbackonly; Rshadowplan originalexpiry; fullsourcecapture includingcontacthistory. No GT inputs tolegalfeatures/student.",
+  "model_limit": "Originalsolverwarmstart/contactimpulses andFinishLineTracker reconstructionlimits unchanged; exactinitializationflags notfullfutureaccuracy proof. GTlabelsprivileged predictions,neverexecutedteachercommands.",
+  "judgment": "Dataaggregation changesheldoutimitationerrors; macro gas MAE modestlylower, brake MAE higher. No broadimprovement/realdrivinggain orpromotion claimed.",
+  "champion_changed": false,
+  "HOLDOUT_used": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
