@@ -1,0 +1,149 @@
+{
+  "stage": 232,
+  "status": "ADOPTED_FROZEN231_SUBMISSION_CHAMPION",
+  "archive_sha256": "247ba5f033ecc7ad5b0d92cf19f3408e15711b61ce8b3cfc2d223aba2df70239",
+  "archive_bytes": 15833,
+  "archive_files": 15,
+  "head_sha256": "2b853adb8ddbe7ff82d9dabf88a66b3621d0baf1fdeb547d08cb74d7fa2ee9b1",
+  "parameters_sha256": "3d1bc5a4ba3db61c45c89b06b307f883051860605d7d95139bfec62efd125baf",
+  "current_manifest_sha256": "b17aef1cee0d4d5fb35763be7cd9ec8748a6e060d79b529ca477c1efba5948bc",
+  "previous_manifest_sha256": "2e8807d7508172adfef38a6b215d9db530001483930e273a5b8f64e6bc709213",
+  "previous_archive_sha256": "b004fd5409914be5c2685569567f6b1d4d141bf67b3c311a8ee3b778bca9195e",
+  "rollback_preserved": true,
+  "package_boundary": {
+    "static_passed": true,
+    "original_nominal_modules_byte_exact": true,
+    "GT_physics_or_teacher_or_scenario_or_evaluation_logs_in_package": false,
+    "package_runtime_modules_from_archive_only": true,
+    "python_audit_denied_events": [],
+    "policy_runtime_dependencies": [
+      "numpy==1.26.0",
+      "opencv-python==4.8.1.78",
+      "packaged nominal modules and frozen model constants"
+    ],
+    "cached_package_init_ms": 229.7757109918166
+  },
+  "cached_equivalence": {
+    "DEV_F0_pixel_frames": 368,
+    "HOLDOUT231_feature_rows": 1158,
+    "all_commands_bit_exact": true,
+    "new_native_actions": 0,
+    "new_training_data": 0
+  },
+  "official_known_DEV_smoke": {
+    "stage": 232,
+    "native_actions": 343,
+    "native_cap": 600,
+    "raw_step_ticks": 1371,
+    "raw_reset_ticks": 51,
+    "wall_s": 24.1616951689939,
+    "CPU_s": 24.876486282,
+    "initial": {
+      "geometry_matches": true,
+      "physical_obstacles_match": true
+    },
+    "endpoint": {
+      "completed": true,
+      "lap_time_ms": 27400,
+      "steps": 343,
+      "progress": 1.0,
+      "finish_qualified": true,
+      "terminated": false,
+      "truncated": true,
+      "retire_reason": null,
+      "damage": 0.2
+    },
+    "full_safe_act_ms": {
+      "count": 343,
+      "median": 6.171537010231987,
+      "p95": 12.269439289229918,
+      "max": 18.02375298575498
+    },
+    "full_safe_reset_ms": {
+      "count": 1,
+      "median": 0.5173730023670942,
+      "p95": 0.5173730023670942,
+      "max": 0.5173730023670942
+    },
+    "agent_init_ms": {
+      "count": 1,
+      "median": 0.023486005375161767,
+      "p95": 0.023486005375161767,
+      "max": 0.023486005375161767
+    },
+    "invalid_actions": 0,
+    "default_timeout_s": 5.0,
+    "timeout_or_invalid_count": 0,
+    "technical_error": null,
+    "peak_RSS_mib": 68.01171875,
+    "official_runner_sha256": "48eedfb0c32a8e1f4dd724e65ac69eb678105ee434ac797ce2c9f442461fd398",
+    "official_runner_source_changed": false,
+    "profiler": "Read-only supervisor times unchanged safe_act/safe_reset including Thread start/join; counts wrapper env.step returns. Supervisor excluded from participant package.",
+    "HOLDOUT_rerun": false,
+    "SEALED_opened": false
+  },
+  "HOLDOUT231": {
+    "executed_runs": 8,
+    "paired_initial_matches": 4,
+    "champion_completed": 4,
+    "student_completed": 4,
+    "common_completed_pairs": 4,
+    "common_deltas_ms": [
+      -6680,
+      -6380,
+      -7000,
+      -10400
+    ],
+    "mean_common_delta_ms": -7615.0,
+    "median_common_delta_ms": -6840.0,
+    "new_completions": [],
+    "lost_completions": [],
+    "censored": 0,
+    "technical_error": null,
+    "unexecuted": []
+  },
+  "damage_diagnostic": {
+    "H0": {
+      "A": 0,
+      "B": 0.2
+    },
+    "H2": {
+      "A": 0,
+      "B": 0.4
+    }
+  },
+  "cost": {
+    "stage": 232,
+    "at_utc": "2026-10-12T21:47:21.704228+00:00",
+    "native_cap": 600,
+    "new_wrapper_actions": 343,
+    "wall_s": 24.1616951689939,
+    "CPU_s": 24.876486282,
+    "raw_step_ticks": 1371,
+    "raw_reset_ticks": 51,
+    "cached_pixel_actor_act_calls": 736,
+    "cached_HOLDOUT_feature_rows": 1158,
+    "qualification_wall_s": 6.96570900498773,
+    "model_queries": 0,
+    "model_physics_ticks": 0,
+    "training_updates": 0,
+    "B_operating_cap": 842000,
+    "actual_cumulative_wrapper_actions": 755986,
+    "research_remaining": 2014,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "limitations": [
+    "Four HOLDOUT pairs do not establish population reliability or universal superiority.",
+    "Student damage increases H0 0->0.2 and H2 0->0.4 retained as diagnostics.",
+    "Known DEV F0 smoke is packaging validation, not independent performance evidence.",
+    "Original registered identity exclusion has historic physical-obstacle metadata coverage gaps.",
+    "Same-host official local runner and package checks do not certify remote-server or fresh-machine parity; SEALED remains closed."
+  ],
+  "HOLDOUT_rerun": false,
+  "SEALED_opened": false,
+  "external_submission_or_transfer": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
