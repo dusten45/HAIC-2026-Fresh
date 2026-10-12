@@ -1,0 +1,715 @@
+{
+  "stage": 228,
+  "status": "FIXED_MODE_STRENGTH_LOO_AND_TWO_CLOSED_LOOP_RUNS_FINISHED",
+  "offline": {
+    "stage": 228,
+    "settings": {
+      "features": 16,
+      "mode_order": [
+        "gas",
+        "brake",
+        "coast"
+      ],
+      "L2_lambda": 1.0,
+      "bias_penalty": 0.0,
+      "objective": "sum cross entropy + .5 squared nonbias weights",
+      "optimizer": "deterministic inverse BFGS",
+      "init": "all zeros",
+      "max_iterations": 400,
+      "gradient_infinity_tolerance": 1e-06,
+      "line_search": "Armijo1e-4, initial1, half steps at most40",
+      "normalization": "train roads only mean/std floor1e-6",
+      "strength": "ridge sum squared loss+lambda1, same normalization, mode rows only",
+      "output": "argmax gas/brake/coast; one strength clipped0..1, coast0/0; nominal steering",
+      "absent_class": "Keep3logits, no pseudo counts; finite optimizer approximation reported",
+      "sweep": false
+    },
+    "folds": [
+      {
+        "held_out": "F0",
+        "train_roads": [
+          "F1",
+          "F2",
+          "F3"
+        ],
+        "train_rows": 1024,
+        "train_mode_counts": [
+          836,
+          188,
+          0
+        ],
+        "held_mode_counts": [
+          312,
+          56,
+          0
+        ],
+        "old_affine": {
+          "rows": 368,
+          "pedal_MAE": [
+            0.25293157568565855,
+            0.08254638621608888
+          ],
+          "pedal_RMSE": [
+            0.3144322468726272,
+            0.12514655023251423
+          ],
+          "actual_mode_error": 0.845108695652174,
+          "argmax_mode_error": null,
+          "confusion_teacher3_actual4": [
+            [
+              54,
+              4,
+              3,
+              251
+            ],
+            [
+              11,
+              3,
+              0,
+              42
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "simultaneous_positive_fraction": 0.7961956521739131
+        },
+        "mode_strength": {
+          "rows": 368,
+          "pedal_MAE": [
+            0.25398308107548434,
+            0.04262244430656605
+          ],
+          "pedal_RMSE": [
+            0.30492372652307675,
+            0.127393372103421
+          ],
+          "actual_mode_error": 0.15489130434782608,
+          "argmax_mode_error": 0.14673913043478262,
+          "confusion_teacher3_actual4": [
+            [
+              307,
+              2,
+              3,
+              0
+            ],
+            [
+              52,
+              4,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "simultaneous_positive_fraction": 0.0
+        },
+        "optimizer": {
+          "iterations": 68,
+          "objective": 440.1090352639737,
+          "gradient_inf": 8.957004530851798e-07,
+          "converged": true,
+          "coast_training_rows": 0,
+          "absent_coast_bias_limit": "No finite exact unpenalized-bias MLE when class absent"
+        },
+        "fit_wall_s": 0.04274398600682616,
+        "fit_CPU_s": 0.04247373900000001,
+        "model_bytes": 936
+      },
+      {
+        "held_out": "F1",
+        "train_roads": [
+          "F0",
+          "F2",
+          "F3"
+        ],
+        "train_rows": 1058,
+        "train_mode_counts": [
+          868,
+          190,
+          0
+        ],
+        "held_mode_counts": [
+          280,
+          54,
+          0
+        ],
+        "old_affine": {
+          "rows": 334,
+          "pedal_MAE": [
+            0.21100430515131907,
+            0.08995158624355884
+          ],
+          "pedal_RMSE": [
+            0.25457833880625713,
+            0.15280635962135528
+          ],
+          "actual_mode_error": 0.9820359281437125,
+          "argmax_mode_error": null,
+          "confusion_teacher3_actual4": [
+            [
+              6,
+              0,
+              0,
+              274
+            ],
+            [
+              0,
+              0,
+              0,
+              54
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "simultaneous_positive_fraction": 0.9820359281437125
+        },
+        "mode_strength": {
+          "rows": 334,
+          "pedal_MAE": [
+            0.23505542818791494,
+            0.05679379763254376
+          ],
+          "pedal_RMSE": [
+            0.27786231970781156,
+            0.16288667157368658
+          ],
+          "actual_mode_error": 0.17065868263473055,
+          "argmax_mode_error": 0.17065868263473055,
+          "confusion_teacher3_actual4": [
+            [
+              276,
+              4,
+              0,
+              0
+            ],
+            [
+              53,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "simultaneous_positive_fraction": 0.0
+        },
+        "optimizer": {
+          "iterations": 71,
+          "objective": 460.19301369089027,
+          "gradient_inf": 2.026298465684917e-07,
+          "converged": true,
+          "coast_training_rows": 0,
+          "absent_coast_bias_limit": "No finite exact unpenalized-bias MLE when class absent"
+        },
+        "fit_wall_s": 0.039593621011590585,
+        "fit_CPU_s": 0.039381008999999995,
+        "model_bytes": 936
+      },
+      {
+        "held_out": "F2",
+        "train_roads": [
+          "F0",
+          "F1",
+          "F3"
+        ],
+        "train_rows": 1055,
+        "train_mode_counts": [
+          880,
+          175,
+          0
+        ],
+        "held_mode_counts": [
+          268,
+          69,
+          0
+        ],
+        "old_affine": {
+          "rows": 337,
+          "pedal_MAE": [
+            0.24938920366464498,
+            0.08423878687854652
+          ],
+          "pedal_RMSE": [
+            0.2880706002680248,
+            0.1318393239128555
+          ],
+          "actual_mode_error": 0.9228486646884273,
+          "argmax_mode_error": null,
+          "confusion_teacher3_actual4": [
+            [
+              26,
+              0,
+              0,
+              242
+            ],
+            [
+              0,
+              0,
+              0,
+              69
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "simultaneous_positive_fraction": 0.9228486646884273
+        },
+        "mode_strength": {
+          "rows": 337,
+          "pedal_MAE": [
+            0.26920681516018086,
+            0.05995921687104184
+          ],
+          "pedal_RMSE": [
+            0.30405031414254297,
+            0.15038666903389614
+          ],
+          "actual_mode_error": 0.21068249258160238,
+          "argmax_mode_error": 0.21068249258160238,
+          "confusion_teacher3_actual4": [
+            [
+              266,
+              1,
+              1,
+              0
+            ],
+            [
+              69,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "simultaneous_positive_fraction": 0.0
+        },
+        "optimizer": {
+          "iterations": 93,
+          "objective": 448.2172784525986,
+          "gradient_inf": 9.91988686638301e-07,
+          "converged": true,
+          "coast_training_rows": 0,
+          "absent_coast_bias_limit": "No finite exact unpenalized-bias MLE when class absent"
+        },
+        "fit_wall_s": 0.04192735199467279,
+        "fit_CPU_s": 0.041929521,
+        "model_bytes": 936
+      },
+      {
+        "held_out": "F3",
+        "train_roads": [
+          "F0",
+          "F1",
+          "F2"
+        ],
+        "train_rows": 1039,
+        "train_mode_counts": [
+          860,
+          179,
+          0
+        ],
+        "held_mode_counts": [
+          288,
+          65,
+          0
+        ],
+        "old_affine": {
+          "rows": 353,
+          "pedal_MAE": [
+            0.24384996289302918,
+            0.07887849373017074
+          ],
+          "pedal_RMSE": [
+            0.2816333396135427,
+            0.12859157028820153
+          ],
+          "actual_mode_error": 0.9263456090651558,
+          "argmax_mode_error": null,
+          "confusion_teacher3_actual4": [
+            [
+              26,
+              0,
+              0,
+              262
+            ],
+            [
+              2,
+              0,
+              0,
+              63
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "simultaneous_positive_fraction": 0.9206798866855525
+        },
+        "mode_strength": {
+          "rows": 353,
+          "pedal_MAE": [
+            0.262586316021249,
+            0.05332820933238305
+          ],
+          "pedal_RMSE": [
+            0.2964457650664641,
+            0.14278296374616573
+          ],
+          "actual_mode_error": 0.18413597733711048,
+          "argmax_mode_error": 0.18413597733711048,
+          "confusion_teacher3_actual4": [
+            [
+              288,
+              0,
+              0,
+              0
+            ],
+            [
+              65,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "simultaneous_positive_fraction": 0.0
+        },
+        "optimizer": {
+          "iterations": 90,
+          "objective": 440.9436514673859,
+          "gradient_inf": 9.502704297614795e-07,
+          "converged": true,
+          "coast_training_rows": 0,
+          "absent_coast_bias_limit": "No finite exact unpenalized-bias MLE when class absent"
+        },
+        "fit_wall_s": 0.04774147502030246,
+        "fit_CPU_s": 0.047745919000000026,
+        "model_bytes": 936
+      }
+    ],
+    "wall_s": 0.1763244850153569,
+    "CPU_s": 0.17522790400000002,
+    "native_actions": 0,
+    "scope": "Offline known DEV teacher observations; coast absent, not evaluated; no driving claim"
+  },
+  "offline_macro": {
+    "old_affine_MAE": [
+      0.23929376184866294,
+      0.08390381326709125
+    ],
+    "new_mode_strength_MAE": [
+      0.2552079101112073,
+      0.05317591703563367
+    ],
+    "old_affine_actual_mode_error": 0.9190847243873674,
+    "new_actual_mode_error": 0.1800921142253174,
+    "new_argmax_mode_error": 0.17805407074705654
+  },
+  "closed_loop_aggregate": {
+    "registered_roads": 2,
+    "executed_roads": 2,
+    "completed": 0,
+    "official_DNF": 2,
+    "censored": 0,
+    "historical_champion_completed": 2,
+    "historical_pedal_affine_completed": 1,
+    "technical_error": null,
+    "unexecuted_roads": [],
+    "cap_unexecuted": []
+  },
+  "cases": {
+    "F1": {
+      "historical_champion201": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 34080,
+        "damage": 0.2,
+        "retire_reason": null,
+        "unique_tiles": 299,
+        "total_tiles": 299,
+        "native_actions": 427
+      },
+      "historical_pedal_affine226": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 0.0,
+        "retire_reason": "off_track",
+        "unique_tiles": 299,
+        "total_tiles": 299,
+        "native_actions": 494
+      },
+      "historical_not_rerun": true,
+      "reset_and_champion_hash_exact": true,
+      "student": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "retire_reason": "crash",
+        "unique_tiles": 31,
+        "total_tiles": 299,
+        "native_actions": 46
+      },
+      "endpoint": {
+        "action": 46,
+        "last_new_tile_action": 30,
+        "no_new_reward_counter": 16,
+        "speed_m_s": 2.1968853964525037,
+        "wheels_on_road": 4,
+        "contiguous_tiles": 31
+      },
+      "first_collision_action": 30,
+      "modes": {
+        "order": [
+          "gas",
+          "brake",
+          "coast"
+        ],
+        "argmax_counts": [
+          46,
+          0,
+          0
+        ],
+        "transition_count": 0,
+        "transitions": [],
+        "simultaneous_pedals_count": 0,
+        "command_mean": [
+          -0.03791263327002525,
+          0.49588045477867126,
+          0.0
+        ],
+        "command_p10": [
+          -0.3998464047908783,
+          0.3492495119571686,
+          0.0
+        ],
+        "command_p90": [
+          0.3969072550535202,
+          0.6806958317756653,
+          0.0
+        ]
+      },
+      "motion": {
+        "stationary_actions_speed_le_001": 0,
+        "moving_actions": 44,
+        "nearest_road_tangent_reverse_moving_actions": 7,
+        "first_reverse_moving_action": 34,
+        "tangent_sign_change_count": 2,
+        "actual_startline_crossings": [],
+        "scope": "Nearestroadtile tangentproxywithspeed>=1,maychangeatjunctions; notproofwholelapdirection. Sourcewidthcenterlinecrossings recordedraw,stationarythresholddiagnostic only."
+      },
+      "inference": {
+        "total_compute_ms": {
+          "count": 46,
+          "median": 5.78700851474423,
+          "p95": 12.59279024816351,
+          "max": 17.344332998618484
+        },
+        "head_only_ms": {
+          "count": 46,
+          "median": 0.042934989323839545,
+          "p95": 0.2000502499868162,
+          "max": 0.32270699739456177
+        },
+        "including_IPC_ms": {
+          "count": 46,
+          "median": 8.909195501473732,
+          "p95": 17.94671300740447,
+          "max": 20.406290015671402
+        },
+        "CPU_s": 0.623092
+      },
+      "steering_and_nominal_memory_exact": true
+    },
+    "F2": {
+      "historical_champion201": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 31600,
+        "damage": 0.0,
+        "retire_reason": null,
+        "unique_tiles": 289,
+        "total_tiles": 289,
+        "native_actions": 396
+      },
+      "historical_pedal_affine226": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 23020,
+        "damage": 0.4,
+        "retire_reason": null,
+        "unique_tiles": 289,
+        "total_tiles": 289,
+        "native_actions": 288
+      },
+      "historical_not_rerun": true,
+      "reset_and_champion_hash_exact": true,
+      "student": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 0.2,
+        "retire_reason": "off_track",
+        "unique_tiles": 47,
+        "total_tiles": 289,
+        "native_actions": 142
+      },
+      "endpoint": {
+        "action": 142,
+        "last_new_tile_action": 41,
+        "no_new_reward_counter": 101,
+        "speed_m_s": 11.01005257126277,
+        "wheels_on_road": 0,
+        "contiguous_tiles": 47
+      },
+      "first_collision_action": 39,
+      "modes": {
+        "order": [
+          "gas",
+          "brake",
+          "coast"
+        ],
+        "argmax_counts": [
+          142,
+          0,
+          0
+        ],
+        "transition_count": 0,
+        "transitions": [],
+        "simultaneous_pedals_count": 0,
+        "command_mean": [
+          0.13702814280986786,
+          0.6581845283508301,
+          0.0
+        ],
+        "command_p10": [
+          -0.005256208032369607,
+          0.3602709382772446,
+          0.0
+        ],
+        "command_p90": [
+          0.2018195539712906,
+          0.8068913400173188,
+          0.0
+        ]
+      },
+      "motion": {
+        "stationary_actions_speed_le_001": 0,
+        "moving_actions": 142,
+        "nearest_road_tangent_reverse_moving_actions": 48,
+        "first_reverse_moving_action": 46,
+        "tangent_sign_change_count": 14,
+        "actual_startline_crossings": [],
+        "scope": "Nearestroadtile tangentproxywithspeed>=1,maychangeatjunctions; notproofwholelapdirection. Sourcewidthcenterlinecrossings recordedraw,stationarythresholddiagnostic only."
+      },
+      "inference": {
+        "total_compute_ms": {
+          "count": 142,
+          "median": 1.7341775092063472,
+          "p95": 7.777387709938919,
+          "max": 10.344264999730512
+        },
+        "head_only_ms": {
+          "count": 142,
+          "median": 0.045344000682234764,
+          "p95": 0.15626883978256953,
+          "max": 0.23850100114941597
+        },
+        "including_IPC_ms": {
+          "count": 142,
+          "median": 4.241393500706181,
+          "p95": 11.016954606748186,
+          "max": 13.65988899488002
+        },
+        "CPU_s": 0.785997
+      },
+      "steering_and_nominal_memory_exact": true
+    }
+  },
+  "cost": {
+    "stage": 228,
+    "at_utc": "2026-10-12T20:33:07.534240+00:00",
+    "native_cap": 950,
+    "new_wrapper_actions": 188,
+    "wall_s": 9.091072442010045,
+    "evaluator_CPU_s": 7.631003807000001,
+    "actor_CPU_s": 1.4090889999999998,
+    "model_queries": 0,
+    "model_physics_ticks": 0,
+    "model_CPU_s": 0,
+    "fit_wall_s": 0.1763244850153569,
+    "fit_CPU_s": 0.17522790400000002,
+    "logistic_fits": 4,
+    "ridge_strength_fits": 8,
+    "BFGS_iterations": 322,
+    "all_numerical_gradient_tolerances_met": true,
+    "normalization_and_head_bytes_per_fold": 936,
+    "raw_step_ticks": 752,
+    "raw_reset_ticks": 102,
+    "student_total_compute_ms": {
+      "count": 188,
+      "median": 2.2487414971692488,
+      "p95": 9.320719397510404,
+      "max": 17.344332998618484
+    },
+    "student_head_compute_ms": {
+      "count": 188,
+      "median": 0.045078006223775446,
+      "p95": 0.17158274422399714,
+      "max": 0.32270699739456177
+    },
+    "qualified_cached_calls": 12,
+    "qualification_native_actions": 0,
+    "qualification_wall_s": 1.5648819490161259,
+    "actor_peak_RSS_mib": 47.0390625,
+    "evaluator_peak_RSS_mib": 73.6796875,
+    "private_run_command_feature_diagnostic_bytes": 384379,
+    "private_fitted_head_and_offline_prediction_bytes": 38584,
+    "B_operating_cap": 835000,
+    "actual_cumulative_wrapper_actions": 750232,
+    "research_remaining": 768,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "accounting": "FourofflineLOOmode/strengthfits first, settingsfixedbeforemetrics, thenF1/F2onceuntilofficialorremaining950globalcap. NoF0/F3nativeruns,retraining/classweights/threshold/lambda sweeps. Read-onlyGTmotion/finishdiagnosticsnotstudentinputs."
+  },
+  "judgment": "Simultaneouspedalremoval succeedsstructurally butnotcompletion:0/2vsoldaffine1/2/champion2/2. GasMAEworseallLOO; onlineallgas/noswitches. No causalclaimoverlapsolefailurecause andno promotion.",
+  "coast_limit": "Zero teachercoastrows; 3logits kept butcoastnotvalidated. Absentclass unpenbiasMLE hasno finiteoptimum; reportedfiniteBFGSgradienttolerance only.",
+  "champion_changed": false,
+  "HOLDOUT_used": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
