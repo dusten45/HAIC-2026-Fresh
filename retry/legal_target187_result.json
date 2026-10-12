@@ -1,0 +1,441 @@
+{
+  "stage": 187,
+  "status": "CLOSED_LEGAL_COMMON_TIME_GAIN_WITHOUT_FAILURE_RESCUE",
+  "intervention": "Exact186normal32/near8/cap45targetarchive reusedbyteforbyte;only center/GTego workerandevaluator removed. Originalpixelroad/detector/tracker/memory restored,withthefrozenrule unchanged.",
+  "frozen_rule": true,
+  "new_coefficients": 0,
+  "archive_builds": 0,
+  "reuse_audit": {
+    "stage": 187,
+    "archive_reused_byte_for_byte_from186": true,
+    "archive_rebuilds": 0,
+    "rule_reused_byte_for_byte": true,
+    "candidate_clean186_reusable": false,
+    "clean186_reason": "Legal input and same targetrule, but normal24 instead of normal32;agent.py differs. Therefore not an exact candidate evaluation.",
+    "oracle186_reusable_as_legal_candidate": false,
+    "oracle186_reason": "Exact same normal32 candidate archive,but privileged center/ego information. Reuse only as labeled information-ladder endpoints.",
+    "cached_legal_normal32_baselines": 4,
+    "cached_normal24_champion_baselines": 4,
+    "new_candidate_episodes_required": 4,
+    "baseline_oracle_comparisons_not_pooled": true
+  },
+  "preregistered_order": [
+    "permanentDEV182_failure1",
+    "permanentDEV182_failure2",
+    "181first_contact_completed_DEV",
+    "181first_clean_completed_DEV"
+  ],
+  "completed_registered_cohort": true,
+  "rows": [
+    {
+      "condition": 1,
+      "role": "permanentDEV182_failure1",
+      "baseline_normal32": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 124,
+        "total_tiles": 314,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 162
+      },
+      "current_champion_normal24": {
+        "completed": true,
+        "lap_ms": 36220,
+        "damage": 0.0,
+        "unique_tiles": 314,
+        "total_tiles": 314,
+        "retire_reason": null,
+        "charged_wrapper_actions": 453
+      },
+      "candidate_legal_normal32": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 256,
+        "total_tiles": 314,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 367
+      },
+      "failure_rescued": false,
+      "existing_normal32_completion_lost": false,
+      "common_lap_delta_vs_normal32_ms": null,
+      "common_lap_delta_vs_normal24_ms": null,
+      "first_damage": {
+        "step": 363,
+        "elapsed_s": 29.04,
+        "speed_m_s": 27.01968437902713
+      },
+      "target_selection_counts": {
+        "rows": 367,
+        "changed": 27,
+        "original_clear": 159,
+        "no_hazards": 165,
+        "empty_path": 0,
+        "no_certified_target_original_fallback": 16,
+        "shorter_path_target": 27,
+        "first_change": 42
+      },
+      "pixel_boundary_counts": {
+        "reset_calls": 1,
+        "act_calls": 367,
+        "pixel_bytes_per_call": 112896,
+        "oracle_packets": 0,
+        "ego_responses": 0,
+        "center_replacement_responses": 0
+      }
+    },
+    {
+      "condition": 2,
+      "role": "permanentDEV182_failure2",
+      "baseline_normal32": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 224,
+        "total_tiles": 291,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 312
+      },
+      "current_champion_normal24": {
+        "completed": true,
+        "lap_ms": 33800,
+        "damage": 0.2,
+        "unique_tiles": 291,
+        "total_tiles": 291,
+        "retire_reason": null,
+        "charged_wrapper_actions": 423
+      },
+      "candidate_legal_normal32": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 187,
+        "total_tiles": 291,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 249
+      },
+      "failure_rescued": false,
+      "existing_normal32_completion_lost": false,
+      "common_lap_delta_vs_normal32_ms": null,
+      "common_lap_delta_vs_normal24_ms": null,
+      "first_damage": {
+        "step": 97,
+        "elapsed_s": 7.76,
+        "speed_m_s": 23.58564774904949
+      },
+      "target_selection_counts": {
+        "rows": 249,
+        "changed": 15,
+        "original_clear": 69,
+        "no_hazards": 154,
+        "empty_path": 0,
+        "no_certified_target_original_fallback": 11,
+        "shorter_path_target": 15,
+        "first_change": 50
+      },
+      "pixel_boundary_counts": {
+        "reset_calls": 1,
+        "act_calls": 249,
+        "pixel_bytes_per_call": 112896,
+        "oracle_packets": 0,
+        "ego_responses": 0,
+        "center_replacement_responses": 0
+      }
+    },
+    {
+      "condition": 3,
+      "role": "181first_contact_completed_DEV",
+      "baseline_normal32": {
+        "completed": true,
+        "lap_ms": 33820,
+        "damage": 0.4,
+        "unique_tiles": 303,
+        "total_tiles": 303,
+        "retire_reason": null,
+        "charged_wrapper_actions": 423
+      },
+      "current_champion_normal24": {
+        "completed": true,
+        "lap_ms": 35840,
+        "damage": 0.4,
+        "unique_tiles": 303,
+        "total_tiles": 303,
+        "retire_reason": null,
+        "charged_wrapper_actions": 449
+      },
+      "candidate_legal_normal32": {
+        "completed": true,
+        "lap_ms": 33460,
+        "damage": 0.0,
+        "unique_tiles": 303,
+        "total_tiles": 303,
+        "retire_reason": null,
+        "charged_wrapper_actions": 419
+      },
+      "failure_rescued": false,
+      "existing_normal32_completion_lost": false,
+      "common_lap_delta_vs_normal32_ms": -360,
+      "common_lap_delta_vs_normal24_ms": -2380,
+      "first_damage": null,
+      "target_selection_counts": {
+        "rows": 419,
+        "changed": 21,
+        "original_clear": 195,
+        "no_hazards": 187,
+        "empty_path": 0,
+        "no_certified_target_original_fallback": 16,
+        "shorter_path_target": 21,
+        "first_change": 45
+      },
+      "pixel_boundary_counts": {
+        "reset_calls": 1,
+        "act_calls": 419,
+        "pixel_bytes_per_call": 112896,
+        "oracle_packets": 0,
+        "ego_responses": 0,
+        "center_replacement_responses": 0
+      }
+    },
+    {
+      "condition": 4,
+      "role": "181first_clean_completed_DEV",
+      "baseline_normal32": {
+        "completed": true,
+        "lap_ms": 32260,
+        "damage": 0.0,
+        "unique_tiles": 287,
+        "total_tiles": 287,
+        "retire_reason": null,
+        "charged_wrapper_actions": 404
+      },
+      "current_champion_normal24": {
+        "completed": true,
+        "lap_ms": 33720,
+        "damage": 0.0,
+        "unique_tiles": 287,
+        "total_tiles": 287,
+        "retire_reason": null,
+        "charged_wrapper_actions": 422
+      },
+      "candidate_legal_normal32": {
+        "completed": true,
+        "lap_ms": 31360,
+        "damage": 0.2,
+        "unique_tiles": 287,
+        "total_tiles": 287,
+        "retire_reason": null,
+        "charged_wrapper_actions": 393
+      },
+      "failure_rescued": false,
+      "existing_normal32_completion_lost": false,
+      "common_lap_delta_vs_normal32_ms": -900,
+      "common_lap_delta_vs_normal24_ms": -2360,
+      "first_damage": {
+        "step": 54,
+        "elapsed_s": 4.32,
+        "speed_m_s": 45.3509678228597
+      },
+      "target_selection_counts": {
+        "rows": 393,
+        "changed": 25,
+        "original_clear": 151,
+        "no_hazards": 192,
+        "empty_path": 0,
+        "no_certified_target_original_fallback": 25,
+        "shorter_path_target": 25,
+        "first_change": 51
+      },
+      "pixel_boundary_counts": {
+        "reset_calls": 1,
+        "act_calls": 393,
+        "pixel_bytes_per_call": 112896,
+        "oracle_packets": 0,
+        "ego_responses": 0,
+        "center_replacement_responses": 0
+      }
+    }
+  ],
+  "failure_rescues": 0,
+  "failed_conditions": 2,
+  "existing_normal32_completion_retention": "2/2",
+  "primary_same_information_normal32_comparison": {
+    "evaluated_conditions": 4,
+    "baseline_completions": 2,
+    "candidate_completions": 2,
+    "lost_completions": 0,
+    "new_completions": 0,
+    "common_completed": 2,
+    "all_common_lap_deltas_ms": [
+      -360,
+      -900
+    ],
+    "sum_ms": -1260,
+    "mean_ms": -630,
+    "median_ms": -630.0,
+    "baseline_damage": 2.4,
+    "candidate_damage": 2.2
+  },
+  "secondary_current_normal24_champion_comparison": {
+    "evaluated_conditions": 4,
+    "baseline_completions": 4,
+    "candidate_completions": 2,
+    "lost_completions": 2,
+    "new_completions": 0,
+    "common_completed": 2,
+    "all_common_lap_deltas_ms": [
+      -2380,
+      -2360
+    ],
+    "sum_ms": -4740,
+    "mean_ms": -2370,
+    "median_ms": -2370.0,
+    "baseline_damage": 0.6000000000000001,
+    "candidate_damage": 2.2
+  },
+  "information_ladder": [
+    {
+      "condition": 1,
+      "original_target_legal_normal32": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 124,
+        "total_tiles": 314,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 162
+      },
+      "original_target_center_ego_oracle184": {
+        "completed": true,
+        "lap_ms": 34160,
+        "damage": 0.0,
+        "unique_tiles": 314,
+        "total_tiles": 314,
+        "retire_reason": null,
+        "charged_wrapper_actions": 428
+      },
+      "frozen_target_center_ego_oracle186": {
+        "completed": true,
+        "lap_ms": 35420,
+        "damage": 0.0,
+        "unique_tiles": 314,
+        "total_tiles": 314,
+        "retire_reason": null,
+        "charged_wrapper_actions": 443
+      },
+      "frozen_target_legal187": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 256,
+        "total_tiles": 314,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 367
+      },
+      "same_new_target_archive_across_information_conditions": true,
+      "legal_control_effect": "Originalnormal32baseline vs187;both originalpixelperception/memory.",
+      "oracle_control_effect": "184vs186;both same center+GTego adapter.",
+      "frozen_rule_information_effect": "186vs187;identicaltargetarchive,center+GTego adapters jointly removed. Not separate center-versus-ego attribution."
+    },
+    {
+      "condition": 2,
+      "original_target_legal_normal32": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 224,
+        "total_tiles": 291,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 312
+      },
+      "original_target_center_ego_oracle184": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 223,
+        "total_tiles": 291,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 311
+      },
+      "frozen_target_center_ego_oracle186": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 188,
+        "total_tiles": 291,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 260
+      },
+      "frozen_target_legal187": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 187,
+        "total_tiles": 291,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 249
+      },
+      "same_new_target_archive_across_information_conditions": true,
+      "legal_control_effect": "Originalnormal32baseline vs187;both originalpixelperception/memory.",
+      "oracle_control_effect": "184vs186;both same center+GTego adapter.",
+      "frozen_rule_information_effect": "186vs187;identicaltargetarchive,center+GTego adapters jointly removed. Not separate center-versus-ego attribution."
+    }
+  ],
+  "information_and_control_effects_pooled": false,
+  "interpretation": "Frozenrule has a legal common-completion timegain onthetwoalreadycompletedDEVroads,butrescuesneitherfailedroad. Originalnormal24completesall4;candidateonly2. No champion promotion.",
+  "information_limit": "Identicaltargetarchive completesfailure1with186center+ego oracle butcrasheswithlegalpixels. Localization/memory errors maymatter;centerandegoadapters were removedtogether,so noisolatedcomponentcause isidentified. Onfailure2bothinformationconditionsstillcrash.",
+  "progress_on_crashes_is_not_completion_or_official_lap_gain": true,
+  "damage_is_independent_diagnostic_not_automatic_veto": true,
+  "verification": "All1428actualactcalls and4resets usedonly112896bytefloat32(4,84,84)pixels. No centerreplacementorGTego responses/packets. Originaltrackerbinding and15archivemembersverified;targetaudit,32/8/45P law,initialgeometry/state,streamhashes andactorcleanup passed. Staticnewboundaryqualification was1reset+1act.",
+  "model_limit": "186simplepursuitarc is anillustrativegeometriccheck,not a validated dynamics oraccuratefuturetrajectory model. Pixelposition/memoryerrorsandendogenousclosedloopchanges can changeoutcomes.",
+  "no_promotion": true,
+  "current_champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "next_action": "Close this fixedcomparison withthecurrentchampionpreserved. Do not inferprecisefuturepredictionfromtheidealarc orstartfurthertuning,HOLDOUT ormodel expansion automatically.",
+  "cost": {
+    "stage": 187,
+    "at_utc": "2026-10-12T09:23:50.316292+00:00",
+    "native_cap": 4000,
+    "new_wrapper_actions": 1428,
+    "native_episode_invocations": 4,
+    "per_episode_cap": 1000,
+    "raw_step_ticks": 5707,
+    "raw_reset_ticks": 204,
+    "wall_s": 72.50434940197738,
+    "evaluator_CPU_s": 58.466167506000005,
+    "actor_CPU_s": 14.164064,
+    "timing_scope": "Four actuallegalcandidate episodes withboundedtarget/compact diagnostics andinputchecks;excludespreparation,2staticqualificationcalls andpublication.",
+    "cached_normal32_endpoint_actions_reused": 1301,
+    "cached_normal24_endpoint_actions_reused": 1747,
+    "cached_oracle_endpoint_actions_reused": 1442,
+    "new_full_baseline_replays": 0,
+    "new_separate_prefix_replays": 0,
+    "qualification_policy_calls": 2,
+    "qualification_reset_calls": 1,
+    "qualification_act_calls": 1,
+    "qualification_native_actions": 0,
+    "extra_policy_calls_in_native": 0,
+    "archive_builds": 0,
+    "archive_reused_byte_for_byte_from186": true,
+    "new_target_formulas": 0,
+    "threshold_sweeps": 0,
+    "native_oracle_packets": 0,
+    "native_oracle_adapter_calls": 0,
+    "new_full_pixel_GT_policy_streams": 0,
+    "B_operating_cap": 800000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 710748,
+    "research_remaining": 5252,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "current_champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false
+}
