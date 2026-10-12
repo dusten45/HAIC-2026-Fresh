@@ -1,0 +1,198 @@
+{
+  "stage": 157,
+  "verdict": "RETAIN_FIXED45_DEV_CANDIDATE_ONLY",
+  "metrics": {
+    "baseline_completed_count": 4,
+    "candidate_completed_count": 4,
+    "counts": {
+      "new_completion": 0,
+      "lost_completion": 0,
+      "common_dnf": 0,
+      "common_completed": 4
+    },
+    "cohort_complete": true,
+    "common_median_delta_ms": -610.0,
+    "common_sum_delta_ms": -2040.0,
+    "common_mean_ratio": 0.9854722334790511,
+    "pilot_sum_delta_ms": -660.0,
+    "remaining2_sum_delta_ms": -1380.0,
+    "slower_common_count": 0
+  },
+  "comparisons": [
+    {
+      "DEV_index": 0,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 34900,
+      "candidate_lap_ms": 34860,
+      "delta_ms": -40,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "actual_cap_intervention": {
+        "rows": 436,
+        "excluded_target_none": 0,
+        "max_target_error_m_s": 0.0,
+        "pedals_match_source": true,
+        "target_increased_vs_same_input_baseline_rows": 198,
+        "pedals_changed_vs_same_input_baseline_rows": 125,
+        "near_target_or_pedal_changes": 6
+      },
+      "first_damage_event": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": true,
+      "actual_action_observation_hashes_match": true
+    },
+    {
+      "DEV_index": 1,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 30120,
+      "candidate_lap_ms": 29500,
+      "delta_ms": -620,
+      "baseline_damage": 0.4,
+      "candidate_damage": 0.0,
+      "actual_cap_intervention": {
+        "rows": 369,
+        "excluded_target_none": 0,
+        "max_target_error_m_s": 0.0,
+        "pedals_match_source": true,
+        "target_increased_vs_same_input_baseline_rows": 183,
+        "pedals_changed_vs_same_input_baseline_rows": 130,
+        "near_target_or_pedal_changes": 10
+      },
+      "first_damage_event": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": true,
+      "actual_action_observation_hashes_match": true
+    },
+    {
+      "DEV_index": 2,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 42860,
+      "candidate_lap_ms": 42080,
+      "delta_ms": -780,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "actual_cap_intervention": {
+        "rows": 527,
+        "excluded_target_none": 0,
+        "max_target_error_m_s": 0.0,
+        "pedals_match_source": true,
+        "target_increased_vs_same_input_baseline_rows": 222,
+        "pedals_changed_vs_same_input_baseline_rows": 156,
+        "near_target_or_pedal_changes": 6
+      },
+      "first_damage_event": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": true,
+      "actual_action_observation_hashes_match": true
+    },
+    {
+      "DEV_index": 3,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_lap_ms": 33000,
+      "candidate_lap_ms": 32400,
+      "delta_ms": -600,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "actual_cap_intervention": {
+        "rows": 406,
+        "excluded_target_none": 0,
+        "max_target_error_m_s": 0.0,
+        "pedals_match_source": true,
+        "target_increased_vs_same_input_baseline_rows": 189,
+        "pedals_changed_vs_same_input_baseline_rows": 124,
+        "near_target_or_pedal_changes": 5
+      },
+      "first_damage_event": null,
+      "first_damage_pre_summary": null,
+      "paired_initial_exact": true,
+      "actual_action_observation_hashes_match": true
+    }
+  ],
+  "pilot_passed": true,
+  "first_failure_evidence": null,
+  "unexecuted_DEV_indices": [],
+  "single_change": "Global cap42.5→45 only; normal24/near5/originalP/path/perception/tracking/HUD/steering fixed",
+  "pilot_rule": "Both comparable baseline completions retained, common medianlapdelta<0 and meanlapratio<1. If pass, execute same frozen candidate on remaining2 in this turn. No damage veto or minimum percent.",
+  "final_gate": "DEV candidate only with complete4comparable cohort/no completion loss/common medianlapdelta<0 and meanlapratio<1. Report remaining2 separately; mixed small gains can be weak, no hidden damage veto.",
+  "damage_automatic_veto": false,
+  "total_damage_diagnostic": {
+    "sums": {
+      "baseline": 0.4,
+      "candidate": 0.0
+    },
+    "observed_record_counts": {
+      "baseline": 4,
+      "candidate": 4
+    },
+    "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+  },
+  "exposure_not_expected_gain": "154 cap exposure70.14s is not an expected or recoverable time gain; only actual outcomes decide.",
+  "candidate_archive_sha256": "ec51dda3f8c2294913c49476e964df45154d8e48f044238beff8687ca4aeca6c",
+  "baseline_archive_sha256": "126348c69d3ed9d6456a93ad6d6dd74f199c515aa150e07a23f016d9195a2e60",
+  "candidate_status": "DEV_ONLY_UNPROMOTED",
+  "actual_cost": {
+    "stage": 157,
+    "at_utc": "2026-10-12T01:18:36.647826+00:00",
+    "native_cap": 8000,
+    "actual_episodes": 4,
+    "new_wrapper_actions": 1738,
+    "raw_step_ticks": 6946,
+    "raw_reset_ticks": 204,
+    "wall_s": 69.59743665298447,
+    "evaluator_CPU_s": 56.387915761,
+    "actor_CPU_s": 13.389629000000001,
+    "B_operating_cap": 760000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 664011,
+    "research_remaining": 11989,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "cached155_baseline_actions_not_recharged": 1763,
+    "baseline_reruns": 0,
+    "new_offline_policy_model_calls": 0,
+    "full_requalification_replays": 0,
+    "new_full_pixels_GT_policy_video_streams": 0,
+    "duplicate_evaluations": 0,
+    "current24_changed": false,
+    "HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "verification": {
+    "single_constructor_cap_literal_changed": true,
+    "other13archive_members_unchanged": true,
+    "observer_reused": true,
+    "evaluator_cap_constants_only": true,
+    "policy_input_action_untransformed": true,
+    "paired_initial_matches": 4,
+    "all_actual_source_law_and_stream_hashes_match": true,
+    "all_actors_reaped": true,
+    "current24_and_rollbacks_preserved": true
+  },
+  "limits": [
+    "Four existingDEV with one new rollout each, cached154 baseline reused; descriptive local contrast, not independent generalization.",
+    "Only globalcap source constant changes; later trajectories/HUD/targets/near activation can differ.",
+    "No full155 baseline policy stream retained. Initialidentity/source-scope/current-input arithmetic verified, not full-policy prefix parity.",
+    "Damage is separate diagnostic; exposure70.14s was not an expected recoverable gain. No monotonic coefficient/safety claim.",
+    "DEV candidate only. Current champion/HOLDOUT/SEALED preserved; officialserver/freshmachine parity unverified."
+  ],
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false,
+  "automatic_next_experiment": false,
+  "prior_warning": {
+    "cap42_5_HOLDOUT_damage_baseline": 0.0,
+    "cap42_5_HOLDOUT_damage_candidate": 0.2,
+    "earlier_DEV3_delay_ms": 280,
+    "retained": true,
+    "no_monotonic_safety_claim": true
+  }
+}
