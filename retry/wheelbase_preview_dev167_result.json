@@ -1,0 +1,327 @@
+{
+  "stage": 167,
+  "status": "REDUCED_RAW_PREVIEW_PENALTY_BUT_REJECT_VS_CHAMPION",
+  "current_policy": "normal24 / near8 / cap45, original P and steering",
+  "fixed_model_change": {
+    "total_arc_support_m": 3.24,
+    "half_support_m": 1.62,
+    "physical_justification": "Static source wheelbase=(80-(-82))*0.02=3.24m. Existing calibrated pixel-to-body coordinates kept; no environment import or true scene geometry to policy.",
+    "formula": "Same circumcircle curvature from points interpolated at path arc center-1.62, center, center+1.62m. Same near-only speed cap, centers in [L,L+4m], max aggregation and original target min. Require fully visible support; no extrapolation.",
+    "unchanged": [
+      "preview structure",
+      "near8",
+      "normal24",
+      "cap45",
+      "perception",
+      "tracking",
+      "HUD",
+      "path selection",
+      "steering",
+      "P"
+    ],
+    "changed_members": [
+      "retry/visible_curvature_preview.py"
+    ],
+    "unchanged_members": 14,
+    "raw166_archive_sha256": "6fb5ecdf4b656ef199a4a5ca9e9a005585efe6c8555cfd25e5a12fdd8fa8307f",
+    "candidate_archive_sha256": "247de4c0d7080b4efd8920d42bc85205c373cd6270a25a36e007092b4d7d2b3c"
+  },
+  "stored_path_evidence": {
+    "maximum_curvature_rows": 12,
+    "support_range_m": [
+      1.322751322751322,
+      1.6759441853957742
+    ],
+    "support_median_m": 1.5289718162011825,
+    "median_abs_turn_deg": 51.340191745909934,
+    "nearby_opposite_turn_rows": 11,
+    "example": {
+      "step": 111,
+      "left_segment_m": 0.5878894767783649,
+      "right_segment_m": 0.9410823394228168,
+      "total_support_m": 1.5289718162011816,
+      "signed_turn_deg": -51.34019174590994,
+      "nearby_opposite_turn_present": false,
+      "raw_curvature": 1.1263603997249352
+    },
+    "interpretation": "All12 peak triplets span less than one wheelbase;11 have a nearby opposite turn. Supports scale sensitivity to short polyline corners, not proof all corners are erroneous or of true-road curvature.",
+    "fixed_scale_registered_before_its_arithmetic": true,
+    "one_scale_only": true,
+    "arithmetic_target_raised_vs166_rows": 12,
+    "native_for_path_inspection": 0
+  },
+  "predeclared_gates": {
+    "DEV_indices": [
+      2,
+      0
+    ],
+    "reference_stages": [
+      163,
+      166
+    ],
+    "candidate_episodes": 2,
+    "per_episode_native_cap": 2000,
+    "both_normal_endpoints": true,
+    "stop_on_technical_fault": true,
+    "no_replacement_retry_or_tuning": true,
+    "primary": "Completion first. Current-champion time gate requires no lost completion, median common delta<0 and mean ratio<1. No DEV adoption.",
+    "excessive_slowdown_reduction": "Separately compare candidate vs stored166 using no completion loss, median common delta<0 and mean ratio<1; this alone does not show benefit over current champion.",
+    "warnings": "Damage/contact separately with actual exposure; smoothness is not performance. Report each case including regressions."
+  },
+  "paired_rows": [
+    {
+      "anonymous_DEV_index": 2,
+      "arms": {
+        "champion163": {
+          "completed": true,
+          "lap_ms": 42060,
+          "damage": 0.2,
+          "wrapper_actions": 526,
+          "actor_CPU_s": 4.217849999999999,
+          "metrics": {
+            "actual_rows": 526,
+            "near_mode_rows": 112,
+            "gas_rows": 386,
+            "brake_rows": 140,
+            "observed_native_exposure_s": 42.080000000001135,
+            "active_pedal_opposite_switches": 182,
+            "active_pedal_switches_per_s": 4.325095057034104,
+            "actual_speed_direction_switches": 184,
+            "actual_speed_switches_per_s": 4.372623574144368,
+            "brake_action_fraction": 0.2661596958174905
+          },
+          "first_damage_step": 125
+        },
+        "raw_preview166": {
+          "completed": true,
+          "lap_ms": 54280,
+          "damage": 0.0,
+          "wrapper_actions": 679,
+          "actor_CPU_s": 5.931704,
+          "metrics": {
+            "actual_rows": 679,
+            "near_mode_rows": 237,
+            "gas_rows": 449,
+            "brake_rows": 230,
+            "observed_native_exposure_s": 54.300000000003045,
+            "active_pedal_opposite_switches": 319,
+            "active_pedal_switches_per_s": 5.8747697974214015,
+            "actual_speed_direction_switches": 317,
+            "actual_speed_switches_per_s": 5.8379373848983835,
+            "brake_action_fraction": 0.3387334315169367
+          },
+          "first_damage_step": null
+        },
+        "wheelbase_preview167": {
+          "completed": true,
+          "lap_ms": 49720,
+          "damage": 0.0,
+          "wrapper_actions": 622,
+          "actor_CPU_s": 5.256884,
+          "metrics": {
+            "actual_rows": 622,
+            "near_mode_rows": 190,
+            "gas_rows": 432,
+            "brake_rows": 190,
+            "observed_native_exposure_s": 49.74000000000233,
+            "active_pedal_opposite_switches": 239,
+            "active_pedal_switches_per_s": 4.804985926819236,
+            "actual_speed_direction_switches": 237,
+            "actual_speed_switches_per_s": 4.764776839565519,
+            "brake_action_fraction": 0.3054662379421222
+          },
+          "first_damage_step": null
+        }
+      },
+      "delta_vs_champion_ms": 7660,
+      "ratio_vs_champion": 1.1821207798383262,
+      "delta_vs_raw166_ms": -4560,
+      "ratio_vs_raw166": 0.9159911569638909,
+      "actual_intervention": {
+        "rows": 622,
+        "target_lowered_rows": 165,
+        "pedal_changed_rows": 157,
+        "outside_near_changes": 0,
+        "target_drop_sum_m_s": 2383.528345665214,
+        "max_target_drop_m_s": 41.13233430850485,
+        "all_source_steering_and_P_checks_pass": true
+      }
+    },
+    {
+      "anonymous_DEV_index": 0,
+      "arms": {
+        "champion163": {
+          "completed": true,
+          "lap_ms": 32440,
+          "damage": 0.0,
+          "wrapper_actions": 406,
+          "actor_CPU_s": 3.719632,
+          "metrics": {
+            "actual_rows": 406,
+            "near_mode_rows": 67,
+            "gas_rows": 294,
+            "brake_rows": 112,
+            "observed_native_exposure_s": 32.45999999999963,
+            "active_pedal_opposite_switches": 118,
+            "active_pedal_switches_per_s": 3.635243376463381,
+            "actual_speed_direction_switches": 118,
+            "actual_speed_switches_per_s": 3.635243376463381,
+            "brake_action_fraction": 0.27586206896551724
+          },
+          "first_damage_step": null
+        },
+        "raw_preview166": {
+          "completed": true,
+          "lap_ms": 48100,
+          "damage": 0.0,
+          "wrapper_actions": 602,
+          "actor_CPU_s": 4.804053,
+          "metrics": {
+            "actual_rows": 602,
+            "near_mode_rows": 233,
+            "gas_rows": 395,
+            "brake_rows": 207,
+            "observed_native_exposure_s": 48.12000000000208,
+            "active_pedal_opposite_switches": 282,
+            "active_pedal_switches_per_s": 5.860349127181792,
+            "actual_speed_direction_switches": 284,
+            "actual_speed_switches_per_s": 5.901911886949039,
+            "brake_action_fraction": 0.3438538205980066
+          },
+          "first_damage_step": null
+        },
+        "wheelbase_preview167": {
+          "completed": true,
+          "lap_ms": 43500,
+          "damage": 0.0,
+          "wrapper_actions": 544,
+          "actor_CPU_s": 5.025431,
+          "metrics": {
+            "actual_rows": 544,
+            "near_mode_rows": 175,
+            "gas_rows": 381,
+            "brake_rows": 163,
+            "observed_native_exposure_s": 43.52000000000136,
+            "active_pedal_opposite_switches": 200,
+            "active_pedal_switches_per_s": 4.595588235293974,
+            "actual_speed_direction_switches": 200,
+            "actual_speed_switches_per_s": 4.595588235293974,
+            "brake_action_fraction": 0.29963235294117646
+          },
+          "first_damage_step": null
+        }
+      },
+      "delta_vs_champion_ms": 11060,
+      "ratio_vs_champion": 1.340937114673243,
+      "delta_vs_raw166_ms": -4600,
+      "ratio_vs_raw166": 0.9043659043659044,
+      "actual_intervention": {
+        "rows": 544,
+        "target_lowered_rows": 169,
+        "pedal_changed_rows": 160,
+        "outside_near_changes": 0,
+        "target_drop_sum_m_s": 3035.230885732878,
+        "max_target_drop_m_s": 41.13233430850485,
+        "all_source_steering_and_P_checks_pass": true
+      }
+    }
+  ],
+  "comparisons": {
+    "champion": {
+      "common_completions": 2,
+      "lost_completion": 0,
+      "median_delta_ms": 9360.0,
+      "sum_delta_ms": 18720,
+      "mean_lap_ratio": 1.2615289472557847,
+      "faster_cases": 0,
+      "time_gate_passed": false
+    },
+    "raw166": {
+      "common_completions": 2,
+      "lost_completion": 0,
+      "median_delta_ms": -4580.0,
+      "sum_delta_ms": -9160,
+      "mean_lap_ratio": 0.9101785306648976,
+      "faster_cases": 2,
+      "time_gate_passed": true
+    }
+  },
+  "completion_counts": {
+    "champion163": 2,
+    "raw_preview166": 2,
+    "wheelbase_preview167": 2
+  },
+  "damage_sums": {
+    "champion163": 0.2,
+    "raw_preview166": 0.0,
+    "wheelbase_preview167": 0.0
+  },
+  "interpretation": "Fixed physical support removed some raw-preview time penalty and retained zero observed contact on these two cases. It remains slower than the current champion in both cases; the added component fails its performance gate. Smoothness is not an objective.",
+  "causal_limits": "Two reused DEV cases, one candidate run each. No matched uniform-slowdown control or actual-road curvature oracle; no unique collision cause, general reliability, or broader preview benefit established.",
+  "P4": {
+    "model_separate": true,
+    "same_initial_state_all_three_arms": true,
+    "cost_separate": true,
+    "policy_input": "current pixels and existing selected path only",
+    "evaluator_GT": "diagnostic only"
+  },
+  "P8": {
+    "original_component_reference": 163,
+    "raw_component_reference": 166,
+    "one_modified_component": 167,
+    "passes_vs_original": false
+  },
+  "checks": {
+    "same_initial_pairs": true,
+    "exact_archive_diff": true,
+    "source_target_steering_P": true,
+    "input_action_hashes": true,
+    "all_actors_reaped": true,
+    "current_and_rollbacks_unchanged": true,
+    "official_server_fresh_machine_parity": "UNVERIFIED"
+  },
+  "cost": {
+    "stage": 167,
+    "at_utc": "2026-10-12T03:21:36.589396+00:00",
+    "native_cap": 6000,
+    "scheduled_native_cap": 4000,
+    "actual_candidate_episodes": 2,
+    "new_wrapper_actions": 1166,
+    "raw_step_ticks": 4663,
+    "raw_reset_ticks": 102,
+    "wall_s": 54.29674604299362,
+    "evaluator_CPU_s": 44.287542071999994,
+    "actor_CPU_s": 10.282315,
+    "timing_scope": "Actual two-episode native batch; setup and saved-path arithmetic not profiled. Actor/evaluator CPU reported separately. Different action counts/trajectories prevent a per-call model-speed claim.",
+    "B_operating_cap": 782000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 685977,
+    "research_remaining": 12023,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "cached_reference_historical_native_not_recharged": {
+      "champion163": 932,
+      "raw_preview166": 1281
+    },
+    "cached_reference_endpoint_episodes": 4,
+    "baseline_or166_reruns": 0,
+    "saved_path_arithmetic_calls": 13,
+    "synthetic_arithmetic_checks": 3,
+    "new_offline_policy_model_calls": 0,
+    "extra_perception_calls": 0,
+    "full_requalification_replays": 0,
+    "full_frame_GT_policy_streams_saved": 0,
+    "all_actors_reaped": true,
+    "current_near8_changed": false,
+    "HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false,
+    "report_sha256": "79e3a81503697f977b6dcd427f13a257594fd24750deb775ececd03a1e58b280"
+  },
+  "decision": "Keep current champion and all rollbacks. End this fixed-length comparison; no further smoothing-length sweep or native run.",
+  "next_discriminating_hypothesis_not_executed": "Even at vehicle-scale support, using the maximum future path curvature as an immediate speed cap may brake earlier than needed. Distance-to-curve timing is distinct from curvature scale; any later check should first use saved DEV evidence, not another scale sweep.",
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
