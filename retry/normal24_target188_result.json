@@ -1,0 +1,321 @@
+{
+  "stage": 188,
+  "status": "CLOSED_NORMAL24_COMPLETION_LOSS_STOP",
+  "intervention": "Exact186legalnormal24/near8/cap45archiveandworker reused,withfrozenfinaltargetrule. Currentchampionperception/memory,route scoring,steering/P/HUD remainunchanged. No normal32budgetincrease.",
+  "inherited_speed_coupling": "Onlyparameters24/8/45arefixed;changedtargetcan still altercurvature-derivedspeedthroughunchangedcontroller equations.",
+  "reuse_audit": {
+    "stage": 188,
+    "clean186_reused": true,
+    "code_and_information_exact": true,
+    "archive_and_worker_and_configuration_hashes_match": true,
+    "same_initial_state_pixels_geometry_andobstacles": true,
+    "normal24_near8_cap45": true,
+    "original_legalpixels_andmemory": true,
+    "cached_original_stage": 186,
+    "cached_completed": true,
+    "cached_lap_ms": 33380,
+    "cached_damage": 0.2,
+    "cached_native_already_charged": 418,
+    "reused_result_is_not_new": true,
+    "new_native_for_cached_case": 0,
+    "new_policy_calls_for_cached_case": 0,
+    "archive_rebuilds": 0,
+    "worker_rebuilds": 0,
+    "rule_changes": 0,
+    "boundary": "187legalinputassertionwrapper addsread-onlychecks;noaction/observation transform. Same actualworker/ZIP as186clean."
+  },
+  "preregistered_conditions": 4,
+  "new_episodes_planned": 3,
+  "new_episodes_executed": 2,
+  "reused_episode_count": 1,
+  "skipped_after_completion_loss": 1,
+  "rows": [
+    {
+      "condition": 1,
+      "role": "prior_normal32_failure1",
+      "origin": "NEW_188",
+      "source_stage": 188,
+      "baseline_normal24": {
+        "completed": true,
+        "lap_ms": 36220,
+        "damage": 0.0,
+        "unique_tiles": 314,
+        "total_tiles": 314,
+        "retire_reason": null,
+        "charged_wrapper_actions": 453
+      },
+      "candidate": {
+        "completed": true,
+        "lap_ms": 36300,
+        "damage": 0.8,
+        "unique_tiles": 314,
+        "total_tiles": 314,
+        "retire_reason": null,
+        "charged_wrapper_actions": 454
+      },
+      "lap_delta_ms": 80,
+      "new_native_actions": 454,
+      "target_selection_counts": {
+        "rows": 454,
+        "changed": 23,
+        "original_clear": 165,
+        "no_hazards": 239,
+        "empty_path": 0,
+        "no_certified_target_original_fallback": 27,
+        "shorter_path_target": 23,
+        "first_change": 44
+      },
+      "new_pixel_boundary_counts": {
+        "reset_calls": 1,
+        "act_calls": 454,
+        "pixel_bytes_per_call": 112896,
+        "oracle_packets": 0,
+        "ego_responses": 0,
+        "center_replacement_responses": 0
+      },
+      "first_damage": {
+        "step": 228,
+        "elapsed_s": 18.24,
+        "speed_m_s": 45.38789958267755
+      }
+    },
+    {
+      "condition": 2,
+      "role": "prior_normal32_failure2",
+      "origin": "NEW_188",
+      "source_stage": 188,
+      "baseline_normal24": {
+        "completed": true,
+        "lap_ms": 33800,
+        "damage": 0.2,
+        "unique_tiles": 291,
+        "total_tiles": 291,
+        "retire_reason": null,
+        "charged_wrapper_actions": 423
+      },
+      "candidate": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "unique_tiles": 264,
+        "total_tiles": 291,
+        "retire_reason": "crash",
+        "charged_wrapper_actions": 400
+      },
+      "lap_delta_ms": null,
+      "new_native_actions": 400,
+      "target_selection_counts": {
+        "rows": 400,
+        "changed": 34,
+        "original_clear": 122,
+        "no_hazards": 215,
+        "empty_path": 0,
+        "no_certified_target_original_fallback": 29,
+        "shorter_path_target": 34,
+        "first_change": 53
+      },
+      "new_pixel_boundary_counts": {
+        "reset_calls": 1,
+        "act_calls": 400,
+        "pixel_bytes_per_call": 112896,
+        "oracle_packets": 0,
+        "ego_responses": 0,
+        "center_replacement_responses": 0
+      },
+      "first_damage": {
+        "step": 396,
+        "elapsed_s": 31.68,
+        "speed_m_s": 32.036502733651204
+      }
+    },
+    {
+      "condition": 3,
+      "role": "prior_contact_completed_DEV",
+      "origin": "NOT_RUN_AFTER_COMPLETION_LOSS",
+      "source_stage": null,
+      "baseline_normal24": {
+        "completed": true,
+        "lap_ms": 35840,
+        "damage": 0.4,
+        "unique_tiles": 303,
+        "total_tiles": 303,
+        "retire_reason": null,
+        "charged_wrapper_actions": 449
+      },
+      "candidate": null,
+      "lap_delta_ms": null,
+      "new_native_actions": 0,
+      "reason": "Stopped after condition2lostexistingcompletion;normal32results are not substituted."
+    },
+    {
+      "condition": 4,
+      "role": "prior_clean_completed_DEV",
+      "origin": "REUSED_186",
+      "source_stage": 186,
+      "baseline_normal24": {
+        "completed": true,
+        "lap_ms": 33720,
+        "damage": 0.0,
+        "unique_tiles": 287,
+        "total_tiles": 287,
+        "retire_reason": null,
+        "charged_wrapper_actions": 422
+      },
+      "candidate": {
+        "completed": true,
+        "lap_ms": 33380,
+        "damage": 0.2,
+        "unique_tiles": 287,
+        "total_tiles": 287,
+        "retire_reason": null,
+        "charged_wrapper_actions": 418
+      },
+      "lap_delta_ms": -340,
+      "new_native_actions": 0,
+      "target_selection_counts": {
+        "rows": 418,
+        "changed": 29,
+        "original_clear": 152,
+        "no_hazards": 210,
+        "empty_path": 0,
+        "no_certified_target_original_fallback": 27,
+        "shorter_path_target": 29,
+        "first_change": 53
+      },
+      "new_pixel_boundary_counts": null,
+      "first_damage": {
+        "step": 245,
+        "elapsed_s": 19.6,
+        "speed_m_s": 45.238325025774515
+      }
+    }
+  ],
+  "new_only_comparison": {
+    "available_conditions": 2,
+    "baseline_completions": 2,
+    "candidate_completions": 1,
+    "lost_completions": 1,
+    "common_completed": 1,
+    "all_common_lap_deltas_ms": [
+      80
+    ],
+    "sum_ms": 80,
+    "mean_ms": 80,
+    "median_ms": 80,
+    "baseline_damage": 0.2,
+    "candidate_damage": 1.8,
+    "eligible_for_all_four_time_gate": false
+  },
+  "including_reused_available_comparison": {
+    "available_conditions": 3,
+    "baseline_completions": 3,
+    "candidate_completions": 2,
+    "lost_completions": 1,
+    "common_completed": 2,
+    "all_common_lap_deltas_ms": [
+      80,
+      -340
+    ],
+    "sum_ms": -260,
+    "mean_ms": -130,
+    "median_ms": -130.0,
+    "baseline_damage": 0.2,
+    "candidate_damage": 2.0,
+    "eligible_for_all_four_time_gate": false
+  },
+  "all_four_candidate_results_available": false,
+  "all_four_time_gate_evaluated": false,
+  "decision": {
+    "stage": 188,
+    "status": "CLOSED_NORMAL24_COMPLETION_LOSS_STOP",
+    "fixed_rule_rejected_on_current_champion": true,
+    "new_conditions_executed": 2,
+    "new_conditions_skipped": 1,
+    "clean186_reused": true,
+    "reused_is_not_new": true,
+    "existing_normal24_completion_losses": 1,
+    "all_four_candidate_completion_gate": false,
+    "new_only_common_lap_delta_ms": [
+      80
+    ],
+    "including_reused_common_lap_delta_ms": [
+      80,
+      -340
+    ],
+    "partial_negative_sum_is_not_pass": true,
+    "damage_warning_not_stop_trigger": true,
+    "no_promotion": true,
+    "current_champion_unchanged": true,
+    "no_postresult_lookahead_tuning": true,
+    "conclusion": "The frozen targetcomponent loses an existingnormal24completion,so itsproblem isnotonlynormal32speedincrease. Stopbeforethirdnewroad. Priorcleanresult is reusedanddoesnotmake anincomplete,completion-losingcohort pass.",
+    "next_action": "Close this target-selection candidate without thresholdretuning ornewnativeexpansion. Preserve remainingauthorizedbudget andtheunchangedchampion.",
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "automatic_next_experiment": false
+  },
+  "normal32_and_normal24_component_effects_separated": true,
+  "source_information": "Allnewandcachedcandidateepisodes useoriginallegalpixels;no centerorGTego adapter.",
+  "verification": "CandidateZIP,worker,all15members,normal24parameters andtargethelper match186. Cachedcleanconfiguration hashandinitialstate matchexactly. New854actcalls/2resets passpixel-onlyboundary,targetaudit,P law,stream/initialhashes andactorcleanup. No newqualificationcalls.",
+  "actual_throughput_native_per_s": 20.77674392240285,
+  "conditional16000_minutes": 12.834863232786402,
+  "prior_two_stage_estimate_minutes": 14.966712466271076,
+  "throughput_is_conditional_not_fixed": true,
+  "budget_expansion_actions": 16000,
+  "damage_is_independent_warning": true,
+  "no_promotion": true,
+  "current_champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "cost": {
+    "stage": 188,
+    "at_utc": "2026-10-12T09:36:01.212982+00:00",
+    "native_cap": 5000,
+    "new_wrapper_actions": 854,
+    "native_episode_invocations": 2,
+    "planned_new_episode_invocations": 3,
+    "skipped_new_episode_invocations": 1,
+    "per_new_episode_caps": [
+      1500,
+      1500,
+      2000
+    ],
+    "reused_candidate_episode_invocations": 1,
+    "reused_candidate_source_stage": 186,
+    "reused_candidate_native_already_charged": 418,
+    "reused_candidate_new_native": 0,
+    "cached_normal24_baseline_actions_referenced": 1747,
+    "new_full_baseline_replays": 0,
+    "new_separate_prefix_replays": 0,
+    "raw_step_ticks": 3416,
+    "raw_reset_ticks": 102,
+    "wall_s": 41.10364950299845,
+    "evaluator_CPU_s": 33.120912621,
+    "actor_CPU_s": 8.094717,
+    "timing_scope": "Two newactuallegalcandidate episodes withboundeddiagnostics,not cached186cleanorpreparation/publication.",
+    "actual_new_native_per_s": 20.77674392240285,
+    "conditional_16000_native_wall_s": 770.0917939671841,
+    "conditional_16000_native_minutes": 12.834863232786402,
+    "throughput_limit": "Observedtwo-road/configurationmix,notaguarantee. Extra16000wasbudgetauthorization,notexecutedwork.",
+    "qualification_policy_calls": 0,
+    "qualification_native_actions": 0,
+    "extra_policy_calls_in_native": 0,
+    "archive_builds": 0,
+    "worker_builds": 0,
+    "new_target_formulas": 0,
+    "threshold_sweeps": 0,
+    "B_operating_cap": 816000,
+    "authorized_budget_increment": 16000,
+    "actual_cumulative_wrapper_actions": 711602,
+    "research_remaining": 20398,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "current_champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false
+}
