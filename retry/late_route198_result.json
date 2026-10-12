@@ -1,0 +1,398 @@
+{
+  "stage": 198,
+  "status": "STOP_NO_EVIDENCED_RANK_REPAIR",
+  "privileged_GT_diagnostic": true,
+  "legal_pixel_policy": false,
+  "champion_promotion": false,
+  "saved_trace_limit": "197 stored candidate endpoints and actual scalar/action rows, but not actual positions, visited tile IDs or finish tracker. Saved-only analysis first found zero predicted newtiles for every candidate from412 onward. One exact replay was necessary to fill those specific telemetry gaps.",
+  "replay": {
+    "actions": 512,
+    "all_actions_and_nominal_outputs_identical": true,
+    "all_saved_actual_scalars_identical": true,
+    "paired_reset_identical": true,
+    "pre409_and_pre412_GT_digests_identical": true,
+    "new_model_queries": 0,
+    "independent_policy_evaluation": false
+  },
+  "observed_route": {
+    "last_new_tile_action": 411,
+    "visited_tiles": 298,
+    "total_tiles": 314,
+    "missing_tiles": 16,
+    "missing_group_sizes": [
+      1,
+      10,
+      5
+    ],
+    "groups": [
+      {
+        "label": "A",
+        "unvisited_tiles": 1,
+        "first_pass_nearby_actions": [
+          137
+        ],
+        "speed_range_m_s": [
+          63.785352552182125,
+          63.785352552182125
+        ],
+        "no_road_wheel_contact_actions": []
+      },
+      {
+        "label": "B",
+        "unvisited_tiles": 10,
+        "first_pass_nearby_actions": [
+          153,
+          154,
+          155,
+          156,
+          157,
+          158
+        ],
+        "speed_range_m_s": [
+          37.551571655306944,
+          68.37848574571741
+        ],
+        "no_road_wheel_contact_actions": [
+          154,
+          155,
+          156
+        ]
+      },
+      {
+        "label": "C",
+        "unvisited_tiles": 5,
+        "first_pass_nearby_actions": [
+          307,
+          308,
+          309
+        ],
+        "speed_range_m_s": [
+          41.89724154117829,
+          42.77602666956729
+        ],
+        "no_road_wheel_contact_actions": [
+          308
+        ]
+      }
+    ],
+    "after411_forward_distance_m": 260.9270678256486,
+    "backward_steps": 0,
+    "negative_forward_speed_steps": 0,
+    "minimum_forward_speed_m_s": 9.857784347301147,
+    "next_missing_tile_entry_centerline_distance_m": 414.2016237799769,
+    "next_missing_tile_end_centerline_distance_m": 417.7016237799769,
+    "finish_center_crossing_wrapper_step": 418,
+    "qualification_ever": false,
+    "official_finish_ever": false,
+    "qualification_ratio": 0.9490445859872612,
+    "required_ratio": 0.95,
+    "endpoint_no_new_tile_counter": 101,
+    "endpoint_damage": 0,
+    "interpretation": "After the first lap, the vehicle travels forward over the already visited initial track section. It is not reversing or oscillating in one spot. Earlier first-lap paths skipped three road groups; high speed and temporary absence of wheel-road contact are observed, but a speed-only causal explanation was not tested."
+  },
+  "fixed_boundary_path_comparison": [
+    {
+      "before_action": 409,
+      "candidates": 11,
+      "admissible": 11,
+      "prior_selected": "N",
+      "maximum_forward_candidate": "N",
+      "selected_forward_gain_m": 27.840657506494153,
+      "maximum_any_forward_gain_m": 27.840657506494153,
+      "candidates_gaining_one_tile": 8,
+      "candidates_gaining_zero_tiles": 3,
+      "persistent_missing_tiles_gained": 0,
+      "maximum_end_visited_tiles": 298,
+      "qualification_candidates": 0,
+      "all_prior_scores_identical": true,
+      "candidate_metrics": {
+        "C00": {
+          "new_tiles": 1,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 14.970089977055295,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "C01": {
+          "new_tiles": 1,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 4.241886856267229,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "C08": {
+          "new_tiles": 1,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 15.576441940305813,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "C09": {
+          "new_tiles": 1,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 4.293830708148562,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "C16": {
+          "new_tiles": 1,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 14.56575482960875,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "C17": {
+          "new_tiles": 1,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 4.280393766988254,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "E00": {
+          "new_tiles": 0,
+          "end_visited_tiles": 297,
+          "forward_gain_m": 0.0882805868388914,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "E08": {
+          "new_tiles": 0,
+          "end_visited_tiles": 297,
+          "forward_gain_m": 0.0882805868388914,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "E16": {
+          "new_tiles": 0,
+          "end_visited_tiles": 297,
+          "forward_gain_m": 0.0882805868388914,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "N": {
+          "new_tiles": 1,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 27.840657506494153,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "R": {
+          "new_tiles": 1,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 15.083993099819054,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        }
+      }
+    },
+    {
+      "before_action": 412,
+      "candidates": 11,
+      "admissible": 8,
+      "prior_selected": "C00",
+      "maximum_forward_candidate": "C00",
+      "selected_forward_gain_m": 25.05226093262877,
+      "maximum_any_forward_gain_m": 34.95551579765447,
+      "candidates_gaining_one_tile": 0,
+      "candidates_gaining_zero_tiles": 11,
+      "persistent_missing_tiles_gained": 0,
+      "maximum_end_visited_tiles": 298,
+      "qualification_candidates": 0,
+      "all_prior_scores_identical": true,
+      "candidate_metrics": {
+        "C00": {
+          "new_tiles": 0,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 25.05226093262877,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "C01": {
+          "new_tiles": 0,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 6.787607113809145,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "C08": {
+          "new_tiles": 0,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 23.61156248633165,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 3,
+          "persistent_missing_tiles_gained": 0
+        },
+        "C09": {
+          "new_tiles": 0,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 6.808530311587674,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "C16": {
+          "new_tiles": 0,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 16.852322217161372,
+          "admissible": false,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 0,
+          "persistent_missing_tiles_gained": 0
+        },
+        "C17": {
+          "new_tiles": 0,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 6.68815896406295,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "E00": {
+          "new_tiles": 0,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 0.6781809596614039,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "E08": {
+          "new_tiles": 0,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 0.6781822922935135,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "E16": {
+          "new_tiles": 0,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 0.6781822922935135,
+          "admissible": true,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 4,
+          "persistent_missing_tiles_gained": 0
+        },
+        "N": {
+          "new_tiles": 0,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 31.130758504170217,
+          "admissible": false,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 0,
+          "persistent_missing_tiles_gained": 0
+        },
+        "R": {
+          "new_tiles": 0,
+          "end_visited_tiles": 298,
+          "forward_gain_m": 34.95551579765447,
+          "admissible": false,
+          "risk": false,
+          "terminal": false,
+          "endpoint_road_wheels": 1,
+          "persistent_missing_tiles_gained": 0
+        }
+      }
+    }
+  ],
+  "decision": {
+    "rank_change": false,
+    "modified_reset_trial": false,
+    "reason": "No admissible existing12-action path reaches any of the persistent16 missed tiles. Pre409 eight moving/retained candidates gain the same final first-lap tile, three full-brake candidates gain0; all end below299. Pre412 all11 gain0. The prior chosen candidate already maximizes admissible forward displacement at both boundaries. No better necessary progress path was shown to be discarded by ranking.",
+    "scope": "Finite candidate/horizon evidence at two exact boundaries. It does not prove that every longer closed-loop sequence is physically incapable of recovery, nor that ranking cannot matter earlier.",
+    "smallest_next_structure": "A single track-following action sequence explicitly targeting the next unvisited road tile before the first missed region could expand path coverage beyond fixed-steering holds. First compare that earlier boundary with existing paths; only add the candidate if it is absent. No such candidate, new state replay or experiment was implemented in198."
+  },
+  "objective_interpretation": "G3/chapter9: high speed and positive forward travel are surrogates, not sufficient for official finish. Persistent missed tiles keep qualification false at the actual finish-line crossing. This model explicitly omits finish-line state; actual tracker telemetry, not a cloned model tracker, establishes nonqualification. Late rank-only repair lacks the prerequisite evidence.",
+  "cost": {
+    "stage": 198,
+    "at_utc": "2026-10-12T13:26:44.303008+00:00",
+    "native_cap": 2000,
+    "new_wrapper_actions": 512,
+    "exact_diagnostic_replay_actions": 512,
+    "modified_policy_actions": 0,
+    "raw_step_ticks": 2048,
+    "raw_reset_ticks": 51,
+    "wall_s": 45.43638768498204,
+    "native_execution_wall_s": 44.819977193983505,
+    "offline_analysis_wall_s": 0.6164104909985326,
+    "evaluator_CPU_s": 36.709399474,
+    "actor_CPU_s": 8.096531,
+    "offline_analysis_CPU_s": 0.614645603,
+    "actual_env_step_wall_s": 32.90472809787025,
+    "model_queries": 22,
+    "model_physics_ticks": 1056,
+    "model_CPU_s": 0.497587584,
+    "model_wall_s": 0.4976279819966294,
+    "reconstruction_wall_s": 0.30448737897677347,
+    "integration_wall_s": 0.19163284290698357,
+    "zero_time_contact_initializations": 22,
+    "model_CPU_included_in_evaluator": false,
+    "model_CPU_included_in_offline_analysis": true,
+    "timing_scope": "Native512 is exact replay, not a new variant trial. Native replay runs zero models. Offline22 model queries are included in the separately timed analysis CPU, not native evaluator CPU; do not count them twice. Wall sums the two timed execution phases and excludes preparation, exploratory saved-data reads and publication.",
+    "B_operating_cap": 816000,
+    "actual_cumulative_wrapper_actions": 724613,
+    "research_remaining": 7387,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "automatic_next_experiment": false
+  },
+  "champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}

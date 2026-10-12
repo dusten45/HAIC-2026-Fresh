@@ -44,7 +44,7 @@ def distribution(values):
             if values else dict(count=0, sum=0., median=None, p95=None, max=None))
 
 
-def predict_actions(snapshot, actions):
+def predict_actions(snapshot, actions, record_road_visits=False):
     """Run explicit controls through the unchanged source transition model."""
     before = time.perf_counter()
     model = SourceVehicleTransition(snapshot)
@@ -52,10 +52,14 @@ def predict_actions(snapshot, actions):
     restored = dict(tiles=model.initial_tiles_exact, progress=model.initial_progress_exact,
                     bodies=model.initial_bodies_exact)
     rows = []
+    initially_visited = {road['idx'] for road in snapshot['roads'] if road['visited']}
     integration_start = time.perf_counter()
     try:
         for action in actions:
             row = model.step(np.asarray(action, np.float32))
+            if record_road_visits:
+                row['newly_visited_tile_ids'] = sorted(
+                    int(road.idx) for road in model.roads if road.road_visited and road.idx not in initially_visited)
             rows.append(row)
             if row['terminal']:
                 break
@@ -162,6 +166,11 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
         def reset(*args, **kwargs):
             result = old_reset(*args, **kwargs)
             state['env'] = env
+            if oracle.get('record_track_diagnostic', False):
+                directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
+                old_write(directory / 'track-diagnostic.json', dict(
+                    track=[list(map(float, point)) for point in env.unwrapped.track],
+                    initial_finish_tracker=vars(env.unwrapped.finish_line_tracker)), exclusive=True)
             listener = env.unwrapped.world.contactListener_bug_workaround
             original_contact = listener._contact
 
@@ -193,6 +202,14 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 off_track_counter=after['off_track_counter'],
                 wheel_road_contacts=sum(bool(w.tiles) for w in env.unwrapped.car.wheels),
                 raw_ticks=round((env.unwrapped.t-before_time)*50), terminal=bool(ended or truncated))
+            if oracle.get('record_track_diagnostic', False):
+                tracker = env.unwrapped.finish_line_tracker
+                row.update(position=after['position'], velocity=after['velocity'], angle=after['angle'],
+                    wheel_tile_ids=sorted({int(t.idx) for w in env.unwrapped.car.wheels for t in w.tiles}),
+                    unvisited_tiles=[int(t.idx) for t in env.unwrapped.road if not t.road_visited],
+                    finish_tracker={key: getattr(tracker, key) for key in (
+                        'departed_start_area', 'crossing_from_back', 'previous_longitudinal',
+                        'previous_lateral', 'qualified_time_s', 'candidate_crossing_time_s', 'finish_time_s')})
             if state['selection'] is not None:
                 predicted = (state['prediction_rows'][state['selection_offset']]
                              if state['selection_offset'] < len(state['prediction_rows']) else None)
@@ -300,6 +317,12 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
             assert state['calls'] == state['steps'] + 1
             nominal_latencies.append(nominal_ms)
             state['nominal'] = nominal
+            if state['calls'] in oracle.get('capture_before_actions', []):
+                snapshot = capture(state['env'])
+                directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
+                old_write(directory / ('pre-action-'+str(state['calls'])+'.json'), dict(
+                    snapshot=snapshot, initial_state_digest=digest(snapshot), nominal=nominal.tolist(),
+                    finish_tracker=vars(state['env'].unwrapped.finish_line_tracker)), exclusive=True)
             active_replay = replay is not None and not state.get('replay_complete', False)
             replan = not active_replay and (state['calls'] - 1) % interval == 0
             if active_replay:
