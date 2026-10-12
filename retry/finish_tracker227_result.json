@@ -1,0 +1,361 @@
+{
+  "stage": 227,
+  "status": "EXACT_FIXED_REPLAY_FINISH_REJECTION_IDENTIFIED",
+  "replay": {
+    "commands": 494,
+    "commands_changed": false,
+    "reset_state_and_observation_match": true,
+    "road_geometry_and_obstacles_match": true,
+    "recorded_wrapper_endpoint_fields_match": true,
+    "complete_rolling_observation_hash_match": true,
+    "raw_tick_tracker_updates": 2027,
+    "old_per_act_observation_hashes_available": false
+  },
+  "official_tracker": {
+    "source": "core/finish_line.py:FinishLineTracker.update",
+    "constants": {
+      "half_width": 6.666666666666667,
+      "half_depth": 0.875,
+      "qualification_ratio": 0.95,
+      "minimum_forward_speed": 0.0001,
+      "maximum_lateral_to_forward_ratio": 4.0
+    },
+    "cumulative_distance_requirement": false,
+    "departure": {
+      "action": 3,
+      "raw_tick": 60,
+      "physics_time_s": 1.2000000000000006,
+      "elapsed_since_reset_s": 0.18000000000000016,
+      "visited_tiles": 2,
+      "progress": 0.006688963210702341,
+      "previous_longitudinal": 0.8363490879331896,
+      "longitudinal": 1.0073634909847193,
+      "lateral": -0.004697436855828685,
+      "forward_speed": 8.550776776023097,
+      "lateral_speed": -0.03752085917044956,
+      "conditions": {
+        "qualified": false,
+        "inside_width": true,
+        "previous_inside_width": true,
+        "back_boundary_transition": false,
+        "entered_from_back": false,
+        "direction_valid": true,
+        "centerline_forward_transition": false
+      },
+      "departed_start_area": false,
+      "crossing_from_back_before": false,
+      "crossing_from_back_after": false
+    },
+    "first_tile_qualification": {
+      "action": 376,
+      "raw_tick": 1555,
+      "physics_time_s": 31.099999999999426,
+      "elapsed_since_reset_s": 30.079999999999426,
+      "visited_tiles": 285,
+      "progress": 0.9531772575250836,
+      "previous_longitudinal": 104.72921907563479,
+      "longitudinal": 104.55717483331935,
+      "lateral": -123.73004337204313,
+      "forward_speed": -8.624249020039493,
+      "lateral_speed": 43.340753628801735,
+      "conditions": {
+        "qualified": true,
+        "inside_width": false,
+        "previous_inside_width": false,
+        "back_boundary_transition": false,
+        "entered_from_back": false,
+        "direction_valid": false,
+        "centerline_forward_transition": false
+      },
+      "departed_start_area": true,
+      "crossing_from_back_before": false,
+      "crossing_from_back_after": false
+    },
+    "first_all_tiles": {
+      "action": 393,
+      "raw_tick": 1622,
+      "physics_time_s": 32.43999999999947,
+      "elapsed_since_reset_s": 31.419999999999472,
+      "visited_tiles": 299,
+      "progress": 1.0,
+      "previous_longitudinal": 86.75586417815951,
+      "longitudinal": 86.46176936132991,
+      "lateral": -63.0861517469833,
+      "forward_speed": -14.704798003029012,
+      "lateral_speed": 45.24835509307257,
+      "conditions": {
+        "qualified": true,
+        "inside_width": false,
+        "previous_inside_width": false,
+        "back_boundary_transition": false,
+        "entered_from_back": false,
+        "direction_valid": false,
+        "centerline_forward_transition": false
+      },
+      "departed_start_area": true,
+      "crossing_from_back_before": false,
+      "crossing_from_back_after": false
+    },
+    "centerline_reverse_crossings": [
+      {
+        "action": 141,
+        "raw_tick": 613,
+        "physics_time_s": 12.259999999999827,
+        "elapsed_since_reset_s": 11.239999999999828,
+        "visited_tiles": 41,
+        "progress": 0.13712374581939799,
+        "previous_longitudinal": 0.280157935482499,
+        "longitudinal": -0.6875192058424224,
+        "lateral": -0.10249703496765172,
+        "forward_speed": -48.38383510746673,
+        "lateral_speed": -0.06265269424618403,
+        "conditions": {
+          "qualified": false,
+          "inside_width": true,
+          "previous_inside_width": true,
+          "back_boundary_transition": false,
+          "entered_from_back": false,
+          "direction_valid": false,
+          "centerline_forward_transition": false
+        },
+        "departed_start_area": true,
+        "crossing_from_back_before": false,
+        "crossing_from_back_after": false
+      },
+      {
+        "action": 429,
+        "raw_tick": 1767,
+        "physics_time_s": 35.339999999999925,
+        "elapsed_since_reset_s": 34.31999999999992,
+        "visited_tiles": 299,
+        "progress": 1.0,
+        "previous_longitudinal": 0.24599241709344302,
+        "longitudinal": -0.7067302291466153,
+        "lateral": -0.07378385042423945,
+        "forward_speed": -47.63599306149427,
+        "lateral_speed": 0.20705669491988843,
+        "conditions": {
+          "qualified": true,
+          "inside_width": true,
+          "previous_inside_width": true,
+          "back_boundary_transition": false,
+          "entered_from_back": false,
+          "direction_valid": false,
+          "centerline_forward_transition": false
+        },
+        "departed_start_area": true,
+        "crossing_from_back_before": false,
+        "crossing_from_back_after": false
+      }
+    ],
+    "qualified_reverse_crossing": {
+      "action": 429,
+      "raw_tick": 1767,
+      "physics_time_s": 35.339999999999925,
+      "elapsed_since_reset_s": 34.31999999999992,
+      "visited_tiles": 299,
+      "progress": 1.0,
+      "previous_longitudinal": 0.24599241709344302,
+      "longitudinal": -0.7067302291466153,
+      "lateral": -0.07378385042423945,
+      "forward_speed": -47.63599306149427,
+      "lateral_speed": 0.20705669491988843,
+      "conditions": {
+        "qualified": true,
+        "inside_width": true,
+        "previous_inside_width": true,
+        "back_boundary_transition": false,
+        "entered_from_back": false,
+        "direction_valid": false,
+        "centerline_forward_transition": false
+      },
+      "departed_start_area": true,
+      "crossing_from_back_before": false,
+      "crossing_from_back_after": false
+    },
+    "qualified_back_entry_count": 0,
+    "candidate_crossing_time_count": 0,
+    "finish_time_count": 0,
+    "final": {
+      "action": 494,
+      "visited_tiles": 299,
+      "damage": 0.0,
+      "speed_m_s": 45.14717961035669,
+      "no_new_reward_counter": 101,
+      "retire_reason": "off_track",
+      "finished": false,
+      "qualified_time_s": 31.099999999999426,
+      "finish_time_s": null
+    },
+    "exact_rejection": "Qualifiedreverse front-to-back crossing never meets rear-boundaryentry and positiveforward direction; crossing_from_back neverarmed, candidate/finish remainNone. Tilequalification/width/startdeparture satisfied at429,so missingtilecount orstandstill isnotreason.",
+    "direction_check_at_reverse_crossing": "Direction predicate false when calculated from observed velocity; original direction branch was not entered because crossing_from_back stayed false."
+  },
+  "pedal_target_analysis": {
+    "stage": 227,
+    "fold": 1,
+    "training_roads": [
+      "F0",
+      "F2",
+      "F3"
+    ],
+    "held_out_road": "F1",
+    "teacher_targets": {
+      "F0": {
+        "rows": 368,
+        "mean_gas": 0.3544843792915344,
+        "mean_brake": 0.044507693499326706,
+        "both_positive_count": 0,
+        "both_positive_fraction": 0.0,
+        "gas_positive_fraction": 0.8478260869565217,
+        "brake_positive_fraction": 0.15217391304347827
+      },
+      "F1": {
+        "rows": 334,
+        "mean_gas": 0.29560586810112,
+        "mean_brake": 0.05676868557929993,
+        "both_positive_count": 0,
+        "both_positive_fraction": 0.0,
+        "gas_positive_fraction": 0.8383233532934131,
+        "brake_positive_fraction": 0.16167664670658682
+      },
+      "F2": {
+        "rows": 337,
+        "mean_gas": 0.31268203258514404,
+        "mean_brake": 0.0581461638212204,
+        "both_positive_count": 0,
+        "both_positive_fraction": 0.0,
+        "gas_positive_fraction": 0.7952522255192879,
+        "brake_positive_fraction": 0.20474777448071216
+      },
+      "F3": {
+        "rows": 353,
+        "mean_gas": 0.2987937331199646,
+        "mean_brake": 0.05332821607589722,
+        "both_positive_count": 0,
+        "both_positive_fraction": 0.0,
+        "gas_positive_fraction": 0.8158640226628895,
+        "brake_positive_fraction": 0.18413597733711048
+      }
+    },
+    "F1_frozen_head_predictions_on_teacher_observations": {
+      "F0": {
+        "rows": 368,
+        "mean_gas": 0.3139333724975586,
+        "mean_brake": 0.05294285714626312,
+        "both_positive_count": 340,
+        "both_positive_fraction": 0.9239130434782609,
+        "gas_positive_fraction": 1.0,
+        "brake_positive_fraction": 0.9239130434782609
+      },
+      "F1": {
+        "rows": 334,
+        "mean_gas": 0.3270990550518036,
+        "mean_brake": 0.05426882579922676,
+        "both_positive_count": 328,
+        "both_positive_fraction": 0.9820359281437125,
+        "gas_positive_fraction": 1.0,
+        "brake_positive_fraction": 0.9820359281437125
+      },
+      "F2": {
+        "rows": 337,
+        "mean_gas": 0.32242903113365173,
+        "mean_brake": 0.05421806499361992,
+        "both_positive_count": 327,
+        "both_positive_fraction": 0.9703264094955489,
+        "gas_positive_fraction": 1.0,
+        "brake_positive_fraction": 0.9703264094955489
+      },
+      "F3": {
+        "rows": 353,
+        "mean_gas": 0.3299808204174042,
+        "mean_brake": 0.05046246200799942,
+        "both_positive_count": 338,
+        "both_positive_fraction": 0.9575070821529745,
+        "gas_positive_fraction": 1.0,
+        "brake_positive_fraction": 0.9575070821529745
+      }
+    },
+    "training_teacher": {
+      "rows": 1058,
+      "mean_gas": 0.322588175535202,
+      "mean_brake": 0.05179484933614731,
+      "both_positive_count": 0,
+      "both_positive_fraction": 0.0,
+      "gas_positive_fraction": 0.8204158790170132,
+      "brake_positive_fraction": 0.17958412098298676
+    },
+    "training_raw_affine_prediction": {
+      "rows": 1058,
+      "mean_gas": 0.3225881877912707,
+      "mean_brake": 0.05179484714626283,
+      "both_positive_count": 1005,
+      "both_positive_fraction": 0.9499054820415879,
+      "gas_positive_fraction": 1.0,
+      "brake_positive_fraction": 0.9499054820415879
+    },
+    "training_unclipped_predicted_mean_minus_target_mean": [
+      -1.5742122449341478e-10,
+      -5.641412892387621e-10,
+      3.5650753182903117e-11
+    ],
+    "F1_all_channels_closed_loop225": {
+      "rows": 302,
+      "mean_gas": 0.3467670679092407,
+      "mean_brake": 0.035856299102306366,
+      "both_positive_count": 200,
+      "both_positive_fraction": 0.6622516556291391,
+      "gas_positive_fraction": 1.0,
+      "brake_positive_fraction": 0.6622516556291391
+    },
+    "F1_pedals_only_closed_loop226": {
+      "rows": 494,
+      "mean_gas": 0.3184099495410919,
+      "mean_brake": 0.0498635433614254,
+      "both_positive_count": 464,
+      "both_positive_fraction": 0.9392712550607287,
+      "gas_positive_fraction": 1.0,
+      "brake_positive_fraction": 0.9392712550607287
+    },
+    "explanation": "Targets are mutually exclusive per row but both channel means are positive. Separate affine ridge outputs with unpenalized bias match training residual means before clipping; no joint pedal mode constraint. Predicted overlap is introduced by the regressor/independent clipping, not copied from overlapping targets. Means alone do not identify a specific conditional mixture or prove a failure cause.",
+    "training_updates": 0,
+    "native_actions": 0,
+    "wall_s": 0.012010964012006298,
+    "CPU_s": 0.010915601999999996
+  },
+  "cost": {
+    "stage": 227,
+    "at_utc": "2026-10-12T20:19:54.663220+00:00",
+    "native_cap": 500,
+    "new_wrapper_actions": 494,
+    "wall_s": 16.652936889993725,
+    "evaluator_CPU_s": 16.645784578,
+    "actor_CPU_s": 0.0,
+    "model_queries": 0,
+    "model_physics_ticks": 0,
+    "model_CPU_s": 0.0,
+    "student_calls": 0,
+    "teacher_calls": 0,
+    "training_updates": 0,
+    "raw_step_ticks": 1976,
+    "raw_reset_ticks": 51,
+    "read_only_tracker_observer_CPU_s": 0.07382512499997029,
+    "read_only_tracker_observer_wall_s": 0.08355357460095547,
+    "tracker_trace_bytes": 5336539,
+    "pedal_analysis_native_actions": 0,
+    "pedal_analysis_wall_s": 0.012010964012006298,
+    "pedal_analysis_CPU_s": 0.010915601999999996,
+    "B_operating_cap": 835000,
+    "actual_cumulative_wrapper_actions": 750044,
+    "research_remaining": 956,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "accounting": "Fixed494float32commandreplayonly, no student/head/teachercalls. Readonlytracker observes everyrawupdate, returnsoriginal. Exactreset/geometry/obstacles/recordedwrapperendpoints/rollingpixelhash. Pedaltargetanalysis saveddataonly, nofit."
+  },
+  "interpretation": "F1officialnoncompletion isreversedfinishlineentry/direction,notstandstill orlackoftilequalification. Pedaloverlapintroducedbyseparateaffineregression/independentclipping,notpresentinoriginalteacherlabels; itscausalroleinwrongdirectionnotproven.",
+  "champion_changed": false,
+  "HOLDOUT_used": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
