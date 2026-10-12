@@ -1,0 +1,174 @@
+{
+  "stage": 212,
+  "status": "FIXED32_SCREEN_NO_LOWER_DAMAGE_QUALIFIER_NATIVE0",
+  "boundary_before_action": 85,
+  "initial_damage": 0.2,
+  "design": {
+    "new_candidates": 32,
+    "blocks": 2,
+    "actions_per_block": 6,
+    "horizon": 12,
+    "steering_range": [
+      -1,
+      1
+    ],
+    "gas_range": [
+      0,
+      1
+    ],
+    "brake": 0,
+    "sampling": "OnefixedPCG64seed sealedbeforeintegration; float32commands andsourceactuators. No resampling/range/block/horizonchange.",
+    "selection_rule": "contiguousgain>=N, strictlylowerdamageincrease, nonterminal; minimumdamage thenexistingdirectionbinary/progress/newtiles/speed/steeroffsetL1/brake/fixedID."
+  },
+  "existing11scores_identical": true,
+  "baseline_N": {
+    "contiguous_gain_tiles": 9,
+    "new_tiles": 9,
+    "damage_increase": 0.4000000000000001,
+    "terminal": false,
+    "endpoint_forward_velocity_m_s": 44.12167368676854
+  },
+  "baseline_summaries": {
+    "C00": {
+      "contiguous_gain_tiles": 4,
+      "new_tiles": 4,
+      "damage_increase": 0.4000000000000001,
+      "terminal": false,
+      "endpoint_forward_velocity_m_s": 19.22635316220136
+    },
+    "C01": {
+      "contiguous_gain_tiles": 2,
+      "new_tiles": 2,
+      "damage_increase": 0.6000000000000001,
+      "terminal": false,
+      "endpoint_forward_velocity_m_s": 10.478299094684482
+    },
+    "C08": {
+      "contiguous_gain_tiles": 8,
+      "new_tiles": 8,
+      "damage_increase": 0.4000000000000001,
+      "terminal": false,
+      "endpoint_forward_velocity_m_s": 33.00999306137854
+    },
+    "C09": {
+      "contiguous_gain_tiles": 1,
+      "new_tiles": 1,
+      "damage_increase": 0.8,
+      "terminal": true,
+      "endpoint_forward_velocity_m_s": 1.784908411540915
+    },
+    "C16": {
+      "contiguous_gain_tiles": 6,
+      "new_tiles": 6,
+      "damage_increase": 0.4000000000000001,
+      "terminal": false,
+      "endpoint_forward_velocity_m_s": 17.974483563543785
+    },
+    "C17": {
+      "contiguous_gain_tiles": 2,
+      "new_tiles": 2,
+      "damage_increase": 0.6000000000000001,
+      "terminal": false,
+      "endpoint_forward_velocity_m_s": 11.073898125667245
+    },
+    "E00": {
+      "contiguous_gain_tiles": 0,
+      "new_tiles": 0,
+      "damage_increase": 0.0,
+      "terminal": false,
+      "endpoint_forward_velocity_m_s": -1.42089698166971e-19
+    },
+    "E08": {
+      "contiguous_gain_tiles": 0,
+      "new_tiles": 0,
+      "damage_increase": 0.0,
+      "terminal": false,
+      "endpoint_forward_velocity_m_s": -7.110782757316306e-20
+    },
+    "E16": {
+      "contiguous_gain_tiles": 0,
+      "new_tiles": 0,
+      "damage_increase": 0.0,
+      "terminal": false,
+      "endpoint_forward_velocity_m_s": -1.3117339377117075e-31
+    },
+    "N": {
+      "contiguous_gain_tiles": 9,
+      "new_tiles": 9,
+      "damage_increase": 0.4000000000000001,
+      "terminal": false,
+      "endpoint_forward_velocity_m_s": 44.12167368676854
+    },
+    "R": {
+      "contiguous_gain_tiles": 8,
+      "new_tiles": 8,
+      "damage_increase": 0.4000000000000001,
+      "terminal": false,
+      "endpoint_forward_velocity_m_s": 32.98688922954755
+    }
+  },
+  "shooting_summary": {
+    "nonterminal": 32,
+    "qualifying": 0,
+    "contiguous_gain_range": [
+      2,
+      10
+    ],
+    "new_tile_range": [
+      2,
+      10
+    ],
+    "damage_increase_min": 0.4000000000000001,
+    "damage_increase_max": 0.4000000000000001,
+    "lower_damage_than_N": 0,
+    "contiguous_at_least_N": 1,
+    "endpoint_forward_velocity_range_m_s": [
+      -29.189871215900343,
+      48.34890894566355
+    ]
+  },
+  "highest_progress_candidate": {
+    "candidate": "S05",
+    "contiguous_gain_tiles": 10,
+    "new_tiles": 10,
+    "damage_increase": 0.4000000000000001,
+    "terminal": false,
+    "endpoint_forward_velocity_m_s": 47.935624708285815
+  },
+  "selected": null,
+  "actual_executed": false,
+  "interpretation": "Thisfixed32cohortdoesnotfalsify N on jointlyatleastcontiguous andstrictlylowerdamage atpre85. Onecandidatehasmoreprogress butsame damage,andfailspreregisteredcondition. No claimallcontrolspace infeasible,no wholelap/pool superiorityproof oractualshootingvalidation.",
+  "cost": {
+    "stage": 212,
+    "at_utc": "2026-10-12T17:03:58.625797+00:00",
+    "native_cap": 200,
+    "new_wrapper_actions": 0,
+    "control_new_native_actions": 0,
+    "native_wall_s": 0,
+    "wall_s": 1.1501853590016253,
+    "model_wall_s": 1.1501853590016253,
+    "evaluator_CPU_s": 0,
+    "actor_CPU_s": 0,
+    "model_queries": 43,
+    "baseline_model_queries": 11,
+    "shooting_model_queries": 32,
+    "model_physics_ticks": 2032,
+    "baseline_model_physics_ticks": 496,
+    "shooting_model_physics_ticks": 1536,
+    "model_CPU_s": 1.147529956,
+    "model_CPU_included_in_evaluator": false,
+    "reconstruction_wall_s": 0.6412744751141872,
+    "integration_wall_s": 0.4850310930341948,
+    "accounting": "Oneoffline pre85fixed32shooting screen plus11unchangedbaseline forecasts. Allbaseline scores exactlymatch211. No qualifyingcandidate,sozero nativeprefix/suffix/reset.32new12actionqueries; existingC09terminatesearly,no horizonincrease. No resampling/tuning.",
+    "B_operating_cap": 820000,
+    "actual_cumulative_wrapper_actions": 734937,
+    "research_remaining": 1063,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "champion_changed": false,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
