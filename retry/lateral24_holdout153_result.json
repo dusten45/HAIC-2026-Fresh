@@ -1,0 +1,143 @@
+{
+  "counts": {
+    "new_completion": 0,
+    "lost_completion": 0,
+    "common_dnf": 0,
+    "common_completed": 4
+  },
+  "baseline_completed_count": 4,
+  "candidate_completed_count": 4,
+  "cohort_complete": true,
+  "common_completion_median_lap_delta_ms": -2540.0,
+  "common_completion_mean_lap_ratio": 0.943481402502685,
+  "total_damage_diagnostic": {
+    "sums": {
+      "baseline": 0.0,
+      "candidate": 0.0
+    },
+    "observed_record_counts": {
+      "baseline": 4,
+      "candidate": 4
+    },
+    "qualification": "Descriptive only: episode durations, completion and censoring exposures may differ."
+  },
+  "paired_reset_identity_matches": true,
+  "episodes_recorded": 8,
+  "actual_wrapper_actions": 3834,
+  "raw_step_ticks": 15324,
+  "raw_reset_ticks": 408,
+  "wall_s": 155.78369707398815,
+  "actor_CPU_s": 28.47096,
+  "evaluator_CPU_s": 127.417397569,
+  "all_actors_reaped": true,
+  "final_aggregate_looks": 1,
+  "termination": null,
+  "stage": 153,
+  "parent_aggregate_review_count": 1,
+  "common_sum_lap_delta_ms": -9200.0,
+  "faster_common_count": 4,
+  "unexecuted_count": 0,
+  "inconclusive_count": 0,
+  "censored_count": 0,
+  "damage_increased": false,
+  "performance_gate_passed": true,
+  "local_runtime_reuse_gate_passed": true,
+  "actor_peak_RSS_bytes": 47960064,
+  "candidate_archive_sha256": "2a43f47869fa234965081c68ed9b1bbfd320f71afb756e55c52471622dbd5825",
+  "decision": "ADOPT_FIXED24_LOCAL_CHAMPION",
+  "new_native_policy_or_model_calls_for_analysis": 0,
+  "baseline_archive_sha256": "41b53b1a3cffea2053de1bc9ed1994a6a96d66f228b9a4818c32aeaf6f22c199",
+  "current_manifest_sha256": "d14e662e756952852c02891f9aee8e11f2bcd3ac272f264f947e3f57c6b24af3",
+  "adopted_local_champion": true,
+  "local_scope_only": true,
+  "damage_automatic_veto": false,
+  "official_server_and_fresh_machine_equivalence": "UNVERIFIED",
+  "SEALED_opened": false,
+  "source_principles": [
+    "HOLDOUT judges a prospectively frozen candidate for adoption",
+    "Completion/common completed lap time determine rank; damage is a separate diagnostic"
+  ],
+  "prior_DEV_warnings": {
+    "20": "Observed completion loss in one of two screening DEV; short crash evidence preserved. No monotonic coefficient/safety relationship.",
+    "24": "New damage0.2 on a previously clean DEV, despite totalDEV damage0.2→0.2. Fresh zero damage does not erase this risk."
+  },
+  "registration": {
+    "new_conditions": 4,
+    "AB": 2,
+    "BA": 2,
+    "prior_exclusion_counts": {
+      "excluded_seeds": 230,
+      "excluded_road_geometry_sha256": 228,
+      "excluded_obstacle_spec_sha256": 240,
+      "excluded_physical_obstacles_sha256": 98,
+      "excluded_obstacle_rng_entropy": 98,
+      "excluded_parent_entropy_vectors": 19
+    },
+    "identity_rejections": 0,
+    "parent_vector_rejections": 0,
+    "selection_wall_s": 0.009845460997894406,
+    "selection_CPU_s": 0.008563403999999997,
+    "source_only_native_policy_calls": 0,
+    "difficulty_performance_filter": false,
+    "coverage_limit": "Historical missing fingerprints not reconstructed; all known seed/road and metadata-available physical/spec/RNG/family excluded."
+  },
+  "budget_expansion": {
+    "B_before": 746000,
+    "authorized_increment": 8000,
+    "B_after": 754000,
+    "research_before": 10892,
+    "research_after_increment": 18892,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "recent_native_actions": 2477,
+    "recent_wall_s": 105.94999439298408,
+    "worst16000_wall_forecast_s": 684.3762253886739,
+    "forecast_is_extrapolation": true
+  },
+  "actual_cost": {
+    "stage": 153,
+    "at_utc": "2026-10-12T00:02:36.867904+00:00",
+    "native_cap": 16000,
+    "actual_episodes": 8,
+    "new_wrapper_actions": 3834,
+    "raw_step_ticks": 15324,
+    "raw_reset_ticks": 408,
+    "wall_s": 155.78369707398815,
+    "evaluator_CPU_s": 127.417397569,
+    "actor_CPU_s": 28.47096,
+    "B_operating_cap": 754000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 654942,
+    "research_remaining": 15058,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "approved_stage153_expansion": 8000,
+    "archive_rebuilds": 0,
+    "full_requalification_replays": 0,
+    "new_offline_policy_model_calls": 0,
+    "duplicate_evaluations": 0,
+    "new_full_trace_or_video_streams": 0,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "current24_adopted": true,
+    "automatic_next_experiment": false
+  },
+  "verification": {
+    "unchanged15224_zip_reused": true,
+    "archive_rebuilds": 0,
+    "full_requalification_replays": 0,
+    "clean_worker_interface_and_resource_checks_reused_and_verified_on_actual8": true,
+    "prior16_manifest_preserved": true,
+    "all_earlier_rollbacks_preserved": true,
+    "no_detailed_trace_tuning_or_research_on_same_HOLDOUT": true
+  },
+  "limits": [
+    "Four fresh prospectively registered pairs, one run per arm; local descriptive adoption, not a population failure estimate.",
+    "Different coefficient changes later trajectories and observations.20 failure/24 success does not establish monotonic safety.",
+    "Prior24 new DEV contact remains explicit even though this fresh4 has no damage.",
+    "Reused same-cloud qualification does not establish fresh-machine/official-server parity. SEALED remains closed."
+  ],
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false,
+  "automatic_next_experiment": false
+}
