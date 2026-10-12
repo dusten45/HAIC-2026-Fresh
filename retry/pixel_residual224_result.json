@@ -1,0 +1,717 @@
+{
+  "stage": 224,
+  "status": "EXACT_DEV_REPLAY_AND_FIXED_OFFLINE_LOO_FINISHED",
+  "replay_roads": [
+    {
+      "road": "F0",
+      "recorded_commands": 368,
+      "qualified": true,
+      "finish_partial_ticks": 3,
+      "error": null,
+      "native_actions": 368,
+      "successful_steps": 368,
+      "reset_hash_match": true,
+      "rolling_observation_hash_match": true,
+      "raw_step_ticks": 1471,
+      "shadow_CPU_s": 3.040111,
+      "clean_check_CPU_s": 2.8007109999999997,
+      "shadow_IPC_wall_s": 3.3989798137045,
+      "clean_check_IPC_wall_s": 3.0766050358652137,
+      "simulator_step_wall_s": 12.208911399327917,
+      "episode_wall_s": 20.569502120022662,
+      "evaluator_CPU_s": 14.808006112,
+      "shadow_act_ms": {
+        "count": 368,
+        "median": 8.243600008427165,
+        "p95": 14.924698499089569,
+        "max": 22.769507981138304
+      },
+      "stored_cache_bytes": 2689804,
+      "stored_shadow_state_bytes": 4038214
+    },
+    {
+      "road": "F1",
+      "recorded_commands": 334,
+      "qualified": true,
+      "finish_partial_ticks": 4,
+      "error": null,
+      "native_actions": 334,
+      "successful_steps": 334,
+      "reset_hash_match": true,
+      "rolling_observation_hash_match": true,
+      "raw_step_ticks": 1336,
+      "shadow_CPU_s": 2.823041,
+      "clean_check_CPU_s": 2.4057299999999997,
+      "shadow_IPC_wall_s": 3.1294984580599703,
+      "clean_check_IPC_wall_s": 2.5775604981463403,
+      "simulator_step_wall_s": 11.375507585180458,
+      "episode_wall_s": 18.828185457008658,
+      "evaluator_CPU_s": 13.625543640000002,
+      "shadow_act_ms": {
+        "count": 334,
+        "median": 8.460961005766876,
+        "p95": 15.674645590479486,
+        "max": 38.952228002017364
+      },
+      "stored_cache_bytes": 2345610,
+      "stored_shadow_state_bytes": 3553123
+    },
+    {
+      "road": "F2",
+      "recorded_commands": 337,
+      "qualified": true,
+      "finish_partial_ticks": 4,
+      "error": null,
+      "native_actions": 337,
+      "successful_steps": 337,
+      "reset_hash_match": true,
+      "rolling_observation_hash_match": true,
+      "raw_step_ticks": 1348,
+      "shadow_CPU_s": 2.932624,
+      "clean_check_CPU_s": 2.9381679999999997,
+      "shadow_IPC_wall_s": 3.09861452964833,
+      "clean_check_IPC_wall_s": 3.249881811934756,
+      "simulator_step_wall_s": 11.540949706250103,
+      "episode_wall_s": 19.898352681979304,
+      "evaluator_CPU_s": 14.043889046000004,
+      "shadow_act_ms": {
+        "count": 337,
+        "median": 8.261099981609732,
+        "p95": 14.097989810397848,
+        "max": 35.62194699770771
+      },
+      "stored_cache_bytes": 2328497,
+      "stored_shadow_state_bytes": 3604549
+    },
+    {
+      "road": "F3",
+      "recorded_commands": 353,
+      "qualified": true,
+      "finish_partial_ticks": 4,
+      "error": null,
+      "native_actions": 353,
+      "successful_steps": 353,
+      "reset_hash_match": true,
+      "rolling_observation_hash_match": true,
+      "raw_step_ticks": 1412,
+      "shadow_CPU_s": 3.1409670000000003,
+      "clean_check_CPU_s": 2.333626,
+      "shadow_IPC_wall_s": 3.424491406098241,
+      "clean_check_IPC_wall_s": 2.5154606742144097,
+      "simulator_step_wall_s": 13.185144496063003,
+      "episode_wall_s": 20.938032537000254,
+      "evaluator_CPU_s": 15.529550543,
+      "shadow_act_ms": {
+        "count": 353,
+        "median": 8.860406989697367,
+        "p95": 15.181981597561387,
+        "max": 24.746164010139182
+      },
+      "stored_cache_bytes": 2478653,
+      "stored_shadow_state_bytes": 3762168
+    }
+  ],
+  "all_workers_reaped": true,
+  "hash_scope": "221reset hash + complete reset/post-step rolling hash; per-act reference hashes absent",
+  "pilot": {
+    "stage": 224,
+    "settings": {
+      "head": "affine_ridge_16_to_3",
+      "parameters": 51,
+      "L2_lambda": 1.0,
+      "intercept_penalty": 0.0,
+      "solver": "float64_closed_form",
+      "residual_clip": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "action_min": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "action_max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sweep": false,
+      "normalization": "train_roads_only_mean_std; std_floor1e-6",
+      "gate": "four_exact_observation_sequence_reproductions_and_shadow_checks",
+      "judgment": "Report each road and macro MAE/RMSE against zero residual; no promotion"
+    },
+    "features": [
+      "target_missing",
+      "target_x",
+      "target_forward",
+      "HUD_speed",
+      "pedal_feedback_speed",
+      "curvature",
+      "target_speed",
+      "previous_shadow_steer",
+      "near_hazard",
+      "route_length",
+      "path_point_count",
+      "obstacle_count",
+      "nearest_pixel_hazard_range",
+      "champion_steer",
+      "champion_gas",
+      "champion_brake"
+    ],
+    "folds": [
+      {
+        "held_out": "F0",
+        "train_roads": [
+          "F1",
+          "F2",
+          "F3"
+        ],
+        "train_rows": 1024,
+        "held_rows": 368,
+        "train_wall_s": 0.0057461919786874205,
+        "train_CPU_s": 0.005746845,
+        "metrics": {
+          "all": {
+            "zero_residual": {
+              "count": 368,
+              "MAE": [
+                0.14446795431762607,
+                0.2885855534648568,
+                0.22136899615883443
+              ],
+              "RMSE": [
+                0.2600132226407285,
+                0.4026030549490779,
+                0.3094839819260478
+              ]
+            },
+            "residual": {
+              "count": 368,
+              "MAE": [
+                0.1377970849078575,
+                0.25293157568565855,
+                0.08254638621608888
+              ],
+              "RMSE": [
+                0.2488401878346209,
+                0.3144322468726272,
+                0.12514655023251423
+              ]
+            }
+          },
+          "teacher_command_different": {
+            "zero_residual": {
+              "count": 368,
+              "MAE": [
+                0.14446795431762607,
+                0.2885855534648568,
+                0.22136899615883443
+              ],
+              "RMSE": [
+                0.2600132226407285,
+                0.4026030549490779,
+                0.3094839819260478
+              ]
+            },
+            "residual": {
+              "count": 368,
+              "MAE": [
+                0.1377970849078575,
+                0.25293157568565855,
+                0.08254638621608888
+              ],
+              "RMSE": [
+                0.2488401878346209,
+                0.3144322468726272,
+                0.12514655023251423
+              ]
+            }
+          },
+          "previous_steering_state_different": {
+            "zero_residual": {
+              "count": 367,
+              "MAE": [
+                0.14426191962816082,
+                0.2889900401121066,
+                0.2219721814344716
+              ],
+              "RMSE": [
+                0.2601136513313634,
+                0.40308481463939927,
+                0.309905335398129
+              ]
+            },
+            "residual": {
+              "count": 367,
+              "MAE": [
+                0.13782614868203094,
+                0.25362075547553214,
+                0.08265602372063968
+              ],
+              "RMSE": [
+                0.24909059321896548,
+                0.3148603372639959,
+                0.12529747097837488
+              ]
+            }
+          },
+          "teacher_command_equal": {
+            "zero_residual": {
+              "count": 0,
+              "MAE": null,
+              "RMSE": null
+            },
+            "residual": {
+              "count": 0,
+              "MAE": null,
+              "RMSE": null
+            }
+          }
+        },
+        "head_inference_ms": {
+          "count": 368,
+          "median": 0.011167,
+          "p95": 0.021644649999999998,
+          "max": 0.23169
+        },
+        "model_bytes": 664
+      },
+      {
+        "held_out": "F1",
+        "train_roads": [
+          "F0",
+          "F2",
+          "F3"
+        ],
+        "train_rows": 1058,
+        "held_rows": 334,
+        "train_wall_s": 0.003344347991514951,
+        "train_CPU_s": 0.0033432190000000084,
+        "metrics": {
+          "all": {
+            "zero_residual": {
+              "count": 334,
+              "MAE": [
+                0.06658644404329152,
+                0.22475414587363243,
+                0.21333598994973574
+              ],
+              "RMSE": [
+                0.09393850382340341,
+                0.3292246244058463,
+                0.30636435322771893
+              ]
+            },
+            "residual": {
+              "count": 334,
+              "MAE": [
+                0.06617511407603704,
+                0.21100430515131907,
+                0.08995158624355884
+              ],
+              "RMSE": [
+                0.0854414552149708,
+                0.25457833880625713,
+                0.15280635962135528
+              ]
+            }
+          },
+          "teacher_command_different": {
+            "zero_residual": {
+              "count": 334,
+              "MAE": [
+                0.06658644404329152,
+                0.22475414587363243,
+                0.21333598994973574
+              ],
+              "RMSE": [
+                0.09393850382340341,
+                0.3292246244058463,
+                0.30636435322771893
+              ]
+            },
+            "residual": {
+              "count": 334,
+              "MAE": [
+                0.06617511407603704,
+                0.21100430515131907,
+                0.08995158624355884
+              ],
+              "RMSE": [
+                0.0854414552149708,
+                0.25457833880625713,
+                0.15280635962135528
+              ]
+            }
+          },
+          "previous_steering_state_different": {
+            "zero_residual": {
+              "count": 333,
+              "MAE": [
+                0.06612549436969369,
+                0.22500824554915633,
+                0.21397663856820343
+              ],
+              "RMSE": [
+                0.09330320309675567,
+                0.32962913950710154,
+                0.30682401493141703
+              ]
+            },
+            "residual": {
+              "count": 333,
+              "MAE": [
+                0.06629085688701207,
+                0.211613158597513,
+                0.0901114919028254
+              ],
+              "RMSE": [
+                0.08555625002161166,
+                0.254959900595186,
+                0.1530224089290316
+              ]
+            }
+          },
+          "teacher_command_equal": {
+            "zero_residual": {
+              "count": 0,
+              "MAE": null,
+              "RMSE": null
+            },
+            "residual": {
+              "count": 0,
+              "MAE": null,
+              "RMSE": null
+            }
+          }
+        },
+        "head_inference_ms": {
+          "count": 334,
+          "median": 0.011327,
+          "p95": 0.020099349999999988,
+          "max": 0.256808
+        },
+        "model_bytes": 664
+      },
+      {
+        "held_out": "F2",
+        "train_roads": [
+          "F0",
+          "F1",
+          "F3"
+        ],
+        "train_rows": 1055,
+        "held_rows": 337,
+        "train_wall_s": 0.0019311509968247265,
+        "train_CPU_s": 0.0018953620000000115,
+        "metrics": {
+          "all": {
+            "zero_residual": {
+              "count": 337,
+              "MAE": [
+                0.08135558862911782,
+                0.2397715455288681,
+                0.19579079026254087
+              ],
+              "RMSE": [
+                0.1203855456243305,
+                0.35282848590241433,
+                0.28834115581812736
+              ]
+            },
+            "residual": {
+              "count": 337,
+              "MAE": [
+                0.07363828304341168,
+                0.24938920366464498,
+                0.08423878687854652
+              ],
+              "RMSE": [
+                0.10197680471642556,
+                0.2880706002680248,
+                0.1318393239128555
+              ]
+            }
+          },
+          "teacher_command_different": {
+            "zero_residual": {
+              "count": 337,
+              "MAE": [
+                0.08135558862911782,
+                0.2397715455288681,
+                0.19579079026254087
+              ],
+              "RMSE": [
+                0.1203855456243305,
+                0.35282848590241433,
+                0.28834115581812736
+              ]
+            },
+            "residual": {
+              "count": 337,
+              "MAE": [
+                0.07363828304341168,
+                0.24938920366464498,
+                0.08423878687854652
+              ],
+              "RMSE": [
+                0.10197680471642556,
+                0.2880706002680248,
+                0.1318393239128555
+              ]
+            }
+          },
+          "previous_steering_state_different": {
+            "zero_residual": {
+              "count": 336,
+              "MAE": [
+                0.08094271036506348,
+                0.24006807109912015,
+                0.19637350094784606
+              ],
+              "RMSE": [
+                0.11996523101474825,
+                0.3532704220583225,
+                0.28876991613796416
+              ]
+            },
+            "residual": {
+              "count": 336,
+              "MAE": [
+                0.07383583281625761,
+                0.2500489740480026,
+                0.08431018751278836
+              ],
+              "RMSE": [
+                0.10212767484568261,
+                0.2884949987025724,
+                0.13199445140416197
+              ]
+            }
+          },
+          "teacher_command_equal": {
+            "zero_residual": {
+              "count": 0,
+              "MAE": null,
+              "RMSE": null
+            },
+            "residual": {
+              "count": 0,
+              "MAE": null,
+              "RMSE": null
+            }
+          }
+        },
+        "head_inference_ms": {
+          "count": 337,
+          "median": 0.011257,
+          "p95": 0.01490239999999999,
+          "max": 0.10579
+        },
+        "model_bytes": 664
+      },
+      {
+        "held_out": "F3",
+        "train_roads": [
+          "F0",
+          "F1",
+          "F2"
+        ],
+        "train_rows": 1039,
+        "held_rows": 353,
+        "train_wall_s": 0.0018184699874836951,
+        "train_CPU_s": 0.0018181879999999984,
+        "metrics": {
+          "all": {
+            "zero_residual": {
+              "count": 353,
+              "MAE": [
+                0.07040374376612452,
+                0.2286193706398624,
+                0.18014851443089608
+              ],
+              "RMSE": [
+                0.12445341806855162,
+                0.34001844643154394,
+                0.27801809911085473
+              ]
+            },
+            "residual": {
+              "count": 353,
+              "MAE": [
+                0.0668545011368319,
+                0.24384996289302918,
+                0.07887849373017074
+              ],
+              "RMSE": [
+                0.12318856153241138,
+                0.2816333396135427,
+                0.12859157028820153
+              ]
+            }
+          },
+          "teacher_command_different": {
+            "zero_residual": {
+              "count": 353,
+              "MAE": [
+                0.07040374376612452,
+                0.2286193706398624,
+                0.18014851443089608
+              ],
+              "RMSE": [
+                0.12445341806855162,
+                0.34001844643154394,
+                0.27801809911085473
+              ]
+            },
+            "residual": {
+              "count": 353,
+              "MAE": [
+                0.0668545011368319,
+                0.24384996289302918,
+                0.07887849373017074
+              ],
+              "RMSE": [
+                0.12318856153241138,
+                0.2816333396135427,
+                0.12859157028820153
+              ]
+            }
+          },
+          "previous_steering_state_different": {
+            "zero_residual": {
+              "count": 352,
+              "MAE": [
+                0.06997851950025734,
+                0.2288707354600774,
+                0.18066029998325658
+              ],
+              "RMSE": [
+                0.12407679778552978,
+                0.3404191478694803,
+                0.27841273110383036
+              ]
+            },
+            "residual": {
+              "count": 352,
+              "MAE": [
+                0.06702849499528053,
+                0.24434550668097058,
+                0.07895525205020187
+              ],
+              "RMSE": [
+                0.12336305897272112,
+                0.2820088317271463,
+                0.1287444299718821
+              ]
+            }
+          },
+          "teacher_command_equal": {
+            "zero_residual": {
+              "count": 0,
+              "MAE": null,
+              "RMSE": null
+            },
+            "residual": {
+              "count": 0,
+              "MAE": null,
+              "RMSE": null
+            }
+          }
+        },
+        "head_inference_ms": {
+          "count": 353,
+          "median": 0.011317,
+          "p95": 0.016434799999999968,
+          "max": 0.124018
+        },
+        "model_bytes": 664
+      }
+    ],
+    "macro_road_errors": {
+      "MAE": {
+        "zero_residual": [
+          0.09070343268903998,
+          0.24543265387680493,
+          0.20266107270050177
+        ],
+        "residual": [
+          0.08611624579103452,
+          0.23929376184866294,
+          0.08390381326709125
+        ]
+      },
+      "RMSE": {
+        "zero_residual": [
+          0.1496976725392535,
+          0.3561686529222206,
+          0.2955518975206872
+        ],
+        "residual": [
+          0.13986175232460715,
+          0.28467863139011296,
+          0.13459595101373165
+        ]
+      }
+    },
+    "channel_order": [
+      "steering",
+      "gas",
+      "brake"
+    ],
+    "fit_wall_s": 0.04579035899951123,
+    "fit_CPU_s": 0.045789017000000015,
+    "closed_loop_student_runs": 0,
+    "champion_changed": false,
+    "native_actions": 0,
+    "scope": "Offline teacher imitation on known DEV trajectories only; not driving performance"
+  },
+  "cost": {
+    "stage": 224,
+    "at_utc": "2026-10-12T19:48:18.732104+00:00",
+    "native_cap": 1600,
+    "new_wrapper_actions": 1392,
+    "replay_wall_s": 80.74678217800101,
+    "wall_s": 80.79257253700052,
+    "evaluator_CPU_s": 58.517650584,
+    "actor_CPU_s": 22.414977999999998,
+    "shadow_CPU_s": 11.936743,
+    "clean_replay_check_CPU_s": 10.478235,
+    "shadow_act_IPC_wall_s": 13.051584207511041,
+    "clean_act_IPC_wall_s": 11.41950802016072,
+    "fit_wall_s": 0.04579035899951123,
+    "fit_CPU_s": 0.045789017000000015,
+    "training_roads_per_fold": 3,
+    "folds": 4,
+    "total_train_rows_across_folds": 4176,
+    "heldout_rows_total": 1392,
+    "training_closed_form_solves": 4,
+    "training_gradient_updates": 0,
+    "head_parameters_per_fold": 51,
+    "model_queries": 0,
+    "model_physics_ticks": 0,
+    "model_CPU_s": 0,
+    "raw_step_ticks": 5567,
+    "raw_reset_ticks": 204,
+    "cache_bytes": 9842564,
+    "shadow_state_bytes": 14958054,
+    "training_cache_bytes": 23360,
+    "evaluator_peak_RSS_mib": 175.56640625,
+    "B_operating_cap": 832000,
+    "actual_cumulative_wrapper_actions": 747043,
+    "research_remaining": 957,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "head_inference_scope": "Incremental affine residual head only; excludes pixel extraction, IPC, diagnostics and environment.",
+    "accounting": "One reset perknownDEVroad, originalfloat32fixedcommands only. Pristinechampioncheck usescachedobservations,0native. AllshadowCPU separatefromevaluator. Fitfourdirectsolves only; no GTmodels, retries orclosedloopstudent."
+  },
+  "information_boundary": "Studentfeatures comeonlyfromcurrentnormal24actualpixelshadowcallarguments,stateandcommands. Teachernominal32/candidate/physics/visitedtiles/scores excluded. Teachercontrolmemorydifference masksusedforevaluationonly.",
+  "difference_scope": "Teacherandshadowshareteacherphysicaltrajectory; previoussteeringmemorydiffisdiagnostic,notseparatephysicalclosedloopcomparison.",
+  "champion_changed": false,
+  "HOLDOUT_used": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
