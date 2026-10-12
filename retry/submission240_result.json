@@ -1,0 +1,158 @@
+{
+  "stage": 240,
+  "status": "ADOPTED_FROZEN_GLOBAL_SCALE_PACKAGE_CHAMPION",
+  "archive_sha256": "ae944d7d9e2fda02fc05936bcf245613a81fade5f2f3edc1f6ead68e9bed8d31",
+  "archive_bytes": 16618,
+  "exact_theta": [
+    0.3453632574088313,
+    -0.20596924895119462
+  ],
+  "exact_scales": [
+    1.412502928638687,
+    0.8138581028883641
+  ],
+  "current_manifest_sha256": "e8e09db04f4f9167187373e033a150c889717467d5e3b7ba5537c8f52f4ba226",
+  "previous_manifest_sha256": "b17aef1cee0d4d5fb35763be7cd9ec8748a6e060d79b529ca477c1efba5948bc",
+  "previous_archive_sha256": "247ba5f033ecc7ad5b0d92cf19f3408e15711b61ce8b3cfc2d223aba2df70239",
+  "rollback_preserved": true,
+  "qualification": {
+    "stage": 240,
+    "package_archive_sha256": "ae944d7d9e2fda02fc05936bcf245613a81fade5f2f3edc1f6ead68e9bed8d31",
+    "package_byte_identical_actual239": true,
+    "command_composition_equivalence_sha256": "11e7fe6ffec1a70c2595fec2a13a95b32a61c92a655f23278212de02d16242b3",
+    "official_known_DEV_F2_smoke_sha256": "5e0f52c2d4cb34e2748c89995bee7bb04ab25ea9d05279320e905dcfd83000a5",
+    "cached_input_scope": "239 storespre/postcommands, notpixelobservations or16features. Actualpackagedpostscaleact composition tested; frozenwholearchiveidentity +prior232feature/headqualification reused.",
+    "static_boundary_passed": true,
+    "head_norm_steering_memory_unchanged": true,
+    "official_server_and_fresh_machine_equivalence": "UNVERIFIED",
+    "SEALED_opened": false
+  },
+  "cached_equivalence": {
+    "cached239_commands": 925,
+    "all_commands_bit_exact": true,
+    "scales": [
+      1.412502928638687,
+      0.8138581028883641
+    ],
+    "native_actions": 0,
+    "scope": "Actualpackaged postscaleact composition onstored232commands; notpixelreplay. Wholearchive byteidentical to239actualcandidate.",
+    "wall_s": 0.21927034901455045,
+    "archive_byte_identical_239": true,
+    "head_norm_steering_nominal_base_unchanged": true,
+    "static_boundary_passed": true
+  },
+  "official_known_DEV_smoke": {
+    "stage": 240,
+    "native_actions": 263,
+    "native_cap": 500,
+    "raw_step_ticks": 1050,
+    "raw_reset_ticks": 51,
+    "wall_s": 17.84763949099579,
+    "CPU_s": 18.404671439999998,
+    "initial": {
+      "geometry_matches": true,
+      "physical_obstacles_match": true
+    },
+    "endpoint": {
+      "completed": true,
+      "lap_time_ms": 20980,
+      "steps": 263,
+      "progress": 1.0,
+      "finish_qualified": true,
+      "terminated": false,
+      "truncated": true,
+      "retire_reason": null,
+      "damage": 0.2
+    },
+    "full_safe_act_ms": {
+      "count": 263,
+      "median": 6.0638609866146,
+      "p95": 15.084210992790743,
+      "max": 24.404160998528823
+    },
+    "full_safe_reset_ms": {
+      "count": 1,
+      "median": 0.49219399807043374,
+      "p95": 0.49219399807043374,
+      "max": 0.49219399807043374
+    },
+    "agent_init_ms": {
+      "count": 1,
+      "median": 0.024546985514461994,
+      "p95": 0.024546985514461994,
+      "max": 0.024546985514461994
+    },
+    "invalid_actions": 0,
+    "default_timeout_s": 5.0,
+    "timeout_or_invalid_count": 0,
+    "technical_error": null,
+    "peak_RSS_mib": 67.81640625,
+    "official_runner_sha256": "48eedfb0c32a8e1f4dd724e65ac69eb678105ee434ac797ce2c9f442461fd398",
+    "official_runner_source_changed": false,
+    "profiler": "Read-only supervisor times unchanged safe_act/safe_reset including Thread start/join; counts wrapper env.step returns. Supervisor excluded from participant package.",
+    "HOLDOUT_rerun": false,
+    "SEALED_opened": false
+  },
+  "HOLDOUT239": {
+    "executed_runs": 8,
+    "paired_initial_hash_matches": 4,
+    "champion_completed": 2,
+    "candidate_completed": 3,
+    "common_completed_pairs": 2,
+    "common_deltas_ms": [
+      -740,
+      -2800
+    ],
+    "mean_common_delta_ms": -1770.0,
+    "new_completions": [
+      "H3"
+    ],
+    "lost_completions": [],
+    "censored": 0,
+    "technical_error": null,
+    "unexecuted": []
+  },
+  "risk_diagnostics": {
+    "H1": "Bothcrash; candidate82actions/86tiles vs232149/141",
+    "H0_damage": [
+      0.4,
+      0.8
+    ]
+  },
+  "cost": {
+    "stage": 240,
+    "at_utc": "2026-10-12T23:15:00.797372+00:00",
+    "native_cap": 500,
+    "new_wrapper_actions": 263,
+    "wall_s": 17.84763949099579,
+    "CPU_s": 18.404671439999998,
+    "raw_step_ticks": 1050,
+    "raw_reset_ticks": 51,
+    "cached_commands": 925,
+    "cache_equivalence_wall_s": 0.21927034901455045,
+    "model_queries": 0,
+    "model_physics_ticks": 0,
+    "training_updates": 0,
+    "archive_rebuilds": 0,
+    "archive_byte_copy": true,
+    "B_operating_cap": 856000,
+    "actual_cumulative_wrapper_actions": 769505,
+    "research_remaining": 2495,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "limitations": [
+    "Four freshpairs only; do notclaimcomplete stability orpopulationreliability.",
+    "H1 bothcrash, candidateearlier82actions/86tiles vsold149/141.",
+    "H0candidate damage0.8 vsold0.4 retained asdiagnostic.",
+    "KnownDEVF2smoke ispackagevalidation, notnew independentperformance confirmation.",
+    "Historicalphysical/spec/RNG identitycoverage gaps retained.",
+    "Samehostofficiallocalrun doesnotcertifyremoteserver/freshmachine; SEALED closed."
+  ],
+  "HOLDOUT_rerun": false,
+  "SEALED_opened": false,
+  "external_submission_or_transfer": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
