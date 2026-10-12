@@ -1,0 +1,1792 @@
+{
+  "stage": 242,
+  "status": "FIXED_TWO_BASIS_CONDITIONAL_BRAKE_CEM_DEV_CLOSED",
+  "protocol": {
+    "stage": 242,
+    "start_utc": "2026-10-12T23:32:03.657768+00:00",
+    "deadline_utc": "2026-10-16T10:01:55+00:00",
+    "native_cap": 10000,
+    "research_before": 11480,
+    "reserve_used": 0,
+    "seed": 242,
+    "generations": 2,
+    "candidates_each": 6,
+    "diagonal_std_both": [
+      0.15,
+      0.15
+    ],
+    "initial_mean": [
+      0.0,
+      0.0
+    ],
+    "theta_bounds": [
+      -0.4054651081081644,
+      0.4054651081081644
+    ],
+    "bounds": "Clipdrawn theta toclosedbounds, no redraw; normalize signedzero cachekey.",
+    "basis_curve": "Validtarget: clip(abs(feature5curvature)*feature4feedbackspeed^2/24,0,1); feature0targetmissing =>1.",
+    "basis_hazard": "max(feature8near, feature11obstacles>0 ?1/(1+feature12image_minrange/5):0). Fixedimage-distance5, notGTdistance orphysicalbound.",
+    "policy": "Only final240 brake timesexp(theta_curve*basis_curve+theta_hazard*basis_hazard) thenclip0..1. Bothbasesoverlap allowcomposition2/3^2..1.5^2; gas/simultaneouspedals/head/16inputs/steering/nominalmemory untouched.",
+    "generation1": "Exactzero slot0 +5Gaussian; generation2 sixGaussian aroundtop2elite mean. Std .15 fixed.",
+    "ranking": "Completioncount primary; count2 meanofficiallap ascending, elsemeanofficialunique/total coverage descending; thetaL2,theta_curve,theta_hazard, proposalorder tie.",
+    "archive": "Zeroincumbent +all12; freezeone globalbest beforetwo screens, no screen-selection/restart.",
+    "roads": "Only newDEV241F0/F3search; newDEV241F1/F2screen. Exact241baselineall4 cached, notoldDEV201 names.",
+    "stop": "Officialterminal orremainingglobal10000cap, noepisode subcaps. DNFcontinue; technicalerrorstopnoretry; incomplete/censoredfitness notranked asobservedfailure.",
+    "HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "automatic_next_experiment": false
+  },
+  "search": {
+    "stage": 242,
+    "generations": [
+      {
+        "generation": 1,
+        "complete": true,
+        "candidates": [
+          {
+            "generation": 1,
+            "slot": 0,
+            "order": 0,
+            "theta": [
+              0.0,
+              0.0
+            ],
+            "scales": [
+              1.0,
+              1.0
+            ],
+            "results": {
+              "F0": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 23620,
+                "unique_tiles": 325,
+                "total_tiles": 325,
+                "damage": 0.2,
+                "retire_reason": null,
+                "historical": "241exact240baseline",
+                "new_native_actions": 0
+              },
+              "F3": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 18760,
+                "unique_tiles": 256,
+                "total_tiles": 256,
+                "damage": 0.2,
+                "retire_reason": null,
+                "historical": "241exact240baseline",
+                "new_native_actions": 0
+              }
+            },
+            "fitness_observed": true,
+            "score": {
+              "completions": 2,
+              "mean_lap_ms": 21190.0,
+              "mean_coverage": 1.0
+            }
+          },
+          {
+            "generation": 1,
+            "slot": 1,
+            "order": 1,
+            "theta": [
+              -0.19060257150786777,
+              -0.2827618032671602
+            ],
+            "scales": [
+              0.8264609820322241,
+              0.7536992951894966
+            ],
+            "results": {
+              "F0": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 22180,
+                "unique_tiles": 324,
+                "total_tiles": 325,
+                "damage": 0.0,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 278,
+                "historical": null
+              },
+              "F3": {
+                "completed": false,
+                "censored": false,
+                "lap_ms": null,
+                "unique_tiles": 125,
+                "total_tiles": 256,
+                "damage": 0.0,
+                "retire_reason": "off_track",
+                "error": null,
+                "new_native_actions": 224,
+                "historical": null
+              }
+            },
+            "fitness_observed": true,
+            "score": {
+              "completions": 1,
+              "mean_lap_ms": null,
+              "mean_coverage": 0.7426021634615385
+            }
+          },
+          {
+            "generation": 1,
+            "slot": 2,
+            "order": 2,
+            "theta": [
+              0.04362869618536994,
+              -0.14227049048048532
+            ],
+            "scales": [
+              1.0445944209789797,
+              0.8673866049323042
+            ],
+            "results": {
+              "F0": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 23960,
+                "unique_tiles": 316,
+                "total_tiles": 325,
+                "damage": 0.0,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 300,
+                "historical": null
+              },
+              "F3": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 18240,
+                "unique_tiles": 256,
+                "total_tiles": 256,
+                "damage": 0.2,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 229,
+                "historical": null
+              }
+            },
+            "fitness_observed": true,
+            "score": {
+              "completions": 2,
+              "mean_lap_ms": 21100.0,
+              "mean_coverage": 0.9861538461538462
+            }
+          },
+          {
+            "generation": 1,
+            "slot": 3,
+            "order": 3,
+            "theta": [
+              -0.3093219003821074,
+              0.024844913715398622
+            ],
+            "scales": [
+              0.7339444749896278,
+              1.025156120541518
+            ],
+            "results": {
+              "F0": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 22240,
+                "unique_tiles": 325,
+                "total_tiles": 325,
+                "damage": 0.0,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 279,
+                "historical": null
+              },
+              "F3": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 17440,
+                "unique_tiles": 256,
+                "total_tiles": 256,
+                "damage": 0.0,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 219,
+                "historical": null
+              }
+            },
+            "fitness_observed": true,
+            "score": {
+              "completions": 2,
+              "mean_lap_ms": 19840.0,
+              "mean_coverage": 1.0
+            }
+          },
+          {
+            "generation": 1,
+            "slot": 4,
+            "order": 4,
+            "theta": [
+              0.1856000234947775,
+              0.16668364103668581
+            ],
+            "scales": [
+              1.20394061610073,
+              1.181380465884613
+            ],
+            "results": {
+              "F0": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 25400,
+                "unique_tiles": 325,
+                "total_tiles": 325,
+                "damage": 0.6000000000000001,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 318,
+                "historical": null
+              },
+              "F3": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 19220,
+                "unique_tiles": 256,
+                "total_tiles": 256,
+                "damage": 0.2,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 241,
+                "historical": null
+              }
+            },
+            "fitness_observed": true,
+            "score": {
+              "completions": 2,
+              "mean_lap_ms": 22310.0,
+              "mean_coverage": 1.0
+            }
+          },
+          {
+            "generation": 1,
+            "slot": 5,
+            "order": 5,
+            "theta": [
+              0.026426437813993325,
+              0.12426257020161975
+            ],
+            "scales": [
+              1.0267787123968324,
+              1.1323131436604237
+            ],
+            "results": {
+              "F0": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 25040,
+                "unique_tiles": 323,
+                "total_tiles": 325,
+                "damage": 0.6000000000000001,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 314,
+                "historical": null
+              },
+              "F3": {
+                "completed": false,
+                "censored": false,
+                "lap_ms": null,
+                "unique_tiles": 94,
+                "total_tiles": 256,
+                "damage": 1.0,
+                "retire_reason": "crash",
+                "error": null,
+                "new_native_actions": 92,
+                "historical": null
+              }
+            },
+            "fitness_observed": true,
+            "score": {
+              "completions": 1,
+              "mean_lap_ms": null,
+              "mean_coverage": 0.6805168269230769
+            }
+          }
+        ],
+        "elite_slots": [
+          3,
+          2
+        ],
+        "updated_mean": [
+          -0.1328466020983687,
+          -0.058712788382543346
+        ]
+      },
+      {
+        "generation": 2,
+        "complete": true,
+        "candidates": [
+          {
+            "generation": 2,
+            "slot": 0,
+            "order": 6,
+            "theta": [
+              -0.27647809584594707,
+              -0.14853062262564398
+            ],
+            "scales": [
+              0.7584502321604494,
+              0.8619736108711381
+            ],
+            "results": {
+              "F0": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 22620,
+                "unique_tiles": 321,
+                "total_tiles": 325,
+                "damage": 0.2,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 283,
+                "historical": null
+              },
+              "F3": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 17220,
+                "unique_tiles": 256,
+                "total_tiles": 256,
+                "damage": 0.0,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 216,
+                "historical": null
+              }
+            },
+            "fitness_observed": true,
+            "score": {
+              "completions": 2,
+              "mean_lap_ms": 19920.0,
+              "mean_coverage": 0.9938461538461538
+            }
+          },
+          {
+            "generation": 2,
+            "slot": 1,
+            "order": 7,
+            "theta": [
+              0.09241636704251052,
+              -0.05413756067682604
+            ],
+            "scales": [
+              1.0968214073062232,
+              0.9473017860636705
+            ],
+            "results": {
+              "F0": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 24360,
+                "unique_tiles": 325,
+                "total_tiles": 325,
+                "damage": 0.4,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 305,
+                "historical": null
+              },
+              "F3": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 18620,
+                "unique_tiles": 256,
+                "total_tiles": 256,
+                "damage": 0.2,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 233,
+                "historical": null
+              }
+            },
+            "fitness_observed": true,
+            "score": {
+              "completions": 2,
+              "mean_lap_ms": 21490.0,
+              "mean_coverage": 1.0
+            }
+          },
+          {
+            "generation": 2,
+            "slot": 2,
+            "order": 8,
+            "theta": [
+              -0.03376248173632436,
+              -0.005073394835748465
+            ],
+            "scales": [
+              0.9668011102896951,
+              0.9949394530951063
+            ],
+            "results": {
+              "F0": {
+                "completed": false,
+                "censored": false,
+                "lap_ms": null,
+                "unique_tiles": 81,
+                "total_tiles": 325,
+                "damage": 1.0,
+                "retire_reason": "crash",
+                "error": null,
+                "new_native_actions": 79,
+                "historical": null
+              },
+              "F3": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 18580,
+                "unique_tiles": 256,
+                "total_tiles": 256,
+                "damage": 0.2,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 233,
+                "historical": null
+              }
+            },
+            "fitness_observed": true,
+            "score": {
+              "completions": 1,
+              "mean_lap_ms": null,
+              "mean_coverage": 0.6246153846153846
+            }
+          },
+          {
+            "generation": 2,
+            "slot": 3,
+            "order": 9,
+            "theta": [
+              -0.047565622715197806,
+              -0.03662395774049304
+            ],
+            "scales": [
+              0.9535478966773793,
+              0.9640385864446165
+            ],
+            "results": {
+              "F0": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 24000,
+                "unique_tiles": 320,
+                "total_tiles": 325,
+                "damage": 0.4,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 300,
+                "historical": null
+              },
+              "F3": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 18680,
+                "unique_tiles": 256,
+                "total_tiles": 256,
+                "damage": 0.2,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 234,
+                "historical": null
+              }
+            },
+            "fitness_observed": true,
+            "score": {
+              "completions": 2,
+              "mean_lap_ms": 21340.0,
+              "mean_coverage": 0.9923076923076923
+            }
+          },
+          {
+            "generation": 2,
+            "slot": 4,
+            "order": 10,
+            "theta": [
+              -0.014889802758717458,
+              0.03250475391014776
+            ],
+            "scales": [
+              0.9852205022027011,
+              1.0330388041059533
+            ],
+            "results": {
+              "F0": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 23500,
+                "unique_tiles": 325,
+                "total_tiles": 325,
+                "damage": 0.2,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 294,
+                "historical": null
+              },
+              "F3": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 18520,
+                "unique_tiles": 256,
+                "total_tiles": 256,
+                "damage": 0.2,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 232,
+                "historical": null
+              }
+            },
+            "fitness_observed": true,
+            "score": {
+              "completions": 2,
+              "mean_lap_ms": 21010.0,
+              "mean_coverage": 1.0
+            }
+          },
+          {
+            "generation": 2,
+            "slot": 5,
+            "order": 11,
+            "theta": [
+              0.15213426611577383,
+              0.1449861641592732
+            ],
+            "scales": [
+              1.1643165541990512,
+              1.1560235755993036
+            ],
+            "results": {
+              "F0": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 24260,
+                "unique_tiles": 325,
+                "total_tiles": 325,
+                "damage": 0.0,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 304,
+                "historical": null
+              },
+              "F3": {
+                "completed": true,
+                "censored": false,
+                "lap_ms": 19180,
+                "unique_tiles": 256,
+                "total_tiles": 256,
+                "damage": 0.4,
+                "retire_reason": null,
+                "error": null,
+                "new_native_actions": 240,
+                "historical": null
+              }
+            },
+            "fitness_observed": true,
+            "score": {
+              "completions": 2,
+              "mean_lap_ms": 21720.0,
+              "mean_coverage": 1.0
+            }
+          }
+        ],
+        "elite_slots": [
+          0,
+          4
+        ],
+        "updated_mean": [
+          -0.14568394930233225,
+          -0.05801293435774811
+        ]
+      }
+    ],
+    "finalist": {
+      "generation": 1,
+      "slot": 3,
+      "order": 3,
+      "theta": [
+        -0.3093219003821074,
+        0.024844913715398622
+      ],
+      "scales": [
+        0.7339444749896278,
+        1.025156120541518
+      ],
+      "results": {
+        "F0": {
+          "completed": true,
+          "censored": false,
+          "lap_ms": 22240,
+          "unique_tiles": 325,
+          "total_tiles": 325,
+          "damage": 0.0,
+          "retire_reason": null,
+          "error": null,
+          "new_native_actions": 279,
+          "historical": null
+        },
+        "F3": {
+          "completed": true,
+          "censored": false,
+          "lap_ms": 17440,
+          "unique_tiles": 256,
+          "total_tiles": 256,
+          "damage": 0.0,
+          "retire_reason": null,
+          "error": null,
+          "new_native_actions": 219,
+          "historical": null
+        }
+      },
+      "fitness_observed": true,
+      "score": {
+        "completions": 2,
+        "mean_lap_ms": 19840.0,
+        "mean_coverage": 1.0
+      }
+    },
+    "screens": {
+      "F1": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "unique_tiles": 31,
+        "total_tiles": 238,
+        "damage": 1.0,
+        "retire_reason": "crash",
+        "error": null,
+        "new_native_actions": 35,
+        "historical": null
+      },
+      "F2": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "unique_tiles": 232,
+        "total_tiles": 292,
+        "damage": 0.4,
+        "retire_reason": "off_track",
+        "error": null,
+        "new_native_actions": 312,
+        "historical": null
+      }
+    },
+    "unexecuted": [],
+    "technical_error": null
+  },
+  "selected_cases": {
+    "F0": {
+      "candidate": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 22240,
+        "unique_tiles": 325,
+        "total_tiles": 325,
+        "damage": 0.0,
+        "retire_reason": null,
+        "error": null,
+        "new_native_actions": 279,
+        "historical": null
+      },
+      "baseline240": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 23620,
+        "unique_tiles": 325,
+        "total_tiles": 325,
+        "damage": 0.2,
+        "retire_reason": null,
+        "historical": "241exact240baseline",
+        "new_native_actions": 0
+      },
+      "candidate_minus_baseline_lap_ms": -1380
+    },
+    "F3": {
+      "candidate": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 17440,
+        "unique_tiles": 256,
+        "total_tiles": 256,
+        "damage": 0.0,
+        "retire_reason": null,
+        "error": null,
+        "new_native_actions": 219,
+        "historical": null
+      },
+      "baseline240": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 18760,
+        "unique_tiles": 256,
+        "total_tiles": 256,
+        "damage": 0.2,
+        "retire_reason": null,
+        "historical": "241exact240baseline",
+        "new_native_actions": 0
+      },
+      "candidate_minus_baseline_lap_ms": -1320
+    },
+    "F1": {
+      "candidate": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "unique_tiles": 31,
+        "total_tiles": 238,
+        "damage": 1.0,
+        "retire_reason": "crash",
+        "error": null,
+        "new_native_actions": 35,
+        "historical": null
+      },
+      "baseline240": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 17080,
+        "unique_tiles": 238,
+        "total_tiles": 238,
+        "damage": 0.0,
+        "retire_reason": null,
+        "historical": "241exact240baseline",
+        "new_native_actions": 0
+      },
+      "candidate_minus_baseline_lap_ms": null
+    },
+    "F2": {
+      "candidate": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "unique_tiles": 232,
+        "total_tiles": 292,
+        "damage": 0.4,
+        "retire_reason": "off_track",
+        "error": null,
+        "new_native_actions": 312,
+        "historical": null
+      },
+      "baseline240": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 21560,
+        "unique_tiles": 292,
+        "total_tiles": 292,
+        "damage": 0.0,
+        "retire_reason": null,
+        "historical": "241exact240baseline",
+        "new_native_actions": 0
+      },
+      "candidate_minus_baseline_lap_ms": null
+    }
+  },
+  "baseline240": {
+    "F0": {
+      "completed": true,
+      "censored": false,
+      "lap_ms": 23620,
+      "unique_tiles": 325,
+      "total_tiles": 325,
+      "damage": 0.2,
+      "retire_reason": null,
+      "historical": "241exact240baseline",
+      "new_native_actions": 0
+    },
+    "F1": {
+      "completed": true,
+      "censored": false,
+      "lap_ms": 17080,
+      "unique_tiles": 238,
+      "total_tiles": 238,
+      "damage": 0.0,
+      "retire_reason": null,
+      "historical": "241exact240baseline",
+      "new_native_actions": 0
+    },
+    "F2": {
+      "completed": true,
+      "censored": false,
+      "lap_ms": 21560,
+      "unique_tiles": 292,
+      "total_tiles": 292,
+      "damage": 0.0,
+      "retire_reason": null,
+      "historical": "241exact240baseline",
+      "new_native_actions": 0
+    },
+    "F3": {
+      "completed": true,
+      "censored": false,
+      "lap_ms": 18760,
+      "unique_tiles": 256,
+      "total_tiles": 256,
+      "damage": 0.2,
+      "retire_reason": null,
+      "historical": "241exact240baseline",
+      "new_native_actions": 0
+    }
+  },
+  "native_diagnostics": [
+    {
+      "job": "g1p1_F0",
+      "road": "F0",
+      "theta_curve_hazard": [
+        -0.19060257150786777,
+        -0.2827618032671602
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 22180,
+      "damage": 0.0,
+      "visited": 324,
+      "total_tiles": 325,
+      "retire_reason": null,
+      "native_actions": 278,
+      "stationary_actions": 0,
+      "max_speed_m_s": 56.56553531989191,
+      "curve_basis_mean": 0.6492047304501973,
+      "hazard_basis_mean": 0.22827277480336602,
+      "composed_brake_multiplier_range": [
+        0.6229030596593065,
+        1.0
+      ],
+      "full_Agent_compute_ms": {
+        "count": 278,
+        "median": 5.237512988969684,
+        "p95": 10.393744535394944,
+        "max": 16.633360006380826
+      },
+      "including_IPC_ms": {
+        "count": 278,
+        "median": 7.788753020577133,
+        "p95": 12.97889141133055,
+        "max": 20.1426440034993
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g1p1_F3",
+      "road": "F3",
+      "theta_curve_hazard": [
+        -0.19060257150786777,
+        -0.2827618032671602
+      ],
+      "completed": false,
+      "censored": false,
+      "lap_ms": null,
+      "damage": 0.0,
+      "visited": 125,
+      "total_tiles": 256,
+      "retire_reason": "off_track",
+      "native_actions": 224,
+      "stationary_actions": 0,
+      "max_speed_m_s": 55.19685844315723,
+      "curve_basis_mean": 0.7943453915231453,
+      "hazard_basis_mean": 0.12763818095248217,
+      "composed_brake_multiplier_range": [
+        0.6229030596593065,
+        1.0
+      ],
+      "full_Agent_compute_ms": {
+        "count": 224,
+        "median": 2.612654512631707,
+        "p95": 11.262539416202344,
+        "max": 16.2160350009799
+      },
+      "including_IPC_ms": {
+        "count": 224,
+        "median": 4.8496900126338005,
+        "p95": 13.843095937045291,
+        "max": 17.90814899140969
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g1p2_F0",
+      "road": "F0",
+      "theta_curve_hazard": [
+        0.04362869618536994,
+        -0.14227049048048532
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 23960,
+      "damage": 0.0,
+      "visited": 316,
+      "total_tiles": 325,
+      "retire_reason": null,
+      "native_actions": 300,
+      "stationary_actions": 0,
+      "max_speed_m_s": 55.2944423724915,
+      "curve_basis_mean": 0.6141220868180962,
+      "hazard_basis_mean": 0.28764030815387476,
+      "composed_brake_multiplier_range": [
+        0.8673866049323042,
+        1.0445944209789797
+      ],
+      "full_Agent_compute_ms": {
+        "count": 300,
+        "median": 5.45598499593325,
+        "p95": 12.71888024202781,
+        "max": 19.667532993480563
+      },
+      "including_IPC_ms": {
+        "count": 300,
+        "median": 7.497681013774127,
+        "p95": 14.939900004537778,
+        "max": 28.718396002659574
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g1p2_F3",
+      "road": "F3",
+      "theta_curve_hazard": [
+        0.04362869618536994,
+        -0.14227049048048532
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 18240,
+      "damage": 0.2,
+      "visited": 256,
+      "total_tiles": 256,
+      "retire_reason": null,
+      "native_actions": 229,
+      "stationary_actions": 0,
+      "max_speed_m_s": 54.26218643475225,
+      "curve_basis_mean": 0.5818032467783201,
+      "hazard_basis_mean": 0.26060363118515006,
+      "composed_brake_multiplier_range": [
+        0.8673866049323042,
+        1.0445944209789797
+      ],
+      "full_Agent_compute_ms": {
+        "count": 229,
+        "median": 5.4706630180589855,
+        "p95": 12.757741590030491,
+        "max": 16.33512499392964
+      },
+      "including_IPC_ms": {
+        "count": 229,
+        "median": 7.779209001455456,
+        "p95": 15.19044340820983,
+        "max": 18.264625017764047
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g1p3_F0",
+      "road": "F0",
+      "theta_curve_hazard": [
+        -0.3093219003821074,
+        0.024844913715398622
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 22240,
+      "damage": 0.0,
+      "visited": 325,
+      "total_tiles": 325,
+      "retire_reason": null,
+      "native_actions": 279,
+      "stationary_actions": 0,
+      "max_speed_m_s": 56.58922218433997,
+      "curve_basis_mean": 0.6335277078666273,
+      "hazard_basis_mean": 0.27396776391446054,
+      "composed_brake_multiplier_range": [
+        0.7339444749896278,
+        1.025156120541518
+      ],
+      "full_Agent_compute_ms": {
+        "count": 279,
+        "median": 5.42499401490204,
+        "p95": 11.141082798712883,
+        "max": 19.427965977229178
+      },
+      "including_IPC_ms": {
+        "count": 279,
+        "median": 7.7972980216145515,
+        "p95": 13.91982948698569,
+        "max": 27.487034007208422
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g1p3_F3",
+      "road": "F3",
+      "theta_curve_hazard": [
+        -0.3093219003821074,
+        0.024844913715398622
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 17440,
+      "damage": 0.0,
+      "visited": 256,
+      "total_tiles": 256,
+      "retire_reason": null,
+      "native_actions": 219,
+      "stationary_actions": 0,
+      "max_speed_m_s": 56.49181869218498,
+      "curve_basis_mean": 0.6811790092790234,
+      "hazard_basis_mean": 0.2938053265765589,
+      "composed_brake_multiplier_range": [
+        0.7339444749896278,
+        1.025156120541518
+      ],
+      "full_Agent_compute_ms": {
+        "count": 219,
+        "median": 5.708036012947559,
+        "p95": 10.499975990387611,
+        "max": 27.706989989383146
+      },
+      "including_IPC_ms": {
+        "count": 219,
+        "median": 8.048855001106858,
+        "p95": 13.284551704418845,
+        "max": 29.557158995885402
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g1p4_F0",
+      "road": "F0",
+      "theta_curve_hazard": [
+        0.1856000234947775,
+        0.16668364103668581
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 25400,
+      "damage": 0.6000000000000001,
+      "visited": 325,
+      "total_tiles": 325,
+      "retire_reason": null,
+      "native_actions": 318,
+      "stationary_actions": 0,
+      "max_speed_m_s": 55.20722656388862,
+      "curve_basis_mean": 0.5198106521208244,
+      "hazard_basis_mean": 0.23537133040196886,
+      "composed_brake_multiplier_range": [
+        1.0,
+        1.422311925946489
+      ],
+      "full_Agent_compute_ms": {
+        "count": 318,
+        "median": 5.12045448704157,
+        "p95": 11.25566640985198,
+        "max": 16.42158001777716
+      },
+      "including_IPC_ms": {
+        "count": 318,
+        "median": 7.2769014950608835,
+        "p95": 13.792743398516903,
+        "max": 22.198362014023587
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g1p4_F3",
+      "road": "F3",
+      "theta_curve_hazard": [
+        0.1856000234947775,
+        0.16668364103668581
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 19220,
+      "damage": 0.2,
+      "visited": 256,
+      "total_tiles": 256,
+      "retire_reason": null,
+      "native_actions": 241,
+      "stationary_actions": 0,
+      "max_speed_m_s": 53.02481385213356,
+      "curve_basis_mean": 0.5641146702595375,
+      "hazard_basis_mean": 0.2685748499399744,
+      "composed_brake_multiplier_range": [
+        1.0,
+        1.422311925946489
+      ],
+      "full_Agent_compute_ms": {
+        "count": 241,
+        "median": 5.1454390049912035,
+        "p95": 12.535285000922158,
+        "max": 15.53170700208284
+      },
+      "including_IPC_ms": {
+        "count": 241,
+        "median": 7.519787002820522,
+        "p95": 14.950051001505926,
+        "max": 20.73553900117986
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g1p5_F0",
+      "road": "F0",
+      "theta_curve_hazard": [
+        0.026426437813993325,
+        0.12426257020161975
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 25040,
+      "damage": 0.6000000000000001,
+      "visited": 323,
+      "total_tiles": 325,
+      "retire_reason": null,
+      "native_actions": 314,
+      "stationary_actions": 0,
+      "max_speed_m_s": 55.120358663258514,
+      "curve_basis_mean": 0.5662929094805013,
+      "hazard_basis_mean": 0.22596872101943613,
+      "composed_brake_multiplier_range": [
+        1.0,
+        1.162635031677659
+      ],
+      "full_Agent_compute_ms": {
+        "count": 314,
+        "median": 5.53666650375817,
+        "p95": 11.916127851873169,
+        "max": 19.06214898917824
+      },
+      "including_IPC_ms": {
+        "count": 314,
+        "median": 7.834113508579321,
+        "p95": 14.35385859804228,
+        "max": 30.515613994793966
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g1p5_F3",
+      "road": "F3",
+      "theta_curve_hazard": [
+        0.026426437813993325,
+        0.12426257020161975
+      ],
+      "completed": false,
+      "censored": false,
+      "lap_ms": null,
+      "damage": 1.0,
+      "visited": 94,
+      "total_tiles": 256,
+      "retire_reason": "crash",
+      "native_actions": 92,
+      "stationary_actions": 0,
+      "max_speed_m_s": 53.68073607279123,
+      "curve_basis_mean": 0.4753210952738479,
+      "hazard_basis_mean": 0.23405811191279913,
+      "composed_brake_multiplier_range": [
+        1.0,
+        1.162635031677659
+      ],
+      "full_Agent_compute_ms": {
+        "count": 92,
+        "median": 4.659557016566396,
+        "p95": 8.903150366677437,
+        "max": 10.778594005387276
+      },
+      "including_IPC_ms": {
+        "count": 92,
+        "median": 6.7431594943627715,
+        "p95": 11.120264152123127,
+        "max": 14.104744012001902
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g2p0_F0",
+      "road": "F0",
+      "theta_curve_hazard": [
+        -0.27647809584594707,
+        -0.14853062262564398
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 22620,
+      "damage": 0.2,
+      "visited": 321,
+      "total_tiles": 325,
+      "retire_reason": null,
+      "native_actions": 283,
+      "stationary_actions": 0,
+      "max_speed_m_s": 56.59337551450301,
+      "curve_basis_mean": 0.677262975493034,
+      "hazard_basis_mean": 0.27002336239259056,
+      "composed_brake_multiplier_range": [
+        0.6537640852813955,
+        1.0
+      ],
+      "full_Agent_compute_ms": {
+        "count": 283,
+        "median": 5.412160011474043,
+        "p95": 12.186228809878212,
+        "max": 35.347283992450684
+      },
+      "including_IPC_ms": {
+        "count": 283,
+        "median": 7.682036986807361,
+        "p95": 15.455255983397361,
+        "max": 37.36340900650248
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g2p0_F3",
+      "road": "F3",
+      "theta_curve_hazard": [
+        -0.27647809584594707,
+        -0.14853062262564398
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 17220,
+      "damage": 0.0,
+      "visited": 256,
+      "total_tiles": 256,
+      "retire_reason": null,
+      "native_actions": 216,
+      "stationary_actions": 0,
+      "max_speed_m_s": 56.67734425477225,
+      "curve_basis_mean": 0.6461760329972487,
+      "hazard_basis_mean": 0.2921949433056551,
+      "composed_brake_multiplier_range": [
+        0.6537640852813955,
+        1.0
+      ],
+      "full_Agent_compute_ms": {
+        "count": 216,
+        "median": 5.060403011157177,
+        "p95": 11.734061990864575,
+        "max": 18.5417520115152
+      },
+      "including_IPC_ms": {
+        "count": 216,
+        "median": 7.222873013233766,
+        "p95": 13.986218997160904,
+        "max": 20.80832701176405
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g2p1_F0",
+      "road": "F0",
+      "theta_curve_hazard": [
+        0.09241636704251052,
+        -0.05413756067682604
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 24360,
+      "damage": 0.4,
+      "visited": 325,
+      "total_tiles": 325,
+      "retire_reason": null,
+      "native_actions": 305,
+      "stationary_actions": 0,
+      "max_speed_m_s": 55.670186663487144,
+      "curve_basis_mean": 0.5530999796200864,
+      "hazard_basis_mean": 0.2254088796437993,
+      "composed_brake_multiplier_range": [
+        0.9473017860636705,
+        1.0968214073062232
+      ],
+      "full_Agent_compute_ms": {
+        "count": 305,
+        "median": 4.7642709978390485,
+        "p95": 11.262649804120889,
+        "max": 15.410002000862733
+      },
+      "including_IPC_ms": {
+        "count": 305,
+        "median": 7.013589987764135,
+        "p95": 13.387699786107987,
+        "max": 21.56981499865651
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g2p1_F3",
+      "road": "F3",
+      "theta_curve_hazard": [
+        0.09241636704251052,
+        -0.05413756067682604
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 18620,
+      "damage": 0.2,
+      "visited": 256,
+      "total_tiles": 256,
+      "retire_reason": null,
+      "native_actions": 233,
+      "stationary_actions": 0,
+      "max_speed_m_s": 54.758942331813465,
+      "curve_basis_mean": 0.5933687154873104,
+      "hazard_basis_mean": 0.2750150510536738,
+      "composed_brake_multiplier_range": [
+        0.9473017860636705,
+        1.0968214073062232
+      ],
+      "full_Agent_compute_ms": {
+        "count": 233,
+        "median": 4.938972997479141,
+        "p95": 10.314130189362912,
+        "max": 16.742692998377606
+      },
+      "including_IPC_ms": {
+        "count": 233,
+        "median": 7.104288000846282,
+        "p95": 12.558314594207317,
+        "max": 18.645801988895983
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g2p2_F0",
+      "road": "F0",
+      "theta_curve_hazard": [
+        -0.03376248173632436,
+        -0.005073394835748465
+      ],
+      "completed": false,
+      "censored": false,
+      "lap_ms": null,
+      "damage": 1.0,
+      "visited": 81,
+      "total_tiles": 325,
+      "retire_reason": "crash",
+      "native_actions": 79,
+      "stationary_actions": 0,
+      "max_speed_m_s": 55.74473657082468,
+      "curve_basis_mean": 0.3513466299250668,
+      "hazard_basis_mean": 0.16983667243697606,
+      "composed_brake_multiplier_range": [
+        0.9619085679233708,
+        1.0
+      ],
+      "full_Agent_compute_ms": {
+        "count": 79,
+        "median": 4.397875018185005,
+        "p95": 7.8301074099726975,
+        "max": 9.36200501746498
+      },
+      "including_IPC_ms": {
+        "count": 79,
+        "median": 6.462126999394968,
+        "p95": 9.594150795601308,
+        "max": 11.11333500011824
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g2p2_F3",
+      "road": "F3",
+      "theta_curve_hazard": [
+        -0.03376248173632436,
+        -0.005073394835748465
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 18580,
+      "damage": 0.2,
+      "visited": 256,
+      "total_tiles": 256,
+      "retire_reason": null,
+      "native_actions": 233,
+      "stationary_actions": 0,
+      "max_speed_m_s": 55.38269318849375,
+      "curve_basis_mean": 0.6155214738860431,
+      "hazard_basis_mean": 0.26795761936620566,
+      "composed_brake_multiplier_range": [
+        0.9619085679233708,
+        1.0
+      ],
+      "full_Agent_compute_ms": {
+        "count": 233,
+        "median": 5.513862997759134,
+        "p95": 12.131357018370176,
+        "max": 33.206211985088885
+      },
+      "including_IPC_ms": {
+        "count": 233,
+        "median": 7.758318999549374,
+        "p95": 15.001202997518703,
+        "max": 35.5767690052744
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g2p3_F0",
+      "road": "F0",
+      "theta_curve_hazard": [
+        -0.047565622715197806,
+        -0.03662395774049304
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 24000,
+      "damage": 0.4,
+      "visited": 320,
+      "total_tiles": 325,
+      "retire_reason": null,
+      "native_actions": 300,
+      "stationary_actions": 0,
+      "max_speed_m_s": 55.22707217870915,
+      "curve_basis_mean": 0.6084578296271143,
+      "hazard_basis_mean": 0.24825793765109894,
+      "composed_brake_multiplier_range": [
+        0.9192569664200978,
+        1.0
+      ],
+      "full_Agent_compute_ms": {
+        "count": 300,
+        "median": 5.191036005271599,
+        "p95": 11.403991890256293,
+        "max": 19.79600402410142
+      },
+      "including_IPC_ms": {
+        "count": 300,
+        "median": 7.485586509574205,
+        "p95": 13.484163711837029,
+        "max": 23.051524010952562
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g2p3_F3",
+      "road": "F3",
+      "theta_curve_hazard": [
+        -0.047565622715197806,
+        -0.03662395774049304
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 18680,
+      "damage": 0.2,
+      "visited": 256,
+      "total_tiles": 256,
+      "retire_reason": null,
+      "native_actions": 234,
+      "stationary_actions": 0,
+      "max_speed_m_s": 55.08058294641584,
+      "curve_basis_mean": 0.6400613143883923,
+      "hazard_basis_mean": 0.2813559919949679,
+      "composed_brake_multiplier_range": [
+        0.9192569664200978,
+        1.0
+      ],
+      "full_Agent_compute_ms": {
+        "count": 234,
+        "median": 5.467978495289572,
+        "p95": 11.75719574675895,
+        "max": 19.14964700699784
+      },
+      "including_IPC_ms": {
+        "count": 234,
+        "median": 7.901973003754392,
+        "p95": 15.499300556257364,
+        "max": 21.593048004433513
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g2p4_F0",
+      "road": "F0",
+      "theta_curve_hazard": [
+        -0.014889802758717458,
+        0.03250475391014776
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 23500,
+      "damage": 0.2,
+      "visited": 325,
+      "total_tiles": 325,
+      "retire_reason": null,
+      "native_actions": 294,
+      "stationary_actions": 0,
+      "max_speed_m_s": 55.55047701730784,
+      "curve_basis_mean": 0.571254291588823,
+      "hazard_basis_mean": 0.2090877162840095,
+      "composed_brake_multiplier_range": [
+        0.9852205022027011,
+        1.0330388041059533
+      ],
+      "full_Agent_compute_ms": {
+        "count": 294,
+        "median": 5.36492200626526,
+        "p95": 10.612387907167417,
+        "max": 45.64266299712472
+      },
+      "including_IPC_ms": {
+        "count": 294,
+        "median": 7.55373299762141,
+        "p95": 13.066645184881054,
+        "max": 49.635823990684
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g2p4_F3",
+      "road": "F3",
+      "theta_curve_hazard": [
+        -0.014889802758717458,
+        0.03250475391014776
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 18520,
+      "damage": 0.2,
+      "visited": 256,
+      "total_tiles": 256,
+      "retire_reason": null,
+      "native_actions": 232,
+      "stationary_actions": 0,
+      "max_speed_m_s": 54.77240065408782,
+      "curve_basis_mean": 0.6014744715295121,
+      "hazard_basis_mean": 0.23883309744465525,
+      "composed_brake_multiplier_range": [
+        0.9852205022027011,
+        1.0330388041059533
+      ],
+      "full_Agent_compute_ms": {
+        "count": 232,
+        "median": 5.2165820088703185,
+        "p95": 11.230130663898306,
+        "max": 16.004934994271025
+      },
+      "including_IPC_ms": {
+        "count": 232,
+        "median": 7.604942496982403,
+        "p95": 13.864159244985784,
+        "max": 18.301949981832877
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g2p5_F0",
+      "road": "F0",
+      "theta_curve_hazard": [
+        0.15213426611577383,
+        0.1449861641592732
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 24260,
+      "damage": 0.0,
+      "visited": 325,
+      "total_tiles": 325,
+      "retire_reason": null,
+      "native_actions": 304,
+      "stationary_actions": 0,
+      "max_speed_m_s": 55.12103234622905,
+      "curve_basis_mean": 0.5223809310434345,
+      "hazard_basis_mean": 0.23890552305779336,
+      "composed_brake_multiplier_range": [
+        1.0,
+        1.3459773861146476
+      ],
+      "full_Agent_compute_ms": {
+        "count": 304,
+        "median": 4.869490512646735,
+        "p95": 11.074220000591595,
+        "max": 21.62347998819314
+      },
+      "including_IPC_ms": {
+        "count": 304,
+        "median": 7.094512489857152,
+        "p95": 14.378164819208905,
+        "max": 27.496444003190845
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "g2p5_F3",
+      "road": "F3",
+      "theta_curve_hazard": [
+        0.15213426611577383,
+        0.1449861641592732
+      ],
+      "completed": true,
+      "censored": false,
+      "lap_ms": 19180,
+      "damage": 0.4,
+      "visited": 256,
+      "total_tiles": 256,
+      "retire_reason": null,
+      "native_actions": 240,
+      "stationary_actions": 0,
+      "max_speed_m_s": 54.613680678085245,
+      "curve_basis_mean": 0.5576819946467924,
+      "hazard_basis_mean": 0.2259089519702198,
+      "composed_brake_multiplier_range": [
+        1.0,
+        1.3459773861146476
+      ],
+      "full_Agent_compute_ms": {
+        "count": 240,
+        "median": 5.163023990462534,
+        "p95": 11.560646047291808,
+        "max": 17.964803002541885
+      },
+      "including_IPC_ms": {
+        "count": 240,
+        "median": 7.522989486460574,
+        "p95": 14.033966160786804,
+        "max": 20.33738698810339
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "screen_F1",
+      "road": "F1",
+      "theta_curve_hazard": [
+        -0.3093219003821074,
+        0.024844913715398622
+      ],
+      "completed": false,
+      "censored": false,
+      "lap_ms": null,
+      "damage": 1.0,
+      "visited": 31,
+      "total_tiles": 238,
+      "retire_reason": "crash",
+      "native_actions": 35,
+      "stationary_actions": 0,
+      "max_speed_m_s": 52.000389141584556,
+      "curve_basis_mean": 0.43434753686918165,
+      "hazard_basis_mean": 0.2258545802605116,
+      "composed_brake_multiplier_range": [
+        0.7339444749896278,
+        1.0
+      ],
+      "full_Agent_compute_ms": {
+        "count": 35,
+        "median": 4.810527025256306,
+        "p95": 11.244803792214949,
+        "max": 12.617271015187725
+      },
+      "including_IPC_ms": {
+        "count": 35,
+        "median": 7.133459992473945,
+        "p95": 15.00658060540444,
+        "max": 22.571592999156564
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    },
+    {
+      "job": "screen_F2",
+      "road": "F2",
+      "theta_curve_hazard": [
+        -0.3093219003821074,
+        0.024844913715398622
+      ],
+      "completed": false,
+      "censored": false,
+      "lap_ms": null,
+      "damage": 0.4,
+      "visited": 232,
+      "total_tiles": 292,
+      "retire_reason": "off_track",
+      "native_actions": 312,
+      "stationary_actions": 66,
+      "max_speed_m_s": 56.12742939077078,
+      "curve_basis_mean": 0.43244909671091447,
+      "hazard_basis_mean": 0.47236678964302176,
+      "composed_brake_multiplier_range": [
+        0.7339444749896278,
+        1.025156120541518
+      ],
+      "full_Agent_compute_ms": {
+        "count": 312,
+        "median": 5.546062515350059,
+        "p95": 11.700507995556103,
+        "max": 20.466860994929448
+      },
+      "including_IPC_ms": {
+        "count": 312,
+        "median": 7.834913005353883,
+        "p95": 14.381731805042362,
+        "max": 25.20161899155937
+      },
+      "basis_and_brake_rule_exact": true,
+      "gas_steering_memory_preserved": true
+    }
+  ],
+  "cost": {
+    "stage": 242,
+    "at_utc": "2026-10-12T23:37:40.534288+00:00",
+    "native_cap": 10000,
+    "new_wrapper_actions": 5794,
+    "wall_s": 245.10657739639282,
+    "new_native_runs": 24,
+    "cache_hits": 2,
+    "proposals_evaluated": 12,
+    "completed_generations": 2,
+    "evaluator_CPU_s": 199.695768779,
+    "actor_CPU_s": 45.24414,
+    "raw_step_ticks": 23148,
+    "raw_reset_ticks": 1224,
+    "full_Agent_compute_ms": {
+      "count": 5794,
+      "median": 5.190978001337498,
+      "p95": 11.420755600556715,
+      "max": 45.64266299712472
+    },
+    "max_act_IPC_ms": 49.635823990684,
+    "max_reset_IPC_ms": 5.711251986213028,
+    "head_fits": 0,
+    "new_GT_model_queries": 0,
+    "new_GT_model_physics_ticks": 0,
+    "B_operating_cap": 866000,
+    "actual_cumulative_wrapper_actions": 776314,
+    "research_remaining": 5686,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "mean_fourroad_common_delta_ms": null,
+  "parameter_semantics": "theta ordercurve,hazard; searchscales field=exp(eachcoefficient) atunitbasis, NOT gas/brakeglobals. Runtimebrake factor exp(theta@actualbasis), overlap fullyallowed.",
+  "data_boundary": "Allfourcase identities arenewDEV241; F0/F3selection, F1/F2singlefrozenscreen. NoDEV201 substitutions orindependentHOLDOUT claim. Raw16features/commands keptprivate.",
+  "implementation_boundary": "240gas/head/norm/steering/nominalmemory unchanged; existing16features capturedfromactualsingleoriginalcorrectioncall. NoGT/eventpostinformation inputs. Exactinitialhash matchesallfour241records.",
+  "durability": "Allproposals/RNGstate, completedroadcache, scores, elite means, frozenfinalist stored. No replayofunfinishedrun, no screenselection orrestart.",
+  "champion_changed": false,
+  "champion_manifest_sha256": "e8e09db04f4f9167187373e033a150c889717467d5e3b7ba5537c8f52f4ba226",
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
