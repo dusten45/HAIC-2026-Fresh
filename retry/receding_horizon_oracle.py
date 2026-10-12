@@ -105,7 +105,7 @@ class DiagnosticStop(RuntimeError):
     """A preregistered local gate stopped without another native action."""
 
 
-def relaxed_selection(scores, specifications):
+def relaxed_selection(scores, specifications, filter_contact=True):
     """Remove both progress tests, keeping contact, terminal, wheels and rank.
 
     maximum_off_track_counter measures consecutive actions without new tiles,
@@ -113,7 +113,7 @@ def relaxed_selection(scores, specifications):
     at a complete 12-action horizon while retaining the <=5 stagnation limit.
     """
     eligible = [name for name, s in scores.items()
-                if not s['risk'] and not s['terminal'] and s['road_wheels'] >= 2]
+                if (not filter_contact or not s['risk']) and not s['terminal'] and s['road_wheels'] >= 2]
     return sorted(eligible, key=lambda name: (-scores[name]['new_tiles'], -scores[name]['speed_m_s'],
         sum(abs(v) for v in specifications[name]['steer_offsets']),
         int(specifications[name]['brake_first_block']), name))
@@ -142,9 +142,9 @@ def add_contiguous_scores(snapshot, predictions, scores):
             contiguous_after_tiles=after, contiguous_gain_tiles=after-before)
 
 
-def choose_with_fallback(scores, specifications, enabled, contiguous_rank=False):
-    original = select({n: s for n, s in scores.items() if not n.startswith('E')}, specifications)
-    relaxed = relaxed_selection(scores, specifications) if enabled and not original else []
+def choose_with_fallback(scores, specifications, enabled, contiguous_rank=False, filter_contact=True):
+    original = select({n: s for n, s in scores.items() if not n.startswith('E')}, specifications, filter_contact)
+    relaxed = relaxed_selection(scores, specifications, filter_contact) if enabled and not original else []
     if contiguous_rank:
         # Stable sorting prepends exactly one key to each unchanged old order.
         original.sort(key=lambda n: -scores[n]['contiguous_gain_tiles'])
@@ -624,10 +624,10 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                            if not all(v['initialization'].values())]
                 _, _, old_order = choose_with_fallback(
                     {n: s for n, s in scores.items() if n not in invalid}, active_specs,
-                    oracle.get('relax_progress_fallback', False))
+                    oracle.get('relax_progress_fallback', False), filter_contact=oracle.get('filter_predicted_contact', True))
                 original, relaxed, eligible = choose_with_fallback(
                     {n: s for n, s in scores.items() if n not in invalid}, active_specs,
-                    oracle.get('relax_progress_fallback', False), contiguous_rank)
+                    oracle.get('relax_progress_fallback', False), contiguous_rank, oracle.get('filter_predicted_contact', True))
                 rank_cpu, rank_wall = time.process_time()-rank_cpu, time.perf_counter()-rank_wall
                 state['progress_fallback_active'] = bool(not original and eligible)
                 chosen = eligible[0] if eligible else None
@@ -655,7 +655,7 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                     original_eligible=original, progress_fallback_intervention=state['progress_fallback_active'],
                     nominal_hold_eligible_primary='N' in original,
                     nominal_hold_eligible_relaxed=bool(relaxed_selection(
-                        {'N': scores['N']}, active_specs)) if 'N' in scores and 'N' not in invalid else False,
+                        {'N': scores['N']}, active_specs, oracle.get('filter_predicted_contact', True))) if 'N' in scores and 'N' not in invalid else False,
                     retained_remaining_actions=retained['remaining_actions'] if retained else 0,
                     retained_origin_step=retained['origin_step'] if retained else None,
                     retained_origin_candidate=state['previous_plan'].get('origin_candidate')

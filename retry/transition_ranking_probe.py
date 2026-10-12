@@ -94,8 +94,8 @@ def endpoint(rows, horizon, initial_tiles):
         observed_actions=len(observed), position=end['position'], angle=end['angle'], damage=end['damage'])
 
 
-def select(scores, specifications):
-    eligible = [name for name, s in scores.items() if not s['risk'] and not s['terminal']
+def select(scores, specifications, filter_contact=True):
+    eligible = [name for name, s in scores.items() if (not filter_contact or not s['risk']) and not s['terminal']
                 and s['new_tiles'] >= 1 and s['maximum_off_track_counter'] <= 5 and s['road_wheels'] >= 2]
     eligible.sort(key=lambda name: (-scores[name]['new_tiles'], -scores[name]['speed_m_s'],
         sum(abs(v) for v in specifications[name]['steer_offsets']),
