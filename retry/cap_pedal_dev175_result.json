@@ -1,0 +1,238 @@
+{
+  "stage": 175,
+  "status": "RETIRED_FIXED_CAP_PEDAL_VARIANT_COMPLETION_LOSS",
+  "decision": "Keep original normal24/near8/cap45 champion. Retire this fixed cap-only small-error pedal candidate after actual completion loss on the third scheduled DEV. Do not run the remaining5.",
+  "eligibility": "Frozen near=false normal24 mode, cap45 and unclipped curvature-limited speed strictly greater than45. Excludes every near call and all curvature-limited/tied targets.",
+  "formula": "For eligible mode and abs(e)<2.5: e_soft=e*abs(e)/2.5; original .08gas/.04brake clips. Otherwise byte-identical original commands; e=existing target-original HUD. No new temporal state.",
+  "band_m_s": 2.5,
+  "band_basis": "Existing2.5m/s HUD bin spacing and174 repeated braking evidence; fixed before175 with no sweep.",
+  "relation_to_150_151": "150/151 softened all target regimes on16/5/40; total-700ms over4DEV but remaining2+160ms.175 tested narrower eligibility on24/8/45 and lost one completion. This does not revive/promote the old weak candidate.",
+  "candidate_archive_sha256": "a6202e0cdfb5e1f5695777dee5201bfc70c6ad5dbd9df30ec937801c26effebe",
+  "changed_archive_members": [
+    "retry/parameter_agent.py"
+  ],
+  "unchanged_other_archive_members": 13,
+  "first_phase_predeclared_DEV": [
+    0,
+    1,
+    3,
+    4
+  ],
+  "conditional_second_phase_DEV": [
+    2,
+    5,
+    6,
+    7
+  ],
+  "executed_order": [
+    0,
+    1,
+    3
+  ],
+  "unexecuted_DEV": [
+    4,
+    2,
+    5,
+    6,
+    7
+  ],
+  "baseline_completions_in_executed_cohort": 3,
+  "candidate_completions": 2,
+  "completion_losses": 1,
+  "censors": 0,
+  "technical_failures": 0,
+  "first_four_gate": "Stopped before fourth run on completion loss; complete4 time gate not reached",
+  "rows": [
+    {
+      "anonymous_DEV": 0,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_official_lap_ms": 35840,
+      "candidate_official_lap_ms": 35380,
+      "common_completion_delta_ms": -460,
+      "baseline_damage": 0.4,
+      "candidate_damage": 0.2,
+      "retire_reason": null,
+      "baseline_pedal_reversals_per_s": 4.071388733965403,
+      "candidate_pedal_reversals_per_s": 3.3898305084745677,
+      "candidate_native_actions": 443,
+      "same_input_changed_pedal_rows": 96,
+      "first_contact_step": 102
+    },
+    {
+      "anonymous_DEV": 1,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "candidate_censored": false,
+      "baseline_official_lap_ms": 31120,
+      "candidate_official_lap_ms": 31200,
+      "common_completion_delta_ms": 80,
+      "baseline_damage": 0.4,
+      "candidate_damage": 0.0,
+      "retire_reason": null,
+      "baseline_pedal_reversals_per_s": 3.982016698779778,
+      "candidate_pedal_reversals_per_s": 3.395259449071169,
+      "candidate_native_actions": 391,
+      "same_input_changed_pedal_rows": 113,
+      "first_contact_step": null
+    },
+    {
+      "anonymous_DEV": 3,
+      "baseline_completed": true,
+      "candidate_completed": false,
+      "candidate_censored": false,
+      "baseline_official_lap_ms": 33720,
+      "candidate_official_lap_ms": null,
+      "common_completion_delta_ms": null,
+      "baseline_damage": 0.0,
+      "candidate_damage": 1.0,
+      "retire_reason": "crash",
+      "baseline_pedal_reversals_per_s": 4.060462359217566,
+      "candidate_pedal_reversals_per_s": 3.5714285714286373,
+      "candidate_native_actions": 294,
+      "same_input_changed_pedal_rows": 61,
+      "first_contact_step": 289
+    }
+  ],
+  "common_completed": 2,
+  "common_time_delta_sum_ms": -380,
+  "common_time_delta_mean_ms": -190,
+  "common_time_delta_median_ms": -190.0,
+  "common_time_mean_ratio": 0.9948679363294161,
+  "time_interpretation": "The two common completions sum-380ms; this does not override the actual lost completion. No DNF time was imputed.",
+  "baseline_damage_in_executed_cohort": 0.8,
+  "candidate_damage_in_executed_cohort": 1.2,
+  "damage_warning": "Damage totals0.8->1.2 on the executed cohort; DEV3 changes0->1.0 and crashes. Damage and reversal rates are diagnostic; actual loss of completion is the stop criterion.",
+  "actual_same_input_checks": {
+    "target_rows": 1128,
+    "target_none_rows": 0,
+    "eligible_cap_rows": 492,
+    "eligible_small_error_rows": 270,
+    "changed_command_rows": 270,
+    "near_rows": 192,
+    "near_changed_rows": 0,
+    "curvature_limited_or_tied_rows": 613,
+    "curvature_limited_or_tied_changed_rows": 0,
+    "excluded_mode_changed_rows": 0,
+    "outside_band_rows": 542,
+    "outside_band_changed_rows": 0,
+    "overspeed_at_least_one_bin_rows": 137,
+    "large_error_brake_changed_rows": 0,
+    "large_error_brake_deceleration_rows": 137,
+    "saturated_brake_rows": 33,
+    "saturated_brake_changed_rows": 0,
+    "small_brake_reduction_rows": 27
+  },
+  "control_check_scope": "Near/curve/outside-band and large overspeed equality checked against original commands at each actual candidate input. It does not imply unchanged trajectories or physically adequate braking in all circumstances.",
+  "failure_evidence": {
+    "anonymous_DEV": 3,
+    "official_endpoint": "crash;205/287tiles, no finish time, not a censor",
+    "first_contact": {
+      "step": 289,
+      "speed_before_m_s": 21.961497167862312,
+      "speed_after_m_s": 9.671587380096039,
+      "feedback_m_s": 21.25,
+      "target_m_s": 8.626361114650885,
+      "near": true,
+      "steer": 0.2771366834640503,
+      "gas": 0.0,
+      "brake": 0.5,
+      "damage_before": 0.0,
+      "damage_after": 0.2,
+      "collision": true
+    },
+    "first_contact_pre_window": {
+      "rows": 20,
+      "steps": [
+        269,
+        288
+      ],
+      "speed_before_range_m_s": [
+        19.152143270324977,
+        45.0462395397138
+      ],
+      "target_range_m_s": [
+        7.904444508853033,
+        45.0
+      ],
+      "near_rows": 6,
+      "joint_residual_max_rad": 0.10364291071891785
+    },
+    "final_action": {
+      "step": 294,
+      "speed_before_m_s": 7.372549166772354,
+      "speed_after_m_s": 9.396806449044075,
+      "feedback_m_s": 6.25,
+      "target_m_s": 12.061903634184523,
+      "near": false,
+      "steer": 0.3995535671710968,
+      "gas": 0.464952290058136,
+      "brake": 0.0,
+      "damage_before": 0.8,
+      "damage_after": 1.0,
+      "collision": true
+    },
+    "final_pre_window": {
+      "rows": 20,
+      "steps": [
+        274,
+        293
+      ],
+      "speed_before_range_m_s": [
+        7.2944228251015835,
+        45.0462395397138
+      ],
+      "target_range_m_s": [
+        6.963943310135759,
+        45.0
+      ],
+      "near_rows": 11,
+      "joint_residual_max_rad": 0.3260449171066284
+    },
+    "last_eligible_small_error_steps_in_first_contact_pre_window": [
+      279,
+      280,
+      281,
+      282
+    ],
+    "inference_limit": "First contact is in near mode with unchanged saturated brake; final crash is in a curvature-limited normal call with unchanged pedals. Earlier cap changes alter the closed-loop state. These bounded scalars do not isolate braking, route or perception as the physical cause; no matched baseline trace was regenerated."
+  },
+  "validation": "75 scalar cases using both actual archive controller classes; one appended pedal block,13other members byte-identical. Cached174 initial states match. Actual3workers pass bindings/target/P/input-action hashes and reaping. Observer calls original policy once.",
+  "cost": {
+    "stage": 175,
+    "at_utc": "2026-10-12T05:30:09.959927+00:00",
+    "native_cap": 16000,
+    "actual_episodes": 3,
+    "unexecuted_episodes": 5,
+    "new_wrapper_actions": 1128,
+    "raw_step_ticks": 4507,
+    "raw_reset_ticks": 153,
+    "wall_s": 45.80486434101476,
+    "evaluator_CPU_s": 36.670508473,
+    "actor_CPU_s": 9.282889,
+    "timing_scope": "Three candidate native runs, bounded diagnostics and gate accounting; preparation, scalar checks, posthoc analysis and publication excluded. Evaluator and actor CPU separate.",
+    "B_operating_cap": 800000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 696671,
+    "research_remaining": 19329,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "baseline_replays": 0,
+    "new_offline_policy_model_calls": 0,
+    "isolated_scalar_controller_checks": 75,
+    "isolated_scalar_controller_calls": 150,
+    "new_full_frame_GT_policy_or_video_streams": 0,
+    "all_actors_reaped": true,
+    "HOLDOUT_detail_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "current_champion_changed": false,
+    "automatic_next_experiment": false
+  },
+  "current_champion_changed": false,
+  "champion_promoted": false,
+  "remaining_uncertainty": "Only this fixed variant is rejected. The size of recoverable time from quantized pedal behavior, and the physical cause of the DEV3 crash, remain unisolated.",
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_extension": false
+}
