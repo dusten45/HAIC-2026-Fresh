@@ -115,6 +115,8 @@ def compact_episode(plan_path, plan, case, initial_pairs, baseline_policy, arm='
     normal=(plan['diagnostic_normal_budgets'][arm] if 'diagnostic_normal_budgets' in plan
             else plan['diagnostic_normal_budget'])
     base_normal=plan['diagnostic_baseline_normal_budget']
+    speed_cap=plan.get('diagnostic_speed_cap',40.0)
+    baseline_cap=plan.get('diagnostic_baseline_speed_cap',40.0)
     started=time.perf_counter()
 
     def factory(*args,**kwargs):
@@ -156,12 +158,13 @@ def compact_episode(plan_path, plan, case, initial_pairs, baseline_policy, arm='
                 assert response['observer_extra_policy_calls']==0
                 expected_budget=5.0 if cp['near'] else normal
                 assert cp['controller_before']['lateral_acceleration']==expected_budget
+                assert cp['controller_before']['speed_cap']==speed_cap
                 target=cp['target_speed_m_s'];law['rows']+=1
                 if target is None:
                     law['excluded_target_none']+=1
                 else:
                     k=max(abs(cp['curvature']),1e-6)
-                    expected=min(40.0,float(np.sqrt(expected_budget/k)))
+                    expected=min(speed_cap,float(np.sqrt(expected_budget/k)))
                     law['max_target_error_m_s']=max(law['max_target_error_m_s'],abs(target-expected))
                     assert abs(target-expected)<1e-12
                     def pedals(t, transform=None):
@@ -171,7 +174,7 @@ def compact_episode(plan_path, plan, case, initial_pairs, baseline_policy, arm='
                         error=transform(t-feedback)
                         return [float(np.float32(np.clip(.08*error,0,.5))),float(np.float32(np.clip(-.04*error,0,.5)))]
                     assert response['action'][1:]==pedals(target, pedal_error_transform)
-                    same_base=min(40.0,float(np.sqrt((5.0 if cp['near'] else base_normal)/k)))
+                    same_base=min(baseline_cap,float(np.sqrt((5.0 if cp['near'] else base_normal)/k)))
                     changed_target=target>same_base+1e-12
                     changed_pedals=response['action'][1:]!=pedals(same_base)
                     law['target_increased_vs_same_input_baseline_rows']+=changed_target
