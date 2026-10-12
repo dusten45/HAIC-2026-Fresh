@@ -490,6 +490,20 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                     assert np.array_equal(nominal, np.asarray(reference['nominal_action'], np.float32))
                     state['pending'] = [np.asarray(reference['action'], np.float32)]
                     state['mode'] = 'replay_prefix'
+                elif state['calls'] == prefix_length+1 and replay.get('resume_planner'):
+                    snapshot = capture(state['env'])
+                    assert digest(snapshot) == replay['snapshot_digest'], 'Resume GT boundary differs'
+                    assert np.array_equal(nominal, np.asarray(replay['boundary_nominal'], np.float32))
+                    state['previous_plan'] = copy.deepcopy(replay['previous_plan'])
+                    state['replay_complete'] = True
+                    active_replay = False
+                    replan = (state['calls']-1) % interval == 0
+                    assert replan, 'Resume must be at the original replan boundary'
+                    directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
+                    old_write(directory/'resume-boundary.json', dict(
+                        before_action=state['calls'], initial_state_digest=digest(snapshot),
+                        nominal=nominal.tolist(), previous_plan=state['previous_plan'],
+                        identical_prefix_nominal_and_controls=True), exclusive=True)
                 elif state['calls'] == prefix_length+1 and not replay.get('intervention'):
                     t = time.perf_counter()
                     snapshot = capture(state['env'])
@@ -709,6 +723,9 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 rank_cpu, rank_wall = time.process_time()-rank_cpu, time.perf_counter()-rank_wall
                 state['progress_fallback_active'] = bool(not original and eligible)
                 chosen = eligible[0] if eligible else None
+                if replay is not None and replay.get('resume_planner') and state['calls'] == len(replay['prefix_rows'])+1:
+                    assert scores == replay['resume_boundary_scores'], 'Resume candidate scores differ'
+                    assert chosen == replay['resume_selected'], 'Resume selection differs'
                 state['selection'] = chosen
                 if chosen == 'R':
                     assert retained['remaining_actions'] >= interval

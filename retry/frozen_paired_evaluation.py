@@ -84,6 +84,12 @@ def episode(plan_path, plan, case, arm, initial_pairs):
               'retire_reason': 'technical_or_resource_stop',
               'saved_video_frames': 0, 'saved_trajectory_rows': 0,
               'saved_policy_telemetry_rows': 0, 'oracle_inputs_to_policy': False}
+    offline_gt_timing = plan.get('offline_gt_wall_timing', False)
+    if offline_gt_timing:
+        assert plan.get('oracle') and config['type'] == 'champion'
+        result.update(offline_GT_timing=True, official_agent_act_limit_ms=5000,
+                      official_timing_compliance_claim_allowed=False,
+                      GT_wall_limit_exceedances=[])
     try:
         native_window(plan)
         verify_files(plan['source_sha256'])
@@ -132,7 +138,15 @@ def episode(plan_path, plan, case, arm, initial_pairs):
             act_calls += 1
             actor_cpu = max(actor_cpu, response['actor_cumulative_CPU_s'])
             action = validate_response(response, config, obs, 'act')
-            assert act_ms <= 5000
+            if offline_gt_timing:
+                # Research supervisor time includes GT worlds, not just Agent.act.
+                # The official runner and the default evaluator limit stay intact.
+                if act_ms > 5000:
+                    result['GT_wall_limit_exceedances'].append(
+                        dict(before_action=used+1, full_GT_act_ms=act_ms))
+                    print(f'GT offline timing warning: action {used+1}, {act_ms:.2f}ms > official5000ms', flush=True)
+            else:
+                assert act_ms <= 5000
             if config['type'] == 'student':
                 mask_hash.update(base64.b64decode(response['student_mask_base64']))
             previous = obs
