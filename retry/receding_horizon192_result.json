@@ -1,0 +1,200 @@
+{
+  "stage": 192,
+  "status": "STOP_EXISTING_NORMAL32_COMPLETION_LOSS",
+  "privileged_diagnostic": true,
+  "legal_policy_performance": false,
+  "fixed_design": {
+    "candidates": 6,
+    "horizon_actions": 12,
+    "horizon_simulated_s": 0.96,
+    "replan_interval_actions": 3,
+    "commitment_simulated_s": 0.24,
+    "steering_offsets": [
+      -0.12,
+      0,
+      0.12
+    ],
+    "steering_clip": [
+      -0.4,
+      0.4
+    ],
+    "pedal_profiles": "gas.1/brake0 for12;or brake.25 forfirst6 then gas.1 for6",
+    "selector": "Unchanged191 contact/terminal exclusion,newtiles>=1,maxofftrack<=5,endpointroadwheels>=2;rank tiles,speed,offsetL1,brakeflag,ID. One eligible suffices.",
+    "fallback": "Fresh originalnormal32 on each remaining step until next3-action replan. No safety guarantee."
+  },
+  "nominal": "Frozen original181 normal32/near8/cap45 archive unchanged. One actualpixel act perstep, own executedfloat32 steering fed back every step. This can round nominal steering memory relative to cachedbaselines. No184GTego or186targetrule.",
+  "cohort": {
+    "planned": 3,
+    "executed": 1,
+    "not_executed": 2,
+    "description": "ExistingcompletedDEV first,then two formerlyfailedconditions permanently moved from182toDEV183. Firstcompletionloss stops remaining fixedcohort;unrun cases have no performance verdict."
+  },
+  "observed_completed_DEV": {
+    "normal32": {
+      "completed": true,
+      "lap_ms": 33820,
+      "damage": 0.4,
+      "unique_tiles": 303,
+      "total_tiles": 303,
+      "successful_wrapper_steps": 423,
+      "retire_reason": null
+    },
+    "normal24": {
+      "completed": true,
+      "lap_ms": 35840,
+      "damage": 0.4,
+      "unique_tiles": 303,
+      "total_tiles": 303,
+      "successful_wrapper_steps": 449,
+      "retire_reason": null
+    },
+    "GT_oracle": {
+      "completed": false,
+      "lap_ms": null,
+      "damage": 1.0,
+      "unique_tiles": 199,
+      "total_tiles": 303,
+      "successful_wrapper_steps": 308,
+      "retire_reason": "crash"
+    }
+  },
+  "evidence": {
+    "replans": 103,
+    "selected_blocks": 94,
+    "fallback_blocks": 9,
+    "selected_steps": 282,
+    "fallback_steps": 26,
+    "eligible_count_histogram": {
+      "0": 9,
+      "1": 43,
+      "2": 18,
+      "3": 19,
+      "4": 14
+    },
+    "selected_candidate_histogram": {
+      "C08": 39,
+      "C00": 15,
+      "C17": 4,
+      "C16": 31,
+      "C09": 2,
+      "C01": 3
+    },
+    "invalid_initialization_queries": 0,
+    "selected_contact_steps": 0,
+    "fallback_contact_steps": 5,
+    "first_contact_step": 304,
+    "terminal_step": 308,
+    "selected_prefix_false_negative_steps": 0,
+    "selected_prefix_tile_mismatch_steps": 0,
+    "selected_prefix_damage_mismatch_steps": 0,
+    "selected_prefix_position_error_m": {
+      "count": 282,
+      "sum": 0.00010079145431518555,
+      "median": 0.0,
+      "p95": 3.7193298339843533e-06,
+      "max": 1.52587890625e-05
+    },
+    "saved_boundary_observation": "At301 the selected12-action forecast was admissible;its committed3actions were contactfree and matchedactualpose/progress. At304 allsix newlyanchored candidates predictedcontact;nominal fallback thencontacted. The previousforecasttail was not retained in the newcandidate basis.",
+    "interpretation": "This fixed candidate/rank/replan/fallback composition lost completion. Accurate executed3-action predictions did not make replanning recursively feasible. Candidatecoverage/plan-continuity/fallback behavior is a plausible mechanism from saved records; continuing the oldtail was not tested, so it is not a proven repair. No broader optimal-control impossibility claim."
+  },
+  "cost": {
+    "stage": 192,
+    "at_utc": "2026-10-12T11:20:48.537206+00:00",
+    "native_cap": 6000,
+    "new_wrapper_actions": 308,
+    "native_episode_invocations": 1,
+    "raw_step_ticks": 1232,
+    "raw_reset_ticks": 51,
+    "wall_s": 30.27856066401,
+    "evaluator_CPU_s": 27.264276815,
+    "actor_CPU_s": 3.019085,
+    "model_queries": 618,
+    "model_physics_ticks": 29484,
+    "zero_time_contact_initializations": 618,
+    "model_CPU_s": 11.705076094000006,
+    "model_CPU_included_in_evaluator": true,
+    "model_positive_ticks_separate_from_native": true,
+    "replan_decision_ms": {
+      "count": 103,
+      "sum": 15145.198026672006,
+      "median": 136.83475798461586,
+      "p95": 226.83024479774735,
+      "max": 320.7312359882053
+    },
+    "all_action_decision_ms": {
+      "count": 308,
+      "sum": 17520.203030551784,
+      "median": 12.972048498340882,
+      "p95": 161.85912093642398,
+      "max": 320.7312359882053
+    },
+    "nominal_actor_IPC_ms": {
+      "count": 308,
+      "sum": 3237.0795940223616,
+      "median": 9.430347490706481,
+      "p95": 17.31871199153828,
+      "max": 32.05559399793856
+    },
+    "feedback_IPC_ms": {
+      "count": 308,
+      "sum": 238.4930168336723,
+      "median": 0.6504884950118139,
+      "p95": 1.446689087606497,
+      "max": 5.098743014968932
+    },
+    "model_component_batch_ms": {
+      "capture_wall_s": {
+        "count": 103,
+        "sum": 1338.5264010867104,
+        "median": 8.956678997492418,
+        "p95": 20.636958608520185,
+        "max": 147.5954780180473
+      },
+      "reconstruction_wall_s": {
+        "count": 103,
+        "sum": 7011.899301840458,
+        "median": 62.9817949666176,
+        "p95": 97.95704492426006,
+        "max": 235.0376550166402
+      },
+      "integration_wall_s": {
+        "count": 103,
+        "sum": 4693.978675233666,
+        "median": 44.492449931567535,
+        "p95": 56.02654289104976,
+        "max": 88.08479103026912
+      },
+      "model_batch_wall_s": {
+        "count": 103,
+        "sum": 11708.884676249,
+        "median": 108.18809602642432,
+        "p95": 151.59489391080567,
+        "max": 273.3783370058518
+      }
+    },
+    "replan_decisions_exceeding_240ms": 4,
+    "actual_env_step_wall_s": 11.79379625513684,
+    "actual_env_step_mean_ms": 38.29154628291182,
+    "qualification_policy_calls": 4,
+    "qualification_feedback_calls": 3,
+    "qualification_native": 0,
+    "timing_scope": "Full decision includes actual pixel actor IPC, GT capture, six fresh world reconstructions and integrations, ranking, bookkeeping and own-action feedback IPC. Model omits rendering/track generation/future pixel actor. Rendering savings were not isolated by an ablation. Native execution wall excludes preparation/qualification/publication.",
+    "B_operating_cap": 816000,
+    "actual_cumulative_wrapper_actions": 720321,
+    "research_remaining": 11679,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "automatic_next_experiment": false
+  },
+  "information": "GT current body,wheels,actuators,damage,road geometry/friction/visited history andfullobstacles go to evaluator selector. Pixelactor sees pixels and ownexecutedaction only. Reconstructed worlds omit solverimpulses/manifoldhistory/islandorder and finish-line state; no futureactual outcomes or futureactorcalls.",
+  "validation": "Syntheticpixel reset+3acts+3feedbackacks; nextact readsexecutedsteer. Actualrun reset identity, frozen source/runtime/archive hashes,308action/feedback/step counts and workerreaping verified. Modelandrank source unchangedfrom191.",
+  "decision": "Existingcompletion lost against bothnormal32 andnormal24;stopthisfixedoracle. No newseed,parameterchange,remainingroad run,championpromotion or automaticfollowup.",
+  "champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
