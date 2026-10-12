@@ -1,0 +1,286 @@
+{
+  "stage": 241,
+  "status": "FRESH_DECLARED_DEV240_SURVEY_CLOSED",
+  "aggregate": {
+    "completed": 4,
+    "roads": 4,
+    "censored": 0,
+    "technical_error": null,
+    "unexecuted": [],
+    "first_contact_roads": [
+      "F0",
+      "F3"
+    ],
+    "stagnation_roads": [],
+    "reverse_proxy_roads": [],
+    "total_stationary_actions": 0
+  },
+  "cases": {
+    "F0": {
+      "completed": true,
+      "censored": false,
+      "lap_ms": 23620,
+      "damage": 0.2,
+      "retire_reason": null,
+      "native_actions": 296,
+      "visited": 325,
+      "total_tiles": 325,
+      "unvisited": 0,
+      "last_new_tile_action": 293,
+      "longest_no_new_tile_streak": 3,
+      "stationary_actions": 0,
+      "valid_target_actions": 296,
+      "target_missing_actions": 0,
+      "near_hazard_actions": 57,
+      "valid_target_lateral_proxy_over24_actions": 130,
+      "curvature_abs_median": 0.007868937514271455,
+      "feedback_speed_median": 48.75,
+      "source_startline_crossings": [
+        {
+          "action": 296,
+          "direction": "forward",
+          "qualified": true,
+          "physics_time_s": 24.639999999999564
+        }
+      ],
+      "features_are_actual_legal_calls": true,
+      "cache_bytes": 1999601,
+      "first_contact": {
+        "action": 125,
+        "poststep_actual_speed_m_s": 45.913721192271126,
+        "poststep_damage": 0.2,
+        "visited": 139,
+        "wheel_road_contacts": 4,
+        "preaction_window_samples": 5,
+        "valid_target_samples": 5,
+        "near_hazard_samples": 5,
+        "curvature_range": [
+          -0.06456359357792989,
+          0.016432485333436133
+        ],
+        "feedback_speed_range": [
+          46.25,
+          48.75
+        ],
+        "range_m_min": 2.9642470254294215,
+        "executed_pedal_mean": [
+          0.42103409171104433,
+          0.0952358826994896
+        ],
+        "nominal_brake_mean": 0.4300000011920929,
+        "scope": "Onlyanonymouspreactionwindow summary; rawobservations/features/commands remainprivate. PoststepGT/event diagnosis excludedfromfuturepolicyinput."
+      },
+      "first_stagnation_5_no_new_tiles": null,
+      "first_moving_nearest_tangent_reverse": null
+    },
+    "F1": {
+      "completed": true,
+      "censored": false,
+      "lap_ms": 17080,
+      "damage": 0.0,
+      "retire_reason": null,
+      "native_actions": 214,
+      "visited": 238,
+      "total_tiles": 238,
+      "unvisited": 0,
+      "last_new_tile_action": 211,
+      "longest_no_new_tile_streak": 3,
+      "stationary_actions": 0,
+      "valid_target_actions": 214,
+      "target_missing_actions": 0,
+      "near_hazard_actions": 41,
+      "valid_target_lateral_proxy_over24_actions": 97,
+      "curvature_abs_median": 0.007868937514271455,
+      "feedback_speed_median": 48.75,
+      "source_startline_crossings": [
+        {
+          "action": 214,
+          "direction": "forward",
+          "qualified": true,
+          "physics_time_s": 18.099999999999703
+        }
+      ],
+      "features_are_actual_legal_calls": true,
+      "cache_bytes": 1452863,
+      "first_contact": null,
+      "first_stagnation_5_no_new_tiles": null,
+      "first_moving_nearest_tangent_reverse": null
+    },
+    "F2": {
+      "completed": true,
+      "censored": false,
+      "lap_ms": 21560,
+      "damage": 0.0,
+      "retire_reason": null,
+      "native_actions": 270,
+      "visited": 292,
+      "total_tiles": 292,
+      "unvisited": 0,
+      "last_new_tile_action": 267,
+      "longest_no_new_tile_streak": 3,
+      "stationary_actions": 0,
+      "valid_target_actions": 268,
+      "target_missing_actions": 2,
+      "near_hazard_actions": 46,
+      "valid_target_lateral_proxy_over24_actions": 124,
+      "curvature_abs_median": 0.007868937514271455,
+      "feedback_speed_median": 48.75,
+      "source_startline_crossings": [
+        {
+          "action": 270,
+          "direction": "forward",
+          "qualified": true,
+          "physics_time_s": 22.579999999999607
+        }
+      ],
+      "features_are_actual_legal_calls": true,
+      "cache_bytes": 1819049,
+      "first_contact": null,
+      "first_stagnation_5_no_new_tiles": null,
+      "first_moving_nearest_tangent_reverse": null
+    },
+    "F3": {
+      "completed": true,
+      "censored": false,
+      "lap_ms": 18760,
+      "damage": 0.2,
+      "retire_reason": null,
+      "native_actions": 235,
+      "visited": 256,
+      "total_tiles": 256,
+      "unvisited": 0,
+      "last_new_tile_action": 232,
+      "longest_no_new_tile_streak": 3,
+      "stationary_actions": 0,
+      "valid_target_actions": 235,
+      "target_missing_actions": 0,
+      "near_hazard_actions": 55,
+      "valid_target_lateral_proxy_over24_actions": 112,
+      "curvature_abs_median": 0.007868937514271455,
+      "feedback_speed_median": 48.75,
+      "source_startline_crossings": [
+        {
+          "action": 235,
+          "direction": "forward",
+          "qualified": true,
+          "physics_time_s": 19.779999999999667
+        }
+      ],
+      "features_are_actual_legal_calls": true,
+      "cache_bytes": 1606129,
+      "first_contact": {
+        "action": 199,
+        "poststep_actual_speed_m_s": 47.7053868605329,
+        "poststep_damage": 0.2,
+        "visited": 219,
+        "wheel_road_contacts": 4,
+        "preaction_window_samples": 5,
+        "valid_target_samples": 5,
+        "near_hazard_samples": 4,
+        "curvature_range": [
+          -0.0522725522342719,
+          0.04386153662031011
+        ],
+        "feedback_speed_range": [
+          48.75,
+          53.75
+        ],
+        "range_m_min": 2.941634655848341,
+        "executed_pedal_mean": [
+          0.4729716062545776,
+          0.11986789256334304
+        ],
+        "nominal_brake_mean": 0.5,
+        "scope": "Onlyanonymouspreactionwindow summary; rawobservations/features/commands remainprivate. PoststepGT/event diagnosis excludedfromfuturepolicyinput."
+      },
+      "first_stagnation_5_no_new_tiles": null,
+      "first_moving_nearest_tangent_reverse": null
+    }
+  },
+  "feature_mapping": {
+    "curvature": {
+      "index": 5,
+      "formula": "2*x/max(forward^2+x^2,1e-6), selectedpixel-route target; zeroiffallback target missing, notGTcurvature"
+    },
+    "hazard": {
+      "near_index": 8,
+      "obstacle_count_index": 11,
+      "range_index": 12,
+      "formula": "Trackedimageobstacle aheadwithin clip(4+.35*HUDspeed,6,14)+2.6+radius; nearsetsnominal lateral8vs24. Range=minhypot(pixelbodyx,y),default100."
+    },
+    "speed": {
+      "HUD_index": 3,
+      "formula": "max(0,11.4142485314592*sum(image[74:83,9:14])-6.545558315185489)",
+      "feedback_index": 4,
+      "feedback": "ExistingHUDtemplate decoder, fallbacktoHUDspeed; currentnominalpedalcall argument"
+    },
+    "target_missing_index": 0
+  },
+  "future_hypothesis": {
+    "status": "Plausible asprecontactfalsification, notprovenfailedroadrepair; thisnewcohorthasnoDNF.",
+    "policy_basis": "Keep240 gas/head/steering/nominalmemory; two brake-only coefficient bases forvalid-target curvature-speed demand andhazardproximity. Existingnear8 shouldbecombinedwith11obstaclecount/12image-derivedrange ratherthanexclusivebinarynear. Route_missing isnotstraight; noGT/postcollision/counter inputs.",
+    "guard": "Useonly16legalpreactionfeatures. NoGTgeometry, futurecollision/damage, progresscounter orposteventvariables aspolicyinputs. Thisdoesnotrepairroutefinding/steeringorprovecontactavoidance.",
+    "evaluation": "Iflaterauthorized, directactualcompletion/time objective onDEV; noimitation-error reward, noHOLDOUTretuning. No newconditionalparameters now.",
+    "evidence": "F0precontact5samples nearall5, curvaturemagnitude grows whileaffine+globaloutput retainsgas andmuchlessbrake thannominal. F3near4/5, nearflagdropsatcontact despiteoneobstacle rangeabout2.94m; binarynearalonecanmissveryclose side/back transitions.",
+    "no_conditional_candidate_created": true
+  },
+  "cost": {
+    "stage": 241,
+    "at_utc": "2026-10-12T23:26:53.555322+00:00",
+    "native_cap": 2200,
+    "new_wrapper_actions": 1015,
+    "wall_s": 45.11429384798976,
+    "evaluator_CPU_s": 35.60710229200001,
+    "actor_CPU_s": 8.368557000000001,
+    "raw_step_ticks": 4055,
+    "raw_reset_ticks": 204,
+    "full_Agent_with_readonly_feature_observer_ms": {
+      "count": 1015,
+      "median": 5.361944989999756,
+      "p95": 12.043880007695405,
+      "max": 22.0628579845652
+    },
+    "max_act_IPC_ms": 47.704808996059,
+    "max_reset_IPC_ms": 6.357385980663821,
+    "private_pixel_feature_cache_bytes": 6877642,
+    "model_queries": 0,
+    "model_physics_ticks": 0,
+    "head_fits": 0,
+    "conditional_parameters_created": 0,
+    "B_operating_cap": 856000,
+    "actual_cumulative_wrapper_actions": 770520,
+    "research_remaining": 1480,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "selection": {
+    "declared_DEV_before_draw": true,
+    "fourfresh": true,
+    "identity_rejections": 0,
+    "parent_vector_rejections": 0,
+    "prior_exclusion_counts": {
+      "excluded_seeds": 294,
+      "excluded_road_geometry_sha256": 292,
+      "excluded_obstacle_spec_sha256": 304,
+      "excluded_physical_obstacles_sha256": 162,
+      "excluded_obstacle_rng_entropy": 162,
+      "excluded_parent_entropy_vectors": 35
+    },
+    "durable_draw_sha256": "ab91bffa431f387510f03c7995390fe691a2935eb0d694216d1a19ceb14bbf02",
+    "difficulty_or_outcome_filter": false
+  },
+  "data_boundary": "Allrawobservations/16features/commands/GTscene retainedprivate inselectedexecutor. NewroadsDEVfrombeforefirstdraw; no239HOLDOUTfailures imported.",
+  "limitations": [
+    "FournewDEVroads andnocomparison;4/4doesnotshowrelative superiority orpopulationreliability.",
+    "Nofailures occurred, sofailuremechanism cannotbeconfirmed; contactprecedents supportonlya futuretesthypothesis.",
+    "GT nearestroadtangent isdirectionproxy; rawsourceFinishLineTracker determinescompletion.",
+    "Historicalphysicalidentity metadata gaps retained."
+  ],
+  "champion_changed": false,
+  "champion_manifest_sha256": "e8e09db04f4f9167187373e033a150c889717467d5e3b7ba5537c8f52f4ba226",
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
