@@ -1,0 +1,681 @@
+{
+  "stage": 221,
+  "status": "KNOWN_DEV_CONTACT_VETO_WIDE_POOL_ABLATION",
+  "sole_change": "Restorepredictedcontactexclusion inbothprimary andexistingrelaxedprogressfallback; all219controls/candidates/rank/modelconditionsunchanged.",
+  "cases": {
+    "F0": {
+      "cached_control_stage": 219,
+      "cached_control": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 28300,
+        "unique_tiles": 326,
+        "total_tiles": 326,
+        "damage": 0.6000000000000001,
+        "retire_reason": null,
+        "native_actions": 354,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 4,
+        "last_new_tile_action": 350,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 326,
+        "final_unvisited_tile_count": 0
+      },
+      "pixel201_cached": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 37000,
+        "unique_tiles": 326,
+        "total_tiles": 326,
+        "damage": 0.0,
+        "retire_reason": null,
+        "native_actions": 463,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 4,
+        "last_new_tile_action": 459,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 326,
+        "final_unvisited_tile_count": 0
+      },
+      "candidate221": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 29400,
+        "unique_tiles": 326,
+        "total_tiles": 326,
+        "damage": 0.2,
+        "retire_reason": null,
+        "native_actions": 368,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 13,
+        "last_new_tile_action": 364,
+        "new_gap_events": 2,
+        "new_gap_tiles": 3,
+        "gap_history": [
+          {
+            "action": 200,
+            "new_gap_tiles": 2,
+            "first_backfill_action": 205,
+            "full_backfill_action": 207
+          },
+          {
+            "action": 213,
+            "new_gap_tiles": 1,
+            "first_backfill_action": 220,
+            "full_backfill_action": 220
+          }
+        ],
+        "final_contiguous_tiles": 326,
+        "final_unvisited_tile_count": 0
+      },
+      "initial_identical": true,
+      "first_selection_change": {
+        "action": 100,
+        "old_selected": "T",
+        "new_selected": "S24",
+        "common_prefix_commands_identical": true,
+        "new_score": {
+          "contiguous_gain_tiles": 6,
+          "new_internal_gap_tiles": 10,
+          "new_tiles": 13,
+          "speed_m_s": 68.3651396739085,
+          "forward_velocity_m_s": 65.33437577596065,
+          "damage": 0.0,
+          "terminal": false
+        },
+        "old_selected_score": {
+          "contiguous_gain_tiles": 7,
+          "new_tiles": 7,
+          "speed_m_s": 19.809724903125694,
+          "forward_velocity_m_s": 19.78567710696244,
+          "damage": 0.6000000000000001,
+          "terminal": false
+        }
+      },
+      "first_actual_command_divergence_action": 100,
+      "new_gap_key_changed_replans": 1,
+      "model_actual_comparison": {
+        "selected": {
+          "actual_actions": 365,
+          "matched_same_prefix_full4tick_actions": 364,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 1.7059844799040144e-05,
+          "unmatched_actual_actions": [
+            368
+          ]
+        },
+        "nominal_fallback": {
+          "actual_actions": 3,
+          "matched_same_prefix_full4tick_actions": 1,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 0.0,
+          "unmatched_actual_actions": [
+            122,
+            123
+          ]
+        }
+      },
+      "mismatch_details": [],
+      "invalid_initialization_candidates": 0,
+      "failure_evidence": null,
+      "online_cost": {
+        "model_batch_ms": {
+          "count": 123,
+          "median": 895.9285060118418,
+          "p95": 1313.31591840717,
+          "max": 3561.9141630013473
+        },
+        "replan_ms": {
+          "count": 123,
+          "sum": 126837.15591099462,
+          "median": 944.7332120034844,
+          "p95": 1556.05412199511,
+          "max": 3612.4034780077636
+        }
+      },
+      "lap_delta_vs_cached_control_ms": 1100,
+      "lap_delta_vs_pixel201_ms": -7600,
+      "contact_veto": {
+        "replans": 123,
+        "raw_risky_candidate_forecasts": 104,
+        "primary_contact_only_exclusions": 44,
+        "relaxed_contact_only_exclusions": 66,
+        "primary_emptied_replans": 0,
+        "all_relaxed_removed_replans": 1,
+        "no_eligible_replans": 1,
+        "primary_and_relaxed_filter_verified": true,
+        "scope": "Perreplan candidate-occurrences,notuniqueIDs; primaryandrelaxedcounts overlap andmustnotsumthem. Holdingallothereligibilityfixed. Actualfreshnominal fallbackunchanged/unvetoed.",
+        "actual_contact_actions": [
+          {
+            "action": 122,
+            "mode": "nominal_fallback",
+            "selected": null,
+            "damage": 0.2
+          }
+        ]
+      },
+      "official5s_GT_warnings": [],
+      "official_timing_compliance_claim_allowed": false
+    },
+    "F1": {
+      "cached_control_stage": 219,
+      "cached_control": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 31520,
+        "unique_tiles": 298,
+        "total_tiles": 299,
+        "damage": 0.8,
+        "retire_reason": null,
+        "native_actions": 395,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 15,
+        "last_new_tile_action": 389,
+        "new_gap_events": 1,
+        "new_gap_tiles": 2,
+        "gap_history": [
+          {
+            "action": 230,
+            "new_gap_tiles": 2,
+            "first_backfill_action": 231,
+            "full_backfill_action": null
+          }
+        ],
+        "final_contiguous_tiles": 203,
+        "final_unvisited_tile_count": 1
+      },
+      "pixel201_cached": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 34080,
+        "unique_tiles": 299,
+        "total_tiles": 299,
+        "damage": 0.2,
+        "retire_reason": null,
+        "native_actions": 427,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 4,
+        "last_new_tile_action": 423,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 299,
+        "final_unvisited_tile_count": 0
+      },
+      "candidate221": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 26700,
+        "unique_tiles": 299,
+        "total_tiles": 299,
+        "damage": 0.0,
+        "retire_reason": null,
+        "native_actions": 334,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 6,
+        "last_new_tile_action": 330,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 299,
+        "final_unvisited_tile_count": 0
+      },
+      "initial_identical": true,
+      "first_selection_change": {
+        "action": 31,
+        "old_selected": "T",
+        "new_selected": "E00",
+        "common_prefix_commands_identical": true,
+        "new_score": {
+          "contiguous_gain_tiles": 2,
+          "new_internal_gap_tiles": 0,
+          "new_tiles": 2,
+          "speed_m_s": 4.645094687971134e-14,
+          "forward_velocity_m_s": 6.1577364644504176e-15,
+          "damage": 0.0,
+          "terminal": false
+        },
+        "old_selected_score": {
+          "contiguous_gain_tiles": 6,
+          "new_tiles": 6,
+          "speed_m_s": 20.931047515445417,
+          "forward_velocity_m_s": 20.677368544042793,
+          "damage": 0.6000000000000001,
+          "terminal": false
+        }
+      },
+      "first_actual_command_divergence_action": 31,
+      "new_gap_key_changed_replans": 0,
+      "model_actual_comparison": {
+        "selected": {
+          "actual_actions": 334,
+          "matched_same_prefix_full4tick_actions": 334,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 1.52587890625e-05,
+          "unmatched_actual_actions": []
+        },
+        "nominal_fallback": {
+          "actual_actions": 0,
+          "matched_same_prefix_full4tick_actions": 0,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 0,
+          "unmatched_actual_actions": []
+        }
+      },
+      "mismatch_details": [],
+      "invalid_initialization_candidates": 0,
+      "failure_evidence": null,
+      "online_cost": {
+        "model_batch_ms": {
+          "count": 112,
+          "median": 842.7817710035015,
+          "p95": 1128.9463947337936,
+          "max": 4089.18392698979
+        },
+        "replan_ms": {
+          "count": 112,
+          "sum": 110496.90414691577,
+          "median": 881.7580440081656,
+          "p95": 1176.8600515366415,
+          "max": 4124.051432998385
+        }
+      },
+      "lap_delta_vs_cached_control_ms": -4820,
+      "lap_delta_vs_pixel201_ms": -7380,
+      "contact_veto": {
+        "replans": 112,
+        "raw_risky_candidate_forecasts": 258,
+        "primary_contact_only_exclusions": 58,
+        "relaxed_contact_only_exclusions": 136,
+        "primary_emptied_replans": 4,
+        "all_relaxed_removed_replans": 0,
+        "no_eligible_replans": 0,
+        "primary_and_relaxed_filter_verified": true,
+        "scope": "Perreplan candidate-occurrences,notuniqueIDs; primaryandrelaxedcounts overlap andmustnotsumthem. Holdingallothereligibilityfixed. Actualfreshnominal fallbackunchanged/unvetoed.",
+        "actual_contact_actions": []
+      },
+      "official5s_GT_warnings": [],
+      "official_timing_compliance_claim_allowed": false
+    },
+    "F2": {
+      "cached_control_stage": 219,
+      "cached_control": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 27860,
+        "unique_tiles": 289,
+        "total_tiles": 289,
+        "damage": 0.6000000000000001,
+        "retire_reason": null,
+        "native_actions": 349,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 15,
+        "last_new_tile_action": 343,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 289,
+        "final_unvisited_tile_count": 0
+      },
+      "pixel201_cached": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 31600,
+        "unique_tiles": 289,
+        "total_tiles": 289,
+        "damage": 0.0,
+        "retire_reason": null,
+        "native_actions": 396,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 4,
+        "last_new_tile_action": 392,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 289,
+        "final_unvisited_tile_count": 0
+      },
+      "candidate221": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 26940,
+        "unique_tiles": 289,
+        "total_tiles": 289,
+        "damage": 0.0,
+        "retire_reason": null,
+        "native_actions": 337,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 6,
+        "last_new_tile_action": 332,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 289,
+        "final_unvisited_tile_count": 0
+      },
+      "initial_identical": true,
+      "first_selection_change": {
+        "action": 49,
+        "old_selected": "T",
+        "new_selected": "C09",
+        "common_prefix_commands_identical": true,
+        "new_score": {
+          "contiguous_gain_tiles": 6,
+          "new_internal_gap_tiles": 0,
+          "new_tiles": 6,
+          "speed_m_s": 16.796121987172498,
+          "forward_velocity_m_s": 16.212353170307722,
+          "damage": 0.0,
+          "terminal": false
+        },
+        "old_selected_score": {
+          "contiguous_gain_tiles": 9,
+          "new_tiles": 9,
+          "speed_m_s": 6.683366094998842,
+          "forward_velocity_m_s": 1.8829327535504827,
+          "damage": 0.2,
+          "terminal": false
+        }
+      },
+      "first_actual_command_divergence_action": 49,
+      "new_gap_key_changed_replans": 1,
+      "model_actual_comparison": {
+        "selected": {
+          "actual_actions": 337,
+          "matched_same_prefix_full4tick_actions": 337,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 7.864199877963372e-06,
+          "unmatched_actual_actions": []
+        },
+        "nominal_fallback": {
+          "actual_actions": 0,
+          "matched_same_prefix_full4tick_actions": 0,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 0,
+          "unmatched_actual_actions": []
+        }
+      },
+      "mismatch_details": [],
+      "invalid_initialization_candidates": 0,
+      "failure_evidence": null,
+      "online_cost": {
+        "model_batch_ms": {
+          "count": 113,
+          "median": 848.1715689995326,
+          "p95": 1047.3956472123973,
+          "max": 8842.739332001656
+        },
+        "replan_ms": {
+          "count": 113,
+          "sum": 117926.05481593637,
+          "median": 883.6711980111431,
+          "p95": 1103.5520413948686,
+          "max": 8892.874682991533
+        }
+      },
+      "lap_delta_vs_cached_control_ms": -920,
+      "lap_delta_vs_pixel201_ms": -4660,
+      "contact_veto": {
+        "replans": 113,
+        "raw_risky_candidate_forecasts": 236,
+        "primary_contact_only_exclusions": 43,
+        "relaxed_contact_only_exclusions": 134,
+        "primary_emptied_replans": 2,
+        "all_relaxed_removed_replans": 0,
+        "no_eligible_replans": 0,
+        "primary_and_relaxed_filter_verified": true,
+        "scope": "Perreplan candidate-occurrences,notuniqueIDs; primaryandrelaxedcounts overlap andmustnotsumthem. Holdingallothereligibilityfixed. Actualfreshnominal fallbackunchanged/unvetoed.",
+        "actual_contact_actions": []
+      },
+      "official5s_GT_warnings": [
+        {
+          "before_action": 166,
+          "full_GT_act_ms": 5678.802056994755
+        },
+        {
+          "before_action": 337,
+          "full_GT_act_ms": 8892.874682991533
+        }
+      ],
+      "official_timing_compliance_claim_allowed": false
+    },
+    "F3": {
+      "cached_control_stage": 218,
+      "cached_control": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 27400,
+        "unique_tiles": 319,
+        "total_tiles": 319,
+        "damage": 0.2,
+        "retire_reason": null,
+        "native_actions": 343,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 5,
+        "last_new_tile_action": 338,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 319,
+        "final_unvisited_tile_count": 0
+      },
+      "pixel201_cached": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 34980,
+        "unique_tiles": 319,
+        "total_tiles": 319,
+        "damage": 0.4,
+        "retire_reason": null,
+        "native_actions": 438,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 4,
+        "last_new_tile_action": 434,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 319,
+        "final_unvisited_tile_count": 0
+      },
+      "candidate221": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 28220,
+        "unique_tiles": 319,
+        "total_tiles": 319,
+        "damage": 0.0,
+        "retire_reason": null,
+        "native_actions": 353,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 4,
+        "last_new_tile_action": 349,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 319,
+        "final_unvisited_tile_count": 0
+      },
+      "initial_identical": true,
+      "first_selection_change": {
+        "action": 70,
+        "old_selected": "N",
+        "new_selected": "T",
+        "common_prefix_commands_identical": true,
+        "new_score": {
+          "contiguous_gain_tiles": 13,
+          "new_internal_gap_tiles": 0,
+          "new_tiles": 13,
+          "speed_m_s": 44.986167040048116,
+          "forward_velocity_m_s": 44.984900403679426,
+          "damage": 0.0,
+          "terminal": false
+        },
+        "old_selected_score": {
+          "contiguous_gain_tiles": 14,
+          "new_tiles": 14,
+          "speed_m_s": 56.15752524128089,
+          "forward_velocity_m_s": 55.328094981638905,
+          "damage": 0.4,
+          "terminal": false
+        }
+      },
+      "first_actual_command_divergence_action": 70,
+      "new_gap_key_changed_replans": 1,
+      "model_actual_comparison": {
+        "selected": {
+          "actual_actions": 353,
+          "matched_same_prefix_full4tick_actions": 353,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 1.5728399755926745e-05,
+          "unmatched_actual_actions": []
+        },
+        "nominal_fallback": {
+          "actual_actions": 0,
+          "matched_same_prefix_full4tick_actions": 0,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 0,
+          "unmatched_actual_actions": []
+        }
+      },
+      "mismatch_details": [],
+      "invalid_initialization_candidates": 0,
+      "failure_evidence": null,
+      "online_cost": {
+        "model_batch_ms": {
+          "count": 118,
+          "median": 979.9955700000282,
+          "p95": 1338.7622494687091,
+          "max": 7552.352263010107
+        },
+        "replan_ms": {
+          "count": 118,
+          "sum": 132698.97836167365,
+          "median": 1020.4131584905554,
+          "p95": 1401.402455990319,
+          "max": 7607.36434001592
+        }
+      },
+      "lap_delta_vs_cached_control_ms": 820,
+      "lap_delta_vs_pixel201_ms": -6760,
+      "contact_veto": {
+        "replans": 118,
+        "raw_risky_candidate_forecasts": 143,
+        "primary_contact_only_exclusions": 33,
+        "relaxed_contact_only_exclusions": 76,
+        "primary_emptied_replans": 0,
+        "all_relaxed_removed_replans": 0,
+        "no_eligible_replans": 0,
+        "primary_and_relaxed_filter_verified": true,
+        "scope": "Perreplan candidate-occurrences,notuniqueIDs; primaryandrelaxedcounts overlap andmustnotsumthem. Holdingallothereligibilityfixed. Actualfreshnominal fallbackunchanged/unvetoed.",
+        "actual_contact_actions": []
+      },
+      "official5s_GT_warnings": [
+        {
+          "before_action": 193,
+          "full_GT_act_ms": 7607.36434001592
+        }
+      ],
+      "official_timing_compliance_claim_allowed": false
+    }
+  },
+  "aggregate": {
+    "completed": 4,
+    "episodes": 4,
+    "cached_control_completed": 4,
+    "known_DEV_only": true,
+    "sum_common_lap_delta_ms": -3820,
+    "sum_damage_baseline": 2.2,
+    "sum_damage_restored": 0.2,
+    "primary_contact_only_exclusions": 178,
+    "relaxed_contact_only_exclusions": 412,
+    "stationary_actions": 0
+  },
+  "cost": {
+    "stage": 221,
+    "at_utc": "2026-10-12T19:11:38.420153+00:00",
+    "native_cap": 2000,
+    "new_wrapper_actions": 1392,
+    "control_new_native_actions": 0,
+    "wall_s": 561.9107704219932,
+    "raw_step_ticks": 5567,
+    "raw_reset_ticks": 204,
+    "evaluator_CPU_s": 546.2776709079999,
+    "actor_CPU_s": 13.058950999999999,
+    "model_queries": 20490,
+    "model_physics_ticks": 981888,
+    "model_CPU_s": 462.4314480430005,
+    "model_CPU_included_in_evaluator": true,
+    "T_control_CPU_s": 2.6218010059987233,
+    "GT_capture_wall_s": 9.258941797015723,
+    "reconstruction_wall_s": 268.4392647613713,
+    "integration_wall_s": 185.5400996474782,
+    "forecast_retention_wall_s": 0.31731730682076886,
+    "extra_comparison_model_queries": 0,
+    "official5s_GT_warning_count": 3,
+    "evaluator_peak_RSS_mib": 4721.41796875,
+    "actor_peak_RSS_mib": 46.296875,
+    "B_operating_cap": 828000,
+    "actual_cumulative_wrapper_actions": 743027,
+    "research_remaining": 973,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "accounting": "FourknownDEVresets once500cap each, restorecontactvetoonly. Cached218/219controls,no retry/tuning/HOLDOUTdata. Vetoexclusion arithmetic usesstoredscores0modelqueries;sameprefixchecksreuseexistingforecastrows. GTmodelCPUinsideevaluator, warningwall/resourcesretained."
+  },
+  "interpretation": "Condition-candidatepoolinteraction comparison, notuserapprovalcheck/universaldamageban. Earlier202narrowresult iscontext only. No220HOLDOUTroads/failureboundariesused; noindependentconfirmation/legalpixelperformance.",
+  "contact_semantics": "Riskflagmeansforecastcollision OR obstaclebeginID; no newdamage threshold. Freshnominalfallbackwhenalleligibleempty unchanged andcancontact.",
+  "timing_scope": "Official5slimit/defaultlegalrunner unchanged, explicitofflineGTmodewarns/logswholeoraclewall. No realtimecompliance claim.",
+  "champion_changed": false,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_next_experiment": false
+}
