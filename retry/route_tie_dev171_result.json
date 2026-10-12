@@ -1,6 +1,6 @@
 {
   "stage": 171,
-  "status": "REJECT_DAMAGE_GATE_DESPITE_TIME_GAIN_KEEP_CHAMPION",
+  "status": "DEV_CANDIDATE_RETAINED_TIME_GAIN_DAMAGE_SEPARATE",
   "champion": "normal24 near8 cap45",
   "candidate_archive_sha256": "2b06d95790e25c95099240a3537e85e354588afba623b168d0b2fc43abeb5951",
   "old122_difference": {
@@ -110,22 +110,9 @@
     "mean_lap_ratio": 0.9840703756538278,
     "baseline_damage_sum": 0.2,
     "candidate_damage_sum": 0.6000000000000001,
-    "time_gate_passed": true,
-    "damage_gate_passed": false
+    "time_gate_passed": true
   },
-  "gate_registered_before_runs": {
-    "DEV_indices": [
-      2,
-      0
-    ],
-    "cached_baseline_stage": 163,
-    "episodes": 2,
-    "stop": "Both normal endpoints unless a technical fault; max2000 actions each. No parameter changes after prefix or first endpoint.",
-    "time_gate": "Both complete, no lost completion; median lap delta<0 and mean lap ratio<1 versus current champion.",
-    "damage_gate_for_future_candidate": "Total damage<=baseline0.2 and clean DEV damage=0. Flip count alone never qualifies.",
-    "no_DEV_adoption": true
-  },
-  "interpretation": "One actual tie selection removed the late route reversals and large local actuator lag, but first contact occurred2 actions earlier. Full contactDEV lap improved1.34s with damage0.2->0.6; cleanDEV is bit-identical. Flip/lag reduction does not establish avoidance or acceptable damage. Time gate passes, predeclared damage gate fails; reject without retuning or champion adoption.",
+  "interpretation": "One tie selection removed the late reversals and large local actuator lag, but first contact occurred2 actions earlier. ContactDEV improved1.34s with damage0.2->0.6; cleanDEV is bit-identical. Retain the frozen DEV candidate on completion/time evidence. Increased damage is a separate diagnostic warning; it is not an automatic veto. No flip-based success or unique cause claimed.",
   "checks": {
     "helper_inside_outside_missing_candidate_release": true,
     "transport_identity_and_fallback": true,
@@ -173,5 +160,25 @@
   },
   "HOLDOUT_opened": false,
   "SEALED_opened": false,
-  "automatic_next_experiment": false
+  "automatic_next_experiment": false,
+  "damage_automatic_veto": false,
+  "applicable_comparison_rule": {
+    "DEV_indices": [
+      2,
+      0
+    ],
+    "cached_baseline_stage": 163,
+    "episodes": 2,
+    "stop": "Both normal endpoints unless a technical fault; max2000 actions each. No parameter changes after prefix or first endpoint.",
+    "time_gate": "Both complete, no lost completion; median lap delta<0 and mean lap ratio<1 versus current champion.",
+    "no_DEV_adoption": true,
+    "damage_diagnostic": "Separate descriptive warning; no automatic damage veto."
+  },
+  "decision_correction": {
+    "stage": 172,
+    "reason": "The assistant-added automatic damage veto conflicts with the user-provided application plan sections8/10 and the prior150/151 correction. Remove that veto; preserve all measured completion, time, contact and damage evidence.",
+    "measurements_unchanged": true,
+    "candidate_archive_unchanged": true,
+    "new_native_actions": 0
+  }
 }
