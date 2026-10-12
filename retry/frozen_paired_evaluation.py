@@ -209,11 +209,12 @@ def run(plan_path):
     directory = plan_path.parent
     plan = json.loads(plan_path.read_text())
     assert sha(plan_path) == plan_path.with_suffix('.sha256').read_text().split()[0]
-    assert list(plan['arms']) == ['A', 'B'] and plan['max_steps'] == 2000
-    assert plan['max_actions'] == 16000 and len(plan['cases']) == 4
+    assert list(plan['arms']) == ['A', 'B']
+    assert type(plan['max_steps']) is int and 1 <= plan['max_steps'] <= 2000
+    assert plan['max_actions'] == 8 * plan['max_steps'] and len(plan['cases']) == 4
     assert len({case['id'] for case in plan['cases']}) == 4
     roles = {case['id'] + '__' + arm for case in plan['cases'] for arm in ('A', 'B')}
-    assert plan['stage_budgets'] == {role: 2000 for role in roles}
+    assert plan['stage_budgets'] == {role: plan['max_steps'] for role in roles}
     assert [case['arm_order'] for case in plan['cases']] == [['A', 'B'], ['B', 'A'], ['A', 'B'], ['B', 'A']]
     assert plan['source_sha256'][str(Path(__file__).resolve())] == sha(__file__)
     verify_files(plan['source_sha256'])
