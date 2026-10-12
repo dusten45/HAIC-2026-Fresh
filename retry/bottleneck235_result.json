@@ -1,0 +1,195 @@
+{
+  "stage": 235,
+  "status": "READ_ONLY_CURRENT232_DEV_TIME_DIAGNOSIS",
+  "cases": {
+    "F0": {
+      "centerline_length_m": 1144.4999999998456,
+      "centerline_assumption_mean_speed_for_10s_m_s": 114.44999999998456,
+      "centerline_at_policy_target45_seconds": 25.4333333333299,
+      "length_scope": "Closed storedDEV centerline, not shortest legal route or required actual travel distance.",
+      "official_lap_s": 27.4,
+      "raw_step_ticks": 1371,
+      "naive_wrapper_count_seconds": 27.44,
+      "raw_wrapper_endpoint_seconds": 27.42,
+      "finish_vs_raw_endpoint_seconds": 0.020000000000003126,
+      "detailed_policy_telemetry_available": false,
+      "actual_distance_or_speed_or_pedal_partition": null,
+      "missing": "232F0smoke retained endpoint/timing only. No actual trajectory/speed/commands; do not substitute234changedsteering or230LOO/221GT.",
+      "centerline_assumption_current_mean_speed_m_s": 41.7700729926951
+    },
+    "F1": {
+      "centerline_length_m": 1050.0,
+      "centerline_assumption_mean_speed_for_10s_m_s": 105.0,
+      "centerline_at_policy_target45_seconds": 23.333333333333332,
+      "length_scope": "Closed storedDEV centerline, not shortest legal route or required actual travel distance.",
+      "official_lap_s": 25.4,
+      "detailed_policy_telemetry_available": true,
+      "recorded_wrapper_steps": 318,
+      "raw_step_ticks": 1271,
+      "raw_reset_ticks": 51,
+      "official_finish_ticks": 1270,
+      "naive_wrapper_count_seconds": 25.44,
+      "raw_wrapper_endpoint_seconds": 25.42,
+      "raw_endpoint_minus_finish_s": 0.020000000000003126,
+      "finish_time_tick_consistency": true,
+      "weighted_partition_seconds": 25.4,
+      "sampled_actual_path_chord_m": 1044.4631871048994,
+      "trapezoid_speed_integral_m": 1044.2274026035539,
+      "right_endpoint_speed_integral_m": 1045.972296651593,
+      "trapezoid_minus_chord_m": -0.23578450134550621,
+      "full_postfinish_sample_chord_m": 1045.3395576276932,
+      "path_distance_scope": "4rawtick position chords, last3rawtick interval linearly trimmed to officialcenterline tick. Approximate actualpath; no perrawtick trajectories, not exact arc length or shortestroute.",
+      "sampled_actual_path_required_mean_speed_for10s_m_s": 104.44631871048993,
+      "current_sampled_path_mean_speed_m_s": 41.120597917515724,
+      "required_current_speed_factor": 2.54,
+      "speed_m_s": {
+        "min": 2.5244341843064255,
+        "p10": 34.093104150058636,
+        "median": 43.09503272865941,
+        "p90": 46.96751993952386,
+        "p95": 47.229067948610364,
+        "max": 48.19031645571815,
+        "time_weighted_mean": 41.11131506313205
+      },
+      "gas": {
+        "min": 0.05362679436802864,
+        "p10": 0.22103741765022278,
+        "median": 0.3964901268482208,
+        "p90": 0.4728815257549286,
+        "p95": 0.4930119514465332,
+        "max": 0.5249692797660828,
+        "time_weighted_mean": 0.36512422321114957
+      },
+      "brake": {
+        "min": 0.002078656805679202,
+        "p10": 0.021219005808234215,
+        "median": 0.06024705618619919,
+        "p90": 0.11402793973684311,
+        "p95": 0.13120771944522858,
+        "max": 0.23725077509880066,
+        "time_weighted_mean": 0.06460511983394272
+      },
+      "positive_gas_brake_overlap_seconds": 25.4,
+      "positive_overlap_fraction": 1.0,
+      "both_pedals_over005_seconds": 17.04000000000001,
+      "both_pedals_over005_fraction": 0.6708661417322839,
+      "classifications": {
+        "curve_abs_geometry_curvature_at_least": 0.0125,
+        "curvature_window": "neareststoredGT segment, headingchange across\u00b13segments /arc distance",
+        "low_speed_less_than": 40.5,
+        "stationary_at_most": 0.001,
+        "causal_scope": "Descriptive proxies. Straightlow speed is not proven avoidable accelerationloss; curvelow speed is not proven necessarybraking. GTgeometrydiagnosis only."
+      },
+      "time_partitions": {
+        "stationary": {
+          "seconds": 0.0,
+          "fraction_of_official_time": 0.0,
+          "sampled_path_m": 0.0,
+          "mean_speed_m_s": null,
+          "mean_gas": null,
+          "mean_brake": null,
+          "decelerating_seconds": 0.0,
+          "significant_overlap_seconds": 0.0
+        },
+        "straight_low_speed_proxy": {
+          "seconds": 6.160000000000001,
+          "fraction_of_official_time": 0.24251968503937013,
+          "sampled_path_m": 207.49429296900976,
+          "mean_speed_m_s": 33.57546462417617,
+          "mean_gas": 0.38846296425183086,
+          "mean_brake": 0.05413479745303363,
+          "decelerating_seconds": 2.08,
+          "significant_overlap_seconds": 2.399999999999995
+        },
+        "curve_low_speed_proxy": {
+          "seconds": 2.6399999999999952,
+          "fraction_of_official_time": 0.10393700787401557,
+          "sampled_path_m": 95.52908943161998,
+          "mean_speed_m_s": 36.309777841130774,
+          "mean_gas": 0.2513769375103889,
+          "mean_brake": 0.08460192760509078,
+          "decelerating_seconds": 2.24,
+          "significant_overlap_seconds": 2.2399999999999984
+        },
+        "other_moving": {
+          "seconds": 16.6,
+          "fraction_of_official_time": 0.6535433070866142,
+          "sampled_path_m": 741.4398047042696,
+          "mean_speed_m_s": 44.6713690974725,
+          "mean_gas": 0.3745535117315959,
+          "mean_brake": 0.06531027726469991,
+          "decelerating_seconds": 6.7200000000000015,
+          "significant_overlap_seconds": 12.400000000000016
+        }
+      },
+      "all_curved_seconds": 6.959999999999997,
+      "curved_decelerating_seconds": 5.7600000000000025,
+      "all_decelerating_seconds": 11.040000000000001,
+      "same_sampled_path_constant45_reference_s": 23.21029304677554,
+      "excess_over_reference45_s": 2.1897069532244586,
+      "excess_reference45_by_partition_s": {
+        "stationary": 0.0,
+        "straight_low_speed_proxy": 1.5490157117997843,
+        "curve_low_speed_proxy": 0.5171313459639957,
+        "other_moving": 0.12355989546067647
+      },
+      "reference_scope": "Same measuredpath atconstant45,no acceleration/curvature/collision/transient; counterfactual accounting only, not physicsbound.",
+      "collision_steps": [
+        201,
+        263,
+        264
+      ],
+      "final_damage": 0.6000000000000001,
+      "speed_distribution_scope": "Timeweighted means of two recordedendpoint speeds perwrapper interval.",
+      "recorded_endpoint_speed_max_m_s": 48.33044500370126
+    }
+  },
+  "physics": {
+    "engine_power": 40000.0,
+    "wheel_moment_of_inertia": 1.6,
+    "friction_limit_per_wheel_road": 400.0,
+    "grass_multiplier": 0.6,
+    "gas": "Rearwheels only; +0.1 maxincrease perrawtick, decreases immediately. Omega drive dt*40000*engine_multiplier*gas/1.6/(abs(omega)+5). This engine expression is not a fixedspeedclamp.",
+    "brake": "Allwheels; brake>=.9 locksomega to0, otherwise perrawtick omega subtracts min(absomega,15*brake), applied afterengine. Positivegas/brake oppose eachother, but cancellationcost notidentifiable fromcommand/speedlogs alone.",
+    "tire_force": "Perwheel longitudinal+lateral vector capped at400*road_friction*grip; grassbaseline240*grip. Coupled friction budget, not direct velocitybound.",
+    "steering": "Frontwheel joint angle\u00b1.4; motorspeed<=3rad/s*steering_multiplier, maxmotortorque64.8. Policy rawclip\u00b1.4 and0.8/0.2smoothing are additional control settings.",
+    "damage": "Grip=max(.6,1-.5damage), engine/steering=max(.8,1-.25damage). F1finaldamage.6 -> grip.7, engine/steering.85.",
+    "rigorous_global_speed_bound_or_route_time_lower_bound_proved": false,
+    "conclusion": "No global speedupperbound or shortestlegalpath lowerbound derived here. CenterlineL/45 is only a policy-reference calculation; empiricalmaxspeed is not physicalupperbound. No claim that10seconds is impossible.",
+    "source_sha256": {
+      "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+      "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69",
+      "core/finish_line.py": "7c16dda1378dcd65aed46d9da96608aa055124c2f27d8fb00c309078361d4204",
+      "env_wrapper.py": "8687215412da0a1f34534623d5050030d85c629a70cb922e9d2199c513a3941e",
+      "damage.py": "b74d15bd2de623cea1345e0469625d4b58f1634d073151a35edf1f05ea35fa30"
+    }
+  },
+  "next_single_test_basis": {
+    "one_next_falsification": "If separately authorized, test one legal output-only mutual-exclusion rule: when frozenhead gas>0, set returnedbrake=0; otherwise keepbrake. Preservesteering,features,head,normandnominalmemory. ChooseknownDEV F1 withexistingbaseline, one fixedcandidate, no threshold tuning.",
+    "rationale": "Simultaneouspedals onthecurrentactualF1trajectory can oppose wheelspin inofficialsource; quantify straightlow-speed andcurve overlap before changing capacity orpreview again. Notproof ofavoidabletime, and removingbrake mayincreasecurve/contactfailure.",
+    "what_would_refute": "Lostofficialcompletion or commoncompletedtime notimproved under the same fixedconditions; damage remainsdiagnostic. No universalperformanceclaim or newminimumgain.",
+    "proposed_experiment_executed": false,
+    "new_candidate_or_model_created": false
+  },
+  "current_champion_changed": false,
+  "long_preview234_line_terminated": true,
+  "H24_line_terminated": true,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "native_actions": 0,
+  "model_queries": 0,
+  "new_training_data": 0,
+  "cost": {
+    "stage": 235,
+    "read_and_analysis_wall_s": 1.8059784079960082,
+    "read_and_analysis_CPU_s": 1.8115271130000001,
+    "native_actions": 0,
+    "model_queries": 0,
+    "policy_actor_calls": 0,
+    "new_paid_resources": 0,
+    "research_remaining": 443,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "scope": "Timed script reads/analysis. Preliminaryinteractiveinspection wall/CPU notseparatelycaptured; no fullturncost claim."
+  }
+}
