@@ -1,0 +1,789 @@
+{
+  "stage": 225,
+  "status": "FOUR_FIXED_LEGAL_CLOSED_LOOP_DEV_RUNS_FINISHED",
+  "aggregate": {
+    "registered_roads": 4,
+    "executed_roads": 4,
+    "historical_control_qualified_roads": 4,
+    "historical_champion_completed": 4,
+    "student_completed": 1,
+    "common_completed": 1,
+    "student_minus_historical_lap_ms": [
+      -5800
+    ],
+    "mean_common_lap_delta_ms": -5800.0,
+    "technical_error": null,
+    "unexecuted_roads": []
+  },
+  "cases": {
+    "F0": {
+      "historical_control_201A_qualified": true,
+      "historical_control_not_rerun": true,
+      "cached_champion": {
+        "completed": true,
+        "lap_ms": 37000,
+        "damage": 0.0,
+        "unique_tiles": 326,
+        "total_tiles": 326
+      },
+      "student": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 31200,
+        "damage": 0.2,
+        "retire_reason": null,
+        "unique_tiles": 326,
+        "total_tiles": 326,
+        "native_actions": 391,
+        "technical_error": null
+      },
+      "common_completed": true,
+      "student_minus_historical_lap_ms": -5800,
+      "endpoint": {
+        "action": 391,
+        "final_contiguous_tiles": 326,
+        "final_unvisited_tile_count": 0,
+        "last_new_tile_action": 387,
+        "longest_no_new_tile_actions": 4,
+        "final_no_new_tile_counter": 4,
+        "final_speed_m_s": 41.97414609604792,
+        "final_wheels_on_road": 4
+      },
+      "command_distribution": {
+        "channel_order": [
+          "steering",
+          "gas",
+          "brake"
+        ],
+        "student": {
+          "count": 391,
+          "mean": [
+            -0.0007636042428202927,
+            0.2786998748779297,
+            0.05511102080345154
+          ],
+          "std": [
+            0.10805609822273254,
+            0.11015000194311142,
+            0.039922282099723816
+          ],
+          "p10": [
+            -0.1626686006784439,
+            0.1326703578233719,
+            0.007246260531246662
+          ],
+          "p50": [
+            -0.005012153182178736,
+            0.28232893347740173,
+            0.0463881753385067
+          ],
+          "p90": [
+            0.16202358901500702,
+            0.4365657866001129,
+            0.11275910586118698
+          ],
+          "gas_brake_both_positive_fraction": 0.9360613810741688,
+          "gas_zero_fraction": 0.005115089514066497,
+          "brake_zero_fraction": 0.058823529411764705
+        },
+        "same_observation_nominal": {
+          "count": 391,
+          "mean": [
+            0.003514862386509776,
+            0.11132978647947311,
+            0.22177337110042572
+          ],
+          "std": [
+            0.17458848655223846,
+            0.19105806946754456,
+            0.2091156542301178
+          ],
+          "p10": [
+            -0.2625206708908081,
+            0.0,
+            0.0
+          ],
+          "p50": [
+            1.054526149561752e-12,
+            0.0,
+            0.15000000596046448
+          ],
+          "p90": [
+            0.28893160820007324,
+            0.5,
+            0.5
+          ],
+          "gas_brake_both_positive_fraction": 0.0,
+          "gas_zero_fraction": 0.690537084398977,
+          "brake_zero_fraction": 0.309462915601023
+        },
+        "offline224_predictions_on_teacher_trajectory": {
+          "count": 368,
+          "mean": [
+            -0.00860417727380991,
+            0.2620980739593506,
+            0.057717014104127884
+          ],
+          "std": [
+            0.09774881601333618,
+            0.11517788469791412,
+            0.050765760242938995
+          ],
+          "p10": [
+            -0.1594492167234421,
+            0.10675816461443902,
+            0.0
+          ],
+          "p50": [
+            -0.006010752171278,
+            0.2586306482553482,
+            0.04911172017455101
+          ],
+          "p90": [
+            0.10740943402051926,
+            0.4307357400655747,
+            0.13435434252023698
+          ],
+          "gas_brake_both_positive_fraction": 0.7961956521739131,
+          "gas_zero_fraction": 0.02717391304347826,
+          "brake_zero_fraction": 0.18478260869565216
+        },
+        "residual_bound_hit_fraction_by_channel": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "feature_distribution": {
+        "online": {
+          "mean_HUD_speed": 37.40113010865102,
+          "mean_previous_nominal_steer": 0.003512127202337996,
+          "row_any_feature_outside_train_range_fraction": 0.028132992327365727,
+          "max_abs_train_standardized_feature": 5.328132696861393
+        },
+        "offline224_teacher_trajectory": {
+          "mean_HUD_speed": 38.73597817147245,
+          "mean_previous_nominal_steer": -0.019041673377745455,
+          "row_any_feature_outside_train_range_fraction": 0.057065217391304345,
+          "max_abs_train_standardized_feature": 31.984371183438952
+        },
+        "scope": "PixelderivedHUDspeed andnormal24internalnominalsteer; GTphysics notfeatures; truncatedfailureprefixnotmatchedroadcoverage."
+      },
+      "inference": {
+        "act_including_IPC_ms": {
+          "count": 391,
+          "median": 8.192459994461387,
+          "p95": 15.634682000381872,
+          "max": 22.47603499563411
+        },
+        "total_student_compute_ms": {
+          "count": 391,
+          "median": 5.472780991112813,
+          "p95": 12.27726750948932,
+          "max": 18.59629401587881
+        },
+        "head_only_ms": {
+          "count": 391,
+          "median": 0.03093699342571199,
+          "p95": 0.1135414931923151,
+          "max": 0.42382098035886884
+        },
+        "cold_start_ms": 360.87771400343627,
+        "reset_including_IPC_ms": 3.753158001927659,
+        "CPU_s": 3.309277,
+        "actor_peak_RSS_mib": 47.16015625
+      },
+      "nominal_memory_contract_verified": true
+    },
+    "F1": {
+      "historical_control_201A_qualified": true,
+      "historical_control_not_rerun": true,
+      "cached_champion": {
+        "completed": true,
+        "lap_ms": 34080,
+        "damage": 0.2,
+        "unique_tiles": 299,
+        "total_tiles": 299
+      },
+      "student": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 0.8,
+        "retire_reason": "off_track",
+        "unique_tiles": 190,
+        "total_tiles": 299,
+        "native_actions": 302,
+        "technical_error": null
+      },
+      "common_completed": false,
+      "student_minus_historical_lap_ms": null,
+      "endpoint": {
+        "action": 302,
+        "final_contiguous_tiles": 190,
+        "final_unvisited_tile_count": 109,
+        "last_new_tile_action": 201,
+        "longest_no_new_tile_actions": 101,
+        "final_no_new_tile_counter": 101,
+        "final_speed_m_s": 1.699533767775385e-05,
+        "final_wheels_on_road": 4
+      },
+      "command_distribution": {
+        "channel_order": [
+          "steering",
+          "gas",
+          "brake"
+        ],
+        "student": {
+          "count": 302,
+          "mean": [
+            -0.0632728710770607,
+            0.346767395734787,
+            0.035856299102306366
+          ],
+          "std": [
+            0.10285569727420807,
+            0.0861443355679512,
+            0.035491276532411575
+          ],
+          "p10": [
+            -0.14739994704723358,
+            0.24959184974431992,
+            0.0
+          ],
+          "p50": [
+            -0.03226320818066597,
+            0.33209362626075745,
+            0.02945111971348524
+          ],
+          "p90": [
+            0.04929174520075322,
+            0.4380625784397125,
+            0.09277820736169817
+          ],
+          "gas_brake_both_positive_fraction": 0.6622516556291391,
+          "gas_zero_fraction": 0.0,
+          "brake_zero_fraction": 0.33774834437086093
+        },
+        "same_observation_nominal": {
+          "count": 302,
+          "mean": [
+            -0.1445971429347992,
+            0.1869131177663803,
+            0.1495913416147232
+          ],
+          "std": [
+            0.20164163410663605,
+            0.2033846527338028,
+            0.19750994443893433
+          ],
+          "p10": [
+            -0.4000000059604645,
+            0.0,
+            0.0
+          ],
+          "p50": [
+            -0.05049343593418598,
+            0.006065343040972948,
+            0.01248276885598898
+          ],
+          "p90": [
+            0.08230411708354965,
+            0.458374559879303,
+            0.5
+          ],
+          "gas_brake_both_positive_fraction": 0.0,
+          "gas_zero_fraction": 0.5,
+          "brake_zero_fraction": 0.5
+        },
+        "offline224_predictions_on_teacher_trajectory": {
+          "count": 334,
+          "mean": [
+            -0.015332706272602081,
+            0.327099084854126,
+            0.054268836975097656
+          ],
+          "std": [
+            0.11241163313388824,
+            0.08328282833099365,
+            0.03368562087416649
+          ],
+          "p10": [
+            -0.1348303586244583,
+            0.24067503362894058,
+            0.010445601958781484
+          ],
+          "p50": [
+            -0.015247260686010122,
+            0.303164005279541,
+            0.05670224130153656
+          ],
+          "p90": [
+            0.10760276094079016,
+            0.45199671685695647,
+            0.09671731442213058
+          ],
+          "gas_brake_both_positive_fraction": 0.9820359281437125,
+          "gas_zero_fraction": 0.0,
+          "brake_zero_fraction": 0.017964071856287425
+        },
+        "residual_bound_hit_fraction_by_channel": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "feature_distribution": {
+        "online": {
+          "mean_HUD_speed": 27.895506354669713,
+          "mean_previous_nominal_steer": -0.14327254929007852,
+          "row_any_feature_outside_train_range_fraction": 0.33112582781456956,
+          "max_abs_train_standardized_feature": 9.398841138223176
+        },
+        "offline224_teacher_trajectory": {
+          "mean_HUD_speed": 38.95499887804371,
+          "mean_previous_nominal_steer": -0.03236837721070856,
+          "row_any_feature_outside_train_range_fraction": 0.011976047904191617,
+          "max_abs_train_standardized_feature": 10.026894818778985
+        },
+        "scope": "PixelderivedHUDspeed andnormal24internalnominalsteer; GTphysics notfeatures; truncatedfailureprefixnotmatchedroadcoverage."
+      },
+      "inference": {
+        "act_including_IPC_ms": {
+          "count": 302,
+          "median": 7.8664025058969855,
+          "p95": 13.549845507077407,
+          "max": 21.55511500313878
+        },
+        "total_student_compute_ms": {
+          "count": 302,
+          "median": 5.562366495723836,
+          "p95": 10.875399492215365,
+          "max": 19.34971401351504
+        },
+        "head_only_ms": {
+          "count": 302,
+          "median": 0.029530012398026884,
+          "p95": 0.11438849469413981,
+          "max": 0.31259399838745594
+        },
+        "cold_start_ms": 167.1166820160579,
+        "reset_including_IPC_ms": 2.1202180068939924,
+        "CPU_s": 2.272726,
+        "actor_peak_RSS_mib": 47.15625
+      },
+      "nominal_memory_contract_verified": true
+    },
+    "F2": {
+      "historical_control_201A_qualified": true,
+      "historical_control_not_rerun": true,
+      "cached_champion": {
+        "completed": true,
+        "lap_ms": 31600,
+        "damage": 0.0,
+        "unique_tiles": 289,
+        "total_tiles": 289
+      },
+      "student": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "retire_reason": "crash",
+        "unique_tiles": 71,
+        "total_tiles": 289,
+        "native_actions": 77,
+        "technical_error": null
+      },
+      "common_completed": false,
+      "student_minus_historical_lap_ms": null,
+      "endpoint": {
+        "action": 77,
+        "final_contiguous_tiles": 71,
+        "final_unvisited_tile_count": 218,
+        "last_new_tile_action": 75,
+        "longest_no_new_tile_actions": 3,
+        "final_no_new_tile_counter": 2,
+        "final_speed_m_s": 6.5161308692213495,
+        "final_wheels_on_road": 4
+      },
+      "command_distribution": {
+        "channel_order": [
+          "steering",
+          "gas",
+          "brake"
+        ],
+        "student": {
+          "count": 77,
+          "mean": [
+            0.013568454422056675,
+            0.3157072067260742,
+            0.05008307099342346
+          ],
+          "std": [
+            0.12169700115919113,
+            0.05782211199402809,
+            0.0357670933008194
+          ],
+          "p10": [
+            -0.12304521650075911,
+            0.255247837305069,
+            0.007560159638524056
+          ],
+          "p50": [
+            -0.0125934649258852,
+            0.3037821650505066,
+            0.04355979338288307
+          ],
+          "p90": [
+            0.13797524571418762,
+            0.4059499621391297,
+            0.10408277958631527
+          ],
+          "gas_brake_both_positive_fraction": 0.987012987012987,
+          "gas_zero_fraction": 0.0,
+          "brake_zero_fraction": 0.012987012987012988
+        },
+        "same_observation_nominal": {
+          "count": 77,
+          "mean": [
+            0.0006334386998787522,
+            0.11320256441831589,
+            0.20893961191177368
+          ],
+          "std": [
+            0.1333455741405487,
+            0.18913616240024567,
+            0.21325409412384033
+          ],
+          "p10": [
+            -0.1362299919128418,
+            0.0,
+            0.0
+          ],
+          "p50": [
+            0.0,
+            0.0,
+            0.11131900548934937
+          ],
+          "p90": [
+            0.1491165399551393,
+            0.5,
+            0.5
+          ],
+          "gas_brake_both_positive_fraction": 0.0,
+          "gas_zero_fraction": 0.6753246753246753,
+          "brake_zero_fraction": 0.3246753246753247
+        },
+        "offline224_predictions_on_teacher_trajectory": {
+          "count": 337,
+          "mean": [
+            -0.010923675261437893,
+            0.31604811549186707,
+            0.05340195447206497
+          ],
+          "std": [
+            0.10419563949108124,
+            0.07361067831516266,
+            0.043632566928863525
+          ],
+          "p10": [
+            -0.15837778449058532,
+            0.2291510969400406,
+            0.003001357428729534
+          ],
+          "p50": [
+            -0.00814432930201292,
+            0.29716721177101135,
+            0.04868772625923157
+          ],
+          "p90": [
+            0.09449333250522614,
+            0.43823820948600767,
+            0.10435190200805666
+          ],
+          "gas_brake_both_positive_fraction": 0.9228486646884273,
+          "gas_zero_fraction": 0.0,
+          "brake_zero_fraction": 0.0771513353115727
+        },
+        "residual_bound_hit_fraction_by_channel": [
+          0.0,
+          0.0,
+          0.012987012987012988
+        ]
+      },
+      "feature_distribution": {
+        "online": {
+          "mean_HUD_speed": 38.76859372573669,
+          "mean_previous_nominal_steer": -0.00453469061219784,
+          "row_any_feature_outside_train_range_fraction": 0.0,
+          "max_abs_train_standardized_feature": 4.319244009329718
+        },
+        "offline224_teacher_trajectory": {
+          "mean_HUD_speed": 37.09546249585357,
+          "mean_previous_nominal_steer": -0.037155536027791716,
+          "row_any_feature_outside_train_range_fraction": 0.01483679525222552,
+          "max_abs_train_standardized_feature": 32.46536616149623
+        },
+        "scope": "PixelderivedHUDspeed andnormal24internalnominalsteer; GTphysics notfeatures; truncatedfailureprefixnotmatchedroadcoverage."
+      },
+      "inference": {
+        "act_including_IPC_ms": {
+          "count": 77,
+          "median": 7.743747002677992,
+          "p95": 13.354736391920596,
+          "max": 13.972434011520818
+        },
+        "total_student_compute_ms": {
+          "count": 77,
+          "median": 5.394491017796099,
+          "p95": 10.181917401496321,
+          "max": 11.483943002531305
+        },
+        "head_only_ms": {
+          "count": 77,
+          "median": 0.030475988751277328,
+          "p95": 0.0722773955203593,
+          "max": 0.2350569993723184
+        },
+        "cold_start_ms": 186.10671398346312,
+        "reset_including_IPC_ms": 2.621132996864617,
+        "CPU_s": 0.7325769999999999,
+        "actor_peak_RSS_mib": 47.1328125
+      },
+      "nominal_memory_contract_verified": true
+    },
+    "F3": {
+      "historical_control_201A_qualified": true,
+      "historical_control_not_rerun": true,
+      "cached_champion": {
+        "completed": true,
+        "lap_ms": 34980,
+        "damage": 0.4,
+        "unique_tiles": 319,
+        "total_tiles": 319
+      },
+      "student": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "retire_reason": "crash",
+        "unique_tiles": 77,
+        "total_tiles": 319,
+        "native_actions": 85,
+        "technical_error": null
+      },
+      "common_completed": false,
+      "student_minus_historical_lap_ms": null,
+      "endpoint": {
+        "action": 85,
+        "final_contiguous_tiles": 77,
+        "final_unvisited_tile_count": 242,
+        "last_new_tile_action": 83,
+        "longest_no_new_tile_actions": 3,
+        "final_no_new_tile_counter": 2,
+        "final_speed_m_s": 3.5799171570079915,
+        "final_wheels_on_road": 4
+      },
+      "command_distribution": {
+        "channel_order": [
+          "steering",
+          "gas",
+          "brake"
+        ],
+        "student": {
+          "count": 85,
+          "mean": [
+            -0.0009912062669172883,
+            0.32019761204719543,
+            0.05331304669380188
+          ],
+          "std": [
+            0.09814469516277313,
+            0.05718661844730377,
+            0.03642689436674118
+          ],
+          "p10": [
+            -0.06817701756954193,
+            0.2506904602050781,
+            0.011355986446142196
+          ],
+          "p50": [
+            -0.01046891137957573,
+            0.31004998087882996,
+            0.04319043457508087
+          ],
+          "p90": [
+            0.0876848205924036,
+            0.41904428601264954,
+            0.11672137379646302
+          ],
+          "gas_brake_both_positive_fraction": 1.0,
+          "gas_zero_fraction": 0.0,
+          "brake_zero_fraction": 0.0
+        },
+        "same_observation_nominal": {
+          "count": 85,
+          "mean": [
+            -0.005542575381696224,
+            0.08919726312160492,
+            0.18808001279830933
+          ],
+          "std": [
+            0.10436686873435974,
+            0.16783684492111206,
+            0.18983319401741028
+          ],
+          "p10": [
+            -0.14898059368133545,
+            0.0,
+            0.0
+          ],
+          "p50": [
+            4.252613507560454e-06,
+            0.0,
+            0.15000000596046448
+          ],
+          "p90": [
+            0.09158249199390417,
+            0.5,
+            0.5
+          ],
+          "gas_brake_both_positive_fraction": 0.0,
+          "gas_zero_fraction": 0.7058823529411765,
+          "brake_zero_fraction": 0.29411764705882354
+        },
+        "offline224_predictions_on_teacher_trajectory": {
+          "count": 353,
+          "mean": [
+            -0.019296640530228615,
+            0.3354049324989319,
+            0.046763189136981964
+          ],
+          "std": [
+            0.07127341628074646,
+            0.08145928382873535,
+            0.03604349121451378
+          ],
+          "p10": [
+            -0.11007483452558517,
+            0.2476681351661682,
+            0.0035446666181087496
+          ],
+          "p50": [
+            -0.013102012686431408,
+            0.3113103210926056,
+            0.03906184062361717
+          ],
+          "p90": [
+            0.05622070953249932,
+            0.4523767948150635,
+            0.09951428025960923
+          ],
+          "gas_brake_both_positive_fraction": 0.9206798866855525,
+          "gas_zero_fraction": 0.0,
+          "brake_zero_fraction": 0.07932011331444759
+        },
+        "residual_bound_hit_fraction_by_channel": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "feature_distribution": {
+        "online": {
+          "mean_HUD_speed": 38.21211210860866,
+          "mean_previous_nominal_steer": -0.0027027656124833945,
+          "row_any_feature_outside_train_range_fraction": 0.011764705882352941,
+          "max_abs_train_standardized_feature": 8.16686118050666
+        },
+        "offline224_teacher_trajectory": {
+          "mean_HUD_speed": 38.209257530556755,
+          "mean_previous_nominal_steer": -0.033241092875377194,
+          "row_any_feature_outside_train_range_fraction": 0.0,
+          "max_abs_train_standardized_feature": 2.9782435554377944
+        },
+        "scope": "PixelderivedHUDspeed andnormal24internalnominalsteer; GTphysics notfeatures; truncatedfailureprefixnotmatchedroadcoverage."
+      },
+      "inference": {
+        "act_including_IPC_ms": {
+          "count": 85,
+          "median": 8.292104001156986,
+          "p95": 11.797450203448534,
+          "max": 18.325206998270005
+        },
+        "total_student_compute_ms": {
+          "count": 85,
+          "median": 5.6689250050112605,
+          "p95": 9.11048180423677,
+          "max": 15.160984999965876
+        },
+        "head_only_ms": {
+          "count": 85,
+          "median": 0.03147800453007221,
+          "p95": 0.11568940244615067,
+          "max": 0.21590699907392263
+        },
+        "cold_start_ms": 232.5716229970567,
+        "reset_including_IPC_ms": 2.7299099892843515,
+        "CPU_s": 0.836765,
+        "actor_peak_RSS_mib": 47.08984375
+      },
+      "nominal_memory_contract_verified": true
+    }
+  },
+  "cost": {
+    "stage": 225,
+    "at_utc": "2026-10-12T19:59:17.437873+00:00",
+    "native_cap": 2400,
+    "new_wrapper_actions": 855,
+    "wall_s": 38.41884825399029,
+    "evaluator_CPU_s": 31.213403089000003,
+    "actor_CPU_s": 7.151345,
+    "model_physics_ticks": 0,
+    "model_CPU_s": 0,
+    "model_queries": 0,
+    "training_updates": 0,
+    "raw_step_ticks": 3417,
+    "raw_reset_ticks": 204,
+    "sum_simulator_step_wall_s": 27.657776997162728,
+    "read_only_GT_diagnostic_CPU_s": 0.1442391819999469,
+    "read_only_GT_diagnostic_wall_s": 0.150267321994761,
+    "total_student_compute_ms": {
+      "count": 855,
+      "median": 5.522885010577738,
+      "p95": 11.606700607808307,
+      "max": 19.34971401351504
+    },
+    "incremental_head_compute_ms": {
+      "count": 855,
+      "median": 0.030566006898880005,
+      "p95": 0.11419998190831392,
+      "max": 0.42382098035886884
+    },
+    "actor_peak_RSS_mib": 47.16015625,
+    "evaluator_peak_RSS_mib": 82.28125,
+    "private_command_feature_diagnostic_bytes": 1207101,
+    "zero_native_qualification": {
+      "stage": 225,
+      "native_actions": 0,
+      "wall_s": 1.4809504669974558
+    },
+    "B_operating_cap": 834000,
+    "actual_cumulative_wrapper_actions": 747898,
+    "research_remaining": 2102,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "accounting": "Fouronce600cappedclosedloopfrozenheads, cached201Acontrolsnotrerun. Officialdefault5sassert unchanged,no offline GTtiming flag. Diagnosticsreadonly, GTmodels0, head/clipunchanged, no retraining/sweeps."
+  },
+  "control_scope": "Historical201Anormal24control withsameexactinitial/champion,notcontemporaneouspairedrerun. 221GTteacher notlegalcontrol.",
+  "memory_scope": "Originalnominalsteeringmemory preserved; executedresidualcontrolsnotinjected. Pixelhistoryonly, noGT/teacherpriorcontrols.",
+  "judgment": "Keepchampion: studentlost3completions;F0lapgaincannotcompensateforDNF. Offline224imitationgain didnotgeneralizetoallclosedloopDEVroads.",
+  "champion_changed": false,
+  "HOLDOUT_used": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
