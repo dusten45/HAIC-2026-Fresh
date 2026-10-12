@@ -93,6 +93,30 @@ def retained_candidate(previous, step, nominal, horizon):
                 origin_step=previous['start_step'], expires_before=previous['start_step']+horizon)
 
 
+class DiagnosticStop(RuntimeError):
+    """A preregistered local gate stopped without another native action."""
+
+
+def relaxed_selection(scores, specifications):
+    """Remove both progress tests, keeping contact, terminal, wheels and rank.
+
+    maximum_off_track_counter measures consecutive actions without new tiles,
+    not geometric road departure. Dropping only new_tiles>=1 would be redundant
+    at a complete 12-action horizon while retaining the <=5 stagnation limit.
+    """
+    eligible = [name for name, s in scores.items()
+                if not s['risk'] and not s['terminal'] and s['road_wheels'] >= 2]
+    return sorted(eligible, key=lambda name: (-scores[name]['new_tiles'], -scores[name]['speed_m_s'],
+        sum(abs(v) for v in specifications[name]['steer_offsets']),
+        int(specifications[name]['brake_first_block']), name))
+
+
+def choose_with_fallback(scores, specifications, enabled):
+    original = select({n: s for n, s in scores.items() if not n.startswith('E')}, specifications)
+    relaxed = relaxed_selection(scores, specifications) if enabled and not original else []
+    return original, relaxed, original or relaxed
+
+
 def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
     from retry import diagnose, frozen_composite_runtime as runtime
     from retry import frozen_paired_evaluation as paired
@@ -105,7 +129,7 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
     assert all(len(controls([0., 0., 0.], s)) == horizon for s in specs.values())
     state = dict(calls=0, steps=0, feedback_calls=0, pending=[], selection=None,
                  contact_ids=set(), prediction_rows=[], selection_offset=0,
-                 previous_plan=None, mode='nominal_fallback')
+                 previous_plan=None, mode='nominal_fallback', progress_fallback_active=False)
     decisions, rows = [], []
     counterfactual = {}
     latencies, nominal_latencies, feedback_latencies = [], [], []
@@ -116,6 +140,14 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
             oracle_inputs_to_policy=True, GT_inputs_to_pixel_actor=False,
             GT_inputs_to_action_selector=True, future_actor_calls=0,
             own_action_feedback_calls=state['feedback_calls'], champion_promotion_allowed=False)
+        result['nominal_policy_calls'] = state['calls']
+        result['actor_cumulative_CPU_s'] = max(result.get('actor_cumulative_CPU_s', 0.), state.get('last_actor_CPU_s', 0.))
+        if state.get('diagnostic_stop') and result.get('error', '').startswith('DiagnosticStop:'):
+            result.pop('error')
+            result.update(diagnostic_stop=state['diagnostic_stop'], retire_reason=state['diagnostic_stop'],
+                completed=False, terminal_observed=False, censored=True,
+                unique_tiles=rows[-1]['unique_tiles'] if rows else 0,
+                damage=rows[-1]['damage'] if rows else 0, total_tiles=state.get('road_count', 0))
         return result
 
     def write(path, value, **kwargs):
@@ -154,7 +186,7 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
             after = truth(env)
             _, _, ended, truncated, info = result
             row = dict(step=state['steps'], action=action.tolist(), nominal_action=state['nominal'].tolist(),
-                mode=state['mode'],
+                mode=state['mode'], progress_fallback_intervention=state['progress_fallback_active'],
                 selected=state['selection'], collision=bool(info['collision']),
                 contact_obstacle_ids=sorted(state['contact_ids']), damage=after['damage'],
                 unique_tiles=after['unique_tiles'], speed_m_s=after['speed_m_s'],
@@ -176,6 +208,32 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                     ('action','nominal_action','collision','contact_obstacle_ids','damage','unique_tiles',
                      'speed_m_s','off_track_counter','wheel_road_contacts','raw_ticks','terminal')), 'Replay prefix differs'
             rows.append(row)
+            if replay is not None and replay.get('intervention') and row['mode'] == 'local_intervention':
+                local = [r for r in rows if r['mode'] == 'local_intervention']
+                if len(local) == replay['suffix_length'] or ended or truncated:
+                    completed = env.unwrapped.finish_time_s is not None
+                    risk = any(r['collision'] or r['contact_obstacle_ids'] for r in local)
+                    valid = (not risk and (completed or (len(local) == replay['suffix_length']
+                             and not ended and not truncated and row['wheel_road_contacts'] >= 2)))
+                    gate = dict(valid=valid, observed_actions=len(local), actual_contact=risk,
+                        actual_contact_steps=sum(bool(r['collision'] or r['contact_obstacle_ids']) for r in local),
+                        actual_completed=completed, actual_terminal=bool(ended or truncated),
+                        actual_new_tiles=row['unique_tiles']-counterfactual['snapshot']['unique_tiles'],
+                        actual_damage=row['damage'], actual_speed_m_s=row['speed_m_s'],
+                        actual_road_wheels=row['wheel_road_contacts'],
+                        actual_maximum_no_new_tile_actions=max(r['off_track_counter'] for r in local),
+                        predicted=counterfactual['scores'][counterfactual['selected']],
+                        tile_mismatch_steps=sum(r['unique_tiles'] != r['predicted_unique_tiles'] for r in local),
+                        position_error_m=distribution([r['position_error_m'] for r in local if r['position_error_m'] is not None]))
+                    state['local_gate'] = gate
+                    directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
+                    old_write(directory / 'local-intervention-result.json', gate, exclusive=True)
+                    if valid:
+                        state['replay_complete'] = True
+                    else:
+                        state['diagnostic_stop'] = 'local_predicted_safe_contact' if risk else 'local_safety_filter_mismatch'
+                    print('Local intervention gate: ' + str(dict(valid=valid, actions=len(local), contact=risk,
+                          new_tiles=gate['actual_new_tiles'], speed=gate['actual_speed_m_s'])), flush=True)
             return result
 
         env.reset, env.step = reset, step
@@ -188,8 +246,11 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
         def call(operation, observation):
             assert operation in ('reset', 'act')
             assert observation.shape == (4, 84, 84) and observation.dtype == np.float32
+            if operation == 'act' and state.get('diagnostic_stop'):
+                raise DiagnosticStop(state['diagnostic_stop'])
             before = time.perf_counter()
             response, nominal_ms = old_call(operation, observation)
+            state['last_actor_CPU_s'] = response['actor_cumulative_CPU_s']
             if operation == 'reset':
                 return response, nominal_ms
             nominal = runtime.validate_response(response, plan['arms'][arm], observation, 'act')
@@ -197,15 +258,16 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
             assert state['calls'] == state['steps'] + 1
             nominal_latencies.append(nominal_ms)
             state['nominal'] = nominal
-            replan = replay is None and (state['calls'] - 1) % interval == 0
-            if replay is not None:
+            active_replay = replay is not None and not state.get('replay_complete', False)
+            replan = not active_replay and (state['calls'] - 1) % interval == 0
+            if active_replay:
                 prefix_length = len(replay['prefix_rows'])
                 if state['calls'] <= prefix_length:
                     reference = replay['prefix_rows'][state['calls']-1]
                     assert np.array_equal(nominal, np.asarray(reference['nominal_action'], np.float32))
                     state['pending'] = [np.asarray(reference['action'], np.float32)]
                     state['mode'] = 'replay_prefix'
-                elif state['calls'] == prefix_length+1:
+                elif state['calls'] == prefix_length+1 and not replay.get('intervention'):
                     t = time.perf_counter()
                     snapshot = capture(state['env'])
                     capture_wall = time.perf_counter()-t
@@ -248,6 +310,40 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                                  prediction_rows=extra['rows'], selection_offset=0, mode='counterfactual_suffix')
                     directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
                     old_write(directory / 'counterfactual-prediction.json', counterfactual, exclusive=True)
+            if active_replay and replay.get('intervention') and state['calls'] == prefix_length+1:
+                t = time.perf_counter()
+                snapshot = capture(state['env'])
+                capture_wall = time.perf_counter()-t
+                assert digest(snapshot) == replay['snapshot_digest'], 'Local intervention GT boundary differs'
+                assert np.array_equal(nominal, np.asarray(replay['boundary_nominal'], np.float32))
+                state['road_count'] = snapshot['road_count']
+                cpu = time.process_time()
+                predicted = predict(snapshot, nominal, specs)
+                model_cpu = time.process_time()-cpu
+                scores = {n: endpoint(v['rows'], horizon, snapshot['unique_tiles']) for n,v in predicted['candidates'].items()}
+                assert {n:s for n,s in scores.items() if not n.startswith('E')} == replay['boundary_scores']
+                assert all(all(v['initialization'].values()) for v in predicted['candidates'].values())
+                original, relaxed, eligible = choose_with_fallback(scores, specs, True)
+                chosen = eligible[0] if eligible else None
+                counterfactual.update(snapshot=snapshot, initial_state_digest=digest(snapshot), prefix_actions=prefix_length,
+                    original_scores_identical=True, prediction=predicted, scores=scores, selected=chosen,
+                    original_eligible=original, relaxed_existing=relaxed_selection({n:s for n,s in scores.items() if not n.startswith('E')}, specs),
+                    relaxed_all=relaxed, frozen_before_actual_suffix=True)
+                decisions.append(dict(step=state['calls'], selected=chosen, eligible=eligible, original_eligible=original,
+                    progress_fallback_intervention=bool(not original and eligible), scores=scores, invalid_initializations=[],
+                    capture_wall_s=capture_wall, model_CPU_s=model_cpu, model_batch_wall_s=predicted['batch_wall_s'],
+                    reconstruction_wall_s=sum(v['reconstruction_wall_s'] for v in predicted['candidates'].values()),
+                    integration_wall_s=sum(v['integration_wall_s'] for v in predicted['candidates'].values()),
+                    model_physics_ticks=predicted['model_physics_ticks'], model_queries=len(predicted['candidates'])))
+                directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
+                old_write(directory / 'counterfactual-prediction.json', counterfactual, exclusive=True)
+                if chosen is None:
+                    state['diagnostic_stop'] = 'no_local_admissible_candidate'
+                    raise DiagnosticStop(state['diagnostic_stop'])
+                actions = controls(nominal, specs[chosen])
+                state.update(pending=actions[:replay['suffix_length']], selection=chosen, prediction_rows=predicted['candidates'][chosen]['rows'],
+                    selection_offset=0, mode='local_intervention', progress_fallback_active=not bool(original),
+                    previous_plan=dict(start_step=state['calls'], actions=actions))
             if replan:
                 t = time.perf_counter()
                 snapshot = capture(state['env'])
@@ -267,7 +363,10 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                           for name, v in predicted['candidates'].items()}
                 invalid = [name for name, v in predicted['candidates'].items()
                            if not all(v['initialization'].values())]
-                eligible = select({n: s for n, s in scores.items() if n not in invalid}, active_specs)
+                original, relaxed, eligible = choose_with_fallback(
+                    {n: s for n, s in scores.items() if n not in invalid}, active_specs,
+                    oracle.get('relax_progress_fallback', False))
+                state['progress_fallback_active'] = bool(not original and eligible)
                 chosen = eligible[0] if eligible else None
                 state['selection'] = chosen
                 if chosen == 'R':
@@ -286,6 +385,7 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 decisions.append(dict(step=state['calls'], anchor=nominal.tolist(),
                     initial_state_digest=digest(snapshot), current_damage=snapshot['damage'],
                     eligible=eligible, invalid_initializations=invalid, selected=chosen,
+                    original_eligible=original, progress_fallback_intervention=state['progress_fallback_active'],
                     retained_remaining_actions=retained['remaining_actions'] if retained else 0,
                     retained_origin_step=retained['origin_step'] if retained else None,
                     fallback_reason=None if chosen else 'no_admissible_valid_candidate',
@@ -301,6 +401,7 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
             assert np.array_equal(np.asarray(feedback['executed_action'], np.float32), executed)
             assert not feedback['python_audit_denied_events']
             state.update(executed=executed, feedback=feedback)
+            state['last_actor_CPU_s'] = feedback['actor_cumulative_CPU_s']
             state['feedback_calls'] += 1
             feedback_latencies.append(feedback_ms)
             response = copy.deepcopy(response)
@@ -323,6 +424,7 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
         diagnose.make_env, runtime.prepare, paired.write = old_factory, old_prepare, old_write
     selected_rows = [r for r in rows if r['selected'] is not None]
     diagnostics = dict(decisions=decisions, actual_steps=rows,
+        local_gate=state.get('local_gate'), diagnostic_stop=state.get('diagnostic_stop'),
         all_action_decision_ms=distribution(latencies), nominal_actor_IPC_ms=distribution(nominal_latencies),
         feedback_IPC_ms=distribution(feedback_latencies),
         replan_decision_ms=distribution([d['full_decision_wall_ms'] for d in decisions if 'full_decision_wall_ms' in d]),

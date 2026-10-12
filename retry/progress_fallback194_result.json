@@ -1,0 +1,651 @@
+{
+  "stage": 194,
+  "status": "GT_D2_RECOVERED_PRESERVATION_LOSS",
+  "path": "B",
+  "privileged_GT_oracle": true,
+  "legal_pixel_policy": false,
+  "champion_promotion": false,
+  "semantics": "off_track_counter isconsecutiveactionswithoutnewtile inthissource/trackrange,notgeometricdistanceoffroad. newtiles0over12 impliescounter>=12,so droppingnewtiles>=1alonewhilekeepingmaxcounter<=5cannotadmitit.",
+  "saved_score_analysis": {
+    "397": {
+      "C00": {
+        "score": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 5,
+          "speed_m_s": 36.910559206976025,
+          "road_wheels": 0,
+          "maximum_off_track_counter": 5,
+          "observed_actions": 12,
+          "damage": 0.0
+        },
+        "no_contact": true,
+        "not_terminal": true,
+        "road_wheels_pass": false,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": true,
+        "relaxed_pass": false
+      },
+      "C01": {
+        "score": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 3,
+          "speed_m_s": 12.611758056979204,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 6,
+          "observed_actions": 12,
+          "damage": 0.0
+        },
+        "no_contact": true,
+        "not_terminal": true,
+        "road_wheels_pass": true,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": false,
+        "relaxed_pass": true
+      },
+      "C08": {
+        "score": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 7,
+          "speed_m_s": 37.37502156440127,
+          "road_wheels": 0,
+          "maximum_off_track_counter": 3,
+          "observed_actions": 12,
+          "damage": 0.2
+        },
+        "no_contact": false,
+        "not_terminal": true,
+        "road_wheels_pass": false,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": true,
+        "relaxed_pass": false
+      },
+      "C09": {
+        "score": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 3,
+          "speed_m_s": 12.844908290613967,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 6,
+          "observed_actions": 12,
+          "damage": 0.0
+        },
+        "no_contact": true,
+        "not_terminal": true,
+        "road_wheels_pass": true,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": false,
+        "relaxed_pass": true
+      },
+      "C16": {
+        "score": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 5,
+          "speed_m_s": 0.019749696988316395,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 4,
+          "observed_actions": 12,
+          "damage": 0.8
+        },
+        "no_contact": false,
+        "not_terminal": true,
+        "road_wheels_pass": true,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": true,
+        "relaxed_pass": false
+      },
+      "C17": {
+        "score": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 3,
+          "speed_m_s": 12.949030048377706,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 6,
+          "observed_actions": 12,
+          "damage": 0.0
+        },
+        "no_contact": true,
+        "not_terminal": true,
+        "road_wheels_pass": true,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": false,
+        "relaxed_pass": true
+      },
+      "R": {
+        "score": {
+          "risk": false,
+          "terminal": false,
+          "new_tiles": 10,
+          "speed_m_s": 38.340931938383676,
+          "road_wheels": 2,
+          "maximum_off_track_counter": 1,
+          "observed_actions": 12,
+          "damage": 0.0
+        },
+        "no_contact": true,
+        "not_terminal": true,
+        "road_wheels_pass": true,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": true,
+        "relaxed_pass": true
+      }
+    },
+    "400": {
+      "C00": {
+        "score": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 1,
+          "speed_m_s": 0.18704986100388823,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 10,
+          "observed_actions": 12,
+          "damage": 0.4
+        },
+        "no_contact": false,
+        "not_terminal": true,
+        "road_wheels_pass": true,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": false,
+        "relaxed_pass": false
+      },
+      "C01": {
+        "score": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 1,
+          "speed_m_s": 0.12834086758296664,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 10,
+          "observed_actions": 12,
+          "damage": 0.2
+        },
+        "no_contact": false,
+        "not_terminal": true,
+        "road_wheels_pass": true,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": false,
+        "relaxed_pass": false
+      },
+      "C08": {
+        "score": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 1,
+          "speed_m_s": 0.19472292839887126,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 10,
+          "observed_actions": 12,
+          "damage": 0.4
+        },
+        "no_contact": false,
+        "not_terminal": true,
+        "road_wheels_pass": true,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": false,
+        "relaxed_pass": false
+      },
+      "C09": {
+        "score": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 1,
+          "speed_m_s": 0.18320160703107743,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 10,
+          "observed_actions": 12,
+          "damage": 0.2
+        },
+        "no_contact": false,
+        "not_terminal": true,
+        "road_wheels_pass": true,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": false,
+        "relaxed_pass": false
+      },
+      "C16": {
+        "score": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 2,
+          "speed_m_s": 0.34811426168205556,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 6,
+          "observed_actions": 12,
+          "damage": 0.6000000000000001
+        },
+        "no_contact": false,
+        "not_terminal": true,
+        "road_wheels_pass": true,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": false,
+        "relaxed_pass": false
+      },
+      "C17": {
+        "score": {
+          "risk": true,
+          "terminal": false,
+          "new_tiles": 1,
+          "speed_m_s": 0.9292250905900655,
+          "road_wheels": 4,
+          "maximum_off_track_counter": 10,
+          "observed_actions": 12,
+          "damage": 0.2
+        },
+        "no_contact": false,
+        "not_terminal": true,
+        "road_wheels_pass": true,
+        "new_tiles_pass": true,
+        "no_new_tile_run_pass": false,
+        "relaxed_pass": false
+      }
+    }
+  },
+  "frozen_rule": "Original6+unexpiredR selectorfirst. Onlywhenempty,usecontactfree/nonterminal/endpointroadwheels>=2 fallback,removingbothprogressfilters. ThreeE candidatesholdgas0/brake1 atsame3steeringanchors. Existingrank/model/horizon12/interval3/nominal32/feedback/suffixexpiryunchanged. NinefreshqueriesplusRwhenpresent;Eignoredbyprimaryselection.",
+  "local": {
+    "selected": "E00",
+    "prefix_actions": 399,
+    "paired_reset_and_prefix_identity": true,
+    "pre400_GT_identity": true,
+    "original_six_forecasts_identical": true,
+    "predictions_sealed_before_native400": true,
+    "candidate_scores": {
+      "C00": {
+        "risk": true,
+        "terminal": false,
+        "new_tiles": 1,
+        "speed_m_s": 0.18704986100388823,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 10,
+        "observed_actions": 12,
+        "damage": 0.4
+      },
+      "C01": {
+        "risk": true,
+        "terminal": false,
+        "new_tiles": 1,
+        "speed_m_s": 0.12834086758296664,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 10,
+        "observed_actions": 12,
+        "damage": 0.2
+      },
+      "C08": {
+        "risk": true,
+        "terminal": false,
+        "new_tiles": 1,
+        "speed_m_s": 0.19472292839887126,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 10,
+        "observed_actions": 12,
+        "damage": 0.4
+      },
+      "C09": {
+        "risk": true,
+        "terminal": false,
+        "new_tiles": 1,
+        "speed_m_s": 0.18320160703107743,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 10,
+        "observed_actions": 12,
+        "damage": 0.2
+      },
+      "C16": {
+        "risk": true,
+        "terminal": false,
+        "new_tiles": 2,
+        "speed_m_s": 0.34811426168205556,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 6,
+        "observed_actions": 12,
+        "damage": 0.6000000000000001
+      },
+      "C17": {
+        "risk": true,
+        "terminal": false,
+        "new_tiles": 1,
+        "speed_m_s": 0.9292250905900655,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 10,
+        "observed_actions": 12,
+        "damage": 0.2
+      },
+      "E00": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 0,
+        "speed_m_s": 2.861084508005254e-14,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 12,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "E08": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 0,
+        "speed_m_s": 9.189786799380398e-17,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 12,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "E16": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 0,
+        "speed_m_s": 9.189817377042401e-17,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 12,
+        "observed_actions": 12,
+        "damage": 0.0
+      }
+    },
+    "relaxed_existing": [],
+    "relaxed_with_emergency": [
+      "E00",
+      "E16",
+      "E08"
+    ],
+    "result": {
+      "valid": true,
+      "observed_actions": 12,
+      "actual_contact": false,
+      "actual_contact_steps": 0,
+      "actual_completed": false,
+      "actual_terminal": false,
+      "actual_new_tiles": 0,
+      "actual_damage": 0.0,
+      "actual_speed_m_s": 2.865999864914635e-14,
+      "actual_road_wheels": 4,
+      "actual_maximum_no_new_tile_actions": 12,
+      "predicted": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 0,
+        "speed_m_s": 2.861084508005254e-14,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 12,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "tile_mismatch_steps": 0,
+      "position_error_m": {
+        "count": 12,
+        "sum": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      }
+    },
+    "cached_fallback_same12": {
+      "actions": 12,
+      "contact_steps": 5,
+      "new_tiles": 2,
+      "damage": 0.8,
+      "terminal": false
+    },
+    "cached_fallback_subsequent_crash_step": 412,
+    "caveat": "Only E00 actuallyexecuted for12. E08/E16 werepredictions,notactualcounterfactualruns. Stopaloneisnotsuccess;D2completionwasobservedlaterincontinuation."
+  },
+  "cases": [
+    {
+      "label": "D2",
+      "execution": "Replay399+fixedlocal12+sameenvcontinuation",
+      "result": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 37860,
+        "damage": 0.0,
+        "retire_reason": null,
+        "successful_wrapper_steps": 474,
+        "unique_tiles": 290,
+        "total_tiles": 291
+      },
+      "baseline193": {
+        "completed": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "retire_reason": "crash"
+      },
+      "comparison": {
+        "lost_completion": false,
+        "new_completion": true,
+        "common_lap_delta_ms": null
+      },
+      "planning_decisions": 22,
+      "original_selector_empty": 7,
+      "intervention_decisions": 7,
+      "intervention_actions": 30,
+      "post_replay_actions": 75,
+      "intervention_action_fraction": 0.4,
+      "longest_consecutive_intervention": {
+        "actions": 15,
+        "first_step": 400,
+        "last_step": 414,
+        "start_visited_tiles": 261,
+        "end_visited_tiles": 262,
+        "endpoint_no_new_tile_actions": 1,
+        "endpoint_road_wheels": 4,
+        "endpoint_speed_m_s": 8.387971267862154
+      },
+      "selected_contact_steps": 0,
+      "selected_false_safe_steps": 0,
+      "selected_tile_mismatch_steps": 0,
+      "selected_position_error_m": {
+        "count": 74,
+        "sum": 2.5265142919989248e-05,
+        "median": 0.0,
+        "p95": 6.675720214843642e-07,
+        "max": 7.864199877963372e-06
+      },
+      "endpoint_no_new_tile_actions": 11,
+      "endpoint_road_wheels": 4,
+      "endpoint_speed_m_s": 21.75316113596249,
+      "contact_steps": []
+    },
+    {
+      "label": "D0",
+      "execution": "Fromresetwithfixednewrule",
+      "result": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 39080,
+        "damage": 0.0,
+        "retire_reason": null,
+        "successful_wrapper_steps": 489,
+        "unique_tiles": 301,
+        "total_tiles": 303
+      },
+      "baseline193": {
+        "completed": true,
+        "lap_ms": 35900,
+        "damage": 0.0,
+        "retire_reason": null
+      },
+      "comparison": {
+        "lost_completion": false,
+        "new_completion": false,
+        "common_lap_delta_ms": 3180
+      },
+      "planning_decisions": 163,
+      "original_selector_empty": 8,
+      "intervention_decisions": 8,
+      "intervention_actions": 24,
+      "post_replay_actions": 489,
+      "intervention_action_fraction": 0.049079754601226995,
+      "longest_consecutive_intervention": {
+        "actions": 12,
+        "first_step": 478,
+        "last_step": 489,
+        "start_visited_tiles": 299,
+        "end_visited_tiles": 301,
+        "endpoint_no_new_tile_actions": 7,
+        "endpoint_road_wheels": 4,
+        "endpoint_speed_m_s": 27.289660158521816
+      },
+      "selected_contact_steps": 0,
+      "selected_false_safe_steps": 0,
+      "selected_tile_mismatch_steps": 0,
+      "selected_position_error_m": {
+        "count": 488,
+        "sum": 0.000273287296295166,
+        "median": 0.0,
+        "p95": 7.62939453125e-06,
+        "max": 1.52587890625e-05
+      },
+      "endpoint_no_new_tile_actions": 7,
+      "endpoint_road_wheels": 4,
+      "endpoint_speed_m_s": 27.289660158521816,
+      "contact_steps": []
+    },
+    {
+      "label": "D1",
+      "execution": "Fromresetwithfixednewrule",
+      "result": {
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 0.2,
+        "retire_reason": "off_track",
+        "successful_wrapper_steps": 255,
+        "unique_tiles": 37,
+        "total_tiles": 314
+      },
+      "baseline193": {
+        "completed": true,
+        "lap_ms": 36060,
+        "damage": 0.0,
+        "retire_reason": null
+      },
+      "comparison": {
+        "lost_completion": true,
+        "new_completion": false,
+        "common_lap_delta_ms": null
+      },
+      "planning_decisions": 85,
+      "original_selector_empty": 66,
+      "intervention_decisions": 60,
+      "intervention_actions": 180,
+      "post_replay_actions": 255,
+      "intervention_action_fraction": 0.7058823529411765,
+      "longest_consecutive_intervention": {
+        "actions": 87,
+        "first_step": 157,
+        "last_step": 243,
+        "start_visited_tiles": 37,
+        "end_visited_tiles": 37,
+        "endpoint_no_new_tile_actions": 89,
+        "endpoint_road_wheels": 4,
+        "endpoint_speed_m_s": 1.2589681602620429e-09
+      },
+      "selected_contact_steps": 0,
+      "selected_false_safe_steps": 0,
+      "selected_tile_mismatch_steps": 0,
+      "selected_position_error_m": {
+        "count": 237,
+        "sum": 6.819807249108487e-05,
+        "median": 0.0,
+        "p95": 9.536743164061958e-08,
+        "max": 1.5266237824995157e-05
+      },
+      "endpoint_no_new_tile_actions": 101,
+      "endpoint_road_wheels": 4,
+      "endpoint_speed_m_s": 0.6920825010855274,
+      "contact_steps": [
+        {
+          "step": 247,
+          "mode": "nominal_fallback",
+          "intervention": false,
+          "damage": 0.2
+        }
+      ]
+    }
+  ],
+  "interpretation": {
+    "strengthens": "Atmatched400,relaxingprogressaloneleaves0existingcandidates;addingfullbrakeproduces3predictedalternatives,andselectedE00istrulycontactfree. Physicalabsenceofallsafeactionsisrefutedatthisstate. D2thenfinishes.",
+    "weakens": "D1losespreviouscompletionwhilemaintaining4roadwheels:87consecutiveinterventionactionsvisitnonewtiles;officialretirementat101stagnantactions. Localavoidancedoesnotguaranteeprogressorpreservewholeepisodeperformance.",
+    "implementation_vs_method": "Pairedprefix/GTandlocal12-actionpose/progressagree;selectedexecutedprefixcontact/progresserrorsare0acrossthesecases. Observedpreservationfailurethereforepoints tothisfinitecandidate/fallbackprogresslimitation ratherthanameasuredtransitionimplementationmismatch. Hiddenstateandunexecutedfuturesarenotfullyvalidated.",
+    "P8": "Reportrequest/decision/actionrates andlongconsecutiveinterventionsseparatelyfromactualfinish. False-safeselectedcontactcount0isnotproofthatallinterventionswerenecessary. Wrong/unnecessaryinterventionsoutside thematchedlocalcomparison arenotidentifiedwithoutpairedcounterfactuals."
+  },
+  "cost": {
+    "stage": 194,
+    "at_utc": "2026-10-12T12:12:39.285298+00:00",
+    "native_cap": 2000,
+    "new_wrapper_actions": 1218,
+    "replay_prefix_actions": 399,
+    "local_actions": 12,
+    "D2_continuation_actions": 63,
+    "D0_actions": 489,
+    "D1_actions": 255,
+    "raw_step_ticks": 4870,
+    "raw_reset_ticks": 153,
+    "wall_s": 138.50872287500533,
+    "evaluator_CPU_s": 125.799863169,
+    "actor_CPU_s": 12.692604999999999,
+    "actual_env_step_wall_s": 53.491070485295495,
+    "model_queries": 2680,
+    "model_physics_ticks": 127924,
+    "model_CPU_s": 56.809335262999994,
+    "zero_time_contact_initializations": 2680,
+    "model_CPU_included_in_evaluator": true,
+    "component_batch_ms": {
+      "capture_wall_ms": {
+        "count": 270,
+        "sum": 6135.160842619371,
+        "median": 10.416560500743799,
+        "p95": 19.74663710570894,
+        "max": 704.4318810221739
+      },
+      "reconstruction_wall_ms": {
+        "count": 270,
+        "sum": 35163.5922449932,
+        "median": 119.86981648078654,
+        "p95": 170.79887134605076,
+        "max": 488.67281805723906
+      },
+      "integration_wall_ms": {
+        "count": 270,
+        "sum": 21659.919169847853,
+        "median": 77.15965596435126,
+        "p95": 113.10955447843295,
+        "max": 257.36392301041633
+      },
+      "model_batch_wall_ms": {
+        "count": 270,
+        "sum": 56865.80333710299,
+        "median": 198.14165099523962,
+        "p95": 286.4249311052845,
+        "max": 638.2642370008398
+      }
+    },
+    "full_decision_ms": {
+      "count": 270,
+      "sum": 69367.24537919508,
+      "median": 233.36817050585523,
+      "p95": 409.88865709514346,
+      "max": 921.0674090136308
+    },
+    "decisions_over_240ms": 117,
+    "timing_scope": "GTcapture,allcandidateworldreconstructions/integrations,ranking,nominalactorandfeedbackIPC included. No renderingablation. Executionwall excludespreparation andpublication. Staticqualificationnative0;no repeatedworkerqualification.",
+    "B_operating_cap": 816000,
+    "actual_cumulative_wrapper_actions": 723163,
+    "research_remaining": 8837,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "automatic_next_experiment": false
+  },
+  "champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
