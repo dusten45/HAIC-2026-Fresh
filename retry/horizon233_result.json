@@ -1,0 +1,364 @@
+{
+  "stage": 233,
+  "status": "PRIVILEGED_H24_DEV_DIAGNOSTIC_CLOSED",
+  "aggregate": {
+    "H24_completed": 2,
+    "historical_H12_completed": 2,
+    "executed_roads": 2,
+    "common_completed_pairs": 2,
+    "common_deltas_ms": [
+      160,
+      -60
+    ],
+    "mean_common_delta_ms": 50.0,
+    "technical_error": null,
+    "unexecuted": [],
+    "censored": 0,
+    "no_new_H12_runs": true
+  },
+  "cases": {
+    "F0": {
+      "H12_historical221": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 29400,
+        "damage": 0.2,
+        "native_actions": 368,
+        "retire_reason": null,
+        "unique_tiles": 326,
+        "total_tiles": 326,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 13,
+        "last_new_tile_action": 364,
+        "final_no_new_reward_counter": 4,
+        "final_speed_m_s": 45.57006258710795
+      },
+      "H24": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 29560,
+        "damage": 0.0,
+        "native_actions": 376,
+        "retire_reason": null,
+        "unique_tiles": 326,
+        "total_tiles": 326,
+        "stationary_actions": 4,
+        "longest_no_new_tile_actions": 21,
+        "last_new_tile_action": 355,
+        "final_no_new_reward_counter": 21,
+        "final_speed_m_s": 4.320673123875129
+      },
+      "initial_exact": true,
+      "new_H12_native_actions": 0,
+      "H24_minus_H12_lap_ms": 160,
+      "first_selected_name_difference": 1,
+      "first_teacher_replan_first_command_difference": 1,
+      "first_actual_command_difference": 1,
+      "first_actual_position_difference": 1,
+      "first_nominal_pixel_command_difference": 2,
+      "common_actual_prefix_exact_until": 0,
+      "common_time_index_actions": 368,
+      "command_difference_actions": 362,
+      "command_difference_intervals": [
+        [
+          1,
+          132
+        ],
+        [
+          139,
+          368
+        ]
+      ],
+      "trajectory_difference_actions": 368,
+      "trajectory_difference_intervals": [
+        [
+          1,
+          368
+        ]
+      ],
+      "scope": "Time-index comparisons after first divergence involve different actual states, not same-state target-quality effects.",
+      "model_actual_prefix_diagnostics": {
+        "selected_steps": 376,
+        "fallback_steps": 0,
+        "selected_contact_steps": 0,
+        "selected_prefix_false_negative_steps": 0,
+        "selected_prefix_tile_mismatch_steps": 0,
+        "selected_prefix_contiguous_mismatch_steps": 0,
+        "selected_prefix_position_error_m": {
+          "count": 376,
+          "sum": 0.00016908344701946392,
+          "median": 0.0,
+          "p95": 3.814697265625e-06,
+          "max": 1.528856233776226e-05
+        }
+      },
+      "partial_finish_tick_actions": [],
+      "candidate_count_range": [
+        43,
+        44
+      ],
+      "invalid_initialization_candidates": 0,
+      "all_initialization_flags_exact": true,
+      "retained_R_selected_replans": 58,
+      "feedback_tail_control_CPU_s": 27.562136721004073,
+      "model_queries": 5535,
+      "model_physics_ticks": 529272,
+      "model_CPU_s": 188.26571396700012,
+      "model_reconstruction_wall_s": 70.79473504054477,
+      "model_integration_wall_s": 82.39949704977334,
+      "GT_replan_wall_ms": {
+        "count": 126,
+        "sum": 196358.35677507566,
+        "median": 1461.0094815143384,
+        "p95": 2178.242906993546,
+        "max": 2898.8229050009977
+      },
+      "GT_all_action_wall_ms": {
+        "count": 376,
+        "sum": 198822.67515891,
+        "median": 11.00340650009457,
+        "p95": 1750.346409768099,
+        "max": 2898.8229050009977
+      },
+      "GT_over_5s_count": 0,
+      "GT_over_5s_calls": [],
+      "historical_H12_model_queries": 5410,
+      "historical_H12_model_physics_ticks": 259260,
+      "historical_H12_model_CPU_s": 119.23379189399995,
+      "historical_H12_replan_wall_ms": {
+        "count": 123,
+        "sum": 126837.15591099462,
+        "median": 944.7332120034844,
+        "p95": 1556.05412199511,
+        "max": 3612.4034780077636
+      }
+    },
+    "F1": {
+      "H12_historical221": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 26700,
+        "damage": 0.0,
+        "native_actions": 334,
+        "retire_reason": null,
+        "unique_tiles": 299,
+        "total_tiles": 299,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 6,
+        "last_new_tile_action": 330,
+        "final_no_new_reward_counter": 4,
+        "final_speed_m_s": 44.12312811958352
+      },
+      "H24": {
+        "completed": true,
+        "censored": false,
+        "lap_ms": 26640,
+        "damage": 0.0,
+        "native_actions": 334,
+        "retire_reason": null,
+        "unique_tiles": 299,
+        "total_tiles": 299,
+        "stationary_actions": 2,
+        "longest_no_new_tile_actions": 17,
+        "last_new_tile_action": 317,
+        "final_no_new_reward_counter": 17,
+        "final_speed_m_s": 10.173356011601493
+      },
+      "initial_exact": true,
+      "new_H12_native_actions": 0,
+      "H24_minus_H12_lap_ms": -60,
+      "first_selected_name_difference": 1,
+      "first_teacher_replan_first_command_difference": 1,
+      "first_actual_command_difference": 1,
+      "first_actual_position_difference": 1,
+      "first_nominal_pixel_command_difference": 2,
+      "common_actual_prefix_exact_until": 0,
+      "common_time_index_actions": 334,
+      "command_difference_actions": 328,
+      "command_difference_intervals": [
+        [
+          1,
+          144
+        ],
+        [
+          148,
+          150
+        ],
+        [
+          154,
+          334
+        ]
+      ],
+      "trajectory_difference_actions": 334,
+      "trajectory_difference_intervals": [
+        [
+          1,
+          334
+        ]
+      ],
+      "scope": "Time-index comparisons after first divergence involve different actual states, not same-state target-quality effects.",
+      "model_actual_prefix_diagnostics": {
+        "selected_steps": 334,
+        "fallback_steps": 0,
+        "selected_contact_steps": 0,
+        "selected_prefix_false_negative_steps": 0,
+        "selected_prefix_tile_mismatch_steps": 0,
+        "selected_prefix_contiguous_mismatch_steps": 0,
+        "selected_prefix_position_error_m": {
+          "count": 334,
+          "sum": 0.00021196703321456746,
+          "median": 0.0,
+          "p95": 3.814697265625e-06,
+          "max": 1.52587890625e-05
+        }
+      },
+      "partial_finish_tick_actions": [],
+      "candidate_count_range": [
+        43,
+        44
+      ],
+      "invalid_initialization_candidates": 0,
+      "all_initialization_flags_exact": true,
+      "retained_R_selected_replans": 52,
+      "feedback_tail_control_CPU_s": 22.265220144998295,
+      "model_queries": 4920,
+      "model_physics_ticks": 471140,
+      "model_CPU_s": 154.86149628200002,
+      "model_reconstruction_wall_s": 54.57999790774193,
+      "model_integration_wall_s": 71.3608738554758,
+      "GT_replan_wall_ms": {
+        "count": 112,
+        "sum": 161482.90886788163,
+        "median": 1346.9310854998184,
+        "p95": 1650.7141697875336,
+        "max": 3970.4448530101217
+      },
+      "GT_all_action_wall_ms": {
+        "count": 334,
+        "sum": 163613.82522276836,
+        "median": 10.681216008379124,
+        "p95": 1497.5392732972978,
+        "max": 3970.4448530101217
+      },
+      "GT_over_5s_count": 0,
+      "GT_over_5s_calls": [],
+      "historical_H12_model_queries": 4922,
+      "historical_H12_model_physics_ticks": 235744,
+      "historical_H12_model_CPU_s": 105.9864395109999,
+      "historical_H12_replan_wall_ms": {
+        "count": 112,
+        "sum": 110496.90414691577,
+        "median": 881.7580440081656,
+        "p95": 1176.8600515366415,
+        "max": 4124.051432998385
+      }
+    }
+  },
+  "cost": {
+    "stage": 233,
+    "at_utc": "2026-10-12T22:03:20.861208+00:00",
+    "native_cap": 1200,
+    "episode_caps": [
+      500,
+      500
+    ],
+    "new_wrapper_actions": 710,
+    "new_H12_wrapper_actions": 0,
+    "wall_s": 391.30453021402354,
+    "evaluator_CPU_s": 385.11123211999995,
+    "actor_CPU_s": 5.776494,
+    "raw_step_ticks": 2840,
+    "raw_reset_ticks": 102,
+    "execution_model_queries": 10455,
+    "execution_model_physics_ticks": 1000412,
+    "execution_model_CPU_s": 343.12721024900014,
+    "preflight_recorded_model_queries": 3,
+    "preflight_recorded_model_physics_ticks": 288,
+    "preflight_recorded_CPU_s": 0.08976617399999998,
+    "preflight_recorded_wall_s": 0.089769971993519,
+    "preflight_repair_model_queries": 1,
+    "preflight_repair_model_ticks_unrecorded_upper_bound": 96,
+    "preflight_repair_wall_CPU_not_separately_recorded": true,
+    "total_model_queries": 10459,
+    "total_recorded_model_physics_ticks": 1000700,
+    "total_actual_model_ticks_upper_bound": 1000796,
+    "execution_model_CPU_included_in_evaluator": true,
+    "GT_5s_warning_count": 0,
+    "training_updates": 0,
+    "actor_peak_RSS_mib": 46.23828125,
+    "evaluator_peak_RSS_mib": 2308.0,
+    "B_operating_cap": 842000,
+    "actual_cumulative_wrapper_actions": 756696,
+    "research_remaining": 1304,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "judgment": "Both H24 roads completed; common completion time worsened. This is a privileged teacher trajectory diagnostic with common T-tail assumption, not proof of better student labels or legal realtime performance.",
+  "protocol": {
+    "teacher_base_stage": 221,
+    "execution_horizon_actions": 12,
+    "evaluation_horizon_actions": 24,
+    "replan_interval_actions": 3,
+    "max_candidate_count": 44,
+    "first_query_without_R": 43,
+    "prefix": "Original C/E/N/S first12 exact, original T continuousfeedback; R only nonexpiredsuffix exact thenT at actualexpiry instead of forecastpadding.",
+    "tail": "Same original frozen GTfeedback T law for every predicted candidate tail, initialized from predicted prefix-end state and last executed steering. This assumption is included in the future-horizon effect.",
+    "rank": "Same candidate generation/order/specs, unchanged221 contactfilter/initialization/eligibility andstable rank functions. Old T rank metadata fromfirst12; originalRmetadata and12-action expiry preserved. Endpoints/contact risk evaluated overup-to24.",
+    "original_road_caps_preserved": [
+      500,
+      500
+    ],
+    "H12": "Historical221 F0/F1 only; no new H12 runs.",
+    "offline_mode": "Existing explicit offline_GT_wall_timing only; originallegal runner andreset/act default5s unchanged."
+  },
+  "preflight": {
+    "recorded_queries": 3,
+    "prefix_matches": [
+      {
+        "candidate": "C08",
+        "matched_original_actions": 12,
+        "matched_original_model_rows": 12,
+        "feedback_starts_at": 13,
+        "initialization_exact": true
+      },
+      {
+        "candidate": "T",
+        "matched_original_actions": 12,
+        "matched_original_model_rows": 12,
+        "feedback_starts_at": 1,
+        "initialization_exact": true
+      },
+      {
+        "candidate": "R",
+        "matched_original_actions": 9,
+        "matched_original_model_rows": 9,
+        "feedback_starts_at": 10,
+        "initialization_exact": true
+      }
+    ],
+    "repair": {
+      "stage": 233,
+      "native_actions": 0,
+      "model_queries": 1,
+      "model_physics_ticks_unrecorded": true,
+      "model_physics_ticks_upper_bound": 96,
+      "reason": "Preflight compared model rows against cached rows with added contiguous_visited_tiles annotation. Comparison excludes that derived annotation; predictor/policy unchanged.",
+      "wall_s_not_separately_recorded": true
+    }
+  },
+  "limitations": [
+    "Two known DEV roads and historical controls; no independent HOLDOUT confirmation.",
+    "After trajectory divergence, later time-index targets occur at different states and do not isolate same-state label quality.",
+    "Common T tail, including cursor/controller initialization at each prefix end, is part of the intervention.",
+    "GT source-model privileges and offline wall time are not legal realtime student performance.",
+    "One failed annotation-only comparison used a model query whose exact tick/CPU timing was not retained; cost bounded and disclosed."
+  ],
+  "champion_changed": false,
+  "champion_manifest_sha256": "b17aef1cee0d4d5fb35763be7cd9ec8748a6e060d79b529ca477c1efba5948bc",
+  "student_training": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00"
+}
