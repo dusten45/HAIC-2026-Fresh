@@ -142,13 +142,47 @@ def add_contiguous_scores(snapshot, predictions, scores):
             contiguous_after_tiles=after, contiguous_gain_tiles=after-before)
 
 
-def choose_with_fallback(scores, specifications, enabled, contiguous_rank=False, filter_contact=True):
+def forward_track_projection(track, position, velocity, road_indices=None):
+    """Nearest source-tile tangent, using the direction reviewed in207.
+
+    Tile i runs track[i-1] to track[i]. The nonadjacent distance gap is
+    diagnostic only and never changes eligibility or the binary rank key.
+    """
+    points = np.asarray(track, dtype=np.float64)[:, -2:]
+    starts = np.roll(points, 1, axis=0)
+    vectors = points-starts
+    squared = np.sum(vectors*vectors, axis=1)
+    assert np.all(squared > 0)
+    fractions = np.clip(np.sum((np.asarray(position)-starts)*vectors, axis=1)/squared, 0., 1.)
+    distances = np.linalg.norm(starts+fractions[:, None]*vectors-position, axis=1)
+    indices = np.asarray(road_indices, dtype=int) if road_indices is not None and len(road_indices) else np.arange(len(points))
+    index = int(indices[np.argmin(distances[indices])])
+    offsets = (np.arange(len(points))-index) % len(points)
+    nonadjacent = np.minimum(offsets, len(points)-offsets) > 2
+    return dict(road_tile_index=index, distance_m=float(distances[index]),
+        nonadjacent_distance_gap_m=float(np.min(distances[nonadjacent])-distances[index]),
+        forward_velocity_m_s=float(np.asarray(velocity) @ (vectors[index]/np.sqrt(squared[index]))))
+
+
+def add_forward_scores(track, predictions, scores):
+    for name, prediction in predictions.items():
+        end = prediction['rows'][-1]
+        projection = forward_track_projection(track, end['position'], end['velocity'])
+        scores[name].update(forward_velocity_m_s=projection['forward_velocity_m_s'],
+                            forward_projection_gap_m=projection['nonadjacent_distance_gap_m'])
+
+
+def choose_with_fallback(scores, specifications, enabled, contiguous_rank=False, filter_contact=True, forward_rank=False):
     original = select({n: s for n, s in scores.items() if not n.startswith('E')}, specifications, filter_contact)
     relaxed = relaxed_selection(scores, specifications, filter_contact) if enabled and not original else []
     if contiguous_rank:
         # Stable sorting prepends exactly one key to each unchanged old order.
         original.sort(key=lambda n: -scores[n]['contiguous_gain_tiles'])
         relaxed.sort(key=lambda n: -scores[n]['contiguous_gain_tiles'])
+    if forward_rank:
+        # Stable binary preference; no magnitude key or new eligibility test.
+        original.sort(key=lambda n: scores[n]['forward_velocity_m_s'] < 0.)
+        relaxed.sort(key=lambda n: scores[n]['forward_velocity_m_s'] < 0.)
     return original, relaxed, original or relaxed
 
 
@@ -231,7 +265,7 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
         def reset(*args, **kwargs):
             result = old_reset(*args, **kwargs)
             state['env'] = env
-            if oracle.get('track_feedback'):
+            if oracle.get('track_feedback') or oracle.get('forward_direction_rank', False):
                 state['track'] = [list(map(float, point)) for point in env.unwrapped.track]
             if oracle.get('contiguous_forward_rank', False):
                 road = env.unwrapped.road
@@ -620,6 +654,9 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 contiguous_rank = oracle.get('contiguous_forward_rank', False)
                 if contiguous_rank:
                     add_contiguous_scores(snapshot, predicted['candidates'], scores)
+                forward_rank = oracle.get('forward_direction_rank', False)
+                if forward_rank:
+                    add_forward_scores(state['track'], predicted['candidates'], scores)
                 invalid = [name for name, v in predicted['candidates'].items()
                            if not all(v['initialization'].values())]
                 _, _, old_order = choose_with_fallback(
@@ -628,6 +665,12 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 original, relaxed, eligible = choose_with_fallback(
                     {n: s for n, s in scores.items() if n not in invalid}, active_specs,
                     oracle.get('relax_progress_fallback', False), contiguous_rank, oracle.get('filter_predicted_contact', True))
+                before_direction = eligible[0] if eligible else None
+                if forward_rank:
+                    original, relaxed, eligible = choose_with_fallback(
+                        {n: s for n, s in scores.items() if n not in invalid}, active_specs,
+                        oracle.get('relax_progress_fallback', False), contiguous_rank,
+                        oracle.get('filter_predicted_contact', True), True)
                 rank_cpu, rank_wall = time.process_time()-rank_cpu, time.perf_counter()-rank_wall
                 state['progress_fallback_active'] = bool(not original and eligible)
                 chosen = eligible[0] if eligible else None
@@ -650,6 +693,8 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                     eligible=eligible, invalid_initializations=invalid, selected=chosen,
                     old_rank_selected=old_order[0] if old_order else None,
                     contiguous_rank_enabled=contiguous_rank,
+                    forward_direction_rank_enabled=forward_rank,
+                    before_direction_selected=before_direction,
                     continuity_rank_CPU_s=rank_cpu if contiguous_rank else 0.,
                     continuity_rank_wall_s=rank_wall if contiguous_rank else 0.,
                     original_eligible=original, progress_fallback_intervention=state['progress_fallback_active'],

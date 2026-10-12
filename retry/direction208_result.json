@@ -1,0 +1,153 @@
+{
+  "stage": 208,
+  "status": "ONE_KNOWN_DEV_F3_RESCUED_NO_PROMOTION",
+  "sole_change": "Stable binary endpoint GT tangent velocity >=0 preference ahead of existing contiguous/newtiles/speed/command-difference order. No magnitude preference, new eligibility, threshold sweep or T.",
+  "cached_pre328": {
+    "before": [
+      "C08",
+      "R",
+      "C16",
+      "C09",
+      "C17",
+      "C01"
+    ],
+    "after": [
+      "C09",
+      "C17",
+      "C01",
+      "C08",
+      "R",
+      "C16"
+    ],
+    "all_old_values_unchanged": true,
+    "both_signgroup_orders_unchanged": true,
+    "new_model_ticks": 0
+  },
+  "comparison": {
+    "control206": {
+      "completed": false,
+      "lap_ms": null,
+      "unique_tiles": 231,
+      "total_tiles": 319,
+      "damage": 0.0,
+      "retire_reason": "off_track",
+      "native_actions": 448,
+      "first_raw_negative_forward": {
+        "action": 333,
+        "forward_velocity_m_s": -8.727358922911861,
+        "speed_m_s": 37.71243199614547
+      },
+      "first_moving_negative_forward": {
+        "action": 333,
+        "forward_velocity_m_s": -8.727358922911861,
+        "speed_m_s": 37.71243199614547
+      },
+      "moving_reverse_actions": 116,
+      "stationary_actions": 0,
+      "first_gap_action": 330,
+      "first_gap_tiles": 4,
+      "first_gap_backfilled_action": 347,
+      "longest_no_new_tile_actions": 101,
+      "last_new_tile_action": 347,
+      "selected_full4tick_comparisons": 438,
+      "selected_contact_mismatch_actions": [],
+      "selected_physical_terminal_mismatch_actions": [],
+      "selected_max_position_error_m": 1.52587890625e-05,
+      "fallback_single_action_comparisons": [
+        {
+          "action": 448,
+          "contact_mismatch": false,
+          "physical_terminal_mismatch": false,
+          "damage_error": 0.0,
+          "position_error_m": 0.0
+        }
+      ],
+      "nominal_fallback_actions": 10,
+      "official_finish_partial_tick_excluded_actions": []
+    },
+    "candidate208": {
+      "completed": true,
+      "lap_ms": 36680,
+      "unique_tiles": 319,
+      "total_tiles": 319,
+      "damage": 0.2,
+      "retire_reason": null,
+      "native_actions": 459,
+      "first_raw_negative_forward": null,
+      "first_moving_negative_forward": null,
+      "moving_reverse_actions": 0,
+      "stationary_actions": 0,
+      "first_gap_action": null,
+      "first_gap_tiles": 0,
+      "first_gap_backfilled_action": null,
+      "longest_no_new_tile_actions": 5,
+      "last_new_tile_action": 454,
+      "selected_full4tick_comparisons": 458,
+      "selected_contact_mismatch_actions": [],
+      "selected_physical_terminal_mismatch_actions": [],
+      "selected_max_position_error_m": 1.52587890625e-05,
+      "fallback_single_action_comparisons": [],
+      "nominal_fallback_actions": 0,
+      "official_finish_partial_tick_excluded_actions": [
+        459
+      ]
+    },
+    "identical_reset": true,
+    "first_actual_command_divergence_action": 319,
+    "direction_selection_changed_replans": 1,
+    "first_direction_selection_change_action": 319,
+    "invalid_initializations": 0,
+    "all_replan_binary_order_verified": true,
+    "T_included": false
+  },
+  "only_actual_ranking_intervention": {
+    "action": 319,
+    "before": "C00",
+    "after": "C09",
+    "relaxed_progress_fallback": true,
+    "before_forward_velocity_m_s": -5.8223843508724435,
+    "after_forward_velocity_m_s": 8.463015153258732,
+    "both_contiguous_gain": 2,
+    "both_road_wheels": 4,
+    "both_nonterminal_contact_free": true
+  },
+  "actual_contact_action": 375,
+  "cost": {
+    "stage": 208,
+    "at_utc": "2026-10-12T16:29:03.687444+00:00",
+    "native_cap": 800,
+    "new_wrapper_actions": 459,
+    "control_new_native_actions": 0,
+    "wall_s": 90.26045537300524,
+    "evaluator_CPU_s": 84.325263272,
+    "actor_CPU_s": 5.8232539999999995,
+    "raw_step_ticks": 1835,
+    "raw_reset_ticks": 51,
+    "model_queries": 1675,
+    "model_physics_ticks": 80356,
+    "model_CPU_s": 47.685053196999995,
+    "model_CPU_included_in_evaluator": true,
+    "GT_capture_wall_s": 3.7065848970087245,
+    "reconstruction_wall_s": 29.142183869320434,
+    "integration_wall_s": 18.084369367425097,
+    "ranking_CPU_s": 0.7398133139999277,
+    "ranking_wall_s": 0.7409980070660822,
+    "cached_pre328_new_model_ticks": 0,
+    "cached_pre328_ranking_CPU_s": 0.007875923000000062,
+    "evaluator_peak_RSS_mib": 425.40234375,
+    "actor_peak_RSS_mib": 46.25390625,
+    "B_operating_cap": 820000,
+    "actual_cumulative_wrapper_actions": 733447,
+    "research_remaining": 2553,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "accounting": "One F3 reset; cached206 control; no retries. Model physics ticks distinct from native wrappers, model CPU included in evaluator CPU. Final finish action uses3 rawticks, other458 use4; reset51 separate. No tuning or T."
+  },
+  "comparison_limit": "One known DEV F3 reset with identical initial state and cached206 control. Endpoint projection does not guarantee every intermediate action or transfer to other roads. Prior206 F2 fallback contact false positive remains unresolved. No new fallback actions in208; 458selected full4tick comparisons match contact/physicalterminal. Official finish uses3ticks and is excluded; source model omitsFinishLineTracker.",
+  "next_judgment": "Local rescue supports direction-aware ranking as a research candidate, not broad validation or legal pixel champion promotion. No automatic next experiment.",
+  "champion_changed": false,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
