@@ -199,6 +199,11 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 row.update(predicted_collision=(bool(predicted['collision'] or predicted['contact_obstacle_ids']) if predicted else None),
                     predicted_unique_tiles=predicted['unique_tiles'] if predicted else None,
                     predicted_damage=predicted['damage'] if predicted else None,
+                    predicted_road_wheels=predicted['wheel_road_contacts'] if predicted else None,
+                    predicted_no_new_tile_actions=predicted['off_track_counter'] if predicted else None,
+                    predicted_terminal=predicted['terminal'] if predicted else None,
+                    angle_error_rad=(abs(predicted['angle']-after['angle'])
+                                     if predicted and row['raw_ticks'] == 4 else None),
                     speed_error_m_s=(abs(predicted['speed_m_s']-after['speed_m_s'])
                                      if predicted and row['raw_ticks'] == 4 else None),
                     position_error_m=(float(np.linalg.norm(np.asarray(predicted['position'])-after['position']))
@@ -228,6 +233,28 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                         tile_mismatch_steps=sum(r['unique_tiles'] != r['predicted_unique_tiles'] for r in local),
                         speed_error_m_s=distribution([r['speed_error_m_s'] for r in local if r['speed_error_m_s'] is not None]),
                         position_error_m=distribution([r['position_error_m'] for r in local if r['position_error_m'] is not None]))
+                    if replay.get('allow_predicted_contact'):
+                        # Explicit diagnostic confirmation of a frozen candidate.
+                        # Contact and damage are compared with the sealed forecast;
+                        # this does not alter the regular 194 candidate selector.
+                        limits = replay['match_limits']
+                        gate.update(
+                            contact_mismatch_steps=sum(bool(r['collision'] or r['contact_obstacle_ids']) != r['predicted_collision'] for r in local),
+                            damage_error=distribution([abs(r['damage']-r['predicted_damage']) for r in local]),
+                            road_wheel_mismatch_steps=sum(r['wheel_road_contacts'] != r['predicted_road_wheels'] for r in local),
+                            no_new_tile_counter_mismatch_steps=sum(r['off_track_counter'] != r['predicted_no_new_tile_actions'] for r in local),
+                            terminal_mismatch_steps=sum(r['terminal'] != r['predicted_terminal'] for r in local),
+                            angle_error_rad=distribution([r['angle_error_rad'] for r in local if r['angle_error_rad'] is not None]),
+                            actual_first_contact_action=next((i+1 for i,r in enumerate(local) if r['collision'] or r['contact_obstacle_ids']), None),
+                            predicted_contact_allowed=True,
+                        )
+                        valid = (len(local) == replay['suffix_length'] and not ended and not truncated
+                                 and gate['actual_new_tiles'] >= 1 and gate['tile_mismatch_steps'] == 0
+                                 and all(gate[k] == 0 for k in ['contact_mismatch_steps', 'road_wheel_mismatch_steps',
+                                     'no_new_tile_counter_mismatch_steps', 'terminal_mismatch_steps'])
+                                 and all(gate[k]['max'] is not None and gate[k]['max'] <= tolerance
+                                     for k,tolerance in limits.items()))
+                        gate['valid'] = valid
                     if replay.get('require_progress_match'):
                         valid = (valid and gate['actual_new_tiles'] >= 1 and gate['tile_mismatch_steps'] == 0
                                  and gate['position_error_m']['max'] is not None
@@ -244,7 +271,8 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                             # a recurring recovery mode or renewed retained plan.
                             state['previous_plan'] = None
                     else:
-                        state['diagnostic_stop'] = ('local_predicted_safe_contact' if risk else
+                        state['diagnostic_stop'] = ('frozen_contact_probe_mismatch' if replay.get('allow_predicted_contact') else
+                            'local_predicted_safe_contact' if risk else
                             'restart_progress_or_state_mismatch' if replay.get('require_progress_match') else 'local_safety_filter_mismatch')
                     print('Local intervention gate: ' + str(dict(valid=valid, actions=len(local), contact=risk,
                           new_tiles=gate['actual_new_tiles'], speed=gate['actual_speed_m_s'])), flush=True)
@@ -359,19 +387,28 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 assert replay['restart_probe'] == 'confirm'
                 frozen = replay['frozen_prediction']
                 assert frozen['initial_state_digest'] == digest(snapshot)
-                chosen = frozen['selected']
-                assert chosen is not None and chosen == frozen['eligible'][0]
+                diagnostic_candidate = replay.get('diagnostic_candidate')
+                if diagnostic_candidate is not None:
+                    assert replay.get('allow_predicted_contact') and not replay.get('require_progress_match')
+                    chosen = diagnostic_candidate
+                    assert chosen in frozen['candidate_controls'] and chosen in frozen['prediction']
+                else:
+                    chosen = frozen['selected']
+                    assert chosen is not None and chosen == frozen['eligible'][0]
                 counterfactual.update(frozen)
+                counterfactual['selected'] = chosen
                 actions = [np.asarray(a, np.float32) for a in frozen['candidate_controls'][chosen]['actions']]
                 assert len(actions) == replay['suffix_length'] == 24
                 state.update(pending=actions, selection=chosen, prediction_rows=frozen['prediction'][chosen]['rows'],
                     selection_offset=0, mode='local_intervention', progress_fallback_active=True, previous_plan=None)
                 decisions.append(dict(step=state['calls'], selected=chosen, eligible=frozen['eligible'],
+                    selection_reason='preregistered_contact_diagnostic' if diagnostic_candidate else 'frozen_eligible_rank',
                     capture_wall_s=capture_wall, model_CPU_s=0., model_batch_wall_s=0.,
                     reconstruction_wall_s=0., integration_wall_s=0., model_physics_ticks=0, model_queries=0))
                 directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
                 old_write(directory / 'restart-confirmation-boundary.json', dict(initial_state_digest=digest(snapshot),
-                    selected=chosen, frozen_prediction_digest=digest(frozen), before_actual_suffix=True), exclusive=True)
+                    selected=chosen, frozen_prediction_digest=digest(frozen), before_actual_suffix=True,
+                    predicted_contact_allowed=bool(replay.get('allow_predicted_contact'))), exclusive=True)
             if active_replay and replay.get('intervention') and not replay.get('restart_probe') and state['calls'] == prefix_length+1:
                 t = time.perf_counter()
                 snapshot = capture(state['env'])

@@ -1,0 +1,220 @@
+{
+  "stage": 196,
+  "status": "L03_CONTACT_PROGRESS_MATCHED_D1_STILL_FAILED",
+  "privileged_GT_oracle": true,
+  "legal_pixel_policy": false,
+  "champion_promotion": false,
+  "candidate": "L03",
+  "frozen_protocol": {
+    "state": "D1 pre160 after exact159-action replay",
+    "choice": "User-directed smaller predicted damage of the two progressing195 candidates L03/L07; no post-result reselection.",
+    "commands": "Use exact195 float32 L03 controls: gas0.45,brake0 throughout; first6 steering+1, next18 frozen pre160 nominal steering.",
+    "prediction_reused": true,
+    "regenerated_candidates": 0,
+    "match_limits": {
+      "position_error_m": 0.001,
+      "speed_error_m_s": 0.01,
+      "angle_error_rad": 0.001,
+      "damage_error": 1e-06
+    },
+    "gate": "Exactly24 nonterminal actions with positive progress; per-step contact flag, visited tiles, road wheel count, no-new-tile counter and terminal flag must match. Continuous state and damage prediction errors must stay within preregistered tolerances. Contact/damage level is diagnostic, not an independent performance rejection.",
+    "continuation": "After valid local match, same environment and policy memory; existing194 rule, unchanged interval3/horizon12/original9 candidates. One-off L03 cleared at184, no recurring restart mode."
+  },
+  "replay_evidence": {
+    "prefix_actions": 159,
+    "action_and_nominal_identity": true,
+    "observed_scalar_identity": true,
+    "GT_boundary_identity": true,
+    "exact_L03_commands_executed": true,
+    "future_actor_calls": 0,
+    "current_pixel_nominal_calls": 267,
+    "own_action_feedback_calls": 267
+  },
+  "local": {
+    "valid": true,
+    "observed_actions": 24,
+    "actual_contact": true,
+    "actual_contact_steps": 3,
+    "actual_completed": false,
+    "actual_terminal": false,
+    "actual_new_tiles": 1,
+    "actual_damage": 0.6000000000000001,
+    "actual_speed_m_s": 0.32371874073971796,
+    "actual_road_wheels": 3,
+    "actual_maximum_no_new_tile_actions": 17,
+    "predicted": {
+      "risk": true,
+      "terminal": false,
+      "new_tiles": 1,
+      "speed_m_s": 0.32371874201850936,
+      "road_wheels": 3,
+      "maximum_off_track_counter": 17,
+      "observed_actions": 24,
+      "damage": 0.6000000000000001
+    },
+    "tile_mismatch_steps": 0,
+    "speed_error_m_s": {
+      "count": 24,
+      "sum": 6.545435271620992e-06,
+      "median": 1.5190373929552248e-07,
+      "p95": 8.66426799728259e-07,
+      "max": 9.951844841538104e-07
+    },
+    "position_error_m": {
+      "count": 24,
+      "sum": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "contact_mismatch_steps": 0,
+    "damage_error": {
+      "count": 24,
+      "sum": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "road_wheel_mismatch_steps": 0,
+    "no_new_tile_counter_mismatch_steps": 0,
+    "terminal_mismatch_steps": 0,
+    "angle_error_rad": {
+      "count": 24,
+      "sum": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "actual_first_contact_action": 3,
+    "predicted_contact_allowed": true
+  },
+  "local_contact_actions": [
+    3,
+    4,
+    7
+  ],
+  "episode_contact_actions": [
+    162,
+    163,
+    166
+  ],
+  "local_first_new_tile_action": 7,
+  "cached194_same24": {
+    "actions": 24,
+    "new_tiles": 0,
+    "contact_steps": 0,
+    "damage": 0.0,
+    "speed_m_s": 2.3131959172557733e-10,
+    "road_wheels": 4,
+    "no_new_tile_actions": 29,
+    "newly_executed": false
+  },
+  "continuation": {
+    "actions": 84,
+    "first_action": 184,
+    "last_action": 267,
+    "replans": 28,
+    "selected_candidates": 0,
+    "nominal_fallback_actions": 84,
+    "new_interventions": 0,
+    "new_tiles": 0,
+    "contacts": 0,
+    "all9_candidates_predicted_contact_at_every_replan": true,
+    "all9_candidates_predicted_zero_new_tiles_at_every_replan": true,
+    "endpoint_speed_m_s": 0.09258917614887481,
+    "endpoint_road_wheels": 3,
+    "endpoint_no_new_tile_actions": 101,
+    "maximum_streak_without_new_tiles": 101,
+    "limitation": "The rejected continuation candidates were not executed. Contact-free nominal fallback is a different action sequence and does not establish whether their contact predictions were false positives."
+  },
+  "official_result": {
+    "completed": false,
+    "terminal_observed": true,
+    "censored": false,
+    "lap_ms": null,
+    "unique_tiles": 38,
+    "total_tiles": 314,
+    "damage": 0.6000000000000001,
+    "retire_reason": "off_track",
+    "successful_wrapper_steps": 267
+  },
+  "interpretation": {
+    "damage_layer": "Actual damage0.6 is reported separately; continuation proceeded despite contact because the frozen prediction matched. Official failure is no-new-tile retirement, not a newly imposed damage gate.",
+    "P4": "The frozen top diagnostic candidate was actually run once. First contact at3, one new tile at7, damage0.6 and survival through24 matched; local prediction mismatch is not the observed cause of later failure.",
+    "P8": "Short contact-bearing progress ended with3 road wheels and17 consecutive no-new-tile actions. The same controller then executed84 nominal fallback actions with no additional tile or contact, ending at101 consecutive no-new-tile actions.",
+    "chapter18": "One L03 maneuver plus unchanged194 continuation was insufficient for completion on this case. This supports a method limitation for this exact sequence, not a measured local transition implementation error. It does not validate unexecuted continuation forecasts or rule out other maneuvers. No expanded intervention was attempted."
+  },
+  "cost": {
+    "stage": 196,
+    "at_utc": "2026-10-12T12:50:08.147415+00:00",
+    "native_cap": 1500,
+    "episode_cap": 1341,
+    "new_wrapper_actions": 267,
+    "replay_prefix_actions": 159,
+    "local_L03_actions": 24,
+    "continuation_actions": 84,
+    "raw_step_ticks": 1068,
+    "raw_reset_ticks": 51,
+    "wall_s": 26.166944769996917,
+    "evaluator_CPU_s": 22.470663793,
+    "actor_CPU_s": 3.695864,
+    "actual_env_step_wall_s": 13.575887713988777,
+    "reset_wall_s": 0.7990362760028802,
+    "model_queries": 252,
+    "model_physics_ticks": 11448,
+    "zero_time_contact_initializations": 252,
+    "model_CPU_s": 6.105308286999991,
+    "model_CPU_included_in_evaluator": true,
+    "cached_forecast_queries_recharged": 0,
+    "local_new_model_queries": 0,
+    "model_component_wall_s": {
+      "capture_wall_s": 0.35273578710621223,
+      "reconstruction_wall_s": 3.8563298647641204,
+      "integration_wall_s": 2.267764753138181,
+      "model_batch_wall_s": 6.1269016019650735
+    },
+    "all_action_decision_ms": {
+      "count": 267,
+      "sum": 11122.792272130027,
+      "median": 16.133578988956288,
+      "p95": 243.1736523954896,
+      "max": 407.8701559919864
+    },
+    "replan_decision_ms": {
+      "count": 29,
+      "sum": 7265.387699997518,
+      "median": 242.18994099646807,
+      "p95": 344.14968939963717,
+      "max": 407.8701559919864
+    },
+    "nominal_actor_IPC_ms": {
+      "count": 267,
+      "sum": 3861.0890968120657,
+      "median": 13.413928012596443,
+      "p95": 23.577958511305035,
+      "max": 51.12919499515556
+    },
+    "feedback_IPC_ms": {
+      "count": 267,
+      "sum": 267.63548588496633,
+      "median": 0.7990230224095285,
+      "p95": 2.3079300008248524,
+      "max": 4.7217480023391545
+    },
+    "timing_scope": "One existing evaluator episode. All267 wrapper actions are charged, including159 replay. Original195 L03 forecast is read without re-running or charging it again; all252 new queries occur during unchanged194 continuation. Model CPU is part of evaluator CPU. Execution wall excludes preparation/publication.",
+    "B_operating_cap": 816000,
+    "actual_cumulative_wrapper_actions": 723589,
+    "research_remaining": 8411,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "automatic_next_experiment": false
+  },
+  "champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
