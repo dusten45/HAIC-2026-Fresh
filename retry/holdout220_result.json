@@ -1,0 +1,510 @@
+{
+  "stage": 220,
+  "status": "EIGHT_FROZEN_HOLDOUT_EPISODES",
+  "new_HOLDOUT_conditions": 4,
+  "frozen_before_performance": true,
+  "balanced_AB_BA": true,
+  "per_episode_native_cap": 600,
+  "selection": {
+    "identity_rejections": 0,
+    "prior_identity_counts": {
+      "excluded_seeds": 278,
+      "excluded_road_geometry_sha256": 276,
+      "excluded_obstacle_spec_sha256": 288,
+      "excluded_physical_obstacles_sha256": 146,
+      "excluded_obstacle_rng_entropy": 146,
+      "excluded_parent_entropy_vectors": 31
+    },
+    "difficulty_filter": false,
+    "outcome_filter": false,
+    "source_only_registration": true,
+    "coverage_limit": "Allrecordedseed/geometryidentities excluded includingregisteredunexecutedroads. Historicmissingphysical/spec/RNGmetadata not reconstructed. No SEALEDoutcomes/roadsopened."
+  },
+  "aggregate": {
+    "registered_conditions": 4,
+    "registered_episodes": 8,
+    "executed_episodes": 8,
+    "paired_initials_verified": 4,
+    "pixel_completed": 4,
+    "GT_completed": 3,
+    "common_completed": 3,
+    "paired_deltas_GT_minus_pixel_ms": [
+      -12100,
+      -10620,
+      -3880
+    ],
+    "mean_paired_delta_ms": -8866.666666666666,
+    "median_paired_delta_ms": -10620.0,
+    "sum_paired_delta_ms": -26600,
+    "GT_only_completions": 0,
+    "pixel_only_completions": 1,
+    "technical_error": null,
+    "unexecuted_roles": []
+  },
+  "cases": {
+    "H0": {
+      "order": [
+        "A",
+        "B"
+      ],
+      "pixel_champion": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 38820,
+        "unique_tiles": 330,
+        "total_tiles": 330,
+        "damage": 0.4,
+        "retire_reason": null,
+        "native_actions": 486,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 4,
+        "last_new_tile_action": 482,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 330,
+        "final_unvisited_tile_count": 0,
+        "actor_CPU_s": 5.763638,
+        "evaluator_CPU_s": 26.855437844,
+        "episode_wall_s": 32.57701204001205
+      },
+      "GT_oracle": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 26720,
+        "unique_tiles": 330,
+        "total_tiles": 330,
+        "damage": 0.0,
+        "retire_reason": null,
+        "native_actions": 335,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 5,
+        "last_new_tile_action": 330,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 330,
+        "final_unvisited_tile_count": 0,
+        "actor_CPU_s": 3.445479,
+        "evaluator_CPU_s": 155.825422872,
+        "episode_wall_s": 159.3063077800034
+      },
+      "paired_initial_identical": true,
+      "common_completed": true,
+      "GT_minus_pixel_lap_ms": -12100,
+      "GT_to_pixel_lap_ratio": 0.6883049974240082,
+      "GT_model_actual_comparison": {
+        "selected": {
+          "actual_actions": 335,
+          "matched_same_prefix_full4tick_actions": 334,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 1.7059844799040144e-05,
+          "unmatched_actions": [
+            335
+          ]
+        },
+        "nominal_fallback": {
+          "actual_actions": 0,
+          "matched_same_prefix_full4tick_actions": 0,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 0,
+          "unmatched_actions": []
+        }
+      },
+      "mismatch_details": [],
+      "GT_online_cost": {
+        "model_batch_ms": {
+          "count": 112,
+          "median": 1081.3298300054157,
+          "p95": 1736.0820622488964,
+          "max": 3465.740627987543
+        },
+        "replan_ms": {
+          "count": 112,
+          "sum": 137990.7780820795,
+          "median": 1135.3856409987202,
+          "p95": 1795.243958543869,
+          "max": 3542.3003459873144
+        },
+        "official5s_GT_warnings": []
+      },
+      "pixel_observer_GT_CPU_s": 0.16718266600001042,
+      "pixel_observer_GT_wall_s": 0.16537138921557926
+    },
+    "H1": {
+      "order": [
+        "B",
+        "A"
+      ],
+      "pixel_champion": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 37980,
+        "unique_tiles": 333,
+        "total_tiles": 333,
+        "damage": 0.4,
+        "retire_reason": null,
+        "native_actions": 475,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 3,
+        "last_new_tile_action": 472,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 333,
+        "final_unvisited_tile_count": 0,
+        "actor_CPU_s": 5.114541,
+        "evaluator_CPU_s": 27.946050449999973,
+        "episode_wall_s": 33.02903279100428
+      },
+      "GT_oracle": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 27360,
+        "unique_tiles": 333,
+        "total_tiles": 333,
+        "damage": 0.8,
+        "retire_reason": null,
+        "native_actions": 343,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 12,
+        "last_new_tile_action": 340,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 333,
+        "final_unvisited_tile_count": 0,
+        "actor_CPU_s": 3.670643,
+        "evaluator_CPU_s": 157.767053049,
+        "episode_wall_s": 161.46571386800497
+      },
+      "paired_initial_identical": true,
+      "common_completed": true,
+      "GT_minus_pixel_lap_ms": -10620,
+      "GT_to_pixel_lap_ratio": 0.7203791469194313,
+      "GT_model_actual_comparison": {
+        "selected": {
+          "actual_actions": 343,
+          "matched_same_prefix_full4tick_actions": 342,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 1.52587890625e-05,
+          "unmatched_actions": [
+            343
+          ]
+        },
+        "nominal_fallback": {
+          "actual_actions": 0,
+          "matched_same_prefix_full4tick_actions": 0,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 0,
+          "unmatched_actions": []
+        }
+      },
+      "mismatch_details": [],
+      "GT_online_cost": {
+        "model_batch_ms": {
+          "count": 115,
+          "median": 1059.5807899953797,
+          "p95": 1492.6955003815235,
+          "max": 4569.695358019089
+        },
+        "replan_ms": {
+          "count": 115,
+          "sum": 140180.13716101996,
+          "median": 1108.877452003071,
+          "p95": 1636.804696396575,
+          "max": 4609.534753020853
+        },
+        "official5s_GT_warnings": []
+      },
+      "pixel_observer_GT_CPU_s": 0.20470630400041046,
+      "pixel_observer_GT_wall_s": 0.20399267013999633
+    },
+    "H2": {
+      "order": [
+        "A",
+        "B"
+      ],
+      "pixel_champion": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 33400,
+        "unique_tiles": 296,
+        "total_tiles": 296,
+        "damage": 0.0,
+        "retire_reason": null,
+        "native_actions": 418,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 4,
+        "last_new_tile_action": 414,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 296,
+        "final_unvisited_tile_count": 0,
+        "actor_CPU_s": 3.50949,
+        "evaluator_CPU_s": 18.126725598999997,
+        "episode_wall_s": 21.60040360299172
+      },
+      "GT_oracle": {
+        "status": "DNF",
+        "completed": false,
+        "censored": false,
+        "lap_ms": null,
+        "unique_tiles": 178,
+        "total_tiles": 296,
+        "damage": 0.4,
+        "retire_reason": "off_track",
+        "native_actions": 278,
+        "stationary_actions": 2,
+        "longest_no_new_tile_actions": 101,
+        "last_new_tile_action": 177,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 178,
+        "final_unvisited_tile_count": 118,
+        "actor_CPU_s": 2.702869,
+        "evaluator_CPU_s": 117.96296308700005,
+        "episode_wall_s": 120.7202262619976
+      },
+      "paired_initial_identical": true,
+      "common_completed": false,
+      "GT_minus_pixel_lap_ms": null,
+      "GT_to_pixel_lap_ratio": null,
+      "GT_model_actual_comparison": {
+        "selected": {
+          "actual_actions": 267,
+          "matched_same_prefix_full4tick_actions": 267,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 1.5728399755926745e-05,
+          "unmatched_actions": []
+        },
+        "nominal_fallback": {
+          "actual_actions": 11,
+          "matched_same_prefix_full4tick_actions": 4,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 0.0,
+          "unmatched_actions": [
+            269,
+            270,
+            272,
+            273,
+            275,
+            276,
+            278
+          ]
+        }
+      },
+      "mismatch_details": [],
+      "GT_online_cost": {
+        "model_batch_ms": {
+          "count": 93,
+          "median": 934.2430300021078,
+          "p95": 1330.043066805228,
+          "max": 7010.405707987957
+        },
+        "replan_ms": {
+          "count": 93,
+          "sum": 104428.50530467695,
+          "median": 984.899288014276,
+          "p95": 1446.6842316032844,
+          "max": 7074.076477991184
+        },
+        "official5s_GT_warnings": [
+          {
+            "before_action": 175,
+            "full_GT_act_ms": 7074.076477991184
+          }
+        ]
+      },
+      "pixel_observer_GT_CPU_s": 0.13879702300005192,
+      "pixel_observer_GT_wall_s": 0.13775337775587104
+    },
+    "H3": {
+      "order": [
+        "B",
+        "A"
+      ],
+      "pixel_champion": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 33760,
+        "unique_tiles": 303,
+        "total_tiles": 303,
+        "damage": 0.8,
+        "retire_reason": null,
+        "native_actions": 423,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 4,
+        "last_new_tile_action": 419,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 303,
+        "final_unvisited_tile_count": 0,
+        "actor_CPU_s": 4.238467,
+        "evaluator_CPU_s": 21.606348026999967,
+        "episode_wall_s": 25.79810477999854
+      },
+      "GT_oracle": {
+        "status": "completed",
+        "completed": true,
+        "censored": false,
+        "lap_ms": 29880,
+        "unique_tiles": 303,
+        "total_tiles": 303,
+        "damage": 0.8,
+        "retire_reason": null,
+        "native_actions": 374,
+        "stationary_actions": 0,
+        "longest_no_new_tile_actions": 23,
+        "last_new_tile_action": 368,
+        "new_gap_events": 0,
+        "new_gap_tiles": 0,
+        "gap_history": [],
+        "final_contiguous_tiles": 303,
+        "final_unvisited_tile_count": 0,
+        "actor_CPU_s": 3.6545759999999996,
+        "evaluator_CPU_s": 153.19839535699998,
+        "episode_wall_s": 156.90322129800916
+      },
+      "paired_initial_identical": true,
+      "common_completed": true,
+      "GT_minus_pixel_lap_ms": -3880,
+      "GT_to_pixel_lap_ratio": 0.8850710900473934,
+      "GT_model_actual_comparison": {
+        "selected": {
+          "actual_actions": 374,
+          "matched_same_prefix_full4tick_actions": 373,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 0.0058441361309937104,
+          "unmatched_actions": [
+            374
+          ]
+        },
+        "nominal_fallback": {
+          "actual_actions": 0,
+          "matched_same_prefix_full4tick_actions": 0,
+          "raw_collision_mismatch_actions": [],
+          "contact_ID_mismatch_actions": [],
+          "damage_mismatch_actions": [],
+          "physical_terminal_mismatch_actions": [],
+          "tile_mismatch_actions": [],
+          "max_position_error_m": 0,
+          "unmatched_actions": []
+        }
+      },
+      "mismatch_details": [],
+      "GT_online_cost": {
+        "model_batch_ms": {
+          "count": 125,
+          "median": 943.0618559999857,
+          "p95": 1146.3233660149854,
+          "max": 7587.146943988046
+        },
+        "replan_ms": {
+          "count": 125,
+          "sum": 135845.68464985932,
+          "median": 986.0481329960749,
+          "p95": 1195.3750237822533,
+          "max": 7635.575034015346
+        },
+        "official5s_GT_warnings": [
+          {
+            "before_action": 64,
+            "full_GT_act_ms": 6263.750829995843
+          },
+          {
+            "before_action": 253,
+            "full_GT_act_ms": 7635.575034015346
+          }
+        ]
+      },
+      "pixel_observer_GT_CPU_s": 0.13567831599982583,
+      "pixel_observer_GT_wall_s": 0.13434597125160508
+    }
+  },
+  "primary_judgment": "GTfewerofficialcompletions;weakgenerality despiteknownDEVsuccess;do notexpandorretuneinthisstage.",
+  "information_compute_limit": "Aunchangedlegalpixelchampionnormal24, Bfrozen219privilegedGTwithnormal32nominal plus44ishquerypool. Comparisoncombinesinformation/control/computebudget; notfairisolatedalgorithm efficiency orlegalagentpromotion.",
+  "model_actual_scope": "Bexistingfirst3forecastrows only, exactentireexecutedcommandprefix/full4tickendpoints. Rawcollision/contactIDs/damage/physicalterminal separate; partialfinish/unmatchedfallback excluded. AreadonlyGTobserverneverfeedsactor/selector oradds policy/model/envcalls.",
+  "cost": {
+    "stage": 220,
+    "at_utc": "2026-10-12T18:48:05.114041+00:00",
+    "native_cap": 4800,
+    "new_wrapper_actions": 3132,
+    "episodes_executed": 8,
+    "registered_episodes": 8,
+    "wall_s": 712.805383502011,
+    "raw_step_ticks": 12515,
+    "raw_reset_ticks": 408,
+    "evaluator_CPU_s": 679.2883962849999,
+    "actor_CPU_s": 32.099703,
+    "model_queries": 19566,
+    "model_physics_ticks": 932296,
+    "model_CPU_s": 490.625934888,
+    "model_CPU_included_in_evaluator": true,
+    "GT_capture_wall_s": 10.584886825090507,
+    "reconstruction_wall_s": 291.4668586072803,
+    "integration_wall_s": 189.28588469466195,
+    "T_control_CPU_s": 2.5523398929960273,
+    "T_total_wall_s": 13.406559212569846,
+    "pixel_observer_GT_CPU_s": 0.6463643090002986,
+    "pixel_observer_GT_wall_s": 0.6414634083630517,
+    "forecast_retention_wall_s": 0.18338583305012435,
+    "extra_comparison_model_queries": 0,
+    "source_only_selection_wall_s": 0.014004249998833984,
+    "source_only_selection_native_actions": 0,
+    "official5s_GT_warning_count": 3,
+    "evaluator_peak_RSS_mib": 4459.0,
+    "actor_peak_RSS_mib": 46.39453125,
+    "memory_scope": "Evaluatorru_maxrss same serialprocesshighwatermark,notindependentcurrentRSSpercondition; actor separatelyobserved.",
+    "technical_error": null,
+    "unexecuted_roles": [],
+    "B_operating_cap": 828000,
+    "actual_cumulative_wrapper_actions": 741635,
+    "research_remaining": 2365,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "accounting": "FourprospectiveHOLDOUTpairs,AB/BA balanced,eacharmresetonce600cap. Source-onlyidentityregistration0native/model. Actualnativeincludesbotharms; onlyBmodelqueries, modelCPUinsideevaluator; pixelreadonlyobserverseparate. No retry/replacement/tuning. All slowGTwarnings/censor/errors retained."
+  },
+  "champion_changed": false,
+  "SEALED_opened": false,
+  "authorization_end_utc": "2026-10-16T10:01:55+00:00",
+  "automatic_next_experiment": false
+}
