@@ -13,6 +13,7 @@ import numpy as np
 from retry.short_sequence_probe import digest
 from retry.source_vehicle_transition import SourceVehicleTransition, capture, controls, predict
 from retry.transition_ranking_probe import endpoint, select
+from retry.track_feedback_candidate import predict_track_feedback
 
 
 def build_feedback_worker(source, destination):
@@ -76,8 +77,8 @@ def retained_candidate(previous, step, nominal, horizon):
     """Shift by elapsed actions; repeat last command for forecast only.
 
     Selecting R does not renew the original plan's expiration. Its rank metadata
-    measures the constant steering offset from today's nominal anchor. The
-    unchanged selector sorts R after C names if every preceding key ties.
+    preserves the old constant steering offset, or uses block mean absolute
+    offsets for a feedback-generated sequence. Final ties still use names.
     """
     if previous is None:
         return None
@@ -89,9 +90,11 @@ def retained_candidate(previous, step, nominal, horizon):
     assert len(suffix) <= horizon
     actions = [np.asarray(a, np.float32).copy() for a in suffix]
     actions.extend([actions[-1].copy() for _ in range(horizon-len(actions))])
-    assert all(float(a[0]) == float(actions[0][0]) for a in actions)
     offset = float(actions[0][0])-float(nominal[0])
-    rank_spec = dict(steer_offsets=[offset, offset],
+    offsets = ([offset, offset] if all(float(a[0]) == float(actions[0][0]) for a in actions) else
+        [float(np.mean([abs(float(a[0])-float(nominal[0])) for a in block]))
+         for block in (actions[:horizon//2], actions[horizon//2:])])
+    rank_spec = dict(steer_offsets=offsets,
                      brake_first_block=any(a[2] > 0 for a in actions[:horizon//2]))
     return dict(actions=actions, rank_spec=rank_spec, remaining_actions=len(suffix),
                 origin_step=previous['start_step'], expires_before=previous['start_step']+horizon)
@@ -119,6 +122,38 @@ def choose_with_fallback(scores, specifications, enabled):
     original = select({n: s for n, s in scores.items() if not n.startswith('E')}, specifications)
     relaxed = relaxed_selection(scores, specifications) if enabled and not original else []
     return original, relaxed, original or relaxed
+
+
+def forecast_pool(snapshot, nominal, oracle, step, previous_plan, track, previous_steer,
+                  record_road_visits=False):
+    """Keep the existing pool; optionally add one model-feedback T trajectory."""
+    specs, horizon = oracle['specifications'], oracle['horizon_actions']
+    if record_road_visits:
+        candidates = {n: predict_actions(snapshot, controls(nominal, s), True) for n,s in specs.items()}
+        predicted = dict(candidates=candidates, model_physics_ticks=sum(q['model_physics_ticks'] for q in candidates.values()))
+    else:
+        predicted = predict(snapshot, nominal, specs)
+    actions = {n: controls(nominal, s) for n,s in specs.items()}
+    active_specs = dict(specs)
+    if oracle.get('include_nominal_hold', False):
+        assert np.isfinite(nominal).all() and np.all(nominal >= [-1,0,0]) and np.all(nominal <= [1,1,1])
+        actions['N'] = [nominal.copy() for _ in range(horizon)]
+        predicted['candidates']['N'] = predict_actions(snapshot, actions['N'], record_road_visits)
+        predicted['model_physics_ticks'] += predicted['candidates']['N']['model_physics_ticks']
+        active_specs['N'] = dict(steer_offsets=[0.,0.], brake_first_block=bool(nominal[2]>0))
+    retained = retained_candidate(previous_plan, step, nominal, horizon) if oracle.get('retain_suffix', False) else None
+    if retained is not None:
+        actions['R'] = retained['actions']
+        predicted['candidates']['R'] = predict_actions(snapshot, actions['R'], record_road_visits)
+        predicted['model_physics_ticks'] += predicted['candidates']['R']['model_physics_ticks']
+        active_specs['R'] = retained['rank_spec']
+    if oracle.get('track_feedback'):
+        query = predict_track_feedback(snapshot, track, nominal, previous_steer, oracle['track_feedback'], horizon)
+        predicted['candidates']['T'] = query
+        predicted['model_physics_ticks'] += query['model_physics_ticks']
+        actions['T'] = [np.asarray(a,np.float32) for a in query['actions']]
+        active_specs['T'] = query['rank_spec']
+    return predicted, active_specs, retained, actions
 
 
 def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
@@ -166,6 +201,8 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
         def reset(*args, **kwargs):
             result = old_reset(*args, **kwargs)
             state['env'] = env
+            if oracle.get('track_feedback'):
+                state['track'] = [list(map(float, point)) for point in env.unwrapped.track]
             if oracle.get('record_track_diagnostic', False):
                 directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
                 old_write(directory / 'track-diagnostic.json', dict(
@@ -277,6 +314,16 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                                  and gate['position_error_m']['max'] is not None
                                  and gate['position_error_m']['max'] <= .001
                                  and gate['speed_error_m_s']['max'] <= .01)
+                        gate['valid'] = valid
+                    if replay.get('required_tile_ids'):
+                        initially_visited = {t['idx'] for t in counterfactual['snapshot']['roads'] if t['visited']}
+                        predicted_rows = counterfactual['prediction'][counterfactual['selected']]['rows']
+                        all_tiles = set(range(counterfactual['snapshot']['road_count']))
+                        gate['required_tiles_visited'] = all(t not in row['unvisited_tiles'] for t in replay['required_tile_ids'])
+                        gate['visited_tile_set_mismatch_steps'] = sum(
+                            sorted(all_tiles-set(actual['unvisited_tiles'])-initially_visited) != prediction['newly_visited_tile_ids']
+                            for actual,prediction in zip(local,predicted_rows))
+                        valid = valid and gate['required_tiles_visited'] and gate['visited_tile_set_mismatch_steps'] == 0
                         gate['valid'] = valid
                     state['local_gate'] = gate
                     directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
@@ -412,7 +459,8 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 assert frozen['initial_state_digest'] == digest(snapshot)
                 diagnostic_candidate = replay.get('diagnostic_candidate')
                 if diagnostic_candidate is not None:
-                    assert replay.get('allow_predicted_contact') and not replay.get('require_progress_match')
+                    assert ((replay.get('allow_predicted_contact') and not replay.get('require_progress_match'))
+                            or (replay.get('require_progress_match') and not frozen['scores'][diagnostic_candidate]['risk']))
                     chosen = diagnostic_candidate
                     assert chosen in frozen['candidate_controls'] and chosen in frozen['prediction']
                 else:
@@ -421,17 +469,56 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 counterfactual.update(frozen)
                 counterfactual['selected'] = chosen
                 actions = [np.asarray(a, np.float32) for a in frozen['candidate_controls'][chosen]['actions']]
-                assert len(actions) == replay['suffix_length'] == 24
+                assert len(actions) == replay['suffix_length'] and len(actions) in (12,24)
                 state.update(pending=actions, selection=chosen, prediction_rows=frozen['prediction'][chosen]['rows'],
                     selection_offset=0, mode='local_intervention', progress_fallback_active=True, previous_plan=None)
                 decisions.append(dict(step=state['calls'], selected=chosen, eligible=frozen['eligible'],
-                    selection_reason='preregistered_contact_diagnostic' if diagnostic_candidate else 'frozen_eligible_rank',
+                    selection_reason='preregistered_diagnostic_candidate' if diagnostic_candidate else 'frozen_eligible_rank',
                     capture_wall_s=capture_wall, model_CPU_s=0., model_batch_wall_s=0.,
                     reconstruction_wall_s=0., integration_wall_s=0., model_physics_ticks=0, model_queries=0))
                 directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
                 old_write(directory / 'restart-confirmation-boundary.json', dict(initial_state_digest=digest(snapshot),
                     selected=chosen, frozen_prediction_digest=digest(frozen), before_actual_suffix=True,
                     predicted_contact_allowed=bool(replay.get('allow_predicted_contact'))), exclusive=True)
+            if active_replay and replay.get('track_probe') == 'query' and state['calls'] == prefix_length+1:
+                t = time.perf_counter()
+                snapshot = capture(state['env'])
+                capture_wall = time.perf_counter()-t
+                assert digest(snapshot) == replay['snapshot_digest']
+                assert np.array_equal(nominal,np.asarray(replay['boundary_nominal'],np.float32))
+                state['road_count'] = snapshot['road_count']
+                cpu, wall = time.process_time(), time.perf_counter()
+                predicted, active_specs, retained, commands = forecast_pool(snapshot, nominal, oracle, state['calls'],
+                    replay['previous_plan'], state['track'], float(state['executed'][0]), True)
+                model_cpu, model_wall = time.process_time()-cpu, time.perf_counter()-wall
+                scores = {n:endpoint(q['rows'],horizon,snapshot['unique_tiles']) for n,q in predicted['candidates'].items()}
+                assert {n:s for n,s in scores.items() if n!='T'} == replay['boundary_scores']
+                assert all(all(q['initialization'].values()) for q in predicted['candidates'].values())
+                base_scores = {n:s for n,s in scores.items() if n!='T'}
+                _,_,old_eligible = choose_with_fallback(base_scores,active_specs,True)
+                original,relaxed,eligible = choose_with_fallback(scores,active_specs,True)
+                target = set(replay['required_tile_ids'])
+                covers = {n:target.issubset(q['rows'][-1]['newly_visited_tile_ids']) for n,q in predicted['candidates'].items()}
+                old_covering = [n for n in old_eligible if covers[n]]
+                supplements = 'T' in eligible and covers['T'] and not old_covering
+                frozen = dict(snapshot=snapshot,initial_state_digest=digest(snapshot),prefix_actions=prefix_length,
+                    prediction=predicted['candidates'],scores=scores,eligible=eligible,selected=eligible[0] if eligible else None,
+                    original_eligible=original,relaxed_eligible=relaxed,existing_eligible=old_eligible,
+                    existing_covering_candidates=old_covering,target_covered=covers,supplements_missing_path=supplements,
+                    candidate_controls={n:dict(actions=[a.tolist() for a in commands[n]],rank_spec=active_specs[n]) for n in commands},
+                    original_scores_identical=True,frozen_before_actual_suffix=True,native_actual_candidate_steps=0)
+                query = predicted['candidates']['T']
+                decisions.append(dict(step=state['calls'],selected=frozen['selected'],eligible=eligible,capture_wall_s=capture_wall,
+                    model_CPU_s=model_cpu,model_batch_wall_s=model_wall,model_physics_ticks=predicted['model_physics_ticks'],
+                    model_queries=len(scores),reconstruction_wall_s=sum(q['reconstruction_wall_s'] for q in predicted['candidates'].values()),
+                    integration_wall_s=sum(q['integration_wall_s'] for q in predicted['candidates'].values()),
+                    T_control_CPU_s=query['control_CPU_s'],T_control_wall_s=query['control_wall_s'],T_total_wall_s=query['wall_s'],
+                    T_reconstruction_wall_s=query['reconstruction_wall_s'],T_integration_wall_s=query['integration_wall_s'],
+                    full_decision_wall_ms=(time.perf_counter()-before)*1000))
+                directory = plan_path.parent / 'runs' / (case['id']+'__'+arm)
+                old_write(directory/'track-candidate-prediction.json',frozen,exclusive=True)
+                state['diagnostic_stop'] = 'track_candidate_prediction_sealed'
+                raise DiagnosticStop(state['diagnostic_stop'])
             if active_replay and replay.get('intervention') and not replay.get('restart_probe') and state['calls'] == prefix_length+1:
                 t = time.perf_counter()
                 snapshot = capture(state['env'])
@@ -471,24 +558,9 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                 snapshot = capture(state['env'])
                 capture_wall = time.perf_counter() - t
                 cpu, wall = time.process_time(), time.perf_counter()
-                predicted = predict(snapshot, nominal, specs)
-                active_specs = dict(specs)
-                nominal_hold = None
-                if oracle.get('include_nominal_hold', False):
-                    # Hold today's entire float32 command, including its pedals.
-                    # This is not a forecast of future pixel-policy decisions.
-                    assert np.isfinite(nominal).all()
-                    assert np.all(nominal >= [-1, 0, 0]) and np.all(nominal <= [1, 1, 1])
-                    nominal_hold = [nominal.copy() for _ in range(horizon)]
-                    predicted['candidates']['N'] = predict_actions(snapshot, nominal_hold)
-                    predicted['model_physics_ticks'] += predicted['candidates']['N']['model_physics_ticks']
-                    active_specs['N'] = dict(steer_offsets=[0., 0.], brake_first_block=bool(nominal[2] > 0))
-                retained = (retained_candidate(state['previous_plan'], state['calls'], nominal, horizon)
-                            if oracle.get('retain_suffix', False) else None)
-                if retained is not None:
-                    predicted['candidates']['R'] = predict_actions(snapshot, retained['actions'])
-                    predicted['model_physics_ticks'] += predicted['candidates']['R']['model_physics_ticks']
-                    active_specs['R'] = retained['rank_spec']
+                predicted, active_specs, retained, all_commands = forecast_pool(
+                    snapshot, nominal, oracle, state['calls'], state['previous_plan'], state.get('track'),
+                    float(state['executed'][0]) if 'executed' in state else 0.)
                 model_cpu = time.process_time() - cpu
                 predicted['batch_wall_s'] = time.perf_counter() - wall
                 scores = {name: endpoint(v['rows'], horizon, snapshot['unique_tiles'])
@@ -505,7 +577,7 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                     assert retained['remaining_actions'] >= interval
                     selected_actions = retained['actions']
                 elif chosen is not None:
-                    selected_actions = nominal_hold if chosen == 'N' else controls(nominal, specs[chosen])
+                    selected_actions = all_commands[chosen]
                     if oracle.get('retain_suffix', False):
                         state['previous_plan'] = dict(start_step=state['calls'], actions=selected_actions, origin_candidate=chosen)
                 else:
@@ -530,7 +602,12 @@ def oracle_episode(plan_path, plan, case, arm, initial_pairs, replay=None):
                     model_batch_wall_s=predicted['batch_wall_s'],
                     reconstruction_wall_s=sum(v['reconstruction_wall_s'] for v in predicted['candidates'].values()),
                     integration_wall_s=sum(v['integration_wall_s'] for v in predicted['candidates'].values()),
-                    model_physics_ticks=predicted['model_physics_ticks'], model_queries=len(predicted['candidates'])))
+                    model_physics_ticks=predicted['model_physics_ticks'], model_queries=len(predicted['candidates']),
+                    T_control_CPU_s=predicted['candidates'].get('T',{}).get('control_CPU_s',0.),
+                    T_control_wall_s=predicted['candidates'].get('T',{}).get('control_wall_s',0.),
+                    T_total_wall_s=predicted['candidates'].get('T',{}).get('wall_s',0.),
+                    T_reconstruction_wall_s=predicted['candidates'].get('T',{}).get('reconstruction_wall_s',0.),
+                    T_integration_wall_s=predicted['candidates'].get('T',{}).get('integration_wall_s',0.)))
             executed = state['pending'].pop(0) if state['pending'] else nominal.copy()
             executed = np.asarray(executed, dtype=np.float32)
             feedback, feedback_ms = old_call('feedback', executed)

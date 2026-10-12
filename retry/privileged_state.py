@@ -36,7 +36,7 @@ FEATURE_NAMES = (
 FEATURE_DIM = len(FEATURE_NAMES)
 
 
-def _local_road(points, position):
+def _local_road(points, position, lookahead_arc_m=None, segment_indices=None):
     """Nearest closed-centerline segment; local ties use static row order."""
     ends = np.roll(points, -1, axis=0)
     vectors = ends - points
@@ -49,11 +49,15 @@ def _local_road(points, position):
     projections = points + fractions[:, None] * vectors
     distances = np.sum((projections - position) ** 2, axis=1)
     distances[~valid] = np.inf
+    if segment_indices is not None:
+        allowed = np.zeros(len(points), dtype=bool)
+        allowed[np.asarray(segment_indices, dtype=int)] = True
+        distances[~allowed] = np.inf
     index = int(np.argmin(distances))
     lengths = np.sqrt(squared)
     cumulative = np.r_[0., np.cumsum(lengths)]
     arc = cumulative[index] + fractions[index] * lengths[index]
-    queries = (arc + np.asarray(SPEC.lookahead_arc_m)) % cumulative[-1]
+    queries = (arc + np.asarray(SPEC.lookahead_arc_m if lookahead_arc_m is None else lookahead_arc_m)) % cumulative[-1]
     closed = np.vstack((points, points[0]))
     future_geometry = np.column_stack([
         np.interp(queries, cumulative, closed[:, axis]) for axis in range(2)])

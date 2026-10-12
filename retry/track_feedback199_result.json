@@ -1,0 +1,311 @@
+{
+  "stage": 199,
+  "status": "STOP_T_PATH_SUPPLEMENT_GATE_NOT_MET",
+  "privileged_GT_candidate": true,
+  "legal_pixel_policy": false,
+  "champion_promotion": false,
+  "candidate_definition": {
+    "name": "T",
+    "horizon_actions": 12,
+    "configuration": {
+      "speed_cap": 45.0,
+      "lateral_fast": 24.0,
+      "lateral_safe": 8.0,
+      "search_behind_m": 7.5,
+      "search_ahead_m": 30.0
+    },
+    "geometry": "Current model hull and static GT centerline. Initial cursor uses wheel-road membership when available; then nearest local segment in -7.5/+30m arc window. Target at forward arc clip(4+.35*model_speed,6,14)m. Existing _local_road geometry helper reused.",
+    "control": "Recompute every model wrapper step. Reuse pure pursuit atan(3.24*curvature), steering clip+/-0.4 and0.8/0.2 command smoothing. Champion zero-offset curvature target min(45,sqrt(lateral/max(abs(curvature),1e-6))) with lateral24 or8 under existing forward obstacle proximity rule. Pedals use .08 gas/.04 brake gains clipped0..0.5 against model speed.",
+    "future_information": "Only reconstructed model state and static GT geometry; no actual future environment or future pixels/actor calls.",
+    "rank": "Unchanged primary/relaxed filters and ranking. Two6-action block mean absolute steering deviations from current nominal; first-block brake flag; final ID ties C<E<N<R<T. No T-specific preference. R keeps the original12-action expiry for variable T sequences.",
+    "control_updates": 12,
+    "distinct_generated_commands": 12,
+    "target_speed_min_m_s": 20.03512756963137,
+    "target_speed_max_m_s": 45.0,
+    "target_cap_is_not_instantaneous_actual_speed_bound": true
+  },
+  "boundary": {
+    "case_label": "D1",
+    "before_action": 133,
+    "prefix_actions": 132,
+    "before_first_missed_A_at_action": 137,
+    "paired_reset_identical": true,
+    "prefix_actions_nominal_and_scalars_identical": true,
+    "GT_boundary_identical": true,
+    "all_original_11_scores_identical": true,
+    "old_eligible": [
+      "C00",
+      "C01",
+      "C09"
+    ],
+    "new_eligible": [
+      "C00",
+      "C01",
+      "T",
+      "C09"
+    ],
+    "old_selected": "C00",
+    "new_selected": "C00",
+    "existing_admissible_A_paths": [
+      "C09"
+    ]
+  },
+  "candidates": {
+    "C00": {
+      "score": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 18,
+        "speed_m_s": 66.00408493253026,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 0,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "admissible": true,
+      "target_A_covered": false,
+      "first_target_A_action": null
+    },
+    "C01": {
+      "score": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 11,
+        "speed_m_s": 29.937745681623472,
+        "road_wheels": 3,
+        "maximum_off_track_counter": 1,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "admissible": true,
+      "target_A_covered": false,
+      "first_target_A_action": null
+    },
+    "C08": {
+      "score": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 8,
+        "speed_m_s": 65.38450716611197,
+        "road_wheels": 0,
+        "maximum_off_track_counter": 6,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "admissible": false,
+      "target_A_covered": true,
+      "first_target_A_action": 5
+    },
+    "C09": {
+      "score": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 8,
+        "speed_m_s": 29.79152990445924,
+        "road_wheels": 2,
+        "maximum_off_track_counter": 3,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "admissible": true,
+      "target_A_covered": true,
+      "first_target_A_action": 7
+    },
+    "C16": {
+      "score": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 7,
+        "speed_m_s": 56.38619287465636,
+        "road_wheels": 0,
+        "maximum_off_track_counter": 7,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "admissible": false,
+      "target_A_covered": true,
+      "first_target_A_action": 5
+    },
+    "C17": {
+      "score": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 6,
+        "speed_m_s": 29.135947784811492,
+        "road_wheels": 0,
+        "maximum_off_track_counter": 6,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "admissible": false,
+      "target_A_covered": false,
+      "first_target_A_action": null
+    },
+    "E00": {
+      "score": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 3,
+        "speed_m_s": 3.774102798096979e-14,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 9,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "admissible": false,
+      "target_A_covered": false,
+      "first_target_A_action": null
+    },
+    "E08": {
+      "score": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 3,
+        "speed_m_s": 4.645073321542642e-14,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 9,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "admissible": false,
+      "target_A_covered": false,
+      "first_target_A_action": null
+    },
+    "E16": {
+      "score": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 3,
+        "speed_m_s": 4.645078509255749e-14,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 9,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "admissible": false,
+      "target_A_covered": false,
+      "first_target_A_action": null
+    },
+    "N": {
+      "score": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 4,
+        "speed_m_s": 2.402339266160503e-12,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 8,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "admissible": false,
+      "target_A_covered": false,
+      "first_target_A_action": null
+    },
+    "R": {
+      "score": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 15,
+        "speed_m_s": 66.07612151961884,
+        "road_wheels": 0,
+        "maximum_off_track_counter": 2,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "admissible": false,
+      "target_A_covered": true,
+      "first_target_A_action": 5
+    },
+    "T": {
+      "score": {
+        "risk": false,
+        "terminal": false,
+        "new_tiles": 9,
+        "speed_m_s": 21.2879119988384,
+        "road_wheels": 4,
+        "maximum_off_track_counter": 1,
+        "observed_actions": 12,
+        "damage": 0.0
+      },
+      "admissible": true,
+      "target_A_covered": true,
+      "first_target_A_action": 8
+    }
+  },
+  "gate": {
+    "preregistered": "T must be admissible and cover A while no originally admissible candidate covers A.",
+    "T_admissible": true,
+    "T_covers_A": true,
+    "no_existing_admissible_A_path": false,
+    "passed": false,
+    "actual_T_executed": false,
+    "actual_C09_executed": false,
+    "reset_D1_executed": false,
+    "reset_D2_executed": false,
+    "reset_D0_executed": false,
+    "intentional_diagnostic_stop": true,
+    "racing_DNF": false
+  },
+  "interpretation": {
+    "path_presence": "Existing C09 disproves absence of an admissible A-covering path at this earlier boundary. The198 late-boundary result remains limited topre409/pre412; it did not prove early path absence.",
+    "relative_model_result": "T predicts9newtiles and4roadwheels, compared with C09 8and2, while both coverA. Thus T is not shown useless; this more favorable local model result did not satisfy the preregistered unique-path gate, and real utility remains untested.",
+    "selection": "C00(18newtiles,skipsA) outranks C01(11,skipsA), T(9,coversA) and C09(8,coversA). At this boundary the primary new-tile-count key determines order, before the speed tie-breaker. Candidate tracking quality alone does not change the routing/selection objective.",
+    "evidence_limits": "Only prospective T/C09 model paths. No forced local execution,95percent qualification or official finish was evaluated. Existing11 endpoint reproduction and fake geometry/expiry checks are not actual validation of T dynamics or full closed-loop integration.",
+    "documents": "Plan section7: GT information gap; chapter4.7: reference routing/selection differs from following a path; P8: added component versus unchanged selector, without claiming actual component efficacy."
+  },
+  "validation": {
+    "existing_fake_geometry_tests": 5,
+    "passed": true,
+    "variable_T_retained_controls_and_expiry_checked": true,
+    "checks_added_native": 0,
+    "checks_added_model_integrations": 0
+  },
+  "cost": {
+    "stage": 199,
+    "at_utc": "2026-10-12T13:51:07.397175+00:00",
+    "native_cap": 3000,
+    "new_wrapper_actions": 132,
+    "query_replay_prefix_actions": 132,
+    "actual_T_validation_actions": 0,
+    "reset_policy_actions": 0,
+    "raw_step_ticks": 528,
+    "raw_reset_ticks": 51,
+    "wall_s": 11.363993553008186,
+    "evaluator_CPU_s": 9.226909185999999,
+    "actor_CPU_s": 2.03904,
+    "actual_env_step_wall_s": 7.053674976108596,
+    "reset_wall_s": 0.9335384749865625,
+    "model_queries": 12,
+    "model_physics_ticks": 576,
+    "model_CPU_s": 0.41562192399999986,
+    "zero_time_contact_initializations": 12,
+    "model_CPU_included_in_evaluator": true,
+    "reconstruction_wall_s": 0.2434786559897475,
+    "integration_wall_s": 0.15998310197028331,
+    "capture_wall_s": 0.04330612701596692,
+    "model_batch_wall_s": 0.41553882000152953,
+    "full_query_decision_wall_ms": 515.5155909887981,
+    "T_control_CPU_s": 0.006101403000000616,
+    "T_control_wall_s": 0.006136007024906576,
+    "T_total_wall_s": 0.033322187984595075,
+    "T_reconstruction_wall_s": 0.013491046003764495,
+    "T_integration_wall_s": 0.012799068965250626,
+    "nominal_policy_calls": 133,
+    "own_action_feedback_calls": 132,
+    "timing_scope": "One replay/query episode; action133 was forecast but not executed. Twelve candidates include original11 and T. T feedback-control time is nested in model CPU, which is nested in evaluator CPU; no double counting. T total wall also includes setup/rank/bookkeeping outside the listed component timers. Existing fake-geometry tests and saved-action suffix checks add zero native/model integrations.",
+    "B_operating_cap": 816000,
+    "actual_cumulative_wrapper_actions": 724745,
+    "research_remaining": 7255,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "automatic_next_experiment": false
+  },
+  "champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
