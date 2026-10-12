@@ -1,0 +1,353 @@
+{
+  "stage": 193,
+  "status": "GT_COHORT_INCOMPLETE",
+  "privileged_GT_oracle": true,
+  "legal_pixel_policy": false,
+  "champion_promotion": false,
+  "only_change": "Re-evaluate unexpired previouslyselected suffix as R alongside the same6candidates. Model,12-actionhorizon,3-actionreplan,nominal32/own-actionfeedback andoriginalselect function unchanged.",
+  "tail_rule": "Repeat lastremaining action tofill12 forecastslots. Keeporiginalplan expiration;Rselection doesnotrenewit. Actualelapsedtime advances oldplan evenin fallback;newCselection replacesit. NoRwhenabsent/expired.",
+  "rank_rule": "R uses twoactualconstant-steering-minus-currentnominal offsets,anybrakeamongfirst6 asbrakeflag,andID R afterC onexactties. ExistingC metadata andrisk/progress thresholds unchanged.",
+  "counterfactual": {
+    "prefix_identity": true,
+    "prefix_actions": 303,
+    "actual_suffix_steps": 9,
+    "model_predicted_contact": false,
+    "actual_contact": false,
+    "actual_contact_steps": 0,
+    "cumulative_false_negative_horizons": [],
+    "actual_terminal": false,
+    "actual_completed": false,
+    "planned_short_endpoint_observed": true,
+    "actual_new_tiles": 6,
+    "predicted_new_tiles": 6,
+    "actual_damage": 0.0,
+    "predicted_damage": 0.0,
+    "tile_mismatch_steps": 0,
+    "position_error_m": {
+      "count": 9,
+      "sum": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+    },
+    "cached192_fallback_contact_steps": 5,
+    "cached192_fallback_actions": 5,
+    "cached192_new_tiles": 2,
+    "cached192_damage": 1.0,
+    "original_six_selected": [],
+    "seven_duplicate_selected": [],
+    "seven_suffix_selected": [
+      "R"
+    ],
+    "full_loop_allowed": true,
+    "boundary": "Nineexecutedactions only. Cachedcontrolendsat5actionsduecrash;do not treatunequalobserved horizons aslap comparison.",
+    "padded12_suffix": {
+      "risk": false,
+      "terminal": false,
+      "new_tiles": 7,
+      "speed_m_s": 30.40909208949211,
+      "road_wheels": 4,
+      "maximum_off_track_counter": 2,
+      "observed_actions": 12,
+      "damage": 0.0
+    }
+  },
+  "full_lap_cases": [
+    {
+      "label": "D0",
+      "executed": true,
+      "baseline": {
+        "normal32": {
+          "completed": true,
+          "lap_ms": 33820,
+          "damage": 0.4,
+          "successful_wrapper_steps": 423
+        },
+        "normal24": {
+          "completed": true,
+          "lap_ms": 35840,
+          "damage": 0.4,
+          "successful_wrapper_steps": 449
+        }
+      },
+      "completed": true,
+      "censored": false,
+      "lap_ms": 35900,
+      "damage": 0.0,
+      "successful_wrapper_steps": 449,
+      "unique_tiles": 296,
+      "total_tiles": 303,
+      "retire_reason": null,
+      "replans": 150,
+      "retained_offered": 138,
+      "retained_selected": 45,
+      "fallback_steps": 35,
+      "selected_contact_steps": 0,
+      "selected_prefix_false_negative_steps": 0,
+      "selected_prefix_tile_mismatch_steps": 0,
+      "selected_prefix_position_error_m": {
+        "count": 414,
+        "sum": 0.0002207796511885134,
+        "median": 0.0,
+        "p95": 3.814697265625e-06,
+        "max": 1.52587890625e-05
+      },
+      "all_action_decision_ms": {
+        "count": 449,
+        "sum": 29778.15845317673,
+        "median": 14.424566004890949,
+        "p95": 199.68371898867176,
+        "max": 521.0689989908133
+      },
+      "replan_decision_ms": {
+        "count": 150,
+        "sum": 26174.58346200874,
+        "median": 164.07888500543777,
+        "p95": 235.01545471663113,
+        "max": 521.0689989908133
+      },
+      "comparisons": {
+        "normal32": {
+          "baseline_completed": true,
+          "baseline_lap_ms": 33820,
+          "baseline_damage": 0.4,
+          "lost_completion": false,
+          "new_completion": false,
+          "common_lap_delta_ms": 2080
+        },
+        "normal24": {
+          "baseline_completed": true,
+          "baseline_lap_ms": 35840,
+          "baseline_damage": 0.4,
+          "lost_completion": false,
+          "new_completion": false,
+          "common_lap_delta_ms": 60
+        }
+      }
+    },
+    {
+      "label": "D1",
+      "executed": true,
+      "baseline": {
+        "normal32": {
+          "completed": false,
+          "lap_ms": null,
+          "damage": 1.0,
+          "successful_wrapper_steps": 162
+        },
+        "normal24": {
+          "completed": true,
+          "lap_ms": 36220,
+          "damage": 0.0,
+          "successful_wrapper_steps": 453
+        }
+      },
+      "completed": true,
+      "censored": false,
+      "lap_ms": 36060,
+      "damage": 0.0,
+      "successful_wrapper_steps": 451,
+      "unique_tiles": 305,
+      "total_tiles": 314,
+      "retire_reason": null,
+      "replans": 151,
+      "retained_offered": 139,
+      "retained_selected": 49,
+      "fallback_steps": 31,
+      "selected_contact_steps": 0,
+      "selected_prefix_false_negative_steps": 0,
+      "selected_prefix_tile_mismatch_steps": 0,
+      "selected_prefix_position_error_m": {
+        "count": 420,
+        "sum": 0.00022842181584397408,
+        "median": 0.0,
+        "p95": 3.814697265625e-06,
+        "max": 1.5266237824995157e-05
+      },
+      "all_action_decision_ms": {
+        "count": 451,
+        "sum": 30820.943101134617,
+        "median": 12.680765008553863,
+        "p95": 199.57785049336962,
+        "max": 673.8580599776469
+      },
+      "replan_decision_ms": {
+        "count": 151,
+        "sum": 27473.830179078504,
+        "median": 163.49172499030828,
+        "p95": 228.59910249826498,
+        "max": 673.8580599776469
+      },
+      "comparisons": {
+        "normal32": {
+          "baseline_completed": false,
+          "baseline_lap_ms": null,
+          "baseline_damage": 1.0,
+          "lost_completion": false,
+          "new_completion": true,
+          "common_lap_delta_ms": null
+        },
+        "normal24": {
+          "baseline_completed": true,
+          "baseline_lap_ms": 36220,
+          "baseline_damage": 0.0,
+          "lost_completion": false,
+          "new_completion": false,
+          "common_lap_delta_ms": -160
+        }
+      }
+    },
+    {
+      "label": "D2",
+      "executed": true,
+      "baseline": {
+        "normal32": {
+          "completed": false,
+          "lap_ms": null,
+          "damage": 1.0,
+          "successful_wrapper_steps": 312
+        },
+        "normal24": {
+          "completed": true,
+          "lap_ms": 33800,
+          "damage": 0.2,
+          "successful_wrapper_steps": 423
+        }
+      },
+      "completed": false,
+      "censored": false,
+      "lap_ms": null,
+      "damage": 1.0,
+      "successful_wrapper_steps": 412,
+      "unique_tiles": 263,
+      "total_tiles": 291,
+      "retire_reason": "crash",
+      "replans": 138,
+      "retained_offered": 123,
+      "retained_selected": 52,
+      "fallback_steps": 34,
+      "selected_contact_steps": 0,
+      "selected_prefix_false_negative_steps": 0,
+      "selected_prefix_tile_mismatch_steps": 0,
+      "selected_prefix_position_error_m": {
+        "count": 378,
+        "sum": 0.00020377272522411577,
+        "median": 0.0,
+        "p95": 3.814697265625e-06,
+        "max": 1.52587890625e-05
+      },
+      "all_action_decision_ms": {
+        "count": 412,
+        "sum": 28013.607768749353,
+        "median": 12.784281483618543,
+        "p95": 188.63010878849306,
+        "max": 1004.1875440219883
+      },
+      "replan_decision_ms": {
+        "count": 138,
+        "sum": 24933.995483006584,
+        "median": 162.5821895140689,
+        "p95": 219.32461769611115,
+        "max": 1004.1875440219883
+      },
+      "comparisons": {
+        "normal32": {
+          "baseline_completed": false,
+          "baseline_lap_ms": null,
+          "baseline_damage": 1.0,
+          "lost_completion": false,
+          "new_completion": false,
+          "common_lap_delta_ms": null
+        },
+        "normal24": {
+          "baseline_completed": true,
+          "baseline_lap_ms": 33800,
+          "baseline_damage": 0.2,
+          "lost_completion": true,
+          "new_completion": false,
+          "common_lap_delta_ms": null
+        }
+      }
+    }
+  ],
+  "strengthens": "Exactpre304 intervention: retained9actions avoided allcontacts andgained6tiles;cachedfallback crashedwithin5. Model9-stepcontact/progress/posematched. Same7-query duplicatecontrol remainsinadmissible;Rbecomesadmissible. Supports specificcandidate-loss hypothesis atthatstate.",
+  "weakens": "Fullclosedloop completed2/3:preservedtheknowncompletion andrescuedoneformerfailure,butsecondformerfailurestillcrashed. KnowncompletedDEVwas2080msslowerthannormal32 and60msslowerthanchampion. Thusretention aloneisnotasufficientglobalrescue orspeedimprovement. Lastfailedcase contactsbeganinfallbackafteroldplanexpiration;no newfailure-specificrepair tested.",
+  "limits": "Shortsuffix rescuealone isnotlap orgeneralization evidence. Fullruns startfromreset andcanchangeearlierpath. Samequery-budgetcontrol isonlyatmatchedboundary,notanindependentfull-lap equalcomputecontrol. Initial303pixelstreamhashwasnotsaved;verifiedaction/nominal/scalarprefix andfullGTboundary instead. Damageisdiagnostic,notanindependentpromotiongate.",
+  "cost": {
+    "stage": 193,
+    "at_utc": "2026-10-12T11:44:11.272203+00:00",
+    "native_cap": 3000,
+    "new_wrapper_actions": 1624,
+    "counterfactual_prefix_actions": 303,
+    "counterfactual_suffix_actions": 9,
+    "full_lap_native": 1312,
+    "native_episode_invocations": 4,
+    "raw_step_ticks": 6496,
+    "raw_reset_ticks": 204,
+    "wall_s": 162.91119022699422,
+    "evaluator_CPU_s": 147.50994526,
+    "actor_CPU_s": 15.329215000000001,
+    "actual_env_step_wall_s": 66.1570142840792,
+    "model_queries": 3042,
+    "model_physics_ticks": 145672,
+    "model_CPU_s": 63.34568076399978,
+    "zero_time_contact_initializations": 3042,
+    "model_CPU_included_in_evaluator": true,
+    "component_batch_ms": {
+      "capture_wall_ms": {
+        "count": 440,
+        "sum": 6189.896021853201,
+        "median": 9.686132005299442,
+        "p95": 15.858694603957694,
+        "max": 507.8341689950321
+      },
+      "reconstruction_wall_ms": {
+        "count": 440,
+        "sum": 38570.653741044225,
+        "median": 76.42834598664194,
+        "p95": 105.08817333466132,
+        "max": 902.3037310107611
+      },
+      "integration_wall_ms": {
+        "count": 440,
+        "sum": 24790.463542973157,
+        "median": 54.956941021373495,
+        "p95": 74.23613448336246,
+        "max": 118.02080296911299
+      },
+      "model_batch_wall_ms": {
+        "count": 440,
+        "sum": 63412.985913135344,
+        "median": 132.56772150634788,
+        "p95": 184.49330280127464,
+        "max": 960.8385819883551
+      }
+    },
+    "full_replan_decision_ms": {
+      "count": 439,
+      "sum": 78582.40912409383,
+      "median": 163.49172499030828,
+      "p95": 231.99787349731193,
+      "max": 1004.1875440219883
+    },
+    "full_replans_over_240ms": 20,
+    "counterfactual_model_queries": 8,
+    "counterfactual_model_physics_ticks": 376,
+    "qualified_worker_reused": true,
+    "new_synthetic_worker_calls": 0,
+    "B_operating_cap": 816000,
+    "actual_cumulative_wrapper_actions": 721945,
+    "research_remaining": 10055,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0,
+    "champion_changed": false,
+    "new_HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "automatic_next_experiment": false
+  },
+  "champion_unchanged": true,
+  "new_HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
