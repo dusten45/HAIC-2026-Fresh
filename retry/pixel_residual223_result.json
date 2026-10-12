@@ -1,0 +1,63 @@
+{
+  "stage": 223,
+  "status": "BLOCKED_MISSING_PIXEL_REPLAY_DATA",
+  "roads": [
+    {
+      "road": "F0",
+      "teacher_executed_command_rows": 368,
+      "saved_video_frames": 0,
+      "saved_policy_telemetry_rows": 0,
+      "observation_digest_present": true,
+      "champion_replay_qualified": false
+    },
+    {
+      "road": "F1",
+      "teacher_executed_command_rows": 334,
+      "saved_video_frames": 0,
+      "saved_policy_telemetry_rows": 0,
+      "observation_digest_present": true,
+      "champion_replay_qualified": false
+    },
+    {
+      "road": "F2",
+      "teacher_executed_command_rows": 337,
+      "saved_video_frames": 0,
+      "saved_policy_telemetry_rows": 0,
+      "observation_digest_present": true,
+      "champion_replay_qualified": false
+    },
+    {
+      "road": "F3",
+      "teacher_executed_command_rows": 353,
+      "saved_video_frames": 0,
+      "saved_policy_telemetry_rows": 0,
+      "observation_digest_present": true,
+      "champion_replay_qualified": false
+    }
+  ],
+  "teacher_executed_command_rows": 1392,
+  "observation_assets_found": 0,
+  "qualified_training_rows": 0,
+  "missing": [
+    "Exact reset and ordered act-input float32 (4,84,84) pixel observations",
+    "Current normal24 champion features/actions on that observation history",
+    "Verified causal champion state replay from reset through every act"
+  ],
+  "unavailable_replay_state": [
+    "previous_image",
+    "hazards",
+    "controller.previous_steer"
+  ],
+  "nominal_substitution_allowed": false,
+  "GT_feature_substitution_allowed": false,
+  "native_actions": 0,
+  "model_queries": 0,
+  "training_updates": 0,
+  "LOO_folds_executed": 0,
+  "student_inference_cost_ms": null,
+  "champion_changed": false,
+  "HOLDOUT_used": false,
+  "SEALED_opened": false,
+  "audit_wall_s": 0.26975292901624925,
+  "audit_CPU_s": 0.259397177
+}
