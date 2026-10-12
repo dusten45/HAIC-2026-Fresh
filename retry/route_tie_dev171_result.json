@@ -1,0 +1,177 @@
+{
+  "stage": 171,
+  "status": "REJECT_DAMAGE_GATE_DESPITE_TIME_GAIN_KEEP_CHAMPION",
+  "champion": "normal24 near8 cap45",
+  "candidate_archive_sha256": "2b06d95790e25c95099240a3537e85e354588afba623b168d0b2fc43abeb5951",
+  "old122_difference": {
+    "old": "Hazard ID side reservation with a new restricted graph search; held while connected regardless of cost disadvantage.",
+    "current": "Only already computed, currently valid candidates within0.05m of the original minimum score. One-step previous route transported by existing tracker motion; no ID reservation, extra search or forced stale path.",
+    "old_result_context": "122 reduced flips but advanced contact by4 actions; different older champion/case, implementation warning rather than paired performance evidence."
+  },
+  "frozen_rule": {
+    "tie_band_m": 0.05,
+    "score": "Existing base-cost gap + speed*abs(next_steer-previous_steer)/3, in nominal metres; original scores unchanged.",
+    "observed_scores_before_outcomes": [
+      2.1837918278816044,
+      2.215893237483372
+    ],
+    "observed_first_gap_m": 0.03210140960176755,
+    "later_gap_range_m": [
+      1.7971573163294585,
+      5.483659274856613
+    ],
+    "minimum_grid_step_m": 0.5878894767783657,
+    "band_fraction_minimum_step": 0.08505,
+    "fallback": "Unavailable/untransportable prior crossing, missing same-side current candidate, or score excess>0.05 returns original ranking.",
+    "normal_lateral": 24,
+    "near_lateral": 8,
+    "speed_cap": 45,
+    "source_steering_and_pedals_unchanged": true,
+    "perception_and_tracker_numeric_rules_unchanged": true,
+    "no_GT_or_steering_correction": true,
+    "candidate_validity_scope": "Connected in the existing current-pixel graph; not a swept-body collision-free guarantee."
+  },
+  "prefix": {
+    "exact_original111_input_action_prefix": true,
+    "exact_branch112_state_and_perception": true,
+    "actual_tie_selections": 1,
+    "first_effect_step": 112,
+    "selected_score_excess_m": 0.03210140960176755,
+    "original_steer_at112": 0.31144431233406067,
+    "candidate_steer_at112": 0.009807995520532131,
+    "common_precontact_window": [
+      100,
+      122
+    ],
+    "baseline_geometric_flip_steps": [
+      104,
+      112,
+      117
+    ],
+    "candidate_geometric_flip_steps": [
+      104
+    ],
+    "flip_metric": "Same physical obstacle, route transverse crossing at current obstacle-forward plane; omit undefined crossings. Candidate has no crossing at122, so no continuous side-hold claim.",
+    "baseline_joint_residual_max_rad": 0.397489458322525,
+    "candidate_joint_residual_max_rad": 2.086162567138672e-07,
+    "baseline_first_contact_step": 125,
+    "candidate_first_contact_step": 123,
+    "first_contact_delta_actions": -2,
+    "first_contact_delta_s": -0.16,
+    "candidate_damage_through157": 0.4,
+    "oracle_inputs_to_actor": false
+  },
+  "episodes": [
+    {
+      "anonymous_DEV_index": 2,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 42060,
+      "candidate_lap_ms": 40720,
+      "delta_ms": -1340,
+      "lap_ratio": 0.9681407513076558,
+      "baseline_damage": 0.2,
+      "candidate_damage": 0.6000000000000001,
+      "candidate_native_actions": 510,
+      "changed_route_selection_rows": 1,
+      "first_contact_step": 123,
+      "first_contact_pre_s": 9.75999999999986,
+      "same_full_action_sequence": false,
+      "same_full_observation_sequence": false,
+      "paired_initial_exact": true,
+      "original_steering_and_P_checks": true
+    },
+    {
+      "anonymous_DEV_index": 0,
+      "baseline_completed": true,
+      "candidate_completed": true,
+      "baseline_lap_ms": 32440,
+      "candidate_lap_ms": 32440,
+      "delta_ms": 0,
+      "lap_ratio": 1.0,
+      "baseline_damage": 0.0,
+      "candidate_damage": 0.0,
+      "candidate_native_actions": 406,
+      "changed_route_selection_rows": 0,
+      "first_contact_step": null,
+      "first_contact_pre_s": null,
+      "same_full_action_sequence": true,
+      "same_full_observation_sequence": true,
+      "paired_initial_exact": true,
+      "original_steering_and_P_checks": true
+    }
+  ],
+  "comparison": {
+    "completed_candidate": 2,
+    "completed_baseline": 2,
+    "lost_completion": 0,
+    "median_delta_ms": -670.0,
+    "sum_delta_ms": -1340,
+    "mean_lap_ratio": 0.9840703756538278,
+    "baseline_damage_sum": 0.2,
+    "candidate_damage_sum": 0.6000000000000001,
+    "time_gate_passed": true,
+    "damage_gate_passed": false
+  },
+  "gate_registered_before_runs": {
+    "DEV_indices": [
+      2,
+      0
+    ],
+    "cached_baseline_stage": 163,
+    "episodes": 2,
+    "stop": "Both normal endpoints unless a technical fault; max2000 actions each. No parameter changes after prefix or first endpoint.",
+    "time_gate": "Both complete, no lost completion; median lap delta<0 and mean lap ratio<1 versus current champion.",
+    "damage_gate_for_future_candidate": "Total damage<=baseline0.2 and clean DEV damage=0. Flip count alone never qualifies.",
+    "no_DEV_adoption": true
+  },
+  "interpretation": "One actual tie selection removed the late route reversals and large local actuator lag, but first contact occurred2 actions earlier. Full contactDEV lap improved1.34s with damage0.2->0.6; cleanDEV is bit-identical. Flip/lag reduction does not establish avoidance or acceptable damage. Time gate passes, predeclared damage gate fails; reject without retuning or champion adoption.",
+  "checks": {
+    "helper_inside_outside_missing_candidate_release": true,
+    "transport_identity_and_fallback": true,
+    "unchanged_archive_members": 11,
+    "reused_clean_observer": true,
+    "paired_initial_states": true,
+    "actual_target_steering_P_checked": true,
+    "all_actors_reaped": true,
+    "current_and_rollbacks_preserved": true,
+    "official_server_fresh_machine_parity": "UNVERIFIED"
+  },
+  "cost": {
+    "stage": 171,
+    "at_utc": "2026-10-12T04:25:38.370824+00:00",
+    "native_cap": 8000,
+    "scheduled_native_cap": 4157,
+    "new_wrapper_actions": 1073,
+    "prefix_wrapper_actions": 157,
+    "candidate_full_episode_actions": 916,
+    "full_candidate_episodes": 2,
+    "full_baseline_reruns": 0,
+    "cached_baseline_historical_native_not_recharged": 932,
+    "raw_step_ticks": 4288,
+    "raw_reset_ticks": 153,
+    "wall_s": 44.09992501398665,
+    "evaluator_CPU_s": 35.699260299,
+    "actor_CPU_s": 8.553345,
+    "timing_scope": "Prefix and two full candidate runs; preparation, saved-score analysis and documentation excluded. Actor and evaluator CPU separate.",
+    "B_operating_cap": 782000,
+    "B_increment": 0,
+    "actual_cumulative_wrapper_actions": 688452,
+    "research_remaining": 9548,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_offline_policy_model_calls": 0,
+    "extra_perception_calls": 0,
+    "full_frames_saved": 0,
+    "full_lap_GT_or_policy_streams_saved": 0,
+    "all_actors_reaped": true,
+    "current_champion_changed": false,
+    "HOLDOUT_opened": false,
+    "SEALED_opened": false,
+    "new_paid_resources": 0,
+    "automatic_next_experiment": false
+  },
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
