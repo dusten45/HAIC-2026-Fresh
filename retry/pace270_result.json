@@ -1,0 +1,734 @@
+{
+  "stage": 270,
+  "diagnostic": "Legal pixel on-policy input affine scalar GTgoalpace pilot, rejected0/8",
+  "cohorts": {
+    "fit_road": {
+      "episodes": 5,
+      "completed": 0,
+      "actual_DNF": 5,
+      "censored": 0
+    },
+    "unlabelled_N2": {
+      "episodes": 1,
+      "completed": 0,
+      "actual_DNF": 1,
+      "censored": 0
+    },
+    "unfit_screen": {
+      "episodes": 2,
+      "completed": 0,
+      "actual_DNF": 2,
+      "censored": 0
+    }
+  },
+  "results": [
+    {
+      "road": "O0",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 147,
+      "retire_reason": "off_track",
+      "damage": 0.2,
+      "visited": 57,
+      "total_tiles": 326,
+      "planner_active_actions": 45,
+      "fallback_actions": 102,
+      "cohort": "fit_road",
+      "pace_calls": 45,
+      "log_clipped_actions": 1,
+      "first_collision": 44,
+      "raw_step_ticks": 588,
+      "raw_reset_ticks": 51,
+      "wall_s": 6.890773781982716,
+      "planning_ms": {
+        "median": 0.0,
+        "p95": 0.10836654109880324,
+        "max": 0.19601598614826798,
+        "sum": 3.0690511339344084
+      },
+      "full_Agent_compute_ms": {
+        "median": 1.7164599848911166,
+        "p95": 7.6771947264205656,
+        "max": 11.232692981138825
+      },
+      "IPC_ms": {
+        "median": 4.434267990291119,
+        "p95": 11.236621305579318,
+        "max": 15.802642039489001
+      },
+      "actor_CPU_s": 0.842965,
+      "pixel_only": true,
+      "privileged_policy_inputs": false,
+      "archive_sha256": "edffef1c3701ef04f1a598e02e0b04b9ead1620a7ce4093d4cdbd3dd167ab195",
+      "reaping": {
+        "pid": 110761,
+        "returncode": 125,
+        "waitpid_no_child": true,
+        "proc_pid_absent": true,
+        "process_reaped": true,
+        "close_ms": 0.13262004358693957,
+        "actor_pids_absent": true,
+        "actor_count": 1
+      },
+      "cached_240": {
+        "completed": true,
+        "lap_ms": 23660,
+        "damage": 0.0
+      },
+      "delta_lap_ms": null,
+      "predicted_pace": {
+        "min": 0.3156372811626675,
+        "median": 4.195345162183003,
+        "max": 11.56114916987756
+      },
+      "selected_goal_m_s": {
+        "median": 105.92060639228079,
+        "max": 314.5197035216762
+      },
+      "head_scales_reconstruction_bitexact": true,
+      "pace_from_original_features_reconstruction": true
+    },
+    {
+      "road": "O2",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 141,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "visited": 41,
+      "total_tiles": 289,
+      "planner_active_actions": 69,
+      "fallback_actions": 72,
+      "cohort": "fit_road",
+      "pace_calls": 69,
+      "log_clipped_actions": 0,
+      "first_collision": 44,
+      "raw_step_ticks": 564,
+      "raw_reset_ticks": 51,
+      "wall_s": 6.422736464010086,
+      "planning_ms": {
+        "median": 0.0,
+        "p95": 0.12204400263726711,
+        "max": 0.46699499944224954,
+        "sum": 4.2913443758152425
+      },
+      "full_Agent_compute_ms": {
+        "median": 2.744723984505981,
+        "p95": 12.971123971510679,
+        "max": 22.19054097076878
+      },
+      "IPC_ms": {
+        "median": 5.998931999783963,
+        "p95": 15.161947056185454,
+        "max": 24.652605992741883
+      },
+      "actor_CPU_s": 0.9500959999999999,
+      "pixel_only": true,
+      "privileged_policy_inputs": false,
+      "archive_sha256": "edffef1c3701ef04f1a598e02e0b04b9ead1620a7ce4093d4cdbd3dd167ab195",
+      "reaping": {
+        "pid": 110764,
+        "returncode": 125,
+        "waitpid_no_child": true,
+        "proc_pid_absent": true,
+        "process_reaped": true,
+        "close_ms": 0.26541203260421753,
+        "actor_pids_absent": true,
+        "actor_count": 1
+      },
+      "cached_240": {
+        "completed": true,
+        "lap_ms": 20980,
+        "damage": 0.2
+      },
+      "delta_lap_ms": null,
+      "predicted_pace": {
+        "min": 0.30245002390454323,
+        "median": 1.8603955943541062,
+        "max": 7.793361255873066
+      },
+      "selected_goal_m_s": {
+        "median": 38.55111283828982,
+        "max": 153.35370581765227
+      },
+      "head_scales_reconstruction_bitexact": true,
+      "pace_from_original_features_reconstruction": true
+    },
+    {
+      "road": "N0",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 134,
+      "retire_reason": "off_track",
+      "damage": 0.0,
+      "visited": 32,
+      "total_tiles": 325,
+      "planner_active_actions": 34,
+      "fallback_actions": 100,
+      "cohort": "fit_road",
+      "pace_calls": 34,
+      "log_clipped_actions": 0,
+      "first_collision": null,
+      "raw_step_ticks": 536,
+      "raw_reset_ticks": 51,
+      "wall_s": 5.631887911004014,
+      "planning_ms": {
+        "median": 0.0,
+        "p95": 0.04771821259055286,
+        "max": 0.14042295515537262,
+        "sum": 1.6248970641754568
+      },
+      "full_Agent_compute_ms": {
+        "median": 1.228598499437794,
+        "p95": 10.382184127229266,
+        "max": 16.624382988084108
+      },
+      "IPC_ms": {
+        "median": 3.770585492020473,
+        "p95": 12.919857437373135,
+        "max": 19.88050004001707
+      },
+      "actor_CPU_s": 0.730143,
+      "pixel_only": true,
+      "privileged_policy_inputs": false,
+      "archive_sha256": "edffef1c3701ef04f1a598e02e0b04b9ead1620a7ce4093d4cdbd3dd167ab195",
+      "reaping": {
+        "pid": 110766,
+        "returncode": 125,
+        "waitpid_no_child": true,
+        "proc_pid_absent": true,
+        "process_reaped": true,
+        "close_ms": 0.23102998966351151,
+        "actor_pids_absent": true,
+        "actor_count": 1
+      },
+      "cached_240": {
+        "completed": true,
+        "lap_ms": 23620,
+        "damage": 0.2
+      },
+      "delta_lap_ms": null,
+      "predicted_pace": {
+        "min": 0.3156372811626675,
+        "median": 2.0191465066642817,
+        "max": 7.788078002498152
+      },
+      "selected_goal_m_s": {
+        "median": 63.12490674613545,
+        "max": 157.15917029033812
+      },
+      "head_scales_reconstruction_bitexact": true,
+      "pace_from_original_features_reconstruction": true
+    },
+    {
+      "road": "N1",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 131,
+      "retire_reason": "off_track",
+      "damage": 0.8,
+      "visited": 30,
+      "total_tiles": 238,
+      "planner_active_actions": 130,
+      "fallback_actions": 1,
+      "cohort": "fit_road",
+      "pace_calls": 130,
+      "log_clipped_actions": 1,
+      "first_collision": 30,
+      "raw_step_ticks": 524,
+      "raw_reset_ticks": 51,
+      "wall_s": 5.861317067989148,
+      "planning_ms": {
+        "median": 0.03901903983205557,
+        "p95": 0.10350148659199476,
+        "max": 1.5827059978619218,
+        "sum": 7.744972070213407
+      },
+      "full_Agent_compute_ms": {
+        "median": 5.286064988467842,
+        "p95": 8.601596491644159,
+        "max": 22.83124002860859
+      },
+      "IPC_ms": {
+        "median": 7.525449036620557,
+        "p95": 12.390186486300081,
+        "max": 27.30590500868857
+      },
+      "actor_CPU_s": 1.0659610000000002,
+      "pixel_only": true,
+      "privileged_policy_inputs": false,
+      "archive_sha256": "edffef1c3701ef04f1a598e02e0b04b9ead1620a7ce4093d4cdbd3dd167ab195",
+      "reaping": {
+        "pid": 110768,
+        "returncode": 125,
+        "waitpid_no_child": true,
+        "proc_pid_absent": true,
+        "process_reaped": true,
+        "close_ms": 0.12076302664354444,
+        "actor_pids_absent": true,
+        "actor_count": 1
+      },
+      "cached_240": {
+        "completed": true,
+        "lap_ms": 17080,
+        "damage": 0.0
+      },
+      "delta_lap_ms": null,
+      "predicted_pace": {
+        "min": 0.30989491958320653,
+        "median": 1.5241297963904803,
+        "max": 11.56114916987756
+      },
+      "selected_goal_m_s": {
+        "median": 8.732778983534764,
+        "max": 148.51442181290105
+      },
+      "head_scales_reconstruction_bitexact": true,
+      "pace_from_original_features_reconstruction": true
+    },
+    {
+      "road": "N2",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 155,
+      "retire_reason": "off_track",
+      "damage": 0.2,
+      "visited": 71,
+      "total_tiles": 292,
+      "planner_active_actions": 53,
+      "fallback_actions": 102,
+      "cohort": "unlabelled_N2",
+      "pace_calls": 53,
+      "log_clipped_actions": 2,
+      "first_collision": 52,
+      "raw_step_ticks": 620,
+      "raw_reset_ticks": 51,
+      "wall_s": 7.179885257035494,
+      "planning_ms": {
+        "median": 0.0,
+        "p95": 0.06243578973226243,
+        "max": 0.23032899480313063,
+        "sum": 2.7589857345446944
+      },
+      "full_Agent_compute_ms": {
+        "median": 1.2714540353044868,
+        "p95": 8.78667251090519,
+        "max": 16.038866015151143
+      },
+      "IPC_ms": {
+        "median": 3.8626259774900973,
+        "p95": 11.370180995436373,
+        "max": 18.03713501431048
+      },
+      "actor_CPU_s": 0.808747,
+      "pixel_only": true,
+      "privileged_policy_inputs": false,
+      "archive_sha256": "edffef1c3701ef04f1a598e02e0b04b9ead1620a7ce4093d4cdbd3dd167ab195",
+      "reaping": {
+        "pid": 110770,
+        "returncode": 125,
+        "waitpid_no_child": true,
+        "proc_pid_absent": true,
+        "process_reaped": true,
+        "close_ms": 0.10916503379121423,
+        "actor_pids_absent": true,
+        "actor_count": 1
+      },
+      "cached_240": {
+        "completed": true,
+        "lap_ms": 21560,
+        "damage": 0.0
+      },
+      "delta_lap_ms": null,
+      "predicted_pace": {
+        "min": 0.30245002390454323,
+        "median": 4.940629530415587,
+        "max": 11.56114916987756
+      },
+      "selected_goal_m_s": {
+        "median": 110.69061521802072,
+        "max": 302.6197165800366
+      },
+      "head_scales_reconstruction_bitexact": true,
+      "pace_from_original_features_reconstruction": true
+    },
+    {
+      "road": "N3",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 325,
+      "retire_reason": "off_track",
+      "damage": 0.2,
+      "visited": 118,
+      "total_tiles": 256,
+      "planner_active_actions": 216,
+      "fallback_actions": 109,
+      "cohort": "fit_road",
+      "pace_calls": 216,
+      "log_clipped_actions": 15,
+      "first_collision": 267,
+      "raw_step_ticks": 1300,
+      "raw_reset_ticks": 51,
+      "wall_s": 13.594028608000372,
+      "planning_ms": {
+        "median": 0.03816699609160423,
+        "p95": 0.12278222711756832,
+        "max": 0.5242630140855908,
+        "sum": 12.377978826407343
+      },
+      "full_Agent_compute_ms": {
+        "median": 4.795889020897448,
+        "p95": 12.471700413152575,
+        "max": 27.249214006587863
+      },
+      "IPC_ms": {
+        "median": 7.084503013174981,
+        "p95": 15.98272935952992,
+        "max": 29.776880983263254
+      },
+      "actor_CPU_s": 2.2710150000000002,
+      "pixel_only": true,
+      "privileged_policy_inputs": false,
+      "archive_sha256": "edffef1c3701ef04f1a598e02e0b04b9ead1620a7ce4093d4cdbd3dd167ab195",
+      "reaping": {
+        "pid": 110772,
+        "returncode": 125,
+        "waitpid_no_child": true,
+        "proc_pid_absent": true,
+        "process_reaped": true,
+        "close_ms": 0.11003698455169797,
+        "actor_pids_absent": true,
+        "actor_count": 1
+      },
+      "cached_240": {
+        "completed": true,
+        "lap_ms": 18760,
+        "damage": 0.2
+      },
+      "delta_lap_ms": null,
+      "predicted_pace": {
+        "min": 0.25125728103753814,
+        "median": 3.00608845703751,
+        "max": 11.56114916987756
+      },
+      "selected_goal_m_s": {
+        "median": 70.83386239793089,
+        "max": 323.7956657384496
+      },
+      "head_scales_reconstruction_bitexact": true,
+      "pace_from_original_features_reconstruction": true
+    },
+    {
+      "road": "S0",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 173,
+      "retire_reason": "off_track",
+      "damage": 0.4,
+      "visited": 106,
+      "total_tiles": 310,
+      "planner_active_actions": 71,
+      "fallback_actions": 102,
+      "cohort": "unfit_screen",
+      "pace_calls": 71,
+      "log_clipped_actions": 17,
+      "first_collision": 71,
+      "raw_step_ticks": 692,
+      "raw_reset_ticks": 51,
+      "wall_s": 7.252587454975583,
+      "planning_ms": {
+        "median": 0.0,
+        "p95": 0.08348039118573074,
+        "max": 0.37127197720110416,
+        "sum": 3.8025290123187006
+      },
+      "full_Agent_compute_ms": {
+        "median": 1.5377769595943391,
+        "p95": 7.0007956004701555,
+        "max": 18.12783197965473
+      },
+      "IPC_ms": {
+        "median": 4.209571983665228,
+        "p95": 9.87307601608336,
+        "max": 22.67652697628364
+      },
+      "actor_CPU_s": 0.8873639999999999,
+      "pixel_only": true,
+      "privileged_policy_inputs": false,
+      "archive_sha256": "edffef1c3701ef04f1a598e02e0b04b9ead1620a7ce4093d4cdbd3dd167ab195",
+      "reaping": {
+        "pid": 110774,
+        "returncode": 125,
+        "waitpid_no_child": true,
+        "proc_pid_absent": true,
+        "process_reaped": true,
+        "close_ms": 0.14765304513275623,
+        "actor_pids_absent": true,
+        "actor_count": 1
+      },
+      "cached_240": {
+        "completed": true,
+        "lap_ms": 22020,
+        "damage": 0.0
+      },
+      "delta_lap_ms": null,
+      "predicted_pace": {
+        "min": 0.30245002390454323,
+        "median": 6.926598345989697,
+        "max": 11.561149169877561
+      },
+      "selected_goal_m_s": {
+        "median": 179.97109104008507,
+        "max": 362.053158973509
+      },
+      "head_scales_reconstruction_bitexact": true,
+      "pace_from_original_features_reconstruction": true
+    },
+    {
+      "road": "S1",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 151,
+      "retire_reason": "off_track",
+      "damage": 0.6000000000000001,
+      "visited": 40,
+      "total_tiles": 268,
+      "planner_active_actions": 49,
+      "fallback_actions": 102,
+      "cohort": "unfit_screen",
+      "pace_calls": 49,
+      "log_clipped_actions": 0,
+      "first_collision": 43,
+      "raw_step_ticks": 604,
+      "raw_reset_ticks": 51,
+      "wall_s": 6.378299376985524,
+      "planning_ms": {
+        "median": 0.0,
+        "p95": 0.058267993154004216,
+        "max": 0.12191396672278643,
+        "sum": 2.4933909880928695
+      },
+      "full_Agent_compute_ms": {
+        "median": 1.4283920172601938,
+        "p95": 7.867149979574606,
+        "max": 21.911360032390803
+      },
+      "IPC_ms": {
+        "median": 3.941247006878257,
+        "p95": 10.915494000073522,
+        "max": 25.43546399101615
+      },
+      "actor_CPU_s": 0.8611659999999999,
+      "pixel_only": true,
+      "privileged_policy_inputs": false,
+      "archive_sha256": "edffef1c3701ef04f1a598e02e0b04b9ead1620a7ce4093d4cdbd3dd167ab195",
+      "reaping": {
+        "pid": 110776,
+        "returncode": 125,
+        "waitpid_no_child": true,
+        "proc_pid_absent": true,
+        "process_reaped": true,
+        "close_ms": 0.1033469452522695,
+        "actor_pids_absent": true,
+        "actor_count": 1
+      },
+      "cached_240": {
+        "completed": true,
+        "lap_ms": 19220,
+        "damage": 0.0
+      },
+      "delta_lap_ms": null,
+      "predicted_pace": {
+        "min": 0.30245002390454323,
+        "median": 2.333940754176866,
+        "max": 9.378200845223386
+      },
+      "selected_goal_m_s": {
+        "median": 77.97552340661079,
+        "max": 169.62808307711268
+      },
+      "head_scales_reconstruction_bitexact": true,
+      "pace_from_original_features_reconstruction": true
+    }
+  ],
+  "fit": {
+    "roads": [
+      {
+        "road": "O0",
+        "original_actions": 296,
+        "valid": 295,
+        "excluded": {
+          "absent_or_zero_student_target": 0,
+          "nonpositive_teacher_target": 0,
+          "standing_start": 1
+        }
+      },
+      {
+        "road": "O2",
+        "original_actions": 263,
+        "valid": 262,
+        "excluded": {
+          "absent_or_zero_student_target": 0,
+          "nonpositive_teacher_target": 0,
+          "standing_start": 1
+        }
+      },
+      {
+        "road": "N0",
+        "original_actions": 296,
+        "valid": 295,
+        "excluded": {
+          "absent_or_zero_student_target": 0,
+          "nonpositive_teacher_target": 0,
+          "standing_start": 1
+        }
+      },
+      {
+        "road": "N1",
+        "original_actions": 214,
+        "valid": 213,
+        "excluded": {
+          "absent_or_zero_student_target": 0,
+          "nonpositive_teacher_target": 0,
+          "standing_start": 1
+        }
+      },
+      {
+        "road": "N3",
+        "original_actions": 235,
+        "valid": 234,
+        "excluded": {
+          "absent_or_zero_student_target": 0,
+          "nonpositive_teacher_target": 0,
+          "standing_start": 1
+        }
+      }
+    ],
+    "label_count": 1299,
+    "excluded_N2": true,
+    "standing_start_excluded": "Teacherstanding-start entry speed0 doesnotencode its accelerationfeedforward; exclude initialpreaction for everyroad, do not fabricate pace floor.",
+    "label_log_min": -1.8755576892860857,
+    "label_log_max": 2.4476502674624268,
+    "pace_bounds": [
+      0.15326946626654528,
+      11.56114916987756
+    ],
+    "lambda_L2": 1,
+    "bias_unpenalized": true,
+    "road_equal_total_weight": true,
+    "normalization_sha256": "2b853adb8ddbe7ff82d9dabf88a66b3621d0baf1fdeb547d08cb74d7fa2ee9b1",
+    "weighted_RMSE_log": 0.2028351588913767,
+    "prediction_min": -1.1958392253928696,
+    "prediction_max": 2.043144175441795,
+    "projection_distance_m": {
+      "median": 2.400716765441593,
+      "p95": 4.701173236618231,
+      "max": 8.224395534550728
+    },
+    "absolute_curvature_mismatch": {
+      "median": 0.007290267822254287,
+      "p95": 0.04560968129654325
+    },
+    "samples": [
+      {
+        "road": "O0",
+        "action": 13,
+        "student_nominal_target": 45.0,
+        "teacher_target": 57.603445685361066,
+        "student_pursuit_curvature": 0.0,
+        "teacher_path_right_curvature": -0.0004333354184874982,
+        "projection_distance_m": 0.9003157952969967,
+        "excluded": null
+      },
+      {
+        "road": "O0",
+        "action": 65,
+        "student_nominal_target": 45.0,
+        "teacher_target": 150.2902181446828,
+        "student_pursuit_curvature": 0.0,
+        "teacher_path_right_curvature": 0.000633530747983904,
+        "projection_distance_m": 2.5831240442820524,
+        "excluded": null
+      },
+      {
+        "road": "O0",
+        "action": 117,
+        "student_nominal_target": 19.637300478129227,
+        "teacher_target": 65.41981371872801,
+        "student_pursuit_curvature": 0.06223685962906024,
+        "teacher_path_right_curvature": -0.002233553603827043,
+        "projection_distance_m": 2.9398231465015305,
+        "excluded": null
+      }
+    ],
+    "label_wall_s": 4.287077937042341,
+    "fit_wall_s": 0.0005153800011612475,
+    "new_native": 0,
+    "model_physics_ticks": 0,
+    "fit_count": 1,
+    "feature_GT_inputs": false
+  },
+  "cost": {
+    "stage": 270,
+    "at_utc": "2026-10-13T06:58:13.781716+00:00",
+    "native_cap": 5213,
+    "new_wrapper_actions": 1357,
+    "new_actual_episodes": 8,
+    "new_baseline_materialization_actions": 0,
+    "cached_input_episodes_reused": 5,
+    "cached_240_baseline_results_reused": 8,
+    "raw_step_ticks": 5428,
+    "raw_reset_ticks": 408,
+    "actual_episode_wall_s": 59.21151592198294,
+    "evaluation_wall_s": 59.37000608444214,
+    "actor_CPU_s": 8.417456999999999,
+    "new_labels": 1299,
+    "label_wall_s": 4.287077937042341,
+    "scalar_ridge_fits": 1,
+    "fit_wall_s": 0.0005153800011612475,
+    "offline_preflight_actor_calls": 122,
+    "active_scalar_inferences": 667,
+    "active_scalar_compute_ms": {
+      "median": 0.040651008021086454,
+      "p95": 0.1287690072786063,
+      "max": 1.5827059978619218
+    },
+    "model_physics_queries": 0,
+    "model_physics_ticks": 0,
+    "new_geometry_solves": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 920000,
+    "actual_cumulative_wrapper_actions": 832144,
+    "research_remaining": 3856,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "promotion": false,
+  "code_sha256": {
+    "pace270_fit.py": "0ce686b83105e1ce5d5a76f13c8efc7e288cc2f40f0dc5c99dcba8ebd86ec600",
+    "pace270_target.py": "e2647f8299f9fa49c0725e714251a32aaadfc07b0f7995b56da7b06a621f1aba",
+    "pace270_build.py": "5640c0c655e9edab05fd9412c5863019ffa62fc3278df7d771b8cc581b0dfbfd",
+    "pace270_worker.py": "2218bb4f88162d2dfaecaac62a417fb9a5dfa28c33c24b304a6a72e02c1b910a",
+    "pace270_run.py": "53f6b391b332dd70de54e9ba55bb03fa8f274dc4b32cc69dd979f7b25dc18b3c"
+  },
+  "fit_contract_sha256": "b17dc081c6a591308ba77bac2efe4b140faee542068a1b13372bb5e5710b346c",
+  "evaluation_contract_sha256": "01387f88183bf417a7891d95bf4a940df84048514a2c43ac78ddf77770754b5b",
+  "frozen_model_sha256": "38f1be1f3de8ee79786b6289547ff0fc896cf8758d95f3a39c8c161b392b0539",
+  "interpretation": "NoGT runtimeinput/teacherpixels. Original16features usedonce;candidateownnewfeaturesgohead. Identity/memory andactualnumericalpipelineverified, butgoalgeometrymismatch andclosed-loop/headdistribution shiftcan invalidateabsoluteGTspeed labels. No claimofsinglecause/pixelimpossibility; nopostfailureclamp/gain/model selection."
+}
