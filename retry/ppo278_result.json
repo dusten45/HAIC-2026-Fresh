@@ -1,0 +1,264 @@
+{
+  "stage": 278,
+  "arms": {
+    "control": {
+      "GAE_lambda": 0.95,
+      "new_valid_actions": 8192,
+      "additional_updates": 8,
+      "complete": 23,
+      "actual_DNF": 6,
+      "collection_cuts": 8,
+      "optimizer_steps": {
+        "actor_optimizer": [
+          320
+        ],
+        "critic_optimizer": [
+          320
+        ]
+      },
+      "MC_prediction": {
+        "samples": 6990,
+        "cut_samples_excluded": 1202,
+        "RMSE": 1.020973574995737,
+        "bias_V_minus_G": -0.6660397195303271,
+        "explained_variance": 0.021368519539616826,
+        "episode_balanced_RMSE": 1.0541107577094322,
+        "episode_balanced_bias": -0.5162654220897719,
+        "post_update_in_sample_RMSE": 0.9531883188219833,
+        "scope": "Observed-terminal suffix rewards only; collection values; arms have different post-first-update trajectories; not independent value test"
+      },
+      "wall_s": 532.7216968536377,
+      "final_zip_sha256": "b64a1e842cbf6a44d0b347f9cb7cc27f1e8b859e33d608d440670e4ef9b105d7",
+      "parity": {
+        "passed": true,
+        "pairs": 8,
+        "offline_calls": 26,
+        "wall_s": 0.8710052919923328,
+        "native": 0,
+        "final_checkpoint": 10,
+        "archive_sha256": "b64a1e842cbf6a44d0b347f9cb7cc27f1e8b859e33d608d440670e4ef9b105d7"
+      }
+    },
+    "lambda1": {
+      "GAE_lambda": 1.0,
+      "new_valid_actions": 8192,
+      "additional_updates": 8,
+      "complete": 23,
+      "actual_DNF": 7,
+      "collection_cuts": 8,
+      "optimizer_steps": {
+        "actor_optimizer": [
+          320
+        ],
+        "critic_optimizer": [
+          320
+        ]
+      },
+      "MC_prediction": {
+        "samples": 6858,
+        "cut_samples_excluded": 1334,
+        "RMSE": 0.8771502809563623,
+        "bias_V_minus_G": -0.2992952883157839,
+        "explained_variance": -0.10559192326826161,
+        "episode_balanced_RMSE": 1.0143588003102675,
+        "episode_balanced_bias": -0.0637591477572142,
+        "post_update_in_sample_RMSE": 0.7571587575885841,
+        "scope": "Observed-terminal suffix rewards only; collection values; arms have different post-first-update trajectories; not independent value test"
+      },
+      "wall_s": 532.7230002880096,
+      "final_zip_sha256": "a15ddd230e9b6369d162b280ca938de8f96cf9ffbbb92c4e0d315fc946d9c96e",
+      "parity": {
+        "passed": true,
+        "pairs": 8,
+        "offline_calls": 26,
+        "wall_s": 0.5770807139924727,
+        "native": 0,
+        "final_checkpoint": 10,
+        "archive_sha256": "a15ddd230e9b6369d162b280ca938de8f96cf9ffbbb92c4e0d315fc946d9c96e"
+      }
+    }
+  },
+  "evaluation": [
+    {
+      "arm": "control",
+      "road": "N0",
+      "native_actions": 304,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "unexecuted": false,
+      "lap_ms": 24300,
+      "retire_reason": null,
+      "damage": 0.4,
+      "visited": 325,
+      "total_tiles": 325,
+      "raw_step_ticks": 1216,
+      "raw_reset_ticks": 51,
+      "wall_s": 14.136914820992388,
+      "actor_CPU_s": 2.738098,
+      "Agent_ms": {
+        "median": 6.0475635109469295,
+        "p95": 12.740864072111432,
+        "max": 26.84606797993183
+      },
+      "IPC_ms": {
+        "median": 8.579233021009713,
+        "max": 29.410330986138433
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false
+    },
+    {
+      "arm": "lambda1",
+      "road": "N0",
+      "native_actions": 315,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "unexecuted": false,
+      "lap_ms": 25160,
+      "retire_reason": null,
+      "damage": 0.6000000000000001,
+      "visited": 316,
+      "total_tiles": 325,
+      "raw_step_ticks": 1259,
+      "raw_reset_ticks": 51,
+      "wall_s": 15.890912486996967,
+      "actor_CPU_s": 2.84852,
+      "Agent_ms": {
+        "median": 6.114700983744115,
+        "p95": 14.634719671448693,
+        "max": 23.63084099488333
+      },
+      "IPC_ms": {
+        "median": 8.666636946145445,
+        "max": 32.925239007454365
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false
+    },
+    {
+      "arm": "lambda1",
+      "road": "N2",
+      "native_actions": 70,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "unexecuted": false,
+      "lap_ms": null,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "visited": 70,
+      "total_tiles": 292,
+      "raw_step_ticks": 280,
+      "raw_reset_ticks": 51,
+      "wall_s": 4.923406889021862,
+      "actor_CPU_s": 0.892197,
+      "Agent_ms": {
+        "median": 6.3307379896286875,
+        "p95": 15.614659184939212,
+        "max": 27.498031966388226
+      },
+      "IPC_ms": {
+        "median": 9.58482050918974,
+        "max": 33.93850103020668
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false
+    },
+    {
+      "arm": "control",
+      "road": "N2",
+      "native_actions": 68,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "unexecuted": false,
+      "lap_ms": null,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "visited": 69,
+      "total_tiles": 292,
+      "raw_step_ticks": 272,
+      "raw_reset_ticks": 51,
+      "wall_s": 4.878202983993106,
+      "actor_CPU_s": 0.8414919999999999,
+      "Agent_ms": {
+        "median": 6.281484005739912,
+        "p95": 14.384656737092882,
+        "max": 27.336288010701537
+      },
+      "IPC_ms": {
+        "median": 9.390869992785156,
+        "max": 47.55772103089839
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false
+    }
+  ],
+  "cached_240_baseline_seconds": {
+    "N0": 23.62,
+    "N2": 21.56
+  },
+  "paired_initial": {
+    "same_initial_checkpoint": true,
+    "same_optimizer": true,
+    "same_noise_shuffle_seeds": true,
+    "first_rollout_equal": {
+      "x": true,
+      "latent": true,
+      "old_mu": true,
+      "old_logp": true,
+      "reward": true,
+      "value": true,
+      "next_value": true,
+      "done": true,
+      "cut": true,
+      "base": true,
+      "executed": true
+    },
+    "later_trajectories_not_forced_identical": true,
+    "no_policy_selection": true
+  },
+  "cost": {
+    "stage": 278,
+    "at_utc": "2026-10-13T11:48:25.922701+00:00",
+    "explicit_research_grant": 15000,
+    "new_wrapper_actions": 17141,
+    "new_training_actions": 16384,
+    "new_evaluation_actions": 757,
+    "new_baseline_native": 0,
+    "training_technical_interruptions": 0,
+    "lost_training_samples": 0,
+    "evaluation_technical_errors": 0,
+    "evaluation_actual_DNF": 2,
+    "evaluation_censored": 0,
+    "training_collection_cuts": 16,
+    "training_raw_step_ticks": 65468,
+    "training_raw_reset_ticks": 3825,
+    "evaluation_raw_step_ticks": 3027,
+    "evaluation_raw_reset_ticks": 204,
+    "parallel_training_elapsed_s": 532.7230007648468,
+    "training_evaluator_CPU_s": 831.625954889,
+    "training_actor_CPU_s": 174.37477499999994,
+    "evaluation_wall_s": 39.91498017311096,
+    "evaluation_CPU_s": 32.498640017,
+    "offline_parity_calls": 52,
+    "offline_parity_native": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 1009000,
+    "actual_cumulative_wrapper_actions": 922072,
+    "research_remaining": 2928,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "decision": "No promotion or automatic extension: no lambda1 benefit on known TRAIN N0/N2; no independent generalization claim.",
+  "limitations": [
+    "Single paired seed and two known TRAIN roads",
+    "lambda1 collection cuts retain V bootstrap, not full Monte Carlo",
+    "Observed-return critic metrics differ in sampled trajectories after first update",
+    "277 history predictor 2.191% gain remains a small positive finding; input unchanged here"
+  ],
+  "champion240_unchanged": true,
+  "DEV_HOLDOUT_SEALED_used": false
+}
