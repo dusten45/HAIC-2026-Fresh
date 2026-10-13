@@ -1,0 +1,152 @@
+{
+  "stage": 259,
+  "scope": "GTwhole-map/livepose/livevelocity diagnostic; notlegalpixel/submissioncandidate",
+  "geometry_objective": "Arcweightedmean squaredcenterline displacement only. Curvature appears only in same258steeringfeasibilityconstraint; no curvature/time objective.",
+  "same_258_representation_constraints_initialization_solver_tolerance": true,
+  "same_speed_planning_and_tracker": true,
+  "solvers": [
+    {
+      "road": "O0",
+      "objective": "Arcweightedmean lateraldisplacement squared only; constraints include steeringcurvature",
+      "displacement_mean_square_m2": 2.721476584405905,
+      "free258_displacement_mean_square_m2": 7.286360544591646,
+      "geometry_feasible": true,
+      "min_clearance": 0.018256238646437772,
+      "objective_calls": 194,
+      "wall_s": 0.10315553296823055,
+      "projection": null,
+      "dimension": 16,
+      "pathlength_m": 1157.2634457295012,
+      "curvature_max": 0.10786011671893389,
+      "curvature_RMS": 0.030774143538066578,
+      "planned_speed_quantiles": [
+        32.38710881176697,
+        59.140689070869094,
+        100.0
+      ],
+      "same_model_258": true,
+      "geometry_frozen_before_speedprofile": true
+    },
+    {
+      "road": "N0",
+      "objective": "Arcweightedmean lateraldisplacement squared only; constraints include steeringcurvature",
+      "displacement_mean_square_m2": 3.4659909468283523,
+      "free258_displacement_mean_square_m2": 5.682764974764135,
+      "geometry_feasible": true,
+      "min_clearance": 0.005422315132845412,
+      "objective_calls": 194,
+      "wall_s": 0.10203594801714644,
+      "projection": null,
+      "dimension": 16,
+      "pathlength_m": 1151.6787553242,
+      "curvature_max": 0.09327114531579749,
+      "curvature_RMS": 0.02830669454820036,
+      "planned_speed_quantiles": [
+        31.466968653662178,
+        60.803532625978434,
+        88.03168011441808
+      ],
+      "same_model_258": true,
+      "geometry_frozen_before_speedprofile": true
+    }
+  ],
+  "rows": [
+    {
+      "road": "O0",
+      "baseline240_lap_ms": 23660,
+      "free258_model_time_s": 21.69166802484427,
+      "free258_lap_ms": 21860,
+      "reference259_model_time_s": 21.915892540737527,
+      "reference259_lap_ms": 22520,
+      "reference_vs240_ms": -1140,
+      "free_vs_reference_ms": -660,
+      "reference_model_error_s": 0.6041074592624724,
+      "reference_completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "damage": 0.0,
+      "free_damage": 0.0,
+      "visited": 326,
+      "total_tiles": 326,
+      "tracking_error_m": {
+        "mean": 0.6493158847398036,
+        "p95": 1.703190305326154,
+        "max": 2.0343483523674233
+      },
+      "speed_m_s": {
+        "median": 48.72220000805836,
+        "max": 99.23629217284554
+      },
+      "native_actions": 282
+    },
+    {
+      "road": "N0",
+      "baseline240_lap_ms": 23620,
+      "free258_model_time_s": 21.39497561456242,
+      "free258_lap_ms": 22120,
+      "reference259_model_time_s": 21.456696959049523,
+      "reference259_lap_ms": 21740,
+      "reference_vs240_ms": -1880,
+      "free_vs_reference_ms": 380,
+      "reference_model_error_s": 0.2833030409504751,
+      "reference_completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "damage": 0.0,
+      "free_damage": 0.0,
+      "visited": 325,
+      "total_tiles": 325,
+      "tracking_error_m": {
+        "mean": 0.648294764159072,
+        "p95": 1.6435437824214452,
+        "max": 2.184773499795196
+      },
+      "speed_m_s": {
+        "median": 51.514214611641236,
+        "max": 91.9351989665312
+      },
+      "native_actions": 272
+    }
+  ],
+  "counts": {
+    "reference_complete": 2,
+    "free258_complete": 2,
+    "baseline240_complete": 2,
+    "actual_DNF": 0,
+    "censored": 0,
+    "unexecuted": 0,
+    "solver_infeasible": 0
+  },
+  "mean_free_vs_reference_ms": -140.0,
+  "mean_reference_vs240_ms": -1510.0,
+  "conclusion": "Time-optimizedfreegeometry gains660ms onO0 but loses380ms onN0, mean140ms gain across2diagnosticroads. Notconsistentfreegeometry advantage. Bothminimumdisplacementrefs faster240(mean1510ms), implicating commonGTspeed/tracking/foresight room withoutisolatingtheirindividualcontributions.",
+  "next_recommendation": "Firstrestrictplanningforesight tocurrent-camera-visible length while freezingonefeasiblereference/model/follower, thencomparetopixel-reconstructedlocalroute atthesamevisibility. Thisis a small transferdiagnostic, notdirectreuseofaGTglobalmap ornewmodeltraining; freegeometry optimization alone notyetjustifiedforpixels.",
+  "cost": {
+    "stage": 259,
+    "at_utc": "2026-10-13T03:32:49.665078+00:00",
+    "native_cap": 5058,
+    "new_wrapper_actions": 554,
+    "new_native_runs": 2,
+    "free258_completed_runs_reused": 2,
+    "raw_step_ticks": 2215,
+    "raw_reset_ticks": 102,
+    "actual_episode_wall_s": 18.713973305013496,
+    "objective_calls": 388,
+    "solver_wall_s": 0.20519148098537698,
+    "speed_profile_calls": 2,
+    "model_physics_ticks": 0,
+    "new_mass_model_initializations": 0,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 908000,
+    "actual_cumulative_wrapper_actions": 819496,
+    "research_remaining": 4504,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "technical_error": null
+}
