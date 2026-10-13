@@ -1,0 +1,11 @@
+"""Freeze pixelcorridor/monotonearc objective, unchanged287source+horizon+search."""
+import argparse
+from pathlib import Path
+from retry.path271_run import read,save,sha
+
+def run(R):
+ G=Path(__file__).resolve().parent.parent;D=R/'stage288';assert not D.exists();D.mkdir(mode=0o700);p=read(R/'stage287/plan.json');p.update(stage=288,research_available=29641,candidate='287source dynamics/GTstate/currentpixelpath/H/pedals/memory;2GN+eps1e-4+samequerycount; primary maximize monotoneforwardarc in currentpixelcorridor; trackingcost exactprogress-tie only',objective_optimizer_source=str(G/'retry/progress288_objective.py'),model_replacement_only=False,objective_replacement_only=True,corridor='Currentimage .32..47 roadthreshold, existing7x7closing/distance>=1.5pixel and observedobstacle2.6+radius exclusion; rows61+unknown. NoGTroad. Actionboundarystate constraints only.',progress='Sequentialprojection onlyforward contiguousarc; arcadvance cappedbysampledtravel to preventfoldedbranchjump; notEucldisplacement reward',fallback='No feasibleinitial/final trajectory =>exact240, notclaimedcorridor adherence forfallback',primary_optimizer='Scalarremainingarc residual, no tracking/rate weight inprimary; original2GN/finiteJacobian/box updatecount; only1e-6numericalnormalregularizer; initial/final lex selection',no_threshold_or_weight_sweep=True)
+ p['base'].update(worker_path=str(G/'retry/progress288_worker.py'),worker_sha256=sha(G/'retry/progress288_worker.py'))
+ sources=[G/'retry/progress288_prepare.py',G/'retry/progress288_run.py',G/'retry/progress288_control.py',G/'retry/progress288_objective.py',G/'retry/progress288_worker.py',G/'retry/source_vehicle_transition.py',Path(p['base']['archive_path']),R/'project-effective-budget-v293.json'];p['hashes']={str(q):sha(q) for q in sources};save(D/'plan.json',p);(D/'plan.sha256').write_text(sha(D/'plan.json')+'\n');(D/'plan.sha256').chmod(0o600);save(D/'budget.json',dict(actions=0));save(D/'model-budget.json',dict(world_build_attempts=0,clone_initializations=0,physics_ticks=0,clone_build_wall_s=0.,integration_wall_s=0.));print('288pixelcorridor/monotonearc fixed; native4000/sourcephysics2560000',flush=True)
+if __name__=='__main__':
+ a=argparse.ArgumentParser();a.add_argument('--private-root',type=Path,required=True);run(a.parse_args().private_root.resolve())
