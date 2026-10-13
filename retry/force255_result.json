@@ -1,0 +1,274 @@
+{
+  "stage": 255,
+  "scope": "Privileged same-state3-action source shadows, unchanged Car.step trace only; no actualpulse/runtimestateinput.",
+  "units": {
+    "omega": "rad/s",
+    "wheel_radius_m": 0.54,
+    "dt_s": 0.02,
+    "engine_constant": 40000,
+    "wheel_inertia": 1.6,
+    "brake": "15*b rad/s reduction per physics tick, capped by omega; b>=.9 locks. Not15N and notdt*15b.",
+    "slip_to_force": "82N per(m/s), rawlong andlat vectornorm thenfrictionclip, thenroadreaction omega correction beforeBox2Dsolve"
+  },
+  "selection": [
+    {
+      "road": "O0",
+      "action": 67,
+      "group": "low_curvature_braking",
+      "verify": true
+    },
+    {
+      "road": "O0",
+      "action": 190,
+      "group": "low_curvature_braking",
+      "verify": false
+    },
+    {
+      "road": "O0",
+      "action": 160,
+      "group": "curve",
+      "verify": false
+    },
+    {
+      "road": "O2",
+      "action": 82,
+      "group": "low_curvature_braking",
+      "verify": false
+    },
+    {
+      "road": "O2",
+      "action": 199,
+      "group": "low_curvature_braking",
+      "verify": false
+    },
+    {
+      "road": "O2",
+      "action": 112,
+      "group": "curve",
+      "verify": false
+    },
+    {
+      "road": "N0",
+      "action": 82,
+      "group": "low_curvature_braking",
+      "verify": false
+    },
+    {
+      "road": "N0",
+      "action": 184,
+      "group": "low_curvature_braking",
+      "verify": false
+    },
+    {
+      "road": "N0",
+      "action": 163,
+      "group": "curve",
+      "verify": true
+    },
+    {
+      "road": "N1",
+      "action": 61,
+      "group": "low_curvature_braking",
+      "verify": false
+    },
+    {
+      "road": "N1",
+      "action": 127,
+      "group": "low_curvature_braking",
+      "verify": false
+    },
+    {
+      "road": "N1",
+      "action": 112,
+      "group": "curve",
+      "verify": false
+    },
+    {
+      "road": "N2",
+      "action": 52,
+      "group": "low_curvature_braking",
+      "verify": false
+    },
+    {
+      "road": "N2",
+      "action": 160,
+      "group": "low_curvature_braking",
+      "verify": false
+    },
+    {
+      "road": "N2",
+      "action": 145,
+      "group": "curve",
+      "verify": false
+    },
+    {
+      "road": "N3",
+      "action": 73,
+      "group": "low_curvature_braking",
+      "verify": false
+    },
+    {
+      "road": "N3",
+      "action": 169,
+      "group": "low_curvature_braking",
+      "verify": false
+    },
+    {
+      "road": "N3",
+      "action": 112,
+      "group": "curve",
+      "verify": false
+    }
+  ],
+  "group_summary": {
+    "low_curvature_braking": {
+      "snapshots": 12,
+      "baseline_front_mean_forward_N": -346.20073588513105,
+      "baseline_rear_mean_forward_N": 376.5098991940229,
+      "baseline_net_mean_forward_N": 30.309163308891865,
+      "baseline_mean_cancel_N": 668.9637610013493,
+      "baseline_front_clipped_fraction": 0.0,
+      "baseline_rear_clipped_fraction": 0.0,
+      "no_brake_mean_end_speed_delta_m_s": 4.794685065371759,
+      "no_gas_mean_end_speed_delta_m_s": -6.037677554765053
+    },
+    "curve": {
+      "snapshots": 6,
+      "baseline_front_mean_forward_N": -357.7208060096952,
+      "baseline_rear_mean_forward_N": 358.50120787451215,
+      "baseline_net_mean_forward_N": 0.7804018648170081,
+      "baseline_mean_cancel_N": 640.3064283524343,
+      "baseline_front_clipped_fraction": 0.041666666666666664,
+      "baseline_rear_clipped_fraction": 0.0,
+      "no_brake_mean_end_speed_delta_m_s": 4.949721388829659,
+      "no_gas_mean_end_speed_delta_m_s": -5.886146926682733
+    }
+  },
+  "baseline_verification": [
+    {
+      "road": "O0",
+      "action": 67,
+      "trace_bit_exact": true,
+      "actual12step_match": true,
+      "errors": {
+        "position_error_m": 0.0,
+        "speed_error_m_s": 1.0877585580715277e-05,
+        "angle_error_rad": 2.384185791015625e-07,
+        "damage_error": 0.0
+      },
+      "discrete_mismatches": 0
+    },
+    {
+      "road": "N0",
+      "action": 163,
+      "trace_bit_exact": true,
+      "actual12step_match": true,
+      "errors": {
+        "position_error_m": 2.3592599633890115e-05,
+        "speed_error_m_s": 1.6542032646782445e-05,
+        "angle_error_rad": 4.76837158203125e-07,
+        "damage_error": 0.0
+      },
+      "discrete_mismatches": 0
+    }
+  ],
+  "coasting_contrast": [
+    {
+      "road": "O0",
+      "action": 67,
+      "model_ticks": 12,
+      "baseline_end_speed_m_s": 55.20913804397815,
+      "dualneutral_end_speed_m_s": 54.58798526101314,
+      "speed_delta_m_s": -0.6211527829650123,
+      "baseline_mean_cancel_N": 649.7272630740689,
+      "dualneutral_mean_cancel_N": 129.1301548188978,
+      "baseline_total_long_N": 18.760172996731878,
+      "dualneutral_total_long_N": -0.13798588227075737,
+      "baseline_front_lat_abs_N": 0.008990638820913924,
+      "dualneutral_front_lat_abs_N": 0.009355742792602465,
+      "contact": false,
+      "terminal": false
+    },
+    {
+      "road": "N0",
+      "action": 82,
+      "model_ticks": 12,
+      "baseline_end_speed_m_s": 50.657139683976276,
+      "dualneutral_end_speed_m_s": 48.84496593832886,
+      "speed_delta_m_s": -1.8121737456474136,
+      "baseline_mean_cancel_N": 676.6982367207053,
+      "dualneutral_mean_cancel_N": 142.28586257430322,
+      "baseline_total_long_N": 54.92562861592338,
+      "dualneutral_total_long_N": -0.23981492967363463,
+      "baseline_front_lat_abs_N": 23.665273902368103,
+      "dualneutral_front_lat_abs_N": 23.115215696735504,
+      "contact": false,
+      "terminal": false
+    }
+  ],
+  "paired_reduction": [
+    {
+      "road": "O0",
+      "action": 67,
+      "K": 6.272222222222221,
+      "legal_speed_proxy": 53.75,
+      "model_ticks": 12,
+      "baseline_end_speed_m_s": 55.20913804397815,
+      "paired_end_speed_m_s": 55.43021009256473,
+      "speed_delta_m_s": 0.2210720485865778,
+      "baseline_cancellation_N": 649.7272630740689,
+      "paired_cancellation_N": 179.193729901093,
+      "baseline_long_force_N": 18.760172996731878,
+      "paired_long_force_N": 25.48661732170517,
+      "baseline_front_lat_abs_N": 0.008990638820913924,
+      "paired_front_lat_abs_N": 0.00935168442788381,
+      "contact": false,
+      "terminal": false
+    },
+    {
+      "road": "N0",
+      "action": 82,
+      "K": 5.716666666666666,
+      "legal_speed_proxy": 48.75,
+      "model_ticks": 12,
+      "baseline_end_speed_m_s": 50.657139683976276,
+      "paired_end_speed_m_s": 50.753162152479526,
+      "speed_delta_m_s": 0.09602246850325002,
+      "baseline_cancellation_N": 676.6982367207053,
+      "paired_cancellation_N": 226.61669723082932,
+      "baseline_long_force_N": 54.92562861592338,
+      "paired_long_force_N": 57.81795320675581,
+      "baseline_front_lat_abs_N": 23.665273902368103,
+      "paired_front_lat_abs_N": 23.39850596261606,
+      "contact": false,
+      "terminal": false
+    }
+  ],
+  "paired_definition": "K=.06*(existingHUDfeedbackspeed/.54+5);d=min(brake,gas/K); gas-=K*d,brake-=d. Sourceunclipped aggregateomega-increment approximation usingrolling-speed estimate; no learnedcoefficients.",
+  "conclusion": "Opposing wheel forces observed at highspeed mostlywithoutclipping, unlikeearlierlaunch saturation. Unilateralbrakeremoval accelerates, gasremoval slows, dualneutral preservesentryspeed butlosesbaselineacceleration. Pairedreduction reducesopposition while preservingapproximatelybaseline3-action netforce/speed in2quietstates. Supportsone shortactualpaired-reduction then240 confirmation, notglobalpedalexclusion orspeedlimit.",
+  "remaining_uncertainty": "Only2quietpairedstates, fixedsteering andsnapshot-onlyspeed estimate; actualrolling/slip, gasup-ramp, curved/hazard frictionprojection andfutureclosedlooppixels maybreak approximation. No lapgain orsafe-speed theorem.",
+  "next_single_experiment": "SameO0pre67/N0pre82,3-action sourcepaired reduction usingcurrentlegal16speedproxy thenfullclosedloop240; expectedtwo296-actionlaps~592native within5045remaining. Freezeformula, no model/head/phase/gain fitting; officialcompletion/time determines value.",
+  "cost": {
+    "stage": 255,
+    "at_utc": "2026-10-13T02:35:17.970962+00:00",
+    "new_wrapper_actions": 0,
+    "model_queries": 62,
+    "model_physics_ticks": 888,
+    "model_zero_time_initializations": 62,
+    "model_wall_s": 1.2108990899287164,
+    "main_diagnostic_wall_s": 6.098838328995043,
+    "main_diagnostic_CPU_s": 6.09265028,
+    "new_training": 0,
+    "new_native_materialization": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 904000,
+    "actual_cumulative_wrapper_actions": 814955,
+    "research_remaining": 5045,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
