@@ -1,0 +1,492 @@
+{
+  "stage": 269,
+  "diagnostic": "Frozen268 coefficients widenedpairedGT transfer, positivewherefixedsolverfeasible",
+  "analysis": {
+    "summary": {
+      "requested_roads": 4,
+      "geometrically_feasible_roads": 3,
+      "solver_failed_roads": [
+        "N2"
+      ],
+      "requested_native_episodes": 8,
+      "executed_native_episodes": 6,
+      "unexecuted_solver_episodes": 2,
+      "actual_DNFs": 2,
+      "censored": 0,
+      "candidate_completed": 3,
+      "candidate_attempted": 3,
+      "baseline_completed": 1,
+      "baseline_attempted": 3,
+      "common_complete_paired_roads": [
+        "N3"
+      ],
+      "N3_paired_gain_ms": -1720,
+      "coefficients_frozen_sha256": "ea31d5a16b94b92e860635727ff9421d07e4db7eb987ec757dfff5645ef73c9b",
+      "candidate_reselected": false,
+      "local_visibility_failure": false
+    },
+    "pairs": [
+      {
+        "road": "O2",
+        "geometry_solver": {
+          "road": "O2",
+          "feasible": true,
+          "solver_objectives": 194,
+          "solver_wall_s": 0.8142432919703424,
+          "total_planning_wall_s": 0.8196736240061,
+          "minimum_clearance_m": 0.002876251098479443,
+          "max_abs_curvature": 0.12860276983634714,
+          "violation": 0.0,
+          "projection": null,
+          "new_native": 0,
+          "model_physics_ticks": 0,
+          "plan_sha256": "44da15e8c5617341726d72cc1b203444038b5ae47234d78403e11b13e37444d2"
+        },
+        "arms": {
+          "baseline": {
+            "label": "O2_baseline",
+            "road": "O2",
+            "phase": "evaluation",
+            "completed": false,
+            "actual_DNF": true,
+            "censored": false,
+            "unexecuted": false,
+            "lap_ms": null,
+            "native_actions": 260,
+            "retire_reason": "off_track",
+            "damage": 0.0,
+            "visited": 193,
+            "total_tiles": 289,
+            "first_collision": null,
+            "first_large_error": null,
+            "tracking_error_m": {
+              "mean": 0.5433590132951298,
+              "p95": 1.4804397320321645,
+              "max": 1.9693805848705244
+            },
+            "actual_speed_m_s": {
+              "median": 32.83487241234567,
+              "max": 100.0000033559206
+            },
+            "target_speed_m_s": {
+              "median": 53.14804911026107,
+              "max": 146.0401676851526
+            },
+            "pace_on_path": {
+              "min": 1.5,
+              "max": 1.5
+            },
+            "raw_step_ticks": 1040,
+            "raw_reset_ticks": 51,
+            "wall_s": 8.84160778997466,
+            "oracle_compute_ms": {
+              "median": 0.2487465098965913,
+              "max": 1.6834139823913574
+            },
+            "GT_only": true,
+            "controller_positive_clamp_preserved": true,
+            "arm": "baseline",
+            "paired_geometry_sha256": "44da15e8c5617341726d72cc1b203444038b5ae47234d78403e11b13e37444d2"
+          },
+          "candidate": {
+            "label": "O2_candidate",
+            "road": "O2",
+            "phase": "evaluation",
+            "completed": true,
+            "actual_DNF": false,
+            "censored": false,
+            "unexecuted": false,
+            "lap_ms": 18520,
+            "native_actions": 232,
+            "retire_reason": null,
+            "damage": 0.0,
+            "visited": 289,
+            "total_tiles": 289,
+            "first_collision": null,
+            "first_large_error": null,
+            "tracking_error_m": {
+              "mean": 0.690129835465518,
+              "p95": 1.7070581138524235,
+              "max": 2.4664968390516657
+            },
+            "actual_speed_m_s": {
+              "median": 54.47860188921898,
+              "max": 100.0000019781324
+            },
+            "target_speed_m_s": {
+              "median": 80.9912480960522,
+              "max": 147.22237333977247
+            },
+            "pace_on_path": {
+              "min": 1.500094544262017,
+              "max": 1.5565677915898735
+            },
+            "raw_step_ticks": 927,
+            "raw_reset_ticks": 51,
+            "wall_s": 8.878567131992895,
+            "oracle_compute_ms": {
+              "median": 0.24998397566378117,
+              "max": 2.822261012624949
+            },
+            "GT_only": true,
+            "controller_positive_clamp_preserved": true,
+            "arm": "candidate",
+            "paired_geometry_sha256": "44da15e8c5617341726d72cc1b203444038b5ae47234d78403e11b13e37444d2"
+          }
+        },
+        "pixel240": {
+          "lap_ms": 20980,
+          "damage": 0.2
+        },
+        "paired_time_delta_ms": null,
+        "candidate_vs_pixel240_ms": -2460,
+        "baseline_terminal_stall": {
+          "speed_m_s": 8.20656800353399e-17,
+          "target_speed_m_s": 52.37420271576821,
+          "action": [
+            -0.08107275515794754,
+            0.0,
+            0.30000001192092896
+          ],
+          "path_error_m": 0.4414463301927462,
+          "visited": 193,
+          "scope": "Observednearzero-speedpositive-targetbraking; feedforwardtermsnotseparatelysaved, nofullmechanismproof."
+        }
+      },
+      {
+        "road": "N1",
+        "geometry_solver": {
+          "road": "N1",
+          "feasible": true,
+          "solver_objectives": 194,
+          "solver_wall_s": 0.6917449820321053,
+          "total_planning_wall_s": 0.6961156119941734,
+          "minimum_clearance_m": 2.016909219015872e-05,
+          "max_abs_curvature": 0.12334462203876215,
+          "violation": 0.0,
+          "projection": null,
+          "new_native": 0,
+          "model_physics_ticks": 0,
+          "plan_sha256": "1cf68d1c876c2ad91d7f7c94b5114a2b106681a613dea6aa1d1ce30071e74248"
+        },
+        "arms": {
+          "candidate": {
+            "label": "N1_candidate",
+            "road": "N1",
+            "phase": "evaluation",
+            "completed": true,
+            "actual_DNF": false,
+            "censored": false,
+            "unexecuted": false,
+            "lap_ms": 14780,
+            "native_actions": 185,
+            "retire_reason": null,
+            "damage": 0.0,
+            "visited": 238,
+            "total_tiles": 238,
+            "first_collision": null,
+            "first_large_error": null,
+            "tracking_error_m": {
+              "mean": 0.6387785776579848,
+              "p95": 1.6664686653991012,
+              "max": 1.8324775312795998
+            },
+            "actual_speed_m_s": {
+              "median": 56.46025639004487,
+              "max": 100.00000594233356
+            },
+            "target_speed_m_s": {
+              "median": 83.65723691480966,
+              "max": 150.7434098635709
+            },
+            "pace_on_path": {
+              "min": 1.50018047821646,
+              "max": 1.5584083416534722
+            },
+            "raw_step_ticks": 740,
+            "raw_reset_ticks": 51,
+            "wall_s": 6.580926613009069,
+            "oracle_compute_ms": {
+              "median": 0.2622869797050953,
+              "max": 0.896798970643431
+            },
+            "GT_only": true,
+            "controller_positive_clamp_preserved": true,
+            "arm": "candidate",
+            "paired_geometry_sha256": "1cf68d1c876c2ad91d7f7c94b5114a2b106681a613dea6aa1d1ce30071e74248"
+          },
+          "baseline": {
+            "label": "N1_baseline",
+            "road": "N1",
+            "phase": "evaluation",
+            "completed": false,
+            "actual_DNF": true,
+            "censored": false,
+            "unexecuted": false,
+            "lap_ms": null,
+            "native_actions": 259,
+            "retire_reason": "off_track",
+            "damage": 0.0,
+            "visited": 187,
+            "total_tiles": 238,
+            "first_collision": null,
+            "first_large_error": null,
+            "tracking_error_m": {
+              "mean": 0.5094890439743515,
+              "p95": 1.5816089767031947,
+              "max": 2.1093342426978974
+            },
+            "actual_speed_m_s": {
+              "median": 33.9864754941848,
+              "max": 99.99999883478739
+            },
+            "target_speed_m_s": {
+              "median": 72.75493405304776,
+              "max": 150.0
+            },
+            "pace_on_path": {
+              "min": 1.5,
+              "max": 1.5
+            },
+            "raw_step_ticks": 1036,
+            "raw_reset_ticks": 51,
+            "wall_s": 8.799386450031307,
+            "oracle_compute_ms": {
+              "median": 0.23214099928736687,
+              "max": 1.0412780102342367
+            },
+            "GT_only": true,
+            "controller_positive_clamp_preserved": true,
+            "arm": "baseline",
+            "paired_geometry_sha256": "1cf68d1c876c2ad91d7f7c94b5114a2b106681a613dea6aa1d1ce30071e74248"
+          }
+        },
+        "pixel240": {
+          "lap_ms": 17080,
+          "damage": 0.0
+        },
+        "paired_time_delta_ms": null,
+        "candidate_vs_pixel240_ms": -2300,
+        "baseline_terminal_stall": {
+          "speed_m_s": 1.6998768662397482e-17,
+          "target_speed_m_s": 72.75493405304776,
+          "action": [
+            0.03485983610153198,
+            0.0,
+            0.30000001192092896
+          ],
+          "path_error_m": 0.4107322823981483,
+          "visited": 187,
+          "scope": "Observednearzero-speedpositive-targetbraking; feedforwardtermsnotseparatelysaved, nofullmechanismproof."
+        }
+      },
+      {
+        "road": "N2",
+        "geometry_solver": {
+          "road": "N2",
+          "feasible": false,
+          "solver_objectives": 194,
+          "solver_wall_s": 0.8570989249856211,
+          "total_planning_wall_s": 0.8610759950242937,
+          "minimum_clearance_m": -0.9107980181710604,
+          "max_abs_curvature": 0.13137230140419637,
+          "violation": 1.0837771285315043,
+          "projection": null,
+          "new_native": 0,
+          "model_physics_ticks": 0,
+          "plan_sha256": "9eddc563e5285e2f50d381f000c66b991116d70d2f76a6763be8e6bded1db32c"
+        },
+        "arms": {
+          "baseline": {
+            "label": "N2_baseline",
+            "road": "N2",
+            "arm": "baseline",
+            "completed": false,
+            "actual_DNF": false,
+            "censored": false,
+            "unexecuted": true,
+            "reason": "fixed_solver_geometry_infeasible",
+            "native_actions": 0,
+            "lap_ms": null
+          },
+          "candidate": {
+            "label": "N2_candidate",
+            "road": "N2",
+            "arm": "candidate",
+            "completed": false,
+            "actual_DNF": false,
+            "censored": false,
+            "unexecuted": true,
+            "reason": "fixed_solver_geometry_infeasible",
+            "native_actions": 0,
+            "lap_ms": null
+          }
+        },
+        "pixel240": {
+          "lap_ms": 21560,
+          "damage": 0.0
+        },
+        "paired_time_delta_ms": null,
+        "candidate_vs_pixel240_ms": null
+      },
+      {
+        "road": "N3",
+        "geometry_solver": {
+          "road": "N3",
+          "feasible": true,
+          "solver_objectives": 194,
+          "solver_wall_s": 0.7801725029712543,
+          "total_planning_wall_s": 0.8080674199736677,
+          "minimum_clearance_m": 9.999999860088593e-05,
+          "max_abs_curvature": 0.11502774419636567,
+          "violation": 2.2405166106825874e-09,
+          "projection": {
+            "geometry_evaluations": 35,
+            "max_coefficient_change": 0.00019122243424152252
+          },
+          "new_native": 0,
+          "model_physics_ticks": 0,
+          "plan_sha256": "606a316011bc5e39ddd5a94b54acf242b23a2f2ca7b150076b86eaffbea33b0e"
+        },
+        "arms": {
+          "candidate": {
+            "label": "N3_candidate",
+            "road": "N3",
+            "phase": "evaluation",
+            "completed": true,
+            "actual_DNF": false,
+            "censored": false,
+            "unexecuted": false,
+            "lap_ms": 15940,
+            "native_actions": 200,
+            "retire_reason": null,
+            "damage": 0.0,
+            "visited": 256,
+            "total_tiles": 256,
+            "first_collision": null,
+            "first_large_error": null,
+            "tracking_error_m": {
+              "mean": 0.624798039506083,
+              "p95": 1.6153847227896614,
+              "max": 1.9265673781343233
+            },
+            "actual_speed_m_s": {
+              "median": 54.92063530071771,
+              "max": 97.9885640135407
+            },
+            "target_speed_m_s": {
+              "median": 77.00317106263145,
+              "max": 143.0010015403375
+            },
+            "pace_on_path": {
+              "min": 1.500118799714091,
+              "max": 1.5556062280775769
+            },
+            "raw_step_ticks": 798,
+            "raw_reset_ticks": 51,
+            "wall_s": 6.849561531038489,
+            "oracle_compute_ms": {
+              "median": 0.23637848789803684,
+              "max": 0.7379170274361968
+            },
+            "GT_only": true,
+            "controller_positive_clamp_preserved": true,
+            "arm": "candidate",
+            "paired_geometry_sha256": "606a316011bc5e39ddd5a94b54acf242b23a2f2ca7b150076b86eaffbea33b0e"
+          },
+          "baseline": {
+            "label": "N3_baseline",
+            "road": "N3",
+            "phase": "evaluation",
+            "completed": true,
+            "actual_DNF": false,
+            "censored": false,
+            "unexecuted": false,
+            "lap_ms": 17660,
+            "native_actions": 221,
+            "retire_reason": null,
+            "damage": 0.0,
+            "visited": 256,
+            "total_tiles": 256,
+            "first_collision": null,
+            "first_large_error": 221,
+            "tracking_error_m": {
+              "mean": 0.6309175226202393,
+              "p95": 1.6027911027525212,
+              "max": 3.4171746389730724
+            },
+            "actual_speed_m_s": {
+              "median": 48.021585452519574,
+              "max": 95.82609847930365
+            },
+            "target_speed_m_s": {
+              "median": 74.39082158476377,
+              "max": 144.12892608643764
+            },
+            "pace_on_path": {
+              "min": 1.5,
+              "max": 1.5
+            },
+            "raw_step_ticks": 884,
+            "raw_reset_ticks": 51,
+            "wall_s": 6.725541411957238,
+            "oracle_compute_ms": {
+              "median": 0.1954460167326033,
+              "max": 0.7827139925211668
+            },
+            "GT_only": true,
+            "controller_positive_clamp_preserved": true,
+            "arm": "baseline",
+            "paired_geometry_sha256": "606a316011bc5e39ddd5a94b54acf242b23a2f2ca7b150076b86eaffbea33b0e"
+          }
+        },
+        "pixel240": {
+          "lap_ms": 18760,
+          "damage": 0.2
+        },
+        "paired_time_delta_ms": -1720,
+        "candidate_vs_pixel240_ms": -2820
+      }
+    ],
+    "recommendation": "Expandedtransferspositiveon3feasiblemaps;N2fixedsolvermissprevents6roadcoverage. Firstpixelpilot:onescalarlocalrelativepacecorrectionteacher268/constant1.5-1, cached240onpolicyinputs, noGTIDs/input; identitygoalhook+same240steering/memory/head/scales, freshconsistentfeatures. Do notdistill fullpedals/futurewholemapgoals; maskunobservablelabels. OneofflinefitthenminimalDEVactualgatewithmandatoryN2validation, noexperimentexecutedhere. TeacherGTfollowerstallinteractionsmeanGTgainsnotguaranteedportable."
+  },
+  "cost": {
+    "stage": 269,
+    "at_utc": "2026-10-13T06:23:39.489005+00:00",
+    "native_cap": 4500,
+    "new_wrapper_actions": 1357,
+    "new_actual_episodes": 6,
+    "requested_episodes": 8,
+    "solver_blocked_unexecuted": 2,
+    "raw_step_ticks": 5425,
+    "raw_reset_ticks": 306,
+    "actual_episode_wall_s": 46.67559092800366,
+    "evaluation_wall_s": 46.9595263004303,
+    "evaluation_CPU_s": 46.918726189,
+    "new_geometry_solves": 4,
+    "solver_objectives": 776,
+    "solver_wall_s": 3.143259701959323,
+    "solver_stage_wall_s": 5.197993993759155,
+    "projection_geometry_evaluations": 35,
+    "model_physics_queries": 0,
+    "model_physics_ticks": 0,
+    "new_car_model_initializations": 0,
+    "new_profile_searches": 0,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 920000,
+    "actual_cumulative_wrapper_actions": 830787,
+    "research_remaining": 5213,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "promotion": false,
+  "code_sha256": {
+    "pace269_prepare.py": "48c81f3ed68c6033be3338bade382072d6ff1f57486a135bbc21a1c4db247ae5",
+    "pace269_run.py": "3465b107ff03a63ebf80024ccaff6d9562f97c9072b8276ef8b29dd3e5012053",
+    "pace268_profile.py": "7af5a396e2a17b6d45e78c3447a8e5e25a4594bd909d3898d8fcb911ee144162"
+  },
+  "contract_sha256": "741126c9ab76d666ab085b7c11e816d40dc5b5ee4083002bf9fda831fdb4d6eb",
+  "frozen_plan_sha256": "1ab5435497107af36adaee8ed0fae066a7e17689adae30461eb8fe04ba7208ca",
+  "interpretation": "SamegeometrycontrolswithinGTpairs; pixel240comparison alsochangesmap/path/controllerinformation. Staticfeasibilitynotdynamiccertificate; N2solvergapnotvisibility260failure oractualDNF. Noall-sixroadcoverage/pixelperformance/physicaloptimalityclaim."
+}
