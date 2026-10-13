@@ -1,0 +1,33 @@
+"""Road/episodeequal LORO summary, cachedN2; no frame-as-episode inference."""
+import argparse,time,datetime
+from pathlib import Path
+import numpy as np
+from retry.path271_run import read,save,sha
+ROADS=['O0','O2','N0','N1','N2','N3'];NAMES=['feature28','pixel_plus28']
+def run(R):
+ G=Path(__file__).resolve().parent.parent;D=R/'stage292';p=read(D/'plan.json');assert not (D/'cost.json').exists()
+ for q,h in p['hashes'].items():assert sha(Path(q))==h
+ tick=time.perf_counter();cpu=time.process_time();old=read(R/'stage291/fit-summary.json');folds=[];all_ep={n:[] for n in NAMES};execution={}
+ for road in ROADS:
+  if road=='N2':summary=old;key='heldout_N2';reuse=True
+  else:summary=read(D/road/'fit-summary.json');key='heldout';reuse=False;assert summary['heldout_road']==road and summary['fit_episodes']==10 and summary['test_episodes']==2;execution[road]=read(D/road/'execution-receipt.json')
+  models={n:summary['models'][n][key] for n in NAMES};f=models['feature28']['episode_balanced_RMSE'];v=models['pixel_plus28']['episode_balanced_RMSE'];row=dict(heldout_road=road,reused_N2=reuse,feature_RMSE=f,pixel_RMSE=v,feature_MSE=f*f,pixel_MSE=v*v,delta_MSE_pixel_minus_feature=v*v-f*f,relative_RMSE_improvement=(f-v)/f,models=models)
+  for n in NAMES:
+   assert models[n]['episode_count']==2
+   for ep in models[n]['episodes']:assert ep['road']==road;all_ep[n].append(dict(ep,MSE=ep['RMSE']**2))
+  assert [(e['behavior'],e['rows'],e['completed']) for e in models[NAMES[0]]['episodes']]==[(e['behavior'],e['rows'],e['completed']) for e in models[NAMES[1]]['episodes']];folds.append(row)
+ def aggregate(eps):
+  assert eps;return dict(episodes=len(eps),MSE=float(np.mean([e['MSE'] for e in eps])),RMSE=float(np.sqrt(np.mean([e['MSE'] for e in eps]))),MAE=float(np.mean([e['MAE'] for e in eps])),bias=float(np.mean([e['bias'] for e in eps])),original_sign_accuracy=float(np.mean([e['completion_sign_accuracy'] for e in eps])))
+ totals={n:dict(all=aggregate(all_ep[n]),complete=aggregate([e for e in all_ep[n] if e['completed']]),DNF=aggregate([e for e in all_ep[n] if not e['completed']])) for n in NAMES}
+ assert all(len(all_ep[n])==12 for n in NAMES);paired=[]
+ for a,b in zip(all_ep[NAMES[0]],all_ep[NAMES[1]]):
+  assert (a['road'],a['behavior'])==(b['road'],b['behavior']);paired.append(dict(road=a['road'],behavior=a['behavior'],completed=a['completed'],feature_MSE=a['MSE'],pixel_MSE=b['MSE'],delta_MSE=b['MSE']-a['MSE'],feature_RMSE=a['RMSE'],pixel_RMSE=b['RMSE']))
+ positive_mass=sum(max(-r['delta_MSE_pixel_minus_feature'],0) for r in folds);concentration=[dict(road=r['heldout_road'],MSE_reduction=max(-r['delta_MSE_pixel_minus_feature'],0),fraction_of_positive_reduction=max(-r['delta_MSE_pixel_minus_feature'],0)/positive_mass if positive_mass else 0) for r in folds];gain_roads=sum(r['delta_MSE_pixel_minus_feature']<0 for r in folds);gain_episodes=sum(e['delta_MSE']<0 for e in paired)
+ public=dict(stage=292,source_stage=291,unique_episodes=12,roads=6,heldout_episodes_per_road=2,new_predictor_fits=10,reused_predictor_fits=2,epochs_each=20,recipe=p['recipe'],predictors=p['predictors'],folds=folds,aggregate=totals,paired_episodes=paired,RMSE_improved_roads=gain_roads,MSE_improved_episodes=gain_episodes,gain_concentration=concentration,all_relative_RMSE_improvement=(totals['feature28']['all']['RMSE']-totals['pixel_plus28']['all']['RMSE'])/totals['feature28']['all']['RMSE'],normalization_fit_roads_only=True,whole_episode_split=True,road_GT_policy_episode_ID_futureframe_inputs=False,frame_rows_not_independent=True,no_policy_training=True,limitations=['SixoverlappingLORO trainingfolds,only12uniqueepisodes,not1145independenttestunits','Realizedreturn includeshiddenfutureaction/randomcommitment variation, notnoise-free expectedV','Nearlymatchedparametercounts,differentarchitectures; notpure image-information causal isolation','Behavior policies hadusedall6TRAINroads; predictorroad exclusion is notfreshcompetitiongeneralization'])
+ prior=R/'project-effective-budget-v297.json';v=read(prior);cost=dict(stage=292,at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),new_wrapper_actions=0,new_source_physics_ticks=0,new_render_calls=0,new_actor_calls=0,new_policy_training_native=0,new_folds=5,new_predictor_fits=10,reused_N2_predictor_fits=2,N2_new_fit_CPU_s=0,epochs_each=20,fold_execution=execution,new_folds_CPU_s_sum=sum(e['CPU_s'] for e in execution.values()),longest_individual_fold_wall_s=max(e['wall_s'] for e in execution.values()),sum_individual_fold_wall_s=sum(e['wall_s'] for e in execution.values()),timing_scope='5parallelCPU1thread folds; wallsum isoverlap, notparallel elapsed; longestindividualfold andperfoldactualreceipts reported',summary_wall_s=time.perf_counter()-tick,summary_CPU_s=time.process_time()-cpu,new_paid_resources=0,B_operating_cap=v['B_operating_cap'],actual_cumulative_wrapper_actions=v['actual_cumulative_wrapper_actions'],research_remaining=v['research_remaining'],final_reserved_actions=84000,final_reserve_used=0);save(D/'cost.json',cost)
+ v.update(version=298,at_utc=cost['at_utc'],prior_budget_path=str(prior),prior_budget_sha256=sha(prior),B_increment=0,cost_path=str(D/'cost.json'),cost_sha256=sha(D/'cost.json'),stage292_new_wrapper_actions=0,budget_reason='292samefixed visual/28 LORO,5newfolds/10fits,N2cached;0native/sourcephysics, no policy/data/grid/reserve.');assert not (R/'project-effective-budget-v298.json').exists();save(R/'project-effective-budget-v298.json',v)
+ f=R/'experiment-cost-lines.jsonl';assert not any(__import__('json').loads(x).get('stage')==292 for x in f.read_text().splitlines())
+ with f.open('a') as h:h.write(__import__('json').dumps(cost)+'\n')
+ public['cost']=cost;public['decision']='Fixed visual predictor failed the aggregate promotion check: overall RMSE worsened 0.573%, sign accuracy declined, and positive road gains concentrated in N2. Preserve local gains without a significance claim; do not start large pixel PPO or infer that images cannot help.';q=G/'retry/vision292_result.json';q.write_text(__import__('json').dumps(public,indent=2,ensure_ascii=False)+'\n');print(__import__('json').dumps(dict(aggregate=totals,gain_roads=gain_roads,gain_episodes=gain_episodes,relative=public['all_relative_RMSE_improvement'],roads=[{k:r[k] for k in ['heldout_road','feature_RMSE','pixel_RMSE','delta_MSE_pixel_minus_feature']} for r in folds],CPUcost=cost['new_folds_CPU_s_sum'],maxfoldwall=cost['longest_individual_fold_wall_s']),indent=2))
+if __name__=='__main__':
+ a=argparse.ArgumentParser();a.add_argument('--private-root',type=Path,required=True);run(a.parse_args().private_root.resolve())
