@@ -1,0 +1,363 @@
+{
+  "stage": 248,
+  "method": "One expression change: sixcurrentpixelHUDproxies plusoriginal16, affineTRAINridge22->2",
+  "signal": {
+    "min": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.48707484828979786,
+      -4.4083424391430635
+    ],
+    "max": [
+      118.22660290750817,
+      137.93103874023325,
+      159.09091374449818,
+      147.18615254931538,
+      0.4413454433862973,
+      5.504833706151204
+    ],
+    "std": [
+      22.25906303306549,
+      23.54698885262598,
+      22.08039463233277,
+      19.738669613511128,
+      0.13505313218181067,
+      1.3721495700416801
+    ],
+    "nonzero_rows": [
+      1857,
+      1857,
+      1857,
+      1857,
+      1690,
+      1735
+    ],
+    "checked_train_frames": 3,
+    "stationary_sample_allzero": true,
+    "moving_sample_proxies_vary": true,
+    "steering_and_yaw_both_signs": true,
+    "exact_physical_state_claim": false,
+    "limitations": "84gray quantization, barbaseline rounding, adjacentwheelcolor leakage andcropping; displayproxy only. NoGTcalibration/decodertraining."
+  },
+  "fit": {
+    "old_rows": 1392,
+    "new_rows": 473,
+    "original231_reproduction_max_abs": {
+      "mean": 0.0,
+      "std": 0.0,
+      "weights": 0.0
+    },
+    "settings": {
+      "inputs": 22,
+      "coefficients": 46,
+      "L2_lambda": 1.0,
+      "bias_penalty": 0.0,
+      "residual_clip": 0.5,
+      "action_clip": [
+        0,
+        1
+      ],
+      "group_fraction": 0.5,
+      "road_uniform": true,
+      "normalization": "TRAINweighted only; stdfloor1e-6",
+      "lateral_acceleration": [
+        24.0,
+        8.0
+      ],
+      "sweep": false,
+      "decoder_fits": 0
+    },
+    "weight_mass": [
+      {
+        "group": 224,
+        "road": "F0",
+        "rows": 368,
+        "weight": 174.0
+      },
+      {
+        "group": 224,
+        "road": "F1",
+        "rows": 334,
+        "weight": 174.0
+      },
+      {
+        "group": 224,
+        "road": "F2",
+        "rows": 337,
+        "weight": 174.0
+      },
+      {
+        "group": 224,
+        "road": "F3",
+        "rows": 353,
+        "weight": 174.0
+      },
+      {
+        "group": 229,
+        "road": "F0",
+        "rows": 109,
+        "weight": 174.0
+      },
+      {
+        "group": 229,
+        "road": "F1",
+        "rows": 165,
+        "weight": 174.0
+      },
+      {
+        "group": 229,
+        "road": "F2",
+        "rows": 96,
+        "weight": 174.0
+      },
+      {
+        "group": 229,
+        "road": "F3",
+        "rows": 103,
+        "weight": 174.0
+      }
+    ],
+    "wall_s": 0.649016235023737,
+    "CPU_s": 0.637981479,
+    "candidate_model_sha256": "3e9f572c08256d36aee6421f1fd8c7c1d3db579597e7f9c51de25b0fa03759d7"
+  },
+  "package": {
+    "archive_sha256": "1153a8e1dcf1f3a6e41726805724b8ea9a418c054def1ef964e4d1579ba74608",
+    "global_scales": [
+      1.412502928638687,
+      0.8138581028883641
+    ],
+    "original_nominal_preserved": true,
+    "static_boundary_passed": true
+  },
+  "paired_initial_observations_exact": true,
+  "roads": [
+    {
+      "road": "O0",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 23660,
+        "damage": 0.0,
+        "new_native_actions": 0
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "lap_ms": 22960,
+        "damage": 0.0,
+        "native_actions": 287,
+        "retire_reason": null,
+        "visited": 326,
+        "total_tiles": 326
+      },
+      "paired_lap_delta_ms": -700
+    },
+    {
+      "road": "O2",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 20980,
+        "damage": 0.2,
+        "new_native_actions": 0
+      },
+      "candidate": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "native_actions": 192,
+        "retire_reason": "crash",
+        "visited": 204,
+        "total_tiles": 289
+      },
+      "paired_lap_delta_ms": null
+    },
+    {
+      "road": "N0",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 23620,
+        "damage": 0.2,
+        "new_native_actions": 0
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "lap_ms": 23480,
+        "damage": 0.2,
+        "native_actions": 294,
+        "retire_reason": null,
+        "visited": 325,
+        "total_tiles": 325
+      },
+      "paired_lap_delta_ms": -140
+    },
+    {
+      "road": "N1",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 17080,
+        "damage": 0.0,
+        "new_native_actions": 0
+      },
+      "candidate": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "native_actions": 33,
+        "retire_reason": "crash",
+        "visited": 31,
+        "total_tiles": 238
+      },
+      "paired_lap_delta_ms": null
+    },
+    {
+      "road": "N2",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 21560,
+        "damage": 0.0,
+        "new_native_actions": 0
+      },
+      "candidate": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "lap_ms": null,
+        "damage": 1.0,
+        "native_actions": 67,
+        "retire_reason": "crash",
+        "visited": 70,
+        "total_tiles": 292
+      },
+      "paired_lap_delta_ms": null
+    },
+    {
+      "road": "N3",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 18760,
+        "damage": 0.2,
+        "new_native_actions": 0
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "lap_ms": 18040,
+        "damage": 0.4,
+        "native_actions": 226,
+        "retire_reason": null,
+        "visited": 256,
+        "total_tiles": 256
+      },
+      "paired_lap_delta_ms": -720
+    },
+    {
+      "road": "S0",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 22020,
+        "damage": 0.0,
+        "new_native_actions": 0
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "lap_ms": 21900,
+        "damage": 0.2,
+        "native_actions": 274,
+        "retire_reason": null,
+        "visited": 310,
+        "total_tiles": 310
+      },
+      "paired_lap_delta_ms": -120
+    },
+    {
+      "road": "S1",
+      "baseline": {
+        "completed": true,
+        "lap_ms": 19220,
+        "damage": 0.0,
+        "new_native_actions": 0
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "lap_ms": 19780,
+        "damage": 0.4,
+        "native_actions": 248,
+        "retire_reason": null,
+        "visited": 259,
+        "total_tiles": 268
+      },
+      "paired_lap_delta_ms": 560
+    }
+  ],
+  "counts": {
+    "baseline_completed": 8,
+    "candidate_completed": 5,
+    "actual_DNF": 3,
+    "censored": 0,
+    "unexecuted": 0,
+    "lost_completion": 3
+  },
+  "paired_time": {
+    "common_completed": 5,
+    "common_mean_lap_delta_ms": -224.0,
+    "baseline_common_mean_lap_ms": 21456.0,
+    "candidate_common_mean_lap_ms": 21232.0,
+    "all8_candidate_mean_lap_ms": null
+  },
+  "cost": {
+    "stage": 248,
+    "at_utc": "2026-10-13T01:13:06.998872+00:00",
+    "native_cap": 8125,
+    "new_wrapper_actions": 1621,
+    "evaluation_wall_s": 71.94223427772522,
+    "evaluator_CPU_s": 58.145922438,
+    "fit_wall_s": 0.649016235023737,
+    "fit_CPU_s": 0.637981479,
+    "new_GT_queries": 0,
+    "decoder_fits": 0,
+    "base_actor_CPU_s": 13.863192999999999,
+    "raw_step_ticks": 6479,
+    "raw_reset_ticks": 408,
+    "new_native_runs": 8,
+    "baseline_reused_episodes": 8,
+    "full_Agent_compute_ms": {
+      "count": 1621,
+      "median": 5.6218829995486885,
+      "p95": 12.26109400158748,
+      "max": 26.718589011579752
+    },
+    "policy_IPC_ms": {
+      "count": 1621,
+      "median": 8.150656998623163,
+      "p95": 15.104071993846446,
+      "max": 30.48861099523492
+    },
+    "B_operating_cap": 898000,
+    "actual_cumulative_wrapper_actions": 807496,
+    "research_remaining": 6504,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "decision": "No automatic champion change; report completion loss first, common-completion time secondary.",
+  "screen_reselection": false,
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "technical_error": null
+}
