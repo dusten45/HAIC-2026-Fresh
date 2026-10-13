@@ -1,0 +1,176 @@
+{
+  "stage": 245,
+  "split": "S1 was DEV_SCREEN_243, evaluated244 and reused245 for diagnosis; not independent evaluation",
+  "change": "Gas residual zero from action1; unchanged brake residual, actor, frozen240 steering/feature/head/memory.",
+  "arms": [
+    {
+      "arm": "saved_residual",
+      "native_actions": 235,
+      "prefix_censored": true,
+      "completed": false,
+      "end_visited": 237,
+      "end_speed_m_s": 0.19383830033408395,
+      "end_damage": 0.4,
+      "end_off_track_counter": 23,
+      "collision_actions": [
+        212,
+        220
+      ],
+      "target_missing_actions": [
+        212
+      ],
+      "first_speed_below_1": 216,
+      "hull_longitudinal_below_minus_point1": [
+        214,
+        215
+      ],
+      "max_memory_difference_float32": 1.3745036109291675e-08,
+      "max_own_pedal_residual": [
+        0.0018898844718933105,
+        0.001975513994693756
+      ]
+    },
+    {
+      "arm": "saved_baseline",
+      "native_actions": 235,
+      "prefix_censored": true,
+      "completed": false,
+      "end_visited": 267,
+      "end_speed_m_s": 53.24266673836255,
+      "end_damage": 0.2,
+      "end_off_track_counter": 0,
+      "collision_actions": [
+        208
+      ],
+      "target_missing_actions": [],
+      "first_speed_below_1": null,
+      "hull_longitudinal_below_minus_point1": [],
+      "max_memory_difference_float32": 1.2812514715854206e-08,
+      "max_own_pedal_residual": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "arm": "gas_restored",
+      "native_actions": 235,
+      "prefix_censored": true,
+      "completed": false,
+      "end_visited": 237,
+      "end_speed_m_s": 0.2605024485357243,
+      "end_damage": 0.6000000000000001,
+      "end_off_track_counter": 22,
+      "collision_actions": [
+        213,
+        214,
+        221
+      ],
+      "target_missing_actions": [],
+      "first_speed_below_1": 217,
+      "hull_longitudinal_below_minus_point1": [],
+      "max_memory_difference_float32": 1.4852720109370665e-08,
+      "max_own_pedal_residual": [
+        0.0,
+        0.0011258572340011597
+      ]
+    }
+  ],
+  "replay_exact_steps": {
+    "saved_residual": 235,
+    "saved_baseline": 235
+  },
+  "first_command_difference": 1,
+  "first_regenerated_pixel_difference": 5,
+  "first_legal_feature_difference": 25,
+  "first_steering_difference": 30,
+  "initial_gas_residual": 0.0009476542472839355,
+  "initial_brake_residual": 5.923211574554443e-06,
+  "original_S1": {
+    "actual_DNF": true,
+    "terminal_action": 313,
+    "retire_reason": "off_track",
+    "last_new_tile_action": 212,
+    "visited": 237,
+    "total_tiles": 297,
+    "damage": 0.4,
+    "return_sum": -0.20202020202019588
+  },
+  "reward_assessment": {
+    "batch_mean_dense_reward": [
+      0.006012516823135514,
+      0.00480614084089267,
+      0.005434831303716091,
+      0.004331360281330273,
+      0.00463847028403614,
+      0.006036173361807968,
+      0.002885523874575523,
+      0.005432704613603306
+    ],
+    "monotone_training_gain": false,
+    "final_DEV_mean_return": 0.840989898989905,
+    "baseline_DEV_mean_expected_return": 1.876125,
+    "S1_failed_return": -0.20202020202019588,
+    "S1_baseline_expected_complete_return": 1.86875,
+    "interpretation": "No observed reward/completion reversal: failure has negative return; batch means fluctuate and mix roads/cuts, so do not establish improved completion."
+  },
+  "findings": [
+    "Residual command changes precede pixel/feature/steering divergence; collision at212 then progress stop, not sustained reverse driving.",
+    "Gas cancellation still collides213/214/221 and stops at237 tiles by235, so gas residual alone is not necessary for this stopping failure.",
+    "Gas-cancelled arm has no missing-target event, so original target loss is not necessary for this collision/stopping failure.",
+    "No nominal steering-memory mismatch beyond float32 rounding; no policy likelihood/reward integrity rerun."
+  ],
+  "uncertainty": [
+    "Gas-cancelled prefix is censored at235; no new official DNF/completion claim.",
+    "This single contrast does not isolate a uniquely causal brake feature or distinguish brake effects from sensitive pixel/physics feedback.",
+    "A failed pilot is not evidence against residual RL in general."
+  ],
+  "next_technical_action": "Before any new RL training, a separately authorized symmetric brake-only cancellation prefix would distinguish channel effects; retain legal-input observer and exact saved-command controls.",
+  "cost": {
+    "stage": 245,
+    "at_utc": "2026-10-13T00:31:17.983134+00:00",
+    "native_cap": 2000,
+    "planned_max_native": 705,
+    "new_wrapper_actions": 705,
+    "phases": {
+      "saved_residual": 235,
+      "saved_baseline": 235,
+      "gas_restored": 235
+    },
+    "wall_s": 33.741621017456055,
+    "evaluator_CPU_s": 27.882621320000002,
+    "base_actor_CPU_s": 5.836477,
+    "raw_step_ticks": 2820,
+    "raw_reset_ticks": 153,
+    "max_base_IPC_ms": 50.96380499890074,
+    "actual_cumulative_wrapper_actions": 792685,
+    "research_remaining": 5315,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 882000,
+    "new_paid_resources": 0,
+    "new_learning": 0,
+    "new_GT_model_queries": 0
+  },
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "first_difference_by_feature_index": {
+    "0": 212,
+    "1": 30,
+    "2": 25,
+    "3": 34,
+    "4": 34,
+    "5": 25,
+    "6": 32,
+    "7": 26,
+    "8": 35,
+    "9": 30,
+    "10": 49,
+    "11": 158,
+    "12": 25,
+    "13": 30,
+    "14": 190,
+    "15": 61
+  }
+}
