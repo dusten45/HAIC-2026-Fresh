@@ -1,0 +1,155 @@
+{
+  "stage": 304,
+  "rule": "Replace only speed*abs(next_smoothed_steer-previous_command)/3 cost anchor with -existing HUD front-joint proxy; retain smoothing previous_command and every other component.",
+  "hypothesis": "Observed wheel-angle anchoring of existing route transition cost reduces reference switches during command/joint mismatch and improves fixed TRAIN completion-first performance.",
+  "prior_difference": "GT planners 193/208/271/288 use state/map/model futures; this candidate has current pixels only and no planning rollout. Legal student 187 changes target rule and 248 learns pedal head with HUD; this changes one route-cost anchor without fit. PPO276 learns residual actions, CEM294/297 jointly vary six coefficients; all their weights and296 coefficients here are frozen. Route134 adds the command-based cost;171 holds bypass side in score ties and253 blends road images; this preserves candidate graph, costs except anchor, mask, target geometry, tracking and observations, using existing unmodified248 HUD decoder. 284 corrects final steering from GT yaw; here final steering formula remains296. Guard301/303 and midpoint299 are not reused.",
+  "pilot_baseline": [
+    {
+      "road": "T2950",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 315,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2954",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 27440,
+      "damage": 0.0,
+      "native_actions": 344,
+      "retire_reason": null
+    }
+  ],
+  "pilot": [
+    {
+      "road": "T2950",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 315,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2954",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 27440,
+      "damage": 0.0,
+      "native_actions": 344,
+      "retire_reason": null
+    }
+  ],
+  "pilot_gate": false,
+  "extension": [],
+  "extension_baseline": [
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24320,
+      "damage": 0.0,
+      "native_actions": 304,
+      "retire_reason": null
+    },
+    {
+      "road": "N0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24040,
+      "damage": 0.0,
+      "native_actions": 301,
+      "retire_reason": null
+    }
+  ],
+  "signals": [
+    {
+      "road": "T2950",
+      "selection_changes": 0,
+      "first_selection_change": null,
+      "missing_target_actions": 18,
+      "collision_steps": [
+        184
+      ]
+    },
+    {
+      "road": "T2954",
+      "selection_changes": 0,
+      "first_selection_change": null,
+      "missing_target_actions": 3,
+      "collision_steps": []
+    }
+  ],
+  "cost": {
+    "stage": 304,
+    "at_utc": "2026-10-13T21:33:58.077177+00:00",
+    "new_wrapper_actions": 659,
+    "native_cap": 6000,
+    "new_official_runs": 2,
+    "raw_step_ticks": 2633,
+    "raw_reset_ticks": 102,
+    "episode_runner_CPU_s": 30.255049975999995,
+    "recorded_actor_CPU_s": 6.6527519999999996,
+    "sum_episode_wall_s": 39.31970385101158,
+    "total_wall_s": 20.898842096328735,
+    "new_source_physics_ticks": 0,
+    "new_parameter_draws": 0,
+    "new_fit_calls": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 1230000,
+    "actual_cumulative_wrapper_actions": 1138264,
+    "research_remaining": 7736,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "technical_error": null,
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "verification": {
+    "actions_verified": 659,
+    "all_actual_results_uncensored": true,
+    "router_formula_verified": true,
+    "unchanged_controller_model_and_constants": true,
+    "all_processes_reaped": true,
+    "champion_and_rollback_preserved": true,
+    "remaining_extension_unexecuted": true,
+    "summary": [
+      {
+        "road": "T2950",
+        "baseline_action_feature_memory_and_event_trace_identical": true,
+        "verified_rows": 315,
+        "multiple_route_candidate_actions": 4,
+        "route_cost_changed_actions": 277,
+        "proxy_vs_command_absdiff_p95_rad": 0.12248521771279561,
+        "proxy_vs_command_absdiff_max_rad": 0.3370370492592555
+      },
+      {
+        "road": "T2954",
+        "baseline_action_feature_memory_and_event_trace_identical": true,
+        "verified_rows": 344,
+        "multiple_route_candidate_actions": 0,
+        "route_cost_changed_actions": 321,
+        "proxy_vs_command_absdiff_p95_rad": 0.010258282152224641,
+        "proxy_vs_command_absdiff_max_rad": 0.1483749097240603
+      }
+    ]
+  }
+}
