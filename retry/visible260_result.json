@@ -1,0 +1,150 @@
+{
+  "stage": 260,
+  "diagnostic": "Current camera visibility-limited GT local planner; not pixel-only",
+  "results": [
+    {
+      "road": "O0",
+      "native_actions": 326,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 26060,
+      "retire_reason": null,
+      "damage": 0.0,
+      "visited": 315,
+      "total_tiles": 326,
+      "tracking_error_m": {
+        "mean": 2.562493626086385,
+        "p95": 6.453530371299366,
+        "max": 14.179422084335457
+      },
+      "replans": 109,
+      "successful_replans": 102,
+      "geometrically_infeasible_replans": 2,
+      "objective_calls": 2550,
+      "planning_ms": {
+        "median": 47.5035349954851,
+        "p95": 62.43476497475057,
+        "max": 71.239143027924,
+        "sum": 5314.446743170265
+      },
+      "control_ms": {
+        "median": 0.30603352934122086,
+        "p95": 54.96744124684483,
+        "max": 71.4063550112769
+      },
+      "raw_step_ticks": 1303,
+      "raw_reset_ticks": 51,
+      "wall_s": 17.049761464004405,
+      "GT_local": true,
+      "pixel_only": false,
+      "global_plan_loaded": false,
+      "cached_240_lap_ms": 23660,
+      "cached_259_lap_ms": 22520,
+      "accepted_replans": 100,
+      "unavailable_replans": 7,
+      "visible_plan_length_m": {
+        "min": 10.513558033498768,
+        "median": 31.50000219247206,
+        "max": 49.001866967277685
+      },
+      "first_damage_action": null,
+      "collision_actions": [],
+      "speed_m_s": {
+        "median": 44.54818427206773,
+        "max": 75.9583028263341
+      }
+    },
+    {
+      "road": "N0",
+      "native_actions": 313,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "visited": 144,
+      "total_tiles": 325,
+      "tracking_error_m": {
+        "mean": 5.213641324940943,
+        "p95": 16.798818489311426,
+        "max": 22.861459147248684
+      },
+      "replans": 105,
+      "successful_replans": 91,
+      "geometrically_infeasible_replans": 3,
+      "objective_calls": 2275,
+      "planning_ms": {
+        "median": 48.91118302475661,
+        "p95": 69.70432359958066,
+        "max": 138.40323797194287,
+        "sum": 5383.9058399316855
+      },
+      "control_ms": {
+        "median": 0.3148369723930955,
+        "p95": 61.19801119202748,
+        "max": 138.61293601803482
+      },
+      "raw_step_ticks": 1252,
+      "raw_reset_ticks": 51,
+      "wall_s": 16.575735610967968,
+      "GT_local": true,
+      "pixel_only": false,
+      "global_plan_loaded": false,
+      "cached_240_lap_ms": 23620,
+      "cached_259_lap_ms": 21740,
+      "accepted_replans": 88,
+      "unavailable_replans": 14,
+      "visible_plan_length_m": {
+        "min": 11.092413509806494,
+        "median": 31.500004203668208,
+        "max": 50.550020208690064
+      },
+      "first_damage_action": 309,
+      "collision_actions": [
+        309,
+        310,
+        311,
+        312,
+        313
+      ],
+      "speed_m_s": {
+        "median": 40.05907191327393,
+        "max": 97.74534482587194
+      }
+    }
+  ],
+  "cost": {
+    "stage": 260,
+    "at_utc": "2026-10-13T03:57:15.324503+00:00",
+    "native_cap": 4504,
+    "new_wrapper_actions": 639,
+    "new_native_runs": 2,
+    "cached_comparators_replayed": 0,
+    "raw_step_ticks": 2555,
+    "raw_reset_ticks": 102,
+    "actual_episode_wall_s": 33.62549707497237,
+    "execution_wall_s": 33.64366412162781,
+    "CPU_s": 93.318309962,
+    "objective_calls": 4825,
+    "provider_and_solver_wall_s": 10.69835258310195,
+    "speed_profile_calls": 193,
+    "model_physics_ticks": 0,
+    "new_mass_model_initializations": 0,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 908000,
+    "actual_cumulative_wrapper_actions": 820135,
+    "research_remaining": 3865,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "contract_sha256": "52cf4e1c9a7580ab037fe29a143d3ed70fbc7335ceff52634c36f7ac5ec3f1b8",
+  "frozen_plan_sha256": "9990c44bf9f6282a5cab27a3feae3b7415818f36dfebd9687eb8e9c42ad60fed",
+  "code_sha256": {
+    "visible260_plan.py": "77fbed9cc664c861f186d2dee4ea988eb712252e05d57a10e1c0dbe93cc9b924",
+    "visible260_run.py": "d0329e2e2a860e22de07cc8de38a80fb7c6fd39e444e1b29a8236111a7ee7a9f"
+  },
+  "interpretation": "No promotion. Local information, open-end assumption, six-variable small solver, replanning and feasibility fallback changed jointly. Finite local-plan distance includes longitudinal distance to forward endpoint and stale-plan distance, so cannot be treated as comparable lateral error against global259. No 10s or pixel impossibility claim."
+}
