@@ -1,0 +1,366 @@
+{
+  "stage": 251,
+  "decision": "Rejected one fixed affine correction: candidate0/8 versusbaseline8/8, no commoncompletedtime comparison.",
+  "teacher": {
+    "rows": 527,
+    "road_receipts": [
+      {
+        "road": "O0",
+        "rows": 99,
+        "statuses": {
+          "intervention_selected": 60,
+          "baseline_tie": 35,
+          "tail_baseline": 4
+        },
+        "selections": {
+          "baseline": 39,
+          "gas_upper": 22,
+          "brake_lower": 38,
+          "brake_upper": 0
+        },
+        "model_wall_s": 7.561273578292457
+      },
+      {
+        "road": "O2",
+        "rows": 88,
+        "statuses": {
+          "intervention_selected": 57,
+          "baseline_tie": 27,
+          "tail_baseline": 4
+        },
+        "selections": {
+          "baseline": 31,
+          "gas_upper": 22,
+          "brake_lower": 35,
+          "brake_upper": 0
+        },
+        "model_wall_s": 6.196659522742266
+      },
+      {
+        "road": "N0",
+        "rows": 99,
+        "statuses": {
+          "intervention_selected": 69,
+          "baseline_tie": 26,
+          "tail_baseline": 4
+        },
+        "selections": {
+          "baseline": 30,
+          "gas_upper": 24,
+          "brake_lower": 45,
+          "brake_upper": 0
+        },
+        "model_wall_s": 8.754088385903742
+      },
+      {
+        "road": "N1",
+        "rows": 72,
+        "statuses": {
+          "intervention_selected": 44,
+          "baseline_tie": 24,
+          "tail_baseline": 4
+        },
+        "selections": {
+          "baseline": 28,
+          "gas_upper": 17,
+          "brake_lower": 27,
+          "brake_upper": 0
+        },
+        "model_wall_s": 4.8210145260964055
+      },
+      {
+        "road": "N2",
+        "rows": 90,
+        "statuses": {
+          "intervention_selected": 55,
+          "baseline_tie": 31,
+          "incomparable_baseline": 1,
+          "tail_baseline": 3
+        },
+        "selections": {
+          "baseline": 35,
+          "gas_upper": 29,
+          "brake_lower": 26,
+          "brake_upper": 0
+        },
+        "model_wall_s": 7.182982109050499
+      },
+      {
+        "road": "N3",
+        "rows": 79,
+        "statuses": {
+          "intervention_selected": 49,
+          "baseline_tie": 26,
+          "tail_baseline": 4
+        },
+        "selections": {
+          "baseline": 30,
+          "gas_upper": 20,
+          "brake_lower": 29,
+          "brake_upper": 0
+        },
+        "model_wall_s": 5.393444074812578
+      }
+    ],
+    "statuses": {
+      "intervention_selected": 334,
+      "baseline_tie": 169,
+      "tail_baseline": 23,
+      "incomparable_baseline": 1
+    },
+    "selections": {
+      "baseline": 193,
+      "gas_upper": 134,
+      "brake_lower": 200,
+      "brake_upper": 0
+    },
+    "baseline_selection_fraction": 0.36622390891840606,
+    "full_horizon_queries": 504,
+    "baseline_verified_full_horizon_queries": 503,
+    "no_future_runtime_access": true,
+    "target_delta_min": [
+      -3.495203598768981e-08,
+      -0.23508459022005201
+    ],
+    "target_delta_max": [
+      0.36896712584253133,
+      9.36336175261232e-09
+    ],
+    "zero_target_rows": 193,
+    "inverse": "Nearestcurrentpre-scaleprojection for finalaction saturation; unchanged/baselinetarget0; clippedresidual thenfinalscale.",
+    "numerical_note": "Opposite-channelfloat32intermediate rounding canleave delta about3.5e-8; unchangedbaselinequeries areexactzero."
+  },
+  "fit": {
+    "stage": 251,
+    "rows": 527,
+    "road_mass": [
+      {
+        "road": "O0",
+        "rows": 99,
+        "weight": 87.83333333333333
+      },
+      {
+        "road": "O2",
+        "rows": 88,
+        "weight": 87.83333333333333
+      },
+      {
+        "road": "N0",
+        "rows": 99,
+        "weight": 87.83333333333333
+      },
+      {
+        "road": "N1",
+        "rows": 72,
+        "weight": 87.83333333333333
+      },
+      {
+        "road": "N2",
+        "rows": 90,
+        "weight": 87.83333333333333
+      },
+      {
+        "road": "N3",
+        "rows": 79,
+        "weight": 87.83333333333333
+      }
+    ],
+    "L2_lambda": 1.0,
+    "bias_penalty": 0.0,
+    "normalization": "Fixedoriginal231TRAINmean/std; no onpolicy/evaluation refit",
+    "correction_parameters": 34,
+    "zero_target_rows": 193,
+    "target_delta_min": [
+      -3.495203598768981e-08,
+      -0.23508459022005201
+    ],
+    "target_delta_max": [
+      0.36896712584253133,
+      9.36336175261232e-09
+    ],
+    "target_delta_mean": [
+      0.05085837322888759,
+      -0.03683480379983679
+    ],
+    "target_delta_nonzero_rows": 334,
+    "wall_s": 0.010792988003231585,
+    "CPU_s": 0.010372197,
+    "model_sha256": "17f51208b432ecc0347b7e194a8ed117cc4a31c996c8ead0da26cca4d280892d",
+    "native_actions": 0
+  },
+  "package": {
+    "archive_sha256": "c7c1d089bb95e48e5da907be8cdee25fc9ed8fb4ce8468d182ad8a89f31c3881",
+    "original_coefficients_scales_normalization_byte_exact": true,
+    "correction_combined_before_residual_clip": true,
+    "runtime_inputs": 16
+  },
+  "roads": [
+    {
+      "road": "O0",
+      "baseline_completed": true,
+      "baseline_lap_ms": 23660,
+      "candidate_completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "candidate_lap_ms": null,
+      "paired_delta_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.2,
+      "native_actions": 174
+    },
+    {
+      "road": "O2",
+      "baseline_completed": true,
+      "baseline_lap_ms": 20980,
+      "candidate_completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "candidate_lap_ms": null,
+      "paired_delta_ms": null,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "native_actions": 44
+    },
+    {
+      "road": "N0",
+      "baseline_completed": true,
+      "baseline_lap_ms": 23620,
+      "candidate_completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "candidate_lap_ms": null,
+      "paired_delta_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.2,
+      "native_actions": 163
+    },
+    {
+      "road": "N1",
+      "baseline_completed": true,
+      "baseline_lap_ms": 17080,
+      "candidate_completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "candidate_lap_ms": null,
+      "paired_delta_ms": null,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "native_actions": 34
+    },
+    {
+      "road": "N2",
+      "baseline_completed": true,
+      "baseline_lap_ms": 21560,
+      "candidate_completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "candidate_lap_ms": null,
+      "paired_delta_ms": null,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "native_actions": 59
+    },
+    {
+      "road": "N3",
+      "baseline_completed": true,
+      "baseline_lap_ms": 18760,
+      "candidate_completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "candidate_lap_ms": null,
+      "paired_delta_ms": null,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "native_actions": 200
+    },
+    {
+      "road": "S0",
+      "baseline_completed": true,
+      "baseline_lap_ms": 22020,
+      "candidate_completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "candidate_lap_ms": null,
+      "paired_delta_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.2,
+      "native_actions": 235
+    },
+    {
+      "road": "S1",
+      "baseline_completed": true,
+      "baseline_lap_ms": 19220,
+      "candidate_completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "candidate_lap_ms": null,
+      "paired_delta_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.0,
+      "native_actions": 179
+    }
+  ],
+  "counts": {
+    "baseline_complete": 8,
+    "candidate_complete": 0,
+    "actual_DNF": 8,
+    "censored": 0,
+    "unexecuted": 0,
+    "crash": 4,
+    "off_track": 4,
+    "common_complete": 0
+  },
+  "common_completed_mean_delta_ms": null,
+  "cost": {
+    "stage": 251,
+    "at_utc": "2026-10-13T01:45:52.791077+00:00",
+    "native_cap": 7000,
+    "new_wrapper_actions": 2662,
+    "phases": {
+      "collection": 1574,
+      "evaluation": 1088
+    },
+    "collection_wall_s": 142.8737952709198,
+    "collection_CPU_s": 129.700622988,
+    "fit_wall_s": 0.010792988003231585,
+    "fit_CPU_s": 0.010372197,
+    "evaluation_wall_s": 49.84500026702881,
+    "evaluation_CPU_s": 42.02287652,
+    "pipeline_wall_s": 192.72958852595184,
+    "base_actor_CPU_s": 20.730914,
+    "raw_step_ticks": 10641,
+    "raw_reset_ticks": 714,
+    "materialization_runs": 6,
+    "candidate_evaluation_runs": 8,
+    "model_queries": 2013,
+    "model_physics_ticks": 96612,
+    "model_zero_time_initializations": 2013,
+    "model_wall_s": 39.90946219689795,
+    "model_wall_is_subset_of_collection": true,
+    "full_Agent_compute_ms": {
+      "count": 1088,
+      "median": 4.340303494245745,
+      "p95": 10.650051664561026,
+      "max": 28.712639003060758
+    },
+    "policy_IPC_ms": {
+      "count": 1088,
+      "median": 6.757347990060225,
+      "p95": 13.982435646175864,
+      "max": 42.1343139896635
+    },
+    "B_operating_cap": 904000,
+    "actual_cumulative_wrapper_actions": 812510,
+    "research_remaining": 7490,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "interpretation": "Sixsuccessfullocalpulse validations didnotgeneralize throughthissinglepersistentaffinecorrection. Thisdoesnotprove229labelcausalerror oruniversalmatched-teacher/ARS/RLlimits; first3pulse teacher versuscontinuouslyappliedstudent remainsa possiblemismatch, notestablishedcause.",
+  "screen_reselection": false,
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "technical_error": null
+}
