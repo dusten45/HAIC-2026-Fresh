@@ -1,0 +1,360 @@
+{
+  "stage": 302,
+  "feature_meanings": {
+    "feature0": "1 iff currentroute_target returnsNone,0 ifvalid; notroadabsence/collision flag",
+    "feature8": "1 iff controller useslateral_safe; near iscomputedbeforepath usingforwardtrackedobstacle withinoriginallookahead+2.6+radius, warming reference bypassesnear",
+    "feature14": "Nominalgas beforeaffinehead/scales/guard, notreturnedgas",
+    "feature15": "Nominalbrake beforeaffinehead/scales/guard",
+    "target_missing": "x/forward/curvature/targetspeed set0sentinels; feedback useslegacyimage speed instead ofvalidtarget templateHUD decode",
+    "feature12": "Minimumhypot overalltrackedobstacles includingbehind/ghosts, default100; notnecessarilyGTdistance ornearestforwardobstacle",
+    "fallback": "Hold previoussteer, gas0/brake.25; no steeringmemory update in action(None)",
+    "narrow_structurally_possible": true,
+    "nominalgas_zero_redundant_under_absent": true
+  },
+  "source_excerpts": {
+    "target_missing_branch": "        if target is None:\n            nominal = np.asarray(self.controller.action(None, speed), np.float32)\n            x = forward = curvature = target_speed = 0.0\n            feedback = speed",
+    "near_condition": "        near = not getattr(self, 'warming_fixed_reference', False) and any(\n            y > 0 and np.hypot(x, y) <= lookahead + 2.6 + radius for x, y, radius in obstacles)\n        self.controller.lateral_acceleration = self.lateral_safe if near else self.lateral_fast",
+    "fallback_action": "        if far_x is None:\n            return np.array([self.previous_steer, 0, 0.25], dtype=np.float32)",
+    "feature_layout": "0 targetNone; 3 legacyHUD;4 feedback;5 purepursuitcurvature;6 goal/sentinel;7 priorsteer;8 safe/nearflag;12 mintrackedrange;13 nominalsteer;14 nominalgas;15 nominalbrake"
+  },
+  "traces": {
+    "300_T2950": {
+      "stage": 300,
+      "road": "T2950",
+      "native_rows": 315,
+      "broad_rows": 49,
+      "broad_intervals": [
+        [
+          69,
+          72
+        ],
+        [
+          115,
+          118
+        ],
+        [
+          148,
+          152
+        ],
+        [
+          156,
+          157
+        ],
+        [
+          160,
+          163
+        ],
+        [
+          181,
+          185
+        ],
+        [
+          201,
+          203
+        ],
+        [
+          213,
+          217
+        ],
+        [
+          237,
+          241
+        ],
+        [
+          255,
+          257
+        ],
+        [
+          285,
+          289
+        ],
+        [
+          308,
+          311
+        ]
+      ],
+      "active_valid_target_rows": 46,
+      "narrow_rows": 3,
+      "narrow_intervals": [
+        [
+          184,
+          184
+        ],
+        [
+          201,
+          201
+        ],
+        [
+          288,
+          288
+        ]
+      ],
+      "first_broad_native": 69,
+      "first_narrow_native": 184,
+      "target_absent_rows": 18,
+      "contacts": [
+        184
+      ],
+      "stored_images": [],
+      "images_available": false,
+      "GT_available": true,
+      "spatial_alignment_to301_possible": false
+    },
+    "301_T2950": {
+      "stage": 301,
+      "road": "T2950",
+      "native_rows": 334,
+      "broad_rows": 48,
+      "broad_intervals": [
+        [
+          69,
+          72
+        ],
+        [
+          89,
+          94
+        ],
+        [
+          117,
+          119
+        ],
+        [
+          151,
+          155
+        ],
+        [
+          165,
+          166
+        ],
+        [
+          168,
+          169
+        ],
+        [
+          188,
+          193
+        ],
+        [
+          237,
+          241
+        ],
+        [
+          243,
+          244
+        ],
+        [
+          276,
+          281
+        ],
+        [
+          312,
+          318
+        ]
+      ],
+      "active_valid_target_rows": 47,
+      "narrow_rows": 1,
+      "narrow_intervals": [
+        [
+          191,
+          191
+        ]
+      ],
+      "first_broad_native": 69,
+      "first_narrow_native": 191,
+      "target_absent_rows": 1,
+      "contacts": [],
+      "stored_images": [],
+      "images_available": false,
+      "GT_available": false,
+      "spatial_alignment_to301_possible": false,
+      "exact_shared_prefix_before_firstguard_rows": 68,
+      "same_legal_features_at_firstguard": true,
+      "GT_state_identity_not_observed_in301": true
+    },
+    "300_T2954": {
+      "stage": 300,
+      "road": "T2954",
+      "native_rows": 344,
+      "broad_rows": 63,
+      "broad_intervals": [
+        [
+          21,
+          23
+        ],
+        [
+          33,
+          34
+        ],
+        [
+          44,
+          48
+        ],
+        [
+          79,
+          83
+        ],
+        [
+          88,
+          91
+        ],
+        [
+          101,
+          103
+        ],
+        [
+          105,
+          106
+        ],
+        [
+          124,
+          128
+        ],
+        [
+          135,
+          138
+        ],
+        [
+          161,
+          166
+        ],
+        [
+          204,
+          206
+        ],
+        [
+          267,
+          272
+        ],
+        [
+          282,
+          289
+        ],
+        [
+          321,
+          327
+        ]
+      ],
+      "active_valid_target_rows": 60,
+      "narrow_rows": 3,
+      "narrow_intervals": [
+        [
+          82,
+          82
+        ],
+        [
+          105,
+          106
+        ]
+      ],
+      "first_broad_native": 21,
+      "first_narrow_native": 82,
+      "target_absent_rows": 3,
+      "contacts": [],
+      "stored_images": [],
+      "images_available": false,
+      "GT_available": true,
+      "spatial_alignment_to301_possible": false
+    },
+    "301_T2954": {
+      "stage": 301,
+      "road": "T2954",
+      "native_rows": 184,
+      "broad_rows": 13,
+      "broad_intervals": [
+        [
+          21,
+          23
+        ],
+        [
+          44,
+          46
+        ],
+        [
+          48,
+          48
+        ],
+        [
+          80,
+          85
+        ]
+      ],
+      "active_valid_target_rows": 13,
+      "narrow_rows": 0,
+      "narrow_intervals": [],
+      "first_broad_native": 21,
+      "first_narrow_native": null,
+      "target_absent_rows": 0,
+      "contacts": [
+        83,
+        86
+      ],
+      "stored_images": [],
+      "images_available": false,
+      "GT_available": false,
+      "spatial_alignment_to301_possible": false,
+      "exact_shared_prefix_before_firstguard_rows": 20,
+      "same_legal_features_at_firstguard": true,
+      "GT_state_identity_not_observed_in301": true
+    }
+  },
+  "condition_decision": {
+    "status": "Structurallypossible andobservedsubsetdiscriminator; retain onlyasanunexecuted falsificationhypothesis, notvalidatedfix",
+    "T2950_narrow_active": 1,
+    "T2954_narrow_active": 0,
+    "limits": [
+      "T2950 successful301 has47validtargetcuts and1absentcut; successcannotbeassigned totheabsentcut",
+      "Original296 has3narrowrows onbothroad types, so predicateisnot a baselineoutcomeclassifier",
+      "Hypotheticalunchanged296 firstpossibleinterventions are184(T2950) and82(T2954); later301 states mustnot besubstituted",
+      "301has noGTpose/wheel/pixelimages; no progressmatchedcausal inference or visualinspection possible"
+    ],
+    "next_one_intervention": "Exact296 finalgas0 onlyif feature8==1 andfeature14==0 andfeature0==1; steering/brake/head/memory unchanged, no latch/release threshold. Testoriginal296, notsplice301 atstep191.",
+    "differences": {
+      "236": "Global outputmagnitude pedalmutualexclusion, no route-loss predicate, couldchangeeitherpedal",
+      "246": "Original244 learnedbrake-residual cancellation backto240 acrossallstates onanotherpolicy/road, not296routefallback throttleveto",
+      "301": "Broadnear nominalgaszero gate alsoacted onvalidtargets; narrow excludesall13 T2954guardrows inobserved301"
+    },
+    "executed": false,
+    "predicted_next_falsification": "Matchedoriginal296 T2950/T2954 candidates, baseline reused; verify originalprefix up tofirstnarrow activation andrecordcontacts/completion. IfT2950gain disappears orT2954baselinecompletionlost, rejectnarrowfixclaim; no causalclaim from302alone.",
+    "excludes_all_observed301_T2954_active_rows": true
+  },
+  "zero_new_native": true,
+  "no_GT301_or_images_reconstructed": true,
+  "champion296_maintained": true,
+  "DEV12_sealed": true,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "limitations": "Boundary windows describe within-trace order; asidefromverifiedpre-firstguard identicalprefix, nativeindices acrosspolicies arenotequalstates. Narrowpredicate separates observed301categories butnotprovenbenefit/harm mechanisms.",
+  "cost": {
+    "stage": 302,
+    "at_utc": "2026-10-13T21:14:06.117560+00:00",
+    "new_wrapper_actions": 0,
+    "new_environment_reset_or_step": 0,
+    "new_policy_or_model_calls": 0,
+    "new_renderer_calls": 0,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "analysis_wall_s": 0.43508435203693807,
+    "analysis_CPU_s": 0.438225831,
+    "B_operating_cap": 1230000,
+    "actual_cumulative_wrapper_actions": 1137085,
+    "research_remaining": 8915,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "raw_state_windows_private": true,
+  "verification": {
+    "feature0_absence_semantics_verified_actual296source": true,
+    "near_andfallback_independent": true,
+    "triplepredicate_structurallypossible": true,
+    "all4storedtraces_counts_recomputed": true,
+    "no_images_present": true,
+    "no301GT_or_images_reconstructed": true,
+    "allbefore_after_contactwindows_preserved_private": true,
+    "no_new_native_policy_renderer_simulator": true,
+    "next_intervention_notexecuted": true,
+    "source_hashes_verified": true,
+    "champion296_240rollback_budget_preserved": true,
+    "compilation_passed": true
+  }
+}
