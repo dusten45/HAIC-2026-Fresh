@@ -1,0 +1,308 @@
+{
+  "stage": 289,
+  "implementation_change": "Replaceforwardwindow/maximumheldarc withconnected-neighbor-local projection endpoint coordinate; allowactualarc decrease, ties retaincurrentbranch; no progressaccumulation",
+  "results": [
+    {
+      "road": "O0",
+      "native_actions": 305,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 24360,
+      "baseline_lap_ms": 23660,
+      "lap_delta_ms": 700,
+      "retire_reason": null,
+      "damage": 0.0,
+      "visited": 322,
+      "total_tiles": 326,
+      "raw_step_ticks": 1219,
+      "raw_reset_ticks": 51,
+      "planner_applied_actions": 301,
+      "optimizer_accepted_actions": 68,
+      "steering_changed_actions": 67,
+      "fallback_actions": 4,
+      "corridor_initial_feasible_actions": 229,
+      "corridor_final_feasible_actions": 180,
+      "no_feasible_fallback_actions": 57,
+      "tracking_tie_break_actions": 75,
+      "source_clone_queries": 4876,
+      "source_model_physics_ticks": 121744,
+      "source_zero_time_initializations": 4876,
+      "current_call_pedals_exact_actions": 305,
+      "memory_verified_actions": 305,
+      "wall_s": 132.5648905580165,
+      "planner_wall_s": 113.36949668283341,
+      "env_step_wall_s": 14.461494791205041,
+      "policy_IPC_wall_s": 3.7266980410786346,
+      "actor_CPU_s": 3.198752,
+      "legal_input_only": false,
+      "privileged_GT_model_state": true,
+      "official_package_qualification": false
+    },
+    {
+      "road": "N0",
+      "native_actions": 291,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 23240,
+      "baseline_lap_ms": 23620,
+      "lap_delta_ms": -380,
+      "retire_reason": null,
+      "damage": 0.2,
+      "visited": 325,
+      "total_tiles": 325,
+      "raw_step_ticks": 1163,
+      "raw_reset_ticks": 51,
+      "planner_applied_actions": 290,
+      "optimizer_accepted_actions": 55,
+      "steering_changed_actions": 55,
+      "fallback_actions": 1,
+      "corridor_initial_feasible_actions": 229,
+      "corridor_final_feasible_actions": 185,
+      "no_feasible_fallback_actions": 48,
+      "tracking_tie_break_actions": 79,
+      "source_clone_queries": 4602,
+      "source_model_physics_ticks": 111064,
+      "source_zero_time_initializations": 4602,
+      "current_call_pedals_exact_actions": 291,
+      "memory_verified_actions": 291,
+      "wall_s": 135.34425954101607,
+      "planner_wall_s": 112.89695020980434,
+      "env_step_wall_s": 15.50244980212301,
+      "policy_IPC_wall_s": 3.987366161425598,
+      "actor_CPU_s": 3.4430549999999998,
+      "legal_input_only": false,
+      "privileged_GT_model_state": true,
+      "official_package_qualification": false
+    }
+  ],
+  "cached288": [
+    {
+      "road": "O0",
+      "completed": true,
+      "lap_ms": 24000,
+      "native_actions": 301,
+      "damage": 0.0
+    },
+    {
+      "road": "N0",
+      "completed": true,
+      "lap_ms": 23580,
+      "native_actions": 295,
+      "damage": 0.0
+    }
+  ],
+  "cached240_lap_ms": {
+    "O0": 23660,
+    "N0": 23620
+  },
+  "mean_lap_delta_vs240_ms": 160.0,
+  "cost": {
+    "stage": 289,
+    "at_utc": "2026-10-13T14:18:30.313886+00:00",
+    "new_wrapper_actions": 596,
+    "new_baseline_native": 0,
+    "new288_replay_native": 0,
+    "new_training_native": 0,
+    "actual_runs": 2,
+    "complete": 2,
+    "actual_DNF": 0,
+    "censored": 0,
+    "technical_errors": 0,
+    "raw_step_ticks": 2382,
+    "raw_reset_ticks": 102,
+    "source_model_physics_ticks": 232808,
+    "source_clone_queries": 9478,
+    "source_zero_time_initializations": 9478,
+    "source_clone_build_wall_s": 135.63099144934677,
+    "source_integration_wall_s": 58.08522376284236,
+    "model_physics_ticks_cap": 2560000,
+    "clone_query_cap": 80000,
+    "actual_elapsed_s": 267.9411795139313,
+    "runner_CPU_s": 261.133888443,
+    "actor_CPU_s": 6.641807,
+    "planner_and_capture_wall_s": 226.26644689263776,
+    "new_paid_resources": 0,
+    "B_operating_cap": 1064000,
+    "actual_cumulative_wrapper_actions": 951551,
+    "research_remaining": 28449,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "synthetic_projection_examples": [
+    {
+      "name": "forward",
+      "path": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          10.0
+        ]
+      ],
+      "positions": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          4.0
+        ]
+      ],
+      "old": 4.0,
+      "new": 4.0,
+      "expected": 4
+    },
+    {
+      "name": "reverse_reduces",
+      "path": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          10.0
+        ]
+      ],
+      "positions": [
+        [
+          0.0,
+          4.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "old": 4.0,
+      "new": 1.0,
+      "expected": 1
+    },
+    {
+      "name": "stored288_return_to_origin",
+      "path": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          10.0
+        ]
+      ],
+      "positions": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "old": 1.0,
+      "new": 0.0,
+      "expected": 0
+    },
+    {
+      "name": "nearparallel_no_branch_jump",
+      "path": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          10.0
+        ],
+        [
+          0.2,
+          10.0
+        ],
+        [
+          0.2,
+          0.0
+        ]
+      ],
+      "positions": [
+        [
+          0.05,
+          1.0
+        ],
+        [
+          0.18,
+          2.0
+        ]
+      ],
+      "old": 2.0,
+      "new": 2.0,
+      "expected": 2
+    },
+    {
+      "name": "connected_corner_then_other_branch",
+      "path": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          10.0
+        ],
+        [
+          0.2,
+          10.0
+        ],
+        [
+          0.2,
+          0.0
+        ]
+      ],
+      "positions": [
+        [
+          0.0,
+          9.0
+        ],
+        [
+          0.0,
+          10.0
+        ],
+        [
+          0.2,
+          10.0
+        ],
+        [
+          0.2,
+          9.0
+        ]
+      ],
+      "old": 11.2,
+      "new": 11.2,
+      "expected": 11.2
+    }
+  ],
+  "stored288_candidate_arrays_missing": true,
+  "stored289_forecast_check": {
+    "count": 1182,
+    "max_old_frontier_minus_endpoint_m": 17.05557809691256,
+    "max_peak_minus_endpoint_m": 0.986360425935203
+  },
+  "same_source_GT_corridor_horizon_search_pedals_tie": true,
+  "GT_privileged": true,
+  "legal_candidate": false,
+  "decision": "Repaircandidate didnot preservecompletion/timeimprovement vs240; stop withoutchangingthresholds/weights orrerunning.",
+  "limitations": [
+    "Connected-local segment continuity avoidsglobalnearparalleljump; projectedarc onlydefinedon observedpath, notunseenrear route",
+    "Samepixelcorridor sampledcenters/morphology, no continuousfullfootprint safety;240fallbacknotclaimedfeasible",
+    "SameGTsource state/warmstart omissions/heldpedals/no futurepixel from288",
+    "Stored288full candidate coordinates/U unavailable, so actual288selection effect not inferred; new evaluation performed"
+  ],
+  "champion_changed": false,
+  "HOLDOUT_SEALED_used": false,
+  "no_parameter_tuning": true
+}
