@@ -1,0 +1,200 @@
+{
+  "stage": 271,
+  "status": "Closed: both complete, both slower; no teacher-path regression fit",
+  "privileged_GT": true,
+  "whole_map_foresight": true,
+  "legal_pixel_candidate": false,
+  "results": [
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 25160,
+      "native_actions": 315,
+      "retire_reason": null,
+      "damage": 0.0,
+      "visited": 326,
+      "total_tiles": 326,
+      "first_collision": null,
+      "first_error_over3m": 224,
+      "tracking_error_m": {
+        "mean": 0.8013409617170457,
+        "p95": 2.416480882188408,
+        "max": 4.523953795481726
+      },
+      "empty_path_actions": 0,
+      "raw_step_ticks": 1258,
+      "raw_reset_ticks": 51,
+      "wall_s": 14.566438083013054,
+      "actor_CPU_s": 1.483874,
+      "full_agent_compute_ms": {
+        "median": 1.6046019736677408,
+        "max": 8.483893994707614
+      },
+      "geometry_compute_ms": {
+        "median": 0.6826720200479031,
+        "max": 3.4468239755369723,
+        "sum": 245.5115236225538
+      },
+      "IPC_ms": {
+        "median": 5.878578987903893,
+        "max": 14.999359962530434
+      },
+      "privileged_GT": true,
+      "whole_map_foresight": true,
+      "legal_pixel_candidate": false,
+      "cached240": {
+        "completed": true,
+        "lap_ms": 23660,
+        "damage": 0.0,
+        "tracking_error_m": {
+          "mean": 2.4007282763570994,
+          "p95": 4.690620734240168,
+          "max": 7.737704641155933,
+          "reference": "Cached240 pre-action poses measured against same frozen258 free line, same forward cursor"
+        }
+      },
+      "delta_vs240_ms": 1500,
+      "cached258": {
+        "completed": true,
+        "lap_ms": 21860,
+        "damage": 0.0,
+        "tracking_error_m": {
+          "mean": 0.7191427839606861,
+          "p95": 1.7396287000051622,
+          "max": 2.007857368647165
+        }
+      },
+      "cached268": {
+        "completed": true,
+        "lap_ms": 19400,
+        "damage": 0.0,
+        "tracking_error_m": {
+          "mean": 0.7309487910054431,
+          "p95": 1.6935971724484267,
+          "max": 2.097284302954953
+        }
+      }
+    },
+    {
+      "road": "N0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 24820,
+      "native_actions": 311,
+      "retire_reason": null,
+      "damage": 0.0,
+      "visited": 325,
+      "total_tiles": 325,
+      "first_collision": null,
+      "first_error_over3m": 218,
+      "tracking_error_m": {
+        "mean": 0.7136972956337432,
+        "p95": 1.728298798910032,
+        "max": 5.530678374054712
+      },
+      "empty_path_actions": 0,
+      "raw_step_ticks": 1242,
+      "raw_reset_ticks": 51,
+      "wall_s": 14.38523488905048,
+      "actor_CPU_s": 1.39093,
+      "full_agent_compute_ms": {
+        "median": 1.6313919913955033,
+        "max": 13.296608987729996
+      },
+      "geometry_compute_ms": {
+        "median": 0.6645769462920725,
+        "max": 3.167770046275109,
+        "sum": 241.14530143560842
+      },
+      "IPC_ms": {
+        "median": 5.910015956033021,
+        "max": 27.446611027698964
+      },
+      "privileged_GT": true,
+      "whole_map_foresight": true,
+      "legal_pixel_candidate": false,
+      "cached240": {
+        "completed": true,
+        "lap_ms": 23620,
+        "damage": 0.2,
+        "tracking_error_m": {
+          "mean": 2.2211093067149554,
+          "p95": 4.527144136696884,
+          "max": 8.224395534550728,
+          "reference": "Cached240 pre-action poses measured against same frozen258 free line, same forward cursor"
+        }
+      },
+      "delta_vs240_ms": 1200,
+      "cached258": {
+        "completed": true,
+        "lap_ms": 22120,
+        "damage": 0.0,
+        "tracking_error_m": {
+          "mean": 0.621688050798163,
+          "p95": 1.6953604981239438,
+          "max": 2.2588477319873963
+        }
+      },
+      "cached268": {
+        "completed": true,
+        "lap_ms": 19900,
+        "damage": 0.0,
+        "tracking_error_m": {
+          "mean": 0.6829590695482198,
+          "p95": 1.7242319269277129,
+          "max": 2.269436862496933
+        }
+      }
+    }
+  ],
+  "preflight": {
+    "passed": true,
+    "identity_pairs": 234,
+    "coordinate_samples": 8,
+    "offline_actor_calls": 472,
+    "all_actions_downstream_reconstructed": true
+  },
+  "cost": {
+    "stage": 271,
+    "at_utc": "2026-10-13T07:22:19.656293+00:00",
+    "native_cap": 3856,
+    "new_wrapper_actions": 626,
+    "new_actual_episodes": 2,
+    "new_baseline_materialization_actions": 0,
+    "cached240_episodes_reused": 2,
+    "historical_two_cached240_collection_actions": 592,
+    "cached258_and268_reference_results_reused": 4,
+    "raw_step_ticks": 2500,
+    "raw_reset_ticks": 102,
+    "actual_episode_wall_s": 28.951672972063534,
+    "evaluation_wall_s": 29.10046887397766,
+    "evaluator_CPU_s": 26.293196316,
+    "actor_CPU_s": 2.874804,
+    "GT_path_slice_compute_ms": 486.6568250581622,
+    "offline_preflight_actor_calls": 472,
+    "offline_identity_pairs": 234,
+    "coordinate_snapshots": 8,
+    "offline_preflight_wall_s": null,
+    "offline_wall_note": "Not separately timed; no estimate substituted.",
+    "new_labels": 0,
+    "new_fits": 0,
+    "new_geometry_solves": 0,
+    "model_physics_queries": 0,
+    "model_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 920000,
+    "actual_cumulative_wrapper_actions": 832770,
+    "research_remaining": 3230,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "promotion_gate_passed": false,
+  "post_failure_retune": false,
+  "champion_unchanged": true,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "output_only_repair": "Completion result retire_reason placeholder normalized to null; output serialization only, no policy/geometry/action change. No evaluation repeated. Raw executed endpoints retained."
+}
