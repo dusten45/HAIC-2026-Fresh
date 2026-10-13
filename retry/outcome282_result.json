@@ -1,0 +1,4322 @@
+{
+  "stage": 282,
+  "recipe": {
+    "max_depth": 2,
+    "min_samples_leaf": 3,
+    "criterion": "Gini",
+    "legal_features": 16,
+    "split_ties": "feature order then ascending midpoint",
+    "class_ties": [
+      "baseline",
+      "gas_upper",
+      "brake_lower",
+      "steer_plus",
+      "steer_minus"
+    ]
+  },
+  "registered_states": 24,
+  "eligible_tree_states": 24,
+  "ineligible_states": 0,
+  "label_distribution": {
+    "baseline": 4,
+    "gas_upper": 4,
+    "brake_lower": 9,
+    "steer_plus": 3,
+    "steer_minus": 4
+  },
+  "labels_by_road": {
+    "O0": {
+      "baseline": 1,
+      "gas_upper": 0,
+      "brake_lower": 1,
+      "steer_plus": 1,
+      "steer_minus": 1
+    },
+    "O2": {
+      "baseline": 0,
+      "gas_upper": 2,
+      "brake_lower": 1,
+      "steer_plus": 0,
+      "steer_minus": 1
+    },
+    "N0": {
+      "baseline": 0,
+      "gas_upper": 1,
+      "brake_lower": 2,
+      "steer_plus": 1,
+      "steer_minus": 0
+    },
+    "N1": {
+      "baseline": 2,
+      "gas_upper": 0,
+      "brake_lower": 2,
+      "steer_plus": 0,
+      "steer_minus": 0
+    },
+    "N2": {
+      "baseline": 1,
+      "gas_upper": 1,
+      "brake_lower": 1,
+      "steer_plus": 0,
+      "steer_minus": 1
+    },
+    "N3": {
+      "baseline": 0,
+      "gas_upper": 0,
+      "brake_lower": 2,
+      "steer_plus": 1,
+      "steer_minus": 1
+    }
+  },
+  "states": [
+    {
+      "road": "O0",
+      "anchor": 37,
+      "label": "steer_plus",
+      "eligible_for_tree": true,
+      "best_gain_ms": 120,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23600,
+          "lap_delta_ms": -60,
+          "retire_reason": null,
+          "native_actions": 296,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23580,
+          "lap_delta_ms": -80,
+          "retire_reason": null,
+          "native_actions": 295,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23540,
+          "lap_delta_ms": -120,
+          "retire_reason": null,
+          "native_actions": 295,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 24100,
+          "lap_delta_ms": 440,
+          "retire_reason": null,
+          "native_actions": 302,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23660,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "O0",
+      "anchor": 73,
+      "label": "baseline",
+      "eligible_for_tree": true,
+      "best_gain_ms": 0,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 24360,
+          "lap_delta_ms": 700,
+          "retire_reason": null,
+          "native_actions": 305,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 24000,
+          "lap_delta_ms": 340,
+          "retire_reason": null,
+          "native_actions": 301,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23680,
+          "lap_delta_ms": 20,
+          "retire_reason": null,
+          "native_actions": 297,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 24120,
+          "lap_delta_ms": 460,
+          "retire_reason": null,
+          "native_actions": 302,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23660,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "O0",
+      "anchor": 148,
+      "label": "brake_lower",
+      "eligible_for_tree": true,
+      "best_gain_ms": 100,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23700,
+          "lap_delta_ms": 40,
+          "retire_reason": null,
+          "native_actions": 297,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23560,
+          "lap_delta_ms": -100,
+          "retire_reason": null,
+          "native_actions": 295,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23840,
+          "lap_delta_ms": 180,
+          "retire_reason": null,
+          "native_actions": 299,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23620,
+          "lap_delta_ms": -40,
+          "retire_reason": null,
+          "native_actions": 296,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23660,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "O0",
+      "anchor": 223,
+      "label": "steer_minus",
+      "eligible_for_tree": true,
+      "best_gain_ms": 100,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23600,
+          "lap_delta_ms": -60,
+          "retire_reason": null,
+          "native_actions": 296,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23680,
+          "lap_delta_ms": 20,
+          "retire_reason": null,
+          "native_actions": 297,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23600,
+          "lap_delta_ms": -60,
+          "retire_reason": null,
+          "native_actions": 296,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23560,
+          "lap_delta_ms": -100,
+          "retire_reason": null,
+          "native_actions": 295,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23660,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "O2",
+      "anchor": 34,
+      "label": "steer_minus",
+      "eligible_for_tree": true,
+      "best_gain_ms": 240,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20800,
+          "lap_delta_ms": -180,
+          "retire_reason": null,
+          "native_actions": 261,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21340,
+          "lap_delta_ms": 360,
+          "retire_reason": null,
+          "native_actions": 267,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21140,
+          "lap_delta_ms": 160,
+          "retire_reason": null,
+          "native_actions": 265,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20740,
+          "lap_delta_ms": -240,
+          "retire_reason": null,
+          "native_actions": 260,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20980,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "O2",
+      "anchor": 67,
+      "label": "gas_upper",
+      "eligible_for_tree": true,
+      "best_gain_ms": 80,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20900,
+          "lap_delta_ms": -80,
+          "retire_reason": null,
+          "native_actions": 262,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21180,
+          "lap_delta_ms": 200,
+          "retire_reason": null,
+          "native_actions": 265,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 22640,
+          "lap_delta_ms": 1660,
+          "retire_reason": null,
+          "native_actions": 284,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21100,
+          "lap_delta_ms": 120,
+          "retire_reason": null,
+          "native_actions": 264,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20980,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "O2",
+      "anchor": 130,
+      "label": "gas_upper",
+      "eligible_for_tree": true,
+      "best_gain_ms": 160,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20820,
+          "lap_delta_ms": -160,
+          "retire_reason": null,
+          "native_actions": 261,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21220,
+          "lap_delta_ms": 240,
+          "retire_reason": null,
+          "native_actions": 266,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20880,
+          "lap_delta_ms": -100,
+          "retire_reason": null,
+          "native_actions": 262,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21860,
+          "lap_delta_ms": 880,
+          "retire_reason": null,
+          "native_actions": 274,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20980,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "O2",
+      "anchor": 196,
+      "label": "brake_lower",
+      "eligible_for_tree": true,
+      "best_gain_ms": 100,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20960,
+          "lap_delta_ms": -20,
+          "retire_reason": null,
+          "native_actions": 263,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20880,
+          "lap_delta_ms": -100,
+          "retire_reason": null,
+          "native_actions": 261,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21000,
+          "lap_delta_ms": 20,
+          "retire_reason": null,
+          "native_actions": 263,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21000,
+          "lap_delta_ms": 20,
+          "retire_reason": null,
+          "native_actions": 263,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20980,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N0",
+      "anchor": 37,
+      "label": "steer_plus",
+      "eligible_for_tree": true,
+      "best_gain_ms": 260,
+      "outcomes": {
+        "gas_upper": {
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "lap_delta_ms": null,
+          "retire_reason": "crash",
+          "native_actions": 77,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23700,
+          "lap_delta_ms": 80,
+          "retire_reason": null,
+          "native_actions": 297,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23360,
+          "lap_delta_ms": -260,
+          "retire_reason": null,
+          "native_actions": 292,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23740,
+          "lap_delta_ms": 120,
+          "retire_reason": null,
+          "native_actions": 297,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23620,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N0",
+      "anchor": 73,
+      "label": "gas_upper",
+      "eligible_for_tree": true,
+      "best_gain_ms": 360,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23260,
+          "lap_delta_ms": -360,
+          "retire_reason": null,
+          "native_actions": 291,
+          "source_stage": 281
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23540,
+          "lap_delta_ms": -80,
+          "retire_reason": null,
+          "native_actions": 295,
+          "source_stage": 281
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23900,
+          "lap_delta_ms": 280,
+          "retire_reason": null,
+          "native_actions": 299,
+          "source_stage": 281
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23620,
+          "lap_delta_ms": 0,
+          "retire_reason": null,
+          "native_actions": 296,
+          "source_stage": 281
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23620,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N0",
+      "anchor": 148,
+      "label": "brake_lower",
+      "eligible_for_tree": true,
+      "best_gain_ms": 140,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23600,
+          "lap_delta_ms": -20,
+          "retire_reason": null,
+          "native_actions": 296,
+          "source_stage": 281
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23480,
+          "lap_delta_ms": -140,
+          "retire_reason": null,
+          "native_actions": 294,
+          "source_stage": 281
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23660,
+          "lap_delta_ms": 40,
+          "retire_reason": null,
+          "native_actions": 296,
+          "source_stage": 281
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23580,
+          "lap_delta_ms": -40,
+          "retire_reason": null,
+          "native_actions": 295,
+          "source_stage": 281
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23620,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N0",
+      "anchor": 223,
+      "label": "brake_lower",
+      "eligible_for_tree": true,
+      "best_gain_ms": 80,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23620,
+          "lap_delta_ms": 0,
+          "retire_reason": null,
+          "native_actions": 296,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23540,
+          "lap_delta_ms": -80,
+          "retire_reason": null,
+          "native_actions": 295,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23640,
+          "lap_delta_ms": 20,
+          "retire_reason": null,
+          "native_actions": 296,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23660,
+          "lap_delta_ms": 40,
+          "retire_reason": null,
+          "native_actions": 296,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23620,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N1",
+      "anchor": 28,
+      "label": "baseline",
+      "eligible_for_tree": true,
+      "best_gain_ms": 0,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17200,
+          "lap_delta_ms": 120,
+          "retire_reason": null,
+          "native_actions": 216,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17140,
+          "lap_delta_ms": 60,
+          "retire_reason": null,
+          "native_actions": 215,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17280,
+          "lap_delta_ms": 200,
+          "retire_reason": null,
+          "native_actions": 217,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17380,
+          "lap_delta_ms": 300,
+          "retire_reason": null,
+          "native_actions": 218,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17080,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N1",
+      "anchor": 52,
+      "label": "brake_lower",
+      "eligible_for_tree": true,
+      "best_gain_ms": 60,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17520,
+          "lap_delta_ms": 440,
+          "retire_reason": null,
+          "native_actions": 219,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17020,
+          "lap_delta_ms": -60,
+          "retire_reason": null,
+          "native_actions": 213,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17300,
+          "lap_delta_ms": 220,
+          "retire_reason": null,
+          "native_actions": 217,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17560,
+          "lap_delta_ms": 480,
+          "retire_reason": null,
+          "native_actions": 220,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17080,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N1",
+      "anchor": 106,
+      "label": "baseline",
+      "eligible_for_tree": true,
+      "best_gain_ms": 0,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17320,
+          "lap_delta_ms": 240,
+          "retire_reason": null,
+          "native_actions": 217,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17080,
+          "lap_delta_ms": 0,
+          "retire_reason": null,
+          "native_actions": 214,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17160,
+          "lap_delta_ms": 80,
+          "retire_reason": null,
+          "native_actions": 215,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17320,
+          "lap_delta_ms": 240,
+          "retire_reason": null,
+          "native_actions": 217,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17080,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N1",
+      "anchor": 160,
+      "label": "brake_lower",
+      "eligible_for_tree": true,
+      "best_gain_ms": 100,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17060,
+          "lap_delta_ms": -20,
+          "retire_reason": null,
+          "native_actions": 214,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 16980,
+          "lap_delta_ms": -100,
+          "retire_reason": null,
+          "native_actions": 213,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17200,
+          "lap_delta_ms": 120,
+          "retire_reason": null,
+          "native_actions": 216,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17060,
+          "lap_delta_ms": -20,
+          "retire_reason": null,
+          "native_actions": 214,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17080,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N2",
+      "anchor": 34,
+      "label": "baseline",
+      "eligible_for_tree": true,
+      "best_gain_ms": 0,
+      "outcomes": {
+        "gas_upper": {
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "lap_delta_ms": null,
+          "retire_reason": "off_track",
+          "native_actions": 163,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21880,
+          "lap_delta_ms": 320,
+          "retire_reason": null,
+          "native_actions": 274,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "lap_delta_ms": null,
+          "retire_reason": "crash",
+          "native_actions": 226,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "lap_delta_ms": null,
+          "retire_reason": "crash",
+          "native_actions": 67,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21560,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N2",
+      "anchor": 67,
+      "label": "gas_upper",
+      "eligible_for_tree": true,
+      "best_gain_ms": 380,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21180,
+          "lap_delta_ms": -380,
+          "retire_reason": null,
+          "native_actions": 265,
+          "source_stage": 281
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21400,
+          "lap_delta_ms": -160,
+          "retire_reason": null,
+          "native_actions": 268,
+          "source_stage": 281
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 22220,
+          "lap_delta_ms": 660,
+          "retire_reason": null,
+          "native_actions": 278,
+          "source_stage": 281
+        },
+        "steer_minus": {
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "lap_delta_ms": null,
+          "retire_reason": "off_track",
+          "native_actions": 314,
+          "source_stage": 281
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21560,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N2",
+      "anchor": 136,
+      "label": "steer_minus",
+      "eligible_for_tree": true,
+      "best_gain_ms": 280,
+      "outcomes": {
+        "gas_upper": {
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "lap_delta_ms": null,
+          "retire_reason": "off_track",
+          "native_actions": 346,
+          "source_stage": 281
+        },
+        "brake_lower": {
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "lap_delta_ms": null,
+          "retire_reason": "crash",
+          "native_actions": 216,
+          "source_stage": 281
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 22080,
+          "lap_delta_ms": 520,
+          "retire_reason": null,
+          "native_actions": 276,
+          "source_stage": 281
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21280,
+          "lap_delta_ms": -280,
+          "retire_reason": null,
+          "native_actions": 267,
+          "source_stage": 281
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21560,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N2",
+      "anchor": 202,
+      "label": "brake_lower",
+      "eligible_for_tree": true,
+      "best_gain_ms": 200,
+      "outcomes": {
+        "gas_upper": {
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "lap_delta_ms": null,
+          "retire_reason": "off_track",
+          "native_actions": 314,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21360,
+          "lap_delta_ms": -200,
+          "retire_reason": null,
+          "native_actions": 268,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 22080,
+          "lap_delta_ms": 520,
+          "retire_reason": null,
+          "native_actions": 277,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21720,
+          "lap_delta_ms": 160,
+          "retire_reason": null,
+          "native_actions": 272,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21560,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N3",
+      "anchor": 28,
+      "label": "steer_plus",
+      "eligible_for_tree": true,
+      "best_gain_ms": 460,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18920,
+          "lap_delta_ms": 160,
+          "retire_reason": null,
+          "native_actions": 237,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18600,
+          "lap_delta_ms": -160,
+          "retire_reason": null,
+          "native_actions": 233,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18300,
+          "lap_delta_ms": -460,
+          "retire_reason": null,
+          "native_actions": 229,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18480,
+          "lap_delta_ms": -280,
+          "retire_reason": null,
+          "native_actions": 232,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18760,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N3",
+      "anchor": 58,
+      "label": "brake_lower",
+      "eligible_for_tree": true,
+      "best_gain_ms": 140,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18720,
+          "lap_delta_ms": -40,
+          "retire_reason": null,
+          "native_actions": 235,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18620,
+          "lap_delta_ms": -140,
+          "retire_reason": null,
+          "native_actions": 233,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "lap_delta_ms": null,
+          "retire_reason": "crash",
+          "native_actions": 162,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "lap_delta_ms": null,
+          "retire_reason": "off_track",
+          "native_actions": 185,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18760,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N3",
+      "anchor": 118,
+      "label": "steer_minus",
+      "eligible_for_tree": true,
+      "best_gain_ms": 40,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18840,
+          "lap_delta_ms": 80,
+          "retire_reason": null,
+          "native_actions": 236,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18980,
+          "lap_delta_ms": 220,
+          "retire_reason": null,
+          "native_actions": 238,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 19020,
+          "lap_delta_ms": 260,
+          "retire_reason": null,
+          "native_actions": 238,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18720,
+          "lap_delta_ms": -40,
+          "retire_reason": null,
+          "native_actions": 235,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18760,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    },
+    {
+      "road": "N3",
+      "anchor": 175,
+      "label": "brake_lower",
+      "eligible_for_tree": true,
+      "best_gain_ms": 140,
+      "outcomes": {
+        "gas_upper": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18720,
+          "lap_delta_ms": -40,
+          "retire_reason": null,
+          "native_actions": 235,
+          "source_stage": 282
+        },
+        "brake_lower": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18620,
+          "lap_delta_ms": -140,
+          "retire_reason": null,
+          "native_actions": 233,
+          "source_stage": 282
+        },
+        "steer_plus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18860,
+          "lap_delta_ms": 100,
+          "retire_reason": null,
+          "native_actions": 236,
+          "source_stage": 282
+        },
+        "steer_minus": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18720,
+          "lap_delta_ms": -40,
+          "retire_reason": null,
+          "native_actions": 234,
+          "source_stage": 282
+        },
+        "baseline": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18760,
+          "lap_delta_ms": 0,
+          "macro": "baseline",
+          "new_native": 0
+        }
+      }
+    }
+  ],
+  "collection": {
+    "new_runs": 80,
+    "reused_runs": 16,
+    "new_complete": 73,
+    "new_actual_DNF": 7,
+    "new_censored": 0,
+    "new_incomparable": 0,
+    "total_macro_complete": 86,
+    "total_macro_actual_DNF": 10
+  },
+  "LORO": {
+    "classification_accuracy": 0.16666666666666666,
+    "confusion_truth_rows_prediction_columns": [
+      [
+        0,
+        1,
+        3,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        3,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        4,
+        0,
+        4
+      ],
+      [
+        1,
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        2,
+        0,
+        0
+      ]
+    ],
+    "folds": [
+      {
+        "heldout_road": "O0",
+        "training_states": 20,
+        "test_states": 4,
+        "classification_correct": 0,
+        "lookup": {
+          "states": 4,
+          "complete": 4,
+          "actual_DNF": 0,
+          "censored": 0,
+          "incomparable": 0,
+          "abstain": 0,
+          "choice_distribution": {
+            "baseline": 0,
+            "gas_upper": 2,
+            "brake_lower": 2,
+            "steer_plus": 0,
+            "steer_minus": 0
+          },
+          "improved": 2,
+          "ties": 0,
+          "slower": 2,
+          "mean_delta_ms_on_common_completed": 60.0,
+          "total_time_all_states_ms": 94880,
+          "rows": [
+            {
+              "road": "O0",
+              "anchor": 37,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 23580,
+              "delta_ms": -80,
+              "baseline_lap_ms": 23660
+            },
+            {
+              "road": "O0",
+              "anchor": 73,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 24000,
+              "delta_ms": 340,
+              "baseline_lap_ms": 23660
+            },
+            {
+              "road": "O0",
+              "anchor": 148,
+              "choice": "gas_upper",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 23700,
+              "delta_ms": 40,
+              "baseline_lap_ms": 23660
+            },
+            {
+              "road": "O0",
+              "anchor": 223,
+              "choice": "gas_upper",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 23600,
+              "delta_ms": -60,
+              "baseline_lap_ms": 23660
+            }
+          ]
+        }
+      },
+      {
+        "heldout_road": "O2",
+        "training_states": 20,
+        "test_states": 4,
+        "classification_correct": 0,
+        "lookup": {
+          "states": 4,
+          "complete": 4,
+          "actual_DNF": 0,
+          "censored": 0,
+          "incomparable": 0,
+          "abstain": 0,
+          "choice_distribution": {
+            "baseline": 0,
+            "gas_upper": 0,
+            "brake_lower": 3,
+            "steer_plus": 0,
+            "steer_minus": 1
+          },
+          "improved": 0,
+          "ties": 0,
+          "slower": 4,
+          "mean_delta_ms_on_common_completed": 205.0,
+          "total_time_all_states_ms": 84740,
+          "rows": [
+            {
+              "road": "O2",
+              "anchor": 34,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 21340,
+              "delta_ms": 360,
+              "baseline_lap_ms": 20980
+            },
+            {
+              "road": "O2",
+              "anchor": 67,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 21180,
+              "delta_ms": 200,
+              "baseline_lap_ms": 20980
+            },
+            {
+              "road": "O2",
+              "anchor": 130,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 21220,
+              "delta_ms": 240,
+              "baseline_lap_ms": 20980
+            },
+            {
+              "road": "O2",
+              "anchor": 196,
+              "choice": "steer_minus",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 21000,
+              "delta_ms": 20,
+              "baseline_lap_ms": 20980
+            }
+          ]
+        }
+      },
+      {
+        "heldout_road": "N0",
+        "training_states": 20,
+        "test_states": 4,
+        "classification_correct": 1,
+        "lookup": {
+          "states": 4,
+          "complete": 4,
+          "actual_DNF": 0,
+          "censored": 0,
+          "incomparable": 0,
+          "abstain": 2,
+          "choice_distribution": {
+            "baseline": 2,
+            "gas_upper": 0,
+            "brake_lower": 1,
+            "steer_plus": 0,
+            "steer_minus": 1
+          },
+          "improved": 2,
+          "ties": 2,
+          "slower": 0,
+          "mean_delta_ms_on_common_completed": -30.0,
+          "total_time_all_states_ms": 94360,
+          "rows": [
+            {
+              "road": "N0",
+              "anchor": 37,
+              "choice": "baseline",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 23620,
+              "delta_ms": 0,
+              "baseline_lap_ms": 23620
+            },
+            {
+              "road": "N0",
+              "anchor": 73,
+              "choice": "baseline",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 23620,
+              "delta_ms": 0,
+              "baseline_lap_ms": 23620
+            },
+            {
+              "road": "N0",
+              "anchor": 148,
+              "choice": "steer_minus",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 23580,
+              "delta_ms": -40,
+              "baseline_lap_ms": 23620
+            },
+            {
+              "road": "N0",
+              "anchor": 223,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 23540,
+              "delta_ms": -80,
+              "baseline_lap_ms": 23620
+            }
+          ]
+        }
+      },
+      {
+        "heldout_road": "N1",
+        "training_states": 20,
+        "test_states": 4,
+        "classification_correct": 2,
+        "lookup": {
+          "states": 4,
+          "complete": 4,
+          "actual_DNF": 0,
+          "censored": 0,
+          "incomparable": 0,
+          "abstain": 0,
+          "choice_distribution": {
+            "baseline": 0,
+            "gas_upper": 1,
+            "brake_lower": 3,
+            "steer_plus": 0,
+            "steer_minus": 0
+          },
+          "improved": 2,
+          "ties": 0,
+          "slower": 2,
+          "mean_delta_ms_on_common_completed": 35.0,
+          "total_time_all_states_ms": 68460,
+          "rows": [
+            {
+              "road": "N1",
+              "anchor": 28,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 17140,
+              "delta_ms": 60,
+              "baseline_lap_ms": 17080
+            },
+            {
+              "road": "N1",
+              "anchor": 52,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 17020,
+              "delta_ms": -60,
+              "baseline_lap_ms": 17080
+            },
+            {
+              "road": "N1",
+              "anchor": 106,
+              "choice": "gas_upper",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 17320,
+              "delta_ms": 240,
+              "baseline_lap_ms": 17080
+            },
+            {
+              "road": "N1",
+              "anchor": 160,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 16980,
+              "delta_ms": -100,
+              "baseline_lap_ms": 17080
+            }
+          ]
+        }
+      },
+      {
+        "heldout_road": "N2",
+        "training_states": 20,
+        "test_states": 4,
+        "classification_correct": 1,
+        "lookup": {
+          "states": 4,
+          "complete": 3,
+          "actual_DNF": 1,
+          "censored": 0,
+          "incomparable": 0,
+          "abstain": 0,
+          "choice_distribution": {
+            "baseline": 0,
+            "gas_upper": 0,
+            "brake_lower": 4,
+            "steer_plus": 0,
+            "steer_minus": 0
+          },
+          "improved": 2,
+          "ties": 0,
+          "slower": 1,
+          "mean_delta_ms_on_common_completed": -13.333333333333334,
+          "total_time_all_states_ms": null,
+          "rows": [
+            {
+              "road": "N2",
+              "anchor": 34,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 21880,
+              "delta_ms": 320,
+              "baseline_lap_ms": 21560
+            },
+            {
+              "road": "N2",
+              "anchor": 67,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 21400,
+              "delta_ms": -160,
+              "baseline_lap_ms": 21560
+            },
+            {
+              "road": "N2",
+              "anchor": 136,
+              "choice": "brake_lower",
+              "completed": false,
+              "actual_DNF": true,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": null,
+              "delta_ms": null,
+              "baseline_lap_ms": 21560
+            },
+            {
+              "road": "N2",
+              "anchor": 202,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 21360,
+              "delta_ms": -200,
+              "baseline_lap_ms": 21560
+            }
+          ]
+        }
+      },
+      {
+        "heldout_road": "N3",
+        "training_states": 20,
+        "test_states": 4,
+        "classification_correct": 0,
+        "lookup": {
+          "states": 4,
+          "complete": 3,
+          "actual_DNF": 1,
+          "censored": 0,
+          "incomparable": 0,
+          "abstain": 0,
+          "choice_distribution": {
+            "baseline": 0,
+            "gas_upper": 1,
+            "brake_lower": 1,
+            "steer_plus": 0,
+            "steer_minus": 2
+          },
+          "improved": 2,
+          "ties": 0,
+          "slower": 1,
+          "mean_delta_ms_on_common_completed": -40.0,
+          "total_time_all_states_ms": null,
+          "rows": [
+            {
+              "road": "N3",
+              "anchor": 28,
+              "choice": "brake_lower",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 18600,
+              "delta_ms": -160,
+              "baseline_lap_ms": 18760
+            },
+            {
+              "road": "N3",
+              "anchor": 58,
+              "choice": "steer_minus",
+              "completed": false,
+              "actual_DNF": true,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": null,
+              "delta_ms": null,
+              "baseline_lap_ms": 18760
+            },
+            {
+              "road": "N3",
+              "anchor": 118,
+              "choice": "gas_upper",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 18840,
+              "delta_ms": 80,
+              "baseline_lap_ms": 18760
+            },
+            {
+              "road": "N3",
+              "anchor": 175,
+              "choice": "steer_minus",
+              "completed": true,
+              "actual_DNF": false,
+              "censored": false,
+              "comparable": true,
+              "lap_ms": 18720,
+              "delta_ms": -40,
+              "baseline_lap_ms": 18760
+            }
+          ]
+        }
+      }
+    ],
+    "lookup": {
+      "states": 24,
+      "complete": 22,
+      "actual_DNF": 2,
+      "censored": 0,
+      "incomparable": 0,
+      "abstain": 2,
+      "choice_distribution": {
+        "baseline": 2,
+        "gas_upper": 4,
+        "brake_lower": 14,
+        "steer_plus": 0,
+        "steer_minus": 4
+      },
+      "improved": 10,
+      "ties": 2,
+      "slower": 10,
+      "mean_delta_ms_on_common_completed": 41.81818181818182,
+      "total_time_all_states_ms": null,
+      "rows": [
+        {
+          "road": "O0",
+          "anchor": 37,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23580,
+          "delta_ms": -80,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 73,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 24000,
+          "delta_ms": 340,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 148,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23700,
+          "delta_ms": 40,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 223,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23600,
+          "delta_ms": -60,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O2",
+          "anchor": 34,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21340,
+          "delta_ms": 360,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 67,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21180,
+          "delta_ms": 200,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 130,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21220,
+          "delta_ms": 240,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 196,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21000,
+          "delta_ms": 20,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "N0",
+          "anchor": 37,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23620,
+          "delta_ms": 0,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 73,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23620,
+          "delta_ms": 0,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 148,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23580,
+          "delta_ms": -40,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 223,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23540,
+          "delta_ms": -80,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N1",
+          "anchor": 28,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17140,
+          "delta_ms": 60,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 52,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17020,
+          "delta_ms": -60,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 106,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17320,
+          "delta_ms": 240,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 160,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 16980,
+          "delta_ms": -100,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N2",
+          "anchor": 34,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21880,
+          "delta_ms": 320,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 67,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21400,
+          "delta_ms": -160,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 136,
+          "choice": "brake_lower",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "delta_ms": null,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 202,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21360,
+          "delta_ms": -200,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N3",
+          "anchor": 28,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18600,
+          "delta_ms": -160,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 58,
+          "choice": "steer_minus",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "delta_ms": null,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 118,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18840,
+          "delta_ms": 80,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 175,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18720,
+          "delta_ms": -40,
+          "baseline_lap_ms": 18760
+        }
+      ]
+    }
+  },
+  "baseline": {
+    "states": 24,
+    "complete": 24,
+    "actual_DNF": 0,
+    "censored": 0,
+    "incomparable": 0,
+    "abstain": 24,
+    "choice_distribution": {
+      "baseline": 24,
+      "gas_upper": 0,
+      "brake_lower": 0,
+      "steer_plus": 0,
+      "steer_minus": 0
+    },
+    "improved": 0,
+    "ties": 24,
+    "slower": 0,
+    "mean_delta_ms_on_common_completed": 0.0,
+    "total_time_all_states_ms": 502640,
+    "rows": [
+      {
+        "road": "O0",
+        "anchor": 37,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23660,
+        "delta_ms": 0,
+        "baseline_lap_ms": 23660
+      },
+      {
+        "road": "O0",
+        "anchor": 73,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23660,
+        "delta_ms": 0,
+        "baseline_lap_ms": 23660
+      },
+      {
+        "road": "O0",
+        "anchor": 148,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23660,
+        "delta_ms": 0,
+        "baseline_lap_ms": 23660
+      },
+      {
+        "road": "O0",
+        "anchor": 223,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23660,
+        "delta_ms": 0,
+        "baseline_lap_ms": 23660
+      },
+      {
+        "road": "O2",
+        "anchor": 34,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 20980,
+        "delta_ms": 0,
+        "baseline_lap_ms": 20980
+      },
+      {
+        "road": "O2",
+        "anchor": 67,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 20980,
+        "delta_ms": 0,
+        "baseline_lap_ms": 20980
+      },
+      {
+        "road": "O2",
+        "anchor": 130,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 20980,
+        "delta_ms": 0,
+        "baseline_lap_ms": 20980
+      },
+      {
+        "road": "O2",
+        "anchor": 196,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 20980,
+        "delta_ms": 0,
+        "baseline_lap_ms": 20980
+      },
+      {
+        "road": "N0",
+        "anchor": 37,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23620,
+        "delta_ms": 0,
+        "baseline_lap_ms": 23620
+      },
+      {
+        "road": "N0",
+        "anchor": 73,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23620,
+        "delta_ms": 0,
+        "baseline_lap_ms": 23620
+      },
+      {
+        "road": "N0",
+        "anchor": 148,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23620,
+        "delta_ms": 0,
+        "baseline_lap_ms": 23620
+      },
+      {
+        "road": "N0",
+        "anchor": 223,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23620,
+        "delta_ms": 0,
+        "baseline_lap_ms": 23620
+      },
+      {
+        "road": "N1",
+        "anchor": 28,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 17080,
+        "delta_ms": 0,
+        "baseline_lap_ms": 17080
+      },
+      {
+        "road": "N1",
+        "anchor": 52,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 17080,
+        "delta_ms": 0,
+        "baseline_lap_ms": 17080
+      },
+      {
+        "road": "N1",
+        "anchor": 106,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 17080,
+        "delta_ms": 0,
+        "baseline_lap_ms": 17080
+      },
+      {
+        "road": "N1",
+        "anchor": 160,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 17080,
+        "delta_ms": 0,
+        "baseline_lap_ms": 17080
+      },
+      {
+        "road": "N2",
+        "anchor": 34,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 21560,
+        "delta_ms": 0,
+        "baseline_lap_ms": 21560
+      },
+      {
+        "road": "N2",
+        "anchor": 67,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 21560,
+        "delta_ms": 0,
+        "baseline_lap_ms": 21560
+      },
+      {
+        "road": "N2",
+        "anchor": 136,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 21560,
+        "delta_ms": 0,
+        "baseline_lap_ms": 21560
+      },
+      {
+        "road": "N2",
+        "anchor": 202,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 21560,
+        "delta_ms": 0,
+        "baseline_lap_ms": 21560
+      },
+      {
+        "road": "N3",
+        "anchor": 28,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 18760,
+        "delta_ms": 0,
+        "baseline_lap_ms": 18760
+      },
+      {
+        "road": "N3",
+        "anchor": 58,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 18760,
+        "delta_ms": 0,
+        "baseline_lap_ms": 18760
+      },
+      {
+        "road": "N3",
+        "anchor": 118,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 18760,
+        "delta_ms": 0,
+        "baseline_lap_ms": 18760
+      },
+      {
+        "road": "N3",
+        "anchor": 175,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 18760,
+        "delta_ms": 0,
+        "baseline_lap_ms": 18760
+      }
+    ]
+  },
+  "always_same_macro": {
+    "gas_upper": {
+      "states": 24,
+      "complete": 20,
+      "actual_DNF": 4,
+      "censored": 0,
+      "incomparable": 0,
+      "abstain": 0,
+      "choice_distribution": {
+        "baseline": 0,
+        "gas_upper": 24,
+        "brake_lower": 0,
+        "steer_plus": 0,
+        "steer_minus": 0
+      },
+      "improved": 12,
+      "ties": 1,
+      "slower": 7,
+      "mean_delta_ms_on_common_completed": 18.0,
+      "total_time_all_states_ms": null,
+      "rows": [
+        {
+          "road": "O0",
+          "anchor": 37,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23600,
+          "delta_ms": -60,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 73,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 24360,
+          "delta_ms": 700,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 148,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23700,
+          "delta_ms": 40,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 223,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23600,
+          "delta_ms": -60,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O2",
+          "anchor": 34,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20800,
+          "delta_ms": -180,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 67,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20900,
+          "delta_ms": -80,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 130,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20820,
+          "delta_ms": -160,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 196,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20960,
+          "delta_ms": -20,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "N0",
+          "anchor": 37,
+          "choice": "gas_upper",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "delta_ms": null,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 73,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23260,
+          "delta_ms": -360,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 148,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23600,
+          "delta_ms": -20,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 223,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23620,
+          "delta_ms": 0,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N1",
+          "anchor": 28,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17200,
+          "delta_ms": 120,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 52,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17520,
+          "delta_ms": 440,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 106,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17320,
+          "delta_ms": 240,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 160,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17060,
+          "delta_ms": -20,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N2",
+          "anchor": 34,
+          "choice": "gas_upper",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "delta_ms": null,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 67,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21180,
+          "delta_ms": -380,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 136,
+          "choice": "gas_upper",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "delta_ms": null,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 202,
+          "choice": "gas_upper",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "delta_ms": null,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N3",
+          "anchor": 28,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18920,
+          "delta_ms": 160,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 58,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18720,
+          "delta_ms": -40,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 118,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18840,
+          "delta_ms": 80,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 175,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18720,
+          "delta_ms": -40,
+          "baseline_lap_ms": 18760
+        }
+      ]
+    },
+    "brake_lower": {
+      "states": 24,
+      "complete": 23,
+      "actual_DNF": 1,
+      "censored": 0,
+      "incomparable": 0,
+      "abstain": 0,
+      "choice_distribution": {
+        "baseline": 0,
+        "gas_upper": 0,
+        "brake_lower": 24,
+        "steer_plus": 0,
+        "steer_minus": 0
+      },
+      "improved": 13,
+      "ties": 1,
+      "slower": 9,
+      "mean_delta_ms_on_common_completed": 13.043478260869565,
+      "total_time_all_states_ms": null,
+      "rows": [
+        {
+          "road": "O0",
+          "anchor": 37,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23580,
+          "delta_ms": -80,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 73,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 24000,
+          "delta_ms": 340,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 148,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23560,
+          "delta_ms": -100,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 223,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23680,
+          "delta_ms": 20,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O2",
+          "anchor": 34,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21340,
+          "delta_ms": 360,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 67,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21180,
+          "delta_ms": 200,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 130,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21220,
+          "delta_ms": 240,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 196,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20880,
+          "delta_ms": -100,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "N0",
+          "anchor": 37,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23700,
+          "delta_ms": 80,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 73,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23540,
+          "delta_ms": -80,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 148,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23480,
+          "delta_ms": -140,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 223,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23540,
+          "delta_ms": -80,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N1",
+          "anchor": 28,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17140,
+          "delta_ms": 60,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 52,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17020,
+          "delta_ms": -60,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 106,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17080,
+          "delta_ms": 0,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 160,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 16980,
+          "delta_ms": -100,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N2",
+          "anchor": 34,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21880,
+          "delta_ms": 320,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 67,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21400,
+          "delta_ms": -160,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 136,
+          "choice": "brake_lower",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "delta_ms": null,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 202,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21360,
+          "delta_ms": -200,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N3",
+          "anchor": 28,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18600,
+          "delta_ms": -160,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 58,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18620,
+          "delta_ms": -140,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 118,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18980,
+          "delta_ms": 220,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 175,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18620,
+          "delta_ms": -140,
+          "baseline_lap_ms": 18760
+        }
+      ]
+    },
+    "steer_plus": {
+      "states": 24,
+      "complete": 22,
+      "actual_DNF": 2,
+      "censored": 0,
+      "incomparable": 0,
+      "abstain": 0,
+      "choice_distribution": {
+        "baseline": 0,
+        "gas_upper": 0,
+        "brake_lower": 0,
+        "steer_plus": 24,
+        "steer_minus": 0
+      },
+      "improved": 5,
+      "ties": 0,
+      "slower": 17,
+      "mean_delta_ms_on_common_completed": 184.54545454545453,
+      "total_time_all_states_ms": null,
+      "rows": [
+        {
+          "road": "O0",
+          "anchor": 37,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23540,
+          "delta_ms": -120,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 73,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23680,
+          "delta_ms": 20,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 148,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23840,
+          "delta_ms": 180,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 223,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23600,
+          "delta_ms": -60,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O2",
+          "anchor": 34,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21140,
+          "delta_ms": 160,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 67,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 22640,
+          "delta_ms": 1660,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 130,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20880,
+          "delta_ms": -100,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 196,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21000,
+          "delta_ms": 20,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "N0",
+          "anchor": 37,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23360,
+          "delta_ms": -260,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 73,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23900,
+          "delta_ms": 280,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 148,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23660,
+          "delta_ms": 40,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 223,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23640,
+          "delta_ms": 20,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N1",
+          "anchor": 28,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17280,
+          "delta_ms": 200,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 52,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17300,
+          "delta_ms": 220,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 106,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17160,
+          "delta_ms": 80,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 160,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17200,
+          "delta_ms": 120,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N2",
+          "anchor": 34,
+          "choice": "steer_plus",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "delta_ms": null,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 67,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 22220,
+          "delta_ms": 660,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 136,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 22080,
+          "delta_ms": 520,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 202,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 22080,
+          "delta_ms": 520,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N3",
+          "anchor": 28,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18300,
+          "delta_ms": -460,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 58,
+          "choice": "steer_plus",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "delta_ms": null,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 118,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 19020,
+          "delta_ms": 260,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 175,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18860,
+          "delta_ms": 100,
+          "baseline_lap_ms": 18760
+        }
+      ]
+    },
+    "steer_minus": {
+      "states": 24,
+      "complete": 21,
+      "actual_DNF": 3,
+      "censored": 0,
+      "incomparable": 0,
+      "abstain": 0,
+      "choice_distribution": {
+        "baseline": 0,
+        "gas_upper": 0,
+        "brake_lower": 0,
+        "steer_plus": 0,
+        "steer_minus": 24
+      },
+      "improved": 9,
+      "ties": 1,
+      "slower": 11,
+      "mean_delta_ms_on_common_completed": 103.80952380952381,
+      "total_time_all_states_ms": null,
+      "rows": [
+        {
+          "road": "O0",
+          "anchor": 37,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 24100,
+          "delta_ms": 440,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 73,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 24120,
+          "delta_ms": 460,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 148,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23620,
+          "delta_ms": -40,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O0",
+          "anchor": 223,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23560,
+          "delta_ms": -100,
+          "baseline_lap_ms": 23660
+        },
+        {
+          "road": "O2",
+          "anchor": 34,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 20740,
+          "delta_ms": -240,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 67,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21100,
+          "delta_ms": 120,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 130,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21860,
+          "delta_ms": 880,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "O2",
+          "anchor": 196,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21000,
+          "delta_ms": 20,
+          "baseline_lap_ms": 20980
+        },
+        {
+          "road": "N0",
+          "anchor": 37,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23740,
+          "delta_ms": 120,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 73,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23620,
+          "delta_ms": 0,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 148,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23580,
+          "delta_ms": -40,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N0",
+          "anchor": 223,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 23660,
+          "delta_ms": 40,
+          "baseline_lap_ms": 23620
+        },
+        {
+          "road": "N1",
+          "anchor": 28,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17380,
+          "delta_ms": 300,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 52,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17560,
+          "delta_ms": 480,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 106,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17320,
+          "delta_ms": 240,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N1",
+          "anchor": 160,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 17060,
+          "delta_ms": -20,
+          "baseline_lap_ms": 17080
+        },
+        {
+          "road": "N2",
+          "anchor": 34,
+          "choice": "steer_minus",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "delta_ms": null,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 67,
+          "choice": "steer_minus",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "delta_ms": null,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 136,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21280,
+          "delta_ms": -280,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N2",
+          "anchor": 202,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 21720,
+          "delta_ms": 160,
+          "baseline_lap_ms": 21560
+        },
+        {
+          "road": "N3",
+          "anchor": 28,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18480,
+          "delta_ms": -280,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 58,
+          "choice": "steer_minus",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": null,
+          "delta_ms": null,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 118,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18720,
+          "delta_ms": -40,
+          "baseline_lap_ms": 18760
+        },
+        {
+          "road": "N3",
+          "anchor": 175,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "comparable": true,
+          "lap_ms": 18720,
+          "delta_ms": -40,
+          "baseline_lap_ms": 18760
+        }
+      ]
+    }
+  },
+  "oracle_recorded_best": {
+    "states": 24,
+    "complete": 24,
+    "actual_DNF": 0,
+    "censored": 0,
+    "incomparable": 0,
+    "abstain": 4,
+    "choice_distribution": {
+      "baseline": 4,
+      "gas_upper": 4,
+      "brake_lower": 9,
+      "steer_plus": 3,
+      "steer_minus": 4
+    },
+    "improved": 20,
+    "ties": 4,
+    "slower": 0,
+    "mean_delta_ms_on_common_completed": -147.5,
+    "total_time_all_states_ms": 499100,
+    "rows": [
+      {
+        "road": "O0",
+        "anchor": 37,
+        "choice": "steer_plus",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23540,
+        "delta_ms": -120,
+        "baseline_lap_ms": 23660
+      },
+      {
+        "road": "O0",
+        "anchor": 73,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23660,
+        "delta_ms": 0,
+        "baseline_lap_ms": 23660
+      },
+      {
+        "road": "O0",
+        "anchor": 148,
+        "choice": "brake_lower",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23560,
+        "delta_ms": -100,
+        "baseline_lap_ms": 23660
+      },
+      {
+        "road": "O0",
+        "anchor": 223,
+        "choice": "steer_minus",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23560,
+        "delta_ms": -100,
+        "baseline_lap_ms": 23660
+      },
+      {
+        "road": "O2",
+        "anchor": 34,
+        "choice": "steer_minus",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 20740,
+        "delta_ms": -240,
+        "baseline_lap_ms": 20980
+      },
+      {
+        "road": "O2",
+        "anchor": 67,
+        "choice": "gas_upper",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 20900,
+        "delta_ms": -80,
+        "baseline_lap_ms": 20980
+      },
+      {
+        "road": "O2",
+        "anchor": 130,
+        "choice": "gas_upper",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 20820,
+        "delta_ms": -160,
+        "baseline_lap_ms": 20980
+      },
+      {
+        "road": "O2",
+        "anchor": 196,
+        "choice": "brake_lower",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 20880,
+        "delta_ms": -100,
+        "baseline_lap_ms": 20980
+      },
+      {
+        "road": "N0",
+        "anchor": 37,
+        "choice": "steer_plus",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23360,
+        "delta_ms": -260,
+        "baseline_lap_ms": 23620
+      },
+      {
+        "road": "N0",
+        "anchor": 73,
+        "choice": "gas_upper",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23260,
+        "delta_ms": -360,
+        "baseline_lap_ms": 23620
+      },
+      {
+        "road": "N0",
+        "anchor": 148,
+        "choice": "brake_lower",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23480,
+        "delta_ms": -140,
+        "baseline_lap_ms": 23620
+      },
+      {
+        "road": "N0",
+        "anchor": 223,
+        "choice": "brake_lower",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 23540,
+        "delta_ms": -80,
+        "baseline_lap_ms": 23620
+      },
+      {
+        "road": "N1",
+        "anchor": 28,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 17080,
+        "delta_ms": 0,
+        "baseline_lap_ms": 17080
+      },
+      {
+        "road": "N1",
+        "anchor": 52,
+        "choice": "brake_lower",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 17020,
+        "delta_ms": -60,
+        "baseline_lap_ms": 17080
+      },
+      {
+        "road": "N1",
+        "anchor": 106,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 17080,
+        "delta_ms": 0,
+        "baseline_lap_ms": 17080
+      },
+      {
+        "road": "N1",
+        "anchor": 160,
+        "choice": "brake_lower",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 16980,
+        "delta_ms": -100,
+        "baseline_lap_ms": 17080
+      },
+      {
+        "road": "N2",
+        "anchor": 34,
+        "choice": "baseline",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 21560,
+        "delta_ms": 0,
+        "baseline_lap_ms": 21560
+      },
+      {
+        "road": "N2",
+        "anchor": 67,
+        "choice": "gas_upper",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 21180,
+        "delta_ms": -380,
+        "baseline_lap_ms": 21560
+      },
+      {
+        "road": "N2",
+        "anchor": 136,
+        "choice": "steer_minus",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 21280,
+        "delta_ms": -280,
+        "baseline_lap_ms": 21560
+      },
+      {
+        "road": "N2",
+        "anchor": 202,
+        "choice": "brake_lower",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 21360,
+        "delta_ms": -200,
+        "baseline_lap_ms": 21560
+      },
+      {
+        "road": "N3",
+        "anchor": 28,
+        "choice": "steer_plus",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 18300,
+        "delta_ms": -460,
+        "baseline_lap_ms": 18760
+      },
+      {
+        "road": "N3",
+        "anchor": 58,
+        "choice": "brake_lower",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 18620,
+        "delta_ms": -140,
+        "baseline_lap_ms": 18760
+      },
+      {
+        "road": "N3",
+        "anchor": 118,
+        "choice": "steer_minus",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 18720,
+        "delta_ms": -40,
+        "baseline_lap_ms": 18760
+      },
+      {
+        "road": "N3",
+        "anchor": 175,
+        "choice": "brake_lower",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "comparable": true,
+        "lap_ms": 18620,
+        "delta_ms": -140,
+        "baseline_lap_ms": 18760
+      }
+    ]
+  },
+  "final_fit": {
+    "training_states": 24,
+    "in_sample_accuracy": 0.5416666666666666,
+    "in_sample_abstain": 5,
+    "prediction_distribution": {
+      "baseline": 5,
+      "gas_upper": 5,
+      "brake_lower": 14,
+      "steer_plus": 0,
+      "steer_minus": 0
+    }
+  },
+  "limitations": [
+    "One3-action intervention thenpixel240 at recorded TRAIN snapshots, not repeated policy performance",
+    "6road-excluded fits of one fixed recipe; one final24-state fit; no hyperparameter tuning",
+    "Baseline abstain is classchoice, no confidence threshold",
+    "DNF/censored/incomparable never assigned fictional completion times; common-completion means conditional",
+    "Oracle selection uses observed outcomes and is optimistic; no independent DEV/HOLDOUT/SEALED"
+  ],
+  "analysis_wall_s": 0.08420656295493245,
+  "analysis_CPU_s": 0.07796961699999999,
+  "time_resolution_ms": 20,
+  "decision": "LORO chosen outcomes contain failure/unknown; no current evidence to test repeated policy. Outcome-label collection is feasible but fixed tree selection gate failed.",
+  "cost": {
+    "stage": 282,
+    "at_utc": "2026-10-13T12:29:54.494396+00:00",
+    "explicit_research_grant": 46000,
+    "new_wrapper_actions": 20098,
+    "new_runs": 80,
+    "reused_runs": 16,
+    "new_baseline_native": 0,
+    "new_training_native": 0,
+    "prefix_actions": 8436,
+    "macro_actions": 240,
+    "continuation_actions": 11422,
+    "native_technical_errors": 0,
+    "lost_native_actions": 0,
+    "new_actual_DNF": 7,
+    "new_censored": 0,
+    "new_incomparable": 0,
+    "raw_step_ticks": 80272,
+    "raw_reset_ticks": 4080,
+    "parallel_elapsed_s": 574.0986444950104,
+    "runner_CPU_s": 1631.577962326,
+    "actor_CPU_s": 244.302441,
+    "env_step_wall_s_sum": 1284.3107656815555,
+    "tree_fits": 7,
+    "analysis_wall_s": 0.08420656295493245,
+    "analysis_CPU_s": 0.07796961699999999,
+    "model_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 1064000,
+    "actual_cumulative_wrapper_actions": 947898,
+    "research_remaining": 32102,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  }
+}
