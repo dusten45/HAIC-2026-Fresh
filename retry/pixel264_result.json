@@ -1,0 +1,199 @@
+{
+  "stage": 264,
+  "diagnostic": "Same263 frozen profile through unchanged240 nominal/head/scales flow, rejected",
+  "results": [
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 25780,
+      "native_actions": 323,
+      "retire_reason": null,
+      "damage": 0.2,
+      "visited": 326,
+      "total_tiles": 326,
+      "planner_active_actions": 323,
+      "fallback_actions": 0,
+      "first_collision": 122,
+      "raw_step_ticks": 1290,
+      "raw_reset_ticks": 51,
+      "wall_s": 13.806689458026085,
+      "planning_ms": {
+        "median": 0.5531869828701019,
+        "p95": 0.9394606226123867,
+        "max": 14.756221033167094,
+        "sum": 209.58966750185937
+      },
+      "full_Agent_compute_ms": {
+        "median": 5.965774995274842,
+        "p95": 12.698478926904498,
+        "max": 47.10137902293354
+      },
+      "IPC_ms": {
+        "median": 8.424022991675884,
+        "p95": 16.179115523118508,
+        "max": 49.619338009506464
+      },
+      "actor_CPU_s": 2.8494710000000003,
+      "pixel_only": true,
+      "privileged_policy_inputs": false,
+      "archive_sha256": "89ba5fc2160c6abf6dceacf1774f40b9ce9113a8e6a5bf7ec2386ede613d89de",
+      "reaping": {
+        "pid": 109442,
+        "returncode": 125,
+        "waitpid_no_child": true,
+        "proc_pid_absent": true,
+        "process_reaped": true,
+        "close_ms": 0.136044982355088,
+        "actor_pids_absent": true,
+        "actor_count": 1
+      },
+      "cached_240_lap_ms": 23660,
+      "cached_240_damage": 0,
+      "delta_lap_ms_vs240": 2120,
+      "cached_263_lap_ms": 41520,
+      "cached_263_completed": true,
+      "delta_lap_ms_vs263": -15740,
+      "collision_actions": [
+        122
+      ],
+      "goal_changed_fraction": 0.7337461300309598,
+      "feedback_speed_proxy_median": 46.25,
+      "selected_goal_median": 35.83944965856408,
+      "nominal_gas_nonzero_actions": 0,
+      "nominal_brake_median": 0.3499999940395355,
+      "final_pedal_mean": [
+        0.4738152174296394,
+        0.07897289650335954
+      ],
+      "final_brake_median": 0.0738043487071991,
+      "head_residual_clip_fraction": [
+        0.0,
+        0.0
+      ],
+      "head_scales_clip_reconstruction_bitexact": true
+    },
+    {
+      "road": "N0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 24660,
+      "native_actions": 309,
+      "retire_reason": null,
+      "damage": 0.0,
+      "visited": 325,
+      "total_tiles": 325,
+      "planner_active_actions": 309,
+      "fallback_actions": 0,
+      "first_collision": null,
+      "raw_step_ticks": 1234,
+      "raw_reset_ticks": 51,
+      "wall_s": 12.97669662500266,
+      "planning_ms": {
+        "median": 0.5586049519479275,
+        "p95": 0.879720575176178,
+        "max": 3.4299169783480465,
+        "sum": 185.3891938808374
+      },
+      "full_Agent_compute_ms": {
+        "median": 6.044531997758895,
+        "p95": 10.964768030680714,
+        "max": 21.298066014423966
+      },
+      "IPC_ms": {
+        "median": 8.425694017205387,
+        "p95": 13.336098205763845,
+        "max": 23.366223962511867
+      },
+      "actor_CPU_s": 2.6452210000000003,
+      "pixel_only": true,
+      "privileged_policy_inputs": false,
+      "archive_sha256": "89ba5fc2160c6abf6dceacf1774f40b9ce9113a8e6a5bf7ec2386ede613d89de",
+      "reaping": {
+        "pid": 109445,
+        "returncode": 125,
+        "waitpid_no_child": true,
+        "proc_pid_absent": true,
+        "process_reaped": true,
+        "close_ms": 0.41781202889978886,
+        "actor_pids_absent": true,
+        "actor_count": 1
+      },
+      "cached_240_lap_ms": 23620,
+      "cached_240_damage": 0.2,
+      "delta_lap_ms_vs240": 1040,
+      "cached_263_lap_ms": null,
+      "cached_263_completed": false,
+      "delta_lap_ms_vs263": null,
+      "collision_actions": [],
+      "goal_changed_fraction": 0.6893203883495146,
+      "feedback_speed_proxy_median": 46.25,
+      "selected_goal_median": 37.32162766533161,
+      "nominal_gas_nonzero_actions": 0,
+      "nominal_brake_median": 0.3499999940395355,
+      "final_pedal_mean": [
+        0.4778501523061863,
+        0.07939109925337401
+      ],
+      "final_brake_median": 0.07152822613716125,
+      "head_residual_clip_fraction": [
+        0.0,
+        0.0
+      ],
+      "head_scales_clip_reconstruction_bitexact": true
+    }
+  ],
+  "cost": {
+    "stage": 264,
+    "at_utc": "2026-10-13T04:38:25.537505+00:00",
+    "native_cap": 1378,
+    "new_wrapper_actions": 632,
+    "new_native_runs": 2,
+    "prefix_actions": 0,
+    "cached_full_results_replayed": 0,
+    "raw_step_ticks": 2524,
+    "raw_reset_ticks": 102,
+    "native_episode_wall_s": 26.783386083028745,
+    "execution_wall_s": 26.839029550552368,
+    "actual_pixel_profiles": 632,
+    "offline_pixel_profiles": 16,
+    "offline_actor_calls": 50,
+    "offline_actor_scope": "16 cached observations each baseline/identity/profile plus paired absent-route; no native/model-physics",
+    "offline_head_reconstruction_rows": 632,
+    "planner_wall_s": 0.3949788613826968,
+    "actor_CPU_s": 5.494692000000001,
+    "model_physics_ticks": 0,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 908000,
+    "actual_cumulative_wrapper_actions": 823254,
+    "research_remaining": 746,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "preflight": {
+    "identity_pairs": 16,
+    "identity_actions_features_memory_exact": true,
+    "profile_pairs": 16,
+    "profile_steering_memory_exact": true,
+    "changed_features_only": [
+      6,
+      14,
+      15
+    ],
+    "profile_AST_and_constants_exact_to263": true,
+    "absent_route_fallback_exact": true,
+    "all_actual_head_scale_outputs_reconstructed_bitexact": true
+  },
+  "decision": "Close speed-profile integration family; no sweep/promotion",
+  "code_sha256": {
+    "pixel264_target.py": "79c9aeb2534fefcecc6159625a83b493275c7c81fd2fb5f2580be27d803cadf9",
+    "pixel264_build.py": "0a4f70fdb266cc14b055c9245c26e010b1bfddd8549f73112769b4ebb986d836",
+    "pixel264_run.py": "fd6e3e66c3c8ca0cd0b31c5a71f27c5b3af6e9469c7cab8b4f160f8721088a2d"
+  },
+  "contract_sha256": "e210118c0719f00b2d4032f0d7009c5d7f052a5098e61f5b470ace895f06f402",
+  "frozen_plan_sha256": "c1d156461cb97d72803f14b28c97a7660bed45a3f70ccc2de22babd7932270b6",
+  "interpretation": "Keeping240 longitudinal machinery recovers both completions compared with263, but is slower than240. New goal and nominal features are internally consistent yet shift frozen-head input distribution. Initial profilev0 anchored to feedback makes nominal gas0; head supplies throttle. This is a matched mechanism contrast, not a causal decomposition of all trajectory-dependent pixel/profile changes."
+}
