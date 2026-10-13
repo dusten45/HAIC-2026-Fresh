@@ -1,0 +1,650 @@
+{
+  "stage": 249,
+  "scope": "Privileged matched-steering source-model shadows only; exact240 frozen future controls. No actual pulse driving or training.",
+  "protocol": {
+    "roads": [
+      "old201F0",
+      "new241F0"
+    ],
+    "anchors": {
+      "O0": [
+        13,
+        65,
+        117,
+        168,
+        220,
+        272
+      ],
+      "N0": [
+        13,
+        65,
+        117,
+        168,
+        220,
+        272
+      ]
+    },
+    "horizon_actions": 12,
+    "pulse_actions": 3,
+    "frontier": "ActualbaselineH12contiguous endpoint; noforwardgain=>incomparable",
+    "time_resolution_s": 0.08,
+    "bounds": "Eachactualnominal\u00b1.5 clip, exact240scale,clip; onlyonepedal first3, allsteering/otherpedal/suffixunchanged.",
+    "tie": "baseline",
+    "terminal": "AnyterminalwithinH12failure; contact/damage diagnostic only"
+  },
+  "counts": {
+    "snapshots": 12,
+    "baseline_verified": 12,
+    "improved": 6,
+    "tie_baseline": 6,
+    "selected_worse": 0,
+    "incomparable": 0,
+    "snapshots_with_worse_interventions": 12
+  },
+  "intervention_comparisons": {
+    "improved": 8,
+    "tied": 15,
+    "worse_or_unreached": 13,
+    "terminal_failure": 0,
+    "reused_identical": 0
+  },
+  "baseline_verification": {
+    "max_errors": {
+      "position_error_m": 1.7059844799040144e-05,
+      "speed_error_m_s": 1.5292778456910128e-05,
+      "angle_error_rad": 5.364418029785156e-07,
+      "damage_error": 0.0
+    },
+    "discrete_mismatches": {
+      "contiguous": 0,
+      "unique_tiles": 0,
+      "contact": 0,
+      "road_wheels": 0,
+      "counter": 0,
+      "terminal": 0
+    },
+    "limits_reused_from196": {
+      "position_error_m": 0.001,
+      "speed_error_m_s": 0.01,
+      "angle_error_rad": 0.001,
+      "damage_error": 1e-06
+    },
+    "actual_baseline_first_passages_match_model": true
+  },
+  "snapshots": [
+    {
+      "road": "O0",
+      "anchor": 13,
+      "baseline_verified": true,
+      "target_advances": 14,
+      "status": "tie_baseline",
+      "selected": "baseline",
+      "saved_first_passage_physics_s": 0.0,
+      "baseline_first_passage_actions": 12,
+      "candidates": {
+        "baseline": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 22,
+          "model_physics_ticks": 48
+        },
+        "gas_upper": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 22,
+          "model_physics_ticks": 48
+        },
+        "brake_lower": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 22,
+          "model_physics_ticks": 48
+        },
+        "brake_upper": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 16,
+          "model_physics_ticks": 48
+        }
+      }
+    },
+    {
+      "road": "O0",
+      "anchor": 65,
+      "baseline_verified": true,
+      "target_advances": 15,
+      "status": "tie_baseline",
+      "selected": "baseline",
+      "saved_first_passage_physics_s": 0.0,
+      "baseline_first_passage_actions": 12,
+      "candidates": {
+        "baseline": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 84,
+          "model_physics_ticks": 48
+        },
+        "gas_upper": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 84,
+          "model_physics_ticks": 48
+        },
+        "brake_lower": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 85,
+          "model_physics_ticks": 48
+        },
+        "brake_upper": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 75,
+          "model_physics_ticks": 48
+        }
+      }
+    },
+    {
+      "road": "O0",
+      "anchor": 117,
+      "baseline_verified": true,
+      "target_advances": 13,
+      "status": "tie_baseline",
+      "selected": "baseline",
+      "saved_first_passage_physics_s": 0.0,
+      "baseline_first_passage_actions": 12,
+      "candidates": {
+        "baseline": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 142,
+          "model_physics_ticks": 48
+        },
+        "gas_upper": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 142,
+          "model_physics_ticks": 48
+        },
+        "brake_lower": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 142,
+          "model_physics_ticks": 48
+        },
+        "brake_upper": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 133,
+          "model_physics_ticks": 48
+        }
+      }
+    },
+    {
+      "road": "O0",
+      "anchor": 168,
+      "baseline_verified": true,
+      "target_advances": 14,
+      "status": "improved",
+      "selected": "brake_lower",
+      "saved_first_passage_physics_s": 0.08,
+      "baseline_first_passage_actions": 12,
+      "candidates": {
+        "baseline": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 198,
+          "model_physics_ticks": 48
+        },
+        "gas_upper": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 198,
+          "model_physics_ticks": 48
+        },
+        "brake_lower": {
+          "first_passage_actions": 11,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 199,
+          "model_physics_ticks": 48
+        },
+        "brake_upper": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 191,
+          "model_physics_ticks": 48
+        }
+      }
+    },
+    {
+      "road": "O0",
+      "anchor": 220,
+      "baseline_verified": true,
+      "target_advances": 12,
+      "status": "improved",
+      "selected": "brake_lower",
+      "saved_first_passage_physics_s": 0.08,
+      "baseline_first_passage_actions": 12,
+      "candidates": {
+        "baseline": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 255,
+          "model_physics_ticks": 48
+        },
+        "gas_upper": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 256,
+          "model_physics_ticks": 48
+        },
+        "brake_lower": {
+          "first_passage_actions": 11,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 256,
+          "model_physics_ticks": 48
+        },
+        "brake_upper": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 247,
+          "model_physics_ticks": 48
+        }
+      }
+    },
+    {
+      "road": "O0",
+      "anchor": 272,
+      "baseline_verified": true,
+      "target_advances": 14,
+      "status": "improved",
+      "selected": "brake_lower",
+      "saved_first_passage_physics_s": 0.08,
+      "baseline_first_passage_actions": 12,
+      "candidates": {
+        "baseline": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 315,
+          "model_physics_ticks": 48
+        },
+        "gas_upper": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 315,
+          "model_physics_ticks": 48
+        },
+        "brake_lower": {
+          "first_passage_actions": 11,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 316,
+          "model_physics_ticks": 48
+        },
+        "brake_upper": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 307,
+          "model_physics_ticks": 48
+        }
+      }
+    },
+    {
+      "road": "N0",
+      "anchor": 13,
+      "baseline_verified": true,
+      "target_advances": 13,
+      "status": "improved",
+      "selected": "brake_lower",
+      "saved_first_passage_physics_s": 0.08,
+      "baseline_first_passage_actions": 12,
+      "candidates": {
+        "baseline": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 21,
+          "model_physics_ticks": 48
+        },
+        "gas_upper": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 22,
+          "model_physics_ticks": 48
+        },
+        "brake_lower": {
+          "first_passage_actions": 11,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 22,
+          "model_physics_ticks": 48
+        },
+        "brake_upper": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 16,
+          "model_physics_ticks": 48
+        }
+      }
+    },
+    {
+      "road": "N0",
+      "anchor": 65,
+      "baseline_verified": true,
+      "target_advances": 15,
+      "status": "tie_baseline",
+      "selected": "baseline",
+      "saved_first_passage_physics_s": 0.0,
+      "baseline_first_passage_actions": 12,
+      "candidates": {
+        "baseline": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 84,
+          "model_physics_ticks": 48
+        },
+        "gas_upper": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 84,
+          "model_physics_ticks": 48
+        },
+        "brake_lower": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.8,
+          "contact_actions": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "frontier": 81,
+          "model_physics_ticks": 48
+        },
+        "brake_upper": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 75,
+          "model_physics_ticks": 48
+        }
+      }
+    },
+    {
+      "road": "N0",
+      "anchor": 117,
+      "baseline_verified": true,
+      "target_advances": 13,
+      "status": "improved",
+      "selected": "gas_upper",
+      "saved_first_passage_physics_s": 0.08,
+      "baseline_first_passage_actions": 12,
+      "candidates": {
+        "baseline": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.2,
+          "contact_actions": [
+            9
+          ],
+          "frontier": 142,
+          "model_physics_ticks": 48
+        },
+        "gas_upper": {
+          "first_passage_actions": 11,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 143,
+          "model_physics_ticks": 48
+        },
+        "brake_lower": {
+          "first_passage_actions": 11,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 144,
+          "model_physics_ticks": 48
+        },
+        "brake_upper": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.0,
+          "contact_actions": [],
+          "frontier": 135,
+          "model_physics_ticks": 48
+        }
+      }
+    },
+    {
+      "road": "N0",
+      "anchor": 168,
+      "baseline_verified": true,
+      "target_advances": 13,
+      "status": "improved",
+      "selected": "gas_upper",
+      "saved_first_passage_physics_s": 0.08,
+      "baseline_first_passage_actions": 12,
+      "candidates": {
+        "baseline": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.2,
+          "contact_actions": [],
+          "frontier": 200,
+          "model_physics_ticks": 48
+        },
+        "gas_upper": {
+          "first_passage_actions": 11,
+          "terminal": false,
+          "damage": 0.2,
+          "contact_actions": [],
+          "frontier": 201,
+          "model_physics_ticks": 48
+        },
+        "brake_lower": {
+          "first_passage_actions": 11,
+          "terminal": false,
+          "damage": 0.4,
+          "contact_actions": [
+            12
+          ],
+          "frontier": 202,
+          "model_physics_ticks": 48
+        },
+        "brake_upper": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.2,
+          "contact_actions": [],
+          "frontier": 192,
+          "model_physics_ticks": 48
+        }
+      }
+    },
+    {
+      "road": "N0",
+      "anchor": 220,
+      "baseline_verified": true,
+      "target_advances": 14,
+      "status": "tie_baseline",
+      "selected": "baseline",
+      "saved_first_passage_physics_s": 0.0,
+      "baseline_first_passage_actions": 12,
+      "candidates": {
+        "baseline": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.2,
+          "contact_actions": [],
+          "frontier": 256,
+          "model_physics_ticks": 48
+        },
+        "gas_upper": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.2,
+          "contact_actions": [],
+          "frontier": 256,
+          "model_physics_ticks": 48
+        },
+        "brake_lower": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.2,
+          "contact_actions": [],
+          "frontier": 256,
+          "model_physics_ticks": 48
+        },
+        "brake_upper": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.2,
+          "contact_actions": [],
+          "frontier": 250,
+          "model_physics_ticks": 48
+        }
+      }
+    },
+    {
+      "road": "N0",
+      "anchor": 272,
+      "baseline_verified": true,
+      "target_advances": 13,
+      "status": "tie_baseline",
+      "selected": "baseline",
+      "saved_first_passage_physics_s": 0.0,
+      "baseline_first_passage_actions": 12,
+      "candidates": {
+        "baseline": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.2,
+          "contact_actions": [],
+          "frontier": 315,
+          "model_physics_ticks": 48
+        },
+        "gas_upper": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.2,
+          "contact_actions": [],
+          "frontier": 315,
+          "model_physics_ticks": 48
+        },
+        "brake_lower": {
+          "first_passage_actions": 12,
+          "terminal": false,
+          "damage": 0.2,
+          "contact_actions": [],
+          "frontier": 315,
+          "model_physics_ticks": 48
+        },
+        "brake_upper": {
+          "first_passage_actions": null,
+          "terminal": false,
+          "damage": 0.2,
+          "contact_actions": [],
+          "frontier": 309,
+          "model_physics_ticks": 48
+        }
+      }
+    }
+  ],
+  "cost": {
+    "stage": 249,
+    "at_utc": "2026-10-13T01:26:33.865149+00:00",
+    "native_cap": 6504,
+    "new_wrapper_actions": 592,
+    "materialization_runs": 2,
+    "materialization_wall_s": 24.439071841014083,
+    "evaluation_wall_s": 26.029237747192383,
+    "evaluator_CPU_s": 21.501067024999998,
+    "base_actor_CPU_s": 4.583102,
+    "raw_step_ticks": 2366,
+    "raw_reset_ticks": 102,
+    "model_queries": 48,
+    "model_physics_ticks": 2304,
+    "model_zero_time_initializations": 48,
+    "model_wall_s": 1.0713766060362104,
+    "actual_baseline_12suffix_env_step_wall_s": 4.400034251972102,
+    "model_baseline_12suffix_wall_s": 0.25887955896905623,
+    "baseline_source_speedup": 16.996452981820923,
+    "actual_intervention_runs": 0,
+    "avoided_actual_intervention_suffix_actions": 432,
+    "shadow_first_passage_savings_s": 0.48000000000000004,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 898000,
+    "actual_cumulative_wrapper_actions": 808088,
+    "research_remaining": 5912,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "interpretation": "Sixsame-steering shadows offeroneaction/80ms lowerfirstpassage times. This motivates separately authorized actualpulse thenclosedloop240, butdoesnotprove229teacher-label causal inconsistency. Frozensteering afterspeedchanges isnot claimed to equal futureclosedloop steering.",
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "new_training": false,
+  "actual_selected_pulse_runs": 0,
+  "automatic_next_experiment": false
+}
