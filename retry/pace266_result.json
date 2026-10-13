@@ -1,0 +1,461 @@
+{
+  "stage": 266,
+  "diagnostic": "Separate controller/actuator/tires/numerical limits; one positiveclamp removal rejected",
+  "reference_mechanisms": [
+    {
+      "road": "O0",
+      "pace": 1.5,
+      "lag_over10_actions": 207,
+      "positive_clamp_lag_actions": 153,
+      "positive_clamp_below_max_gas_rear_not_clipped": 105,
+      "max_gas_lag_actions": 32,
+      "braking_lag_actions": 47,
+      "simultaneous_gas_brake_actions": 0,
+      "near_solver_limit_actions": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "solver_limit_activation_scope": "Observed100m/s plateau+matched release/maxTranslation/dt+reused microprobe; nativeC++ branch not instrumented"
+    },
+    {
+      "road": "N0",
+      "pace": 1.5,
+      "lag_over10_actions": 232,
+      "positive_clamp_lag_actions": 166,
+      "positive_clamp_below_max_gas_rear_not_clipped": 130,
+      "max_gas_lag_actions": 28,
+      "braking_lag_actions": 55,
+      "simultaneous_gas_brake_actions": 0,
+      "near_solver_limit_actions": [],
+      "solver_limit_activation_scope": "Observed100m/s plateau+matched release/maxTranslation/dt+reused microprobe; nativeC++ branch not instrumented"
+    }
+  ],
+  "source_probe_summary": [
+    {
+      "anchor": 13,
+      "group": "unused positive acceleration",
+      "trials": {
+        "baseline": {
+          "front": {
+            "mean_body_forward_N": -351.9881987655934,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": -175.97878653862264,
+            "mean_applied_long_N": -175.97878653862264
+          },
+          "rear": {
+            "mean_body_forward_N": 587.5478401877037,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": 293.7739177111821,
+            "mean_applied_long_N": 293.7739177111821
+          },
+          "end_speed_m_s": 35.61581792787751,
+          "end_damage": 0.0,
+          "collision": false,
+          "all_wheels_road": true,
+          "max_baseline_speed_match_error": 7.611265964158065e-06
+        },
+        "positive_unclamped": {
+          "front": {
+            "mean_body_forward_N": -453.0624591602279,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": -226.5130622788838,
+            "mean_applied_long_N": -226.5130622788838
+          },
+          "rear": {
+            "mean_body_forward_N": 779.6571925460656,
+            "clipped_fraction": 0.8333333333333334,
+            "mean_raw_long_N": 675.2222941095112,
+            "mean_applied_long_N": 389.8285942953967
+          },
+          "end_speed_m_s": 38.607839081599444,
+          "end_damage": 0.0,
+          "collision": false,
+          "all_wheels_road": true
+        }
+      },
+      "end_speed_gain_m_s": 2.992021153721936
+    },
+    {
+      "anchor": 54,
+      "group": "braking despite positive lag",
+      "trials": {
+        "baseline": {
+          "front": {
+            "mean_body_forward_N": -418.035669761261,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": -209.01115427299814,
+            "mean_applied_long_N": -209.01115427299814
+          },
+          "rear": {
+            "mean_body_forward_N": -258.25282540121987,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": -129.12641245462274,
+            "mean_applied_long_N": -129.12641245462274
+          },
+          "end_speed_m_s": 71.80984411425148,
+          "end_damage": 0.0,
+          "collision": false,
+          "all_wheels_road": true,
+          "max_baseline_speed_match_error": 2.290416564676434e-05
+        },
+        "positive_unclamped": {
+          "front": {
+            "mean_body_forward_N": -418.035669761261,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": -209.01115427299814,
+            "mean_applied_long_N": -209.01115427299814
+          },
+          "rear": {
+            "mean_body_forward_N": -258.25282540121987,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": -129.12641245462274,
+            "mean_applied_long_N": -129.12641245462274
+          },
+          "end_speed_m_s": 71.80984411425148,
+          "end_damage": 0.0,
+          "collision": false,
+          "all_wheels_road": true
+        }
+      },
+      "end_speed_gain_m_s": 0.0
+    },
+    {
+      "anchor": 165,
+      "group": "full gas actuator ceiling",
+      "trials": {
+        "baseline": {
+          "front": {
+            "mean_body_forward_N": -402.54959362256864,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": -201.24912994718412,
+            "mean_applied_long_N": -201.24912994718412
+          },
+          "rear": {
+            "mean_body_forward_N": 312.86929757223436,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": 156.4346484058296,
+            "mean_applied_long_N": 156.4346484058296
+          },
+          "end_speed_m_s": 82.69662747189619,
+          "end_damage": 0.0,
+          "collision": false,
+          "all_wheels_road": true,
+          "max_baseline_speed_match_error": 3.2077763023607986e-07
+        },
+        "positive_unclamped": {
+          "front": {
+            "mean_body_forward_N": -402.54959362256864,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": -201.24912994718412,
+            "mean_applied_long_N": -201.24912994718412
+          },
+          "rear": {
+            "mean_body_forward_N": 312.86929757223436,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": 156.4346484058296,
+            "mean_applied_long_N": 156.4346484058296
+          },
+          "end_speed_m_s": 82.69662747189619,
+          "end_damage": 0.0,
+          "collision": false,
+          "all_wheels_road": true
+        }
+      },
+      "end_speed_gain_m_s": 0.0
+    },
+    {
+      "anchor": 167,
+      "group": "braking despite positive lag",
+      "trials": {
+        "baseline": {
+          "front": {
+            "mean_body_forward_N": -421.9441416582641,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": -210.95065120574478,
+            "mean_applied_long_N": -210.95065120574478
+          },
+          "rear": {
+            "mean_body_forward_N": -255.8316505278265,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": -127.91582338880278,
+            "mean_applied_long_N": -127.91582338880278
+          },
+          "end_speed_m_s": 68.10895547810037,
+          "end_damage": 0.0,
+          "collision": false,
+          "all_wheels_road": true,
+          "max_baseline_speed_match_error": 1.500030164436339e-05
+        },
+        "positive_unclamped": {
+          "front": {
+            "mean_body_forward_N": -421.9441416582641,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": -210.95065120574478,
+            "mean_applied_long_N": -210.95065120574478
+          },
+          "rear": {
+            "mean_body_forward_N": -255.8316505278265,
+            "clipped_fraction": 0.0,
+            "mean_raw_long_N": -127.91582338880278,
+            "mean_applied_long_N": -127.91582338880278
+          },
+          "end_speed_m_s": 68.10895547810037,
+          "end_damage": 0.0,
+          "collision": false,
+          "all_wheels_road": true
+        }
+      },
+      "end_speed_gain_m_s": 0.0
+    }
+  ],
+  "fullgas_probe_first_two_actions": {
+    "front": {
+      "mean_body_forward_N": -332.54030127496594,
+      "clipped_fraction": 0.0,
+      "mean_raw_long_N": -166.24821209734557,
+      "mean_applied_long_N": -166.24821209734557
+    },
+    "rear": {
+      "mean_body_forward_N": 548.934531105202,
+      "clipped_fraction": 0.0,
+      "mean_raw_long_N": 274.4672638972552,
+      "mean_applied_long_N": 274.4672638972552
+    }
+  },
+  "source_version": {
+    "distribution": "box2d-py",
+    "distribution_version": "2.3.5",
+    "module_version": "2.3.5",
+    "native_extension_sha256": "254a26f70ff213e42dc5b5b2df0f3f0a1a8cee80f32575cbfb57db8bde328d6c",
+    "dt": 0.02,
+    "exported_maxTranslation": 2.0,
+    "matched_release_source_archive_sha256": "b37dc38844bcd7def48a97111d2b082e4f81cca3cece7460feb3eacda0da2207",
+    "limit_microprobe_reused": true
+  },
+  "release_source_archive_sha256": "b37dc38844bcd7def48a97111d2b082e4f81cca3cece7460feb3eacda0da2207",
+  "actual_results": [
+    {
+      "road": "O0",
+      "pace": 1.5,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 182,
+      "retire_reason": "off_track",
+      "damage": 0.0,
+      "visited": 119,
+      "total_tiles": 326,
+      "first_large_error_action": 80,
+      "first_large_error_m": 5.575625186731062,
+      "first_collision_action": null,
+      "tracking_error_m": {
+        "mean": 24.2399022848655,
+        "p95": 47.0339084254052,
+        "max": 47.80277842139909
+      },
+      "actual_speed_m_s": {
+        "median": 16.635442407653745,
+        "max": 100.00001128857193
+      },
+      "target_speed_m_s": {
+        "median": 101.77879794304602,
+        "max": 150.0
+      },
+      "speed_tracking": {
+        "mean_error": -56.978591303411655,
+        "mean_absolute_error": 56.98861318983423,
+        "median_actual_target_ratio": 0.29538671137117944
+      },
+      "tire": {
+        "front": {
+          "samples": 1456,
+          "clipped_fraction": 0.16964285714285715,
+          "road_clipped_fraction": 0.12752721617418353,
+          "grass_fraction": 0.5583791208791209,
+          "max_raw_force_ratio": 24.971631949730632,
+          "mean_abs_lateral_slip": 2.5782633434491853
+        },
+        "rear": {
+          "samples": 1456,
+          "clipped_fraction": 0.728021978021978,
+          "road_clipped_fraction": 0.3898305084745763,
+          "grass_fraction": 0.5542582417582418,
+          "max_raw_force_ratio": 56.82211501439967,
+          "mean_abs_lateral_slip": 13.725883401654821
+        },
+        "all": {
+          "samples": 2912,
+          "clipped_fraction": 0.4488324175824176,
+          "road_clipped_fraction": 0.2592879256965944,
+          "grass_fraction": 0.5563186813186813,
+          "max_raw_force_ratio": 56.82211501439967,
+          "mean_abs_lateral_slip": 8.152073372552008
+        }
+      },
+      "raw_step_ticks": 728,
+      "raw_reset_ticks": 51,
+      "wall_s": 9.31467823102139,
+      "oracle_compute_ms": {
+        "median": 0.24249751004390419,
+        "max": 0.8090639603324234
+      },
+      "privileged_GT": true,
+      "pixel_only": false,
+      "geometric_path_unchanged": true,
+      "stress_profile_physical_feasibility_claim": false,
+      "cached_265_pace1_5_completed": true,
+      "cached_265_lap_ms": 19700,
+      "cached_265_damage": 0.0,
+      "first_action_difference_vs265": 1,
+      "first_grass_wheel_action": 81,
+      "tire_clipped_fraction_before_first_large_error": {
+        "front": 0.11234177215189874,
+        "rear": 0.37341772151898733
+      },
+      "tire_clipped_fraction_before_first_grass": {
+        "front": 0.1234375,
+        "rear": 0.38125
+      },
+      "reference265_tire_fraction_same_prefix": {
+        "front": 0.0,
+        "rear": 0.0
+      },
+      "max_gas_fraction_before_error": 0.6835443037974683,
+      "median_actual_target_ratio_before_error": 0.7383538642675087,
+      "first_brake_action": 19
+    },
+    {
+      "road": "N0",
+      "pace": 1.5,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 191,
+      "retire_reason": "off_track",
+      "damage": 0.4,
+      "visited": 119,
+      "total_tiles": 325,
+      "first_large_error_action": 82,
+      "first_large_error_m": 3.875796677502874,
+      "first_collision_action": 88,
+      "tracking_error_m": {
+        "mean": 26.13781813779529,
+        "p95": 57.80926971492063,
+        "max": 58.255067977257625
+      },
+      "actual_speed_m_s": {
+        "median": 29.726425857904978,
+        "max": 99.56885012935335
+      },
+      "target_speed_m_s": {
+        "median": 123.35379328416997,
+        "max": 141.81715159987806
+      },
+      "speed_tracking": {
+        "mean_error": -66.53981389760796,
+        "mean_absolute_error": 66.54487743803814,
+        "median_actual_target_ratio": 0.3078872460549198
+      },
+      "tire": {
+        "front": {
+          "samples": 1528,
+          "clipped_fraction": 0.23167539267015708,
+          "road_clipped_fraction": 0.1494413407821229,
+          "grass_fraction": 0.5314136125654451,
+          "max_raw_force_ratio": 32.91173102089382,
+          "mean_abs_lateral_slip": 3.6231927392168926
+        },
+        "rear": {
+          "samples": 1528,
+          "clipped_fraction": 0.7768324607329843,
+          "road_clipped_fraction": 0.5244072524407253,
+          "grass_fraction": 0.5307591623036649,
+          "max_raw_force_ratio": 76.32087089247888,
+          "mean_abs_lateral_slip": 12.21171609911437
+        },
+        "all": {
+          "samples": 3056,
+          "clipped_fraction": 0.5042539267015707,
+          "road_clipped_fraction": 0.33705512909979063,
+          "grass_fraction": 0.5310863874345549,
+          "max_raw_force_ratio": 76.32087089247888,
+          "mean_abs_lateral_slip": 7.917454419165622
+        }
+      },
+      "raw_step_ticks": 764,
+      "raw_reset_ticks": 51,
+      "wall_s": 10.515854216995649,
+      "oracle_compute_ms": {
+        "median": 0.2655830467119813,
+        "max": 2.496710978448391
+      },
+      "privileged_GT": true,
+      "pixel_only": false,
+      "geometric_path_unchanged": true,
+      "stress_profile_physical_feasibility_claim": false,
+      "cached_265_pace1_5_completed": true,
+      "cached_265_lap_ms": 20200,
+      "cached_265_damage": 0.0,
+      "first_action_difference_vs265": 1,
+      "first_grass_wheel_action": 84,
+      "tire_clipped_fraction_before_first_large_error": {
+        "front": 0.07407407407407407,
+        "rear": 0.4737654320987654
+      },
+      "tire_clipped_fraction_before_first_grass": {
+        "front": 0.08433734939759036,
+        "rear": 0.4864457831325301
+      },
+      "reference265_tire_fraction_same_prefix": {
+        "front": 0.0030864197530864196,
+        "rear": 0.0
+      },
+      "max_gas_fraction_before_error": 0.6419753086419753,
+      "median_actual_target_ratio_before_error": 0.7382687558126454,
+      "first_brake_action": 19
+    }
+  ],
+  "cost": {
+    "stage": 266,
+    "at_utc": "2026-10-13T05:09:49.713789+00:00",
+    "native_cap": 3737,
+    "new_wrapper_actions": 542,
+    "diagnostic_prefix_actions": 169,
+    "actual_candidate_actions": 373,
+    "new_prefix_replays": 1,
+    "new_candidate_runs": 2,
+    "cached_265_full_results_replayed": 0,
+    "raw_step_ticks": 2168,
+    "raw_reset_ticks": 153,
+    "native_episode_wall_s": 25.146595363039523,
+    "execution_wall_s": 25.358246564865112,
+    "model_queries": 8,
+    "model_physics_ticks": 96,
+    "model_wall_s": 0.15102802799083292,
+    "new_car_model_initializations": 8,
+    "new_geometry_solver_calls": 0,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 912000,
+    "actual_cumulative_wrapper_actions": 824805,
+    "research_remaining": 3195,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "promotion": false,
+  "code_sha256": {
+    "pace266_diagnose.py": "cdc349d58bf0c1305c64ffc847319ebe2263304121230a68339ebea585a1b126",
+    "pace266_run.py": "1175f2bfd7568b2917eec21c1fff6b7804d4d6ffc020d7b6b54434d55b70fea0"
+  },
+  "contract_sha256": "cfe35c8d0c49fc3a4c7fc6ea7d55f136e2bd9decca8e7f49392f2ef26a7f9e3a",
+  "frozen_plan_sha256": "7da0b5255e753c15ee037659b362dd1380fb2424c62aa5b73a51b779ac108c40",
+  "interpretation": "Sourceproof unused acceleration inonealignedstate doesnotgeneralize toglobal fullgas. Rear vector saturation andsteering failure precedegrass/damage, sooriginalclamp contributes stability. Source braking/profile assumptions andactual100m/solverlimit remainseparate. No currenttrajectory length/100 optimal-bound or10simpossibility claim. No furthercandidate/pace sweep."
+}
