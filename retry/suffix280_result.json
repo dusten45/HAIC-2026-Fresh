@@ -1,0 +1,99 @@
+{
+  "stage": 280,
+  "status": "Blocked at capability gate; no policy learning",
+  "rows": [
+    {
+      "road": "N0",
+      "preaction_boundary": 148,
+      "prefix_actions": 147,
+      "suffix_actions": 149,
+      "existing_baseline_actions": 296,
+      "existing_baseline_complete": true,
+      "existing_baseline_lap_ms": 23620,
+      "full_observation_action_trace": true,
+      "durable_full_controller_state": false,
+      "capabilities": {
+        "road_visit_restored": true,
+        "body_restored": true,
+        "render_callable": false,
+        "observation_stack": false,
+        "finish_tracker": false,
+        "finish_time": false,
+        "policy_controller_snapshot": false,
+        "real_track_coordinates": false
+      },
+      "source_world_build_wall_s": 0.01634422200731933,
+      "source_physics_ticks": 0,
+      "source_zero_time_contact_initializations": 1,
+      "source_suffix_executed": false,
+      "first_mismatch": null,
+      "first_mismatch_scope": "Not measured: capability gate failed before continuation",
+      "official_source_terminal_reproduced": false,
+      "reference_collection_wall_s": 16.82152526100981,
+      "reference_actor_CPU_s": 2.627225
+    },
+    {
+      "road": "N2",
+      "preaction_boundary": 136,
+      "prefix_actions": 135,
+      "suffix_actions": 135,
+      "existing_baseline_actions": 270,
+      "existing_baseline_complete": true,
+      "existing_baseline_lap_ms": 21560,
+      "full_observation_action_trace": true,
+      "durable_full_controller_state": false,
+      "capabilities": {
+        "road_visit_restored": true,
+        "body_restored": true,
+        "render_callable": false,
+        "observation_stack": false,
+        "finish_tracker": false,
+        "finish_time": false,
+        "policy_controller_snapshot": false,
+        "real_track_coordinates": false
+      },
+      "source_world_build_wall_s": 0.009614865994080901,
+      "source_physics_ticks": 0,
+      "source_zero_time_contact_initializations": 1,
+      "source_suffix_executed": false,
+      "first_mismatch": null,
+      "first_mismatch_scope": "Not measured: capability gate failed before continuation",
+      "official_source_terminal_reproduced": false,
+      "reference_collection_wall_s": 13.690129864000482,
+      "reference_actor_CPU_s": 2.34652
+    }
+  ],
+  "cost": {
+    "stage": 280,
+    "at_utc": "2026-10-13T12:04:48.165732+00:00",
+    "new_wrapper_actions": 0,
+    "new_source_physics_ticks": 0,
+    "source_zero_time_contact_initializations": 2,
+    "new_render_calls": 0,
+    "new_actor_calls": 0,
+    "new_suffix_rollouts": 0,
+    "audit_wall_s": 3.9870404090033844,
+    "audit_CPU_s": 3.942585002,
+    "source_world_build_wall_s": 0.025959088001400232,
+    "B_operating_cap": 1009000,
+    "actual_cumulative_wrapper_actions": 923208,
+    "research_remaining": 1792,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "missing": [
+    "Renderer scene assets/road polygons/colors/camera and state_pixels output",
+    "Four-frame wrapper pixel stack and matching preprocessing",
+    "Official finish tracker line geometry, previous side/position, qualification/crossing/time state",
+    "240 controller/planner/hazards/previous-image history in snapshot",
+    "Box2D warm-start impulses/contact manifold/broadphase/island history not cloned"
+  ],
+  "alternatives": [
+    "Existing real pixel240 observation/action traces support offline actor replay, not changed-trajectory counterfactual labels",
+    "Fresh official reset and charged prefix replay in the same runner can support true short intervention then actual pixel240 full continuation, as250; this audit executes none",
+    "Existing source clone remains usable for bounded supplied-control physics diagnostics, not official pixel closed-loop completion labels"
+  ],
+  "champion_changed": false,
+  "HOLDOUT_SEALED_used": false
+}
