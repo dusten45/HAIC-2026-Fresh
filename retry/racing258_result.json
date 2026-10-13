@@ -1,0 +1,281 @@
+{
+  "stage": 258,
+  "scope": "Privilegedwhole-map/livepose/livevelocity diagnostic oracle; notlegalpixelcandidate orsubmission.",
+  "geometry": "Actualphysicalroadquad centers/width andfullobstaclebodygeometry, conservativevehicleboundingradius+clearance/roadhalfwidth, maxsteering curvature; sourceactual95%qualification/forwardcrossing usedforfinish.",
+  "comparison": "Samefixedmodel/speed-envelope/purepursuit follower; rigidcenterstopsbeforefirstobstacle becausewholelapfeasibilityfails; free16Bspline offsets optimizedstandinglapmodeltime.",
+  "plans": [
+    {
+      "road": "O0",
+      "dimension": 16,
+      "objective_calls": 194,
+      "first_model_wall_s": 0.004577964020427316,
+      "solver_wall_s": 0.8025716890115291,
+      "free_feasible": true,
+      "center_wholelap_feasible": false,
+      "geometry_min_clearance_m": {
+        "center": -3.5054275693122112,
+        "free": 0.00010000001490073629
+      },
+      "profiles": {
+        "center": {
+          "length_m": 1144.5000014135549,
+          "abs_curvature_max": 0.08821808069517408,
+          "arc_weighted_curvature_RMS": 0.031391218412417154,
+          "speed_profile_quantiles_m_s": [
+            0.0,
+            0.0,
+            56.01880583997604
+          ],
+          "predicted_time_s": null
+        },
+        "free": {
+          "length_m": 1142.055044861604,
+          "abs_curvature_max": 0.12780859589020266,
+          "arc_weighted_curvature_RMS": 0.03241586715891518,
+          "speed_profile_quantiles_m_s": [
+            29.81316158209912,
+            59.08753909747962,
+            99.9054909404926
+          ],
+          "predicted_time_s": 21.69166802484427
+        }
+      },
+      "model": {
+        "mass": 7.3019199669361115,
+        "effective_mass": 29.249793766661764,
+        "rear_traction_accel": 35.0188778925416,
+        "brake_accel": 91.16873397261595,
+        "lateral_accel": 87.648180601539
+      },
+      "optimization_status": "Fixedbudget feasible; nooptimality/stationaritycertificate",
+      "feasibility_repair": {
+        "stage": 258,
+        "original_plan_sha256": "1508223acb0ec5d209f686d1591f96336c48f83ebe1515dc70e7f1ba033172e8",
+        "original_min_clearance": -0.00038434047481583633,
+        "new_min_clearance": 0.00010000001490073629,
+        "max_coefficient_change": 0.000627499393531572,
+        "geometry_evaluations": 35,
+        "wall_s": 0.01568563503678888,
+        "reason": "Numericalfinite-search obstacleclearance residual0.384mm; boundedminimum-norm projection, no radius/speed/model/follower tuning.",
+        "native_actions_before_repair": 617,
+        "free_O0_previously_unexecuted": true
+      }
+    },
+    {
+      "road": "N0",
+      "dimension": 16,
+      "objective_calls": 194,
+      "first_model_wall_s": 0.0038249240024015307,
+      "solver_wall_s": 0.8618559149908833,
+      "free_feasible": true,
+      "center_wholelap_feasible": false,
+      "geometry_min_clearance_m": {
+        "center": -3.5855391926003155,
+        "free": 0.023998527978688067
+      },
+      "profiles": {
+        "center": {
+          "length_m": 1141.0000010117542,
+          "abs_curvature_max": 0.08821796054080137,
+          "arc_weighted_curvature_RMS": 0.028717847526502735,
+          "speed_profile_quantiles_m_s": [
+            0.0,
+            0.0,
+            78.27854517738237
+          ],
+          "predicted_time_s": null
+        },
+        "free": {
+          "length_m": 1150.4637021601068,
+          "abs_curvature_max": 0.11734139747051775,
+          "arc_weighted_curvature_RMS": 0.028694646463975324,
+          "speed_profile_quantiles_m_s": [
+            31.5005373691163,
+            60.86587782711938,
+            87.86958013810865
+          ],
+          "predicted_time_s": 21.39497561456242
+        }
+      },
+      "model": {
+        "mass": 7.3019199669361115,
+        "effective_mass": 29.249793766661764,
+        "rear_traction_accel": 35.0188778925416,
+        "brake_accel": 91.16873397261595,
+        "lateral_accel": 87.648180601539
+      },
+      "optimization_status": "Fixedbudget feasible; nooptimality/stationaritycertificate",
+      "feasibility_repair": null
+    }
+  ],
+  "actual_results": [
+    {
+      "road": "O0",
+      "arm": "center",
+      "native_actions": 160,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.2,
+      "visited": 53,
+      "total_tiles": 326,
+      "predicted_model_time_s": null,
+      "path_feasible": false,
+      "tracking_error_m": {
+        "mean": 0.3810061813790823,
+        "p95": 1.3206254602743703,
+        "max": 1.8773300560538375
+      },
+      "speed_m_s": {
+        "median": 1.7616318777073875e-08,
+        "max": 74.1868026392927
+      },
+      "oracle_compute_ms": {
+        "median": 0.21417898824438453,
+        "max": 9.426187025383115
+      },
+      "baseline240_lap_ms": 23660,
+      "paired_vs240_ms": null,
+      "model_time_error_s": null
+    },
+    {
+      "road": "O0",
+      "arm": "free",
+      "native_actions": 274,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 21860,
+      "retire_reason": null,
+      "damage": 0.0,
+      "visited": 326,
+      "total_tiles": 326,
+      "predicted_model_time_s": 21.69166802484427,
+      "path_feasible": true,
+      "tracking_error_m": {
+        "mean": 0.7191427839606861,
+        "p95": 1.7396287000051622,
+        "max": 2.007857368647165
+      },
+      "speed_m_s": {
+        "median": 49.66500825089164,
+        "max": 99.41607131515318
+      },
+      "oracle_compute_ms": {
+        "median": 0.2554464736022055,
+        "max": 2.2705549490638077
+      },
+      "baseline240_lap_ms": 23660,
+      "paired_vs240_ms": -1800,
+      "model_time_error_s": 0.16833197515573062
+    },
+    {
+      "road": "N0",
+      "arm": "center",
+      "native_actions": 180,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.0,
+      "visited": 79,
+      "total_tiles": 325,
+      "predicted_model_time_s": null,
+      "path_feasible": false,
+      "tracking_error_m": {
+        "mean": 0.3848044531951231,
+        "p95": 1.355616031309457,
+        "max": 1.878549782887571
+      },
+      "speed_m_s": {
+        "median": 3.889492350555418e-12,
+        "max": 91.8792070671759
+      },
+      "oracle_compute_ms": {
+        "median": 0.21093449322506785,
+        "max": 3.3705669920891523
+      },
+      "baseline240_lap_ms": 23620,
+      "paired_vs240_ms": null,
+      "model_time_error_s": null
+    },
+    {
+      "road": "N0",
+      "arm": "free",
+      "native_actions": 277,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 22120,
+      "retire_reason": null,
+      "damage": 0.0,
+      "visited": 325,
+      "total_tiles": 325,
+      "predicted_model_time_s": 21.39497561456242,
+      "path_feasible": true,
+      "tracking_error_m": {
+        "mean": 0.621688050798163,
+        "p95": 1.6953604981239438,
+        "max": 2.2588477319873963
+      },
+      "speed_m_s": {
+        "median": 50.93998713986818,
+        "max": 91.78805697642257
+      },
+      "oracle_compute_ms": {
+        "median": 0.19975198665633798,
+        "max": 1.6931209829635918
+      },
+      "baseline240_lap_ms": 23620,
+      "paired_vs240_ms": -1500,
+      "model_time_error_s": 0.7250243854375817
+    }
+  ],
+  "cost": {
+    "stage": 258,
+    "at_utc": "2026-10-13T03:24:20.640091+00:00",
+    "native_cap": 5000,
+    "new_wrapper_actions": 891,
+    "new_native_runs": 4,
+    "raw_step_ticks": 3561,
+    "raw_reset_ticks": 204,
+    "actual_episode_wall_s": 30.382337962975726,
+    "solver_wall_s": 1.6644276040024124,
+    "solver_objective_calls": 388,
+    "center_profile_calls": 2,
+    "free_projection_profile_calls": 1,
+    "geometric_projection_calls": 35,
+    "geometric_projection_wall_s": 0.01568563503678888,
+    "positive_model_physics_ticks": 0,
+    "source_mass_read_zero_time_initializations": 4,
+    "model_rollouts": "Approximatewholelap speed-envelope passes, notexactphysics rollouts",
+    "optimizer_dimension_per_road": 16,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 908000,
+    "actual_cumulative_wrapper_actions": 818942,
+    "research_remaining": 5058,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "counts": {
+    "center_complete": 0,
+    "center_actual_DNF": 2,
+    "free_complete": 2,
+    "free_actual_DNF": 0,
+    "censored": 0,
+    "unexecuted": 0
+  },
+  "free_mean_paired_vs240_ms": -1650.0,
+  "conclusion": "BothfreeGToraclesfinish1.80/1.50sfaster240withoutdamage, butrigidcenterscannotavoidobstacles; purecurvature versus speedplanning attribution isconfounded. Whole-lapforesight/planning/tracking leavesroom; no10sfeasibility/impossibility claim.",
+  "limitations": "Approximatefriction/rollingmodel,fixed100m/snumericcap, limited16dims/localfixedbudgetsolver, trackingerrors up2.26m. Plannedgeometryfeasibility isnot guaranteedactualfootprintsafety; actualcontact/finish measured. Nolegalpixels transfer demonstrated.",
+  "next_recommendation": "Forcleanbottleneck attribution, freezeoneobstacle-feasiblecentrebasedreference withmandatorydetours andcomparefreecurvature offsets usingidenticalspeed/follower. Then separatelytestGTspeedprofile/follower transfer; globalforesight cannotbeassumedavailablefrompixels. Nounlimited optimizer orlearning started.",
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "technical_error": null
+}
