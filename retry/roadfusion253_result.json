@@ -1,0 +1,101 @@
+{
+  "stage": 253,
+  "hypothesis": "Temporal road raster information reduces single-frame quantization routing jitter while controller/head/lookahead remainfixed.",
+  "distinct_from_prior": "171warpedroute direction tie preference and184GTmotion suppliedtoobstacletracking; thismodifiesonlyroad perception fromtwoactualpixel observations, notretainedroute/GTinput/controlgain.",
+  "legal_inputs": "Onlylast2observed84gray frames; deterministicopticalflow/similarity fit, currentHUD/carregion/currentobstaclelist preserved. NoGT student.",
+  "protocol": {
+    "roads": [
+      "O0",
+      "N0"
+    ],
+    "mean_time_abandon_if_nonnegative": true,
+    "completion_loss_abandon": true,
+    "blend": 0.5,
+    "motion": "Four-parameter deterministic similarityfit oftrackedstaticimage corners; existingtrackerstyle flowsettings/determinant acceptance reused.",
+    "native_cap": 1000,
+    "matched_affine_line_closed": true
+  },
+  "counts": {
+    "baseline_completed": 2,
+    "candidate_completed": 2,
+    "actual_DNF": 0,
+    "censored": 0,
+    "unexecuted": 0
+  },
+  "roads": [
+    {
+      "road": "O0",
+      "baseline_lap_ms": 23660,
+      "baseline_damage": 0.0,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 24100,
+      "paired_delta_ms": 440,
+      "damage": 0.2,
+      "retire_reason": null,
+      "native_actions": 302,
+      "fusion_used_actions": 232,
+      "changed_mask_actions": 204,
+      "mean_changed_mask_pixels": 12.152317880794701
+    },
+    {
+      "road": "N0",
+      "baseline_lap_ms": 23620,
+      "baseline_damage": 0.2,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 23680,
+      "paired_delta_ms": 60,
+      "damage": 0.2,
+      "retire_reason": null,
+      "native_actions": 297,
+      "fusion_used_actions": 202,
+      "changed_mask_actions": 181,
+      "mean_changed_mask_pixels": 9.932659932659933
+    }
+  ],
+  "common_completed_mean_paired_delta_ms": 250.0,
+  "cost": {
+    "stage": 253,
+    "at_utc": "2026-10-13T02:04:02.520886+00:00",
+    "native_cap": 1000,
+    "expected_baseline_native": 592,
+    "new_wrapper_actions": 599,
+    "wall_s": 29.153093338012695,
+    "evaluator_CPU_s": 23.490433074000002,
+    "base_actor_CPU_s": 5.684374,
+    "raw_step_ticks": 2391,
+    "raw_reset_ticks": 102,
+    "new_native_runs": 2,
+    "baseline_reused_episodes": 2,
+    "model_queries": 0,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "full_Agent_compute_ms": {
+      "count": 599,
+      "median": 6.672066985629499,
+      "p95": 13.550754584139213,
+      "max": 22.343710996210575
+    },
+    "policy_IPC_ms": {
+      "count": 599,
+      "median": 9.320537006715313,
+      "p95": 16.772811592090875,
+      "max": 34.27815600298345
+    },
+    "B_operating_cap": 904000,
+    "actual_cumulative_wrapper_actions": 814955,
+    "research_remaining": 5045,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "decision": "Abandon fixed road-raster blend: both complete but mean250ms slower; no ratio/motion/road sweep.",
+  "next_recommendation": "Keep240 andstopthisfusionfamily. Beforefurthernative, selectanewbottleneckonlywhereexistingonpolicycache providesdirectfailureorlatencyevidence; no additionalbudget justifiedbythisresult.",
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "technical_error": null
+}
