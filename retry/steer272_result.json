@@ -1,0 +1,280 @@
+{
+  "stage": 272,
+  "status": "Closed: steering-target-only ablation fails diagnostic advancement gate",
+  "privileged_GT": true,
+  "whole_map_foresight": true,
+  "legal_pixel_candidate": false,
+  "results": [
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 25160,
+      "native_actions": 315,
+      "retire_reason": null,
+      "damage": 0.0,
+      "visited": 326,
+      "total_tiles": 326,
+      "first_collision": null,
+      "first_error_over3m": 128,
+      "tracking_error_m": {
+        "mean": 0.7934899389770104,
+        "p95": 2.1905466489279424,
+        "max": 4.725204278883283
+      },
+      "empty_path_actions": 0,
+      "steering_active_actions": 315,
+      "raw_step_ticks": 1259,
+      "raw_reset_ticks": 51,
+      "wall_s": 16.26918379100971,
+      "actor_CPU_s": 1.480271,
+      "full_agent_compute_ms": {
+        "median": 1.6558159841224551,
+        "max": 7.908076047897339
+      },
+      "geometry_compute_ms": {
+        "median": 0.849535979796201,
+        "max": 12.434836011379957,
+        "sum": 318.7151171732694
+      },
+      "IPC_ms": {
+        "median": 6.342920009046793,
+        "max": 16.93088299361989
+      },
+      "privileged_GT": true,
+      "whole_map_foresight": true,
+      "legal_pixel_candidate": false,
+      "cached240": {
+        "completed": true,
+        "lap_ms": 23660,
+        "damage": 0.0,
+        "tracking_error_m": {
+          "mean": 2.4007282763570994,
+          "p95": 4.690620734240168,
+          "max": 7.737704641155933,
+          "reference": "Cached240 pre-action poses measured against same frozen258 free line, same forward cursor"
+        }
+      },
+      "cached258": {
+        "completed": true,
+        "lap_ms": 21860,
+        "damage": 0.0,
+        "tracking_error_m": {
+          "mean": 0.7191427839606861,
+          "p95": 1.7396287000051622,
+          "max": 2.007857368647165
+        }
+      },
+      "cached268": {
+        "completed": true,
+        "lap_ms": 19400,
+        "damage": 0.0,
+        "tracking_error_m": {
+          "mean": 0.7309487910054431,
+          "p95": 1.6935971724484267,
+          "max": 2.097284302954953
+        }
+      },
+      "cached271": {
+        "completed": true,
+        "lap_ms": 25160,
+        "damage": 0.0,
+        "tracking_error_m": {
+          "mean": 0.8013409617170457,
+          "p95": 2.416480882188408,
+          "max": 4.523953795481726
+        }
+      },
+      "delta_vs271_ms": 0,
+      "delta_vs240_ms": 1500,
+      "runtime_validation": {
+        "verified_actions": 315,
+        "new_lookahead_m": {
+          "median": 13.73995670457256,
+          "min": 6.0,
+          "max": 15.354990745748495
+        },
+        "old_lookahead_m": {
+          "median": 14.0,
+          "min": 6.0,
+          "max": 14.0
+        },
+        "GT_speed_minus_HUD_abs_m_s": {
+          "median": 0.642030125129537,
+          "p95": 1.1978623816182066
+        },
+        "GT_steering_target_outside271_window": 0,
+        "original_nominal_pedals_bit_exact": true,
+        "unchanged_head_scales_bit_exact": true,
+        "original_longitudinal_route_target_exact": true
+      },
+      "diagnostic_gate_passed": false
+    },
+    {
+      "road": "N0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 24780,
+      "native_actions": 310,
+      "retire_reason": null,
+      "damage": 0.0,
+      "visited": 325,
+      "total_tiles": 325,
+      "first_collision": null,
+      "first_error_over3m": 218,
+      "tracking_error_m": {
+        "mean": 0.6966336048336236,
+        "p95": 1.8100098969881195,
+        "max": 5.766296309354263
+      },
+      "empty_path_actions": 0,
+      "steering_active_actions": 310,
+      "raw_step_ticks": 1239,
+      "raw_reset_ticks": 51,
+      "wall_s": 14.196745446999557,
+      "actor_CPU_s": 1.354052,
+      "full_agent_compute_ms": {
+        "median": 1.5640914789400995,
+        "max": 8.48524400498718
+      },
+      "geometry_compute_ms": {
+        "median": 0.7853584829717875,
+        "max": 2.5599029613658786,
+        "sum": 266.54445444000885
+      },
+      "IPC_ms": {
+        "median": 5.686604505171999,
+        "max": 22.435977996792644
+      },
+      "privileged_GT": true,
+      "whole_map_foresight": true,
+      "legal_pixel_candidate": false,
+      "cached240": {
+        "completed": true,
+        "lap_ms": 23620,
+        "damage": 0.2,
+        "tracking_error_m": {
+          "mean": 2.2211093067149554,
+          "p95": 4.527144136696884,
+          "max": 8.224395534550728,
+          "reference": "Cached240 pre-action poses measured against same frozen258 free line, same forward cursor"
+        }
+      },
+      "cached258": {
+        "completed": true,
+        "lap_ms": 22120,
+        "damage": 0.0,
+        "tracking_error_m": {
+          "mean": 0.621688050798163,
+          "p95": 1.6953604981239438,
+          "max": 2.2588477319873963
+        }
+      },
+      "cached268": {
+        "completed": true,
+        "lap_ms": 19900,
+        "damage": 0.0,
+        "tracking_error_m": {
+          "mean": 0.6829590695482198,
+          "p95": 1.7242319269277129,
+          "max": 2.269436862496933
+        }
+      },
+      "cached271": {
+        "completed": true,
+        "lap_ms": 24820,
+        "damage": 0.0,
+        "tracking_error_m": {
+          "mean": 0.7136972956337432,
+          "p95": 1.728298798910032,
+          "max": 5.530678374054712
+        }
+      },
+      "delta_vs271_ms": -40,
+      "delta_vs240_ms": 1160,
+      "runtime_validation": {
+        "verified_actions": 310,
+        "new_lookahead_m": {
+          "median": 13.89959140541071,
+          "min": 6.0,
+          "max": 15.25421233644778
+        },
+        "old_lookahead_m": {
+          "median": 14.0,
+          "min": 6.0,
+          "max": 14.0
+        },
+        "GT_speed_minus_HUD_abs_m_s": {
+          "median": 0.6518981053668327,
+          "p95": 1.186444664014066
+        },
+        "GT_steering_target_outside271_window": 0,
+        "original_nominal_pedals_bit_exact": true,
+        "unchanged_head_scales_bit_exact": true,
+        "original_longitudinal_route_target_exact": true
+      },
+      "diagnostic_gate_passed": false
+    }
+  ],
+  "cost": {
+    "stage": 272,
+    "at_utc": "2026-10-13T07:33:39.822504+00:00",
+    "native_cap": 3230,
+    "new_wrapper_actions": 625,
+    "new_actual_episodes": 2,
+    "new_baseline_materialization_actions": 0,
+    "cached_baseline_reference_results_reused": 8,
+    "raw_step_ticks": 2498,
+    "raw_reset_ticks": 102,
+    "actual_episode_wall_s": 30.465929238009267,
+    "evaluation_wall_s": 30.61204218864441,
+    "evaluator_CPU_s": 27.848576093000002,
+    "actor_CPU_s": 2.834323,
+    "GT_geometry_target_compute_ms": 585.2595716132782,
+    "offline_preflight_actor_calls": 78,
+    "offline_identity_pairs": 32,
+    "formula_snapshots": 8,
+    "offline_preflight_wall_s": 9.143926525954157,
+    "new_labels": 0,
+    "new_fits": 0,
+    "new_geometry_solves": 0,
+    "model_physics_queries": 0,
+    "model_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 920000,
+    "actual_cumulative_wrapper_actions": 833395,
+    "research_remaining": 2605,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "preflight": {
+    "passed": true,
+    "identities": [
+      {
+        "road": "O0",
+        "pairs": 16,
+        "disabled_steering_override_exact271": true
+      },
+      {
+        "road": "N0",
+        "pairs": 16,
+        "disabled_steering_override_exact271": true
+      }
+    ],
+    "offline_actor_calls": 78,
+    "identity_pairs": 32,
+    "formula_samples": 8,
+    "wall_s": 9.143926525954157,
+    "native_actions": 0,
+    "model_physics_ticks": 0
+  },
+  "all_downstream_actions_reconstructed": true,
+  "pixel_component_experiment_recommended": false,
+  "new_parameter_sweep": false,
+  "new_training": false,
+  "champion_unchanged": true,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false
+}
