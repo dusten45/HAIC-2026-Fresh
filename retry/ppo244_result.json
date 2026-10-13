@@ -1,0 +1,243 @@
+{
+  "stage": 244,
+  "method": "fixed latent residual PPO; current240 frozen",
+  "actor_parameters": 34,
+  "value_parameters": 577,
+  "settings": {
+    "actor_parameters": 34,
+    "actor_initial": "zeros16->2",
+    "latent_std": 0.2,
+    "residual_amplitudes": [
+      0.03,
+      0.02
+    ],
+    "normalization": "Frozen231/current240mean/std only",
+    "noisy_seed": 244,
+    "training_noise_seed": 24401,
+    "minibatch_seed": 24402,
+    "critic_seed": 24403,
+    "training_native": 8192,
+    "batch": 1024,
+    "PPO_clip": 0.1,
+    "actor_Adam_lr": 0.0003,
+    "critic_Adam_lr": 0.0003,
+    "Adam_betas": [
+      0.9,
+      0.999
+    ],
+    "Adam_epsilon": 1e-08,
+    "epochs_max": 2,
+    "minibatch": 128,
+    "target_analytic_KL": 0.01,
+    "entropy_bonus": 0,
+    "gamma": 1.0,
+    "GAE_lambda": 0.95,
+    "advantage_normalization": true,
+    "grad_norm": 0.5,
+    "value_hidden": 32,
+    "value_activation": "tanh",
+    "value_output_initial": "zeros",
+    "value_hidden_normal_std": 0.25,
+    "value_loss": "MSE",
+    "value_coefficient": 0.5,
+    "dtype": "float64",
+    "best_checkpoint_selection": false
+  },
+  "time_limit_s": 160,
+  "preflight": {
+    "reward_checks": [
+      {
+        "completed": true,
+        "sum_reward": 1.8523750000000032,
+        "expected": 1.8523749999999999,
+        "error": 3.3306690738754696e-15
+      },
+      {
+        "completed": false,
+        "sum_reward": -0.4381270903010057,
+        "expected": -0.4381270903010034,
+        "error": -2.3314683517128287e-15
+      }
+    ],
+    "zero_actor_no_noise_commands": 296,
+    "zero_commands_exact": true,
+    "latent_logp_max_error": 1.3322676295501878e-15,
+    "native_actions": 0,
+    "GT_model_queries": 0
+  },
+  "controls": [
+    {
+      "label": "O0",
+      "completed": true,
+      "lap_ms": 23700,
+      "damage": 0.0,
+      "native_actions": 297
+    },
+    {
+      "label": "N0",
+      "completed": true,
+      "lap_ms": 25320,
+      "damage": 0.6000000000000001,
+      "native_actions": 317
+    }
+  ],
+  "training": {
+    "native_actions": 8192,
+    "batches": 8,
+    "completed": 22,
+    "actual_DNF": 7,
+    "collection_truncated": 8,
+    "updates": [
+      {
+        "batch": 1,
+        "native_training": 1024,
+        "optimizer_minibatch_steps": 16,
+        "target_KL_stop": false,
+        "max_checked_analytic_KL": 0.000746683912241595,
+        "actor_loss": -0.16298751318101007,
+        "value_MSE": 0.04964002132977183,
+        "actor_max_abs_parameter": 0.0028731188894777025
+      },
+      {
+        "batch": 2,
+        "native_training": 2048,
+        "optimizer_minibatch_steps": 16,
+        "target_KL_stop": false,
+        "max_checked_analytic_KL": 0.0016383066123060854,
+        "actor_loss": 0.16864984867691737,
+        "value_MSE": 0.029994645720952458,
+        "actor_max_abs_parameter": 0.0037434117282655536
+      },
+      {
+        "batch": 3,
+        "native_training": 3072,
+        "optimizer_minibatch_steps": 16,
+        "target_KL_stop": false,
+        "max_checked_analytic_KL": 0.0006219908107965571,
+        "actor_loss": -0.019901163092723686,
+        "value_MSE": 0.0361884325994457,
+        "actor_max_abs_parameter": 0.004800996062437356
+      },
+      {
+        "batch": 4,
+        "native_training": 4096,
+        "optimizer_minibatch_steps": 16,
+        "target_KL_stop": false,
+        "max_checked_analytic_KL": 0.002204743934409568,
+        "actor_loss": 0.11104522527169747,
+        "value_MSE": 0.02298546758309784,
+        "actor_max_abs_parameter": 0.00579305216201109
+      },
+      {
+        "batch": 5,
+        "native_training": 5120,
+        "optimizer_minibatch_steps": 16,
+        "target_KL_stop": false,
+        "max_checked_analytic_KL": 0.0009288824521714971,
+        "actor_loss": 0.0019356000414768315,
+        "value_MSE": 0.024947208862863984,
+        "actor_max_abs_parameter": 0.006230101872536059
+      },
+      {
+        "batch": 6,
+        "native_training": 6144,
+        "optimizer_minibatch_steps": 16,
+        "target_KL_stop": false,
+        "max_checked_analytic_KL": 0.0005916316146787022,
+        "actor_loss": 0.05794848351022601,
+        "value_MSE": 0.0292476006961463,
+        "actor_max_abs_parameter": 0.007001307506546569
+      },
+      {
+        "batch": 7,
+        "native_training": 7168,
+        "optimizer_minibatch_steps": 16,
+        "target_KL_stop": false,
+        "max_checked_analytic_KL": 0.0004354466068711155,
+        "actor_loss": -0.006805387085435009,
+        "value_MSE": 0.03846546321124042,
+        "actor_max_abs_parameter": 0.007239035251818
+      },
+      {
+        "batch": 8,
+        "native_training": 8192,
+        "optimizer_minibatch_steps": 16,
+        "target_KL_stop": false,
+        "max_checked_analytic_KL": 0.0005270413560970411,
+        "actor_loss": 0.030711514329636813,
+        "value_MSE": 0.049447629160347825,
+        "actor_max_abs_parameter": 0.0071793386567925764
+      }
+    ]
+  },
+  "final_actor_sha256": "9c3b988cdb46b1298cc50f46b08de8cc770d41b3a09a784a16dea3d87f814590",
+  "final_actor_nonzero_parameters": 34,
+  "final_screens": [
+    {
+      "label": "S0",
+      "completed": true,
+      "lap_ms": 18560,
+      "damage": 0.0,
+      "native_actions": 233,
+      "baseline_lap_ms": 18640,
+      "delta_lap_ms": -80,
+      "retire_reason": null
+    },
+    {
+      "label": "S1",
+      "completed": false,
+      "lap_ms": null,
+      "damage": 0.4,
+      "native_actions": 313,
+      "baseline_lap_ms": 21000,
+      "delta_lap_ms": null,
+      "retire_reason": "off_track"
+    }
+  ],
+  "latent_logp_max_error": 0,
+  "maximum_actual_pedal_change": [
+    0.01971125602722168,
+    0.012789595872163773
+  ],
+  "endpoint_pedal_values": 84,
+  "native_actions": 9352,
+  "phases": {
+    "control": 614,
+    "training": 8192,
+    "screen": 546
+  },
+  "cost": {
+    "stage": 244,
+    "at_utc": "2026-10-13T00:23:17.455560+00:00",
+    "native_cap": 11000,
+    "new_wrapper_actions": 9352,
+    "phases": {
+      "control": 614,
+      "training": 8192,
+      "screen": 546
+    },
+    "wall_s": 417.98156571388245,
+    "evaluator_CPU_s": 340.84534513799997,
+    "base_actor_CPU_s": 77.177512,
+    "raw_step_ticks": 37361,
+    "raw_reset_ticks": 2091,
+    "base_actor_calls": 9360,
+    "unexecuted_bootstrap_peek_calls": 8,
+    "max_full_policy_including_baseIPC_ms": 51.65020999265835,
+    "new_GT_model_queries": 0,
+    "B_operating_cap": 882000,
+    "actual_cumulative_wrapper_actions": 791980,
+    "research_remaining": 6020,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "normalization_exact": true,
+  "steering_exact": true,
+  "technical_error": null,
+  "decision": "Closed without promotion: final DEV actor lost baseline completion on S1"
+}
