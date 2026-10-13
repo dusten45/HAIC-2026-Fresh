@@ -1,0 +1,334 @@
+{
+  "stage": 267,
+  "diagnostic": "Actualsimulator eight-knot GT paceCEM; marginal one-roadgain, transfernegative",
+  "analysis": {
+    "training": {
+      "new_episodes": 9,
+      "completed": 8,
+      "actual_DNF": 1,
+      "censored": 0,
+      "unexecuted": 0,
+      "generations": [
+        {
+          "generation": 0,
+          "actual_new_completed": 3,
+          "actual_new_DNF": 0,
+          "actual_new_censored": 0,
+          "completed_population_including_reuse": 4,
+          "incumbent": "cached265_O0_1.5",
+          "incumbent_lap_ms": 19700
+        },
+        {
+          "generation": 1,
+          "actual_new_completed": 2,
+          "actual_new_DNF": 1,
+          "actual_new_censored": 0,
+          "completed_population_including_reuse": 3,
+          "incumbent": "cached265_O0_1.5",
+          "incumbent_lap_ms": 19700
+        },
+        {
+          "generation": 2,
+          "actual_new_completed": 3,
+          "actual_new_DNF": 0,
+          "actual_new_censored": 0,
+          "completed_population_including_reuse": 4,
+          "incumbent": "g2_p3",
+          "incumbent_lap_ms": 19660
+        }
+      ],
+      "results": [
+        {
+          "label": "g0_p1",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": 20340,
+          "native_actions": 255,
+          "retire_reason": null,
+          "damage": 0.0,
+          "visited": 326,
+          "first_collision": null,
+          "first_large_error": null,
+          "tracking_error_m": {
+            "mean": 0.7028677465615691,
+            "p95": 1.734359395392557,
+            "max": 2.0051111108181527
+          },
+          "wall_s": 8.73470675299177
+        },
+        {
+          "label": "g0_p2",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": 19920,
+          "native_actions": 249,
+          "retire_reason": null,
+          "damage": 0.0,
+          "visited": 326,
+          "first_collision": null,
+          "first_large_error": 145,
+          "tracking_error_m": {
+            "mean": 0.7716405454977652,
+            "p95": 1.8231174761931475,
+            "max": 3.112920415139411
+          },
+          "wall_s": 9.145451591000892
+        },
+        {
+          "label": "g0_p3",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": 20240,
+          "native_actions": 254,
+          "retire_reason": null,
+          "damage": 0.0,
+          "visited": 326,
+          "first_collision": null,
+          "first_large_error": null,
+          "tracking_error_m": {
+            "mean": 0.6678108404687936,
+            "p95": 1.6200947449623715,
+            "max": 2.102607053762196
+          },
+          "wall_s": 8.497226795007009
+        },
+        {
+          "label": "g1_p1",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": 20560,
+          "native_actions": 258,
+          "retire_reason": null,
+          "damage": 0.0,
+          "visited": 326,
+          "first_collision": null,
+          "first_large_error": null,
+          "tracking_error_m": {
+            "mean": 0.7048882425508924,
+            "p95": 1.7057976139236186,
+            "max": 2.303285000308599
+          },
+          "wall_s": 8.080541179981083
+        },
+        {
+          "label": "g1_p2",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": 20700,
+          "native_actions": 259,
+          "retire_reason": null,
+          "damage": 0.0,
+          "visited": 326,
+          "first_collision": null,
+          "first_large_error": null,
+          "tracking_error_m": {
+            "mean": 0.6238786770983223,
+            "p95": 1.6728318153430617,
+            "max": 2.19012856539777
+          },
+          "wall_s": 7.931750454008579
+        },
+        {
+          "label": "g1_p3",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": null,
+          "native_actions": 442,
+          "retire_reason": "off_track",
+          "damage": 0.0,
+          "visited": 186,
+          "first_collision": null,
+          "first_large_error": 137,
+          "tracking_error_m": {
+            "mean": 16.88815136801792,
+            "p95": 32.192298461428514,
+            "max": 37.313520398687764
+          },
+          "wall_s": 13.909836046979763
+        },
+        {
+          "label": "g2_p1",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": 20620,
+          "native_actions": 258,
+          "retire_reason": null,
+          "damage": 0.0,
+          "visited": 326,
+          "first_collision": null,
+          "first_large_error": null,
+          "tracking_error_m": {
+            "mean": 0.6666243413311085,
+            "p95": 1.699693293660996,
+            "max": 2.179300257852098
+          },
+          "wall_s": 7.967077143024653
+        },
+        {
+          "label": "g2_p2",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": 20700,
+          "native_actions": 259,
+          "retire_reason": null,
+          "damage": 0.0,
+          "visited": 326,
+          "first_collision": null,
+          "first_large_error": 259,
+          "tracking_error_m": {
+            "mean": 0.654224450607191,
+            "p95": 1.6260443773945439,
+            "max": 3.387937292882238
+          },
+          "wall_s": 8.182783481955994
+        },
+        {
+          "label": "g2_p3",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": 19660,
+          "native_actions": 246,
+          "retire_reason": null,
+          "damage": 0.0,
+          "visited": 326,
+          "first_collision": null,
+          "first_large_error": 246,
+          "tracking_error_m": {
+            "mean": 0.68673379031847,
+            "p95": 1.728513127085695,
+            "max": 3.460898902306369
+          },
+          "wall_s": 7.545870558999013
+        }
+      ],
+      "cached_constant1_5_lap_ms": 19700,
+      "best_label": "g2_p3",
+      "best_lap_ms": 19660,
+      "delta_ms": -40,
+      "best_damage": 0.0,
+      "best_tracking_error_m": {
+        "mean": 0.68673379031847,
+        "p95": 1.728513127085695,
+        "max": 3.460898902306369
+      },
+      "best_first_large_error": 246
+    },
+    "transfer": {
+      "label": "transfer_N0",
+      "road": "N0",
+      "phase": "transfer",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "unexecuted": false,
+      "lap_ms": 22200,
+      "native_actions": 278,
+      "retire_reason": null,
+      "damage": 0.0,
+      "visited": 325,
+      "total_tiles": 325,
+      "first_collision": null,
+      "first_large_error": null,
+      "tracking_error_m": {
+        "mean": 0.6874921240165345,
+        "p95": 1.6567364699471854,
+        "max": 2.3833688476962878
+      },
+      "actual_speed_m_s": {
+        "median": 51.10295058165907,
+        "max": 93.59900702876223
+      },
+      "target_speed_m_s": {
+        "median": 75.38199229307381,
+        "max": 143.48552368470172
+      },
+      "pace_on_path": {
+        "min": 1.1462282005889062,
+        "max": 1.6337752171600204
+      },
+      "raw_step_ticks": 1111,
+      "raw_reset_ticks": 51,
+      "wall_s": 8.76017890300136,
+      "oracle_compute_ms": {
+        "median": 0.19716849783435464,
+        "max": 1.7317100428044796
+      },
+      "GT_only": true,
+      "controller_positive_clamp_preserved": true,
+      "cached_constant1_5_lap_ms": 20200,
+      "delta_ms": 2000,
+      "parameters_frozen_before_N0": true,
+      "no_post_transfer_updates": true
+    },
+    "selected_shape": {
+      "knot_count": 8,
+      "selected_knots_min": 1.1461228691596788,
+      "selected_knots_max": 1.6338169794277577,
+      "minimum_knot_normalized_arc": 0.75,
+      "maximum_knot_normalized_arc": 0.625,
+      "selected_parameters_sha256": "cb1a86c45d3b983767d6e858222fe3185c34aeed56c1ba64af355fa2d8f543b6"
+    },
+    "recommendation": "Observed O0gain40ms is marginal, N0loses2000ms. Do not continue blindly optimizing one-road normalized-phase knobs or promote this oracle. Retainconstant1.5 asdiagnosticreference. If separatelyscoped, use curvature/traction-conditioned parameters with independent DEVtraining/transfer gates rather than phase-only schedule; noautomaticnewrun."
+  },
+  "cost": {
+    "stage": 267,
+    "at_utc": "2026-10-13T05:30:48.988052+00:00",
+    "native_cap": 8000,
+    "training_cap": 6000,
+    "transfer_reserved": 2000,
+    "new_wrapper_actions": 2758,
+    "training_native_actions": 2480,
+    "transfer_native_actions": 278,
+    "new_training_episodes": 9,
+    "new_transfer_episodes": 1,
+    "cached_constant_reference_reused": 1,
+    "cached_incumbent_population_entries": 3,
+    "duplicate_native_replays": 0,
+    "prefix_native": 0,
+    "raw_step_ticks": 11023,
+    "raw_reset_ticks": 510,
+    "actual_episode_wall_s": 88.75542290695012,
+    "execution_wall_s": 88.98540711402893,
+    "CPU_s": 88.87765607,
+    "CEM_parameter_updates": 3,
+    "new_affine_or_neural_fits": 0,
+    "new_geometry_solves": 0,
+    "model_queries": 0,
+    "model_physics_ticks": 0,
+    "all_fitness_episodes_native": true,
+    "render_skipped": false,
+    "new_paid_resources": 0,
+    "B_operating_cap": 920000,
+    "authorized_research_increment": 8000,
+    "actual_cumulative_wrapper_actions": 827563,
+    "research_remaining": 8437,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "promotion": false,
+  "code_sha256": {
+    "pace267_profile.py": "f96bf9f6f60ab66b19a0e0c07b9640e88346ac9ad78a7c0b82eff7a4bece5bf1",
+    "pace267_run.py": "43f78ac12991611444e7efe58f4ea62f7dbba04b88c4d018425b9f5ed2424e99"
+  },
+  "contract_sha256": "6f7016a98e88d41978d4c68b3f7193807210c71a995f89ad9f66fb411153ca8c",
+  "frozen_plan_sha256": "2008def4f6991556ad5bb65f9f3b2aeb068dfc5ad62e43f26cd0c1733e178444",
+  "interpretation": "O0officialtimeoptimization isempirical androad-specific, not certifiedfeasibility/globaloptimum/pixel-only performance. N0evaluatedonceafterbestfrozen, noN0selection/relearning, nofollowupgain/pace sweep."
+}
