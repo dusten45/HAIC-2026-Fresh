@@ -1,0 +1,984 @@
+{
+  "stage": 247,
+  "method": "Deterministic fixed-episode parameter probes, one ARS-style update; no actionnoise",
+  "contract": {
+    "probes": 8,
+    "directions": 4,
+    "parameter_seed": 247,
+    "actor_parameters": 34,
+    "probe_baseline_latent_RMS": 0.2,
+    "residual_amplitudes": [
+      0.03,
+      0.02
+    ],
+    "normalization_frozen": true,
+    "paired_initial_observations_exact": true,
+    "baseline_feature_cohort": "Savednew241four240baseline legalfeatures; road-balanced. old201featurecaches absent. No screen/probe features usedforradius/norm.",
+    "update_definition": "Eight6road equalmean terminalreturns; sigma=populationstd of8policymeans. g=(1/4)sum_i ((Rplus_i-Rminus_i)/sigma)*positive_probe_i. theta=g*min(1,.2/baselineRMS(g)); sigma0 orsum0=>exactzero. One update, LR1, no radius/rate sweep.",
+    "update": {
+      "return_population_std": 0.36391679511413394,
+      "paired_differences": [
+        0.4209970238095242,
+        0.8723451596376488,
+        0.3658105441597088,
+        0.35792371743217855
+      ],
+      "raw_update_latent_RMS": 0.11893488332053168,
+      "scale": 1.0,
+      "final_latent_RMS": 0.11893488332053168,
+      "zero_handling": "exact zero if return std or direction sum zero"
+    }
+  },
+  "training_candidates": [
+    {
+      "name": "baseline",
+      "direction": null,
+      "sign": null,
+      "completed": 6,
+      "actual_DNF": 0,
+      "censored": 0,
+      "unexecuted": 0,
+      "all_roads_observed": true,
+      "mean_lap_ms": 20943.333333333332,
+      "mean_return": 1.8691041666666666,
+      "new_native_actions": 0,
+      "baseline_feature_latent_RMS": 0.0,
+      "episode_median_policy_ms_range": null,
+      "max_policy_including_baseIPC_ms": null,
+      "roads": [
+        {
+          "label": "O0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23660,
+          "return_value": null,
+          "damage": 0.0,
+          "native_actions": 0,
+          "retire_reason": null
+        },
+        {
+          "label": "O2",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 20980,
+          "return_value": null,
+          "damage": 0.2,
+          "native_actions": 0,
+          "retire_reason": null
+        },
+        {
+          "label": "N0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23620,
+          "return_value": null,
+          "damage": 0.2,
+          "native_actions": 0,
+          "retire_reason": null
+        },
+        {
+          "label": "N1",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 17080,
+          "return_value": null,
+          "damage": 0.0,
+          "native_actions": 0,
+          "retire_reason": null
+        },
+        {
+          "label": "N2",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 21560,
+          "return_value": null,
+          "damage": 0.0,
+          "native_actions": 0,
+          "retire_reason": null
+        },
+        {
+          "label": "N3",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 18760,
+          "return_value": null,
+          "damage": 0.2,
+          "native_actions": 0,
+          "retire_reason": null
+        }
+      ]
+    },
+    {
+      "name": "probe0",
+      "direction": 1,
+      "sign": "+",
+      "completed": 5,
+      "actual_DNF": 1,
+      "censored": 0,
+      "unexecuted": 0,
+      "all_roads_observed": true,
+      "mean_lap_ms": null,
+      "mean_return": 1.431183504566212,
+      "new_native_actions": 1375,
+      "baseline_feature_latent_RMS": 0.2,
+      "episode_median_policy_ms_range": [
+        7.1070400008466095,
+        8.609171025454998
+      ],
+      "max_policy_including_baseIPC_ms": 51.512227015336975,
+      "roads": [
+        {
+          "label": "O0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23880,
+          "return_value": 1.8507500000000028,
+          "damage": 0.0,
+          "native_actions": 299,
+          "retire_reason": null
+        },
+        {
+          "label": "O2",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 20720,
+          "return_value": 1.8705000000000023,
+          "damage": 0.0,
+          "native_actions": 260,
+          "retire_reason": null
+        },
+        {
+          "label": "N0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23960,
+          "return_value": 1.8502500000000028,
+          "damage": 0.0,
+          "native_actions": 300,
+          "retire_reason": null
+        },
+        {
+          "label": "N1",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 17420,
+          "return_value": 1.891125000000002,
+          "damage": 0.4,
+          "native_actions": 218,
+          "retire_reason": null
+        },
+        {
+          "label": "N2",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.7602739726027398,
+          "damage": 1.0,
+          "native_actions": 67,
+          "retire_reason": "crash"
+        },
+        {
+          "label": "N3",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 18440,
+          "return_value": 1.8847500000000021,
+          "damage": 0.4,
+          "native_actions": 231,
+          "retire_reason": null
+        }
+      ]
+    },
+    {
+      "name": "probe1",
+      "direction": 1,
+      "sign": "-",
+      "completed": 4,
+      "actual_DNF": 2,
+      "censored": 0,
+      "unexecuted": 0,
+      "all_roads_observed": true,
+      "mean_lap_ms": null,
+      "mean_return": 1.0101864807566878,
+      "new_native_actions": 1222,
+      "baseline_feature_latent_RMS": 0.2,
+      "episode_median_policy_ms_range": [
+        6.978135003009811,
+        8.026549010537565
+      ],
+      "max_policy_including_baseIPC_ms": 34.843557979911566,
+      "roads": [
+        {
+          "label": "O0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23640,
+          "return_value": 1.8522500000000028,
+          "damage": 0.0,
+          "native_actions": 296,
+          "retire_reason": null
+        },
+        {
+          "label": "O2",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 20800,
+          "return_value": 1.8700000000000023,
+          "damage": 0.0,
+          "native_actions": 260,
+          "retire_reason": null
+        },
+        {
+          "label": "N0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23120,
+          "return_value": 1.8555000000000026,
+          "damage": 0.0,
+          "native_actions": 290,
+          "retire_reason": null
+        },
+        {
+          "label": "N1",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.6428571428571428,
+          "damage": 1.0,
+          "native_actions": 80,
+          "retire_reason": "crash"
+        },
+        {
+          "label": "N2",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.7602739726027398,
+          "damage": 1.0,
+          "native_actions": 68,
+          "retire_reason": "crash"
+        },
+        {
+          "label": "N3",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 18160,
+          "return_value": 1.886500000000002,
+          "damage": 0.0,
+          "native_actions": 228,
+          "retire_reason": null
+        }
+      ]
+    },
+    {
+      "name": "probe2",
+      "direction": 2,
+      "sign": "+",
+      "completed": 4,
+      "actual_DNF": 2,
+      "censored": 0,
+      "unexecuted": 0,
+      "all_roads_observed": true,
+      "mean_lap_ms": null,
+      "mean_return": 1.1027767257587984,
+      "new_native_actions": 1494,
+      "baseline_feature_latent_RMS": 0.20000000000000004,
+      "episode_median_policy_ms_range": [
+        7.113276020390913,
+        8.029782999074087
+      ],
+      "max_policy_including_baseIPC_ms": 24.600367003586143,
+      "roads": [
+        {
+          "label": "O0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23640,
+          "return_value": 1.8522500000000028,
+          "damage": 0.0,
+          "native_actions": 296,
+          "retire_reason": null
+        },
+        {
+          "label": "O2",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 20540,
+          "return_value": 1.8716250000000023,
+          "damage": 0.0,
+          "native_actions": 257,
+          "retire_reason": null
+        },
+        {
+          "label": "N0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 24200,
+          "return_value": 1.8487500000000028,
+          "damage": 0.4,
+          "native_actions": 303,
+          "retire_reason": null
+        },
+        {
+          "label": "N1",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.6470588235294117,
+          "damage": 1.0,
+          "native_actions": 81,
+          "retire_reason": "crash"
+        },
+        {
+          "label": "N2",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.1917808219178082,
+          "damage": 0.8,
+          "native_actions": 322,
+          "retire_reason": "off_track"
+        },
+        {
+          "label": "N3",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 18740,
+          "return_value": 1.882875000000002,
+          "damage": 0.4,
+          "native_actions": 235,
+          "retire_reason": null
+        }
+      ]
+    },
+    {
+      "name": "probe3",
+      "direction": 2,
+      "sign": "-",
+      "completed": 2,
+      "actual_DNF": 4,
+      "censored": 0,
+      "unexecuted": 0,
+      "all_roads_observed": true,
+      "mean_lap_ms": null,
+      "mean_return": 0.23043156612114957,
+      "new_native_actions": 1157,
+      "baseline_feature_latent_RMS": 0.20000000000000004,
+      "episode_median_policy_ms_range": [
+        7.008382977801375,
+        8.266472519608214
+      ],
+      "max_policy_including_baseIPC_ms": 32.6884750102181,
+      "roads": [
+        {
+          "label": "O0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 24360,
+          "return_value": 1.847750000000003,
+          "damage": 0.2,
+          "native_actions": 305,
+          "retire_reason": null
+        },
+        {
+          "label": "O2",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.5813148788927336,
+          "damage": 0.4,
+          "native_actions": 212,
+          "retire_reason": "off_track"
+        },
+        {
+          "label": "N0",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.7507692307692307,
+          "damage": 0.4,
+          "native_actions": 176,
+          "retire_reason": "off_track"
+        },
+        {
+          "label": "N1",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.25630252100840334,
+          "damage": 1.0,
+          "native_actions": 163,
+          "retire_reason": "crash"
+        },
+        {
+          "label": "N2",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.7602739726027398,
+          "damage": 1.0,
+          "native_actions": 67,
+          "retire_reason": "crash"
+        },
+        {
+          "label": "N3",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 18640,
+          "return_value": 1.883500000000002,
+          "damage": 0.4,
+          "native_actions": 234,
+          "retire_reason": null
+        }
+      ]
+    },
+    {
+      "name": "probe4",
+      "direction": 3,
+      "sign": "+",
+      "completed": 4,
+      "actual_DNF": 2,
+      "censored": 0,
+      "unexecuted": 0,
+      "all_roads_observed": true,
+      "mean_lap_ms": null,
+      "mean_return": 1.0942248210928225,
+      "new_native_actions": 1349,
+      "baseline_feature_latent_RMS": 0.2,
+      "episode_median_policy_ms_range": [
+        6.967427994823083,
+        8.130695496220142
+      ],
+      "max_policy_including_baseIPC_ms": 44.12461898755282,
+      "roads": [
+        {
+          "label": "O0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23760,
+          "return_value": 1.8515000000000028,
+          "damage": 0.0,
+          "native_actions": 298,
+          "retire_reason": null
+        },
+        {
+          "label": "O2",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 20700,
+          "return_value": 1.8706250000000024,
+          "damage": 0.0,
+          "native_actions": 259,
+          "retire_reason": null
+        },
+        {
+          "label": "N0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23540,
+          "return_value": 1.8528750000000027,
+          "damage": 0.0,
+          "native_actions": 295,
+          "retire_reason": null
+        },
+        {
+          "label": "N1",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.13025210084033612,
+          "damage": 1.0,
+          "native_actions": 191,
+          "retire_reason": "crash"
+        },
+        {
+          "label": "N2",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.7602739726027398,
+          "damage": 1.0,
+          "native_actions": 67,
+          "retire_reason": "crash"
+        },
+        {
+          "label": "N3",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 19060,
+          "return_value": 1.880875000000002,
+          "damage": 0.4,
+          "native_actions": 239,
+          "retire_reason": null
+        }
+      ]
+    },
+    {
+      "name": "probe5",
+      "direction": 3,
+      "sign": "-",
+      "completed": 3,
+      "actual_DNF": 3,
+      "censored": 0,
+      "unexecuted": 0,
+      "all_roads_observed": true,
+      "mean_lap_ms": null,
+      "mean_return": 0.7284142769331137,
+      "new_native_actions": 1519,
+      "baseline_feature_latent_RMS": 0.2,
+      "episode_median_policy_ms_range": [
+        6.939668004633859,
+        7.52832849684637
+      ],
+      "max_policy_including_baseIPC_ms": 47.18546898220666,
+      "roads": [
+        {
+          "label": "O0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23480,
+          "return_value": 1.8532500000000027,
+          "damage": 0.0,
+          "native_actions": 294,
+          "retire_reason": null
+        },
+        {
+          "label": "O2",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 21740,
+          "return_value": 1.8641250000000025,
+          "damage": 0.4,
+          "native_actions": 272,
+          "retire_reason": null
+        },
+        {
+          "label": "N0",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.7507692307692307,
+          "damage": 0.6000000000000001,
+          "native_actions": 175,
+          "retire_reason": "off_track"
+        },
+        {
+          "label": "N1",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.2857142857142857,
+          "damage": 1.0,
+          "native_actions": 178,
+          "retire_reason": "crash"
+        },
+        {
+          "label": "N2",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.1917808219178082,
+          "damage": 0.4,
+          "native_actions": 362,
+          "retire_reason": "off_track"
+        },
+        {
+          "label": "N3",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 18980,
+          "return_value": 1.881375000000002,
+          "damage": 0.2,
+          "native_actions": 238,
+          "retire_reason": null
+        }
+      ]
+    },
+    {
+      "name": "probe6",
+      "direction": 4,
+      "sign": "+",
+      "completed": 5,
+      "actual_DNF": 1,
+      "censored": 0,
+      "unexecuted": 0,
+      "all_roads_observed": true,
+      "mean_lap_ms": null,
+      "mean_return": 1.429121004566212,
+      "new_native_actions": 1400,
+      "baseline_feature_latent_RMS": 0.2,
+      "episode_median_policy_ms_range": [
+        7.275537995155901,
+        8.267625991720706
+      ],
+      "max_policy_including_baseIPC_ms": 67.08947697188705,
+      "roads": [
+        {
+          "label": "O0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23800,
+          "return_value": 1.8512500000000027,
+          "damage": 0.0,
+          "native_actions": 298,
+          "retire_reason": null
+        },
+        {
+          "label": "O2",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 21820,
+          "return_value": 1.8636250000000025,
+          "damage": 0.2,
+          "native_actions": 273,
+          "retire_reason": null
+        },
+        {
+          "label": "N0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23880,
+          "return_value": 1.8507500000000028,
+          "damage": 0.2,
+          "native_actions": 299,
+          "retire_reason": null
+        },
+        {
+          "label": "N1",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 18300,
+          "return_value": 1.885625000000002,
+          "damage": 0.6000000000000001,
+          "native_actions": 229,
+          "retire_reason": null
+        },
+        {
+          "label": "N2",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.7602739726027398,
+          "damage": 1.0,
+          "native_actions": 68,
+          "retire_reason": "crash"
+        },
+        {
+          "label": "N3",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 18600,
+          "return_value": 1.883750000000002,
+          "damage": 0.4,
+          "native_actions": 233,
+          "retire_reason": null
+        }
+      ]
+    },
+    {
+      "name": "probe7",
+      "direction": 4,
+      "sign": "-",
+      "completed": 4,
+      "actual_DNF": 2,
+      "censored": 0,
+      "unexecuted": 0,
+      "all_roads_observed": true,
+      "mean_lap_ms": null,
+      "mean_return": 1.0711972871340334,
+      "new_native_actions": 1291,
+      "baseline_feature_latent_RMS": 0.2,
+      "episode_median_policy_ms_range": [
+        6.938814505701885,
+        9.50389850186184
+      ],
+      "max_policy_including_baseIPC_ms": 34.189718979178,
+      "roads": [
+        {
+          "label": "O0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23320,
+          "return_value": 1.8542500000000026,
+          "damage": 0.0,
+          "native_actions": 292,
+          "retire_reason": null
+        },
+        {
+          "label": "O2",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.2941176470588235,
+          "damage": 1.0,
+          "native_actions": 191,
+          "retire_reason": "crash"
+        },
+        {
+          "label": "N0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 24280,
+          "return_value": 1.8482500000000028,
+          "damage": 0.0,
+          "native_actions": 304,
+          "retire_reason": null
+        },
+        {
+          "label": "N1",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 16700,
+          "return_value": 1.895625000000002,
+          "damage": 0.0,
+          "native_actions": 209,
+          "retire_reason": null
+        },
+        {
+          "label": "N2",
+          "completed": false,
+          "censored": false,
+          "lap_ms": null,
+          "return_value": -0.7636986301369864,
+          "damage": 1.0,
+          "native_actions": 68,
+          "retire_reason": "crash"
+        },
+        {
+          "label": "N3",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 18100,
+          "return_value": 1.886875000000002,
+          "damage": 0.0,
+          "native_actions": 227,
+          "retire_reason": null
+        }
+      ]
+    },
+    {
+      "name": "update",
+      "direction": null,
+      "sign": null,
+      "completed": 6,
+      "actual_DNF": 0,
+      "censored": 0,
+      "unexecuted": 0,
+      "all_roads_observed": true,
+      "mean_lap_ms": 21300.0,
+      "mean_return": 1.8668750000000027,
+      "new_native_actions": 1601,
+      "baseline_feature_latent_RMS": 0.11893488332053168,
+      "episode_median_policy_ms_range": [
+        7.096104993252084,
+        8.446518972050399
+      ],
+      "max_policy_including_baseIPC_ms": 36.10147300059907,
+      "roads": [
+        {
+          "label": "O0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 24120,
+          "return_value": 1.8492500000000027,
+          "damage": 0.2,
+          "native_actions": 302,
+          "retire_reason": null
+        },
+        {
+          "label": "O2",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 20800,
+          "return_value": 1.8700000000000023,
+          "damage": 0.0,
+          "native_actions": 261,
+          "retire_reason": null
+        },
+        {
+          "label": "N0",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23500,
+          "return_value": 1.8531250000000028,
+          "damage": 0.0,
+          "native_actions": 294,
+          "retire_reason": null
+        },
+        {
+          "label": "N1",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 17420,
+          "return_value": 1.891125000000002,
+          "damage": 0.0,
+          "native_actions": 218,
+          "retire_reason": null
+        },
+        {
+          "label": "N2",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 23460,
+          "return_value": 1.8533750000000027,
+          "damage": 0.6000000000000001,
+          "native_actions": 294,
+          "retire_reason": null
+        },
+        {
+          "label": "N3",
+          "completed": true,
+          "censored": false,
+          "lap_ms": 18500,
+          "return_value": 1.8843750000000021,
+          "damage": 0.0,
+          "native_actions": 232,
+          "retire_reason": null
+        }
+      ]
+    }
+  ],
+  "winner": "baseline",
+  "winner_actor_sha256": "4dcc5e36bcdef478d8fe0672c25594140efd8345e30f0aa09f783efbdb53490f",
+  "screens": [
+    {
+      "road": "S0",
+      "arms": {
+        "A": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": null,
+          "lap_ms": 22020,
+          "damage": 0.0,
+          "return_value": 1.8623750000000026,
+          "new_native_actions": 276,
+          "retire_reason": null,
+          "reused_same_policy": null
+        },
+        "B": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": null,
+          "lap_ms": 22020,
+          "damage": 0.0,
+          "return_value": 1.8623750000000026,
+          "new_native_actions": 0,
+          "retire_reason": null,
+          "reused_same_policy": true
+        }
+      }
+    },
+    {
+      "road": "S1",
+      "arms": {
+        "B": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": null,
+          "lap_ms": 19220,
+          "damage": 0.0,
+          "return_value": 1.8798750000000022,
+          "new_native_actions": 241,
+          "retire_reason": null,
+          "reused_same_policy": null
+        },
+        "A": {
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": null,
+          "lap_ms": 19220,
+          "damage": 0.0,
+          "return_value": 1.8798750000000022,
+          "new_native_actions": 0,
+          "retire_reason": null,
+          "reused_same_policy": true
+        }
+      }
+    }
+  ],
+  "screen_counts": {
+    "baseline_complete": 2,
+    "winner_complete": 2,
+    "lost_completion": 0,
+    "new_completion": 0,
+    "unknown_arms": 0
+  },
+  "common_screen_mean_delta_ms": 0.0,
+  "comparison_to_PPO244": {
+    "total_native": 9352,
+    "total_wall_s": 417.98156571388245,
+    "max_policy_including_baseIPC_ms": 51.65020999265835,
+    "training_complete": 22,
+    "training_actual_DNF": 7,
+    "training_collection_cuts": 8,
+    "training_native": 8192,
+    "final_screen_complete": 1,
+    "final_screen_roads": 2,
+    "comparison_limit": "PPO noisytraining episodes/cuts and earlierDEV screen cohort differ; no controlled general superiority claim."
+  },
+  "cost": {
+    "stage": 247,
+    "at_utc": "2026-10-13T00:55:20.182825+00:00",
+    "native_cap": 19000,
+    "training_native_cap": 17400,
+    "screen_native_cap": 1600,
+    "new_wrapper_actions": 12925,
+    "phases": {
+      "training": 12408,
+      "screen": 517
+    },
+    "wall_s": 553.8017876148224,
+    "evaluator_CPU_s": 451.15852240500004,
+    "base_actor_CPU_s": 102.80202900000002,
+    "raw_step_ticks": 51646,
+    "raw_reset_ticks": 2856,
+    "new_native_runs": 56,
+    "baseline_training_reused_episodes": 6,
+    "screen_same_policy_reuse": 2,
+    "max_policy_including_baseIPC_ms": 67.08947697188705,
+    "new_GT_model_queries": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 898000,
+    "actual_cumulative_wrapper_actions": 805875,
+    "research_remaining": 8125,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "screen_reselection": false,
+  "automatic_next_experiment": false,
+  "technical_error": null,
+  "inference_timing": {
+    "probes": {
+      "actions": 10807,
+      "episode_median_ms_range": [
+        6.938814505701885,
+        9.50389850186184
+      ],
+      "max_policy_including_baseIPC_ms": 67.08947697188705
+    },
+    "update": {
+      "actions": 1601,
+      "episode_median_ms_range": [
+        7.096104993252084,
+        8.446518972050399
+      ],
+      "max_policy_including_baseIPC_ms": 36.10147300059907
+    },
+    "selected_baseline_fresh_screen": {
+      "actions": 517,
+      "episode_median_ms_range": [
+        7.633847009856254,
+        8.083180495304987
+      ],
+      "max_policy_including_baseIPC_ms": 49.90510697825812
+    }
+  },
+  "decision": "Baseline240 selected: update6/6 but21.300s mean versus20.943333s; no promotion/follow-up."
+}
