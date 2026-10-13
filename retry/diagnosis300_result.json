@@ -1,0 +1,716 @@
+{
+  "stage": 300,
+  "prior_stored_comparisons": [
+    {
+      "road": "T2950",
+      "policy": "240",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 26360,
+      "retire_reason": null,
+      "damage": 0.4,
+      "native_actions": 330,
+      "first_collision_step": 179,
+      "first_target_missing_step": 179,
+      "nominal_steering_clip_rows": 10,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T2950",
+      "policy": "296",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.2,
+      "native_actions": 315,
+      "first_collision_step": 184,
+      "first_target_missing_step": 184,
+      "nominal_steering_clip_rows": 9,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T2950",
+      "policy": "298",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 26840,
+      "retire_reason": null,
+      "damage": 0.0,
+      "native_actions": 336,
+      "first_collision_step": null,
+      "first_target_missing_step": 185,
+      "nominal_steering_clip_rows": 11,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T2950",
+      "policy": "299",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 25400,
+      "retire_reason": null,
+      "damage": 0.0,
+      "native_actions": 318,
+      "first_collision_step": null,
+      "first_target_missing_step": 185,
+      "nominal_steering_clip_rows": 10,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T2954",
+      "policy": "240",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.2,
+      "native_actions": 263,
+      "first_collision_step": 162,
+      "first_target_missing_step": 101,
+      "nominal_steering_clip_rows": 105,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T2954",
+      "policy": "296",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 27440,
+      "retire_reason": null,
+      "damage": 0.0,
+      "native_actions": 344,
+      "first_collision_step": null,
+      "first_target_missing_step": 82,
+      "nominal_steering_clip_rows": 7,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T2954",
+      "policy": "298",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "native_actions": 84,
+      "first_collision_step": 80,
+      "first_target_missing_step": null,
+      "nominal_steering_clip_rows": 4,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T2954",
+      "policy": "299",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.0,
+      "native_actions": 193,
+      "first_collision_step": null,
+      "first_target_missing_step": 96,
+      "nominal_steering_clip_rows": 4,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T2955",
+      "policy": "240",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 23500,
+      "retire_reason": null,
+      "damage": 0.2,
+      "native_actions": 294,
+      "first_collision_step": 189,
+      "first_target_missing_step": 141,
+      "nominal_steering_clip_rows": 1,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T2955",
+      "policy": "296",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 23860,
+      "retire_reason": null,
+      "damage": 0.0,
+      "native_actions": 299,
+      "first_collision_step": null,
+      "first_target_missing_step": null,
+      "nominal_steering_clip_rows": 0,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T2955",
+      "policy": "298",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "native_actions": 150,
+      "first_collision_step": 146,
+      "first_target_missing_step": 146,
+      "nominal_steering_clip_rows": 4,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T2955",
+      "policy": "299",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 24100,
+      "retire_reason": null,
+      "damage": 0.0,
+      "native_actions": 302,
+      "first_collision_step": null,
+      "first_target_missing_step": null,
+      "nominal_steering_clip_rows": 7,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T29510",
+      "policy": "240",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 18980,
+      "retire_reason": null,
+      "damage": 0.0,
+      "native_actions": 238,
+      "first_collision_step": null,
+      "first_target_missing_step": 179,
+      "nominal_steering_clip_rows": 4,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T29510",
+      "policy": "296",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 18940,
+      "retire_reason": null,
+      "damage": 0.4,
+      "native_actions": 237,
+      "first_collision_step": 179,
+      "first_target_missing_step": 179,
+      "nominal_steering_clip_rows": 3,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T29510",
+      "policy": "298",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 19060,
+      "retire_reason": null,
+      "damage": 0.0,
+      "native_actions": 239,
+      "first_collision_step": null,
+      "first_target_missing_step": 181,
+      "nominal_steering_clip_rows": 2,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T29510",
+      "policy": "299",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.8,
+      "native_actions": 303,
+      "first_collision_step": 202,
+      "first_target_missing_step": 203,
+      "nominal_steering_clip_rows": 104,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T29511",
+      "policy": "240",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 19880,
+      "retire_reason": null,
+      "damage": 0.0,
+      "native_actions": 249,
+      "first_collision_step": null,
+      "first_target_missing_step": 73,
+      "nominal_steering_clip_rows": 0,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T29511",
+      "policy": "296",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 21300,
+      "retire_reason": null,
+      "damage": 0.0,
+      "native_actions": 267,
+      "first_collision_step": null,
+      "first_target_missing_step": 75,
+      "nominal_steering_clip_rows": 3,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T29511",
+      "policy": "298",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 20900,
+      "retire_reason": null,
+      "damage": 0.0,
+      "native_actions": 262,
+      "first_collision_step": null,
+      "first_target_missing_step": 76,
+      "nominal_steering_clip_rows": 1,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    },
+    {
+      "road": "T29511",
+      "policy": "299",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "native_actions": 180,
+      "first_collision_step": 176,
+      "first_target_missing_step": 75,
+      "nominal_steering_clip_rows": 5,
+      "memory_action_float32_maxerror": 0.0,
+      "actual_road_departure_and_progress_unrecorded": true
+    }
+  ],
+  "new_signal_runs": {
+    "T2950_240": {
+      "result": {
+        "road": "T2950",
+        "policy": "240",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "lap_ms": 26360,
+        "retire_reason": null,
+        "damage": 0.4,
+        "native_actions": 330
+      },
+      "events": {
+        "first_native_collision": {
+          "step": 179,
+          "arc_m": 688.2095812760725,
+          "pre_speed": 44.61638418865008,
+          "pre_wheel_contacts": [
+            2,
+            1,
+            1,
+            2
+          ]
+        },
+        "first_actual_rawtick_road_contact_loss": {
+          "native_step": 182,
+          "raw_tick_in_native": 1,
+          "arc_m": 690.6311353404184,
+          "time_s_from_start": 14.499999999999758
+        },
+        "first_target_missing": {
+          "step": 179,
+          "arc_m": 688.2095812760725
+        }
+      },
+      "pre_collision_20m": {
+        "rows": 5,
+        "valid_target_rows": 4,
+        "GT_speed_range": [
+          46.7805777678395,
+          49.13006648036575
+        ],
+        "HUD_feedback_range": [
+          46.25,
+          48.75
+        ],
+        "target_speed_range": [
+          8.286464317651594,
+          31.885038458944397
+        ],
+        "final_gas_range": [
+          0.273311048746109,
+          0.4910067021846771
+        ],
+        "final_brake_range": [
+          0.06288758665323257,
+          0.18373140692710876
+        ],
+        "nominal_gas_zero_rows": 4,
+        "near_overspeed_finalgas_positive_rows": 4,
+        "target_road_supported_rows": 4,
+        "path_road_supported_fraction": 1.0,
+        "unsmoothed_steering_clipped_rows": 0,
+        "max_post_native_joint_lag_rad": 5.513429641723633e-06,
+        "closest_detected_obstacle_match_error_max_m": 17.06053182306007
+      },
+      "max_post_native_joint_lag_rad": 0.3151726871728897,
+      "raw_motor_rate_limit_ticks": 73,
+      "raw_ticks": 1319,
+      "command_feature_memory_collision_prefix_exact": true
+    },
+    "T2950_296": {
+      "result": {
+        "road": "T2950",
+        "policy": "296",
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "lap_ms": null,
+        "retire_reason": "off_track",
+        "damage": 0.2,
+        "native_actions": 315
+      },
+      "events": {
+        "first_native_collision": {
+          "step": 184,
+          "arc_m": 688.735288362621,
+          "pre_speed": 43.690085138948746,
+          "pre_wheel_contacts": [
+            2,
+            1,
+            1,
+            2
+          ]
+        },
+        "first_actual_rawtick_road_contact_loss": {
+          "native_step": 185,
+          "raw_tick_in_native": 2,
+          "arc_m": 691.6765283777893,
+          "time_s_from_start": 14.759999999999753
+        },
+        "first_target_missing": {
+          "step": 184,
+          "arc_m": 688.735288362621
+        }
+      },
+      "pre_collision_20m": {
+        "rows": 6,
+        "valid_target_rows": 5,
+        "GT_speed_range": [
+          46.02379121284789,
+          49.19250633439816
+        ],
+        "HUD_feedback_range": [
+          46.25,
+          48.75
+        ],
+        "target_speed_range": [
+          7.653690509082354,
+          29.542152653076208
+        ],
+        "final_gas_range": [
+          0.2823425531387329,
+          0.5023598074913025
+        ],
+        "final_brake_range": [
+          0.04092555120587349,
+          0.19826382398605347
+        ],
+        "nominal_gas_zero_rows": 5,
+        "near_overspeed_finalgas_positive_rows": 3.0,
+        "target_road_supported_rows": 5,
+        "path_road_supported_fraction": 1.0,
+        "unsmoothed_steering_clipped_rows": 1,
+        "max_post_native_joint_lag_rad": 0.011252999305725098,
+        "closest_detected_obstacle_match_error_max_m": 0.29054357520847673
+      },
+      "max_post_native_joint_lag_rad": 0.36157968640327454,
+      "raw_motor_rate_limit_ticks": 80,
+      "raw_ticks": 1260,
+      "command_feature_memory_collision_prefix_exact": true,
+      "post_collision_progress": {
+        "last_newtile_native_step": 214,
+        "native_actions_without_newtile": 101,
+        "visited_at_terminal": 208,
+        "maximum_signed_arc_m": 721.2932012419585,
+        "terminal_signed_arc_m": 336.4926070808111,
+        "terminal_speed_m_s": 39.186401126844764,
+        "description": "Moving back alongpreviouslyvisited orderedroad, notstationary; signedconnectedarc isdiagnosticnotofficialprogress. Native reward/offtrack_counter were notrecorded separately."
+      }
+    },
+    "T2954_296": {
+      "result": {
+        "road": "T2954",
+        "policy": "296",
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "lap_ms": 27440,
+        "retire_reason": null,
+        "damage": 0.0,
+        "native_actions": 344
+      },
+      "events": {
+        "first_native_collision": null,
+        "first_actual_rawtick_road_contact_loss": {
+          "native_step": 84,
+          "raw_tick_in_native": 1,
+          "arc_m": 293.11417998008994,
+          "time_s_from_start": 6.659999999999924
+        },
+        "first_target_missing": {
+          "step": 82,
+          "arc_m": 285.4486770356416
+        }
+      },
+      "pre_collision_20m": {
+        "rows": 0,
+        "valid_target_rows": 0,
+        "GT_speed_range": null,
+        "HUD_feedback_range": null,
+        "target_speed_range": null,
+        "final_gas_range": null,
+        "final_brake_range": null,
+        "nominal_gas_zero_rows": 0,
+        "near_overspeed_finalgas_positive_rows": 0,
+        "target_road_supported_rows": 0,
+        "path_road_supported_fraction": null,
+        "unsmoothed_steering_clipped_rows": 0,
+        "max_post_native_joint_lag_rad": null,
+        "closest_detected_obstacle_match_error_max_m": null
+      },
+      "max_post_native_joint_lag_rad": 0.134768545627594,
+      "raw_motor_rate_limit_ticks": 95,
+      "raw_ticks": 1373,
+      "command_feature_memory_collision_prefix_exact": true
+    },
+    "T2954_298": {
+      "result": {
+        "road": "T2954",
+        "policy": "298",
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "lap_ms": null,
+        "retire_reason": "crash",
+        "damage": 1.0,
+        "native_actions": 84
+      },
+      "events": {
+        "first_native_collision": {
+          "step": 80,
+          "arc_m": 285.5031005572946,
+          "pre_speed": 45.55547523769139,
+          "pre_wheel_contacts": [
+            2,
+            1,
+            2,
+            1
+          ]
+        },
+        "first_actual_rawtick_road_contact_loss": null,
+        "first_target_missing": null
+      },
+      "pre_collision_20m": {
+        "rows": 6,
+        "valid_target_rows": 6,
+        "GT_speed_range": [
+          45.55547523769139,
+          50.69300863549685
+        ],
+        "HUD_feedback_range": [
+          46.25,
+          51.25
+        ],
+        "target_speed_range": [
+          8.214352594204355,
+          15.927522955319272
+        ],
+        "final_gas_range": [
+          0.5477792024612427,
+          0.6163491010665894
+        ],
+        "final_brake_range": [
+          0.11438211798667908,
+          0.18402604758739471
+        ],
+        "nominal_gas_zero_rows": 6,
+        "near_overspeed_finalgas_positive_rows": 4.0,
+        "target_road_supported_rows": 6,
+        "path_road_supported_fraction": 1.0,
+        "unsmoothed_steering_clipped_rows": 0,
+        "max_post_native_joint_lag_rad": 4.112720489501953e-06,
+        "closest_detected_obstacle_match_error_max_m": 0.28034358284193384
+      },
+      "max_post_native_joint_lag_rad": 0.43610556423664093,
+      "raw_motor_rate_limit_ticks": 20,
+      "raw_ticks": 336,
+      "command_feature_memory_collision_prefix_exact": true
+    }
+  },
+  "spatial_pairs": [
+    {
+      "road": "T2950",
+      "policies": [
+        "T2950_240",
+        "T2950_296"
+      ],
+      "matched_bins": 141,
+      "first_observable_gt_lateral_divergence_gt1m": {
+        "bin_arc_m": 255.0,
+        "steps": [
+          69,
+          71
+        ],
+        "observed_arc_m": [
+          255.17172454581873,
+          253.15126482536613
+        ],
+        "lateral_m": [
+          -0.3418485553519795,
+          -1.6468504065270113
+        ]
+      },
+      "alignment": "Firstforwardcrossing bracket nearest actualnative record,5mbins,absarcerror<=2.5m. Reverse revisit never substituted; matchedprogress doesnot equalmatchedstate."
+    },
+    {
+      "road": "T2954",
+      "policies": [
+        "T2954_296",
+        "T2954_298"
+      ],
+      "matched_bins": 54,
+      "first_observable_gt_lateral_divergence_gt1m": {
+        "bin_arc_m": 105.0,
+        "steps": [
+          36,
+          35
+        ],
+        "observed_arc_m": [
+          106.48810097795118,
+          104.76222757312401
+        ],
+        "lateral_m": [
+          -0.13954448546648227,
+          0.9440828980576851
+        ]
+      },
+      "alignment": "Firstforwardcrossing bracket nearest actualnative record,5mbins,absarcerror<=2.5m. Reverse revisit never substituted; matchedprogress doesnot equalmatchedstate."
+    }
+  ],
+  "findings": {
+    "verified": [
+      "All4new GTsignal traces reproduce stored actions/features/memory/collision exactly; no policycode/intervention change",
+      "T2950 bothpolicies collisionneararc688 before first actualwheelroadcontactloss;240 recovers/completes,296 later nonprogress DNF",
+      "T2954 steeringrevert collides onroad with accuratelylocatednearestobstacle androad-supported reference;precollisionwheeljointfollow isaccurate andsteeringcommand notclipped in20mwindow",
+      "Nearcollisionvalidtargets coexistwith GT/HUDspeed farabovetarget andpositivefinalgas while nominalgas iszero; affinehead reintroducesgas, observablegoal/actuator mismatch",
+      "T2950/296 continuesmoving with~39m/s atterminal, signedarc drops721->336m aftercollision,101nativewithoutnewtiles after214; no stationaryfailure claim. Sourceofftrack rule consistent, counter/reward notdirectlylogged."
+    ],
+    "hypotheses": [
+      "Positivegas undernearoverspeed maydelaydeceleration andcontribute collision; notcausallyisolated bytheseobservational comparisons",
+      "T2950 postcollision rate-limited reversal contributesrecovery difficulty; it isnot proven soleinitialcollision cause",
+      "Different pose/history yieldsdifferent route-reference switching around T2954arc275-285; trackerghosts exist buttheircausalrole remainsunknown",
+      "Postcollision lackof road-direction/phase observation maypermit revisitingoldroad; this isnot independentlyisolated. Proposednear nominalzero-gasguard onlytests impact/speed contribution, notuniversalwrongway recovery."
+    ],
+    "not_verified": [
+      "No GTposition/rawwheel/fullpath for299 orotheruncollectedroads; no firstphysicaldeparture/progressalignment reconstructed there",
+      "Roadsupported reference doesnot prove all perception/routechoices correct or collisionfeasible; no tireforce/frictionclip sensor collected",
+      "Purepursuitcurvature is notGTroadcurvature orrequired yaw; speedsabovecontrollergoal alone do notprove excessivephysicalspeed asuniquecause"
+    ],
+    "next_single_falsification": {
+      "intervention": "Exact296: legalnearflag(feature8)==1 and samecallnominalgas(feature14)==0: setreturnedgas=0 only; keepsteer/brake/path/head coefficients/actualmemory unchanged. Coversoverspeed validtargets andoriginalzero-gas fallback, oneexistingnominal-output consistency gate.",
+      "purpose": "Testwhether persistent finalgas afterhead undernearoverspeed contributes tosameprogress collision/recovery failures.",
+      "pilot": "T2950/T2954, reused300matched296 references; collectsame signals; preregistercompletion/contact/firstpassarc comparison beforecandidate execution, no gain/grid.",
+      "reject": "Ifsamecollision/progressfailure remains or baselinecompletion lost, do not claim the proposed gas guard fixesmechanism. Completion gains needseparate independentgate.",
+      "executed": false
+    }
+  },
+  "cost": {
+    "stage": 300,
+    "at_utc": "2026-10-13T20:05:28.948200+00:00",
+    "new_wrapper_actions": 1073,
+    "new_signal_augmentation_official_runs": 4,
+    "native_cap": 2500,
+    "outcome_only_reconfirmation_runs": 0,
+    "unchanged_policy_archives": true,
+    "GT_diagnostic_only": true,
+    "new_policy_training": 0,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "raw_step_ticks": 4288,
+    "raw_reset_ticks": 204,
+    "collection_wall_s": 165.5051817893982,
+    "collection_runner_CPU_s": 155.949747829,
+    "actor_CPU_s": 9.409345,
+    "analysis_wall_s": 0.9334863129770383,
+    "analysis_CPU_s": 0.9171965240000001,
+    "B_operating_cap": 1230000,
+    "actual_cumulative_wrapper_actions": 1136567,
+    "research_remaining": 9433,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "GT_for_diagnosis_only": true,
+  "policy_code_changed": false,
+  "no_297DEV_HOLDOUT_SEALED": true,
+  "champion296_maintained": true,
+  "actual_new_runs": 4,
+  "technical_error": null,
+  "automatic_next_experiment": false,
+  "analysis_recovery": "Savedresults/cost/ledger complete before finalconsole numpyint64 formatting error; fixedconsoleserialization withoutreanalysis/extra native.",
+  "verification": {
+    "fixed4signal_runs_complete": true,
+    "all1073actions_features_memory_collision_terminal_exact_to_prior": true,
+    "archives_and_policycode_unchanged": true,
+    "GT_only_evaluator_side": true,
+    "rawticks_counted_exact": true,
+    "firstpass_arc_matching_verified": true,
+    "no_reverse_revisit_substitution": true,
+    "no_old_missing_GT_reconstruction": true,
+    "new_intervention_notexecuted": true,
+    "all_processes_reaped": true,
+    "native_cost1073": true,
+    "budget_censor": 0,
+    "collection_technical_error": 0,
+    "analysis_console_serialization_fixed_no_repeat": true,
+    "champion296_240rollback_preserved": true,
+    "compilation_passed": true
+  },
+  "raw_alignment_snapshots_private": true
+}
