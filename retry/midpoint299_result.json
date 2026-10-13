@@ -1,0 +1,92 @@
+{
+  "stage": 299,
+  "candidate": "Oneexactsteeringlogmidpoint296/240",
+  "other5parameters_unchanged": true,
+  "midpoint_fixed_before_results": true,
+  "candidate_archive_sha256": "849d580240dd1f54471191ab8606fab894efdf7ea051a16802117e57226554ff",
+  "TRAIN": {
+    "label": "steering_log_midpoint",
+    "fully_observed": true,
+    "completions": 15,
+    "own_complete_mean_ms": 22460.0,
+    "against296": {
+      "paired_additional_completions": 1,
+      "paired_lost_completions": 3,
+      "common_completions": 14,
+      "common_mean_delta_ms": -715.7142857142857,
+      "completion_sets_equal": false
+    },
+    "reused_roads": 0,
+    "unexecuted": []
+  },
+  "TRAIN_eligible": false,
+  "transferred297_DEV_count": 12,
+  "fresh_DEV_opened": false,
+  "fresh_DEV": [],
+  "fresh_DEV_summary": null,
+  "judgment": null,
+  "promotion": {
+    "adopted": false,
+    "champion296_maintained": true
+  },
+  "technical_error": null,
+  "cost": {
+    "stage": 299,
+    "at_utc": "2026-10-13T19:45:04.186295+00:00",
+    "new_wrapper_actions": 4896,
+    "TRAIN_native": 4896,
+    "DEV_native": 0,
+    "TRAIN_cap": 6000,
+    "DEV_cap": 9000,
+    "new_midpoint_candidates": 1,
+    "new_search_draws": 0,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "new_simulation_episodes": 18,
+    "raw_step_ticks": 19564,
+    "raw_reset_ticks": 918,
+    "episode_runner_CPU_s": 210.55432006199996,
+    "recorded_actor_CPU_s": 47.447174999999994,
+    "sum_episode_wall_s": 265.76238834194373,
+    "total_wall_s": 211.60377883911133,
+    "wall_scope": "Max2parallelTRAIN, lowcapacitysequential; orderedpairedDEV; episodewall sum overlaps",
+    "unconfirmed_charged_native": 0,
+    "B_operating_cap": 1230000,
+    "actual_cumulative_wrapper_actions": 1135494,
+    "research_remaining": 10506,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "no_other_midpoints_combinations_retune": true,
+  "no_damage_or_individual_loss_veto": true,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "extra_certification_runs": 0,
+  "automatic_next_experiment": false,
+  "decision": "Maintain296; no alternatemidpoint or298candidate evaluation.",
+  "TRAIN_added_roads": [
+    "T2950"
+  ],
+  "TRAIN_lost_roads": [
+    "T2954",
+    "T29510",
+    "T29511"
+  ],
+  "verification": {
+    "single_exact_logmidpoint_verified": true,
+    "other5values_and_policycode_preserved": true,
+    "actualcoefficient_source_hashes_frozen_before_results": true,
+    "all18officialTRAINresults": true,
+    "TRAINgate_recomputed": true,
+    "charged_native_equals_trace_rows": 4896,
+    "native_replay": 0,
+    "technical_error": 0,
+    "budget_censor": 0,
+    "transferred12DEV_notopened": true,
+    "no_other_midpoints_or_candidates": true,
+    "all_processes_reaped": true,
+    "champion296_and240rollback_preserved": true,
+    "compilation_passed": true,
+    "unused_promotion_metadata_path_fixed_without_resultchanges": true
+  }
+}
