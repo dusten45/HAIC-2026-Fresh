@@ -1,0 +1,235 @@
+{
+  "stage": 298,
+  "fixed_ablation_order": [
+    "296",
+    "revert_gas",
+    "revert_brake",
+    "revert_steering",
+    "revert_lookahead",
+    "revert_lateral",
+    "revert_ceiling"
+  ],
+  "screen_roads": [
+    "T2950",
+    "T2951",
+    "T2953"
+  ],
+  "screen_identity_rule": "T2950 plusfirst2of prior296 extra5 inimmutable295identityorder:T2951/T2953",
+  "screen": [
+    {
+      "label": "296",
+      "ordinal": 0,
+      "reset_parameter": null,
+      "fully_observed": true,
+      "completions": 2,
+      "own_complete_mean_ms": 22420.0,
+      "against296": null,
+      "reused_roads": null,
+      "cached": true
+    },
+    {
+      "label": "revert_gas",
+      "ordinal": 1,
+      "reset_parameter": "gas",
+      "fully_observed": true,
+      "completions": 3,
+      "own_complete_mean_ms": 24260.0,
+      "against296": {
+        "paired_additional_completions": 1,
+        "paired_lost_completions": 0,
+        "common_completions": 2,
+        "common_mean_delta_ms": 320.0,
+        "completion_sets_equal": false
+      },
+      "reused_roads": 0,
+      "cached": null
+    },
+    {
+      "label": "revert_brake",
+      "ordinal": 2,
+      "reset_parameter": "brake",
+      "fully_observed": true,
+      "completions": 2,
+      "own_complete_mean_ms": 21900.0,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 0,
+        "common_completions": 2,
+        "common_mean_delta_ms": -520.0,
+        "completion_sets_equal": true
+      },
+      "reused_roads": 0,
+      "cached": null
+    },
+    {
+      "label": "revert_steering",
+      "ordinal": 3,
+      "reset_parameter": "steering",
+      "fully_observed": true,
+      "completions": 3,
+      "own_complete_mean_ms": 23540.0,
+      "against296": {
+        "paired_additional_completions": 1,
+        "paired_lost_completions": 0,
+        "common_completions": 2,
+        "common_mean_delta_ms": -530.0,
+        "completion_sets_equal": false
+      },
+      "reused_roads": 0,
+      "cached": null
+    },
+    {
+      "label": "revert_lookahead",
+      "ordinal": 4,
+      "reset_parameter": "lookahead",
+      "fully_observed": true,
+      "completions": 2,
+      "own_complete_mean_ms": 21770.0,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 0,
+        "common_completions": 2,
+        "common_mean_delta_ms": -650.0,
+        "completion_sets_equal": true
+      },
+      "reused_roads": 0,
+      "cached": null
+    },
+    {
+      "label": "revert_lateral",
+      "ordinal": 5,
+      "reset_parameter": "lateral",
+      "fully_observed": true,
+      "completions": 2,
+      "own_complete_mean_ms": 21910.0,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 0,
+        "common_completions": 2,
+        "common_mean_delta_ms": -510.0,
+        "completion_sets_equal": true
+      },
+      "reused_roads": 0,
+      "cached": null
+    },
+    {
+      "label": "revert_ceiling",
+      "ordinal": 6,
+      "reset_parameter": "ceiling",
+      "fully_observed": true,
+      "completions": 2,
+      "own_complete_mean_ms": 22670.0,
+      "against296": {
+        "paired_additional_completions": 1,
+        "paired_lost_completions": 1,
+        "common_completions": 1,
+        "common_mean_delta_ms": -1300.0,
+        "completion_sets_equal": false
+      },
+      "reused_roads": 0,
+      "cached": null
+    }
+  ],
+  "selected": {
+    "label": "revert_steering",
+    "ordinal": 3,
+    "reset_parameter": "steering",
+    "fully_observed": true,
+    "completions": 3,
+    "own_complete_mean_ms": 23540.0,
+    "against296": {
+      "paired_additional_completions": 1,
+      "paired_lost_completions": 0,
+      "common_completions": 2,
+      "common_mean_delta_ms": -530.0,
+      "completion_sets_equal": false
+    },
+    "reused_roads": 0,
+    "cached": null
+  },
+  "full_TRAIN": {
+    "label": "revert_steering",
+    "fully_observed": true,
+    "completions": 16,
+    "own_complete_mean_ms": 22335.0,
+    "against296": {
+      "paired_additional_completions": 1,
+      "paired_lost_completions": 2,
+      "common_completions": 15,
+      "common_mean_delta_ms": -492.0,
+      "completion_sets_equal": false
+    }
+  },
+  "full_TRAIN_eligible": false,
+  "transferred297_DEV_count": 12,
+  "fresh_DEV_opened": false,
+  "fresh_DEV": [],
+  "fresh_DEV_summary": null,
+  "judgment": null,
+  "promotion": {
+    "adopted": false,
+    "champion296_maintained": true
+  },
+  "technical_error": null,
+  "cost": {
+    "stage": 298,
+    "at_utc": "2026-10-13T19:33:12.595108+00:00",
+    "new_wrapper_actions": 8562,
+    "screen_native": 4738,
+    "extension_native": 3824,
+    "DEV_native": 0,
+    "screen_cap": 6000,
+    "extension_cap": 6000,
+    "DEV_cap": 10000,
+    "new_parameter_search_draws": 0,
+    "fixed_onecoordinate_policies": 6,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "new_simulation_episodes": 33,
+    "raw_step_ticks": 34212,
+    "raw_reset_ticks": 1683,
+    "episode_runner_CPU_s": 349.81064862499994,
+    "recorded_actor_CPU_s": 79.16456999999998,
+    "sum_episode_wall_s": 441.4594143901486,
+    "total_wall_s": 354.5523271560669,
+    "wall_scope": "Max2parallel screen/extension, orderedpairedDEV; lowremainingphasecapacity schedulessequentially to avoidreservation-inducedcensor",
+    "unconfirmed_charged_native": 0,
+    "B_operating_cap": 1230000,
+    "actual_cumulative_wrapper_actions": 1130598,
+    "research_remaining": 15402,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "no_intermediate_values_combinations_retune": true,
+  "conditional_complete_mean_limitation": true,
+  "no_damage_or_individual_loss_veto": true,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "extra_certification_runs": 0,
+  "automatic_next_experiment": false,
+  "decision": "Maintain296; fixedwinner alone evaluated, no alternateablation selection.",
+  "verification": {
+    "exact_single240value_revert_each_policy": true,
+    "other5values_and_policy_code_preserved": true,
+    "fixed_screen_identity_order_verified": true,
+    "all18screen_and15extension_officialoutcomes": true,
+    "selectedscreen3results_reused_exact": true,
+    "screen_rank_andfullTRAINgate_recomputed": true,
+    "singlewinner_no_alternate": true,
+    "transferred12DEV_notopened": true,
+    "charged_native_equals_trace_rows": 8562,
+    "native_replay": 0,
+    "technical_error": 0,
+    "budget_censor": 0,
+    "all_processes_reaped": true,
+    "champion296_and240rollback_preserved": true,
+    "compilation_passed": true
+  },
+  "full_TRAIN_additional_roads": [
+    "T2950"
+  ],
+  "full_TRAIN_lost_roads": [
+    "T2954",
+    "T2955"
+  ]
+}
