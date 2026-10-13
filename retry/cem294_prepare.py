@@ -1,0 +1,27 @@
+"""Register unfiltered4freshDEV beforedraw, freeze6D CEM and new allocation."""
+import argparse,datetime,json,zipfile
+from pathlib import Path
+import numpy as np
+from retry.path271_run import read,save,sha
+from retry.cem294_build import build,LOW,HIGH
+
+def run(R):
+ G=Path(__file__).resolve().parent.parent;D=R/'stage294';assert not D.exists();D.mkdir(mode=0o700)
+ prior=R/'project-effective-budget-v299.json';v=read(prior);assert v['actual_cumulative_wrapper_actions']==975024 and v['research_remaining']==4976
+ v.update(version=300,prior_budget_path=str(prior),prior_budget_sha256=sha(prior),B_increment=76000,B_operating_cap=1140000,research_remaining=80976,budget_reason='User294 grants76000 research; caps64000TRAIN+16000freshDEV; reserve84000unchanged.',at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat());save(R/'project-effective-budget-v300.json',v)
+ exclusions=read(R/'stage290/exclusion-snapshot.json');meta=read(R/'stage290/registration/split.json');mapping={'seed':'excluded_seeds','road_geometry_sha256':'excluded_road_geometry_sha256','obstacle_spec_sha256':'excluded_obstacle_spec_sha256','expected_physical_obstacles_sha256':'excluded_physical_obstacles_sha256','obstacle_rng_entropy':'excluded_obstacle_rng_entropy'}
+ for case in meta['cases']:
+  for src,key in mapping.items():
+   if src in case and case[src] not in exclusions[key]:exclusions[key].append(case[src])
+ if meta['family_entropy'] not in exclusions['excluded_parent_entropy_vectors']:exclusions['excluded_parent_entropy_vectors'].append(meta['family_entropy'])
+ exclusions['stage']=294;save(D/'exclusion-snapshot.json',exclusions);reg=D/'registration';reg.mkdir(mode=0o700)
+ c=read(R/'stage290/registration/selection-contract.json');c.update(stage=294,protocol='identity-only-four-v1',track_ids=[1,2,3,4],case_order=[0,1,2,3],arm_orders=[['A','B'],['B','A'],['A','B'],['B','A']],declared_split='DEV_SCREEN_294',initial_draw='oneosurandom16,fouruint32children',authorization='294fourunfiltered freshDEV fixed before firstCEMdraw; performance unavailable until finalwinnerfrozen',frozen_at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),exclusion_snapshot_path=str(D/'exclusion-snapshot.json'),exclusion_snapshot_sha256=sha(D/'exclusion-snapshot.json'));save(reg/'selection-contract.json',c);(reg/'selection-contract.sha256').write_text(sha(reg/'selection-contract.json')+'\n');(reg/'selection-contract.sha256').chmod(0o600)
+ selector=R/'stage125/prepare_selection.py';s=selector.read_text();s=s.replace('f\'holdout{contract["stage"]}-{index}\'','f\'dev-screen{contract["stage"]}-{index}\'').replace('f\'HOLDOUT_{contract["stage"]}\'','f\'DEV_SCREEN_{contract["stage"]}\'');ns={'__name__':'sourceonly_fourdev294','__file__':str(selector)};exec(compile(s,str(selector),'exec'),ns);ns['register'](reg/'selection-contract.json',reg)
+ old=read(R/'stage275/plan.json');base=dict(old['base']);base.update(worker_path=str(G/'retry/preview286_worker.py'),worker_sha256=sha(G/'retry/preview286_worker.py'));baseline=read(R/'stage270/plan.json')['baselines']
+ with zipfile.ZipFile(base['archive_path']) as z:
+  n={};exec(z.read('retry/scale238_model.py'),n);source_scales=n['SCALES'].tolist()
+ names=['cem294_build.py','cem294_prepare.py','cem294_episode.py','cem294_search.py','preview286_worker.py'];sources=[G/'retry'/n for n in names]+[Path(base['archive_path']),reg/'split.json',R/'project-effective-budget-v300.json']
+ p=dict(stage=294,deadline_utc='2026-10-16T10:01:55+00:00',base=base,cases=old['cases'],initial_observations=old['initial_observations'],baseline=baseline,roads=['O0','O2','N0','N1','N2','N3'],sandbox_path=old['sandbox_path'],registration=str(reg/'split.json'),registration_sha256=sha(reg/'split.json'),source_scales=source_scales,recipe=dict(seed=294,generations=4,new_policies_per_generation=8,initial_sigma=[.08,.08,.06,.06,.06,.04],sigma_floor=.015,old_weight=.5,elite_weight=.5,elite_max=3,low=LOW.tolist(),high=HIGH.tolist(),sample='clip(logGaussian draw,bounds)',archive='Exact240 and all fullyobserved6of6 completions, no DNF/censor/technical result in elite',rank='meanofficiallap,logparameterL2norm,registrationorder',update='mean=.5old+.5eliteMean;variance=.5oldVariance+.5elitePopulationVariance;floorSigma=.015',cache='exact float64 theta bytes',worker_parallelism=2),training_cap=64000,evaluation_cap=16000,research_available=80976,no_HOLDOUT_SEALED=True,no_reserve=True,no_champion_change=True,no_retune=True,screen_gate='Onlyfinal archivewinner frozen aftertraining, strict TRAIN meanimprovement over240; fresh4paired AB/BA; preserve baselinecompletions and improve commoncomplete mean, no individualroadthreshold',hashes={str(q):sha(q) for q in sources});save(D/'plan.json',p);(D/'plan.sha256').write_text(sha(D/'plan.json')+'\n');(D/'plan.sha256').chmod(0o600);save(D/'budget.json',dict(actions=0,training=0,evaluation=0));save(D/'screen-seal.json',dict(new_DEV=4,registered_before_first_CEM_draw=True,opened_for_performance=False,registration_sha256=sha(reg/'split.json')))
+ zero=D/'zero-package.zip';cfg=dict(base);cfg.update({k:v for k,v in build(base['archive_path'],np.zeros(6),zero).items() if k in ['archive_path','archive_sha256','members_sha256']});save(D/'zero-config.json',cfg);print('294 fourfreshDEV sealed; CEM4x8; TRAIN64000+DEV16000; B1140000/R80976',flush=True)
+if __name__=='__main__':
+ a=argparse.ArgumentParser();a.add_argument('--private-root',type=Path,required=True);run(a.parse_args().private_root.resolve())
