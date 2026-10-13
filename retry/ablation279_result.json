@@ -1,0 +1,253 @@
+{
+  "stage": 279,
+  "source_checkpoint": 64,
+  "source_checkpoint_sha256": "2743d3bf5cdcb1aa6b6992f6df7c6b795e8533d90a4205322d3e792c9d320fd2",
+  "source_stage": 276,
+  "ablations": {
+    "A": "steering residual zero; gas/brake unchanged",
+    "B": "gas/brake residual zero; steering unchanged"
+  },
+  "results": [
+    {
+      "arm": "A",
+      "road": "N0",
+      "native_actions": 307,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "unexecuted": false,
+      "lap_ms": 24500,
+      "retire_reason": null,
+      "damage": 0.4,
+      "visited": 322,
+      "total_tiles": 325,
+      "raw_step_ticks": 1226,
+      "raw_reset_ticks": 51,
+      "wall_s": 15.189978375041392,
+      "actor_CPU_s": 2.852604,
+      "Agent_ms": {
+        "median": 6.346331967506558,
+        "p95": 14.204763475572689,
+        "max": 21.622670989017934
+      },
+      "IPC_ms": {
+        "median": 9.214091987814754,
+        "max": 24.826027976814657
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false,
+      "first_command_difference": {
+        "step": 1,
+        "action": [
+          0.0,
+          0.5209064483642578,
+          0.01868312992155552
+        ],
+        "full_same_input": [
+          -0.000364907638868317,
+          0.5209064483642578,
+          0.01868312992155552
+        ],
+        "delta": [
+          0.000364907638868317,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "arm": "B",
+      "road": "N0",
+      "native_actions": 297,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "unexecuted": false,
+      "lap_ms": 23700,
+      "retire_reason": null,
+      "damage": 0.2,
+      "visited": 325,
+      "total_tiles": 325,
+      "raw_step_ticks": 1186,
+      "raw_reset_ticks": 51,
+      "wall_s": 15.237544059986249,
+      "actor_CPU_s": 2.801358,
+      "Agent_ms": {
+        "median": 6.386621971614659,
+        "p95": 12.765857006888837,
+        "max": 18.346616998314857
+      },
+      "IPC_ms": {
+        "median": 9.444439958315343,
+        "max": 23.662955034524202
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false,
+      "first_command_difference": {
+        "step": 1,
+        "action": [
+          -0.000364907638868317,
+          0.5241886973381042,
+          0.02033587545156479
+        ],
+        "full_same_input": [
+          -0.000364907638868317,
+          0.5209064483642578,
+          0.01868312992155552
+        ],
+        "delta": [
+          0.0,
+          0.0032822489738464355,
+          0.0016527455300092697
+        ]
+      }
+    },
+    {
+      "arm": "A",
+      "road": "N2",
+      "native_actions": 166,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "unexecuted": false,
+      "lap_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.4,
+      "visited": 70,
+      "total_tiles": 292,
+      "raw_step_ticks": 664,
+      "raw_reset_ticks": 51,
+      "wall_s": 9.722682082967367,
+      "actor_CPU_s": 1.489588,
+      "Agent_ms": {
+        "median": 5.6885770172812045,
+        "p95": 13.630023982841522,
+        "max": 21.260567009449005
+      },
+      "IPC_ms": {
+        "median": 8.525371027644724,
+        "max": 28.684019052889198
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false,
+      "first_command_difference": {
+        "step": 1,
+        "action": [
+          0.0,
+          0.5209064483642578,
+          0.01868312992155552
+        ],
+        "full_same_input": [
+          -0.000364907638868317,
+          0.5209064483642578,
+          0.01868312992155552
+        ],
+        "delta": [
+          0.000364907638868317,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "arm": "B",
+      "road": "N2",
+      "native_actions": 366,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "unexecuted": false,
+      "lap_ms": null,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "visited": 277,
+      "total_tiles": 292,
+      "raw_step_ticks": 1464,
+      "raw_reset_ticks": 51,
+      "wall_s": 21.672206353978254,
+      "actor_CPU_s": 3.580991,
+      "Agent_ms": {
+        "median": 7.01195900910534,
+        "p95": 14.969847543397918,
+        "max": 20.125298004131764
+      },
+      "IPC_ms": {
+        "median": 10.261830495437607,
+        "max": 29.32925400091335
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false,
+      "first_command_difference": {
+        "step": 1,
+        "action": [
+          -0.000364907638868317,
+          0.5241886973381042,
+          0.02033587545156479
+        ],
+        "full_same_input": [
+          -0.000364907638868317,
+          0.5209064483642578,
+          0.01868312992155552
+        ],
+        "delta": [
+          0.0,
+          0.0032822489738464355,
+          0.0016527455300092697
+        ]
+      }
+    }
+  ],
+  "cached_unablated276": [
+    {
+      "road": "N0",
+      "native_actions": 78,
+      "completed": false,
+      "lap_ms": null,
+      "retire_reason": "crash"
+    },
+    {
+      "road": "N2",
+      "native_actions": 222,
+      "completed": false,
+      "lap_ms": null,
+      "retire_reason": "crash"
+    }
+  ],
+  "cached240_seconds": {
+    "N0": 23.62,
+    "N2": 21.56
+  },
+  "cost": {
+    "stage": 279,
+    "at_utc": "2026-10-13T11:54:17.096173+00:00",
+    "new_wrapper_actions": 1136,
+    "new_training_actions": 0,
+    "new_evaluation_actions": 1136,
+    "new_baseline_native": 0,
+    "new_unablated_native": 0,
+    "actual_DNF": 2,
+    "censored": 0,
+    "technical_errors": 0,
+    "evaluation_wall_s": 62.004244327545166,
+    "evaluation_CPU_s": 51.330798922,
+    "actor_CPU_s": 10.724540999999999,
+    "raw_step_ticks": 4540,
+    "raw_reset_ticks": 204,
+    "offline_memory_history_pairs": 16,
+    "offline_native": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 1009000,
+    "actual_cumulative_wrapper_actions": 923208,
+    "research_remaining": 1792,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "closed_loop_intervention": true,
+  "actual_returned_action_memory_history": true,
+  "independent_evaluation": false,
+  "champion_changed": false,
+  "HOLDOUT_SEALED_used": false,
+  "new_training": false,
+  "parameter_search": false,
+  "decision": "Weak TRAIN-only reason to prioritize smaller gas/brake residual ranges in future learning; both output removals rescued N0 and neither rescued N2, so no unique output cause or champion promotion."
+}
