@@ -1,0 +1,181 @@
+{
+  "stage": 261,
+  "diagnostic": "One observed road orientation-memory recovery, rejected",
+  "diagnostic_receipts": [
+    {
+      "road": "O0",
+      "prefix_native": 184,
+      "raw_step_ticks": 736,
+      "raw_reset_ticks": 51,
+      "wall_s": 10.427501184982248,
+      "max_speed_replay_gap": 0.0,
+      "sampled_records": 15,
+      "physics_match": true
+    },
+    {
+      "road": "N0",
+      "prefix_native": 308,
+      "raw_step_ticks": 1232,
+      "raw_reset_ticks": 51,
+      "wall_s": 15.780014537042007,
+      "max_speed_replay_gap": 0.0,
+      "sampled_records": 14,
+      "physics_match": true
+    }
+  ],
+  "orientation_evidence": {
+    "road": "N0",
+    "old_plan_action": 277,
+    "reversed_plan_action": 292,
+    "exact_reversed_edges": 4
+  },
+  "offline_gate": [
+    {
+      "step": 289,
+      "old_center_nodes": 0,
+      "recovered_available": true,
+      "recovered_feasible": true
+    },
+    {
+      "step": 292,
+      "old_center_nodes": 5,
+      "recovered_available": false,
+      "recovered_feasible": null,
+      "old_vs_remembered_direction_dot": -0.9999999999999999
+    }
+  ],
+  "results": [
+    {
+      "road": "O0",
+      "native_actions": 326,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 26060,
+      "retire_reason": null,
+      "damage": 0.0,
+      "visited": 315,
+      "total_tiles": 326,
+      "tracking_error_m": {
+        "mean": 2.562493626086385,
+        "p95": 6.453530371299366,
+        "max": 14.179422084335457
+      },
+      "replans": 109,
+      "successful_replans": 102,
+      "geometrically_infeasible_replans": 2,
+      "objective_calls": 2550,
+      "planning_ms": {
+        "median": 46.938066952861845,
+        "p95": 60.98025359679013,
+        "max": 71.97592803277075,
+        "sum": 5295.372965745628
+      },
+      "control_ms": {
+        "median": 0.30282247462309897,
+        "p95": 54.93461346486583,
+        "max": 72.20508495811373
+      },
+      "raw_step_ticks": 1303,
+      "raw_reset_ticks": 51,
+      "wall_s": 17.04554341203766,
+      "GT_local": true,
+      "pixel_only": false,
+      "global_plan_loaded": false,
+      "cached_260_lap_ms": 26060,
+      "cached_260_retire_action": 326,
+      "cached_240_lap_ms": 23660,
+      "cached_259_lap_ms": 22520,
+      "first_action_difference_vs260": null,
+      "identical_actions_vs260": 326,
+      "first_collision": null,
+      "accepted_replans": 100,
+      "unavailable_replans": 7,
+      "final_direction_memory_edges": 314
+    },
+    {
+      "road": "N0",
+      "native_actions": 130,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "visited": 99,
+      "total_tiles": 325,
+      "tracking_error_m": {
+        "mean": 4.8350468016323855,
+        "p95": 14.692180972518175,
+        "max": 18.232655780594744
+      },
+      "replans": 44,
+      "successful_replans": 39,
+      "geometrically_infeasible_replans": 1,
+      "objective_calls": 975,
+      "planning_ms": {
+        "median": 47.08825398120098,
+        "p95": 62.11736327386461,
+        "max": 90.57021501939744,
+        "sum": 2135.4183997609653
+      },
+      "control_ms": {
+        "median": 0.3111864789389074,
+        "p95": 55.665654997574165,
+        "max": 90.80721397185698
+      },
+      "raw_step_ticks": 520,
+      "raw_reset_ticks": 51,
+      "wall_s": 7.0675235480302945,
+      "GT_local": true,
+      "pixel_only": false,
+      "global_plan_loaded": false,
+      "cached_260_lap_ms": null,
+      "cached_260_retire_action": 313,
+      "cached_240_lap_ms": 23620,
+      "cached_259_lap_ms": 21740,
+      "first_action_difference_vs260": 100,
+      "identical_actions_vs260": 99,
+      "first_collision": 126,
+      "accepted_replans": 38,
+      "unavailable_replans": 5,
+      "final_direction_memory_edges": 121
+    }
+  ],
+  "cost": {
+    "stage": 261,
+    "at_utc": "2026-10-13T04:08:50.371474+00:00",
+    "native_cap": 3865,
+    "new_wrapper_actions": 948,
+    "diagnostic_prefix_actions": 492,
+    "candidate_evaluation_actions": 456,
+    "new_prefix_replays": 2,
+    "new_candidate_runs": 2,
+    "baseline_results_replayed": 0,
+    "raw_step_ticks": 3791,
+    "raw_reset_ticks": 204,
+    "native_episode_wall_s": 50.32058268209221,
+    "execution_wall_s": 50.36172938346863,
+    "diagnostic_geometry_objectives": 3625,
+    "candidate_geometry_objectives": 3525,
+    "offline_gate_geometry_objectives": 450,
+    "offline_gate_accounting": "Initial script type-error after eight available sample plans:200; corrected reporting script ten available sample plans:250. No candidate change, physics query or native run in either gate.",
+    "model_physics_ticks": 0,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 908000,
+    "actual_cumulative_wrapper_actions": 821083,
+    "research_remaining": 2917,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "promotion": false,
+  "code_sha256": {
+    "visible261_plan.py": "2f85d82314108c251e4efe1c55db7626ea2feba02f856ed5a34fd72ea32b2785",
+    "visible261_run.py": "e770a9e906cd549f7ea271a58cab79d2b23188a794dc31dc6b2d62a63b0bdd1c",
+    "visible261_diagnose.py": "6958fb2d37162f02945f5ee54c27d5e7e80386b04a64345d03dc760566c2c131"
+  },
+  "contract_sha256": "418bc1777ef69bc727de6e2b480da558879f6764b3856e47c983bad2967f9405",
+  "frozen_plan_sha256": "9eee07952f18c514222d7a8a4a612e7b101630e2e290b2fc02643494fe0597a3",
+  "interpretation": "Observed orientation discontinuity exists, but direction memory with unchanged retained-plan fallback fails earlier on N0. No future-info causal isolation or pixel impossibility claim. Next minimal observation at actions97..103: signed body/velocity orientation and retained-plan target/feedforward terms, before further experiment."
+}
