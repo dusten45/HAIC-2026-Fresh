@@ -1,0 +1,99 @@
+{
+  "stage": 246,
+  "split": "S1 DEV_SCREEN_243, previously244screen,245/246diagnostic reuse; not independent evaluation",
+  "change": "Only brake residual zero fromaction1; final244actor gas residual onlegalfeatures, allbase/steering/norm/head/nominalmemory fixed.",
+  "result": {
+    "completed": true,
+    "censored": false,
+    "lap_ms": 21120,
+    "native_actions": 265,
+    "damage": 0.4,
+    "visited": 297,
+    "total_tiles": 297,
+    "collision_actions": [
+      182,
+      208
+    ],
+    "target_missing_actions": [],
+    "first_speed_below_1": null,
+    "last_new_tile_action": 262,
+    "max_no_new_tile_streak": 3,
+    "end_off_track_counter": 3,
+    "hull_longitudinal_below_minus_point1": [],
+    "first_difference_from_240": {
+      "pixel": 6,
+      "legal_feature": 25,
+      "path_forward": 30,
+      "path_lateral": 30,
+      "curvature": 30,
+      "steering": 30
+    },
+    "max_steering_memory_float32_difference": 1.4454599961410963e-08,
+    "max_own_gas_residual": 0.0018936991691589355,
+    "brake_restoration_exact": true,
+    "steering_unchanged": true
+  },
+  "historical_controls": [
+    {
+      "policy": "240 noresidual",
+      "completed": true,
+      "lap_ms": 21000,
+      "damage": 0.2,
+      "official_terminal_action": 263
+    },
+    {
+      "policy": "244 bothresiduals",
+      "completed": false,
+      "actual_DNF": true,
+      "retire_reason": "off_track",
+      "official_terminal_action": 313,
+      "visited": 237,
+      "damage": 0.4
+    },
+    {
+      "policy": "245 brakeonly, gasrestored",
+      "completed": false,
+      "actual_DNF": null,
+      "censored": true,
+      "observed_actions": 235,
+      "visited": 237,
+      "end_speed_m_s": 0.2605024485357243,
+      "damage": 0.6
+    }
+  ],
+  "interpretation": "Brake cancellation restores official completion under this fixed S1 initial condition, while gas-only residual completes and brake-only historical prefix stopped. This implicates brake-channel-driven pixel/dynamics feedback in original failure; it does not prove a universal brake formula error or reject residual RL.",
+  "limitations": [
+    "245brake-only endedat235, so no official terminal for that historicalcontrast.",
+    "246 is one reused diagnostic road, not independent generalization or promotion evidence.",
+    "No matched later-state brake ablation identifies a unique feature/timing; steering changes remain downstream feedback."
+  ],
+  "next_direction": "Inspect brake residual sensitivity around precontact legal-feature/route changes before more RL; use targeted brake-channel constraint/ablation research only when separately scoped, with fresh DEV evidence for promotion.",
+  "cost": {
+    "stage": 246,
+    "at_utc": "2026-10-13T00:35:53.627927+00:00",
+    "native_cap": 600,
+    "new_wrapper_actions": 265,
+    "phases": {
+      "brake_restored": 265
+    },
+    "wall_s": 11.84432077407837,
+    "evaluator_CPU_s": 9.791383195,
+    "base_actor_CPU_s": 2.070081,
+    "raw_step_ticks": 1057,
+    "raw_reset_ticks": 51,
+    "max_base_IPC_ms": 26.261524006258696,
+    "actual_cumulative_wrapper_actions": 792950,
+    "research_remaining": 5050,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 882000,
+    "new_paid_resources": 0,
+    "new_learning": 0,
+    "new_GT_model_queries": 0
+  },
+  "likelihood_reward_rechecked": false,
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
