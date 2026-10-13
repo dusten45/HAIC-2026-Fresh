@@ -1,0 +1,202 @@
+{
+  "stage": 257,
+  "formula": "Verbatim256paired K=.06*(max(0,legalfeature4speed)/.54+5),d=min(current240brake,current240gas/K),gas-=K*d,brake-=d,clip0..1. Everyaction; no extra threshold orratiofit.",
+  "original240_preserved": true,
+  "legal_inputs": "Only original240pixels/features/controller output; noGTwheelomega/forces.",
+  "counts": {
+    "baseline_complete": 8,
+    "candidate_complete": 6,
+    "actual_DNF": 2,
+    "censored": 0,
+    "unexecuted": 0,
+    "lost_completion": 2
+  },
+  "roads": [
+    {
+      "road": "O0",
+      "baseline_lap_ms": 23660,
+      "baseline_completed": true,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 23600,
+      "paired_delta_ms": -60,
+      "damage": 0.4,
+      "retire_reason": null,
+      "native_actions": 296,
+      "nonzero_reduction_actions": 296
+    },
+    {
+      "road": "O2",
+      "baseline_lap_ms": 20980,
+      "baseline_completed": true,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 21000,
+      "paired_delta_ms": 20,
+      "damage": 0.2,
+      "retire_reason": null,
+      "native_actions": 263,
+      "nonzero_reduction_actions": 263
+    },
+    {
+      "road": "N0",
+      "baseline_lap_ms": 23620,
+      "baseline_completed": true,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "paired_delta_ms": null,
+      "damage": 0.6000000000000001,
+      "retire_reason": "off_track",
+      "native_actions": 327,
+      "nonzero_reduction_actions": 325
+    },
+    {
+      "road": "N1",
+      "baseline_lap_ms": 17080,
+      "baseline_completed": true,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 16980,
+      "paired_delta_ms": -100,
+      "damage": 0.0,
+      "retire_reason": null,
+      "native_actions": 213,
+      "nonzero_reduction_actions": 213
+    },
+    {
+      "road": "N2",
+      "baseline_lap_ms": 21560,
+      "baseline_completed": true,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "paired_delta_ms": null,
+      "damage": 1.0,
+      "retire_reason": "crash",
+      "native_actions": 66,
+      "nonzero_reduction_actions": 66
+    },
+    {
+      "road": "N3",
+      "baseline_lap_ms": 18760,
+      "baseline_completed": true,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 18160,
+      "paired_delta_ms": -600,
+      "damage": 0.0,
+      "retire_reason": null,
+      "native_actions": 228,
+      "nonzero_reduction_actions": 228
+    },
+    {
+      "road": "S0",
+      "baseline_lap_ms": 22020,
+      "baseline_completed": true,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 21680,
+      "paired_delta_ms": -340,
+      "damage": 0.0,
+      "retire_reason": null,
+      "native_actions": 272,
+      "nonzero_reduction_actions": 272
+    },
+    {
+      "road": "S1",
+      "baseline_lap_ms": 19220,
+      "baseline_completed": true,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 19700,
+      "paired_delta_ms": 480,
+      "damage": 0.0,
+      "retire_reason": null,
+      "native_actions": 247,
+      "nonzero_reduction_actions": 247
+    }
+  ],
+  "common_completed_mean_paired_delta_ms": -100.0,
+  "action_reduction": {
+    "channels": [
+      "gas",
+      "brake"
+    ],
+    "nonzero_actions": 1910,
+    "mean": [
+      0.35665603056216366,
+      0.06181552787198202
+    ],
+    "median": [
+      0.38787324726581573,
+      0.06486693536862731
+    ],
+    "p95": [
+      0.4872483467683196,
+      0.08318143524229527
+    ],
+    "max": [
+      0.5345292687416077,
+      0.13072985410690308
+    ],
+    "min": [
+      0.0,
+      0.0
+    ],
+    "K_range": [
+      0.3,
+      6.549999999999999
+    ]
+  },
+  "cost": {
+    "stage": 257,
+    "at_utc": "2026-10-13T02:52:09.073765+00:00",
+    "native_cap": 3861,
+    "expected_baseline_native": 2091,
+    "new_wrapper_actions": 1912,
+    "evaluation_wall_s": 84.9821720123291,
+    "evaluation_CPU_s": 68.962450031,
+    "base_actor_CPU_s": 16.102887,
+    "raw_step_ticks": 7634,
+    "raw_reset_ticks": 408,
+    "new_native_runs": 8,
+    "baseline_reused_episodes": 8,
+    "model_queries": 0,
+    "model_ticks": 0,
+    "new_fits": 0,
+    "full_Agent_compute_ms": {
+      "count": 1912,
+      "median": 5.55267499294132,
+      "p95": 11.80554872844368,
+      "max": 42.76178398868069
+    },
+    "policy_IPC_ms": {
+      "count": 1912,
+      "median": 8.063609508099034,
+      "p95": 14.827173473895517,
+      "max": 47.99698403803632
+    },
+    "B_operating_cap": 904000,
+    "actual_cumulative_wrapper_actions": 818051,
+    "research_remaining": 1949,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "new_paid_resources": 0
+  },
+  "decision": "Close thispairedlaw: N0off_track andN2crash lose2baseline completions. Commoncompletion100msmean gain doesnot compensate lostcompletions. No extra gate/ratio sweep.",
+  "next_recommendation": "Keep240; noindependentcomparison orfurtherpaired-law variant recommended. No additionalresearch budget requested.",
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "technical_error": null
+}
