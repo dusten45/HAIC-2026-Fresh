@@ -1,0 +1,276 @@
+{
+  "stage": 268,
+  "diagnostic": "Three road-common curvature/drive/brake coefficients, actualsim training+frozen transfer positive",
+  "analysis": {
+    "training": {
+      "new_episodes": 6,
+      "completed": 4,
+      "actual_DNF": 2,
+      "censored": 0,
+      "technical_error": null,
+      "results": [
+        {
+          "label": "g0_p1",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": null,
+          "native_actions": 254,
+          "retire_reason": "off_track",
+          "damage": 0.0,
+          "visited": 184,
+          "first_collision": null,
+          "first_large_error": 145,
+          "tracking_error_m": {
+            "mean": 11.055666311213466,
+            "p95": 30.982721504026717,
+            "max": 34.31047345019751
+          },
+          "wall_s": 9.461924556002486
+        },
+        {
+          "label": "g0_p2",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": 20220,
+          "native_actions": 253,
+          "retire_reason": null,
+          "damage": 0.0,
+          "visited": 326,
+          "first_collision": null,
+          "first_large_error": null,
+          "tracking_error_m": {
+            "mean": 0.7126665483335698,
+            "p95": 1.655517546052498,
+            "max": 2.3298766343581563
+          },
+          "wall_s": 10.190434427990112
+        },
+        {
+          "label": "g0_p3",
+          "completed": false,
+          "actual_DNF": true,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": null,
+          "native_actions": 372,
+          "retire_reason": "off_track",
+          "damage": 0.0,
+          "visited": 140,
+          "first_collision": null,
+          "first_large_error": 91,
+          "tracking_error_m": {
+            "mean": 12.154071238450959,
+            "p95": 28.75235969191223,
+            "max": 31.302466972704973
+          },
+          "wall_s": 14.778333524009213
+        },
+        {
+          "label": "g1_p1",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": 19460,
+          "native_actions": 244,
+          "retire_reason": null,
+          "damage": 0.0,
+          "visited": 326,
+          "first_collision": null,
+          "first_large_error": null,
+          "tracking_error_m": {
+            "mean": 0.6965354127937665,
+            "p95": 1.687815973050669,
+            "max": 2.2367209169640563
+          },
+          "wall_s": 9.877011939010117
+        },
+        {
+          "label": "g1_p2",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": 20140,
+          "native_actions": 252,
+          "retire_reason": null,
+          "damage": 0.0,
+          "visited": 326,
+          "first_collision": null,
+          "first_large_error": null,
+          "tracking_error_m": {
+            "mean": 0.6672886999109428,
+            "p95": 1.6819017905386504,
+            "max": 2.189952004044006
+          },
+          "wall_s": 8.819496919983067
+        },
+        {
+          "label": "g1_p3",
+          "completed": true,
+          "actual_DNF": false,
+          "censored": false,
+          "unexecuted": false,
+          "lap_ms": 19400,
+          "native_actions": 243,
+          "retire_reason": null,
+          "damage": 0.0,
+          "visited": 326,
+          "first_collision": null,
+          "first_large_error": null,
+          "tracking_error_m": {
+            "mean": 0.7309487910054431,
+            "p95": 1.6935971724484267,
+            "max": 2.097284302954953
+          },
+          "wall_s": 7.800259028968867
+        }
+      ],
+      "generations": [
+        {
+          "generation": 0,
+          "actual_new_completed": 1,
+          "actual_new_DNF": 2,
+          "actual_new_censored": 0,
+          "completed_population_including_reuse": 2,
+          "incumbent": "cached265_O0_1.5",
+          "incumbent_lap_ms": 19700
+        },
+        {
+          "generation": 1,
+          "actual_new_completed": 3,
+          "actual_new_DNF": 0,
+          "actual_new_censored": 0,
+          "completed_population_including_reuse": 4,
+          "incumbent": "g1_p3",
+          "incumbent_lap_ms": 19400
+        }
+      ],
+      "best_label": "g1_p3",
+      "best_lap_ms": 19400,
+      "cached_constant1_5_lap_ms": 19700,
+      "delta_ms": -300,
+      "damage": 0.0,
+      "best_tracking_error_m": {
+        "mean": 0.7309487910054431,
+        "p95": 1.6935971724484267,
+        "max": 2.097284302954953
+      },
+      "best_first_large_error": null,
+      "previous267_best_lap_ms": 19660,
+      "delta_vs267_ms": -260
+    },
+    "transfer": {
+      "label": "transfer_N0",
+      "road": "N0",
+      "phase": "transfer",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "unexecuted": false,
+      "lap_ms": 19900,
+      "native_actions": 249,
+      "retire_reason": null,
+      "damage": 0.0,
+      "visited": 325,
+      "total_tiles": 325,
+      "first_collision": null,
+      "first_large_error": null,
+      "tracking_error_m": {
+        "mean": 0.6829590695482198,
+        "p95": 1.7242319269277129,
+        "max": 2.269436862496933
+      },
+      "actual_speed_m_s": {
+        "median": 57.38825079331175,
+        "max": 94.78262651487937
+      },
+      "target_speed_m_s": {
+        "median": 81.38720054063948,
+        "max": 140.37849545825102
+      },
+      "pace_on_path": {
+        "min": 1.5001324395409448,
+        "max": 1.5548880920785555
+      },
+      "raw_step_ticks": 996,
+      "raw_reset_ticks": 51,
+      "wall_s": 8.190505300008226,
+      "oracle_compute_ms": {
+        "median": 0.19245099974796176,
+        "max": 0.7775750127620995
+      },
+      "GT_only": true,
+      "controller_positive_clamp_preserved": true,
+      "cached_constant1_5_lap_ms": 20200,
+      "delta_ms": -300,
+      "previous267_lap_ms": 22200,
+      "delta_vs267_ms": -2300,
+      "parameters_frozen_before_N0": true,
+      "no_post_transfer_updates": true
+    },
+    "representation": {
+      "coefficients": 3,
+      "previous267_coefficients": 8,
+      "no_roadID_or_absolute_phase": true,
+      "cyclic_equivariance_checked": true,
+      "selected_pace_range_O0": {
+        "min": 1.5000891534190663,
+        "max": 1.5530021252509796
+      },
+      "selected_pace_range_N0": {
+        "min": 1.5001324395409448,
+        "max": 1.5548880920785555
+      },
+      "selected_parameters_sha256": "ea31d5a16b94b92e860635727ff9421d07e4db7eb987ec757dfff5645ef73c9b"
+    },
+    "recommendation": "Freeze as promising GTdiagnostic, no pixel/champion promotion. Bothroads improve0.30s vsconstant1.5 but6candidate search has2failures; testfrozenrobustness separatelybeforemoreoptimization. Selectedpace1.50..1.55 mostlyraisesaggressiveness; noextra scalarcontrol wasrun, sofewerDOF/conditioning benefitnotcausallyisolated. NoN0retraining/phaseknots/gain sweep."
+  },
+  "cost": {
+    "stage": 268,
+    "at_utc": "2026-10-13T05:52:41.631220+00:00",
+    "native_cap": 5000,
+    "training_cap": 3000,
+    "transfer_reserved": 2000,
+    "new_wrapper_actions": 1867,
+    "training_native_actions": 1618,
+    "transfer_native_actions": 249,
+    "new_training_episodes": 6,
+    "new_transfer_episodes": 1,
+    "cached_constant_reference_reused": 1,
+    "cached_incumbent_population_entries": 2,
+    "duplicate_native_replays": 0,
+    "prefix_native": 0,
+    "raw_step_ticks": 7465,
+    "raw_reset_ticks": 357,
+    "actual_episode_wall_s": 69.11796569597209,
+    "execution_wall_s": 69.44363141059875,
+    "CPU_s": 69.311420679,
+    "CEM_parameter_updates": 2,
+    "new_affine_or_neural_fits": 0,
+    "new_geometry_solves": 0,
+    "numerical_conditioned_profiles": 7,
+    "model_queries": 0,
+    "model_physics_ticks": 0,
+    "all_fitness_episodes_native": true,
+    "render_skipped": false,
+    "new_paid_resources": 0,
+    "B_operating_cap": 920000,
+    "actual_cumulative_wrapper_actions": 829430,
+    "research_remaining": 6570,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "promotion": false,
+  "code_sha256": {
+    "pace268_profile.py": "7af5a396e2a17b6d45e78c3447a8e5e25a4594bd909d3898d8fcb911ee144162",
+    "pace268_run.py": "0f1ddd47b4cd0d3565eacab0e2ddac71f68f35e2888885f315fe019cf5ec6d2c"
+  },
+  "contract_sha256": "65ddf6c992008bdb351f29891e089c6190c14d8ee821ca126bf21c2c6b990bfc",
+  "frozen_plan_sha256": "197b11d7d177c1077a30e001f8e99411d6d5e96ea9efbb0dcd0664776634a316",
+  "interpretation": "Positive two-knownDEV evidence, not frictionconstant-only exactvehicle limits, broadgeneralization/globaloptimum orpixelperformance. Differentsearchbudget/seed vs267 andnear-globalpaceincrease meanrepresentation advantage isnot fullyisolated. Failures/physics costretained; noautomaticnewexperiment."
+}
