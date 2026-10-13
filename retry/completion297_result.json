@@ -1,0 +1,401 @@
+{
+  "stage": 297,
+  "recipe": {
+    "seed": 297,
+    "generations": 2,
+    "new_policies_per_generation": 8,
+    "initial_sigma": [
+      0.04,
+      0.04,
+      0.03,
+      0.03,
+      0.03,
+      0.02
+    ],
+    "sigma_floor": 0.015,
+    "low": [
+      -0.2231435513142097,
+      -0.2231435513142097,
+      -0.2231435513142097,
+      -0.2231435513142097,
+      -0.2231435513142097,
+      -0.11778303565638351
+    ],
+    "high": [
+      0.22314355131420974,
+      0.22314355131420974,
+      0.22314355131420974,
+      0.22314355131420974,
+      0.22314355131420974,
+      0.10536051565782635
+    ],
+    "coordinate_system": "Absolute relative240 sixlogparams, ranges unchanged; initialmean exact296theta",
+    "old_weight": 0.5,
+    "elite_weight": 0.5,
+    "elite_max": 3,
+    "rank": "Fullyobserved18TRAIN only: -completioncount, owncompletedroadmeanofficiallap, L2absolute240logtheta, registrationorder(240=0,296=1,new=2..17)",
+    "update": "Mean=.5old+.5eliteMean; diagonalVariance=.5oldVariance+.5elitePopulationVariance; floorSigma=.015",
+    "cache": "Exactfloat64 theta bytes, perTRAINroad cachedofficialoutcomes; no DEV cache/selection use",
+    "worker_parallelism": 2
+  },
+  "initial_center": "Exactfrozen296g1p4; parametercoordsrelative240, no DEVuse",
+  "initial_archive": [
+    {
+      "label": "240",
+      "completions": 13,
+      "own_complete_mean_ms": 21401.53846153846
+    },
+    {
+      "label": "296",
+      "completions": 17,
+      "own_complete_mean_ms": 22894.117647058825
+    }
+  ],
+  "completed_generations": 2,
+  "processed_new_policies": 16,
+  "fully_observed_new_policies": 16,
+  "training": [
+    {
+      "label": "g1p1",
+      "ordinal": 2,
+      "fully_observed": true,
+      "completions": 14,
+      "own_complete_mean_ms": 21902.85714285714,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 3,
+        "common_completions": 14,
+        "common_mean_delta_ms": -714.2857142857143,
+        "completion_sets_equal": false
+      },
+      "new_native": 4908,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g1p2",
+      "ordinal": 3,
+      "fully_observed": true,
+      "completions": 12,
+      "own_complete_mean_ms": 22591.666666666668,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 5,
+        "common_completions": 12,
+        "common_mean_delta_ms": 123.33333333333333,
+        "completion_sets_equal": false
+      },
+      "new_native": 4537,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g1p3",
+      "ordinal": 4,
+      "fully_observed": true,
+      "completions": 13,
+      "own_complete_mean_ms": 23027.69230769231,
+      "against296": {
+        "paired_additional_completions": 1,
+        "paired_lost_completions": 5,
+        "common_completions": 12,
+        "common_mean_delta_ms": 355.0,
+        "completion_sets_equal": false
+      },
+      "new_native": 4791,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g1p4",
+      "ordinal": 5,
+      "fully_observed": true,
+      "completions": 14,
+      "own_complete_mean_ms": 22470.0,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 3,
+        "common_completions": 14,
+        "common_mean_delta_ms": -224.28571428571428,
+        "completion_sets_equal": false
+      },
+      "new_native": 4797,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g1p5",
+      "ordinal": 6,
+      "fully_observed": true,
+      "completions": 11,
+      "own_complete_mean_ms": 22356.363636363636,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 6,
+        "common_completions": 11,
+        "common_mean_delta_ms": 212.72727272727272,
+        "completion_sets_equal": false
+      },
+      "new_native": 4778,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g1p6",
+      "ordinal": 7,
+      "fully_observed": true,
+      "completions": 11,
+      "own_complete_mean_ms": 23270.909090909092,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 6,
+        "common_completions": 11,
+        "common_mean_delta_ms": 1201.8181818181818,
+        "completion_sets_equal": false
+      },
+      "new_native": 4744,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g1p7",
+      "ordinal": 8,
+      "fully_observed": true,
+      "completions": 14,
+      "own_complete_mean_ms": 21901.428571428572,
+      "against296": {
+        "paired_additional_completions": 1,
+        "paired_lost_completions": 4,
+        "common_completions": 13,
+        "common_mean_delta_ms": -346.15384615384613,
+        "completion_sets_equal": false
+      },
+      "new_native": 4708,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g1p8",
+      "ordinal": 9,
+      "fully_observed": true,
+      "completions": 14,
+      "own_complete_mean_ms": 22700.0,
+      "against296": {
+        "paired_additional_completions": 1,
+        "paired_lost_completions": 4,
+        "common_completions": 13,
+        "common_mean_delta_ms": -33.84615384615385,
+        "completion_sets_equal": false
+      },
+      "new_native": 5591,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g2p1",
+      "ordinal": 10,
+      "fully_observed": true,
+      "completions": 13,
+      "own_complete_mean_ms": 21773.846153846152,
+      "against296": {
+        "paired_additional_completions": 1,
+        "paired_lost_completions": 5,
+        "common_completions": 12,
+        "common_mean_delta_ms": -428.3333333333333,
+        "completion_sets_equal": false
+      },
+      "new_native": 4264,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g2p2",
+      "ordinal": 11,
+      "fully_observed": true,
+      "completions": 13,
+      "own_complete_mean_ms": 22372.30769230769,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 4,
+        "common_completions": 13,
+        "common_mean_delta_ms": 106.15384615384616,
+        "completion_sets_equal": false
+      },
+      "new_native": 4377,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g2p3",
+      "ordinal": 12,
+      "fully_observed": true,
+      "completions": 12,
+      "own_complete_mean_ms": 22735.0,
+      "against296": {
+        "paired_additional_completions": 1,
+        "paired_lost_completions": 6,
+        "common_completions": 11,
+        "common_mean_delta_ms": -154.54545454545453,
+        "completion_sets_equal": false
+      },
+      "new_native": 5327,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g2p4",
+      "ordinal": 13,
+      "fully_observed": true,
+      "completions": 13,
+      "own_complete_mean_ms": 21866.153846153848,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 4,
+        "common_completions": 13,
+        "common_mean_delta_ms": -667.6923076923077,
+        "completion_sets_equal": false
+      },
+      "new_native": 4848,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g2p5",
+      "ordinal": 14,
+      "fully_observed": true,
+      "completions": 15,
+      "own_complete_mean_ms": 22152.0,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 2,
+        "common_completions": 15,
+        "common_mean_delta_ms": -168.0,
+        "completion_sets_equal": false
+      },
+      "new_native": 5042,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g2p6",
+      "ordinal": 15,
+      "fully_observed": true,
+      "completions": 13,
+      "own_complete_mean_ms": 23124.615384615383,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 4,
+        "common_completions": 13,
+        "common_mean_delta_ms": 395.38461538461536,
+        "completion_sets_equal": false
+      },
+      "new_native": 4868,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g2p7",
+      "ordinal": 16,
+      "fully_observed": true,
+      "completions": 13,
+      "own_complete_mean_ms": 23435.384615384617,
+      "against296": {
+        "paired_additional_completions": 1,
+        "paired_lost_completions": 5,
+        "common_completions": 12,
+        "common_mean_delta_ms": 251.66666666666666,
+        "completion_sets_equal": false
+      },
+      "new_native": 4813,
+      "reused_TRAIN_roads": 0
+    },
+    {
+      "label": "g2p8",
+      "ordinal": 17,
+      "fully_observed": true,
+      "completions": 13,
+      "own_complete_mean_ms": 21716.923076923078,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 4,
+        "common_completions": 13,
+        "common_mean_delta_ms": -287.6923076923077,
+        "completion_sets_equal": false
+      },
+      "new_native": 4373,
+      "reused_TRAIN_roads": 0
+    }
+  ],
+  "winner": {
+    "label": "296",
+    "completions": 17,
+    "own_complete_mean_ms": 22894.117647058825,
+    "against296": {
+      "paired_additional_completions": 0,
+      "paired_lost_completions": 0,
+      "common_completions": 17,
+      "common_mean_delta_ms": 0.0,
+      "completion_sets_equal": true
+    }
+  },
+  "fresh_DEV_registered_before_draws": 12,
+  "fresh_DEV_opened": false,
+  "fresh_DEV": [],
+  "fresh_DEV_summary": null,
+  "judgment": null,
+  "promotion": {
+    "adopted": false,
+    "champion296_maintained": true
+  },
+  "technical_error": null,
+  "cost": {
+    "stage": 297,
+    "at_utc": "2026-10-13T19:16:45.313623+00:00",
+    "new_wrapper_actions": 76766,
+    "training_native": 76766,
+    "DEV_native": 0,
+    "training_cap": 85000,
+    "DEV_cap": 10000,
+    "new_parameter_draws": 16,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "new_simulation_episodes": 288,
+    "raw_step_ticks": 306771,
+    "raw_reset_ticks": 14688,
+    "episode_runner_CPU_s": 3542.2682108489994,
+    "recorded_actor_CPU_s": 785.1613820000005,
+    "sum_episode_wall_s": 4596.218637631857,
+    "total_search_wall_s": 2664.9753470420837,
+    "training_search_wall_s": 2664.9735276699066,
+    "wall_scope": "Max2parallel TRAIN processes; DEVpairedordered; episodewall sum overlaps and isnot overall elapsed",
+    "unconfirmed_charged_native": 0,
+    "B_operating_cap": 1230000,
+    "actual_cumulative_wrapper_actions": 1122036,
+    "research_remaining": 23964,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "old294_and296_DEV_used_for_training": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "no_damage_or_individualcompletion_veto": true,
+  "conditional_completedset_time_limitation": true,
+  "extra_certification_runs": 0,
+  "automatic_next_experiment": false,
+  "decision": "Maintain296 underfixedexperiment; no retune/alternatecandidate/extra validation.",
+  "verification": {
+    "all16draws_and2elite_updates_replayed_exact": true,
+    "initial_center_exact296": true,
+    "initial240_296_18road_results_cached": true,
+    "all288officialepisodes": true,
+    "technical_error": 0,
+    "budget_censor": 0,
+    "native_replay": 0,
+    "no_duplicate_policy_road_pairs": true,
+    "allcharged_native_equals_trace_rows": 76766,
+    "all_processes_reaped": true,
+    "fresh12DEV_registered_before_draws_and_notopened": true,
+    "old294_296DEV_notused_for_training": true,
+    "champion296_and240rollback_preserved": true,
+    "closure_metadata_compile_repair_only": true,
+    "compilation_passed": true
+  },
+  "best_new_candidate": {
+    "label": "g2p5",
+    "completions": 15,
+    "own_complete_mean_ms": 22152.0,
+    "against296": {
+      "paired_additional_completions": 0,
+      "paired_lost_completions": 2,
+      "common_completions": 15,
+      "common_mean_delta_ms": -168.0,
+      "completion_sets_equal": false
+    }
+  }
+}
