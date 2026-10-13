@@ -1,0 +1,271 @@
+{
+  "stage": 262,
+  "diagnostic": "Forward-target validity guard rejected; no demonstrated coordinate/arc/speed arithmetic bug",
+  "diagnostic_receipts": [
+    {
+      "stage": 260,
+      "prefix_actions": 103,
+      "raw_step_ticks": 412,
+      "raw_reset_ticks": 51,
+      "wall_s": 5.933190395007841,
+      "objective_calls": 775,
+      "planning_ms_sum": 1843.2932863943279,
+      "matched_actions_bitexact": true,
+      "matched_physics": true,
+      "selected_trace_rows": 7
+    },
+    {
+      "stage": 261,
+      "prefix_actions": 103,
+      "raw_step_ticks": 412,
+      "raw_reset_ticks": 51,
+      "wall_s": 5.701364397013094,
+      "objective_calls": 775,
+      "planning_ms_sum": 1707.1125108050182,
+      "matched_actions_bitexact": true,
+      "matched_physics": true,
+      "selected_trace_rows": 7
+    }
+  ],
+  "selected_scalar_evidence": [
+    {
+      "stage": 260,
+      "step": 100,
+      "plan_created": 100,
+      "target_body_forward": 6.016401466922984,
+      "target_velocity_forward": -1.806679998720311,
+      "velocity_hull_dot": 0.8824183704957128,
+      "arc": 0.0,
+      "goal_arc": 12.918280668267347,
+      "plan_length": 24.589660775942704,
+      "desired": 43.99218485576066,
+      "feedforward": 34.042966120769044,
+      "feedback": 0.0,
+      "command_acc": 34.042966120769044
+    },
+    {
+      "stage": 261,
+      "step": 100,
+      "plan_created": 97,
+      "target_body_forward": 5.149882838618789,
+      "target_velocity_forward": 9.947408077750035,
+      "velocity_hull_dot": 0.8824183704957128,
+      "arc": 6.65809974083875,
+      "goal_arc": 19.576380409106097,
+      "plan_length": 31.528313560302728,
+      "desired": 47.634947758105284,
+      "feedforward": -2.3935500874076325,
+      "feedback": 5.464144353516932,
+      "command_acc": 3.0705942661092998
+    },
+    {
+      "stage": 261,
+      "step": 101,
+      "plan_created": 97,
+      "target_body_forward": 0.1579990566030071,
+      "target_velocity_forward": 5.979801728482818,
+      "velocity_hull_dot": 0.8782444848910361,
+      "arc": 8.682140388201816,
+      "goal_arc": 21.63855094428501,
+      "plan_length": 31.528313560302728,
+      "desired": 47.5331354171024,
+      "feedforward": -2.3935500874076325,
+      "feedback": 5.051449334177271,
+      "command_acc": 2.657899246769638
+    },
+    {
+      "stage": 261,
+      "step": 102,
+      "plan_created": 97,
+      "target_body_forward": -3.456563534571801,
+      "target_velocity_forward": 1.1634456831402982,
+      "velocity_hull_dot": 0.9278874107347322,
+      "arc": 10.00866174455562,
+      "goal_arc": 22.963159899169618,
+      "plan_length": 31.528313560302728,
+      "desired": 47.466290901688296,
+      "feedforward": -2.3935500874076325,
+      "feedback": 4.964221661982478,
+      "command_acc": 2.5706715745748454
+    },
+    {
+      "stage": 261,
+      "step": 103,
+      "plan_created": 103,
+      "target_body_forward": 8.526690070398535,
+      "target_velocity_forward": 11.133359865703953,
+      "velocity_hull_dot": 0.9923910058171621,
+      "arc": 0.0,
+      "goal_arc": 13.248018191511575,
+      "plan_length": 18.777512455244082,
+      "desired": 30.433598897886494,
+      "feedforward": 0.0,
+      "feedback": -22.58608932256736,
+      "command_acc": -22.58608932256736
+    }
+  ],
+  "results": [
+    {
+      "road": "O0",
+      "plan_expiry_actions": [
+        60,
+        140,
+        368,
+        380
+      ],
+      "native_actions": 469,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.0,
+      "visited": 302,
+      "total_tiles": 326,
+      "tracking_error_m": {
+        "mean": 2.9539640453396507,
+        "p95": 9.801473553065279,
+        "max": 24.2245856460913
+      },
+      "replans": 157,
+      "successful_replans": 119,
+      "geometrically_infeasible_replans": 3,
+      "objective_calls": 2975,
+      "planning_ms": {
+        "median": 48.55238500749692,
+        "p95": 66.33998537436128,
+        "max": 122.38679704023525,
+        "sum": 7882.572715927381
+      },
+      "control_ms": {
+        "median": 0.3197430050931871,
+        "p95": 57.93385939905418,
+        "max": 122.76191398268566
+      },
+      "raw_step_ticks": 1876,
+      "raw_reset_ticks": 51,
+      "wall_s": 24.85070002300199,
+      "GT_local": true,
+      "pixel_only": false,
+      "global_plan_loaded": false,
+      "cached_240_lap_ms": 23660,
+      "cached_259_lap_ms": 22520,
+      "cached_260_lap_ms": 26060,
+      "cached_260_terminal_action": 326,
+      "cached_261_lap_ms": 26060,
+      "cached_261_terminal_action": 326,
+      "first_changed_action_vs261": 60,
+      "last_new_tile_action": 368,
+      "no_plan_fallback_actions": 101,
+      "terminal_speed_m_s": 2.1798530607574725e-11,
+      "unavailable_replans": 38,
+      "accepted_replans": 116,
+      "first_changed_old_action": [
+        0.38938647508621216,
+        0.41319942474365234,
+        0.0
+      ],
+      "first_changed_new_action": [
+        0.3666016161441803,
+        0.0,
+        0.10000000149011612
+      ]
+    },
+    {
+      "road": "N0",
+      "plan_expiry_actions": [
+        71
+      ],
+      "native_actions": 170,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "retire_reason": "off_track",
+      "damage": 0.0,
+      "visited": 82,
+      "total_tiles": 325,
+      "tracking_error_m": {
+        "mean": 1.9829983961630022,
+        "p95": 5.308745313046052,
+        "max": 10.703474843116568
+      },
+      "replans": 57,
+      "successful_replans": 24,
+      "geometrically_infeasible_replans": 1,
+      "objective_calls": 600,
+      "planning_ms": {
+        "median": 32.90793002815917,
+        "p95": 53.888832591474056,
+        "max": 57.25025502033532,
+        "sum": 2105.0405597197823
+      },
+      "control_ms": {
+        "median": 0.2910854818765074,
+        "p95": 49.484686242067255,
+        "max": 57.533483020961285
+      },
+      "raw_step_ticks": 680,
+      "raw_reset_ticks": 51,
+      "wall_s": 7.51580151199596,
+      "GT_local": true,
+      "pixel_only": false,
+      "global_plan_loaded": false,
+      "cached_240_lap_ms": 23620,
+      "cached_259_lap_ms": 21740,
+      "cached_260_lap_ms": null,
+      "cached_260_terminal_action": 313,
+      "cached_261_lap_ms": null,
+      "cached_261_terminal_action": 130,
+      "first_changed_action_vs261": 71,
+      "last_new_tile_action": 69,
+      "no_plan_fallback_actions": 100,
+      "terminal_speed_m_s": 2.824041529655261e-11,
+      "unavailable_replans": 33,
+      "accepted_replans": 23,
+      "first_changed_old_action": [
+        0.26193511486053467,
+        0.0,
+        0.027044812217354774
+      ],
+      "first_changed_new_action": [
+        0.15377184748649597,
+        0.0,
+        0.10000000149011612
+      ]
+    }
+  ],
+  "cost": {
+    "stage": 262,
+    "at_utc": "2026-10-13T04:17:17.416561+00:00",
+    "native_cap": 2917,
+    "new_wrapper_actions": 845,
+    "diagnostic_prefix_actions": 206,
+    "candidate_evaluation_actions": 639,
+    "new_prefix_replays": 2,
+    "new_candidate_runs": 2,
+    "cached_full_results_replayed": 0,
+    "raw_step_ticks": 3380,
+    "raw_reset_ticks": 204,
+    "native_episode_wall_s": 44.00105632701889,
+    "execution_wall_s": 44.026172399520874,
+    "diagnostic_geometry_objectives": 1550,
+    "candidate_geometry_objectives": 3575,
+    "model_physics_ticks": 0,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 908000,
+    "actual_cumulative_wrapper_actions": 821928,
+    "research_remaining": 2072,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "promotion": false,
+  "code_sha256": {
+    "visible262_diagnose.py": "87542b254d8291fb798318906f76db34355f752a12f406d2478fe27481ceff69",
+    "visible262_run.py": "699768e93432dd2d275ca74b52b148069e92b05d2ad122ba3ed5859648c7f8c0"
+  },
+  "contract_sha256": "e23171c27ae669d664c3b4fd0e9d3047d9ed3e510f3b65e7119c6b1af4652327",
+  "frozen_plan_sha256": "231be1bb53bf03f0816f93621a5e7dc427a656cfbf21c593279a9472323c98b6",
+  "interpretation": "Target behind hull is observed, but not proof of a coordinate or physics-model arithmetic bug. The existing no-plan fallback stops without regaining a feasible reference. O0/N0 branch before97..103; no claim that this guard repairs that observed episode or isolates future information. Next useful observation is first invalidation and fallback-to-replan transition (O0 58..64;N0 67..76), without another ungrounded pedal change."
+}
