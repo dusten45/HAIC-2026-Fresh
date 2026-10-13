@@ -1,0 +1,137 @@
+{
+  "stage": 301,
+  "guard": "Onlyfeature8==1 andfeature14==0 => returnedgas0 afteroriginal296 finalclip; no otheraction/state/parameter changes",
+  "pilot_baseline": [
+    {
+      "road": "T2950",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 315,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2954",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 27440,
+      "damage": 0.0,
+      "native_actions": 344,
+      "retire_reason": null
+    }
+  ],
+  "pilot": [
+    {
+      "road": "T2950",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 26660,
+      "damage": 0.0,
+      "native_actions": 334,
+      "retire_reason": null
+    },
+    {
+      "road": "T2954",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.4,
+      "native_actions": 184,
+      "retire_reason": "off_track"
+    }
+  ],
+  "pilot_gate": false,
+  "pilot_metrics": {
+    "completions": 1,
+    "own_complete_mean_ms": 26660.0,
+    "against296": {
+      "paired_additional_completions": 1,
+      "paired_lost_completions": 1,
+      "common_completions": 0,
+      "common_mean_delta_ms": null,
+      "completion_sets_equal": false
+    }
+  },
+  "extension": [],
+  "full18": null,
+  "technical_error": null,
+  "cost": {
+    "stage": 301,
+    "at_utc": "2026-10-13T21:02:25.606602+00:00",
+    "new_wrapper_actions": 518,
+    "native_cap": 6000,
+    "new_official_runs": 2,
+    "guard_active_actions": 61,
+    "gas_changed_actions": 61,
+    "formula_memory_actions_verified": 518,
+    "new_source_physics_ticks": 0,
+    "new_parameter_draws": 0,
+    "new_paid_resources": 0,
+    "raw_step_ticks": 2070,
+    "raw_reset_ticks": 102,
+    "episode_runner_CPU_s": 25.118259824,
+    "recorded_actor_CPU_s": 5.458437999999999,
+    "sum_episode_wall_s": 32.2212127239909,
+    "total_wall_s": 20.541354656219482,
+    "B_operating_cap": 1230000,
+    "actual_cumulative_wrapper_actions": 1137085,
+    "research_remaining": 8915,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "decision": "Fixedpilotgate failed: stopwithoutremaining16TRAIN; no causaloruniversal claim.",
+  "pilot_signal_summary": {
+    "T2950": {
+      "active_actions": 48,
+      "first_active_step": 69,
+      "collision_steps": [],
+      "last_HUD_feedback_speed": 48.75,
+      "last_guard_active": false,
+      "last_final_gas": 0.556605339050293,
+      "GT_pose_and_wheels_notcollected": true
+    },
+    "T2954": {
+      "active_actions": 13,
+      "first_active_step": 21,
+      "collision_steps": [
+        83,
+        86
+      ],
+      "last_HUD_feedback_speed": 0.0,
+      "last_guard_active": false,
+      "last_final_gas": 0.632605254650116,
+      "GT_pose_and_wheels_notcollected": true
+    }
+  },
+  "verification": {
+    "no_existing301_at_start": true,
+    "exact296base_members_preserved": true,
+    "oneguard_formula_verified_actions": 518,
+    "other_action_channels_and_directmemory_preserved": true,
+    "guard_active": 61,
+    "bothpilot_officialresults": true,
+    "commoncompletion0_gatefailure_verified": true,
+    "remaining16notexecuted": true,
+    "DEV_notopened": true,
+    "champion_notchanged": true,
+    "all_processes_reaped": true,
+    "native_cost518": true,
+    "budget_censor": 0,
+    "technical_error": 0,
+    "compilation_passed": true
+  }
+}
