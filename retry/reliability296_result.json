@@ -1,0 +1,489 @@
+{
+  "stage": 296,
+  "candidates": [
+    "240",
+    "g1p4"
+  ],
+  "rule": "Requireall24officialoutcomes. Compare12overall completioncounts first; if equal, meanofficialtime on pairedcommoncompletedroads; if bothequal or nocommon,keep240. Lostbaseline completiondoesnotveto totalcompletiongain. Damage diagnostic only.",
+  "fully_observed": true,
+  "planned_runs": 24,
+  "completed_runs": 24,
+  "overall": {
+    "roads": 12,
+    "fully_observed_pairs": 12,
+    "baseline_completions": 9,
+    "candidate_completions": 10,
+    "paired_additional_completions": 2,
+    "paired_lost_completions": 1,
+    "both_DNF": 1,
+    "common_completions": 8,
+    "common_baseline_mean_ms": 21230.0,
+    "common_candidate_mean_ms": 21930.0,
+    "common_mean_delta_ms": 700.0,
+    "baseline_Wilson95": [
+      0.46769466506643426,
+      0.9110583316059453
+    ],
+    "candidate_Wilson95": [
+      0.5519691377470266,
+      0.9530348578161463
+    ],
+    "paired_discordant_exact_two_sided_p": 1.0,
+    "uncertainty": "Smallfixed12road sample, oneepisode/policy/road; Wilson andpairedexactsign diagnostics only, no populationeffect certainty or significance gate."
+  },
+  "groups": {
+    "sealed295": {
+      "roads": 4,
+      "fully_observed_pairs": 4,
+      "baseline_completions": 3,
+      "candidate_completions": 3,
+      "paired_additional_completions": 0,
+      "paired_lost_completions": 0,
+      "both_DNF": 1,
+      "common_completions": 3,
+      "common_baseline_mean_ms": 20253.333333333332,
+      "common_candidate_mean_ms": 20933.333333333332,
+      "common_mean_delta_ms": 680.0,
+      "baseline_Wilson95": [
+        0.30064184258240184,
+        0.9544127391902995
+      ],
+      "candidate_Wilson95": [
+        0.30064184258240184,
+        0.9544127391902995
+      ],
+      "paired_discordant_exact_two_sided_p": 1.0,
+      "uncertainty": "Smallfixed12road sample, oneepisode/policy/road; Wilson andpairedexactsign diagnostics only, no populationeffect certainty or significance gate."
+    },
+    "new8": {
+      "roads": 8,
+      "fully_observed_pairs": 8,
+      "baseline_completions": 6,
+      "candidate_completions": 7,
+      "paired_additional_completions": 2,
+      "paired_lost_completions": 1,
+      "both_DNF": 0,
+      "common_completions": 5,
+      "common_baseline_mean_ms": 21816.0,
+      "common_candidate_mean_ms": 22528.0,
+      "common_mean_delta_ms": 712.0,
+      "baseline_Wilson95": [
+        0.40927543031016883,
+        0.9285207872478909
+      ],
+      "candidate_Wilson95": [
+        0.5291118177871464,
+        0.9775825085499433
+      ],
+      "paired_discordant_exact_two_sided_p": 1.0,
+      "uncertainty": "Smallfixed12road sample, oneepisode/policy/road; Wilson andpairedexactsign diagnostics only, no populationeffect certainty or significance gate."
+    }
+  },
+  "judgment": {
+    "base_completions": 9,
+    "candidate_completions": 10,
+    "common_completions": 8,
+    "common_mean_delta_ms": 700.0,
+    "paired_additional_completions": 2,
+    "paired_lost_completions": 1,
+    "winner": "g1p4",
+    "candidate_outranks": true,
+    "completion_count_primary": true
+  },
+  "records": [
+    {
+      "road": "S2960",
+      "group": "sealed295",
+      "arm_order": [
+        "A",
+        "B"
+      ],
+      "baseline": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": null,
+        "damage": 0.0,
+        "native_actions": 252,
+        "retire_reason": "off_track"
+      },
+      "candidate": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": null,
+        "damage": 1.0,
+        "native_actions": 123,
+        "retire_reason": "crash"
+      }
+    },
+    {
+      "road": "S2961",
+      "group": "sealed295",
+      "arm_order": [
+        "B",
+        "A"
+      ],
+      "baseline": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 21040,
+        "damage": 0.0,
+        "native_actions": 264,
+        "retire_reason": null
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 21680,
+        "damage": 0.0,
+        "native_actions": 272,
+        "retire_reason": null
+      }
+    },
+    {
+      "road": "S2962",
+      "group": "sealed295",
+      "arm_order": [
+        "A",
+        "B"
+      ],
+      "baseline": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 18140,
+        "damage": 0.0,
+        "native_actions": 227,
+        "retire_reason": null
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 19000,
+        "damage": 0.0,
+        "native_actions": 238,
+        "retire_reason": null
+      }
+    },
+    {
+      "road": "S2963",
+      "group": "sealed295",
+      "arm_order": [
+        "B",
+        "A"
+      ],
+      "baseline": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 21580,
+        "damage": 0.6000000000000001,
+        "native_actions": 270,
+        "retire_reason": null
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 22120,
+        "damage": 0.2,
+        "native_actions": 277,
+        "retire_reason": null
+      }
+    },
+    {
+      "road": "S2964",
+      "group": "new8",
+      "arm_order": [
+        "A",
+        "B"
+      ],
+      "baseline": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 19820,
+        "damage": 0.0,
+        "native_actions": 248,
+        "retire_reason": null
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 20680,
+        "damage": 0.0,
+        "native_actions": 259,
+        "retire_reason": null
+      }
+    },
+    {
+      "road": "S2965",
+      "group": "new8",
+      "arm_order": [
+        "B",
+        "A"
+      ],
+      "baseline": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 23360,
+        "damage": 0.0,
+        "native_actions": 293,
+        "retire_reason": null
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 24140,
+        "damage": 0.0,
+        "native_actions": 302,
+        "retire_reason": null
+      }
+    },
+    {
+      "road": "S2966",
+      "group": "new8",
+      "arm_order": [
+        "A",
+        "B"
+      ],
+      "baseline": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 22560,
+        "damage": 0.4,
+        "native_actions": 283,
+        "retire_reason": null
+      },
+      "candidate": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": null,
+        "damage": 1.0,
+        "native_actions": 139,
+        "retire_reason": "crash"
+      }
+    },
+    {
+      "road": "S2967",
+      "group": "new8",
+      "arm_order": [
+        "B",
+        "A"
+      ],
+      "baseline": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 21020,
+        "damage": 0.0,
+        "native_actions": 263,
+        "retire_reason": null
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 21860,
+        "damage": 0.0,
+        "native_actions": 274,
+        "retire_reason": null
+      }
+    },
+    {
+      "road": "S2968",
+      "group": "new8",
+      "arm_order": [
+        "A",
+        "B"
+      ],
+      "baseline": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": null,
+        "damage": 1.0,
+        "native_actions": 232,
+        "retire_reason": "crash"
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 22860,
+        "damage": 0.0,
+        "native_actions": 286,
+        "retire_reason": null
+      }
+    },
+    {
+      "road": "S2969",
+      "group": "new8",
+      "arm_order": [
+        "B",
+        "A"
+      ],
+      "baseline": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 22280,
+        "damage": 0.2,
+        "native_actions": 279,
+        "retire_reason": null
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 23360,
+        "damage": 0.2,
+        "native_actions": 293,
+        "retire_reason": null
+      }
+    },
+    {
+      "road": "S29610",
+      "group": "new8",
+      "arm_order": [
+        "A",
+        "B"
+      ],
+      "baseline": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": null,
+        "damage": 0.4,
+        "native_actions": 276,
+        "retire_reason": "off_track"
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 19520,
+        "damage": 0.4,
+        "native_actions": 245,
+        "retire_reason": null
+      }
+    },
+    {
+      "road": "S29611",
+      "group": "new8",
+      "arm_order": [
+        "B",
+        "A"
+      ],
+      "baseline": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 22600,
+        "damage": 0.2,
+        "native_actions": 283,
+        "retire_reason": null
+      },
+      "candidate": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "lap_ms": 22600,
+        "damage": 0.0,
+        "native_actions": 283,
+        "retire_reason": null
+      }
+    }
+  ],
+  "promotion": {
+    "adopted": true,
+    "new_champion_manifest_sha256": "b92fe5307a491bfb9d1f5081bf97c9c1d4646dcf9c8511fb169bc48c8f9349e5",
+    "archive_sha256": "0a6c5e286e87d75498c5aec1174c7af3fd54f6efa34b0d83ca1efba5d404a937",
+    "previous240manifest_preserved": true,
+    "completion_speed_tradeoff_explicit": true
+  },
+  "technical_error": null,
+  "cost": {
+    "stage": 296,
+    "at_utc": "2026-10-13T18:22:04.117244+00:00",
+    "new_wrapper_actions": 6161,
+    "evaluation_native": 6161,
+    "native_cap": 10000,
+    "new_source_physics_ticks": 0,
+    "new_parameter_draws": 0,
+    "new_paid_resources": 0,
+    "new_simulation_episodes": 24,
+    "raw_step_ticks": 24615,
+    "raw_reset_ticks": 1224,
+    "episode_runner_CPU_s": 304.78197718399997,
+    "recorded_actor_CPU_s": 68.32219500000001,
+    "sum_episode_wall_s": 372.66603668004973,
+    "total_search_wall_s": 382.78225922584534,
+    "wall_scope": "24sequential officialepisodes, actualwall includingdriver/IPC; no arbitraryresearch timer",
+    "unconfirmed_charged_native": 0,
+    "B_operating_cap": 1140000,
+    "actual_cumulative_wrapper_actions": 1045270,
+    "research_remaining": 10730,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "new_parameters": 0,
+  "existing_TRAIN_and294_DEV_included_in_judgment": false,
+  "stage295_preservation_rejection_unchanged": true,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "extra_certification_runs": 0,
+  "automatic_next_experiment": false,
+  "decision": "Adopt exactg1p4 undernewpreregistered completionprimary rule; retain time tradeoff and smallsample uncertainty.",
+  "verification": {
+    "all24officialoutcomes": true,
+    "technical_error": 0,
+    "budget_censor": 0,
+    "native_replay": 0,
+    "identity_andrule_preregistered": true,
+    "sealed295four_reused_without_priorperformance": true,
+    "new8identity_disjoint": true,
+    "judgment_recomputed_exact": true,
+    "package_byteidentical_frozen_g1p4": true,
+    "manifest_parameters_match_actual_package": true,
+    "champion_pointer_updated": true,
+    "rollback240_archive_and_manifest_preserved": true,
+    "all_processes_reaped": true,
+    "no_extra_certification_runs": true,
+    "trace_rows_equal_native": 6161,
+    "compilation_passed": true
+  }
+}
