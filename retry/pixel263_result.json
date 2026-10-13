@@ -1,0 +1,255 @@
+{
+  "stage": 263,
+  "diagnostic": "Legal pixel-only existing240 geometry speed-profile pilot, rejected",
+  "results": [
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 41520,
+      "native_actions": 520,
+      "retire_reason": null,
+      "damage": 0.6000000000000001,
+      "visited": 326,
+      "total_tiles": 326,
+      "planner_active_actions": 520,
+      "fallback_actions": 0,
+      "first_collision": 181,
+      "raw_step_ticks": 2077,
+      "raw_reset_ticks": 51,
+      "wall_s": 24.610635271004867,
+      "planning_ms": {
+        "median": 0.5912490014452487,
+        "p95": 1.2832675682147947,
+        "max": 9.129798971116543,
+        "sum": 373.6211600480601
+      },
+      "full_Agent_compute_ms": {
+        "median": 6.616943486733362,
+        "p95": 14.099970212555489,
+        "max": 26.950843981467187
+      },
+      "IPC_ms": {
+        "median": 9.303159022238106,
+        "p95": 17.258836678229272,
+        "max": 29.581364011391997
+      },
+      "actor_CPU_s": 4.894356,
+      "pixel_only": true,
+      "privileged_policy_inputs": false,
+      "archive_sha256": "1cd2f5b13898d08863c958dc6a12477a3b5345b5f89869efb98f25ecf39e91e8",
+      "reaping": {
+        "pid": 109259,
+        "returncode": 125,
+        "waitpid_no_child": true,
+        "proc_pid_absent": true,
+        "process_reaped": true,
+        "close_ms": 0.27068902272731066,
+        "actor_pids_absent": true,
+        "actor_count": 1
+      },
+      "cached_240_lap_ms": 23660,
+      "cached_240_damage": 0,
+      "delta_lap_ms_vs240": 17860,
+      "collision_actions": [
+        181,
+        182,
+        183
+      ],
+      "pixel_plan_stats": {
+        "feedback_speed_m_s": {
+          "min": 0.0,
+          "median": 23.75,
+          "p95": 46.25,
+          "max": 46.25
+        },
+        "desired_speed_m_s": {
+          "min": 0.0,
+          "median": 21.25,
+          "p95": 45.0,
+          "max": 45.0
+        },
+        "path_length_m": {
+          "min": 19.288744133837014,
+          "median": 23.98726818228961,
+          "p95": 31.79345069375568,
+          "max": 40.929046174787516
+        },
+        "tail_curvature_cap": {
+          "min": 4.315921090294114,
+          "median": 45.0,
+          "p95": 45.0,
+          "max": 45.0
+        },
+        "tail_profile_speed": {
+          "min": 4.315921090294114,
+          "median": 18.804768163421052,
+          "p95": 45.0,
+          "max": 45.0
+        },
+        "command_accel": {
+          "min": -91.16873397261595,
+          "median": -1.875,
+          "p95": 35.0188778925416,
+          "max": 35.0188778925416
+        }
+      },
+      "same_observation_pedal_delta_mean": [
+        -0.4266768961876201,
+        -0.0016962836671154946
+      ],
+      "same_observation_pedal_delta_scope": "Frozen240 counterfactual output on candidate pixels; not a new native baseline or causal lap delta",
+      "gas_positive_actions": 236,
+      "brake_positive_actions": 284
+    },
+    {
+      "road": "N0",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 174,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "visited": 120,
+      "total_tiles": 325,
+      "planner_active_actions": 174,
+      "fallback_actions": 0,
+      "first_collision": 170,
+      "raw_step_ticks": 696,
+      "raw_reset_ticks": 51,
+      "wall_s": 8.210751589969732,
+      "planning_ms": {
+        "median": 0.5956410022918135,
+        "p95": 1.0342641005991022,
+        "max": 1.7304369830526412,
+        "sum": 114.75775676080957
+      },
+      "full_Agent_compute_ms": {
+        "median": 6.239907525014132,
+        "p95": 11.118330212775616,
+        "max": 16.05236897012219
+      },
+      "IPC_ms": {
+        "median": 8.683576510520652,
+        "p95": 14.534519129665568,
+        "max": 19.022652006242424
+      },
+      "actor_CPU_s": 1.589588,
+      "pixel_only": true,
+      "privileged_policy_inputs": false,
+      "archive_sha256": "1cd2f5b13898d08863c958dc6a12477a3b5345b5f89869efb98f25ecf39e91e8",
+      "reaping": {
+        "pid": 109270,
+        "returncode": 125,
+        "waitpid_no_child": true,
+        "proc_pid_absent": true,
+        "process_reaped": true,
+        "close_ms": 0.4263540031388402,
+        "actor_pids_absent": true,
+        "actor_count": 1
+      },
+      "cached_240_lap_ms": 23620,
+      "cached_240_damage": 0.2,
+      "delta_lap_ms_vs240": null,
+      "collision_actions": [
+        170,
+        171,
+        172,
+        173,
+        174
+      ],
+      "pixel_plan_stats": {
+        "feedback_speed_m_s": {
+          "min": 0.0,
+          "median": 26.25,
+          "p95": 46.25,
+          "max": 46.25
+        },
+        "desired_speed_m_s": {
+          "min": 0.0,
+          "median": 26.25,
+          "p95": 45.0,
+          "max": 45.0
+        },
+        "path_length_m": {
+          "min": 22.92768959435626,
+          "median": 23.63407531964516,
+          "p95": 31.404318297823092,
+          "max": 39.812515345486034
+        },
+        "tail_curvature_cap": {
+          "min": 4.468380269003436,
+          "median": 45.0,
+          "p95": 45.0,
+          "max": 45.0
+        },
+        "tail_profile_speed": {
+          "min": 4.468380269003436,
+          "median": 24.231615210193098,
+          "p95": 45.0,
+          "max": 45.0
+        },
+        "command_accel": {
+          "min": -91.16873397261595,
+          "median": -1.875,
+          "p95": 35.0188778925416,
+          "max": 35.0188778925416
+        }
+      },
+      "same_observation_pedal_delta_mean": [
+        -0.4170926369127186,
+        0.0016349530076319031
+      ],
+      "same_observation_pedal_delta_scope": "Frozen240 counterfactual output on candidate pixels; not a new native baseline or causal lap delta",
+      "gas_positive_actions": 74,
+      "brake_positive_actions": 100
+    }
+  ],
+  "cost": {
+    "stage": 263,
+    "at_utc": "2026-10-13T04:29:19.947163+00:00",
+    "native_cap": 2072,
+    "new_wrapper_actions": 694,
+    "new_native_runs": 2,
+    "prefix_actions": 0,
+    "cached_full_results_replayed": 0,
+    "raw_step_ticks": 2773,
+    "raw_reset_ticks": 102,
+    "native_episode_wall_s": 32.8213868609746,
+    "execution_wall_s": 32.90837550163269,
+    "actual_pixel_profiles": 694,
+    "offline_pixel_profiles": 16,
+    "offline_actor_calls": 34,
+    "offline_calls_scope": "16 paired cached observations plus one paired synthetic absent-route observation; zero native or simulator model queries",
+    "planner_wall_s": 0.4883789168088697,
+    "actor_CPU_s": 6.483944,
+    "model_physics_ticks": 0,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 908000,
+    "actual_cumulative_wrapper_actions": 822622,
+    "research_remaining": 1378,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "preflight": {
+    "paired_cached_frames": 16,
+    "steering_bitexact": true,
+    "nominal_memory_and_original_features_bitexact": true,
+    "simulator_imported": false,
+    "absent_route_fallback_bitexact": true,
+    "actor_processes_reaped": true
+  },
+  "promotion": false,
+  "code_sha256": {
+    "pixel263_agent.py": "ccaf650a54c92af92214ea3c54cdf5a698a552b85e190947cbb73678466681d0",
+    "pixel263_build.py": "4c622d0e7aa8dcef0e54c8169bec4063aa106f04fadab28fd31a469c7516c7d1",
+    "pixel263_run.py": "30e03c1e18106ff66bd83f2e5314b760420069b265b970965911501870f11bba",
+    "pixel263_worker.py": "f6b51208f2d93950d4d595f2cad2b8df26efe5bfe888f6cd1d1ac084bd8deb9b"
+  },
+  "contract_sha256": "826f4a7a0759ccbc3ee9f25f0b74aa366072e4cbc6c2d2f963b4384e7589e42b",
+  "frozen_plan_sha256": "ff8f3381f3c6393e19483c18e4a5631b394916ac8552b8509a8aea5bb1362588",
+  "interpretation": "Profile and physical pedal law replace active learned/rescaled pedals together; one pilot cannot isolate profile benefit or establish pixel-speed planning impossibility. Current path/steering/memory pipeline retained; no missing-path fallback on actual runs, so failures not GT route reconnection. No further gain/ratio/head changes executed."
+}
