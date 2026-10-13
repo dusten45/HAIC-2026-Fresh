@@ -1,0 +1,326 @@
+{
+  "stage": 305,
+  "rule": "On fresh empty route only: accepted existing tracker affine transports immediately previous fresh route in its pixel coordinates; preserve directed order, sampled current allowed mask and forward points, require original lookahead length. Missing affine or short/invalid path => exact fallback. No chained retention.",
+  "hypothesis": "One-frame affine-transported reference on fresh route loss prevents stale command continuation and improves completion-first TRAIN performance.",
+  "prior_difference": "260 retains a world-coordinate GT plan with live pose;261 stores known directed edges and uses hull heading;262 rejects behind-hull targets using GT. This candidate stores only one immediately previous fresh pixel route and transports it with already computed legal LK/LMEDS image affine, no heading/pose/map/teacher/model. It changes only empty-route reference selection, no fresh-route ranking, guard, joint feedback, gain, learning, perception threshold or hazard state.171 uses transported reference only in score ties,253 blends road images; here all fresh nonempty routes remain exact296.",
+  "pilot_baseline": [
+    {
+      "road": "T2950",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 315,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2954",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 27440,
+      "damage": 0.0,
+      "native_actions": 344,
+      "retire_reason": null
+    }
+  ],
+  "pilot": [
+    {
+      "road": "T2950",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 311,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2954",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 27440,
+      "damage": 0.0,
+      "native_actions": 344,
+      "retire_reason": null
+    }
+  ],
+  "pilot_gate": false,
+  "extension": [],
+  "extension_baseline": [
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24320,
+      "damage": 0.0,
+      "native_actions": 304,
+      "retire_reason": null
+    },
+    {
+      "road": "O2",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 22360,
+      "damage": 0.2,
+      "native_actions": 280,
+      "retire_reason": null
+    },
+    {
+      "road": "N0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24040,
+      "damage": 0.0,
+      "native_actions": 301,
+      "retire_reason": null
+    },
+    {
+      "road": "N1",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 17860,
+      "damage": 0.0,
+      "native_actions": 224,
+      "retire_reason": null
+    },
+    {
+      "road": "N2",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 29000,
+      "damage": 0.6000000000000001,
+      "native_actions": 363,
+      "retire_reason": null
+    },
+    {
+      "road": "N3",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 19720,
+      "damage": 0.0,
+      "native_actions": 247,
+      "retire_reason": null
+    },
+    {
+      "road": "T2951",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21040,
+      "damage": 0.0,
+      "native_actions": 264,
+      "retire_reason": null
+    },
+    {
+      "road": "T2952",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21140,
+      "damage": 0.0,
+      "native_actions": 265,
+      "retire_reason": null
+    },
+    {
+      "road": "T2953",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23800,
+      "damage": 0.2,
+      "native_actions": 298,
+      "retire_reason": null
+    },
+    {
+      "road": "T2955",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23860,
+      "damage": 0.0,
+      "native_actions": 299,
+      "retire_reason": null
+    },
+    {
+      "road": "T2956",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23320,
+      "damage": 0.0,
+      "native_actions": 292,
+      "retire_reason": null
+    },
+    {
+      "road": "T2957",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 25400,
+      "damage": 0.2,
+      "native_actions": 318,
+      "retire_reason": null
+    },
+    {
+      "road": "T2958",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24480,
+      "damage": 0.0,
+      "native_actions": 307,
+      "retire_reason": null
+    },
+    {
+      "road": "T2959",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21180,
+      "damage": 0.4,
+      "native_actions": 265,
+      "retire_reason": null
+    },
+    {
+      "road": "T29510",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 18940,
+      "damage": 0.4,
+      "native_actions": 237,
+      "retire_reason": null
+    },
+    {
+      "road": "T29511",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21300,
+      "damage": 0.0,
+      "native_actions": 267,
+      "retire_reason": null
+    }
+  ],
+  "signals": [
+    {
+      "road": "T2950",
+      "reference_recovery_actions": 2,
+      "first_reference_recovery": 186,
+      "missing_target_actions": 22,
+      "collision_steps": [
+        184
+      ]
+    },
+    {
+      "road": "T2954",
+      "reference_recovery_actions": 0,
+      "first_reference_recovery": null,
+      "missing_target_actions": 3,
+      "collision_steps": []
+    }
+  ],
+  "cost": {
+    "stage": 305,
+    "at_utc": "2026-10-13T21:40:11.672590+00:00",
+    "new_wrapper_actions": 655,
+    "native_cap": 6000,
+    "new_official_runs": 2,
+    "raw_step_ticks": 2617,
+    "raw_reset_ticks": 102,
+    "episode_runner_CPU_s": 25.528443238,
+    "recorded_actor_CPU_s": 5.467342,
+    "sum_episode_wall_s": 32.4307296089828,
+    "total_wall_s": 17.482540369033813,
+    "new_source_physics_ticks": 0,
+    "new_parameter_draws": 0,
+    "new_fit_calls": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 1230000,
+    "actual_cumulative_wrapper_actions": 1138919,
+    "research_remaining": 7081,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "technical_error": null,
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "verification": {
+    "actor_legal_input_only": true,
+    "original296_model_constants_tracker_outputs_preserved": true,
+    "one_frame_no_chained_reference": true,
+    "transform_and_expiry_preflight_passed": true,
+    "formula_memory_checks": 655,
+    "baseline_reused": true,
+    "technical_error": 0,
+    "censor": 0,
+    "champion296_240rollback_preserved": true,
+    "all_processes_reaped": true,
+    "summary": [
+      {
+        "road": "T2950",
+        "reference_recovery_steps": [
+          186,
+          284
+        ],
+        "first_trace_difference": 186,
+        "verified_equal_prefix_rows": 185,
+        "whole_trace_equal": false,
+        "empty_fresh_route_calls": 24,
+        "empty_route_reason_counts": {
+          "current_mask_or_short_reference": 1,
+          "one_frame_transported_current_mask_reference": 2,
+          "missing_signal": 21
+        },
+        "accepted_affine_on_empty_route_calls": 8,
+        "prior_fresh_reference_on_empty_route_calls": 3
+      },
+      {
+        "road": "T2954",
+        "reference_recovery_steps": [],
+        "first_trace_difference": null,
+        "verified_equal_prefix_rows": 344,
+        "whole_trace_equal": true,
+        "empty_fresh_route_calls": 3,
+        "empty_route_reason_counts": {
+          "current_mask_or_short_reference": 2,
+          "missing_signal": 1
+        },
+        "accepted_affine_on_empty_route_calls": 3,
+        "prior_fresh_reference_on_empty_route_calls": 2
+      }
+    ]
+  }
+}
