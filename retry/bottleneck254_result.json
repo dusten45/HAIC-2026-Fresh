@@ -1,0 +1,181 @@
+{
+  "stage": 254,
+  "policy": "Current240 exactstage251 materializations; noolder232bottleneck reuse",
+  "roads": [
+    {
+      "road": "O0",
+      "current240_lap_s": 23.66,
+      "time_bins_s": {
+        "target_missing": 0.0,
+        "near_hazard": 3.839999999999919,
+        "small_pixel_curvature": 13.660000000000199,
+        "low_speed": 0.8000000000000007,
+        "low_small_curvature_no_hazard": 0.8000000000000007,
+        "brake_above_point05_small_curvature_no_hazard": 9.900000000000253,
+        "both_pedals_above_point05": 19.900000000000052
+      },
+      "actual_path_over_tile_center_loop": 1.003103825618607,
+      "speed_quantiles_m_s": [
+        43.18417282194692,
+        49.61488197539079,
+        54.50956759591693
+      ],
+      "initial4_pixel_curvature_abs_max": 0.0,
+      "initial4_near_hazard_count": 0,
+      "preaction4_rear_force_over_friction_limit": [
+        3.7213375539336244,
+        3.7213375539394686
+      ],
+      "force_scope": "Sourcealgebra firstphysics tick atstoredactualboundary4, beforeBox2Dsolve; not entirelaunch/speedgain prediction."
+    },
+    {
+      "road": "O2",
+      "current240_lap_s": 20.98,
+      "time_bins_s": {
+        "target_missing": 0.0,
+        "near_hazard": 2.8799999999999386,
+        "small_pixel_curvature": 12.580000000000165,
+        "low_speed": 0.8000000000000007,
+        "low_small_curvature_no_hazard": 0.8000000000000007,
+        "brake_above_point05_small_curvature_no_hazard": 9.220000000000205,
+        "both_pedals_above_point05": 17.06000000000005
+      },
+      "actual_path_over_tile_center_loop": 0.998799856862697,
+      "speed_quantiles_m_s": [
+        40.09306546300169,
+        49.870862225424595,
+        54.282678900095924
+      ],
+      "initial4_pixel_curvature_abs_max": 0.0,
+      "initial4_near_hazard_count": 0,
+      "preaction4_rear_force_over_friction_limit": [
+        4.077073789283764,
+        4.077073789290213
+      ],
+      "force_scope": "Sourcealgebra firstphysics tick atstoredactualboundary4, beforeBox2Dsolve; not entirelaunch/speedgain prediction."
+    },
+    {
+      "road": "N0",
+      "current240_lap_s": 23.62,
+      "time_bins_s": {
+        "target_missing": 0.0,
+        "near_hazard": 4.559999999999905,
+        "small_pixel_curvature": 13.300000000000203,
+        "low_speed": 0.8000000000000007,
+        "low_small_curvature_no_hazard": 0.8000000000000007,
+        "brake_above_point05_small_curvature_no_hazard": 9.060000000000265,
+        "both_pedals_above_point05": 19.78000000000005
+      },
+      "actual_path_over_tile_center_loop": 1.0007755704187957,
+      "speed_quantiles_m_s": [
+        42.50360504076073,
+        49.36938936151124,
+        54.82651383560169
+      ],
+      "initial4_pixel_curvature_abs_max": 0.0,
+      "initial4_near_hazard_count": 0,
+      "preaction4_rear_force_over_friction_limit": [
+        3.721337536629276,
+        3.721337536633422
+      ],
+      "force_scope": "Sourcealgebra firstphysics tick atstoredactualboundary4, beforeBox2Dsolve; not entirelaunch/speedgain prediction."
+    },
+    {
+      "road": "N1",
+      "current240_lap_s": 17.08,
+      "time_bins_s": {
+        "target_missing": 0.0,
+        "near_hazard": 3.27999999999994,
+        "small_pixel_curvature": 9.400000000000137,
+        "low_speed": 0.8000000000000007,
+        "low_small_curvature_no_hazard": 0.8000000000000007,
+        "brake_above_point05_small_curvature_no_hazard": 6.4400000000001665,
+        "both_pedals_above_point05": 14.36000000000002
+      },
+      "actual_path_over_tile_center_loop": 0.9912757609730546,
+      "speed_quantiles_m_s": [
+        38.779264946642684,
+        49.986106456502256,
+        53.69088244249402
+      ],
+      "initial4_pixel_curvature_abs_max": 0.0,
+      "initial4_near_hazard_count": 0,
+      "preaction4_rear_force_over_friction_limit": [
+        3.823701206565801,
+        3.823701206572714
+      ],
+      "force_scope": "Sourcealgebra firstphysics tick atstoredactualboundary4, beforeBox2Dsolve; not entirelaunch/speedgain prediction."
+    },
+    {
+      "road": "N2",
+      "current240_lap_s": 21.56,
+      "time_bins_s": {
+        "target_missing": 0.1599999999999966,
+        "near_hazard": 3.6799999999999224,
+        "small_pixel_curvature": 11.720000000000194,
+        "low_speed": 0.8000000000000007,
+        "low_small_curvature_no_hazard": 0.8000000000000007,
+        "brake_above_point05_small_curvature_no_hazard": 7.800000000000253,
+        "both_pedals_above_point05": 18.040000000000042
+      },
+      "actual_path_over_tile_center_loop": 0.9991587621597338,
+      "speed_quantiles_m_s": [
+        41.01023362067391,
+        48.269235597896646,
+        55.034141178352144
+      ],
+      "initial4_pixel_curvature_abs_max": 0.0,
+      "initial4_near_hazard_count": 0,
+      "preaction4_rear_force_over_friction_limit": [
+        4.07707426070897,
+        4.0770742607138635
+      ],
+      "force_scope": "Sourcealgebra firstphysics tick atstoredactualboundary4, beforeBox2Dsolve; not entirelaunch/speedgain prediction."
+    },
+    {
+      "road": "N3",
+      "current240_lap_s": 18.76,
+      "time_bins_s": {
+        "target_missing": 0.0,
+        "near_hazard": 4.399999999999908,
+        "small_pixel_curvature": 9.88000000000017,
+        "low_speed": 0.8000000000000007,
+        "low_small_curvature_no_hazard": 0.8000000000000007,
+        "brake_above_point05_small_curvature_no_hazard": 6.200000000000214,
+        "both_pedals_above_point05": 15.400000000000034
+      },
+      "actual_path_over_tile_center_loop": 0.9887671713969721,
+      "speed_quantiles_m_s": [
+        39.0511685187647,
+        49.795956278132635,
+        53.3992095144168
+      ],
+      "initial4_pixel_curvature_abs_max": 0.0,
+      "initial4_near_hazard_count": 0,
+      "preaction4_rear_force_over_friction_limit": [
+        3.807211048245947,
+        3.807211048251411
+      ],
+      "force_scope": "Sourcealgebra firstphysics tick atstoredactualboundary4, beforeBox2Dsolve; not entirelaunch/speedgain prediction."
+    }
+  ],
+  "bin_definitions": {
+    "small_pixel_curvature": "abs(feature5)<.01 diagnosticpixelrouteproxy, notGTroadcurvature",
+    "low_speed": "postaction speed<35m/s; descriptive, not a runtime threshold",
+    "bins_overlap": true,
+    "time": "Stepelapsed weights, finalboundaryadjustedtoofficiallap",
+    "path_ratio": "Actualhullpolyline / loopthroughroadtilefixturecentroids; approximatepathproxy, not shortestfeasiblelap"
+  },
+  "decision": "No justified untestedcandidate selected. Persistentstraightlow-speed/pathinflation/targetloss notobserved. Simultaneouspedals alone isnotcausalproof; globalexclusion failed236. Initialrearforce alreadyclamped makes gas-only launch increase unsupported.",
+  "minimum_next_observation": "Useexistingfullquery-boundary states/sourceforcealgebra toseparate longitudinal versus lateral traction saturation and counteracting wheel forces in longstraight-braking segments beforeanynew actualpulse. No new fullroad/decoder/teacher dataset is required for that first diagnostic.",
+  "native_actions": 0,
+  "model_physics_ticks": 0,
+  "new_candidates": 0,
+  "wall_s": 5.791771071992116,
+  "CPU_s": 5.753753452,
+  "champion_changed": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "source_data": "Existingcurrent240stage251 materializations only; rawextracts remainprivate"
+}
