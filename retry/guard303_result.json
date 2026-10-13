@@ -1,0 +1,147 @@
+{
+  "stage": 303,
+  "guard": "Onlyfeature8==1 andfeature14==0 andfeature0==1 => returnedgas0 afteroriginal296 finalclip; no otheraction/state/parameter changes",
+  "pilot_baseline": [
+    {
+      "road": "T2950",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 315,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2954",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 27440,
+      "damage": 0.0,
+      "native_actions": 344,
+      "retire_reason": null
+    }
+  ],
+  "pilot": [
+    {
+      "road": "T2950",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 315,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2954",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.4,
+      "native_actions": 205,
+      "retire_reason": "off_track"
+    }
+  ],
+  "pilot_gate": false,
+  "pilot_metrics": {
+    "completions": 0,
+    "own_complete_mean_ms": null,
+    "against296": {
+      "paired_additional_completions": 0,
+      "paired_lost_completions": 1,
+      "common_completions": 0,
+      "common_mean_delta_ms": null,
+      "completion_sets_equal": false
+    }
+  },
+  "extension": [],
+  "full18": null,
+  "technical_error": null,
+  "cost": {
+    "stage": 303,
+    "at_utc": "2026-10-13T21:23:41.627853+00:00",
+    "new_wrapper_actions": 520,
+    "native_cap": 6000,
+    "new_official_runs": 2,
+    "guard_active_actions": 5,
+    "gas_changed_actions": 5,
+    "formula_memory_actions_verified": 520,
+    "new_source_physics_ticks": 0,
+    "new_parameter_draws": 0,
+    "new_paid_resources": 0,
+    "raw_step_ticks": 2080,
+    "raw_reset_ticks": 102,
+    "episode_runner_CPU_s": 23.142767592,
+    "recorded_actor_CPU_s": 4.869992,
+    "sum_episode_wall_s": 29.345255650987383,
+    "total_wall_s": 17.901256322860718,
+    "B_operating_cap": 1230000,
+    "actual_cumulative_wrapper_actions": 1137605,
+    "research_remaining": 8395,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "decision": "Fixedpilotgate failed: stopwithoutremaining16TRAIN; no causaloruniversal claim.",
+  "pilot_signal_summary": {
+    "T2950": {
+      "active_steps": [
+        184,
+        201
+      ],
+      "unchanged_action_feature_memory_prefix_rows": 183,
+      "first_activation_legal_features_match300": true,
+      "collision_steps": [
+        184
+      ],
+      "last_HUD_feedback_speed": 41.25,
+      "last_final_gas": 0.47932642698287964,
+      "last_guard_active": false,
+      "GT303_notcollected": true
+    },
+    "T2954": {
+      "active_steps": [
+        82,
+        105,
+        106
+      ],
+      "unchanged_action_feature_memory_prefix_rows": 81,
+      "first_activation_legal_features_match300": true,
+      "collision_steps": [
+        105,
+        107
+      ],
+      "last_HUD_feedback_speed": 0.0,
+      "last_final_gas": 0.5815712809562683,
+      "last_guard_active": false,
+      "GT303_notcollected": true
+    }
+  },
+  "verification": {
+    "exact296not301base_verified": true,
+    "triplecondition_formula_verified_actions": 520,
+    "other_action_channels_directmemory_andcoefficients_preserved": true,
+    "firstguard_prefix_matches300": true,
+    "pilot_officialresults_complete": true,
+    "actual_DNF_nottechnicalcensor": true,
+    "pilotgate_failure_verified": true,
+    "remaining16_andDEV_notexecuted": true,
+    "native_cost520": true,
+    "technical_error": 0,
+    "budget_censor": 0,
+    "all_processes_reaped": true,
+    "champion296_240rollback_preserved": true,
+    "compilation_passed": true
+  }
+}
