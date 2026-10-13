@@ -1,0 +1,379 @@
+{
+  "stage": 273,
+  "status": "Small legaljoint-memory probe complete; primary gate fails, secondary minus candidate gate passes on2knownDEV only",
+  "results": [
+    {
+      "road": "O0",
+      "policy": "plus_nominal",
+      "native_actions": 304,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 24300,
+      "return_value": 1.848125000000003,
+      "retire_reason": null,
+      "damage": 0.2,
+      "first_collision": 113,
+      "visited": 326,
+      "total_tiles": 326,
+      "raw_step_ticks": 1216,
+      "raw_reset_ticks": 51,
+      "wall_s": 14.781010737991892,
+      "actor_CPU_s": 2.7508239999999997,
+      "Agent_ms": {
+        "median": 5.934880493441597,
+        "p95": 12.275498907547432,
+        "max": 16.804727027192712
+      },
+      "IPC_ms": {
+        "median": 8.540804497897625,
+        "max": 19.529161043465137
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false
+    },
+    {
+      "road": "O0",
+      "policy": "plus_executed",
+      "native_actions": 300,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 23980,
+      "return_value": 1.8501250000000027,
+      "retire_reason": null,
+      "damage": 0.0,
+      "first_collision": null,
+      "visited": 326,
+      "total_tiles": 326,
+      "raw_step_ticks": 1200,
+      "raw_reset_ticks": 51,
+      "wall_s": 13.661643817962613,
+      "actor_CPU_s": 2.491527,
+      "Agent_ms": {
+        "median": 5.911698011914268,
+        "p95": 11.61723273107782,
+        "max": 22.251856978982687
+      },
+      "IPC_ms": {
+        "median": 8.349745970917866,
+        "max": 26.475479011423886
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false
+    },
+    {
+      "road": "O0",
+      "policy": "minus_executed",
+      "native_actions": 294,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 23460,
+      "return_value": 1.8533750000000027,
+      "retire_reason": null,
+      "damage": 0.0,
+      "first_collision": null,
+      "visited": 326,
+      "total_tiles": 326,
+      "raw_step_ticks": 1174,
+      "raw_reset_ticks": 51,
+      "wall_s": 14.730982845008839,
+      "actor_CPU_s": 2.6199039999999996,
+      "Agent_ms": {
+        "median": 6.036615464836359,
+        "p95": 12.851058738306163,
+        "max": 21.591095020994544
+      },
+      "IPC_ms": {
+        "median": 8.678654994582757,
+        "max": 25.35343001363799
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false
+    },
+    {
+      "road": "O0",
+      "policy": "minus_nominal",
+      "native_actions": 301,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 24020,
+      "return_value": 1.8498750000000028,
+      "retire_reason": null,
+      "damage": 0.2,
+      "first_collision": 110,
+      "visited": 326,
+      "total_tiles": 326,
+      "raw_step_ticks": 1202,
+      "raw_reset_ticks": 51,
+      "wall_s": 14.287526509026065,
+      "actor_CPU_s": 2.56603,
+      "Agent_ms": {
+        "median": 5.78292302088812,
+        "p95": 12.631249031983316,
+        "max": 18.830377026461065
+      },
+      "IPC_ms": {
+        "median": 8.385438995901495,
+        "max": 21.3740739854984
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false
+    },
+    {
+      "road": "N0",
+      "policy": "plus_executed",
+      "native_actions": 175,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "return_value": -0.7507692307692307,
+      "retire_reason": "off_track",
+      "damage": 0.6000000000000001,
+      "first_collision": 74,
+      "visited": 81,
+      "total_tiles": 325,
+      "raw_step_ticks": 700,
+      "raw_reset_ticks": 51,
+      "wall_s": 8.232785185973626,
+      "actor_CPU_s": 1.374107,
+      "Agent_ms": {
+        "median": 5.416442989371717,
+        "p95": 8.394466782920063,
+        "max": 34.791376965586096
+      },
+      "IPC_ms": {
+        "median": 7.925964018795639,
+        "max": 41.723361995536834
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false
+    },
+    {
+      "road": "N0",
+      "policy": "plus_nominal",
+      "native_actions": 131,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "return_value": -0.5692307692307692,
+      "retire_reason": "crash",
+      "damage": 1.0,
+      "first_collision": 111,
+      "visited": 140,
+      "total_tiles": 325,
+      "raw_step_ticks": 524,
+      "raw_reset_ticks": 51,
+      "wall_s": 6.223842254956253,
+      "actor_CPU_s": 1.150422,
+      "Agent_ms": {
+        "median": 5.426527000963688,
+        "p95": 10.567185992840677,
+        "max": 19.122338038869202
+      },
+      "IPC_ms": {
+        "median": 8.11932102078572,
+        "max": 23.635901045054197
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false
+    },
+    {
+      "road": "N0",
+      "policy": "minus_nominal",
+      "native_actions": 296,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 23620,
+      "return_value": 1.8523750000000028,
+      "retire_reason": null,
+      "damage": 0.2,
+      "first_collision": 74,
+      "visited": 325,
+      "total_tiles": 325,
+      "raw_step_ticks": 1182,
+      "raw_reset_ticks": 51,
+      "wall_s": 13.990551538998261,
+      "actor_CPU_s": 2.540355,
+      "Agent_ms": {
+        "median": 5.472752993227914,
+        "p95": 12.673433986492455,
+        "max": 25.08053701603785
+      },
+      "IPC_ms": {
+        "median": 7.8599139815196395,
+        "max": 40.176359994802624
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false
+    },
+    {
+      "road": "N0",
+      "policy": "minus_executed",
+      "native_actions": 288,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 23000,
+      "return_value": 1.8562500000000026,
+      "retire_reason": null,
+      "damage": 0.0,
+      "first_collision": null,
+      "visited": 325,
+      "total_tiles": 325,
+      "raw_step_ticks": 1151,
+      "raw_reset_ticks": 51,
+      "wall_s": 16.471595870971214,
+      "actor_CPU_s": 2.923391,
+      "Agent_ms": {
+        "median": 6.806550489272922,
+        "p95": 14.940017543267457,
+        "max": 28.33515900420025
+      },
+      "IPC_ms": {
+        "median": 9.964287019101903,
+        "max": 31.14138904493302
+      },
+      "pixel_only": true,
+      "GT_runtime_inputs": false
+    }
+  ],
+  "pairs": [
+    {
+      "road": "O0",
+      "sign": "plus",
+      "nominal_completed": true,
+      "executed_completed": true,
+      "both_completed": true,
+      "delta_executed_minus_nominal_ms": -320,
+      "nominal_DNF": false,
+      "executed_DNF": false,
+      "unknown": false
+    },
+    {
+      "road": "O0",
+      "sign": "minus",
+      "nominal_completed": true,
+      "executed_completed": true,
+      "both_completed": true,
+      "delta_executed_minus_nominal_ms": -560,
+      "nominal_DNF": false,
+      "executed_DNF": false,
+      "unknown": false
+    },
+    {
+      "road": "N0",
+      "sign": "plus",
+      "nominal_completed": false,
+      "executed_completed": false,
+      "both_completed": false,
+      "delta_executed_minus_nominal_ms": null,
+      "nominal_DNF": true,
+      "executed_DNF": true,
+      "unknown": false
+    },
+    {
+      "road": "N0",
+      "sign": "minus",
+      "nominal_completed": true,
+      "executed_completed": true,
+      "both_completed": true,
+      "delta_executed_minus_nominal_ms": -620,
+      "nominal_DNF": false,
+      "executed_DNF": false,
+      "unknown": false
+    }
+  ],
+  "primary_gate_passed": false,
+  "candidate_gate_passing_signs": [
+    "minus"
+  ],
+  "baselines": {
+    "O0": {
+      "completed": true,
+      "lap_ms": 23660,
+      "damage": 0.0
+    },
+    "N0": {
+      "completed": true,
+      "lap_ms": 23620,
+      "damage": 0.2
+    }
+  },
+  "cost": {
+    "stage": 273,
+    "at_utc": "2026-10-13T07:50:18.341734+00:00",
+    "native_cap": 2600,
+    "available_research_at_start": 2605,
+    "new_wrapper_actions": 2089,
+    "new_actual_episodes": 8,
+    "new_baseline_materialization_actions": 0,
+    "cached240_baselines_reused": 2,
+    "raw_step_ticks": 8349,
+    "raw_reset_ticks": 408,
+    "actual_episode_wall_s": 102.37993876088876,
+    "evaluation_wall_s": 102.59414410591125,
+    "evaluator_CPU_s": 84.09208769700001,
+    "actor_CPU_s": 18.41656,
+    "measured_native_per_wall_second": 20.361785930427548,
+    "offline_preflight_actor_calls": 45,
+    "offline_preflight_wall_s": 1.7054509890149347,
+    "zero_identity_pairs": 16,
+    "new_parameter_directions": 1,
+    "optimizer_updates": 0,
+    "new_teacher_labels": 0,
+    "new_fits": 0,
+    "new_geometry_solves": 0,
+    "model_physics_queries": 0,
+    "model_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "B_operating_cap": 920000,
+    "actual_cumulative_wrapper_actions": 835484,
+    "research_remaining": 516,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "standalone_archive_offline_verification_calls": 36,
+    "standalone_archive_offline_verification_wall_s": 1.1967036909773014,
+    "total_offline_actor_calls": 81
+  },
+  "next_research_budget": {
+    "executed": false,
+    "first": "Fixedminus_executedremaining6DEVregression before deeper learning; no coefficient change",
+    "remaining_DEV_expected_native": 1499,
+    "remaining_DEV_native_cap": 3900,
+    "additional_research_to_guarantee_cap": 3384,
+    "expected_wall_s": 73.61829679978983,
+    "cap_wall_s": 191.5352618540229,
+    "conditional_learning": "Only if fixedcandidate broadDEVcompletion gate passes: legaljointactor,executedsteeringfeedback,fullcompleted-time objective,16fixed2048actionupdates32768training,no intermediate screen/checkpoint selection; final6knownDEV+2freshDEVpaired240 screens650per-run caps.",
+    "conditional_training_native": 32768,
+    "conditional_final_gate_native_cap": 6500,
+    "conditional_learning_total_native_cap": 39268,
+    "conditional_learning_wall_estimate_s": 1928.5145288419928,
+    "allocation_is_design_budget_not_convergence_guarantee": true,
+    "GT_oracle_times_are_not_legal_candidate_metrics": true,
+    "final_reserve_used": 0
+  },
+  "training_or_convergence_test": false,
+  "teacher_runtime_inputs": false,
+  "all_action_and_memory_audits_passed": true,
+  "champion_unchanged": true,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_additional_run": false,
+  "standalone_pixel_candidate": {
+    "passed": true,
+    "archive_sha256": "065c55255ae02f425e094b0706ca46bad708013a5271beb7910608426ac96449",
+    "identity_pairs": 16,
+    "offline_actor_calls": 36,
+    "wall_s": 1.1967036909773014,
+    "new_native": 0,
+    "not_champion": true,
+    "not_officially_qualified": true,
+    "pixel_only": true
+  }
+}
