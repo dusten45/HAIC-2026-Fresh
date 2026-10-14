@@ -1,0 +1,74 @@
+{
+  "stage": 312,
+  "review_only": true,
+  "source_audit": {
+    "archived_choose_route_functions": 165,
+    "distinct_AST_bodies": 5,
+    "archives_without_named_function": 33,
+    "explicit_gain_and_lookahead_aligned_functions": 0,
+    "current_router_uses_default_target_and_unit_gain": true,
+    "current_controller_uses_frozen_gain_and_lookahead": true
+  },
+  "selected_path_arithmetic": {
+    "rows": 659,
+    "nonempty_paths": 638,
+    "proxy_differs_in_float32": 378,
+    "proxy_steer_abs_error_rad": {
+      "mean": 0.007210588086284015,
+      "median": 0.004250494312009745,
+      "p95": 0.02436534339359968,
+      "maximum": 0.06300038643227393
+    },
+    "target_distance_difference_m": {
+      "mean": 0.8612420472107521,
+      "p95": 0.8944334603426778,
+      "maximum": 0.894433460342681
+    },
+    "actual_target_max_abs_reconstruction_error": 0.0,
+    "actual_nominal_and_final_steer_bit_exact": true,
+    "counterfactual_rank_changes_measured": false,
+    "closed_loop_benefit_measured": false
+  },
+  "cost": {
+    "new_native": 0,
+    "new_source_physics_ticks": 0,
+    "new_fits": 0,
+    "new_actor_calls": 0,
+    "wall_s": 2.794221288000699,
+    "actual_cumulative_wrapper_actions": 1242120,
+    "research_remaining": 3880,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1330000
+  },
+  "methodology_originals_verified": false,
+  "working_family_map_count": 16,
+  "review_sources": [
+    "stage20 working family map",
+    "stage112 original-document audit",
+    "stage300 cached296 TRAIN traces",
+    "stage306/307 existing aggregates",
+    "stage298/299/301/303/304/305/308/309/310/311 existing code and results"
+  ],
+  "proposal": {
+    "axis": "Match route score steering predictor to frozen296 executed target/gain/clip/smoothing; unchanged candidate pool, weights, anchor and controller",
+    "implemented": false,
+    "native_executed": false,
+    "proposed_native_cap": 3000,
+    "estimated_native": [
+      1750,
+      2000
+    ],
+    "estimated_wall_s": [
+      60,
+      90
+    ],
+    "extra_budget_requested": 0,
+    "automatic_extension": false
+  },
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false
+}
