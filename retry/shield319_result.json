@@ -1,0 +1,544 @@
+{
+  "stage": 319,
+  "rule": "First sampled obstacle overlap consumes latch. Original steering and clipped +/-0.08 alternatives, exactties original/minus/plus. Only strictly improved clearance applies one action with gas0 and brake max(old,.5); executed steering memory updated, thereafter296. No threshold or parameter sweep.",
+  "model": "Current ego xright/yforward. Physical tracked-obstacle origin already41.542/62.4475. HUD norm speed heldconstant, lateralvelocity0. Measured CCW yaw and front0 joint; front1 samejoint, rear0. Four20ms motor50/max3 updates, linearly interpolated joint8 samples/tick. Clockwise yaw=-HUDyaw+v/3.24*(tan(-joint)-tan(-initialjoint)); midpoint pose integration. Eight official polygon fixtures, skin.01,33pose samples. No tire/slip/damage/brake dynamics or collision/safety certification.",
+  "gate": "OFF exact296 actions/features/memory. ON actual action change and at leastone first applied trigger strictly before cached first contact; else native0. Recorded callback collision is event label, not geometric overlap truth. No results-based threshold repair.",
+  "comparison": "Six once vs cached2965/6. Count first/equal commonmean strictly lower. Additions/losses/time/damage/actual intervention/cost. No damage veto, minimum gain,DEV,promotion or extension.",
+  "preflight": {
+    "records": [
+      {
+        "road": "T2950",
+        "actions": 315,
+        "off_exact": true,
+        "on_action_changes": 12,
+        "first_predicted_overlap": 151,
+        "first_applied_trigger": 151,
+        "first_cached_contact": 184,
+        "applied_before_first_contact": true,
+        "interventions": 1,
+        "callback_event_confusion": {
+          "TP": 1,
+          "FP": 9,
+          "FN": 0,
+          "TN": 305
+        },
+        "sampling_half_gap_bound_max_m": 0.08052156454942312,
+        "actor_compute_ms": [
+          {
+            "p95": 26.368797622853894,
+            "max": 58.406429016031325
+          },
+          {
+            "p95": 28.753005276666965,
+            "max": 63.156106043607
+          }
+        ],
+        "IPC_max_ms": [
+          63.39423597091809,
+          67.30416702339426
+        ],
+        "actor_CPU_s": [
+          4.525284,
+          4.6854320000000005
+        ]
+      },
+      {
+        "road": "T2953",
+        "actions": 298,
+        "off_exact": true,
+        "on_action_changes": 13,
+        "first_predicted_overlap": 59,
+        "first_applied_trigger": 59,
+        "first_cached_contact": 176,
+        "applied_before_first_contact": true,
+        "interventions": 1,
+        "callback_event_confusion": {
+          "TP": 0,
+          "FP": 3,
+          "FN": 1,
+          "TN": 294
+        },
+        "sampling_half_gap_bound_max_m": 0.07749744611440872,
+        "actor_compute_ms": [
+          {
+            "p95": 43.905662692850456,
+            "max": 93.31456304062158
+          },
+          {
+            "p95": 48.095978659694076,
+            "max": 238.58024401124567
+          }
+        ],
+        "IPC_max_ms": [
+          99.61282799486071,
+          244.7225569630973
+        ],
+        "actor_CPU_s": [
+          6.473155,
+          6.514896
+        ]
+      },
+      {
+        "road": "T2956",
+        "actions": 292,
+        "off_exact": true,
+        "on_action_changes": 11,
+        "first_predicted_overlap": 113,
+        "first_applied_trigger": 113,
+        "first_cached_contact": null,
+        "applied_before_first_contact": false,
+        "interventions": 1,
+        "callback_event_confusion": {
+          "TP": 0,
+          "FP": 4,
+          "FN": 0,
+          "TN": 288
+        },
+        "sampling_half_gap_bound_max_m": 0.08235621946800933,
+        "actor_compute_ms": [
+          {
+            "p95": 38.579434680286795,
+            "max": 55.2679940010421
+          },
+          {
+            "p95": 37.46277188765816,
+            "max": 60.68464001873508
+          }
+        ],
+        "IPC_max_ms": [
+          60.04876899532974,
+          67.16097902972251
+        ],
+        "actor_CPU_s": [
+          5.575665999999999,
+          5.539502
+        ]
+      },
+      {
+        "road": "T2959",
+        "actions": 265,
+        "off_exact": true,
+        "on_action_changes": 12,
+        "first_predicted_overlap": 122,
+        "first_applied_trigger": 122,
+        "first_cached_contact": 241,
+        "applied_before_first_contact": true,
+        "interventions": 1,
+        "callback_event_confusion": {
+          "TP": 1,
+          "FP": 3,
+          "FN": 1,
+          "TN": 260
+        },
+        "sampling_half_gap_bound_max_m": 0.0790799410295746,
+        "actor_compute_ms": [
+          {
+            "p95": 49.907460203394265,
+            "max": 114.0104669611901
+          },
+          {
+            "p95": 48.975232394877764,
+            "max": 117.64536204282194
+          }
+        ],
+        "IPC_max_ms": [
+          125.98630198044702,
+          134.12234198767692
+        ],
+        "actor_CPU_s": [
+          6.428972,
+          6.455426999999999
+        ]
+      },
+      {
+        "road": "O0",
+        "actions": 304,
+        "off_exact": true,
+        "on_action_changes": 0,
+        "first_predicted_overlap": null,
+        "first_applied_trigger": null,
+        "first_cached_contact": null,
+        "applied_before_first_contact": false,
+        "interventions": 0,
+        "callback_event_confusion": {
+          "TP": 0,
+          "FP": 0,
+          "FN": 0,
+          "TN": 304
+        },
+        "sampling_half_gap_bound_max_m": 0.07812175195116532,
+        "actor_compute_ms": [
+          {
+            "p95": 33.07344774075318,
+            "max": 62.35469796229154
+          },
+          {
+            "p95": 30.097641702741377,
+            "max": 71.50630600517616
+          }
+        ],
+        "IPC_max_ms": [
+          68.72156198369339,
+          77.81633298145607
+        ],
+        "actor_CPU_s": [
+          5.761583,
+          6.142892
+        ]
+      },
+      {
+        "road": "O2",
+        "actions": 280,
+        "off_exact": true,
+        "on_action_changes": 13,
+        "first_predicted_overlap": 45,
+        "first_applied_trigger": 45,
+        "first_cached_contact": 46,
+        "applied_before_first_contact": true,
+        "interventions": 1,
+        "callback_event_confusion": {
+          "TP": 1,
+          "FP": 8,
+          "FN": 0,
+          "TN": 271
+        },
+        "sampling_half_gap_bound_max_m": 0.07701647794271856,
+        "actor_compute_ms": [
+          {
+            "p95": 24.835416077985432,
+            "max": 36.91219602478668
+          },
+          {
+            "p95": 24.194347360753454,
+            "max": 52.71483800606802
+          }
+        ],
+        "IPC_max_ms": [
+          39.643294003326446,
+          57.17475898563862
+        ],
+        "actor_CPU_s": [
+          3.7639699999999996,
+          3.665173
+        ]
+      }
+    ],
+    "actual_action_changes": 61,
+    "early_trigger_roads": 4,
+    "gate_passed": true,
+    "new_native": 0,
+    "new_source_physics_ticks": 0,
+    "wall_s": 79.10375618934631,
+    "kinematic_sequences": 1590,
+    "kinematic_substeps": 50880
+  },
+  "results": [
+    {
+      "road": "T2950",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 26720,
+      "damage": 0.0,
+      "native_actions": 335,
+      "retire_reason": null
+    },
+    {
+      "road": "T2953",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24240,
+      "damage": 0.4,
+      "native_actions": 304,
+      "retire_reason": null
+    },
+    {
+      "road": "T2956",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23640,
+      "damage": 0.0,
+      "native_actions": 296,
+      "retire_reason": null
+    },
+    {
+      "road": "T2959",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21320,
+      "damage": 0.0,
+      "native_actions": 267,
+      "retire_reason": null
+    },
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24320,
+      "damage": 0.0,
+      "native_actions": 304,
+      "retire_reason": null
+    },
+    {
+      "road": "O2",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21560,
+      "damage": 0.0,
+      "native_actions": 270,
+      "retire_reason": null
+    }
+  ],
+  "baseline": [
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24320,
+      "damage": 0.0,
+      "native_actions": 304,
+      "retire_reason": null
+    },
+    {
+      "road": "O2",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 22360,
+      "damage": 0.2,
+      "native_actions": 280,
+      "retire_reason": null
+    },
+    {
+      "road": "T2950",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 315,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2953",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23800,
+      "damage": 0.2,
+      "native_actions": 298,
+      "retire_reason": null
+    },
+    {
+      "road": "T2956",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23320,
+      "damage": 0.0,
+      "native_actions": 292,
+      "retire_reason": null
+    },
+    {
+      "road": "T2959",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21180,
+      "damage": 0.4,
+      "native_actions": 265,
+      "retire_reason": null
+    }
+  ],
+  "fully_observed": true,
+  "diagnostic": {
+    "paired_additional_completions": 1,
+    "paired_lost_completions": 0,
+    "common_completions": 5,
+    "common_mean_delta_ms": 20.0,
+    "completion_sets_equal": false
+  },
+  "signals": [
+    {
+      "road": "T2950",
+      "actions": 335,
+      "interventions": 1,
+      "first_applied": 151
+    },
+    {
+      "road": "T2953",
+      "actions": 304,
+      "interventions": 1,
+      "first_applied": 59
+    },
+    {
+      "road": "T2956",
+      "actions": 296,
+      "interventions": 1,
+      "first_applied": 113
+    },
+    {
+      "road": "T2959",
+      "actions": 267,
+      "interventions": 1,
+      "first_applied": 122
+    },
+    {
+      "road": "O0",
+      "actions": 304,
+      "interventions": 0,
+      "first_applied": null
+    },
+    {
+      "road": "O2",
+      "actions": 270,
+      "interventions": 1,
+      "first_applied": 45
+    }
+  ],
+  "unobserved": [],
+  "budget_shortfall_estimate": null,
+  "technical_error": null,
+  "cost": {
+    "stage": 319,
+    "new_wrapper_actions": 1776,
+    "native_cap": 2969,
+    "new_official_runs": 6,
+    "new_source_physics_ticks": 0,
+    "new_fits_or_PPO": 0,
+    "new_paid_resources": 0,
+    "raw_step_ticks": 7095,
+    "raw_reset_ticks": 306,
+    "runner_CPU_s": 97.85522759599999,
+    "actor_CPU_s": 32.425256,
+    "total_native_wall_s": 133.60673594474792,
+    "actual_cumulative_wrapper_actions": 1264996,
+    "research_remaining": 1193,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1350189
+  },
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "automatic_extension": false,
+  "screen_count_first_improved": true,
+  "verification": {
+    "prefixes": [
+      {
+        "road": "T2950",
+        "identical_baseline_prefix_actions": 150,
+        "intervention_input_and_base_match": true,
+        "first_applied": 151,
+        "predicted_margin_improvement_m": 0.00017703384998357663
+      },
+      {
+        "road": "T2953",
+        "identical_baseline_prefix_actions": 58,
+        "intervention_input_and_base_match": true,
+        "first_applied": 59,
+        "predicted_margin_improvement_m": 0.03609842314182188
+      },
+      {
+        "road": "T2956",
+        "identical_baseline_prefix_actions": 112,
+        "intervention_input_and_base_match": true,
+        "first_applied": 113,
+        "predicted_margin_improvement_m": 0.055815552747359276
+      },
+      {
+        "road": "T2959",
+        "identical_baseline_prefix_actions": 121,
+        "intervention_input_and_base_match": true,
+        "first_applied": 122,
+        "predicted_margin_improvement_m": 0.05758602302113447
+      },
+      {
+        "road": "O0",
+        "identical_baseline_prefix_actions": 304,
+        "intervention_input_and_base_match": true,
+        "first_applied": null,
+        "predicted_margin_improvement_m": null
+      },
+      {
+        "road": "O2",
+        "identical_baseline_prefix_actions": 44,
+        "intervention_input_and_base_match": true,
+        "first_applied": 45,
+        "predicted_margin_improvement_m": 0.1886930964962702
+      }
+    ],
+    "package": {
+      "all296_nonroot_members_byte_exact": true,
+      "originalroot_exact_as_base": true,
+      "official_scaled_fixture_vertices_and_anchors_verified": true,
+      "straight80ms_translation_and_left_right_yaw_steer_reflection_verified": true,
+      "source_motor_target_sign": "joint_target=-action_steering",
+      "source_polygon_skin_m": 0.009999999776482582,
+      "same_float32_clipped_command_duplicates_removed": true,
+      "source_physics_ticks": 0
+    },
+    "all_six_official_endpoints_observed": true,
+    "evaluation_technical_errors": 0,
+    "evaluation_censors": 0,
+    "champion_and_rollback_preserved": true
+  },
+  "actual_contact_summary": [
+    {
+      "road": "T2950",
+      "first_actual_contact": null,
+      "damage": 0.0,
+      "interventions": 1
+    },
+    {
+      "road": "T2953",
+      "first_actual_contact": 177,
+      "damage": 0.4,
+      "interventions": 1
+    },
+    {
+      "road": "T2956",
+      "first_actual_contact": null,
+      "damage": 0.0,
+      "interventions": 1
+    },
+    {
+      "road": "T2959",
+      "first_actual_contact": null,
+      "damage": 0.0,
+      "interventions": 1
+    },
+    {
+      "road": "O0",
+      "first_actual_contact": null,
+      "damage": 0.0,
+      "interventions": 0
+    },
+    {
+      "road": "O2",
+      "first_actual_contact": null,
+      "damage": 0.0,
+      "interventions": 1
+    }
+  ]
+}
