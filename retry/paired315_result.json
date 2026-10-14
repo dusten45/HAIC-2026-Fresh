@@ -1,0 +1,704 @@
+{
+  "stage": 315,
+  "rule": "One fixed paired1NN over all16 legal features. Weighted TRAIN-only normalization, std floor1e-6, squared Euclidean distance, k1, first index exact ties, return teacher final gas/brake pair intact. Steering and296 memory preserved. No metric/k/label/source/scale sweep.",
+  "difference_from_prior": "228 learned class logits and separate mode intensity regressions;236 chose a current pedal by magnitude. This retrieves one observed paired action in joint state space, no channel averaging or mode classifier. 306 affine was continuous channel-wise residual regression. Teacher steering mismatch remains.",
+  "preregistered_offline_gate": "Six road-held-out folds. Same held rows; train-only normalization; paired1NN vs296 final pedals and newly solved same-fold306 residual ridge lambda1,bias0. Strictly lower equal-road mean gas+brake MAE than both controls is required. No minimum gain or road-veto; no retuning.",
+  "native_gate": "Only if offline gate passes, build one frozen index and actor. OFF bit-exact296,ON actual pair/action change and bounded compute on stored306 pixels; then one sixTRAIN comparison. Completion count first, equal count strict improvement of common-completion mean. Report additions/losses. No damage veto, automatic extension, DEV or promotion.",
+  "road_leave_one_out": [
+    {
+      "road": "T2950",
+      "held_rows": 100,
+      "train_rows": 481,
+      "baseline296": {
+        "gas_MAE": 0.3674221082191798,
+        "brake_MAE": 0.26824651058763266,
+        "joint_L1_MAE": 0.6356686188068125,
+        "both_positive_fraction": 1.0
+      },
+      "ridge_same_fold": {
+        "gas_MAE": 0.2916811342611362,
+        "brake_MAE": 0.28625743939894877,
+        "joint_L1_MAE": 0.5779385736600849,
+        "both_positive_fraction": 0.95
+      },
+      "paired_1NN": {
+        "gas_MAE": 0.23757541408500402,
+        "brake_MAE": 0.273960684761405,
+        "joint_L1_MAE": 0.511536098846409,
+        "both_positive_fraction": 0.0
+      }
+    },
+    {
+      "road": "T2953",
+      "held_rows": 100,
+      "train_rows": 481,
+      "baseline296": {
+        "gas_MAE": 0.3490245529168169,
+        "brake_MAE": 0.11918562008067965,
+        "joint_L1_MAE": 0.46821017299749657,
+        "both_positive_fraction": 1.0
+      },
+      "ridge_same_fold": {
+        "gas_MAE": 0.2744619145912807,
+        "brake_MAE": 0.13449712558207166,
+        "joint_L1_MAE": 0.4089590401733524,
+        "both_positive_fraction": 0.97
+      },
+      "paired_1NN": {
+        "gas_MAE": 0.30345687645669384,
+        "brake_MAE": 0.13016361642628907,
+        "joint_L1_MAE": 0.4336204928829829,
+        "both_positive_fraction": 0.0
+      }
+    },
+    {
+      "road": "T2956",
+      "held_rows": 98,
+      "train_rows": 483,
+      "baseline296": {
+        "gas_MAE": 0.3510875406467008,
+        "brake_MAE": 0.11378568675064919,
+        "joint_L1_MAE": 0.46487322739735,
+        "both_positive_fraction": 1.0
+      },
+      "ridge_same_fold": {
+        "gas_MAE": 0.30191345819699067,
+        "brake_MAE": 0.13030461759941828,
+        "joint_L1_MAE": 0.4322180757964089,
+        "both_positive_fraction": 0.9693877551020408
+      },
+      "paired_1NN": {
+        "gas_MAE": 0.29206016254681105,
+        "brake_MAE": 0.11788276617168164,
+        "joint_L1_MAE": 0.4099429287184927,
+        "both_positive_fraction": 0.0
+      }
+    },
+    {
+      "road": "T2959",
+      "held_rows": 89,
+      "train_rows": 492,
+      "baseline296": {
+        "gas_MAE": 0.3347900296426365,
+        "brake_MAE": 0.12867417479499002,
+        "joint_L1_MAE": 0.4634642044376265,
+        "both_positive_fraction": 1.0
+      },
+      "ridge_same_fold": {
+        "gas_MAE": 0.2933738384119036,
+        "brake_MAE": 0.13432190800408275,
+        "joint_L1_MAE": 0.4276957464159864,
+        "both_positive_fraction": 0.9775280898876404
+      },
+      "paired_1NN": {
+        "gas_MAE": 0.30751706784727767,
+        "brake_MAE": 0.17556378814611542,
+        "joint_L1_MAE": 0.4830808559933931,
+        "both_positive_fraction": 0.0
+      }
+    },
+    {
+      "road": "O0",
+      "held_rows": 100,
+      "train_rows": 481,
+      "baseline296": {
+        "gas_MAE": 0.3345414281077683,
+        "brake_MAE": 0.10486224858090282,
+        "joint_L1_MAE": 0.43940367668867114,
+        "both_positive_fraction": 1.0
+      },
+      "ridge_same_fold": {
+        "gas_MAE": 0.2855930314485082,
+        "brake_MAE": 0.1261702461770561,
+        "joint_L1_MAE": 0.4117632776255643,
+        "both_positive_fraction": 0.98
+      },
+      "paired_1NN": {
+        "gas_MAE": 0.2700575208477676,
+        "brake_MAE": 0.11533550798892975,
+        "joint_L1_MAE": 0.38539302883669735,
+        "both_positive_fraction": 0.0
+      }
+    },
+    {
+      "road": "O2",
+      "held_rows": 94,
+      "train_rows": 487,
+      "baseline296": {
+        "gas_MAE": 0.34608199683490504,
+        "brake_MAE": 0.12014532836272995,
+        "joint_L1_MAE": 0.466227325197635,
+        "both_positive_fraction": 1.0
+      },
+      "ridge_same_fold": {
+        "gas_MAE": 0.2654698962400982,
+        "brake_MAE": 0.14173971062754828,
+        "joint_L1_MAE": 0.4072096068676465,
+        "both_positive_fraction": 0.9680851063829787
+      },
+      "paired_1NN": {
+        "gas_MAE": 0.26892331280504683,
+        "brake_MAE": 0.16259532287082773,
+        "joint_L1_MAE": 0.43151863567587456,
+        "both_positive_fraction": 0.0
+      }
+    }
+  ],
+  "mean_road_joint_L1_MAE": {
+    "baseline296": 0.4896412042542653,
+    "ridge_same_fold": 0.44429738675650726,
+    "paired_1NN": 0.4425153401589749
+  },
+  "offline_gate_passed": true,
+  "body_diagnosis": [
+    {
+      "role": "T2950_296",
+      "first_collision_action": 184,
+      "one_step_kinematic_rollouts": 315,
+      "kinematic_substeps": 1260,
+      "pre_first_collision_or_all_rows": 183,
+      "local_position_error_m": {
+        "mean": 0.10111946335092933,
+        "p95": 0.20947673879186535,
+        "maximum": 0.2975291876101405
+      },
+      "actual_body_lateral_speed_m_s": {
+        "mean": 0.4822271599598486,
+        "p95": 1.9124969675734607,
+        "maximum": 2.3767747684592813
+      },
+      "command_memory_vs_actual_joint_rad": {
+        "p95": 5.3908773033573e-06,
+        "maximum": 8.87160651474872e-06
+      },
+      "first_collision_endpoint_error_m": 0.19759666493280761,
+      "scope": "Frozen286 single-step motion, legal speed/action/memory only. GT pose/velocity/joint are labels. Not collision prediction or a continuous hull certificate."
+    },
+    {
+      "role": "T2954_296",
+      "first_collision_action": null,
+      "one_step_kinematic_rollouts": 343,
+      "kinematic_substeps": 1372,
+      "pre_first_collision_or_all_rows": 343,
+      "local_position_error_m": {
+        "mean": 0.09915069303329119,
+        "p95": 0.21463727729813717,
+        "maximum": 0.4610600064032829
+      },
+      "actual_body_lateral_speed_m_s": {
+        "mean": 0.6380198552805586,
+        "p95": 2.0641774204813483,
+        "maximum": 2.961162808129986
+      },
+      "command_memory_vs_actual_joint_rad": {
+        "p95": 5.703612248508793e-06,
+        "maximum": 0.13476853848144857
+      },
+      "first_collision_endpoint_error_m": null,
+      "scope": "Frozen286 single-step motion, legal speed/action/memory only. GT pose/velocity/joint are labels. Not collision prediction or a continuous hull certificate."
+    }
+  ],
+  "teacher_rows": 581,
+  "teacher_both_positive_fraction": 0.0,
+  "cost": {
+    "new_native": 0,
+    "new_source_physics_ticks": 0,
+    "new_teacher_queries": 0,
+    "small_ridge_control_solves": 6,
+    "new_classifier_or_neural_fits": 0,
+    "nearest_neighbor_indices_built": 1,
+    "kinematic_rollouts": 658,
+    "kinematic_substeps": 2632,
+    "new_actor_calls": 0,
+    "new_paid_resources": 0,
+    "cache_wall_s": 0.5352330010500737,
+    "cache_CPU_s": 1.0618483159999998
+  },
+  "limitations": [
+    "Teacher first/future steering mismatch remains; no teacher validity or policy benefit established.",
+    "This is predictive road-held-out label error, not causal removal of simultaneous pedals or closed-loop performance.",
+    "Frozen286 one-step residual diagnosis does not validate a swept-body model or justify repeating its controller."
+  ],
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_extension": false,
+  "promotion": false,
+  "preflight": {
+    "records": [
+      {
+        "road": "T2950",
+        "actions": 315,
+        "off_exact": true,
+        "steer_features_memory_exact": true,
+        "paired_retrieval_verified": 315,
+        "on_action_changes": 315,
+        "actor_compute_ms": [
+          {
+            "p95": 28.531280037714183,
+            "max": 56.48508598096669
+          },
+          {
+            "p95": 27.768352406565107,
+            "max": 80.94805100699887
+          }
+        ],
+        "IPC_ms": [
+          {
+            "p95": 37.58413419709541,
+            "max": 64.57596301333979
+          },
+          {
+            "p95": 36.2214160617441,
+            "max": 94.4469139794819
+          }
+        ],
+        "actor_CPU_s": [
+          5.198576999999999,
+          5.080651
+        ]
+      },
+      {
+        "road": "T2953",
+        "actions": 298,
+        "off_exact": true,
+        "steer_features_memory_exact": true,
+        "paired_retrieval_verified": 298,
+        "on_action_changes": 298,
+        "actor_compute_ms": [
+          {
+            "p95": 27.322649906273,
+            "max": 82.08050997927785
+          },
+          {
+            "p95": 24.002039883635007,
+            "max": 57.95997101813555
+          }
+        ],
+        "IPC_ms": [
+          {
+            "p95": 34.33750771509948,
+            "max": 85.8276059734635
+          },
+          {
+            "p95": 29.85157055081799,
+            "max": 69.35040198732167
+          }
+        ],
+        "actor_CPU_s": [
+          4.703836,
+          4.633428
+        ]
+      },
+      {
+        "road": "T2956",
+        "actions": 292,
+        "off_exact": true,
+        "steer_features_memory_exact": true,
+        "paired_retrieval_verified": 292,
+        "on_action_changes": 292,
+        "actor_compute_ms": [
+          {
+            "p95": 30.733348155627027,
+            "max": 90.83902701968327
+          },
+          {
+            "p95": 30.284831026801836,
+            "max": 99.45650398731232
+          }
+        ],
+        "IPC_ms": [
+          {
+            "p95": 37.98984569439199,
+            "max": 116.58274498768151
+          },
+          {
+            "p95": 37.113603836041875,
+            "max": 117.50277498504147
+          }
+        ],
+        "actor_CPU_s": [
+          5.508571,
+          5.24054
+        ]
+      },
+      {
+        "road": "T2959",
+        "actions": 265,
+        "off_exact": true,
+        "steer_features_memory_exact": true,
+        "paired_retrieval_verified": 265,
+        "on_action_changes": 265,
+        "actor_compute_ms": [
+          {
+            "p95": 18.378311581909657,
+            "max": 54.79183798888698
+          },
+          {
+            "p95": 17.463506781496104,
+            "max": 39.80086499359459
+          }
+        ],
+        "IPC_ms": [
+          {
+            "p95": 23.05684880120679,
+            "max": 61.10256799729541
+          },
+          {
+            "p95": 22.204474185127754,
+            "max": 51.53747898293659
+          }
+        ],
+        "actor_CPU_s": [
+          3.325062,
+          3.355891
+        ]
+      },
+      {
+        "road": "O0",
+        "actions": 304,
+        "off_exact": true,
+        "steer_features_memory_exact": true,
+        "paired_retrieval_verified": 304,
+        "on_action_changes": 304,
+        "actor_compute_ms": [
+          {
+            "p95": 19.626181910280135,
+            "max": 53.92148101236671
+          },
+          {
+            "p95": 19.500201541814015,
+            "max": 117.51802102662623
+          }
+        ],
+        "IPC_ms": [
+          {
+            "p95": 24.11354790383484,
+            "max": 58.91524499747902
+          },
+          {
+            "p95": 26.267733381246202,
+            "max": 122.42291099391878
+          }
+        ],
+        "actor_CPU_s": [
+          3.8631499999999996,
+          3.957731
+        ]
+      },
+      {
+        "road": "O2",
+        "actions": 280,
+        "off_exact": true,
+        "steer_features_memory_exact": true,
+        "paired_retrieval_verified": 280,
+        "on_action_changes": 280,
+        "actor_compute_ms": [
+          {
+            "p95": 16.0386906558415,
+            "max": 27.738659002352506
+          },
+          {
+            "p95": 15.927074025967162,
+            "max": 37.52420505043119
+          }
+        ],
+        "IPC_ms": [
+          {
+            "p95": 20.533158385660503,
+            "max": 39.03310600435361
+          },
+          {
+            "p95": 19.1184812312713,
+            "max": 43.8144929939881
+          }
+        ],
+        "actor_CPU_s": [
+          3.0448129999999995,
+          3.0622949999999998
+        ]
+      }
+    ],
+    "actual_action_changes": 1754,
+    "actual_change": true,
+    "new_native": 0,
+    "wall_s": 68.60435366630554
+  },
+  "results": [
+    {
+      "road": "T2950",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.6000000000000001,
+      "native_actions": 370,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2953",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.0,
+      "native_actions": 180,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2956",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 31880,
+      "damage": 0.2,
+      "native_actions": 399,
+      "retire_reason": null
+    },
+    {
+      "road": "T2959",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 30200,
+      "damage": 0.2,
+      "native_actions": 378,
+      "retire_reason": null
+    },
+    {
+      "road": "O0",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.0,
+      "native_actions": 249,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "O2",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 1.0,
+      "native_actions": 109,
+      "retire_reason": "crash"
+    }
+  ],
+  "baseline": [
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24320,
+      "damage": 0.0,
+      "native_actions": 304,
+      "retire_reason": null
+    },
+    {
+      "road": "O2",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 22360,
+      "damage": 0.2,
+      "native_actions": 280,
+      "retire_reason": null
+    },
+    {
+      "road": "T2950",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 315,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2953",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23800,
+      "damage": 0.2,
+      "native_actions": 298,
+      "retire_reason": null
+    },
+    {
+      "road": "T2956",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23320,
+      "damage": 0.0,
+      "native_actions": 292,
+      "retire_reason": null
+    },
+    {
+      "road": "T2959",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21180,
+      "damage": 0.4,
+      "native_actions": 265,
+      "retire_reason": null
+    }
+  ],
+  "fully_observed": true,
+  "diagnostic": {
+    "paired_additional_completions": 0,
+    "paired_lost_completions": 3,
+    "common_completions": 2,
+    "common_mean_delta_ms": 8790.0,
+    "completion_sets_equal": false
+  },
+  "screen_better": false,
+  "unobserved": [],
+  "technical_error": null,
+  "signals": [
+    {
+      "road": "T2950",
+      "actions": 370,
+      "pedals_changed": 370,
+      "both_pedals_positive": 0
+    },
+    {
+      "road": "T2953",
+      "actions": 180,
+      "pedals_changed": 180,
+      "both_pedals_positive": 0
+    },
+    {
+      "road": "T2956",
+      "actions": 399,
+      "pedals_changed": 399,
+      "both_pedals_positive": 0
+    },
+    {
+      "road": "T2959",
+      "actions": 378,
+      "pedals_changed": 378,
+      "both_pedals_positive": 0
+    },
+    {
+      "road": "O0",
+      "actions": 249,
+      "pedals_changed": 249,
+      "both_pedals_positive": 0
+    },
+    {
+      "road": "O2",
+      "actions": 109,
+      "pedals_changed": 109,
+      "both_pedals_positive": 0
+    }
+  ],
+  "native_cost": {
+    "stage": 315,
+    "at_utc": "2026-10-14T13:03:30.468230+00:00",
+    "new_wrapper_actions": 1685,
+    "native_cap": 3880,
+    "new_official_runs": 6,
+    "new_source_physics_ticks": 0,
+    "new_teacher_queries": 0,
+    "new_paid_resources": 0,
+    "raw_step_ticks": 6737,
+    "raw_reset_ticks": 306,
+    "runner_CPU_s": 130.87718670799998,
+    "actor_CPU_s": 28.896555999999997,
+    "total_native_wall_s": 164.25738048553467,
+    "actual_cumulative_wrapper_actions": 1243805,
+    "research_remaining": 2195,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1330000
+  },
+  "verification": {
+    "stage": 315,
+    "actual_native_rows_independent_retrieval_verified": 1685,
+    "steering_and_nominal_memory_preserved": true,
+    "champion296_and240rollback_preserved": true,
+    "freshDEV_unopened": true,
+    "modes": [
+      {
+        "road": "T2950",
+        "actions": 370,
+        "pedals_changed": 370,
+        "mode": {
+          "gas": 311,
+          "brake": 59,
+          "coast": 0
+        }
+      },
+      {
+        "road": "T2956",
+        "actions": 399,
+        "pedals_changed": 399,
+        "mode": {
+          "gas": 304,
+          "brake": 95,
+          "coast": 0
+        }
+      },
+      {
+        "road": "O2",
+        "actions": 109,
+        "pedals_changed": 109,
+        "mode": {
+          "gas": 87,
+          "brake": 22,
+          "coast": 0
+        }
+      },
+      {
+        "road": "T2959",
+        "actions": 378,
+        "pedals_changed": 378,
+        "mode": {
+          "gas": 294,
+          "brake": 84,
+          "coast": 0
+        }
+      },
+      {
+        "road": "T2953",
+        "actions": 180,
+        "pedals_changed": 180,
+        "mode": {
+          "gas": 104,
+          "brake": 76,
+          "coast": 0
+        }
+      },
+      {
+        "road": "O0",
+        "actions": 249,
+        "pedals_changed": 249,
+        "mode": {
+          "gas": 190,
+          "brake": 59,
+          "coast": 0
+        }
+      }
+    ],
+    "remaining": 2195,
+    "reserve": 84000
+  }
+}
