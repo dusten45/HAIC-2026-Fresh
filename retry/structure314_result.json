@@ -1,0 +1,150 @@
+{
+  "stage": 314,
+  "review_only": true,
+  "policy_created": false,
+  "experiment_preregistered": false,
+  "native_evaluation_started": false,
+  "selected_structural_change": null,
+  "decision": "No justified untested structural intervention selected; preserve296 and all prior failures.",
+  "candidate_family_review": [
+    {
+      "axis": "Temporal road perception fusion",
+      "prior": [
+        253
+      ],
+      "reason": "Already tested with actual mask/action changes and slower paired laps; no new direct mechanism evidence."
+    },
+    {
+      "axis": "Tracker transport/origin/fallback",
+      "prior": [
+        130,
+        131,
+        132,
+        184
+      ],
+      "reason": "Existing origin, speed, metric-motion and privileged-motion studies; residual error alone does not justify repackaging."
+    },
+    {
+      "axis": "Direction or local route memory",
+      "prior": [
+        208,
+        209,
+        261,
+        305
+      ],
+      "reason": "Direction and reference recovery already tested; new reliable legal signal and distinct pre-failure effect not established."
+    },
+    {
+      "axis": "Road closing creates unsupported connections",
+      "prior": [
+        178,
+        186,
+        253
+      ],
+      "reason": "Current failed296 pre-contact path samples and targets remain road-supported; a specific false bridge and its causal effect have not been observed."
+    },
+    {
+      "axis": "Pedal mode/teacher or head representation",
+      "prior": [
+        236,
+        248,
+        251,
+        276,
+        290,
+        306,
+        307
+      ],
+      "reason": "Mode exclusion, added state, matched-steering imitation and categorical joint control have already been tested; no new label objective is justified within this small screen."
+    },
+    {
+      "axis": "Missing-target correction",
+      "prior": [
+        301,
+        303,
+        305
+      ],
+      "reason": "Already directly tested on current296; do not reintroduce the same guard or reference recovery."
+    }
+  ],
+  "current_saved_support": [
+    {
+      "trace_role": "T2950_296",
+      "actions": 315,
+      "first_collision_action": 184,
+      "pre_contact_including_first_action": 184,
+      "nonempty_paths": 183,
+      "paths_with_unsupported_points": 0,
+      "first_unsupported_path_action": null,
+      "unsupported_targets": 0,
+      "target_missing_inputs": 1,
+      "sample_support_is_not_swept_body_feasibility": true
+    },
+    {
+      "trace_role": "T2954_296",
+      "actions": 344,
+      "first_collision_action": null,
+      "pre_contact_including_first_action": 344,
+      "nonempty_paths": 341,
+      "paths_with_unsupported_points": 3,
+      "first_unsupported_path_action": 85,
+      "unsupported_targets": 0,
+      "target_missing_inputs": 3,
+      "sample_support_is_not_swept_body_feasibility": true
+    }
+  ],
+  "current_saved_target_availability": [
+    {
+      "road": "T2950",
+      "actions": 315,
+      "target_missing_inputs": 18
+    },
+    {
+      "road": "T2953",
+      "actions": 298,
+      "target_missing_inputs": 0
+    },
+    {
+      "road": "T2956",
+      "actions": 292,
+      "target_missing_inputs": 0
+    },
+    {
+      "road": "T2959",
+      "actions": 265,
+      "target_missing_inputs": 0
+    },
+    {
+      "road": "O0",
+      "actions": 304,
+      "target_missing_inputs": 0
+    },
+    {
+      "road": "O2",
+      "actions": 280,
+      "target_missing_inputs": 2
+    }
+  ],
+  "limitations": [
+    "No statement that all perception, planning, or learning methods are impossible.",
+    "Existing sampled road support does not prove continuous hull feasibility or eliminate all perception errors.",
+    "This review is not a performance experiment or a new original-document mapping."
+  ],
+  "next_evidence_needed": "Identify a distinct pre-failure information/representation error and show an existing-input, legal intervention changes it before spending native. No automatic new collection, fit, source search or intervention.",
+  "cost": {
+    "new_native": 0,
+    "new_source_physics_ticks": 0,
+    "new_fits": 0,
+    "new_policy_calls": 0,
+    "new_paid_resources": 0,
+    "aggregate_wall_s": 0.48046582302777097
+  },
+  "champion296_maintained": true,
+  "research_remaining": 3880,
+  "final_reserved_actions": 84000,
+  "reserve_used": 0,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_extension": false,
+  "promotion": false
+}
