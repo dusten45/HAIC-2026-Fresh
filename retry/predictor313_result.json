@@ -1,0 +1,390 @@
+{
+  "stage": 313,
+  "rule": "Only score predictor uses frozen296 target/lookahead/gain/clip/smoothing. Existing candidates, costs, tie order, anchor, controller, head and memory unchanged.",
+  "comparison": "Completion count first; equal count requires strictly lower common-completion mean time. Report additions/losses; no identical-set or 80ms gate. Six results only, no automatic extension/DEV/promotion.",
+  "changed_from312_before_results": "Remove two-road preflight threshold, 80ms minimum, identical-completion-set and no-loss requirements, per 2026-10-14 19:02 KST instruction.",
+  "preflight": {
+    "records": [
+      {
+        "road": "T2950",
+        "actions": 315,
+        "off_exact": true,
+        "on_action_changes": 0,
+        "same_input_selected_path_changes": 0,
+        "candidate_predictions_verified": 301,
+        "actor_compute_ms": [
+          {
+            "p95": 13.555180904222656,
+            "max": 37.10483101895079
+          },
+          {
+            "p95": 12.83951968071051,
+            "max": 25.435496005229652
+          }
+        ],
+        "IPC_ms": [
+          {
+            "p95": 16.460456716595218,
+            "max": 43.18203194998205
+          },
+          {
+            "p95": 15.44431761722081,
+            "max": 27.41922502173111
+          }
+        ],
+        "actor_CPU_s": [
+          2.70493,
+          2.7454069999999997
+        ]
+      },
+      {
+        "road": "T2953",
+        "actions": 298,
+        "off_exact": true,
+        "on_action_changes": 0,
+        "same_input_selected_path_changes": 0,
+        "candidate_predictions_verified": 305,
+        "actor_compute_ms": [
+          {
+            "p95": 14.46492102986667,
+            "max": 21.931089053396136
+          },
+          {
+            "p95": 13.261853923904704,
+            "max": 21.820282039698213
+          }
+        ],
+        "IPC_ms": [
+          {
+            "p95": 16.53032269969117,
+            "max": 31.656033999752253
+          },
+          {
+            "p95": 15.700822623330168,
+            "max": 23.90789205674082
+          }
+        ],
+        "actor_CPU_s": [
+          2.658839,
+          2.622385
+        ]
+      },
+      {
+        "road": "T2956",
+        "actions": 292,
+        "off_exact": true,
+        "on_action_changes": 0,
+        "same_input_selected_path_changes": 0,
+        "candidate_predictions_verified": 294,
+        "actor_compute_ms": [
+          {
+            "p95": 12.421607840224166,
+            "max": 26.398514048196375
+          },
+          {
+            "p95": 12.159907506429589,
+            "max": 17.251792014576495
+          }
+        ],
+        "IPC_ms": [
+          {
+            "p95": 14.415520374313926,
+            "max": 31.508951971773058
+          },
+          {
+            "p95": 14.648024932830591,
+            "max": 32.863130036275834
+          }
+        ],
+        "actor_CPU_s": [
+          2.461881,
+          2.475158
+        ]
+      },
+      {
+        "road": "T2959",
+        "actions": 265,
+        "off_exact": true,
+        "on_action_changes": 0,
+        "same_input_selected_path_changes": 0,
+        "candidate_predictions_verified": 272,
+        "actor_compute_ms": [
+          {
+            "p95": 12.72006798535585,
+            "max": 21.0394180030562
+          },
+          {
+            "p95": 13.00589080201462,
+            "max": 19.482573959976435
+          }
+        ],
+        "IPC_ms": [
+          {
+            "p95": 15.370802208781239,
+            "max": 30.82953399280086
+          },
+          {
+            "p95": 15.291013801470395,
+            "max": 21.89530699979514
+          }
+        ],
+        "actor_CPU_s": [
+          2.228047,
+          2.303337
+        ]
+      },
+      {
+        "road": "O0",
+        "actions": 304,
+        "off_exact": true,
+        "on_action_changes": 0,
+        "same_input_selected_path_changes": 0,
+        "candidate_predictions_verified": 307,
+        "actor_compute_ms": [
+          {
+            "p95": 11.714208452031011,
+            "max": 19.265410024672747
+          },
+          {
+            "p95": 11.815576135995792,
+            "max": 58.1360770156607
+          }
+        ],
+        "IPC_ms": [
+          {
+            "p95": 14.042014392907731,
+            "max": 21.09030302381143
+          },
+          {
+            "p95": 13.874419138301151,
+            "max": 60.91178097994998
+          }
+        ],
+        "actor_CPU_s": [
+          2.4829369999999997,
+          2.535489
+        ]
+      },
+      {
+        "road": "O2",
+        "actions": 280,
+        "off_exact": true,
+        "on_action_changes": 0,
+        "same_input_selected_path_changes": 0,
+        "candidate_predictions_verified": 284,
+        "actor_compute_ms": [
+          {
+            "p95": 13.568649048102097,
+            "max": 59.49497799156234
+          },
+          {
+            "p95": 13.014477613614876,
+            "max": 24.127501994371414
+          }
+        ],
+        "IPC_ms": [
+          {
+            "p95": 17.633219395065684,
+            "max": 63.583354000002146
+          },
+          {
+            "p95": 15.933282460900957,
+            "max": 37.374115956481546
+          }
+        ],
+        "actor_CPU_s": [
+          2.536066,
+          2.5124429999999998
+        ]
+      }
+    ],
+    "same_input_selected_path_changes": 0,
+    "actual_selection_change": false,
+    "new_native": 0,
+    "new_source_physics_ticks": 0,
+    "wall_s": 38.24971866607666
+  },
+  "results": [],
+  "baseline": [
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24320,
+      "damage": 0.0,
+      "native_actions": 304,
+      "retire_reason": null
+    },
+    {
+      "road": "O2",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 22360,
+      "damage": 0.2,
+      "native_actions": 280,
+      "retire_reason": null
+    },
+    {
+      "road": "T2950",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 315,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2953",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23800,
+      "damage": 0.2,
+      "native_actions": 298,
+      "retire_reason": null
+    },
+    {
+      "road": "T2956",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23320,
+      "damage": 0.0,
+      "native_actions": 292,
+      "retire_reason": null
+    },
+    {
+      "road": "T2959",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21180,
+      "damage": 0.4,
+      "native_actions": 265,
+      "retire_reason": null
+    }
+  ],
+  "fully_observed": false,
+  "diagnostic": null,
+  "screen_better": false,
+  "unobserved": [
+    "T2950",
+    "T2953",
+    "T2956",
+    "T2959",
+    "O0",
+    "O2"
+  ],
+  "technical_error": null,
+  "signals": [],
+  "cost": {
+    "stage": 313,
+    "at_utc": "2026-10-14T10:07:45.583130+00:00",
+    "new_wrapper_actions": 0,
+    "native_cap": 3000,
+    "new_official_runs": 0,
+    "new_source_physics_ticks": 0,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "raw_step_ticks": 0,
+    "raw_reset_ticks": 0,
+    "runner_CPU_s": 0,
+    "actor_CPU_s": 0,
+    "total_native_wall_s": 0.00035881996154785156,
+    "B_operating_cap": 1330000,
+    "actual_cumulative_wrapper_actions": 1242120,
+    "research_remaining": 3880,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_extension": false,
+  "promotion": false,
+  "score_arithmetic": [
+    {
+      "road": "T2950",
+      "actions": 315,
+      "empty_candidate_frames": 18,
+      "multi_candidate_frames": 4,
+      "candidate_prediction_changed": 183,
+      "connection_cost_changed": 183,
+      "minimum_original_winner_margin_m": 6.297076825810338,
+      "minimum_aligned_winner_margin_m": 6.164472349136395
+    },
+    {
+      "road": "T2953",
+      "actions": 298,
+      "empty_candidate_frames": 0,
+      "multi_candidate_frames": 7,
+      "candidate_prediction_changed": 180,
+      "connection_cost_changed": 180,
+      "minimum_original_winner_margin_m": 4.219572322109266,
+      "minimum_aligned_winner_margin_m": 4.651356190788302
+    },
+    {
+      "road": "T2956",
+      "actions": 292,
+      "empty_candidate_frames": 0,
+      "multi_candidate_frames": 2,
+      "candidate_prediction_changed": 161,
+      "connection_cost_changed": 161,
+      "minimum_original_winner_margin_m": 7.579047987372196,
+      "minimum_aligned_winner_margin_m": 7.675401691845439
+    },
+    {
+      "road": "T2959",
+      "actions": 265,
+      "empty_candidate_frames": 0,
+      "multi_candidate_frames": 7,
+      "candidate_prediction_changed": 168,
+      "connection_cost_changed": 168,
+      "minimum_original_winner_margin_m": 1.7460665313411563,
+      "minimum_aligned_winner_margin_m": 2.247628411530076
+    },
+    {
+      "road": "O0",
+      "actions": 304,
+      "empty_candidate_frames": 0,
+      "multi_candidate_frames": 3,
+      "candidate_prediction_changed": 184,
+      "connection_cost_changed": 184,
+      "minimum_original_winner_margin_m": 2.763269187390827,
+      "minimum_aligned_winner_margin_m": 3.310229737491297
+    },
+    {
+      "road": "O2",
+      "actions": 280,
+      "empty_candidate_frames": 2,
+      "multi_candidate_frames": 6,
+      "candidate_prediction_changed": 173,
+      "connection_cost_changed": 173,
+      "minimum_original_winner_margin_m": 0.03459903774978823,
+      "minimum_aligned_winner_margin_m": 0.03459903774978734
+    }
+  ],
+  "closure_reason": "No selected path or action changes on all1754 saved baseline inputs; native screen was not started.",
+  "native_comparison_performed": false,
+  "verification": {
+    "all_other296_members_byte_exact": true,
+    "only_existing_function_changed": "choose_route",
+    "off_exact_actions_features_memory": 1754,
+    "on_candidate_predictions_bit_exact": 1763,
+    "changed_selection": 0,
+    "changed_returned_actions": 0,
+    "all_preflight_processes_reaped": true,
+    "champion_and_rollback_preserved": true,
+    "native_results_unobserved_not_DNF": true
+  }
+}
