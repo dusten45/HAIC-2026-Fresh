@@ -1,0 +1,407 @@
+{
+  "stage": 321,
+  "rule": "Same exact319 geometry/trigger/latch/horizon/numbers. A steering-only retains originalgas/brake; B retains originalsteering and gas0/brakefloor.5. At mostone action, then296 with actual memory. No modified trigger, threshold or source model.",
+  "judgment": "Selected after320 outcomes; causal diagnostic set, not generalization. Observe allsix once, no settings/checkpoint changes or skipped arms after losses. Report each road/arm completion,time,damage,firstcontact and actualpulse; cached296/joint reuse. No promotion,DEV,HOLDOUT,SEALED.",
+  "budget_extension": {
+    "stage": 321,
+    "at_utc": "2026-10-14T15:52:56.872865+00:00",
+    "baseline_or_joint_max_three": 1042,
+    "two_arm_expected_native": 2084,
+    "measured319_max_extra_per_run": 20,
+    "uncertainty_allowance": 120,
+    "planned_native_cap": 2204,
+    "additional_research": 1748,
+    "research_after": 2204,
+    "B_after": 1354420,
+    "scope": "Explicit selected3 x2 ablation only; reasonable research extension, no reserve or automatic extra policies"
+  },
+  "results": [
+    {
+      "road": "T2950",
+      "arm": "A",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 1.0,
+      "native_actions": 193,
+      "retire_reason": "crash"
+    },
+    {
+      "road": "T2950",
+      "arm": "B",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.0,
+      "native_actions": 319,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "N2",
+      "arm": "B",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23100,
+      "damage": 0.4,
+      "native_actions": 289,
+      "retire_reason": null
+    },
+    {
+      "road": "N2",
+      "arm": "A",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21820,
+      "damage": 0.0,
+      "native_actions": 273,
+      "retire_reason": null
+    },
+    {
+      "road": "T2954",
+      "arm": "A",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.0,
+      "native_actions": 208,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2954",
+      "arm": "B",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 27980,
+      "damage": 0.0,
+      "native_actions": 350,
+      "retire_reason": null
+    }
+  ],
+  "baseline": [
+    {
+      "road": "T2950",
+      "arm": null,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 315,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "N2",
+      "arm": null,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 29000,
+      "damage": 0.6000000000000001,
+      "native_actions": 363,
+      "retire_reason": null
+    },
+    {
+      "road": "T2954",
+      "arm": null,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 27440,
+      "damage": 0.0,
+      "native_actions": 344,
+      "retire_reason": null
+    }
+  ],
+  "joint": [
+    {
+      "road": "T2950",
+      "arm": null,
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 26720,
+      "damage": 0.0,
+      "native_actions": 335,
+      "retire_reason": null
+    },
+    {
+      "road": "N2",
+      "arm": null,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 1.0,
+      "native_actions": 227,
+      "retire_reason": "crash"
+    },
+    {
+      "road": "T2954",
+      "arm": null,
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 272,
+      "retire_reason": "off_track"
+    }
+  ],
+  "details": [
+    {
+      "road": "T2950",
+      "arm": "A",
+      "interventions": 1,
+      "actual_changed_actions": 1,
+      "first_applied": 151,
+      "first_contact": 184,
+      "pulse_base": [
+        -0.05631101131439209,
+        0.4656917452812195,
+        0.03654415160417557
+      ],
+      "pulse_action": [
+        -0.13631100952625275,
+        0.4656917452812195,
+        0.03654415160417557
+      ],
+      "exact_joint_prefix": true,
+      "trigger_input_and_model_exact": true
+    },
+    {
+      "road": "T2950",
+      "arm": "B",
+      "interventions": 1,
+      "actual_changed_actions": 1,
+      "first_applied": 151,
+      "first_contact": null,
+      "pulse_base": [
+        -0.05631101131439209,
+        0.4656917452812195,
+        0.03654415160417557
+      ],
+      "pulse_action": [
+        -0.05631101131439209,
+        0.0,
+        0.5
+      ],
+      "exact_joint_prefix": true,
+      "trigger_input_and_model_exact": true
+    },
+    {
+      "road": "N2",
+      "arm": "B",
+      "interventions": 1,
+      "actual_changed_actions": 1,
+      "first_applied": 65,
+      "first_contact": 66,
+      "pulse_base": [
+        0.029697882011532784,
+        0.3959079682826996,
+        0.05523725599050522
+      ],
+      "pulse_action": [
+        0.029697882011532784,
+        0.0,
+        0.5
+      ],
+      "exact_joint_prefix": true,
+      "trigger_input_and_model_exact": true
+    },
+    {
+      "road": "N2",
+      "arm": "A",
+      "interventions": 1,
+      "actual_changed_actions": 1,
+      "first_applied": 65,
+      "first_contact": null,
+      "pulse_base": [
+        0.029697882011532784,
+        0.3959079682826996,
+        0.05523725599050522
+      ],
+      "pulse_action": [
+        0.10969787836074829,
+        0.3959079682826996,
+        0.05523725599050522
+      ],
+      "exact_joint_prefix": true,
+      "trigger_input_and_model_exact": true
+    },
+    {
+      "road": "T2954",
+      "arm": "A",
+      "interventions": 1,
+      "actual_changed_actions": 1,
+      "first_applied": 82,
+      "first_contact": null,
+      "pulse_base": [
+        -0.1464989334344864,
+        0.22701120376586914,
+        0.0548880361020565
+      ],
+      "pulse_action": [
+        -0.22649893164634705,
+        0.22701120376586914,
+        0.0548880361020565
+      ],
+      "exact_joint_prefix": true,
+      "trigger_input_and_model_exact": true
+    },
+    {
+      "road": "T2954",
+      "arm": "B",
+      "interventions": 1,
+      "actual_changed_actions": 1,
+      "first_applied": 82,
+      "first_contact": null,
+      "pulse_base": [
+        -0.1464989334344864,
+        0.22701120376586914,
+        0.0548880361020565
+      ],
+      "pulse_action": [
+        -0.1464989334344864,
+        0.0,
+        0.5
+      ],
+      "exact_joint_prefix": true,
+      "trigger_input_and_model_exact": true
+    }
+  ],
+  "matched_trigger_legal_state": [
+    {
+      "road": "T2950",
+      "pixel_and_full_policy_prestate_exact": true,
+      "trigger_step": 151
+    },
+    {
+      "road": "N2",
+      "pixel_and_full_policy_prestate_exact": true,
+      "trigger_step": 65
+    },
+    {
+      "road": "T2954",
+      "pixel_and_full_policy_prestate_exact": true,
+      "trigger_step": 82
+    }
+  ],
+  "fully_observed": true,
+  "unobserved": [],
+  "technical_error": null,
+  "cost": {
+    "stage": 321,
+    "new_wrapper_actions": 1632,
+    "native_cap": 2204,
+    "new_official_runs": 6,
+    "reused_baseline_and_joint_runs": 6,
+    "raw_step_ticks": 6528,
+    "raw_reset_ticks": 306,
+    "runner_CPU_s": 83.878094425,
+    "actor_CPU_s": 27.177296000000002,
+    "total_native_wall_s": 113.51150631904602,
+    "additional_research": 1748,
+    "new_source_physics_ticks": 0,
+    "new_fits_or_PPO": 0,
+    "new_paid_resources": 0,
+    "actual_cumulative_wrapper_actions": 1269848,
+    "research_remaining": 572,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1354420
+  },
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "automatic_extension": false,
+  "limitations": [
+    "Three roads selected after320 outcomes; diagnostic conditional set, not generalization.",
+    "Single pulse components followed by own296 closed-loop states; not an additive decomposition of all later dynamics.",
+    "319 model/false-warning limitations unchanged; no fitted or privileged runtime inputs."
+  ],
+  "cached_first_contact": [
+    {
+      "road": "T2950",
+      "baseline_first_contact": 184,
+      "joint_first_contact": null,
+      "baseline_contact_observed": true,
+      "joint_contact_observed": true
+    },
+    {
+      "road": "N2",
+      "baseline_first_contact": 65,
+      "joint_first_contact": 223,
+      "baseline_contact_observed": true,
+      "joint_contact_observed": true
+    },
+    {
+      "road": "T2954",
+      "baseline_first_contact": null,
+      "joint_first_contact": 172,
+      "baseline_contact_observed": true,
+      "joint_contact_observed": true
+    }
+  ],
+  "diagnostic_summary": {
+    "baseline_completions": 2,
+    "joint_completions": 1,
+    "A_steering_only_completions": 1,
+    "B_brake_only_completions": 2,
+    "B_common_baseline_completions": 2,
+    "B_common_mean_delta_ms": -2680.0,
+    "A_common_baseline_completions": 1,
+    "A_common_delta_ms": -7180,
+    "scope": "Selected3 causal diagnostic, not generalization; joint-only T0rescue, bothisolated N2complete, brakeonly preservesT4."
+  },
+  "followup_proposal": {
+    "executed": false,
+    "arm": "B unchanged brake-only",
+    "reason": "Preserves baseline2selected completions and meanpaired time -2.68s, avoids both joint losses; T0 remainsDNF, no champion benefit yet. A losesT4 and crashesT0; no fullA extension proposed.",
+    "next_roads": 15,
+    "baseline_remaining15_native": 4168,
+    "reuse_B321_runs": 3,
+    "estimated_native_cap": 4468,
+    "allowance_basis": "Existing296 remaining15cost4168 +15x observed319 maxpositive20; no policy/threshold change",
+    "current_remaining": 572,
+    "additional_research_if_authorized_for_this_cap": 3896,
+    "reserve_use": 0,
+    "no_automatic_execution": true
+  },
+  "verification": {
+    "package": {
+      "changed_members": [
+        "agent.py",
+        "retry/shield319_constants.py"
+      ],
+      "all_geometry_HUD_base_tracker_path_target_head_members_exact319": true,
+      "only_component_ablation_and_readonly_prestate_hash_added": true
+    },
+    "all6_official_endpoints_observed": true,
+    "matched_full_pixel_and_policy_state_at_all3triggers": true,
+    "exact_joint_prefix_and_trigger_model_inputs": true,
+    "arm_components_and_actual_memory_verified": true,
+    "evaluation_errors": 0,
+    "evaluation_censors": 0,
+    "champion_and_rollback_preserved": true
+  }
+}
