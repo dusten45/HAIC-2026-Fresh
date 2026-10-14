@@ -1,0 +1,391 @@
+{
+  "stage": 316,
+  "arms": {
+    "A": "legal28 X -> reward suffix G",
+    "B": "legal28 X -> S=G+p_pre-t_pre/160; offset-only V=S_hat-p_pre+t_pre/160",
+    "C": "legal28 X + p_pre + damage_pre + t_pre/160 -> S; same V offset"
+  },
+  "recipe": "Scalar ridge lambda1,unpenalized bias; training-only weighted normalization,std floor1e-6,equal episode mass after first-row exclusion. Three fits once. Identical277 road/early-late [4::5] split. k>=2 prestate journal k-1; fixed original training tile count; verified nonterminal80ms intervals. Accounting identity must hold without ad-hoc correction. No future outcome,IDs,length or final state predictors. Episode-balanced metrics and500 paired bootstrap(seed316), no5% threshold. No PPO/native/source now.",
+  "provenance": {
+    "terminal_episodes": 231,
+    "complete": 167,
+    "DNF": 64,
+    "excluded_collection_cut": 62,
+    "excluded_cut_rows": 9110,
+    "excluded_technical": 0,
+    "terminal_source_rows": 54378,
+    "excluded_unknown_reset_first_rows": 231,
+    "usable_rows": 54147,
+    "train_episodes": 188,
+    "heldout_episodes": 43,
+    "train_rows": 44185,
+    "heldout_rows": 9962,
+    "exact277_split_verified": true,
+    "immutable_training_tile_counts": true,
+    "all_legal28_buffer_and_journal_rows_exact": true
+  },
+  "accounting": {
+    "nonterminal_intervals_checked": 53916,
+    "maximum_inferred_dt_error_s": 1.8665624601510444e-14,
+    "maximum_final_score_identity_error": 1.199040866595169e-14,
+    "pre_state_source": "journal row k-1 only for k>=2",
+    "time_source": "0.08*(k-1), source skip4 and nonterminal reward-delta verification",
+    "first_row_reset_progress_guessed": false
+  },
+  "heldout_episode_balanced": {
+    "A": {
+      "samples": 9962,
+      "MSE": 0.8633773551293278,
+      "RMSE": 0.9291810131127991,
+      "bias": -0.0857163957556046,
+      "EV": 0.0367795776544918
+    },
+    "B": {
+      "samples": 9962,
+      "MSE": 1.0051388769048957,
+      "RMSE": 1.0025661459000577,
+      "bias": -0.08428079678151486,
+      "EV": -0.12300764471916104
+    },
+    "C": {
+      "samples": 9962,
+      "MSE": 0.8299170119213902,
+      "RMSE": 0.910997811150713,
+      "bias": -0.06345797573323718,
+      "EV": 0.07069360010084724
+    }
+  },
+  "paired_episode_losses": [
+    {
+      "comparison": "C-A",
+      "episodes": 43,
+      "mean_delta_MSE": -0.03346034320793711,
+      "median_delta_MSE": 0.008042499657375413,
+      "p10_p90_delta_MSE": [
+        -0.45314410530539073,
+        0.14912213726883813
+      ],
+      "fraction_left_lower": 0.3488372093023256,
+      "paired_bootstrap_resamples": 500,
+      "bootstrap_seed": 316,
+      "CI95_mean_delta_MSE": [
+        -0.12351886512924629,
+        0.04204498857464725
+      ]
+    },
+    {
+      "comparison": "C-B",
+      "episodes": 43,
+      "mean_delta_MSE": -0.17522186498350512,
+      "median_delta_MSE": 0.023731239237341162,
+      "p10_p90_delta_MSE": [
+        -1.3016105566678418,
+        0.15919063791148036
+      ],
+      "fraction_left_lower": 0.2558139534883721,
+      "paired_bootstrap_resamples": 500,
+      "bootstrap_seed": 316,
+      "CI95_mean_delta_MSE": [
+        -0.3484536680303195,
+        -0.027740710184116054
+      ]
+    },
+    {
+      "comparison": "B-A",
+      "episodes": 43,
+      "mean_delta_MSE": 0.141761521775568,
+      "median_delta_MSE": -0.006393890737214636,
+      "p10_p90_delta_MSE": [
+        -0.020338930172066293,
+        0.8125664061453433
+      ],
+      "fraction_left_lower": 0.5813953488372093,
+      "paired_bootstrap_resamples": 500,
+      "bootstrap_seed": 316,
+      "CI95_mean_delta_MSE": [
+        0.06302850886454832,
+        0.23687797371033364
+      ]
+    }
+  ],
+  "strata": [
+    {
+      "stratum": "complete",
+      "episodes": 34,
+      "metrics": {
+        "A": {
+          "samples": 9037,
+          "MSE": 0.37782340514362467,
+          "RMSE": 0.6146734134022918,
+          "bias": -0.5299280679215544,
+          "EV": -0.4757892070512706
+        },
+        "B": {
+          "samples": 9037,
+          "MSE": 0.36999701604516483,
+          "RMSE": 0.6082738002291114,
+          "bias": -0.5748830956515372,
+          "EV": 0.3989340941854004
+        },
+        "C": {
+          "samples": 9037,
+          "MSE": 0.46081398736799045,
+          "RMSE": 0.6788328125304421,
+          "bias": -0.46506096275011155,
+          "EV": -2.7204064074731966
+        }
+      }
+    },
+    {
+      "stratum": "DNF",
+      "episodes": 9,
+      "metrics": {
+        "A": {
+          "samples": 925,
+          "MSE": 2.697692277297539,
+          "RMSE": 1.6424653047469646,
+          "bias": 1.5924165879824281,
+          "EV": -8.860184681582187
+        },
+        "B": {
+          "samples": 925,
+          "MSE": 3.404563684597212,
+          "RMSE": 1.8451459792106455,
+          "bias": 1.769105665616347,
+          "EV": -15.73770696620073
+        },
+        "C": {
+          "samples": 925,
+          "MSE": 2.224306215789791,
+          "RMSE": 1.4914108138905895,
+          "bias": 1.4537088641082885,
+          "EV": -5.762393394440884
+        }
+      }
+    },
+    {
+      "stratum": "early",
+      "episodes": 21,
+      "metrics": {
+        "A": {
+          "samples": 4930,
+          "MSE": 0.7424567445464055,
+          "RMSE": 0.8616592972552467,
+          "bias": -0.21133920487573488,
+          "EV": 0.005101544603002606
+        },
+        "B": {
+          "samples": 4930,
+          "MSE": 0.8603414415437212,
+          "RMSE": 0.9275459242235509,
+          "bias": -0.22061926219082548,
+          "EV": -0.15726069933697406
+        },
+        "C": {
+          "samples": 4930,
+          "MSE": 0.7415302366885471,
+          "RMSE": 0.8611214993765671,
+          "bias": -0.17474127838765105,
+          "EV": -0.013723364900903423
+        }
+      }
+    },
+    {
+      "stratum": "late",
+      "episodes": 22,
+      "metrics": {
+        "A": {
+          "samples": 5032,
+          "MSE": 0.978801574322117,
+          "RMSE": 0.989344012122233,
+          "bias": 0.03419628567724708,
+          "EV": 0.0514232580067564
+        },
+        "B": {
+          "samples": 5032,
+          "MSE": 1.143354610658744,
+          "RMSE": 1.069277611595204,
+          "bias": 0.04586046565464521,
+          "EV": -0.10733318172072503
+        },
+        "C": {
+          "samples": 5032,
+          "MSE": 0.9142862064618318,
+          "RMSE": 0.9561831448325325,
+          "bias": 0.04276699498233967,
+          "EV": 0.11466124032347935
+        }
+      }
+    },
+    {
+      "stratum": "complete_early",
+      "episodes": 18,
+      "metrics": {
+        "A": {
+          "samples": 4732,
+          "MSE": 0.37718940214479735,
+          "RMSE": 0.6141574734095461,
+          "bias": -0.5286481925243098,
+          "EV": -0.4774870288612518
+        },
+        "B": {
+          "samples": 4732,
+          "MSE": 0.37317701130731673,
+          "RMSE": 0.6108821582820345,
+          "bias": -0.5768285253991909,
+          "EV": 0.3884779086692224
+        },
+        "C": {
+          "samples": 4732,
+          "MSE": 0.4520961616219503,
+          "RMSE": 0.6723809646487252,
+          "bias": -0.46355024950491613,
+          "EV": -2.586612412559685
+        }
+      }
+    },
+    {
+      "stratum": "complete_late",
+      "episodes": 16,
+      "metrics": {
+        "A": {
+          "samples": 4305,
+          "MSE": 0.37853665851730534,
+          "RMSE": 0.6152533287332181,
+          "bias": -0.5313679277434543,
+          "EV": -0.4738935661215429
+        },
+        "B": {
+          "samples": 4305,
+          "MSE": 0.3664195213752438,
+          "RMSE": 0.6053259629119205,
+          "bias": -0.5726944871854269,
+          "EV": 0.4109538875941683
+        },
+        "C": {
+          "samples": 4305,
+          "MSE": 0.4706215413322856,
+          "RMSE": 0.6860186158788154,
+          "bias": -0.4667605151509563,
+          "EV": -2.8731249076113423
+        }
+      }
+    },
+    {
+      "stratum": "DNF_early",
+      "episodes": 3,
+      "metrics": {
+        "A": {
+          "samples": 198,
+          "MSE": 2.934060798956056,
+          "RMSE": 1.7129100381970024,
+          "bias": 1.6925147210157159,
+          "EV": -15.148799752574948
+        },
+        "B": {
+          "samples": 198,
+          "MSE": 3.7833280229621473,
+          "RMSE": 1.9450778963738566,
+          "bias": 1.9166363170593677,
+          "EV": -24.537144581938865
+        },
+        "C": {
+          "samples": 198,
+          "MSE": 2.4781346870881293,
+          "RMSE": 1.5742092259569975,
+          "bias": 1.5581125483159395,
+          "EV": -10.723063368384937
+        }
+      }
+    },
+    {
+      "stratum": "DNF_late",
+      "episodes": 6,
+      "metrics": {
+        "A": {
+          "samples": 727,
+          "MSE": 2.5795080164682815,
+          "RMSE": 1.606084685335204,
+          "bias": 1.5423675214657842,
+          "EV": -8.767333090345808
+        },
+        "B": {
+          "samples": 727,
+          "MSE": 3.215181515414745,
+          "RMSE": 1.7930927235965086,
+          "bias": 1.6953403398948375,
+          "EV": -15.602756840547912
+        },
+        "C": {
+          "samples": 727,
+          "MSE": 2.0973919801406216,
+          "RMSE": 1.4482375427189496,
+          "bias": 1.4015070220044623,
+          "EV": -5.483791058180676
+        }
+      }
+    }
+  ],
+  "C_lower_than_both": true,
+  "no_minimum_improvement_threshold": true,
+  "cost": {
+    "new_native": 0,
+    "new_source_physics_ticks": 0,
+    "new_PPO_updates": 0,
+    "new_actor_calls": 0,
+    "scalar_ridge_fits": 3,
+    "fit_cost": [
+      {
+        "arm": "A",
+        "wall_s": 0.07440810598200187,
+        "CPU_s": 0.07440478700000064
+      },
+      {
+        "arm": "B",
+        "wall_s": 0.05940041603753343,
+        "CPU_s": 0.05940093899999965
+      },
+      {
+        "arm": "C",
+        "wall_s": 0.05052870302461088,
+        "CPU_s": 0.05053047999999993
+      }
+    ],
+    "new_paid_resources": 0,
+    "wall_s": 5.608605696004815,
+    "CPU_s": 5.278067931
+  },
+  "research_remaining": 2195,
+  "final_reserved_actions": 84000,
+  "reserve_used": 0,
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "next_PPO_executed": false,
+  "promotion": false,
+  "limitations": [
+    "Realized reward suffix is not a noise-free conditional value.",
+    "Same six TRAIN roads and changing historical policies; episode split is not unseen-road generalization.",
+    "A training-only asymmetric critic prediction gain is not an actor or policy improvement.",
+    "No future outcome, terminal reason, episode length, road or policy identifier enters any predictor."
+  ],
+  "next_matched_pilot_proposal": {
+    "executed": false,
+    "comparison": "B offset-only vs C asymmetric, matched legal28 actors and common actor initialization/RNG, same S target and output offset; privileged data only in critic training; final checkpoint only, same six known TRAIN, cached296 comparator; no DEV/promotion",
+    "new_training_native": 16384,
+    "training_arm_native": 8192,
+    "training_arms": 2,
+    "fixed_final_evaluation_cap": 6000,
+    "new_native_cap": 22384,
+    "existing_research_available": 2195,
+    "minimum_additional_research_for_this_cap": 20189,
+    "reserve_use": 0,
+    "estimated_wall_minutes": [
+      14,
+      36
+    ],
+    "measurement_basis": "278 matched two8192 arms:532.723s training;276 training19.02native/s;315 screen1685native/164.257s. Load and censoring vary; cap is not a guarantee of twelve observed endpoints.",
+    "scope": "A small matched causal pilot, not required convergence budget; aggregate gain is weak vs A, complete stratum worsens, no automatic run or request approval."
+  }
+}
