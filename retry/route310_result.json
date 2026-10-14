@@ -1,0 +1,856 @@
+{
+  "stage": 310,
+  "coefficients": [
+    [
+      "length",
+      1.0
+    ],
+    [
+      "clearance",
+      2.0
+    ],
+    [
+      "connection",
+      1.0
+    ]
+  ],
+  "prior_difference": "134/135 compares connection0/1,171 holds near-score passing-side tie,123 changes hardmargin,304 changes cost anchor toHUDwheel,305 recoversemptyroute,294/297 changescontrollerparams,309 finalpedals. No same.8/1.2 coefficient experiment found:189 archivedconnected implementations hadunchangededge1+2/d, examinedchoose defaults1.0; controller gain and steeringconnection cost are different.",
+  "cost_relationship": "length/clearance partially coupled inedge ratio, butlength changes overallbasegap scale too; differentexisting occurrences, notsixindependentdirections.",
+  "screen": [
+    {
+      "label": "296",
+      "ordinal": 0,
+      "completions": 5,
+      "own_complete_mean_ms": 22996.0,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 0,
+        "common_completions": 5,
+        "common_mean_delta_ms": 0.0,
+        "completion_sets_equal": true
+      }
+    },
+    {
+      "label": "length080",
+      "ordinal": 1,
+      "coordinate": "length",
+      "factor": 0.8,
+      "completions": 5,
+      "own_complete_mean_ms": 24504.0,
+      "fully_observed": true,
+      "against296": {
+        "paired_additional_completions": 1,
+        "paired_lost_completions": 1,
+        "common_completions": 4,
+        "common_mean_delta_ms": -70.0,
+        "completion_sets_equal": false
+      }
+    },
+    {
+      "label": "length120",
+      "ordinal": 2,
+      "coordinate": "length",
+      "factor": 1.2,
+      "completions": 5,
+      "own_complete_mean_ms": 22896.0,
+      "fully_observed": true,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 0,
+        "common_completions": 5,
+        "common_mean_delta_ms": -100.0,
+        "completion_sets_equal": true
+      }
+    },
+    {
+      "label": "clearance080",
+      "ordinal": 3,
+      "coordinate": "clearance",
+      "factor": 0.8,
+      "completions": 5,
+      "own_complete_mean_ms": 23384.0,
+      "fully_observed": true,
+      "against296": {
+        "paired_additional_completions": 1,
+        "paired_lost_completions": 1,
+        "common_completions": 4,
+        "common_mean_delta_ms": -250.0,
+        "completion_sets_equal": false
+      }
+    },
+    {
+      "label": "clearance120",
+      "ordinal": 4,
+      "coordinate": "clearance",
+      "factor": 1.2,
+      "completions": 6,
+      "own_complete_mean_ms": 24103.333333333332,
+      "fully_observed": true,
+      "against296": {
+        "paired_additional_completions": 1,
+        "paired_lost_completions": 0,
+        "common_completions": 5,
+        "common_mean_delta_ms": 148.0,
+        "completion_sets_equal": false
+      }
+    },
+    {
+      "label": "connection080",
+      "ordinal": 5,
+      "coordinate": "connection",
+      "factor": 0.8,
+      "completions": 5,
+      "own_complete_mean_ms": 22996.0,
+      "fully_observed": true,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 0,
+        "common_completions": 5,
+        "common_mean_delta_ms": 0.0,
+        "completion_sets_equal": true
+      }
+    },
+    {
+      "label": "connection120",
+      "ordinal": 6,
+      "coordinate": "connection",
+      "factor": 1.2,
+      "completions": 5,
+      "own_complete_mean_ms": 22996.0,
+      "fully_observed": true,
+      "against296": {
+        "paired_additional_completions": 0,
+        "paired_lost_completions": 0,
+        "common_completions": 5,
+        "common_mean_delta_ms": 0.0,
+        "completion_sets_equal": true
+      }
+    }
+  ],
+  "winner": "clearance120",
+  "full18": [
+    {
+      "road": "T2950",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 28900,
+      "damage": 0.2,
+      "native_actions": 362,
+      "retire_reason": null
+    },
+    {
+      "road": "T2953",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23940,
+      "damage": 0.4,
+      "native_actions": 300,
+      "retire_reason": null
+    },
+    {
+      "road": "T2956",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23340,
+      "damage": 0.0,
+      "native_actions": 292,
+      "retire_reason": null
+    },
+    {
+      "road": "T2959",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21340,
+      "damage": 0.0,
+      "native_actions": 267,
+      "retire_reason": null
+    },
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24240,
+      "damage": 0.0,
+      "native_actions": 304,
+      "retire_reason": null
+    },
+    {
+      "road": "O2",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 22860,
+      "damage": 0.2,
+      "native_actions": 286,
+      "retire_reason": null
+    },
+    {
+      "road": "N0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23980,
+      "damage": 0.0,
+      "native_actions": 300,
+      "retire_reason": null
+    },
+    {
+      "road": "N1",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 18920,
+      "damage": 0.4,
+      "native_actions": 237,
+      "retire_reason": null
+    },
+    {
+      "road": "N2",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 166,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "N3",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 19040,
+      "damage": 0.0,
+      "native_actions": 239,
+      "retire_reason": null
+    },
+    {
+      "road": "T2951",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21040,
+      "damage": 0.0,
+      "native_actions": 264,
+      "retire_reason": null
+    },
+    {
+      "road": "T2952",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21240,
+      "damage": 0.0,
+      "native_actions": 266,
+      "retire_reason": null
+    },
+    {
+      "road": "T2954",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.0,
+      "native_actions": 464,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2955",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24700,
+      "damage": 0.4,
+      "native_actions": 309,
+      "retire_reason": null
+    },
+    {
+      "road": "T2957",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.4,
+      "native_actions": 191,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2958",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 22480,
+      "damage": 0.0,
+      "native_actions": 282,
+      "retire_reason": null
+    },
+    {
+      "road": "T29510",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.4,
+      "native_actions": 303,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T29511",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21260,
+      "damage": 0.0,
+      "native_actions": 266,
+      "retire_reason": null
+    }
+  ],
+  "full18_summary": {
+    "completions": 14,
+    "own_complete_mean_ms": 22662.85714285714,
+    "against296": {
+      "paired_additional_completions": 1,
+      "paired_lost_completions": 4,
+      "common_completions": 13,
+      "common_mean_delta_ms": -3.076923076923077,
+      "completion_sets_equal": false
+    }
+  },
+  "signals": [
+    {
+      "phase": "screen",
+      "candidate": "connection120",
+      "road": "T2950",
+      "actions": 315,
+      "path_changed_actions": 0,
+      "first_path_change": null,
+      "multiple_route_candidate_actions": 4
+    },
+    {
+      "phase": "screen",
+      "candidate": "connection120",
+      "road": "T2956",
+      "actions": 292,
+      "path_changed_actions": 0,
+      "first_path_change": null,
+      "multiple_route_candidate_actions": 2
+    },
+    {
+      "phase": "screen",
+      "candidate": "connection120",
+      "road": "O2",
+      "actions": 280,
+      "path_changed_actions": 0,
+      "first_path_change": null,
+      "multiple_route_candidate_actions": 6
+    },
+    {
+      "phase": "screen",
+      "candidate": "connection120",
+      "road": "T2959",
+      "actions": 265,
+      "path_changed_actions": 0,
+      "first_path_change": null,
+      "multiple_route_candidate_actions": 7
+    },
+    {
+      "phase": "screen",
+      "candidate": "connection120",
+      "road": "T2953",
+      "actions": 298,
+      "path_changed_actions": 0,
+      "first_path_change": null,
+      "multiple_route_candidate_actions": 7
+    },
+    {
+      "phase": "screen",
+      "candidate": "connection120",
+      "road": "O0",
+      "actions": 304,
+      "path_changed_actions": 0,
+      "first_path_change": null,
+      "multiple_route_candidate_actions": 3
+    },
+    {
+      "phase": "screen",
+      "candidate": "length120",
+      "road": "T2950",
+      "actions": 284,
+      "path_changed_actions": 26,
+      "first_path_change": 25,
+      "multiple_route_candidate_actions": 1
+    },
+    {
+      "phase": "screen",
+      "candidate": "length120",
+      "road": "T2956",
+      "actions": 292,
+      "path_changed_actions": 46,
+      "first_path_change": 35,
+      "multiple_route_candidate_actions": 4
+    },
+    {
+      "phase": "screen",
+      "candidate": "length120",
+      "road": "O2",
+      "actions": 270,
+      "path_changed_actions": 39,
+      "first_path_change": 21,
+      "multiple_route_candidate_actions": 5
+    },
+    {
+      "phase": "screen",
+      "candidate": "length120",
+      "road": "T2959",
+      "actions": 267,
+      "path_changed_actions": 31,
+      "first_path_change": 1,
+      "multiple_route_candidate_actions": 7
+    },
+    {
+      "phase": "screen",
+      "candidate": "length120",
+      "road": "T2953",
+      "actions": 298,
+      "path_changed_actions": 30,
+      "first_path_change": 1,
+      "multiple_route_candidate_actions": 8
+    },
+    {
+      "phase": "screen",
+      "candidate": "length120",
+      "road": "O0",
+      "actions": 307,
+      "path_changed_actions": 28,
+      "first_path_change": 20,
+      "multiple_route_candidate_actions": 3
+    },
+    {
+      "phase": "screen",
+      "candidate": "length080",
+      "road": "T2950",
+      "actions": 363,
+      "path_changed_actions": 40,
+      "first_path_change": 35,
+      "multiple_route_candidate_actions": 5
+    },
+    {
+      "phase": "screen",
+      "candidate": "length080",
+      "road": "T2956",
+      "actions": 293,
+      "path_changed_actions": 48,
+      "first_path_change": 35,
+      "multiple_route_candidate_actions": 2
+    },
+    {
+      "phase": "screen",
+      "candidate": "length080",
+      "road": "O2",
+      "actions": 274,
+      "path_changed_actions": 46,
+      "first_path_change": 22,
+      "multiple_route_candidate_actions": 6
+    },
+    {
+      "phase": "screen",
+      "candidate": "length080",
+      "road": "T2959",
+      "actions": 342,
+      "path_changed_actions": 39,
+      "first_path_change": 1,
+      "multiple_route_candidate_actions": 12
+    },
+    {
+      "phase": "screen",
+      "candidate": "length080",
+      "road": "T2953",
+      "actions": 302,
+      "path_changed_actions": 48,
+      "first_path_change": 1,
+      "multiple_route_candidate_actions": 3
+    },
+    {
+      "phase": "screen",
+      "candidate": "length080",
+      "road": "O0",
+      "actions": 302,
+      "path_changed_actions": 46,
+      "first_path_change": 22,
+      "multiple_route_candidate_actions": 2
+    },
+    {
+      "phase": "screen",
+      "candidate": "connection080",
+      "road": "T2950",
+      "actions": 315,
+      "path_changed_actions": 0,
+      "first_path_change": null,
+      "multiple_route_candidate_actions": 4
+    },
+    {
+      "phase": "screen",
+      "candidate": "connection080",
+      "road": "T2956",
+      "actions": 292,
+      "path_changed_actions": 0,
+      "first_path_change": null,
+      "multiple_route_candidate_actions": 2
+    },
+    {
+      "phase": "screen",
+      "candidate": "connection080",
+      "road": "O2",
+      "actions": 280,
+      "path_changed_actions": 0,
+      "first_path_change": null,
+      "multiple_route_candidate_actions": 6
+    },
+    {
+      "phase": "screen",
+      "candidate": "connection080",
+      "road": "T2959",
+      "actions": 265,
+      "path_changed_actions": 0,
+      "first_path_change": null,
+      "multiple_route_candidate_actions": 7
+    },
+    {
+      "phase": "screen",
+      "candidate": "connection080",
+      "road": "T2953",
+      "actions": 298,
+      "path_changed_actions": 0,
+      "first_path_change": null,
+      "multiple_route_candidate_actions": 7
+    },
+    {
+      "phase": "screen",
+      "candidate": "connection080",
+      "road": "O0",
+      "actions": 304,
+      "path_changed_actions": 0,
+      "first_path_change": null,
+      "multiple_route_candidate_actions": 3
+    },
+    {
+      "phase": "screen",
+      "candidate": "clearance080",
+      "road": "T2950",
+      "actions": 335,
+      "path_changed_actions": 59,
+      "first_path_change": 38,
+      "multiple_route_candidate_actions": 3
+    },
+    {
+      "phase": "screen",
+      "candidate": "clearance080",
+      "road": "T2956",
+      "actions": 293,
+      "path_changed_actions": 49,
+      "first_path_change": 35,
+      "multiple_route_candidate_actions": 5
+    },
+    {
+      "phase": "screen",
+      "candidate": "clearance080",
+      "road": "O2",
+      "actions": 269,
+      "path_changed_actions": 53,
+      "first_path_change": 21,
+      "multiple_route_candidate_actions": 7
+    },
+    {
+      "phase": "screen",
+      "candidate": "clearance080",
+      "road": "T2959",
+      "actions": 264,
+      "path_changed_actions": 51,
+      "first_path_change": 1,
+      "multiple_route_candidate_actions": 6
+    },
+    {
+      "phase": "screen",
+      "candidate": "clearance080",
+      "road": "T2953",
+      "actions": 219,
+      "path_changed_actions": 28,
+      "first_path_change": 1,
+      "multiple_route_candidate_actions": 4
+    },
+    {
+      "phase": "screen",
+      "candidate": "clearance080",
+      "road": "O0",
+      "actions": 304,
+      "path_changed_actions": 56,
+      "first_path_change": 22,
+      "multiple_route_candidate_actions": 2
+    },
+    {
+      "phase": "screen",
+      "candidate": "clearance120",
+      "road": "T2950",
+      "actions": 362,
+      "path_changed_actions": 28,
+      "first_path_change": 19,
+      "multiple_route_candidate_actions": 2
+    },
+    {
+      "phase": "screen",
+      "candidate": "clearance120",
+      "road": "T2956",
+      "actions": 292,
+      "path_changed_actions": 29,
+      "first_path_change": 35,
+      "multiple_route_candidate_actions": 2
+    },
+    {
+      "phase": "screen",
+      "candidate": "clearance120",
+      "road": "O2",
+      "actions": 286,
+      "path_changed_actions": 23,
+      "first_path_change": 22,
+      "multiple_route_candidate_actions": 6
+    },
+    {
+      "phase": "screen",
+      "candidate": "clearance120",
+      "road": "T2959",
+      "actions": 267,
+      "path_changed_actions": 24,
+      "first_path_change": 1,
+      "multiple_route_candidate_actions": 12
+    },
+    {
+      "phase": "screen",
+      "candidate": "clearance120",
+      "road": "T2953",
+      "actions": 300,
+      "path_changed_actions": 26,
+      "first_path_change": 1,
+      "multiple_route_candidate_actions": 5
+    },
+    {
+      "phase": "screen",
+      "candidate": "clearance120",
+      "road": "O0",
+      "actions": 304,
+      "path_changed_actions": 25,
+      "first_path_change": 22,
+      "multiple_route_candidate_actions": 2
+    },
+    {
+      "phase": "extension",
+      "candidate": "clearance120",
+      "road": "T2952",
+      "actions": 266,
+      "path_changed_actions": 27,
+      "first_path_change": 22,
+      "multiple_route_candidate_actions": 0
+    },
+    {
+      "phase": "extension",
+      "candidate": "clearance120",
+      "road": "N2",
+      "actions": 166,
+      "path_changed_actions": 4,
+      "first_path_change": 22,
+      "multiple_route_candidate_actions": 2
+    },
+    {
+      "phase": "extension",
+      "candidate": "clearance120",
+      "road": "T2958",
+      "actions": 282,
+      "path_changed_actions": 19,
+      "first_path_change": 19,
+      "multiple_route_candidate_actions": 1
+    },
+    {
+      "phase": "extension",
+      "candidate": "clearance120",
+      "road": "T2957",
+      "actions": 191,
+      "path_changed_actions": 7,
+      "first_path_change": 26,
+      "multiple_route_candidate_actions": 0
+    },
+    {
+      "phase": "extension",
+      "candidate": "clearance120",
+      "road": "N0",
+      "actions": 300,
+      "path_changed_actions": 30,
+      "first_path_change": 19,
+      "multiple_route_candidate_actions": 6
+    },
+    {
+      "phase": "extension",
+      "candidate": "clearance120",
+      "road": "N1",
+      "actions": 237,
+      "path_changed_actions": 18,
+      "first_path_change": 22,
+      "multiple_route_candidate_actions": 9
+    },
+    {
+      "phase": "extension",
+      "candidate": "clearance120",
+      "road": "T29510",
+      "actions": 303,
+      "path_changed_actions": 16,
+      "first_path_change": 1,
+      "multiple_route_candidate_actions": 3
+    },
+    {
+      "phase": "extension",
+      "candidate": "clearance120",
+      "road": "T2954",
+      "actions": 464,
+      "path_changed_actions": 15,
+      "first_path_change": 23,
+      "multiple_route_candidate_actions": 4
+    },
+    {
+      "phase": "extension",
+      "candidate": "clearance120",
+      "road": "T2951",
+      "actions": 264,
+      "path_changed_actions": 11,
+      "first_path_change": 19,
+      "multiple_route_candidate_actions": 5
+    },
+    {
+      "phase": "extension",
+      "candidate": "clearance120",
+      "road": "N3",
+      "actions": 239,
+      "path_changed_actions": 22,
+      "first_path_change": 19,
+      "multiple_route_candidate_actions": 6
+    },
+    {
+      "phase": "extension",
+      "candidate": "clearance120",
+      "road": "T29511",
+      "actions": 266,
+      "path_changed_actions": 20,
+      "first_path_change": 22,
+      "multiple_route_candidate_actions": 4
+    },
+    {
+      "phase": "extension",
+      "candidate": "clearance120",
+      "road": "T2955",
+      "actions": 309,
+      "path_changed_actions": 22,
+      "first_path_change": 19,
+      "multiple_route_candidate_actions": 5
+    }
+  ],
+  "cost": {
+    "stage": 310,
+    "at_utc": "2026-10-14T03:11:54.821556+00:00",
+    "new_wrapper_actions": 13884,
+    "native_cap": 16000,
+    "screen_native": 10597,
+    "extension_native": 3287,
+    "new_official_runs": 48,
+    "new_source_physics_ticks": 0,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "raw_step_ticks": 55490,
+    "raw_reset_ticks": 2448,
+    "runner_CPU_s": 553.0392512469999,
+    "actor_CPU_s": 187.69296599999993,
+    "sum_episode_wall_s": 803.7983731220593,
+    "total_wall_s": 479.19488763809204,
+    "B_operating_cap": 1330000,
+    "actual_cumulative_wrapper_actions": 1240343,
+    "research_remaining": 5657,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0
+  },
+  "technical_error": null,
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_next_experiment": false,
+  "verification": {
+    "all_original_members_except_one_cost_line_preserved": true,
+    "same_current_input_original_router_comparisons": 13884,
+    "all48_official_results_complete": true,
+    "screen_rank_winner_and_single_extension_verified": true,
+    "identity304_exact": true,
+    "no_runnerup_replacement": true,
+    "processes_reaped": true,
+    "candidate_technical_errors": 0,
+    "censors": 0,
+    "post_execution_aggregation_error_repaired": 1,
+    "native_replayed": 0,
+    "champion296_240rollback_preserved": true,
+    "path_changes_by_candidate": {
+      "connection120": {
+        "actions": 1754,
+        "path_changed_actions": 0
+      },
+      "length120": {
+        "actions": 1718,
+        "path_changed_actions": 200
+      },
+      "length080": {
+        "actions": 1876,
+        "path_changed_actions": 267
+      },
+      "connection080": {
+        "actions": 1754,
+        "path_changed_actions": 0
+      },
+      "clearance080": {
+        "actions": 1684,
+        "path_changed_actions": 296
+      },
+      "clearance120": {
+        "actions": 5098,
+        "path_changed_actions": 366
+      }
+    },
+    "six_single_coefficient_candidates_from_three_existing_nonzero_coefficients": true,
+    "hard_feasibility_perception_tracker_head_controller_gains_and_pedal_formulas_preserved": true,
+    "both_connection_candidates_whole_screen_traces_exact296_actions": 3508
+  },
+  "post_execution_aggregation_repair": {
+    "initial_sha256": "0f878816d3d2631cc43aab082bc46546043b5c91ff20b6322335f6090c698f2c",
+    "repaired_sha256": "4f97b3c0b51ac92b2e6757f9e41e82aa5d1590e73ca302bcc5c544464fa0c453",
+    "error": "TypeError: dict() got multiple values for keyword argument 'results'",
+    "scope": "After all12officialextension results saved: fixduplicate result-key aggregation only; preserveoriginalsource/outcome, reconstruct confirmedexisting endpoints",
+    "native_replay": 0,
+    "candidate_policy_ranking_or_freeze_changed": false
+  }
+}
