@@ -1,0 +1,1954 @@
+{
+  "stage": 327,
+  "index_resolution": "Use explicit64completedprefix andexpected65actionsperarm fromrequest. This isbeforezero-basedaction64, i.e.one-based65. No alternativeanchorselection.",
+  "prefix_actions": 64,
+  "action_step": 65,
+  "model_rule": "O0/O2 exact325road-excludedmodel. NoN0LOROexists,N0notin325training,fullfitabsent: predeclared326fixedarithmeticmeanofsixexistingmodels assecondary. No fit,param,norm,threshold,inputrecipechange.",
+  "intervention": "At65 only: baselineunchanged; steerplus/minus finalbaseline0\u00b1.08float32clip\u00b1.4,pedalsunchanged; pedaloriginalsteer,gas0,brakemax(original,.5). No jointarm,nofull-episodecontinuation.",
+  "gate": "Diagnosticfalsificationonly: residualpairedMAEbelowpersistenceandmotorforall3channels neededforevidenceofbetteractionresponse. Regardless ofpass no controller/policy/full-lap/DEVexpansion. Recordtailandcontact,noexclusion.",
+  "state_names": [
+    "HUD_norm_speed_m_s",
+    "HUD_yaw_CCW_rad_s",
+    "HUD_front0_joint_angle_rad"
+  ],
+  "preflight": {
+    "OFF_cached_actions_features_exact": 130,
+    "crossprocess_full_policy_receipts_exact": true,
+    "pure_post_peek": true,
+    "command_channel_clip_checks": true,
+    "new_native": 0,
+    "new_fits": 0,
+    "wall_s": 11.40717164799571,
+    "CPU_s": 9.687003794,
+    "last_actor_CPU_s": 0.8846620000000001
+  },
+  "pairing_verification": [
+    {
+      "road": "O0",
+      "paired_arms": 4,
+      "raw_prefix_observations_equal": 65,
+      "prefix_action_count": 64,
+      "full_policy_object_hash_and_controller_tracker_history_exact": true,
+      "base_action65_exact": true
+    },
+    {
+      "road": "O2",
+      "paired_arms": 4,
+      "raw_prefix_observations_equal": 65,
+      "prefix_action_count": 64,
+      "full_policy_object_hash_and_controller_tracker_history_exact": true,
+      "base_action65_exact": true
+    },
+    {
+      "road": "N0",
+      "paired_arms": 4,
+      "raw_prefix_observations_equal": 65,
+      "prefix_action_count": 64,
+      "full_policy_object_hash_and_controller_tracker_history_exact": true,
+      "base_action65_exact": true
+    }
+  ],
+  "endpoint_rows": [
+    {
+      "road": "O0",
+      "arm": "baseline",
+      "action_step": 65,
+      "model_mode": "same_road_excluded325",
+      "actual_action": [
+        -1.0180595381825697e-05,
+        0.5284296274185181,
+        0.06992001831531525
+      ],
+      "baseline_action": [
+        -1.0180595381825697e-05,
+        0.5284296274185181,
+        0.06992001831531525
+      ],
+      "action_difference": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "steering_requested": -1.0180595381825697e-05,
+      "steering_clipped": false,
+      "next_errors": {
+        "persistence": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "residual_ridge": [
+          0.34890732244230094,
+          0.006288171766269062,
+          -0.0006369132735953985
+        ],
+        "motor_kinematic": [
+          0.0,
+          0.00016103565226438044,
+          1.0180595381825697e-05
+        ]
+      },
+      "collision": false,
+      "collision_flag_present": true,
+      "official_terminal": false,
+      "protocol_stop": true,
+      "outside_TRAIN_marginal_action_by_channel": [
+        false,
+        false,
+        false
+      ],
+      "frozen_speed_fallback_pre_post": [
+        false,
+        false
+      ],
+      "interval_s": 0.0799999999999983
+    },
+    {
+      "road": "O0",
+      "arm": "steer_plus",
+      "action_step": 65,
+      "model_mode": "same_road_excluded325",
+      "actual_action": [
+        0.07998982071876526,
+        0.5284296274185181,
+        0.06992001831531525
+      ],
+      "baseline_action": [
+        -1.0180595381825697e-05,
+        0.5284296274185181,
+        0.06992001831531525
+      ],
+      "action_difference": [
+        0.07999999821186066,
+        0.0,
+        0.0
+      ],
+      "steering_requested": 0.07998981940461818,
+      "steering_clipped": false,
+      "next_errors": {
+        "persistence": [
+          0.0,
+          1.008846553047866,
+          0.08374905765326926
+        ],
+        "residual_ridge": [
+          0.45750715351674387,
+          0.36592365256315496,
+          0.012526611971231408
+        ],
+        "motor_kinematic": [
+          0.0,
+          -0.2591300134497423,
+          0.003759236934504001
+        ]
+      },
+      "collision": false,
+      "collision_flag_present": true,
+      "official_terminal": false,
+      "protocol_stop": true,
+      "outside_TRAIN_marginal_action_by_channel": [
+        false,
+        false,
+        false
+      ],
+      "frozen_speed_fallback_pre_post": [
+        false,
+        false
+      ],
+      "interval_s": 0.0799999999999983
+    },
+    {
+      "road": "O0",
+      "arm": "steer_minus",
+      "action_step": 65,
+      "model_mode": "same_road_excluded325",
+      "actual_action": [
+        -0.08001018315553665,
+        0.5284296274185181,
+        0.06992001831531525
+      ],
+      "baseline_action": [
+        -1.0180595381825697e-05,
+        0.5284296274185181,
+        0.06992001831531525
+      ],
+      "action_difference": [
+        -0.08000000566244125,
+        0.0,
+        0.0
+      ],
+      "steering_requested": -0.08001018059538183,
+      "steering_clipped": false,
+      "next_errors": {
+        "persistence": [
+          0.0,
+          -1.00698176795171,
+          -0.08397581471318206
+        ],
+        "residual_ridge": [
+          0.24030748967640392,
+          -0.3514825138229356,
+          -0.01402719447895849
+        ],
+        "motor_kinematic": [
+          0.0,
+          0.2613189597694794,
+          -0.003965631557645413
+        ]
+      },
+      "collision": false,
+      "collision_flag_present": true,
+      "official_terminal": false,
+      "protocol_stop": true,
+      "outside_TRAIN_marginal_action_by_channel": [
+        false,
+        false,
+        false
+      ],
+      "frozen_speed_fallback_pre_post": [
+        false,
+        false
+      ],
+      "interval_s": 0.0799999999999983
+    },
+    {
+      "road": "O0",
+      "arm": "pedal",
+      "action_step": 65,
+      "model_mode": "same_road_excluded325",
+      "actual_action": [
+        -1.0180595381825697e-05,
+        0.0,
+        0.5
+      ],
+      "baseline_action": [
+        -1.0180595381825697e-05,
+        0.5284296274185181,
+        0.06992001831531525
+      ],
+      "action_difference": [
+        0.0,
+        -0.5284296274185181,
+        0.43007999658584595
+      ],
+      "steering_requested": -1.0180595381825697e-05,
+      "steering_clipped": false,
+      "next_errors": {
+        "persistence": [
+          12.5,
+          0.0,
+          0.0
+        ],
+        "residual_ridge": [
+          -1.3962849572244451,
+          -0.2909073943311944,
+          -0.010299876913372051
+        ],
+        "motor_kinematic": [
+          12.5,
+          0.00016103565226438044,
+          1.0180595381825697e-05
+        ]
+      },
+      "collision": false,
+      "collision_flag_present": true,
+      "official_terminal": false,
+      "protocol_stop": true,
+      "outside_TRAIN_marginal_action_by_channel": [
+        false,
+        true,
+        true
+      ],
+      "frozen_speed_fallback_pre_post": [
+        false,
+        false
+      ],
+      "interval_s": 0.0799999999999983
+    },
+    {
+      "road": "O2",
+      "arm": "baseline",
+      "action_step": 65,
+      "model_mode": "same_road_excluded325",
+      "actual_action": [
+        0.029572727158665657,
+        0.5169373154640198,
+        0.07569094747304916
+      ],
+      "baseline_action": [
+        0.029572727158665657,
+        0.5169373154640198,
+        0.07569094747304916
+      ],
+      "action_difference": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "steering_requested": 0.029572727158665657,
+      "steering_clipped": false,
+      "next_errors": {
+        "persistence": [
+          0.0,
+          0.05594342755481557,
+          0.004383975623044569
+        ],
+        "residual_ridge": [
+          0.16549368199390813,
+          0.0636283266728424,
+          0.0038192190128207675
+        ],
+        "motor_kinematic": [
+          0.0,
+          0.07120460337925394,
+          0.00534790840903783
+        ]
+      },
+      "collision": false,
+      "collision_flag_present": true,
+      "official_terminal": false,
+      "protocol_stop": true,
+      "outside_TRAIN_marginal_action_by_channel": [
+        false,
+        false,
+        false
+      ],
+      "frozen_speed_fallback_pre_post": [
+        false,
+        false
+      ],
+      "interval_s": 0.0799999999999983
+    },
+    {
+      "road": "O2",
+      "arm": "steer_plus",
+      "action_step": 65,
+      "model_mode": "same_road_excluded325",
+      "actual_action": [
+        0.10957272350788116,
+        0.5169373154640198,
+        0.07569094747304916
+      ],
+      "baseline_action": [
+        0.029572727158665657,
+        0.5169373154640198,
+        0.07569094747304916
+      ],
+      "action_difference": [
+        0.07999999821186066,
+        0.0,
+        0.0
+      ],
+      "steering_requested": 0.10957272715866566,
+      "steering_clipped": false,
+      "next_errors": {
+        "persistence": [
+          0.0,
+          1.0293591516837677,
+          0.085789875437816
+        ],
+        "residual_ridge": [
+          0.2500903087504298,
+          0.31371367718870147,
+          0.008732455569643721
+        ],
+        "motor_kinematic": [
+          0.0,
+          -0.22764518926406163,
+          0.006753811874593743
+        ]
+      },
+      "collision": false,
+      "collision_flag_present": true,
+      "official_terminal": false,
+      "protocol_stop": true,
+      "outside_TRAIN_marginal_action_by_channel": [
+        false,
+        false,
+        false
+      ],
+      "frozen_speed_fallback_pre_post": [
+        false,
+        false
+      ],
+      "interval_s": 0.0799999999999983
+    },
+    {
+      "road": "O2",
+      "arm": "steer_minus",
+      "action_step": 65,
+      "model_mode": "same_road_excluded325",
+      "actual_action": [
+        -0.05042727291584015,
+        0.5169373154640198,
+        0.07569094747304916
+      ],
+      "baseline_action": [
+        0.029572727158665657,
+        0.5169373154640198,
+        0.07569094747304916
+      ],
+      "action_difference": [
+        -0.07999999821186066,
+        0.0,
+        0.0
+      ],
+      "steering_requested": -0.050427272841334345,
+      "steering_clipped": false,
+      "next_errors": {
+        "persistence": [
+          0.0,
+          -0.9286609719435662,
+          -0.08223734221520437
+        ],
+        "residual_ridge": [
+          0.08089705129803804,
+          -0.1976456655297496,
+          -0.006309432005512344
+        ],
+        "motor_kinematic": [
+          0.0,
+          0.3528455250259849,
+          -0.00127340935470531
+        ]
+      },
+      "collision": false,
+      "collision_flag_present": true,
+      "official_terminal": false,
+      "protocol_stop": true,
+      "outside_TRAIN_marginal_action_by_channel": [
+        false,
+        false,
+        false
+      ],
+      "frozen_speed_fallback_pre_post": [
+        false,
+        false
+      ],
+      "interval_s": 0.0799999999999983
+    },
+    {
+      "road": "O2",
+      "arm": "pedal",
+      "action_step": 65,
+      "model_mode": "same_road_excluded325",
+      "actual_action": [
+        0.029572727158665657,
+        0.0,
+        0.5
+      ],
+      "baseline_action": [
+        0.029572727158665657,
+        0.5169373154640198,
+        0.07569094747304916
+      ],
+      "action_difference": [
+        0.0,
+        -0.5169373154640198,
+        0.42430904507637024
+      ],
+      "steering_requested": 0.029572727158665657,
+      "steering_clipped": false,
+      "next_errors": {
+        "persistence": [
+          12.5,
+          0.0,
+          0.004383975623044569
+        ],
+        "residual_ridge": [
+          -1.5002847852216092,
+          -0.3464071042614921,
+          -0.013783682778690673
+        ],
+        "motor_kinematic": [
+          12.5,
+          0.015261175824438367,
+          0.00534790840903783
+        ]
+      },
+      "collision": false,
+      "collision_flag_present": true,
+      "official_terminal": false,
+      "protocol_stop": true,
+      "outside_TRAIN_marginal_action_by_channel": [
+        false,
+        true,
+        true
+      ],
+      "frozen_speed_fallback_pre_post": [
+        false,
+        false
+      ],
+      "interval_s": 0.0799999999999983
+    },
+    {
+      "road": "N0",
+      "arm": "baseline",
+      "action_step": 65,
+      "model_mode": "fixed_sixmodel_mean_secondary",
+      "actual_action": [
+        0.17314308881759644,
+        0.49017757177352905,
+        0.08035199344158173
+      ],
+      "baseline_action": [
+        0.17314308881759644,
+        0.49017757177352905,
+        0.08035199344158173
+      ],
+      "action_difference": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "steering_requested": 0.17314308881759644,
+      "steering_clipped": false,
+      "next_errors": {
+        "persistence": [
+          0.0,
+          0.6079186313619134,
+          0.03650793865800345
+        ],
+        "residual_ridge": [
+          -0.14840019120804726,
+          0.40933909505144905,
+          0.009116226244427622
+        ],
+        "motor_kinematic": [
+          0.0,
+          0.11573529423449003,
+          0.007582541207768134
+        ]
+      },
+      "collision": false,
+      "collision_flag_present": true,
+      "official_terminal": false,
+      "protocol_stop": true,
+      "outside_TRAIN_marginal_action_by_channel": [
+        false,
+        false,
+        false
+      ],
+      "frozen_speed_fallback_pre_post": [
+        false,
+        false
+      ],
+      "interval_s": 0.0799999999999983
+    },
+    {
+      "road": "N0",
+      "arm": "steer_plus",
+      "action_step": 65,
+      "model_mode": "fixed_sixmodel_mean_secondary",
+      "actual_action": [
+        0.2531431019306183,
+        0.49017757177352905,
+        0.08035199344158173
+      ],
+      "baseline_action": [
+        0.17314308881759644,
+        0.49017757177352905,
+        0.08035199344158173
+      ],
+      "action_difference": [
+        0.08000001311302185,
+        0.0,
+        0.0
+      ],
+      "steering_requested": 0.25314308881759645,
+      "steering_clipped": false,
+      "next_errors": {
+        "persistence": [
+          0.0,
+          1.012576108847172,
+          0.11685563639163243
+        ],
+        "residual_ridge": [
+          -0.059210252688387754,
+          0.14233116745849683,
+          0.017534957246185617
+        ],
+        "motor_kinematic": [
+          0.0,
+          -0.869780791543703,
+          0.00793022582837527
+        ]
+      },
+      "collision": false,
+      "collision_flag_present": true,
+      "official_terminal": false,
+      "protocol_stop": true,
+      "outside_TRAIN_marginal_action_by_channel": [
+        false,
+        false,
+        false
+      ],
+      "frozen_speed_fallback_pre_post": [
+        false,
+        false
+      ],
+      "interval_s": 0.0799999999999983
+    },
+    {
+      "road": "N0",
+      "arm": "steer_minus",
+      "action_step": 65,
+      "model_mode": "fixed_sixmodel_mean_secondary",
+      "actual_action": [
+        0.09314309060573578,
+        0.49017757177352905,
+        0.08035199344158173
+      ],
+      "baseline_action": [
+        0.17314308881759644,
+        0.49017757177352905,
+        0.08035199344158173
+      ],
+      "action_difference": [
+        -0.07999999821186066,
+        0.0,
+        0.0
+      ],
+      "steering_requested": 0.09314308881759643,
+      "steering_clipped": false,
+      "next_errors": {
+        "persistence": [
+          0.0,
+          -0.40465749187826483,
+          -0.043990931822126406
+        ],
+        "residual_ridge": [
+          -0.23759011311477707,
+          0.06842825178207068,
+          0.0005463090983568591
+        ],
+        "motor_kinematic": [
+          0.0,
+          0.4548869929221673,
+          0.007083668939498938
+        ]
+      },
+      "collision": false,
+      "collision_flag_present": true,
+      "official_terminal": false,
+      "protocol_stop": true,
+      "outside_TRAIN_marginal_action_by_channel": [
+        false,
+        false,
+        false
+      ],
+      "frozen_speed_fallback_pre_post": [
+        false,
+        false
+      ],
+      "interval_s": 0.0799999999999983
+    },
+    {
+      "road": "N0",
+      "arm": "pedal",
+      "action_step": 65,
+      "model_mode": "fixed_sixmodel_mean_secondary",
+      "actual_action": [
+        0.17314308881759644,
+        0.0,
+        0.5
+      ],
+      "baseline_action": [
+        0.17314308881759644,
+        0.49017757177352905,
+        0.08035199344158173
+      ],
+      "action_difference": [
+        0.0,
+        -0.49017757177352905,
+        0.4196479916572571
+      ],
+      "steering_requested": 0.17314308881759644,
+      "steering_clipped": false,
+      "next_errors": {
+        "persistence": [
+          12.5,
+          0.1006981786330472,
+          0.03650793865800345
+        ],
+        "residual_ridge": [
+          -1.3556527369701783,
+          -0.36492259755967904,
+          0.001826914552754605
+        ],
+        "motor_kinematic": [
+          12.5,
+          -0.39148515849437615,
+          0.007582541207768134
+        ]
+      },
+      "collision": false,
+      "collision_flag_present": true,
+      "official_terminal": false,
+      "protocol_stop": true,
+      "outside_TRAIN_marginal_action_by_channel": [
+        false,
+        true,
+        true
+      ],
+      "frozen_speed_fallback_pre_post": [
+        false,
+        false
+      ],
+      "interval_s": 0.0799999999999983
+    }
+  ],
+  "paired_responses": [
+    {
+      "road": "O0",
+      "arm": "steer_plus",
+      "observed_response": [
+        0.0,
+        -1.008846553047866,
+        -0.08374905765326926
+      ],
+      "predicted_response": {
+        "persistence": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "residual_ridge": [
+          0.10859983107444293,
+          -0.6492110722509802,
+          -0.07058553240844245
+        ],
+        "motor_kinematic": [
+          0.0,
+          -1.2681376021498727,
+          -0.08000000131414708
+        ]
+      },
+      "response_errors": {
+        "persistence": [
+          0.0,
+          1.008846553047866,
+          0.08374905765326926
+        ],
+        "residual_ridge": [
+          0.10859983107444293,
+          0.3596354807968859,
+          0.013163525244826807
+        ],
+        "motor_kinematic": [
+          0.0,
+          -0.2592910491020066,
+          0.0037490563391221754
+        ]
+      },
+      "sign_match": {
+        "persistence": [
+          true,
+          false,
+          false
+        ],
+        "residual_ridge": [
+          false,
+          true,
+          true
+        ],
+        "motor_kinematic": [
+          true,
+          true,
+          true
+        ]
+      },
+      "baseline_collision": false,
+      "intervention_collision": false,
+      "steering_clipped": false,
+      "action_difference": [
+        0.07999999821186066,
+        0.0,
+        0.0
+      ],
+      "pre_pixels_prefix_and_policy_exact": true
+    },
+    {
+      "road": "O0",
+      "arm": "steer_minus",
+      "observed_response": [
+        0.0,
+        1.00698176795171,
+        0.08397581471318206
+      ],
+      "predicted_response": {
+        "persistence": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "residual_ridge": [
+          -0.10859983276589702,
+          0.6492110823625052,
+          0.07058553350781897
+        ],
+        "motor_kinematic": [
+          0.0,
+          1.268139692068925,
+          0.08000000256015483
+        ]
+      },
+      "response_errors": {
+        "persistence": [
+          0.0,
+          -1.00698176795171,
+          -0.08397581471318206
+        ],
+        "residual_ridge": [
+          -0.10859983276589702,
+          -0.35777068558920466,
+          -0.013390281205363092
+        ],
+        "motor_kinematic": [
+          0.0,
+          0.26115792411721506,
+          -0.003975812153027239
+        ]
+      },
+      "sign_match": {
+        "persistence": [
+          true,
+          false,
+          false
+        ],
+        "residual_ridge": [
+          false,
+          true,
+          true
+        ],
+        "motor_kinematic": [
+          true,
+          true,
+          true
+        ]
+      },
+      "baseline_collision": false,
+      "intervention_collision": false,
+      "steering_clipped": false,
+      "action_difference": [
+        -0.08000000566244125,
+        0.0,
+        0.0
+      ],
+      "pre_pixels_prefix_and_policy_exact": true
+    },
+    {
+      "road": "O0",
+      "arm": "pedal",
+      "observed_response": [
+        -12.5,
+        0.0,
+        0.0
+      ],
+      "predicted_response": {
+        "persistence": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "residual_ridge": [
+          -14.245192279666746,
+          -0.29719556609746345,
+          -0.009662963639776652
+        ],
+        "motor_kinematic": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "response_errors": {
+        "persistence": [
+          12.5,
+          0.0,
+          0.0
+        ],
+        "residual_ridge": [
+          -1.745192279666746,
+          -0.29719556609746345,
+          -0.009662963639776652
+        ],
+        "motor_kinematic": [
+          12.5,
+          0.0,
+          0.0
+        ]
+      },
+      "sign_match": {
+        "persistence": [
+          false,
+          true,
+          true
+        ],
+        "residual_ridge": [
+          true,
+          false,
+          false
+        ],
+        "motor_kinematic": [
+          false,
+          true,
+          true
+        ]
+      },
+      "baseline_collision": false,
+      "intervention_collision": false,
+      "steering_clipped": false,
+      "action_difference": [
+        0.0,
+        -0.5284296274185181,
+        0.43007999658584595
+      ],
+      "pre_pixels_prefix_and_policy_exact": true
+    },
+    {
+      "road": "O2",
+      "arm": "steer_plus",
+      "observed_response": [
+        0.0,
+        -0.973415724128952,
+        -0.08140589981477142
+      ],
+      "predicted_response": {
+        "persistence": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "residual_ridge": [
+          0.08459662675652169,
+          -0.7233303736130929,
+          -0.07649266325794847
+        ],
+        "motor_kinematic": [
+          0.0,
+          -1.2722655167722676,
+          -0.07999999634921551
+        ]
+      },
+      "response_errors": {
+        "persistence": [
+          0.0,
+          0.973415724128952,
+          0.08140589981477142
+        ],
+        "residual_ridge": [
+          0.08459662675652169,
+          0.2500853505158591,
+          0.00491323655682295
+        ],
+        "motor_kinematic": [
+          0.0,
+          -0.29884979264331557,
+          0.0014059034655559133
+        ]
+      },
+      "sign_match": {
+        "persistence": [
+          true,
+          false,
+          false
+        ],
+        "residual_ridge": [
+          false,
+          true,
+          true
+        ],
+        "motor_kinematic": [
+          true,
+          true,
+          true
+        ]
+      },
+      "baseline_collision": false,
+      "intervention_collision": false,
+      "steering_clipped": false,
+      "action_difference": [
+        0.07999999821186066,
+        0.0,
+        0.0
+      ],
+      "pre_pixels_prefix_and_policy_exact": true
+    },
+    {
+      "road": "O2",
+      "arm": "steer_minus",
+      "observed_response": [
+        0.0,
+        0.9846043994983817,
+        0.08662131783824895
+      ],
+      "predicted_response": {
+        "persistence": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "residual_ridge": [
+          -0.08459663069587009,
+          0.7233304072957898,
+          0.07649266681991583
+        ],
+        "motor_kinematic": [
+          0.0,
+          1.2662453211451128,
+          0.0800000000745058
+        ]
+      },
+      "response_errors": {
+        "persistence": [
+          0.0,
+          -0.9846043994983817,
+          -0.08662131783824895
+        ],
+        "residual_ridge": [
+          -0.08459663069587009,
+          -0.26127399220259195,
+          -0.010128651018333115
+        ],
+        "motor_kinematic": [
+          0.0,
+          0.28164092164673105,
+          -0.00662131776374314
+        ]
+      },
+      "sign_match": {
+        "persistence": [
+          true,
+          false,
+          false
+        ],
+        "residual_ridge": [
+          false,
+          true,
+          true
+        ],
+        "motor_kinematic": [
+          true,
+          true,
+          true
+        ]
+      },
+      "baseline_collision": false,
+      "intervention_collision": false,
+      "steering_clipped": false,
+      "action_difference": [
+        -0.07999999821186066,
+        0.0,
+        0.0
+      ],
+      "pre_pixels_prefix_and_policy_exact": true
+    },
+    {
+      "road": "O2",
+      "arm": "pedal",
+      "observed_response": [
+        -12.5,
+        0.05594342755481557,
+        0.0
+      ],
+      "predicted_response": {
+        "persistence": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "residual_ridge": [
+          -14.165778467215517,
+          -0.35409200337951896,
+          -0.01760290179151144
+        ],
+        "motor_kinematic": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "response_errors": {
+        "persistence": [
+          12.5,
+          -0.05594342755481557,
+          0.0
+        ],
+        "residual_ridge": [
+          -1.6657784672155174,
+          -0.41003543093433453,
+          -0.01760290179151144
+        ],
+        "motor_kinematic": [
+          12.5,
+          -0.05594342755481557,
+          0.0
+        ]
+      },
+      "sign_match": {
+        "persistence": [
+          false,
+          false,
+          true
+        ],
+        "residual_ridge": [
+          true,
+          false,
+          false
+        ],
+        "motor_kinematic": [
+          false,
+          false,
+          true
+        ]
+      },
+      "baseline_collision": false,
+      "intervention_collision": false,
+      "steering_clipped": false,
+      "action_difference": [
+        0.0,
+        -0.5169373154640198,
+        0.42430904507637024
+      ],
+      "pre_pixels_prefix_and_policy_exact": true
+    },
+    {
+      "road": "N0",
+      "arm": "steer_plus",
+      "observed_response": [
+        0.0,
+        -0.4046574774852587,
+        -0.08034769773362899
+      ],
+      "predicted_response": {
+        "persistence": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "residual_ridge": [
+          0.0891899385196595,
+          -0.6716654050782109,
+          -0.07192896673187099
+        ],
+        "motor_kinematic": [
+          0.0,
+          -1.3901735632634518,
+          -0.08000001311302185
+        ]
+      },
+      "response_errors": {
+        "persistence": [
+          0.0,
+          0.4046574774852587,
+          0.08034769773362899
+        ],
+        "residual_ridge": [
+          0.0891899385196595,
+          -0.2670079275929522,
+          0.008418731001757995
+        ],
+        "motor_kinematic": [
+          0.0,
+          -0.985516085778193,
+          0.000347684620607136
+        ]
+      },
+      "sign_match": {
+        "persistence": [
+          true,
+          false,
+          false
+        ],
+        "residual_ridge": [
+          false,
+          true,
+          true
+        ],
+        "motor_kinematic": [
+          true,
+          true,
+          true
+        ]
+      },
+      "baseline_collision": false,
+      "intervention_collision": false,
+      "steering_clipped": false,
+      "action_difference": [
+        0.08000001311302185,
+        0.0,
+        0.0
+      ],
+      "pre_pixels_prefix_and_policy_exact": true
+    },
+    {
+      "road": "N0",
+      "arm": "steer_minus",
+      "observed_response": [
+        0.0,
+        1.0125761232401782,
+        0.08049887048012985
+      ],
+      "predicted_response": {
+        "persistence": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "residual_ridge": [
+          -0.08918992190672981,
+          0.6716652799707998,
+          0.07192895333405909
+        ],
+        "motor_kinematic": [
+          0.0,
+          1.3517278219278555,
+          0.07999999821186066
+        ]
+      },
+      "response_errors": {
+        "persistence": [
+          0.0,
+          -1.0125761232401782,
+          -0.08049887048012985
+        ],
+        "residual_ridge": [
+          -0.08918992190672981,
+          -0.34091084326937837,
+          -0.008569917146070763
+        ],
+        "motor_kinematic": [
+          0.0,
+          0.33915169868767725,
+          -0.000498872268269196
+        ]
+      },
+      "sign_match": {
+        "persistence": [
+          true,
+          false,
+          false
+        ],
+        "residual_ridge": [
+          false,
+          true,
+          true
+        ],
+        "motor_kinematic": [
+          true,
+          true,
+          true
+        ]
+      },
+      "baseline_collision": false,
+      "intervention_collision": false,
+      "steering_clipped": false,
+      "action_difference": [
+        -0.07999999821186066,
+        0.0,
+        0.0
+      ],
+      "pre_pixels_prefix_and_policy_exact": true
+    },
+    {
+      "road": "N0",
+      "arm": "pedal",
+      "observed_response": [
+        -12.5,
+        0.5072204527288662,
+        0.0
+      ],
+      "predicted_response": {
+        "persistence": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "residual_ridge": [
+          -13.707252545762131,
+          -0.2670412398822619,
+          -0.007289311691673017
+        ],
+        "motor_kinematic": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "response_errors": {
+        "persistence": [
+          12.5,
+          -0.5072204527288662,
+          0.0
+        ],
+        "residual_ridge": [
+          -1.207252545762131,
+          -0.7742616926111281,
+          -0.007289311691673017
+        ],
+        "motor_kinematic": [
+          12.5,
+          -0.5072204527288662,
+          0.0
+        ]
+      },
+      "sign_match": {
+        "persistence": [
+          false,
+          false,
+          true
+        ],
+        "residual_ridge": [
+          true,
+          false,
+          false
+        ],
+        "motor_kinematic": [
+          false,
+          false,
+          true
+        ]
+      },
+      "baseline_collision": false,
+      "intervention_collision": false,
+      "steering_clipped": false,
+      "action_difference": [
+        0.0,
+        -0.49017757177352905,
+        0.4196479916572571
+      ],
+      "pre_pixels_prefix_and_policy_exact": true
+    }
+  ],
+  "metrics": {
+    "primary_O0_O2": {
+      "absolute_next_errors": {
+        "persistence": {
+          "samples": 8,
+          "MAE": [
+            3.125,
+            0.5037239840227157,
+            0.043065005158195106
+          ],
+          "RMSE": [
+            6.25,
+            0.7032873505577741,
+            0.059400298590723453
+          ],
+          "bias": [
+            3.125,
+            0.019813299048896657,
+            0.0015117159260984946
+          ],
+          "max_abs": [
+            12.5,
+            1.0293591516837677,
+            0.085789875437816
+          ]
+        },
+        "residual_ridge": {
+          "samples": 8,
+          "MAE": [
+            0.5549715937654849,
+            0.24199956326704247,
+            0.008766923250478106
+          ],
+          "RMSE": [
+            0.7653218748936332,
+            0.2746892008263954,
+            0.009879349502222228
+          ],
+          "bias": [
+            -0.1691708418460287,
+            -0.05461110621930048,
+            -0.0024973516120541327
+          ],
+          "max_abs": [
+            1.5002847852216092,
+            0.36592365256315496,
+            0.01402719447895849
+          ]
+        },
+        "motor_kinematic": {
+          "samples": 8,
+          "MAE": [
+            3.125,
+            0.14846594225218612,
+            0.0033085334662859723
+          ],
+          "RMSE": [
+            6.25,
+            0.1990795413353365,
+            0.004097165150972474
+          ],
+          "bias": [
+            3.125,
+            0.026772141573735177,
+            0.0019987732381982915
+          ],
+          "max_abs": [
+            12.5,
+            0.3528455250259849,
+            0.006753811874593743
+          ]
+        }
+      },
+      "baseline_relative_response_errors": {
+        "persistence": {
+          "samples": 6,
+          "MAE": [
+            4.166666666666667,
+            0.6716319786969542,
+            0.05595868166991195
+          ],
+          "RMSE": [
+            7.216878364870322,
+            0.8115722714956192,
+            0.06855170231686548
+          ],
+          "bias": [
+            4.166666666666667,
+            -0.010877886304681514,
+            -0.0009070291805650549
+          ],
+          "max_abs": [
+            12.5,
+            1.008846553047866,
+            0.08662131783824895
+          ]
+        },
+        "residual_ridge": {
+          "samples": 6,
+          "MAE": [
+            0.6328939446958325,
+            0.32266608435605665,
+            0.011476926576105675
+          ],
+          "RMSE": [
+            0.9881308129508247,
+            0.3277698845197634,
+            0.012128083871258043
+          ],
+          "bias": [
+            -0.5684951254188443,
+            -0.11942580725180825,
+            -0.00545133930888909
+          ],
+          "max_abs": [
+            1.745192279666746,
+            0.41003543093433453,
+            0.01760290179151144
+          ]
+        },
+        "motor_kinematic": {
+          "samples": 6,
+          "MAE": [
+            4.166666666666667,
+            0.19281385251068064,
+            0.002625348286908078
+          ],
+          "RMSE": [
+            7.216878364870322,
+            0.2262733538109698,
+            0.0035515470617979482
+          ],
+          "bias": [
+            4.166666666666667,
+            -0.01188090392269861,
+            -0.0009070283520153816
+          ],
+          "max_abs": [
+            12.5,
+            0.29884979264331557,
+            0.00662131776374314
+          ]
+        }
+      },
+      "nonzero_response_signs": {
+        "persistence": {
+          "correct": [
+            0,
+            0,
+            0
+          ],
+          "observed_nonzero_denominators": [
+            2,
+            5,
+            4
+          ],
+          "observed_zero_denominators": [
+            4,
+            1,
+            2
+          ]
+        },
+        "residual_ridge": {
+          "correct": [
+            2,
+            4,
+            4
+          ],
+          "observed_nonzero_denominators": [
+            2,
+            5,
+            4
+          ],
+          "observed_zero_denominators": [
+            4,
+            1,
+            2
+          ]
+        },
+        "motor_kinematic": {
+          "correct": [
+            0,
+            4,
+            4
+          ],
+          "observed_nonzero_denominators": [
+            2,
+            5,
+            4
+          ],
+          "observed_zero_denominators": [
+            4,
+            1,
+            2
+          ]
+        }
+      },
+      "contact_absolute_errors": {
+        "no_contact": {
+          "persistence": {
+            "samples": 8,
+            "MAE": [
+              3.125,
+              0.5037239840227157,
+              0.043065005158195106
+            ],
+            "RMSE": [
+              6.25,
+              0.7032873505577741,
+              0.059400298590723453
+            ],
+            "bias": [
+              3.125,
+              0.019813299048896657,
+              0.0015117159260984946
+            ],
+            "max_abs": [
+              12.5,
+              1.0293591516837677,
+              0.085789875437816
+            ]
+          },
+          "residual_ridge": {
+            "samples": 8,
+            "MAE": [
+              0.5549715937654849,
+              0.24199956326704247,
+              0.008766923250478106
+            ],
+            "RMSE": [
+              0.7653218748936332,
+              0.2746892008263954,
+              0.009879349502222228
+            ],
+            "bias": [
+              -0.1691708418460287,
+              -0.05461110621930048,
+              -0.0024973516120541327
+            ],
+            "max_abs": [
+              1.5002847852216092,
+              0.36592365256315496,
+              0.01402719447895849
+            ]
+          },
+          "motor_kinematic": {
+            "samples": 8,
+            "MAE": [
+              3.125,
+              0.14846594225218612,
+              0.0033085334662859723
+            ],
+            "RMSE": [
+              6.25,
+              0.1990795413353365,
+              0.004097165150972474
+            ],
+            "bias": [
+              3.125,
+              0.026772141573735177,
+              0.0019987732381982915
+            ],
+            "max_abs": [
+              12.5,
+              0.3528455250259849,
+              0.006753811874593743
+            ]
+          }
+        },
+        "contact": {
+          "persistence": {
+            "samples": 0
+          },
+          "residual_ridge": {
+            "samples": 0
+          },
+          "motor_kinematic": {
+            "samples": 0
+          }
+        }
+      },
+      "all_three_response_MAE_better_than_both_baselines": false
+    },
+    "secondary_N0": {
+      "absolute_next_errors": {
+        "persistence": {
+          "samples": 4,
+          "MAE": [
+            3.125,
+            0.5314626026800995,
+            0.05846561138244143
+          ],
+          "RMSE": [
+            6.25,
+            0.6262513967006866,
+            0.0675575699111237
+          ],
+          "bias": [
+            3.125,
+            0.32913385674096696,
+            0.03647014547137823
+          ],
+          "max_abs": [
+            12.5,
+            1.012576108847172,
+            0.11685563639163243
+          ]
+        },
+        "residual_ridge": {
+          "samples": 4,
+          "MAE": [
+            0.4502133234953476,
+            0.2462552779629239,
+            0.007256101785431176
+          ],
+          "RMSE": [
+            0.6927791632040177,
+            0.2853364609628832,
+            0.009927441475263938
+          ],
+          "bias": [
+            -0.4502133234953476,
+            0.06379397918308438,
+            0.007256101785431176
+          ],
+          "max_abs": [
+            1.3556527369701783,
+            0.40933909505144905,
+            0.017534957246185617
+          ]
+        },
+        "motor_kinematic": {
+          "samples": 4,
+          "MAE": [
+            3.125,
+            0.4579720592986841,
+            0.007544744295852619
+          ],
+          "RMSE": [
+            6.25,
+            0.5315298884637328,
+            0.007550773299279616
+          ],
+          "bias": [
+            3.125,
+            -0.17266091572035547,
+            0.007544744295852619
+          ],
+          "max_abs": [
+            12.5,
+            0.869780791543703,
+            0.00793022582837527
+          ]
+        }
+      },
+      "baseline_relative_response_errors": {
+        "persistence": {
+          "samples": 3,
+          "MAE": [
+            4.166666666666667,
+            0.6414846844847677,
+            0.05361552273791961
+          ],
+          "RMSE": [
+            7.216878364870322,
+            0.6943415747088069,
+            0.06566536550234918
+          ],
+          "bias": [
+            4.166666666666667,
+            -0.37171303282792856,
+            -5.03909155002887e-05
+          ],
+          "max_abs": [
+            12.5,
+            1.0125761232401782,
+            0.08049887048012985
+          ]
+        },
+        "residual_ridge": {
+          "samples": 3,
+          "MAE": [
+            0.4618774687295068,
+            0.46072682115781954,
+            0.008092653279833925
+          ],
+          "RMSE": [
+            0.7008015402741862,
+            0.5121831069390357,
+            0.008112800102489066
+          ],
+          "bias": [
+            -0.40241750971640045,
+            -0.46072682115781954,
+            -0.002480165945328595
+          ],
+          "max_abs": [
+            1.207252545762131,
+            0.7742616926111281,
+            0.008569917146070763
+          ]
+        },
+        "motor_kinematic": {
+          "samples": 3,
+          "MAE": [
+            4.166666666666667,
+            0.6106294123982455,
+            0.00028218562962544397
+          ],
+          "RMSE": [
+            7.216878364870322,
+            0.6692130746174405,
+            0.0003510736558305966
+          ],
+          "bias": [
+            4.166666666666667,
+            -0.384528279939794,
+            -5.039588255401998e-05
+          ],
+          "max_abs": [
+            12.5,
+            0.985516085778193,
+            0.000498872268269196
+          ]
+        }
+      },
+      "nonzero_response_signs": {
+        "persistence": {
+          "correct": [
+            0,
+            0,
+            0
+          ],
+          "observed_nonzero_denominators": [
+            1,
+            3,
+            2
+          ],
+          "observed_zero_denominators": [
+            2,
+            0,
+            1
+          ]
+        },
+        "residual_ridge": {
+          "correct": [
+            1,
+            2,
+            2
+          ],
+          "observed_nonzero_denominators": [
+            1,
+            3,
+            2
+          ],
+          "observed_zero_denominators": [
+            2,
+            0,
+            1
+          ]
+        },
+        "motor_kinematic": {
+          "correct": [
+            0,
+            2,
+            2
+          ],
+          "observed_nonzero_denominators": [
+            1,
+            3,
+            2
+          ],
+          "observed_zero_denominators": [
+            2,
+            0,
+            1
+          ]
+        }
+      },
+      "contact_absolute_errors": {
+        "no_contact": {
+          "persistence": {
+            "samples": 4,
+            "MAE": [
+              3.125,
+              0.5314626026800995,
+              0.05846561138244143
+            ],
+            "RMSE": [
+              6.25,
+              0.6262513967006866,
+              0.0675575699111237
+            ],
+            "bias": [
+              3.125,
+              0.32913385674096696,
+              0.03647014547137823
+            ],
+            "max_abs": [
+              12.5,
+              1.012576108847172,
+              0.11685563639163243
+            ]
+          },
+          "residual_ridge": {
+            "samples": 4,
+            "MAE": [
+              0.4502133234953476,
+              0.2462552779629239,
+              0.007256101785431176
+            ],
+            "RMSE": [
+              0.6927791632040177,
+              0.2853364609628832,
+              0.009927441475263938
+            ],
+            "bias": [
+              -0.4502133234953476,
+              0.06379397918308438,
+              0.007256101785431176
+            ],
+            "max_abs": [
+              1.3556527369701783,
+              0.40933909505144905,
+              0.017534957246185617
+            ]
+          },
+          "motor_kinematic": {
+            "samples": 4,
+            "MAE": [
+              3.125,
+              0.4579720592986841,
+              0.007544744295852619
+            ],
+            "RMSE": [
+              6.25,
+              0.5315298884637328,
+              0.007550773299279616
+            ],
+            "bias": [
+              3.125,
+              -0.17266091572035547,
+              0.007544744295852619
+            ],
+            "max_abs": [
+              12.5,
+              0.869780791543703,
+              0.00793022582837527
+            ]
+          }
+        },
+        "contact": {
+          "persistence": {
+            "samples": 0
+          },
+          "residual_ridge": {
+            "samples": 0
+          },
+          "motor_kinematic": {
+            "samples": 0
+          }
+        }
+      },
+      "all_three_response_MAE_better_than_both_baselines": false
+    }
+  },
+  "cost": {
+    "stage": 327,
+    "new_wrapper_actions": 780,
+    "native_cap": 780,
+    "new_native_runs": 12,
+    "raw_step_ticks": 3120,
+    "raw_reset_ticks": 612,
+    "actual_simulated_interval_per_run_s": 5.2,
+    "collection_wall_s": 64.43701791763306,
+    "runner_CPU_s": 51.456237740999995,
+    "actor_CPU_s": 12.087876999999997,
+    "analysis_wall_s": 0.4542518440284766,
+    "analysis_CPU_s": 0.45295337,
+    "new_source_physics_ticks": 0,
+    "new_fits": 0,
+    "new_PPO": 0,
+    "new_paid_resources": 0,
+    "additional_research": 385,
+    "actual_cumulative_wrapper_actions": 1274701,
+    "research_remaining": 0,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1358701
+  },
+  "official_terminal_endpoints": 0,
+  "successful_protocol_stops": 12,
+  "technical_errors": 0,
+  "missing_endpoints": 0,
+  "decision": "Keep diagnostic evidence only; no MPC/controller/full-episode validation or promotion regardless of one-step response results.",
+  "limitations": [
+    "Three knownTRAIN states atfixed64prefix,12ownnativeprefixes,not12independentprestates.",
+    "HUDquantization canhidephysicalresponses;exactzeroresponse isnotphysicalzero;contactsampletiny.",
+    "N0hasno325LOROmodel;fixedsixfoldmean isseparatesecondaryzero-fitdefinition.",
+    "Oneactionprotocolend isnotDNF,notfull-lap performance;noglobalcollisionorplanningguarantee."
+  ],
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "prefix_contact_context": [
+    {
+      "road": "O0",
+      "prefix_contacts": 0,
+      "prefix_first_contact": null
+    },
+    {
+      "road": "O2",
+      "prefix_contacts": 1,
+      "prefix_first_contact": 46
+    },
+    {
+      "road": "N0",
+      "prefix_contacts": 0,
+      "prefix_first_contact": null
+    }
+  ],
+  "endpoint_summary": {
+    "all12raw_prepost_available": true,
+    "direct_collision_flags_present": 12,
+    "direct_contact_count": 0,
+    "steering_clipped_count": 0,
+    "HUDspeed_decoder_fallback_count": 0
+  }
+}
