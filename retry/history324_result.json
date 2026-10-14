@@ -1,0 +1,957 @@
+{
+  "stage": 324,
+  "hypothesis": "Additional causal3-step feature/action history helps actual same-state intervention-gain decisions, not instantaneous state reconstruction or teacher action imitation.",
+  "candidates": [
+    {
+      "candidate": "Paired current16 vs history76 actual intervention gain ridge",
+      "chosen": true,
+      "novelty": "282 CART labels and283 current16 gain ridge had no added causal history;277 return and318 state targets differ. Reuse283 current predictions; change only input."
+    },
+    {
+      "candidate": "Raw pixel+feature actual intervention outcome predictor",
+      "chosen": false,
+      "reason": "292 related CNN return predictor failed overall; changes information and model together, more fitting without isolated first evidence."
+    }
+  ],
+  "inputs": {
+    "A": "Existing283 legal16 including tracker/controller memory; cached predictions reused, not rerun fit.",
+    "B": "Current16 + lag1/2/3 legal16 + lag1/2/3 already executed actions3 + validity masks3 =76. Same episode, previous completed80ms intervals. No current/future macro actions, GT, elapsed, roadID, outcome, reward, progress inputs."
+  },
+  "target": "Reuse96 measured macro official return gains vs no-change on24states: complete2-T/160, actualDNFp-1 from saved terminal counts. No new target, teacher, imputation or simulator reconstruction.",
+  "recipe": "Exact283 ridgelambda1, unpenalized bias, TRAINfold-only population mean/std; std<1e-12=>1. SixLORO fits H only, no fullfit/no tuned lambda/features/historylength. Sameuniquepositiveargmax; max tie or nonpositive=>baseline.",
+  "gate": "History selected actual outcomes must preserve24/24 completions and have strict positive mean official return gain vsbaseline, and strictly greater mean gain thanreused current16. Action-selection differences required. Passing is limited known240 one-shot lookup evidence, not296transfer or repeated-policy/native authorization.",
+  "gate_passed": false,
+  "actual_targets_verified": 96,
+  "states": 24,
+  "roads": 6,
+  "folds": [
+    {
+      "heldout_road": "O0",
+      "train_states": 20,
+      "test_states": 4,
+      "normal_equation_max_residual": 9.103828801926284e-15,
+      "training_road_ids_disjoint_test": true,
+      "choices_differ": 3,
+      "gain_prediction_RMSE": {
+        "current16": 1.132941244848519,
+        "history76": 2.6441957016497804
+      },
+      "selected_outcomes": {
+        "current16": {
+          "completions": 4,
+          "mean_return_gain": -0.00015625000000002442
+        },
+        "history76": {
+          "completions": 4,
+          "mean_return_gain": 0.0004999999999999449
+        }
+      }
+    },
+    {
+      "heldout_road": "O2",
+      "train_states": 20,
+      "test_states": 4,
+      "normal_equation_max_residual": 9.825473767932635e-15,
+      "training_road_ids_disjoint_test": true,
+      "choices_differ": 3,
+      "gain_prediction_RMSE": {
+        "current16": 0.7096029438689868,
+        "history76": 0.88358298534936
+      },
+      "selected_outcomes": {
+        "current16": {
+          "completions": 4,
+          "mean_return_gain": -0.0004062500000000524
+        },
+        "history76": {
+          "completions": 4,
+          "mean_return_gain": 0.0003749999999999587
+        }
+      }
+    },
+    {
+      "heldout_road": "N0",
+      "train_states": 20,
+      "test_states": 4,
+      "normal_equation_max_residual": 7.549516567451064e-15,
+      "training_road_ids_disjoint_test": true,
+      "choices_differ": 1,
+      "gain_prediction_RMSE": {
+        "current16": 0.7773948392368061,
+        "history76": 0.9812311185238095
+      },
+      "selected_outcomes": {
+        "current16": {
+          "completions": 4,
+          "mean_return_gain": 0.0003750000000000697
+        },
+        "history76": {
+          "completions": 4,
+          "mean_return_gain": 0.0006562500000000804
+        }
+      }
+    },
+    {
+      "heldout_road": "N1",
+      "train_states": 20,
+      "test_states": 4,
+      "normal_equation_max_residual": 1.509903313490213e-14,
+      "training_road_ids_disjoint_test": true,
+      "choices_differ": 2,
+      "gain_prediction_RMSE": {
+        "current16": 0.580570249858766,
+        "history76": 0.7926777763219681
+      },
+      "selected_outcomes": {
+        "current16": {
+          "completions": 4,
+          "mean_return_gain": -0.0005625000000000213
+        },
+        "history76": {
+          "completions": 4,
+          "mean_return_gain": -0.0006562500000000249
+        }
+      }
+    },
+    {
+      "heldout_road": "N2",
+      "train_states": 20,
+      "test_states": 4,
+      "normal_equation_max_residual": 4.884981308350689e-15,
+      "training_road_ids_disjoint_test": true,
+      "choices_differ": 2,
+      "gain_prediction_RMSE": {
+        "current16": 1.475035197144169,
+        "history76": 1.527867006809839
+      },
+      "selected_outcomes": {
+        "current16": {
+          "completions": 2,
+          "mean_return_gain": -1.024234589041096
+        },
+        "history76": {
+          "completions": 2,
+          "mean_return_gain": -1.0227846746575344
+        }
+      }
+    },
+    {
+      "heldout_road": "N3",
+      "train_states": 20,
+      "test_states": 4,
+      "normal_equation_max_residual": 9.769962616701378e-15,
+      "training_road_ids_disjoint_test": true,
+      "choices_differ": 1,
+      "gain_prediction_RMSE": {
+        "current16": 1.1875270466360435,
+        "history76": 0.9837937604837224
+      },
+      "selected_outcomes": {
+        "current16": {
+          "completions": 3,
+          "mean_return_gain": -0.6300624999999997
+        },
+        "history76": {
+          "completions": 4,
+          "mean_return_gain": 0.0010000000000000564
+        }
+      }
+    }
+  ],
+  "scores": {
+    "current16": {
+      "completions": 21,
+      "actual_DNF": 3,
+      "mean_official_return_gain": -0.27584118150684933,
+      "common_completed_mean_time_delta_ms": -0.9523809523809523,
+      "abstain": 8,
+      "choice_distribution": {
+        "baseline": 8,
+        "gas_upper": 5,
+        "brake_lower": 5,
+        "steer_plus": 3,
+        "steer_minus": 3
+      },
+      "improved": 7,
+      "tied": 8,
+      "worsened": 9,
+      "rows": [
+        {
+          "road": "O0",
+          "anchor": 37,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -80,
+          "return_delta": 0.0004999999999999449
+        },
+        {
+          "road": "O0",
+          "anchor": 73,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 340,
+          "return_delta": -0.0021249999999999325
+        },
+        {
+          "road": "O0",
+          "anchor": 148,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -100,
+          "return_delta": 0.0006249999999998757
+        },
+        {
+          "road": "O0",
+          "anchor": 223,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -60,
+          "return_delta": 0.0003750000000000142
+        },
+        {
+          "road": "O2",
+          "anchor": 34,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 360,
+          "return_delta": -0.0022500000000000853
+        },
+        {
+          "road": "O2",
+          "anchor": 67,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "O2",
+          "anchor": 130,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -100,
+          "return_delta": 0.0006249999999998757
+        },
+        {
+          "road": "O2",
+          "anchor": 196,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N0",
+          "anchor": 37,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 80,
+          "return_delta": -0.0004999999999999449
+        },
+        {
+          "road": "N0",
+          "anchor": 73,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -360,
+          "return_delta": 0.0022500000000000853
+        },
+        {
+          "road": "N0",
+          "anchor": 148,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 40,
+          "return_delta": -0.00024999999999986144
+        },
+        {
+          "road": "N0",
+          "anchor": 223,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N1",
+          "anchor": 28,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 120,
+          "return_delta": -0.0007500000000000284
+        },
+        {
+          "road": "N1",
+          "anchor": 52,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N1",
+          "anchor": 106,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 240,
+          "return_delta": -0.0015000000000000568
+        },
+        {
+          "road": "N1",
+          "anchor": 160,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N2",
+          "anchor": 34,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N2",
+          "anchor": 67,
+          "choice": "steer_minus",
+          "completed": false,
+          "actual_DNF": true,
+          "lap_delta_ms": null,
+          "return_delta": -2.060455479452055
+        },
+        {
+          "road": "N2",
+          "anchor": 136,
+          "choice": "gas_upper",
+          "completed": false,
+          "actual_DNF": true,
+          "lap_delta_ms": null,
+          "return_delta": -2.036482876712329
+        },
+        {
+          "road": "N2",
+          "anchor": 202,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N3",
+          "anchor": 28,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -460,
+          "return_delta": 0.002875000000000183
+        },
+        {
+          "road": "N3",
+          "anchor": 58,
+          "choice": "steer_minus",
+          "completed": false,
+          "actual_DNF": true,
+          "lap_delta_ms": null,
+          "return_delta": -2.5233749999999997
+        },
+        {
+          "road": "N3",
+          "anchor": 118,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -40,
+          "return_delta": 0.0002500000000000835
+        },
+        {
+          "road": "N3",
+          "anchor": 175,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        }
+      ]
+    },
+    "history76": {
+      "completions": 22,
+      "actual_DNF": 2,
+      "mean_official_return_gain": -0.1701516124429224,
+      "common_completed_mean_time_delta_ms": -71.81818181818181,
+      "abstain": 6,
+      "choice_distribution": {
+        "baseline": 6,
+        "gas_upper": 8,
+        "brake_lower": 5,
+        "steer_plus": 3,
+        "steer_minus": 2
+      },
+      "improved": 12,
+      "tied": 6,
+      "worsened": 6,
+      "rows": [
+        {
+          "road": "O0",
+          "anchor": 37,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -120,
+          "return_delta": 0.0007500000000000284
+        },
+        {
+          "road": "O0",
+          "anchor": 73,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "O0",
+          "anchor": 148,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -100,
+          "return_delta": 0.0006249999999998757
+        },
+        {
+          "road": "O0",
+          "anchor": 223,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -100,
+          "return_delta": 0.0006249999999998757
+        },
+        {
+          "road": "O2",
+          "anchor": 34,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "O2",
+          "anchor": 67,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -80,
+          "return_delta": 0.0004999999999999449
+        },
+        {
+          "road": "O2",
+          "anchor": 130,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -160,
+          "return_delta": 0.0009999999999998899
+        },
+        {
+          "road": "O2",
+          "anchor": 196,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N0",
+          "anchor": 37,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 80,
+          "return_delta": -0.0004999999999999449
+        },
+        {
+          "road": "N0",
+          "anchor": 73,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -360,
+          "return_delta": 0.0022500000000000853
+        },
+        {
+          "road": "N0",
+          "anchor": 148,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -140,
+          "return_delta": 0.0008750000000001812
+        },
+        {
+          "road": "N0",
+          "anchor": 223,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N1",
+          "anchor": 28,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 120,
+          "return_delta": -0.0007500000000000284
+        },
+        {
+          "road": "N1",
+          "anchor": 52,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -60,
+          "return_delta": 0.0003750000000000142
+        },
+        {
+          "road": "N1",
+          "anchor": 106,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 240,
+          "return_delta": -0.0015000000000000568
+        },
+        {
+          "road": "N1",
+          "anchor": 160,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 120,
+          "return_delta": -0.0007500000000000284
+        },
+        {
+          "road": "N2",
+          "anchor": 34,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N2",
+          "anchor": 67,
+          "choice": "gas_upper",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -380,
+          "return_delta": 0.002375000000000016
+        },
+        {
+          "road": "N2",
+          "anchor": 136,
+          "choice": "gas_upper",
+          "completed": false,
+          "actual_DNF": true,
+          "lap_delta_ms": null,
+          "return_delta": -2.036482876712329
+        },
+        {
+          "road": "N2",
+          "anchor": 202,
+          "choice": "gas_upper",
+          "completed": false,
+          "actual_DNF": true,
+          "lap_delta_ms": null,
+          "return_delta": -2.057030821917808
+        },
+        {
+          "road": "N3",
+          "anchor": 28,
+          "choice": "steer_plus",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -460,
+          "return_delta": 0.002875000000000183
+        },
+        {
+          "road": "N3",
+          "anchor": 58,
+          "choice": "brake_lower",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -140,
+          "return_delta": 0.0008749999999999591
+        },
+        {
+          "road": "N3",
+          "anchor": 118,
+          "choice": "steer_minus",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": -40,
+          "return_delta": 0.0002500000000000835
+        },
+        {
+          "road": "N3",
+          "anchor": 175,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        }
+      ]
+    },
+    "baseline": {
+      "completions": 24,
+      "actual_DNF": 0,
+      "mean_official_return_gain": 0.0,
+      "common_completed_mean_time_delta_ms": 0.0,
+      "abstain": 24,
+      "choice_distribution": {
+        "baseline": 24,
+        "gas_upper": 0,
+        "brake_lower": 0,
+        "steer_plus": 0,
+        "steer_minus": 0
+      },
+      "improved": 0,
+      "tied": 24,
+      "worsened": 0,
+      "rows": [
+        {
+          "road": "O0",
+          "anchor": 37,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "O0",
+          "anchor": 73,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "O0",
+          "anchor": 148,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "O0",
+          "anchor": 223,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "O2",
+          "anchor": 34,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "O2",
+          "anchor": 67,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "O2",
+          "anchor": 130,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "O2",
+          "anchor": 196,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N0",
+          "anchor": 37,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N0",
+          "anchor": 73,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N0",
+          "anchor": 148,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N0",
+          "anchor": 223,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N1",
+          "anchor": 28,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N1",
+          "anchor": 52,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N1",
+          "anchor": 106,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N1",
+          "anchor": 160,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N2",
+          "anchor": 34,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N2",
+          "anchor": 67,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N2",
+          "anchor": 136,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N2",
+          "anchor": 202,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N3",
+          "anchor": 28,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N3",
+          "anchor": 58,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N3",
+          "anchor": 118,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        },
+        {
+          "road": "N3",
+          "anchor": 175,
+          "choice": "baseline",
+          "completed": true,
+          "actual_DNF": false,
+          "lap_delta_ms": 0,
+          "return_delta": 0.0
+        }
+      ]
+    }
+  },
+  "action_selection_differences": 12,
+  "gain_prediction_RMSE": {
+    "current16": 1.025869230833524,
+    "history76": 1.45292062867184
+  },
+  "validation": {
+    "causal_lags_per_state": 3,
+    "prefix_feature_action_post_pixel_hash_exact": true,
+    "current_pre_pixel_is_prior_post_pixel": true,
+    "complete_post_action_times_aligned_with_sparse_pre_snapshots": true,
+    "original_current_predictions_reproduced_exact": true
+  },
+  "decision": "Reject this fixed history extension for decision selection; no native expansion.",
+  "cost": {
+    "stage": 324,
+    "new_wrapper_actions": 0,
+    "new_native": 0,
+    "new_source_physics_ticks": 0,
+    "new_actor_calls": 0,
+    "new_PPO": 0,
+    "history_ridge_fits": 6,
+    "current_ridge_fits": 0,
+    "full_final_fits": 0,
+    "teacher_queries": 0,
+    "new_paid_resources": 0,
+    "analysis_wall_s": 10.129683420993388,
+    "analysis_CPU_s": 10.109391099000002,
+    "research_remaining": 395,
+    "before_fit_field_recovery": 2,
+    "failed_attempt_native": 0,
+    "failed_attempt_fits": 0,
+    "failed_attempt_CPU_unrecorded": true,
+    "final_reserved_actions": 84000,
+    "actual_cumulative_wrapper_actions": 1273921,
+    "B_operating_cap": 1358316
+  },
+  "export_recovery": {
+    "export_recovery": true,
+    "new_fits": 0,
+    "new_native": 0,
+    "all76_input_columns_recreated_exact": true,
+    "stored_model_predictions_exact": true,
+    "normal_equations_verified": true,
+    "all_input_hashes_preserved": true,
+    "wall_s": 0.9032324239960872,
+    "CPU_s": 0.8404615279999998
+  },
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "limitations": [
+    "24 snapshots on six known240 TRAIN roads, not296 or repeated-policy performance.",
+    "Current16 already has tracker/controller memory; additional3step feature/action history added jointly.",
+    "Fixed lambda1 linear action-gain predictor, not teacher regression/state reconstruction or a general memory impossibility result."
+  ],
+  "history_vs_current_paired": {
+    "additional_completions": 2,
+    "lost_completions": 1,
+    "common_completions": 20,
+    "common_mean_time_delta_ms": -52.0
+  },
+  "cached_selected_interventions_verified": {
+    "nonbaseline_selections": 18,
+    "all_have_actual_action_changes": true,
+    "changed_macro_actions": 54,
+    "new_actor_calls": 0
+  },
+  "history_actual_DNF_selections": [
+    {
+      "road": "N2",
+      "anchor": 136,
+      "choice": "gas_upper",
+      "completed": false,
+      "actual_DNF": true,
+      "lap_delta_ms": null,
+      "return_delta": -2.036482876712329
+    },
+    {
+      "road": "N2",
+      "anchor": 202,
+      "choice": "gas_upper",
+      "completed": false,
+      "actual_DNF": true,
+      "lap_delta_ms": null,
+      "return_delta": -2.057030821917808
+    }
+  ]
+}
