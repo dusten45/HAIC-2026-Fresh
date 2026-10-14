@@ -1,0 +1,514 @@
+{
+  "stage": 308,
+  "rule": "Forq>0 replacea_ff by originala_ff*dot(GTvelocity, selectedunitsegmenttangent)/q; atq==0 originala_ff. Normfeedback1.5, clamps,inverse,steering/cursor/memory,constant1.5path/profile/lapwrap unchanged.",
+  "baseline": [
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 19700,
+      "native_actions": 247,
+      "damage": 0.0,
+      "visited": 326,
+      "total_tiles": 326,
+      "retire_reason": null,
+      "tracking_error_m": {
+        "mean": 0.7111640128907809,
+        "p95": 1.6012788841444743,
+        "max": 2.235057787843052
+      },
+      "actual_speed_m_s": {
+        "median": 56.179360027810894,
+        "max": 100.00000718878943
+      },
+      "target_speed_m_s": {
+        "median": 77.89158678497076,
+        "max": 150.0
+      }
+    },
+    {
+      "road": "N0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 20200,
+      "native_actions": 253,
+      "damage": 0.0,
+      "visited": 325,
+      "total_tiles": 325,
+      "retire_reason": null,
+      "tracking_error_m": {
+        "mean": 0.6147429391095518,
+        "p95": 1.6587347870445595,
+        "max": 2.5004379744323866
+      },
+      "actual_speed_m_s": {
+        "median": 56.54668864780418,
+        "max": 94.03801254894675
+      },
+      "target_speed_m_s": {
+        "median": 81.3568383739456,
+        "max": 140.42484158004692
+      }
+    },
+    {
+      "road": "O2",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 260,
+      "damage": 0.0,
+      "visited": 193,
+      "total_tiles": 289,
+      "retire_reason": "off_track",
+      "tracking_error_m": {
+        "mean": 0.5433590132951298,
+        "p95": 1.4804397320321645,
+        "max": 1.9693805848705244
+      },
+      "actual_speed_m_s": {
+        "median": 32.83487241234567,
+        "max": 100.0000033559206
+      },
+      "target_speed_m_s": {
+        "median": 53.14804911026107,
+        "max": 146.0401676851526
+      }
+    },
+    {
+      "road": "N1",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 259,
+      "damage": 0.0,
+      "visited": 187,
+      "total_tiles": 238,
+      "retire_reason": "off_track",
+      "tracking_error_m": {
+        "mean": 0.5094890439743515,
+        "p95": 1.5816089767031947,
+        "max": 2.1093342426978974
+      },
+      "actual_speed_m_s": {
+        "median": 33.9864754941848,
+        "max": 99.99999883478739
+      },
+      "target_speed_m_s": {
+        "median": 72.75493405304776,
+        "max": 150.0
+      }
+    },
+    {
+      "road": "N3",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 17660,
+      "native_actions": 221,
+      "damage": 0.0,
+      "visited": 256,
+      "total_tiles": 256,
+      "retire_reason": null,
+      "tracking_error_m": {
+        "mean": 0.6309175226202393,
+        "p95": 1.6027911027525212,
+        "max": 3.4171746389730724
+      },
+      "actual_speed_m_s": {
+        "median": 48.021585452519574,
+        "max": 95.82609847930365
+      },
+      "target_speed_m_s": {
+        "median": 74.39082158476377,
+        "max": 144.12892608643764
+      }
+    }
+  ],
+  "candidate": [
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 18980,
+      "native_actions": 238,
+      "damage": 0.0,
+      "visited": 326,
+      "total_tiles": 326,
+      "retire_reason": null,
+      "tracking_error_m": {
+        "mean": 0.7600078307318603,
+        "p95": 1.786195225671556,
+        "max": 3.3726233270623696
+      },
+      "actual_speed_m_s": {
+        "median": 58.72557954950819,
+        "max": 100.0000090857789
+      },
+      "target_speed_m_s": {
+        "median": 78.32379465875442,
+        "max": 150.0
+      }
+    },
+    {
+      "road": "N0",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 248,
+      "damage": 0.0,
+      "visited": 197,
+      "total_tiles": 325,
+      "retire_reason": "off_track",
+      "tracking_error_m": {
+        "mean": 18.416158829398068,
+        "p95": 51.831947226233,
+        "max": 53.076027957649075
+      },
+      "actual_speed_m_s": {
+        "median": 44.33126666674344,
+        "max": 96.93354223871916
+      },
+      "target_speed_m_s": {
+        "median": 107.61168025584183,
+        "max": 140.82877652924662
+      }
+    },
+    {
+      "road": "O2",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 323,
+      "damage": 0.4,
+      "visited": 129,
+      "total_tiles": 289,
+      "retire_reason": "off_track",
+      "tracking_error_m": {
+        "mean": 12.027288412683761,
+        "p95": 22.6316519771452,
+        "max": 27.297348877283213
+      },
+      "actual_speed_m_s": {
+        "median": 15.973838771022201,
+        "max": 100.00000226647387
+      },
+      "target_speed_m_s": {
+        "median": 95.3891410203827,
+        "max": 146.42442293377226
+      }
+    },
+    {
+      "road": "N1",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 180,
+      "damage": 0.0,
+      "visited": 97,
+      "total_tiles": 238,
+      "retire_reason": "off_track",
+      "tracking_error_m": {
+        "mean": 16.1961558244687,
+        "p95": 35.75365630021823,
+        "max": 40.71014420216336
+      },
+      "actual_speed_m_s": {
+        "median": 26.113363161428374,
+        "max": 100.00000959173526
+      },
+      "target_speed_m_s": {
+        "median": 59.884504980306026,
+        "max": 150.0
+      }
+    },
+    {
+      "road": "N3",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "lap_ms": null,
+      "native_actions": 226,
+      "damage": 0.2,
+      "visited": 109,
+      "total_tiles": 256,
+      "retire_reason": "off_track",
+      "tracking_error_m": {
+        "mean": 5.3391857402082845,
+        "p95": 21.55161181589915,
+        "max": 28.653439141713257
+      },
+      "actual_speed_m_s": {
+        "median": 18.549421473692554,
+        "max": 96.52793572161143
+      },
+      "target_speed_m_s": {
+        "median": 52.12263229219597,
+        "max": 143.26287129720012
+      }
+    }
+  ],
+  "candidate_completions": 1,
+  "baseline_completions": 3,
+  "gate_passed": false,
+  "paired": {
+    "paired_additional_completions": 0,
+    "paired_lost_completions": 2,
+    "common_completions": 1,
+    "common_mean_delta_ms": -720.0,
+    "completion_sets_equal": false
+  },
+  "diagnostics": [
+    {
+      "road": "O0",
+      "candidate": {
+        "actions": 238,
+        "last_new_tile_action": 236,
+        "longest_no_new_tile_actions": 6,
+        "below_target_braking_actions": 46,
+        "near_zero_speed_actions": 1,
+        "q_range_mps": [
+          0.011911804360883004,
+          150.0
+        ],
+        "vparallel_range_mps": [
+          5.487944594932474e-11,
+          99.9999676647912
+        ],
+        "negative_vparallel_actions": 0,
+        "q_zero_actions": 0,
+        "last_pre_action_speed_m_s": 72.38994689400788
+      },
+      "baseline": {
+        "actions": 247,
+        "last_new_tile_action": 244,
+        "longest_no_new_tile_actions": 3,
+        "below_target_braking_actions": 52,
+        "near_zero_speed_actions": 1,
+        "q_range_mps": [
+          0.011911804360883004,
+          150.0
+        ],
+        "vparallel_range_mps": null,
+        "negative_vparallel_actions": null,
+        "q_zero_actions": 0,
+        "last_pre_action_speed_m_s": 70.75760747518406
+      },
+      "changed_accel_vs_same_state_spatial_actions": 34,
+      "changed_pedals_vs_same_state_spatial_actions": 34
+    },
+    {
+      "road": "N0",
+      "candidate": {
+        "actions": 248,
+        "last_new_tile_action": 147,
+        "longest_no_new_tile_actions": 101,
+        "below_target_braking_actions": 28,
+        "near_zero_speed_actions": 1,
+        "q_range_mps": [
+          0.00495688087908341,
+          140.82877652924662
+        ],
+        "vparallel_range_mps": [
+          -24.607087360170272,
+          96.93350043130786
+        ],
+        "negative_vparallel_actions": 40,
+        "q_zero_actions": 0,
+        "last_pre_action_speed_m_s": 31.088687378590944
+      },
+      "baseline": {
+        "actions": 253,
+        "last_new_tile_action": 251,
+        "longest_no_new_tile_actions": 3,
+        "below_target_braking_actions": 55,
+        "near_zero_speed_actions": 1,
+        "q_range_mps": [
+          0.00495688087908341,
+          140.42484158004692
+        ],
+        "vparallel_range_mps": null,
+        "negative_vparallel_actions": null,
+        "q_zero_actions": 0,
+        "last_pre_action_speed_m_s": 74.54763409282847
+      },
+      "changed_accel_vs_same_state_spatial_actions": 24,
+      "changed_pedals_vs_same_state_spatial_actions": 24
+    },
+    {
+      "road": "O2",
+      "candidate": {
+        "actions": 323,
+        "last_new_tile_action": 222,
+        "longest_no_new_tile_actions": 101,
+        "below_target_braking_actions": 12,
+        "near_zero_speed_actions": 1,
+        "q_range_mps": [
+          0.0,
+          146.42442293377226
+        ],
+        "vparallel_range_mps": [
+          -28.164591684819754,
+          99.99914986899395
+        ],
+        "negative_vparallel_actions": 106,
+        "q_zero_actions": 1,
+        "last_pre_action_speed_m_s": 12.439942450719222
+      },
+      "baseline": {
+        "actions": 260,
+        "last_new_tile_action": 159,
+        "longest_no_new_tile_actions": 101,
+        "below_target_braking_actions": 140,
+        "near_zero_speed_actions": 97,
+        "q_range_mps": [
+          0.0,
+          146.0401676851526
+        ],
+        "vparallel_range_mps": null,
+        "negative_vparallel_actions": null,
+        "q_zero_actions": 1,
+        "last_pre_action_speed_m_s": 8.20656800353399e-17
+      },
+      "changed_accel_vs_same_state_spatial_actions": 224,
+      "changed_pedals_vs_same_state_spatial_actions": 224
+    },
+    {
+      "road": "N1",
+      "candidate": {
+        "actions": 180,
+        "last_new_tile_action": 79,
+        "longest_no_new_tile_actions": 101,
+        "below_target_braking_actions": 17,
+        "near_zero_speed_actions": 1,
+        "q_range_mps": [
+          0.0,
+          150.0
+        ],
+        "vparallel_range_mps": [
+          -28.793132936613024,
+          99.9999980392652
+        ],
+        "negative_vparallel_actions": 42,
+        "q_zero_actions": 1,
+        "last_pre_action_speed_m_s": 9.661015385647422
+      },
+      "baseline": {
+        "actions": 259,
+        "last_new_tile_action": 158,
+        "longest_no_new_tile_actions": 101,
+        "below_target_braking_actions": 139,
+        "near_zero_speed_actions": 98,
+        "q_range_mps": [
+          0.0,
+          150.0
+        ],
+        "vparallel_range_mps": null,
+        "negative_vparallel_actions": null,
+        "q_zero_actions": 1,
+        "last_pre_action_speed_m_s": 1.6998768662397482e-17
+      },
+      "changed_accel_vs_same_state_spatial_actions": 44,
+      "changed_pedals_vs_same_state_spatial_actions": 44
+    },
+    {
+      "road": "N3",
+      "candidate": {
+        "actions": 226,
+        "last_new_tile_action": 125,
+        "longest_no_new_tile_actions": 101,
+        "below_target_braking_actions": 23,
+        "near_zero_speed_actions": 1,
+        "q_range_mps": [
+          0.0,
+          143.26287129720012
+        ],
+        "vparallel_range_mps": [
+          -20.80746206426032,
+          96.52782921277338
+        ],
+        "negative_vparallel_actions": 100,
+        "q_zero_actions": 1,
+        "last_pre_action_speed_m_s": 0.012299773252320494
+      },
+      "baseline": {
+        "actions": 221,
+        "last_new_tile_action": 219,
+        "longest_no_new_tile_actions": 3,
+        "below_target_braking_actions": 49,
+        "near_zero_speed_actions": 1,
+        "q_range_mps": [
+          0.0,
+          144.12892608643764
+        ],
+        "vparallel_range_mps": null,
+        "negative_vparallel_actions": null,
+        "q_zero_actions": 1,
+        "last_pre_action_speed_m_s": 68.20255688720977
+      },
+      "changed_accel_vs_same_state_spatial_actions": 38,
+      "changed_pedals_vs_same_state_spatial_actions": 38
+    }
+  ],
+  "cost": {
+    "stage": 308,
+    "at_utc": "2026-10-14T00:36:35.950453+00:00",
+    "new_wrapper_actions": 1215,
+    "native_cap": 4000,
+    "new_source_physics_ticks": 0,
+    "new_geometry_solves": 0,
+    "new_fits": 0,
+    "new_paid_resources": 0,
+    "raw_step_ticks": 4858,
+    "raw_reset_ticks": 255,
+    "total_wall_s": 40.522539377212524,
+    "runner_CPU_s": 40.18698057699999,
+    "B_operating_cap": 1240000,
+    "actual_cumulative_wrapper_actions": 1148238,
+    "research_remaining": 7762,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "pre_native_error_wall_s": 0.5860357284545898,
+    "failed_reset_ticks_source_derived": 51,
+    "known_total_reset_ticks_including_failed_initialization": 306,
+    "failed_initialization_CPU_s": null
+  },
+  "verification": {
+    "feedforward_feedback_clamp_actions": 1215,
+    "changed_same_state_clamped_accel_actions": 364,
+    "cached_path_profile_hashes_unchanged": true,
+    "N2_still_solver_blocked": true,
+    "censor": 0,
+    "candidate_technical_error": 0,
+    "pre_native_linkage_errors_repaired": 1,
+    "pedal_inverse_verified_actions": 1215,
+    "original_cursor_steering_and_lapwrap_source_identical": true,
+    "env_closed_all_five": true,
+    "changed_same_state_pedal_actions": 364
+  },
+  "GT_diagnostic_only": true,
+  "legal_submission_candidate": false,
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "automatic_distillation_or_next_experiment": false,
+  "pre_native_recovery": {
+    "error": "KeyError: 'road_geometry_sha256'",
+    "failed_started_native": 0,
+    "failed_candidate_outcomes": 0,
+    "failed_attempt_wall_s": 0.5860357284545898,
+    "failed_reset_instances": 1,
+    "failed_reset_ticks_source_derived": 51,
+    "failed_attempt_CPU_s": null,
+    "repair": "Missing old265 geometry hash linked to matching registered TRAIN seed/track/initial image, before any candidate native. Old claim/error/plan/source retained.",
+    "policy_or_selection_changed": false
+  }
+}
