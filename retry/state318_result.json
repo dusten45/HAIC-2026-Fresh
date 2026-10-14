@@ -1,0 +1,838 @@
+{
+  "stage": 318,
+  "targets": {
+    "ego_longitudinal_m_s": "Hull local+y forward: -sin(angle)*world_vx+cos(angle)*world_vy",
+    "ego_right_lateral_m_s": "Hull local+x right: cos(angle)*world_vx+sin(angle)*world_vy",
+    "yaw_CCW_rad_s": "Hull angular_velocity, positive CCW",
+    "front0_joint_angle_rad": "Wheel0 joint.angle relative hull, physical signed angle; same front wheel as renderer HUD"
+  },
+  "input_recipe": "A current16 legal features. B current16 + lag1/2/3 pre-observation16 features + lag1/2/3 executed actions3 + three validity masks =76. Own same-road consecutive80ms native pre-inputs only; zeros with mask0 at reset/unavailable history. No GT/proxy augmentation or input search.",
+  "ridge_recipe": "Six leave-one-road-out folds, each A/B fitted once; multioutput4 targets,lambda1,biasunpenalized,TRAIN-only mean/std floor1e-6, equal TRAIN-road mass. Road-balanced heldoutRMSE=sqrt(meanroadMSE),MAE/bias=meanroad metrics. No full final fit. No minimum improvement rule or policy evaluation.",
+  "provenance": [
+    {
+      "road": "T2950",
+      "cached_pixels": 315,
+      "snapshot_rows": 315,
+      "eligible_rows": 315,
+      "previous_lag_valid_rows": [
+        314,
+        313,
+        312
+      ],
+      "maximum_interval_error_s": 1.7069679003611782e-15,
+      "cached_stack_shift_exact": true,
+      "features_actions_previous_action_and_pre_damage_exact": true,
+      "completed": false,
+      "first_collision_post_action": 184
+    },
+    {
+      "road": "T2953",
+      "cached_pixels": 298,
+      "snapshot_rows": 298,
+      "eligible_rows": 298,
+      "previous_lag_valid_rows": [
+        297,
+        296,
+        295
+      ],
+      "maximum_interval_error_s": 1.7069679003611782e-15,
+      "cached_stack_shift_exact": true,
+      "features_actions_previous_action_and_pre_damage_exact": true,
+      "completed": true,
+      "first_collision_post_action": 176
+    },
+    {
+      "road": "T2956",
+      "cached_pixels": 292,
+      "snapshot_rows": 292,
+      "eligible_rows": 292,
+      "previous_lag_valid_rows": [
+        291,
+        290,
+        289
+      ],
+      "maximum_interval_error_s": 1.7069679003611782e-15,
+      "cached_stack_shift_exact": true,
+      "features_actions_previous_action_and_pre_damage_exact": true,
+      "completed": true,
+      "first_collision_post_action": null
+    },
+    {
+      "road": "T2959",
+      "cached_pixels": 265,
+      "snapshot_rows": 265,
+      "eligible_rows": 265,
+      "previous_lag_valid_rows": [
+        264,
+        263,
+        262
+      ],
+      "maximum_interval_error_s": 1.7069679003611782e-15,
+      "cached_stack_shift_exact": true,
+      "features_actions_previous_action_and_pre_damage_exact": true,
+      "completed": true,
+      "first_collision_post_action": 241
+    },
+    {
+      "road": "O0",
+      "cached_pixels": 304,
+      "snapshot_rows": 304,
+      "eligible_rows": 304,
+      "previous_lag_valid_rows": [
+        303,
+        302,
+        301
+      ],
+      "maximum_interval_error_s": 1.7069679003611782e-15,
+      "cached_stack_shift_exact": true,
+      "features_actions_previous_action_and_pre_damage_exact": true,
+      "completed": true,
+      "first_collision_post_action": null
+    },
+    {
+      "road": "O2",
+      "cached_pixels": 280,
+      "snapshot_rows": 280,
+      "eligible_rows": 280,
+      "previous_lag_valid_rows": [
+        279,
+        278,
+        277
+      ],
+      "maximum_interval_error_s": 1.7069679003611782e-15,
+      "cached_stack_shift_exact": true,
+      "features_actions_previous_action_and_pre_damage_exact": true,
+      "completed": true,
+      "first_collision_post_action": 46
+    }
+  ],
+  "total_eligible_rows": 1754,
+  "six_road_LOO": true,
+  "folds": [
+    {
+      "road": "T2950",
+      "train_rows": 1439,
+      "test_rows": 315,
+      "metrics": {
+        "A": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.902738435617102,
+            "MAE": 0.7260840830077272,
+            "bias": 0.041402585563496054
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.9257646980151291,
+            "MAE": 0.3356596383082016,
+            "bias": -0.18118626912198238
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 2.1567618102611044,
+            "MAE": 0.6750079423747921,
+            "bias": 0.4997025538502262
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.09070874739357326,
+            "MAE": 0.02268657174678388,
+            "bias": 0.020537834131313278
+          }
+        },
+        "B": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.6991750219752518,
+            "MAE": 0.4302195124536048,
+            "bias": -0.05757182320913816
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 1.094665496331646,
+            "MAE": 0.3812983204343089,
+            "bias": -0.23932691849322085
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 3.185203723697092,
+            "MAE": 0.9082285239962866,
+            "bias": 0.7581168252431679
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.04791392011454772,
+            "MAE": 0.012146721101759083,
+            "bias": 0.0035533053085992665
+          }
+        }
+      }
+    },
+    {
+      "road": "T2953",
+      "train_rows": 1456,
+      "test_rows": 298,
+      "metrics": {
+        "A": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.7151029787937281,
+            "MAE": 0.6168382009793673,
+            "bias": 0.014886382246294634
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.2081754947814065,
+            "MAE": 0.14029456594037443,
+            "bias": 0.021451862895444977
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.3093063658235572,
+            "MAE": 0.1843225302276713,
+            "bias": -0.009897817731115737
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.010449008538107001,
+            "MAE": 0.0023306508207807178,
+            "bias": 6.247255963194535e-05
+          }
+        },
+        "B": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.44324066697970327,
+            "MAE": 0.3575588381671457,
+            "bias": 0.04286592934843095
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.19002373593992117,
+            "MAE": 0.1080159380001299,
+            "bias": 0.014073754558308654
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.22830197063299293,
+            "MAE": 0.14302009594277598,
+            "bias": -0.012685579888709496
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.010332419199011499,
+            "MAE": 0.003315527890771727,
+            "bias": 0.0004838379315902603
+          }
+        }
+      }
+    },
+    {
+      "road": "T2956",
+      "train_rows": 1462,
+      "test_rows": 292,
+      "metrics": {
+        "A": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.7085582632283159,
+            "MAE": 0.6138790776403097,
+            "bias": 0.02718446484918145
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.16718415676018303,
+            "MAE": 0.11057481722060966,
+            "bias": 0.021037055300663892
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.25879314356216593,
+            "MAE": 0.17008361710224928,
+            "bias": -0.061517743284968326
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.0018974928657265668,
+            "MAE": 0.0013774410161653216,
+            "bias": -0.00039987675985803746
+          }
+        },
+        "B": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.38296701546106177,
+            "MAE": 0.2984630688213633,
+            "bias": 0.008802385886984933
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.1318635434846583,
+            "MAE": 0.0760930798372391,
+            "bias": 0.008739287593661878
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.18247691045417885,
+            "MAE": 0.1207450893393748,
+            "bias": -0.031223802559422864
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.0042201907536480775,
+            "MAE": 0.00259597722164162,
+            "bias": 0.00028167437770685314
+          }
+        }
+      }
+    },
+    {
+      "road": "T2959",
+      "train_rows": 1489,
+      "test_rows": 265,
+      "metrics": {
+        "A": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.7238171150247521,
+            "MAE": 0.6192682636611083,
+            "bias": -0.03518786681044403
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.19961863262113166,
+            "MAE": 0.1378430777232431,
+            "bias": 0.00890301998433197
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.2162969555250757,
+            "MAE": 0.1512867631219181,
+            "bias": -0.02621679368161879
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.0029258450948674714,
+            "MAE": 0.0018566538713952448,
+            "bias": -0.000544251278903765
+          }
+        },
+        "B": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.4493462630582609,
+            "MAE": 0.35877627062117073,
+            "bias": -0.052816176231289855
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.15763296246554848,
+            "MAE": 0.09798953378304573,
+            "bias": 0.00919524822315708
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.17998360014311152,
+            "MAE": 0.12419499748379043,
+            "bias": -0.027491391743119632
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.006519491453067869,
+            "MAE": 0.0036217455862797136,
+            "bias": -0.0001278657484814118
+          }
+        }
+      }
+    },
+    {
+      "road": "O0",
+      "train_rows": 1450,
+      "test_rows": 304,
+      "metrics": {
+        "A": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.7306338177713045,
+            "MAE": 0.6265692764658077,
+            "bias": -0.08731699250220898
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.18139330699261885,
+            "MAE": 0.12235587879344931,
+            "bias": -0.00014052607856392054
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.2147207052469371,
+            "MAE": 0.14662764328684158,
+            "bias": -0.002886463601531528
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.002641239027004903,
+            "MAE": 0.0016785226110170217,
+            "bias": -0.0005441221690706896
+          }
+        },
+        "B": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.40947590035707315,
+            "MAE": 0.33121770039767273,
+            "bias": -0.12042734460385227
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.13068146042103904,
+            "MAE": 0.08361118198608776,
+            "bias": -0.006209815485322943
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.15699894763943736,
+            "MAE": 0.10596973593195518,
+            "bias": 0.006466388884557129
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.0044574544750265385,
+            "MAE": 0.0029107677080289205,
+            "bias": -0.00013352126332760494
+          }
+        }
+      }
+    },
+    {
+      "road": "O2",
+      "train_rows": 1474,
+      "test_rows": 280,
+      "metrics": {
+        "A": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.7155100320888484,
+            "MAE": 0.5976887223433115,
+            "bias": -0.0004908494932382781
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.3685818302516716,
+            "MAE": 0.18999114235167475,
+            "bias": -0.06975482012914311
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.5812423645353945,
+            "MAE": 0.2459397496413026,
+            "bias": 0.08994782317393532
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.02662944005223019,
+            "MAE": 0.004004711955142533,
+            "bias": 0.0001129826982982084
+          }
+        },
+        "B": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.4750606975626013,
+            "MAE": 0.3532956593446621,
+            "bias": 0.07691652944872926
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.3169757005361068,
+            "MAE": 0.14057740564713628,
+            "bias": -0.03869146066760495
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.5498342266653674,
+            "MAE": 0.1979405618133121,
+            "bias": 0.08159507531549759
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.022783200524083027,
+            "MAE": 0.004360873925124273,
+            "bias": -0.001087064305407328
+          }
+        }
+      }
+    }
+  ],
+  "road_balanced": {
+    "A": {
+      "ego_longitudinal_m_s": {
+        "RMSE": 0.7525573470399465,
+        "MAE": 0.6333879373496053,
+        "bias": -0.006587046024486527
+      },
+      "ego_right_lateral_m_s": {
+        "RMSE": 0.4353028736586864,
+        "MAE": 0.17278652005625883,
+        "bias": -0.033281612858208076
+      },
+      "yaw_CCW_rad_s": {
+        "RMSE": 0.934968614968472,
+        "MAE": 0.2622113742924626,
+        "bias": 0.08152192645415451
+      },
+      "front0_joint_angle_rad": {
+        "RMSE": 0.038870560631683405,
+        "MAE": 0.005655758670214118,
+        "bias": 0.0032041731969018267
+      }
+    },
+    "B": {
+      "ego_longitudinal_m_s": {
+        "RMSE": 0.48772208251150984,
+        "MAE": 0.35492184163427,
+        "bias": -0.017038416560022522
+      },
+      "ego_right_lateral_m_s": {
+        "RMSE": 0.4820423482198256,
+        "MAE": 0.14793090994799124,
+        "bias": -0.04203665071183685
+      },
+      "yaw_CCW_rad_s": {
+        "RMSE": 1.3285520198566239,
+        "MAE": 0.2666831674179159,
+        "bias": 0.1291295858753286
+      },
+      "front0_joint_angle_rad": {
+        "RMSE": 0.02236723620450485,
+        "MAE": 0.004825268905600889,
+        "bias": 0.0004950610501133399
+      }
+    },
+    "direct_proxy": {
+      "ego_longitudinal_m_s": {
+        "RMSE": 0.7609603388718117,
+        "MAE": 0.6518425697185791,
+        "bias": 0.04499847994497296
+      },
+      "ego_right_lateral_m_s": {
+        "RMSE": 0.8736958690695057,
+        "MAE": 0.5482738612662152,
+        "bias": 0.12935441470130174
+      },
+      "yaw_CCW_rad_s": {
+        "RMSE": 0.05398988708352684,
+        "MAE": 0.04248902764628723,
+        "bias": -0.01490866809699552
+      },
+      "front0_joint_angle_rad": {
+        "RMSE": 0.004167492008994305,
+        "MAE": 0.003004825060989643,
+        "bias": -0.0009061223177955789
+      }
+    }
+  },
+  "strata": [
+    {
+      "stratum": "completed_trajectory",
+      "roads": 5,
+      "rows": 1439,
+      "metrics": {
+        "A": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.7187654249283842,
+            "MAE": 0.6148487082179808,
+            "bias": -0.016184972342083034
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.2365972420811442,
+            "MAE": 0.1402118964058702,
+            "bias": -0.0037006816054532404
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.34449277486055324,
+            "MAE": 0.17965206067599654,
+            "bias": -0.002114199025059827
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.012941762238715187,
+            "MAE": 0.002249596054900167,
+            "bias": -0.0002625589899804678
+          }
+        },
+        "B": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.43321848235320937,
+            "MAE": 0.3398623074704029,
+            "bias": -0.008931735230199401
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.19793756793731285,
+            "MAE": 0.10125742785072779,
+            "bias": -0.0025785971555600524
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.298254943072828,
+            "MAE": 0.13837409610224172,
+            "bias": 0.003332138001760536
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.011882893518208556,
+            "MAE": 0.003360978466369251,
+            "bias": -0.00011658780158384645
+          }
+        },
+        "direct_proxy": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.7349213051668325,
+            "MAE": 0.6335191075527139,
+            "bias": 0.036337232807997055
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.8438397691618208,
+            "MAE": 0.524552712277843,
+            "bias": 0.134489180210612
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.05313095125548491,
+            "MAE": 0.04176856233134108,
+            "bias": -0.014144956103184036
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.004064202284834114,
+            "MAE": 0.0029099679105793986,
+            "bias": -0.0008396494044605004
+          }
+        }
+      }
+    },
+    {
+      "stratum": "DNF_trajectory",
+      "roads": 1,
+      "rows": 315,
+      "metrics": {
+        "A": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.902738435617102,
+            "MAE": 0.7260840830077272,
+            "bias": 0.041402585563496054
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.9257646980151291,
+            "MAE": 0.3356596383082016,
+            "bias": -0.18118626912198238
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 2.1567618102611044,
+            "MAE": 0.6750079423747921,
+            "bias": 0.4997025538502262
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.09070874739357326,
+            "MAE": 0.02268657174678388,
+            "bias": 0.020537834131313278
+          }
+        },
+        "B": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.6991750219752518,
+            "MAE": 0.4302195124536048,
+            "bias": -0.05757182320913816
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 1.094665496331646,
+            "MAE": 0.3812983204343089,
+            "bias": -0.23932691849322085
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 3.185203723697092,
+            "MAE": 0.9082285239962866,
+            "bias": 0.7581168252431679
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.04791392011454772,
+            "MAE": 0.012146721101759083,
+            "bias": 0.0035533053085992665
+          }
+        },
+        "direct_proxy": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.8796688013535602,
+            "MAE": 0.7434598805479053,
+            "bias": 0.08830471562985258
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 1.0098212959129649,
+            "MAE": 0.6668796062080778,
+            "bias": 0.10368058715475026
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.05809438473026722,
+            "MAE": 0.046091354221018,
+            "bias": -0.01872722806605291
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.004649649106108351,
+            "MAE": 0.0034791108130408626,
+            "bias": -0.001238486884470966
+          }
+        }
+      }
+    },
+    {
+      "stratum": "before_first_collision_or_no_collision",
+      "roads": 6,
+      "rows": 1243,
+      "metrics": {
+        "A": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.7164443992351986,
+            "MAE": 0.6108643215604218,
+            "bias": -0.01590741798428037
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.17730933656011988,
+            "MAE": 0.1162938303800896,
+            "bias": 0.008773949566830601
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.2520637368029202,
+            "MAE": 0.15056457650253652,
+            "bias": -0.02868313692544409
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.008054402473551868,
+            "MAE": 0.0017351478186566152,
+            "bias": -7.639464868850681e-05
+          }
+        },
+        "B": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.4006082883476823,
+            "MAE": 0.3171008611446171,
+            "bias": -0.0477789776801266
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.14375297866753697,
+            "MAE": 0.08038736979205864,
+            "bias": 0.003915448028489386
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.17547270842478035,
+            "MAE": 0.10850242607766172,
+            "bias": -0.014936063524237472
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.011074425524058172,
+            "MAE": 0.0028782882080737025,
+            "bias": 0.00044032089096488635
+          }
+        },
+        "direct_proxy": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.7350766289116512,
+            "MAE": 0.6341810407852921,
+            "bias": 0.05422939846843667
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.7879822804588561,
+            "MAE": 0.4540322205325324,
+            "bias": 0.16175634025394486
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.04948896155730072,
+            "MAE": 0.037029095994151516,
+            "bias": -0.010507469606972589
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.003610609109579196,
+            "MAE": 0.002438488000370161,
+            "bias": -0.0006008229464201399
+          }
+        }
+      }
+    },
+    {
+      "stratum": "after_first_collision",
+      "roads": 4,
+      "rows": 511,
+      "metrics": {
+        "A": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.812196473294267,
+            "MAE": 0.6543171838484174,
+            "bias": 0.09236299283980795
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.7499091723401416,
+            "MAE": 0.2845947530007441,
+            "bias": -0.119459072575857
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 1.7016238791036478,
+            "MAE": 0.5039402485987396,
+            "bias": 0.3357438354902741
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.07137851969141662,
+            "MAE": 0.014972034113313909,
+            "bias": 0.01216890754340744
+          }
+        },
+        "B": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.6677627139132559,
+            "MAE": 0.46544842172151274,
+            "bias": 0.11625706163630989
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 0.8704548552646952,
+            "MAE": 0.2976498670811496,
+            "bias": -0.15618368421935383
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 2.489285954524269,
+            "MAE": 0.6303456102563885,
+            "bias": 0.4685301186392449
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.03710177543886126,
+            "MAE": 0.009004584628071258,
+            "bias": 0.0013386196411649671
+          }
+        },
+        "direct_proxy": {
+          "ego_longitudinal_m_s": {
+            "RMSE": 0.8082716455868995,
+            "MAE": 0.6656001066826269,
+            "bias": 0.05550046902294144
+          },
+          "ego_right_lateral_m_s": {
+            "RMSE": 1.0060219450648549,
+            "MAE": 0.7204772569112695,
+            "bias": -0.03417218226586784
+          },
+          "yaw_CCW_rad_s": {
+            "RMSE": 0.06229140187299078,
+            "MAE": 0.05225541637252027,
+            "bias": -0.028332914255990927
+          },
+          "front0_joint_angle_rad": {
+            "RMSE": 0.005011366089852079,
+            "MAE": 0.003958595018434966,
+            "bias": -0.001931856843379945
+          }
+        }
+      }
+    }
+  ],
+  "proxy_definitions": {
+    "longitudinal": "Current legal HUD scalar norm speed treated as forward speed; not an exact longitudinal observation.",
+    "lateral": "Zero null prediction, not a measured lateral proxy.",
+    "yaw": "Unchanged248 current-pixel HUD yaw decoder",
+    "joint": "Unchanged248 current-pixel front0 joint-angle decoder"
+  },
+  "extra_proxy_metrics": {
+    "legacy_norm_speed_vs_physical_norm": {
+      "RMSE": 2.68487053598358,
+      "MAE": 2.2095012366422586,
+      "bias": -0.02979760108520507
+    },
+    "HUD_norm_speed_vs_physical_norm": {
+      "RMSE": 0.7605332576089843,
+      "MAE": 0.6518491416270129,
+      "bias": 0.03623905713835719
+    },
+    "negative_previous_command_vs_front_joint": {
+      "RMSE": 0.01345872411158745,
+      "MAE": 0.0008291850987628804,
+      "bias": 0.00019707237103636736
+    }
+  },
+  "excluded_rows_by_reason": {},
+  "additional_source_scope": {
+    "stage300_T2950_duplicate_target_max_abs_difference": 0.0,
+    "stage300_duplicate_used_for_fitting": false,
+    "stage300_T2954_outside_fixed_six_not_added": true,
+    "stage315_actual_rows_without_preGT_excluded": 1685,
+    "stage315_foreign_trajectory_GT_transferred": false
+  },
+  "cost": {
+    "new_native": 0,
+    "new_source_physics_ticks": 0,
+    "new_actor_calls": 0,
+    "new_PPO_updates": 0,
+    "scalar_target_columns": 4,
+    "ridge_multioutput_solves": 12,
+    "extra_full_fit_or_input_search": 0,
+    "new_paid_resources": 0,
+    "wall_s": 13.836291748972144,
+    "CPU_s": 13.816392801000001
+  },
+  "research_remaining": 2969,
+  "final_reserved_actions": 84000,
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "automatic_extension": false,
+  "limitations": [
+    "Linear state prediction, not a certified sufficient observation or control-performance gain.",
+    "Six known296 TRAIN trajectories; one DNF trajectory, correlated adjacent observations.",
+    "B adds past features, executed actions and masks jointly; no component attribution or longer history tested.",
+    "No GT angle or velocity enters legal predictors or proxy decoder."
+  ]
+}
