@@ -1,0 +1,94 @@
+{
+  "stage": 351,
+  "decision": "Duplicate cached experiment; no new actor invocation. Existing342O0first190evidence applies to unchanged349semanticpipeline under the recorded inputs, by exact source/reset/state-algebra correspondence.",
+  "new_actor_calls": 0,
+  "new_native_actions": 0,
+  "verified_input_stacks": 190,
+  "input_file_hash_preserved": true,
+  "baseline_archive_byte_identical_to342": true,
+  "candidate_semantic_changes": "Only equivalent metadata bookkeeping and same fixed routing filter moved intoarchive. Normalized original tracker/nominal AST identical, helper functions exact, all other original members byteidentical.",
+  "reset_and_memory_qualification": "Existing342baseline/candidate reset states exact and original state projections match349resets; own-returned-command commits, f7previousnominalmemory and full original A/Bstates checked through190.",
+  "differences": {
+    "action": [],
+    "features": [],
+    "pixel_path": [],
+    "target": [],
+    "nominal_memory": [],
+    "original_policy_state": []
+  },
+  "low_births": [
+    {
+      "step": 181,
+      "direct_index": 0,
+      "area_pixels": 3
+    }
+  ],
+  "withheld_actions": [
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189
+  ],
+  "interpretation": "Known181birth is retained181-189andexpires190. Withholding its footprint changes neither recorded routing/target/control nor normalmemory on these inputs. No new standaloneO0agent-pickle execution was performed; added349metadata changesfullpicklebyconstruction. NativeO0behavior under334/349remains unmeasured.",
+  "limits": [
+    "SourceO0pixels came from296actualtrajectory; this is off-policy fixed-input evidence for334ON/H1, never a substitution for actualO0baseline or generalization/occlusion safety.",
+    "Same inputs, source logic and reset/memory context make another190+190actor replay redundant. Source/state algebra and previous349/350package qualifications support applicability; no new O0runtime/latency/fullpickle parity measurement.",
+    "No threshold/fit/tuning/rollout/protectedsplit/promotion. N2singleknowncondition outcome doesnot establish otherTRAINconditions are unaffected."
+  ],
+  "next_minimum_closed_loop_comparison": {
+    "status": "Proposed only; not executed, reserved or granted.",
+    "minimum_design": "Keep existing actualN2effect337DNF versus350finish; no N2rerun. Add one independent actualO0paired baseline334ON/H1 versus frozen349candidate from matching fresh resets, existing permitted TRAINcase only. Twoactualarms are necessary because historicalO0actual used296and cannot substitute for334baseline.",
+    "bounded_plan": {
+      "per_arm_cap": 400,
+      "total_new_native_cap": 800,
+      "new_environment_resets": 2,
+      "new_native_auxiliary": 0,
+      "research_remaining_after_maximum": 946,
+      "additional_research_needed": 0,
+      "maximum_step_ticks": 3200,
+      "expected_reset_ticks_total": 102,
+      "maximum_total_raw_ticks": 3302
+    },
+    "cap_reason": "Existing O0source296actualfinished304actions;400offers96moreactions perarm while staying within1746. This is only a cost reference from anotherpolicy, not evidence334/349mustfinish by400. Choose400beforeexecution, no cutoff sweep or automaticextension.",
+    "preconditions": "Separately register both exact349archive/worker hashes, identicalenvironment/versions/case/init/RNG, orderAthenB and400each/800total caps. Current334actualtrajectory is unknown: do not force source306O0prefix or birth181. Match reset and the naturally common actualprefix until first returned-control difference, then each uses ownobservations/fullcontrols/normalmemory. No extra cache actors are needed after351evidence transfer.",
+    "outcomes": "N2effect is retained as one knowncondition, not pooled lapscore. For O0report bothfinish/DNF/protocolcensor and officiallaps; only if bothfinish compare exact officialBminusAlap. Any positive lapdelta is observed regression; no chosen tolerance. Damage/contact/progress secondary. Onearm400censor yields inconclusive completion/regression, not a safety pass; stop rather than expand automatically.",
+    "stop": "Officialfinish/retirement before400, source/input/reset/physics/accessRNG/commonprefix/interface/leak/technical mismatch or deadline. Chargeactualfailedactions; no automaticthirdarm/retry/tuning/split/promotion.",
+    "full_default_alternative": {
+      "per_arm_cap": 2000,
+      "total_cap": 4000,
+      "additional_research_needed": 2254,
+      "reason": "If both arms must be funded through default2000ratherthan accept400protocolcensor, current1746is insufficient. This alternative is not authorized or reserved."
+    },
+    "final_reserved_actions": 84000
+  },
+  "cost": {
+    "stage": 351,
+    "new_wrapper_actions": 0,
+    "new_actor_calls": 0,
+    "actor_resets": 0,
+    "new_environment_resets": 0,
+    "new_routing_calls": 0,
+    "new_target_calls": 0,
+    "metadata_algebra_updates": 190,
+    "new_learning_fits": 0,
+    "new_tuning": 0,
+    "new_paid_resources": 0,
+    "audit_wall_s": 0.3742739229928702,
+    "audit_CPU_s": 0.49746574900000007,
+    "actual_cumulative_wrapper_actions": 1284297,
+    "research_remaining": 1746,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1370043,
+    "measurement_scope": "Offline source/records/metadata audit only; no new policy or simulator execution. Preparation/closure/git/task wall not fully timed."
+  },
+  "champion296_preserved": true,
+  "promotion": false,
+  "new_protected_split_opened": false,
+  "deadline_utc": "2026-10-17T10:01:55Z"
+}
