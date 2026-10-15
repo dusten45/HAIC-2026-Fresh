@@ -1,0 +1,211 @@
+{
+  "stage": 355,
+  "official_outcome": {
+    "native_actions": 356,
+    "collision_event_actions": [],
+    "raw_collision_flags": 0,
+    "new_obstacle_hit_intervals": [],
+    "fixture_touching": [],
+    "raw_observation_count": 1423,
+    "damage": 0.0,
+    "unique_tiles": 357,
+    "speed_m_s": 46.18930470488159,
+    "off_track_counter": 3,
+    "last_tile_growth_action": 353,
+    "actual_DNF": false,
+    "protocol_stop": false,
+    "completed": true,
+    "finish_time_s": 29.45999999999946,
+    "lap_ms": 28440,
+    "retire_reason": null
+  },
+  "stop_reason": "official_finish",
+  "technical_error": null,
+  "candidate_modified": false,
+  "candidate_archive_sha256": "ef1965a5b09ec9324498643842badbcd972c48fb7c141770d7cce88fe6496208",
+  "candidate_worker_sha256": "ea3cca4c43ab35ac89359892a45d15db61cbf7f29b7729737e09908cc85da41a",
+  "fresh_reset_qualification": true,
+  "no_historical_forced_prefix": true,
+  "finish": {
+    "qualification_raw_time_s": 27.859999999999495,
+    "center_crossing_raw_time_s": 29.45999999999946,
+    "declaration_raw_time_s": 29.47999999999946,
+    "postreset_start_time_s": 1.0200000000000005,
+    "lap_ms": 28440
+  },
+  "historical_comparison": {
+    "baseline296": {
+      "completed": true,
+      "native_actions": 344,
+      "lap_ms": 27440,
+      "damage": 0.0,
+      "visited": 357,
+      "total_tiles": 357
+    },
+    "H1_330": {
+      "completed": false,
+      "actual_DNF": true,
+      "native_actions": 612,
+      "retire_reason": "off_track",
+      "visited": 357,
+      "total_tiles": 357,
+      "damage": 0.2
+    },
+    "reference_lap_difference_from296_ms": 1000,
+    "not_new_or_recounted": true,
+    "scope": "Knownsamecasehistoricalcontext, notfreshpairedcausaleffect.349versus330includes334fallbackand342filter;296is anotherpolicy. No qualifiedcurrent334T2954actualarm ormatchedhistoricalactor/physics/RNGprefix exists."
+  },
+  "posthoc_rule_audit": {
+    "low_births": [
+      {
+        "action": 92,
+        "direct_index": 0,
+        "area_pixels": 4,
+        "raw_road_neighbors": 0,
+        "posthoc_geometric_label": "fixture_supported",
+        "fixture_index": 2
+      }
+    ],
+    "held_actions": [
+      92
+    ],
+    "fixture_supported_withheld": [
+      {
+        "action": 92,
+        "uid": [
+          92,
+          0
+        ],
+        "fixture_index": 2,
+        "birth_point_to_fixture_center_m": 0.35982710320281297,
+        "fixture_radius_m": 1.2000000476837158,
+        "selected_path_center_distance_at_birth_m": 24.991875972504655,
+        "full_tracker_point_preserved": true,
+        "scope": "Birthpointgeometricallysupported bycapturedfixture; not semanticpixelmaterialorvisibilitygroundtruth. Selectedpathdistance descriptive, not counterfactualrouteeffect."
+      }
+    ],
+    "local_birth_context": [
+      {
+        "action": 91,
+        "uid": [
+          91,
+          0
+        ],
+        "area_pixels": 5,
+        "raw_road_neighbors": 3,
+        "low": false,
+        "posthoc_geometric_label": "fixture_supported",
+        "fixture_index": 2
+      },
+      {
+        "action": 92,
+        "uid": [
+          92,
+          0
+        ],
+        "area_pixels": 4,
+        "raw_road_neighbors": 0,
+        "low": true,
+        "posthoc_geometric_label": "fixture_supported",
+        "fixture_index": 2
+      },
+      {
+        "action": 93,
+        "uid": [
+          93,
+          0
+        ],
+        "area_pixels": 5,
+        "raw_road_neighbors": 3,
+        "low": false,
+        "posthoc_geometric_label": "fixture_supported",
+        "fixture_index": 2
+      }
+    ],
+    "semantic_material_or_actual_occlusion_verified": false,
+    "support_labels_computed_only_after_episode": true,
+    "GT_capture_scope": "Readonlyevaluatorcaptureandinitialidentitygate duringrun; noGTtoactororcontrol. Geometryassociation/labelinterpretationonlyafterepisode."
+  },
+  "assessment": {
+    "official_feasibility": "confirmed",
+    "fixture_supported_footprint_preservation": "falsified_on_this_record",
+    "fixture_supported_withheld_count": 1,
+    "promotion": false,
+    "meaning": "Completionandnocollision do not rescue the rulepreservation premise. Atleastone zero-ringbirthgeometricallysupportedbyrealfixture waswithheldfromhardrouting. Fullhazards remainedtracked andused bynear/count/min-distance, so this isnotcompleteobstacledeletion. No counterfactualcontrol/harmcausality ismeasured."
+  },
+  "limits": [
+    "SinglepreviouslyobservedTRAINcase, notgeneralization orchampionpromotion. Now349actualcoverageN2/O0/O2/T2954only; other14conditions remainunmeasured, do notclaim an18conditioncount.",
+    "Newofficialfinish is distinct fromfulltileprogress; historical330T2954had357/357andDNF. No historicalresultrelabelled, nofreshbaseline/isolated342effect.",
+    "Fixture-supportedmeanscapturedcirclecorrespondence; do notconvertgeometriclabelintoauthoritativesemanticorocclusiontruth. The counterexampleinvalidates the conservative no-supported-exclusion gate regardlessofobservednocontact.",
+    "Hidden solver/OpenCV RNG and omittedwarmstart/contactislandstate notdirectlycaptured. Noextraarm/retry/tuning/learning ornewprotectedsplit."
+  ],
+  "cost": {
+    "stage": 355,
+    "new_wrapper_actions": 356,
+    "new_candidate_runs": 1,
+    "new_baseline_runs": 0,
+    "new_environment_resets": 1,
+    "actual_actor_calls": 356,
+    "actual_actor_resets": 1,
+    "new_cached_actor_calls": 0,
+    "new_native_auxiliary": 0,
+    "total_native_cap": 2000,
+    "additional_research_registered_before_native": 1468,
+    "raw_step_ticks": 1423,
+    "raw_reset_ticks": 51,
+    "new_source_physics_rollout_ticks": 0,
+    "new_learning_fits": 0,
+    "new_tuning": 0,
+    "new_paid_resources": 0,
+    "technical_error": null,
+    "technical_recovery_native": 0,
+    "measurements": {
+      "wall_s": 30.980320127971936,
+      "runner_CPU_s": 26.872492951999998,
+      "actor_CPU_s": 4.130119,
+      "reset_wall_s": 0.42971098597627133,
+      "raw_step_render_wall_s": 11.57421070971759,
+      "raw_contact_observer_wall_s": 0.2754719262593426,
+      "capture_wall_s": 12.6040174413356,
+      "journal_wall_s": 0.26622260455042124,
+      "artifact_wall_s": 0.05575310398126021
+    },
+    "actual_cumulative_wrapper_actions": 1285867,
+    "research_remaining": 1644,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1371511,
+    "unused_registered_native": 1644,
+    "historical_results_charged_again": false,
+    "measurement_scope": "Only355freshactualepisode charged; allprefix/capturewithinthisrun, no cacheorauxiliaryphysics. Rawstep includesrender; read-onlyGT/contact/capture/journal/artifactseparatetimers. Preparation/coding/closure/git/taskwall notfullytimed."
+  },
+  "next_decision": {
+    "status": "Proposed only, not executed.",
+    "decision": "Pause broader rulequalification/promotion and furtheractualcandidateexpansion because the supported-footprint preservation premise failed. Preserve exactcandidate andallofficialoutcomes; no adhocthresholdrepair. Ifneeded, nextstep is a separatelyscopednative0review of92sourceassociation/pixelboundary andstoredroutingrelevance, withnopolicy/physicsreplayunlessregistered.",
+    "unresolved_conditions": [
+      "T29511",
+      "T2950 gain retention"
+    ],
+    "condition_priority_scope": "354conditionpriorityremainscontext, not authorization to skip the newpreservationcounterexample or launch additional episodes.",
+    "new_native_cap": 0,
+    "new_actor_calls_authorized": 0,
+    "champion296_unchanged": true,
+    "final_reserve": 84000,
+    "minimum_diagnostic_proposal": {
+      "status": "notexecuted",
+      "input": "Saved355action92only, identicalpixels/speed/priorsteer andallremaininghazards.",
+      "variants": "Reproduce actualfilteredroute/target first, thenrestore only92:0footprint.",
+      "direct_routing_calls_cap": 2,
+      "direct_target_calls_cap": 2,
+      "actor_calls": 0,
+      "native_actions": 0,
+      "stop": "Anyoriginalroute/targetreproductionmismatch stops. No extraframe/fit/tuning/controllercall.",
+      "interpretation": "Isolatesdirectroutingrelevance ofthesupportedfootprint. Evenanunchangedroute wouldnoterase the no-supported-exclusion gatecounterexample; no fullcontrol/trajectoryharmclaim."
+    }
+  },
+  "champion296_preserved": true,
+  "new_HOLDOUT_opening": false,
+  "new_SEALED_opening": false,
+  "promotion": false,
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
