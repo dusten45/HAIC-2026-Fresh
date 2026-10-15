@@ -1,0 +1,736 @@
+{
+  "stage": 354,
+  "remote_report": {
+    "commit": "9fbb765fc53325f5737d485952270355c704361e",
+    "sha256": "19853d3d73dfcfc685b005f1ad46a64402e385382967beb5942b107e1ad2ebb0",
+    "local_bytes_identical": true,
+    "source_path": "retry/h1_330_result.json"
+  },
+  "arithmetic": {
+    "baseline296_completed": 17,
+    "H1_330_completed": 15,
+    "conditions": 18,
+    "gains": [
+      "T2950"
+    ],
+    "losses": [
+      "N2",
+      "T2954",
+      "T29511"
+    ],
+    "equation": "17 +1 -3 =15",
+    "finding": "Remote330report andindividualresults were alreadycorrect. The shortnarrative omittedT29511; not a newfailure orcensor correction."
+  },
+  "table": [
+    {
+      "condition": "T2950",
+      "baseline296": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 315,
+        "lap_ms": null,
+        "damage": 0.2,
+        "visited": 208,
+        "total_tiles": 338,
+        "retire_reason": "off_track"
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 361,
+        "lap_ms": 28860,
+        "damage": 0.2,
+        "visited": 332,
+        "total_tiles": 338,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "T2953",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 298,
+        "lap_ms": 23800,
+        "damage": 0.2,
+        "visited": 316,
+        "total_tiles": 316,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 319,
+        "lap_ms": 25480,
+        "damage": 0.4,
+        "visited": 316,
+        "total_tiles": 316,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "T2956",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 292,
+        "lap_ms": 23320,
+        "damage": 0.0,
+        "visited": 323,
+        "total_tiles": 323,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 316,
+        "lap_ms": 25220,
+        "damage": 0.0,
+        "visited": 323,
+        "total_tiles": 323,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "T2959",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 265,
+        "lap_ms": 21180,
+        "damage": 0.4,
+        "visited": 278,
+        "total_tiles": 278,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 282,
+        "lap_ms": 22480,
+        "damage": 0.0,
+        "visited": 278,
+        "total_tiles": 278,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "O0",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 304,
+        "lap_ms": 24320,
+        "damage": 0.0,
+        "visited": 326,
+        "total_tiles": 326,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 323,
+        "lap_ms": 25820,
+        "damage": 0.0,
+        "visited": 326,
+        "total_tiles": 326,
+        "retire_reason": null
+      },
+      "current334_ON_H1": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 324,
+        "lap_ms": 25840,
+        "damage": 0.0,
+        "visited": 326,
+        "total_tiles": 326,
+        "retire_reason": null,
+        "source_stage": 352,
+        "source_arm": "A",
+        "archive_sha256": "133cf83a145b1db6b9bd32c43139e8dc43967ed547b3154b73164fa5d6a55a33"
+      },
+      "frozen349": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 324,
+        "lap_ms": 25840,
+        "damage": 0.0,
+        "visited": 326,
+        "total_tiles": 326,
+        "retire_reason": null,
+        "source_stage": 352,
+        "source_arm": "B",
+        "archive_sha256": "ef1965a5b09ec9324498643842badbcd972c48fb7c141770d7cce88fe6496208"
+      }
+    },
+    {
+      "condition": "O2",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 280,
+        "lap_ms": 22360,
+        "damage": 0.2,
+        "visited": 285,
+        "total_tiles": 289,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 285,
+        "lap_ms": 22780,
+        "damage": 0.0,
+        "visited": 289,
+        "total_tiles": 289,
+        "retire_reason": null
+      },
+      "current334_ON_H1": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 283,
+        "lap_ms": 22600,
+        "damage": 0.0,
+        "visited": 289,
+        "total_tiles": 289,
+        "retire_reason": null,
+        "source_stage": 353,
+        "source_arm": "A",
+        "archive_sha256": "133cf83a145b1db6b9bd32c43139e8dc43967ed547b3154b73164fa5d6a55a33"
+      },
+      "frozen349": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 283,
+        "lap_ms": 22600,
+        "damage": 0.0,
+        "visited": 289,
+        "total_tiles": 289,
+        "retire_reason": null,
+        "source_stage": 353,
+        "source_arm": "B",
+        "archive_sha256": "ef1965a5b09ec9324498643842badbcd972c48fb7c141770d7cce88fe6496208"
+      }
+    },
+    {
+      "condition": "N0",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 301,
+        "lap_ms": 24040,
+        "damage": 0.0,
+        "visited": 325,
+        "total_tiles": 325,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 321,
+        "lap_ms": 25600,
+        "damage": 0.0,
+        "visited": 325,
+        "total_tiles": 325,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "N1",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 224,
+        "lap_ms": 17860,
+        "damage": 0.0,
+        "visited": 238,
+        "total_tiles": 238,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 238,
+        "lap_ms": 19000,
+        "damage": 0.0,
+        "visited": 238,
+        "total_tiles": 238,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "N2",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 363,
+        "lap_ms": 29000,
+        "damage": 0.6000000000000001,
+        "visited": 292,
+        "total_tiles": 292,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 72,
+        "lap_ms": null,
+        "damage": 1.0,
+        "visited": 70,
+        "total_tiles": 292,
+        "retire_reason": "crash"
+      },
+      "current334_ON_H1": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 233,
+        "lap_ms": null,
+        "damage": 0.2,
+        "visited": 132,
+        "total_tiles": 292,
+        "retire_reason": "off_track",
+        "source_stage": 337,
+        "source_arm": "B",
+        "archive_sha256": "133cf83a145b1db6b9bd32c43139e8dc43967ed547b3154b73164fa5d6a55a33"
+      },
+      "frozen349": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 292,
+        "lap_ms": 23320,
+        "damage": 0.0,
+        "visited": 292,
+        "total_tiles": 292,
+        "retire_reason": null,
+        "source_stage": 350,
+        "source_arm": "B",
+        "archive_sha256": "ef1965a5b09ec9324498643842badbcd972c48fb7c141770d7cce88fe6496208"
+      }
+    },
+    {
+      "condition": "N3",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 247,
+        "lap_ms": 19720,
+        "damage": 0.0,
+        "visited": 256,
+        "total_tiles": 256,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 255,
+        "lap_ms": 20320,
+        "damage": 0.0,
+        "visited": 256,
+        "total_tiles": 256,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "T2951",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 264,
+        "lap_ms": 21040,
+        "damage": 0.0,
+        "visited": 257,
+        "total_tiles": 267,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 273,
+        "lap_ms": 21760,
+        "damage": 0.0,
+        "visited": 267,
+        "total_tiles": 267,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "T2952",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 265,
+        "lap_ms": 21140,
+        "damage": 0.0,
+        "visited": 288,
+        "total_tiles": 288,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 284,
+        "lap_ms": 22660,
+        "damage": 0.0,
+        "visited": 288,
+        "total_tiles": 288,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "T2954",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 344,
+        "lap_ms": 27440,
+        "damage": 0.0,
+        "visited": 357,
+        "total_tiles": 357,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 612,
+        "lap_ms": null,
+        "damage": 0.2,
+        "visited": 357,
+        "total_tiles": 357,
+        "retire_reason": "off_track"
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "T2955",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 299,
+        "lap_ms": 23860,
+        "damage": 0.0,
+        "visited": 320,
+        "total_tiles": 320,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 321,
+        "lap_ms": 25620,
+        "damage": 0.2,
+        "visited": 320,
+        "total_tiles": 320,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "T2957",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 318,
+        "lap_ms": 25400,
+        "damage": 0.2,
+        "visited": 327,
+        "total_tiles": 327,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 329,
+        "lap_ms": 26240,
+        "damage": 0.0,
+        "visited": 327,
+        "total_tiles": 327,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "T2958",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 307,
+        "lap_ms": 24480,
+        "damage": 0.0,
+        "visited": 294,
+        "total_tiles": 304,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 328,
+        "lap_ms": 26200,
+        "damage": 0.0,
+        "visited": 293,
+        "total_tiles": 304,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "T29510",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 237,
+        "lap_ms": 18940,
+        "damage": 0.4,
+        "visited": 250,
+        "total_tiles": 250,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 253,
+        "lap_ms": 20180,
+        "damage": 0.0,
+        "visited": 250,
+        "total_tiles": 250,
+        "retire_reason": null
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    },
+    {
+      "condition": "T29511",
+      "baseline296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 267,
+        "lap_ms": 21300,
+        "damage": 0.0,
+        "visited": 272,
+        "total_tiles": 277,
+        "retire_reason": null
+      },
+      "H1_330": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 181,
+        "lap_ms": null,
+        "damage": 0.4,
+        "visited": 79,
+        "total_tiles": 277,
+        "retire_reason": "off_track"
+      },
+      "current334_ON_H1": null,
+      "frozen349": null
+    }
+  ],
+  "all36_uncensored_without_technical_error": true,
+  "lineage": {
+    "archive_sha256": {
+      "champion296": "0a6c5e286e87d75498c5aec1174c7af3fd54f6efa34b0d83ca1efba5d404a937",
+      "H1_330": "5309df15b8acaeee3b4876a8c9ad6d7a41946592a0c72ecda3774c4ca6f35367",
+      "current334_ON_H1": "133cf83a145b1db6b9bd32c43139e8dc43967ed547b3154b73164fa5d6a55a33",
+      "baseline349": "133cf83a145b1db6b9bd32c43139e8dc43967ed547b3154b73164fa5d6a55a33",
+      "candidate349": "ef1965a5b09ec9324498643842badbcd972c48fb7c141770d7cce88fe6496208"
+    },
+    "from296to330": "296root retained as h1_330_base; root wrapper adds fixedsix-model equal-raw-speed-mean H1pedal selection with allmodel supportintersection. Original296dependencies preserved. Per-input steering/nominalmemory preserved; closedloopobservations can change. No newfit in354.",
+    "from330to334": "Current selectedbranch is outerH1ON + innerfallbackON of334two-by-twofamily. Exactly temporal_agent.py differs: rejected/missingoptical fallback adds HUDyawrotation plus existingHUDspeedtranslation. Acceptedoptical branch, H1models/root/controller/scheduling/constants unchanged.",
+    "from334to349": "349baseline byteidentical selected334ON/H1.349candidate moves fixed342zero-raw-road-ring birth metadata and lineage routing filter insidearchive: only temporal/nominalmetadata+filter and helperaddition. Fullhazards stilldrive near/count/min-distance; H1models/controller/fallback unchanged.",
+    "coverage": "330has18actualoutcomes.334stageitselfwas fixedpixel diagnostic, not18actualevaluation; original6cache used H1OFFsourcecontext. Latercurrent334ON/H1and349actual data exist onlyN2/O0/O2 here. Other15rows remain unmeasured for theseversions; neverinherit330labels."
+  },
+  "T2954_next_contract": {
+    "status": "Prepared only; native execution, reservation and budget grant not made.",
+    "question": "Does unchanged frozen349officiallycomplete existing T2954 under ownobservations/fullreturnedcontrols/normalmemory? This separates an unmeasured policycondition ratherthan repeating O0/O2or tuning.",
+    "case_key": "T2954",
+    "candidate_archive_sha256": "ef1965a5b09ec9324498643842badbcd972c48fb7c141770d7cce88fe6496208",
+    "candidate_worker_sha256": "ea3cca4c43ab35ac89359892a45d15db61cbf7f29b7729737e09908cc85da41a",
+    "new_candidate_runs": 1,
+    "new_baseline_runs": 0,
+    "new_cached_actor_calls": 0,
+    "normal_episode": {
+      "native_cap": 2000,
+      "actor_act_cap": 2000,
+      "environment_resets": 1,
+      "actor_resets": 1,
+      "maximum_step_ticks": 8000,
+      "expected_reset_ticks": 51,
+      "maximum_total_raw_ticks": 8051,
+      "source": "local_runner defaultmax_steps2000, also explicit350stop precedent. Allprefix/auxiliarynative ifany count within2000; plannedauxiliary0."
+    },
+    "budget": {
+      "current_research": 532,
+      "minimum_additional_for_normal2000": 1468,
+      "research_after_hypothetical_grant": 2000,
+      "final_reserved_actions": 84000,
+      "final_reserve_used": 0,
+      "grant_made": false,
+      "full_underlying_TimeLimit_option": {
+        "action_cap": 2038,
+        "additional_research_needed": 1506,
+        "remaining_raw_ticks": 8150,
+        "reset_ticks": 51,
+        "total_raw_ticks": 8201,
+        "last_action_raw_ticks": 2,
+        "scope": "Different explicitcap, not automaticextension of normal2000.8200rawlimit minus50elapsed afterreset, skip4."
+      }
+    },
+    "reuse": "296T2954completed344/lap27440and330T2954DNF612/357of357are immutablecontext only, notnewruns orsame-policy causalcomparators. Reuse exactcase seed/track/geometry/initialpixel identities and existing349package/interface/reset/sourcequalification.334hasnoT2954caseoractualrecord. Do not assert an old334/296fullpolicy prefix for349.",
+    "required_before_execution": "Explicitly register sufficientbudget, currentdeadline, same frozen349archive+observer/runtime/environment hashes, exactexisting T2954case/init/RNG and normal2000stop. Check freshreset geometry/obstacle/initpixelhash and input-only actor, loadedmodule paths/hashes, resetmetadataempty and legal finitecommands. Capture newbefore/after originalpolicy+metadata/tracker/physical/accessRNGandrawcontacts. No artifactchanges ornewthresholds.",
+    "prefix": "Only a causally justified same-input/same-state comparison may be used. T2954has no current334/349qualifiedactualprefix; do notforce296/330storedactions/pixels/memory. Old330pixels can be inspected later as existing data, but are not an on-policy349continuation or requirednewactorcache.",
+    "stops": "Officialfinish orretirement first, else2000protocolcap, deadline, source/reset/interface/leak/technicalfailure. No automaticretry/extraarm/extension.2000nofinish isprotocolcensor; distinguishactualDNFandtechnicalcensor. Atapproveddeadline stopnewexperiments.",
+    "outcomes": "Completion first, officialcenter-crossinglap minuspostresetstart; separatequalification,center,finishdeclaration. Uniqueprogress/contact/damage andretirement jointly.357of357tiles alone isnotcompletion, as historical330T2954demonstrates.",
+    "inference": "OneknownTRAINfeasibility only.349versus330also includes334fallback, so cannotattribute difference solelyto342rule. A later same-conditioncurrent334baseline would be required for isolatedrule effect, separatelybudgeted; no sucharm here. No championpromotion/splitopening/generalization.",
+    "deadline_utc": "2026-10-17T10:01:55Z"
+  },
+  "priorities": [
+    {
+      "order": 1,
+      "condition": "T2954",
+      "reason": "Current349unmeasured;330DNFdespite357/357tiles. Test officialcompletion with sufficientnormalepisodebudget."
+    },
+    {
+      "order": 2,
+      "condition": "T29511",
+      "reason": "Thirdactualcompletionloss omitted fromshortsummary:296finish267/lap21300;330offtrack181/progress79of277. No334/349actualrecord; a distinctregressionuncertainty."
+    },
+    {
+      "order": 3,
+      "condition": "T2950",
+      "reason": "Checkretentionof330gain:296DNF315/progress208of338 versus330finish361/lap28860.334fixedpixelcacheisnotanactualcurrent349finish; no transferofsuccess."
+    },
+    {
+      "order": 4,
+      "condition": "Other unmeasured existing conditions",
+      "reason": "No automatic eighteen-condition success claim fromthreeknowncase results; prioritize only afterdistinctquestion andbudget. No newprotectedcases."
+    }
+  ],
+  "cost": {
+    "stage": 354,
+    "new_wrapper_actions": 0,
+    "new_actor_calls": 0,
+    "new_environment_resets": 0,
+    "new_learning_fits": 0,
+    "new_routing_calls": 0,
+    "new_thresholds": 0,
+    "new_paid_resources": 0,
+    "individual_episodes_checked": 36,
+    "conditions_checked": 18,
+    "audit_wall_s": 0.5455207569757476,
+    "audit_CPU_s": 0.44571813699999996,
+    "actual_cumulative_wrapper_actions": 1285511,
+    "research_remaining": 532,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1370043,
+    "measurement_scope": "Read-onlyindividualrecords/source/zipmember audit; no policy orsimulator execution. Fetch/preparation/report/git andalltaskwall notfullytimed."
+  },
+  "champion296_preserved": true,
+  "promotion": false,
+  "new_protected_split_opened": false,
+  "next_episode_executed": false
+}
