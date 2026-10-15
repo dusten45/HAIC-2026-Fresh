@@ -1,0 +1,399 @@
+{
+  "stage": 344,
+  "decision": "Source-policy cached exposure established; no supported-point loss observed. This is not an actual avoidance/safety/completion result and does not change343current-policy unexposed conclusion.",
+  "policy_identity": {
+    "archive_sha256": "0a6c5e286e87d75498c5aec1174c7af3fd54f6efa34b0d83ca1efba5d404a937",
+    "original_worker_sha256": "f1f7399b31805120d8c2dc546bd1750cdf11af984939fa8fd60ff5002fbbda35",
+    "historical_loaded_module_hashes_exact": true,
+    "source": "Historical306O2collection frozen296, original straight HUDspeed fallback. NoH1/current334ONsubstitution."
+  },
+  "verification": {
+    "passed": true,
+    "inputs": 160,
+    "original_archive_and_module_hashes_exact": true,
+    "original_actions_features_nominal_memory_exact": true,
+    "original_five_field_state_contract_reconstructed": true,
+    "qualified334OFFtracker_andpath_exact": true,
+    "original_full_pickle_or_RNG_snapshot_unavailable": true,
+    "additional_actor_calls": 0,
+    "new_native_actions": 0
+  },
+  "source_state_limit": "Historical trace stores nominal memory/features/actions, no full actor pickle/RNG snapshot. Five-field original worker contract is independently reconstructed from source pixels, qualified334OFFtracker, sourceconstants and original history, not falsely claimed as stored full state.",
+  "flagged_births": [
+    {
+      "birth_action": 146,
+      "direct_index": 0,
+      "component_area": 4,
+      "raw_road_neighbors": 0,
+      "diagnostic_label": "unresolved"
+    }
+  ],
+  "routing_withheld_actions": [
+    146,
+    147,
+    148
+  ],
+  "changed_ranges": {
+    "routing_input": [
+      [
+        146,
+        148
+      ]
+    ],
+    "path": [
+      [
+        146,
+        146
+      ]
+    ],
+    "target": [
+      [
+        146,
+        146
+      ]
+    ],
+    "target_speed": [
+      [
+        146,
+        146
+      ]
+    ],
+    "pedals": [
+      [
+        146,
+        153
+      ]
+    ],
+    "steering": [
+      [
+        146,
+        153
+      ]
+    ],
+    "float32_action": [
+      [
+        146,
+        153
+      ]
+    ],
+    "nominal_memory": [
+      [
+        146,
+        160
+      ]
+    ]
+  },
+  "unchanged_float32_action_ranges": [
+    [
+      1,
+      145
+    ],
+    [
+      154,
+      160
+    ]
+  ],
+  "unchanged_float32_actions": 152,
+  "maximum_absolute_action_delta": [
+    0.00256231427192688,
+    0.0056983232498168945,
+    9.112805128097534e-05
+  ],
+  "maximum_absolute_nominal_memory_delta": 0.0025623355005751636,
+  "nominal_memory_difference_right_censored_at160": true,
+  "selected_aggregate_comparison": [
+    {
+      "action": 145,
+      "baseline_target": [
+        -10.76487939009313,
+        7.436124558517772
+      ],
+      "candidate_target": [
+        -10.76487939009313,
+        7.436124558517772
+      ],
+      "baseline_target_speed": 7.90595236150547,
+      "candidate_target_speed": 7.90595236150547,
+      "baseline_control": [
+        -0.3999382257461548,
+        0.2980583906173706,
+        0.08735750615596771
+      ],
+      "candidate_control": [
+        -0.3999382257461548,
+        0.2980583906173706,
+        0.08735750615596771
+      ],
+      "nominal_memory_delta": 0.0
+    },
+    {
+      "action": 146,
+      "baseline_target": [
+        -10.76487939009313,
+        7.436124558517772
+      ],
+      "candidate_target": [
+        -10.50902587690209,
+        7.819331224743305
+      ],
+      "baseline_target_speed": 7.90595236150547,
+      "candidate_target_speed": 8.011026239553036,
+      "baseline_control": [
+        -0.3999876379966736,
+        0.3335924446582794,
+        0.09793104976415634
+      ],
+      "candidate_control": [
+        -0.3974253237247467,
+        0.3392907679080963,
+        0.09802217781543732
+      ],
+      "nominal_memory_delta": 0.0025623355005751636
+    },
+    {
+      "action": 147,
+      "baseline_target": [
+        -9.553203997648442,
+        8.278722969683916
+      ],
+      "candidate_target": [
+        -9.553203997648442,
+        8.278722969683916
+      ],
+      "baseline_target_speed": 8.1086627652625,
+      "candidate_target_speed": 8.1086627652625,
+      "baseline_control": [
+        -0.39058518409729004,
+        0.3780970573425293,
+        0.09649358689785004
+      ],
+      "candidate_control": [
+        -0.3900727331638336,
+        0.3784130811691284,
+        0.09655863791704178
+      ],
+      "nominal_memory_delta": 0.0005124671001150438
+    },
+    {
+      "action": 148,
+      "baseline_target": [
+        -5.1440329218107,
+        10.997556952192213
+      ],
+      "candidate_target": [
+        -5.1440329218107,
+        10.997556952192213
+      ],
+      "baseline_target_speed": 18.38240688000313,
+      "candidate_target_speed": 18.38240688000313,
+      "baseline_control": [
+        -0.26560187339782715,
+        0.41323772072792053,
+        0.09713124483823776
+      ],
+      "candidate_control": [
+        -0.26549938321113586,
+        0.41330093145370483,
+        0.09714425355195999
+      ],
+      "nominal_memory_delta": 0.00010249342002299766
+    },
+    {
+      "action": 149,
+      "baseline_target": [
+        -2.9394473838918285,
+        12.144604463010836
+      ],
+      "candidate_target": [
+        -2.9394473838918285,
+        12.144604463010836
+      ],
+      "baseline_target_speed": 25.026925061068493,
+      "candidate_target_speed": 25.026925061068493,
+      "baseline_control": [
+        -0.15559722483158112,
+        0.4313472509384155,
+        0.09625216573476791
+      ],
+      "candidate_control": [
+        -0.15557672083377838,
+        0.4313599169254303,
+        0.09625476598739624
+      ],
+      "nominal_memory_delta": 2.049868400458288e-05
+    },
+    {
+      "action": 153,
+      "baseline_target": [
+        3.8068243594745104,
+        11.275912162476727
+      ],
+      "candidate_target": [
+        3.8068243594745104,
+        11.275912162476727
+      ],
+      "baseline_target_speed": 20.946107873024893,
+      "candidate_target_speed": 20.946107873024893,
+      "baseline_control": [
+        0.1638704091310501,
+        0.43048715591430664,
+        0.08616159111261368
+      ],
+      "candidate_control": [
+        0.1638704389333725,
+        0.43048715591430664,
+        0.08616159856319427
+      ],
+      "nominal_memory_delta": 3.2797894400360406e-08
+    },
+    {
+      "action": 154,
+      "baseline_target": [
+        3.8068243594745113,
+        11.275912162476727
+      ],
+      "candidate_target": [
+        3.8068243594745113,
+        11.275912162476727
+      ],
+      "baseline_target_speed": 20.946107873024893,
+      "candidate_target_speed": 20.946107873024893,
+      "baseline_control": [
+        0.17825104296207428,
+        0.4233867824077606,
+        0.09665723145008087
+      ],
+      "candidate_control": [
+        0.17825104296207428,
+        0.4233867824077606,
+        0.09665723145008087
+      ],
+      "nominal_memory_delta": 6.559578880072081e-09
+    },
+    {
+      "action": 160,
+      "baseline_target": [
+        -1.4697236919459142,
+        12.399180814368421
+      ],
+      "candidate_target": [
+        -1.4697236919459142,
+        12.399180814368421
+      ],
+      "baseline_target_speed": 35.36711156625978,
+      "candidate_target_speed": 35.36711156625978,
+      "baseline_control": [
+        -0.05607689917087555,
+        0.4824678599834442,
+        0.07554636150598526
+      ],
+      "candidate_control": [
+        -0.05607689917087555,
+        0.4824678599834442,
+        0.07554636150598526
+      ],
+      "nominal_memory_delta": 4.1981695897419513e-13
+    }
+  ],
+  "tracker_and_support_lineage_exact": true,
+  "supported_direct_detections_checked": 48,
+  "supported_birth_retained_contexts_checked": 35,
+  "supported_routing_losses": 0,
+  "supported_loss_details": [],
+  "cache_gate_passed": true,
+  "interpretation": [
+    "Original sourcepolicy reaches the near-car146birth and samepixelrule changes path,target,speedgoal,fullcontrol andnormalmemory146. No forcedstep orcoordinate condition.",
+    "Footprint held146-148; path/target differonly146. Control recursion differs146-153; float64memory still differs through160evenwhen154-160float32commands match. Laterconvergence isunobserved.",
+    "343usedcurrent334ON/H1andwascontrol-unexposedat160despite137predicate. Sourcepolicy and visitingpixels differ; results are complementary, not a reclassification of343.",
+    "Birth remains unresolved, not semantic falsepositive. The actualsourceO2historical trajectory belongs tobaseline only; candidate cached controls do not provide a new actual trajectory."
+  ],
+  "limits": [
+    "One rule selected posthoc in341, one known source-road cache; no independent generalization or real occlusion/material labels.",
+    "Exact original archive and original worker identified; metadata adapts only to existing originalstraight fallback. Birthrule unchanged, not a new motion model.",
+    "Missing original full pickle/RNG remains explicit. Only available stored state and independently reconstructed originalstate contract reproduced.",
+    "Zero captured supported loss cannot prove absence of dangerous real clipped/occluded obstacles. No actual completion, native or promotion in344."
+  ],
+  "cost": {
+    "stage": 344,
+    "new_wrapper_actions": 0,
+    "new_native_actions": 0,
+    "new_environment_resets": 0,
+    "new_source_physics_ticks": 0,
+    "new_learning_fits": 0,
+    "parameter_sweeps": 0,
+    "new_paid_resources": 0,
+    "cached_actor_calls": 320,
+    "actor_resets_on_stored_pixels": 2,
+    "technical_recovery_actor_calls": 0,
+    "technical_recovery_resets": 0,
+    "technical_error": null,
+    "execution_wall_s": 5.405196856008843,
+    "runner_CPU_s": 1.311457049,
+    "actor_CPU_s": 4.09948,
+    "closure_wall_s": 0.08871210901997983,
+    "closure_CPU_s": 0.08747085999999993,
+    "actual_cumulative_wrapper_actions": 1283122,
+    "research_remaining": 1116,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1368238,
+    "measurement_scope": "Actor phases timed including journals and finaldata save; preflight,sourceidentification,build,offlinequalification,interactiveinspection,report/git not wholly timed. No simulator call or physics timing."
+  },
+  "next_minimum_actual_validation": {
+    "status": "Proposal only; no native scheduled/reserved.",
+    "question": "Does the identical observation rule cause local harm at the now source-policy-qualified reachable O2near-car exposure?",
+    "design": "Two fresh O2arms using exact frozen296source-policy baseline and the unchanged342rule, max160native each. Historical collection has no original full actor pickle or accessibleRNGsnapshot; use fresh independent A/B to qualify those live common-prefix fields rather than claim they were stored. Current334ON/H1is not substituted.",
+    "gates": "Freeze original296archive and source original tracker/controller/models; onlyflag bookkeeping may follow that existing straight fallback. Verify reset,commands,pixels,actor/tracker/capturedphysics/accessRNG until first naturally different fullcontrol. Historical storedprefix and344qualifiedbaseline provide extra reference, not forced146intervention. Both thereafter own observations/fullcontrols/normalmemory.",
+    "budget": {
+      "per_arm_cap": 160,
+      "total_native_cap": 320,
+      "new_A_runs": 1,
+      "new_B_runs": 1,
+      "new_environment_resets_cap": 2,
+      "maximum_postreset_raw_ticks": 1280,
+      "expected_reset_raw_ticks": 102,
+      "additional_budget_needed": 0,
+      "research_remaining_after_maximum": 796,
+      "final_reserved_actions": 84000,
+      "final_reserve_used": 0
+    },
+    "stop": "Officialterminal,160cap,qualification/integrity/deadline failure. If exposure does not occur naturally, label unexposed without extension. No new cutoff,extraarm,fit,protectedsplit orpromotion.",
+    "outcomes": "Joint fixture/time/touching,damage,tileprogress,speed,officialretirement/finish andposthoc supportedpoint withholding. New earlier contact/blockage or supportedloss is local counterexample; damagealone isnot officialscore.160survival nofinish isprotocolcensor.",
+    "value": "344removes the policy/visitation mismatch that made343unexposed. This is the smallest fully live-qualified two-arm local check within the agreed160horizon; reuse of old A would leave unrecorded original actor/RNG fields unverified. It tests this source-policy context only, not currentH1or global safety."
+  },
+  "preserved334_mixed_evidence": {
+    "original6_nearest_sequential_mean": {
+      "OFF": 24.400035404035584,
+      "ON": 25.294083105402862
+    },
+    "original6_nearest_single_fallback_RMSE": {
+      "OFF": 44.439248329736024,
+      "ON": 44.721119854690684
+    },
+    "posthoc_fixture_birth_subset_fallback_mean": {
+      "OFF": 4.6401517836674335,
+      "ON": 2.7520444653287575
+    },
+    "posthoc_fixture_birth_subset_fallback_p99": {
+      "OFF": 19.48628667730667,
+      "ON": 13.674044295882311
+    },
+    "fixture_birth_coverage": {
+      "candidate_previous_points": 1324,
+      "fixture_birth_supported_previous_points": 664,
+      "birth_detections_with_GT": 464,
+      "unique_fixture_compatible_births": 372,
+      "no_fixture_compatible_births": 92,
+      "multiple_fixture_compatible_births": 0
+    },
+    "actual_occlusion_preservation_verified": false,
+    "original334_immutable": true
+  },
+  "actual_occlusion_preservation_verified": false,
+  "champion296_preserved": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
