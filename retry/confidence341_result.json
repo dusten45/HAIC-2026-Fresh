@@ -1,0 +1,893 @@
+{
+  "stage": 341,
+  "decision": "One narrow observation-based low-road-support hypothesis is justified for a prospective native0cache gate only. No general detector confidence, semantic false-positive rule, occlusion-safe deployment or champion promotion established.",
+  "chronology": {
+    "first_differences": {
+      "path": 127,
+      "path_length": 127,
+      "target": 128,
+      "target_speed": 128,
+      "pedals": 127,
+      "steering": 128,
+      "nominal_memory": 128,
+      "pre_position": 128,
+      "pre_speed": 128,
+      "post_position": 127
+    },
+    "selected_aggregate_endpoints": [
+      {
+        "action": 127,
+        "phase": "routing intervention",
+        "target_speeds": {
+          "337": 41.788390132919,
+          "340": 41.788390132919
+        },
+        "post_hull_fixture_gaps_m": {
+          "337": 16.50471019905122,
+          "340": 16.48079933465599
+        },
+        "post_speeds_m_s": {
+          "337": 46.24049333014008,
+          "340": 46.71781354636841
+        },
+        "post_unique_tiles": {
+          "337": 127,
+          "340": 127
+        },
+        "pre_position_separation_m": 0.0
+      },
+      {
+        "action": 128,
+        "phase": "routing intervention",
+        "target_speeds": {
+          "337": 41.788390132919,
+          "340": 26.83880362881712
+        },
+        "post_hull_fixture_gaps_m": {
+          "337": 12.885537530646001,
+          "340": 12.885322081940059
+        },
+        "post_speeds_m_s": {
+          "337": 46.61165437224885,
+          "340": 46.00032560027386
+        },
+        "post_unique_tiles": {
+          "337": 128,
+          "340": 128
+        },
+        "pre_position_separation_m": 0.024573833292162107
+      },
+      {
+        "action": 129,
+        "phase": "routing intervention",
+        "target_speeds": {
+          "337": 41.788390132919,
+          "340": 11.374674801384668
+        },
+        "post_hull_fixture_gaps_m": {
+          "337": 9.237309149666896,
+          "340": 9.403527021408081
+        },
+        "post_speeds_m_s": {
+          "337": 47.30840648219056,
+          "340": 44.94327537721589
+        },
+        "post_unique_tiles": {
+          "337": 129,
+          "340": 129
+        },
+        "pre_position_separation_m": 0.11947539811492452
+      },
+      {
+        "action": 130,
+        "phase": "own-observation aftermath",
+        "target_speeds": {
+          "337": 8.676805472429994,
+          "340": 10.780926765944812
+        },
+        "post_hull_fixture_gaps_m": {
+          "337": 5.686488272711222,
+          "340": 5.85365067123613
+        },
+        "post_speeds_m_s": {
+          "337": 45.88089377384641,
+          "340": 43.7194818746814
+        },
+        "post_unique_tiles": {
+          "337": 130,
+          "340": 130
+        },
+        "pre_position_separation_m": 0.6593593289493445
+      },
+      {
+        "action": 132,
+        "phase": "own-observation aftermath",
+        "target_speeds": {
+          "337": 23.524711187319895,
+          "340": 20.887151905687844
+        },
+        "post_hull_fixture_gaps_m": {
+          "337": -0.002936124801635742,
+          "340": 1.0665606714115046
+        },
+        "post_speeds_m_s": {
+          "337": 3.130783677544374,
+          "340": 42.50073594078385
+        },
+        "post_unique_tiles": {
+          "337": 132,
+          "340": 133
+        },
+        "pre_position_separation_m": 2.474636275001564
+      },
+      {
+        "action": 133,
+        "phase": "own-observation aftermath",
+        "target_speeds": {
+          "337": 5.495389421530708,
+          "340": 16.351855176836015
+        },
+        "post_hull_fixture_gaps_m": {
+          "337": 0.0025064945220947266,
+          "340": 1.3831793512382076
+        },
+        "post_speeds_m_s": {
+          "337": 2.8789741036586993,
+          "340": 41.90926611986114
+        },
+        "post_unique_tiles": {
+          "337": 132,
+          "340": 134
+        },
+        "pre_position_separation_m": 3.1040633701506732
+      },
+      {
+        "action": 140,
+        "phase": "own-observation aftermath",
+        "target_speeds": {
+          "337": 5.495389421530708,
+          "340": 41.788390132919
+        },
+        "post_hull_fixture_gaps_m": {
+          "337": 0.00619053840637207,
+          "340": 21.73197575078858
+        },
+        "post_speeds_m_s": {
+          "337": 0.311888664662927,
+          "340": 43.52888989161514
+        },
+        "post_unique_tiles": {
+          "337": 132,
+          "340": 140
+        },
+        "pre_position_separation_m": 24.03863923925292
+      }
+    ],
+    "scope": "Only127input is same pre-intervention scene.128+inputs include previous whole-control effects;127-129routing exclusion then130+endogenous policy/memory/physical continuation. No independent pedal/speed/steer attribution.",
+    "gap_scope": "Analytic hull fixture polygons vs captured obstacle2circle at action endpoints; excludes wheel shapes/Box2D polygon skin/swept intra-action minimum. Source constants parsed as data, no physics imported or advanced.",
+    "observed_routing_intervention_actions": [
+      127,
+      128,
+      129
+    ],
+    "no_filter_after130": true,
+    "caution": "At127gas and brake both decrease while target and steering remain equal; B128speed is initially higher. Later lower target speed and avoidance cannot be assigned to one pedal or target variable independently."
+  },
+  "corpus": {
+    "trajectories": 11,
+    "existing_input_frames": 2436,
+    "original6_roads": 6,
+    "known_N2_trajectories": 5,
+    "raw_direct_detections": 715,
+    "appearance_deduplicated_direct_detections": 655,
+    "context_deduplicated_detections": 656,
+    "retained_context_deduplicated_point_observations": 1036,
+    "missing_GT_input_boundaries": 128,
+    "deduplication": "Road+pixel hash+component index for appearance, plus tracker/affine context for temporal distribution. Prefer availableGT; sharedN2histories not independent samples. Selected compatible subset only, no missing interval created.",
+    "all_detector_outputs_exact": true,
+    "tracker_algebra_max_error": 3.552713678800501e-15
+  },
+  "label_contract": "Current detection center within exactly one captured physical circle is fixture-supported geometric evidence, not semantic material truth. Other detections and missingGT remain unresolved; no distance-defined false-positive negatives. Retained birth IDs never repaired with futureGT.",
+  "distribution": {
+    "original6": {
+      "fixture_supported": {
+        "count": 372,
+        "roads": 6,
+        "first_sighting_count": 72,
+        "touch_boundary_count": 14,
+        "first_sighting_touch_boundary_count": 4,
+        "connected_ego_count": 366,
+        "past_redetected_count": 300,
+        "future_redetected_count": 302,
+        "quantiles": {
+          "area": {
+            "min": 3.0,
+            "p25": 4.0,
+            "median": 5.0,
+            "p75": 5.0,
+            "max": 7.0
+          },
+          "width": {
+            "min": 2.0,
+            "p25": 2.0,
+            "median": 2.0,
+            "p75": 2.0,
+            "max": 3.0
+          },
+          "height": {
+            "min": 2.0,
+            "p25": 2.0,
+            "median": 3.0,
+            "p75": 3.0,
+            "max": 3.0
+          },
+          "aspect": {
+            "min": 0.6666666666666666,
+            "p25": 0.6666666666666666,
+            "median": 0.6666666666666666,
+            "p75": 1.0,
+            "max": 1.5
+          },
+          "cx": {
+            "min": 1.5,
+            "p25": 31.575000000000003,
+            "median": 38.5,
+            "p75": 44.4,
+            "max": 64.5
+          },
+          "cy": {
+            "min": 0.3333333333333333,
+            "p25": 17.0,
+            "median": 32.1,
+            "p75": 46.675,
+            "max": 59.75
+          },
+          "gray_mean": {
+            "min": 166.14285714285714,
+            "p25": 168.8,
+            "median": 169.25,
+            "p75": 170.0,
+            "max": 171.0
+          },
+          "gray_range": {
+            "min": 0.0,
+            "p25": 3.0,
+            "median": 5.0,
+            "p75": 7.0,
+            "max": 7.0
+          },
+          "raw_road_ring_fraction": {
+            "min": 0.08333333333333333,
+            "p25": 0.25,
+            "median": 0.35714285714285715,
+            "p75": 0.42857142857142855,
+            "max": 0.5714285714285714
+          },
+          "raw_road_wide_fraction": {
+            "min": 0.421875,
+            "p25": 0.7769953051643192,
+            "median": 0.7887323943661971,
+            "p75": 0.8051948051948052,
+            "max": 0.8441558441558441
+          },
+          "past_consecutive_direct": {
+            "min": 1.0,
+            "p25": 2.0,
+            "median": 4.0,
+            "p75": 7.0,
+            "max": 11.0
+          }
+        },
+        "first_sighting_area_counts": {
+          "3": 3,
+          "4": 30,
+          "5": 27,
+          "6": 12
+        }
+      },
+      "unresolved": {
+        "count": 92,
+        "roads": 6,
+        "first_sighting_count": 82,
+        "touch_boundary_count": 85,
+        "first_sighting_touch_boundary_count": 75,
+        "connected_ego_count": 92,
+        "past_redetected_count": 10,
+        "future_redetected_count": 10,
+        "quantiles": {
+          "area": {
+            "min": 3.0,
+            "p25": 3.0,
+            "median": 3.5,
+            "p75": 5.0,
+            "max": 15.0
+          },
+          "width": {
+            "min": 2.0,
+            "p25": 2.0,
+            "median": 2.0,
+            "p75": 3.0,
+            "max": 9.0
+          },
+          "height": {
+            "min": 2.0,
+            "p25": 2.0,
+            "median": 2.0,
+            "p75": 2.0,
+            "max": 5.0
+          },
+          "aspect": {
+            "min": 0.4,
+            "p25": 1.0,
+            "median": 1.0,
+            "p75": 1.5,
+            "max": 4.5
+          },
+          "cx": {
+            "min": 0.25,
+            "p25": 0.475,
+            "median": 37.58333333333333,
+            "p75": 53.083333333333336,
+            "max": 82.66666666666667
+          },
+          "cy": {
+            "min": 0.2,
+            "p25": 0.3333333333333333,
+            "median": 0.3333333333333333,
+            "p75": 15.399999999999999,
+            "max": 59.666666666666664
+          },
+          "gray_mean": {
+            "min": 167.66666666666666,
+            "p25": 171.625,
+            "median": 172.66666666666666,
+            "p75": 173.25,
+            "max": 175.0
+          },
+          "gray_range": {
+            "min": 0.0,
+            "p25": 5.0,
+            "median": 8.0,
+            "p75": 10.0,
+            "max": 16.0
+          },
+          "raw_road_ring_fraction": {
+            "min": 0.0,
+            "p25": 0.2222222222222222,
+            "median": 0.25,
+            "p75": 0.3,
+            "max": 0.7142857142857143
+          },
+          "raw_road_wide_fraction": {
+            "min": 0.2,
+            "p25": 0.46153846153846156,
+            "median": 0.48717948717948717,
+            "p75": 0.5116279069767442,
+            "max": 0.7142857142857143
+          },
+          "past_consecutive_direct": {
+            "min": 1.0,
+            "p25": 1.0,
+            "median": 1.0,
+            "p75": 1.0,
+            "max": 8.0
+          }
+        },
+        "first_sighting_area_counts": {
+          "3": 43,
+          "4": 16,
+          "5": 4,
+          "6": 8,
+          "7": 2,
+          "8": 2,
+          "9": 2,
+          "12": 2,
+          "13": 2,
+          "15": 1
+        }
+      },
+      "missing_GT": {
+        "count": 0,
+        "roads": 0,
+        "first_sighting_count": 0,
+        "touch_boundary_count": 0,
+        "first_sighting_touch_boundary_count": 0,
+        "connected_ego_count": 0,
+        "past_redetected_count": 0,
+        "future_redetected_count": 0,
+        "quantiles": {
+          "area": null,
+          "width": null,
+          "height": null,
+          "aspect": null,
+          "cx": null,
+          "cy": null,
+          "gray_mean": null,
+          "gray_range": null,
+          "raw_road_ring_fraction": null,
+          "raw_road_wide_fraction": null,
+          "past_consecutive_direct": null
+        },
+        "first_sighting_area_counts": {}
+      }
+    },
+    "N2": {
+      "fixture_supported": {
+        "count": 171,
+        "roads": 1,
+        "first_sighting_count": 10,
+        "touch_boundary_count": 4,
+        "first_sighting_touch_boundary_count": 3,
+        "connected_ego_count": 171,
+        "past_redetected_count": 161,
+        "future_redetected_count": 159,
+        "quantiles": {
+          "area": {
+            "min": 4.0,
+            "p25": 5.0,
+            "median": 6.0,
+            "p75": 6.0,
+            "max": 7.0
+          },
+          "width": {
+            "min": 2.0,
+            "p25": 2.0,
+            "median": 2.0,
+            "p75": 2.0,
+            "max": 3.0
+          },
+          "height": {
+            "min": 2.0,
+            "p25": 3.0,
+            "median": 3.0,
+            "p75": 3.0,
+            "max": 3.0
+          },
+          "aspect": {
+            "min": 0.6666666666666666,
+            "p25": 0.6666666666666666,
+            "median": 0.6666666666666666,
+            "p75": 0.6666666666666666,
+            "max": 1.5
+          },
+          "cx": {
+            "min": 27.5,
+            "p25": 41.2,
+            "median": 41.5,
+            "p75": 41.5,
+            "max": 46.4
+          },
+          "cy": {
+            "min": 0.25,
+            "p25": 45.0,
+            "median": 56.0,
+            "p75": 56.0,
+            "max": 58.8
+          },
+          "gray_mean": {
+            "min": 166.71428571428572,
+            "p25": 168.0,
+            "median": 168.0,
+            "p75": 169.2,
+            "max": 170.75
+          },
+          "gray_range": {
+            "min": 1.0,
+            "p25": 5.0,
+            "median": 6.0,
+            "p75": 6.0,
+            "max": 7.0
+          },
+          "raw_road_ring_fraction": {
+            "min": 0.14285714285714285,
+            "p25": 0.35714285714285715,
+            "median": 0.42857142857142855,
+            "p75": 0.42857142857142855,
+            "max": 0.5714285714285714
+          },
+          "raw_road_wide_fraction": {
+            "min": 0.49295774647887325,
+            "p25": 0.6944444444444444,
+            "median": 0.6944444444444444,
+            "p75": 0.7746478873239436,
+            "max": 0.8309859154929577
+          },
+          "past_consecutive_direct": {
+            "min": 1.0,
+            "p25": 5.0,
+            "median": 14.0,
+            "p75": 57.5,
+            "max": 101.0
+          }
+        },
+        "first_sighting_area_counts": {
+          "4": 3,
+          "5": 4,
+          "6": 3
+        }
+      },
+      "unresolved": {
+        "count": 20,
+        "roads": 1,
+        "first_sighting_count": 17,
+        "touch_boundary_count": 20,
+        "first_sighting_touch_boundary_count": 17,
+        "connected_ego_count": 20,
+        "past_redetected_count": 3,
+        "future_redetected_count": 3,
+        "quantiles": {
+          "area": {
+            "min": 3.0,
+            "p25": 3.0,
+            "median": 3.0,
+            "p75": 4.0,
+            "max": 5.0
+          },
+          "width": {
+            "min": 2.0,
+            "p25": 2.0,
+            "median": 2.0,
+            "p75": 2.0,
+            "max": 3.0
+          },
+          "height": {
+            "min": 2.0,
+            "p25": 2.0,
+            "median": 2.0,
+            "p75": 3.0,
+            "max": 3.0
+          },
+          "aspect": {
+            "min": 0.6666666666666666,
+            "p25": 0.6666666666666666,
+            "median": 1.0,
+            "p75": 1.0,
+            "max": 1.5
+          },
+          "cx": {
+            "min": 0.25,
+            "p25": 7.166666666666667,
+            "median": 49.0,
+            "p75": 72.2125,
+            "max": 82.75
+          },
+          "cy": {
+            "min": 0.25,
+            "p25": 0.3333333333333333,
+            "median": 0.45,
+            "p75": 9.604166666666666,
+            "max": 52.666666666666664
+          },
+          "gray_mean": {
+            "min": 168.66666666666666,
+            "p25": 171.125,
+            "median": 172.33333333333334,
+            "p75": 173.0,
+            "max": 174.33333333333334
+          },
+          "gray_range": {
+            "min": 2.0,
+            "p25": 5.0,
+            "median": 7.5,
+            "p75": 10.0,
+            "max": 14.0
+          },
+          "raw_road_ring_fraction": {
+            "min": 0.0,
+            "p25": 0.2222222222222222,
+            "median": 0.25,
+            "p75": 0.25,
+            "max": 0.3333333333333333
+          },
+          "raw_road_wide_fraction": {
+            "min": 0.10869565217391304,
+            "p25": 0.46153846153846156,
+            "median": 0.48717948717948717,
+            "p75": 0.5116279069767442,
+            "max": 0.5348837209302325
+          },
+          "past_consecutive_direct": {
+            "min": 1.0,
+            "p25": 1.0,
+            "median": 1.0,
+            "p75": 1.0,
+            "max": 4.0
+          }
+        },
+        "first_sighting_area_counts": {
+          "3": 10,
+          "4": 5,
+          "5": 2
+        }
+      },
+      "missing_GT": {
+        "count": 0,
+        "roads": 0,
+        "first_sighting_count": 0,
+        "touch_boundary_count": 0,
+        "first_sighting_touch_boundary_count": 0,
+        "connected_ego_count": 0,
+        "past_redetected_count": 0,
+        "future_redetected_count": 0,
+        "quantiles": {
+          "area": null,
+          "width": null,
+          "height": null,
+          "aspect": null,
+          "cx": null,
+          "cy": null,
+          "gray_mean": null,
+          "gray_range": null,
+          "raw_road_ring_fraction": null,
+          "raw_road_wide_fraction": null,
+          "past_consecutive_direct": null
+        },
+        "first_sighting_area_counts": {}
+      }
+    }
+  },
+  "risk_counts": {
+    "original6": {
+      "supported_detections": 372,
+      "unresolved_detections": 92,
+      "supported_first_sightings": 72,
+      "supported_boundary": 14,
+      "supported_first_boundary": 4,
+      "supported_area3_boundary_first": 2,
+      "supported_not_closed_connected_ego": 6,
+      "unresolved_past_redetected": 10,
+      "zero_road_ring_selected": 3,
+      "zero_road_ring_supported": 0
+    },
+    "N2": {
+      "supported_detections": 171,
+      "unresolved_detections": 20,
+      "supported_first_sightings": 10,
+      "supported_boundary": 4,
+      "supported_first_boundary": 3,
+      "supported_area3_boundary_first": 0,
+      "supported_not_closed_connected_ego": 0,
+      "unresolved_past_redetected": 3,
+      "zero_road_ring_selected": 3,
+      "zero_road_ring_supported": 0
+    }
+  },
+  "retention": {
+    "original6": {
+      "fixture_supported": {
+        "point_observations": 292,
+        "unique_births": 72,
+        "supported_without_current_direct_in_geometric_ROI": 9,
+        "unconfirmed_birth_point_observations": 138,
+        "age_counts": {
+          "1": 72,
+          "2": 67,
+          "3": 36,
+          "4": 32,
+          "5": 29,
+          "6": 22,
+          "7": 19,
+          "8": 15
+        },
+        "actual_visibility_labels": 0,
+        "actual_occlusion_labels": 0
+      },
+      "unresolved": {
+        "point_observations": 568,
+        "unique_births": 81,
+        "supported_without_current_direct_in_geometric_ROI": 0,
+        "unconfirmed_birth_point_observations": 546,
+        "age_counts": {
+          "1": 81,
+          "2": 77,
+          "3": 73,
+          "4": 68,
+          "5": 68,
+          "6": 67,
+          "7": 67,
+          "8": 67
+        },
+        "actual_visibility_labels": 0,
+        "actual_occlusion_labels": 0
+      },
+      "missing_GT": {
+        "point_observations": 0,
+        "unique_births": 0,
+        "supported_without_current_direct_in_geometric_ROI": 0,
+        "unconfirmed_birth_point_observations": 0,
+        "age_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0,
+          "7": 0,
+          "8": 0
+        },
+        "actual_visibility_labels": 0,
+        "actual_occlusion_labels": 0
+      }
+    },
+    "N2": {
+      "fixture_supported": {
+        "point_observations": 37,
+        "unique_births": 11,
+        "supported_without_current_direct_in_geometric_ROI": 0,
+        "unconfirmed_birth_point_observations": 0,
+        "age_counts": {
+          "1": 10,
+          "2": 10,
+          "3": 5,
+          "4": 4,
+          "5": 3,
+          "6": 3,
+          "7": 2,
+          "8": 0
+        },
+        "actual_visibility_labels": 0,
+        "actual_occlusion_labels": 0
+      },
+      "unresolved": {
+        "point_observations": 126,
+        "unique_births": 17,
+        "supported_without_current_direct_in_geometric_ROI": 0,
+        "unconfirmed_birth_point_observations": 118,
+        "age_counts": {
+          "1": 14,
+          "2": 15,
+          "3": 15,
+          "4": 16,
+          "5": 16,
+          "6": 16,
+          "7": 17,
+          "8": 17
+        },
+        "actual_visibility_labels": 0,
+        "actual_occlusion_labels": 0
+      },
+      "missing_GT": {
+        "point_observations": 13,
+        "unique_births": 2,
+        "supported_without_current_direct_in_geometric_ROI": 0,
+        "unconfirmed_birth_point_observations": 13,
+        "age_counts": {
+          "1": 0,
+          "2": 1,
+          "3": 2,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "7": 2,
+          "8": 2
+        },
+        "actual_visibility_labels": 0,
+        "actual_occlusion_labels": 0
+      }
+    }
+  },
+  "structural_zero_screen": {
+    "selected_deduplicated_detections": 6,
+    "selected_roads": 4,
+    "all_selected_unresolved": true,
+    "fixture_supported_detections_screened": 543,
+    "fixture_supported_selected": 0,
+    "selected_observed_future_redetection_count": 0,
+    "selected_retained_point_contexts": 28,
+    "fixture_supported_retained_selected": 0,
+    "semantic_false_positive_labels": 0,
+    "actual_occlusion_labels": 0,
+    "not_a_policy_evaluation": true
+  },
+  "limitations": [
+    "Boundary,size andraw-road/closed-road connectivity are not universal semantic rules: genuine supported boundary/area3births exist, and6supported detections are outsideego-connected closedroad.",
+    "Past redetection ranks evidence but supported first sightings can need immediate avoidance; unresolved examples can redetect too. Future redetection is descriptive only and forbidden as an online feature.",
+    "Nine original6fixture-supported retained-point contexts are in geometricROI without a current supported direct detection; these are not nine verified occlusions. Cannot distinguish necessary real-occlusion retention from harmful retention with current labels.",
+    "Only saved grayscale, no rawRGB/material masks, no independent visibility labels. Captured fixture geometry supplies partial posthoc evidence only.",
+    "Singleposthocstructural rule selected after feature description; must face a newly frozen cache gate. No parameter sweep or learned confidence.655detections are correlated, not655independent physical obstacles.",
+    "340survived233with235tiles but noofficialfinish; remains protocolcensor. Official objective is completion/finish time, not proxy gap or classifier separation."
+  ],
+  "next_minimum_cache_comparison": {
+    "status": "Proposed, not executed or reserved; exploratory single structural rule, not a qualified deployment candidate.",
+    "observation_rule": "When a direct detector component has zero raw-road pixels in its immediately adjacent8-neighbor one-pixel ring, mark that birth lineage low-road-support. Keep tracker, model, near scheduling and count/min-distance features unchanged, but withhold that tagged point only from connected_route while the original tracker retains it. A new direct observation gets its own observed support flag; ordinary dedup/expiry ends the old lineage. No step number, absolute coordinates, GT, RGB or future redetection used.",
+    "evidence": "Six deduplicated unresolved detections across four roads includingN2, and zero of543fixture-supported detections meet the structural zero. No one-pixel-radius or brightness sweep; ring fixed in registered feature audit. Lack of an observed positive loss is not safety proof, precision or false-positive accuracy.",
+    "risk": "A real obstacle clipped by the viewport, partly covered by car/HUD or surrounded by road-mask failure may also have zero observed raw-road neighbors. RGB/material and actual occlusion labels are absent. Withholding its routing footprint can remove a dangerous genuine obstacle even while tracker retains it.",
+    "design": "One matched fixed-pixel cache: frozen current334ON/H1 pipeline baseline versus exactly this routing-confidence flag. Use every existing affected episode with its full original pixel prefix, independent actor reset on saved pixels, own normal nominal memory and returned command history. No trajectory stitching or new frames. Unaffected existing episodes have a statically verified no-op detector predicate. Different historical source policy is not mistaken for current-baseline output reproduction.",
+    "affected_trajectories": [
+      {
+        "key": "T2959",
+        "input_frames": 265
+      },
+      {
+        "key": "O0",
+        "input_frames": 304
+      },
+      {
+        "key": "O2",
+        "input_frames": 280
+      },
+      {
+        "key": "N2_337",
+        "input_frames": 233
+      },
+      {
+        "key": "N2_340",
+        "input_frames": 233
+      }
+    ],
+    "source_selection": "All five recorded episodes containing this observation predicate; includes340 descriptive saved continuation, not an independent validation sample. No choice by outcome or score.",
+    "exact_saved_policy_act_calls": 2630,
+    "actor_resets_on_saved_pixels": 10,
+    "new_native_actions": 0,
+    "new_environment_resets": 0,
+    "new_source_physics_ticks": 0,
+    "new_learning_fits": 0,
+    "parameter_sweeps": 0,
+    "additional_budget_needed": 0,
+    "research_remaining_after": 1436,
+    "final_reserved_actions_after": 84000,
+    "pre_run_gates": "Freeze plan/source/archive and the single rule before execution. Baseline337233actions must reproduce already qualified outputs/state. Every detector/component/lineage and disabled-route branch must match original. All masks use pixels only; GT remains in evaluator. Baseline and rule share frozen models, all other parameters and source pixels.",
+    "stop_or_reject": "Any reconstruction/state/mutation mismatch, any fixture-supported direct or birth-supported retained point withheld from routing, new fitted cutoff, or deadline: stop dependent work and reject this cache gate. Missing semantic/occlusion truth cannot be converted into a pass; keep unresolved counts. No native promotion from a cache pass.",
+    "measured_endpoints": "Count low-support lineages and normal expiry, protected supported-point losses, routing candidate/path/target/float32controls and memory differences. Verify knownN2prefix126and127onset as diagnostic only; inspect all other affected roads for new effects. Report zero branch/no-effect intervals as well as changes.",
+    "interpretation": "This tests whether a general legal-observation flag reproduces useful routing effects without observed supported losses on saved scenes. It cannot establish actual avoidance, completion or occlusion safety. If it fails or remains ambiguous, keep confidence as diagnostic metadata and seek independently labelled visibility/material evidence rather than tuning another cutoff."
+  },
+  "preserved334_mixed_evidence": {
+    "original6_nearest_sequential_mean": {
+      "OFF": 24.400035404035584,
+      "ON": 25.294083105402862
+    },
+    "original6_nearest_single_fallback_RMSE": {
+      "OFF": 44.439248329736024,
+      "ON": 44.721119854690684
+    },
+    "posthoc_fixture_birth_subset_fallback_mean": {
+      "OFF": 4.6401517836674335,
+      "ON": 2.7520444653287575
+    },
+    "posthoc_fixture_birth_subset_fallback_p99": {
+      "OFF": 19.48628667730667,
+      "ON": 13.674044295882311
+    },
+    "fixture_birth_coverage": {
+      "candidate_previous_points": 1324,
+      "fixture_birth_supported_previous_points": 664,
+      "birth_detections_with_GT": 464,
+      "unique_fixture_compatible_births": 372,
+      "no_fixture_compatible_births": 92,
+      "multiple_fixture_compatible_births": 0
+    },
+    "actual_occlusion_preservation_verified": false,
+    "original334_immutable": true
+  },
+  "actual_occlusion_preservation_verified": false,
+  "champion296_preserved": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "authorization_end_utc": "2026-10-17T10:01:55Z",
+  "cost": {
+    "new_native_actions": 0,
+    "new_environment_resets": 0,
+    "new_actor_calls": 0,
+    "new_learning_fits": 0,
+    "parameter_sweeps": 0,
+    "new_source_physics_ticks": 0,
+    "existing_input_frames_processed": 2436,
+    "detector_reconstruction_calls": 2436,
+    "tracker_algebra_reconstruction_calls": 2436,
+    "wall_s": 9.558889476989862,
+    "runner_CPU_s": 12.282698802999999,
+    "stage": 341,
+    "new_wrapper_actions": 0,
+    "new_paid_resources": 0,
+    "closure_wall_s": 0.3798758409684524,
+    "closure_CPU_s": 0.36921602899999995,
+    "actual_cumulative_wrapper_actions": 1282802,
+    "research_remaining": 1436,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1368238,
+    "measurement_scope": "Recorded processing run includes loading/hash/algebra/statistics; closure timed separately. Earlier inventory reads, interactive inspections, code/report preparation andfinalgitverification not wholly timed. No simulator or actor calls."
+  }
+}
