@@ -1,0 +1,800 @@
+{
+  "stage": 357,
+  "passed_cached_gate": true,
+  "error": null,
+  "variant_archive_sha256": "b03a65de6410b2fa4805eefcd7a5a05ec246fc27843bdc40facc938927e665ad",
+  "unmodified349_archive_sha256": "ef1965a5b09ec9324498643842badbcd972c48fb7c141770d7cce88fe6496208",
+  "single_policy_change": "Preserveallcurrentdirectage0routingpoints; applyexistinglowlineagefilteronlytoage>0retainedpoints. Exactlynominal238_base.pychanged; otherarchivebytes/modelparameters/metadata/tracker unchanged.",
+  "common_observer": "Samepassiveactual-subsetrecorderbotharms, no policyselection. Baselinehistoricalreproduction qualifiesthismeasurementchange.",
+  "support_audit": {
+    "totals": {
+      "inputs": 2792,
+      "supported_direct_contexts": 649,
+      "supported_birth_retained_contexts": 173,
+      "missing_birth_GT_direct_contexts": 12,
+      "missing_birth_GT_retained_contexts": 16,
+      "baseline_supported_direct_losses": 1,
+      "baseline_supported_retained_losses": 0,
+      "variant_supported_direct_losses": 0,
+      "variant_supported_retained_losses": 0,
+      "baseline_removed_contexts": 34,
+      "variant_removed_contexts": 26
+    },
+    "cases": [
+      {
+        "key": "T2954_355",
+        "inputs": 356,
+        "supported_direct_contexts": 68,
+        "supported_birth_retained_contexts": 27,
+        "missing_birth_GT_direct_contexts": 0,
+        "missing_birth_GT_retained_contexts": 0,
+        "baseline_supported_direct_losses": 1,
+        "baseline_supported_retained_losses": 0,
+        "variant_supported_direct_losses": 0,
+        "variant_supported_retained_losses": 0,
+        "low_births": 1,
+        "baseline_removed_contexts": 1,
+        "variant_removed_contexts": 0,
+        "actor_replay_planned": true
+      },
+      {
+        "key": "N2_337",
+        "inputs": 233,
+        "supported_direct_contexts": 132,
+        "supported_birth_retained_contexts": 6,
+        "missing_birth_GT_direct_contexts": 0,
+        "missing_birth_GT_retained_contexts": 0,
+        "baseline_supported_direct_losses": 0,
+        "baseline_supported_retained_losses": 0,
+        "variant_supported_direct_losses": 0,
+        "variant_supported_retained_losses": 0,
+        "low_births": 1,
+        "baseline_removed_contexts": 9,
+        "variant_removed_contexts": 8,
+        "actor_replay_planned": true
+      },
+      {
+        "key": "N2_340",
+        "inputs": 233,
+        "supported_direct_contexts": 51,
+        "supported_birth_retained_contexts": 13,
+        "missing_birth_GT_direct_contexts": 0,
+        "missing_birth_GT_retained_contexts": 0,
+        "baseline_supported_direct_losses": 0,
+        "baseline_supported_retained_losses": 0,
+        "variant_supported_direct_losses": 0,
+        "variant_supported_retained_losses": 0,
+        "low_births": 3,
+        "baseline_removed_contexts": 11,
+        "variant_removed_contexts": 8,
+        "actor_replay_planned": true
+      },
+      {
+        "key": "O0",
+        "inputs": 304,
+        "supported_direct_contexts": 65,
+        "supported_birth_retained_contexts": 13,
+        "missing_birth_GT_direct_contexts": 0,
+        "missing_birth_GT_retained_contexts": 0,
+        "baseline_supported_direct_losses": 0,
+        "baseline_supported_retained_losses": 0,
+        "variant_supported_direct_losses": 0,
+        "variant_supported_retained_losses": 0,
+        "low_births": 1,
+        "baseline_removed_contexts": 9,
+        "variant_removed_contexts": 8,
+        "actor_replay_planned": true
+      },
+      {
+        "key": "O2",
+        "inputs": 280,
+        "supported_direct_contexts": 59,
+        "supported_birth_retained_contexts": 29,
+        "missing_birth_GT_direct_contexts": 0,
+        "missing_birth_GT_retained_contexts": 0,
+        "baseline_supported_direct_losses": 0,
+        "baseline_supported_retained_losses": 0,
+        "variant_supported_direct_losses": 0,
+        "variant_supported_retained_losses": 0,
+        "low_births": 1,
+        "baseline_removed_contexts": 3,
+        "variant_removed_contexts": 2,
+        "actor_replay_planned": true
+      },
+      {
+        "key": "T2959",
+        "inputs": 265,
+        "supported_direct_contexts": 56,
+        "supported_birth_retained_contexts": 20,
+        "missing_birth_GT_direct_contexts": 0,
+        "missing_birth_GT_retained_contexts": 0,
+        "baseline_supported_direct_losses": 0,
+        "baseline_supported_retained_losses": 0,
+        "variant_supported_direct_losses": 0,
+        "variant_supported_retained_losses": 0,
+        "low_births": 1,
+        "baseline_removed_contexts": 1,
+        "variant_removed_contexts": 0,
+        "actor_replay_planned": true
+      },
+      {
+        "key": "T2950",
+        "inputs": 315,
+        "supported_direct_contexts": 65,
+        "supported_birth_retained_contexts": 20,
+        "missing_birth_GT_direct_contexts": 0,
+        "missing_birth_GT_retained_contexts": 0,
+        "baseline_supported_direct_losses": 0,
+        "baseline_supported_retained_losses": 0,
+        "variant_supported_direct_losses": 0,
+        "variant_supported_retained_losses": 0,
+        "low_births": 0,
+        "baseline_removed_contexts": 0,
+        "variant_removed_contexts": 0,
+        "actor_replay_planned": false
+      },
+      {
+        "key": "T2953",
+        "inputs": 298,
+        "supported_direct_contexts": 71,
+        "supported_birth_retained_contexts": 28,
+        "missing_birth_GT_direct_contexts": 0,
+        "missing_birth_GT_retained_contexts": 0,
+        "baseline_supported_direct_losses": 0,
+        "baseline_supported_retained_losses": 0,
+        "variant_supported_direct_losses": 0,
+        "variant_supported_retained_losses": 0,
+        "low_births": 0,
+        "baseline_removed_contexts": 0,
+        "variant_removed_contexts": 0,
+        "actor_replay_planned": false
+      },
+      {
+        "key": "T2956",
+        "inputs": 292,
+        "supported_direct_contexts": 56,
+        "supported_birth_retained_contexts": 13,
+        "missing_birth_GT_direct_contexts": 0,
+        "missing_birth_GT_retained_contexts": 0,
+        "baseline_supported_direct_losses": 0,
+        "baseline_supported_retained_losses": 0,
+        "variant_supported_direct_losses": 0,
+        "variant_supported_retained_losses": 0,
+        "low_births": 0,
+        "baseline_removed_contexts": 0,
+        "variant_removed_contexts": 0,
+        "actor_replay_planned": false
+      },
+      {
+        "key": "N2_333B",
+        "inputs": 72,
+        "supported_direct_contexts": 10,
+        "supported_birth_retained_contexts": 2,
+        "missing_birth_GT_direct_contexts": 0,
+        "missing_birth_GT_retained_contexts": 0,
+        "baseline_supported_direct_losses": 0,
+        "baseline_supported_retained_losses": 0,
+        "variant_supported_direct_losses": 0,
+        "variant_supported_retained_losses": 0,
+        "low_births": 0,
+        "baseline_removed_contexts": 0,
+        "variant_removed_contexts": 0,
+        "actor_replay_planned": false
+      },
+      {
+        "key": "N2_330_A",
+        "inputs": 72,
+        "supported_direct_contexts": 8,
+        "supported_birth_retained_contexts": 0,
+        "missing_birth_GT_direct_contexts": 6,
+        "missing_birth_GT_retained_contexts": 8,
+        "baseline_supported_direct_losses": 0,
+        "baseline_supported_retained_losses": 0,
+        "variant_supported_direct_losses": 0,
+        "variant_supported_retained_losses": 0,
+        "low_births": 0,
+        "baseline_removed_contexts": 0,
+        "variant_removed_contexts": 0,
+        "actor_replay_planned": false
+      },
+      {
+        "key": "N2_331B",
+        "inputs": 72,
+        "supported_direct_contexts": 8,
+        "supported_birth_retained_contexts": 2,
+        "missing_birth_GT_direct_contexts": 6,
+        "missing_birth_GT_retained_contexts": 8,
+        "baseline_supported_direct_losses": 0,
+        "baseline_supported_retained_losses": 0,
+        "variant_supported_direct_losses": 0,
+        "variant_supported_retained_losses": 0,
+        "low_births": 0,
+        "baseline_removed_contexts": 0,
+        "variant_removed_contexts": 0,
+        "actor_replay_planned": false
+      }
+    ],
+    "label_definition": "Birthpointwithinexactlyonecapturedfixturecircle; retainedlabelpropagatedfrombirth. MissingbirthGTcontexts remainunknown. Countsarepointcontexts, notindependentobjects/trials.",
+    "gate": "No knownfixture-supported currentdirect orbirth-supportedretained UID actuallyexcluded. Lowflagaloneisnotexclusionunderageguard; old342evaluatorassumption separatedwithoutrelaxingroutingpreservationrequirement."
+  },
+  "T2954_counterexample": {
+    "fixture_supported92_current_direct_routed": true,
+    "original_low_metadata_flag_still_true": true,
+    "verified_by_actual_actor_replay": true,
+    "all356path_target_action_nominalmemory_unchanged": true,
+    "source356inference_confirmed_by_actor_replay": true,
+    "new_actual_completion_claim": false
+  },
+  "N2_retained_effect": [
+    {
+      "key": "N2_337",
+      "all233old349outputs_and_normalmemory_preserved": true,
+      "critical_retained_exclusion_actions": [
+        127,
+        128,
+        129
+      ],
+      "critical_retained_ages": [
+        6,
+        7,
+        8
+      ],
+      "differences_from_no_filter342baseline": {
+        "path": [
+          127,
+          128,
+          129
+        ],
+        "target": [
+          128,
+          129
+        ],
+        "float32_action": [
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138
+        ],
+        "steering": [
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138
+        ],
+        "pedals": [
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138
+        ],
+        "nominal_memory": [
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153
+        ]
+      },
+      "evidence": "Newvariantactualactorreplay versus qualifiedsavednofilterreference. Bothsource trajectories partlyshared, notindependenttrials oractualworldcomparisons."
+    },
+    {
+      "key": "N2_340",
+      "all233old349outputs_and_normalmemory_preserved": true,
+      "critical_retained_exclusion_actions": [
+        127,
+        128,
+        129
+      ],
+      "critical_retained_ages": [
+        6,
+        7,
+        8
+      ],
+      "differences_from_no_filter342baseline": {
+        "path": [
+          127,
+          128,
+          129
+        ],
+        "target": [
+          128,
+          129
+        ],
+        "float32_action": [
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142
+        ],
+        "steering": [
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142
+        ],
+        "pedals": [
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138
+        ],
+        "nominal_memory": [
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153
+        ]
+      },
+      "evidence": "Newvariantactualactorreplay versus qualifiedsavednofilterreference. Bothsource trajectories partlyshared, notindependenttrials oractualworldcomparisons."
+    }
+  ],
+  "actual_actor_pairs": [
+    {
+      "key": "T2954_355",
+      "inputs": 356,
+      "evidence": "Two actualfrozenpixelactorreplays, ownreturnedcommands/normalmemory; no environment.",
+      "changes": {
+        "routing_membership": [
+          92
+        ],
+        "path": [],
+        "target": [],
+        "features": [],
+        "float32_action": [],
+        "nominal_memory": [],
+        "original_state_projection": []
+      },
+      "protected_direct_actions": [
+        92
+      ],
+      "baseline_historical_reproduction_passed": true,
+      "variant_known_supported_direct_and_retained_losses": 0
+    },
+    {
+      "key": "N2_337",
+      "inputs": 233,
+      "evidence": "Two actualfrozenpixelactorreplays, ownreturnedcommands/normalmemory; no environment.",
+      "changes": {
+        "routing_membership": [
+          121
+        ],
+        "path": [],
+        "target": [],
+        "features": [],
+        "float32_action": [],
+        "nominal_memory": [],
+        "original_state_projection": []
+      },
+      "protected_direct_actions": [
+        121
+      ],
+      "baseline_historical_reproduction_passed": true,
+      "variant_known_supported_direct_and_retained_losses": 0
+    },
+    {
+      "key": "N2_340",
+      "inputs": 233,
+      "evidence": "Two actualfrozenpixelactorreplays, ownreturnedcommands/normalmemory; no environment.",
+      "changes": {
+        "routing_membership": [
+          121,
+          135,
+          232
+        ],
+        "path": [],
+        "target": [],
+        "features": [],
+        "float32_action": [],
+        "nominal_memory": [],
+        "original_state_projection": []
+      },
+      "protected_direct_actions": [
+        121,
+        135,
+        232
+      ],
+      "baseline_historical_reproduction_passed": true,
+      "variant_known_supported_direct_and_retained_losses": 0
+    },
+    {
+      "key": "O0",
+      "inputs": 304,
+      "evidence": "Two actualfrozenpixelactorreplays, ownreturnedcommands/normalmemory; no environment.",
+      "changes": {
+        "routing_membership": [
+          181
+        ],
+        "path": [],
+        "target": [],
+        "features": [],
+        "float32_action": [],
+        "nominal_memory": [],
+        "original_state_projection": []
+      },
+      "protected_direct_actions": [
+        181
+      ],
+      "baseline_historical_reproduction_passed": true,
+      "variant_known_supported_direct_and_retained_losses": 0
+    },
+    {
+      "key": "O2",
+      "inputs": 280,
+      "evidence": "Two actualfrozenpixelactorreplays, ownreturnedcommands/normalmemory; no environment.",
+      "changes": {
+        "routing_membership": [
+          146
+        ],
+        "path": [
+          146
+        ],
+        "target": [
+          146
+        ],
+        "features": [
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167
+        ],
+        "float32_action": [
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153
+        ],
+        "nominal_memory": [
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166
+        ],
+        "original_state_projection": [
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166
+        ]
+      },
+      "protected_direct_actions": [
+        146
+      ],
+      "baseline_historical_reproduction_passed": true,
+      "variant_known_supported_direct_and_retained_losses": 0
+    },
+    {
+      "key": "T2959",
+      "inputs": 265,
+      "evidence": "Two actualfrozenpixelactorreplays, ownreturnedcommands/normalmemory; no environment.",
+      "changes": {
+        "routing_membership": [
+          182
+        ],
+        "path": [],
+        "target": [],
+        "features": [],
+        "float32_action": [],
+        "nominal_memory": [],
+        "original_state_projection": []
+      },
+      "protected_direct_actions": [
+        182
+      ],
+      "baseline_historical_reproduction_passed": true,
+      "variant_known_supported_direct_and_retained_losses": 0
+    }
+  ],
+  "algebra_only_cases": [
+    {
+      "key": "T2950",
+      "inputs": 315,
+      "supported_direct_contexts": 65,
+      "supported_birth_retained_contexts": 20,
+      "missing_birth_GT_direct_contexts": 0,
+      "missing_birth_GT_retained_contexts": 0,
+      "baseline_supported_direct_losses": 0,
+      "baseline_supported_retained_losses": 0,
+      "variant_supported_direct_losses": 0,
+      "variant_supported_retained_losses": 0,
+      "low_births": 0,
+      "baseline_removed_contexts": 0,
+      "variant_removed_contexts": 0,
+      "actor_replay_planned": false
+    },
+    {
+      "key": "T2953",
+      "inputs": 298,
+      "supported_direct_contexts": 71,
+      "supported_birth_retained_contexts": 28,
+      "missing_birth_GT_direct_contexts": 0,
+      "missing_birth_GT_retained_contexts": 0,
+      "baseline_supported_direct_losses": 0,
+      "baseline_supported_retained_losses": 0,
+      "variant_supported_direct_losses": 0,
+      "variant_supported_retained_losses": 0,
+      "low_births": 0,
+      "baseline_removed_contexts": 0,
+      "variant_removed_contexts": 0,
+      "actor_replay_planned": false
+    },
+    {
+      "key": "T2956",
+      "inputs": 292,
+      "supported_direct_contexts": 56,
+      "supported_birth_retained_contexts": 13,
+      "missing_birth_GT_direct_contexts": 0,
+      "missing_birth_GT_retained_contexts": 0,
+      "baseline_supported_direct_losses": 0,
+      "baseline_supported_retained_losses": 0,
+      "variant_supported_direct_losses": 0,
+      "variant_supported_retained_losses": 0,
+      "low_births": 0,
+      "baseline_removed_contexts": 0,
+      "variant_removed_contexts": 0,
+      "actor_replay_planned": false
+    },
+    {
+      "key": "N2_333B",
+      "inputs": 72,
+      "supported_direct_contexts": 10,
+      "supported_birth_retained_contexts": 2,
+      "missing_birth_GT_direct_contexts": 0,
+      "missing_birth_GT_retained_contexts": 0,
+      "baseline_supported_direct_losses": 0,
+      "baseline_supported_retained_losses": 0,
+      "variant_supported_direct_losses": 0,
+      "variant_supported_retained_losses": 0,
+      "low_births": 0,
+      "baseline_removed_contexts": 0,
+      "variant_removed_contexts": 0,
+      "actor_replay_planned": false
+    },
+    {
+      "key": "N2_330_A",
+      "inputs": 72,
+      "supported_direct_contexts": 8,
+      "supported_birth_retained_contexts": 0,
+      "missing_birth_GT_direct_contexts": 6,
+      "missing_birth_GT_retained_contexts": 8,
+      "baseline_supported_direct_losses": 0,
+      "baseline_supported_retained_losses": 0,
+      "variant_supported_direct_losses": 0,
+      "variant_supported_retained_losses": 0,
+      "low_births": 0,
+      "baseline_removed_contexts": 0,
+      "variant_removed_contexts": 0,
+      "actor_replay_planned": false
+    },
+    {
+      "key": "N2_331B",
+      "inputs": 72,
+      "supported_direct_contexts": 8,
+      "supported_birth_retained_contexts": 2,
+      "missing_birth_GT_direct_contexts": 6,
+      "missing_birth_GT_retained_contexts": 8,
+      "baseline_supported_direct_losses": 0,
+      "baseline_supported_retained_losses": 0,
+      "variant_supported_direct_losses": 0,
+      "variant_supported_retained_losses": 0,
+      "low_births": 0,
+      "baseline_removed_contexts": 0,
+      "variant_removed_contexts": 0,
+      "actor_replay_planned": false
+    }
+  ],
+  "limitations": [
+    "No newworld/simulation/learning. Allactorresultsarefixedstoredpixelreplays withownreturnedcommands/normalmemory, notactualcompleteepisodes. Historical355T2954finishbelongs349, not a new357completion.",
+    "Six zero-lowbirthtrajectories1121inputs arecoveredbycurrentrule/tracker/sourceinduction, not actorreplays. Six pairedtrajectories1671inputs haveactualnewactoroutputs. Do notmix theseevidence types.",
+    "O2cachedsourcepixels were generated underanotherpolicy. Any146path/controlchangefrom protecting a fresh point is reported, not claimed as actualavoidance/regression.",
+    "KnownGTsupportgate passed only on availablelabels; missingbirthGT/material/visibility/occlusionunknown. Supportedretainedpoints could fail onnewdata; do notgeneralize.",
+    "Independentobservationsarenotindependenttrials: N2trajectoriesshareprefixes. Preserve existing334mixedaggregate evidence and296champion."
+  ],
+  "technical_recovery": {
+    "kind": "Hostpathstr-to-Pathadapterbeforefirstactor",
+    "original_failure_preserved": true,
+    "failed_actor_act_reset_native_calls": 0,
+    "original_runner_andpolicyartifacts_unchanged": true,
+    "recovery_within_original_caps": true
+  },
+  "cost": {
+    "stage": 357,
+    "new_wrapper_actions": 0,
+    "new_actor_act_calls": 3342,
+    "new_actor_commit_calls": 3342,
+    "actor_resets_on_saved_pixels": 12,
+    "actor_act_cap": 3342,
+    "actor_reset_cap": 12,
+    "new_environment_resets": 0,
+    "new_standalone_routing_calls": 0,
+    "new_learning_fits": 0,
+    "new_paid_resources": 0,
+    "covered_saved_input_contexts": 2792,
+    "actually_paired_actor_input_contexts": 1671,
+    "algebra_only_input_contexts": 1121,
+    "standalone_metadata_preflight_updates": 2792,
+    "execution_wall_s": 64.31343835999724,
+    "runner_CPU_s": 30.380394746,
+    "actor_CPU_s": 35.852954,
+    "failed_preflight_wall_s": 0.22997491498244926,
+    "failed_preflight_CPU_s": 0.22996784299999995,
+    "failed_preflight_actor_calls": 0,
+    "technical_recovery_extra_actor_calls": 0,
+    "technical_setup_error_recovered_before_actors": true,
+    "policy_gate_failure": null,
+    "closure_wall_s": 1.3734382460243069,
+    "closure_CPU_s": 1.3589518750000003,
+    "actual_cumulative_wrapper_actions": 1285867,
+    "research_remaining": 1644,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1371511,
+    "measurement_scope": "Successfulcache runner includes supportpreflight/loading/hashing/IPC/journals. Failedzeroactorpathparserattempt separatelytimed; recovery staysoriginal3342/12cap. Artifactbuilding/coding/report/git/alltaskwall notfullytimed. Actorinternallyroutes; standalone routing calls0doesnotmean no internalrouting."
+  },
+  "next_step": {
+    "status": "Proposal only; notexecuted.",
+    "decision": "Keep357as cache-qualifiedresearchvariant only, do notclaimactualcompletion/generalization or promote296. Lowclassificationitselfremains unchanged and genuine lowflagbirthcouldlaterbeexcludedasretained; knowncorpuspassing isnotocclusionproof.",
+    "condition_priority_if_later_actual": "T29511remains distinctunmeasuredregressioncondition before T2950gainretention. A futureactualtest must useexact357artifact/runtime andnewregisteredepisodebudget, no automatic355rerun.",
+    "normal_episode_cap": 2000,
+    "current_research": 1644,
+    "minimum_additional_if_full_normal_episode_requested": 356,
+    "final_reserve": 84000,
+    "new_native_authorized_now": 0
+  },
+  "promotion": false,
+  "champion296_preserved": true,
+  "new_protected_split_opened": false,
+  "new_actual_completion_claim": false
+}
