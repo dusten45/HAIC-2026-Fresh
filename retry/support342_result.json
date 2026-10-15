@@ -1,0 +1,663 @@
+{
+  "stage": 342,
+  "decision": "Registered cached-policy gate passed only. A legal observation rule reproduces the knownN2routing effect and adds a near-car O2effect, with zero captured fixture-supported losses. No actual trajectory improvement or general safety established.",
+  "baseline337_qualified": true,
+  "actor_call_cap_respected": true,
+  "reset_cap_respected": true,
+  "supported_direct_detections_checked": 363,
+  "supported_birth_retained_point_contexts_checked": 81,
+  "supported_routing_losses": 0,
+  "all_flagged_births": [
+    {
+      "key": "N2_337",
+      "birth_action": 121,
+      "direct_index": 0,
+      "component_area": 3,
+      "raw_road_neighbors": 0,
+      "diagnostic_label": "unresolved",
+      "last_age": 8,
+      "right_censored_at_saved_endpoint": false,
+      "end_reason": "original_age_expiry",
+      "observed_lifetime_ranges": [
+        [
+          121,
+          129
+        ]
+      ],
+      "selected_ranges": [
+        [
+          121,
+          129
+        ]
+      ]
+    },
+    {
+      "key": "N2_340",
+      "birth_action": 121,
+      "direct_index": 0,
+      "component_area": 3,
+      "raw_road_neighbors": 0,
+      "diagnostic_label": "unresolved",
+      "last_age": 8,
+      "right_censored_at_saved_endpoint": false,
+      "end_reason": "original_age_expiry",
+      "observed_lifetime_ranges": [
+        [
+          121,
+          129
+        ]
+      ],
+      "selected_ranges": [
+        [
+          121,
+          129
+        ]
+      ]
+    },
+    {
+      "key": "N2_340",
+      "birth_action": 135,
+      "direct_index": 0,
+      "component_area": 4,
+      "raw_road_neighbors": 0,
+      "diagnostic_label": "unresolved",
+      "last_age": 0,
+      "right_censored_at_saved_endpoint": false,
+      "end_reason": "original_spatial_expiry",
+      "observed_lifetime_ranges": [
+        [
+          135,
+          135
+        ]
+      ],
+      "selected_ranges": [
+        [
+          135,
+          135
+        ]
+      ]
+    },
+    {
+      "key": "N2_340",
+      "birth_action": 232,
+      "direct_index": 0,
+      "component_area": 3,
+      "raw_road_neighbors": 0,
+      "diagnostic_label": "unresolved",
+      "last_age": 0,
+      "right_censored_at_saved_endpoint": false,
+      "end_reason": "original_spatial_expiry",
+      "observed_lifetime_ranges": [
+        [
+          232,
+          232
+        ]
+      ],
+      "selected_ranges": [
+        [
+          232,
+          232
+        ]
+      ]
+    },
+    {
+      "key": "O0",
+      "birth_action": 181,
+      "direct_index": 0,
+      "component_area": 3,
+      "raw_road_neighbors": 0,
+      "diagnostic_label": "unresolved",
+      "last_age": 8,
+      "right_censored_at_saved_endpoint": false,
+      "end_reason": "original_age_expiry",
+      "observed_lifetime_ranges": [
+        [
+          181,
+          189
+        ]
+      ],
+      "selected_ranges": [
+        [
+          181,
+          189
+        ]
+      ]
+    },
+    {
+      "key": "O2",
+      "birth_action": 146,
+      "direct_index": 0,
+      "component_area": 4,
+      "raw_road_neighbors": 0,
+      "diagnostic_label": "unresolved",
+      "last_age": 2,
+      "right_censored_at_saved_endpoint": false,
+      "end_reason": "original_spatial_expiry",
+      "observed_lifetime_ranges": [
+        [
+          146,
+          148
+        ]
+      ],
+      "selected_ranges": [
+        [
+          146,
+          148
+        ]
+      ]
+    },
+    {
+      "key": "T2959",
+      "birth_action": 182,
+      "direct_index": 0,
+      "component_area": 4,
+      "raw_road_neighbors": 0,
+      "diagnostic_label": "unresolved",
+      "last_age": 0,
+      "right_censored_at_saved_endpoint": false,
+      "end_reason": "original_spatial_expiry",
+      "observed_lifetime_ranges": [
+        [
+          182,
+          182
+        ]
+      ],
+      "selected_ranges": [
+        [
+          182,
+          182
+        ]
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "key": "N2_337",
+      "input_frames": 233,
+      "change_ranges": {
+        "routing_input": [
+          [
+            121,
+            129
+          ]
+        ],
+        "path": [
+          [
+            127,
+            129
+          ]
+        ],
+        "target": [
+          [
+            128,
+            129
+          ]
+        ],
+        "target_speed": [
+          [
+            128,
+            129
+          ]
+        ],
+        "pedals": [
+          [
+            127,
+            138
+          ]
+        ],
+        "steering": [
+          [
+            128,
+            138
+          ]
+        ],
+        "float32_action": [
+          [
+            127,
+            138
+          ]
+        ],
+        "nominal_memory": [
+          [
+            128,
+            153
+          ]
+        ]
+      },
+      "change_counts": {
+        "routing_input": 9,
+        "path": 3,
+        "target": 2,
+        "target_speed": 2,
+        "pedals": 12,
+        "steering": 11,
+        "float32_action": 12,
+        "nominal_memory": 26
+      },
+      "unchanged_float32_action_ranges": [
+        [
+          1,
+          126
+        ],
+        [
+          139,
+          233
+        ]
+      ],
+      "unchanged_float32_actions": 221,
+      "maximum_absolute_action_delta": [
+        0.19481001188978553,
+        0.17696696519851685,
+        0.0310547836124897
+      ],
+      "maximum_absolute_nominal_memory_delta": 0.19481001088229308,
+      "tracker_and_support_lineage_exact": true,
+      "supported_point_routing_losses": 0
+    },
+    {
+      "key": "N2_340",
+      "input_frames": 233,
+      "change_ranges": {
+        "routing_input": [
+          [
+            121,
+            129
+          ],
+          [
+            135,
+            135
+          ],
+          [
+            232,
+            232
+          ]
+        ],
+        "path": [
+          [
+            127,
+            129
+          ]
+        ],
+        "target": [
+          [
+            128,
+            129
+          ]
+        ],
+        "target_speed": [
+          [
+            128,
+            129
+          ]
+        ],
+        "pedals": [
+          [
+            127,
+            138
+          ]
+        ],
+        "steering": [
+          [
+            128,
+            142
+          ]
+        ],
+        "float32_action": [
+          [
+            127,
+            142
+          ]
+        ],
+        "nominal_memory": [
+          [
+            128,
+            153
+          ]
+        ]
+      },
+      "change_counts": {
+        "routing_input": 11,
+        "path": 3,
+        "target": 2,
+        "target_speed": 2,
+        "pedals": 12,
+        "steering": 15,
+        "float32_action": 16,
+        "nominal_memory": 26
+      },
+      "unchanged_float32_action_ranges": [
+        [
+          1,
+          126
+        ],
+        [
+          143,
+          233
+        ]
+      ],
+      "unchanged_float32_actions": 217,
+      "maximum_absolute_action_delta": [
+        0.17685734620317817,
+        0.16038426756858826,
+        0.03692937642335892
+      ],
+      "maximum_absolute_nominal_memory_delta": 0.1768573487025305,
+      "tracker_and_support_lineage_exact": true,
+      "supported_point_routing_losses": 0
+    },
+    {
+      "key": "O0",
+      "input_frames": 304,
+      "change_ranges": {
+        "routing_input": [
+          [
+            181,
+            189
+          ]
+        ],
+        "path": [],
+        "target": [],
+        "target_speed": [],
+        "pedals": [],
+        "steering": [],
+        "float32_action": [],
+        "nominal_memory": []
+      },
+      "change_counts": {
+        "routing_input": 9,
+        "path": 0,
+        "target": 0,
+        "target_speed": 0,
+        "pedals": 0,
+        "steering": 0,
+        "float32_action": 0,
+        "nominal_memory": 0
+      },
+      "unchanged_float32_action_ranges": [
+        [
+          1,
+          304
+        ]
+      ],
+      "unchanged_float32_actions": 304,
+      "maximum_absolute_action_delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_absolute_nominal_memory_delta": 0.0,
+      "tracker_and_support_lineage_exact": true,
+      "supported_point_routing_losses": 0
+    },
+    {
+      "key": "O2",
+      "input_frames": 280,
+      "change_ranges": {
+        "routing_input": [
+          [
+            146,
+            148
+          ]
+        ],
+        "path": [
+          [
+            146,
+            146
+          ]
+        ],
+        "target": [
+          [
+            146,
+            146
+          ]
+        ],
+        "target_speed": [
+          [
+            146,
+            146
+          ]
+        ],
+        "pedals": [
+          [
+            146,
+            153
+          ]
+        ],
+        "steering": [
+          [
+            146,
+            153
+          ]
+        ],
+        "float32_action": [
+          [
+            146,
+            153
+          ]
+        ],
+        "nominal_memory": [
+          [
+            146,
+            166
+          ]
+        ]
+      },
+      "change_counts": {
+        "routing_input": 3,
+        "path": 1,
+        "target": 1,
+        "target_speed": 1,
+        "pedals": 8,
+        "steering": 8,
+        "float32_action": 8,
+        "nominal_memory": 21
+      },
+      "unchanged_float32_action_ranges": [
+        [
+          1,
+          145
+        ],
+        [
+          154,
+          280
+        ]
+      ],
+      "unchanged_float32_actions": 272,
+      "maximum_absolute_action_delta": [
+        0.0025623440742492676,
+        0.005698353052139282,
+        0.020091138780117035
+      ],
+      "maximum_absolute_nominal_memory_delta": 0.0025623355005751636,
+      "tracker_and_support_lineage_exact": true,
+      "supported_point_routing_losses": 0
+    },
+    {
+      "key": "T2959",
+      "input_frames": 265,
+      "change_ranges": {
+        "routing_input": [
+          [
+            182,
+            182
+          ]
+        ],
+        "path": [],
+        "target": [],
+        "target_speed": [],
+        "pedals": [],
+        "steering": [],
+        "float32_action": [],
+        "nominal_memory": []
+      },
+      "change_counts": {
+        "routing_input": 1,
+        "path": 0,
+        "target": 0,
+        "target_speed": 0,
+        "pedals": 0,
+        "steering": 0,
+        "float32_action": 0,
+        "nominal_memory": 0
+      },
+      "unchanged_float32_action_ranges": [
+        [
+          1,
+          265
+        ]
+      ],
+      "unchanged_float32_actions": 265,
+      "maximum_absolute_action_delta": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_absolute_nominal_memory_delta": 0.0,
+      "tracker_and_support_lineage_exact": true,
+      "supported_point_routing_losses": 0
+    }
+  ],
+  "untouched_cases": [
+    {
+      "key": "T2950",
+      "inputs": 315,
+      "all_direct_predicates_false": true,
+      "no_op_proof": "Initial flags empty; new flags false; original prediction/dedup/expiry only propagates/removes flags. Routing filter can never activate.",
+      "new_actor_calls": 0
+    },
+    {
+      "key": "T2953",
+      "inputs": 298,
+      "all_direct_predicates_false": true,
+      "no_op_proof": "Initial flags empty; new flags false; original prediction/dedup/expiry only propagates/removes flags. Routing filter can never activate.",
+      "new_actor_calls": 0
+    },
+    {
+      "key": "T2956",
+      "inputs": 292,
+      "all_direct_predicates_false": true,
+      "no_op_proof": "Initial flags empty; new flags false; original prediction/dedup/expiry only propagates/removes flags. Routing filter can never activate.",
+      "new_actor_calls": 0
+    },
+    {
+      "key": "N2_333B",
+      "inputs": 72,
+      "all_direct_predicates_false": true,
+      "no_op_proof": "Initial flags empty; new flags false; original prediction/dedup/expiry only propagates/removes flags. Routing filter can never activate.",
+      "new_actor_calls": 0
+    },
+    {
+      "key": "N2_330_A",
+      "inputs": 72,
+      "all_direct_predicates_false": true,
+      "no_op_proof": "Initial flags empty; new flags false; original prediction/dedup/expiry only propagates/removes flags. Routing filter can never activate.",
+      "new_actor_calls": 0
+    },
+    {
+      "key": "N2_331B",
+      "inputs": 72,
+      "all_direct_predicates_false": true,
+      "no_op_proof": "Initial flags empty; new flags false; original prediction/dedup/expiry only propagates/removes flags. Routing filter can never activate.",
+      "new_actor_calls": 0
+    }
+  ],
+  "total_unchanged_float32_actions": 1279,
+  "rule": "Freshcomponent zero raw-road support in immediately adjacent1pixel8-neighbor ring marks low support; exclude only that tracked source lineage hard routing footprint until ordinary source dedup/expiry. Every new direct detection re-evaluates its own pixels. Flags do not use step,coordinates,GT,futureobservations; IDs are audit bookkeeping only.",
+  "preserved": "Detector/tracker/association/dedup/age/expiry, near schedule/count/min-distance definitions, models/controller/lookahead unchanged. Full returned controls and normal own nominal memory on fixed common pixels.",
+  "interpretation": [
+    "N2footprint held121-129without a frame rule, but output first differs127 and path only127-129. Holding121-126has no output effect. No current obstacle suppressed.",
+    "O0andT2959selected births yield identical paths,targets,float32controls and memory throughout. O2changes path/target only146, with later recursive memory/control residue.",
+    "Memory can remain different after float32commands match and after filtering ends. These are fixed-pixel own-memory continuations, not physical trajectories or independent per-frame effects.",
+    "Seven episode births include the same121birth in337/340sharedprefix, corresponding to six deduplicated341observations. All material labels remain unresolved."
+  ],
+  "limits": [
+    "Single rule postselected from341descriptions; no independent generalization or semantic false-positive labels.",
+    "No authoritative RGB/material/visibility/occlusion labels. Zero captured supported loss cannot exclude a real clipped/occluded obstacle with no raw-road neighbors.",
+    "Six unaffected episodes proved no-op from false birth predicates plus flag-propagation induction, not extra actor replay beyond2630.",
+    "Different historical source policy on original roads; baseline337 is the exact full-output reproduction gate. Current-policy tracker matches existing current334ONrecords on source pixels.",
+    "340survival233isprotocolcensor,noofficialfinish. No native or champion promotion follows a cache pass."
+  ],
+  "next_minimum_actual_validation": {
+    "status": "Proposed only; no native scheduled/reserved/executed.",
+    "question": "Does the only new nonN2cache path effect near the car help or harm actual avoidance on the existing O2road?",
+    "design": "One fresh matched pair on the existingO2case, current frozen334ON/H1 baseline versus exactly the observation rule. Historical O2actual collection used a different policy; do not reuse it as a qualified current baseline. Same reset/road/accessibleRNG, no other changes. Verify commands/pixels/actor/tracker/physics through the first naturally rule-induced full-control difference; then own observations, full controls and normal memory.",
+    "per_arm_native_cap": 160,
+    "new_A_runs": 1,
+    "new_B_runs": 1,
+    "total_native_cap": 320,
+    "new_environment_resets_cap": 2,
+    "maximum_postreset_raw_ticks": 1280,
+    "expected_total_reset_ticks": 102,
+    "additional_budget_needed": 0,
+    "research_remaining_after_maximum": 1116,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "horizon": "Bounded local falsification around the146effect observed on historical saved pixels. Current policy may visit different states: no forced146activation or source-prefix assumption. If no natural rule exposure before160, label unexposed/inconclusive; no automatic horizon extension.",
+    "gates": "Freeze the exact legal rule and current archive; preserve342cache gate. Qualify independent pair reset and common prefix before natural branch, pixel-only actor, no GT selection. Missing prefix qualification or supported-point removal stops the candidate as failure, not success.",
+    "outcomes": "Joint first contact fixture/time, damage, touching persistence, unique-tile progress, speed and official retirement/finish. Report every held birth. Any new early contact/blockage or supported loss is a local counterexample; no damage-only or cached-speed win.160survival withoutfinish isprotocolcensor, not completion.",
+    "limits": "O2near-car birth has unresolved material/occlusion label, so cache clearance is not safety proof. This one pair cannot validate all unseen real obstacles or general completion. No new cutoff, extra arm, tuning or automatic promotion."
+  },
+  "preserved334_mixed_evidence": {
+    "original6_nearest_sequential_mean": {
+      "OFF": 24.400035404035584,
+      "ON": 25.294083105402862
+    },
+    "original6_nearest_single_fallback_RMSE": {
+      "OFF": 44.439248329736024,
+      "ON": 44.721119854690684
+    },
+    "posthoc_fixture_birth_subset_fallback_mean": {
+      "OFF": 4.6401517836674335,
+      "ON": 2.7520444653287575
+    },
+    "posthoc_fixture_birth_subset_fallback_p99": {
+      "OFF": 19.48628667730667,
+      "ON": 13.674044295882311
+    },
+    "fixture_birth_coverage": {
+      "candidate_previous_points": 1324,
+      "fixture_birth_supported_previous_points": 664,
+      "birth_detections_with_GT": 464,
+      "unique_fixture_compatible_births": 372,
+      "no_fixture_compatible_births": 92,
+      "multiple_fixture_compatible_births": 0
+    },
+    "actual_occlusion_preservation_verified": false,
+    "original334_immutable": true
+  },
+  "actual_occlusion_preservation_verified": false,
+  "cost": {
+    "stage": 342,
+    "new_wrapper_actions": 0,
+    "new_native_actions": 0,
+    "new_environment_resets": 0,
+    "new_source_physics_ticks": 0,
+    "new_learning_fits": 0,
+    "parameter_sweeps": 0,
+    "new_paid_resources": 0,
+    "cached_actor_calls": 2630,
+    "actor_resets_on_stored_pixels": 10,
+    "processed_paired_input_frames": 1315,
+    "untouched_input_frames_checked": 1121,
+    "execution_wall_s": 71.8638754300191,
+    "runner_CPU_s": 34.498190186,
+    "actor_CPU_s": 38.93092,
+    "closure_wall_s": 7.532090940978378,
+    "closure_CPU_s": 7.5079547259999995,
+    "technical_recovery_actor_calls": 0,
+    "technical_recovery_resets": 0,
+    "technical_error": null,
+    "actual_cumulative_wrapper_actions": 1282802,
+    "research_remaining": 1436,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1368238,
+    "measurement_scope": "Cached execution includes preflight,loading,hash/IPC/journals; actorCPUincludes initialization. Closure separately timed. Initialbuild/coding/interactivechecks/report/gitnot wholly timed; no pure simulator metric."
+  },
+  "champion296_preserved": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
