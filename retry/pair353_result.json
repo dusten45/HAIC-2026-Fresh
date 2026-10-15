@@ -1,0 +1,257 @@
+{
+  "stage": 353,
+  "paired_condition_valid": true,
+  "artifacts_modified": false,
+  "baseline_archive_sha256": "133cf83a145b1db6b9bd32c43139e8dc43967ed547b3154b73164fa5d6a55a33",
+  "candidate_archive_sha256": "ef1965a5b09ec9324498643842badbcd972c48fb7c141770d7cce88fe6496208",
+  "outcomes": {
+    "A": {
+      "native_actions": 283,
+      "collision_event_actions": [],
+      "raw_collision_flags": 0,
+      "new_obstacle_hit_intervals": [],
+      "fixture_touching": [],
+      "raw_observation_count": 1131,
+      "damage": 0.0,
+      "unique_tiles": 289,
+      "speed_m_s": 47.11410444628487,
+      "off_track_counter": 3,
+      "last_tile_growth_action": 280,
+      "actual_DNF": false,
+      "protocol_stop": false,
+      "completed": true,
+      "finish_time_s": 23.619999999999585,
+      "lap_ms": 22600,
+      "retire_reason": null
+    },
+    "B": {
+      "native_actions": 283,
+      "collision_event_actions": [],
+      "raw_collision_flags": 0,
+      "new_obstacle_hit_intervals": [],
+      "fixture_touching": [],
+      "raw_observation_count": 1131,
+      "damage": 0.0,
+      "unique_tiles": 289,
+      "speed_m_s": 47.11410444628487,
+      "off_track_counter": 3,
+      "last_tile_growth_action": 280,
+      "actual_DNF": false,
+      "protocol_stop": false,
+      "completed": true,
+      "finish_time_s": 23.619999999999585,
+      "lap_ms": 22600,
+      "retire_reason": null
+    }
+  },
+  "official_ordering": "official_lap_tie",
+  "both_finished": true,
+  "candidate_minus_baseline_lap_ms": 0,
+  "natural_prefix": {
+    "passed": true,
+    "common_actual_actions": 283,
+    "common_input_stacks": 284,
+    "first_semantic_branch_action": null,
+    "first_semantic_branch_fields": [],
+    "first_full_control_difference": null,
+    "no_semantic_branch": true,
+    "natural_unforced": true,
+    "original_state_projection_physics_accessRNG_rawticks_verified": true,
+    "full_agent_pickle_excluded_for_expected_metadata": true
+  },
+  "predicate_exposed_on_actual_B": true,
+  "predicate_scope": "Actualfixedpredicate activated; seebirths andheldactions, no generalsafetyclaim.",
+  "rule_audit": {
+    "low_births": [
+      {
+        "action": 137,
+        "direct_index": 0,
+        "area_pixels": 6,
+        "posthoc_geometric_label": "unresolved"
+      }
+    ],
+    "withheld_action_count": 9,
+    "withheld_actions": [
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145
+    ],
+    "fixture_supported_withheld_count": 0,
+    "semantic_truth_or_actual_occlusion_verified": false,
+    "GT_input_to_policy": false
+  },
+  "historical_N2_separate": {
+    "reused_not_new": true,
+    "candidate350": {
+      "native_actions": 292,
+      "completed": true,
+      "lap_ms": 23320,
+      "unique_tiles": 292,
+      "total_tiles": 292,
+      "damage": 0.0
+    },
+    "baseline337": {
+      "native_actions": 233,
+      "actual_DNF": true,
+      "retire_reason": "off_track",
+      "unique_tiles": 132,
+      "total_tiles": 292,
+      "damage": 0.2
+    },
+    "lap_delta": null,
+    "scope": "SeparateknownTRAINcondition; prior337/350notrerun/relabelled/charged. Do not pool times or substitute296champion."
+  },
+  "historical_O0_separate": {
+    "reused_not_new": true,
+    "outcomes": {
+      "A": {
+        "native_actions": 324,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1293,
+        "damage": 0.0,
+        "unique_tiles": 326,
+        "speed_m_s": 46.86606456612398,
+        "off_track_counter": 4,
+        "last_tile_growth_action": 320,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 26.859999999999516,
+        "lap_ms": 25840,
+        "retire_reason": null
+      },
+      "B": {
+        "native_actions": 324,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1293,
+        "damage": 0.0,
+        "unique_tiles": 326,
+        "speed_m_s": 46.86606456612398,
+        "off_track_counter": 4,
+        "last_tile_growth_action": 320,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 26.859999999999516,
+        "lap_ms": 25840,
+        "retire_reason": null
+      }
+    },
+    "lap_delta_ms": 0,
+    "predicate_exposed": false,
+    "scope": "Prior352actualpairedcompletiontie withno low-supportbirth, not new353data or activefiltertest."
+  },
+  "historical343_prefix": {
+    "reused_not_new": true,
+    "each_new_arm_actions_reproduced": 160,
+    "input_stacks_per_arm": 161,
+    "originalstate_projection_pixels_physics_accessRNG_rawticks_exact": true,
+    "old343_native_charged_again": false
+  },
+  "combined_interpretation": "N2finish-versus-DNF, priorO0inactive-rulecompletiontie and newO2pairedobjective remain separate knownconditions. Do not pool laps orclaim general safety/superiority/championpromotion.",
+  "limits": [
+    "Three knownTRAINconditions only, postselected researchcontext. N2completed once, priorO0paired once and O2paired once; no successrate, generalization or occlusion-preservation claim.",
+    "Original-state projection deliberately excludes fullagentpickle differences caused by candidate metadata. Capturedphysics/RNG/rawticks exactwherecommon; hidden solver/OpenCV RNG and omitted warmstart/contactisland state notdirectlymeasured.",
+    "Only343prefix160was validated on freshlyreturnedcontrols, no storedcontinuation orforcedbirth.296O2stages346/347are a separatepolicycontext and never thebaseline. Damage/contact diagnostics do not replace officialcompletion/lapordering.",
+    "Preserve existing334mixed aggregate evidence and champion296. No newprotected split, fit, tuning, automaticextension or extraarm."
+  ],
+  "cost": {
+    "stage": 353,
+    "new_wrapper_actions": 566,
+    "per_arm_native": {
+      "A": 283,
+      "B": 283
+    },
+    "new_baseline_runs": 1,
+    "new_candidate_runs": 1,
+    "new_environment_resets": 2,
+    "total_cap": 800,
+    "per_arm_cap": 400,
+    "additional_research": 0,
+    "new_cached_actor_calls": 0,
+    "actual_actor_calls": 566,
+    "actual_actor_resets": 2,
+    "new_native_auxiliary": 0,
+    "raw_step_ticks": 2262,
+    "raw_reset_ticks": 102,
+    "new_source_physics_rollout_ticks": 0,
+    "new_learning_fits": 0,
+    "new_tuning": 0,
+    "new_paid_resources": 0,
+    "technical_error": null,
+    "technical_recovery_native": 0,
+    "per_arm_measurements": {
+      "A": {
+        "wall_s": 25.434954364027362,
+        "runner_CPU_s": 22.079648873,
+        "actor_CPU_s": 3.3921859999999997,
+        "reset_wall_s": 0.3830104119842872,
+        "raw_step_render_wall_s": 8.898196260270197,
+        "raw_contact_observer_wall_s": 0.23459499259479344,
+        "capture_wall_s": 9.675040713220369,
+        "journal_wall_s": 0.21305482386378571,
+        "artifact_wall_s": 0.03574945201398805
+      },
+      "B": {
+        "wall_s": 28.209700962004717,
+        "runner_CPU_s": 24.960935062,
+        "actor_CPU_s": 3.26734,
+        "reset_wall_s": 0.3717476070160046,
+        "raw_step_render_wall_s": 8.55821426876355,
+        "raw_contact_observer_wall_s": 0.2159538134583272,
+        "capture_wall_s": 10.061321797315031,
+        "journal_wall_s": 0.23635637207189575,
+        "artifact_wall_s": 0.04319661599583924
+      }
+    },
+    "total_measurements": {
+      "wall_s": 53.64465532603208,
+      "runner_CPU_s": 47.040583935,
+      "actor_CPU_s": 6.659526,
+      "reset_wall_s": 0.7547580190002918,
+      "raw_step_render_wall_s": 17.456410529033747,
+      "raw_contact_observer_wall_s": 0.45054880605312064,
+      "capture_wall_s": 19.7363625105354,
+      "journal_wall_s": 0.44941119593568146,
+      "artifact_wall_s": 0.07894606800982729
+    },
+    "actual_cumulative_wrapper_actions": 1285511,
+    "research_remaining": 532,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1370043,
+    "unused_reserved_actions": 234,
+    "historical_N2_charged_again": false,
+    "measurement_scope": "Only two fresh353O2runs charged. Prefix within each400cap, no cache orauxiliarynative. Rawstep includesrender; observers/capture/journal/artifact distinct timers. Coding/setup/hash/closure/git not fully measured."
+  },
+  "next_decision": {
+    "status": "Proposal only, not executed/reserved.",
+    "keep_champion296": true,
+    "no_generalization_or_occlusion_claim": true,
+    "do_not_repeat_N2_orO2": true,
+    "additional_research_grant": 0,
+    "decision": "Stop this known-case native sequence and preserve remainingresearch for contingency. Keep349as research-onlycandidate and296as champion. Do not repeat N2/O0/O2or add cache/tuning arms. Consolidate frozen artifact identities, condition-specific outcomes, censoring and final-validation readiness without opening protectedsplits or executing finalreserve.",
+    "reason": "The planned three known-condition evidence set is complete. Its limits and existing334mixedaggregate evidence do not justify promotion/generalization. Any later newtest needs a distinct question and separately preregistered budget; no automatic extension.",
+    "next_action_native_cap": 0,
+    "final_reserve_execution_authorized": false,
+    "research_remaining": 532
+  },
+  "champion296_preserved": true,
+  "new_DEV_opening": false,
+  "new_HOLDOUT_opening": false,
+  "new_SEALED_opening": false,
+  "promotion": false,
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
