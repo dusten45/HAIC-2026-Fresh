@@ -1,0 +1,263 @@
+{
+  "stage": 366,
+  "candidate_archive_sha256": "65df88a5b2391675e49c3f39259adab0f8a791da5ab58ea620cbe130b0a9ce34",
+  "candidate_modified": false,
+  "official_outcome": {
+    "native_actions": 252,
+    "collision_event_actions": [],
+    "raw_collision_flags": 0,
+    "new_obstacle_hit_intervals": [],
+    "fixture_touching": [],
+    "raw_observation_count": 1007,
+    "damage": 0.0,
+    "unique_tiles": 250,
+    "speed_m_s": 45.64286765127064,
+    "off_track_counter": 3,
+    "last_tile_growth_action": 249,
+    "actual_DNF": false,
+    "protocol_stop": false,
+    "completed": true,
+    "finish_time_s": 21.139999999999638,
+    "lap_ms": 20120,
+    "retire_reason": null
+  },
+  "stop_reason": "official_finish",
+  "comparison_qualification": {
+    "passed": true,
+    "historical_source": "363T29510/357notnewcontrol",
+    "fresh_reset_same": true,
+    "common_semantic_actions": 252,
+    "common_fullcommands": 252,
+    "common_qualified_input_stacks": 253,
+    "first_routing_membership_difference": 60,
+    "first_semantic_output_difference": null,
+    "first_semantic_fields": [],
+    "first_full_control_difference": null,
+    "no_semantic_branch": true,
+    "original_state_projection_pixels_physics_accessRNG_rawticks_exact_wherecommon": true,
+    "passive_observer_version_diff": false,
+    "ownobservations_controls_normalmemory": true
+  },
+  "historical363_357": {
+    "reused_not_new": true,
+    "outcome": {
+      "native_actions": 252,
+      "collision_event_actions": [],
+      "raw_collision_flags": 0,
+      "new_obstacle_hit_intervals": [],
+      "fixture_touching": [],
+      "raw_observation_count": 1007,
+      "damage": 0.0,
+      "unique_tiles": 250,
+      "speed_m_s": 45.64286765127064,
+      "off_track_counter": 3,
+      "last_tile_growth_action": 249,
+      "actual_DNF": false,
+      "protocol_stop": false,
+      "completed": true,
+      "finish_time_s": 21.139999999999638,
+      "lap_ms": 20120,
+      "retire_reason": null
+    },
+    "lap_difference_new_minus_historical_ms": 0,
+    "same_case_init_RNG_environment_runtime_models_and_observer": true
+  },
+  "first_differences": {
+    "diagnostic_support_metadata": 31,
+    "routing_membership": 60,
+    "path": null,
+    "target": null,
+    "semantic_output": null,
+    "full_control": null,
+    "scope": "Newpositive_historyfielddiagnosticdifferenceisreportedseparately. Striponlythisfieldfororiginalsupportcomparison; originalstateprojectionexcludesagentpickledigest."
+  },
+  "support_audit": {
+    "known_supported_direct_contexts": 74,
+    "known_birth_supported_retained_contexts": 24,
+    "supported_direct_losses": 0,
+    "supported_retained_losses": 0,
+    "losses": [],
+    "missing_birth_GT_direct": 0,
+    "missing_birth_GT_retained": 0,
+    "low_births": [
+      {
+        "action": 59,
+        "uid": [
+          59,
+          0
+        ],
+        "raw_road_neighbors": 0,
+        "area_pixels": 4,
+        "positive_history": true,
+        "posthoc_label": "fixture_supported"
+      }
+    ],
+    "retained_exclusions": [],
+    "newly_preserved_low_retained": [
+      {
+        "action": 60,
+        "uid": [
+          59,
+          0
+        ],
+        "age": 1,
+        "posthoc_label": "fixture_supported"
+      },
+      {
+        "action": 61,
+        "uid": [
+          59,
+          0
+        ],
+        "age": 2,
+        "posthoc_label": "fixture_supported"
+      },
+      {
+        "action": 62,
+        "uid": [
+          59,
+          0
+        ],
+        "age": 3,
+        "posthoc_label": "fixture_supported"
+      },
+      {
+        "action": 63,
+        "uid": [
+          59,
+          0
+        ],
+        "age": 4,
+        "posthoc_label": "fixture_supported"
+      }
+    ],
+    "gate_passed": true,
+    "scope": "Onlythisactualepisode;birthcirclecorrespondenceposthoc,notsemanticmaterialorocclusiontruth."
+  },
+  "positive_history_audit": {
+    "link58to59": [
+      {
+        "action": 59,
+        "uid": [
+          59,
+          0
+        ],
+        "parent_uid": [
+          58,
+          0
+        ],
+        "distance_m": 0.2959418915624716,
+        "low_birth": true,
+        "positive_history": true,
+        "current_label": "fixture_supported",
+        "confirmed_distinct_supported_fixture_transfer": false,
+        "ambiguous": false
+      }
+    ],
+    "preserved60to63": [
+      {
+        "action": 60,
+        "uid": [
+          59,
+          0
+        ],
+        "age": 1,
+        "posthoc_label": "fixture_supported"
+      },
+      {
+        "action": 61,
+        "uid": [
+          59,
+          0
+        ],
+        "age": 2,
+        "posthoc_label": "fixture_supported"
+      },
+      {
+        "action": 62,
+        "uid": [
+          59,
+          0
+        ],
+        "age": 3,
+        "posthoc_label": "fixture_supported"
+      },
+      {
+        "action": 63,
+        "uid": [
+          59,
+          0
+        ],
+        "age": 4,
+        "posthoc_label": "fixture_supported"
+      }
+    ],
+    "all_positive_transfer_edges": 67,
+    "ambiguous_transfer_edges": 1,
+    "confirmed_distinct_supported_fixture_transfers": 0,
+    "ambiguous_low_birth_edges": 0,
+    "metadata_reconstructed_inputs": 252,
+    "prior365_62ambiguous_edges_remain_unresolved": true,
+    "prior365_missing_GT_direct12_retained16_remain_unresolved": true,
+    "scope": "Oneknownactualconditiondoesnotresolvepriorcacheuncertainty; GTnotruntimefeature."
+  },
+  "finish": {
+    "qualification_raw_time_s": 19.959999999999663,
+    "center_crossing_raw_time_s": 21.139999999999638,
+    "declaration_raw_time_s": 21.159999999999638,
+    "postreset_start_time_s": 1.0200000000000005,
+    "official_lap_ms": 20120
+  },
+  "cost": {
+    "stage": 366,
+    "new_wrapper_actions": 252,
+    "new_candidate_runs": 1,
+    "new_baseline_runs": 0,
+    "new_environment_resets": 1,
+    "new_actor_act_calls": 252,
+    "new_actor_commit_calls": 252,
+    "actor_resets": 1,
+    "episode_cap": 2000,
+    "reservation_from_existing_research": 2000,
+    "additional_research": 0,
+    "new_cached_actor_calls": 0,
+    "new_standalone_diagnostic_calls": 0,
+    "new_native_auxiliary": 0,
+    "new_source_physics_rollout_ticks": 0,
+    "new_learning_fits": 0,
+    "new_tuning": 0,
+    "new_paid_resources": 0,
+    "raw_step_ticks": 1007,
+    "raw_reset_ticks": 51,
+    "measurements": {
+      "wall_s": 23.314772381039802,
+      "runner_CPU_s": 19.602390422000003,
+      "actor_CPU_s": 2.963311,
+      "reset_wall_s": 0.3119780080160126,
+      "raw_step_render_wall_s": 7.194900244940072,
+      "raw_contact_observer_wall_s": 0.17018273624125868,
+      "capture_wall_s": 8.06709954777034,
+      "journal_wall_s": 0.18579834618140012,
+      "artifact_wall_s": 0.044499608979094774
+    },
+    "actual_cumulative_wrapper_actions": 1291467,
+    "research_remaining": 21938,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1397405,
+    "unused_episode_reservation": 1748,
+    "historical363_reexecuted_or_recounted": false,
+    "technical_error": null,
+    "scope": "Only366freshactual365episodecharged. Posthocsavedlineageauditaddsnoactor/native. Rawstepincludesrender; componenttimersdistinct. Coding/registration/closure/gitnotfullytimed."
+  },
+  "promotion": false,
+  "new_DEV_opening": false,
+  "new_HOLDOUT_opening": false,
+  "new_SEALED_opening": false,
+  "limits": [
+    "Oneactual365T29510episodeonly;not18condition365evaluation. Historical35718/18andoriginalretainedfailureremainpreservedseparately.",
+    "No newpairedbaseline orisolatedwhole-populationcausality. Fullcommand/pixel/physics/accessRNGmatchingcheckedwherecommon; hidden solver/OpenCV RNG/warmstart/islandstate notfullycaptured.",
+    "Existing62ambiguousedgesandmissingGTremainunknown; unique2mdedupnottrueobjectidentity, unseenocclusionsandaliasingunproven. No othercandidate,splitopening,fit,tuningorretry."
+  ],
+  "next_step": "Preservefixed365andcondition-specificevidence; no automaticnextworldepisode,budgetextensionorpromotion."
+}
