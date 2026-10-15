@@ -1,0 +1,227 @@
+{
+  "stage": 335,
+  "question": "Does fixed334fallback-only tracker improve local contact persistence on its own visited states?",
+  "design": "One newB fromreset, every action is unchanged334 ON archive returned steer/gas/brake. No stored-command overrides, no single66intervention. Existing full exact330/331A reused after fresh cachedOFF72 qualification; ambiguousA stops before native, no automatic newA/144.",
+  "comparison_valid": true,
+  "verification": {
+    "passed": true,
+    "own_observations_used": true,
+    "all_returned_steer_gas_brake_executed": true,
+    "stored_command_override": false,
+    "first_difference_not_forced": true,
+    "unchanged334_archive_sha256": "133cf83a145b1db6b9bd32c43139e8dc43967ed547b3154b73164fa5d6a55a33",
+    "fresh_OFF72_exact_A": true,
+    "qualified_actual_prefix": {
+      "actual_common_prefix_commands": 65,
+      "common_prefix_input_stacks": 66,
+      "first_observed_differences": {
+        "command": 66,
+        "input": 67,
+        "actor_state": 66,
+        "nominal_memory": 66
+      },
+      "component_names": [
+        "steering",
+        "gas",
+        "brake"
+      ],
+      "changed_command_counts": [
+        7,
+        7,
+        7
+      ],
+      "mean_absolute_command_differences": [
+        0.015641363337635994,
+        0.00770259415730834,
+        0.005167488008737564
+      ],
+      "maximum_absolute_command_differences": [
+        0.32793301343917847,
+        0.3404708504676819,
+        0.08225102722644806
+      ],
+      "nominal_memory_changed_count": 7,
+      "maximum_absolute_nominal_memory_difference": 0.3279330095849699,
+      "ON_tracker_optical_inputs": 11,
+      "ON_tracker_fallback_with_points_inputs": 1
+    },
+    "hidden_solver_and_OpenCV_RNG_directly_measured": false,
+    "actual_occlusion_preservation_verified": false,
+    "new_native_actions_for_saved_verification": 0
+  },
+  "common_interval_comparison": {
+    "common_actions": 72,
+    "A": {
+      "observed_actions": 72,
+      "first_contact": 68,
+      "contact_actions": [
+        68,
+        69,
+        70,
+        71,
+        72
+      ],
+      "contact_action_count": 5,
+      "collision_endpoint_fixture_pairs": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "fixture_scope": "[obstacle index, obstacle fixture, car body index (0 hull,1-4wheels), car fixture], saved wrapper endpoints only; no substep fixture enumeration.",
+      "first_contact_time_interval_s": [
+        6.379999999999952,
+        6.45999999999995
+      ],
+      "endpoint_damage": 1.0,
+      "endpoint_speed_m_s": 10.782765283220924,
+      "endpoint_unique_tiles": 70,
+      "total_tiles": 292,
+      "endpoint_progress": 0.23972602739726026,
+      "actual_terminal_in_interval": true,
+      "actual_DNF": true,
+      "completed": false,
+      "protocol_stop": false
+    },
+    "B": {
+      "observed_actions": 72,
+      "first_contact": null,
+      "contact_actions": [],
+      "contact_action_count": 0,
+      "collision_endpoint_fixture_pairs": [],
+      "fixture_scope": "[obstacle index, obstacle fixture, car body index (0 hull,1-4wheels), car fixture], saved wrapper endpoints only; no substep fixture enumeration.",
+      "first_contact_time_interval_s": null,
+      "endpoint_damage": 0.0,
+      "endpoint_speed_m_s": 41.939190392905886,
+      "endpoint_unique_tiles": 73,
+      "total_tiles": 292,
+      "endpoint_progress": 0.25,
+      "actual_terminal_in_interval": false,
+      "actual_DNF": false,
+      "completed": false,
+      "protocol_stop": true
+    },
+    "endpoint_position_gap_m": 13.474045727357108,
+    "endpoint_heading_difference_B_minus_A_rad": -1.368398904800415,
+    "endpoint_unique_tiles_B_minus_A": 3
+  },
+  "control_memory_diagnostic": {
+    "actual_common_prefix_commands": 65,
+    "common_prefix_input_stacks": 66,
+    "first_observed_differences": {
+      "command": 66,
+      "input": 67,
+      "actor_state": 66,
+      "nominal_memory": 66
+    },
+    "component_names": [
+      "steering",
+      "gas",
+      "brake"
+    ],
+    "changed_command_counts": [
+      7,
+      7,
+      7
+    ],
+    "mean_absolute_command_differences": [
+      0.015641363337635994,
+      0.00770259415730834,
+      0.005167488008737564
+    ],
+    "maximum_absolute_command_differences": [
+      0.32793301343917847,
+      0.3404708504676819,
+      0.08225102722644806
+    ],
+    "nominal_memory_changed_count": 7,
+    "maximum_absolute_nominal_memory_difference": 0.3279330095849699,
+    "ON_tracker_optical_inputs": 11,
+    "ON_tracker_fallback_with_points_inputs": 1
+  },
+  "interpretation": "Fallback-only tracker on its own visited states avoided observed contact through72, while actualA contacted68-72 and crashed72. Local72-action closed-loop evidence; not completion/generalization or champion promotion. Static association ambiguity and unverified occlusion remain.",
+  "preserved334_mixed_evidence": {
+    "original6_nearest_sequential_mean": {
+      "OFF": 24.400035404035584,
+      "ON": 25.294083105402862
+    },
+    "original6_nearest_single_fallback_RMSE": {
+      "OFF": 44.439248329736024,
+      "ON": 44.721119854690684
+    },
+    "posthoc_fixture_birth_subset_fallback_mean": {
+      "OFF": 4.6401517836674335,
+      "ON": 2.7520444653287575
+    },
+    "posthoc_fixture_birth_subset_fallback_p99": {
+      "OFF": 19.48628667730667,
+      "ON": 13.674044295882311
+    },
+    "fixture_birth_coverage": {
+      "candidate_previous_points": 1324,
+      "fixture_birth_supported_previous_points": 664,
+      "birth_detections_with_GT": 464,
+      "unique_fixture_compatible_births": 372,
+      "no_fixture_compatible_births": 92,
+      "multiple_fixture_compatible_births": 0
+    },
+    "actual_occlusion_preservation_verified": false,
+    "original334_immutable": true
+  },
+  "cost": {
+    "stage": 335,
+    "new_wrapper_actions": 72,
+    "native_cap": 72,
+    "new_B_runs": 1,
+    "new_A_runs": 0,
+    "reused_actual_A_runs": 1,
+    "additional_research": 72,
+    "raw_step_ticks": 288,
+    "raw_reset_ticks": 51,
+    "native_wall_s": 11.074336376972497,
+    "runner_CPU_s": 10.124398448,
+    "actor_CPU_s": 0.946897,
+    "cached_actor_calls": 144,
+    "cache_wall_s": 3.4919789240229875,
+    "cache_runner_CPU_s": 2.1011342269999997,
+    "cache_actor_CPU_s": 1.858668,
+    "new_learning_fits": 0,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "actual_cumulative_wrapper_actions": 1282199,
+    "research_remaining": 0,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1366199
+  },
+  "next_distinguishing_experiment": {
+    "status": "Proposed only; not executed, no automatic horizon extension or budget grant",
+    "question": "Does the frozen tracker candidate retain the local rescue beyond72 and complete the knownN2 lap?",
+    "new_B_native_cap": 363,
+    "measured_horizon_basis": "Existing296N2 actual completed363actions/29000ms; this cap is a measured full-lap attempt horizon, not a guarantee candidate completes by it.",
+    "new_research_budget_required": 363,
+    "final_reserve_used": 0,
+    "replay_cost": "Actual335 environment closed; cannot resume for free or teleport. New trial starts reset, includes measured72prefix and up to291unseen actions, totalcap363.",
+    "A": "Reuse qualified330/331A actualDNF72 plus296N2 fullcompletion as distinct references; ifA qualification unclear stop before native and separately report additionalA72 cost, do not launch automatically.",
+    "qualification": "Same unchanged334archive/worker/runtime/case; requalify exact33572prefix observations/actions/controller and tracker state/accessibleRNG/physical measurements. Unexpected mismatch stops, no reseed/retry.",
+    "stop": "Official completion/retirement,363protocolcap,contractmismatch orauthorizationdeadline; capwithoutcompletion is protocolcensoring, notDNF. No automatic capextension.",
+    "interpretation": "Official completion required to claimN2 completion rescue. Compare common completed time only to actual296 fullreference. KnownTRAIN onecase remains no generalization or promotion; damage increase alone not veto.",
+    "occlusion": "Independent visibility/occlusion evidence still needed before general tracker claims; do not call nondetection occlusion."
+  },
+  "limitations": [
+    "Single postselected knownTRAIN N2,72action local horizon; B protocolstop is neither completion nor actualDNF.",
+    "Only fallback component archive changed vs actualA. New own-state control differs in multiple downstream steer/pedal/memory updates;335 is not333single-command experiment.",
+    "Actual captured physical states and accessible RNG checked along commonprefix. Earlier basic state reference is independent333 measured sharedprefix, not fabricated historicalA GT.",
+    "Hidden Box2D solver state/OpenCV RNG not directly measured; contacttime interval.08seconds and fixture snapshots only wrapperendpoints.",
+    "334nearest metrics worsened despite fixture-supported posthoc subset gain; unknown correspondence and actualocclusion preservation unverified."
+  ],
+  "champion296_preserved": true,
+  "TRAIN_registry_preserved": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
