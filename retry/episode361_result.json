@@ -1,0 +1,225 @@
+{
+  "stage": 361,
+  "case_key": "T2950",
+  "official_outcome": {
+    "native_actions": 332,
+    "collision_event_actions": [],
+    "raw_collision_flags": 0,
+    "new_obstacle_hit_intervals": [],
+    "fixture_touching": [],
+    "raw_observation_count": 1328,
+    "damage": 0.0,
+    "unique_tiles": 338,
+    "speed_m_s": 45.679689412352054,
+    "off_track_counter": 3,
+    "last_tile_growth_action": 329,
+    "actual_DNF": false,
+    "protocol_stop": false,
+    "completed": true,
+    "finish_time_s": 27.5599999999995,
+    "lap_ms": 26540,
+    "retire_reason": null
+  },
+  "stop_reason": "official_finish",
+  "technical_error": null,
+  "candidate_modified": false,
+  "candidate_archive_sha256": "b03a65de6410b2fa4805eefcd7a5a05ec246fc27843bdc40facc938927e665ad",
+  "candidate_worker_sha256": "b66ffc9a476852551380ef0ac46419c0ace38d63471ac4ec442c9abed4016f13",
+  "fresh_reset_qualified": true,
+  "ownobservations_fullcontrols_normalmemory": true,
+  "historical_comparison": {
+    "baseline296": {
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "native_actions": 315,
+      "lap_ms": null,
+      "damage": 0.2,
+      "visited": 208,
+      "total_tiles": 338,
+      "retire_reason": "off_track"
+    },
+    "H1_330": {
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "native_actions": 361,
+      "lap_ms": 28860,
+      "damage": 0.2,
+      "visited": 332,
+      "total_tiles": 338,
+      "retire_reason": null
+    },
+    "same_case_verified": true,
+    "reused_not_new": true,
+    "new_minus_historical296_lap_ms": null,
+    "new_minus_historical330_lap_ms": -2320,
+    "scope": "Historicaldifferentpolicies, notfreshpairedcontrol orisolatedguard/filter/fallbackeffect. No matchedhistoricalstate/RNGprefixclaim; observerRNGfixednew361 and historical330seednotrecorded."
+  },
+  "support_audit": {
+    "known_supported_direct_contexts": 64,
+    "known_birth_supported_retained_contexts": 23,
+    "supported_direct_losses": 0,
+    "supported_retained_losses": 0,
+    "losses": [],
+    "missing_birth_GT_direct": 0,
+    "missing_birth_GT_retained": 0,
+    "low_births": [
+      {
+        "action": 163,
+        "uid": [
+          163,
+          0
+        ],
+        "area_pixels": 4,
+        "label": "fixture_supported"
+      }
+    ],
+    "protected_current_direct_actions": [
+      163
+    ],
+    "retained_exclusions": [],
+    "gate_passed": true,
+    "scope": "Birthcirclecorrespondencecomputedafterepisode, notsemanticmaterial/occlusiontruth. Initialidentity/read-onlycapture didnotenteractorcontrols. MissingGTreportedseparately."
+  },
+  "finish": {
+    "qualification_raw_time_s": 26.119999999999532,
+    "center_crossing_raw_time_s": 27.5599999999995,
+    "declaration_raw_time_s": 27.5799999999995,
+    "postreset_start_time_s": 1.0200000000000005,
+    "official_lap_ms": 26540
+  },
+  "cost": {
+    "stage": 361,
+    "new_wrapper_actions": 332,
+    "new_candidate_runs": 1,
+    "new_baseline_runs": 0,
+    "new_environment_resets": 1,
+    "new_actor_act_calls": 332,
+    "new_actor_commit_calls": 332,
+    "actor_resets": 1,
+    "new_cached_actor_calls": 0,
+    "new_native_auxiliary": 0,
+    "native_cap": 1725,
+    "additional_research_registered_before_native": 0,
+    "raw_step_ticks": 1328,
+    "raw_reset_ticks": 51,
+    "new_source_physics_rollout_ticks": 0,
+    "new_learning_fits": 0,
+    "new_tuning": 0,
+    "new_paid_resources": 0,
+    "technical_error": null,
+    "technical_recovery_native": 0,
+    "measurements": {
+      "wall_s": 29.666805504995864,
+      "runner_CPU_s": 25.784424127999998,
+      "actor_CPU_s": 3.905316,
+      "reset_wall_s": 0.4254772590356879,
+      "raw_step_render_wall_s": 11.031835952366237,
+      "raw_contact_observer_wall_s": 0.26512602559523657,
+      "capture_wall_s": 12.059264503128361,
+      "journal_wall_s": 0.24430489022051916,
+      "artifact_wall_s": 0.04750773299019784
+    },
+    "actual_cumulative_wrapper_actions": 1287049,
+    "research_remaining": 1393,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1372442,
+    "unused_registered_native": 1393,
+    "historical_results_not_recounted": true,
+    "measurement_scope": "Only361freshactualepisode; no newcontrol/cache/auxiliaryphysics. Rawstep includesrender; contact/capture/journal/artifact timers distinct. Registration/coding/closure/git/taskwall notfullytimed."
+  },
+  "promotion": false,
+  "champion296_preserved": true,
+  "new_DEV_opening": false,
+  "new_HOLDOUT_opening": false,
+  "new_SEALED_opening": false,
+  "limits": [
+    "SingleknownTRAINcondition; N2/O2successdoesnotimplythisconditionorgeneralization. No automaticcandidatepromotion.",
+    "Officialcompletionandgeometricpreservationgate are separate. Anyknownsupportedwithheld pointfailsgate evenwithfinish; retainedlowpointsundernewocclusion remainunproven.",
+    "Current357differsfrom330by334fallbackand342filterplusage0guard. Cannotattributetrajectoryoutcomes solelytoonechange;296isalsoanotherpolicy.",
+    "Hidden solver/OpenCV RNG/warmstart/islandstate notdirectlycaptured. No newcontrol/retry/extraarm/tuning, paidresources orprotectedcaseopening."
+  ],
+  "next_step": "Preserve frozen357 andthiscondition-specific outcome; no automaticexperiment,extension,tuning orpromotion.",
+  "authorization_end_utc": "2026-10-17T10:01:55Z",
+  "actual357_coverage": {
+    "known_conditions": 18,
+    "actual_measured": [
+      {
+        "condition": "O2",
+        "source_stage": 358,
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "native_actions": 283,
+        "lap_ms": 22600,
+        "damage": 0.0,
+        "visited": 289,
+        "total_tiles": 289
+      },
+      {
+        "condition": "N2",
+        "source_stage": 359,
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "native_actions": 292,
+        "lap_ms": 23320,
+        "damage": 0.0,
+        "visited": 292,
+        "total_tiles": 292
+      },
+      {
+        "condition": "T29511",
+        "source_stage": 360,
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "native_actions": 275,
+        "lap_ms": 21980,
+        "damage": 0.0,
+        "visited": 277,
+        "total_tiles": 277
+      },
+      {
+        "condition": "T2950",
+        "source_stage": 361,
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "native_actions": 332,
+        "lap_ms": 26540,
+        "damage": 0.0,
+        "visited": 338,
+        "total_tiles": 338
+      }
+    ],
+    "not_yet_actual_measured": [
+      "T2953",
+      "T2956",
+      "T2959",
+      "O0",
+      "N0",
+      "N1",
+      "N3",
+      "T2951",
+      "T2952",
+      "T2954",
+      "T2955",
+      "T2957",
+      "T2958",
+      "T29510"
+    ],
+    "scope": "Onlyfouractual357conditions, not18conditionbenchmarkorunbiasedsuccessestimate. Historical349T2954andO0and357cachedreplays arenotactual357episodes."
+  },
+  "proposed_next_scope": {
+    "status": "proposalonly_noexecution_orreservation",
+    "first": "T2954actual357: prior355freshsupportedpoint92was349,357onlycached356inputreplay; testguardinownclosedloopandposthocsupport.",
+    "second": "O0actual357: historical349completionexistsbut357onlycachedreplay, then remainingknownTRAIN/Nconditions withfixedcandidateandconditionbudgetbeforeeachrun.",
+    "stops": "Anyknownsupportedloss stopsqualification; no tuningorautomaticextension. ProtectedDEV/HOLDOUT/SEALEDstayclosed; no promotion fromselectedknowncases.",
+    "budget": "Existingremainingresearchonlyunlessseparatelyauthorized;reserve84000untouched. Registercapsbeforeanynextreset."
+  }
+}
