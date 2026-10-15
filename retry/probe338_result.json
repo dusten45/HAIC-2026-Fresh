@@ -1,0 +1,188 @@
+{
+  "stage": 338,
+  "question": "Single earliest dtype-real steering difference at128 in fixed124-132diagnostic window usingcurrentdirectdetections canresolve newobstacle2blockage.",
+  "verification": {
+    "passed": true,
+    "actual_prefix_actions_exact": 127,
+    "actual_prefix_pixel_frames_exact": 128,
+    "actor_tracker_nominal_memory_captured_physics_accessible_RNG_gate": true,
+    "frozen_package_original_routing_controller_reproduced": true,
+    "actual_dtype": "float32",
+    "first_window_dtype_difference": 128,
+    "executed_steering_delta_at128": -0.06458394229412079,
+    "only_execution_override_action": 128,
+    "only_execution_override_component": "steering",
+    "same128pedals": true,
+    "same128original_nominal_memory_update": true,
+    "tracker_not_deleted": true,
+    "after128_candidate_returned_outputs_on_own_inputs": true,
+    "no_stored_continuation": true,
+    "no_postterminal_steps": true,
+    "hidden_solver_OpenCV_RNG_not_directly_measured": true,
+    "new_native_actions": 0
+  },
+  "comparison": {
+    "common_actions": 136,
+    "A": {
+      "observed_actions": 136,
+      "first_collision_event": 132,
+      "collision_event_actions": [
+        132
+      ],
+      "endpoint_fixture_pairs": [
+        [
+          2,
+          0,
+          0,
+          0
+        ]
+      ],
+      "hull_obstacle2_touching_endpoint_actions": [
+        132,
+        133,
+        134,
+        135,
+        136
+      ],
+      "damage": 0.2,
+      "unique_tiles": 132,
+      "progress_beyond132_tiles": 0,
+      "speed_m_s": 1.3884100739829892,
+      "off_track_counter": 4,
+      "actual_terminated": false,
+      "actual_truncated": false,
+      "completed": false,
+      "retire_reason": null
+    },
+    "B": {
+      "observed_actions": 136,
+      "first_collision_event": 132,
+      "collision_event_actions": [
+        132,
+        133,
+        134,
+        135,
+        136
+      ],
+      "endpoint_fixture_pairs": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          0
+        ]
+      ],
+      "hull_obstacle2_touching_endpoint_actions": [
+        132,
+        133,
+        134,
+        135,
+        136
+      ],
+      "damage": 1.0,
+      "unique_tiles": 134,
+      "progress_beyond132_tiles": 2,
+      "speed_m_s": 7.664182457515682,
+      "off_track_counter": 0,
+      "actual_terminated": true,
+      "actual_truncated": false,
+      "completed": false,
+      "retire_reason": "crash"
+    },
+    "A_full_episode": {
+      "native_actions": 233,
+      "actual_DNF": true,
+      "retire_reason": "off_track",
+      "damage": 0.2,
+      "unique_tiles": 132
+    },
+    "B_actual_DNF": true,
+    "B_censored": false,
+    "B_protocol_stop": false,
+    "B_finish_time_s": null,
+    "B_lap_ms": null
+  },
+  "interpretation": "Singlefirstdtype-realsteering128 intervention doesnotresolvefirstcontact132/officialretirement: Bcrashes136, whileAisnonterminalwithdamage.2atcommon136andlaterstalls/off_track233. Bmakes2moretiles,buthas5collisioneventactionsandearlierofficialcrash. Rejects sufficiencyofthisparticularintervention only; notallretainedpoints harmless,notproofspeed/lookahead cause. Damagealone isnotveto; physicaleventpattern,progress andofficialtermination arejointlyreported.",
+  "limits": [
+    "KnownpostselectedN2,onecommand/oneB. No completion/generalization/promotion.",
+    "OriginalA233fullrecordqualified; commoncomparisonstops136atBterminal. No Bobservations/actions synthesizedto233.",
+    "Bchangedphysicalstateafter128,so129+originalpolicyreturneddifferentcontrols. Oneexecutionoverride isnotafull direct-onlytrackingpolicy.",
+    "Near-path/far-target .549rad difference canbenormaloncurvedpath andwasnotusedasdefectcriterion.",
+    "GT evaluatoronly; actualocclusion remainsunverified, hidden solver/OpenCVRNG notdirectlymeasured."
+  ],
+  "cost": {
+    "stage": 338,
+    "new_wrapper_actions": 136,
+    "native_cap": 233,
+    "new_B_runs": 1,
+    "new_A_runs": 0,
+    "additional_research": 0,
+    "raw_step_ticks": 544,
+    "raw_reset_ticks": 51,
+    "native_wall_s": 17.132859549019486,
+    "runner_CPU_s": 15.249129549000003,
+    "actor_CPU_s": 1.8768880000000001,
+    "capture_wall_s": 6.570593520475086,
+    "cached_actor_calls": 128,
+    "cache_wall_s": 2.318103945988696,
+    "cache_runner_CPU_s": 0.885998566,
+    "cache_actor_CPU_s": 1.7596450000000001,
+    "cached_frozen_routing_controller_calls": 10,
+    "native_probe_routing_controller_calls": 2,
+    "new_learning_fits": 0,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "actual_cumulative_wrapper_actions": 1282569,
+    "research_remaining": 1669,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1368238,
+    "measurement_scope": "Native/capture/actor/cachedcalls measured; initialhash/data load,build,final saved-evidence/report not wholly timed. Captureoverhead notpure simulatorstep cost."
+  },
+  "preserved334_mixed_evidence": {
+    "original6_nearest_sequential_mean": {
+      "OFF": 24.400035404035584,
+      "ON": 25.294083105402862
+    },
+    "original6_nearest_single_fallback_RMSE": {
+      "OFF": 44.439248329736024,
+      "ON": 44.721119854690684
+    },
+    "posthoc_fixture_birth_subset_fallback_mean": {
+      "OFF": 4.6401517836674335,
+      "ON": 2.7520444653287575
+    },
+    "posthoc_fixture_birth_subset_fallback_p99": {
+      "OFF": 19.48628667730667,
+      "ON": 13.674044295882311
+    },
+    "fixture_birth_coverage": {
+      "candidate_previous_points": 1324,
+      "fixture_birth_supported_previous_points": 664,
+      "birth_detections_with_GT": 464,
+      "unique_fixture_compatible_births": 372,
+      "no_fixture_compatible_births": 92,
+      "multiple_fixture_compatible_births": 0
+    },
+    "actual_occlusion_preservation_verified": false,
+    "original334_immutable": true
+  },
+  "actual_occlusion_preservation_verified": false,
+  "next_action_proposal": {
+    "status": "Notexecuted; do notautomaticallymoveprobe129orpicklargermagnitude.",
+    "focus": "Native0 audit of unresolved detection birth/retention and route history on fixed recordedapproach, separating geometriccorrespondence from visibility and temporaltransport. No newthreshold,lookahead,pedalchange orcausalclaimfromnear/farangle. Any longer/multi-command memoryintervention needs separate pairedcontract; thissinglecommandresult cannot settle it."
+  },
+  "champion296_preserved": true,
+  "TRAIN_registry_preserved": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
