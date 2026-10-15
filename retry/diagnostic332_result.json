@@ -1,0 +1,326 @@
+{
+  "stage": 332,
+  "full_success296_spatial_comparison_available": false,
+  "inventory": {
+    "296_success": {
+      "actions": 363,
+      "precontact_boundary_last": 64,
+      "first_contact": 65,
+      "pixels": false,
+      "GT_pose": false,
+      "path": false,
+      "obstacle_GT": false,
+      "fixtures": false,
+      "features16": true,
+      "collision_damage": true,
+      "contact_steps": [
+        65,
+        66,
+        228
+      ]
+    },
+    "330_failure": {
+      "actions": 72,
+      "pixel_stacks": 73,
+      "precontact_boundary_last": 67,
+      "first_contact": 68,
+      "pixels": true,
+      "GT_pose": false,
+      "path": false,
+      "obstacle_GT": false,
+      "fixtures": false,
+      "features16": true,
+      "collision_damage": true,
+      "contact_steps": [
+        68,
+        69,
+        70,
+        71,
+        72
+      ]
+    },
+    "331_A": {
+      "actions": 72,
+      "pixel_stacks": 73,
+      "precontact_boundary_last": 67,
+      "first_contact": 68,
+      "pixels": true,
+      "GT_pose": "boundary64; pre/post65-72 only",
+      "path": false,
+      "obstacle_GT": "same boundaries",
+      "fixtures": "road/obstacle fixtures captured; car fixture cores source-defined only",
+      "features16": true,
+      "collision_damage": true,
+      "contact_steps": [
+        68,
+        69,
+        70,
+        71,
+        72
+      ]
+    },
+    "331_B": {
+      "actions": 72,
+      "pixel_stacks": 73,
+      "precontact_boundary_last": 67,
+      "first_contact": 68,
+      "pixels": true,
+      "GT_pose": "boundary64; pre/post65-72 only",
+      "path": false,
+      "obstacle_GT": "same boundaries",
+      "fixtures": "road/obstacle fixtures captured; car fixture cores source-defined only",
+      "features16": true,
+      "collision_damage": true,
+      "contact_steps": [
+        68,
+        69,
+        70,
+        71,
+        72
+      ]
+    }
+  },
+  "coordinate_contract": "Boundary n is after n wrapper actions, before action n+1; initial raw t1.02, .08s per action precontact. World axes transform by R(-hull angle) into x-right/y-forward body frame. Positive command steering is clockwise; actual joint target is negative command. Joint at boundary n compared with executed action n, never n+1. Pixel paths use anisotropic1.3608/1.701px/m and frozen detector calibration; HUD values are quantized proxies, not GT. Tile centerline is derived from actual saved road fixture centroids.",
+  "precontact_histories": {
+    "296_success": {
+      "contact_free_executed_actions": 64,
+      "precontact_observation_boundaries": 65,
+      "first_contact": 65,
+      "features_missing_target": 0,
+      "feedback_speed_m_s_range": [
+        0.0,
+        53.75
+      ],
+      "mean_feedback_speed_m_s": 44.04296875,
+      "mean_gas": 0.5251483339816332,
+      "mean_brake": 0.06437810749048367,
+      "mean_abs_steering": 0.025058595056471643,
+      "geometry_aligned_with_other_policy": false,
+      "precontact_input_features_count": 65,
+      "precontact_input_mean_feedback_speed_m_s": 44.15384615384615,
+      "statistics_scope": "Action statistics exclude first-contact action; input features count includes its collision-free pre-action input. Observation count does not imply saved pixels."
+    },
+    "330_failure": {
+      "contact_free_executed_actions": 67,
+      "precontact_observation_boundaries": 68,
+      "first_contact": 68,
+      "features_missing_target": 0,
+      "feedback_speed_m_s_range": [
+        0.0,
+        51.25
+      ],
+      "mean_feedback_speed_m_s": 42.08955223880597,
+      "mean_gas": 0.5519050328589198,
+      "mean_brake": 0.07477832671755286,
+      "mean_abs_steering": 0.026452089793593928,
+      "geometry_aligned_with_other_policy": false,
+      "precontact_input_features_count": 68,
+      "precontact_input_mean_feedback_speed_m_s": 42.150735294117645,
+      "statistics_scope": "Action statistics exclude first-contact action; input features count includes its collision-free pre-action input. Observation count does not imply saved pixels."
+    },
+    "331_A": {
+      "contact_free_executed_actions": 67,
+      "precontact_observation_boundaries": 68,
+      "first_contact": 68,
+      "features_missing_target": 0,
+      "feedback_speed_m_s_range": [
+        0.0,
+        51.25
+      ],
+      "mean_feedback_speed_m_s": 42.08955223880597,
+      "mean_gas": 0.5519050328589198,
+      "mean_brake": 0.07477832671755286,
+      "mean_abs_steering": 0.026452089793593928,
+      "geometry_aligned_with_other_policy": false,
+      "precontact_input_features_count": 68,
+      "precontact_input_mean_feedback_speed_m_s": 42.150735294117645,
+      "statistics_scope": "Action statistics exclude first-contact action; input features count includes its collision-free pre-action input. Observation count does not imply saved pixels."
+    },
+    "331_B": {
+      "contact_free_executed_actions": 67,
+      "precontact_observation_boundaries": 68,
+      "first_contact": 68,
+      "features_missing_target": 0,
+      "feedback_speed_m_s_range": [
+        0.0,
+        51.25
+      ],
+      "mean_feedback_speed_m_s": 42.08955223880597,
+      "mean_gas": 0.55182521912589,
+      "mean_brake": 0.07388686119064466,
+      "mean_abs_steering": 0.026452089793593928,
+      "geometry_aligned_with_other_policy": false,
+      "precontact_input_features_count": 68,
+      "precontact_input_mean_feedback_speed_m_s": 42.1875,
+      "statistics_scope": "Action statistics exclude first-contact action; input features count includes its collision-free pre-action input. Observation count does not imply saved pixels."
+    }
+  },
+  "index_only_prefix_differences": {
+    "first_action_difference": 1,
+    "first_steering_difference": 21,
+    "first_feedback_speed_difference": 20,
+    "first_legacy_speed_feature_difference": 19,
+    "comparison_scope": "Same action index only, not the same location or tile; no success296 positions or pixels are available. Pedal channel differs at action1; subsequent observation/steering differences are consequences or other coupled responses, not isolated steering treatment."
+  },
+  "static_results": {
+    "actual_precontact_boundaries": 8,
+    "actual_boundary_indices": [
+      64,
+      65,
+      66,
+      67
+    ],
+    "spatially_matched_same_tile_pairs": 4,
+    "nearest_observed_A_B_position_gap_m_range": [
+      0.0,
+      0.18521248290100917
+    ],
+    "aligned_B_minus_A_speed_m_s_range": [
+      0.0,
+      1.355427934355781
+    ],
+    "direct_obstacle_nearest_GT_center_error_m_range": [
+      0.015288781233863406,
+      0.20166176892705803
+    ],
+    "all_direct_matches_same_contact_obstacle": true,
+    "aged_hazard_nearest_any_GT_center_error_m_range": [
+      2.1810662826779565,
+      16.209614779843864
+    ],
+    "maximum_abs_lateral_velocity_m_s": 1.6877789483836343,
+    "maximum_abs_road_proxy_heading_error_rad": 0.2633213517914783,
+    "maximum_joint_plus_previous_executed_steering_error_rad": 1.3560056686401367e-06,
+    "hull_core_gap_to_eventual_contact_obstacle_m_range": [
+      2.417898278063669,
+      13.852881800606355
+    ],
+    "wheel_core_gap_to_eventual_contact_obstacle_m_range": [
+      2.8406702847694634,
+      14.27784550470703
+    ],
+    "last_boundary_initial_path_heading_rad_range": [
+      0.4918091759886985,
+      0.4918091759886985
+    ],
+    "last_boundary_velocity_vs_initial_path_heading_error_abs_rad_range": [
+      0.45620219288650665,
+      0.45681812587872306
+    ],
+    "route_counterfactual_frames": 8,
+    "retained_route_and_original_steering_reproduced_exactly": true,
+    "direct_only_path_changes": 6,
+    "direct_only_steering_changes": 4,
+    "direct_only_steering_change_absolute_range": [
+      0.2522401921451092,
+      0.3361232578754425
+    ],
+    "static_effect": "Removing aged hazards from routing changes selected steering sign at boundaries65/66 in both trajectories; path changes at67 do not change target or calculated steering. This proves a local routing output dependency, not a contact or full-policy benefit.",
+    "physical_contact": "At actual post-action68 both arms touch the same obstacle through hull fixture0; B also has a front-wheel contact. Precontact core gaps are not swept clearance and omit unmeasured polygon skin."
+  },
+  "next_single_probe_proposal": {
+    "status": "Proposed only, not executed, no extra budget authorized",
+    "hypothesis": "Retained hazards alter the locally chosen avoidance direction; test whether one direct-only-derived steering command at action66 changes subsequent contact persistence, while all pedals and other steering commands remain stored330.",
+    "comparison_A": "Existing exact331A replay, restricted to same endpoint71: first contact68, contact68-71, damage.8; actual later crash72 is outside proposed endpoint.",
+    "intervention_B": "Independent reset; stored331A actions1-65 unchanged. At action66 compute the frozen routing function using only current direct detections, same saved-pixel image, original speed/previous nominal memory, same lookahead/controller laws. Override only executed steering with that derived value; pedals stay stored330. Actions67-71 all stored331A commands. Retain actual-observation original nominal memory updates throughout; distinguish calculated and executed steering. No threshold, fit, horizon or sweep.",
+    "native_cap": 71,
+    "prefix_cost": 65,
+    "single_probe_cost": 1,
+    "followup_cost": 5,
+    "new_A_cost": 0,
+    "existing_A_is_measured_actual_reference": true,
+    "research_remaining_after_max": 0,
+    "final_reserve_used": 0,
+    "prebranch_gate": "Match initial observation/geometry and full65-action saved raw prefix, actual captured pre-action66 physical snapshot, serialized policy state, action/features/audit/nominal memory/collision/damage. Match tracked RNG states where recorded; OpenCV hidden RNG and hidden Box2D state remain explicit limitations. Source contract must justify env RNG state unchanged since measured boundary64; otherwise do not claim that unmeasured state equality or execute the probe.",
+    "stop": "Stop at first replay or state difference before probe; record consumed native, no retry/reseed/repair sweep. Stop official terminal immediately; otherwise protocol stop71, not DNF or completion. Stop at authorization deadline. No run under this332 task.",
+    "falsification": "Same firstcontact68 and same contact persistence/damage through71 refutes sufficiency of this single direct-only-derived command, not all tracking explanations. Earlier contact or greater damage rejects it. Later first contact/lower damage only supports a local effect.",
+    "continuation_gate": "Require no lost progress versus recordedA at71 and strictly less damage with later/no contact through71 before considering further investigation. No promotion or crash72/complete-lap claim; any further experiment needs its own authorization/budget/preregistration.",
+    "remaining_blocker": "Full296-versus-failure spatial causal diagnosis remains impossible because historical296 success pixels/GT/path/tile records are absent. This local counterfactual does not fill them."
+  },
+  "cost": {
+    "stage": 332,
+    "new_wrapper_actions": 0,
+    "new_fits": 0,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "additional_research": 0,
+    "saved_observation_actor_calls": 136,
+    "pure_routing_function_calls": 17,
+    "pure_routing_successful_calls": 16,
+    "pure_routing_failed_validation_calls": 1,
+    "saved_actor_wall_s": 3.43128057802096,
+    "saved_actor_CPU_s": 1.431254,
+    "saved_actor_evaluator_CPU_s": 1.988931139,
+    "static_geometry_wall_s": 0.22941522498149425,
+    "static_geometry_CPU_s": 0.22940342199999986,
+    "static_routing_wall_s": 0.1974422979983501,
+    "static_routing_CPU_s": 0.21530849600000002,
+    "failed_static_routing_invocation_wall_s": 0.318487998,
+    "cost_scope": "Recorded replay/geometry/function costs; initial discovery, JSON inventory and final reporting not timed. Failed read-only route check CPU not measured; failure was tuple/list serialization equality and happened before alternatives.",
+    "actual_cumulative_wrapper_actions": 1282055,
+    "research_remaining": 71,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1366126
+  },
+  "limitations": [
+    "296 success has no saved pixels/pose/path/tile/obstacle GT, so full spatial alignment cannot be performed. 330 earlier physical GT is also absent.",
+    "Late A/B samples align by actual position and tile with reported longitudinal differences; no synthetic interpolation or guessed GT.",
+    "Nearest-obstacle association reports distances to all six actual obstacles; it does not label visibility or infer GT for unobserved old frames. Direct detection accuracy does not establish retained-memory accuracy.",
+    "Nominal local car footprint reconstructed from unchanged source constants; actual car fixture shapes/skin were not captured. Static endpoint clearance is not swept collision prediction.",
+    "331 last8pedals negative result does not prove steering cause or unavoidability. Static route change is an output dependency, not a measured physical counterfactual.",
+    "Stored-pixel replay follows each recorded input stream; it is not a closed-loop success296 run. Missing baseline pixels cannot be replaced by applying296 to330 pixels."
+  ],
+  "champion296_preserved": true,
+  "TRAIN_registry_preserved": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "rigid_transport_diagnostic": {
+    "static_rigid_transforms": 2,
+    "new_fits": 0,
+    "native_actions": 0,
+    "new_actor_calls": 0,
+    "source_physics_rollout_ticks": 0,
+    "wall_s": 0.26681546395411715,
+    "CPU_s": 0.26376670399999996,
+    "scope": "Counterfactual measured ego-pose transport of an already observed hazard. It shows a local transport discrepancy; it does not recover unrecorded optical-flow acceptance flags, prove global tracker failure, or predict physical contact.",
+    "old_valid_detection_error_m_range": [
+      0.20166176892705803,
+      0.20166176892705803
+    ],
+    "retained_next_boundary_error_m_range": [
+      2.7118729499031877,
+      2.7241124801879217
+    ],
+    "measured_pose_transport_error_m_range": [
+      0.2016617689270612,
+      0.20166176892706184
+    ],
+    "retained_to_new_detection_distance_m_range": [
+      2.7352881610257587,
+      2.7352881610257587
+    ],
+    "HUD_forward_only_fallback_signature_both": true
+  },
+  "independent_verification": {
+    "passed": true,
+    "independent_OpenCV_polygon_distance_queries": 384,
+    "maximum_geometry_distance_error_m": 8.09359823961131e-06,
+    "coordinate_roundtrip_and_analytic_square_passed": true,
+    "stored_actor_input_action_feature_reproduction_count": 136,
+    "source_hashes_unchanged": true,
+    "cost_ledger_stage332_entries": 1,
+    "native_budget_unchanged": true,
+    "research_remaining": 71,
+    "final_reserved_actions": 84000,
+    "splits_unopened": true,
+    "new_native_actions": 0,
+    "new_actor_calls": 0,
+    "new_fits": 0,
+    "new_source_physics_ticks": 0,
+    "verification_wall_s": 0.30585062998579815,
+    "verification_CPU_s": 0.297614731
+  }
+}
