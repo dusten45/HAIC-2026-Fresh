@@ -1,0 +1,361 @@
+{
+  "stage": 367,
+  "candidate_archive_sha256": "65df88a5b2391675e49c3f39259adab0f8a791da5ab58ea620cbe130b0a9ce34",
+  "candidate_modified": false,
+  "official_outcome": {
+    "native_actions": 292,
+    "collision_event_actions": [],
+    "raw_collision_flags": 0,
+    "new_obstacle_hit_intervals": [],
+    "fixture_touching": [],
+    "raw_observation_count": 1167,
+    "damage": 0.0,
+    "unique_tiles": 292,
+    "speed_m_s": 48.060908359801935,
+    "off_track_counter": 3,
+    "last_tile_growth_action": 289,
+    "actual_DNF": false,
+    "protocol_stop": false,
+    "completed": true,
+    "finish_time_s": 24.33999999999957,
+    "lap_ms": 23320,
+    "retire_reason": null
+  },
+  "stop_reason": "official_finish",
+  "comparison_qualification": {
+    "passed": true,
+    "historical_source": "359N2/357notnewcontrol",
+    "fresh_reset_same": true,
+    "common_semantic_actions": 292,
+    "common_fullcommands": 292,
+    "common_qualified_input_stacks": 293,
+    "first_routing_membership_difference": null,
+    "first_semantic_output_difference": null,
+    "first_semantic_fields": [],
+    "first_full_control_difference": null,
+    "no_semantic_branch": true,
+    "original_state_projection_pixels_physics_accessRNG_rawticks_exact_wherecommon": true,
+    "passive_observer_version_diff": false,
+    "ownobservations_controls_normalmemory": true
+  },
+  "historical359_357": {
+    "reused_not_new": true,
+    "outcome": {
+      "native_actions": 292,
+      "collision_event_actions": [],
+      "raw_collision_flags": 0,
+      "new_obstacle_hit_intervals": [],
+      "fixture_touching": [],
+      "raw_observation_count": 1167,
+      "damage": 0.0,
+      "unique_tiles": 292,
+      "speed_m_s": 48.060908359801935,
+      "off_track_counter": 3,
+      "last_tile_growth_action": 289,
+      "actual_DNF": false,
+      "protocol_stop": false,
+      "completed": true,
+      "finish_time_s": 24.33999999999957,
+      "lap_ms": 23320,
+      "retire_reason": null
+    },
+    "lap_difference_new_minus_historical_ms": 0,
+    "same_case_init_RNG_environment_runtime_models_and_observer": true
+  },
+  "first_differences": {
+    "diagnostic_support_metadata": 60,
+    "routing_membership": null,
+    "path": null,
+    "target": null,
+    "semantic_output": null,
+    "full_control": null,
+    "scope": "Newpositive_historyfielddiagnosticdifferenceisreportedseparately. Striponlythisfieldfororiginalsupportcomparison; originalstateprojectionexcludesagentpickledigest."
+  },
+  "support_audit": {
+    "known_supported_direct_contexts": 61,
+    "known_birth_supported_retained_contexts": 22,
+    "supported_direct_losses": 0,
+    "supported_retained_losses": 0,
+    "losses": [],
+    "missing_birth_GT_direct": 0,
+    "missing_birth_GT_retained": 0,
+    "low_births": [
+      {
+        "action": 121,
+        "uid": [
+          121,
+          0
+        ],
+        "raw_road_neighbors": 0,
+        "area_pixels": 3,
+        "positive_history": false,
+        "posthoc_label": "unresolved"
+      },
+      {
+        "action": 135,
+        "uid": [
+          135,
+          0
+        ],
+        "raw_road_neighbors": 0,
+        "area_pixels": 4,
+        "positive_history": false,
+        "posthoc_label": "unresolved"
+      },
+      {
+        "action": 232,
+        "uid": [
+          232,
+          0
+        ],
+        "raw_road_neighbors": 0,
+        "area_pixels": 3,
+        "positive_history": false,
+        "posthoc_label": "unresolved"
+      }
+    ],
+    "retained_exclusions": [
+      {
+        "action": 122,
+        "uid": [
+          121,
+          0
+        ],
+        "age": 1
+      },
+      {
+        "action": 123,
+        "uid": [
+          121,
+          0
+        ],
+        "age": 2
+      },
+      {
+        "action": 124,
+        "uid": [
+          121,
+          0
+        ],
+        "age": 3
+      },
+      {
+        "action": 125,
+        "uid": [
+          121,
+          0
+        ],
+        "age": 4
+      },
+      {
+        "action": 126,
+        "uid": [
+          121,
+          0
+        ],
+        "age": 5
+      },
+      {
+        "action": 127,
+        "uid": [
+          121,
+          0
+        ],
+        "age": 6
+      },
+      {
+        "action": 128,
+        "uid": [
+          121,
+          0
+        ],
+        "age": 7
+      },
+      {
+        "action": 129,
+        "uid": [
+          121,
+          0
+        ],
+        "age": 8
+      }
+    ],
+    "newly_preserved_low_retained": [],
+    "gate_passed": true,
+    "scope": "Onlythisactualepisode;birthcirclecorrespondenceposthoc,notsemanticmaterialorocclusiontruth."
+  },
+  "positive_history_audit": {
+    "N2_birth121": [
+      {
+        "action": 121,
+        "uid": [
+          121,
+          0
+        ],
+        "raw_road_neighbors": 0,
+        "area_pixels": 3,
+        "positive_history": false,
+        "posthoc_label": "unresolved"
+      }
+    ],
+    "N2_retained121_life": [
+      {
+        "action": 121,
+        "age": 0,
+        "low": true,
+        "positive_history": false,
+        "routed": true
+      },
+      {
+        "action": 122,
+        "age": 1,
+        "low": true,
+        "positive_history": false,
+        "routed": false
+      },
+      {
+        "action": 123,
+        "age": 2,
+        "low": true,
+        "positive_history": false,
+        "routed": false
+      },
+      {
+        "action": 124,
+        "age": 3,
+        "low": true,
+        "positive_history": false,
+        "routed": false
+      },
+      {
+        "action": 125,
+        "age": 4,
+        "low": true,
+        "positive_history": false,
+        "routed": false
+      },
+      {
+        "action": 126,
+        "age": 5,
+        "low": true,
+        "positive_history": false,
+        "routed": false
+      },
+      {
+        "action": 127,
+        "age": 6,
+        "low": true,
+        "positive_history": false,
+        "routed": false
+      },
+      {
+        "action": 128,
+        "age": 7,
+        "low": true,
+        "positive_history": false,
+        "routed": false
+      },
+      {
+        "action": 129,
+        "age": 8,
+        "low": true,
+        "positive_history": false,
+        "routed": false
+      }
+    ],
+    "N2_critical127to129": [
+      {
+        "action": 127,
+        "age": 6,
+        "low": true,
+        "positive_history": false,
+        "routed": false
+      },
+      {
+        "action": 128,
+        "age": 7,
+        "low": true,
+        "positive_history": false,
+        "routed": false
+      },
+      {
+        "action": 129,
+        "age": 8,
+        "low": true,
+        "positive_history": false,
+        "routed": false
+      }
+    ],
+    "all_positive_transfer_edges": 57,
+    "ambiguous_transfer_edges": 3,
+    "confirmed_distinct_supported_fixture_transfers": 0,
+    "ambiguous_low_birth_edges": 0,
+    "metadata_reconstructed_inputs": 292,
+    "prior365_62ambiguous_edges_remain_unresolved": true,
+    "prior365_missing_GT_direct12_retained16_remain_unresolved": true,
+    "scope": "Oneknownactualconditiondoesnotresolvepriorcacheuncertainty; GTnotruntimefeature."
+  },
+  "finish": {
+    "qualification_raw_time_s": 22.9399999999996,
+    "center_crossing_raw_time_s": 24.33999999999957,
+    "declaration_raw_time_s": 24.35999999999957,
+    "postreset_start_time_s": 1.0200000000000005,
+    "official_lap_ms": 23320
+  },
+  "cost": {
+    "stage": 367,
+    "new_wrapper_actions": 292,
+    "new_candidate_runs": 1,
+    "new_baseline_runs": 0,
+    "new_environment_resets": 1,
+    "new_actor_act_calls": 292,
+    "new_actor_commit_calls": 292,
+    "actor_resets": 1,
+    "episode_cap": 2000,
+    "reservation_from_existing_research": 2000,
+    "additional_research": 0,
+    "new_cached_actor_calls": 0,
+    "new_standalone_diagnostic_calls": 0,
+    "new_native_auxiliary": 0,
+    "new_source_physics_rollout_ticks": 0,
+    "new_learning_fits": 0,
+    "new_tuning": 0,
+    "new_paid_resources": 0,
+    "raw_step_ticks": 1167,
+    "raw_reset_ticks": 51,
+    "measurements": {
+      "wall_s": 30.111234131036326,
+      "runner_CPU_s": 26.842694484,
+      "actor_CPU_s": 3.2720119999999997,
+      "reset_wall_s": 0.3520054010441527,
+      "raw_step_render_wall_s": 8.57031365914736,
+      "raw_contact_observer_wall_s": 0.20579166745301336,
+      "capture_wall_s": 12.013770255958661,
+      "journal_wall_s": 0.9605829635984264,
+      "artifact_wall_s": 0.04097468202235177
+    },
+    "actual_cumulative_wrapper_actions": 1291759,
+    "research_remaining": 21646,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1397405,
+    "unused_episode_reservation": 1708,
+    "historical359_reexecuted_or_recounted": false,
+    "technical_error": null,
+    "scope": "Only367freshactual365episodecharged. Posthocsavedlineageauditaddsnoactor/native. Rawstepincludesrender; componenttimersdistinct. Coding/registration/closure/gitnotfullytimed."
+  },
+  "promotion": false,
+  "new_DEV_opening": false,
+  "new_HOLDOUT_opening": false,
+  "new_SEALED_opening": false,
+  "limits": [
+    "Oneactual365N2episodeonly;not18condition365evaluation. Historical35718/18andoriginalretainedfailureremainpreservedseparately.",
+    "No newpairedbaseline orisolatedwhole-populationcausality. Fullcommand/pixel/physics/accessRNGmatchingcheckedwherecommon; hidden solver/OpenCV RNG/warmstart/islandstate notfullycaptured.",
+    "Existing62ambiguousedgesandmissingGTremainunknown; unique2mdedupnottrueobjectidentity, unseenocclusionsandaliasingunproven. No othercandidate,splitopening,fit,tuningorretry."
+  ],
+  "next_step": "Preservefixed365andcondition-specificevidence; no automaticnextworldepisode,budgetextensionorpromotion.",
+  "actual365_measured_conditions": [
+    "T29510",
+    "N2"
+  ]
+}
