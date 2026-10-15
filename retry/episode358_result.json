@@ -1,0 +1,169 @@
+{
+  "stage": 358,
+  "new_actual_policy": "Frozen357age0guard on334ON/H1",
+  "candidate_archive_sha256": "b03a65de6410b2fa4805eefcd7a5a05ec246fc27843bdc40facc938927e665ad",
+  "candidate_modified": false,
+  "comparison_valid": true,
+  "official_outcome": {
+    "native_actions": 283,
+    "collision_event_actions": [],
+    "raw_collision_flags": 0,
+    "new_obstacle_hit_intervals": [],
+    "fixture_touching": [],
+    "raw_observation_count": 1131,
+    "damage": 0.0,
+    "unique_tiles": 289,
+    "speed_m_s": 47.11410444628487,
+    "off_track_counter": 3,
+    "last_tile_growth_action": 280,
+    "actual_DNF": false,
+    "protocol_stop": false,
+    "completed": true,
+    "finish_time_s": 23.619999999999585,
+    "lap_ms": 22600,
+    "retire_reason": null
+  },
+  "stop_reason": "official_finish",
+  "historical353_349_B": {
+    "reused_not_new": true,
+    "outcome": {
+      "native_actions": 283,
+      "collision_event_actions": [],
+      "raw_collision_flags": 0,
+      "new_obstacle_hit_intervals": [],
+      "fixture_touching": [],
+      "raw_observation_count": 1131,
+      "damage": 0.0,
+      "unique_tiles": 289,
+      "speed_m_s": 47.11410444628487,
+      "off_track_counter": 3,
+      "last_tile_growth_action": 280,
+      "actual_DNF": false,
+      "protocol_stop": false,
+      "completed": true,
+      "finish_time_s": 23.619999999999585,
+      "lap_ms": 22600,
+      "retire_reason": null
+    },
+    "worker_version_difference": "357passiveactual-subsetobserver versus349low-implies-excludedobserver; no selection inobserver. Same357observer baselinequalifiedbefore358, actualcode/modulehashesbound.",
+    "case_init_environment_runtime_models_matched": true
+  },
+  "official_ordering": "official_lap_tie",
+  "new_minus_historical_lap_ms": 0,
+  "qualification": {
+    "passed": true,
+    "historical_source": "353B349notnewcontrol",
+    "fresh_reset_same": true,
+    "common_semantic_actions": 283,
+    "common_fullcommands": 283,
+    "common_qualified_input_stacks": 284,
+    "first_routing_membership_difference": 137,
+    "first_semantic_output_difference": null,
+    "first_semantic_fields": [],
+    "first_full_control_difference": null,
+    "no_semantic_branch": true,
+    "original_state_projection_pixels_physics_accessRNG_rawticks_exact_wherecommon": true,
+    "passive_observer_version_diff": true,
+    "ownobservations_controls_normalmemory": true
+  },
+  "first_differences": {
+    "routing_membership": 137,
+    "semantic_path_target_features_audit_state": null,
+    "full_control": null,
+    "scope": "Membershipdifference isnot automatically a path/target/controloutputdifference. Postbranch temporalcomparisons wouldbecoupledtrajectory descriptors."
+  },
+  "support_audit": {
+    "known_supported_direct_contexts": 63,
+    "known_birth_supported_retained_contexts": 19,
+    "supported_direct_losses": 0,
+    "supported_retained_losses": 0,
+    "losses": [],
+    "missing_birth_GT_direct": 0,
+    "missing_birth_GT_retained": 0,
+    "low_births": [
+      {
+        "action": 137,
+        "uid": [
+          137,
+          0
+        ],
+        "area_pixels": 6,
+        "label": "unresolved"
+      }
+    ],
+    "protected_current_direct_actions": [
+      137
+    ],
+    "retained_exclusion_actions": [
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145
+    ],
+    "scope": "GTbirthlabelscomputedafterepisode; sourcecirclecorrespondence, notsemanticmaterial/occlusiontruth. Initialidentity/readonlystatecapture didnotenteractorcontrols."
+  },
+  "cache_context": "146-153cachedoutputchange was onstage306O2observations generatedby296archive, replayedwith349/357current334ON/H1. Itwasnot353current349actualpixels. This358runusesnewown357pixels anddoesnotforcecached146state.",
+  "finish": {
+    "qualification_raw_time_s": 22.299999999999613,
+    "center_crossing_raw_time_s": 23.619999999999585,
+    "declaration_raw_time_s": 23.639999999999585,
+    "postreset_start_time_s": 1.0200000000000005,
+    "official_lap_ms": 22600
+  },
+  "limits": [
+    "OneknownO2condition andonefreshcandidateversusqualifiedhistoricalrecord; no newpairedcontrol, population/generalization orpromotionclaim.",
+    "Onlythis358is anactual357episode.357cachedN2/T2954replays andhistorical349completions remain separate, notnew357worldresults.",
+    "Originalpolicy stateprojection excludesfullagentpickle andcodeidentityboundseparately. AccessibleRNG/capturedphysics/rawtickscheckedwherecommon; hidden solver/OpenCV RNG/warmstart/islandstate notdirectlycaptured.",
+    "The age0guard doesnotprove safetyofretained lowflagpointsundernewocclusion. Preserve355counterexamplehistory,357cachetradeoffand334mixedaggregate evidence. No othercandidate, protectedsplit, fit ortuning."
+  ],
+  "cost": {
+    "stage": 358,
+    "new_wrapper_actions": 283,
+    "new_candidate_runs": 1,
+    "new_baseline_runs": 0,
+    "new_environment_resets": 1,
+    "new_actor_act_calls": 283,
+    "new_actor_commit_calls": 283,
+    "actor_resets": 1,
+    "new_cached_actor_calls": 0,
+    "new_native_auxiliary": 0,
+    "native_cap": 1644,
+    "additional_research": 0,
+    "raw_step_ticks": 1131,
+    "raw_reset_ticks": 51,
+    "new_source_physics_rollout_ticks": 0,
+    "new_learning_fits": 0,
+    "new_tuning": 0,
+    "new_paid_resources": 0,
+    "technical_error": null,
+    "technical_recovery_native": 0,
+    "measurements": {
+      "wall_s": 25.349048061005305,
+      "runner_CPU_s": 22.275816035000002,
+      "actor_CPU_s": 3.107557,
+      "reset_wall_s": 0.3170741520007141,
+      "raw_step_render_wall_s": 8.038349192705937,
+      "raw_contact_observer_wall_s": 0.2018891050829552,
+      "capture_wall_s": 9.19815490784822,
+      "journal_wall_s": 0.20963944279355928,
+      "artifact_wall_s": 0.03341182298026979
+    },
+    "actual_cumulative_wrapper_actions": 1286150,
+    "research_remaining": 1361,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1371511,
+    "unused_reserved_native": 1361,
+    "historical353_reexecuted_or_recounted": false,
+    "measurement_scope": "Only358freshactualrun charged; no newcontrol/cache/auxiliaryphysics. Rawstep includesrender; contact/capture/journal/artifact distincttimers. Registration/coding/closure/git/taskwall notfullytimed."
+  },
+  "promotion": false,
+  "champion296_preserved": true,
+  "new_HOLDOUT_opening": false,
+  "new_SEALED_opening": false,
+  "next_step": "Preserve exact357andcondition-specificevidence. No automaticnextnative, grant orretuning. T29511andT2950retention stillseparateunmeasuredquestions, separatelyregistered ifrequested."
+}
