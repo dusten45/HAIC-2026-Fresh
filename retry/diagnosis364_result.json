@@ -1,0 +1,1026 @@
+{
+  "stage": 364,
+  "candidate_archive_sha256": "b03a65de6410b2fa4805eefcd7a5a05ec246fc27843bdc40facc938927e665ad",
+  "candidate_unchanged": true,
+  "source_reproduction_passed": true,
+  "saved_observation_lineage_audit": {
+    "T29510": {
+      "target_birth": {
+        "action": 59,
+        "uid": [
+          59,
+          0
+        ],
+        "legal_pixel_features": {
+          "area_pixels": 4,
+          "bbox_xywh": [
+            0,
+            36,
+            2,
+            2
+          ],
+          "width": 2,
+          "height": 2,
+          "aspect_width_over_height": 1.0,
+          "component_gray_range": [
+            169,
+            171
+          ],
+          "touches_left": true,
+          "touches_right": false,
+          "touches_top": false,
+          "touches_HUD_mask": false,
+          "raw_road_neighbors": 0,
+          "observed_ring_pixels": 8,
+          "outside_unobserved_ring_positions": 4,
+          "ring_gray_range": [
+            134,
+            163
+          ],
+          "raw_road_pixels_in_existing7x7_neighborhood": 28
+        },
+        "raw_birth_low": true,
+        "unique_predecessor": true,
+        "prior_positive_history": true,
+        "current_road_positive": false,
+        "positive_history": true,
+        "predecessors": [
+          {
+            "old_tag": "58:0",
+            "distance_m": 0.2959418915624716
+          }
+        ],
+        "posthoc_geometric_label": "fixture_supported"
+      },
+      "nearby_direct_births": [
+        {
+          "action": 58,
+          "uid": [
+            58,
+            0
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 6,
+            "bbox_xywh": [
+              0,
+              31,
+              2,
+              3
+            ],
+            "width": 2,
+            "height": 3,
+            "aspect_width_over_height": 0.6666666666666666,
+            "component_gray_range": [
+              164,
+              171
+            ],
+            "touches_left": true,
+            "touches_right": false,
+            "touches_top": false,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 4,
+            "observed_ring_pixels": 9,
+            "outside_unobserved_ring_positions": 5,
+            "ring_gray_range": [
+              102,
+              151
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 34
+          },
+          "raw_birth_low": false,
+          "unique_predecessor": false,
+          "prior_positive_history": false,
+          "current_road_positive": true,
+          "positive_history": true,
+          "predecessors": [],
+          "posthoc_geometric_label": "fixture_supported"
+        },
+        {
+          "action": 59,
+          "uid": [
+            59,
+            0
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 4,
+            "bbox_xywh": [
+              0,
+              36,
+              2,
+              2
+            ],
+            "width": 2,
+            "height": 2,
+            "aspect_width_over_height": 1.0,
+            "component_gray_range": [
+              169,
+              171
+            ],
+            "touches_left": true,
+            "touches_right": false,
+            "touches_top": false,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 0,
+            "observed_ring_pixels": 8,
+            "outside_unobserved_ring_positions": 4,
+            "ring_gray_range": [
+              134,
+              163
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 28
+          },
+          "raw_birth_low": true,
+          "unique_predecessor": true,
+          "prior_positive_history": true,
+          "current_road_positive": false,
+          "positive_history": true,
+          "predecessors": [
+            {
+              "old_tag": "58:0",
+              "distance_m": 0.2959418915624716
+            }
+          ],
+          "posthoc_geometric_label": "fixture_supported"
+        }
+      ],
+      "target_life": [
+        {
+          "action": 59,
+          "age": 0,
+          "low": true,
+          "routed": true,
+          "optical_reason": "accepted",
+          "mode": "direct_birth",
+          "direct_detections": 1,
+          "full_tracker_preserved": true
+        },
+        {
+          "action": 60,
+          "age": 1,
+          "low": true,
+          "routed": false,
+          "optical_reason": "accepted",
+          "mode": "accepted_optical",
+          "direct_detections": 0,
+          "full_tracker_preserved": true
+        },
+        {
+          "action": 61,
+          "age": 2,
+          "low": true,
+          "routed": false,
+          "optical_reason": "accepted",
+          "mode": "accepted_optical",
+          "direct_detections": 0,
+          "full_tracker_preserved": true
+        },
+        {
+          "action": 62,
+          "age": 3,
+          "low": true,
+          "routed": false,
+          "optical_reason": "accepted",
+          "mode": "accepted_optical",
+          "direct_detections": 0,
+          "full_tracker_preserved": true
+        },
+        {
+          "action": 63,
+          "age": 4,
+          "low": true,
+          "routed": false,
+          "optical_reason": "accepted",
+          "mode": "accepted_optical",
+          "direct_detections": 0,
+          "full_tracker_preserved": true
+        }
+      ],
+      "expiry": [
+        {
+          "action": 64,
+          "reason": "spatial_expiry"
+        }
+      ],
+      "tracker_and_metadata_reconstructed_inputs": 66,
+      "lineage_maximum_error": 0.0
+    },
+    "N2": {
+      "target_birth": {
+        "action": 121,
+        "uid": [
+          121,
+          0
+        ],
+        "legal_pixel_features": {
+          "area_pixels": 3,
+          "bbox_xywh": [
+            17,
+            0,
+            2,
+            3
+          ],
+          "width": 2,
+          "height": 3,
+          "aspect_width_over_height": 0.6666666666666666,
+          "component_gray_range": [
+            166,
+            180
+          ],
+          "touches_left": false,
+          "touches_right": false,
+          "touches_top": true,
+          "touches_HUD_mask": false,
+          "raw_road_neighbors": 0,
+          "observed_ring_pixels": 11,
+          "outside_unobserved_ring_positions": 3,
+          "ring_gray_range": [
+            81,
+            252
+          ],
+          "raw_road_pixels_in_existing7x7_neighborhood": 5
+        },
+        "raw_birth_low": true,
+        "unique_predecessor": false,
+        "prior_positive_history": false,
+        "current_road_positive": false,
+        "positive_history": false,
+        "predecessors": [],
+        "posthoc_geometric_label": "unresolved"
+      },
+      "nearby_direct_births": [
+        {
+          "action": 121,
+          "uid": [
+            121,
+            0
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 3,
+            "bbox_xywh": [
+              17,
+              0,
+              2,
+              3
+            ],
+            "width": 2,
+            "height": 3,
+            "aspect_width_over_height": 0.6666666666666666,
+            "component_gray_range": [
+              166,
+              180
+            ],
+            "touches_left": false,
+            "touches_right": false,
+            "touches_top": true,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 0,
+            "observed_ring_pixels": 11,
+            "outside_unobserved_ring_positions": 3,
+            "ring_gray_range": [
+              81,
+              252
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 5
+          },
+          "raw_birth_low": true,
+          "unique_predecessor": false,
+          "prior_positive_history": false,
+          "current_road_positive": false,
+          "positive_history": false,
+          "predecessors": [],
+          "posthoc_geometric_label": "unresolved"
+        },
+        {
+          "action": 123,
+          "uid": [
+            123,
+            0
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 4,
+            "bbox_xywh": [
+              27,
+              0,
+              3,
+              2
+            ],
+            "width": 3,
+            "height": 2,
+            "aspect_width_over_height": 1.5,
+            "component_gray_range": [
+              166,
+              171
+            ],
+            "touches_left": false,
+            "touches_right": false,
+            "touches_top": true,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 2,
+            "observed_ring_pixels": 9,
+            "outside_unobserved_ring_positions": 5,
+            "ring_gray_range": [
+              104,
+              162
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 32
+          },
+          "raw_birth_low": false,
+          "unique_predecessor": false,
+          "prior_positive_history": false,
+          "current_road_positive": true,
+          "positive_history": true,
+          "predecessors": [],
+          "posthoc_geometric_label": "fixture_supported"
+        },
+        {
+          "action": 124,
+          "uid": [
+            124,
+            0
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 3,
+            "bbox_xywh": [
+              40,
+              0,
+              2,
+              2
+            ],
+            "width": 2,
+            "height": 2,
+            "aspect_width_over_height": 1.0,
+            "component_gray_range": [
+              164,
+              175
+            ],
+            "touches_left": false,
+            "touches_right": false,
+            "touches_top": true,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 2,
+            "observed_ring_pixels": 8,
+            "outside_unobserved_ring_positions": 4,
+            "ring_gray_range": [
+              104,
+              175
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 18
+          },
+          "raw_birth_low": false,
+          "unique_predecessor": false,
+          "prior_positive_history": false,
+          "current_road_positive": true,
+          "positive_history": true,
+          "predecessors": [],
+          "posthoc_geometric_label": "unresolved"
+        },
+        {
+          "action": 124,
+          "uid": [
+            124,
+            1
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 5,
+            "bbox_xywh": [
+              29,
+              5,
+              2,
+              3
+            ],
+            "width": 2,
+            "height": 3,
+            "aspect_width_over_height": 0.6666666666666666,
+            "component_gray_range": [
+              165,
+              171
+            ],
+            "touches_left": false,
+            "touches_right": false,
+            "touches_top": false,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 7,
+            "observed_ring_pixels": 14,
+            "outside_unobserved_ring_positions": 0,
+            "ring_gray_range": [
+              103,
+              155
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 59
+          },
+          "raw_birth_low": false,
+          "unique_predecessor": true,
+          "prior_positive_history": true,
+          "current_road_positive": true,
+          "positive_history": true,
+          "predecessors": [
+            {
+              "old_tag": "123:0",
+              "distance_m": 0.2511572349526991
+            }
+          ],
+          "posthoc_geometric_label": "fixture_supported"
+        },
+        {
+          "action": 125,
+          "uid": [
+            125,
+            0
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 5,
+            "bbox_xywh": [
+              31,
+              10,
+              2,
+              3
+            ],
+            "width": 2,
+            "height": 3,
+            "aspect_width_over_height": 0.6666666666666666,
+            "component_gray_range": [
+              168,
+              171
+            ],
+            "touches_left": false,
+            "touches_right": false,
+            "touches_top": false,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 3,
+            "observed_ring_pixels": 14,
+            "outside_unobserved_ring_positions": 0,
+            "ring_gray_range": [
+              108,
+              163
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 55
+          },
+          "raw_birth_low": false,
+          "unique_predecessor": true,
+          "prior_positive_history": true,
+          "current_road_positive": true,
+          "positive_history": true,
+          "predecessors": [
+            {
+              "old_tag": "124:1",
+              "distance_m": 0.22513490742925127
+            }
+          ],
+          "posthoc_geometric_label": "fixture_supported"
+        },
+        {
+          "action": 126,
+          "uid": [
+            126,
+            0
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 5,
+            "bbox_xywh": [
+              32,
+              16,
+              2,
+              3
+            ],
+            "width": 2,
+            "height": 3,
+            "aspect_width_over_height": 0.6666666666666666,
+            "component_gray_range": [
+              167,
+              171
+            ],
+            "touches_left": false,
+            "touches_right": false,
+            "touches_top": false,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 4,
+            "observed_ring_pixels": 14,
+            "outside_unobserved_ring_positions": 0,
+            "ring_gray_range": [
+              107,
+              160
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 56
+          },
+          "raw_birth_low": false,
+          "unique_predecessor": true,
+          "prior_positive_history": true,
+          "current_road_positive": true,
+          "positive_history": true,
+          "predecessors": [
+            {
+              "old_tag": "125:0",
+              "distance_m": 0.09273923884129098
+            }
+          ],
+          "posthoc_geometric_label": "fixture_supported"
+        },
+        {
+          "action": 127,
+          "uid": [
+            127,
+            0
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 5,
+            "bbox_xywh": [
+              33,
+              22,
+              3,
+              2
+            ],
+            "width": 3,
+            "height": 2,
+            "aspect_width_over_height": 1.5,
+            "component_gray_range": [
+              164,
+              171
+            ],
+            "touches_left": false,
+            "touches_right": false,
+            "touches_top": false,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 5,
+            "observed_ring_pixels": 14,
+            "outside_unobserved_ring_positions": 0,
+            "ring_gray_range": [
+              104,
+              163
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 56
+          },
+          "raw_birth_low": false,
+          "unique_predecessor": true,
+          "prior_positive_history": true,
+          "current_road_positive": true,
+          "positive_history": true,
+          "predecessors": [
+            {
+              "old_tag": "126:0",
+              "distance_m": 0.013102102161224375
+            }
+          ],
+          "posthoc_geometric_label": "fixture_supported"
+        },
+        {
+          "action": 128,
+          "uid": [
+            128,
+            0
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 4,
+            "bbox_xywh": [
+              34,
+              28,
+              2,
+              2
+            ],
+            "width": 2,
+            "height": 2,
+            "aspect_width_over_height": 1.0,
+            "component_gray_range": [
+              168,
+              171
+            ],
+            "touches_left": false,
+            "touches_right": false,
+            "touches_top": false,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 2,
+            "observed_ring_pixels": 12,
+            "outside_unobserved_ring_positions": 0,
+            "ring_gray_range": [
+              103,
+              162
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 49
+          },
+          "raw_birth_low": false,
+          "unique_predecessor": true,
+          "prior_positive_history": true,
+          "current_road_positive": true,
+          "positive_history": true,
+          "predecessors": [
+            {
+              "old_tag": "127:0",
+              "distance_m": 0.2407851550325632
+            }
+          ],
+          "posthoc_geometric_label": "fixture_supported"
+        },
+        {
+          "action": 129,
+          "uid": [
+            129,
+            0
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 4,
+            "bbox_xywh": [
+              36,
+              34,
+              2,
+              2
+            ],
+            "width": 2,
+            "height": 2,
+            "aspect_width_over_height": 1.0,
+            "component_gray_range": [
+              170,
+              171
+            ],
+            "touches_left": false,
+            "touches_right": false,
+            "touches_top": false,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 3,
+            "observed_ring_pixels": 12,
+            "outside_unobserved_ring_positions": 0,
+            "ring_gray_range": [
+              104,
+              159
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 51
+          },
+          "raw_birth_low": false,
+          "unique_predecessor": true,
+          "prior_positive_history": true,
+          "current_road_positive": true,
+          "positive_history": true,
+          "predecessors": [
+            {
+              "old_tag": "128:0",
+              "distance_m": 0.20872112703370863
+            }
+          ],
+          "posthoc_geometric_label": "fixture_supported"
+        },
+        {
+          "action": 130,
+          "uid": [
+            130,
+            0
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 5,
+            "bbox_xywh": [
+              39,
+              39,
+              3,
+              3
+            ],
+            "width": 3,
+            "height": 3,
+            "aspect_width_over_height": 1.0,
+            "component_gray_range": [
+              164,
+              171
+            ],
+            "touches_left": false,
+            "touches_right": false,
+            "touches_top": false,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 7,
+            "observed_ring_pixels": 16,
+            "outside_unobserved_ring_positions": 0,
+            "ring_gray_range": [
+              105,
+              159
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 63
+          },
+          "raw_birth_low": false,
+          "unique_predecessor": true,
+          "prior_positive_history": true,
+          "current_road_positive": true,
+          "positive_history": true,
+          "predecessors": [
+            {
+              "old_tag": "129:0",
+              "distance_m": 0.4520094256886894
+            }
+          ],
+          "posthoc_geometric_label": "fixture_supported"
+        },
+        {
+          "action": 131,
+          "uid": [
+            131,
+            0
+          ],
+          "legal_pixel_features": {
+            "area_pixels": 4,
+            "bbox_xywh": [
+              43,
+              45,
+              2,
+              3
+            ],
+            "width": 2,
+            "height": 3,
+            "aspect_width_over_height": 0.6666666666666666,
+            "component_gray_range": [
+              169,
+              171
+            ],
+            "touches_left": false,
+            "touches_right": false,
+            "touches_top": false,
+            "touches_HUD_mask": false,
+            "raw_road_neighbors": 2,
+            "observed_ring_pixels": 14,
+            "outside_unobserved_ring_positions": 0,
+            "ring_gray_range": [
+              108,
+              163
+            ],
+            "raw_road_pixels_in_existing7x7_neighborhood": 54
+          },
+          "raw_birth_low": false,
+          "unique_predecessor": true,
+          "prior_positive_history": true,
+          "current_road_positive": true,
+          "positive_history": true,
+          "predecessors": [
+            {
+              "old_tag": "130:0",
+              "distance_m": 0.5198235359980337
+            }
+          ],
+          "posthoc_geometric_label": "fixture_supported"
+        }
+      ],
+      "target_life": [
+        {
+          "action": 121,
+          "age": 0,
+          "low": true,
+          "routed": true,
+          "optical_reason": "no_hazards",
+          "mode": "direct_birth",
+          "direct_detections": 1,
+          "full_tracker_preserved": true
+        },
+        {
+          "action": 122,
+          "age": 1,
+          "low": true,
+          "routed": false,
+          "optical_reason": "accepted",
+          "mode": "accepted_optical",
+          "direct_detections": 0,
+          "full_tracker_preserved": true
+        },
+        {
+          "action": 123,
+          "age": 2,
+          "low": true,
+          "routed": false,
+          "optical_reason": "accepted",
+          "mode": "accepted_optical",
+          "direct_detections": 1,
+          "full_tracker_preserved": true
+        },
+        {
+          "action": 124,
+          "age": 3,
+          "low": true,
+          "routed": false,
+          "optical_reason": "accepted",
+          "mode": "accepted_optical",
+          "direct_detections": 2,
+          "full_tracker_preserved": true
+        },
+        {
+          "action": 125,
+          "age": 4,
+          "low": true,
+          "routed": false,
+          "optical_reason": "accepted",
+          "mode": "accepted_optical",
+          "direct_detections": 1,
+          "full_tracker_preserved": true
+        },
+        {
+          "action": 126,
+          "age": 5,
+          "low": true,
+          "routed": false,
+          "optical_reason": "accepted",
+          "mode": "accepted_optical",
+          "direct_detections": 1,
+          "full_tracker_preserved": true
+        },
+        {
+          "action": 127,
+          "age": 6,
+          "low": true,
+          "routed": false,
+          "optical_reason": "accepted",
+          "mode": "accepted_optical",
+          "direct_detections": 1,
+          "full_tracker_preserved": true
+        },
+        {
+          "action": 128,
+          "age": 7,
+          "low": true,
+          "routed": false,
+          "optical_reason": "accepted",
+          "mode": "accepted_optical",
+          "direct_detections": 1,
+          "full_tracker_preserved": true
+        },
+        {
+          "action": 129,
+          "age": 8,
+          "low": true,
+          "routed": false,
+          "optical_reason": "accepted",
+          "mode": "accepted_optical",
+          "direct_detections": 1,
+          "full_tracker_preserved": true
+        }
+      ],
+      "expiry": [
+        {
+          "action": 130,
+          "reason": "age_expiry"
+        }
+      ],
+      "tracker_and_metadata_reconstructed_inputs": 131,
+      "lineage_maximum_error": 0.0
+    }
+  },
+  "fixed_input_footprint_restore": [
+    {
+      "action": 60,
+      "original_reproduced": true,
+      "same_precontroller_state_and_perception": true,
+      "live_state_preserved": true,
+      "path_changed": false,
+      "target_changed": false,
+      "features_changed": false,
+      "full_control_changed": false,
+      "steering_changed": false,
+      "pedals_changed": false,
+      "nominal_memory_changed": false,
+      "audit_changed": false,
+      "original_action": [
+        0.09802073985338211,
+        0.48127657175064087,
+        0.12213536351919174
+      ],
+      "restored_action": [
+        0.09802073985338211,
+        0.48127657175064087,
+        0.12213536351919174
+      ],
+      "evidence_type": "Executedfrozenfullpolicyonpre-actcloneswithfixedsamepostperception; notjustsourcededuction, notnewworldcontinuation."
+    },
+    {
+      "action": 61,
+      "original_reproduced": true,
+      "same_precontroller_state_and_perception": true,
+      "live_state_preserved": true,
+      "path_changed": false,
+      "target_changed": false,
+      "features_changed": false,
+      "full_control_changed": false,
+      "steering_changed": false,
+      "pedals_changed": false,
+      "nominal_memory_changed": false,
+      "audit_changed": false,
+      "original_action": [
+        0.07112997770309448,
+        0.6083772778511047,
+        0.09632077813148499
+      ],
+      "restored_action": [
+        0.07112997770309448,
+        0.6083772778511047,
+        0.09632077813148499
+      ],
+      "evidence_type": "Executedfrozenfullpolicyonpre-actcloneswithfixedsamepostperception; notjustsourcededuction, notnewworldcontinuation."
+    },
+    {
+      "action": 62,
+      "original_reproduced": true,
+      "same_precontroller_state_and_perception": true,
+      "live_state_preserved": true,
+      "path_changed": false,
+      "target_changed": false,
+      "features_changed": false,
+      "full_control_changed": false,
+      "steering_changed": false,
+      "pedals_changed": false,
+      "nominal_memory_changed": false,
+      "audit_changed": false,
+      "original_action": [
+        0.03886835649609566,
+        0.6205395460128784,
+        0.0978417694568634
+      ],
+      "restored_action": [
+        0.03886835649609566,
+        0.6205395460128784,
+        0.0978417694568634
+      ],
+      "evidence_type": "Executedfrozenfullpolicyonpre-actcloneswithfixedsamepostperception; notjustsourcededuction, notnewworldcontinuation."
+    },
+    {
+      "action": 63,
+      "original_reproduced": true,
+      "same_precontroller_state_and_perception": true,
+      "live_state_preserved": true,
+      "path_changed": false,
+      "target_changed": false,
+      "features_changed": false,
+      "full_control_changed": false,
+      "steering_changed": false,
+      "pedals_changed": false,
+      "nominal_memory_changed": false,
+      "audit_changed": false,
+      "original_action": [
+        0.007773671764880419,
+        0.6475788950920105,
+        0.0890112966299057
+      ],
+      "restored_action": [
+        0.007773671764880419,
+        0.6475788950920105,
+        0.0890112966299057
+      ],
+      "evidence_type": "Executedfrozenfullpolicyonpre-actcloneswithfixedsamepostperception; notjustsourcededuction, notnewworldcontinuation."
+    }
+  ],
+  "smallest_hypothesis": {
+    "status": "Proposedonly_notimplemented_orvalidatedasnewpolicy",
+    "legal_feature": "Carryever-positive existingraw-road-neighbor evidence across aunique predecessor underexisting2m direct-dedup replacement; currentbirthzero doesnoterase priorpositivehistory. Retained suppression onlyeligiblewhenassociationhistoryhasnosuchpositiveobservation. Ambiguousmulti-predecessoridentity remainsunknown.",
+    "observed_predictions": "T29510has58positive6pixelbirth4roadneighbors ->59low4pixelbirth0neighborsviaexistingunique2massociation. N2low121hasnopredecessorandnopositivehistory, soitsknownretainedexclusion127-129wouldremaineligiblebysource/metadata inferenceonly. No N2newvariantactorortrajectoryrun.",
+    "no_new_numeric_threshold": true,
+    "no_ID_frame_UID_or_GT_runtime_feature": true,
+    "limits": "Onlytwoselectedlineages; 2mdedupisnottrueobjectidentity andmaymergeobjects. No guaranteedsemantic/material/occlusionsafety orfullcorpusgatepass. Candidateunchanged; no thresholdsearchornewvariant. Ifpriorpositivehistorywereabsent/ambiguous, birthzeroalonecannotidentifyphysicalstatus."
+  },
+  "preservation": {
+    "official_known18_completed": 18,
+    "historical296_completed": 17,
+    "support_gate_still_failed": true,
+    "counterexample_one_birth_supported_retained_lineage": true,
+    "excluded_contexts": [
+      60,
+      61,
+      62,
+      63
+    ],
+    "GT_scope": "Onlyposthocbirthcirclecorrespondence; legalfeatureconstructiondoesnotuseGTlabels/poses/fixtureID.",
+    "unchanged_fixed_input_outputs_ifobserved_do_not_waive_gate": true,
+    "closed_loop_harm_or_lap_effect_not_identified": true
+  },
+  "cost": {
+    "stage": 364,
+    "new_wrapper_actions": 0,
+    "new_environment_resets": 0,
+    "new_source_physics_ticks": 0,
+    "new_learning_fits": 0,
+    "candidate_modifications": 0,
+    "new_paid_resources": 0,
+    "actor_act_calls": 63,
+    "actor_commit_calls": 63,
+    "pixel_resets": 1,
+    "clone_fullpolicy_act_calls": 8,
+    "routing_entries_in_clones": 8,
+    "target_entries_in_clones": 8,
+    "metadata_updates": 197,
+    "tracker_updates": 197,
+    "run_wall_s": 1.7614825509954244,
+    "run_runner_CPU_s": 0.5493418429999999,
+    "actor_CPU_s": 1.2088619999999999,
+    "audit_wall_s": 2.0639562400174327,
+    "audit_CPU_s": 2.3127668769999996,
+    "actual_cumulative_wrapper_actions": 1291215,
+    "research_remaining": 22190,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1397405,
+    "scope": "Savedpixelreproduction63and8same-inputcloneactcalls; directentrycountsincludeinternalroutingsearchwork. Noenv/simulation/learning/newcandidate. Coding/registration/closure/gitnotfullytimed."
+  },
+  "promotion": false,
+  "new_DEV_opening": false,
+  "new_HOLDOUT_opening": false,
+  "new_SEALED_opening": false,
+  "next_step": "Preserve357andcounterexample. Hypothesisonly; no automaticruleedit/corpusreplay/nativeorbudgetextension.",
+  "technical_recovery": {
+    "kind": "Readonlyexpiryrecordschemaadapter",
+    "original_error": "KeyError:'item' because tracker expiryrecordsareflat",
+    "failed_attempt_metadata_reconstructions": 66,
+    "successful_audit_reconstructions": 197,
+    "total_metadata_reconstructions_at_least": 263,
+    "failed_audit_wall_CPU_not_measured": true,
+    "source_and_call_results_preserved": true,
+    "extra_actor_clone_native_calls": 0,
+    "source_adapter": "retry/diagnosis364_recover.py",
+    "cost_metadata_updates_scope": "Successful197-inputaudit; initialfailed66-inputread-onlyattemptreportedseparately. Experimentcall/nativeledgerunchanged."
+  }
+}
