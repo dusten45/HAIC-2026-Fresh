@@ -1,0 +1,220 @@
+{
+  "stage": 343,
+  "decision": "Control-unexposed/inconclusive for the intended near-car harmful-effect hypothesis. A low-support predicate activated but did not alter any path,target,fullcontrol ornormalmemory. Neither method counterexample nor safety pass; no actual completion.",
+  "verification": {
+    "passed": true,
+    "fresh_independent_resets": 2,
+    "prefix_actions_exact": 160,
+    "input_frames_exact": 161,
+    "reset_actor_tracker_physics_accessible_RNG_exact": true,
+    "raw_tick_contacts_pose_speed_tiles_exact": true,
+    "full_returned_controls_normal_memory": true,
+    "predicate_exposed": true,
+    "routing_withheld_actions": [
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145
+    ],
+    "control_exposed": false,
+    "first_control_difference": null,
+    "forced146": false,
+    "supported_losses": 0,
+    "no_postcap_steps": true,
+    "hidden_solver_OpenCV_RNG_not_directly_measured": true
+  },
+  "comparison": {
+    "A": {
+      "native_actions": 160,
+      "collision_event_actions": [],
+      "raw_collision_flags": 0,
+      "new_obstacle_hit_intervals": [],
+      "fixture_touching": [],
+      "raw_observation_count": 640,
+      "damage": 0.0,
+      "unique_tiles": 161,
+      "speed_m_s": 47.510575160117995,
+      "off_track_counter": 0,
+      "last_tile_growth_action": 160,
+      "actual_DNF": false,
+      "protocol_stop": true,
+      "completed": false,
+      "finish_time_s": null,
+      "lap_ms": null,
+      "retire_reason": null
+    },
+    "B": {
+      "native_actions": 160,
+      "collision_event_actions": [],
+      "raw_collision_flags": 0,
+      "new_obstacle_hit_intervals": [],
+      "fixture_touching": [],
+      "raw_observation_count": 640,
+      "damage": 0.0,
+      "unique_tiles": 161,
+      "speed_m_s": 47.510575160117995,
+      "off_track_counter": 0,
+      "last_tile_growth_action": 160,
+      "actual_DNF": false,
+      "protocol_stop": true,
+      "completed": false,
+      "finish_time_s": null,
+      "lap_ms": null,
+      "retire_reason": null
+    }
+  },
+  "flagged_births": [
+    {
+      "birth_action": 137,
+      "direct_index": 0,
+      "component_area": 6,
+      "raw_road_neighbors": 0,
+      "diagnostic_label": "unresolved"
+    }
+  ],
+  "withheld_route_geometry": {
+    "actions": [
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145
+    ],
+    "minimum_path_center_distance_m": 3.8267992111114975,
+    "minimum_existing_clearance_margin_m": 0.026799211111497634,
+    "scope": "Existing source router2.6+observedradius margin on selected path only, not a new cutoff or vehicle swept-clearance proof."
+  },
+  "limits": [
+    "Exact160prefix and161pixels despite conditional footprint137-145; natural action branch never occurred. Historical146near-car point was not forced or reached as such undercurrentpolicy.",
+    "Both raw-contactevent flags and sampled fixturetouching pairs are zero over1280actualticks; no fixture-specific contact interval observed. Samples are raw0.02sendpoints, not hidden solver substeps.",
+    "No finish, lap time or DNF at160; both are protocolcensors. Damage0and161tiles cannot qualify global completion or rule safety.",
+    "One postselected known TRAIN road, no generalization/occlusion/material safety. GT only posthoc, unresolved point not false-positive ground truth.",
+    "Nextcache explicitly changes baseline context to the sourcepolicy to test reachability, not silently relabel the343result or tune a rule."
+  ],
+  "cost": {
+    "stage": 343,
+    "new_wrapper_actions": 320,
+    "new_A_runs": 1,
+    "new_B_runs": 1,
+    "new_environment_resets": 2,
+    "per_arm_cap": 160,
+    "total_cap": 320,
+    "additional_research": 0,
+    "raw_step_ticks": 1280,
+    "raw_reset_ticks": 102,
+    "actual_cumulative_wrapper_actions": 1283122,
+    "research_remaining": 1116,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1368238,
+    "new_learning_fits": 0,
+    "parameter_sweeps": 0,
+    "new_source_physics_rollout_ticks": 0,
+    "new_paid_resources": 0,
+    "technical_recovery_native_actions": 0,
+    "technical_recovery_resets": 0,
+    "technical_error": null,
+    "per_arm": {
+      "A": {
+        "wall_s": 19.078889967000578,
+        "runner_CPU_s": 16.374477299,
+        "actor_CPU_s": 2.670342,
+        "reset_wall_s": 0.48280944797443226,
+        "raw_step_render_wall_s": 7.410210185509641,
+        "raw_contact_observer_wall_s": 0.20082827913574874,
+        "capture_wall_s": 6.888580030063167,
+        "journal_wall_s": 0.17065072379773483,
+        "artifact_wall_s": 0.027719946985598654
+      },
+      "B": {
+        "wall_s": 18.627528885030188,
+        "runner_CPU_s": 16.157350679,
+        "actor_CPU_s": 2.473398,
+        "reset_wall_s": 0.5150637030019425,
+        "raw_step_render_wall_s": 6.593161396216601,
+        "raw_contact_observer_wall_s": 0.18065490189474076,
+        "capture_wall_s": 6.367861091974191,
+        "journal_wall_s": 0.1872020015725866,
+        "artifact_wall_s": 0.02583427698118612
+      }
+    },
+    "totals": {
+      "wall_s": 37.706418852030765,
+      "runner_CPU_s": 32.531827977999995,
+      "actor_CPU_s": 5.14374,
+      "reset_wall_s": 0.9978731509763747,
+      "raw_step_render_wall_s": 14.003371581726242,
+      "raw_contact_observer_wall_s": 0.3814831810304895,
+      "capture_wall_s": 13.256441122037359,
+      "journal_wall_s": 0.3578527253703214,
+      "artifact_wall_s": 0.053554223966784775
+    },
+    "closure_wall_s": 0.36312735197134316,
+    "closure_CPU_s": 0.359476004,
+    "measurement_scope": "Actual raw.step timing includes simulation+render, not pure solver time. Read-only raw-contact observer, pre/postcapture, journal and artifact writing timed separately; some reset capture/startup/hash/IPC/report/verification remain in total or outside namedsubtimers. No extra world advances."
+  },
+  "next_minimum_experiment": {
+    "status": "Proposed native0cache gate only, not executed/reserved.",
+    "question": "Can the same observation rule create a naturally reachable near-car control change under the exact frozen policy that actually generated the historical O2near-car pixels?",
+    "reason": "343current334ON/H1does not visit the historical near-car exposure within160. Reusing an off-policy cached birth or simply extending a matched no-effect pair cannot establish that exposure. A qualified source-policy replay checks policy/visitation mismatch cheaply.",
+    "design": "Reuse existing historicalO2first160stored inputs. Exact frozen296collection baseline versus the unchanged zero-road-neighbor routing rule adapted only to that source tracker lineage bookkeeping. Original source fallback/tracker/controller/models remain frozen in both arms; do not substitute334ON/H1. Baseline must reproduce historical actions/features/normal memory before candidate. Metadata follows the source original transforms without changing them.",
+    "budget": {
+      "stored_policy_act_calls": 320,
+      "actor_resets_on_stored_pixels": 2,
+      "new_native_actions": 0,
+      "new_environment_resets": 0,
+      "new_source_physics_rollout_ticks": 0,
+      "new_learning_fits": 0,
+      "parameter_sweeps": 0,
+      "research_remaining_after": 1116,
+      "final_reserved_actions_after": 84000
+    },
+    "gates": "One baseline and one exact-rule candidate, no extra arm/cutoff. Preserve detector/tracker; stop on reproduction/integrity or captured fixture-supported removal. Report first control-relevant footprint and all no-effect intervals. If no exposed effect, record inconclusive, no automatic extension.",
+    "value": "Tests whether the original near-car falsification target is on-policy for a qualified known baseline, before spending more native. If exposed it can support a separately registered actual paired validation; it does not qualify currentH1safety or authorize a new native run.",
+    "limits": "Different baseline context is explicit. Actual occlusion/material truth still absent, and cache is not an actual avoidance outcome. Champion remains unchanged."
+  },
+  "preserved334_mixed_evidence": {
+    "original6_nearest_sequential_mean": {
+      "OFF": 24.400035404035584,
+      "ON": 25.294083105402862
+    },
+    "original6_nearest_single_fallback_RMSE": {
+      "OFF": 44.439248329736024,
+      "ON": 44.721119854690684
+    },
+    "posthoc_fixture_birth_subset_fallback_mean": {
+      "OFF": 4.6401517836674335,
+      "ON": 2.7520444653287575
+    },
+    "posthoc_fixture_birth_subset_fallback_p99": {
+      "OFF": 19.48628667730667,
+      "ON": 13.674044295882311
+    },
+    "fixture_birth_coverage": {
+      "candidate_previous_points": 1324,
+      "fixture_birth_supported_previous_points": 664,
+      "birth_detections_with_GT": 464,
+      "unique_fixture_compatible_births": 372,
+      "no_fixture_compatible_births": 92,
+      "multiple_fixture_compatible_births": 0
+    },
+    "actual_occlusion_preservation_verified": false,
+    "original334_immutable": true
+  },
+  "actual_occlusion_preservation_verified": false,
+  "champion296_preserved": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
