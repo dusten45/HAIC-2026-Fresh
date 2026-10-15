@@ -1,0 +1,157 @@
+{
+  "stage": 360,
+  "case_key": "T29511",
+  "official_outcome": {
+    "native_actions": 275,
+    "collision_event_actions": [],
+    "raw_collision_flags": 0,
+    "new_obstacle_hit_intervals": [],
+    "fixture_touching": [],
+    "raw_observation_count": 1099,
+    "damage": 0.0,
+    "unique_tiles": 277,
+    "speed_m_s": 46.55013093346029,
+    "off_track_counter": 3,
+    "last_tile_growth_action": 272,
+    "actual_DNF": false,
+    "protocol_stop": false,
+    "completed": true,
+    "finish_time_s": 22.9999999999996,
+    "lap_ms": 21980,
+    "retire_reason": null
+  },
+  "stop_reason": "official_finish",
+  "technical_error": null,
+  "candidate_modified": false,
+  "candidate_archive_sha256": "b03a65de6410b2fa4805eefcd7a5a05ec246fc27843bdc40facc938927e665ad",
+  "candidate_worker_sha256": "b66ffc9a476852551380ef0ac46419c0ace38d63471ac4ec442c9abed4016f13",
+  "fresh_reset_qualified": true,
+  "ownobservations_fullcontrols_normalmemory": true,
+  "historical_comparison": {
+    "baseline296": {
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "native_actions": 267,
+      "lap_ms": 21300,
+      "damage": 0.0,
+      "visited": 272,
+      "total_tiles": 277,
+      "retire_reason": null
+    },
+    "H1_330": {
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "native_actions": 181,
+      "lap_ms": null,
+      "damage": 0.4,
+      "visited": 79,
+      "total_tiles": 277,
+      "retire_reason": "off_track"
+    },
+    "same_case_verified": true,
+    "reused_not_new": true,
+    "new_minus_historical296_lap_ms": 680,
+    "scope": "Historicaldifferentpolicies, notfreshpairedcontrol orisolatedguard/filter/fallbackeffect. No matchedhistoricalstate/RNGprefixclaim; observerRNGfixednew360 and historical330seednotrecorded."
+  },
+  "support_audit": {
+    "known_supported_direct_contexts": 70,
+    "known_birth_supported_retained_contexts": 16,
+    "supported_direct_losses": 0,
+    "supported_retained_losses": 0,
+    "losses": [],
+    "missing_birth_GT_direct": 0,
+    "missing_birth_GT_retained": 0,
+    "low_births": [
+      {
+        "action": 160,
+        "uid": [
+          160,
+          0
+        ],
+        "area_pixels": 4,
+        "label": "fixture_supported"
+      },
+      {
+        "action": 163,
+        "uid": [
+          163,
+          0
+        ],
+        "area_pixels": 4,
+        "label": "fixture_supported"
+      }
+    ],
+    "protected_current_direct_actions": [
+      160,
+      163
+    ],
+    "retained_exclusions": [],
+    "gate_passed": true,
+    "scope": "Birthcirclecorrespondencecomputedafterepisode, notsemanticmaterial/occlusiontruth. Initialidentity/read-onlycapture didnotenteractorcontrols. MissingGTreportedseparately."
+  },
+  "finish": {
+    "qualification_raw_time_s": 21.659999999999627,
+    "center_crossing_raw_time_s": 22.9999999999996,
+    "declaration_raw_time_s": 22.9999999999996,
+    "postreset_start_time_s": 1.0200000000000005,
+    "official_lap_ms": 21980
+  },
+  "cost": {
+    "stage": 360,
+    "new_wrapper_actions": 275,
+    "new_candidate_runs": 1,
+    "new_baseline_runs": 0,
+    "new_environment_resets": 1,
+    "new_actor_act_calls": 275,
+    "new_actor_commit_calls": 275,
+    "actor_resets": 1,
+    "new_cached_actor_calls": 0,
+    "new_native_auxiliary": 0,
+    "native_cap": 2000,
+    "additional_research_registered_before_native": 931,
+    "raw_step_ticks": 1099,
+    "raw_reset_ticks": 51,
+    "new_source_physics_rollout_ticks": 0,
+    "new_learning_fits": 0,
+    "new_tuning": 0,
+    "new_paid_resources": 0,
+    "technical_error": null,
+    "technical_recovery_native": 0,
+    "measurements": {
+      "wall_s": 22.038778468966484,
+      "runner_CPU_s": 18.769413049,
+      "actor_CPU_s": 3.240643,
+      "reset_wall_s": 0.3969655800028704,
+      "raw_step_render_wall_s": 8.706009242683649,
+      "raw_contact_observer_wall_s": 0.21267028379952535,
+      "capture_wall_s": 7.737386560649611,
+      "journal_wall_s": 0.22004757093964145,
+      "artifact_wall_s": 0.03201791300671175
+    },
+    "actual_cumulative_wrapper_actions": 1286717,
+    "research_remaining": 1725,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1372442,
+    "unused_registered_native": 1725,
+    "historical_results_not_recounted": true,
+    "measurement_scope": "Only360freshactualepisode; no newcontrol/cache/auxiliaryphysics. Rawstep includesrender; contact/capture/journal/artifact timers distinct. Registration/coding/closure/git/taskwall notfullytimed."
+  },
+  "promotion": false,
+  "champion296_preserved": true,
+  "new_DEV_opening": false,
+  "new_HOLDOUT_opening": false,
+  "new_SEALED_opening": false,
+  "limits": [
+    "SingleknownTRAINcondition; N2/O2successdoesnotimplythisconditionorgeneralization. No automaticcandidatepromotion.",
+    "Officialcompletionandgeometricpreservationgate are separate. Anyknownsupportedwithheld pointfailsgate evenwithfinish; retainedlowpointsundernewocclusion remainunproven.",
+    "Current357differsfrom330by334fallbackand342filterplusage0guard. Cannotattributetrajectoryoutcomes solelytoonechange;296isalsoanotherpolicy.",
+    "Hidden solver/OpenCV RNG/warmstart/islandstate notdirectlycaptured. No newcontrol/retry/extraarm/tuning, paidresources orprotectedcaseopening."
+  ],
+  "next_step": "Preserve frozen357 andthiscondition-specific outcome; no automaticexperiment,extension,tuning orpromotion.",
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
