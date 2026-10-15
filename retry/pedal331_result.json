@@ -1,0 +1,145 @@
+{
+  "stage": 331,
+  "design": "N2 independent reset twice; identical stored330 prefix64; stored330 steering fixed65-72; A stored330 pedals; B original296 final pedals on its actual observations, retaining calculated nominal memory.",
+  "reference330_A_exact": true,
+  "reference_actions": 72,
+  "reference_observation_stacks": 73,
+  "prebranch_observation_captured_physical_policy_tracked_RNG_exact": true,
+  "outcomes": {
+    "A": {
+      "native_actions": 72,
+      "first_contact": 68,
+      "contact_steps": [
+        68,
+        69,
+        70,
+        71,
+        72
+      ],
+      "damage": 1.0,
+      "actual_DNF": true,
+      "actual_terminal": true,
+      "completed": false,
+      "protocol_stop": false,
+      "retire_reason": "crash",
+      "branch_steering_overrides": 0,
+      "branch_supported_H1_actions": 4,
+      "branch_target_missing": 0,
+      "branch_HUD_missing": 0,
+      "endpoint_speed_m_s": 10.782765283220924,
+      "endpoint_progress": 0.23972602739726026,
+      "mean_predicted_H1_goal_error": 15.06889752323473,
+      "mean_actual_H1_goal_error": 16.1949472609135,
+      "mean_H1_speed_absolute_error": 5.730573573614155
+    },
+    "B": {
+      "native_actions": 72,
+      "first_contact": 68,
+      "contact_steps": [
+        68,
+        69,
+        70,
+        71,
+        72
+      ],
+      "damage": 1.0,
+      "actual_DNF": true,
+      "actual_terminal": true,
+      "completed": false,
+      "protocol_stop": false,
+      "retire_reason": "crash",
+      "branch_steering_overrides": 6,
+      "branch_supported_H1_actions": 4,
+      "branch_target_missing": 0,
+      "branch_HUD_missing": 0,
+      "endpoint_speed_m_s": 10.23636153818751,
+      "endpoint_progress": 0.23972602739726026,
+      "mean_predicted_H1_goal_error": 15.335983238839125,
+      "mean_actual_H1_goal_error": 16.49778478316393,
+      "mean_H1_speed_absolute_error": 5.446354533500241
+    }
+  },
+  "endpoint_position_gap_m": 0.08410375449605856,
+  "endpoint_heading_gap_rad": 0.04712057113647461,
+  "cost": {
+    "stage": 331,
+    "new_wrapper_actions": 144,
+    "native_cap": 144,
+    "raw_step_ticks": 576,
+    "raw_reset_ticks": 102,
+    "runner_CPU_s": 9.700543060000001,
+    "actor_CPU_s": 1.576276,
+    "native_wall_s": 11.287967185955495,
+    "cache_wall_s": 1.6929140980355442,
+    "offline_cached_policy_calls": 72,
+    "new_fits": 0,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "additional_research": 0,
+    "actual_cumulative_wrapper_actions": 1282055,
+    "research_remaining": 71,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1366126
+  },
+  "limitations": [
+    "Single postselected known TRAIN branch; no generalization or full-lap result.",
+    "Equal physical state means captured fields, not unexposed Box2D warm-start/broadphase/island internals. Exact independent replay and all saved pixels corroborate the boundary.",
+    "Python/NumPy and environment RNG states match; OpenCV only existing seed-call stream matches. Its opaque internal RNG state has no getter and was not directly verified.",
+    "Contact timing has wrapper .08-second interval resolution; collision flags are actual simulator outcomes.",
+    "Unsupported H1 forecasts are extrapolation diagnostics. Missing targets have no defined goal error."
+  ],
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "interpretation": "Both arms contacted. Compare first-contact timing and actual retirement without claiming unavoidability; no contact-avoidance gate passed.",
+  "next_high_information_hypothesis": "Proposed only: geometric tracking state inherited from prefix64 dominates initial contact, while pedal choices may affect contact speed and subsequent damage. Distinguish by an earlier matched steering-only intervention with identical pedals and explicit calculated-memory semantics; preregister budget before any run. Both failures alone do not establish this cause.",
+  "H1_contact_diagnostic": {
+    "A": {
+      "precontact_steps": 3,
+      "precontact_mean_H1_speed_absolute_error": 1.2044565635225315,
+      "first_contact_H1_supported": true,
+      "first_contact_predicted_goal_error": 7.353739151412,
+      "first_contact_actual_HUD_goal_error": 23.358784494989393,
+      "first_contact_predicted_speed": 46.962523646401394,
+      "first_contact_actual_HUD_speed": 16.25,
+      "first_contact_actual_true_speed": 15.436663255003008,
+      "first_contact_time_interval_s": [
+        6.379999999999952,
+        6.45999999999995
+      ]
+    },
+    "B": {
+      "precontact_steps": 3,
+      "precontact_mean_H1_speed_absolute_error": 0.32669374531577233,
+      "first_contact_H1_supported": true,
+      "first_contact_predicted_goal_error": 8.07940269250581,
+      "first_contact_actual_HUD_goal_error": 25.538390132918998,
+      "first_contact_predicted_speed": 49.86779282542481,
+      "first_contact_actual_HUD_speed": 16.25,
+      "first_contact_actual_true_speed": 16.042740997042213,
+      "first_contact_time_interval_s": [
+        6.379999999999952,
+        6.45999999999995
+      ]
+    }
+  },
+  "independent_verification": {
+    "passed": true,
+    "native_actions": 0,
+    "new_policy_calls": 0,
+    "A_original330_all_pixels_actions_exact": true,
+    "common_prefix_observation_stacks_exact": 65,
+    "common_prefix_actions_exact": 64,
+    "steering_fixed_branch_actions": 8,
+    "branch_pedal_commands_different": 8,
+    "B_calculated_vs_executed_steering_different": 6,
+    "nominal_memory_calculated_steering_preserved_all144": true,
+    "boundary_full_captured_dict_exact": true,
+    "cost_ledger_stage331_entries": 1,
+    "champion296_preserved": true,
+    "splits_unopened": true
+  }
+}
