@@ -1,0 +1,141 @@
+{
+  "stage": 333,
+  "design": "Independent reset, stored331A commands1-65, only action66 steering from same-pixel direct-only frozen routing/controller; storedA pedals66 and all commands67-72; actual-observation nominal memory retained.",
+  "comparison_valid": true,
+  "verification": {
+    "passed": true,
+    "existing_A_330_331_commands_pixels_exact": true,
+    "reference_A_complete_exact_replay_qualified": true,
+    "prefix_actions_exact": 65,
+    "prefix_observation_stacks_exact": 66,
+    "physical_policy_tracked_RNG_prebranch_exact": true,
+    "only_changed_command_action": 66,
+    "only_changed_component": "steering",
+    "all_pedals_and_commands67_onward_stored_A_exact": true,
+    "nominal_memory_calculated_original_steering_preserved": true,
+    "probe_policy_state_preserved": true,
+    "no_actions_after_terminal": true,
+    "new_verification_native_actions": 0
+  },
+  "common_interval_comparison": {
+    "common_actions": 72,
+    "A": {
+      "observed_actions": 72,
+      "first_contact": 68,
+      "contact_actions": [
+        68,
+        69,
+        70,
+        71,
+        72
+      ],
+      "contact_action_count": 5,
+      "collision_endpoint_fixture_pairs": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "fixture_scope": "[obstacle index, obstacle fixture, car body index (0 hull,1-4wheels), car fixture], saved wrapper endpoints only; no substep fixture enumeration.",
+      "first_contact_time_interval_s": [
+        6.379999999999952,
+        6.45999999999995
+      ],
+      "endpoint_damage": 1.0,
+      "endpoint_speed_m_s": 10.782765283220924,
+      "endpoint_unique_tiles": 70,
+      "total_tiles": 292,
+      "endpoint_progress": 0.23972602739726026,
+      "actual_terminal_in_interval": true,
+      "actual_DNF": true,
+      "completed": false,
+      "protocol_stop": false
+    },
+    "B": {
+      "observed_actions": 72,
+      "first_contact": 68,
+      "contact_actions": [
+        68
+      ],
+      "contact_action_count": 1,
+      "collision_endpoint_fixture_pairs": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "fixture_scope": "[obstacle index, obstacle fixture, car body index (0 hull,1-4wheels), car fixture], saved wrapper endpoints only; no substep fixture enumeration.",
+      "first_contact_time_interval_s": [
+        6.379999999999952,
+        6.45999999999995
+      ],
+      "endpoint_damage": 0.2,
+      "endpoint_speed_m_s": 42.944912566902275,
+      "endpoint_unique_tiles": 73,
+      "total_tiles": 292,
+      "endpoint_progress": 0.25,
+      "actual_terminal_in_interval": false,
+      "actual_DNF": false,
+      "completed": false,
+      "protocol_stop": true
+    },
+    "endpoint_position_gap_m": 13.78263450661423,
+    "endpoint_heading_difference_B_minus_A_rad": -1.2716145515441895,
+    "endpoint_unique_tile_difference_B_minus_A": 3
+  },
+  "interpretation": "Same first contact, less persistent contact and lower endpoint damage, with survival through72. Supports a local postcontact/persistence effect of one executed steering command under this fixed continuation. Does not establish contact avoidance, full-policy benefit, completion, or universal cause.",
+  "cost": {
+    "stage": 333,
+    "new_wrapper_actions": 72,
+    "native_cap": 72,
+    "new_B_runs": 1,
+    "new_A_runs": 0,
+    "reused_actual_A_runs": 1,
+    "additional_research": 1,
+    "raw_step_ticks": 288,
+    "raw_reset_ticks": 51,
+    "native_wall_s": 5.686111822957173,
+    "runner_CPU_s": 4.942506852,
+    "actor_CPU_s": 0.737672,
+    "cached_actor_calls": 66,
+    "cache_wall_s": 1.3689037599833682,
+    "cache_actor_CPU_s": 0.677021,
+    "cache_runner_CPU_s": 0.856395616,
+    "pure_routing_probe_calls": 2,
+    "new_fits": 0,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "actual_cumulative_wrapper_actions": 1282127,
+    "research_remaining": 0,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1366127
+  },
+  "limitations": [
+    "Known postselected TRAIN N2 single-command experiment; fixed subsequent recorded controls, not a closed-loop direct-only policy.",
+    "Only captured physical state and tracked Python/NumPy/environment RNG are directly matched; opaque OpenCV RNG and hidden Box2D solver state remain unmeasured. Environment RNG equality at65 also relies on measured64 state and unchanged source step call contract.",
+    "Contact times are .08-second wrapper intervals. Fixture pairs are saved endpoints, not every raw substep contact.",
+    "Protocol survival through72 is not completion or a general-policy improvement; firstcontact unchanged does not establish inevitability.",
+    "Increased damage would not alone veto a candidate. Same/worse result would reject one-command sufficiency only, not all stale-coordinate defects."
+  ],
+  "next_legal_transport_proposal": {
+    "status": "Proposed only; not executed; research balance may not fund another native run",
+    "component": "Transport aged hazard points with legal ego-motion rotation and translation while preserving occluded hazards.",
+    "legal_inputs": "Existing road-image optical-flow affine transform when accepted; otherwise consider fixed current HUD yaw/speed and a body-frame SE(2) motion approximation. Use measured GT only for diagnostic errors, never as policy motion input.",
+    "transform": "p_next = R(-delta_yaw) (p_old - estimated_body_displacement); verify yaw sign, frame convention, sampling lag and pixel scaling on stored TRAIN observations. Norm speed alone does not reveal lateral velocity; forward-only translation is an approximation.",
+    "preserve_occlusion": "Transport retained points, retain unchanged radius/age limit/dedup and direct detection. Missing current detection during occlusion must not delete a retained point. Direct-only333 probe is not a proposed replacement tracker.",
+    "isolation": "Stored-pixel current tracker vs one transport-component change, identical detections/retention/route/controller constants. Include actual occlusion examples with saved GT where available; current N2 late observations alone do not validate occlusion preservation.",
+    "offline_gate": "First reproduce original stored actor outputs and frame transforms; measure stale-point world/body error, duplicate persistence, real occluded-obstacle retention and downstream routing changes without any fit or threshold search. Stop mismatches. No automatic horizon extension or native budget expansion.",
+    "native_gate": "Only after offline evidence, separately preregister any native comparison and its budget; preserve final reserve84000. No such run under333."
+  },
+  "champion296_preserved": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
