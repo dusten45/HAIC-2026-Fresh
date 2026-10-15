@@ -1,0 +1,486 @@
+{
+  "stage": 329,
+  "deadline_utc": "2026-10-17T10:01:55Z",
+  "novelty": "263newprofile+sourceinversefinalpedals,264changedprofilegoalbeforehead,293gasintegral,309CEMfinalmultipliers. Hereunchangedcurrentq+frozen325actionconditionednextspeedfinitecandidateargmin; noqchange,profile,integral,gainsearch,fit.",
+  "target": "Samecall296features6 raw m/s,sqrt(lateralbudget/abs(curvature))cappedbyunchangedcap;notstandardizedq. Missingtargetfeatures0,nonforwardfeatures2<=0,nonfiniteorq<0=>whole296action.",
+  "inputs": "CurrentdirectpixelHUDnormspeed viaunchangeddecoder(feature3fallback),248yaw/joint,final296steer+candidatepedals; exactly325sixinputs. Predictnextspeedonly;noGT,futureframes,roadID,history,damage,returninput.",
+  "candidates": "Exactlybaseline,+gas.03,-gas.03,+brake.02,-brake.02 after296finalpedals,clip0..1,float32dedup. Existing275pedalperturbationbounds;steeringneverchanged. Nofullpedalreplacement orlarge327pulse.",
+  "support": "FixedsameLOROTRAINmarginalmin/max ofall6inputs,noadditionalpadding/densitythreshold. Baselinealwaysincluded. Ifcurrentbaseinputoutside=>296;alternativerejectedifoutsideany6range. Notjointconditionalcoveragecertification.",
+  "choice": "Uniqueexact minimumabs(predictednextspeed-q),rawm/s; exacttie,nonfinite,undefined,missingtarget=>296. Alwaysinclude296,nostagepenalty ornewthreshold. Sameqforallcandidates. Noresult-basedcandidateorcoefficientsearch.",
+  "model_rule": "Oneexisting325LOROmodelperheldoutartifact;allsixroadsare325roads. MODELvaluesfixedintoartifact,modulehasnoroadIDbranch;donotclaimsixartifactsone deployablepolicy.",
+  "cache_gate": "OFFall1754actions/features/directsteermemoryexact;ONsamecachedobservationsnominalcontroller/trackerstateandsteeringexact,currentqfeaturesexact. Atleastonechangedaction;allchangesstrictobjectiveimprovement,supported,finitesinglecurrentinput. Bothpredictedaccelerationanddecelerationchosen whenrespectivegoalregimesexist;one-sidedalwaysincrementalbrakingorwrongdirectionfails. Reportfractions(noad-hocpercentageveto). Missingtargetmustreturnwhole296.",
+  "cache": {
+    "passed": true,
+    "total": {
+      "rows": 1754,
+      "changed": 1715,
+      "acceleration": 74,
+      "deceleration": 1641,
+      "wrong_direction": 0,
+      "missing_target": 20
+    },
+    "choices": {
+      "gas_up": 64,
+      "brake_down": 10,
+      "baseline": 39,
+      "brake_up": 1640,
+      "gas_down": 1
+    },
+    "details": [
+      {
+        "road": "T2950",
+        "rows": 315,
+        "changed": 292,
+        "acceleration": 13,
+        "deceleration": 279,
+        "wrong_direction": 0,
+        "missing_target": 18,
+        "reasons": {
+          "unique_improvement": 292,
+          "base_input_outside_support": 5,
+          "absent_or_invalid_target": 18
+        },
+        "choices": {
+          "gas_up": 11,
+          "brake_down": 2,
+          "baseline": 23,
+          "brake_up": 278,
+          "gas_down": 1
+        },
+        "baseline_objective_sum": 4152.85752236291,
+        "selected_objective_sum": 4006.9161299863267
+      },
+      {
+        "road": "T2953",
+        "rows": 298,
+        "changed": 295,
+        "acceleration": 12,
+        "deceleration": 283,
+        "wrong_direction": 0,
+        "missing_target": 0,
+        "reasons": {
+          "unique_improvement": 295,
+          "baseline_best": 2,
+          "base_input_outside_support": 1
+        },
+        "choices": {
+          "gas_up": 10,
+          "baseline": 3,
+          "brake_down": 2,
+          "brake_up": 283
+        },
+        "baseline_objective_sum": 4550.375209041726,
+        "selected_objective_sum": 4394.642790754795
+      },
+      {
+        "road": "T2956",
+        "rows": 292,
+        "changed": 291,
+        "acceleration": 12,
+        "deceleration": 279,
+        "wrong_direction": 0,
+        "missing_target": 0,
+        "reasons": {
+          "unique_improvement": 291,
+          "baseline_best": 1
+        },
+        "choices": {
+          "gas_up": 10,
+          "brake_down": 2,
+          "baseline": 1,
+          "brake_up": 279
+        },
+        "baseline_objective_sum": 4227.62904653043,
+        "selected_objective_sum": 4073.451571340586
+      },
+      {
+        "road": "T2959",
+        "rows": 265,
+        "changed": 263,
+        "acceleration": 12,
+        "deceleration": 251,
+        "wrong_direction": 0,
+        "missing_target": 0,
+        "reasons": {
+          "unique_improvement": 263,
+          "baseline_best": 2
+        },
+        "choices": {
+          "gas_up": 11,
+          "baseline": 2,
+          "brake_down": 1,
+          "brake_up": 251
+        },
+        "baseline_objective_sum": 3943.5085602813206,
+        "selected_objective_sum": 3804.9298980974154
+      },
+      {
+        "road": "O0",
+        "rows": 304,
+        "changed": 303,
+        "acceleration": 12,
+        "deceleration": 291,
+        "wrong_direction": 0,
+        "missing_target": 0,
+        "reasons": {
+          "unique_improvement": 303,
+          "baseline_best": 1
+        },
+        "choices": {
+          "gas_up": 10,
+          "brake_down": 2,
+          "baseline": 1,
+          "brake_up": 291
+        },
+        "baseline_objective_sum": 4484.664496852402,
+        "selected_objective_sum": 4322.589334650967
+      },
+      {
+        "road": "O2",
+        "rows": 280,
+        "changed": 271,
+        "acceleration": 13,
+        "deceleration": 258,
+        "wrong_direction": 0,
+        "missing_target": 2,
+        "reasons": {
+          "unique_improvement": 271,
+          "base_input_outside_support": 6,
+          "baseline_best": 1,
+          "absent_or_invalid_target": 2
+        },
+        "choices": {
+          "gas_up": 12,
+          "baseline": 9,
+          "brake_up": 258,
+          "brake_down": 1
+        },
+        "baseline_objective_sum": 3963.8396597020205,
+        "selected_objective_sum": 3821.355809698116
+      }
+    ],
+    "OFF_action_features_steer_memory_exact": true,
+    "ON_nominal_controller_tracker_state_exact": true,
+    "causal_current_input_only": true,
+    "undefined_target_fallback": true,
+    "models_frozen": true,
+    "new_native": 0,
+    "new_fits": 0,
+    "failures": [],
+    "wall_s": 43.896400655969046,
+    "CPU_s": 9.660435642
+  },
+  "independent_cache_verification": {
+    "rows": 1754,
+    "candidate_forecasts": 8518,
+    "max_forecast_abs_difference": 0,
+    "raw_q_m_s_exact": true,
+    "unchanged325input_order_and_support": true,
+    "noGT_or_future_input": true,
+    "native": 0,
+    "new_fits": 0
+  },
+  "results": [
+    {
+      "road": "T2950",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 26680,
+      "damage": 0.0,
+      "native_actions": 334,
+      "retire_reason": null
+    },
+    {
+      "road": "T2953",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 25400,
+      "damage": 0.2,
+      "native_actions": 318,
+      "retire_reason": null
+    },
+    {
+      "road": "T2956",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 25020,
+      "damage": 0.0,
+      "native_actions": 313,
+      "retire_reason": null
+    },
+    {
+      "road": "T2959",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 22560,
+      "damage": 0.0,
+      "native_actions": 283,
+      "retire_reason": null
+    },
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 25820,
+      "damage": 0.0,
+      "native_actions": 323,
+      "retire_reason": null
+    },
+    {
+      "road": "O2",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 22840,
+      "damage": 0.0,
+      "native_actions": 286,
+      "retire_reason": null
+    }
+  ],
+  "baseline296": [
+    {
+      "road": "O0",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 24320,
+      "damage": 0.0,
+      "native_actions": 304,
+      "retire_reason": null
+    },
+    {
+      "road": "O2",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 22360,
+      "damage": 0.2,
+      "native_actions": 280,
+      "retire_reason": null
+    },
+    {
+      "road": "T2950",
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": null,
+      "damage": 0.2,
+      "native_actions": 315,
+      "retire_reason": "off_track"
+    },
+    {
+      "road": "T2953",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23800,
+      "damage": 0.2,
+      "native_actions": 298,
+      "retire_reason": null
+    },
+    {
+      "road": "T2956",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 23320,
+      "damage": 0.0,
+      "native_actions": 292,
+      "retire_reason": null
+    },
+    {
+      "road": "T2959",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "lap_ms": 21180,
+      "damage": 0.4,
+      "native_actions": 265,
+      "retire_reason": null
+    }
+  ],
+  "paired": {
+    "candidate_completions": 6,
+    "baseline_completions": 5,
+    "additional_completions": [
+      "T2950"
+    ],
+    "lost_completions": [],
+    "common_completions": 5,
+    "common_completed_mean_time_delta_ms": 1332.0,
+    "candidate_damage_sum": 0.2,
+    "baseline_damage_sum": 1.0,
+    "count_first_positive": true
+  },
+  "signals": [
+    {
+      "road": "T2950",
+      "actions": 334,
+      "changed": 325,
+      "acceleration": 18,
+      "deceleration": 307,
+      "fallback": 9,
+      "choices": {
+        "gas_up": 12,
+        "brake_down": 6,
+        "baseline": 9,
+        "brake_up": 307
+      },
+      "first_contact": null
+    },
+    {
+      "road": "T2953",
+      "actions": 318,
+      "changed": 314,
+      "acceleration": 19,
+      "deceleration": 295,
+      "fallback": 4,
+      "choices": {
+        "gas_up": 15,
+        "baseline": 4,
+        "brake_down": 4,
+        "brake_up": 295
+      },
+      "first_contact": 64
+    },
+    {
+      "road": "T2956",
+      "actions": 313,
+      "changed": 312,
+      "acceleration": 14,
+      "deceleration": 298,
+      "fallback": 1,
+      "choices": {
+        "gas_up": 9,
+        "brake_down": 5,
+        "baseline": 1,
+        "brake_up": 298
+      },
+      "first_contact": null
+    },
+    {
+      "road": "T2959",
+      "actions": 283,
+      "changed": 279,
+      "acceleration": 19,
+      "deceleration": 260,
+      "fallback": 4,
+      "choices": {
+        "gas_up": 12,
+        "baseline": 4,
+        "brake_down": 7,
+        "brake_up": 260
+      },
+      "first_contact": null
+    },
+    {
+      "road": "O0",
+      "actions": 323,
+      "changed": 320,
+      "acceleration": 18,
+      "deceleration": 302,
+      "fallback": 3,
+      "choices": {
+        "gas_up": 11,
+        "brake_down": 7,
+        "baseline": 3,
+        "brake_up": 302
+      },
+      "first_contact": null
+    },
+    {
+      "road": "O2",
+      "actions": 286,
+      "changed": 279,
+      "acceleration": 14,
+      "deceleration": 265,
+      "fallback": 7,
+      "choices": {
+        "gas_up": 11,
+        "baseline": 7,
+        "brake_up": 264,
+        "brake_down": 3,
+        "gas_down": 1
+      },
+      "first_contact": null
+    }
+  ],
+  "native_choices": {
+    "gas_up": 70,
+    "brake_down": 32,
+    "baseline": 28,
+    "brake_up": 1726,
+    "gas_down": 1
+  },
+  "cost": {
+    "stage": 329,
+    "new_wrapper_actions": 1857,
+    "native_cap": 1874,
+    "new_official_runs": 6,
+    "cached_baseline_runs_reused": 6,
+    "raw_step_ticks": 7423,
+    "raw_reset_ticks": 306,
+    "native_wall_s": 93.6845178604126,
+    "runner_CPU_s": 73.71698959700001,
+    "actor_CPU_s": 17.788919999999997,
+    "cache_wall_s": 43.896400655969046,
+    "new_fits": 0,
+    "new_PPO": 0,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "additional_research": 1874,
+    "actual_cumulative_wrapper_actions": 1276558,
+    "research_remaining": 17,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1360575
+  },
+  "technical_errors": 0,
+  "censored": 0,
+  "unobserved": 0,
+  "champion296_maintained": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "decision": "Positive count-first knownTRAINcrossfold diagnostic:6/6vs5/6, common5slower. Sixdifferentfoldartifacts arenotonesingledeployablepolicy; retain296,nofurtherstudyhere.",
+  "limitations": [
+    "KnownsixTRAIN after extensivepastanalysis,base296alreadytrainedonTRAIN;predictormodelroad-excludedisnotfreshindependentgeneralization.",
+    "H1currentqtracking isnotdirectlap-timeobjective;heavybrake-upbias andslowercommontimesretained.",
+    "Rectangularmarginalsupport gate isnotjointcoverage, counterfactualcalibration or safetyguarantee.",
+    "Sixfoldartifactsuseconstantmodelparameters,noroadIDbranchinsideactor;notonefullfit/deployablepolicy.",
+    "Onefullepisodeperfold,notfull18qualificationorofficialserververification;noDEV,HOLDOUT,SEALEDor promotion."
+  ],
+  "runtime_independent_verification": {
+    "actual_rows": 1857,
+    "candidate_forecasts": 9088,
+    "max_prediction_abs_difference": 0.0,
+    "currentrawpixels_speed_yaw_joint_input_order_exact": true,
+    "supportreproduced": true,
+    "target_raw_m_s_exact": true,
+    "invalid_target_and_exact_tie_fallback_tested": true,
+    "reasons": {
+      "unique_improvement": 1829,
+      "base_input_outside_support": 13,
+      "absent_or_invalid_target": 3,
+      "baseline_best": 12
+    }
+  }
+}
