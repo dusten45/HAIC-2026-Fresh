@@ -1,0 +1,234 @@
+{
+  "stage": 348,
+  "reproduction_passed": true,
+  "records": [
+    {
+      "context": "source296",
+      "step": 146,
+      "footprints_restored": 1,
+      "path_changed": true,
+      "target_changed": true,
+      "common_actual_input_prestate": true,
+      "recorded_control_diff": true,
+      "feature_difference_indices": [
+        1,
+        2,
+        5,
+        6,
+        9,
+        13
+      ],
+      "restoration_matches_recorded_peer": true,
+      "causal_control_comparison_allowed": true
+    },
+    {
+      "context": "source296",
+      "step": 147,
+      "footprints_restored": 1,
+      "path_changed": false,
+      "target_changed": false,
+      "common_actual_input_prestate": false,
+      "recorded_control_diff": true,
+      "feature_difference_indices": [
+        7,
+        13
+      ],
+      "restoration_matches_recorded_peer": true,
+      "causal_control_comparison_allowed": false
+    },
+    {
+      "context": "source296",
+      "step": 148,
+      "footprints_restored": 1,
+      "path_changed": false,
+      "target_changed": false,
+      "common_actual_input_prestate": false,
+      "recorded_control_diff": true,
+      "feature_difference_indices": [
+        7,
+        12,
+        13
+      ],
+      "restoration_matches_recorded_peer": true,
+      "causal_control_comparison_allowed": false
+    },
+    {
+      "context": "source296",
+      "step": 149,
+      "footprints_restored": 0,
+      "path_changed": false,
+      "target_changed": false,
+      "common_actual_input_prestate": false,
+      "recorded_control_diff": true,
+      "feature_difference_indices": [
+        7,
+        12,
+        13
+      ],
+      "restoration_matches_recorded_peer": true,
+      "causal_control_comparison_allowed": false
+    },
+    {
+      "context": "source296",
+      "step": 150,
+      "footprints_restored": 0,
+      "path_changed": false,
+      "target_changed": false,
+      "common_actual_input_prestate": false,
+      "recorded_control_diff": true,
+      "feature_difference_indices": [
+        7,
+        13
+      ],
+      "restoration_matches_recorded_peer": true,
+      "causal_control_comparison_allowed": false
+    },
+    {
+      "context": "source296",
+      "step": 151,
+      "footprints_restored": 0,
+      "path_changed": false,
+      "target_changed": false,
+      "common_actual_input_prestate": false,
+      "recorded_control_diff": true,
+      "feature_difference_indices": [
+        7,
+        9,
+        13
+      ],
+      "restoration_matches_recorded_peer": false,
+      "causal_control_comparison_allowed": false
+    },
+    {
+      "context": "source296",
+      "step": 152,
+      "footprints_restored": 0,
+      "path_changed": false,
+      "target_changed": false,
+      "common_actual_input_prestate": false,
+      "recorded_control_diff": true,
+      "feature_difference_indices": [
+        7,
+        13
+      ],
+      "restoration_matches_recorded_peer": false,
+      "causal_control_comparison_allowed": false
+    },
+    {
+      "context": "source296",
+      "step": 153,
+      "footprints_restored": 0,
+      "path_changed": false,
+      "target_changed": false,
+      "common_actual_input_prestate": false,
+      "recorded_control_diff": true,
+      "feature_difference_indices": [
+        1,
+        2,
+        5,
+        6,
+        7,
+        13
+      ],
+      "restoration_matches_recorded_peer": false,
+      "causal_control_comparison_allowed": false
+    },
+    {
+      "context": "current334",
+      "step": 137,
+      "footprints_restored": 1,
+      "path_changed": false,
+      "target_changed": false,
+      "common_actual_input_prestate": true,
+      "recorded_control_diff": false,
+      "feature_difference_indices": [],
+      "restoration_matches_recorded_peer": true,
+      "causal_control_comparison_allowed": true
+    },
+    {
+      "context": "current334",
+      "step": 145,
+      "footprints_restored": 1,
+      "path_changed": false,
+      "target_changed": false,
+      "common_actual_input_prestate": true,
+      "recorded_control_diff": false,
+      "feature_difference_indices": [],
+      "restoration_matches_recorded_peer": true,
+      "causal_control_comparison_allowed": true
+    },
+    {
+      "context": "N2",
+      "step": 127,
+      "footprints_restored": 1,
+      "path_changed": true,
+      "target_changed": false,
+      "common_actual_input_prestate": true,
+      "recorded_control_diff": true,
+      "feature_difference_indices": [
+        9
+      ],
+      "restoration_matches_recorded_peer": true,
+      "causal_control_comparison_allowed": true
+    },
+    {
+      "context": "N2",
+      "step": 128,
+      "footprints_restored": 1,
+      "path_changed": true,
+      "target_changed": true,
+      "common_actual_input_prestate": false,
+      "recorded_control_diff": true,
+      "feature_difference_indices": [
+        1,
+        2,
+        5,
+        6,
+        9,
+        12,
+        13,
+        15
+      ],
+      "restoration_matches_recorded_peer": true,
+      "causal_control_comparison_allowed": false
+    }
+  ],
+  "cost": {
+    "stage": 348,
+    "new_wrapper_actions": 0,
+    "new_actor_calls": 0,
+    "new_environment_resets": 0,
+    "new_source_physics_rollout_ticks": 0,
+    "new_learning_fits": 0,
+    "parameter_sweeps": 0,
+    "new_paid_resources": 0,
+    "function_calls": {
+      "routing": 24,
+      "target": 24
+    },
+    "function_wall_s": 0.12922874395735562,
+    "function_CPU_s": 0.157883467,
+    "actual_cumulative_wrapper_actions": 1284005,
+    "research_remaining": 233,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1368238,
+    "measurement_scope": "Function timers exclude imports, preparation, hashing, closure and git. No new simulation cost; historical actual records reused without recounting.",
+    "function_call_scope": "24 direct connected_route entry calls plus24 direct route_target entry calls. Internal route_target calls made by connected_route candidate evaluation are included in routing computation, not separately counted."
+  },
+  "promotion": false,
+  "protocol_status": "prepared_not_executed",
+  "new_protected_split_opened": false,
+  "champion296_preserved": true,
+  "findings": [
+    "296 O2: restoring the held footprint changes route and target only at146 among146-153. At146 matched actual inputs/prestate link the intervention to actual steering and pedals. At147-153 actual controls still differ but own trajectories/memory already differ; no fresh independent attribution.",
+    "Current334ON/H1 O2: footprint restoration at137 and145 changes neither route nor target; matched actual controls remain identical. No global harmlessness or occlusion claim.",
+    "N2: at127 identical actual inputs/prestate show route length feature9 as the only feature difference, same target/steering and different pedals. At128 route/target differ on the recorded candidate state, but actual inputs already diverge; no independent steering attribution."
+  ],
+  "limits": [
+    "No Agent/controller invocation, policy replay, fit, parameter search or new native run. Restored route/target are function counterfactuals; restored controls are not generated.",
+    "The203lineage and allocation of the260ms official gap remain unresolved. The previous347 result remains baseline22.360s versus candidate22.620s on one known condition; no promotion or generalization.",
+    "Geometric support does not establish semantic identity or actual occlusion. Policy296 and current334ON/H1 contexts remain separate."
+  ],
+  "deadline_utc": "2026-10-17T10:01:55Z"
+}
