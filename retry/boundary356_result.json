@@ -1,0 +1,185 @@
+{
+  "stage": 356,
+  "classification": "Freshcurrentdirect age0detectorbirth at92, geometricallymatchingfixture2; previous91birthdedup-replaced, new93directredetection replaces92. No coordinate/time-labelbug found; semanticpixelmaterial lacksauthoritativeRGBmask.",
+  "local_support": [
+    {
+      "action": 90,
+      "uid": [
+        90,
+        0
+      ],
+      "age": 0,
+      "current_direct": true,
+      "area_pixels": 5,
+      "touches_left_boundary": true,
+      "road_neighbors": 2,
+      "low": false,
+      "observed_ring_pixels": 10,
+      "outside_unobserved_ring_positions": 4,
+      "ring_gray_range": [
+        113,
+        156
+      ],
+      "fixture_supported_ids": [
+        2
+      ],
+      "fixture_center_distance_m": 0.21734132836283468,
+      "fixture_radius_m": 1.2000000476837158,
+      "all_component_centers_inside_projected_fixture": true,
+      "coordinate_roundtrip_and_independent_camera_passed": true
+    },
+    {
+      "action": 91,
+      "uid": [
+        91,
+        0
+      ],
+      "age": 0,
+      "current_direct": true,
+      "area_pixels": 5,
+      "touches_left_boundary": true,
+      "road_neighbors": 3,
+      "low": false,
+      "observed_ring_pixels": 10,
+      "outside_unobserved_ring_positions": 4,
+      "ring_gray_range": [
+        109,
+        158
+      ],
+      "fixture_supported_ids": [
+        2
+      ],
+      "fixture_center_distance_m": 0.28256647942395086,
+      "fixture_radius_m": 1.2000000476837158,
+      "all_component_centers_inside_projected_fixture": true,
+      "coordinate_roundtrip_and_independent_camera_passed": true
+    },
+    {
+      "action": 92,
+      "uid": [
+        92,
+        0
+      ],
+      "age": 0,
+      "current_direct": true,
+      "area_pixels": 4,
+      "touches_left_boundary": true,
+      "road_neighbors": 0,
+      "low": true,
+      "observed_ring_pixels": 8,
+      "outside_unobserved_ring_positions": 4,
+      "ring_gray_range": [
+        136,
+        161
+      ],
+      "fixture_supported_ids": [
+        2
+      ],
+      "fixture_center_distance_m": 0.35982710320281297,
+      "fixture_radius_m": 1.2000000476837158,
+      "all_component_centers_inside_projected_fixture": true,
+      "coordinate_roundtrip_and_independent_camera_passed": true
+    },
+    {
+      "action": 93,
+      "uid": [
+        93,
+        0
+      ],
+      "age": 0,
+      "current_direct": true,
+      "area_pixels": 5,
+      "touches_left_boundary": true,
+      "road_neighbors": 3,
+      "low": false,
+      "observed_ring_pixels": 10,
+      "outside_unobserved_ring_positions": 4,
+      "ring_gray_range": [
+        103,
+        159
+      ],
+      "fixture_supported_ids": [
+        2
+      ],
+      "fixture_center_distance_m": 0.32497853119295567,
+      "fixture_radius_m": 1.2000000476837158,
+      "all_component_centers_inside_projected_fixture": true,
+      "coordinate_roundtrip_and_independent_camera_passed": true
+    }
+  ],
+  "exclusion_actions": [
+    92
+  ],
+  "dedup_association_distances_m": [
+    0.09056930434642664,
+    0.08215554120872737
+  ],
+  "source_evidence": "Leftviewport-clippedcomponent. At92observedonepixelring has8samples,4positionsoutsideimageunknown, allobservedringgray136-161above rawroadband. Nearbyrawroad existsfartherthanonepixel. Thuszero-ringcount isnot evidenceofnon-obstacle; resampling/antialiashalo isconsistentwithsourcepipeline butnotindependentlyrerendered.",
+  "routing_and_control": {
+    "actual_record_preserved": true,
+    "route_changed": false,
+    "target_changed": false,
+    "full_hazards_schedule_count_min_distance_unchanged": true,
+    "same_pixels_speed_previous_steer_precontroller": true,
+    "new_controller_or_actor_calls": 0,
+    "conclusion": "No same-call action/audit/nominal-memory change follows by deterministic frozen-source dependency: samepath/target => samepathlength/count, nominalfeatures/controlleroutput, scaledpedals andH1inputs.",
+    "evidence_type": "Source-dependency inference with actualoriginalroute/target reproduction, not a separatelyexecutedcounterfactualcontroller orclosedloop.",
+    "closed_loop_harm_or_lap_effect_identified": false
+  },
+  "gate": {
+    "public_source": "retry/support342_stage.py:64",
+    "exact_requirement": "Any fixture-supported direct or birth-supported retained point withheld, any reproduction/integrity failure: stop, no candidate pass.",
+    "implementation_sources": [
+      "retry/support342_run.py:55",
+      "retry/support342_run.py:58",
+      "retry/support342_run.py:59"
+    ],
+    "definition": "Fixture support: birthpoint liesinsideexactlyonecapturedcircle in preactionego frame. Directbirth and birth-supportedretained routing exclusions forbidden; semanticmaterial/occlusiontruth unverified.",
+    "violation": "92:0is a freshage0directbirth and geometricallysupportedatbirth92. Originalrulefiltersit immediately. Not a pastunsupportedlineage gainingcurrentGTsupport and not coordinate/time-labeldrift. The existingdirectbirth check andremoved-evidence check bothflagthesame UID; oneexcludedfootprint, nottwoindependentlosses.",
+    "unchanged_route_does_not_waive_gate": true,
+    "full_tracker_deletion": false
+  },
+  "smallest_modification_hypothesis": {
+    "status": "Hypothesis/contract only; not applied to code, archive, metadata or replay.",
+    "single_policy_change": "Only hard-routing selection: exclude a low-birth-flag point iff its existing tracker age>0. Always retain currentage0direct detections in routing. Birthpredicate, detector, metadata/association/expiry, fullhazardfeatures, H1/controller/fallback unchanged; no newnumericthreshold orGTinput.",
+    "why": "Currentdirect imageevidence mustnotbe hardvetoed solelyby a zeroonepixelroad ring, especiallywhenborderclipping andmidgrayhalo make supportunobservable. Distinguishcurrentdirect fromagedretention.",
+    "predictions": "Saved92is age0so would bepreserved; criticalknownN2routing121lineageat127-129hasage6-8so would remaineligible. Predictions only, no modifiedrule execution. Otherfreshlowbirths andnormalmemoryeffects mustbeverified.",
+    "limitations": "Not a complete safetyfix: a genuine lowflagbirth mightsurvivewithoutredetection and laterbeexcluded asretained. The originalbirth-supportedretained gate remainsmandatory; preserving92alone isinsufficient. Border-onlyexemption isnotchosen: itwouldalsoprotect a knownN2topboundaryunresolvedbirth andrisksremovingtheknownroutingeffect.",
+    "validation": {
+      "stage1": "Freezeprivatevariantcopywithonlythisselectionchange; preserve349/296. AuditactualroutingUIDmembership onexisting342corpus+355, direct andbirth-supportedretained separately. GTposthoconly. Lowmetadatalabel isnot itselfexclusion undernewguard: checkactualroutingmembership withoutweakeningtheoriginalwithheld-point requirement. Any supportedretained exclusion fails andstops.",
+      "stage2": "Only afterstage1, boundedfrozenfunctioncheck at savedT295492andN2121: reproduceoldroute/target thennewselection; cap4directrouting+4directtargetentries, actor/controller/native0. N2127-129inputselection mustremainidenticalbyageUIDaudit. Baselinereproductionmismatch orloss ofrequiredknownN2effect stops, no thresholdrepair/sweep.",
+      "stage3": "Stateful replay ornewclosedloop only if a distinctunresolvedmemory/trajectoryquestion survives, withseparatepreregisteredcaps. Not authorized orscheduled here."
+    },
+    "native_execution_now": 0,
+    "actor_execution_now": 0
+  },
+  "privacy": "Rawpixels/crops, privateposes/GT, seeds, models andpersonaldocuments stayprivate. Onlyderivedaggregates/sourcequotes andgenericcode published.",
+  "cost": {
+    "stage": 356,
+    "new_wrapper_actions": 0,
+    "new_actor_calls": 0,
+    "new_controller_calls": 0,
+    "new_environment_resets": 0,
+    "new_learning_fits": 0,
+    "candidate_modifications": 0,
+    "direct_routing_entries": 2,
+    "direct_target_entries": 2,
+    "metadata_updates": 94,
+    "tracker_lineage_updates": 94,
+    "new_paid_resources": 0,
+    "audit_wall_s": 0.5888318730285391,
+    "audit_CPU_s": 0.38863860299999986,
+    "function_wall_s": 0.024925314995925874,
+    "function_CPU_s": 0.03205840600000001,
+    "actual_cumulative_wrapper_actions": 1285867,
+    "research_remaining": 1644,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1371511,
+    "scope": "Directentry counts; internalroute_targetcandidateevaluations includedinroutingcomputation, notseparatelycounted. Read-onlymetadata/coordinateaudit andtwo frozenfunctionvariants; no simulation. Preparation/git/taskwall notfullytimed."
+  },
+  "champion296_preserved": true,
+  "promotion": false,
+  "new_protected_split_opened": false,
+  "modified_hypothesis_applied": false
+}
