@@ -1,0 +1,125 @@
+{
+  "stage": 336,
+  "status": "technical_censored_completion_question_unanswered",
+  "actual_outcome": {
+    "native_actions": 1,
+    "full_prefix72_verified": false,
+    "prefix_actions_verified": 1,
+    "terminated": false,
+    "truncated": false,
+    "finish_qualified_time_s": null,
+    "finish_time_s": null,
+    "lap_ms": null,
+    "unique_tiles_after_action_not_persisted": true,
+    "damage_after_action_not_persisted": true,
+    "actual_DNF": false,
+    "censored": true,
+    "note": "First live action/pixels/actor state/memory/physics/RNG comparison passed before JSON failure, but rich row was never written. Do not invent missing GT or call missing fields candidate failure."
+  },
+  "limit_contract": {
+    "elapsed_after_reset": 50,
+    "raw_limit": 8200,
+    "frame_skip": 4,
+    "warmup": 50,
+    "raw_reset_ticks": 51,
+    "remaining_raw": 8150,
+    "postreset_action_cap": 2038,
+    "last_action_raw_ticks": 2
+  },
+  "termination_contract": "CarRacing success uses truncated=True with finish flag. Officiallap uses retroactive center finish_time_s minuspostreset startclock. DefaultCLI2000 differs from verifiedcurrentmake_env2038; no363cut. No completion or failure conclusion from this technicalcensoring.",
+  "technical_failure": "TypeError: DamageEffects dataclass in evaluator info was not JSON serializable. Environment was closed after action1; not a tracker/control failure.",
+  "repair": {
+    "passed": true,
+    "original_failure_reproduced_without_env": true,
+    "damage_dataclass_levels_tested": 3,
+    "numpy_nested_supported": true,
+    "run_AST_same_except_json_default_keyword": true,
+    "policy_control_physics_timing_unchanged": true,
+    "new_native_actions": 0,
+    "new_actor_calls": 0,
+    "fixed_source_not_executed_native": true
+  },
+  "no_retry": true,
+  "reason_no_retry": "Current explicit one-new-B episode, no reseed/no free resume contract. Actual world closed; recreating it would be another reset, not continuation.",
+  "next_required_step": {
+    "status": "Blocked pending separate replacement-episode instruction; not executed or newly funded",
+    "same_candidate_archive_unchanged": true,
+    "diagnostic_serializer_fixed": true,
+    "proposed_new_job": "Separate replacement stage, preserve336failedartifacts and guard; do not erase opening marker or masquerade as resumption.",
+    "new_B_cap": 2038,
+    "current_unused_research": 2037,
+    "minimal_additional_research_if_replacement_authorized": 1,
+    "would_operating_B": 1368238,
+    "final_reserve_used": 0,
+    "gates": "Run native0serializer regression before reset, qualify samearchive andfresh33572cache; one reset, actualcountervalidatedcap, full72liveprefix thenownpolicy toofficialfinish/terminal/verifiedcap. No363cut, no sweep.",
+    "scope": "A replacement requires exception to this one-episode restriction. Current336 does not authorize a second B. Paired multi-road validation only if later actualepisode completion established."
+  },
+  "preserved334_mixed_evidence": {
+    "original6_nearest_sequential_mean": {
+      "OFF": 24.400035404035584,
+      "ON": 25.294083105402862
+    },
+    "original6_nearest_single_fallback_RMSE": {
+      "OFF": 44.439248329736024,
+      "ON": 44.721119854690684
+    },
+    "posthoc_fixture_birth_subset_fallback_mean": {
+      "OFF": 4.6401517836674335,
+      "ON": 2.7520444653287575
+    },
+    "posthoc_fixture_birth_subset_fallback_p99": {
+      "OFF": 19.48628667730667,
+      "ON": 13.674044295882311
+    },
+    "fixture_birth_coverage": {
+      "candidate_previous_points": 1324,
+      "fixture_birth_supported_previous_points": 664,
+      "birth_detections_with_GT": 464,
+      "unique_fixture_compatible_births": 372,
+      "no_fixture_compatible_births": 92,
+      "multiple_fixture_compatible_births": 0
+    },
+    "actual_occlusion_preservation_verified": false,
+    "original334_immutable": true
+  },
+  "actual_occlusion_preservation_verified": false,
+  "cost": {
+    "stage": 336,
+    "new_wrapper_actions": 1,
+    "registered_native_cap": 2038,
+    "new_B_resets": 1,
+    "new_A_runs": 0,
+    "additional_research": 2038,
+    "raw_step_ticks": 4,
+    "raw_reset_ticks": 51,
+    "native_wall_s": 0.9473270250018686,
+    "runner_CPU_s": 0.6077989339999998,
+    "actor_CPU_s": 0.269281,
+    "capture_wall_s": 0.024046523962169886,
+    "cached_actor_calls": 72,
+    "cache_wall_s": 1.5869486380252056,
+    "cache_runner_CPU_s": 0.9684976800000002,
+    "cache_actor_CPU_s": 0.8323519999999999,
+    "synthetic_nonHAIC_counter_wrapper_calls": 2038,
+    "synthetic_counter_CPU_s": 0.14212739500000005,
+    "synthetic_counter_wall_s": 0.14212979195872322,
+    "serializer_test_CPU_s": 0.016486766999999958,
+    "serializer_test_wall_s": 0.016485178959555924,
+    "new_learning_fits": 0,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "actual_cumulative_wrapper_actions": 1282200,
+    "research_remaining": 2037,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1368237,
+    "measurement_scope": "Real B one action then diagnostic JSON exception; reset51rawticks andaction4rawticks measured separately. Synthetic wrapper test uses noHAICphysics and no nativebudget. Initial source/hash/data loads before timers, build/report/patch time not fully instrumented."
+  },
+  "champion296_preserved": true,
+  "TRAIN_registry_preserved": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
