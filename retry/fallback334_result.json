@@ -1,0 +1,4079 @@
+{
+  "stage": 334,
+  "formula": "CCW yaw rate,delta=.08*(previous_yaw+current_yaw)/2,d_old=(0,current_HUD_speed*.08),pnext=R(-delta)*(pold-d_old). Existing previous_image supplies previous yaw; no new state/learned parameter.",
+  "change": "Only rejected/missing optical fallback line changed. Accepted affine algorithm/coordinate conversion untouched. Detection,radius,age,expiry,dedup,routing,controller unchanged. Distinct from323 replacing valid optical rotation.",
+  "evaluation": "OFF full stored-record reproduction first pertrajectory; paired singleinterval tracker outputs share OFF initialhazards/directdetections/acceptedaffine; separate natural sequentialON fullactor replay on fixed recorded observations and recorded command history, originalnominal memoryupdates. Not physicalclosedloop.",
+  "verification": {
+    "passed": true,
+    "OFF_actor_rows_reproduced": 1970,
+    "ON_fixed_pixel_actor_rows": 1970,
+    "paired_interval_initial_state_shared": true,
+    "reset_frames_excluded": 9,
+    "no_cross_episode_or_gap_intervals": true,
+    "algebra_validation": {
+      "passed": true,
+      "origin_pixel_flip_anisotropy_rotation_straight_inverse": true,
+      "delta_yaw": "0.08*(previous_yaw+current_yaw)/2",
+      "body_displacement": "(0,current_HUD_speed*.08)",
+      "no_speed_average": true,
+      "no_lateral_model": true
+    },
+    "shared_accepted_optical_matrices_exact": 596,
+    "all_optical_outputs_equal_when_both_have_points": true,
+    "single_interval_accepted_optical_outputs_bit_exact": true,
+    "optical_OFF": 646,
+    "optical_ON": 601,
+    "optical_gate_eligibility_differences": 65,
+    "eligibility_scope": "Original optical gate depends on any retained hazard; changed retention changes attempt coverage. No accepted matrix is replaced by HUD rotation when points share the same image interval.",
+    "same_retention_without_direct_frame_events": true,
+    "retention_without_direct_frames": 6,
+    "actual_occlusion_preservation_verified": false,
+    "new_native_actions": 0
+  },
+  "inventory": [
+    {
+      "key": "T2950",
+      "road": "T2950",
+      "group": "original6",
+      "input_observations": 315,
+      "actual_GT_input_boundaries": 315,
+      "GT_interval_count": 314,
+      "actual_visibility_labels": 0,
+      "reset_frame_excluded_from_intervals": 1,
+      "terminal_after_frame_not_replayed": true,
+      "source": "all preaction frames"
+    },
+    {
+      "key": "T2953",
+      "road": "T2953",
+      "group": "original6",
+      "input_observations": 298,
+      "actual_GT_input_boundaries": 298,
+      "GT_interval_count": 297,
+      "actual_visibility_labels": 0,
+      "reset_frame_excluded_from_intervals": 1,
+      "terminal_after_frame_not_replayed": true,
+      "source": "all preaction frames"
+    },
+    {
+      "key": "T2956",
+      "road": "T2956",
+      "group": "original6",
+      "input_observations": 292,
+      "actual_GT_input_boundaries": 292,
+      "GT_interval_count": 291,
+      "actual_visibility_labels": 0,
+      "reset_frame_excluded_from_intervals": 1,
+      "terminal_after_frame_not_replayed": true,
+      "source": "all preaction frames"
+    },
+    {
+      "key": "T2959",
+      "road": "T2959",
+      "group": "original6",
+      "input_observations": 265,
+      "actual_GT_input_boundaries": 265,
+      "GT_interval_count": 264,
+      "actual_visibility_labels": 0,
+      "reset_frame_excluded_from_intervals": 1,
+      "terminal_after_frame_not_replayed": true,
+      "source": "all preaction frames"
+    },
+    {
+      "key": "O0",
+      "road": "O0",
+      "group": "original6",
+      "input_observations": 304,
+      "actual_GT_input_boundaries": 304,
+      "GT_interval_count": 303,
+      "actual_visibility_labels": 0,
+      "reset_frame_excluded_from_intervals": 1,
+      "terminal_after_frame_not_replayed": true,
+      "source": "all preaction frames"
+    },
+    {
+      "key": "O2",
+      "road": "O2",
+      "group": "original6",
+      "input_observations": 280,
+      "actual_GT_input_boundaries": 280,
+      "GT_interval_count": 279,
+      "actual_visibility_labels": 0,
+      "reset_frame_excluded_from_intervals": 1,
+      "terminal_after_frame_not_replayed": true,
+      "source": "all preaction frames"
+    },
+    {
+      "key": "N2_333B",
+      "road": "N2",
+      "group": "N2",
+      "input_observations": 72,
+      "actual_GT_input_boundaries": 72,
+      "GT_interval_count": 71,
+      "actual_visibility_labels": 0,
+      "reset_frame_excluded_from_intervals": 1,
+      "terminal_after_frame_not_replayed": true,
+      "source": "all pre/post basic poses; static obstacle fixtures from64+"
+    },
+    {
+      "key": "N2_330_A",
+      "road": "N2",
+      "group": "N2",
+      "input_observations": 72,
+      "actual_GT_input_boundaries": 8,
+      "GT_interval_count": 7,
+      "actual_visibility_labels": 0,
+      "reset_frame_excluded_from_intervals": 1,
+      "terminal_after_frame_not_replayed": true,
+      "source": "actual64+ only;330 alias exact"
+    },
+    {
+      "key": "N2_331B",
+      "road": "N2",
+      "group": "N2",
+      "input_observations": 72,
+      "actual_GT_input_boundaries": 8,
+      "GT_interval_count": 7,
+      "actual_visibility_labels": 0,
+      "reset_frame_excluded_from_intervals": 1,
+      "terminal_after_frame_not_replayed": true,
+      "source": "actual64+ only"
+    }
+  ],
+  "additional_TRAIN_inventory": [
+    {
+      "road": "O0",
+      "arm": "baseline240",
+      "stage": 291,
+      "pixels_available": true,
+      "pixel_rows": 296,
+      "pose_GT_in_listed_trace_schema": false,
+      "authoritative_visibility_labels": false,
+      "source_scope": "Older240/frozen290 TRAIN pixels available; fixed296/330 corpus only replayed in334. Trace has actions/time/damage/progress, no pose fields. Uninterpreted28features not treated as GT."
+    },
+    {
+      "road": "O0",
+      "arm": "frozen290",
+      "stage": 291,
+      "pixels_available": true,
+      "pixel_rows": 560,
+      "pose_GT_in_listed_trace_schema": false,
+      "authoritative_visibility_labels": false,
+      "source_scope": "Older240/frozen290 TRAIN pixels available; fixed296/330 corpus only replayed in334. Trace has actions/time/damage/progress, no pose fields. Uninterpreted28features not treated as GT."
+    },
+    {
+      "road": "O2",
+      "arm": "baseline240",
+      "stage": 291,
+      "pixels_available": true,
+      "pixel_rows": 263,
+      "pose_GT_in_listed_trace_schema": false,
+      "authoritative_visibility_labels": false,
+      "source_scope": "Older240/frozen290 TRAIN pixels available; fixed296/330 corpus only replayed in334. Trace has actions/time/damage/progress, no pose fields. Uninterpreted28features not treated as GT."
+    },
+    {
+      "road": "O2",
+      "arm": "frozen290",
+      "stage": 291,
+      "pixels_available": true,
+      "pixel_rows": 393,
+      "pose_GT_in_listed_trace_schema": false,
+      "authoritative_visibility_labels": false,
+      "source_scope": "Older240/frozen290 TRAIN pixels available; fixed296/330 corpus only replayed in334. Trace has actions/time/damage/progress, no pose fields. Uninterpreted28features not treated as GT."
+    }
+  ],
+  "nearest_association_original": {
+    "original6": {
+      "all": {
+        "single_interval": {
+          "OFF": {
+            "count": 1324,
+            "roads": 6,
+            "mean": 24.451459607148504,
+            "RMSE": 38.18483259834863,
+            "p95": 80.58158149748061,
+            "p99": 118.56794675362285,
+            "maximum": 140.1574452382684
+          },
+          "ON": {
+            "count": 1324,
+            "roads": 6,
+            "mean": 24.405969402129116,
+            "RMSE": 38.301931051136286,
+            "p95": 80.58158149748061,
+            "p99": 118.56794675362285,
+            "maximum": 148.6355915389048
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 1324,
+          "roads": 6,
+          "mean": 24.367104779038947,
+          "RMSE": 38.36713366780116,
+          "p95": 80.59571734462108,
+          "p99": 118.66596178923015,
+          "maximum": 149.09372308643873
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 1324,
+          "roads": 6,
+          "mean": 75.6873211791362,
+          "RMSE": 87.2947476203487,
+          "p95": 171.68058222651308,
+          "p99": 190.6549156949234,
+          "maximum": 190.75986623512136
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 1324,
+              "roads": 6,
+              "mean": 24.400035404035584,
+              "RMSE": 38.45934296229956,
+              "p95": 80.59571734462108,
+              "p99": 118.8016777715183,
+              "maximum": 149.09372308643873
+            },
+            "cumulative_error_m_s": {
+              "count": 1324,
+              "roads": 6,
+              "mean": 9.099342746165478,
+              "RMSE": 16.254513775766366,
+              "p95": 36.595431284012214,
+              "p99": 57.1194109083507,
+              "maximum": 99.97003271125766
+            },
+            "frames": 1754,
+            "duplicates": 537,
+            "geometric_ROI_obstacle_instances": 378,
+            "geometric_ROI_missing_detection": 6,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 6,
+            "unknown_identity_points": 0
+          },
+          "ON": {
+            "error": {
+              "count": 1063,
+              "roads": 6,
+              "mean": 25.294083105402862,
+              "RMSE": 39.81243183595378,
+              "p95": 86.50138468560553,
+              "p99": 119.59776048934101,
+              "maximum": 149.09372308643873
+            },
+            "cumulative_error_m_s": {
+              "count": 1063,
+              "roads": 6,
+              "mean": 9.369245187383266,
+              "RMSE": 16.861124701851054,
+              "p95": 38.838756602832504,
+              "p99": 61.79767747215584,
+              "maximum": 89.01184539930043
+            },
+            "frames": 1754,
+            "duplicates": 313,
+            "geometric_ROI_obstacle_instances": 378,
+            "geometric_ROI_missing_detection": 6,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 6,
+            "unknown_identity_points": 0
+          }
+        }
+      },
+      "fallback": {
+        "single_interval": {
+          "OFF": {
+            "count": 308,
+            "roads": 6,
+            "mean": 33.127296257094,
+            "RMSE": 44.439248329736024,
+            "p95": 90.92255306181268,
+            "p99": 118.52140342209408,
+            "maximum": 140.1574452382684
+          },
+          "ON": {
+            "count": 308,
+            "roads": 6,
+            "mean": 32.75619908753502,
+            "RMSE": 44.721119854690684,
+            "p95": 90.6577544359358,
+            "p99": 112.3323608721516,
+            "maximum": 148.6355915389048
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 308,
+          "roads": 6,
+          "mean": 32.71857906740621,
+          "RMSE": 44.85329906526691,
+          "p95": 91.08720296081411,
+          "p99": 113.0374935336817,
+          "maximum": 149.09372308643873
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 308,
+          "roads": 6,
+          "mean": 65.56786887436535,
+          "RMSE": 75.18891182641937,
+          "p95": 149.22631332021007,
+          "p99": 176.74412575727223,
+          "maximum": 181.36359135530955
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 376,
+              "roads": 6,
+              "mean": 30.966909888953946,
+              "RMSE": 44.41980903561166,
+              "p95": 91.39534228503067,
+              "p99": 122.48780653798887,
+              "maximum": 149.09372308643873
+            },
+            "cumulative_error_m_s": {
+              "count": 376,
+              "roads": 6,
+              "mean": 10.193540135492148,
+              "RMSE": 17.141914496536998,
+              "p95": 39.0654417502386,
+              "p99": 56.80045928202756,
+              "maximum": 79.91345539600022
+            },
+            "frames": 1134,
+            "duplicates": 166,
+            "geometric_ROI_obstacle_instances": 74,
+            "geometric_ROI_missing_detection": 1,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 1,
+            "unknown_identity_points": 0
+          },
+          "ON": {
+            "error": {
+              "count": 307,
+              "roads": 6,
+              "mean": 35.94565290314123,
+              "RMSE": 49.352655564825625,
+              "p95": 107.57221180997875,
+              "p99": 119.59776048934101,
+              "maximum": 149.09372308643873
+            },
+            "cumulative_error_m_s": {
+              "count": 307,
+              "roads": 6,
+              "mean": 13.13033449801804,
+              "RMSE": 21.144891890829697,
+              "p95": 46.30579428416631,
+              "p99": 70.92269197443512,
+              "maximum": 79.79652211584236
+            },
+            "frames": 1134,
+            "duplicates": 88,
+            "geometric_ROI_obstacle_instances": 74,
+            "geometric_ROI_missing_detection": 1,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 1,
+            "unknown_identity_points": 0
+          }
+        }
+      },
+      "optical": {
+        "single_interval": {
+          "OFF": {
+            "count": 1016,
+            "roads": 6,
+            "mean": 21.86986501290008,
+            "RMSE": 36.112509791261104,
+            "p95": 80.12634361712914,
+            "p99": 118.6993404055311,
+            "maximum": 137.68029152747752
+          },
+          "ON": {
+            "count": 1016,
+            "roads": 6,
+            "mean": 21.86986501290008,
+            "RMSE": 36.112509791261104,
+            "p95": 80.12634361712914,
+            "p99": 118.6993404055311,
+            "maximum": 137.68029152747752
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 1016,
+          "roads": 6,
+          "mean": 21.827336744048132,
+          "RMSE": 36.14632255252275,
+          "p95": 80.46773517255033,
+          "p99": 118.71971150785166,
+          "maximum": 137.68029152747752
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 1016,
+          "roads": 6,
+          "mean": 78.43939704834173,
+          "RMSE": 90.09580094226685,
+          "p95": 176.50103883669806,
+          "p99": 190.72287760660058,
+          "maximum": 190.75986623512136
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 948,
+              "roads": 6,
+              "mean": 21.780386573195816,
+              "RMSE": 35.81386334707528,
+              "p95": 75.98011401885657,
+              "p99": 118.54053856800937,
+              "maximum": 137.68029152747752
+            },
+            "cumulative_error_m_s": {
+              "count": 948,
+              "roads": 6,
+              "mean": 8.590286412305428,
+              "RMSE": 15.825566922139485,
+              "p95": 34.7933873925253,
+              "p99": 61.11617192841083,
+              "maximum": 99.97003271125766
+            },
+            "frames": 620,
+            "duplicates": 371,
+            "geometric_ROI_obstacle_instances": 304,
+            "geometric_ROI_missing_detection": 5,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 5,
+            "unknown_identity_points": 0
+          },
+          "ON": {
+            "error": {
+              "count": 756,
+              "roads": 6,
+              "mean": 21.077620400256386,
+              "RMSE": 35.31968178705857,
+              "p95": 79.24310370604299,
+              "p99": 115.87799759096383,
+              "maximum": 124.24066590832909
+            },
+            "cumulative_error_m_s": {
+              "count": 756,
+              "roads": 6,
+              "mean": 7.629104434141798,
+              "RMSE": 14.376134749552673,
+              "p95": 34.28153633954179,
+              "p99": 51.860946194303715,
+              "maximum": 89.01184539930043
+            },
+            "frames": 620,
+            "duplicates": 225,
+            "geometric_ROI_obstacle_instances": 304,
+            "geometric_ROI_missing_detection": 5,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 5,
+            "unknown_identity_points": 0
+          }
+        }
+      },
+      "precontact": {
+        "single_interval": {
+          "OFF": {
+            "count": 871,
+            "roads": 6,
+            "mean": 21.81683504722509,
+            "RMSE": 36.83773347144766,
+            "p95": 80.59571734462108,
+            "p99": 118.6993404055311,
+            "maximum": 140.1574452382684
+          },
+          "ON": {
+            "count": 871,
+            "roads": 6,
+            "mean": 21.77313078168442,
+            "RMSE": 36.97591192336347,
+            "p95": 80.59571734462108,
+            "p99": 118.8016777715183,
+            "maximum": 148.6355915389048
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 871,
+          "roads": 6,
+          "mean": 21.73266518923207,
+          "RMSE": 37.036042422571064,
+          "p95": 80.67333480226594,
+          "p99": 118.71971150785166,
+          "maximum": 149.09372308643873
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 871,
+          "roads": 6,
+          "mean": 78.61289222661016,
+          "RMSE": 89.0614773577255,
+          "p95": 179.2012683500515,
+          "p99": 190.73465803826522,
+          "maximum": 190.75986623512136
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 885,
+              "roads": 6,
+              "mean": 21.568900317693327,
+              "RMSE": 36.88161107012134,
+              "p95": 80.59571734462108,
+              "p99": 118.8016777715183,
+              "maximum": 149.09372308643873
+            },
+            "cumulative_error_m_s": {
+              "count": 885,
+              "roads": 6,
+              "mean": 8.098328617372731,
+              "RMSE": 15.778680900320262,
+              "p95": 34.7933873925253,
+              "p99": 62.02268220296877,
+              "maximum": 99.97003271125766
+            },
+            "frames": 1243,
+            "duplicates": 349,
+            "geometric_ROI_obstacle_instances": 260,
+            "geometric_ROI_missing_detection": 4,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 4,
+            "unknown_identity_points": 0
+          },
+          "ON": {
+            "error": {
+              "count": 714,
+              "roads": 6,
+              "mean": 22.416794329390466,
+              "RMSE": 38.34076307221173,
+              "p95": 86.50138468560553,
+              "p99": 124.0798502328991,
+              "maximum": 149.09372308643873
+            },
+            "cumulative_error_m_s": {
+              "count": 714,
+              "roads": 6,
+              "mean": 8.422885000264952,
+              "RMSE": 16.492523613614505,
+              "p95": 36.62798827473858,
+              "p99": 69.14794692746696,
+              "maximum": 89.01184539930043
+            },
+            "frames": 1243,
+            "duplicates": 204,
+            "geometric_ROI_obstacle_instances": 260,
+            "geometric_ROI_missing_detection": 4,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 4,
+            "unknown_identity_points": 0
+          }
+        }
+      },
+      "postcontact": {
+        "single_interval": {
+          "OFF": {
+            "count": 453,
+            "roads": 4,
+            "mean": 26.53377998106865,
+            "RMSE": 37.18916657506796,
+            "p95": 71.68249345951126,
+            "p99": 90.65213186533492,
+            "maximum": 116.35896782467961
+          },
+          "ON": {
+            "count": 453,
+            "roads": 4,
+            "mean": 26.602533449309163,
+            "RMSE": 37.421872724919325,
+            "p95": 71.68249345951126,
+            "p99": 90.65213186533492,
+            "maximum": 116.35896782467961
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 453,
+          "roads": 4,
+          "mean": 26.54840890309908,
+          "RMSE": 37.42712018776622,
+          "p95": 71.68249345951126,
+          "p99": 90.2432372788466,
+          "maximum": 119.59776048934101
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 453,
+          "roads": 4,
+          "mean": 69.56832579865814,
+          "RMSE": 78.95383504338143,
+          "p95": 154.3947388805738,
+          "p99": 176.95396205918496,
+          "maximum": 177.04866955019403
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 439,
+              "roads": 4,
+              "mean": 27.19542442743609,
+              "RMSE": 37.99980203205244,
+              "p95": 71.70492677091521,
+              "p99": 90.2432372788466,
+              "maximum": 119.59776048934101
+            },
+            "cumulative_error_m_s": {
+              "count": 439,
+              "roads": 4,
+              "mean": 10.556548369974603,
+              "RMSE": 16.64170837362367,
+              "p95": 36.96929577543206,
+              "p99": 49.79840740969753,
+              "maximum": 65.11336967541345
+            },
+            "frames": 511,
+            "duplicates": 188,
+            "geometric_ROI_obstacle_instances": 118,
+            "geometric_ROI_missing_detection": 2,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 2,
+            "unknown_identity_points": 0
+          },
+          "ON": {
+            "error": {
+              "count": 349,
+              "roads": 4,
+              "mean": 27.87513892822722,
+              "RMSE": 39.0420048651116,
+              "p95": 71.87733337894663,
+              "p99": 90.90915011317253,
+              "maximum": 119.59776048934101
+            },
+            "cumulative_error_m_s": {
+              "count": 349,
+              "roads": 4,
+              "mean": 10.40755280908581,
+              "RMSE": 16.617958832979767,
+              "p95": 37.837914669173344,
+              "p99": 49.88929957059829,
+              "maximum": 65.0931225845046
+            },
+            "frames": 511,
+            "duplicates": 109,
+            "geometric_ROI_obstacle_instances": 118,
+            "geometric_ROI_missing_detection": 2,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 2,
+            "unknown_identity_points": 0
+          }
+        }
+      },
+      "actual_contact_interval": {
+        "single_interval": {
+          "OFF": {
+            "count": 15,
+            "roads": 4,
+            "mean": 5.811962587349201,
+            "RMSE": 10.356243362284966,
+            "p95": 20.32463002307203,
+            "p99": 30.74587050197056,
+            "maximum": 30.74587050197056
+          },
+          "ON": {
+            "count": 15,
+            "roads": 4,
+            "mean": 5.833901631415568,
+            "RMSE": 10.356997038339228,
+            "p95": 20.32463002307203,
+            "p99": 30.74587050197056,
+            "maximum": 30.74587050197056
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 15,
+          "roads": 4,
+          "mean": 5.8986573811618115,
+          "RMSE": 10.469944343464752,
+          "p95": 20.451722725551242,
+          "p99": 31.053345396918044,
+          "maximum": 31.053345396918044
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 15,
+          "roads": 4,
+          "mean": 67.2154326554629,
+          "RMSE": 68.57672505664574,
+          "p95": 87.67752865555791,
+          "p99": 87.67752865555791,
+          "maximum": 87.67752865555791
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 14,
+              "roads": 4,
+              "mean": 5.7841516621687585,
+              "RMSE": 10.69188904563322,
+              "p95": 30.74587050197056,
+              "p99": 30.74587050197056,
+              "maximum": 30.74587050197056
+            },
+            "cumulative_error_m_s": {
+              "count": 14,
+              "roads": 4,
+              "mean": 2.8059390892587506,
+              "RMSE": 5.392992522730114,
+              "p95": 13.1694897590397,
+              "p99": 13.529794830633985,
+              "maximum": 13.529794830633985
+            },
+            "frames": 5,
+            "duplicates": 9,
+            "geometric_ROI_obstacle_instances": 0,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 0
+          },
+          "ON": {
+            "error": {
+              "count": 6,
+              "roads": 4,
+              "mean": 2.982350263135202,
+              "RMSE": 6.175119619706483,
+              "p95": 17.1492625176064,
+              "p99": 17.1492625176064,
+              "maximum": 17.1492625176064
+            },
+            "cumulative_error_m_s": {
+              "count": 6,
+              "roads": 4,
+              "mean": 1.667365640147937,
+              "RMSE": 4.432195742371705,
+              "p95": 12.530359002684696,
+              "p99": 12.530359002684696,
+              "maximum": 12.530359002684696
+            },
+            "frames": 5,
+            "duplicates": 1,
+            "geometric_ROI_obstacle_instances": 0,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 0
+          }
+        }
+      },
+      "fallback_precontact": {
+        "single_interval": {
+          "OFF": {
+            "count": 222,
+            "roads": 5,
+            "mean": 33.306699694781564,
+            "RMSE": 44.27157194059206,
+            "p95": 105.86130379360218,
+            "p99": 118.52140342209408,
+            "maximum": 140.1574452382684
+          },
+          "ON": {
+            "count": 222,
+            "roads": 5,
+            "mean": 33.060515407961,
+            "RMSE": 44.78698869169915,
+            "p95": 106.93769481829035,
+            "p99": 121.78187224462425,
+            "maximum": 148.6355915389048
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 222,
+          "roads": 5,
+          "mean": 33.11014626704079,
+          "RMSE": 44.98966915630737,
+          "p95": 107.49170526604723,
+          "p99": 122.48780653798887,
+          "maximum": 149.09372308643873
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 222,
+          "roads": 5,
+          "mean": 65.84192488727349,
+          "RMSE": 76.00155393671824,
+          "p95": 136.53627912590437,
+          "p99": 179.2012683500515,
+          "maximum": 181.36359135530955
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 266,
+              "roads": 6,
+              "mean": 25.89167366381104,
+              "RMSE": 40.493534337552624,
+              "p95": 86.62659548112728,
+              "p99": 122.48780653798887,
+              "maximum": 149.09372308643873
+            },
+            "cumulative_error_m_s": {
+              "count": 266,
+              "roads": 6,
+              "mean": 9.213190844176646,
+              "RMSE": 16.464190700096687,
+              "p95": 36.75238375194796,
+              "p99": 55.16899042941967,
+              "maximum": 79.91345539600022
+            },
+            "frames": 831,
+            "duplicates": 116,
+            "geometric_ROI_obstacle_instances": 51,
+            "geometric_ROI_missing_detection": 1,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 1,
+            "unknown_identity_points": 0
+          },
+          "ON": {
+            "error": {
+              "count": 222,
+              "roads": 6,
+              "mean": 29.234165769829,
+              "RMSE": 44.01482011243405,
+              "p95": 106.85843020732995,
+              "p99": 121.78187224462425,
+              "maximum": 149.09372308643873
+            },
+            "cumulative_error_m_s": {
+              "count": 222,
+              "roads": 6,
+              "mean": 11.672817196091598,
+              "RMSE": 20.043670563102697,
+              "p95": 45.06591655313065,
+              "p99": 70.92269197443512,
+              "maximum": 79.79652211584236
+            },
+            "frames": 831,
+            "duplicates": 67,
+            "geometric_ROI_obstacle_instances": 51,
+            "geometric_ROI_missing_detection": 1,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 1,
+            "unknown_identity_points": 0
+          }
+        }
+      },
+      "fallback_postcontact": {
+        "single_interval": {
+          "OFF": {
+            "count": 86,
+            "roads": 4,
+            "mean": 32.34492641920086,
+            "RMSE": 42.333040822322005,
+            "p95": 75.16141714552506,
+            "p99": 91.39534228503067,
+            "maximum": 91.39534228503067
+          },
+          "ON": {
+            "count": 86,
+            "roads": 4,
+            "mean": 32.004360112914426,
+            "RMSE": 42.600272511782805,
+            "p95": 76.98373478294045,
+            "p99": 91.32030649631164,
+            "maximum": 91.32030649631164
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 86,
+          "roads": 4,
+          "mean": 31.880170439630966,
+          "RMSE": 42.63432601584999,
+          "p95": 77.284197067873,
+          "p99": 91.49439030984593,
+          "maximum": 91.49439030984593
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 86,
+          "roads": 4,
+          "mean": 71.92134358140775,
+          "RMSE": 81.20469477010626,
+          "p95": 154.34186514778037,
+          "p99": 176.74412575727223,
+          "maximum": 176.74412575727223
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 110,
+              "roads": 4,
+              "mean": 30.914178094636082,
+              "RMSE": 41.879956593907195,
+              "p95": 75.16141714552506,
+              "p99": 91.39534228503067,
+              "maximum": 119.59776048934101
+            },
+            "cumulative_error_m_s": {
+              "count": 110,
+              "roads": 4,
+              "mean": 10.18080018232682,
+              "RMSE": 16.899575074559248,
+              "p95": 36.96929577543206,
+              "p99": 57.82639343854832,
+              "maximum": 65.11336967541345
+            },
+            "frames": 303,
+            "duplicates": 50,
+            "geometric_ROI_obstacle_instances": 23,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 0
+          },
+          "ON": {
+            "error": {
+              "count": 85,
+              "roads": 4,
+              "mean": 37.447065153879414,
+              "RMSE": 48.45403415479349,
+              "p95": 81.10028924061815,
+              "p99": 119.59776048934101,
+              "maximum": 119.59776048934101
+            },
+            "cumulative_error_m_s": {
+              "count": 85,
+              "roads": 4,
+              "mean": 13.216041626039859,
+              "RMSE": 20.551247047182052,
+              "p95": 44.315363748836155,
+              "p99": 65.0931225845046,
+              "maximum": 65.0931225845046
+            },
+            "frames": 303,
+            "duplicates": 21,
+            "geometric_ROI_obstacle_instances": 23,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 0
+          }
+        }
+      }
+    },
+    "N2": {
+      "all": {
+        "single_interval": {
+          "OFF": {
+            "count": 65,
+            "roads": 1,
+            "mean": 6.6713008603045,
+            "RMSE": 9.220808791887869,
+            "p95": 16.177526724855273,
+            "p99": 16.329327087692665,
+            "maximum": 16.329327087692665
+          },
+          "ON": {
+            "count": 65,
+            "roads": 1,
+            "mean": 6.50938878711331,
+            "RMSE": 9.171854236769502,
+            "p95": 16.097595676221122,
+            "p99": 16.329327087692665,
+            "maximum": 16.329327087692665
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 65,
+          "roads": 1,
+          "mean": 6.2547482969748796,
+          "RMSE": 9.20573122407428,
+          "p95": 16.18270451266746,
+          "p99": 16.329327087692665,
+          "maximum": 16.329327087692665
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 65,
+          "roads": 1,
+          "mean": 101.76390114868107,
+          "RMSE": 102.70234426152108,
+          "p95": 112.27467857817439,
+          "p99": 112.28272613762117,
+          "maximum": 112.28272613762117
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 55,
+              "roads": 1,
+              "mean": 4.582564217287508,
+              "RMSE": 7.4358596953942495,
+              "p95": 16.177526724855273,
+              "p99": 16.23467730159504,
+              "maximum": 16.23467730159504
+            },
+            "cumulative_error_m_s": {
+              "count": 55,
+              "roads": 1,
+              "mean": 1.4775298280880118,
+              "RMSE": 3.029651682966682,
+              "p95": 8.976621245240267,
+              "p99": 11.552749417752338,
+              "maximum": 11.552749417752338
+            },
+            "frames": 85,
+            "duplicates": 29,
+            "geometric_ROI_obstacle_instances": 23,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 13
+          },
+          "ON": {
+            "error": {
+              "count": 36,
+              "roads": 1,
+              "mean": 4.72697910009417,
+              "RMSE": 8.419786208949322,
+              "p95": 16.48639699634943,
+              "p99": 16.525026402807406,
+              "maximum": 16.525026402807406
+            },
+            "cumulative_error_m_s": {
+              "count": 36,
+              "roads": 1,
+              "mean": 1.6978087949398137,
+              "RMSE": 3.660195636507606,
+              "p95": 10.40316201517984,
+              "p99": 11.713627434474695,
+              "maximum": 11.713627434474695
+            },
+            "frames": 85,
+            "duplicates": 10,
+            "geometric_ROI_obstacle_instances": 23,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 13
+          }
+        }
+      },
+      "fallback": {
+        "single_interval": {
+          "OFF": {
+            "count": 26,
+            "roads": 1,
+            "mean": 7.1043956520398925,
+            "RMSE": 9.30075141632223,
+            "p95": 16.182704512667463,
+            "p99": 16.20961477984386,
+            "maximum": 16.20961477984386
+          },
+          "ON": {
+            "count": 26,
+            "roads": 1,
+            "mean": 6.699615469061914,
+            "RMSE": 9.17894140509651,
+            "p95": 16.073672076021328,
+            "p99": 16.097595676221122,
+            "maximum": 16.097595676221122
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 26,
+          "roads": 1,
+          "mean": 6.699684590941235,
+          "RMSE": 9.429719235791158,
+          "p95": 16.057352293304113,
+          "p99": 16.329327087692665,
+          "maximum": 16.329327087692665
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 26,
+          "roads": 1,
+          "mean": 101.92527672025224,
+          "RMSE": 102.82075862848552,
+          "p95": 112.24704259558698,
+          "p99": 112.27041295421718,
+          "maximum": 112.27041295421718
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 21,
+              "roads": 1,
+              "mean": 3.1926306400734967,
+              "RMSE": 5.4867194530440635,
+              "p95": 12.980951107122962,
+              "p99": 16.182704512667463,
+              "maximum": 16.182704512667463
+            },
+            "cumulative_error_m_s": {
+              "count": 21,
+              "roads": 1,
+              "mean": 0.7592056561599442,
+              "RMSE": 1.3146477824822087,
+              "p95": 3.1370731481159515,
+              "p99": 3.8779787286053296,
+              "maximum": 3.8779787286053296
+            },
+            "frames": 69,
+            "duplicates": 11,
+            "geometric_ROI_obstacle_instances": 10,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 8
+          },
+          "ON": {
+            "error": {
+              "count": 12,
+              "roads": 1,
+              "mean": 2.192309165743505,
+              "RMSE": 5.309534644828108,
+              "p95": 16.073672076021328,
+              "p99": 16.073672076021328,
+              "maximum": 16.073672076021328
+            },
+            "cumulative_error_m_s": {
+              "count": 12,
+              "roads": 1,
+              "mean": 0.4542570634163853,
+              "RMSE": 1.1956563262285995,
+              "p95": 3.8692561336736384,
+              "p99": 3.8692561336736384,
+              "maximum": 3.8692561336736384
+            },
+            "frames": 69,
+            "duplicates": 2,
+            "geometric_ROI_obstacle_instances": 10,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 8
+          }
+        }
+      },
+      "optical": {
+        "single_interval": {
+          "OFF": {
+            "count": 39,
+            "roads": 1,
+            "mean": 6.382570999147574,
+            "RMSE": 9.167126413919524,
+            "p95": 16.177526724855273,
+            "p99": 16.329327087692665,
+            "maximum": 16.329327087692665
+          },
+          "ON": {
+            "count": 39,
+            "roads": 1,
+            "mean": 6.382570999147574,
+            "RMSE": 9.167126413919524,
+            "p95": 16.177526724855273,
+            "p99": 16.329327087692665,
+            "maximum": 16.329327087692665
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 39,
+          "roads": 1,
+          "mean": 5.95812410099731,
+          "RMSE": 9.053327696079144,
+          "p95": 16.20961477984386,
+          "p99": 16.23467730159504,
+          "maximum": 16.23467730159504
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 39,
+          "roads": 1,
+          "mean": 101.65631743430028,
+          "RMSE": 102.62332544177504,
+          "p95": 112.28079487660978,
+          "p99": 112.28272613762117,
+          "maximum": 112.28272613762117
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 34,
+              "roads": 1,
+              "mean": 5.441052603213809,
+              "RMSE": 8.417199862820668,
+              "p95": 16.177526724855273,
+              "p99": 16.23467730159504,
+              "maximum": 16.23467730159504
+            },
+            "cumulative_error_m_s": {
+              "count": 34,
+              "roads": 1,
+              "mean": 1.9212006401612298,
+              "RMSE": 3.712218054154035,
+              "p95": 10.270823383228688,
+              "p99": 11.552749417752338,
+              "maximum": 11.552749417752338
+            },
+            "frames": 16,
+            "duplicates": 18,
+            "geometric_ROI_obstacle_instances": 13,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 5
+          },
+          "ON": {
+            "error": {
+              "count": 24,
+              "roads": 1,
+              "mean": 5.994314067269501,
+              "RMSE": 9.604354253894678,
+              "p95": 16.48639699634943,
+              "p99": 16.525026402807406,
+              "maximum": 16.525026402807406
+            },
+            "cumulative_error_m_s": {
+              "count": 24,
+              "roads": 1,
+              "mean": 2.319584660701528,
+              "RMSE": 4.402357450393907,
+              "p95": 10.40316201517984,
+              "p99": 11.713627434474695,
+              "maximum": 11.713627434474695
+            },
+            "frames": 16,
+            "duplicates": 8,
+            "geometric_ROI_obstacle_instances": 13,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 5
+          }
+        }
+      },
+      "precontact": {
+        "single_interval": {
+          "OFF": {
+            "count": 28,
+            "roads": 1,
+            "mean": 5.980735167166986,
+            "RMSE": 9.17490345138116,
+            "p95": 16.182704512667463,
+            "p99": 16.20961477984386,
+            "maximum": 16.20961477984386
+          },
+          "ON": {
+            "count": 28,
+            "roads": 1,
+            "mean": 5.837766242054591,
+            "RMSE": 9.138786928254056,
+            "p95": 16.073672076021328,
+            "p99": 16.097595676221122,
+            "maximum": 16.097595676221122
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 28,
+          "roads": 1,
+          "mean": 5.806171710513958,
+          "RMSE": 9.194830242061581,
+          "p95": 16.20961477984386,
+          "p99": 16.23467730159504,
+          "maximum": 16.23467730159504
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 28,
+          "roads": 1,
+          "mean": 101.42698976127811,
+          "RMSE": 102.46136595929352,
+          "p95": 112.28079487660978,
+          "p99": 112.28272613762117,
+          "maximum": 112.28272613762117
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 27,
+              "roads": 1,
+              "mean": 3.8078012942173016,
+              "RMSE": 7.040489539877279,
+              "p95": 16.182704512667463,
+              "p99": 16.23467730159504,
+              "maximum": 16.23467730159504
+            },
+            "cumulative_error_m_s": {
+              "count": 27,
+              "roads": 1,
+              "mean": 0.8594965890623641,
+              "RMSE": 1.8534562124078815,
+              "p95": 5.133157612530075,
+              "p99": 6.403028342058292,
+              "maximum": 6.403028342058292
+            },
+            "frames": 73,
+            "duplicates": 13,
+            "geometric_ROI_obstacle_instances": 14,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 5
+          },
+          "ON": {
+            "error": {
+              "count": 19,
+              "roads": 1,
+              "mean": 4.3243886528022975,
+              "RMSE": 8.265683723747681,
+              "p95": 16.294215268627646,
+              "p99": 16.294215268627646,
+              "maximum": 16.294215268627646
+            },
+            "cumulative_error_m_s": {
+              "count": 19,
+              "roads": 1,
+              "mean": 1.0244840649136295,
+              "RMSE": 2.1919592350518364,
+              "p95": 6.444271017196511,
+              "p99": 6.444271017196511,
+              "maximum": 6.444271017196511
+            },
+            "frames": 73,
+            "duplicates": 5,
+            "geometric_ROI_obstacle_instances": 14,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 5
+          }
+        }
+      },
+      "postcontact": {
+        "single_interval": {
+          "OFF": {
+            "count": 37,
+            "roads": 1,
+            "mean": 7.193891114570729,
+            "RMSE": 9.25539662428641,
+            "p95": 16.177526724855273,
+            "p99": 16.329327087692665,
+            "maximum": 16.329327087692665
+          },
+          "ON": {
+            "count": 37,
+            "roads": 1,
+            "mean": 7.017643686076664,
+            "RMSE": 9.196799114989972,
+            "p95": 16.177526724855273,
+            "p99": 16.329327087692665,
+            "maximum": 16.329327087692665
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 37,
+          "roads": 1,
+          "mean": 6.594211659702065,
+          "RMSE": 9.213972043079398,
+          "p95": 16.177526724855273,
+          "p99": 16.329327087692665,
+          "maximum": 16.329327087692665
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 37,
+          "roads": 1,
+          "mean": 102.01886111752657,
+          "RMSE": 102.884331036408,
+          "p95": 112.24704259558698,
+          "p99": 112.24762190773752,
+          "maximum": 112.24762190773752
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 28,
+              "roads": 1,
+              "mean": 5.32965703596235,
+              "RMSE": 7.798148149164964,
+              "p95": 16.101519734264485,
+              "p99": 16.177526724855273,
+              "maximum": 16.177526724855273
+            },
+            "cumulative_error_m_s": {
+              "count": 28,
+              "roads": 1,
+              "mean": 2.073490451434171,
+              "RMSE": 3.8362943171587003,
+              "p95": 10.270823383228688,
+              "p99": 11.552749417752338,
+              "maximum": 11.552749417752338
+            },
+            "frames": 12,
+            "duplicates": 16,
+            "geometric_ROI_obstacle_instances": 9,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 8
+          },
+          "ON": {
+            "error": {
+              "count": 17,
+              "roads": 1,
+              "mean": 5.176933129420382,
+              "RMSE": 8.588746987840462,
+              "p95": 16.525026402807406,
+              "p99": 16.525026402807406,
+              "maximum": 16.525026402807406
+            },
+            "cumulative_error_m_s": {
+              "count": 17,
+              "roads": 1,
+              "mean": 2.450348199086726,
+              "RMSE": 4.795856882498157,
+              "p95": 11.713627434474695,
+              "p99": 11.713627434474695,
+              "maximum": 11.713627434474695
+            },
+            "frames": 12,
+            "duplicates": 5,
+            "geometric_ROI_obstacle_instances": 9,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 8
+          }
+        }
+      },
+      "actual_contact_interval": {
+        "single_interval": {
+          "OFF": {
+            "count": 28,
+            "roads": 1,
+            "mean": 7.126752100562422,
+            "RMSE": 9.087252210286286,
+            "p95": 16.068391555510207,
+            "p99": 16.329327087692665,
+            "maximum": 16.329327087692665
+          },
+          "ON": {
+            "count": 28,
+            "roads": 1,
+            "mean": 6.893853712909549,
+            "RMSE": 9.008293651275553,
+            "p95": 16.068391555510207,
+            "p99": 16.329327087692665,
+            "maximum": 16.329327087692665
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 28,
+          "roads": 1,
+          "mean": 6.370345842031642,
+          "RMSE": 9.038981435839993,
+          "p95": 15.959576054231809,
+          "p99": 16.329327087692665,
+          "maximum": 16.329327087692665
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 28,
+          "roads": 1,
+          "mean": 102.67785599414444,
+          "RMSE": 103.49731630716877,
+          "p95": 112.24704259558698,
+          "p99": 112.24762190773752,
+          "maximum": 112.24762190773752
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 21,
+              "roads": 1,
+              "mean": 4.176854621401813,
+              "RMSE": 6.423018216022053,
+              "p95": 12.980951107122962,
+              "p99": 16.068391555510207,
+              "maximum": 16.068391555510207
+            },
+            "cumulative_error_m_s": {
+              "count": 21,
+              "roads": 1,
+              "mean": 1.1234314090201283,
+              "RMSE": 2.0344843016753935,
+              "p95": 3.1370731481159515,
+              "p99": 7.6884996664991085,
+              "maximum": 7.6884996664991085
+            },
+            "frames": 9,
+            "duplicates": 12,
+            "geometric_ROI_obstacle_instances": 9,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 8
+          },
+          "ON": {
+            "error": {
+              "count": 12,
+              "roads": 1,
+              "mean": 2.9898257098756615,
+              "RMSE": 6.037191049748543,
+              "p95": 16.48639699634943,
+              "p99": 16.48639699634943,
+              "maximum": 16.48639699634943
+            },
+            "cumulative_error_m_s": {
+              "count": 12,
+              "roads": 1,
+              "mean": 0.8416910901806699,
+              "RMSE": 2.291891380590754,
+              "p95": 7.763182776904466,
+              "p99": 7.763182776904466,
+              "maximum": 7.763182776904466
+            },
+            "frames": 9,
+            "duplicates": 3,
+            "geometric_ROI_obstacle_instances": 9,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 8
+          }
+        }
+      },
+      "fallback_precontact": {
+        "single_interval": {
+          "OFF": {
+            "count": 10,
+            "roads": 1,
+            "mean": 7.525387639384498,
+            "RMSE": 10.284371191020295,
+            "p95": 16.20961477984386,
+            "p99": 16.20961477984386,
+            "maximum": 16.20961477984386
+          },
+          "ON": {
+            "count": 10,
+            "roads": 1,
+            "mean": 7.125074649069791,
+            "RMSE": 10.193934259779187,
+            "p95": 16.097595676221122,
+            "p99": 16.097595676221122,
+            "maximum": 16.097595676221122
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 10,
+          "roads": 1,
+          "mean": 7.0048517592597985,
+          "RMSE": 10.204148808984813,
+          "p95": 16.057352293304113,
+          "p99": 16.057352293304113,
+          "maximum": 16.057352293304113
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 10,
+          "roads": 1,
+          "mean": 98.96721342159735,
+          "RMSE": 100.11844810194901,
+          "p95": 112.27041295421718,
+          "p99": 112.27041295421718,
+          "maximum": 112.27041295421718
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 10,
+              "roads": 1,
+              "mean": 2.660733121451352,
+              "RMSE": 5.350933116736978,
+              "p95": 16.182704512667463,
+              "p99": 16.182704512667463,
+              "maximum": 16.182704512667463
+            },
+            "cumulative_error_m_s": {
+              "count": 10,
+              "roads": 1,
+              "mean": 0.5648401452994889,
+              "RMSE": 1.2623410553766217,
+              "p95": 3.8779787286053296,
+              "p99": 3.8779787286053296,
+              "maximum": 3.8779787286053296
+            },
+            "frames": 64,
+            "duplicates": 5,
+            "geometric_ROI_obstacle_instances": 5,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 3
+          },
+          "ON": {
+            "error": {
+              "count": 6,
+              "roads": 1,
+              "mean": 2.78102388538848,
+              "RMSE": 6.563247246918562,
+              "p95": 16.073672076021328,
+              "p99": 16.073672076021328,
+              "maximum": 16.073672076021328
+            },
+            "cumulative_error_m_s": {
+              "count": 6,
+              "roads": 1,
+              "mean": 0.6530423054297336,
+              "RMSE": 1.5796490582938534,
+              "p95": 3.8692561336736384,
+              "p99": 3.8692561336736384,
+              "maximum": 3.8692561336736384
+            },
+            "frames": 64,
+            "duplicates": 1,
+            "geometric_ROI_obstacle_instances": 5,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 3
+          }
+        }
+      },
+      "fallback_postcontact": {
+        "single_interval": {
+          "OFF": {
+            "count": 16,
+            "roads": 1,
+            "mean": 6.841275659949512,
+            "RMSE": 8.629239869720701,
+            "p95": 15.03412292885386,
+            "p99": 15.03412292885386,
+            "maximum": 15.03412292885386
+          },
+          "ON": {
+            "count": 16,
+            "roads": 1,
+            "mean": 6.4337034815569885,
+            "RMSE": 8.483123471583424,
+            "p95": 15.730591916906272,
+            "p99": 15.730591916906272,
+            "maximum": 15.730591916906272
+          }
+        },
+        "single_interval_previous_association": {
+          "count": 16,
+          "roads": 1,
+          "mean": 6.508955110742131,
+          "RMSE": 8.911590757803264,
+          "p95": 16.329327087692665,
+          "p99": 16.329327087692665,
+          "maximum": 16.329327087692665
+        },
+        "single_interval_nearest_second_margin": {
+          "count": 16,
+          "roads": 1,
+          "mean": 103.77406628191156,
+          "RMSE": 104.47421393128026,
+          "p95": 112.24704259558698,
+          "p99": 112.24704259558698,
+          "maximum": 112.24704259558698
+        },
+        "sequential": {
+          "OFF": {
+            "error": {
+              "count": 11,
+              "roads": 1,
+              "mean": 3.6761738388209007,
+              "RMSE": 5.60730890961828,
+              "p95": 12.980951107122962,
+              "p99": 12.980951107122962,
+              "maximum": 12.980951107122962
+            },
+            "cumulative_error_m_s": {
+              "count": 11,
+              "roads": 1,
+              "mean": 0.9359015751239944,
+              "RMSE": 1.3604553125132086,
+              "p95": 3.1370731481159515,
+              "p99": 3.1370731481159515,
+              "maximum": 3.1370731481159515
+            },
+            "frames": 5,
+            "duplicates": 6,
+            "geometric_ROI_obstacle_instances": 5,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 5
+          },
+          "ON": {
+            "error": {
+              "count": 6,
+              "roads": 1,
+              "mean": 1.60359444609853,
+              "RMSE": 3.647752988495221,
+              "p95": 8.92813253575339,
+              "p99": 8.92813253575339,
+              "maximum": 8.92813253575339
+            },
+            "cumulative_error_m_s": {
+              "count": 6,
+              "roads": 1,
+              "mean": 0.2554718214030369,
+              "RMSE": 0.6032387201865307,
+              "p95": 1.4773561971511984,
+              "p99": 1.4773561971511984,
+              "maximum": 1.4773561971511984
+            },
+            "frames": 5,
+            "duplicates": 1,
+            "geometric_ROI_obstacle_instances": 5,
+            "geometric_ROI_missing_detection": 0,
+            "geometric_ROI_missing_track": 0,
+            "retained_without_detection": 0,
+            "unknown_identity_points": 5
+          }
+        }
+      }
+    }
+  },
+  "nearest_association_age_errors": {
+    "original6": {
+      "0": {
+        "OFF": {
+          "count": 464,
+          "roads": 6,
+          "mean": 10.281876099928747,
+          "RMSE": 27.11212693705995,
+          "p95": 67.73329121134739,
+          "p99": 112.45674104449444,
+          "maximum": 149.09372308643873
+        },
+        "ON": {
+          "count": 464,
+          "roads": 6,
+          "mean": 10.281876099928747,
+          "RMSE": 27.11212693705995,
+          "p95": 67.73329121134739,
+          "p99": 112.45674104449444,
+          "maximum": 149.09372308643873
+        }
+      },
+      "1": {
+        "OFF": {
+          "count": 153,
+          "roads": 6,
+          "mean": 25.807759450904854,
+          "RMSE": 39.79269557424279,
+          "p95": 86.62659548112728,
+          "p99": 117.12836491983197,
+          "maximum": 140.1574452382684
+        },
+        "ON": {
+          "count": 110,
+          "roads": 6,
+          "mean": 27.81865936368976,
+          "RMSE": 41.50780032578101,
+          "p95": 89.74988230072417,
+          "p99": 115.87799759096383,
+          "maximum": 121.78187224462425
+        }
+      },
+      "2": {
+        "OFF": {
+          "count": 144,
+          "roads": 6,
+          "mean": 26.12763315610899,
+          "RMSE": 39.05883120973816,
+          "p95": 80.55325365991489,
+          "p99": 118.36828676780507,
+          "maximum": 136.62569518285005
+        },
+        "ON": {
+          "count": 102,
+          "roads": 6,
+          "mean": 27.938891630717123,
+          "RMSE": 40.55252553888519,
+          "p95": 86.45011468535832,
+          "p99": 110.58829242631553,
+          "maximum": 123.72389422946213
+        }
+      },
+      "3": {
+        "OFF": {
+          "count": 109,
+          "roads": 6,
+          "mean": 33.36309098537512,
+          "RMSE": 44.73252126179024,
+          "p95": 89.84546150230248,
+          "p99": 137.33968513989973,
+          "maximum": 137.33968513989973
+        },
+        "ON": {
+          "count": 70,
+          "roads": 6,
+          "mean": 39.39701253040198,
+          "RMSE": 48.94369554616722,
+          "p95": 89.84546150230248,
+          "p99": 123.92437540696938,
+          "maximum": 123.92437540696938
+        }
+      },
+      "4": {
+        "OFF": {
+          "count": 100,
+          "roads": 6,
+          "mean": 34.24150068366151,
+          "RMSE": 44.84783575453629,
+          "p95": 86.46740900521134,
+          "p99": 137.68029152747752,
+          "maximum": 137.68029152747752
+        },
+        "ON": {
+          "count": 65,
+          "roads": 6,
+          "mean": 41.93612144633972,
+          "RMSE": 50.423647815747834,
+          "p95": 105.6562139420995,
+          "p99": 124.24066590832909,
+          "maximum": 124.24066590832909
+        }
+      },
+      "5": {
+        "OFF": {
+          "count": 97,
+          "roads": 6,
+          "mean": 35.109486049118274,
+          "RMSE": 45.667367566442955,
+          "p95": 85.98011676604662,
+          "p99": 137.41095216020403,
+          "maximum": 137.41095216020403
+        },
+        "ON": {
+          "count": 65,
+          "roads": 6,
+          "mean": 41.89284220549267,
+          "RMSE": 50.36511850916491,
+          "p95": 105.42352507601521,
+          "p99": 124.11087203306407,
+          "maximum": 124.11087203306407
+        }
+      },
+      "6": {
+        "OFF": {
+          "count": 89,
+          "roads": 6,
+          "mean": 35.83948899344558,
+          "RMSE": 45.12470208806805,
+          "p95": 83.30004671074728,
+          "p99": 137.18839857620486,
+          "maximum": 137.18839857620486
+        },
+        "ON": {
+          "count": 65,
+          "roads": 6,
+          "mean": 41.7914686298158,
+          "RMSE": 50.25398126733003,
+          "p95": 105.50278275719488,
+          "p99": 124.0798502328991,
+          "maximum": 124.0798502328991
+        }
+      },
+      "7": {
+        "OFF": {
+          "count": 86,
+          "roads": 6,
+          "mean": 36.51145020396564,
+          "RMSE": 45.37146473396969,
+          "p95": 81.08546358718277,
+          "p99": 137.11814231733678,
+          "maximum": 137.11814231733678
+        },
+        "ON": {
+          "count": 62,
+          "roads": 6,
+          "mean": 43.22881085526153,
+          "RMSE": 51.36555432467461,
+          "p95": 105.88087969909746,
+          "p99": 124.10901750382277,
+          "maximum": 124.10901750382277
+        }
+      },
+      "8": {
+        "OFF": {
+          "count": 82,
+          "roads": 6,
+          "mean": 37.76875886366929,
+          "RMSE": 46.132538925571104,
+          "p95": 80.82404877955754,
+          "p99": 137.01107566204064,
+          "maximum": 137.01107566204064
+        },
+        "ON": {
+          "count": 60,
+          "roads": 6,
+          "mean": 43.5241184107852,
+          "RMSE": 51.43949350934751,
+          "p95": 106.25804951493849,
+          "p99": 124.18971339409555,
+          "maximum": 124.18971339409555
+        }
+      }
+    },
+    "N2": {
+      "0": {
+        "OFF": {
+          "count": 24,
+          "roads": 1,
+          "mean": 0.7938658505270989,
+          "RMSE": 3.3166427700636683,
+          "p95": 0.28354736499955735,
+          "p99": 16.23467730159504,
+          "maximum": 16.23467730159504
+        },
+        "ON": {
+          "count": 24,
+          "roads": 1,
+          "mean": 0.7938658505270989,
+          "RMSE": 3.3166427700636683,
+          "p95": 0.28354736499955735,
+          "p99": 16.23467730159504,
+          "maximum": 16.23467730159504
+        }
+      },
+      "1": {
+        "OFF": {
+          "count": 5,
+          "roads": 1,
+          "mean": 6.458182113923074,
+          "RMSE": 8.492966110391345,
+          "p95": 16.057352293304113,
+          "p99": 16.057352293304113,
+          "maximum": 16.057352293304113
+        },
+        "ON": {
+          "count": 3,
+          "roads": 1,
+          "mean": 8.951641713174755,
+          "RMSE": 10.73743177021624,
+          "p95": 16.057352293304113,
+          "p99": 16.057352293304113,
+          "maximum": 16.057352293304113
+        }
+      },
+      "2": {
+        "OFF": {
+          "count": 6,
+          "roads": 1,
+          "mean": 5.982620075136565,
+          "RMSE": 8.083368582275227,
+          "p95": 16.182704512667463,
+          "p99": 16.182704512667463,
+          "maximum": 16.182704512667463
+        },
+        "ON": {
+          "count": 3,
+          "roads": 1,
+          "mean": 8.736300263734085,
+          "RMSE": 10.638476798392938,
+          "p95": 16.073672076021328,
+          "p99": 16.073672076021328,
+          "maximum": 16.073672076021328
+        }
+      },
+      "3": {
+        "OFF": {
+          "count": 4,
+          "roads": 1,
+          "mean": 5.8054982015576515,
+          "RMSE": 8.15021826853512,
+          "p95": 15.689736049059322,
+          "p99": 15.689736049059322,
+          "maximum": 15.689736049059322
+        },
+        "ON": {
+          "count": 1,
+          "roads": 1,
+          "mean": 15.893470775408272,
+          "RMSE": 15.893470775408272,
+          "p95": 15.893470775408272,
+          "p99": 15.893470775408272,
+          "maximum": 15.893470775408272
+        }
+      },
+      "4": {
+        "OFF": {
+          "count": 4,
+          "roads": 1,
+          "mean": 6.303954721167341,
+          "RMSE": 8.39998331769647,
+          "p95": 15.873384119102704,
+          "p99": 15.873384119102704,
+          "maximum": 15.873384119102704
+        },
+        "ON": {
+          "count": 1,
+          "roads": 1,
+          "mean": 16.294215268627646,
+          "RMSE": 16.294215268627646,
+          "p95": 16.294215268627646,
+          "p99": 16.294215268627646,
+          "maximum": 16.294215268627646
+        }
+      },
+      "5": {
+        "OFF": {
+          "count": 4,
+          "roads": 1,
+          "mean": 7.005542393420719,
+          "RMSE": 8.783943975522808,
+          "p95": 16.068391555510207,
+          "p99": 16.068391555510207,
+          "maximum": 16.068391555510207
+        },
+        "ON": {
+          "count": 1,
+          "roads": 1,
+          "mean": 16.48639699634943,
+          "RMSE": 16.48639699634943,
+          "p95": 16.48639699634943,
+          "p99": 16.48639699634943,
+          "maximum": 16.48639699634943
+        }
+      },
+      "6": {
+        "OFF": {
+          "count": 4,
+          "roads": 1,
+          "mean": 9.422269990623432,
+          "RMSE": 10.61693203498515,
+          "p95": 16.101519734264485,
+          "p99": 16.101519734264485,
+          "maximum": 16.101519734264485
+        },
+        "ON": {
+          "count": 1,
+          "roads": 1,
+          "mean": 16.47471407563478,
+          "RMSE": 16.47471407563478,
+          "p95": 16.47471407563478,
+          "p99": 16.47471407563478,
+          "maximum": 16.47471407563478
+        }
+      },
+      "7": {
+        "OFF": {
+          "count": 3,
+          "roads": 1,
+          "mean": 11.542827953035207,
+          "RMSE": 12.384646792376081,
+          "p95": 16.177526724855273,
+          "p99": 16.177526724855273,
+          "maximum": 16.177526724855273
+        },
+        "ON": {
+          "count": 1,
+          "roads": 1,
+          "mean": 16.525026402807406,
+          "RMSE": 16.525026402807406,
+          "p95": 16.525026402807406,
+          "p99": 16.525026402807406,
+          "maximum": 16.525026402807406
+        }
+      },
+      "8": {
+        "OFF": {
+          "count": 1,
+          "roads": 1,
+          "mean": 16.024075431545626,
+          "RMSE": 16.024075431545626,
+          "p95": 16.024075431545626,
+          "p99": 16.024075431545626,
+          "maximum": 16.024075431545626
+        },
+        "ON": {
+          "count": 1,
+          "roads": 1,
+          "mean": 16.380817741185698,
+          "RMSE": 16.380817741185698,
+          "p95": 16.380817741185698,
+          "p99": 16.380817741185698,
+          "maximum": 16.380817741185698
+        }
+      }
+    }
+  },
+  "nearest_association_caveat": "Heuristic nearest identity fixed at previous frame or detection birth; unknown birth staysunknown. Distance/margin distributions reported, no fitted gate; duplicates and missing conditional on these identities.",
+  "posthoc_fixture_birth_audit": {
+    "posthoc": true,
+    "criterion": "Detection center lies within exactly one actual captured circular fixture at birth, using its physical radius, not a fitted distance/confidence threshold. Then fixed identity propagates through existing source lineage; otherwise unresolved forever.",
+    "not_visibility_or_oracle": true,
+    "aggregate": {
+      "original6": {
+        "all": {
+          "paired": {
+            "OFF": {
+              "count": 664,
+              "roads": 6,
+              "mean": 2.735641519469208,
+              "RMSE": 4.902906830792929,
+              "p95": 11.438675624953854,
+              "p99": 24.27761988524757,
+              "maximum": 24.334179698587736
+            },
+            "ON": {
+              "count": 664,
+              "roads": 6,
+              "mean": 2.45834387205808,
+              "RMSE": 4.561989561530778,
+              "p95": 10.132448343686299,
+              "p99": 19.260962307450193,
+              "maximum": 24.334179698587736
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 664,
+              "roads": 6,
+              "mean": 2.247492514365997,
+              "RMSE": 4.463748964267032,
+              "p95": 9.983908360058246,
+              "p99": 19.48628667730667,
+              "maximum": 24.334179698587736
+            },
+            "ON": {
+              "count": 495,
+              "roads": 6,
+              "mean": 0.6862461592021755,
+              "RMSE": 1.536112301557673,
+              "p95": 4.762392947658386,
+              "p99": 6.402720213059252,
+              "maximum": 6.933315732118954
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 217,
+              "unknown_points": 660,
+              "geometric_ROI_instances": 378,
+              "no_known_track_upper_bound": 1,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 7,
+              "retained_without_direct": 6
+            },
+            "ON": {
+              "duplicates": 47,
+              "unknown_points": 568,
+              "geometric_ROI_instances": 378,
+              "no_known_track_upper_bound": 1,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 7,
+              "retained_without_direct": 6
+            }
+          }
+        },
+        "fallback": {
+          "paired": {
+            "OFF": {
+              "count": 98,
+              "roads": 6,
+              "mean": 4.6401517836674335,
+              "RMSE": 6.42198272663865,
+              "p95": 12.710690226359617,
+              "p99": 19.48628667730667,
+              "maximum": 24.30052908633025
+            },
+            "ON": {
+              "count": 98,
+              "roads": 6,
+              "mean": 2.7520444653287575,
+              "RMSE": 4.405962351944689,
+              "p95": 9.84218866614277,
+              "p99": 13.674044295882311,
+              "maximum": 19.260962307450193
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 145,
+              "roads": 6,
+              "mean": 2.6617905412464573,
+              "RMSE": 4.835451359150401,
+              "p95": 11.438675624953854,
+              "p99": 19.48628667730667,
+              "maximum": 24.30052908633025
+            },
+            "ON": {
+              "count": 88,
+              "roads": 6,
+              "mean": 0.2557403194231942,
+              "RMSE": 0.4501035475450652,
+              "p95": 0.7938317733232505,
+              "p99": 2.0964186612029203,
+              "maximum": 2.828904554497585
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 58,
+              "unknown_points": 231,
+              "geometric_ROI_instances": 74,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 1,
+              "retained_without_direct": 1
+            },
+            "ON": {
+              "duplicates": 0,
+              "unknown_points": 219,
+              "geometric_ROI_instances": 74,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 1,
+              "retained_without_direct": 1
+            }
+          }
+        },
+        "optical": {
+          "paired": {
+            "OFF": {
+              "count": 566,
+              "roads": 6,
+              "mean": 2.4030684456934632,
+              "RMSE": 4.587252055580818,
+              "p95": 10.132448343686299,
+              "p99": 24.27761988524757,
+              "maximum": 24.334179698587736
+            },
+            "ON": {
+              "count": 566,
+              "roads": 6,
+              "mean": 2.4030684456934632,
+              "RMSE": 4.587252055580818,
+              "p95": 10.132448343686299,
+              "p99": 24.27761988524757,
+              "maximum": 24.334179698587736
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 519,
+              "roads": 6,
+              "mean": 2.1223451443202097,
+              "RMSE": 4.347956537144337,
+              "p95": 9.858546983158051,
+              "p99": 13.947128319245172,
+              "maximum": 24.334179698587736
+            },
+            "ON": {
+              "count": 407,
+              "roads": 6,
+              "mean": 0.7629703886586784,
+              "RMSE": 1.6642593108452441,
+              "p95": 4.907045840719378,
+              "p99": 6.445033842700485,
+              "maximum": 6.933315732118954
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 159,
+              "unknown_points": 429,
+              "geometric_ROI_instances": 304,
+              "no_known_track_upper_bound": 1,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 6,
+              "retained_without_direct": 5
+            },
+            "ON": {
+              "duplicates": 47,
+              "unknown_points": 349,
+              "geometric_ROI_instances": 304,
+              "no_known_track_upper_bound": 1,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 6,
+              "retained_without_direct": 5
+            }
+          }
+        },
+        "fallback_fresh": {
+          "paired": {
+            "OFF": {
+              "count": 50,
+              "roads": 6,
+              "mean": 3.0838405572182586,
+              "RMSE": 4.204846032091945,
+              "p95": 11.438675624953854,
+              "p99": 11.503934267769772,
+              "maximum": 11.503934267769772
+            },
+            "ON": {
+              "count": 50,
+              "roads": 6,
+              "mean": 0.5850929843176429,
+              "RMSE": 0.6385241820831552,
+              "p95": 0.972530332319084,
+              "p99": 1.0520473499458225,
+              "maximum": 1.0520473499458225
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 74,
+              "roads": 6,
+              "mean": 0.16068838568168645,
+              "RMSE": 0.181932084274717,
+              "p95": 0.2936180931554111,
+              "p99": 0.38513711863688793,
+              "maximum": 0.38513711863688793
+            },
+            "ON": {
+              "count": 74,
+              "roads": 6,
+              "mean": 0.16068838568168645,
+              "RMSE": 0.181932084274717,
+              "p95": 0.2936180931554111,
+              "p99": 0.38513711863688793,
+              "maximum": 0.38513711863688793
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            },
+            "ON": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            }
+          }
+        },
+        "fallback_aged": {
+          "paired": {
+            "OFF": {
+              "count": 48,
+              "roads": 6,
+              "mean": 6.225927662010651,
+              "RMSE": 7.858955995482404,
+              "p95": 13.485851661172996,
+              "p99": 24.30052908633025,
+              "maximum": 24.30052908633025
+            },
+            "ON": {
+              "count": 48,
+              "roads": 6,
+              "mean": 4.693045306357995,
+              "RMSE": 5.884162402198508,
+              "p95": 10.600715385921664,
+              "p99": 19.260962307450193,
+              "maximum": 19.260962307450193
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 71,
+              "roads": 6,
+              "mean": 4.975798905876319,
+              "RMSE": 6.582741898375585,
+              "p95": 11.881709893888754,
+              "p99": 24.30052908633025,
+              "maximum": 24.30052908633025
+            },
+            "ON": {
+              "count": 14,
+              "roads": 5,
+              "mean": 0.869782634887683,
+              "RMSE": 1.2390018417734958,
+              "p95": 2.828904554497585,
+              "p99": 2.828904554497585,
+              "maximum": 2.828904554497585
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            },
+            "ON": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            }
+          }
+        },
+        "fallback_precontact": {
+          "paired": {
+            "OFF": {
+              "count": 65,
+              "roads": 5,
+              "mean": 5.000760825639727,
+              "RMSE": 6.8926057965490894,
+              "p95": 13.038789771587853,
+              "p99": 24.30052908633025,
+              "maximum": 24.30052908633025
+            },
+            "ON": {
+              "count": 65,
+              "roads": 5,
+              "mean": 2.8651519555553313,
+              "RMSE": 4.660781095189151,
+              "p95": 10.600715385921664,
+              "p99": 19.260962307450193,
+              "maximum": 19.260962307450193
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 98,
+              "roads": 6,
+              "mean": 2.312952713120812,
+              "RMSE": 4.665966643414141,
+              "p95": 11.503934267769772,
+              "p99": 19.48628667730667,
+              "maximum": 24.30052908633025
+            },
+            "ON": {
+              "count": 62,
+              "roads": 6,
+              "mean": 0.20347246878891556,
+              "RMSE": 0.30548610125913617,
+              "p95": 0.4329495414262784,
+              "p99": 1.4507690641192048,
+              "maximum": 1.6939005381464247
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            },
+            "ON": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            }
+          }
+        },
+        "fallback_postcontact": {
+          "paired": {
+            "OFF": {
+              "count": 33,
+              "roads": 4,
+              "mean": 3.1187932988748424,
+              "RMSE": 4.405440081281547,
+              "p95": 8.644344515549237,
+              "p99": 11.881709893888754,
+              "maximum": 11.881709893888754
+            },
+            "ON": {
+              "count": 33,
+              "roads": 4,
+              "mean": 1.942236646648868,
+              "RMSE": 3.0766597168656347,
+              "p95": 7.01868385525501,
+              "p99": 9.072473005480871,
+              "maximum": 9.072473005480871
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 47,
+              "roads": 4,
+              "mean": 1.9630733262470994,
+              "RMSE": 3.4799660406201296,
+              "p95": 8.319040735681952,
+              "p99": 11.881709893888754,
+              "maximum": 11.881709893888754
+            },
+            "ON": {
+              "count": 26,
+              "roads": 4,
+              "mean": 0.3600794831993273,
+              "RMSE": 0.6222986665762352,
+              "p95": 0.44353907293418954,
+              "p99": 2.828904554497585,
+              "maximum": 2.828904554497585
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            },
+            "ON": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            }
+          }
+        },
+        "coverage": {
+          "candidate_previous_points": 1324,
+          "fixture_birth_supported_previous_points": 664,
+          "birth_detections_with_GT": 464,
+          "unique_fixture_compatible_births": 372,
+          "no_fixture_compatible_births": 92,
+          "multiple_fixture_compatible_births": 0
+        }
+      },
+      "N2": {
+        "all": {
+          "paired": {
+            "OFF": {
+              "count": 44,
+              "roads": 1,
+              "mean": 2.750753934140889,
+              "RMSE": 4.143847715950663,
+              "p95": 10.311377966135492,
+              "p99": 12.980951107122962,
+              "maximum": 12.980951107122962
+            },
+            "ON": {
+              "count": 44,
+              "roads": 1,
+              "mean": 2.4599725173200095,
+              "RMSE": 3.8131408467001253,
+              "p95": 9.25527256363703,
+              "p99": 12.095263655763985,
+              "maximum": 12.095263655763985
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 46,
+              "roads": 1,
+              "mean": 2.3398187875849725,
+              "RMSE": 3.966461659529374,
+              "p95": 10.311377966135492,
+              "p99": 12.980951107122962,
+              "maximum": 12.980951107122962
+            },
+            "ON": {
+              "count": 27,
+              "roads": 1,
+              "mean": 0.879663136016904,
+              "RMSE": 2.506624611094344,
+              "p95": 8.92813253575339,
+              "p99": 9.25527256363703,
+              "maximum": 9.25527256363703
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 21,
+              "unknown_points": 22,
+              "geometric_ROI_instances": 23,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            },
+            "ON": {
+              "duplicates": 2,
+              "unknown_points": 22,
+              "geometric_ROI_instances": 23,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            }
+          }
+        },
+        "fallback": {
+          "paired": {
+            "OFF": {
+              "count": 17,
+              "roads": 1,
+              "mean": 3.360498140208704,
+              "RMSE": 4.721911306971798,
+              "p95": 12.980951107122962,
+              "p99": 12.980951107122962,
+              "maximum": 12.980951107122962
+            },
+            "ON": {
+              "count": 17,
+              "roads": 1,
+              "mean": 2.607887414319367,
+              "RMSE": 3.9351854317016572,
+              "p95": 11.445116881099684,
+              "p99": 11.445116881099684,
+              "maximum": 11.445116881099684
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 20,
+              "roads": 1,
+              "mean": 2.543126946443799,
+              "RMSE": 4.302940692946785,
+              "p95": 10.311377966135492,
+              "p99": 12.980951107122962,
+              "maximum": 12.980951107122962
+            },
+            "ON": {
+              "count": 11,
+              "roads": 1,
+              "mean": 0.9303670829909756,
+              "RMSE": 2.6956355925844884,
+              "p95": 8.92813253575339,
+              "p99": 8.92813253575339,
+              "maximum": 8.92813253575339
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 10,
+              "unknown_points": 9,
+              "geometric_ROI_instances": 10,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            },
+            "ON": {
+              "duplicates": 1,
+              "unknown_points": 9,
+              "geometric_ROI_instances": 10,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            }
+          }
+        },
+        "optical": {
+          "paired": {
+            "OFF": {
+              "count": 27,
+              "roads": 1,
+              "mean": 2.3668409155055996,
+              "RMSE": 3.7342521817979857,
+              "p95": 9.25527256363703,
+              "p99": 12.095263655763985,
+              "maximum": 12.095263655763985
+            },
+            "ON": {
+              "count": 27,
+              "roads": 1,
+              "mean": 2.3668409155055996,
+              "RMSE": 3.7342521817979857,
+              "p95": 9.25527256363703,
+              "p99": 12.095263655763985,
+              "maximum": 12.095263655763985
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 26,
+              "roads": 1,
+              "mean": 2.1834278961551066,
+              "RMSE": 3.6867937931289747,
+              "p95": 9.25527256363703,
+              "p99": 12.095263655763985,
+              "maximum": 12.095263655763985
+            },
+            "ON": {
+              "count": 16,
+              "roads": 1,
+              "mean": 0.84480417247223,
+              "RMSE": 2.36794404068953,
+              "p95": 9.25527256363703,
+              "p99": 9.25527256363703,
+              "maximum": 9.25527256363703
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 11,
+              "unknown_points": 13,
+              "geometric_ROI_instances": 13,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            },
+            "ON": {
+              "duplicates": 1,
+              "unknown_points": 13,
+              "geometric_ROI_instances": 13,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            }
+          }
+        },
+        "fallback_fresh": {
+          "paired": {
+            "OFF": {
+              "count": 9,
+              "roads": 1,
+              "mean": 1.4453133624344943,
+              "RMSE": 1.6237156756559026,
+              "p95": 2.7241124801879226,
+              "p99": 2.7241124801879226,
+              "maximum": 2.7241124801879226
+            },
+            "ON": {
+              "count": 9,
+              "roads": 1,
+              "mean": 0.9752463743982073,
+              "RMSE": 1.0506758858333642,
+              "p95": 1.4470202826072993,
+              "p99": 1.4470202826072993,
+              "maximum": 1.4470202826072993
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 10,
+              "roads": 1,
+              "mean": 0.13059053771473414,
+              "RMSE": 0.1481260112584285,
+              "p95": 0.28354736499955735,
+              "p99": 0.28354736499955735,
+              "maximum": 0.28354736499955735
+            },
+            "ON": {
+              "count": 10,
+              "roads": 1,
+              "mean": 0.13059053771473414,
+              "RMSE": 0.1481260112584285,
+              "p95": 0.28354736499955735,
+              "p99": 0.28354736499955735,
+              "maximum": 0.28354736499955735
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            },
+            "ON": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            }
+          }
+        },
+        "fallback_aged": {
+          "paired": {
+            "OFF": {
+              "count": 8,
+              "roads": 1,
+              "mean": 5.515081015204689,
+              "RMSE": 6.664378396436362,
+              "p95": 12.980951107122962,
+              "p99": 12.980951107122962,
+              "maximum": 12.980951107122962
+            },
+            "ON": {
+              "count": 8,
+              "roads": 1,
+              "mean": 4.4446085842306715,
+              "RMSE": 5.627181311925434,
+              "p95": 11.445116881099684,
+              "p99": 11.445116881099684,
+              "maximum": 11.445116881099684
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 10,
+              "roads": 1,
+              "mean": 4.955663355172863,
+              "RMSE": 6.083473999190215,
+              "p95": 12.980951107122962,
+              "p99": 12.980951107122962,
+              "maximum": 12.980951107122962
+            },
+            "ON": {
+              "count": 1,
+              "roads": 1,
+              "mean": 8.92813253575339,
+              "RMSE": 8.92813253575339,
+              "p95": 8.92813253575339,
+              "p99": 8.92813253575339,
+              "maximum": 8.92813253575339
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            },
+            "ON": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            }
+          }
+        },
+        "fallback_precontact": {
+          "paired": {
+            "OFF": {
+              "count": 6,
+              "roads": 1,
+              "mean": 1.831114443414927,
+              "RMSE": 2.0431784123599517,
+              "p95": 2.7241124801879226,
+              "p99": 2.7241124801879226,
+              "maximum": 2.7241124801879226
+            },
+            "ON": {
+              "count": 6,
+              "roads": 1,
+              "mean": 1.1994793347479187,
+              "RMSE": 1.4953837737499849,
+              "p95": 2.4410967388751232,
+              "p99": 2.4410967388751232,
+              "maximum": 2.4410967388751232
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 9,
+              "roads": 1,
+              "mean": 1.158291855760673,
+              "RMSE": 1.6480603701731464,
+              "p95": 2.7241124801879226,
+              "p99": 2.7241124801879226,
+              "maximum": 2.7241124801879226
+            },
+            "ON": {
+              "count": 5,
+              "roads": 1,
+              "mean": 0.12249424726191019,
+              "RMSE": 0.1373699658853308,
+              "p95": 0.24304234363521726,
+              "p99": 0.24304234363521726,
+              "maximum": 0.24304234363521726
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            },
+            "ON": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            }
+          }
+        },
+        "fallback_postcontact": {
+          "paired": {
+            "OFF": {
+              "count": 11,
+              "roads": 1,
+              "mean": 4.194707429368946,
+              "RMSE": 5.672838959759643,
+              "p95": 12.980951107122962,
+              "p99": 12.980951107122962,
+              "maximum": 12.980951107122962
+            },
+            "ON": {
+              "count": 11,
+              "roads": 1,
+              "mean": 3.3761100031765205,
+              "RMSE": 4.765783334516811,
+              "p95": 11.445116881099684,
+              "p99": 11.445116881099684,
+              "maximum": 11.445116881099684
+            }
+          },
+          "sequential": {
+            "OFF": {
+              "count": 11,
+              "roads": 1,
+              "mean": 3.6761738388209007,
+              "RMSE": 5.60730890961828,
+              "p95": 12.980951107122962,
+              "p99": 12.980951107122962,
+              "maximum": 12.980951107122962
+            },
+            "ON": {
+              "count": 6,
+              "roads": 1,
+              "mean": 1.60359444609853,
+              "RMSE": 3.647752988495221,
+              "p95": 8.92813253575339,
+              "p99": 8.92813253575339,
+              "maximum": 8.92813253575339
+            }
+          },
+          "frame_totals": {
+            "OFF": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            },
+            "ON": {
+              "duplicates": 0,
+              "unknown_points": 0,
+              "geometric_ROI_instances": 0,
+              "no_known_track_upper_bound": 0,
+              "no_track_lower_bound": 0,
+              "no_direct_fixture_supported": 0,
+              "retained_without_direct": 0
+            }
+          }
+        },
+        "coverage": {
+          "candidate_previous_points": 65,
+          "fixture_birth_supported_previous_points": 44,
+          "birth_detections_with_GT": 24,
+          "unique_fixture_compatible_births": 23,
+          "no_fixture_compatible_births": 1,
+          "multiple_fixture_compatible_births": 0
+        }
+      }
+    },
+    "perroad_paired_fallback": {
+      "N2": {
+        "OFF": {
+          "count": 17,
+          "roads": 1,
+          "mean": 3.360498140208704,
+          "RMSE": 4.721911306971798,
+          "p95": 12.980951107122962,
+          "p99": 12.980951107122962,
+          "maximum": 12.980951107122962
+        },
+        "ON": {
+          "count": 17,
+          "roads": 1,
+          "mean": 2.607887414319367,
+          "RMSE": 3.9351854317016572,
+          "p95": 11.445116881099684,
+          "p99": 11.445116881099684,
+          "maximum": 11.445116881099684
+        }
+      },
+      "O0": {
+        "OFF": {
+          "count": 17,
+          "roads": 1,
+          "mean": 9.640658336944156,
+          "RMSE": 11.438365486797162,
+          "p95": 24.30052908633025,
+          "p99": 24.30052908633025,
+          "maximum": 24.30052908633025
+        },
+        "ON": {
+          "count": 17,
+          "roads": 1,
+          "mean": 5.741075483656533,
+          "RMSE": 7.914586362374255,
+          "p95": 19.260962307450193,
+          "p99": 19.260962307450193,
+          "maximum": 19.260962307450193
+        }
+      },
+      "O2": {
+        "OFF": {
+          "count": 12,
+          "roads": 1,
+          "mean": 4.321767480906221,
+          "RMSE": 5.132400978580152,
+          "p95": 8.319040735681952,
+          "p99": 8.319040735681952,
+          "maximum": 8.319040735681952
+        },
+        "ON": {
+          "count": 12,
+          "roads": 1,
+          "mean": 2.8261096135374544,
+          "RMSE": 3.8808130778672347,
+          "p95": 8.220505149319782,
+          "p99": 8.220505149319782,
+          "maximum": 8.220505149319782
+        }
+      },
+      "T2950": {
+        "OFF": {
+          "count": 20,
+          "roads": 1,
+          "mean": 5.316143610574489,
+          "RMSE": 6.551301065668261,
+          "p95": 11.881709893888754,
+          "p99": 12.710690226359617,
+          "maximum": 12.710690226359617
+        },
+        "ON": {
+          "count": 20,
+          "roads": 1,
+          "mean": 3.0039238944031554,
+          "RMSE": 4.381652542513591,
+          "p95": 9.072473005480871,
+          "p99": 10.600715385921664,
+          "maximum": 10.600715385921664
+        }
+      },
+      "T2953": {
+        "OFF": {
+          "count": 21,
+          "roads": 1,
+          "mean": 4.1933831855920225,
+          "RMSE": 5.22445207942991,
+          "p95": 10.119344019805778,
+          "p99": 11.515572065232353,
+          "maximum": 11.515572065232353
+        },
+        "ON": {
+          "count": 21,
+          "roads": 1,
+          "mean": 2.254336526061291,
+          "RMSE": 3.4360228822971552,
+          "p95": 7.015631501663804,
+          "p99": 9.84218866614277,
+          "maximum": 9.84218866614277
+        }
+      },
+      "T2956": {
+        "OFF": {
+          "count": 15,
+          "roads": 1,
+          "mean": 1.34789694653142,
+          "RMSE": 1.4429836526444708,
+          "p95": 2.2392351198951057,
+          "p99": 2.2392351198951057,
+          "maximum": 2.2392351198951057
+        },
+        "ON": {
+          "count": 15,
+          "roads": 1,
+          "mean": 0.8564341506223986,
+          "RMSE": 0.988511985134279,
+          "p95": 1.6925000887250758,
+          "p99": 1.6925000887250758,
+          "maximum": 1.6925000887250758
+        }
+      },
+      "T2959": {
+        "OFF": {
+          "count": 13,
+          "roads": 1,
+          "mean": 3.0210611414562947,
+          "RMSE": 4.239903422001897,
+          "p95": 11.438675624953854,
+          "p99": 11.438675624953854,
+          "maximum": 11.438675624953854
+        },
+        "ON": {
+          "count": 13,
+          "roads": 1,
+          "mean": 1.8303871236917109,
+          "RMSE": 2.606021844106137,
+          "p95": 5.356920667016395,
+          "p99": 5.356920667016395,
+          "maximum": 5.356920667016395
+        }
+      }
+    },
+    "age_errors": {
+      "original6": {
+        "0": {
+          "OFF": {
+            "count": 372,
+            "roads": 6,
+            "mean": 0.16829200047133802,
+            "RMSE": 0.1880850414972086,
+            "p95": 0.32521479472268855,
+            "p99": 0.3965301037454525,
+            "maximum": 0.42762015043195006
+          },
+          "ON": {
+            "count": 372,
+            "roads": 6,
+            "mean": 0.16829200047133802,
+            "RMSE": 0.1880850414972086,
+            "p95": 0.32521479472268855,
+            "p99": 0.3965301037454525,
+            "maximum": 0.42762015043195006
+          }
+        },
+        "1": {
+          "OFF": {
+            "count": 72,
+            "roads": 6,
+            "mean": 2.174656426581192,
+            "RMSE": 3.2383941034808608,
+            "p95": 6.014188677024368,
+            "p99": 11.503934267769772,
+            "maximum": 11.503934267769772
+          },
+          "ON": {
+            "count": 45,
+            "roads": 6,
+            "mean": 1.0142033664999484,
+            "RMSE": 1.657684964351351,
+            "p95": 4.526696822414373,
+            "p99": 5.598320277264608,
+            "maximum": 5.598320277264608
+          }
+        },
+        "2": {
+          "OFF": {
+            "count": 67,
+            "roads": 6,
+            "mean": 3.337710724942999,
+            "RMSE": 4.723163734507042,
+            "p95": 9.400830617508998,
+            "p99": 19.48628667730667,
+            "maximum": 19.48628667730667
+          },
+          "ON": {
+            "count": 40,
+            "roads": 6,
+            "mean": 1.8030507859522087,
+            "RMSE": 2.4693517783683148,
+            "p95": 5.488214884503457,
+            "p99": 6.445033842700485,
+            "maximum": 6.445033842700485
+          }
+        },
+        "3": {
+          "OFF": {
+            "count": 36,
+            "roads": 6,
+            "mean": 5.771699457314425,
+            "RMSE": 7.1433799005642715,
+            "p95": 10.119344019805778,
+            "p99": 24.30052908633025,
+            "maximum": 24.30052908633025
+          },
+          "ON": {
+            "count": 11,
+            "roads": 6,
+            "mean": 3.3440916789780193,
+            "RMSE": 3.8375426011698526,
+            "p95": 6.452272369416555,
+            "p99": 6.452272369416555,
+            "maximum": 6.452272369416555
+          }
+        },
+        "4": {
+          "OFF": {
+            "count": 32,
+            "roads": 6,
+            "mean": 6.806779757163768,
+            "RMSE": 8.125859271346304,
+            "p95": 13.038789771587853,
+            "p99": 24.334179698587736,
+            "maximum": 24.334179698587736
+          },
+          "ON": {
+            "count": 6,
+            "roads": 4,
+            "mean": 4.913512421597687,
+            "RMSE": 5.002328933603419,
+            "p95": 6.397989532793529,
+            "p99": 6.397989532793529,
+            "maximum": 6.397989532793529
+          }
+        },
+        "5": {
+          "OFF": {
+            "count": 29,
+            "roads": 5,
+            "mean": 7.456861102007671,
+            "RMSE": 8.913977687998523,
+            "p95": 12.556199718617666,
+            "p99": 24.330010516030207,
+            "maximum": 24.330010516030207
+          },
+          "ON": {
+            "count": 6,
+            "roads": 4,
+            "mean": 4.964072298734074,
+            "RMSE": 5.045627040361308,
+            "p95": 6.454269626139332,
+            "p99": 6.454269626139332,
+            "maximum": 6.454269626139332
+          }
+        },
+        "6": {
+          "OFF": {
+            "count": 22,
+            "roads": 5,
+            "mean": 8.814195194148958,
+            "RMSE": 10.71407476478231,
+            "p95": 24.327114736451886,
+            "p99": 24.327114736451886,
+            "maximum": 24.327114736451886
+          },
+          "ON": {
+            "count": 6,
+            "roads": 4,
+            "mean": 5.0065334953485845,
+            "RMSE": 5.07368594146424,
+            "p95": 6.402720213059252,
+            "p99": 6.402720213059252,
+            "maximum": 6.402720213059252
+          }
+        },
+        "7": {
+          "OFF": {
+            "count": 19,
+            "roads": 5,
+            "mean": 9.346017801868692,
+            "RMSE": 11.120770252306938,
+            "p95": 24.308609895194287,
+            "p99": 24.308609895194287,
+            "maximum": 24.308609895194287
+          },
+          "ON": {
+            "count": 5,
+            "roads": 3,
+            "mean": 4.88593142909425,
+            "RMSE": 4.961698928429742,
+            "p95": 6.564233221942668,
+            "p99": 6.564233221942668,
+            "maximum": 6.564233221942668
+          }
+        },
+        "8": {
+          "OFF": {
+            "count": 15,
+            "roads": 5,
+            "mean": 10.112685823477117,
+            "RMSE": 11.596760078480486,
+            "p95": 24.27761988524757,
+            "p99": 24.27761988524757,
+            "maximum": 24.27761988524757
+          },
+          "ON": {
+            "count": 4,
+            "roads": 3,
+            "mean": 5.129435273953658,
+            "RMSE": 5.201268138647053,
+            "p95": 6.933315732118954,
+            "p99": 6.933315732118954,
+            "maximum": 6.933315732118954
+          }
+        }
+      },
+      "N2": {
+        "0": {
+          "OFF": {
+            "count": 23,
+            "roads": 1,
+            "mean": 0.1225262222197969,
+            "RMSE": 0.13801626467627015,
+            "p95": 0.24304234363521726,
+            "p99": 0.28354736499955735,
+            "maximum": 0.28354736499955735
+          },
+          "ON": {
+            "count": 23,
+            "roads": 1,
+            "mean": 0.1225262222197969,
+            "RMSE": 0.13801626467627015,
+            "p95": 0.24304234363521726,
+            "p99": 0.28354736499955735,
+            "maximum": 0.28354736499955735
+          }
+        },
+        "1": {
+          "OFF": {
+            "count": 4,
+            "roads": 1,
+            "mean": 4.058389569077816,
+            "RMSE": 5.06985710079684,
+            "p95": 9.25527256363703,
+            "p99": 9.25527256363703,
+            "maximum": 9.25527256363703
+          },
+          "ON": {
+            "count": 2,
+            "roads": 1,
+            "mean": 5.398786423110076,
+            "RMSE": 6.634710257007021,
+            "p95": 9.25527256363703,
+            "p99": 9.25527256363703,
+            "maximum": 9.25527256363703
+          }
+        },
+        "2": {
+          "OFF": {
+            "count": 5,
+            "roads": 1,
+            "mean": 3.9426031876303864,
+            "RMSE": 5.102257548912586,
+            "p95": 10.311377966135492,
+            "p99": 10.311377966135492,
+            "maximum": 10.311377966135492
+          },
+          "ON": {
+            "count": 2,
+            "roads": 1,
+            "mean": 5.0676143575904655,
+            "RMSE": 6.370582067690786,
+            "p95": 8.92813253575339,
+            "p99": 8.92813253575339,
+            "maximum": 8.92813253575339
+          }
+        },
+        "3": {
+          "OFF": {
+            "count": 3,
+            "roads": 1,
+            "mean": 2.5107522523904278,
+            "RMSE": 2.551889104820374,
+            "p95": 3.156086721725885,
+            "p99": 3.156086721725885,
+            "maximum": 3.156086721725885
+          },
+          "ON": {
+            "count": 0
+          }
+        },
+        "4": {
+          "OFF": {
+            "count": 3,
+            "roads": 1,
+            "mean": 3.1141449218555524,
+            "RMSE": 3.176715051628759,
+            "p95": 3.965749187311702,
+            "p99": 3.965749187311702,
+            "maximum": 3.965749187311702
+          },
+          "ON": {
+            "count": 0
+          }
+        },
+        "5": {
+          "OFF": {
+            "count": 3,
+            "roads": 1,
+            "mean": 3.984592672724223,
+            "RMSE": 4.100304048860359,
+            "p95": 5.3498189339067554,
+            "p99": 5.3498189339067554,
+            "maximum": 5.3498189339067554
+          },
+          "ON": {
+            "count": 0
+          }
+        },
+        "6": {
+          "OFF": {
+            "count": 3,
+            "roads": 1,
+            "mean": 7.195853409409747,
+            "RMSE": 7.992038655000505,
+            "p95": 12.095263655763985,
+            "p99": 12.095263655763985,
+            "maximum": 12.095263655763985
+          },
+          "ON": {
+            "count": 0
+          }
+        },
+        "7": {
+          "OFF": {
+            "count": 2,
+            "roads": 1,
+            "mean": 9.225478567125176,
+            "RMSE": 9.960573717972444,
+            "p95": 12.980951107122962,
+            "p99": 12.980951107122962,
+            "maximum": 12.980951107122962
+          },
+          "ON": {
+            "count": 0
+          }
+        },
+        "8": {
+          "OFF": {
+            "count": 0
+          },
+          "ON": {
+            "count": 0
+          }
+        }
+      }
+    },
+    "cumulative_error_m_s": {
+      "original6": {
+        "OFF": {
+          "count": 664,
+          "roads": 6,
+          "mean": 0.6465417045769122,
+          "RMSE": 1.5882040168123888,
+          "p95": 3.446415681198399,
+          "p99": 6.374973046971922,
+          "maximum": 14.154441449605839
+        },
+        "ON": {
+          "count": 495,
+          "roads": 6,
+          "mean": 0.16587939113013017,
+          "RMSE": 0.5459351890734075,
+          "p95": 1.3116447867766723,
+          "p99": 2.7958538604431915,
+          "maximum": 4.024994319097492
+        }
+      },
+      "N2": {
+        "OFF": {
+          "count": 46,
+          "roads": 1,
+          "mean": 0.510416208634935,
+          "RMSE": 0.8777125764700234,
+          "p95": 1.8696111082592703,
+          "p99": 3.1370731481159515,
+          "maximum": 3.1370731481159515
+        },
+        "ON": {
+          "count": 27,
+          "roads": 1,
+          "mean": 0.10457729592678046,
+          "RMSE": 0.32411386196000014,
+          "p95": 0.7631055942909271,
+          "p99": 1.4773561971511984,
+          "maximum": 1.4773561971511984
+        }
+      }
+    }
+  },
+  "coverage_by_trajectory": [
+    {
+      "key": "T2950",
+      "counts": {
+        "frames": 315,
+        "optical_OFF": 107,
+        "optical_ON": 104,
+        "fallback_with_points_OFF": 29,
+        "fallback_with_points_ON": 31,
+        "both_optical": 103,
+        "optical_eligibility_difference": 7,
+        "sequential_path_changed": 16,
+        "sequential_steering_changed": 62,
+        "single_interval_path_changed": 7,
+        "single_interval_steering_changed": 4
+      },
+      "age_distribution": {
+        "OFF": {
+          "0": 82,
+          "1": 30,
+          "2": 29,
+          "3": 22,
+          "4": 20,
+          "5": 20,
+          "6": 17,
+          "7": 16,
+          "8": 15
+        },
+        "ON": {
+          "0": 82,
+          "1": 19,
+          "2": 19,
+          "3": 12,
+          "4": 12,
+          "5": 12,
+          "6": 12,
+          "7": 11,
+          "8": 10
+        }
+      },
+      "actual_GT_frames": 315,
+      "actual_GT_intervals": 314,
+      "unique_N2_intervals": 314
+    },
+    {
+      "key": "T2953",
+      "counts": {
+        "frames": 298,
+        "optical_OFF": 108,
+        "optical_ON": 99,
+        "fallback_with_points_OFF": 28,
+        "fallback_with_points_ON": 29,
+        "both_optical": 98,
+        "optical_eligibility_difference": 12,
+        "sequential_path_changed": 14,
+        "sequential_steering_changed": 35,
+        "single_interval_path_changed": 5,
+        "single_interval_steering_changed": 1
+      },
+      "age_distribution": {
+        "OFF": {
+          "0": 87,
+          "1": 32,
+          "2": 27,
+          "3": 22,
+          "4": 21,
+          "5": 21,
+          "6": 20,
+          "7": 19,
+          "8": 18
+        },
+        "ON": {
+          "0": 87,
+          "1": 22,
+          "2": 17,
+          "3": 14,
+          "4": 13,
+          "5": 13,
+          "6": 13,
+          "7": 13,
+          "8": 13
+        }
+      },
+      "actual_GT_frames": 298,
+      "actual_GT_intervals": 297,
+      "unique_N2_intervals": 297
+    },
+    {
+      "key": "T2956",
+      "counts": {
+        "frames": 292,
+        "optical_OFF": 93,
+        "optical_ON": 73,
+        "fallback_with_points_OFF": 33,
+        "fallback_with_points_ON": 33,
+        "both_optical": 71,
+        "optical_eligibility_difference": 26,
+        "sequential_path_changed": 12,
+        "sequential_steering_changed": 66,
+        "single_interval_path_changed": 9,
+        "single_interval_steering_changed": 7
+      },
+      "age_distribution": {
+        "OFF": {
+          "0": 71,
+          "1": 22,
+          "2": 20,
+          "3": 16,
+          "4": 15,
+          "5": 14,
+          "6": 14,
+          "7": 14,
+          "8": 14
+        },
+        "ON": {
+          "0": 71,
+          "1": 17,
+          "2": 15,
+          "3": 11,
+          "4": 10,
+          "5": 10,
+          "6": 10,
+          "7": 9,
+          "8": 9
+        }
+      },
+      "actual_GT_frames": 292,
+      "actual_GT_intervals": 291,
+      "unique_N2_intervals": 291
+    },
+    {
+      "key": "T2959",
+      "counts": {
+        "frames": 265,
+        "optical_OFF": 105,
+        "optical_ON": 95,
+        "fallback_with_points_OFF": 30,
+        "fallback_with_points_ON": 30,
+        "both_optical": 95,
+        "optical_eligibility_difference": 10,
+        "sequential_path_changed": 26,
+        "sequential_steering_changed": 103,
+        "single_interval_path_changed": 12,
+        "single_interval_steering_changed": 10
+      },
+      "age_distribution": {
+        "OFF": {
+          "0": 67,
+          "1": 21,
+          "2": 21,
+          "3": 15,
+          "4": 15,
+          "5": 15,
+          "6": 15,
+          "7": 15,
+          "8": 14
+        },
+        "ON": {
+          "0": 67,
+          "1": 16,
+          "2": 16,
+          "3": 10,
+          "4": 10,
+          "5": 10,
+          "6": 10,
+          "7": 10,
+          "8": 10
+        }
+      },
+      "actual_GT_frames": 265,
+      "actual_GT_intervals": 264,
+      "unique_N2_intervals": 264
+    },
+    {
+      "key": "O0",
+      "counts": {
+        "frames": 304,
+        "optical_OFF": 111,
+        "optical_ON": 111,
+        "fallback_with_points_OFF": 33,
+        "fallback_with_points_ON": 36,
+        "both_optical": 110,
+        "optical_eligibility_difference": 7,
+        "sequential_path_changed": 12,
+        "sequential_steering_changed": 68,
+        "single_interval_path_changed": 9,
+        "single_interval_steering_changed": 8
+      },
+      "age_distribution": {
+        "OFF": {
+          "0": 87,
+          "1": 26,
+          "2": 26,
+          "3": 20,
+          "4": 17,
+          "5": 16,
+          "6": 13,
+          "7": 13,
+          "8": 13
+        },
+        "ON": {
+          "0": 87,
+          "1": 19,
+          "2": 19,
+          "3": 14,
+          "4": 13,
+          "5": 13,
+          "6": 13,
+          "7": 12,
+          "8": 12
+        }
+      },
+      "actual_GT_frames": 304,
+      "actual_GT_intervals": 303,
+      "unique_N2_intervals": 303
+    },
+    {
+      "key": "O2",
+      "counts": {
+        "frames": 280,
+        "optical_OFF": 96,
+        "optical_ON": 93,
+        "fallback_with_points_OFF": 12,
+        "fallback_with_points_ON": 12,
+        "both_optical": 93,
+        "optical_eligibility_difference": 3,
+        "sequential_path_changed": 10,
+        "sequential_steering_changed": 44,
+        "single_interval_path_changed": 3,
+        "single_interval_steering_changed": 3
+      },
+      "age_distribution": {
+        "OFF": {
+          "0": 70,
+          "1": 22,
+          "2": 21,
+          "3": 14,
+          "4": 12,
+          "5": 11,
+          "6": 10,
+          "7": 9,
+          "8": 8
+        },
+        "ON": {
+          "0": 70,
+          "1": 17,
+          "2": 16,
+          "3": 9,
+          "4": 7,
+          "5": 7,
+          "6": 7,
+          "7": 7,
+          "8": 6
+        }
+      },
+      "actual_GT_frames": 280,
+      "actual_GT_intervals": 279,
+      "unique_N2_intervals": 279
+    },
+    {
+      "key": "N2_333B",
+      "counts": {
+        "frames": 72,
+        "optical_OFF": 11,
+        "optical_ON": 11,
+        "fallback_with_points_OFF": 1,
+        "fallback_with_points_ON": 1,
+        "both_optical": 11,
+        "optical_eligibility_difference": 0,
+        "sequential_path_changed": 7,
+        "sequential_steering_changed": 7,
+        "single_interval_path_changed": 1,
+        "single_interval_steering_changed": 1
+      },
+      "age_distribution": {
+        "OFF": {
+          "0": 11,
+          "1": 3,
+          "2": 3,
+          "3": 2,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "7": 1,
+          "8": 1
+        },
+        "ON": {
+          "0": 11,
+          "1": 2,
+          "2": 2,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "8": 1
+        }
+      },
+      "actual_GT_frames": 72,
+      "actual_GT_intervals": 71,
+      "unique_N2_intervals": 71
+    },
+    {
+      "key": "N2_330_A",
+      "counts": {
+        "frames": 72,
+        "optical_OFF": 7,
+        "optical_ON": 7,
+        "fallback_with_points_OFF": 5,
+        "fallback_with_points_ON": 5,
+        "both_optical": 7,
+        "optical_eligibility_difference": 0,
+        "sequential_path_changed": 5,
+        "sequential_steering_changed": 7,
+        "single_interval_path_changed": 5,
+        "single_interval_steering_changed": 3,
+        "unknown_identity_points_OFF": 14,
+        "unknown_identity_points_ON": 14
+      },
+      "age_distribution": {
+        "OFF": {
+          "0": 14,
+          "1": 2,
+          "2": 2,
+          "3": 2,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "7": 2,
+          "8": 1
+        },
+        "ON": {
+          "0": 14,
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "8": 1
+        }
+      },
+      "actual_GT_frames": 8,
+      "actual_GT_intervals": 7,
+      "unique_N2_intervals": 6
+    },
+    {
+      "key": "N2_331B",
+      "counts": {
+        "frames": 72,
+        "optical_OFF": 8,
+        "optical_ON": 8,
+        "fallback_with_points_OFF": 4,
+        "fallback_with_points_ON": 4,
+        "both_optical": 8,
+        "optical_eligibility_difference": 0,
+        "sequential_path_changed": 7,
+        "sequential_steering_changed": 7,
+        "single_interval_path_changed": 4,
+        "single_interval_steering_changed": 2,
+        "unknown_identity_points_OFF": 14,
+        "unknown_identity_points_ON": 14
+      },
+      "age_distribution": {
+        "OFF": {
+          "0": 14,
+          "1": 3,
+          "2": 3,
+          "3": 2,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "7": 2,
+          "8": 1
+        },
+        "ON": {
+          "0": 14,
+          "1": 2,
+          "2": 2,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "8": 1
+        }
+      },
+      "actual_GT_frames": 8,
+      "actual_GT_intervals": 7,
+      "unique_N2_intervals": 7
+    }
+  ],
+  "first_sequential_steering_changes": {
+    "T2950": 149,
+    "T2953": 110,
+    "T2956": 113,
+    "T2959": 41,
+    "O0": 121,
+    "O2": 110,
+    "N2_333B": 66,
+    "N2_330_A": 66,
+    "N2_331B": 66
+  },
+  "metric_semantics": "Nearest-association distances include unresolved distant detections and are not guaranteed same-physical-obstacle errors. Fixture-birth subset is a posthoc physical-membership audit, not fitted confidence, visibility truth or primary preregistration change. Unknown births never reassigned. Missing-track heuristic counts mean no known correspondence, upper bounds when unknownpoints exist. Sequential subsets differ in retained-point count; compare coverage and missing bounds, not error alone.",
+  "interpretation": "Fixed fallback improves birth-fixture-compatible interval transport and reduces association-dependent duplicates; raw nearest metrics and sequential retained sets give different conclusions. Unresolved detections and absent independent occlusion truth prevent general tracker/safety promotion. This is fixed-pixel replay, not a physical closed-loop result.",
+  "real_occlusion_preservation_verified": false,
+  "next_minimal_closed_loop": {
+    "status": "Proposed only; not executed; current research balance0",
+    "minimum_new_native": 72,
+    "minimal_new_research_budget_required": 72,
+    "new_A_needed": false,
+    "A": "Existing full exact330/331A72 measured N2 reference, code/geometry/replay bindings requalified before any native launch.333B remains a different single-command diagnostic comparator, not a substitute baseline.",
+    "B": "One N2 closed-loop rollout with the fixed fallback-only transport enabled from reset, all other policy components including accepted optical/detection/age/dedup/routing/controller unchanged. Stop official terminal or72 protocol cap. This is different from333 stored-command continuation.",
+    "prefix": "No teleport/clone. Replay actual normal initialization; native cost includes every prefix action through72, even if steering first diverges later. Cached first steer differences are provenance only, not a posthoc cutoff.",
+    "gates": "Before any launch verify exactOFF reproduction, source changes onlyfallback, coordinate/timing/optical gates and fixed hyperparameters; resolve independent visibility/occlusion coverage or explicitly limit claim toN2 local contact test. Preregister budget separately; final reserve untouched.",
+    "stop": "First input/config/state or timing discrepancy invalidates comparison; no repair/reseed/sweep. Stop official terminal orauthorization deadline. Same/worse result rejects this candidate local sufficiency only; damage increase is no automatic standalone veto.",
+    "interpretation": "Compare firstcontact, endpoint fixtures, persistence, terminal/crash, pose/speed and uniqueprogress at common interval. Survival72 is not completion. No promotion or generalization from static or singleN2 result.",
+    "fallback_if_A_evidence_fails": "Do not silently reuse ambiguous reference: new A72+B72 cap144, separate new budget144 required because balance0. Not authorized or executed under334.",
+    "cached_N2_first_any_command_change": 66,
+    "cached_prefix_actions_before_first_difference": 65
+  },
+  "cost": {
+    "stage": 334,
+    "new_wrapper_actions": 0,
+    "new_learning_fits": 0,
+    "new_source_physics_ticks": 0,
+    "new_paid_resources": 0,
+    "additional_research": 0,
+    "stored_actor_calls": 3940,
+    "OFF_actor_calls": 1970,
+    "ON_actor_calls": 1970,
+    "actor_CPU_s": 42.02725,
+    "replay_evaluator_CPU_s": 9.391559347000003,
+    "replay_wall_s": 61.09887526597595,
+    "existing_optical_pipeline_attempts": 1603,
+    "existing_optical_estimator_call_count": "Not separately instrumented; pipeline attempts include feature/flow rejection before affine estimation. No new fitted model or registration method.",
+    "paired_route_function_calls": 310,
+    "metrics_CPU_s": 7.227787739,
+    "metrics_wall_s": 6.889894009043928,
+    "posthoc_fixture_audit_CPU_s": 1.80684582,
+    "posthoc_fixture_audit_wall_s": 1.830664730980061,
+    "cost_scope": "Measured replay/functions/association audit; initial discovery, hash/build, final reporting not timed. Existing frozen optical registration is replayed, not a new learned fit.",
+    "actual_cumulative_wrapper_actions": 1282127,
+    "research_remaining": 0,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1366127
+  },
+  "champion296_preserved": true,
+  "TRAIN_registry_preserved": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "remaining_blockers": [
+    "No authoritative visibility/occlusion masks; retained-without-detection frames are not demonstrated real occlusion.",
+    "Only50.2% oforiginal6 candidate previous points have fixture-compatible birth lineage; distant detections remain unresolved and cannot be interpreted as known obstacle motion.",
+    "Sequential point populations change due unchanged expiry/dedup; lower errors are not a paired physical outcome. Some accepted optical estimates still transport previously valid points badly; this task preserves them.",
+    "N2 early331 GT unavailable; unknown births stayunknown.333GT priority and exact-interval dedup do not create missingGT.",
+    "Research remaining0; no newnative or automatic budget expansion."
+  ],
+  "saved_evidence_verification": {
+    "passed": true,
+    "OFF_rows_independently_verified": 1970,
+    "archive_member_changes": {
+      "OFF": [
+        "retry/temporal_agent.py"
+      ],
+      "ON": [
+        "retry/temporal_agent.py"
+      ]
+    },
+    "algebra": {
+      "passed": true,
+      "origin_pixel_flip_anisotropy_rotation_straight_inverse": true,
+      "delta_yaw": "0.08*(previous_yaw+current_yaw)/2",
+      "body_displacement": "(0,current_HUD_speed*.08)",
+      "no_speed_average": true,
+      "no_lateral_model": true
+    },
+    "actual_GT_motion_intervals": 1832,
+    "motion_diagnostic": {
+      "original6": {
+        "yaw_error": {
+          "count": 1748,
+          "roads": 6,
+          "mean": 0.005860687427797063,
+          "RMSE": 0.00809535360486095,
+          "p95": 0.017102306744914336,
+          "p99": 0.021040387938067187,
+          "maximum": 0.047859942263117794
+        },
+        "lateral_displacement_error": {
+          "count": 1748,
+          "roads": 6,
+          "mean": 0.1986094857681779,
+          "RMSE": 0.3173229275161535,
+          "p95": 0.7745881928775161,
+          "p99": 0.8659841287810793,
+          "maximum": 0.9082237392192014
+        },
+        "forward_displacement_error": {
+          "count": 1748,
+          "roads": 6,
+          "mean": 0.05922744069981164,
+          "RMSE": 0.07064705264808954,
+          "p95": 0.12689543739297715,
+          "p99": 0.17118412264980565,
+          "maximum": 0.20766005582451363
+        },
+        "displacement_error_norm": {
+          "count": 1748,
+          "roads": 6,
+          "mean": 0.22713129069455837,
+          "RMSE": 0.32509205830854115,
+          "p95": 0.7800396418754031,
+          "p99": 0.8753518256469546,
+          "maximum": 0.9206435164093923
+        }
+      },
+      "N2": {
+        "yaw_error": {
+          "count": 84,
+          "roads": 1,
+          "mean": 0.00819262943766096,
+          "RMSE": 0.020960244745639692,
+          "p95": 0.026706704902794393,
+          "p99": 0.1391520872958262,
+          "maximum": 0.1391520872958262
+        },
+        "lateral_displacement_error": {
+          "count": 84,
+          "roads": 1,
+          "mean": 0.1934854236941173,
+          "RMSE": 0.3586353688339505,
+          "p95": 1.0117376534582823,
+          "p99": 1.053589288381005,
+          "maximum": 1.053589288381005
+        },
+        "forward_displacement_error": {
+          "count": 84,
+          "roads": 1,
+          "mean": 0.16052908863156584,
+          "RMSE": 0.3126031561994582,
+          "p95": 0.6979188170329151,
+          "p99": 1.4865411774506285,
+          "maximum": 1.4865411774506285
+        },
+        "displacement_error_norm": {
+          "count": 84,
+          "roads": 1,
+          "mean": 0.28793673837610084,
+          "RMSE": 0.4757521004099999,
+          "p95": 1.2317578156701279,
+          "p99": 1.568365296603374,
+          "maximum": 1.568365296603374
+        }
+      }
+    },
+    "first_any_cached_command_changes": {
+      "T2950": 28,
+      "T2953": 49,
+      "T2956": 28,
+      "T2959": 40,
+      "O0": 102,
+      "O2": 106,
+      "N2_333B": 66,
+      "N2_330_A": 66,
+      "N2_331B": 66
+    },
+    "fixed_formula_not_refit": true,
+    "new_native_actions": 0,
+    "new_actor_calls": 0,
+    "new_learning_fits": 0,
+    "new_source_physics_ticks": 0,
+    "budget_unchanged": true,
+    "visibility_truth_available": false,
+    "verification_wall_s": 4.663533046026714,
+    "verification_CPU_s": 4.721338858
+  },
+  "cumulative_metric_definition": "Discrete .08*sum(error) over observed retained point-time samples including births; not continuous physical residence error. Retained populations differ."
+}
