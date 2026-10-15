@@ -1,0 +1,290 @@
+{
+  "stage": 345,
+  "decision": "Natural source-policy exposure qualified; no local harmful counterexample observed in the160window. Both arms remain protocolcensored withoutfinish, so completion/non-regression and general safety are unresolved.",
+  "exposure": {
+    "first_natural_full_control_difference": 146,
+    "prefix_actions_exact": 145,
+    "prefix_input_frames_exact": 146,
+    "first_different_input_action": 147,
+    "rule_birth146_not_forced": true,
+    "held_actions": {
+      "A": [],
+      "B": [
+        146,
+        147,
+        148
+      ]
+    },
+    "postbranch_controls_on_own_observations": true,
+    "normal_own_memory": true,
+    "full_fresh_actor_pickle_controller_tracker_physics_accessRNG_gate": true
+  },
+  "comparison": {
+    "A": {
+      "native_actions": 160,
+      "collision_event_actions": [
+        46
+      ],
+      "raw_collision_flags": 1,
+      "new_obstacle_hit_intervals": [
+        {
+          "object_index": 0,
+          "action": 46,
+          "raw_interval_s": [
+            4.679999999999988,
+            4.699999999999988
+          ]
+        }
+      ],
+      "fixture_touching": [
+        {
+          "fixture_pair": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "first_raw_time_s": 4.699999999999988,
+          "last_raw_time_s": 4.719999999999987,
+          "touching_raw_endpoint_count": 2,
+          "endpoint_sample_weight_s": 0.04
+        }
+      ],
+      "raw_observation_count": 640,
+      "damage": 0.2,
+      "unique_tiles": 158,
+      "speed_m_s": 45.36236131403168,
+      "off_track_counter": 0,
+      "last_tile_growth_action": 160,
+      "actual_DNF": false,
+      "protocol_stop": true,
+      "completed": false,
+      "finish_time_s": null,
+      "lap_ms": null,
+      "retire_reason": null
+    },
+    "B": {
+      "native_actions": 160,
+      "collision_event_actions": [
+        46
+      ],
+      "raw_collision_flags": 1,
+      "new_obstacle_hit_intervals": [
+        {
+          "object_index": 0,
+          "action": 46,
+          "raw_interval_s": [
+            4.679999999999988,
+            4.699999999999988
+          ]
+        }
+      ],
+      "fixture_touching": [
+        {
+          "fixture_pair": [
+            0,
+            0,
+            4,
+            0
+          ],
+          "first_raw_time_s": 4.699999999999988,
+          "last_raw_time_s": 4.719999999999987,
+          "touching_raw_endpoint_count": 2,
+          "endpoint_sample_weight_s": 0.04
+        }
+      ],
+      "raw_observation_count": 640,
+      "damage": 0.2,
+      "unique_tiles": 158,
+      "speed_m_s": 46.360047951999796,
+      "off_track_counter": 0,
+      "last_tile_growth_action": 160,
+      "actual_DNF": false,
+      "protocol_stop": true,
+      "completed": false,
+      "finish_time_s": null,
+      "lap_ms": null,
+      "retire_reason": null
+    }
+  },
+  "postbranch": {
+    "A": {
+      "collision_actions": [],
+      "touching_raw_endpoints": 0,
+      "tiles_at_prefix": 146,
+      "tiles_at_stop": 158,
+      "progress_tiles": 12,
+      "damage_at_prefix": 0.2,
+      "damage_at_stop": 0.2
+    },
+    "B": {
+      "collision_actions": [],
+      "touching_raw_endpoints": 0,
+      "tiles_at_prefix": 146,
+      "tiles_at_stop": 158,
+      "progress_tiles": 12,
+      "damage_at_prefix": 0.2,
+      "damage_at_stop": 0.2
+    }
+  },
+  "flagged_births": {
+    "A": [
+      {
+        "birth_action": 146,
+        "direct_index": 0,
+        "component_area": 4,
+        "raw_road_neighbors": 0,
+        "diagnostic_label": "unresolved"
+      }
+    ],
+    "B": [
+      {
+        "birth_action": 146,
+        "direct_index": 0,
+        "component_area": 4,
+        "raw_road_neighbors": 0,
+        "diagnostic_label": "unresolved"
+      }
+    ]
+  },
+  "supported_direct_detections_checked": {
+    "A": 48,
+    "B": 48
+  },
+  "supported_birth_retained_contexts_checked": {
+    "A": 35,
+    "B": 35
+  },
+  "supported_routing_losses": [],
+  "trajectory_difference": {
+    "final_position_separation_m": 0.08786999815140652,
+    "maximum_postbranch_position_separation_m": 0.08786999815140652,
+    "comparison_scope": "After146 the scenes and normal memory may differ. Joint outcomes are paired closed-loop effects, not independent per-frame steering/pedal effects."
+  },
+  "shared_prebranch_contact": "Both hit obstacle0 via carbody4(wheelindex3),fixture0 before the rule146branch. Firsthitrawinterval is recorded separately; touching sampled at4.70/4.72s. Damage.2is shared prebranch history, not candidate-induced extra damage.",
+  "limits": [
+    "Fresh actual A/B, not344cachedcontrols or historicalA substitute. All executed commands equal each own returned fullcontrol; no forced146intervention or memoryoverride.",
+    "Touching duration is sampled raw0.02sendpoints, not exact hidden solver contact duration. Hidden solver/OpenCVRNG states not directly inspected.",
+    "Selected point remains unresolved semantic material. Zero captured supportedloss cannot establish real occlusion safety.",
+    "One knownTRAIN source-policy road, not current334ON/H1or broad completionrate.343differentpolicy unexposed and344cachedexposed conclusions both preserved.",
+    "160censors prevent official completion/lap comparison; no automatic extension/native/adoption."
+  ],
+  "cost": {
+    "stage": 345,
+    "new_wrapper_actions": 320,
+    "new_A_runs": 1,
+    "new_B_runs": 1,
+    "new_environment_resets": 2,
+    "per_arm_cap": 160,
+    "total_cap": 320,
+    "additional_research": 0,
+    "raw_step_ticks": 1280,
+    "raw_reset_ticks": 102,
+    "new_source_physics_rollout_ticks": 0,
+    "new_learning_fits": 0,
+    "parameter_sweeps": 0,
+    "new_paid_resources": 0,
+    "technical_error": null,
+    "technical_recovery_native": 0,
+    "technical_recovery_resets": 0,
+    "per_arm": {
+      "A": {
+        "wall_s": 19.523490186955314,
+        "runner_CPU_s": 17.005397542,
+        "actor_CPU_s": 2.5176709999999995,
+        "reset_wall_s": 0.49614089500391856,
+        "raw_step_render_wall_s": 7.76811222435208,
+        "raw_contact_observer_wall_s": 0.21874086424941197,
+        "capture_wall_s": 7.152295484032948,
+        "journal_wall_s": 0.16902692685835063,
+        "artifact_wall_s": 0.03235950699308887
+      },
+      "B": {
+        "wall_s": 17.200964446004946,
+        "runner_CPU_s": 15.123080868999999,
+        "actor_CPU_s": 2.048261,
+        "reset_wall_s": 0.4958977149799466,
+        "raw_step_render_wall_s": 6.152194783557206,
+        "raw_contact_observer_wall_s": 0.16735230083577335,
+        "capture_wall_s": 5.944538427982479,
+        "journal_wall_s": 0.1665278902510181,
+        "artifact_wall_s": 0.032826861017383635
+      }
+    },
+    "totals": {
+      "wall_s": 36.72445463296026,
+      "runner_CPU_s": 32.128478411,
+      "actor_CPU_s": 4.565932,
+      "reset_wall_s": 0.9920386099838652,
+      "raw_step_render_wall_s": 13.920307007909287,
+      "raw_contact_observer_wall_s": 0.3860931650851853,
+      "capture_wall_s": 13.096833912015427,
+      "journal_wall_s": 0.33555481710936874,
+      "artifact_wall_s": 0.0651863680104725
+    },
+    "closure_wall_s": 0.3116264469572343,
+    "closure_CPU_s": 0.3063666460000001,
+    "actual_cumulative_wrapper_actions": 1283442,
+    "research_remaining": 796,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1368238,
+    "measurement_scope": "Rawstep wall includes simulator+render; read-onlycontact/capture/journal/artifactsubtimers separate. Setup/hash/IPC included in total or outside namedsubtimers; report/gitnot whollytimed. No pure solver cost or extra world advancement."
+  },
+  "next_minimum_experiment": {
+    "status": "Proposal only; no new episode scheduled/reserved.",
+    "question": "Can the unchanged exposed candidate reach an official O2finish beyond the160censor? Absolute completion feasibility only, not relative superiority.",
+    "why": "345already supplies a fresh exposed local pair with no observed harmful counterexample. The cheapest remaining distinction is candidate officialfinish versus laterretirement/censor, without paying for a second baseline to answer a binary feasibility question.",
+    "design": "One fresh candidate-only episode, sameO2and exact345Bconfig/initialconditions. Replay and verify the actual345Bprefix160commands/161pixels/fullactor/tracker/physics/accessRNG, then continue its own observations/fullreturnedcontrols/normalmemory. Prefix replay is charged inside300. Closed345world cannot be resumed from incomplete solver snapshots. No A substitute or comparative win is claimed.",
+    "per_arm_native_cap": 300,
+    "total_native_cap": 300,
+    "new_A_runs": 0,
+    "new_B_runs": 1,
+    "new_environment_resets_cap": 1,
+    "maximum_postreset_raw_ticks": 1200,
+    "expected_reset_raw_ticks": 51,
+    "additional_budget_needed": 0,
+    "research_remaining_after_maximum": 496,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "cap_basis": "Historical qualified sourcebaseline finished at280;300provides20actions of prespecified margin. It is an evaluation horizon only, not a control threshold. Stop at official finish/retirement or300; no implicit extension.",
+    "gates": "Exact original296archive/source tracker/single342rule and exact345BobserverRNGseed for the replay gate. Fullpixel/state/physics/accessRNG checks, no forcedpost160controls. No model/threshold/split changes.",
+    "outcomes": "Officialfinish flag first, retroactive center-crossing lap time iffinished; actualretirement vsprotocolcensor separate. Jointly report contacts/touching/progress/speed/damage and supportedloss. No freshAin this feasibility check, so no paired timing/non-regression or officialrank improvement claim.",
+    "value": "Costs at most300of796research native with one reset, leaves496and preservesfinalreserve. Resolves absolute completion feasibility rather than repeating a160localpair. A finish still doesnot establish comparative improvement, generalization, occlusion safety or championpromotion."
+  },
+  "preserved334_mixed_evidence": {
+    "original6_nearest_sequential_mean": {
+      "OFF": 24.400035404035584,
+      "ON": 25.294083105402862
+    },
+    "original6_nearest_single_fallback_RMSE": {
+      "OFF": 44.439248329736024,
+      "ON": 44.721119854690684
+    },
+    "posthoc_fixture_birth_subset_fallback_mean": {
+      "OFF": 4.6401517836674335,
+      "ON": 2.7520444653287575
+    },
+    "posthoc_fixture_birth_subset_fallback_p99": {
+      "OFF": 19.48628667730667,
+      "ON": 13.674044295882311
+    },
+    "fixture_birth_coverage": {
+      "candidate_previous_points": 1324,
+      "fixture_birth_supported_previous_points": 664,
+      "birth_detections_with_GT": 464,
+      "unique_fixture_compatible_births": 372,
+      "no_fixture_compatible_births": 92,
+      "multiple_fixture_compatible_births": 0
+    },
+    "actual_occlusion_preservation_verified": false,
+    "original334_immutable": true
+  },
+  "actual_occlusion_preservation_verified": false,
+  "champion296_preserved": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
