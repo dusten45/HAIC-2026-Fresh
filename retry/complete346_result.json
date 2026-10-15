@@ -1,0 +1,196 @@
+{
+  "stage": 346,
+  "decision": "Official completion feasibility observed on this single unchanged candidate/O2episode.",
+  "outcome": {
+    "native_actions": 283,
+    "collision_event_actions": [
+      46
+    ],
+    "raw_collision_flags": 1,
+    "new_obstacle_hit_intervals": [
+      {
+        "object_index": 0,
+        "action": 46,
+        "raw_interval_s": [
+          4.679999999999988,
+          4.699999999999988
+        ]
+      }
+    ],
+    "fixture_touching": [
+      {
+        "fixture_pair": [
+          0,
+          0,
+          4,
+          0
+        ],
+        "first_raw_time_s": 4.699999999999988,
+        "last_raw_time_s": 4.719999999999987,
+        "touching_raw_endpoint_count": 2,
+        "endpoint_sample_weight_s": 0.04
+      }
+    ],
+    "raw_observation_count": 1132,
+    "damage": 0.2,
+    "unique_tiles": 281,
+    "speed_m_s": 46.810647166066815,
+    "off_track_counter": 3,
+    "last_tile_growth_action": 280,
+    "actual_DNF": false,
+    "protocol_stop": false,
+    "completed": true,
+    "finish_time_s": 23.639999999999585,
+    "lap_ms": 22620,
+    "retire_reason": null,
+    "terminated": false,
+    "truncated": true,
+    "censored": false,
+    "stop_reason": "official_finish",
+    "finish_qualified_time_s": 22.8999999999996,
+    "declaration_raw_time_s": 23.659999999999584,
+    "postreset_start_time_s": 1.0200000000000005
+  },
+  "verification": {
+    "passed": true,
+    "prefix_actions_exact": 160,
+    "prefix_input_frames_exact": 161,
+    "full_actor_tracker_memory_physics_accessRNG_andrawticks_exact": true,
+    "all_returned_controls_executed": true,
+    "normal_own_memory": true,
+    "own_observations_after160": true,
+    "first_officialterminal_stop": true,
+    "finish_flag_first": true,
+    "no_steps_after_terminal": true,
+    "total300cap_includes_prefix": true,
+    "hidden_solver_OpenCV_RNG_not_directly_measured": true
+  },
+  "flagged_births": [
+    {
+      "birth_action": 146,
+      "direct_index": 0,
+      "component_area": 4,
+      "diagnostic_label": "unresolved"
+    },
+    {
+      "birth_action": 203,
+      "direct_index": 0,
+      "component_area": 3,
+      "diagnostic_label": "unresolved"
+    }
+  ],
+  "routing_withheld_actions": [
+    146,
+    147,
+    148,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211
+  ],
+  "supported_routing_losses": [],
+  "limits": [
+    "Standalone feasibility, no freshbaseline comparison made here. No historical baseline superiority, timing improvement, safety, generalization orchampionpromotion claim.",
+    "Officialfinish is not alltilesvisited: sourcefinishtracker qualification then center crossing. Lap uses retroactivefinish_time minuspostresetstart, not actioncount or declarationclock.",
+    "Damage andcontacts diagnostic only. Semantic material/actualocclusion unverified; zero captured supportedloss doesnotprove safe omission for all real obstacles.",
+    "345localpairedcensor,343differentpolicy unexposed,344sourcecacheexposed results remain distinct."
+  ],
+  "cost": {
+    "stage": 346,
+    "new_wrapper_actions": 283,
+    "native_cap": 300,
+    "prefix_included_in_cap": true,
+    "new_A_runs": 0,
+    "new_B_runs": 1,
+    "new_environment_resets": 1,
+    "additional_research": 0,
+    "raw_step_ticks": 1132,
+    "raw_reset_ticks": 51,
+    "new_source_physics_rollout_ticks": 0,
+    "new_learning_fits": 0,
+    "parameter_sweeps": 0,
+    "new_paid_resources": 0,
+    "technical_error": null,
+    "technical_recovery_native": 0,
+    "technical_recovery_resets": 0,
+    "actual_cumulative_wrapper_actions": 1283725,
+    "research_remaining": 513,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1368238,
+    "unused_reserved_actions": 17,
+    "measurements": {
+      "wall_s": 27.498859971005004,
+      "runner_CPU_s": 24.486531579,
+      "actor_CPU_s": 3.035307,
+      "reset_wall_s": 0.4322840630193241,
+      "raw_step_render_wall_s": 9.610409735585563,
+      "raw_contact_observer_wall_s": 0.2429706221446395,
+      "capture_wall_s": 10.082705673936289,
+      "journal_wall_s": 0.212333848758135,
+      "artifact_wall_s": 0.04237012501107529
+    },
+    "closure_wall_s": 0.4043742200010456,
+    "closure_CPU_s": 0.400529731,
+    "measurement_scope": "Rawstep includes simulation+render. Read-only rawcontact/capture/journal/artifact separately timed; totals include other setup/hash/IPC, not wholecoding/report/git. No extra physicsstep."
+  },
+  "next_minimum_valid_comparison": {
+    "status": "Proposed only; no new episode scheduled/reserved.",
+    "question": "Relative official completion and lap time on this one fixedO2case after a matched fresh baseline, not generalization or safety.",
+    "design": "One fresh original296baseline A, at most300native including exact replay ofactual345Aprefix160. Reuse fully recorded actual346B as candidate arm; do not rerun B or use a different policy/history as A. Directly verify shared reset and prefix145against346B, and full160baseline prefix against345A, with actor/tracker/physics/accessRNG. Then A own observations/fullcontrols/normalmemory toofficialterminal orcap.",
+    "total_native_cap": 300,
+    "new_A_runs": 1,
+    "new_B_runs": 0,
+    "new_environment_resets_cap": 1,
+    "maximum_postreset_raw_ticks": 1200,
+    "expected_reset_raw_ticks": 51,
+    "additional_budget_needed": 0,
+    "research_remaining_after_maximum": 213,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "value": "346answers candidate feasibility only. A single new live-qualified baseline plus existing fully qualified candidate is the smallest new valid paired official-objective comparison; it avoids another candidate run or repeating160-onlypair.",
+    "gates": "Exact original296archive and original baseline config from345A, sameO2case and observerRNGseed. Use fullfreshstate and rawtick prefix checks; no forced146action, no savedpost160controls, no threshold/model/split changes.",
+    "outcomes": "Finishflag first, lap time from retroactive center crossing only if bothofficiallyfinish; actualDNF and protocolcensor separate. Joint contact/damage/tile/speed/termination report. No comparison now in346; future result remains onecase, no safety/generalization/promotion.",
+    "stop": "Officialtermination,300cap,qualification/integrity/deadline stop. No automatic extension or extra budget. Missingfinish atcap remainscensor."
+  },
+  "preserved334_mixed_evidence": {
+    "original6_nearest_sequential_mean": {
+      "OFF": 24.400035404035584,
+      "ON": 25.294083105402862
+    },
+    "original6_nearest_single_fallback_RMSE": {
+      "OFF": 44.439248329736024,
+      "ON": 44.721119854690684
+    },
+    "posthoc_fixture_birth_subset_fallback_mean": {
+      "OFF": 4.6401517836674335,
+      "ON": 2.7520444653287575
+    },
+    "posthoc_fixture_birth_subset_fallback_p99": {
+      "OFF": 19.48628667730667,
+      "ON": 13.674044295882311
+    },
+    "fixture_birth_coverage": {
+      "candidate_previous_points": 1324,
+      "fixture_birth_supported_previous_points": 664,
+      "birth_detections_with_GT": 464,
+      "unique_fixture_compatible_births": 372,
+      "no_fixture_compatible_births": 92,
+      "multiple_fixture_compatible_births": 0
+    },
+    "actual_occlusion_preservation_verified": false,
+    "original334_immutable": true
+  },
+  "actual_occlusion_preservation_verified": false,
+  "champion296_preserved": true,
+  "DEV_opened": false,
+  "HOLDOUT_opened": false,
+  "SEALED_opened": false,
+  "promotion": false,
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
