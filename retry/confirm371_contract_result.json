@@ -1,0 +1,167 @@
+{
+  "stage": 371,
+  "contract_only": true,
+  "unopened297_role": {
+    "declared_split": "DEV_COMPLETION_CEM_297",
+    "conditions_registered": 12,
+    "role": "Performance-unopenedconditionalDEVconfirmationforsinglefrozenTRAINwinner;notformalHOLDOUTandnotfinalSEALED",
+    "registered_before_original_parameter_draws": true,
+    "registration_metadata": [
+      {
+        "stage": 297,
+        "declared_split": "DEV_COMPLETION_CEM_297",
+        "authorization": "29712unfilteredfreshDEV fixedbefore2x8parameterdraws, no performanceuntilsinglewinnerfrozen",
+        "frozen_at_utc": "2026-10-13T18:31:49.040422+00:00",
+        "exclusion_snapshot_sha256": "bdaa1bcf278d7e259aa77e5aa69ec2c5429bf07f2144eed89ca14a6595555a93"
+      },
+      {
+        "stage": 297,
+        "declared_split": "DEV_COMPLETION_CEM_297",
+        "authorization": "29712unfilteredfreshDEV fixedbefore2x8parameterdraws, no performanceuntilsinglewinnerfrozen",
+        "frozen_at_utc": "2026-10-13T18:31:49.424059+00:00",
+        "exclusion_snapshot_sha256": "ccbc6fbf7be809242d5db462a15f1314a955f0d7eb58138489b1de77e076bf1d"
+      },
+      {
+        "stage": 297,
+        "declared_split": "DEV_COMPLETION_CEM_297",
+        "authorization": "29712unfilteredfreshDEV fixedbefore2x8parameterdraws, no performanceuntilsinglewinnerfrozen",
+        "frozen_at_utc": "2026-10-13T18:31:49.660180+00:00",
+        "exclusion_snapshot_sha256": "97592d9911499ca6b15d16aab993a9648b4ac2720a7b3d2f9c17381d8c6809a8"
+      }
+    ],
+    "registered_manifest_hashes": [
+      "f0932ec1b94669e278768e3a0b63240a02b3fe2b9c6d3233e924d1e1afd4656f",
+      "3f4fdf081bd6af369343b2c4c7c6cc067446353e7f38c18da6133eb4147991fb",
+      "7206da76c20e7b790752905a357f22e4d27ab3ed677e6489547efd9c63527130"
+    ],
+    "manifest_hashes_taken_from_existing_seal_not_recomputed_from_condition_files": true,
+    "transfer_chain": [
+      {
+        "stage": 297,
+        "role": "originalconditionalDEV",
+        "performance_opened": false
+      },
+      {
+        "stage": 298,
+        "role": "transferredsame297DEV",
+        "performance_opened": false
+      },
+      {
+        "stage": 299,
+        "role": "transferredsame297DEV",
+        "performance_opened": false
+      },
+      {
+        "stage": 309,
+        "role": "conditionalreuseofexisting297DEV",
+        "performance_opened": false
+      }
+    ],
+    "opening_markers_and_DEV_result_folders_absent": true,
+    "last_identity_job_inventory_stage369_no_fresh_jobs": true,
+    "stage370_only_old296DEV_and_protectedmarkers_preserved": true,
+    "identity_metadata_was_checked_in369_not_a_claim_of_total_identity_blindness": true,
+    "current_contract_case_content_queries": 0,
+    "current_contract_case_performance_queries": 0,
+    "current_condition_file_content_reads": 0
+  },
+  "proposed_confirmation_contract": {
+    "status": "Proposalonly_noauthorizationtoexecute_open_or_promote",
+    "arms": {
+      "A": {
+        "role": "currentchampion296",
+        "archive_sha256": "0a6c5e286e87d75498c5aec1174c7af3fd54f6efa34b0d83ca1efba5d404a937"
+      },
+      "B": {
+        "role": "frozen365",
+        "archive_sha256": "65df88a5b2391675e49c3f39259adab0f8a791da5ab58ea620cbe130b0a9ce34"
+      }
+    },
+    "case_set": "Existing297registered12only,exactorder/registeredABBAorderspreservedafterseparateauthorizedrelease;noresamplingorsubstitution",
+    "paired_cases": 12,
+    "new_actual_episodes": 24,
+    "per_arm_episode_cap": 2000,
+    "maximum_wrapper_actions": 48000,
+    "maximum_actor_act_calls": 48000,
+    "maximum_actor_commit_calls": 48000,
+    "environment_resets": 24,
+    "actor_resets": 24,
+    "maximum_raw_step_ticks": 192000,
+    "expected_reset_raw_ticks": 1224,
+    "maximum_total_raw_ticks": 193224,
+    "research_available": 20499,
+    "additional_research_needed_for_full_maximum": 27501,
+    "final_reserve": 84000,
+    "reserve_change": 0,
+    "preopening_budget_gate": "Do not openfreshperformancebeforefull24000perarm/48000totalworstcaseauthorizationandallocation. Existing20499doesnotguaranteeall24;nooutcome-dependentbudgettopup. Actualconsumptiononly;no automatic2038extension.",
+    "freeze_before_any_release": "Freezebotharchive/member/modelhashes,legalpixel-onlyworker/evaluator/env/runtimehashes,read-onlyGTobservers,case-manifestsealreferences,originalorderandABBAarmorder,budget/stops/judgment. Futureexplicitinstructionmustdesignate365against296fortheexistingconditionalDEVrole;oldCEMauthorizationisnotautomaticreleasepermission.",
+    "pairing": "Independentfreshenv/actorresetperarm,sameprivatecase/seed/options. Comparepre-actioninitialpixels/geometry/registeredobstaclehash/fullcapturedphysics/accessRNGacrosspair;initialpixelhashmaybecomesavailableonlywhenauthorizedfirstreset. Nohistorical296scoreonthis12exists. Bothownobservations/fullreturnedcontrols/normalmemory;postbranchobservationsnotforcedequal. SameCPU/memory/input/timeoutlimits;measurementworker/versiondifferencesboundanddisclosedwithoutmodifyingpolicyZIP.",
+    "metrics": "Officialfinishcountfirst. Pairedfinishgain/lossandpercaseofficialretroactivecenterlap. Onboth-finishcasesnew-oldunweightedmean/median/sumandallindividualdeltas;no inventedDNFtimepenalty. Both-DNFprogress/retirementdiagnosticperofficialnonfinishordering;no adhocglobalprogressweight. Damage/contact/invalid/resourceusage diagnostic,legalityboundsmandatory.",
+    "judgment": {
+      "require_all24_definitive_uncensored_runs": true,
+      "require_candidate_known_supported_direct_and_birth_retained_losses_zero": true,
+      "require_no_confirmed_wrong_low_crossfixture_positive_transfer": true,
+      "fresh_baseline_count": "Unknownuntilauthorizedevaluation;do notcarryreusedDEV10orfixed11threshold",
+      "candidate_count_greater": "Candidateeligibleforpromotionreviewevenifcommonfinishslower;speedcostmustbereported.",
+      "equal_count": "Requirecommon-completedmeannew-oldlapstrictly<0ms. Tie/nocommon:retain296.",
+      "candidate_count_less": "Retain296;nomethodretryorretuning.",
+      "individual_finish_loss": "Reportallpairedgains/losses;no posthocindividual-lossvetoiftotalcountimproves. Supportgateindependenthardpremise.",
+      "damage": "No inventeddamagepenaltyormediandamageveto.",
+      "promotion": "Criterionpassonlyeligibleforexplicitlimitedpromotiondecisionwithimmutable365and296rollback;noautomaticpointerchange,no claimfinalofficialserver/SEALEDcertification."
+    },
+    "stops": "Officialfinish/retirementfirst,else2000protocolcensor/deadline/technicalfailure. OrdinaryDNF:runmateandnextregisteredpairs. Anytechnical/source/reset/legality/integrityerrororknownsupportedloss:stopremainingpairs,preservepartial+unmeasured,retain296. Noretry,resampling,replacement,caps/budgetextension,alternatecandidateorextracertification;bookkeepingrecoverymayreadalreadydurablerecordsonly.",
+    "after_exposure": "Onefrozen365vs296only. No retuning,thresholds,featurechanges,headfits,variantselectionorevaluationof365.1onthis12afterviewingresults. Markdatasetperformance-exposedandrecordall24-or-stoppedqueries/artifacthashespermanently. Do notcallitunopenedagain. Anyfutureresearchrevisionrequiresseparatecontractandindependentevidence,notrecyclingthissetasfresh.",
+    "disclosure": "Performance-unexposedDEVcanprospectivelyconfirmfixedcandidatewithoutfeedback,notanunbiasedpopulationguarantee/formalHOLDOUTreclassification. Reportalloutcomesincludingfailures;noearlystopbecausewinnerappearsclear. Prior62ambiguousedgesandmissingGTnotresolved."
+  },
+  "separate_SEALED_metadata": {
+    "separate_final_validation_pending": true,
+    "metadata_manifest_status": "PENDING_CLOSED",
+    "registered_final_count_from_original_contract": 16,
+    "ledger_episodes_used": 0,
+    "ledger_future_queries_this_phase_max": 0,
+    "SEALED_opened_markers": 0,
+    "condition_contents_or_results_not_read": true,
+    "reserved_actions": 84000,
+    "reserve_not_used_for_pairedDEV": true,
+    "scope": "SeparateSEALEDfinalcontract/explicitauthorizationstillrequired;fresh297DEVcannotconsumeorsubstitutefinalvalidation. NoSEALEDscheme/conditionsopenedorscheduledhere."
+  },
+  "reusedDEV_tradeoff": {
+    "reusedDEV365_completed": 12,
+    "reusedDEV296_completed": 10,
+    "common_completed_count": 10,
+    "common_mean_new_minus296_lap_ms": 1036,
+    "common_median_delta_ms": 1330,
+    "common_sum_delta_ms": 10360,
+    "common_slower_conditions": 10,
+    "interpretation": "Twoknowncrash-to-finishgainsfavoredpreregisteredcompletion-firstcriterion;alltencommonlapswereslower. ReusedDEVnotindependentproof,notaveryspeedgain. Freshpaired296countunknown.",
+    "official_source": "README.md:251-259",
+    "official_limit": "Finishbeatsnonfinish,thenfasterlap;nonfinishbyprogress. No universalacross-seedseconds-per-finishtradeformulaestablished;DAMAGEcannotreplaceofficialobjective."
+  },
+  "prior62_and_missingGT_unresolved": true,
+  "cost": {
+    "stage": 371,
+    "new_wrapper_actions": 0,
+    "new_actor_calls": 0,
+    "new_environment_resets": 0,
+    "new_source_physics_ticks": 0,
+    "new_learning_fits": 0,
+    "new_candidate_modifications": 0,
+    "new_paid_resources": 0,
+    "new_split_content_reads": 0,
+    "new_performance_queries": 0,
+    "future_budget_granted": 0,
+    "future_native_reserved": 0,
+    "audit_wall_s": 2.236210923001636,
+    "audit_CPU_s": 0.923126165,
+    "actual_cumulative_wrapper_actions": 1300064,
+    "research_remaining": 20499,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1404563,
+    "scope": "Metadata/source/recordauditonly;sealedcasefilesstat-only,noconditioncontenthash/parse/read. No simulator/policyimportorcalls. Coding/report/gitnotfullytimed."
+  },
+  "new_simulation": false,
+  "new_split_opening": false,
+  "champion_changed": false,
+  "execution_authorized": false
+}
