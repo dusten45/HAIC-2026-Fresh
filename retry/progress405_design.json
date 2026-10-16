@@ -1,0 +1,148 @@
+{
+  "stage": 405,
+  "status": "DESIGN_ONLY_NOT_EXECUTED",
+  "created_utc": "2026-10-16T17:09:07.120923+00:00",
+  "algorithm": "Fixeddeadline milestone with signedfinitehorizonprogress and retainedfeasible suffix",
+  "observation_boundary": {
+    "allowed": [
+      "Currentfullsourcephysicalsnapshot",
+      "Currentnominalcontroller/executor memory",
+      "Frozenpath/profile/sourceparameters",
+      "Ownpreviousmodel-generatedplanandanchor/deadline"
+    ],
+    "forbidden": [
+      "Storedfutureactualpositions/yaw/slip/controls/finish",
+      "OthertrajectoryO/Cfuturestate",
+      "Futurepixel/teacheractions",
+      "Futuremilestoneanchor selectedfromactualfailure"
+    ]
+  },
+  "milestone": {
+    "distance_m": 3.24,
+    "source": "Unchangedsourcewheelbase",
+    "horizon_actions": 13,
+    "horizon_s": 1.04,
+    "anchor_and_deadline": "Setoncefromcurrentstate/time,donotresetuntildistancecrossed;nextmilestoneonlyafterreached",
+    "goal": "Predictedreachs_goalbyfixeddeadline,actualdiagnosticprogressnotinfinitesimaldrift"
+  },
+  "candidate_set": {
+    "max_candidates": 6,
+    "steers": [
+      "currentnominalpursuit",
+      "negativecurrentfrontjointmean",
+      "zero"
+    ],
+    "pedals": [
+      "currentnominalpedals",
+      "gas0_brake0.3"
+    ],
+    "reason_replace_coast": "Fixedsixslots,replacecoastwithalreadyusedbrake0.3 toprobeexplicitdecelerationcoverage suggestedby404;stationarybrakeoptionstillavailableatreset,soobjectiveanti-stallnotgasfloor.",
+    "tail": "Afterfirstcandidateaction,unchangedstate-specificnominalfollowerfromownpredictedstates. Neverstoredfuturecommands. Nominalmemorysemanticsfixedandcloned.",
+    "retained_suffix": "Atseconddecisionreplacefixedslot5(neutralbrake)bypriorchosenmodel-generatedremainingsequence,pad/truncateto currenthorizonwithfrozennominaltail. Revalidatecurrentstate/fullhorizon/goal/deadline. Sixslotsremain,noextra candidate.",
+    "duplicates": "Preservefixedorderandcountqualifieduniquealternatives;do notclaimrankingwith1safealternative"
+  },
+  "selection": {
+    "hard_constraints": [
+      "Predictedpatherror<=3m allboundaries",
+      "No newcollision/damage/roadcontactloss/grass/meaningfulreverse",
+      "Validfiniteprofile/projection/executor domains",
+      "Milestonebyfixeddeadline"
+    ],
+    "rank": [
+      "Signed progress deficit sum((s_goal-s_k)*dt), equivalentnegativecumulativeforwardprogress; no maxzero plateau aftermilestone",
+      "Maximum predictedpatherror",
+      "Maximum predictedabsyaw",
+      "Fixedcandidateindex"
+    ],
+    "slip_yaw": "Logcurrentandpredictedwheel-localforces/slip/yaw;no posthoc fittedyaw/slip threshold orautomaticq>1veto;sourceappliesrealvectorclip.",
+    "no_feasible": "Stopandreportinfeasible;no nominal/coast fallback,noextraquery/horizon/state"
+  },
+  "benchmarks": [
+    {
+      "name": "reset_Cbase",
+      "initial": "402P10Cfullinitialsnapshot",
+      "nominal": "FixedCbase1.0",
+      "actual_reference_steps": [
+        1,
+        13
+      ],
+      "purpose": "Stationaryfailurepositivecontrast;startmilestoneandtwo-decisionsno-deadline-drift"
+    },
+    {
+      "name": "O268_pre92",
+      "initial": "Replayactual404O268commands1..91fromfullinitial,compareeachsourcepost391limits",
+      "nominal": "FixedO268",
+      "actual_reference_steps": [
+        92,
+        104
+      ],
+      "purpose": "Nearbyactualarc3.583mahead,notidenticalstate;safecomparison13window"
+    },
+    {
+      "name": "C268_pre91",
+      "initial": "Replayactual404C268commands1..90fromfullinitial,compareeachsourcepost391limits",
+      "nominal": "FixedC268",
+      "actual_reference_steps": [
+        91,
+        103
+      ],
+      "purpose": "Currente.295m;baseline13windowendsknown4.760msafetyfailure"
+    }
+  ],
+  "qualification": {
+    "limits": {
+      "speed_m_s": 0.5,
+      "yaw_rate_rad_s": 0.05,
+      "position_m": 0.1
+    },
+    "discrete": [
+      "collision",
+      "damage",
+      "numberofroadcontactwheels"
+    ],
+    "initial": "Body/tile/progress exactandcurrentcontroller memorycomplete;sourcehashesfixed. Freshsnapshotwarmstartsnotassumedrestored.",
+    "long_reference": "Atall3statespredict13frozennominalactionsfrompredictedstates,sealbeforeactualfuturecomparison. Cknownunsafe referencecanbefidelity-qualifiedbutnotcandidate-safe.",
+    "independence": "Parent/inputhashunchanged,forward/reversefirstsix13stepbranches exactrepeat;referencebefore/afteragree;eachchosenbranchfirststep vs continuousmodelparent391criteria. Firstfailurestopswholeprobe.",
+    "references_before_candidates": "All3nominal13stepfidelityreferences qualified beforecandidatephase;unsafeCnominal labeledunsafe notinvalidfidelity. Firstfailurestops."
+  },
+  "future_probe": {
+    "executed": false,
+    "model_tick_cap": 4096,
+    "CPU_cap_s": 60,
+    "wall_cap_s": 120,
+    "max_parallel_physics_workers": 1,
+    "native_cap": 0,
+    "actor_cap": 0,
+    "learning_cap": 0,
+    "SEALED_cap": 0,
+    "reserve_use": 0,
+    "max_decisions_per_state": 2,
+    "cost_breakdown_ticks": {
+      "prefix_C90_O91": 724,
+      "reference_before_after_3x13": 312,
+      "firstsix_forward_reverse_3x6x2x13": 1872,
+      "second_six_3x6x13": 936,
+      "selected_parent_two_steps_each": 24
+    },
+    "worst_total_positive_ticks": 3868,
+    "unused_cap_margin": 228,
+    "source_world_upper_count": 63,
+    "cost_basis": "40172.442CPU/1939sourceworlds plusphysics10212ticks;onlyroughscale,budgetincludesallreplay/reference/candidate/parentpositivequeries. No CEM/fit.",
+    "stops": "Sourcefidelity/domain/independence/resource/deadlinefailurestop;anyno-feasiblecaseendsrecipe,no earlierstatereplacement or candidate/horizonenlargement.",
+    "case_order": [
+      "reset_Cbase",
+      "O268_pre92",
+      "C268_pre91"
+    ]
+  },
+  "research_readout": {
+    "reset": "Firsttwoselections mustinclude nonzero nominaldrive candidate andsourcepositiveprogress,with13stepfeasibletarget3.24m;all-stopanalyticaltrajectoryfailsgoal. Ifstillstationaryclose recipe,no gasfloor.",
+    "dynamic": "ReportbaselineunsafeC vs safeO andsafealternativecounts;0safe=>no localrecoverabilitydemonstrated,1safe=>existenceonlynotranking,>=2=>modelcomparisononly. ChosenO mustpreservepredictedsafety; noactual14.78/pixelclaim.",
+    "tail": "Retainedsuffixeligibility/fullpredictedactions checkedafteroneparentstep,nominalmemoryupdatedfromcurrentstate;no claimofrecursivefeasibilityproof.",
+    "scope": "Posthoc3knownstates,notindependentgeneralization oractualcounterfactualranking. Oneintegrateddesignchangesobjective/decelcoverage/suffix,notobjective-onlyablation."
+  },
+  "design_revision_before_candidate_evaluation": {
+    "at_utc": "2026-10-16T17:14:42.835623+00:00",
+    "reason": "Analyticalplateauin403clippeddeficit at highspeed; use signeddeficitwithinfinitehorizon. No model/native/controls evaluated, no coefficientfit. Original403designpreserved."
+  }
+}
