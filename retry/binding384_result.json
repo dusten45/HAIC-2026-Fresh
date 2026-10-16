@@ -1,0 +1,146 @@
+{
+  "stage": 384,
+  "contract_binding": {
+    "stage": 384,
+    "status": "PREPARED_NOT_EXECUTABLE_NOT_OPENED",
+    "final_opening_authorized": false,
+    "immutable_contract382_sha256": "fa0dbb2e4ff624e5665b87c316d8d1c10d3fd6624b64b0a093e73766c14870d1",
+    "candidate296_zip_sha256": "0a6c5e286e87d75498c5aec1174c7af3fd54f6efa34b0d83ca1efba5d404a937",
+    "candidate_member_manifest_sha256": "b25e77a762ea53336e3b5ac63aaab8a1f371f467cd62fbdc71de4d990dac2f55",
+    "candidate_members": 18,
+    "rollback240_zip_sha256": "ae944d7d9e2fda02fc05936bcf245613a81fade5f2f3edc1f6ead68e9bed8d31",
+    "qualification381_plan_sha256": "b5bdf17bad75b6a564f611f190e138f6892b0612faa97b45330ff617e26d33de",
+    "qualification381_result_sha256": "c5a88b4fca514141f0f48f12a8f9a6200cb24232f30b2cff20968fdd1b716f67",
+    "qualified_archive_exact": true,
+    "qualified_loaded_policy_modules": 17,
+    "original_split_manifest_sha256": "d0fea5b4a96937e5ff9cc9a2c856d8b2b3cc7fc0b6c831caf7bfda0b91977ca7",
+    "SEALED_ordered_identity_block_sha256": "b650238bc040f6a67f90cf8f99ffcb8d6a2b1053e456289628fd41051d431ba3",
+    "SEALED_case_count": 16,
+    "seed383_proof_sha256": "078d5847749155a3c10d3bb2c4820496c9669a288c7ebcdc280d11e432429103",
+    "seed383_proof_plan_sha256": "5853734b00e3385ae4884ab4b2c1d2f5c628df572e39c04773f304d3fdd436d6",
+    "seed383_scope": "Seed/pair overlap0 vs conservative339 within preserved metadata,224exposurestages;2unattributed retained; no geometry/statistical/server/newmachine independence proof",
+    "runtime": {
+      "interpreter_path": "/workspace/HAIC-2026-Fresh/.venv/bin/python",
+      "interpreter_sha256": "ec579de7512e84d960bc642a840de69c785c52d6adf89e3a15f51717b29be40f",
+      "python_version": "3.11.16",
+      "distributions": {
+        "numpy": {
+          "version": "1.26.0",
+          "file_count": 891,
+          "content_manifest_sha256": "47408e99dfb5425572549c3f2031578969b2688bd5935660cd20d49b3509fe9b",
+          "scope": "Current installed distribution files excluding generated pyc; not retrospective381 binary proof or full OS image"
+        },
+        "opencv-python": {
+          "version": "4.8.1.78",
+          "file_count": 128,
+          "content_manifest_sha256": "8369056c5dacc0abcb891424bfb87adbccc0f74ca8639ba75bce34bf9813ef04",
+          "scope": "Current installed distribution files excluding generated pyc; not retrospective381 binary proof or full OS image"
+        }
+      },
+      "retrospective381_distribution_byte_hashes_recorded": false
+    },
+    "execution_sources": {
+      "retry/clean_pixel_worker.py": "c5e9963932f30bf9472b0977c380ffadb5d4e521749b50dd008ab2e12d58b8d2",
+      "retry/frozen_composite_runtime.py": "d397f9b36b54e2f3a4725fad6fdddcb3be9a85dee5be17ac589603a3b8ae373d",
+      "retry/pixel_sandbox_runtime.py": "c3f5083f453e70c96624c502f5a127c2d7ec9f6ac20ccff4f15535bd0fcad40a",
+      "retry/qualify_pixel_package.py": "b49fb9f537aa9923e9c3db00fb81482265c3dfdab06fca96e6f492c2050ca026",
+      "local_runner.py": "48eedfb0c32a8e1f4dd724e65ac69eb678105ee434ac797ce2c9f442461fd398",
+      "env_wrapper.py": "8687215412da0a1f34534623d5050030d85c629a70cb922e9d2199c513a3941e",
+      "core/finish_line.py": "7c16dda1378dcd65aed46d9da96608aa055124c2f27d8fb00c309078361d4204"
+    },
+    "native_sandbox_sha256": "46190c1ed732adbc081919797c700e57fd0e4f355dbe00cc3f42e42767210979",
+    "execution": {
+      "candidates": 1,
+      "cases": 16,
+      "max_steps_per_case": 2000,
+      "frame_skip": 4,
+      "raw_TimeLimit": 8200,
+      "warmup_elapsed_steps": 50,
+      "raw_reset_ticks": 51,
+      "input": "reset/act + official pixels only",
+      "policy_changes": 0,
+      "new_splits": 0,
+      "new_condition_selection": 0,
+      "actor_and_reset": "Independent unchanged actor per case, full normal reset; no carryover state or privileged diagnostics"
+    },
+    "failure_rule": "Frozen clean worker: exact shape3,finite,in-range actions; first qualification/runtime/invalid/IPC/source/deadline failure aborts batch and yields technical/censor classification, no retry/no fabricated official-server DNF. Local runner flatten/finiteclip/no-op/thread-timeout paths are source reference only, not identical to this strict adapter.",
+    "aggregate_rule": "Finish_time present wins even if truncated; local2000cap without finish is max_steps DNF. Report16 planned denominator and observed/unobserved/censored separately,completioncount first; lap mean/median only completed, no fake DNFtimes; damage/runtime separate. No240SEALEDcomparison/posthocpolicyselection/newpass threshold.",
+    "reserve": {
+      "total": 84000,
+      "primary296_cap": 32000,
+      "automatic_retry": 0,
+      "rollback_comparison": 0,
+      "unallocated": 52000,
+      "current_used": 0
+    },
+    "remaining": [
+      "Explicit final opening authorization and frozen claim/query/error-cost ledger binding",
+      "Final executor/report adapter must consume these exact hashes and strict abort/aggregation rules; no invocation now",
+      "Recheck snapshot freshness without inference before opening; no package/ZIP change or automatic requalification"
+    ],
+    "same_machine_only": true,
+    "official_server_equivalence": false,
+    "new_machine_equivalence": false,
+    "consumer_original_document_full_read": false,
+    "parent_original_full_read_relay_recorded": true
+  },
+  "time_estimate": {
+    "existing_measurements": [
+      {
+        "stage": 296,
+        "native_actions": 6161,
+        "wall_s": 382.78225922584534,
+        "wall_per_native_s": 0.06212989112576616,
+        "full32000_projection_minutes": 33.135941933741954
+      },
+      {
+        "stage": 375,
+        "native_actions": 4799,
+        "wall_s": 400.7760051409714,
+        "wall_per_native_s": 0.08351239948759562,
+        "full32000_projection_minutes": 44.53994639338433
+      },
+      {
+        "stage": 377,
+        "native_actions": 237,
+        "wall_s": 16.803832178004086,
+        "wall_per_native_s": 0.07090224547681048,
+        "full32000_projection_minutes": 37.814530920965595
+      }
+    ],
+    "fullcap32000_minutes": [
+      33.135941933741954,
+      44.53994639338433
+    ],
+    "conditional_4000to5000_native_minutes": [
+      4.141992741717744,
+      6.959366623966302
+    ],
+    "scope": "Observed samehost historical rates, reset/startup overhead already included; different observer/IO/policy paths; no SEALED prediction, no new benchmark, not hard wall guarantee"
+  },
+  "new_experiment": false,
+  "SEALED_evaluation_opened": false,
+  "research_program_terminated": false,
+  "cost": {
+    "stage": 384,
+    "new_wrapper_actions": 0,
+    "new_actor_calls": 0,
+    "new_environment_resets": 0,
+    "new_environment_creation": 0,
+    "new_model_forward_calls": 0,
+    "new_learning_fits": 0,
+    "new_source_physics_rollout_ticks": 0,
+    "new_observation_queries": 0,
+    "new_performance_queries": 0,
+    "new_terrain_queries": 0,
+    "new_paid_resources": 0,
+    "metadata_binding_wall_s": 1.0542346469592303,
+    "metadata_binding_CPU_s": 1.0483316820000002,
+    "scope": "Dependency hashing/binding/timing arithmetic; earlier source review and report/git not fully timed",
+    "actual_cumulative_wrapper_actions": 1312121,
+    "research_remaining": 35943,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064
+  }
+}
