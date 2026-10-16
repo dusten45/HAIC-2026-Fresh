@@ -130,3 +130,6 @@ B는 미리 고른 N1 직선64/코너94의 한 행동 모델 자격을 통과한
 
 
 **418은별도승인된실제clipping보정으로같은Cpre119/history118의A/B를각1번실행했다.** 초기/fullfork/RNG/memory·prefix118이같았고guardian26회에서살아있는부모접근가능fullstate가보존됐다. 실제A131명령/post는411과정확히같았다. B첫변경전이와13행동body/wheel/rawhullfidelity를통과했고clip26/208·phase별flag가source와일치했다. 첫clip은121raw3rearwheel2였다. guardianneutral개입0이며명령의미세수치차이는기존게이트안이었다. 실제exit A.50–.52/B.44–.46초로이득.04–.08초가재현됐지만417의.08보장이득미달판정은그대로다. 실제262/reset2·CPU15.664초와새모델2808tick/54world·CPU7.479초를분리계상했고cached417tick재청구0이다. 원장v438연구29,618·예비84,000사용0,추가실험없이닫았다. [418 실제전이·clipping·시간·비용](calibrate418_result.md)
+
+
+**419는signedC+guardian기준의상태기반3recipe plannerprotocol을정적으로구현했다.** 절대행동/arc구간/seed트리거없이현재상태에서질의하고, terminal가중치대신각13적격child의긴Cnominalwitness를officialfinish/실패까지확인하는방법을선택했다. 모든적격recipe를보고엄격한finishbracket지배로선택하며417의.08을보편기준으로쓰지않는다. 미완료tail시간추정·Otail의C이식·분기memorycommit·예측actualgoal갱신은거부한다. 412/414/418저장fixture와synthetic포함36정적검사가통과했고새actual/model0이다. 긴tailphysics/실시간성은미자격이며후속3decision모델폐루프와조건부actual보정은설계만남겼다. 필수3852tick+자격중복3852tick의비용을분리했고관측rate상한이아닌경험적추정임을명시했다. 정적CPU.244초, 원장v439연구29,618·예비84,000사용0유지다. [419 코드·단위/경계·후속비용·제안](planner419_result.md)
