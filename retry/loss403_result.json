@@ -1,0 +1,1287 @@
+{
+  "stage": 403,
+  "same_geometry_profile_registration": true,
+  "reference_length_m": 842.8841457769236,
+  "official_lap_s": 15.559999999999736,
+  "historical_lap_difference_s": 0.7799999999997365,
+  "gap_to11_s": 4.559999999999736,
+  "stored_profile_estimated_time_s": 15.316710464806208,
+  "whole": {
+    "actions": 195,
+    "scored_time_s": 15.559999999999736,
+    "mean_speed": 53.614585565422814,
+    "mean_target": 55.14870712985677,
+    "mean_target_minus_speed": 1.2570436028560596,
+    "mean_sigma": 53.53616802609699,
+    "mean_sigma_speed_ratio": 0.9979664542357979,
+    "ratio_excluded_time_s": 0.08000000000000007,
+    "gas_time_s": 11.879999999999804,
+    "brake_time_s": 3.679999999999932,
+    "coast_time_s": 0,
+    "both_pedals_time_s": 0,
+    "positive_clamp_time_s": 7.079999999999883,
+    "negative_clamp_time_s": 1.7599999999999625,
+    "braking_below_target_time_s": 1.43999999999998,
+    "under_target5_time_s": 1.8399999999999608,
+    "max_post_path_error_m": 1.5254846075434585,
+    "tires": {
+      "front": {
+        "samples": 1558,
+        "clipped": 1
+      },
+      "rear": {
+        "samples": 1558,
+        "clipped": 0
+      }
+    }
+  },
+  "arc_bins": [
+    {
+      "arc_fraction": [
+        0.0,
+        0.1
+      ],
+      "actions": 37,
+      "scored_time_s": 2.9600000000000026,
+      "mean_speed": 28.241476137432567,
+      "mean_target": 31.309463553600427,
+      "mean_target_minus_speed": 2.283501967908411,
+      "mean_sigma": 28.114725806001918,
+      "mean_sigma_speed_ratio": 0.9954275688237422,
+      "ratio_excluded_time_s": 0.08000000000000007,
+      "gas_time_s": 2.480000000000002,
+      "brake_time_s": 0.4800000000000004,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 1.5200000000000014,
+      "negative_clamp_time_s": 0,
+      "braking_below_target_time_s": 0.4800000000000004,
+      "under_target5_time_s": 0,
+      "max_post_path_error_m": 1.5254846075434585,
+      "tires": {
+        "front": {
+          "samples": 296,
+          "clipped": 0
+        },
+        "rear": {
+          "samples": 296,
+          "clipped": 0
+        }
+      }
+    },
+    {
+      "arc_fraction": [
+        0.1,
+        0.2
+      ],
+      "actions": 16,
+      "scored_time_s": 1.2799999999999727,
+      "mean_speed": 65.19326553244284,
+      "mean_target": 67.76262157531275,
+      "mean_target_minus_speed": 2.569356042869905,
+      "mean_sigma": 65.18931360006563,
+      "mean_sigma_speed_ratio": 0.9999274279287335,
+      "ratio_excluded_time_s": 0,
+      "gas_time_s": 1.2799999999999727,
+      "brake_time_s": 0,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 1.1199999999999761,
+      "negative_clamp_time_s": 0,
+      "braking_below_target_time_s": 0,
+      "under_target5_time_s": 0,
+      "max_post_path_error_m": 0.27459914072259783,
+      "tires": {
+        "front": {
+          "samples": 128,
+          "clipped": 0
+        },
+        "rear": {
+          "samples": 128,
+          "clipped": 0
+        }
+      }
+    },
+    {
+      "arc_fraction": [
+        0.2,
+        0.3
+      ],
+      "actions": 11,
+      "scored_time_s": 0.8799999999999812,
+      "mean_speed": 95.08556978083169,
+      "mean_target": 95.5973895658759,
+      "mean_target_minus_speed": 0.5118197850442242,
+      "mean_sigma": 95.0846967501638,
+      "mean_sigma_speed_ratio": 0.9999910244400592,
+      "ratio_excluded_time_s": 0,
+      "gas_time_s": 0.7199999999999847,
+      "brake_time_s": 0.1599999999999966,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 0,
+      "negative_clamp_time_s": 0.1599999999999966,
+      "braking_below_target_time_s": 0,
+      "under_target5_time_s": 0,
+      "max_post_path_error_m": 0.06333500481360495,
+      "tires": {
+        "front": {
+          "samples": 88,
+          "clipped": 0
+        },
+        "rear": {
+          "samples": 88,
+          "clipped": 0
+        }
+      }
+    },
+    {
+      "arc_fraction": [
+        0.3,
+        0.4
+      ],
+      "actions": 19,
+      "scored_time_s": 1.5199999999999676,
+      "mean_speed": 55.10393397023972,
+      "mean_target": 50.74724589636579,
+      "mean_target_minus_speed": -4.356688073873921,
+      "mean_sigma": 54.88566810580603,
+      "mean_sigma_speed_ratio": 0.9952845358298564,
+      "ratio_excluded_time_s": 0,
+      "gas_time_s": 0.799999999999983,
+      "brake_time_s": 0.7199999999999847,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 0,
+      "negative_clamp_time_s": 0.7199999999999847,
+      "braking_below_target_time_s": 0,
+      "under_target5_time_s": 0,
+      "max_post_path_error_m": 1.0289568753038418,
+      "tires": {
+        "front": {
+          "samples": 152,
+          "clipped": 0
+        },
+        "rear": {
+          "samples": 152,
+          "clipped": 0
+        }
+      }
+    },
+    {
+      "arc_fraction": [
+        0.4,
+        0.5
+      ],
+      "actions": 21,
+      "scored_time_s": 1.679999999999965,
+      "mean_speed": 50.58737589291672,
+      "mean_target": 47.44450024811899,
+      "mean_target_minus_speed": -3.142875644797737,
+      "mean_sigma": 50.504800751830956,
+      "mean_sigma_speed_ratio": 0.9983409462257088,
+      "ratio_excluded_time_s": 0,
+      "gas_time_s": 1.4399999999999702,
+      "brake_time_s": 0.23999999999999488,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 0,
+      "negative_clamp_time_s": 0.1599999999999966,
+      "braking_below_target_time_s": 0,
+      "under_target5_time_s": 0,
+      "max_post_path_error_m": 0.7094351650527528,
+      "tires": {
+        "front": {
+          "samples": 168,
+          "clipped": 0
+        },
+        "rear": {
+          "samples": 168,
+          "clipped": 0
+        }
+      }
+    },
+    {
+      "arc_fraction": [
+        0.5,
+        0.6
+      ],
+      "actions": 15,
+      "scored_time_s": 1.1999999999999744,
+      "mean_speed": 68.78932753039588,
+      "mean_target": 69.095577201738,
+      "mean_target_minus_speed": 0.30624967134212916,
+      "mean_sigma": 68.75146641552719,
+      "mean_sigma_speed_ratio": 0.9993769218583692,
+      "ratio_excluded_time_s": 0,
+      "gas_time_s": 0.7199999999999847,
+      "brake_time_s": 0.47999999999998977,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 0.1599999999999966,
+      "negative_clamp_time_s": 0.1599999999999966,
+      "braking_below_target_time_s": 0.23999999999999488,
+      "under_target5_time_s": 0,
+      "max_post_path_error_m": 0.3873753763031109,
+      "tires": {
+        "front": {
+          "samples": 120,
+          "clipped": 0
+        },
+        "rear": {
+          "samples": 120,
+          "clipped": 0
+        }
+      }
+    },
+    {
+      "arc_fraction": [
+        0.6,
+        0.7
+      ],
+      "actions": 19,
+      "scored_time_s": 1.5199999999999676,
+      "mean_speed": 55.79068316878062,
+      "mean_target": 59.679208266384556,
+      "mean_target_minus_speed": 3.8885250976039516,
+      "mean_sigma": 55.73187469016464,
+      "mean_sigma_speed_ratio": 0.9988118006253782,
+      "ratio_excluded_time_s": 0,
+      "gas_time_s": 1.2799999999999727,
+      "brake_time_s": 0.23999999999999488,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 1.2799999999999727,
+      "negative_clamp_time_s": 0.0799999999999983,
+      "braking_below_target_time_s": 0.1599999999999966,
+      "under_target5_time_s": 0.3999999999999915,
+      "max_post_path_error_m": 0.7459456149047313,
+      "tires": {
+        "front": {
+          "samples": 152,
+          "clipped": 1
+        },
+        "rear": {
+          "samples": 152,
+          "clipped": 0
+        }
+      }
+    },
+    {
+      "arc_fraction": [
+        0.7,
+        0.8
+      ],
+      "actions": 19,
+      "scored_time_s": 1.5199999999999676,
+      "mean_speed": 54.73272581012223,
+      "mean_target": 60.10780939420233,
+      "mean_target_minus_speed": 5.375083584080086,
+      "mean_sigma": 54.680255090370444,
+      "mean_sigma_speed_ratio": 0.9989632100158894,
+      "ratio_excluded_time_s": 0,
+      "gas_time_s": 1.0399999999999778,
+      "brake_time_s": 0.47999999999998977,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 1.0399999999999778,
+      "negative_clamp_time_s": 0,
+      "braking_below_target_time_s": 0.47999999999998977,
+      "under_target5_time_s": 1.0399999999999778,
+      "max_post_path_error_m": 0.5391573097886555,
+      "tires": {
+        "front": {
+          "samples": 152,
+          "clipped": 0
+        },
+        "rear": {
+          "samples": 152,
+          "clipped": 0
+        }
+      }
+    },
+    {
+      "arc_fraction": [
+        0.8,
+        0.9
+      ],
+      "actions": 15,
+      "scored_time_s": 1.1999999999999744,
+      "mean_speed": 68.1388452236293,
+      "mean_target": 71.72892759386275,
+      "mean_target_minus_speed": 3.5900823702334415,
+      "mean_sigma": 68.1377034010111,
+      "mean_sigma_speed_ratio": 0.9999811808927216,
+      "ratio_excluded_time_s": 0,
+      "gas_time_s": 0.8799999999999812,
+      "brake_time_s": 0.3199999999999932,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 0.8799999999999812,
+      "negative_clamp_time_s": 0.23999999999999488,
+      "braking_below_target_time_s": 0.0799999999999983,
+      "under_target5_time_s": 0.3999999999999915,
+      "max_post_path_error_m": 0.11598333738829202,
+      "tires": {
+        "front": {
+          "samples": 120,
+          "clipped": 0
+        },
+        "rear": {
+          "samples": 120,
+          "clipped": 0
+        }
+      }
+    },
+    {
+      "arc_fraction": [
+        0.9,
+        1.0
+      ],
+      "actions": 23,
+      "scored_time_s": 1.7999999999999616,
+      "mean_speed": 45.817411474941274,
+      "mean_target": 47.08923673517529,
+      "mean_target_minus_speed": 1.2718252602340334,
+      "mean_sigma": 45.73256095662064,
+      "mean_sigma_speed_ratio": 0.9977206002806351,
+      "ratio_excluded_time_s": 0,
+      "gas_time_s": 1.2399999999999736,
+      "brake_time_s": 0.5599999999999881,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 1.079999999999977,
+      "negative_clamp_time_s": 0.23999999999999488,
+      "braking_below_target_time_s": 0,
+      "under_target5_time_s": 0,
+      "max_post_path_error_m": 1.0788382001337087,
+      "tires": {
+        "front": {
+          "samples": 182,
+          "clipped": 0
+        },
+        "rear": {
+          "samples": 182,
+          "clipped": 0
+        }
+      }
+    }
+  ],
+  "arc_crossing_intervals": [
+    {
+      "fraction": 0.1,
+      "interval_s": [
+        2.8800000000000026,
+        2.9600000000000026
+      ],
+      "crossing_action": 37
+    },
+    {
+      "fraction": 0.2,
+      "interval_s": [
+        4.159999999999977,
+        4.239999999999975
+      ],
+      "crossing_action": 53
+    },
+    {
+      "fraction": 0.3,
+      "interval_s": [
+        5.039999999999958,
+        5.119999999999957
+      ],
+      "crossing_action": 64
+    },
+    {
+      "fraction": 0.4,
+      "interval_s": [
+        6.559999999999926,
+        6.639999999999924
+      ],
+      "crossing_action": 83
+    },
+    {
+      "fraction": 0.5,
+      "interval_s": [
+        8.239999999999892,
+        8.31999999999989
+      ],
+      "crossing_action": 104
+    },
+    {
+      "fraction": 0.6,
+      "interval_s": [
+        9.439999999999866,
+        9.519999999999865
+      ],
+      "crossing_action": 119
+    },
+    {
+      "fraction": 0.7,
+      "interval_s": [
+        10.959999999999834,
+        11.039999999999832
+      ],
+      "crossing_action": 138
+    },
+    {
+      "fraction": 0.8,
+      "interval_s": [
+        12.479999999999801,
+        12.5599999999998
+      ],
+      "crossing_action": 157
+    },
+    {
+      "fraction": 0.9,
+      "interval_s": [
+        13.679999999999776,
+        13.759999999999774
+      ],
+      "crossing_action": 172
+    }
+  ],
+  "curvature_groups": [
+    {
+      "curvature_range": [
+        0,
+        0.02
+      ],
+      "actions": 146,
+      "scored_time_s": 11.639999999999809,
+      "mean_speed": 56.928433375393205,
+      "mean_target": 59.01126755784808,
+      "mean_target_minus_speed": 1.6888657853940214,
+      "mean_sigma": 56.88257421758859,
+      "mean_sigma_speed_ratio": 0.999002300888343,
+      "ratio_excluded_time_s": 0.08000000000000007,
+      "gas_time_s": 8.519999999999868,
+      "brake_time_s": 3.1199999999999406,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 6.039999999999903,
+      "negative_clamp_time_s": 1.7599999999999625,
+      "braking_below_target_time_s": 1.2799999999999798,
+      "under_target5_time_s": 1.2799999999999727,
+      "max_post_path_error_m": 1.3438269119754476,
+      "tires": {
+        "front": {
+          "samples": 1166,
+          "clipped": 1
+        },
+        "rear": {
+          "samples": 1166,
+          "clipped": 0
+        }
+      }
+    },
+    {
+      "curvature_range": [
+        0.02,
+        0.05
+      ],
+      "actions": 26,
+      "scored_time_s": 2.0799999999999566,
+      "mean_speed": 50.22443457702915,
+      "mean_target": 50.93242697391756,
+      "mean_target_minus_speed": 0.7079923968884054,
+      "mean_sigma": 50.10688512177567,
+      "mean_sigma_speed_ratio": 0.9974021865975422,
+      "ratio_excluded_time_s": 0,
+      "gas_time_s": 2.0799999999999566,
+      "brake_time_s": 0,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 0.7199999999999847,
+      "negative_clamp_time_s": 0,
+      "braking_below_target_time_s": 0,
+      "under_target5_time_s": 0.47999999999998977,
+      "max_post_path_error_m": 0.34362284004712507,
+      "tires": {
+        "front": {
+          "samples": 208,
+          "clipped": 0
+        },
+        "rear": {
+          "samples": 208,
+          "clipped": 0
+        }
+      }
+    },
+    {
+      "curvature_range": [
+        0.05,
+        0.1
+      ],
+      "actions": 18,
+      "scored_time_s": 1.4399999999999693,
+      "mean_speed": 39.218646553917154,
+      "mean_target": 37.662373875906034,
+      "mean_target_minus_speed": -1.55627267801113,
+      "mean_sigma": 39.09776701020354,
+      "mean_sigma_speed_ratio": 0.9968092006208389,
+      "ratio_excluded_time_s": 0,
+      "gas_time_s": 1.0399999999999778,
+      "brake_time_s": 0.3999999999999915,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 0.23999999999999488,
+      "negative_clamp_time_s": 0,
+      "braking_below_target_time_s": 0,
+      "under_target5_time_s": 0.0799999999999983,
+      "max_post_path_error_m": 1.0788382001337087,
+      "tires": {
+        "front": {
+          "samples": 144,
+          "clipped": 0
+        },
+        "rear": {
+          "samples": 144,
+          "clipped": 0
+        }
+      }
+    },
+    {
+      "curvature_range": [
+        0.1,
+        null
+      ],
+      "actions": 5,
+      "scored_time_s": 0.40000000000000036,
+      "mean_speed": 26.63577987635171,
+      "mean_target": 28.396167286014272,
+      "mean_target_minus_speed": 1.760387409662561,
+      "mean_sigma": 25.96626261338022,
+      "mean_sigma_speed_ratio": 0.9751307907100345,
+      "ratio_excluded_time_s": 0,
+      "gas_time_s": 0.2400000000000002,
+      "brake_time_s": 0.16000000000000014,
+      "coast_time_s": 0,
+      "both_pedals_time_s": 0,
+      "positive_clamp_time_s": 0.08000000000000007,
+      "negative_clamp_time_s": 0,
+      "braking_below_target_time_s": 0.16000000000000014,
+      "under_target5_time_s": 0,
+      "max_post_path_error_m": 1.5254846075434585,
+      "tires": {
+        "front": {
+          "samples": 40,
+          "clipped": 0
+        },
+        "rear": {
+          "samples": 40,
+          "clipped": 0
+        }
+      }
+    }
+  ],
+  "visit_threshold_comparison": [
+    {
+      "fraction": 0.1,
+      "visited_threshold": 24,
+      "new_interval_s": [
+        2.480000000000002,
+        2.5600000000000023
+      ],
+      "old_interval_s": [
+        2.48,
+        2.56
+      ],
+      "new_minus_old_interval_s": [
+        -0.07999999999999785,
+        0.08000000000000229
+      ]
+    },
+    {
+      "fraction": 0.2,
+      "visited_threshold": 48,
+      "new_interval_s": [
+        3.9999999999999805,
+        4.079999999999979
+      ],
+      "old_interval_s": [
+        3.92,
+        4.0
+      ],
+      "new_minus_old_interval_s": [
+        -1.9539925233402755e-14,
+        0.15999999999997883
+      ]
+    },
+    {
+      "fraction": 0.3,
+      "visited_threshold": 72,
+      "new_interval_s": [
+        4.879999999999962,
+        4.95999999999996
+      ],
+      "old_interval_s": [
+        4.8,
+        4.88
+      ],
+      "new_minus_old_interval_s": [
+        -3.8191672047105385e-14,
+        0.15999999999996017
+      ]
+    },
+    {
+      "fraction": 0.4,
+      "visited_threshold": 96,
+      "new_interval_s": [
+        6.399999999999929,
+        6.479999999999928
+      ],
+      "old_interval_s": [
+        6.24,
+        6.32
+      ],
+      "new_minus_old_interval_s": [
+        0.07999999999992902,
+        0.23999999999992738
+      ]
+    },
+    {
+      "fraction": 0.5,
+      "visited_threshold": 119,
+      "new_interval_s": [
+        7.919999999999898,
+        7.999999999999896
+      ],
+      "old_interval_s": [
+        7.84,
+        7.92
+      ],
+      "new_minus_old_interval_s": [
+        -1.021405182655144e-13,
+        0.15999999999989623
+      ]
+    },
+    {
+      "fraction": 0.6,
+      "visited_threshold": 143,
+      "new_interval_s": [
+        9.199999999999871,
+        9.27999999999987
+      ],
+      "old_interval_s": [
+        8.96,
+        9.040000000000001
+      ],
+      "new_minus_old_interval_s": [
+        0.15999999999987047,
+        0.31999999999986883
+      ]
+    },
+    {
+      "fraction": 0.7,
+      "visited_threshold": 167,
+      "new_interval_s": [
+        10.799999999999837,
+        10.879999999999836
+      ],
+      "old_interval_s": [
+        10.64,
+        10.72
+      ],
+      "new_minus_old_interval_s": [
+        0.07999999999983665,
+        0.239999999999835
+      ]
+    },
+    {
+      "fraction": 0.8,
+      "visited_threshold": 191,
+      "new_interval_s": [
+        12.239999999999807,
+        12.319999999999805
+      ],
+      "old_interval_s": [
+        11.92,
+        12.0
+      ],
+      "new_minus_old_interval_s": [
+        0.2399999999998066,
+        0.39999999999980496
+      ]
+    },
+    {
+      "fraction": 0.9,
+      "visited_threshold": 215,
+      "new_interval_s": [
+        13.51999999999978,
+        13.599999999999778
+      ],
+      "old_interval_s": [
+        13.120000000000001,
+        13.200000000000001
+      ],
+      "new_minus_old_interval_s": [
+        0.31999999999977824,
+        0.4799999999997766
+      ]
+    },
+    {
+      "fraction": 1.0,
+      "visited_threshold": 238,
+      "new_interval_s": [
+        15.35999999999974,
+        15.439999999999738
+      ],
+      "old_interval_s": [
+        14.56,
+        14.64
+      ],
+      "new_minus_old_interval_s": [
+        0.7199999999997395,
+        0.8799999999997379
+      ]
+    }
+  ],
+  "visit_band_duration_comparison": [
+    {
+      "visited_fraction": [
+        0.0,
+        0.1
+      ],
+      "new_duration_interval_s": [
+        2.480000000000002,
+        2.5600000000000023
+      ],
+      "old_duration_interval_s": [
+        2.48,
+        2.56
+      ],
+      "new_minus_old_duration_interval_s": [
+        -0.07999999999999785,
+        0.08000000000000229
+      ]
+    },
+    {
+      "visited_fraction": [
+        0.1,
+        0.2
+      ],
+      "new_duration_interval_s": [
+        1.4399999999999782,
+        1.5999999999999766
+      ],
+      "old_duration_interval_s": [
+        1.3599999999999999,
+        1.52
+      ],
+      "new_minus_old_duration_interval_s": [
+        -0.08000000000002183,
+        0.23999999999997668
+      ]
+    },
+    {
+      "visited_fraction": [
+        0.2,
+        0.3
+      ],
+      "new_duration_interval_s": [
+        0.799999999999983,
+        0.9599999999999795
+      ],
+      "old_duration_interval_s": [
+        0.7999999999999998,
+        0.96
+      ],
+      "new_minus_old_duration_interval_s": [
+        -0.16000000000001702,
+        0.15999999999997971
+      ]
+    },
+    {
+      "visited_fraction": [
+        0.3,
+        0.4
+      ],
+      "new_duration_interval_s": [
+        1.4399999999999693,
+        1.599999999999966
+      ],
+      "old_duration_interval_s": [
+        1.3600000000000003,
+        1.5200000000000005
+      ],
+      "new_minus_old_duration_interval_s": [
+        -0.08000000000003116,
+        0.23999999999996557
+      ]
+    },
+    {
+      "visited_fraction": [
+        0.4,
+        0.5
+      ],
+      "new_duration_interval_s": [
+        1.4399999999999702,
+        1.5999999999999668
+      ],
+      "old_duration_interval_s": [
+        1.5199999999999996,
+        1.6799999999999997
+      ],
+      "new_minus_old_duration_interval_s": [
+        -0.24000000000002952,
+        0.07999999999996721
+      ]
+    },
+    {
+      "visited_fraction": [
+        0.5,
+        0.6
+      ],
+      "new_duration_interval_s": [
+        1.1999999999999753,
+        1.359999999999972
+      ],
+      "old_duration_interval_s": [
+        1.040000000000001,
+        1.200000000000001
+      ],
+      "new_minus_old_duration_interval_s": [
+        -2.5757174171303632e-14,
+        0.319999999999971
+      ]
+    },
+    {
+      "visited_fraction": [
+        0.6,
+        0.7
+      ],
+      "new_duration_interval_s": [
+        1.5199999999999676,
+        1.6799999999999642
+      ],
+      "old_duration_interval_s": [
+        1.5999999999999996,
+        1.7599999999999998
+      ],
+      "new_minus_old_duration_interval_s": [
+        -0.2400000000000322,
+        0.07999999999996454
+      ]
+    },
+    {
+      "visited_fraction": [
+        0.7,
+        0.8
+      ],
+      "new_duration_interval_s": [
+        1.359999999999971,
+        1.5199999999999676
+      ],
+      "old_duration_interval_s": [
+        1.1999999999999993,
+        1.3599999999999994
+      ],
+      "new_minus_old_duration_interval_s": [
+        -2.842170943040401e-14,
+        0.3199999999999683
+      ]
+    },
+    {
+      "visited_fraction": [
+        0.8,
+        0.9
+      ],
+      "new_duration_interval_s": [
+        1.1999999999999744,
+        1.359999999999971
+      ],
+      "old_duration_interval_s": [
+        1.120000000000001,
+        1.2800000000000011
+      ],
+      "new_minus_old_duration_interval_s": [
+        -0.08000000000002672,
+        0.23999999999997002
+      ]
+    },
+    {
+      "visited_fraction": [
+        0.9,
+        1.0
+      ],
+      "new_duration_interval_s": [
+        1.7599999999999625,
+        1.919999999999959
+      ],
+      "old_duration_interval_s": [
+        1.3599999999999994,
+        1.5199999999999996
+      ],
+      "new_minus_old_duration_interval_s": [
+        0.2399999999999629,
+        0.5599999999999596
+      ]
+    }
+  ],
+  "historical": {
+    "actions": 185,
+    "lap_s": 14.78,
+    "raw_step_ticks": 740,
+    "terminal_raw_ticks": 4,
+    "actual_speed_median": 56.46025639004487,
+    "target_speed_median": 83.65723691480966,
+    "gas_actions": 147,
+    "brake_actions": 38,
+    "coast_actions": 0,
+    "max_path_error": 1.8324775312795998,
+    "positions_forces_yaw_feed_unavailable": true
+  },
+  "joint_objective": [
+    {
+      "arm": "P15_J",
+      "actions": 160,
+      "chosen_counts": {
+        "3": 160
+      },
+      "coast_choices": 160,
+      "nominal_min_error_minus_winner_min": 0.0016024369463591283,
+      "nominal_min_error_minus_winner_max": 0.001617563861610217,
+      "final_arc": 0.0,
+      "speed_max": 9.158720074757769e-11
+    },
+    {
+      "arm": "P10_J",
+      "actions": 160,
+      "chosen_counts": {
+        "3": 160
+      },
+      "coast_choices": 160,
+      "nominal_min_error_minus_winner_min": 0.0016024369463591283,
+      "nominal_min_error_minus_winner_max": 0.001617563861610217,
+      "final_arc": 0.0,
+      "speed_max": 9.158720074757769e-11
+    }
+  ],
+  "new_wrapper_actions": 0,
+  "new_actor_calls": 0,
+  "new_model_integration_ticks": 0,
+  "new_learning_fits": 0,
+  "new_SEALED_queries": 0,
+  "new_paid_resources": 0,
+  "CPU_s": 0.06041194300000008,
+  "wall_s": 0.06485094293020666,
+  "source_hashes_rechecked": true,
+  "protected_hashes_rechecked": true,
+  "scope": "Descriptiveknownsavedconditions;visitcountsnotspatialmatch,arcbintimesprestateattributionnotexactcontinuoussegmentation;nooptimalityboundor296promotion",
+  "supplement": {
+    "ideal_profile_clock_s": 15.316710464806201,
+    "stored_clock_difference_s": -7.105427357601002e-15,
+    "official_actual_minus_ideal_s": 0.2432895351935347,
+    "bin_clock": [
+      {
+        "arc_fraction": [
+          0.0,
+          0.1
+        ],
+        "ideal_profile_s": 2.69003365416444,
+        "prearc_attributed_actual_s": 2.9600000000000026,
+        "difference_attributed_s": 0.26996634583556256
+      },
+      {
+        "arc_fraction": [
+          0.1,
+          0.2
+        ],
+        "ideal_profile_s": 1.2544011527104986,
+        "prearc_attributed_actual_s": 1.2799999999999727,
+        "difference_attributed_s": 0.025598847289474147
+      },
+      {
+        "arc_fraction": [
+          0.2,
+          0.3
+        ],
+        "ideal_profile_s": 0.8831721921926938,
+        "prearc_attributed_actual_s": 0.8799999999999812,
+        "difference_attributed_s": -0.0031721921927125862
+      },
+      {
+        "arc_fraction": [
+          0.3,
+          0.4
+        ],
+        "ideal_profile_s": 1.6752236791179014,
+        "prearc_attributed_actual_s": 1.5199999999999676,
+        "difference_attributed_s": -0.15522367911793378
+      },
+      {
+        "arc_fraction": [
+          0.4,
+          0.5
+        ],
+        "ideal_profile_s": 1.801652915736577,
+        "prearc_attributed_actual_s": 1.679999999999965,
+        "difference_attributed_s": -0.12165291573661197
+      },
+      {
+        "arc_fraction": [
+          0.5,
+          0.6
+        ],
+        "ideal_profile_s": 1.2211534863155808,
+        "prearc_attributed_actual_s": 1.1999999999999744,
+        "difference_attributed_s": -0.02115348631560643
+      },
+      {
+        "arc_fraction": [
+          0.6,
+          0.7
+        ],
+        "ideal_profile_s": 1.4126619304559718,
+        "prearc_attributed_actual_s": 1.5199999999999676,
+        "difference_attributed_s": 0.10733806954399583
+      },
+      {
+        "arc_fraction": [
+          0.7,
+          0.8
+        ],
+        "ideal_profile_s": 1.3993344428395922,
+        "prearc_attributed_actual_s": 1.5199999999999676,
+        "difference_attributed_s": 0.12066555716037541
+      },
+      {
+        "arc_fraction": [
+          0.8,
+          0.9
+        ],
+        "ideal_profile_s": 1.1826337917571763,
+        "prearc_attributed_actual_s": 1.1999999999999744,
+        "difference_attributed_s": 0.01736620824279811
+      },
+      {
+        "arc_fraction": [
+          0.9,
+          1.0
+        ],
+        "ideal_profile_s": 1.7964432195157691,
+        "prearc_attributed_actual_s": 1.7999999999999616,
+        "difference_attributed_s": 0.003556780484192501
+      }
+    ],
+    "cumulative_clock": [
+      {
+        "fraction": 0.1,
+        "actual_interval_s": [
+          2.8800000000000026,
+          2.9600000000000026
+        ],
+        "ideal_profile_time_s": 2.69003365416444,
+        "actual_minus_ideal_interval_s": [
+          0.1899663458355625,
+          0.26996634583556256
+        ]
+      },
+      {
+        "fraction": 0.2,
+        "actual_interval_s": [
+          4.159999999999977,
+          4.239999999999975
+        ],
+        "ideal_profile_time_s": 3.9444348068749386,
+        "actual_minus_ideal_interval_s": [
+          0.2155651931250384,
+          0.2955651931250367
+        ]
+      },
+      {
+        "fraction": 0.3,
+        "actual_interval_s": [
+          5.039999999999958,
+          5.119999999999957
+        ],
+        "ideal_profile_time_s": 4.8276069990676325,
+        "actual_minus_ideal_interval_s": [
+          0.21239300093232583,
+          0.2923930009323241
+        ]
+      },
+      {
+        "fraction": 0.4,
+        "actual_interval_s": [
+          6.559999999999926,
+          6.639999999999924
+        ],
+        "ideal_profile_time_s": 6.502830678185534,
+        "actual_minus_ideal_interval_s": [
+          0.05716932181439205,
+          0.13716932181439034
+        ]
+      },
+      {
+        "fraction": 0.5,
+        "actual_interval_s": [
+          8.239999999999892,
+          8.31999999999989
+        ],
+        "ideal_profile_time_s": 8.30448359392211,
+        "actual_minus_ideal_interval_s": [
+          -0.06448359392221903,
+          0.015516406077779266
+        ]
+      },
+      {
+        "fraction": 0.6,
+        "actual_interval_s": [
+          9.439999999999866,
+          9.519999999999865
+        ],
+        "ideal_profile_time_s": 9.525637080237692,
+        "actual_minus_ideal_interval_s": [
+          -0.08563708023782546,
+          -0.005637080237827163
+        ]
+      },
+      {
+        "fraction": 0.7,
+        "actual_interval_s": [
+          10.959999999999834,
+          11.039999999999832
+        ],
+        "ideal_profile_time_s": 10.938299010693664,
+        "actual_minus_ideal_interval_s": [
+          0.02170098930617037,
+          0.10170098930616867
+        ]
+      },
+      {
+        "fraction": 0.8,
+        "actual_interval_s": [
+          12.479999999999801,
+          12.5599999999998
+        ],
+        "ideal_profile_time_s": 12.337633453533256,
+        "actual_minus_ideal_interval_s": [
+          0.14236654646654578,
+          0.22236654646654408
+        ]
+      },
+      {
+        "fraction": 0.9,
+        "actual_interval_s": [
+          13.679999999999776,
+          13.759999999999774
+        ],
+        "ideal_profile_time_s": 13.520267245290432,
+        "actual_minus_ideal_interval_s": [
+          0.1597327547093439,
+          0.2397327547093422
+        ]
+      }
+    ],
+    "actuator_groups": [
+      {
+        "group": "all",
+        "actions": 194,
+        "excluded_undefined_reference_actions": 1,
+        "scored_time_s": 15.479999999999734,
+        "mean_requested_accel": 6.649637223535994,
+        "mean_achieved_norm_accel": 4.336790837905794,
+        "mean_requested_gas": 0.4793803076691754,
+        "max_rear_gas_request_lag": 0.7445098400115967,
+        "time_with_requested_gas_lag": 1.759999999999966
+      },
+      {
+        "group": "positive_clamp",
+        "actions": 89,
+        "excluded_undefined_reference_actions": 0,
+        "scored_time_s": 7.079999999999883,
+        "mean_requested_accel": 35.01887789254153,
+        "mean_achieved_norm_accel": 32.18229856646988,
+        "mean_requested_gas": 0.708465044781312,
+        "max_rear_gas_request_lag": 0.7445098400115967,
+        "time_with_requested_gas_lag": 0.7199999999999847
+      },
+      {
+        "group": "target_gap_ge5",
+        "actions": 23,
+        "excluded_undefined_reference_actions": 0,
+        "scored_time_s": 1.8399999999999608,
+        "mean_requested_accel": 35.01887789254162,
+        "mean_achieved_norm_accel": 31.685102057783933,
+        "mean_requested_gas": 0.7028688114622365,
+        "max_rear_gas_request_lag": 0.6334290146827698,
+        "time_with_requested_gas_lag": 0.3999999999999915
+      },
+      {
+        "group": "braking_below_target",
+        "actions": 18,
+        "excluded_undefined_reference_actions": 0,
+        "scored_time_s": 1.43999999999998,
+        "mean_requested_accel": -71.70777708662966,
+        "mean_achieved_norm_accel": -72.83919687557072,
+        "mean_requested_gas": 0.0,
+        "max_rear_gas_request_lag": 0.0,
+        "time_with_requested_gas_lag": 0
+      }
+    ],
+    "new_native_actor_model_learning_SEALED": 0,
+    "CPU_s": 0.052756923,
+    "wall_s": 0.05287447792943567
+  },
+  "cost": {
+    "stage": 403,
+    "new_wrapper_actions": 0,
+    "new_environment_resets": 0,
+    "new_actor_calls": 0,
+    "new_model_integration_ticks": 0,
+    "source_model_world_initializations": 0,
+    "new_learning_fits": 0,
+    "new_SEALED_queries": 0,
+    "new_paid_resources": 0,
+    "analysis_CPU_s": 0.06041194300000008,
+    "supplement_final_CPU_s": 0.052756923,
+    "final_passes_CPU_s": 0.11316886600000008,
+    "recorded_successful_passes_CPU_including_draft_s": 0.20506312600000004,
+    "analysis_wall_s": 0.06485094293020666,
+    "supplement_final_wall_s": 0.05287447792943567,
+    "all_preparation_diagnostic_read_report_git_time_included": false,
+    "actual_cumulative_wrapper_actions": 1316286,
+    "research_remaining": 31778,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064,
+    "scope": "Saveddata/sourceanalysis andunexecuteddesign only. No new state transition/control rollout/profile optimization."
+  },
+  "checks": {
+    "saved_analysis_only": true,
+    "time_partition_matches_official_center_clock": true,
+    "no_interpolated_boundary_times_claim": true,
+    "historic_path_registration_equal": true,
+    "historical_missing_positions_forces_yaw_not_reconstructed": true,
+    "visitcounts_not_spatialidentity": true,
+    "profile_clock_not_physics_bound": true,
+    "goal_gap_not_claimed_trackerrecoverable": true,
+    "stationary_joint_not_success": true,
+    "one_finiteprogress_alternative_designed_not_run": true,
+    "no_new_profile_or_gain_sweep": true,
+    "no296promotion_or11simpossibility": true,
+    "protected_hashes_exact": true,
+    "budget_unchanged": true
+  },
+  "next_hypotheses": {
+    "executed": false,
+    "priority": "Fixedpath frozen268profile x currentC executor informationtestbeforegeometry/gain changes; no newcoefficients orcurrentrun.",
+    "joint_alternative": {
+      "executed": false,
+      "name": "Fixeddeadlinemilestone plus finitehorizonprogressdeficit",
+      "milestone_m": 3.24,
+      "horizon_wrapper_steps": 13,
+      "horizon_s": 1.04,
+      "deadline_reset_only_after_reaching_milestone": true,
+      "candidates": "Unchanged six firstactions; frozenpace1.0+C tail12 actions",
+      "objective": "Safetydomainconstraints AND reachmilestonebyfixeddeadline; minimize sum(max(s_goal-s_k,0)*dt),thenmaxpatherror,absyaw,index. No feasiblecandidate=>fail,nocoastfallback.",
+      "future_diagnostic_model_cap": 2048,
+      "future_CPU_cap_s": 60,
+      "future_wall_cap_s": 120,
+      "future_native_actor_learning_SEALED_cap": 0,
+      "scope": "Designonly,notimplementedhere;resetand402pre94 two-statequalification beforecandidateevaluation;noactualperformanceclaim."
+    }
+  }
+}
