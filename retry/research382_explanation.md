@@ -99,3 +99,7 @@ B는 미리 고른 N1 직선64/코너94의 한 행동 모델 자격을 통과한
 **409는408 실패를 보존한 채 종료 계측 계약을 따로 교정했다.** source상 terminal이면 action repeat가1–4tick에서 끝날 수 있고, finish tracker의 중앙 통과 후보 시각은 확인 시각보다 앞설 수 있다. 저장189행의755tick/3020wheel sample·시계·wrapper counter가 모두 맞았고, 마지막3tick/12sample은 정상 공식 종료로 별도 계약을 통과했다. 표본 삭제/중복/라벨/시계/종료 flag/timestamp 훼손8개는 모두 거부했다. 기존408 코드·계획·결과·분석·비용은 바꾸지 않았고15.08초 공식 관측과 원래 기술 자격 실패를 동시에 유지했다.
 
 행동번호/실패arc/seed를 배제한 현재 상태의 nominal13행동 위험·진행 예측과 고정 pulse 적격의 조건부 설계를 작성했다. nominal이 적격이면 무조건 보존해 성공 O에 불필요한 개입을 막는다. 픽셀 관측 식별/불확실성, source finish 모델 부재, 반복 개입/fallback, 약80/161ms의 집계 환산 query 비용, O 전체 창의 오탐·C 미탐·독립성/가용성 검증이 선행 조건이다. 기존406의세 상태 대입은 새 예측이 아니며 일반화/오탐률 근거로 세지 않았다. 모든 새wrapper/actor/모델/학습/SEALED0, 연구30,892·예비84,000·사용0을 유지했다. [409 종료 계약·대조 결과](terminal409_result.md) · [미실행 상태 기반 설계](state409_design.md)
+
+**410은 현재 finish tracker/phase를 인과적으로 복제하는 모델과 저장 창 검사를 완료했다.** 기존 source/408 실패는 수정하지 않았다. 사전 복원·현재 snapshot/memory/RNG 불변·독립 반복·실제 nominal 자격을 통과했고, O 정상 종료와408의3rawtick 종료/model DONE도 재현했다. O185·C완전91창을 순서대로 검사해 source 미자격·안전/진행 오탐/미탐0, O pulse질의/선택0, C는 pre91에서만 고정 pulse가 적격이었다. 겹친276창과 안전양성1개는 독립 episode/일반화 성능이 아니다. C마지막12창은 별도 검열로 남겼다.
+
+모델30,518tick/569world·worker CPU57.950초/wall58.957초, 정적프로세스 CPU0.922초이며 구현 wall246.247초는 별도다. 자격/창 CPU는 분리 계측하지 않았다. 살아 있는 연속 부모의 branch후 step 대조는 없고 캡처 snapshot 입력 불변/새world 반복을 확인한 범위다. 실제 pulse 이후 바뀐 상태의 연속 재개입·fallback·픽셀 관측·질의 지연·독립 일반화는 여전히 미검증이다. 새native/actor/학습/SEALED0으로 연구30,892·예비84,000·사용0을 유지했다. [410 자격·분류·비용·남은 조건](terminal410_result.md)
