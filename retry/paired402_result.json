@@ -1,0 +1,255 @@
+{
+  "stage": 402,
+  "results": [
+    {
+      "arm": "P15_C",
+      "pace": 1.5,
+      "status": "SAFETY_STOP_CENSORED",
+      "completed": false,
+      "actual_DNF": false,
+      "censored": true,
+      "lap_ms": null,
+      "retire_reason": null,
+      "stop_reason": "SafetyStop: path_error_over3m",
+      "safety": [
+        "path_error_over3m"
+      ],
+      "local_gate_passed": false,
+      "local_event": null,
+      "native": 99,
+      "raw_ticks": 396,
+      "reset_ticks": 51,
+      "damage": 0.0,
+      "max_path_error_m": 3.237510814352528,
+      "initial_exact": true,
+      "first_launch_exact": true,
+      "phase_events": [
+        {
+          "step": 2,
+          "phase": "FIRST_LAP"
+        }
+      ],
+      "model_compared_actions": 99,
+      "all_model_boundaries_qualified": true,
+      "max_model_errors": {
+        "speed_m_s": 0.0,
+        "yaw_rate_rad_s": 0.0,
+        "position_m": 0.0
+      },
+      "model_command_difference_count": 0,
+      "unconfirmed_charged_native": 0,
+      "episode_CPU_s": 8.548392247,
+      "episode_wall_s": 8.655767454998568
+    },
+    {
+      "arm": "P10_C",
+      "pace": 1.0,
+      "status": "COMPLETED",
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "lap_ms": 15560,
+      "retire_reason": null,
+      "stop_reason": null,
+      "safety": [],
+      "local_gate_passed": true,
+      "local_event": {
+        "step": 106,
+        "elapsed_interval_s": [
+          8.399999999999888,
+          8.479999999999887
+        ],
+        "max_path_error_m": 1.5254846075434585,
+        "shadow_boundaries_qualified": 106
+      },
+      "native": 195,
+      "raw_ticks": 779,
+      "reset_ticks": 51,
+      "damage": 0.0,
+      "max_path_error_m": 1.5254846075434585,
+      "initial_exact": true,
+      "first_launch_exact": true,
+      "phase_events": [
+        {
+          "step": 2,
+          "phase": "FIRST_LAP"
+        },
+        {
+          "step": 195,
+          "phase": "DONE"
+        }
+      ],
+      "model_compared_actions": 106,
+      "all_model_boundaries_qualified": true,
+      "max_model_errors": {
+        "speed_m_s": 0.0,
+        "yaw_rate_rad_s": 0.0,
+        "position_m": 0.0
+      },
+      "model_command_difference_count": 0,
+      "unconfirmed_charged_native": 0,
+      "episode_CPU_s": 13.56602384,
+      "episode_wall_s": 13.623651360045187
+    }
+  ],
+  "cost": {
+    "stage": 402,
+    "new_wrapper_actions": 294,
+    "new_environment_resets": 2,
+    "new_environment_worlds": 2,
+    "raw_step_ticks": 1175,
+    "raw_reset_ticks": 102,
+    "new_model_integration_ticks": 820,
+    "source_model_world_initializations": 2,
+    "source_zero_time_contact_setups": 2,
+    "unconfirmed_reserved_model_ticks": 0,
+    "unconfirmed_charged_native": 0,
+    "new_actor_calls": 0,
+    "new_learning_fits": 0,
+    "new_SEALED_queries": 0,
+    "new_paid_resources": 0,
+    "CPU_s": 22.138351875,
+    "wholeworker_CPU_s": 22.885673834,
+    "wall_s": 22.30144691467285,
+    "posthoc_analysis_CPU_s": 0.09001773499999999,
+    "posthoc_analysis_wall_s": 0.08956639096140862,
+    "registered_native_cap": 1200,
+    "unused_native_cap": 906,
+    "registered_model_cap": 820,
+    "registered_CPU_cap_s": 180,
+    "registered_wall_cap_s": 300,
+    "preparation_import_report_git_time_included": false,
+    "actual_cumulative_wrapper_actions": 1316286,
+    "research_remaining": 31778,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064
+  },
+  "analysis": {
+    "cases": [
+      {
+        "arm": "P15_C",
+        "whole": {
+          "actions": 99,
+          "median_actual_speed_m_s": 56.20491079730773,
+          "median_target_speed_m_s": 73.34264245333605,
+          "gas_actions": 82,
+          "brake_actions": 17,
+          "collision_actions": 0,
+          "raw_grass_samples": 0,
+          "all_wheels_onroad": true,
+          "front": {
+            "samples": 792,
+            "clipped": 72,
+            "max_force_ratio": 3.657641259577005
+          },
+          "rear": {
+            "samples": 792,
+            "clipped": 107,
+            "max_force_ratio": 11.16976669102254
+          }
+        }
+      },
+      {
+        "arm": "P10_C",
+        "whole": {
+          "actions": 195,
+          "median_actual_speed_m_s": 53.638301938771086,
+          "median_target_speed_m_s": 54.51306291111764,
+          "gas_actions": 149,
+          "brake_actions": 46,
+          "collision_actions": 0,
+          "raw_grass_samples": 0,
+          "all_wheels_onroad": true,
+          "front": {
+            "samples": 1558,
+            "clipped": 1,
+            "max_force_ratio": 1.029333575187967
+          },
+          "rear": {
+            "samples": 1558,
+            "clipped": 0,
+            "max_force_ratio": 0.9411948607466499
+          }
+        },
+        "through_model_gate": {
+          "actions": 106,
+          "median_actual_speed_m_s": 48.939511771567865,
+          "median_target_speed_m_s": 47.630471650925216,
+          "gas_actions": 86,
+          "brake_actions": 20,
+          "collision_actions": 0,
+          "raw_grass_samples": 0,
+          "all_wheels_onroad": true,
+          "front": {
+            "samples": 848,
+            "clipped": 0,
+            "max_force_ratio": 0.9280963955467354
+          },
+          "rear": {
+            "samples": 848,
+            "clipped": 0,
+            "max_force_ratio": 0.9411948607466499
+          }
+        },
+        "after_model_gate": {
+          "actions": 89,
+          "median_actual_speed_m_s": 57.88370025780443,
+          "median_target_speed_m_s": 62.60559855750055,
+          "gas_actions": 63,
+          "brake_actions": 26,
+          "collision_actions": 0,
+          "raw_grass_samples": 0,
+          "all_wheels_onroad": true,
+          "front": {
+            "samples": 710,
+            "clipped": 1,
+            "max_force_ratio": 1.029333575187967
+          },
+          "rear": {
+            "samples": 710,
+            "clipped": 0,
+            "max_force_ratio": 0.8852443201053001
+          }
+        },
+        "finish": {
+          "official_lap_s": 15.559999999999736,
+          "forwardedge_clearance_episode_s": 15.579999999999735,
+          "terminal_action_raw_ticks": 3,
+          "qualified": true,
+          "official_center_timestamp_present": true
+        }
+      }
+    ],
+    "new_native_actor_model_learning_SEALED": 0,
+    "CPU_s": 0.09001773499999999,
+    "wall_s": 0.08956639096140862
+  },
+  "checks": {
+    "preregistered_twoactualarms_only": true,
+    "oneattempt_each_no_retuning": true,
+    "original401policy_andpath_preserved": true,
+    "fullinitial_physical_RNG_pixels_exact": true,
+    "first_launch_exact": true,
+    "all205modelsummary_reconstructions_exact401": true,
+    "all205actual_model_boundaries_exact": true,
+    "P10local106safe_gate_beforecontinuation": true,
+    "same_episode_no_reset_for_full_lap": true,
+    "P10official_center_time_andforwardedge_qualified": true,
+    "baseline_safetycensor_notDNF": true,
+    "no_commoncompletion_timegain_claim": true,
+    "no11s_or296promotion_claim": true,
+    "raw_calls_all_confirmed": true,
+    "worker_reaped": true,
+    "protected_hashes_exact": true,
+    "reserve_untouched": true
+  },
+  "completed_count": 1,
+  "actual_DNF_count": 0,
+  "safety_censored_count": 1,
+  "technical_error_count": 0,
+  "plan_sha256": "6099531077e39dae9562b5736a5550325c3ff41aeaba67c6ecfab48ecff8d56e",
+  "scope": "KnownN1actualpairedprofilediagnostic, 15.56sofficialcompletionbutnot11simprovement/pixel296/generalization. Baselinecensoredlapnull;wholelapmodelnotqualifiedbeyond106.",
+  "next_hypotheses_executed": false,
+  "next": "Savedactual402segmenttime/actuation/futurebrakinglimitdecompositionbeforeanynewprofilecandidate. Jointprogressconstraintdesignseparate,nativeJnotrun. No automaticgain/profilesearch."
+}
