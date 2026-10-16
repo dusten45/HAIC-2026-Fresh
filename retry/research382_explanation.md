@@ -111,3 +111,7 @@ B는 미리 고른 N1 직선64/코너94의 한 행동 모델 자격을 통과한
 **412는 저장된404/408/411을 같은 canonical arc 기준으로 분해했다.** 첫lap seam·정지/역행/반복과 공식 종료 미관측 구간을 분리하고, 참조 clock+속도항+heading/body-slip+pathmetric+경계 적분 잔차의 항등식을 확인했다. O의속도항4.924초는 요청 대비4.794초/목표표본 차이/출발 미정의 항으로 나눴다. 직접방향 항은약0.031초였고 chord는참조진행보다짧았다. 경로length와방향 항을중복합산하지 않았으며10.027초시계나속도gap을물리적회수가능성으로쓰지 않았다.
 
 실제조향·타이어상태의고정경로 timing(H1)과가능속도영역을바꾸는경로/속도공동계획(H2)만미실행가설로남겼다. 최소고정primitive/한Hermitepatch·같은exit·body/wheel반사실자격·중단/승격과비용을제안했다. 조건부민감도0.48–0.96/0.31–0.62초는겹치는속도항을공유하므로더하지않고기대성능으로부르지않는다. 411의필수단일recipe18,863tick과중복자격18,863tick/게이트312tick을나눴지만미측정CPU/지연반감을주장하지않았다. 새native/모델/actor/학습/SEALED0으로연구30,334·예비84,000·사용0을유지했다. [412 분해·범위·비용](decompose412_result.md) · [두가설·최소반증](hypotheses412_plan.md)
+
+**413은412의H1 첫 고정primitive를 실제 pair로 확인했다.** 개발 규칙의117직전 한 snapshot과 nominal/첫gas1·brake0 후ownnominal 두recipe만 동결했다. source116prefix·nominal13의body/wheel 동일phase·독립반복·부모/RNG·COM자격을 통과해 실제129행동씩 한 번 실행했다. 두native의초기/fullfork/prefix가같았고 첫changed전이/13행동 모두body·wheel·rawhull기준을통과했다. 같은originalarc30m exit가 A0.66–0.68초/B0.56–0.58초로 실제 이득[0.08,0.12]초였고 sourcebracket도맞았다. 손상/안전위반0으로 다음GT승격기준을통과했다.
+
+이는한상태국소양성이지H1전체·lap·독립일반화·픽셀296증거가아니다. exit속도/yaw/pose가달라후속제동비용은미확인이다. raworigin/COM정보와계측payload비용을기록했지만전체tracerdispatchoverhead/parent1step raw전체는별도미보존이라는범위도남겼다. source728tick/6world·CPU2.203초, 실제258wrapper/reset2·CPU16.808초, 준비wall143.854초별도였다. 원장v433으로연구30,076·예비84,000·사용0을유지했고다른window/pedal/horizon/재주행/튜닝은없었다. [413 첫반사실·bracket이득·fidelity·비용](headroom413_result.md)
