@@ -1,0 +1,486 @@
+{
+  "stage": 376,
+  "read_only_diagnosis": true,
+  "policies_immutable": true,
+  "new_native_actions": 0,
+  "new_environment_resets": 0,
+  "new_candidate_changes": 0,
+  "no372materials_or_newsplit": true,
+  "historical_actual_first_differences": {
+    "full_control": 139,
+    "steering": 141,
+    "pedals": 139,
+    "features": 139,
+    "post_memory": 141,
+    "collision": 179
+  },
+  "fixed_input_first_differences": {
+    "tracker_before": 140,
+    "tracker_after": 139,
+    "optical_matrix": 145,
+    "optical_reason": 143,
+    "path": 175,
+    "target": 177,
+    "features": 139,
+    "min_hazard_distance": 140,
+    "near_flag": 147,
+    "hazard_count": 139,
+    "pre_memory": 178,
+    "post_memory": 177,
+    "full_control": 139,
+    "steering": 177,
+    "pedals": 139
+  },
+  "first_actual374_fallback": 49,
+  "fixed_tracker_difference_spans": [
+    [
+      139,
+      148
+    ],
+    [
+      170,
+      178
+    ],
+    [
+      198,
+      206
+    ]
+  ],
+  "fixed296_vs_historical_first_common_output_mismatch": 140,
+  "shared_accepted_optical_matrices": 189,
+  "shared_accepted_optical_matrix_mismatches": 0,
+  "critical_fixed_input_snapshots": [
+    {
+      "step": 49,
+      "both_optical": false,
+      "OFF_optical_reason": "rejected_or_unavailable",
+      "ON_optical_reason": "rejected_or_unavailable",
+      "before_hazards_equal": true,
+      "after_hazards_equal": true,
+      "OFF_hazard_count": 0,
+      "ON_hazard_count": 0,
+      "OFF_min_distance": 100.0,
+      "ON_min_distance": 100.0,
+      "pre_memory_equal": true,
+      "post_memory_equal": true,
+      "path_equal": true,
+      "target_equal": true,
+      "OFF_action": [
+        -0.3735581338405609,
+        0.33693334460258484,
+        0.07596095651388168
+      ],
+      "ON_action": [
+        -0.3735581338405609,
+        0.33693334460258484,
+        0.07596095651388168
+      ]
+    },
+    {
+      "step": 139,
+      "both_optical": false,
+      "OFF_optical_reason": "rejected_or_unavailable",
+      "ON_optical_reason": "rejected_or_unavailable",
+      "before_hazards_equal": true,
+      "after_hazards_equal": false,
+      "OFF_hazard_count": 3,
+      "ON_hazard_count": 2,
+      "OFF_min_distance": 13.510637441538584,
+      "ON_min_distance": 13.510637441538584,
+      "pre_memory_equal": true,
+      "post_memory_equal": true,
+      "path_equal": true,
+      "target_equal": true,
+      "OFF_action": [
+        -0.17092639207839966,
+        0.3998677730560303,
+        0.08215318620204926
+      ],
+      "ON_action": [
+        -0.17092639207839966,
+        0.3984036445617676,
+        0.08810915052890778
+      ]
+    },
+    {
+      "step": 175,
+      "both_optical": true,
+      "OFF_optical_reason": "accepted",
+      "ON_optical_reason": "accepted",
+      "before_hazards_equal": false,
+      "after_hazards_equal": false,
+      "OFF_hazard_count": 2,
+      "ON_hazard_count": 1,
+      "OFF_min_distance": 25.55202799213615,
+      "ON_min_distance": 25.55202799213615,
+      "pre_memory_equal": true,
+      "post_memory_equal": true,
+      "path_equal": false,
+      "target_equal": true,
+      "OFF_action": [
+        -0.046472374349832535,
+        0.5311881303787231,
+        0.04758284613490105
+      ],
+      "ON_action": [
+        -0.046472374349832535,
+        0.5637466311454773,
+        0.06997092068195343
+      ]
+    },
+    {
+      "step": 177,
+      "both_optical": true,
+      "OFF_optical_reason": "accepted",
+      "ON_optical_reason": "accepted",
+      "before_hazards_equal": false,
+      "after_hazards_equal": false,
+      "OFF_hazard_count": 2,
+      "ON_hazard_count": 1,
+      "OFF_min_distance": 18.55493896728238,
+      "ON_min_distance": 18.55493896728238,
+      "pre_memory_equal": true,
+      "post_memory_equal": false,
+      "path_equal": false,
+      "target_equal": false,
+      "OFF_action": [
+        -0.02157151885330677,
+        0.5606736540794373,
+        0.05174266919493675
+      ],
+      "ON_action": [
+        -0.0018588949460536242,
+        0.5962429046630859,
+        0.0684809535741806
+      ]
+    },
+    {
+      "step": 178,
+      "both_optical": true,
+      "OFF_optical_reason": "accepted",
+      "ON_optical_reason": "accepted",
+      "before_hazards_equal": false,
+      "after_hazards_equal": false,
+      "OFF_hazard_count": 2,
+      "ON_hazard_count": 1,
+      "OFF_min_distance": 14.873259346475773,
+      "ON_min_distance": 14.873259346475773,
+      "pre_memory_equal": false,
+      "post_memory_equal": false,
+      "path_equal": false,
+      "target_equal": false,
+      "OFF_action": [
+        -0.1310366988182068,
+        0.4257032871246338,
+        0.1082666888833046
+      ],
+      "ON_action": [
+        -0.0003717789950314909,
+        0.5697330832481384,
+        0.08565066754817963
+      ]
+    },
+    {
+      "step": 202,
+      "both_optical": true,
+      "OFF_optical_reason": "accepted",
+      "ON_optical_reason": "accepted",
+      "before_hazards_equal": false,
+      "after_hazards_equal": false,
+      "OFF_hazard_count": 5,
+      "ON_hazard_count": 3,
+      "OFF_min_distance": 5.5582293815364405,
+      "ON_min_distance": 5.5582293815364405,
+      "pre_memory_equal": false,
+      "post_memory_equal": false,
+      "path_equal": false,
+      "target_equal": false,
+      "OFF_action": [
+        -0.23085705935955048,
+        0.4588286578655243,
+        0.09325500577688217
+      ],
+      "ON_action": [
+        -0.24439117312431335,
+        0.46064236760139465,
+        0.0997803807258606
+      ]
+    }
+  ],
+  "posthoc_motion": {
+    "all": {
+      "fallback_intervals": 10,
+      "fixture_birth_supported_point_transports": 5,
+      "yaw_absolute_error_rad": {
+        "count": 10,
+        "mean": 0.003483743085610539,
+        "median": 0.0035430587840309113,
+        "p95": 0.00636401298487405,
+        "max": 0.006420963533221663
+      },
+      "displacement_norm_error_m": {
+        "count": 10,
+        "mean": 0.5054819413893464,
+        "median": 0.46264454146036826,
+        "p95": 0.8578623567498503,
+        "max": 0.8748886719900559
+      },
+      "lateral_displacement_abs_m": {
+        "count": 10,
+        "mean": 0.49911757638273146,
+        "median": 0.457158902591166,
+        "p95": 0.845209607160378,
+        "max": 0.8575083996678734
+      },
+      "errors_m": {
+        "OFF": {
+          "count": 5,
+          "mean": 3.8142810684778334,
+          "median": 4.893725996407668,
+          "p95": 5.727592299940118,
+          "max": 5.809583609865248
+        },
+        "ON": {
+          "count": 5,
+          "mean": 0.6172968793105142,
+          "median": 0.6939237570278899,
+          "p95": 0.8207985370252504,
+          "max": 0.8371094243940818
+        },
+        "GT_yaw_only": {
+          "count": 5,
+          "mean": 0.5930302979789115,
+          "median": 0.5877441092684644,
+          "p95": 0.8477649591415964,
+          "max": 0.8787426443012599
+        },
+        "GT_displacement_only": {
+          "count": 5,
+          "mean": 0.2357688314429633,
+          "median": 0.1571309464795217,
+          "p95": 0.41681438088600065,
+          "max": 0.41827767748748584
+        },
+        "GT_exact": {
+          "count": 5,
+          "mean": 0.18936436725467143,
+          "median": 0.1561492436051442,
+          "p95": 0.36496236640799334,
+          "max": 0.38870560139193394
+        }
+      }
+    },
+    "precontact": {
+      "fallback_intervals": 10,
+      "fixture_birth_supported_point_transports": 5,
+      "yaw_absolute_error_rad": {
+        "count": 10,
+        "mean": 0.003483743085610539,
+        "median": 0.0035430587840309113,
+        "p95": 0.00636401298487405,
+        "max": 0.006420963533221663
+      },
+      "displacement_norm_error_m": {
+        "count": 10,
+        "mean": 0.5054819413893464,
+        "median": 0.46264454146036826,
+        "p95": 0.8578623567498503,
+        "max": 0.8748886719900559
+      },
+      "lateral_displacement_abs_m": {
+        "count": 10,
+        "mean": 0.49911757638273146,
+        "median": 0.457158902591166,
+        "p95": 0.845209607160378,
+        "max": 0.8575083996678734
+      },
+      "errors_m": {
+        "OFF": {
+          "count": 5,
+          "mean": 3.8142810684778334,
+          "median": 4.893725996407668,
+          "p95": 5.727592299940118,
+          "max": 5.809583609865248
+        },
+        "ON": {
+          "count": 5,
+          "mean": 0.6172968793105142,
+          "median": 0.6939237570278899,
+          "p95": 0.8207985370252504,
+          "max": 0.8371094243940818
+        },
+        "GT_yaw_only": {
+          "count": 5,
+          "mean": 0.5930302979789115,
+          "median": 0.5877441092684644,
+          "p95": 0.8477649591415964,
+          "max": 0.8787426443012599
+        },
+        "GT_displacement_only": {
+          "count": 5,
+          "mean": 0.2357688314429633,
+          "median": 0.1571309464795217,
+          "p95": 0.41681438088600065,
+          "max": 0.41827767748748584
+        },
+        "GT_exact": {
+          "count": 5,
+          "mean": 0.18936436725467143,
+          "median": 0.1561492436051442,
+          "p95": 0.36496236640799334,
+          "max": 0.38870560139193394
+        }
+      }
+    },
+    "postcontact": {
+      "fallback_intervals": 0,
+      "fixture_birth_supported_point_transports": 0,
+      "yaw_absolute_error_rad": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "displacement_norm_error_m": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "lateral_displacement_abs_m": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p95": null,
+        "max": null
+      },
+      "errors_m": {
+        "OFF": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        },
+        "ON": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        },
+        "GT_yaw_only": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        },
+        "GT_displacement_only": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        },
+        "GT_exact": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      }
+    }
+  },
+  "coordinate_exact_GT_static_center_max_error": 7.055014780377178e-06,
+  "old296_snapshot_gap": "Historical296237tracehascontrols/features/memoryonly,nopixels/tracker/GTpose/fullRNG. Counterfactual303same374pixelsisnot296actualtrajectory/score,especiallyafter139.",
+  "GT_scope": "AllGTcomparisonsreadonlyposthoc. GT_yaw/displacementonlyarecomponentdiagnostics,notlegalproposedpoliciesornewcandidate. Birthfixtureidentitiesfixed,unknownexcludedfromerrorandnotcalledfalse.",
+  "causal_limit": "Onlyfixedinputeffectsidentified. Firstfallbackandfirstoutputdifferencenotautomaticallycausetheactual202contact/303retirement. No freshsimulationorstate-sufficiencetest;nomemory/coordinateerrorclaimedwithoutproof.",
+  "cost": {
+    "stage": 376,
+    "new_wrapper_actions": 0,
+    "new_environment_resets": 0,
+    "new_actor_act_calls": 606,
+    "new_actor_commit_calls": 606,
+    "stored_pixel_resets": 2,
+    "new_source_physics_rollout_ticks": 0,
+    "new_learning_fits": 0,
+    "new_candidate_modifications": 0,
+    "new_paid_resources": 0,
+    "actor_act_cap": 606,
+    "actor_commit_cap": 606,
+    "pixel_reset_cap": 2,
+    "replay_wall_s": 11.99792231299216,
+    "replay_runner_CPU_s": 5.792702071,
+    "actor_CPU_s": 6.266572,
+    "posthoc_analysis_wall_s": 0.46757696697022766,
+    "posthoc_analysis_CPU_s": 0.4597994500000001,
+    "actual_cumulative_wrapper_actions": 1311581,
+    "research_remaining": 36483,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064,
+    "scope": "Fixedsavedinputs/JSON/posematrixalgebraonly,nosimulatorornewpolicy. Coding/build/report/gitnotfullytimed."
+  },
+  "first_state_difference_retention": {
+    "step": 139,
+    "old_age": 0,
+    "birth_label": "unresolved",
+    "ON_inside_existing_window": false,
+    "OFF_inside_existing_window": true,
+    "ON_newdirect_gap_m": 1.5519255864157482,
+    "OFF_newdirect_gap_m": 5.052400792269374,
+    "source_dedup_distance_m": 2.0
+  },
+  "birth_supported_dedup_events": [
+    {
+      "step": 171,
+      "parent_birth": 170,
+      "same_fixture_birth_supported": true,
+      "ON_direct_gap_m": 0.7202458842475645,
+      "OFF_direct_gap_m": 4.783481490628388
+    },
+    {
+      "step": 198,
+      "parent_birth": 197,
+      "same_fixture_birth_supported": true,
+      "ON_direct_gap_m": 0.6940626364670828,
+      "OFF_direct_gap_m": 5.800146573358948
+    },
+    {
+      "step": 199,
+      "parent_birth": 198,
+      "same_fixture_birth_supported": true,
+      "ON_direct_gap_m": 0.6066645605592754,
+      "OFF_direct_gap_m": 5.120102030578828
+    }
+  ],
+  "first_target_extra_provenance": {
+    "first_target_difference_step": 177,
+    "extra_routing_points": 1,
+    "extra_point_birth": 170,
+    "extra_point_age": 7,
+    "extra_point_birth_label": "fixture_supported",
+    "same_fixture_as_current_supported_direct": true
+  },
+  "remaining_minimum_hypothesis": {
+    "status": "Proposalonly,noexecution/newcandidate",
+    "mechanism": "Accuratededupremovesaduplicateddisplacedfootprintwhichcouldhaveactedasanaccidentalroutingbuffer;thiscouplingcouldalteravoidancetargetbeforecontact. Notanopticalsignormemorybugclaim.",
+    "minimum_test": "Atfirstfixed-inputtargetdifference177,cloneonefrozen374pre-actionstate;theextraroutingpointcomesfrombirth170anddedup171,notafittedframegate. Reproduceoriginalroute/target/float32nominalsteer;restoreonlythatold296fallback-predictedduplicateintoroutingarguments;keepcurrentheadcount/min-distance/near/model/controlconstantsandstateotherwisefixed. GTonlyposthocidentity,restoredpointcomesfromlegalstoredtracker/math. No runtimecondition/frameexception.",
+    "maximum_function_calls": {
+      "routing": 2,
+      "route_target": 2,
+      "controller": 2,
+      "actor": 0,
+      "native": 0,
+      "source_physics": 0,
+      "fit": 0
+    },
+    "stop": "Originalreproduction/statepuritymismatchstops. Noactualtarget/float32steerchangefalsifiesthislocalbuffermechanism;no largerpoint/threshold/sweep/extraframe. Differenceonlyidentifieslocalreadoutdependence,notDNFrescueorsafety.",
+    "duplicate_scope": "Restorationdiagnosticmethodalreadyexists;thisexactT29510fallback-onlyknown-fixture-dedupcontextwasnotpreviouslyprobed. Do notclaimanewgeneralmethodorpolicyimprovement.",
+    "no_execution_or_reservation": true
+  }
+}
