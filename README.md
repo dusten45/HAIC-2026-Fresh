@@ -376,3 +376,10 @@ python -m pip list
 
 특히 Python 버전이 3.10 또는 3.11인지, 현재 가상 환경의 Python과 `pip`가 같은
 경로를 사용하는지 먼저 확인하십시오.
+
+
+---
+
+## 개인 연구 기록 (공식 안내와 별도)
+
+[기술 경과와 선택 기준](retry/research382_explanation.md) · [현재 시간 손실 진단과 다음 반증 실험](retry/loss389_result.md) · [방법군 비교](retry/methods380_result.md)
