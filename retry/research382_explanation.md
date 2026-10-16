@@ -127,3 +127,6 @@ B는 미리 고른 N1 직선64/코너94의 한 행동 모델 자격을 통과한
 
 
 **417은416의고정Cpre119/history118에서두recipe source까지만실행했다.** 연구용signedC는기존의미있는후진조건만유지하며strict음수정의역한줄을바꿨고저장411정상188행명령은정확히일치했다. prefix·nominal13body/wheel/rawfirstpre·연속부모vs복원fullrawhull·독립반복·부모/RNG게이트를통과했다. 411actual중간rawhull미보존범위는명시했다. Aexit .50–.52/B .44–.46초로source양성이나보장이득.04초가사전.08초기준에미달해actual0으로닫았다. 다른창/pulse/horizon/재주행은없고H1전체실패로확대하지않았다. 모델784tick/6world·CPU1.703초, 실제/guardianquery0, 원장v437연구29,880·예비84,000사용0이다. [417 C source·시간게이트·비용](paired417_result.md)
+
+
+**418은별도승인된실제clipping보정으로같은Cpre119/history118의A/B를각1번실행했다.** 초기/fullfork/RNG/memory·prefix118이같았고guardian26회에서살아있는부모접근가능fullstate가보존됐다. 실제A131명령/post는411과정확히같았다. B첫변경전이와13행동body/wheel/rawhullfidelity를통과했고clip26/208·phase별flag가source와일치했다. 첫clip은121raw3rearwheel2였다. guardianneutral개입0이며명령의미세수치차이는기존게이트안이었다. 실제exit A.50–.52/B.44–.46초로이득.04–.08초가재현됐지만417의.08보장이득미달판정은그대로다. 실제262/reset2·CPU15.664초와새모델2808tick/54world·CPU7.479초를분리계상했고cached417tick재청구0이다. 원장v438연구29,618·예비84,000사용0,추가실험없이닫았다. [418 실제전이·clipping·시간·비용](calibrate418_result.md)
