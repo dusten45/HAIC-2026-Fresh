@@ -1,0 +1,77 @@
+{
+  "stage": 381,
+  "passed": true,
+  "technical_error": null,
+  "archive_sha256": "0a6c5e286e87d75498c5aec1174c7af3fd54f6efa34b0d83ca1efba5d404a937",
+  "member_count": 18,
+  "member_hashes_exact": true,
+  "unchanged_policy": true,
+  "independent_process_same_machine": true,
+  "new_machine_reproduction": false,
+  "official_server_equivalence": false,
+  "consumer_direct_original_full_read": false,
+  "parent_full_read_and_excerpts_recorded": true,
+  "saved_TRAIN_actions_matched": 237,
+  "post_reset_prefix_actions_matched": 16,
+  "actor_act_calls": 253,
+  "actor_reset_calls": 2,
+  "new_native_actions": 0,
+  "new_env_creation": 0,
+  "cold_start_ms": 226.07029089704156,
+  "reset_including_IPC_ms": [
+    4.721860052086413,
+    2.209175960160792
+  ],
+  "act_including_IPC_ms": {
+    "n": 253,
+    "median": 7.448819000273943,
+    "p95": 13.269522064365434,
+    "max": 19.632251001894474
+  },
+  "act_compute_ms": {
+    "n": 253,
+    "median": 4.981832928024232,
+    "p95": 10.619916603900487,
+    "max": 15.646081999875605
+  },
+  "observed_peak_RSS_MiB": 45.69140625,
+  "memory_limit_bytes": 1024000000,
+  "actor_CPU_s": 1.9229819999999997,
+  "dependency_versions": {
+    "numpy": "1.26.0",
+    "opencv-python": "4.8.1.78"
+  },
+  "python_version": "3.11.16",
+  "libc": [
+    "glibc",
+    "2.41"
+  ],
+  "input_boundary": "Only op+float32(4,84,84) pixels, no env object/seed/info/evaluation logs. Savedframes read by supervisor only.",
+  "metadata_syscalls_hidden": false,
+  "hostile_code_security_proof": false,
+  "process_reaped": true,
+  "SEALED_opened": false,
+  "manifest_updated": false,
+  "cost": {
+    "stage": 381,
+    "new_wrapper_actions": 0,
+    "new_environment_resets": 0,
+    "new_environment_creation": 0,
+    "new_actor_calls": 253,
+    "new_actor_reset_calls": 2,
+    "new_model_forward_calls": 253,
+    "model_forward_scope": "Existing affine policy head evaluated during each act; no training or new model",
+    "new_learning_fits": 0,
+    "new_source_physics_rollout_ticks": 0,
+    "new_candidate_implementations": 0,
+    "new_paid_resources": 0,
+    "qualification_wall_s": 2.455890871002339,
+    "supervisor_CPU_s": 0.547239361,
+    "actor_CPU_s": 1.9229819999999997,
+    "actual_cumulative_wrapper_actions": 1312121,
+    "research_remaining": 35943,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064
+  }
+}
