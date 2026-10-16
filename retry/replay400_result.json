@@ -1,0 +1,162 @@
+{
+  "stage": 400,
+  "status": "STOPPED_AT_STATIC_PROFILE_GATE",
+  "replay": {
+    "status": "QUALIFIED",
+    "cases": [
+      {
+        "case": "O0",
+        "initial": {
+          "bodies": true,
+          "tiles": true,
+          "progress": true
+        },
+        "checked_actions": 175,
+        "required_actions": 175,
+        "passed": true,
+        "max_errors": {
+          "speed_m_s": 2.595630479618194e-05,
+          "yaw_rate_rad_s": 8.106231689453125e-06,
+          "position_m": 0.0003425802042103114
+        },
+        "diagnostics": {
+          "wheel_omega_max_abs": 3.69864380047602e-05,
+          "joint_max_abs": 7.152557373046875e-07,
+          "gas_max_abs": 0.0,
+          "brake_max_abs": 0.0,
+          "wheel_tile_counts_match": true,
+          "visited_match": true,
+          "offtrackcounter_match": true
+        }
+      },
+      {
+        "case": "N1",
+        "initial": {
+          "bodies": true,
+          "tiles": true,
+          "progress": true
+        },
+        "checked_actions": 99,
+        "required_actions": 99,
+        "passed": true,
+        "max_errors": {
+          "speed_m_s": 0.0,
+          "yaw_rate_rad_s": 0.0,
+          "position_m": 0.0
+        },
+        "diagnostics": {
+          "wheel_omega_max_abs": 0.0,
+          "joint_max_abs": 0.0,
+          "gas_max_abs": 0.0,
+          "brake_max_abs": 0.0,
+          "wheel_tile_counts_match": true,
+          "visited_match": true,
+          "offtrackcounter_match": true
+        }
+      }
+    ],
+    "first_mismatch": null,
+    "technical_error": null,
+    "limits": {
+      "speed_m_s": 0.5,
+      "yaw_rate_rad_s": 0.05,
+      "position_m": 0.1
+    },
+    "source_model": "UnmodifiedSourceVehicleTransition",
+    "python": "3.11.16",
+    "numpy": "1.26.0",
+    "Box2D": "2.3.5"
+  },
+  "profile_static": {
+    "case": "N1",
+    "passed": false,
+    "status": "STATIC_UNQUALIFIED",
+    "residuals": {
+      "nonnegative": {
+        "count_positive": 0,
+        "max_residual": -0.0,
+        "positive_min": null
+      },
+      "upper": {
+        "count_positive": 0,
+        "max_residual": 0.0,
+        "positive_min": null
+      },
+      "drive": {
+        "count_positive": 72,
+        "max_residual": 1.3358203432289883e-12,
+        "positive_min": 2.842170943040401e-14
+      },
+      "brake": {
+        "count_positive": 14,
+        "max_residual": 2.2737367544323206e-12,
+        "positive_min": 1.1368683772161603e-13
+      }
+    },
+    "boundary": {
+      "initial_zero": true,
+      "terminal_positive": true,
+      "all_finite": true,
+      "all_ds_positive": true
+    },
+    "source_feasible_envelope_certified": false,
+    "new_model_ticks": 0,
+    "new_native": 0,
+    "CPU_s": 0.0012931779999999504,
+    "wall_s": 0.001302108052186668,
+    "scope": "Existingapproximateprofileonly,norepair/fit,strictregisteredfloat64inequalities. Positive smallresidualsarequalificationgaps,notphysicalimpossibility."
+  },
+  "branch_qualification_executed": false,
+  "factorial_executed": false,
+  "model_counterfactual_results": null,
+  "cost": {
+    "stage": 400,
+    "new_wrapper_actions": 0,
+    "new_environment_resets": 0,
+    "new_actor_calls": 0,
+    "new_learning_fits": 0,
+    "new_SEALED_queries": 0,
+    "new_paid_resources": 0,
+    "source_physics_ticks": 1096,
+    "new_model_integration_ticks": 1096,
+    "reserved_model_ticks": 1096,
+    "unconfirmed_reserved_model_ticks": 0,
+    "source_model_world_initializations": 2,
+    "source_zero_time_contact_setups": 2,
+    "model_tick_cap": 12288,
+    "unused_model_ticks": 11192,
+    "replay_CPU_s": 0.48419643700000004,
+    "static_CPU_s": 0.0012931779999999504,
+    "recorded_compute_CPU_s": 0.485489615,
+    "replay_wall_s": 0.4894703719764948,
+    "static_wall_s": 0.001302108052186668,
+    "opening_to_static_result_receipt_wall_s": 44.640069007873535,
+    "preparation_import_report_git_included": false,
+    "actual_cumulative_wrapper_actions": 1315992,
+    "research_remaining": 32072,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064
+  },
+  "checks": {
+    "replay274commands1096ticks_pass": true,
+    "existing391criteria_unchanged": true,
+    "initial_bodies_tiles_progress_exact": true,
+    "no_replay_retry_or_state_correction": true,
+    "profile_static_strict_residual_failed": true,
+    "no_posthoc_tolerance_or_profile_repair": true,
+    "branch_and_factorial_not_executed": true,
+    "protected_hashes_exact": true,
+    "native_budget_unchanged": true,
+    "model_not_actual_performance": true
+  },
+  "plan_sha256": "cbafa57df07f17dc46f6b4d994aea7651e87a00ea0c19582c6d69d9087e2647b",
+  "profile_plan_sha256": "6c07f849b25ea32a8a5241de90c7aeb8150172891ce7b2f3a6f167c92cc19121",
+  "source_hashes": {
+    "retry/replay400_run.py": "603721a6e3a729e003d0971874ae22b74bbe74f01e809b1cad1421083780d088",
+    "retry/profile400_audit.py": "25efa351db9ab87c653c117088d7cba209f3e485ac12db5ed6bd75720c5bc636",
+    "retry/source_vehicle_transition.py": "dff10a57ec276c1e8df0701af3c8a196823620205137991276e50b6095759461"
+  },
+  "scope": "Highslipstoredcontrolreplayqualified, strictnumericprofilegapblocksdependentbranch/factorial. No changedcontrolphysicalperformance,pixelpromotion,physicalimpossibilityorglobal11slowerbound.",
+  "next": "Separatepreregistrationofroundingawarecertificatebeforeanychange; no numericrepair/toleranceornewmodelrun here. Branchrestorationandindependenceremainunqualified."
+}
