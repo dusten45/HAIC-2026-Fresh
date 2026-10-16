@@ -382,4 +382,4 @@ python -m pip list
 
 ## 개인 연구 기록 (공식 안내와 별도)
 
-[기술 경과와 선택 기준](retry/research382_explanation.md) · [현재 시간 손실 진단과 다음 반증 실험](retry/loss389_result.md) · [방법군 비교](retry/methods380_result.md)
+[기술 경과와 선택 기준](retry/research382_explanation.md) · [현재 최소 반증 결과와 다음 게이트](retry/probe390_result.md) · [시간 손실 진단](retry/loss389_result.md) · [방법군 비교](retry/methods380_result.md)

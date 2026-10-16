@@ -1,0 +1,612 @@
+{
+  "stage": 390,
+  "A": [
+    {
+      "case": "O0",
+      "result": {
+        "case": "O0",
+        "native": 247,
+        "matched_rows": 247,
+        "raw_ticks": 985,
+        "reset_ticks": 51,
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "lap_ms": 19700,
+        "retire_reason": null,
+        "technical_error": null,
+        "runner_CPU_s": 14.508803303,
+        "wall_s": 14.533999006031081,
+        "unconfirmed_charged_native": 0
+      },
+      "time_s": 19.699999999999648,
+      "distance_observed_chord_m": 1134.6850691684094,
+      "distance_scope": "Actual wrapper endpoints, terminal chord includes post-finish portion, no exact continuous distance",
+      "mean_speed_m_s": 57.43495505978814,
+      "mean_target_m_s": 80.53075348628323,
+      "lag_over10_s": 16.499999999999705,
+      "lag_with_constraint_s": 15.939999999999714,
+      "longest_lag_with_constraint_s": 4.399999999999906,
+      "brake_below_target_s": 4.159999999999918,
+      "positive_accel_clamped_s": 13.619999999999763,
+      "negative_accel_clamped_s": 3.759999999999925,
+      "gas_at1_s": 2.5599999999999454,
+      "wheel_gas_slew_present_s": 0.6399999999999864,
+      "rear_unclipped_positive_clamp_gasbelow1_s": 9.219999999999857,
+      "rear_clipping_action_s": 1.9999999999999583,
+      "first_wheel_road_loss_step": null,
+      "first_patherror_over3_step": null,
+      "first_negative_body_forward_step": null,
+      "negative_body_forward_s": 0.0,
+      "max_abs_cursor_gap_segments": 0.49947117279015174,
+      "first_cursor_gap_over2_step": null,
+      "cursor_gap_over2_runs_before_departure": [],
+      "nearest_arc_net_m": 1141.8328983412848,
+      "last_new_tile_step": 244,
+      "after_last_new_tile_s": 0.17999999999999616,
+      "final_visited": 326,
+      "total_reference_nodes": 326,
+      "final_offtrackcounter": 3,
+      "max_offtrackcounter": 4,
+      "windows": [
+        {
+          "first_step": 1,
+          "last_step": 64,
+          "time_s": 5.119999999999957,
+          "mean_speed_m_s": 53.205356865259866,
+          "mean_target_m_s": 81.54994022866535,
+          "visited_pre": 2,
+          "visited_post": 81,
+          "max_cursor_gap_segments": 0.43342292130051874,
+          "max_cursor_path_error_m": 1.5876804972339,
+          "wheel_contact_loss_s": 0.0
+        },
+        {
+          "first_step": 65,
+          "last_step": 128,
+          "time_s": 5.119999999999892,
+          "mean_speed_m_s": 59.262863713385656,
+          "mean_target_m_s": 77.98639382371329,
+          "visited_pre": 81,
+          "visited_post": 167,
+          "max_cursor_gap_segments": 0.49947117279015174,
+          "max_cursor_path_error_m": 1.9619682771185403,
+          "wheel_contact_loss_s": 0.0
+        },
+        {
+          "first_step": 129,
+          "last_step": 247,
+          "time_s": 9.459999999999798,
+          "mean_speed_m_s": 58.73481240117987,
+          "mean_target_m_s": 81.35621705408043,
+          "visited_pre": 167,
+          "visited_post": 326,
+          "max_cursor_gap_segments": 0.4942935331504259,
+          "max_cursor_path_error_m": 2.235057787843052,
+          "wheel_contact_loss_s": 0.0
+        }
+      ],
+      "registered_gates": {
+        "progress_state": false,
+        "speed_execution": true
+      },
+      "gate_scope": "Nearest planned polyline spatial projection can be ambiguous; no force-limit optimum or causal seconds claim"
+    },
+    {
+      "case": "N1",
+      "result": {
+        "case": "N1",
+        "native": 259,
+        "matched_rows": 259,
+        "raw_ticks": 1036,
+        "reset_ticks": 51,
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "lap_ms": null,
+        "retire_reason": "off_track",
+        "technical_error": null,
+        "runner_CPU_s": 13.055940058000001,
+        "wall_s": 13.063703264924698,
+        "unconfirmed_charged_native": 0
+      },
+      "time_s": 20.719999999999626,
+      "distance_observed_chord_m": 647.0874817518529,
+      "distance_scope": "Actual wrapper endpoints, terminal chord includes post-finish portion, no exact continuous distance",
+      "mean_speed_m_s": 31.235394954593037,
+      "mean_target_m_s": 78.855069404833,
+      "lag_over10_s": 20.319999999999624,
+      "lag_with_constraint_s": 20.079999999999625,
+      "longest_lag_with_constraint_s": 9.439999999999799,
+      "brake_below_target_s": 11.11999999999977,
+      "positive_accel_clamped_s": 9.359999999999857,
+      "negative_accel_clamped_s": 11.039999999999772,
+      "gas_at1_s": 1.2799999999999727,
+      "wheel_gas_slew_present_s": 0.3999999999999915,
+      "rear_unclipped_positive_clamp_gasbelow1_s": 7.599999999999894,
+      "rear_clipping_action_s": 0.47999999999998977,
+      "first_wheel_road_loss_step": null,
+      "first_patherror_over3_step": null,
+      "first_negative_body_forward_step": null,
+      "negative_body_forward_s": 0.0,
+      "max_abs_cursor_gap_segments": 0.4923484570958294,
+      "first_cursor_gap_over2_step": null,
+      "cursor_gap_over2_runs_before_departure": [],
+      "nearest_arc_net_m": 650.3711588705306,
+      "last_new_tile_step": 158,
+      "after_last_new_tile_s": 8.079999999999828,
+      "final_visited": 187,
+      "total_reference_nodes": 238,
+      "final_offtrackcounter": 101,
+      "max_offtrackcounter": 101,
+      "windows": [
+        {
+          "first_step": 1,
+          "last_step": 64,
+          "time_s": 5.119999999999957,
+          "mean_speed_m_s": 50.774846654866174,
+          "mean_target_m_s": 78.27865273247716,
+          "visited_pre": 2,
+          "visited_post": 79,
+          "max_cursor_gap_segments": 0.4497581488019762,
+          "max_cursor_path_error_m": 1.694461208372764,
+          "wheel_contact_loss_s": 0.0
+        },
+        {
+          "first_step": 65,
+          "last_step": 128,
+          "time_s": 5.119999999999892,
+          "mean_speed_m_s": 52.04730347902521,
+          "mean_target_m_s": 79.44781441954281,
+          "visited_pre": 79,
+          "visited_post": 153,
+          "max_cursor_gap_segments": 0.4923484570958294,
+          "max_cursor_path_error_m": 2.1093342426978974,
+          "wheel_contact_loss_s": 0.0
+        },
+        {
+          "first_step": 129,
+          "last_step": 259,
+          "time_s": 10.479999999999777,
+          "mean_speed_m_s": 11.521753318095687,
+          "mean_target_m_s": 78.84709219940818,
+          "visited_pre": 153,
+          "visited_post": 187,
+          "max_cursor_gap_segments": 0.4681711599530445,
+          "max_cursor_path_error_m": 1.7623254335437435,
+          "wheel_contact_loss_s": 0.0
+        }
+      ],
+      "registered_gates": {
+        "progress_state": false,
+        "speed_execution": true
+      },
+      "gate_scope": "Nearest planned polyline spatial projection can be ambiguous; no force-limit optimum or causal seconds claim"
+    }
+  ],
+  "B": {
+    "model_gate": {
+      "passed": true,
+      "technical_error": null,
+      "CPU_s": 0.07704768900000003,
+      "wall_s": 0.07747848297003657,
+      "source_physics_ticks": 24,
+      "scope": "One-action same-actual-state qualification only; failure withholds this model MPC, not joint-optimization family"
+    },
+    "model_original_errors": [
+      {
+        "step": 64,
+        "phase": "straight",
+        "errors": {
+          "speed_m_s": 7.946137401404485e-07,
+          "yaw_rate_rad_s": 3.3574178814888e-07,
+          "position_m": 0.0
+        },
+        "initialization": {
+          "bodies": true,
+          "tiles": true,
+          "progress": true
+        },
+        "discrete": {
+          "collision": true,
+          "damage": true,
+          "road_contacts": true
+        },
+        "passed": true
+      },
+      {
+        "step": 94,
+        "phase": "corner",
+        "errors": {
+          "speed_m_s": 3.438589153859084e-06,
+          "yaw_rate_rad_s": 2.6226043701171875e-06,
+          "position_m": 0.0
+        },
+        "initialization": {
+          "bodies": true,
+          "tiles": true,
+          "progress": true
+        },
+        "discrete": {
+          "collision": true,
+          "damage": true,
+          "road_contacts": true
+        },
+        "passed": true
+      }
+    ],
+    "states": [
+      {
+        "step": 64,
+        "phase": "straight",
+        "arms": [
+          {
+            "arm": "original",
+            "end_speed_m_s": 51.26748601361176,
+            "end_forward_velocity_m_s": 51.26748412584586,
+            "delta_forward_velocity_m_s": 0.0,
+            "delta_lateral_velocity_m_s": 0.0,
+            "delta_yaw_rate_rad_s": 0.0,
+            "delta_lateral_position_m": 0.0,
+            "collision": false,
+            "damage": 0.0,
+            "wheel_road_contact_count": 4,
+            "new_contact_or_loss": false,
+            "tire": {
+              "front": {
+                "samples": 8,
+                "clipped_fraction": 0.0,
+                "road_clipped_fraction": 0.0,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 0.4378928415280795,
+                "mean_abs_lateral_slip": 0.002000560583340416
+              },
+              "rear": {
+                "samples": 8,
+                "clipped_fraction": 0.0,
+                "road_clipped_fraction": 0.0,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 0.37250971033145175,
+                "mean_abs_lateral_slip": 0.014235701324537331
+              },
+              "all": {
+                "samples": 16,
+                "clipped_fraction": 0.0,
+                "road_clipped_fraction": 0.0,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 0.4378928415280795,
+                "mean_abs_lateral_slip": 0.008118130953938874
+              }
+            },
+            "predicted_end_forward_velocity_m_s": 51.26748333170267,
+            "prediction_speed_error_m_s": 7.946137401404485e-07,
+            "prediction_yaw_error_rad_s": 3.3574178814888e-07,
+            "prediction_position_error_m": 0.0,
+            "local_headroom_gate": false
+          },
+          {
+            "arm": "no_brake",
+            "end_speed_m_s": 53.67576945670303,
+            "end_forward_velocity_m_s": 53.67576747258304,
+            "delta_forward_velocity_m_s": 2.408283346737175,
+            "delta_lateral_velocity_m_s": 0.0006818055126358775,
+            "delta_yaw_rate_rad_s": -1.3075070455670357e-05,
+            "delta_lateral_position_m": 2.3789672820893518e-05,
+            "collision": false,
+            "damage": 0.0,
+            "wheel_road_contact_count": 4,
+            "new_contact_or_loss": false,
+            "tire": {
+              "front": {
+                "samples": 8,
+                "clipped_fraction": 0.0,
+                "road_clipped_fraction": 0.0,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 0.3095746444822435,
+                "mean_abs_lateral_slip": 0.001913602830697414
+              },
+              "rear": {
+                "samples": 8,
+                "clipped_fraction": 0.0,
+                "road_clipped_fraction": 0.0,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 0.5323563395056605,
+                "mean_abs_lateral_slip": 0.014330450303319253
+              },
+              "all": {
+                "samples": 16,
+                "clipped_fraction": 0.0,
+                "road_clipped_fraction": 0.0,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 0.5323563395056605,
+                "mean_abs_lateral_slip": 0.008122026567008334
+              }
+            },
+            "predicted_end_forward_velocity_m_s": 53.67576747258304,
+            "prediction_speed_error_m_s": 0.0,
+            "prediction_yaw_error_rad_s": 4.656612873077393e-10,
+            "prediction_position_error_m": 0.0,
+            "local_headroom_gate": true
+          },
+          {
+            "arm": "full_gas_no_brake",
+            "end_speed_m_s": 54.62465403035992,
+            "end_forward_velocity_m_s": 54.624652032946244,
+            "delta_forward_velocity_m_s": 3.3571679071003855,
+            "delta_lateral_velocity_m_s": 0.0008594810648592321,
+            "delta_yaw_rate_rad_s": 4.476006142795086e-05,
+            "delta_lateral_position_m": 3.5104658784590974e-05,
+            "collision": false,
+            "damage": 0.0,
+            "wheel_road_contact_count": 4,
+            "new_contact_or_loss": false,
+            "tire": {
+              "front": {
+                "samples": 8,
+                "clipped_fraction": 0.0,
+                "road_clipped_fraction": 0.0,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 0.39711570067758084,
+                "mean_abs_lateral_slip": 0.00188300138900388
+              },
+              "rear": {
+                "samples": 8,
+                "clipped_fraction": 0.0,
+                "road_clipped_fraction": 0.0,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 0.7605470738528284,
+                "mean_abs_lateral_slip": 0.014290760185616591
+              },
+              "all": {
+                "samples": 16,
+                "clipped_fraction": 0.0,
+                "road_clipped_fraction": 0.0,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 0.7605470738528284,
+                "mean_abs_lateral_slip": 0.008086880787310236
+              }
+            },
+            "predicted_end_forward_velocity_m_s": 54.62465629541203,
+            "prediction_speed_error_m_s": 4.262505079566381e-06,
+            "prediction_yaw_error_rad_s": 6.30505383014679e-07,
+            "prediction_position_error_m": 0.0,
+            "local_headroom_gate": true
+          }
+        ],
+        "actual_forward_ranking": [
+          "full_gas_no_brake",
+          "no_brake",
+          "original"
+        ],
+        "predicted_forward_ranking": [
+          "full_gas_no_brake",
+          "no_brake",
+          "original"
+        ],
+        "ranking_exact": true
+      },
+      {
+        "step": 94,
+        "phase": "corner",
+        "arms": [
+          {
+            "arm": "original",
+            "end_speed_m_s": 46.552693619063476,
+            "end_forward_velocity_m_s": 45.59053945301554,
+            "delta_forward_velocity_m_s": 0.0,
+            "delta_lateral_velocity_m_s": 0.0,
+            "delta_yaw_rate_rad_s": 0.0,
+            "delta_lateral_position_m": 0.0,
+            "collision": false,
+            "damage": 0.0,
+            "wheel_road_contact_count": 4,
+            "new_contact_or_loss": false,
+            "tire": {
+              "front": {
+                "samples": 8,
+                "clipped_fraction": 0.5,
+                "road_clipped_fraction": 0.5,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 1.1929120640263589,
+                "mean_abs_lateral_slip": 3.594287508618109
+              },
+              "rear": {
+                "samples": 8,
+                "clipped_fraction": 0.0,
+                "road_clipped_fraction": 0.0,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 0.8011231469365492,
+                "mean_abs_lateral_slip": 1.6337507459343499
+              },
+              "all": {
+                "samples": 16,
+                "clipped_fraction": 0.25,
+                "road_clipped_fraction": 0.25,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 1.1929120640263589,
+                "mean_abs_lateral_slip": 2.6140191272762294
+              }
+            },
+            "predicted_end_forward_velocity_m_s": 45.5905443994004,
+            "prediction_speed_error_m_s": 3.438589153859084e-06,
+            "prediction_yaw_error_rad_s": 2.6226043701171875e-06,
+            "prediction_position_error_m": 0.0,
+            "local_headroom_gate": false
+          },
+          {
+            "arm": "no_brake",
+            "end_speed_m_s": 48.70054143787617,
+            "end_forward_velocity_m_s": 47.6539194340818,
+            "delta_forward_velocity_m_s": 2.063379981066258,
+            "delta_lateral_velocity_m_s": 0.626514428688186,
+            "delta_yaw_rate_rad_s": -0.11799430847167969,
+            "delta_lateral_position_m": 0.024727178147959578,
+            "collision": false,
+            "damage": 0.0,
+            "wheel_road_contact_count": 4,
+            "new_contact_or_loss": false,
+            "tire": {
+              "front": {
+                "samples": 8,
+                "clipped_fraction": 0.25,
+                "road_clipped_fraction": 0.25,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 1.1736003457506738,
+                "mean_abs_lateral_slip": 3.6778545026050296
+              },
+              "rear": {
+                "samples": 8,
+                "clipped_fraction": 0.0,
+                "road_clipped_fraction": 0.0,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 0.924325547628952,
+                "mean_abs_lateral_slip": 1.6900228779063724
+              },
+              "all": {
+                "samples": 16,
+                "clipped_fraction": 0.125,
+                "road_clipped_fraction": 0.125,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 1.1736003457506738,
+                "mean_abs_lateral_slip": 2.683938690255701
+              }
+            },
+            "predicted_end_forward_velocity_m_s": 47.653915170443966,
+            "prediction_speed_error_m_s": 4.150101432287556e-06,
+            "prediction_yaw_error_rad_s": 1.1920928955078125e-06,
+            "prediction_position_error_m": 0.0,
+            "local_headroom_gate": false
+          },
+          {
+            "arm": "full_gas_no_brake",
+            "end_speed_m_s": 49.46785971918058,
+            "end_forward_velocity_m_s": 48.42874917645917,
+            "delta_forward_velocity_m_s": 2.838209723443632,
+            "delta_lateral_velocity_m_s": 0.6701696892390264,
+            "delta_yaw_rate_rad_s": -0.14170002937316895,
+            "delta_lateral_position_m": 0.025245151480492212,
+            "collision": false,
+            "damage": 0.0,
+            "wheel_road_contact_count": 4,
+            "new_contact_or_loss": false,
+            "tire": {
+              "front": {
+                "samples": 8,
+                "clipped_fraction": 0.375,
+                "road_clipped_fraction": 0.375,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 1.1783163710595979,
+                "mean_abs_lateral_slip": 3.7259925187743903
+              },
+              "rear": {
+                "samples": 8,
+                "clipped_fraction": 0.25,
+                "road_clipped_fraction": 0.25,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 1.0963141120945634,
+                "mean_abs_lateral_slip": 1.7365982577296961
+              },
+              "all": {
+                "samples": 16,
+                "clipped_fraction": 0.3125,
+                "road_clipped_fraction": 0.3125,
+                "grass_fraction": 0.0,
+                "max_raw_force_ratio": 1.1783163710595979,
+                "mean_abs_lateral_slip": 2.731295388252043
+              }
+            },
+            "predicted_end_forward_velocity_m_s": 48.428748963983494,
+            "prediction_speed_error_m_s": 1.946620592718773e-06,
+            "prediction_yaw_error_rad_s": 4.291534423828125e-06,
+            "prediction_position_error_m": 0.0,
+            "local_headroom_gate": false
+          }
+        ],
+        "actual_forward_ranking": [
+          "full_gas_no_brake",
+          "no_brake",
+          "original"
+        ],
+        "predicted_forward_ranking": [
+          "full_gas_no_brake",
+          "no_brake",
+          "original"
+        ],
+        "ranking_exact": true
+      }
+    ],
+    "local_headroom_passed": true,
+    "scope": "2selectedstates,4rawticks;original measuredinB0,changedarms onlyafterbothmodelgates;candidate ranking diagnostic notMPC orwholelapclaim"
+  },
+  "cost": {
+    "stage": 390,
+    "registered_native_cap": 4774,
+    "new_wrapper_actions": 916,
+    "A_native": 506,
+    "B_native": 410,
+    "unused_native_cap": 3858,
+    "new_environment_resets": 7,
+    "new_actor_act_calls": 410,
+    "new_actor_commit_calls": 410,
+    "new_actor_resets": 5,
+    "new_source_physics_rollout_ticks": 24,
+    "source_model_world_initializations": 6,
+    "raw_step_ticks": 3661,
+    "raw_reset_ticks": 357,
+    "new_learning_fits": 0,
+    "new_paid_resources": 0,
+    "new_DEV_episodes": 0,
+    "new_HOLDOUT_episodes": 0,
+    "new_SEALED_episodes": 0,
+    "runner_CPU_s": 52.221750432,
+    "actor_CPU_s": 4.731005999999999,
+    "sum_episode_wall_s": 57.03112230298575,
+    "model_CPU_s": 0.07704768900000003,
+    "model_wall_s": 0.07747848297003657,
+    "analysis_CPU_s": 0.08924263700000001,
+    "actual_cumulative_wrapper_actions": 1313925,
+    "research_remaining": 34139,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064,
+    "scope": "Episode wall sum includes parallelA/B0; analysis corrected lap gauge without replay. Git/report/preparation time not fully measured. B0 94 isnecessarycaptureandoriginalarm,chargedoncewithin410."
+  },
+  "analysis_CPU_s": 0.04405501300000003,
+  "analysis_wall_s": 0.04501351108774543,
+  "new_native_this_analysis": 0,
+  "new_model_this_analysis": 0,
+  "checks": {
+    "plan_and_source_hashes_exact": true,
+    "registered_gates_unchanged": true,
+    "A_506_rows_exact": true,
+    "B_full_prefix_and_boundaries_exact": true,
+    "model_qualification_before_changed_pulses": true,
+    "model_predictions_frozen_before_pulses": true,
+    "all_seven_native_runs_have_confirmed_accounting": true,
+    "all_five_actors_reaped": true,
+    "README_original_prefix_preserved": true,
+    "protected_hashes_exact": true
+  },
+  "model_scope": "Same2knownTRAINactualstates one4-tick action. Ranking isforwardvelocityonly,notcompleteMPCcost. No longhorizonclaim.",
+  "N1_stationary_braking": {
+    "rows": 99,
+    "first_step": 161,
+    "target_speed_m_s_range": [
+      72.75493405304776,
+      72.75493405304776
+    ],
+    "feedforward_accel_range": [
+      -205.12965143838576,
+      -205.12965143838576
+    ],
+    "feedback_accel_range": [
+      109.11436052254666,
+      109.13240107957165
+    ],
+    "all_wheels_onroad": true,
+    "brake_range": [
+      0.30000001192092896,
+      0.30000001192092896
+    ]
+  }
+}
