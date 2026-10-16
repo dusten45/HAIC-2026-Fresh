@@ -1,0 +1,396 @@
+{
+  "stage": 401,
+  "numeric": {
+    "stage": 401,
+    "numeric_passed": true,
+    "status": "ROUNDING_AWARE_QUALIFIED",
+    "controls_passed": true,
+    "summary": {
+      "drive": {
+        "rows": 238,
+        "nonpositive": 166,
+        "rounding_compatible_positive": 72,
+        "certified_violation": 0,
+        "max_exact_residual": "1.62541706445163193154040344937871643695238871864824830369463025339467065477E-12",
+        "max_bound": "9.04747935895124517224613105498730368828881290674414375944145735220899170169341982968591934E-12",
+        "max_positive_ratio_to_bound": "0.360004096956246793218263962459253686573317252616207431343782476524407252046505833592494534"
+      },
+      "brake": {
+        "rows": 238,
+        "nonpositive": 215,
+        "rounding_compatible_positive": 23,
+        "certified_violation": 0,
+        "max_exact_residual": "1.62477933824576651016294175482130727223987250867898168849023932125419378280E-12",
+        "max_bound": "7.08689019995694247864952262687285337992728231192264609600382239203909982538922081469456148E-12",
+        "max_positive_ratio_to_bound": "0.344508562740472550521879507263098764111810955268372661083543056550064690401087640912301517"
+      },
+      "upper": {
+        "rows": 239,
+        "nonpositive": 225,
+        "rounding_compatible_positive": 14,
+        "certified_violation": 0,
+        "max_exact_residual": "6.5010629137524945329166667372445019956216556780951549785447273061413035917E-13",
+        "max_bound": "4.44089209850062813384678972489367059086161621802383996887196549955943719466122645986292146E-12",
+        "max_positive_ratio_to_bound": "0.514311663298810948938143679899872963103930109856405698935918962260999735696067961137599627"
+      }
+    },
+    "boundary_passed": true,
+    "original400_unchanged": true,
+    "exact_real_inequalities_all_satisfied": false,
+    "source_feasibility_certified": false,
+    "model_ticks": 0,
+    "CPU_s": 0.016978155999999994,
+    "wall_s": 0.016997935017570853,
+    "scope": "Numericalbackwardconsistencyonly;positiveexactstoredinputresidualswithinoperationboundarenotdeclarednonpositive. Subboundphysicalviolationsnotresolved."
+  },
+  "numeric_controls": [
+    {
+      "n": 4,
+      "scale": "0.001",
+      "negative": {
+        "residual": "-4.44089209850062813384678972489367059086161621802383996887196549955943719466E-19",
+        "bound": "4.44089209850062813384678972489367059086161621802383996887196549955943719466122645986292146E-19",
+        "classification": "NONPOSITIVE"
+      },
+      "positive": {
+        "residual": "1.77635683940025125353871588995746823634464648720953598754878619982377487786E-18",
+        "bound": "4.44089209850062813384678972489367059086161621802383996887196549955943719466122645986292146E-19",
+        "classification": "CERTIFIED_VIOLATION"
+      },
+      "passed": true
+    },
+    {
+      "n": 4,
+      "scale": "2",
+      "negative": {
+        "residual": "-8.8817841970012562676935794497873411817232324360476799377439309991188743893E-16",
+        "bound": "8.88178419700125626769357944978734118172323243604767993774393099911887438932245291972584292E-16",
+        "classification": "NONPOSITIVE"
+      },
+      "positive": {
+        "residual": "3.55271367880050250707743177991493647268929297441907197509757239964754975573E-15",
+        "bound": "8.88178419700125626769357944978734118172323243604767993774393099911887438932245291972584292E-16",
+        "classification": "CERTIFIED_VIOLATION"
+      },
+      "passed": true
+    },
+    {
+      "n": 4,
+      "scale": "10000",
+      "negative": {
+        "residual": "-4.44089209850062813384678972489367059086161621802383996887196549955943719466E-12",
+        "bound": "4.44089209850062813384678972489367059086161621802383996887196549955943719466122645986292146E-12",
+        "classification": "NONPOSITIVE"
+      },
+      "positive": {
+        "residual": "1.77635683940025125353871588995746823634464648720953598754878619982377487786E-11",
+        "bound": "4.44089209850062813384678972489367059086161621802383996887196549955943719466122645986292146E-12",
+        "classification": "CERTIFIED_VIOLATION"
+      },
+      "passed": true
+    },
+    {
+      "n": 6,
+      "scale": "0.001",
+      "negative": {
+        "residual": "-6.66133814775094367988438187673928317992136487865052258163670283498797195734E-19",
+        "bound": "6.66133814775094367988438187673928317992136487865052258163670283498797195733864939002707928E-19",
+        "classification": "NONPOSITIVE"
+      },
+      "positive": {
+        "residual": "2.66453525910037747195375275069571327196854595146020903265468113399518878294E-18",
+        "bound": "6.66133814775094367988438187673928317992136487865052258163670283498797195733864939002707928E-19",
+        "classification": "CERTIFIED_VIOLATION"
+      },
+      "passed": true
+    },
+    {
+      "n": 6,
+      "scale": "2",
+      "negative": {
+        "residual": "-1.33226762955018873597687637534785663598427297573010451632734056699759439147E-15",
+        "bound": "1.33226762955018873597687637534785663598427297573010451632734056699759439146772987800541586E-15",
+        "classification": "NONPOSITIVE"
+      },
+      "positive": {
+        "residual": "5.32907051820075494390750550139142654393709190292041806530936226799037756587E-15",
+        "bound": "1.33226762955018873597687637534785663598427297573010451632734056699759439146772987800541586E-15",
+        "classification": "CERTIFIED_VIOLATION"
+      },
+      "passed": true
+    },
+    {
+      "n": 6,
+      "scale": "10000",
+      "negative": {
+        "residual": "-6.66133814775094367988438187673928317992136487865052258163670283498797195734E-12",
+        "bound": "6.66133814775094367988438187673928317992136487865052258163670283498797195733864939002707928E-12",
+        "classification": "NONPOSITIVE"
+      },
+      "positive": {
+        "residual": "2.66453525910037747195375275069571327196854595146020903265468113399518878294E-11",
+        "bound": "6.66133814775094367988438187673928317992136487865052258163670283498797195733864939002707928E-12",
+        "classification": "CERTIFIED_VIOLATION"
+      },
+      "passed": true
+    },
+    {
+      "n": 8,
+      "scale": "0.001",
+      "negative": {
+        "residual": "-8.88178419700126021199810555485162310960727691943993065784194790517838832673E-19",
+        "bound": "8.88178419700126021199810555485162310960727691943993065784194790517838832672828280080452743E-19",
+        "classification": "NONPOSITIVE"
+      },
+      "positive": {
+        "residual": "3.55271367880050408479924222194064924384291076777597226313677916207135533069E-18",
+        "bound": "8.88178419700126021199810555485162310960727691943993065784194790517838832672828280080452743E-19",
+        "classification": "CERTIFIED_VIOLATION"
+      },
+      "passed": true
+    },
+    {
+      "n": 8,
+      "scale": "2",
+      "negative": {
+        "residual": "-1.77635683940025204239962111097032462192145538388798613156838958103567766535E-15",
+        "bound": "1.77635683940025204239962111097032462192145538388798613156838958103567766534565656016090549E-15",
+        "classification": "NONPOSITIVE"
+      },
+      "positive": {
+        "residual": "7.10542735760100816959848444388129848768582153555194452627355832414271066138E-15",
+        "bound": "1.77635683940025204239962111097032462192145538388798613156838958103567766534565656016090549E-15",
+        "classification": "CERTIFIED_VIOLATION"
+      },
+      "passed": true
+    },
+    {
+      "n": 8,
+      "scale": "10000",
+      "negative": {
+        "residual": "-8.88178419700126021199810555485162310960727691943993065784194790517838832673E-12",
+        "bound": "8.88178419700126021199810555485162310960727691943993065784194790517838832672828280080452743E-12",
+        "classification": "NONPOSITIVE"
+      },
+      "positive": {
+        "residual": "3.55271367880050408479924222194064924384291076777597226313677916207135533069E-11",
+        "bound": "8.88178419700126021199810555485162310960727691943993065784194790517838832672828280080452743E-12",
+        "classification": "CERTIFIED_VIOLATION"
+      },
+      "passed": true
+    },
+    {
+      "kind": "binary64sqrt2squared_exactpositive",
+      "result": {
+        "residual": "2.7343234630647692806884916507957232351955020204815893780647684252471663058E-16",
+        "bound": "1.77635683940025204239962111097032462192145538388798613156838958103567766534565656016090549E-15",
+        "classification": "ROUNDING_COMPATIBLE_POSITIVE"
+      },
+      "passed": true
+    }
+  ],
+  "branch": {
+    "status": "BRANCH_QUALIFIED",
+    "passed": true,
+    "failure": null,
+    "technical_error": null,
+    "records": [
+      {
+        "label": "parent_vs_fresh",
+        "errors": {
+          "speed_m_s": 4.832541279142788e-06,
+          "yaw_rate_rad_s": 3.0994415283203125e-06,
+          "position_m": 0.0
+        },
+        "discrete": {
+          "collision": true,
+          "damage": true,
+          "wheel_road_contacts": true
+        },
+        "passed": true
+      },
+      {
+        "label": "candidate_independence",
+        "passed": true,
+        "candidates": 6,
+        "orders": [
+          "forward",
+          "reverse"
+        ],
+        "snapshot_unchanged": true,
+        "parent_unchanged": true
+      }
+    ]
+  },
+  "factorial": {
+    "status": "COMPLETED_MODEL_DIAGNOSTIC",
+    "qualification_failure": null,
+    "technical_error": null,
+    "results": [
+      {
+        "arm": "P15_C",
+        "pace": 1.5,
+        "joint": false,
+        "status": "MODEL_SAFETY_STOP",
+        "actions": 99,
+        "target_reached": true,
+        "safe_target": false,
+        "max_path_error": 3.237510814352528,
+        "arrival_interval_s": null,
+        "max_abs_yaw": 5.810561656951904,
+        "diagnostic_only": true
+      },
+      {
+        "arm": "P10_C",
+        "pace": 1.0,
+        "joint": false,
+        "status": "TARGET_ARC_REACHED",
+        "actions": 106,
+        "target_reached": true,
+        "safe_target": true,
+        "max_path_error": 1.5254846075434585,
+        "arrival_interval_s": [
+          8.4,
+          8.48
+        ],
+        "max_abs_yaw": 2.4132466316223145,
+        "diagnostic_only": true
+      },
+      {
+        "arm": "P15_J",
+        "pace": 1.5,
+        "joint": true,
+        "status": "ACTION_CAP_CENSORED",
+        "actions": 160,
+        "target_reached": false,
+        "safe_target": false,
+        "max_path_error": 0.0003998159436335798,
+        "arrival_interval_s": null,
+        "max_abs_yaw": 4.896857364045104e-10,
+        "diagnostic_only": true
+      },
+      {
+        "arm": "P10_J",
+        "pace": 1.0,
+        "joint": true,
+        "status": "ACTION_CAP_CENSORED",
+        "actions": 160,
+        "target_reached": false,
+        "safe_target": false,
+        "max_path_error": 0.0003998159436335798,
+        "arrival_interval_s": null,
+        "max_abs_yaw": 4.896857364045104e-10,
+        "diagnostic_only": true
+      }
+    ],
+    "uncompleted_arms": [],
+    "actual_environment_performance": false
+  },
+  "selection_diagnostics": [
+    {
+      "arm": "P15_C",
+      "actions": 99,
+      "speed_max": 100.00000484616396,
+      "chosen_candidate_counts": {},
+      "all_chosen_predictions_qualified": true,
+      "chosen_max_errors": {
+        "speed_m_s": 0.0,
+        "yaw_rate_rad_s": 0.0,
+        "position_m": 0.0
+      }
+    },
+    {
+      "arm": "P10_C",
+      "actions": 106,
+      "speed_max": 99.13124344704468,
+      "chosen_candidate_counts": {},
+      "all_chosen_predictions_qualified": true,
+      "chosen_max_errors": {
+        "speed_m_s": 0.0,
+        "yaw_rate_rad_s": 0.0,
+        "position_m": 0.0
+      }
+    },
+    {
+      "arm": "P15_J",
+      "actions": 160,
+      "speed_max": 9.158720074757769e-11,
+      "chosen_candidate_counts": {
+        "3": 160
+      },
+      "all_chosen_predictions_qualified": true,
+      "chosen_max_errors": {
+        "speed_m_s": 3.732413369796769e-11,
+        "yaw_rate_rad_s": 5.762516852581001e-11,
+        "position_m": 0.0
+      }
+    },
+    {
+      "arm": "P10_J",
+      "actions": 160,
+      "speed_max": 9.158720074757769e-11,
+      "chosen_candidate_counts": {
+        "3": 160
+      },
+      "all_chosen_predictions_qualified": true,
+      "chosen_max_errors": {
+        "speed_m_s": 3.732413369796769e-11,
+        "yaw_rate_rad_s": 5.762516852581001e-11,
+        "position_m": 0.0
+      }
+    }
+  ],
+  "cost": {
+    "stage": 401,
+    "new_wrapper_actions": 0,
+    "new_environment_resets": 0,
+    "new_actor_calls": 0,
+    "new_learning_fits": 0,
+    "new_SEALED_queries": 0,
+    "new_paid_resources": 0,
+    "new_model_integration_ticks": 10212,
+    "source_physics_ticks": 10212,
+    "qualification_ticks": 432,
+    "factorial_ticks": 9780,
+    "source_model_world_initializations": 1939,
+    "source_zero_time_contact_setups": 1939,
+    "reserved_model_ticks": 10212,
+    "unconfirmed_reserved_model_ticks": 0,
+    "model_tick_cap": 12288,
+    "unused_model_ticks": 2076,
+    "CPU_s": 72.442104019,
+    "CPU_cap_s": 180,
+    "opening_to_final_receipt_wall_s": 157.02331590652466,
+    "wall_cap_s": 300,
+    "actual_max_parallel_physics_workers": 1,
+    "includes_numeric_CPU_s": 0.016978155999999994,
+    "preparation_import_report_git_time_included": false,
+    "actual_cumulative_wrapper_actions": 1315992,
+    "research_remaining": 32072,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064
+  },
+  "checks": {
+    "preregistered_operation_bounds_not_observed_tolerance": true,
+    "independent90digit_and_positive_controls_pass": true,
+    "exact_positive_residuals_disclosed": true,
+    "original400_unqualified_unchanged": true,
+    "unchanged_original_profile_and_official_sources": true,
+    "highslip_branch_and_candidate_independence_pass": true,
+    "all_chosen_predictions_pass391criteria": true,
+    "no_actual_qualification_failure": true,
+    "fixed_four_arms_no_retuning": true,
+    "two_joint_arms_censored_not_success": true,
+    "model_results_not_actual_performance": true,
+    "protected_hashes_exact": true,
+    "native_balance_unchanged": true
+  },
+  "plan_hashes": {
+    "plan.json": "54d05766bce831eb2055a46a8cf4f6c26177b2c966ca50f3d032598ef57bd5b7",
+    "branch-plan.json": "9405e3a4be609a0853d8a0f876f64938c82515ee06d9a338af54fd3c5cb1babb",
+    "factorial-plan.json": "f704afef645d59b3a347cfa068f31510543e3daeaf48e48235caa6b6530c6876"
+  },
+  "scope": "Roundoff-compatible numerical qualification, notexactreal/sourcefeasibility. KnownN1model-onlylocalprofilegain;greedyjointrecipefailsprogress,notwholefamilyrefutation.No296promotionor11simpossibilityclaim.",
+  "new_experiments_after_factorial": 0
+}
