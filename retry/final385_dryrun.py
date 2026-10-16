@@ -146,7 +146,7 @@ def run(root):
         pass
     else:
         raise AssertionError('Duplicate query claim accepted')
-    close_query(qpath, json.loads((root/'uncertain/summary-private.json').read_text()))
+    close_query(qpath, json.loads((root/'uncertain/summary-provisional-private.json').read_text()))
     closed = json.loads(qpath.read_text())
     check('query claim consumed before reset and cannot repeat', closed['SEALED']['episodes_used']==1 and closed['SEALED']['future_episode_queries_this_phase_max']==0 and closed['other_pool']['preserved'])
     accounting = root/'accounting'

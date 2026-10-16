@@ -279,10 +279,12 @@ def run_batch(directory, count, cap, factory, *, check_time=lambda: None,
         journal.close()
         summary = summarize(directory/'events-private.jsonl', count)
         summary['batch_error'] = batch_error
-        summary['batch_qualification_passed'] = batch_error is None and summary['batch_completed_event'] and summary['all_cases_definitive'] and not summary['native_unresolved'] and not summary['journal_damaged_suffix']
-        durable_save(directory/'summary-private.json', summary)
-        public = public_summary(summary)
-        durable_save(directory/'summary-public.json', public)
+        summary['execution_qualification_passed'] = batch_error is None and summary['batch_completed_event'] and summary['all_cases_definitive'] and not summary['native_unresolved'] and not summary['journal_damaged_suffix']
+        summary['summary_phase'] = 'PROVISIONAL_PRE_SETTLEMENT'
+        summary['accounting_status'] = 'PENDING_SETTLEMENT'
+        summary['batch_qualification_passed'] = False
+        durable_save(directory/'summary-provisional-private.json', summary)
+        durable_save(directory/'summary-provisional-public.json', public_summary(summary))
     return summary
 
 
@@ -322,7 +324,7 @@ def preflight(root, authority):
     if sys.version.split()[0] != '3.11.16' or Path(sys.executable).absolute() != G/'.venv/bin/python':
         raise RuntimeError('Use the frozen absolute interpreter')
     stage = authority.get('preparation_stage', 385)
-    if stage != 386:
+    if stage != 387:
         raise PermissionError('Unknown preparation revision')
     preparation_directory = root/('stage'+str(stage))
     preservation = preparation_directory/'source-and-protected-hashes.json'
@@ -524,6 +526,7 @@ def close_query(path, summary):
     for claim in pool['claims']:
         claim['observed_status'] = summary['case_rows'][claim['case_index']]['status']
     durable_save(path, q)
+    return dict(status=pool['status'],episodes_used=pool['episodes_used'],future_episode_queries_this_phase_max=pool['future_episode_queries_this_phase_max'],accounting_status=pool['accounting_status'])
 
 
 def ensure_receipt(path, value):
@@ -642,9 +645,57 @@ def settle_live(root, output, prior, budget_path, authority):
         raise
     finally:
         # Even failed accounting cannot leave the query phase enabled.
-        close_query(root/'protected-query-ledger-v1.json',result)
+        try:
+            result['query_state'] = close_query(root/'protected-query-ledger-v1.json',result)
+        except BaseException:
+            result['batch_qualification_passed'] = False
+            result['query_state'] = dict(status='CLOSURE_ERROR_UNCONFIRMED')
+            raise
+        finally:
+            publish_final_summary(output,result,root/'protected-query-ledger-v1.json')
     ensure_receipt(output/('settlement-'+digest(result)+'.json'),result)
     return result
+
+
+def publish_final_summary(output, result, query_path):
+    """Final report publication follows accounting+query closure, never precedes it."""
+    result['summary_phase'] = 'FINAL_POST_SETTLEMENT'
+    result['batch_qualification_passed'] = bool(result.get('batch_qualification_passed') and result.get('accounting_status')=='CONFIRMED' and result.get('query_state',{}).get('status')=='closed_completed')
+    public = public_summary(result)
+    version = digest(result)
+    private_name = 'summary-final-'+version+'-private.json'
+    public_name = 'summary-final-'+version+'-public.json'
+    ensure_receipt(output/private_name,result)
+    ensure_receipt(output/public_name,public)
+    durable_save(output/'summary-private.json',result)
+    durable_save(output/'summary-public.json',public)
+    # Last commit marker binds the immutable pair and current query state.
+    durable_save(output/'summary-finalized.json',dict(summary_phase=result['summary_phase'],
+        batch_qualification_passed=result['batch_qualification_passed'],
+        private_file=private_name,private_sha256=sha(output/private_name),
+        public_file=public_name,public_sha256=sha(output/public_name),
+        query_ledger_sha256=sha(query_path)))
+
+
+def read_final_summary(output, query_path):
+    marker=read(output/'summary-finalized.json')
+    if marker['query_ledger_sha256']!=sha(query_path):
+        raise RuntimeError('Final query/report publication mismatch')
+    for kind in ['private','public']:
+        if sha(output/marker[kind+'_file'])!=marker[kind+'_sha256']:
+            raise RuntimeError('Final report content mismatch')
+        if sha(output/('summary-'+kind+'.json'))!=marker[kind+'_sha256']:
+            raise RuntimeError('Final report alias mismatch')
+    result=read(output/marker['public_file'])
+    if result['summary_phase']!='FINAL_POST_SETTLEMENT' or result['batch_qualification_passed']!=marker['batch_qualification_passed']:
+        raise RuntimeError('Final report phase mismatch')
+    return result
+
+
+def emit_cli_summary(result, stream=None):
+    """CLI status uses the same post-settlement redacted payload as report files."""
+    print(json.dumps(public_summary(result),ensure_ascii=False),file=stream or sys.stdout,flush=True)
+    return 0 if result.get('summary_phase')=='FINAL_POST_SETTLEMENT' and result.get('batch_qualification_passed') else 2
 
 
 def recover_live_metadata(root, authority_path):
@@ -677,6 +728,4 @@ if __name__ == '__main__':
         result = recover_live_metadata(args.root, args.authorization)
     else:
         result = run_live(args.root, args.authorization)
-    print(json.dumps(public_summary(result), ensure_ascii=False), flush=True)
-    if not result.get('batch_qualification_passed', False):
-        sys.exit(2)
+    sys.exit(emit_cli_summary(result))
