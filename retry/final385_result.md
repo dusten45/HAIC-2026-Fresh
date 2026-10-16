@@ -30,7 +30,7 @@ journal은 각 레코드의 seq·이전 hash·현재 hash와 fsync를 사용한�
 
 최종 회계는 immutable journal hash에 묶어 root의 `project-effective-budget-final385.json`과 별도 최종 receipt로 남기도록 연결했다. 확인된 step만 누적·예비 사용에 반영하고 연구 잔여는 건드리지 않는다. 같은 journal의 metadata 회계 복구는 멱등이며 FINAL385 비용 줄을 두 번 추가하지 않는다. query phase는 종료·중단 뒤 허용량0으로 닫고 이미 소비한 claim은 되돌리지 않는다. 예비 배분은 최대32,000·자동 retry0·240 비교0·미배정52,000을 유지한다.
 
-`--recover-metadata`는 기존 marker와 같은 권한·source, 독점 lock 아래 journal 보고·회계만 복구한다. backend·actor·환경·reset·step을 만들지 않고 누락된 행동을 실행하지 않는다. 찢긴 journal의 정상 prefix는 읽되 손상 suffix를 자동 삭제하지 않는다. 자격 실패 시 CLI는 exit code2를 반환하고 공개 요약에는 예외의 종류만 표시하며 원시 메시지·조건별 행은 제외한다. 공유 비용 원장 자체의 손상, 디스크 고갈, 유효 prefix까지의 소실은 자동 재주행으로 복구할 대상이 아니며, 독립 receipt를 보존한 metadata 회계 조정이 필요할 수 있다.
+`--recover-metadata`는 기존 marker와 같은 권한·source, 독점 lock 아래 journal 보고·회계만 복구한다. backend·actor·환경·reset·step을 만들지 않고 누락된 행동을 실행하지 않는다. 찢긴 journal의 정상 prefix는 읽되 손상 suffix를 자동 삭제하지 않는다. 실패 결과가 정상 반환돼 emitter까지 도달한 경우 CLI는 exit code2와 redacted JSON을 사용한다. 정산 예외가 다시 전파되는 실제 __main__ 경로는 emitter를 거치지 않으므로 JSON·exit2를 보장하지 않으며,원시 stderr traceback도 redacted public 파일과 구분한다. 이 범위는388 정정에서 명확히 했다. 공유 비용 원장 자체의 손상, 디스크 고갈, 유효 prefix까지의 소실은 자동 재주행으로 복구할 대상이 아니며, 독립 receipt를 보존한 metadata 회계 조정이 필요할 수 있다.
 
 synthetic dry run의22개 검증에는 다음이 포함된다.
 
