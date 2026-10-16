@@ -1,0 +1,50 @@
+"""Account every authorized query and apply the frozen completion-first contract."""
+import datetime,json,statistics,math,sys
+from pathlib import Path
+from retry.path271_run import read,save,sha
+G=Path(__file__).resolve().parent.parent
+FIELDS=['completed','actual_DNF','censored','technical_error','native_actions','lap_ms','damage','unique_tiles','total_tiles','retire_reason','stop_reason']
+COUNTS=['known_supported_direct_contexts','known_birth_supported_retained_contexts','supported_direct_losses','supported_retained_losses','missing_birth_GT_direct','missing_birth_GT_retained','all_positive_transfer_edges','ambiguous_transfer_edges','confirmed_distinct_supported_fixture_transfers','ambiguous_low_birth_edges']
+def wilson(k,n):
+ if not n:return None
+ z=1.959963984540054;q=k/n;d=1+z*z/n;c=(q+z*z/(2*n))/d;h=z*math.sqrt(q*(1-q)/n+z*z/(4*n*n))/d;return [c-h,c+h]
+def close(R):
+ D=R/'stage372';p=read(D/'plan.json');assert sha(D/'plan.json')==(D/'plan.sha256').read_text().strip();assert not (D/'cost.json').exists()
+ for f,h in p['source_hashes'].items():assert sha(f)==h,f
+ binding=read(D/'cases-frozen-private.json');assert sha(D/'cases-frozen-private.json')==(D/'cases-frozen.sha256').read_text().strip();status=read(D/'batch-status.json');b=read(D/'native-budget.json');budgets=[read(D/tag/'native-budget.json') for tag in status['attempted']]
+ for k in ['actions','actor_act_calls','actor_commit_calls','resets','actor_resets']:assert b[k]==sum(x[k] for x in budgets)
+ assert b['actions']<=48000 and b['resets']<=24;table=[];results=[];gates=[];valid_pairs=[]
+ for key in binding['order']:
+  row=dict(public_label=key,registered_arm_order=binding['cases'][key]['arm_order'],A296=None,B365=None,new_minus_296_lap_ms=None,paired_initial_check_passed=False)
+  for arm,out in [('A','A296'),('B','B365')]:
+   F=D/key/arm
+   if (F/'result.json').exists():
+    r=read(F/'result.json');results.append((key,arm,r));row[out]={k:r.get(k) for k in FIELDS}
+    if (F/'outcome-summary.json').exists():
+     diag=read(F/'outcome-summary.json');row[out]['contact_diagnostics']={k:diag[k] for k in ['collision_event_actions','raw_collision_flags','raw_observation_count']};row[out]['contact_diagnostics']['fixture_pair_count']=len(diag['fixture_touching'])
+  if (D/key/'support-gate.json').exists():
+   g=read(D/key/'support-gate.json');gates.append(g);row['candidate_support_audit']={k:g[k] for k in ['passed']+COUNTS}
+  if (D/key/'paired-initial-check.json').exists():row['paired_initial_check_passed']=read(D/key/'paired-initial-check.json')['passed']
+  if all(row[k] is not None and not row[k]['technical_error'] and not row[k]['censored'] and row[k]['completed']!=row[k]['actual_DNF'] for k in ['A296','B365']) and row['paired_initial_check_passed']:
+   valid_pairs.append(row)
+   if row['A296']['completed'] and row['B365']['completed']:row['new_minus_296_lap_ms']=row['B365']['lap_ms']-row['A296']['lap_ms']
+  table.append(row)
+ full=len(valid_pairs)==12 and len(status['evaluated'])==24;support_pass=len(gates)==12 and all(g['passed'] for g in gates);ready=full and support_pass and not status.get('technical_error');a=sum(x['A296']['completed'] for x in valid_pairs);n=sum(x['B365']['completed'] for x in valid_pairs);common=[x for x in valid_pairs if x['new_minus_296_lap_ms'] is not None];deltas=[x['new_minus_296_lap_ms'] for x in common];delta=dict(count=len(deltas),mean=statistics.mean(deltas) if deltas else None,median=statistics.median(deltas) if deltas else None,sum=sum(deltas),min=min(deltas) if deltas else None,max=max(deltas) if deltas else None,new_faster=sum(d<0 for d in deltas),ties=sum(d==0 for d in deltas),new_slower=sum(d>0 for d in deltas),sample_standard_deviation=statistics.stdev(deltas) if len(deltas)>1 else None,descriptive_standard_error=statistics.stdev(deltas)/math.sqrt(len(deltas)) if len(deltas)>1 else None)
+ gains=[x['public_label'] for x in valid_pairs if x['B365']['completed'] and not x['A296']['completed']];losses=[x['public_label'] for x in valid_pairs if x['A296']['completed'] and not x['B365']['completed']]
+ judged=dict(evaluated=bool(ready),candidate_outranks=None,champion_changed=False,automatic_promotion=False,requires_separate_explicit_promotion_decision=True)
+ if ready:
+  wins=n>a or n==a and bool(deltas) and delta['mean']<0;judged.update(candidate_outranks=bool(wins),reason='completion_count_improved' if n>a else 'completion_count_inferior' if n<a else 'equal_count_common_mean_improved' if wins else 'equal_count_time_not_improved_or_tied')
+ else:judged['reason']='Incomplete/censored/technical/supportfailure;cannotpass371qualification.'
+ aggregate=dict(planned_pairs=12,planned_episodes=24,attempted_episodes=len(status['attempted']),durable_results=len(results),valid_definitive_pairs=len(valid_pairs),all24_definitive=full,baseline296_completed_on_valid_pairs=a,candidate365_completed_on_valid_pairs=n,paired_completion_gains=gains,paired_completion_losses=losses,common_lap_delta_ms=delta,actual_DNF={arm:sum(r['actual_DNF'] for _,ar,r in results if ar==arm) for arm in ['A','B']},censored=sum(r['censored'] for _,_,r in results),technical_errors=sum(bool(r['technical_error']) for _,_,r in results),unmeasured=status['unmeasured'])
+ uncertainty=dict(n_valid_pairs=len(valid_pairs),baseline296_completion_Wilson95=wilson(a,len(valid_pairs)),candidate365_completion_Wilson95=wilson(n,len(valid_pairs)),discordant_completion_pairs=len(gains)+len(losses),scope='Descriptiveonly;small12conditionalDEV,notformalHOLDOUTorunbiasedpopulationclaim. MarginalWilsonassumesbinomialanddoesnotencodepairing/registrationdependencies. Commonlapconditionalonbothfinish;SEdescriptive,noconfirmatorysignificancethresholdadded. Oneepisodeperarm/case,norepeats;hiddenphysics/OpenCVinternalRNGnotfullymeasured. ThisDEVisnowpermanentlyperformance-exposedandnotfreshindependentevidenceforfuturevariants.')
+ measures=['wall_s','runner_CPU_s','actor_CPU_s','reset_wall_s','raw_step_render_wall_s','raw_contact_observer_wall_s','capture_wall_s','journal_wall_s','artifact_wall_s'];v=read(R/'project-effective-budget-v389.json');assert (v['actual_cumulative_wrapper_actions'],v['research_remaining'],v['final_reserved_actions'],v['final_reserve_used'],v['B_operating_cap'])==(1300064,48000,84000,0,1432064)
+ cost=dict(stage=372,new_wrapper_actions=b['actions'],new_environment_resets=b['resets'],new_actor_resets=b['actor_resets'],new_actor_act_calls=b['actor_act_calls'],new_actor_commit_calls=b['actor_commit_calls'],additional_research_registered_before_opening=27501,total_native_cap=48000,per_episode_cap=2000,new_source_physics_rollout_ticks=0,new_learning_fits=0,new_tuning=0,new_paid_resources=0,raw_step_ticks=sum(r['raw_step_ticks'] for _,_,r in results),raw_reset_ticks=sum(r['raw_reset_ticks'] for _,_,r in results),measurements={k:sum(r[k] for _,_,r in results) for k in measures},batch_wall_s=status['wall_s'],batch_runner_CPU_s=status['runner_CPU_s'],actual_cumulative_wrapper_actions=1300064+b['actions'],research_remaining=48000-b['actions'],final_reserved_actions=84000,final_reserve_used=0,B_operating_cap=1432064,scope='Actual372only;bothfresharmscharged,originalpolicyZIPsfixed. Batchincludesposthocdiagnosis;coding/registration/closure/gitnotfullytimed. Failed/censoredqueriesalsocharged;noadditionalnativeafterstop.')
+ support=dict(candidate_episodes_audited=len(gates),all_audited_passed=all(g['passed'] for g in gates),full12_gate_passed=support_pass,**{k:sum(g[k] for g in gates) for k in COUNTS},scope='PosthocbirthcircleGTonly;missing/unresolvedarenotnegativeGT. Prior62ambiguitiesand12/16missingGTnotclaimedresolved. NoGTtoactororcontrol.')
+ assert all(sha(f)==h for f,h in p['protected_marker_hashes'].items());assert sha(R/'current-champion.json')==sha(R/'stage296/champion-manifest.json')=='b92fe5307a491bfb9d1f5081bf97c9c1d4646dcf9c8511fb169bc48c8f9349e5';assert read(R/'protected-query-ledger-v1.json')['SEALED']['episodes_used']==0 and not list(R.rglob('SEALED*.opened'))
+ report=dict(stage=372,declared_split='DEV_COMPLETION_CEM_297',baseline_archive_sha256=p['configs']['A']['archive_sha256'],candidate_archive_sha256=p['configs']['B']['archive_sha256'],policy_modified_or_retuned=False,registration_and_full_grant_before_release=True,paired_initial_checks_posthoc=True,worker_difference='296originalpreview286vs365existingpassive357;bothhashbound,ZIPsunmodified,sameCPU/memory/IPCconstraints. Notfreshmachineorofficialserverparity.',batch_status={k:v for k,v in status.items() if k!='budget'},aggregate=aggregate,preregistered_371_judgment=judged,table=table,support_audit=support,uncertainty=uncertainty,cost=cost,DEV_now_permanently_performance_exposed=True,not_HOLDOUT_or_SEALED=True,separateSEALED16_pending_untouched=True,champion296_unchanged=True,promotion=False)
+ save(D/'cost.json',cost);save(D/'summary-private.json',report);save(G/'retry/confirm372_result.json',report);save(D/'final-report-verification.json',dict(passed=True,accounting_reconciled=True,all24_definitive=full,full_support_pass=support_pass,judgment_qualified=bool(ready),immutable_sources_and_models=True,protected_HOLDOUT_SEALED_reserve_unchanged=True,champion296_unchanged=True,DEV_exposure_permanent=True))
+ v.update(version=390,at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),prior_budget_path=str(R/'project-effective-budget-v389.json'),prior_budget_sha256=sha(R/'project-effective-budget-v389.json'),cost_path=str(D/'cost.json'),cost_sha256=sha(D/'cost.json'),B_increment=0,actual_cumulative_wrapper_actions=cost['actual_cumulative_wrapper_actions'],research_remaining=cost['research_remaining'],stage372_new_wrapper_actions=b['actions']);assert not (R/'project-effective-budget-v390.json').exists();save(R/'project-effective-budget-v390.json',v)
+ ledger=R/'experiment-cost-lines.jsonl';assert not any(json.loads(s).get('stage')==372 for s in ledger.read_text().splitlines())
+ with ledger.open('a') as f:f.write(json.dumps(cost)+'\n')
+ print(json.dumps(dict(aggregate=aggregate,judgment=judged,support=support,cost=cost)),flush=True)
+if __name__=='__main__':close(Path(sys.argv[1]).resolve())
