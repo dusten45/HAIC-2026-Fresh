@@ -1,0 +1,358 @@
+{
+  "stage": 415,
+  "status": "H2_STATIC_AND_SOURCE_COMPLETE_NO_GEOMETRY_TIME_GAIN_IDENTIFIED",
+  "promotion": false,
+  "promotion_reason": "Geometry and source qualificationpassed, butgeometrynominal/fullgas effectbrackets both[-.02,.02] andinteraction[-.04,.04] includezero. No >=.08geometrygain. CloseuniqueH2patch withoutactual/tuning/retry. NotH2wholefalsification; 414singlepulseOclosednotH1whole.",
+  "geometry": {
+    "selected_fraction": 0.40038511514344893,
+    "patch_segments": 4,
+    "changed_nodes": 3,
+    "patch_length_old_m": 12.370524925102066,
+    "patch_length_new_m": 12.293155523919902,
+    "gates": [
+      {
+        "name": "finite_positive_ds",
+        "passed": true
+      },
+      {
+        "name": "no_nonadjacent_crossing",
+        "passed": true,
+        "crossings": 0
+      },
+      {
+        "name": "road_boundary_topology",
+        "passed": true,
+        "boundary_edges": 476,
+        "max_edge_multiplicity": 2
+      },
+      {
+        "name": "road_footprint_clearance",
+        "passed": true,
+        "minimum_m": 1.2556969792531163,
+        "required_motion_bound_m": 0.012501
+      },
+      {
+        "name": "obstacle_footprint_clearance",
+        "passed": true,
+        "minimum_after_extra_margin_m": 28.887698562084044
+      },
+      {
+        "name": "original_path_3m_guard",
+        "passed": true,
+        "sample_max_m": 0.26191464690692545,
+        "certificate_upper_m": 0.27441464690692546
+      },
+      {
+        "name": "curvature_transition_decrease",
+        "passed": true,
+        "old_max_adjacent_jump": 0.10027836576868965,
+        "new_max_adjacent_jump": 0.032243166008695284
+      },
+      {
+        "name": "steering_curvature_bound",
+        "passed": true,
+        "new_max_abs_curvature": 0.07549144734152241,
+        "limit": 0.13049173417844498
+      }
+    ],
+    "new_corridor": {
+      "poses": 898,
+      "road_clearance_m": 1.2556969792531163,
+      "road_inside": true,
+      "obstacle_clearance_after_extra_margin_m": 28.887698562084044,
+      "original_path_sample_max_distance_m": 0.26191464690692545,
+      "motion_bound_m": 0.012501,
+      "road_pass": true,
+      "obstacle_pass": true,
+      "guard_pass": true
+    },
+    "old_corridor_diagnostic": {
+      "poses": 921,
+      "road_clearance_m": 1.2556969792531163,
+      "road_inside": true,
+      "obstacle_clearance_after_extra_margin_m": 28.887698562084044,
+      "original_path_sample_max_distance_m": 5.605870502299835e-15,
+      "motion_bound_m": 0.012501,
+      "road_pass": true,
+      "obstacle_pass": true,
+      "guard_pass": true
+    }
+  },
+  "footprint_margin_audit": {
+    "status": "PASS_STORED_CLEARANCE_LIPSCHITZ_CERTIFICATE",
+    "joint_range_rad": [
+      -0.4,
+      0.4
+    ],
+    "max_wheel_lateral_extent_m": 1.5681829831674792,
+    "original_rectangle_lateral_halfwidth_m": 1.75,
+    "required_extra_expansion_for_full_35cm_m": 0.16818298316747926,
+    "road_clearance_lower_after_full_35cm_and_motion_m": 1.075012996085637,
+    "note": "Originalrectangle wording overstated .35margin oversteeredwheel envelope; existingmeasuredclearance minus requiredextraexpansion andmotion certifiesfullmargin. No patchrepair/re-evaluation/rollout."
+  },
+  "source": {
+    "status": "ALL_FOUR_SOURCE_QUALIFIED",
+    "arms": {
+      "old_nominal": {
+        "valid": true,
+        "actions": 13,
+        "safety": [],
+        "domain": null,
+        "goal_reached": true,
+        "exit_reached": true,
+        "arrival_bracket_s": [
+          0.5799999999999876,
+          0.5999999999999872
+        ],
+        "final_progress_m": 49.07464274079092,
+        "max_path_error_m": 0.6663390655677691
+      },
+      "old_fullgas": {
+        "valid": true,
+        "actions": 13,
+        "safety": [],
+        "domain": null,
+        "goal_reached": true,
+        "exit_reached": true,
+        "arrival_bracket_s": [
+          0.4599999999999902,
+          0.47999999999998977
+        ],
+        "final_progress_m": 60.98043919093277,
+        "max_path_error_m": 0.6326432740379828
+      },
+      "new_nominal": {
+        "valid": true,
+        "actions": 13,
+        "safety": [],
+        "domain": null,
+        "goal_reached": true,
+        "exit_reached": true,
+        "arrival_bracket_s": [
+          0.5799999999999876,
+          0.5999999999999872
+        ],
+        "final_progress_m": 49.07993672842599,
+        "max_path_error_m": 0.6737084260187366
+      },
+      "new_fullgas": {
+        "valid": true,
+        "actions": 13,
+        "safety": [],
+        "domain": null,
+        "goal_reached": true,
+        "exit_reached": true,
+        "arrival_bracket_s": [
+          0.4599999999999902,
+          0.47999999999998977
+        ],
+        "final_progress_m": 60.98975257441566,
+        "max_path_error_m": 0.6403784368227567
+      }
+    },
+    "independent_repeats": {
+      "old_nominal": true,
+      "old_fullgas": true,
+      "new_nominal": true,
+      "new_fullgas": true
+    },
+    "all_four_qualified": true,
+    "time_interaction_bracket_s": [
+      -0.03999999999999915,
+      0.03999999999999915
+    ],
+    "interaction_sign": "(newgas-newnominal)-(oldgas-oldnominal); negative meansgasbenefitlargeronnewpath",
+    "gain_brackets_s": {
+      "new_fullgas_vs_old_nominal": [
+        0.09999999999999787,
+        0.13999999999999702
+      ],
+      "new_vs_old_nominal": [
+        -0.019999999999999574,
+        0.019999999999999574
+      ],
+      "new_vs_old_fullgas": [
+        -0.019999999999999574,
+        0.019999999999999574
+      ]
+    },
+    "failed_arm_time_imputed": false
+  },
+  "source_fidelity": {
+    "prefix-qualification.json": {
+      "passed": true,
+      "actions": 78,
+      "max_body_errors": {
+        "speed_m_s": 0.0,
+        "yaw_rate_rad_s": 0.0,
+        "position_m": 0.0,
+        "time_s": 0.0
+      },
+      "max_wheel_errors": {
+        "joint_angle": 0.0,
+        "omega": 0.0,
+        "lateral_slip_m_s": 0.0,
+        "longitudinal_slip_m_s": 0.0,
+        "force_ratio": 0.0
+      },
+      "max_hull_errors": {
+        "origin_position_m": 0.0,
+        "COM_position_m": 0.0,
+        "COM_speed_m_s": 0.0,
+        "origin_speed_m_s": 0.0,
+        "yaw_rad_s": 0.0,
+        "time_s": 0.0
+      },
+      "discrete_all_exact": true,
+      "COM_mass_all_exact": true
+    },
+    "nominal-qualification.json": {
+      "passed": true,
+      "actions": 13,
+      "max_body_errors": {
+        "speed_m_s": 1.0210597707782654e-05,
+        "yaw_rate_rad_s": 4.5299530029296875e-06,
+        "position_m": 5.3947966093944364e-06,
+        "time_s": 0.0
+      },
+      "max_wheel_errors": {
+        "joint_angle": 3.5762786865234375e-07,
+        "omega": 1.3721398190114087e-05,
+        "lateral_slip_m_s": 1.5578546140204708e-05,
+        "longitudinal_slip_m_s": 1.479195407938505e-05,
+        "force_ratio": 3.000279939824324e-06
+      },
+      "max_hull_errors": {
+        "origin_position_m": 5.3947966093944364e-06,
+        "COM_position_m": 5.3947966093944364e-06,
+        "COM_speed_m_s": 6.67832112810629e-06,
+        "origin_speed_m_s": 6.687154019857644e-06,
+        "yaw_rad_s": 4.5299530029296875e-06,
+        "time_s": 0.0
+      },
+      "discrete_all_exact": true,
+      "COM_mass_all_exact": true
+    }
+  },
+  "parent_qualification_passed": true,
+  "parent_RNG_inputs_memory_unchanged": true,
+  "arm_tire_diagnostics": {
+    "old_nominal": {
+      "max_force_ratio": 0.9061382505247623,
+      "clipped_wheel_samples": 0,
+      "wheel_samples": 208,
+      "max_abs_lateral_slip_m_s": 2.9174131741846168,
+      "grass_wheel_samples": 0
+    },
+    "old_fullgas": {
+      "max_force_ratio": 1.1414470257794165,
+      "clipped_wheel_samples": 18,
+      "wheel_samples": 208,
+      "max_abs_lateral_slip_m_s": 4.600168804521672,
+      "grass_wheel_samples": 0
+    },
+    "new_nominal": {
+      "max_force_ratio": 0.9057340501269457,
+      "clipped_wheel_samples": 0,
+      "wheel_samples": 208,
+      "max_abs_lateral_slip_m_s": 2.907770795259921,
+      "grass_wheel_samples": 0
+    },
+    "new_fullgas": {
+      "max_force_ratio": 1.138183423274538,
+      "clipped_wheel_samples": 18,
+      "wheel_samples": 208,
+      "max_abs_lateral_slip_m_s": 4.591122270888263,
+      "grass_wheel_samples": 0
+    }
+  },
+  "stationary414_algebra": {
+    "status": "CORRECTED_EXISTING_C268_NODE_ADAPTER",
+    "supersedes": "result.json stationary414_algebra genericC1.5nodecomparison",
+    "O": {
+      "raw_accel": -109.97959149650009,
+      "command_accel": -91.16873397261595,
+      "gas": 0.0,
+      "brake": 0.3
+    },
+    "C_algebra": {
+      "raw_accel": 96.03479448024711,
+      "command_accel": 35.0188778925416,
+      "gas": 0.03456995477501549,
+      "brake": 0.0
+    },
+    "speed": 5.7771500969509126e-15,
+    "sigma": -3.2834064722633844e-16,
+    "O_target": 64.02319632016474,
+    "C_target": 64.02319632016474,
+    "O_feed": -206.0143859767472,
+    "C_feed": -206.0143859767472,
+    "same_segment": true,
+    "same_nodes": true,
+    "stationary_symbolic_O": -109.97959149650009,
+    "stationary_symbolic_C": 96.03479448024711,
+    "negative_feed_term_O": -206.0143859767472,
+    "progress_scaled_feed_term_C": 1.0565373289280322e-15,
+    "negative_progress_domain_violation": true,
+    "C_runtime_command_qualified": false,
+    "scope": "Existingformulaonly. Tinysignednegative sigmaisnotrounded/clipped; existingexecutorwouldrejectnegativeprogress. Positivealgebra/zerobrakeisnotruntimeorprogress/safetyproof. No newrollout.",
+    "CPU_s": 0.004130642999999878,
+    "wall_s": 0.00463564891833812
+  },
+  "cost": {
+    "stage": 415,
+    "new_wrapper_actions": 0,
+    "new_environment_resets": 0,
+    "new_model_integration_ticks": 784,
+    "source_physics_ticks": 784,
+    "reserved_model_ticks": 784,
+    "unconfirmed_reserved_model_ticks": 0,
+    "source_world_initializations": 10,
+    "source_zero_time_contact_setups": 10,
+    "model_tick_cap": 4096,
+    "world_cap": 64,
+    "source_CPU_s": 1.5154002249999998,
+    "source_wall_s": 1.528162589063868,
+    "source_CPU_cap_s": 30,
+    "source_wall_cap_s": 60,
+    "source_worker_CPU_recorded_before_final_serialization_s": 2.180440423,
+    "static_CPU_s": 2.2534956520000002,
+    "static_wall_s": 2.1833553719334304,
+    "static_CPU_cap_s": 30,
+    "static_wall_cap_s": 60,
+    "static_preparation_wall_s": 54.480002880096436,
+    "source_preparation_wall_between_static_result_and_source_opening_s": 84.99173784255981,
+    "combined_preparation_elapsed_excluding_static_execution_s": 142.65334745170549,
+    "preparation_CPU_s": null,
+    "preparation_CPU_fully_measured": false,
+    "late_source_preparation_marker_180s_estimate_rejected": true,
+    "preparation_scope": "Elapsedartifact/timestampintervals inclreasoning/tooloverhead; combinedwall excludesstaticexecution, endsbefore sourceexecution. UnmeasuredCPU notestimated.",
+    "recorded_trace_payload_CPU_s": 0.0198629740000007,
+    "recorded_trace_payload_wall_s": 0.046061842469498515,
+    "parent_last_step_payload_separately_retained": false,
+    "dispatch_overhead_isolated": false,
+    "uninstrumented_benchmark": false,
+    "new_actor_calls": 0,
+    "new_learning_fits": 0,
+    "new_SEALED_queries": 0,
+    "new_paid_resources": 0,
+    "new_reserve_use": 0,
+    "actual_cumulative_wrapper_actions": 1318184,
+    "research_before": 29880,
+    "research_remaining": 29880,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064,
+    "report_git_fully_timed": false
+  },
+  "static_plan_sha256": "f213067b20dfd3176e8a0a80afd87b0849cc669ba66fceb73492761e242a8b2c",
+  "source_plan_sha256": "567c46ddcafd2ecd484d0a92e73ba4a4012460beccf2ecd2ffad1f35f74ece5d",
+  "source_only": true,
+  "new_native_actions": 0,
+  "SEALED_used": 0,
+  "SEALED_future_allowed": 0,
+  "protected_preserved": true,
+  "original408_preserved": true,
+  "new_geometry_actual_fidelity": false,
+  "full_lap_claim": false
+}
