@@ -1,0 +1,147 @@
+{
+  "stage": 397,
+  "passed": true,
+  "qualification_failure": null,
+  "technical_error": null,
+  "stored_checks": [
+    {
+      "name": "stored_C_commands",
+      "count": 24,
+      "passed": true
+    },
+    {
+      "name": "recorded_launches",
+      "count": 2,
+      "passed": true,
+      "records": [
+        {
+          "case": "N1",
+          "finite": true,
+          "phase": "LAUNCH"
+        },
+        {
+          "case": "O0",
+          "finite": true,
+          "phase": "LAUNCH"
+        }
+      ]
+    },
+    {
+      "name": "recorded_positive_transitions",
+      "count": 2,
+      "passed": true,
+      "records": [
+        {
+          "case": "N1",
+          "phase": "FIRST_LAP",
+          "r": 4.23836803661563
+        },
+        {
+          "case": "O0",
+          "phase": "FIRST_LAP",
+          "r": 4.238747632593139
+        }
+      ]
+    },
+    {
+      "name": "late_cursor_firstlap_reference",
+      "count": 1,
+      "passed": true,
+      "old_target": 150.0,
+      "firstlap_target": 103.65139609559468
+    }
+  ],
+  "fixtures": [
+    {
+      "name": "same_vertex_outgoing",
+      "passed": true
+    },
+    {
+      "name": "terminal_vertex_incoming",
+      "passed": true
+    },
+    {
+      "name": "zero_positive_target_rest",
+      "passed": true
+    },
+    {
+      "name": "tiny_positive_target_no_epsilon",
+      "passed": true,
+      "r": 3.794733192202055e-06
+    },
+    {
+      "name": "stop_intent_rest",
+      "passed": true
+    },
+    {
+      "name": "stop_intent_moving",
+      "passed": true
+    },
+    {
+      "name": "reject_nonlaunch_zero_target",
+      "passed": true,
+      "expected_domain_rejection": "Unsupported_nonlaunch_stop_target"
+    },
+    {
+      "name": "reject_reverse",
+      "passed": true,
+      "expected_domain_rejection": "Negative_progress_domain"
+    },
+    {
+      "name": "reject_distinct_feet",
+      "passed": true,
+      "expected_domain_rejection": "Distinct_or_nonadjacent_projection_ambiguity"
+    },
+    {
+      "name": "reject_selfcrossing_arcs",
+      "passed": true,
+      "expected_domain_rejection": "Distinct_or_nonadjacent_projection_ambiguity"
+    },
+    {
+      "name": "official_center_not_DONE",
+      "passed": true
+    },
+    {
+      "name": "official_forwardedge_DONE_center_timestamp",
+      "passed": true
+    },
+    {
+      "name": "reject_stale_finish_confirm",
+      "passed": true,
+      "expected_domain_rejection": "Finish_confirmation_not_current"
+    },
+    {
+      "name": "reject_future_finish_metadata",
+      "passed": true,
+      "expected_domain_rejection": "Future_finish_metadata"
+    },
+    {
+      "name": "qualified_only_not_DONE",
+      "passed": true
+    },
+    {
+      "name": "reject_seam_without_officialcandidate",
+      "passed": true,
+      "expected_domain_rejection": "First_lap_arc_domain"
+    },
+    {
+      "name": "reject_duplicate_boundary",
+      "passed": true,
+      "expected_domain_rejection": "Duplicate_or_nonmonotone_action_boundary"
+    }
+  ],
+  "fixture_count": 17,
+  "new_wrapper_actions": 0,
+  "new_actor_calls": 0,
+  "new_environment_resets": 0,
+  "new_source_physics_rollout_ticks": 0,
+  "new_model_integration_ticks": 0,
+  "new_learning_fits": 0,
+  "new_SEALED_queries": 0,
+  "new_paid_resources": 0,
+  "CPU_s": 0.26775302700000003,
+  "wall_s": 0.26902983407489955,
+  "source_hashes_rechecked": true,
+  "protected_hashes_rechecked": true,
+  "scope": "Staticcontract/24storedinteriorcommands only; fullcandidatephysicalperformanceunknown; expectedinvaliddomainsreject,notuniversalstatecoverage"
+}

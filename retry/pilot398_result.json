@@ -1,0 +1,400 @@
+{
+  "stage": 398,
+  "cases": [
+    {
+      "case": "O0",
+      "result": {
+        "case": "O0",
+        "status": "SAFETY_STOP_CENSORED",
+        "completed": false,
+        "actual_DNF": false,
+        "censored": true,
+        "lap_ms": null,
+        "retire_reason": null,
+        "stop_reason": "PilotSafetyStop: path_error_over3m",
+        "technical_error": null,
+        "safety_reasons": [
+          "path_error_over3m"
+        ],
+        "native": 175,
+        "raw_ticks": 700,
+        "reset_ticks": 51,
+        "damage": 0.0,
+        "max_path_error_m": 3.3065314880958376,
+        "phase_events": [
+          {
+            "step": 2,
+            "phase": "FIRST_LAP",
+            "time": 1.1000000000000005
+          }
+        ],
+        "initial_exact": true,
+        "first_launch_exact": true,
+        "unconfirmed_charged_native": 0,
+        "runner_CPU_s": 14.847013978,
+        "wall_s": 14.93656921305228,
+        "wholeworker_CPU_s": 15.41463223,
+        "new_actor": 0,
+        "new_model_integration": 0,
+        "new_learning": 0
+      },
+      "observed_episode_s": 13.999999999999769,
+      "lap_ms": null,
+      "actualfinishrecorded": false,
+      "failure_events": [
+        {
+          "path_error_over_m": 1.0,
+          "step": 26,
+          "elapsed_post_s": 2.080000000000002
+        },
+        {
+          "path_error_over_m": 2.0,
+          "step": 174,
+          "elapsed_post_s": 13.91999999999977
+        },
+        {
+          "path_error_over_m": 3.0,
+          "step": 175,
+          "elapsed_post_s": 13.999999999999769
+        }
+      ],
+      "first_pedal_difference_from_cachedO_step": 23,
+      "first_physical_difference_from_cachedO_step": 23,
+      "first_steer_difference_from_cachedO_step": 24,
+      "first_clipped_action": {
+        "front": 79,
+        "rear": 85
+      },
+      "whole_trace_front": {
+        "wheel_ticks": 1400,
+        "clipped_ticks": 111,
+        "clipped_fraction": 0.07928571428571428,
+        "max_force_ratio": 2.366224727216761,
+        "max_abs_lateral_slip_m_s": 11.356388562684288,
+        "max_abs_longitudinal_slip_m_s": 4.769134388149098
+      },
+      "whole_trace_rear": {
+        "wheel_ticks": 1400,
+        "clipped_ticks": 43,
+        "clipped_fraction": 0.030714285714285715,
+        "max_force_ratio": 2.279009362348244,
+        "max_abs_lateral_slip_m_s": 9.298507545421558,
+        "max_abs_longitudinal_slip_m_s": 7.40214455564638
+      },
+      "all_body_wheels_onroad": true,
+      "raw_grass_samples": 0,
+      "collision_actions": 0,
+      "braking_actions": 39,
+      "gas_positive_actions": 136,
+      "max_gas_request_lag": 0.7212102055549622
+    },
+    {
+      "case": "N1",
+      "result": {
+        "case": "N1",
+        "status": "SAFETY_STOP_CENSORED",
+        "completed": false,
+        "actual_DNF": false,
+        "censored": true,
+        "lap_ms": null,
+        "retire_reason": null,
+        "stop_reason": "PilotSafetyStop: path_error_over3m",
+        "technical_error": null,
+        "safety_reasons": [
+          "path_error_over3m"
+        ],
+        "native": 99,
+        "raw_ticks": 396,
+        "reset_ticks": 51,
+        "damage": 0.0,
+        "max_path_error_m": 3.237510814352528,
+        "phase_events": [
+          {
+            "step": 2,
+            "phase": "FIRST_LAP",
+            "time": 1.1000000000000005
+          }
+        ],
+        "initial_exact": true,
+        "first_launch_exact": true,
+        "unconfirmed_charged_native": 0,
+        "runner_CPU_s": 7.488202267999999,
+        "wall_s": 7.524152933969162,
+        "wholeworker_CPU_s": 8.052846115,
+        "new_actor": 0,
+        "new_model_integration": 0,
+        "new_learning": 0
+      },
+      "observed_episode_s": 7.919999999999898,
+      "lap_ms": null,
+      "actualfinishrecorded": false,
+      "failure_events": [
+        {
+          "path_error_over_m": 1.0,
+          "step": 26,
+          "elapsed_post_s": 2.080000000000002
+        },
+        {
+          "path_error_over_m": 2.0,
+          "step": 99,
+          "elapsed_post_s": 7.919999999999898
+        },
+        {
+          "path_error_over_m": 3.0,
+          "step": 99,
+          "elapsed_post_s": 7.919999999999898
+        }
+      ],
+      "first_pedal_difference_from_cachedO_step": 23,
+      "first_physical_difference_from_cachedO_step": 23,
+      "first_steer_difference_from_cachedO_step": 24,
+      "first_clipped_action": {
+        "front": 70,
+        "rear": 73
+      },
+      "whole_trace_front": {
+        "wheel_ticks": 792,
+        "clipped_ticks": 72,
+        "clipped_fraction": 0.09090909090909091,
+        "max_force_ratio": 3.657641259577005,
+        "max_abs_lateral_slip_m_s": 17.21510672736872,
+        "max_abs_longitudinal_slip_m_s": 5.297112933142458
+      },
+      "whole_trace_rear": {
+        "wheel_ticks": 792,
+        "clipped_ticks": 107,
+        "clipped_fraction": 0.1351010101010101,
+        "max_force_ratio": 11.16976669102254,
+        "max_abs_lateral_slip_m_s": 45.41800050033339,
+        "max_abs_longitudinal_slip_m_s": 32.140788108541145
+      },
+      "all_body_wheels_onroad": true,
+      "raw_grass_samples": 0,
+      "collision_actions": 0,
+      "braking_actions": 17,
+      "gas_positive_actions": 82,
+      "max_gas_request_lag": 0.6377749085426331
+    }
+  ],
+  "cost": {
+    "new_wrapper_actions": 274,
+    "new_environment_resets": 2,
+    "raw_step_ticks": 1096,
+    "raw_reset_ticks": 102,
+    "runner_episode_CPU_s": 22.335216245999998,
+    "wholeworker_CPU_receipts_s": 23.467478345,
+    "sum_episode_wall_s": 22.460722147021443,
+    "receipt_wall_span_s": 14.922825336456299,
+    "unconfirmed_charged_native": 0,
+    "new_actor_calls": 0,
+    "new_model_integration_ticks": 0,
+    "new_learning_fits": 0,
+    "new_paid_resources": 0,
+    "stage": 398,
+    "registered_native_cap": 1600,
+    "unused_native_cap": 1326,
+    "registered_CPU_cap_s": 180,
+    "registered_wall_cap_s": 300,
+    "new_environment_creation": 2,
+    "source_model_world_initializations": 0,
+    "new_SEALED_queries": 0,
+    "analysis_CPU_s": 0.15687618999999997,
+    "analysis_wall_s": 0.15715610701590776,
+    "actual_cumulative_wrapper_actions": 1315992,
+    "research_remaining": 32072,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064,
+    "scope": "Twoactualsafetycensoredfull-lapattempts, notDNF/finishedlaps. WorkerreceiptsCPUandfilemtimewallspan;preparation/failedposthocanalysis/report/gitnotfullytimed. Static397 separatelychargednative0."
+  },
+  "research_gate_passed": false,
+  "completed_count": 0,
+  "actual_DNF_count": 0,
+  "safety_censored_count": 2,
+  "technical_error_count": 0,
+  "analysis_CPU_s": 0.15687618999999997,
+  "analysis_wall_s": 0.15715610701590776,
+  "analysis_native": 0,
+  "analysis_model": 0,
+  "scope": "FrozenGTcandidateclosedbypreregisteredpath3m gate;no retuningorposthocthresholdrelaxation;notlegal296performance/generalization/wholefamilyrefutation",
+  "qualification397": {
+    "stage": 397,
+    "passed": true,
+    "qualification_failure": null,
+    "technical_error": null,
+    "stored_checks": [
+      {
+        "name": "stored_C_commands",
+        "count": 24,
+        "passed": true
+      },
+      {
+        "name": "recorded_launches",
+        "count": 2,
+        "passed": true,
+        "records": [
+          {
+            "case": "N1",
+            "finite": true,
+            "phase": "LAUNCH"
+          },
+          {
+            "case": "O0",
+            "finite": true,
+            "phase": "LAUNCH"
+          }
+        ]
+      },
+      {
+        "name": "recorded_positive_transitions",
+        "count": 2,
+        "passed": true,
+        "records": [
+          {
+            "case": "N1",
+            "phase": "FIRST_LAP",
+            "r": 4.23836803661563
+          },
+          {
+            "case": "O0",
+            "phase": "FIRST_LAP",
+            "r": 4.238747632593139
+          }
+        ]
+      },
+      {
+        "name": "late_cursor_firstlap_reference",
+        "count": 1,
+        "passed": true,
+        "old_target": 150.0,
+        "firstlap_target": 103.65139609559468
+      }
+    ],
+    "fixtures": [
+      {
+        "name": "same_vertex_outgoing",
+        "passed": true
+      },
+      {
+        "name": "terminal_vertex_incoming",
+        "passed": true
+      },
+      {
+        "name": "zero_positive_target_rest",
+        "passed": true
+      },
+      {
+        "name": "tiny_positive_target_no_epsilon",
+        "passed": true,
+        "r": 3.794733192202055e-06
+      },
+      {
+        "name": "stop_intent_rest",
+        "passed": true
+      },
+      {
+        "name": "stop_intent_moving",
+        "passed": true
+      },
+      {
+        "name": "reject_nonlaunch_zero_target",
+        "passed": true,
+        "expected_domain_rejection": "Unsupported_nonlaunch_stop_target"
+      },
+      {
+        "name": "reject_reverse",
+        "passed": true,
+        "expected_domain_rejection": "Negative_progress_domain"
+      },
+      {
+        "name": "reject_distinct_feet",
+        "passed": true,
+        "expected_domain_rejection": "Distinct_or_nonadjacent_projection_ambiguity"
+      },
+      {
+        "name": "reject_selfcrossing_arcs",
+        "passed": true,
+        "expected_domain_rejection": "Distinct_or_nonadjacent_projection_ambiguity"
+      },
+      {
+        "name": "official_center_not_DONE",
+        "passed": true
+      },
+      {
+        "name": "official_forwardedge_DONE_center_timestamp",
+        "passed": true
+      },
+      {
+        "name": "reject_stale_finish_confirm",
+        "passed": true,
+        "expected_domain_rejection": "Finish_confirmation_not_current"
+      },
+      {
+        "name": "reject_future_finish_metadata",
+        "passed": true,
+        "expected_domain_rejection": "Future_finish_metadata"
+      },
+      {
+        "name": "qualified_only_not_DONE",
+        "passed": true
+      },
+      {
+        "name": "reject_seam_without_officialcandidate",
+        "passed": true,
+        "expected_domain_rejection": "First_lap_arc_domain"
+      },
+      {
+        "name": "reject_duplicate_boundary",
+        "passed": true,
+        "expected_domain_rejection": "Duplicate_or_nonmonotone_action_boundary"
+      }
+    ],
+    "fixture_count": 17,
+    "new_wrapper_actions": 0,
+    "new_actor_calls": 0,
+    "new_environment_resets": 0,
+    "new_source_physics_rollout_ticks": 0,
+    "new_model_integration_ticks": 0,
+    "new_learning_fits": 0,
+    "new_SEALED_queries": 0,
+    "new_paid_resources": 0,
+    "CPU_s": 0.26775302700000003,
+    "wall_s": 0.26902983407489955,
+    "source_hashes_rechecked": true,
+    "protected_hashes_rechecked": true,
+    "scope": "Staticcontract/24storedinteriorcommands only; fullcandidatephysicalperformanceunknown; expectedinvaliddomainsreject,notuniversalstatecoverage"
+  },
+  "checks": {
+    "static397passed_before_anynative": true,
+    "stored_C24_and17fixtures_pass": true,
+    "frozen_candidate_and_pilot_sources_exact": true,
+    "initialphysical_RNG_controller_matches_cachedO": true,
+    "firstlaunch_reproduces_cachedO": true,
+    "oneattempt_percase_no_tuning_or_replay": true,
+    "both_safetycensored_at_frozen3m_gate": true,
+    "zero_actual_DNF_not_mislabeled": true,
+    "no_lap_or_commoncompletion_time_mean": true,
+    "all274callsconfirmed": true,
+    "workers_reaped": true,
+    "resource_caps_pass": true,
+    "policy_unchanged_after_outcomes": true,
+    "posthoc_analysis_schema_fix_only": true,
+    "protected_source_hashes_exact": true
+  },
+  "next_hypotheses": {
+    "executed": false,
+    "A": "Fixedpath feasiblekinetic-energyenvelope withjointlongitudinal/lateralavailableforceandactuatorstate,notmusttrackinadmissiblepace1.5targets",
+    "B": "Jointsteering/drive/progress dynamiccontrol ratherthan independentpurepursuit+scalaracceleration; needsmodelrankingqualification inhighyaw/clippedstates",
+    "first_information_gate": {
+      "executed": false,
+      "kind": "Stored398prescribed-control source-model replay fromsavedinitialfullsnapshots",
+      "native_cap": 0,
+      "actor_cap": 0,
+      "learning_cap": 0,
+      "source_positive_ticks_cap": 1096,
+      "CPU_cap_s": 60,
+      "scope": "175+99storedcommands,no optimization orcounterfactualpolicies. Compareeachactualrow speed<=.5m/s,yawrate<=.05rad/s,pos<=.1m plusdiscretecontact/damage/contactsandwheelomega/jointdiagnostics;firstmismatchreportandstopthismodelgate. Ifpassed then planrankingtest,notMPCoptimalityproof."
+    }
+  },
+  "publication_scope": "Aggregate results only. Per-action state/control traces, initial snapshots, geometry, seeds, profiles and private plans remain outside git."
+}
