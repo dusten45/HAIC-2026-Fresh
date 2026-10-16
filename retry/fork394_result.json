@@ -1,0 +1,716 @@
+{
+  "stage": 394,
+  "cases": [
+    {
+      "case": "N1",
+      "arms": [
+        {
+          "arm": "O",
+          "result": {
+            "case": "N1",
+            "arm": "O",
+            "status": "REGISTERED_ONE_ACTION_DONE",
+            "native": 161,
+            "raw_ticks": 644,
+            "reset_ticks": 51,
+            "matched_original_rows": 161,
+            "initial_exact": true,
+            "fork_full_state_exact": true,
+            "technical_error": null,
+            "stop_error": null,
+            "unconfirmed_charged_native": 0,
+            "runner_CPU_s": 7.653807171,
+            "wall_s": 7.757292534923181,
+            "wholeworker_CPU_sofar_s": 8.428279309,
+            "diagnostic_prefix_only": true,
+            "actual_lap_claim": false,
+            "new_actor": 0,
+            "new_model": 0
+          },
+          "requested_steering_rad": 0.034898970276117325,
+          "requested_gas": 0.0,
+          "requested_brake": 0.30000001192092896,
+          "pre_speed_m_s": 0.012027038016650407,
+          "post_speed_m_s": 3.682741079489028e-06,
+          "pre_forward_velocity_m_s": 0.012016606307369839,
+          "post_forward_velocity_m_s": 1.280753390471583e-06,
+          "post_lateral_velocity_m_s": 3.4528615105954594e-06,
+          "pre_yaw_rate_rad_s": -0.002785022370517254,
+          "post_yaw_rate_rad_s": -2.6763096684589982e-05,
+          "pre_rear_gas": [
+            0.0,
+            0.0
+          ],
+          "rear_gas_each_rawtick": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "brake_each_rawtick": [
+            [
+              0.30000001192092896,
+              0.30000001192092896,
+              0.30000001192092896,
+              0.30000001192092896
+            ],
+            [
+              0.30000001192092896,
+              0.30000001192092896,
+              0.30000001192092896,
+              0.30000001192092896
+            ],
+            [
+              0.30000001192092896,
+              0.30000001192092896,
+              0.30000001192092896,
+              0.30000001192092896
+            ],
+            [
+              0.30000001192092896,
+              0.30000001192092896,
+              0.30000001192092896,
+              0.30000001192092896
+            ]
+          ],
+          "maximum_positive_gas_request_lag": 0.0,
+          "all_rear_gas_equal_request_from_first_tick": true,
+          "front": {
+            "samples": 8,
+            "clipped_fraction": 0.0,
+            "max_raw_force_ratio": 0.0032692090995921717,
+            "max_abs_lateral_slip_m_s": 0.004869358334420579,
+            "max_abs_longitudinal_slip_m_s": 0.01525317565818975,
+            "grass_fraction": 0.0
+          },
+          "rear": {
+            "samples": 8,
+            "clipped_fraction": 0.0,
+            "max_raw_force_ratio": 0.0031898761633183375,
+            "max_abs_lateral_slip_m_s": 0.003836941415404707,
+            "max_abs_longitudinal_slip_m_s": 0.015079888682481626,
+            "grass_fraction": 0.0
+          },
+          "collision": false,
+          "damage": 0.0,
+          "post_wheel_road_contacts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "response": {
+            "case": "N1",
+            "arm": "O",
+            "delta_forward_velocity_m_s": 0.0,
+            "delta_lateral_velocity_m_s": 0.0,
+            "delta_yaw_rate_rad_s": 0.0,
+            "delta_lateral_position_m": 0.0,
+            "safe_local_registered_gate": true,
+            "new_touching_obstacle_pairs": 0,
+            "collision": false,
+            "damage": 0.0,
+            "all_wheels_onroad": true,
+            "N1_local_response_passed": false
+          }
+        },
+        {
+          "arm": "C",
+          "result": {
+            "case": "N1",
+            "arm": "C",
+            "status": "REGISTERED_ONE_ACTION_DONE",
+            "native": 161,
+            "raw_ticks": 644,
+            "reset_ticks": 51,
+            "matched_original_rows": 160,
+            "initial_exact": true,
+            "fork_full_state_exact": true,
+            "technical_error": null,
+            "stop_error": null,
+            "unconfirmed_charged_native": 0,
+            "runner_CPU_s": 7.389190234000001,
+            "wall_s": 7.435996034997515,
+            "wholeworker_CPU_sofar_s": 15.853461656,
+            "diagnostic_prefix_only": true,
+            "actual_lap_claim": false,
+            "new_actor": 0,
+            "new_model": 0
+          },
+          "requested_steering_rad": 0.034898970276117325,
+          "requested_gas": 0.03472394496202469,
+          "requested_brake": 0.0,
+          "pre_speed_m_s": 0.012027038016650407,
+          "post_speed_m_s": 2.012000672834046,
+          "pre_forward_velocity_m_s": 0.012016606307369839,
+          "post_forward_velocity_m_s": 2.011979073285458,
+          "post_lateral_velocity_m_s": 0.009322882925544975,
+          "pre_yaw_rate_rad_s": -0.002785022370517254,
+          "post_yaw_rate_rad_s": -0.004776081535965204,
+          "pre_rear_gas": [
+            0.0,
+            0.0
+          ],
+          "rear_gas_each_rawtick": [
+            [
+              0.03472394496202469,
+              0.03472394496202469
+            ],
+            [
+              0.03472394496202469,
+              0.03472394496202469
+            ],
+            [
+              0.03472394496202469,
+              0.03472394496202469
+            ],
+            [
+              0.03472394496202469,
+              0.03472394496202469
+            ]
+          ],
+          "brake_each_rawtick": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "maximum_positive_gas_request_lag": 0.0,
+          "all_rear_gas_equal_request_from_first_tick": true,
+          "front": {
+            "samples": 8,
+            "clipped_fraction": 0.0,
+            "max_raw_force_ratio": 0.22375924158807783,
+            "max_abs_lateral_slip_m_s": 0.04972244563324146,
+            "max_abs_longitudinal_slip_m_s": 1.090375382270512,
+            "grass_fraction": 0.0
+          },
+          "rear": {
+            "samples": 8,
+            "clipped_fraction": 0.0,
+            "max_raw_force_ratio": 0.38503296374891854,
+            "max_abs_lateral_slip_m_s": 0.003836941415404707,
+            "max_abs_longitudinal_slip_m_s": 1.8782056607682898,
+            "grass_fraction": 0.0
+          },
+          "collision": false,
+          "damage": 0.0,
+          "post_wheel_road_contacts": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "response": {
+            "case": "N1",
+            "arm": "C",
+            "delta_forward_velocity_m_s": 2.0119777925320674,
+            "delta_lateral_velocity_m_s": 0.009319430064034368,
+            "delta_yaw_rate_rad_s": -0.004749318439280614,
+            "delta_lateral_position_m": 0.0003073816274818585,
+            "safe_local_registered_gate": true,
+            "new_touching_obstacle_pairs": 0,
+            "collision": false,
+            "damage": 0.0,
+            "all_wheels_onroad": true,
+            "N1_local_response_passed": true
+          }
+        }
+      ],
+      "case_error": null,
+      "unexecuted": [],
+      "wholeworker_CPU_s": 15.865461197
+    },
+    {
+      "case": "O0",
+      "arms": [
+        {
+          "arm": "O",
+          "result": {
+            "case": "O0",
+            "arm": "O",
+            "status": "REGISTERED_ONE_ACTION_DONE",
+            "native": 221,
+            "raw_ticks": 884,
+            "reset_ticks": 51,
+            "matched_original_rows": 221,
+            "initial_exact": true,
+            "fork_full_state_exact": true,
+            "technical_error": null,
+            "stop_error": null,
+            "unconfirmed_charged_native": 0,
+            "runner_CPU_s": 11.06225572,
+            "wall_s": 11.172657203976996,
+            "wholeworker_CPU_sofar_s": 11.832476513,
+            "diagnostic_prefix_only": true,
+            "actual_lap_claim": false,
+            "new_actor": 0,
+            "new_model": 0
+          },
+          "requested_steering_rad": 0.000768291880376637,
+          "requested_gas": 0.0,
+          "requested_brake": 0.012611061334609985,
+          "pre_speed_m_s": 91.09837555923406,
+          "post_speed_m_s": 90.684448488359,
+          "pre_forward_velocity_m_s": 91.09837404910637,
+          "post_forward_velocity_m_s": 90.68442737726704,
+          "post_lateral_velocity_m_s": 0.061878065706527034,
+          "pre_yaw_rate_rad_s": 0.006997298449277878,
+          "post_yaw_rate_rad_s": -0.01427390705794096,
+          "pre_rear_gas": [
+            1.0,
+            1.0
+          ],
+          "rear_gas_each_rawtick": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "brake_each_rawtick": [
+            [
+              0.012611061334609985,
+              0.012611061334609985,
+              0.012611061334609985,
+              0.012611061334609985
+            ],
+            [
+              0.012611061334609985,
+              0.012611061334609985,
+              0.012611061334609985,
+              0.012611061334609985
+            ],
+            [
+              0.012611061334609985,
+              0.012611061334609985,
+              0.012611061334609985,
+              0.012611061334609985
+            ],
+            [
+              0.012611061334609985,
+              0.012611061334609985,
+              0.012611061334609985,
+              0.012611061334609985
+            ]
+          ],
+          "maximum_positive_gas_request_lag": 0.0,
+          "all_rear_gas_equal_request_from_first_tick": true,
+          "front": {
+            "samples": 8,
+            "clipped_fraction": 0.0,
+            "max_raw_force_ratio": 0.4251589297964399,
+            "max_abs_lateral_slip_m_s": 0.06631212857087121,
+            "max_abs_longitudinal_slip_m_s": 2.073942723255115,
+            "grass_fraction": 0.0
+          },
+          "rear": {
+            "samples": 8,
+            "clipped_fraction": 0.0,
+            "max_raw_force_ratio": 0.3311990188314202,
+            "max_abs_lateral_slip_m_s": 0.027487216236977474,
+            "max_abs_longitudinal_slip_m_s": 1.6153711250791218,
+            "grass_fraction": 0.0
+          },
+          "collision": false,
+          "damage": 0.0,
+          "post_wheel_road_contacts": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "response": {
+            "case": "O0",
+            "arm": "O",
+            "delta_forward_velocity_m_s": 0.0,
+            "delta_lateral_velocity_m_s": 0.0,
+            "delta_yaw_rate_rad_s": 0.0,
+            "delta_lateral_position_m": 0.0,
+            "safe_local_registered_gate": true,
+            "new_touching_obstacle_pairs": 0,
+            "collision": false,
+            "damage": 0.0,
+            "all_wheels_onroad": true,
+            "N1_local_response_passed": false
+          }
+        },
+        {
+          "arm": "H",
+          "result": {
+            "case": "O0",
+            "arm": "H",
+            "status": "REGISTERED_ONE_ACTION_DONE",
+            "native": 221,
+            "raw_ticks": 884,
+            "reset_ticks": 51,
+            "matched_original_rows": 220,
+            "initial_exact": true,
+            "fork_full_state_exact": true,
+            "technical_error": null,
+            "stop_error": null,
+            "unconfirmed_charged_native": 0,
+            "runner_CPU_s": 10.943899492,
+            "wall_s": 11.028165052994154,
+            "wholeworker_CPU_sofar_s": 22.811616373,
+            "diagnostic_prefix_only": true,
+            "actual_lap_claim": false,
+            "new_actor": 0,
+            "new_model": 0
+          },
+          "requested_steering_rad": 0.000768291880376637,
+          "requested_gas": 0.8028991222381592,
+          "requested_brake": 0.0,
+          "pre_speed_m_s": 91.09837555923406,
+          "post_speed_m_s": 92.90748298688865,
+          "pre_forward_velocity_m_s": 91.09837404910637,
+          "post_forward_velocity_m_s": 92.90746134997119,
+          "post_lateral_velocity_m_s": 0.06340711801893048,
+          "pre_yaw_rate_rad_s": 0.006997298449277878,
+          "post_yaw_rate_rad_s": -0.01449098065495491,
+          "pre_rear_gas": [
+            1.0,
+            1.0
+          ],
+          "rear_gas_each_rawtick": [
+            [
+              0.8028991222381592,
+              0.8028991222381592
+            ],
+            [
+              0.8028991222381592,
+              0.8028991222381592
+            ],
+            [
+              0.8028991222381592,
+              0.8028991222381592
+            ],
+            [
+              0.8028991222381592,
+              0.8028991222381592
+            ]
+          ],
+          "brake_each_rawtick": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "maximum_positive_gas_request_lag": 0.0,
+          "all_rear_gas_equal_request_from_first_tick": true,
+          "front": {
+            "samples": 8,
+            "clipped_fraction": 0.0,
+            "max_raw_force_ratio": 0.40421829723911984,
+            "max_abs_lateral_slip_m_s": 0.06670157195981119,
+            "max_abs_longitudinal_slip_m_s": 1.9717931264447799,
+            "grass_fraction": 0.0
+          },
+          "rear": {
+            "samples": 8,
+            "clipped_fraction": 0.0,
+            "max_raw_force_ratio": 0.6033424101565877,
+            "max_abs_lateral_slip_m_s": 0.027487216236977474,
+            "max_abs_longitudinal_slip_m_s": 2.9430053476991276,
+            "grass_fraction": 0.0
+          },
+          "collision": false,
+          "damage": 0.0,
+          "post_wheel_road_contacts": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "response": {
+            "case": "O0",
+            "arm": "H",
+            "delta_forward_velocity_m_s": 2.2230339727041497,
+            "delta_lateral_velocity_m_s": 0.0015290523124033325,
+            "delta_yaw_rate_rad_s": -0.00021707359701395035,
+            "delta_lateral_position_m": 3.964764461187227e-05,
+            "safe_local_registered_gate": true,
+            "new_touching_obstacle_pairs": 0,
+            "collision": false,
+            "damage": 0.0,
+            "all_wheels_onroad": true,
+            "N1_local_response_passed": false
+          }
+        },
+        {
+          "arm": "C",
+          "result": {
+            "case": "O0",
+            "arm": "C",
+            "status": "REGISTERED_ONE_ACTION_DONE",
+            "native": 221,
+            "raw_ticks": 884,
+            "reset_ticks": 51,
+            "matched_original_rows": 220,
+            "initial_exact": true,
+            "fork_full_state_exact": true,
+            "technical_error": null,
+            "stop_error": null,
+            "unconfirmed_charged_native": 0,
+            "runner_CPU_s": 10.739794908,
+            "wall_s": 10.83341078297235,
+            "wholeworker_CPU_sofar_s": 33.587425376,
+            "diagnostic_prefix_only": true,
+            "actual_lap_claim": false,
+            "new_actor": 0,
+            "new_model": 0
+          },
+          "requested_steering_rad": 0.000768291880376637,
+          "requested_gas": 1.0,
+          "requested_brake": 0.0,
+          "pre_speed_m_s": 91.09837555923406,
+          "post_speed_m_s": 93.3674763742511,
+          "pre_forward_velocity_m_s": 91.09837404910637,
+          "post_forward_velocity_m_s": 93.36745463161533,
+          "post_lateral_velocity_m_s": 0.06371898923539453,
+          "pre_yaw_rate_rad_s": 0.006997298449277878,
+          "post_yaw_rate_rad_s": -0.014532829634845257,
+          "pre_rear_gas": [
+            1.0,
+            1.0
+          ],
+          "rear_gas_each_rawtick": [
+            [
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ],
+          "brake_each_rawtick": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "maximum_positive_gas_request_lag": 0.0,
+          "all_rear_gas_equal_request_from_first_tick": true,
+          "front": {
+            "samples": 8,
+            "clipped_fraction": 0.0,
+            "max_raw_force_ratio": 0.40421829723911984,
+            "max_abs_lateral_slip_m_s": 0.06680593182454686,
+            "max_abs_longitudinal_slip_m_s": 1.9717931264447799,
+            "grass_fraction": 0.0
+          },
+          "rear": {
+            "samples": 8,
+            "clipped_fraction": 0.0,
+            "max_raw_force_ratio": 0.6650121503201896,
+            "max_abs_lateral_slip_m_s": 0.027487216236977474,
+            "max_abs_longitudinal_slip_m_s": 3.243845252415184,
+            "grass_fraction": 0.0
+          },
+          "collision": false,
+          "damage": 0.0,
+          "post_wheel_road_contacts": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "response": {
+            "case": "O0",
+            "arm": "C",
+            "delta_forward_velocity_m_s": 2.6830272543482963,
+            "delta_lateral_velocity_m_s": 0.0018409235288700432,
+            "delta_yaw_rate_rad_s": -0.0002589225769042969,
+            "delta_lateral_position_m": 5.1882625025098113e-05,
+            "safe_local_registered_gate": true,
+            "new_touching_obstacle_pairs": 0,
+            "collision": false,
+            "damage": 0.0,
+            "all_wheels_onroad": true,
+            "N1_local_response_passed": false
+          }
+        }
+      ],
+      "case_error": null,
+      "unexecuted": [],
+      "wholeworker_CPU_s": 33.607477808
+    }
+  ],
+  "cost": {
+    "new_wrapper_actions": 985,
+    "new_environment_resets": 5,
+    "raw_step_ticks": 3940,
+    "raw_reset_ticks": 255,
+    "runner_episode_CPU_s": 47.788947525000005,
+    "wholeworker_CPU_receipts_s": 49.472939005,
+    "sum_episode_wall_s": 48.2275216098642,
+    "receipt_wall_span_s": 33.12381291389465,
+    "receipt_wall_basis": "Hostfilemtimeoflastcasereceipt minus sharedtime.time start; notallgit/reportwall",
+    "unconfirmed_charged_native": 0,
+    "matched_original_rows": 982,
+    "new_actor_calls": 0,
+    "new_model_integration_ticks": 0,
+    "new_learning_fits": 0,
+    "new_paid_resources": 0,
+    "stage": 394,
+    "registered_native_cap": 985,
+    "registered_reset_cap": 5,
+    "registered_CPU_cap_s": 120,
+    "registered_wall_cap_s": 300,
+    "new_environment_creation": 5,
+    "source_model_world_initializations": 0,
+    "new_SEALED_queries": 0,
+    "analysis_CPU_s": 0.030798718000000003,
+    "analysis_wall_s": 0.033516900963149965,
+    "actual_cumulative_wrapper_actions": 1314910,
+    "research_remaining": 33154,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064,
+    "CPU_scope": "Workerreceiptsincludeimports/episodework up tolastmetadata; OSperworkerCPUhard60 enforces120sum. Additionalpreparation/report/git notfullytimed.",
+    "wall_scope": "Receiptfilemtime span33s andshared300s guard; sumepisodewall includesparallelwork,notelapsed."
+  },
+  "N1_local_gate_passed": true,
+  "all_changed_arms_pass_local_safety_gate": true,
+  "safety_stop_exists": false,
+  "analysis_CPU_s": 0.030798718000000003,
+  "analysis_wall_s": 0.033516900963149965,
+  "analysis_new_native": 0,
+  "analysis_new_model": 0,
+  "scope": "Only3changedoneactionresponses vs2originalcontrols; no lap/sustainedrecovery/nextcurvebraking/wholepolicy orpopulationclaim",
+  "checks": {
+    "frozen_sources_protected_exact": true,
+    "before_anynative_preflight_amendment_preserved": true,
+    "five_initial_and_fork_fullcaptures_RNG_controller_exact": true,
+    "original_nominal_controls985_exact": true,
+    "unchanged_actualrows982_exact": true,
+    "changed_forkactions3": true,
+    "all_five_registered_horizons_done": true,
+    "no_technical_errors_or_unconfirmed_calls": true,
+    "all_local_response_and_safety_gates_pass": true,
+    "CPU_wall_reset_native_caps_pass": true,
+    "actual_processes_reaped": true,
+    "actor_model_learning_zero": true,
+    "raw_tire_samples80": true
+  },
+  "next_window_proposal": {
+    "executed": false,
+    "cases": [
+      "N1",
+      "O0"
+    ],
+    "starts": [
+      161,
+      221
+    ],
+    "horizon_actions": 12,
+    "arms": [
+      "O",
+      "C"
+    ],
+    "native_cap": 808,
+    "reset_cap": 4,
+    "CPU_cap_s": 120,
+    "wall_cap_s": 300,
+    "actor_cap": 0,
+    "model_integration_cap": 0,
+    "learning_cap": 0,
+    "reserve_use": 0,
+    "accounting": "2*(160+12)+2*(220+12)=808 includingforkwindow; no extraactualrunhere",
+    "own_state_controls": "OriginalGTsteeringlawonownactualstate eachstep;Ccoherentpedalsonownactualprojection/frozenprofile,notstoredfuturecommands. No gainchanges.",
+    "information_gate": "Positiveprojectedprogress deltaCminusO>=1m after.96s, maxpatherror<=3m andno newcontact/damage/roadcontactloss/meaningfulreverse. Domainzero/seam/nonuniqueprojection/cap ->stopwithoutfallback. Thisonlywindowinformation,nolap/generalization/296promotion.",
+    "purpose": "Boundedclosedloop qualification andbraking/long-latresponse; notassumeonepulseis sustainedrecovery"
+  }
+}
