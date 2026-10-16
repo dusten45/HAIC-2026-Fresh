@@ -116,7 +116,13 @@ def summarize(path, count):
     confirmed_claims = set()
     reset_times = {}
     actor_metadata = []
+    cap = None
     for e in events:
+        if e['kind'] == 'batch_prepared':
+            candidate_cap = e.get('per_case_cap')
+            if not isinstance(candidate_cap, int) or isinstance(candidate_cap, bool) or candidate_cap <= 0 or e.get('count') != count or cap is not None:
+                raise ValueError('Invalid batch cap metadata')
+            cap = candidate_cap
         i = e.get('case_index')
         if i is not None:
             if not 0 <= i < count:
@@ -159,6 +165,8 @@ def summarize(path, count):
                 row.update(status='COMPLETED', reason='durable_finish_metric', lap_ms=round((m['finish_time_s']-reset_times[i])*1000))
             elif m['terminated'] or m['truncated']:
                 row.update(status='DNF', reason=m.get('retire_reason') or 'official_truncation', lap_ms=None)
+            elif cap is not None and {step for case, step in committed if case == i} == set(range(1, cap+1)) and not any(case == i for case, step in intents-committed):
+                row.update(status='DNF', reason='max_steps', lap_ms=None)
     done = [r for r in cases if r['status'] == 'COMPLETED']
     laps = [r['lap_ms'] for r in done]
     counts = {k: sum(r['status'] == k for r in cases) for k in sorted({r['status'] for r in cases})}
@@ -183,7 +191,8 @@ def summarize(path, count):
                 completed_lap_median_ms=statistics.median(laps) if laps else None,
                 journal_damaged_suffix=damaged, durable_events=len(events),
                 all_cases_definitive=len(done)+counts.get('DNF', 0) == count,
-                batch_completed_event=any(e['kind']=='batch_completed' for e in events))
+                batch_completed_event=any(e['kind']=='batch_completed' for e in events),
+                batch_error=next((e['reason'] for e in reversed(events) if e['kind']=='batch_aborted'), None))
 
 
 def strict_action(value):
@@ -228,6 +237,7 @@ def run_batch(directory, count, cap, factory, *, check_time=lambda: None,
                     action = strict_action(action)
                     journal.event('act_committed', case_index=i, step=step,
                                   action=action, metadata=actor_metadata)
+                    check_time()
                     journal.event('step_intent', case_index=i, step=step,
                                   action_sha256=digest(action))
                     obs, metrics = backend.step(action)
@@ -246,8 +256,8 @@ def run_batch(directory, count, cap, factory, *, check_time=lambda: None,
                             reason = metrics.get('retire_reason') or ('max_steps' if step == cap or metrics['truncated'] else 'off_track')
                         journal.event('case_terminal', case_index=i, status=status, reason=reason, lap_ms=lap)
                         break
-            except Exception as exc:
-                status = 'CENSORED_DEADLINE' if isinstance(exc, Deadline) else 'CENSORED_TECHNICAL'
+            except (Exception, KeyboardInterrupt, SystemExit) as exc:
+                status = 'CENSORED_DEADLINE' if isinstance(exc, Deadline) else 'CENSORED_INTERRUPTED' if isinstance(exc, (KeyboardInterrupt, SystemExit)) else 'CENSORED_TECHNICAL'
                 if claimed:
                     journal.event('case_aborted', case_index=i, status=status, reason=type(exc).__name__)
                 else:
@@ -260,9 +270,11 @@ def run_batch(directory, count, cap, factory, *, check_time=lambda: None,
                     if not receipt.get('process_reaped', False):
                         raise RuntimeError('Actor cleanup failed')
         journal.event('batch_completed')
-    except Exception as exc:
+    except (Exception, KeyboardInterrupt, SystemExit) as exc:
         batch_error = type(exc).__name__+': '+str(exc)
         journal.event('batch_aborted', reason=type(exc).__name__)
+        if isinstance(exc, (KeyboardInterrupt, SystemExit)):
+            raise
     finally:
         journal.close()
         summary = summarize(directory/'events-private.jsonl', count)
@@ -309,13 +321,17 @@ def preflight(root, authority):
     """Pure metadata gates; called before any live backend import or seed parsing."""
     if sys.version.split()[0] != '3.11.16' or Path(sys.executable).absolute() != G/'.venv/bin/python':
         raise RuntimeError('Use the frozen absolute interpreter')
-    preservation = root/'stage385/source-and-protected-hashes.json'
+    stage = authority.get('preparation_stage', 385)
+    if stage != 386:
+        raise PermissionError('Unknown preparation revision')
+    preparation_directory = root/('stage'+str(stage))
+    preservation = preparation_directory/'source-and-protected-hashes.json'
     if authority.get('preservation_receipt_sha256') != sha(preservation):
         raise PermissionError('Preparation preservation binding mismatch')
     for path, expected in read(preservation)['protected_hashes'].items():
         if sha(path) != expected:
             raise RuntimeError('Prepared champion/contract/query snapshot changed')
-    preparation = root/'stage385/execution-plan-private.json'
+    preparation = preparation_directory/'execution-plan-private.json'
     if authority.get('preparation_plan_sha256') != sha(preparation):
         raise PermissionError('Preparation plan binding mismatch')
     for path, expected in read(preparation)['frozen_execution_sources'].items():
@@ -344,14 +360,7 @@ def preflight(root, authority):
     for rel, h in b['execution_sources'].items():
         if sha(G/rel) != h:
             raise RuntimeError('Frozen execution source changed')
-    for name, value in read(root/'stage384/dependency-files-private.json').items():
-        import importlib.metadata
-        dist = importlib.metadata.distribution(name)
-        if dist.version != value['version']:
-            raise RuntimeError('Dependency version changed')
-        for rel, h in value['files_sha256'].items():
-            if sha(dist.locate_file(rel)) != h:
-                raise RuntimeError('Dependency content changed')
+    verify_dependencies(read(root/'stage384/dependency-files-private.json'), b['runtime']['distributions'])
     champion = read(root/'current-champion.json')
     if champion['archive_sha256'] != b['candidate296_zip_sha256'] or sha(champion['archive_path']) != b['candidate296_zip_sha256']:
         raise RuntimeError('Champion changed')
@@ -377,6 +386,32 @@ def preflight(root, authority):
     if budget['final_reserved_actions'] < 32000 or budget.get('final_reserve_used') != 0:
         raise RuntimeError('Final reserve unavailable')
     return b, champion['configuration'], budget, budget_path, check_time
+
+
+def verify_dependencies(snapshot, expected, resolver=None):
+    """Bind untrusted file maps to immutable384 schema/digests before iteration."""
+    if not isinstance(snapshot, dict) or set(snapshot) != set(expected):
+        raise RuntimeError('Dependency names differ from384 binding')
+    for name, bound in expected.items():
+        value = snapshot[name]
+        if not isinstance(value, dict) or value.get('version') != bound['version']:
+            raise RuntimeError('Dependency snapshot version differs from384')
+        files = value.get('files_sha256')
+        if not isinstance(files, dict) or len(files) != bound['file_count'] or value.get('file_count') != bound['file_count']:
+            raise RuntimeError('Dependency snapshot file count differs from384')
+        canonical = hashlib.sha256(json.dumps(files,sort_keys=True,separators=(',', ':'),ensure_ascii=False).encode()).hexdigest()
+        if canonical != bound['content_manifest_sha256'] or value.get('content_manifest_sha256') != canonical:
+            raise RuntimeError('Dependency snapshot digest differs from384')
+    if resolver is None:
+        import importlib.metadata
+        resolver = importlib.metadata.distribution
+    for name, bound in expected.items():
+        dist = resolver(name)
+        if dist.version != bound['version']:
+            raise RuntimeError('Installed dependency version changed')
+        for rel, h in snapshot[name]['files_sha256'].items():
+            if sha(dist.locate_file(rel)) != h:
+                raise RuntimeError('Installed dependency content changed')
 
 
 class LiveBackend:
@@ -457,10 +492,9 @@ def run_live(root, authority_path):
         directory.mkdir(mode=0o700)
         return LiveBackend(config, directory, root/'stage88/pixel-read-sandbox', cases[i])
     try:
-        result = run_batch(output, 16, 2000, factory, check_time=check_time, on_open=on_open, on_claim=on_claim)
-        finalize_accounting(root, output, prior, budget_path)
-        close_query(root/'protected-query-ledger-v1.json', result)
-        return result
+        return run_with_settlement(
+            lambda: run_batch(output,16,2000,factory,check_time=check_time,on_open=on_open,on_claim=on_claim),
+            lambda: settle_live(root,output,prior,budget_path,authority))
     finally:
         os.close(lock)
 
@@ -486,6 +520,7 @@ def close_query(path, summary):
     pool['status'] = 'closed_completed' if summary.get('batch_qualification_passed') else 'closed_aborted_no_retry'
     pool['native_confirmed'] = summary['native_confirmed']
     pool['native_unresolved_upper'] = summary['native_unresolved']
+    pool['accounting_status'] = summary.get('accounting_status', 'UNKNOWN')
     for claim in pool['claims']:
         claim['observed_status'] = summary['case_rows'][claim['case_index']]['status']
     durable_save(path, q)
@@ -499,43 +534,117 @@ def ensure_receipt(path, value):
         durable_save(path, value, exclusive=True)
 
 
-def finalize_accounting(root, output, prior, budget_path):
-    """Journal-only, idempotent metadata completion; never runs a missing step."""
+def finalize_accounting(root, output, prior, budget_path, expected_ledger_sha256, expected_budget_sha256):
+    """Revalidate under ledger lock; drift only emits independent reconciliation."""
     summary = summarize(output/'events-private.jsonl', 16)
     confirmed, pending = summary['native_confirmed'], summary['native_unresolved']
     if confirmed+pending > 32000:
         raise RuntimeError('Final native cap exceeded')
-    budget = dict(prior)
-    budget.update(version='FINAL385', prior_budget_path=str(budget_path), prior_budget_sha256=sha(budget_path),
-                  actual_cumulative_wrapper_actions=prior['actual_cumulative_wrapper_actions']+confirmed,
-                  final_reserved_actions=prior['final_reserved_actions']-confirmed,
-                  final_reserve_used=prior['final_reserve_used']+confirmed,
-                  unresolved_final_native_upper=pending,
-                  final_reserve_encumbered_unresolved=pending,
-                  native_accounting_status='UNRESOLVED_NO_RETRY' if pending else 'CONFIRMED',
-                  final_journal_sha256=sha(output/'events-private.jsonl'))
-    assert budget['actual_cumulative_wrapper_actions']+budget['research_remaining']+budget['final_reserved_actions']==budget['B_operating_cap']
+    journal_hash = sha(output/'events-private.jsonl')
     cost = dict(stage='FINAL385', new_wrapper_actions=confirmed, unresolved_native_upper=pending,
                 exact_native=not pending, query_cases_claimed_upper=summary['claimed_cases_upper'],
                 actor_act_intents=summary['actor_act_intents'], actor_reset_intents=summary['actor_reset_intents'],
                 raw_step_ticks_confirmed=summary['raw_step_ticks'], raw_reset_ticks_confirmed=summary['raw_reset_ticks'],
-                no_retry=True, journal_sha256=sha(output/'events-private.jsonl'))
-    ensure_receipt(output/'project-budget-after.json', budget)
-    ensure_receipt(root/'project-effective-budget-final385.json', budget)
-    ensure_receipt(output/'cost.json', cost)
+                no_retry=True, journal_sha256=journal_hash)
     ledger = root/'experiment-cost-lines.jsonl'
     with ledger.open('r+') as f:
         fcntl.flock(f, fcntl.LOCK_EX)
-        existing = [json.loads(line) for line in f if json.loads(line).get('stage')=='FINAL385']
-        if existing:
-            if len(existing)!=1 or existing[0]!=cost:
-                raise RuntimeError('Conflicting final cost accounting')
-        else:
+        f.seek(0)
+        raw = f.read()
+        original_lines, own = [], []
+        reason = None
+        try:
+            for line in raw.splitlines(keepends=True):
+                value = json.loads(line)
+                if value.get('stage') == 'FINAL385':
+                    own.append(value)
+                else:
+                    original_lines.append(line)
+            base_hash = hashlib.sha256(''.join(original_lines).encode()).hexdigest()
+            if base_hash != expected_ledger_sha256:
+                reason = 'CONCURRENT_COST_LEDGER_DRIFT'
+            if len(own)>1 or own and own[0]!=cost:
+                reason = 'CONFLICTING_FINAL_COST_LINE'
+        except (ValueError, TypeError):
+            base_hash = None
+            reason = 'COST_LEDGER_DAMAGED'
+        try:
+            observed_budget_hash = sha(budget_path)
+            if observed_budget_hash != expected_budget_sha256 or read(budget_path) != prior:
+                reason = 'PRIOR_BUDGET_CHANGED'
+        except (OSError, ValueError, TypeError):
+            observed_budget_hash = None
+            reason = 'PRIOR_BUDGET_UNREADABLE'
+        # Receipt contains only this run's facts, never stale project balances.
+        ensure_receipt(output/'cost-independent.json', cost)
+        if reason:
+            reconciliation = dict(status='RECONCILIATION_REQUIRED', reason=reason,
+                expected_ledger_sha256=expected_ledger_sha256, observed_base_ledger_sha256=base_hash,
+                expected_budget_sha256=expected_budget_sha256, observed_budget_sha256=observed_budget_hash,
+                independent_cost_sha256=sha(output/'cost-independent.json'),
+                native_confirmed=confirmed, native_unresolved_upper=pending,
+                shared_budget_published=False, shared_cost_line_appended=False, no_reexecution=True)
+            target = output/('reconciliation-'+digest(reconciliation)+'.json')
+            ensure_receipt(target, reconciliation)
+            summary['accounting_status'] = 'RECONCILIATION_REQUIRED'
+            summary['batch_qualification_passed'] = False
+            return summary
+        budget = dict(prior)
+        budget.update(version='FINAL385', prior_budget_path=str(budget_path), prior_budget_sha256=expected_budget_sha256,
+                      actual_cumulative_wrapper_actions=prior['actual_cumulative_wrapper_actions']+confirmed,
+                      final_reserved_actions=prior['final_reserved_actions']-confirmed,
+                      final_reserve_used=prior['final_reserve_used']+confirmed,
+                      unresolved_final_native_upper=pending, final_reserve_encumbered_unresolved=pending,
+                      native_accounting_status='UNRESOLVED_NO_RETRY' if pending else 'CONFIRMED',
+                      final_journal_sha256=journal_hash)
+        assert budget['actual_cumulative_wrapper_actions']+budget['research_remaining']+budget['final_reserved_actions']==budget['B_operating_cap']
+        # Check all existing receipts before publishing any project balance.
+        receipts=[(output/'project-budget-after.json',budget),
+                  (root/'project-effective-budget-final385.json',budget),(output/'cost.json',cost)]
+        for path, value in receipts:
+            if path.exists() and read(path)!=value:
+                raise RuntimeError('Conflicting immutable accounting receipt')
+        for path, value in receipts:
+            ensure_receipt(path,value)
+        if not own:
             f.seek(0, os.SEEK_END)
             f.write(json.dumps(cost)+'\n')
             f.flush()
             os.fsync(f.fileno())
+    summary['accounting_status'] = 'UNRESOLVED_NO_RETRY' if pending else 'CONFIRMED'
     return summary
+
+
+def run_with_settlement(run, settle):
+    """Catchable exits preserve metadata in finally, then propagate unchanged."""
+    try:
+        result = run()
+    finally:
+        settled = settle()
+    return settled if settled is not None else result
+
+
+def settle_live(root, output, prior, budget_path, authority):
+    """No backend calls: used on normal return and catchable interruption."""
+    if not (output/'events-private.jsonl').exists():
+        return None
+    result = recover_report(output,16)
+    result['batch_qualification_passed'] = result['batch_completed_event'] and result['all_cases_definitive'] and not result['batch_error'] and not result['native_unresolved'] and not result['journal_damaged_suffix']
+    try:
+        accounting = finalize_accounting(root,output,prior,budget_path,
+            authority['experiment_cost_ledger_sha256'],authority['budget_sha256'])
+        result['accounting_status'] = accounting['accounting_status']
+        if accounting['accounting_status']=='RECONCILIATION_REQUIRED':
+            result['batch_qualification_passed'] = False
+    except BaseException:
+        result['batch_qualification_passed'] = False
+        result['accounting_status'] = 'SETTLEMENT_ERROR_RECONCILIATION_REQUIRED'
+        raise
+    finally:
+        # Even failed accounting cannot leave the query phase enabled.
+        close_query(root/'protected-query-ledger-v1.json',result)
+    ensure_receipt(output/('settlement-'+digest(result)+'.json'),result)
+    return result
 
 
 def recover_live_metadata(root, authority_path):
@@ -552,11 +661,7 @@ def recover_live_metadata(root, authority_path):
     try:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         output = root/'final385-evaluation'
-        result = recover_report(output, 16)
-        result['batch_qualification_passed'] = result['batch_completed_event'] and result['all_cases_definitive'] and not result['native_unresolved'] and not result['journal_damaged_suffix']
-        finalize_accounting(root, output, read(budget_path), budget_path)
-        close_query(root/'protected-query-ledger-v1.json', result)
-        return result
+        return settle_live(root,output,read(budget_path),budget_path,authority)
     finally:
         os.close(lock)
 

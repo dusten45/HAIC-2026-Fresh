@@ -1,5 +1,6 @@
 """Synthetic transaction/failure fixtures only; no scientific policy/env execution."""
 import json
+import hashlib
 from pathlib import Path
 import sys
 from retry.final385_adapter import (Deadline, Journal, digest, durable_save,
@@ -154,8 +155,8 @@ def run(root):
     prior = dict(actual_cumulative_wrapper_actions=10,research_remaining=20,final_reserved_actions=84000,final_reserve_used=0,B_operating_cap=84030)
     durable_save(budget_path, prior, exclusive=True)
     (accounting/'experiment-cost-lines.jsonl').touch(mode=0o600)
-    finalize_accounting(accounting, root/'power_loss', prior, budget_path)
-    finalize_accounting(accounting, root/'power_loss', prior, budget_path)
+    finalize_accounting(accounting, root/'power_loss', prior, budget_path, hashlib.sha256(b'').hexdigest(), hashlib.sha256(budget_path.read_bytes()).hexdigest())
+    finalize_accounting(accounting, root/'power_loss', prior, budget_path, hashlib.sha256(b'').hexdigest(), hashlib.sha256(budget_path.read_bytes()).hexdigest())
     b = json.loads((accounting/'project-effective-budget-final385.json').read_text())
     check('uncertain cost held with exact confirmed-only debit', b['actual_cumulative_wrapper_actions']==10 and b['final_reserved_actions']==84000 and b['final_reserve_encumbered_unresolved']==1 and b['native_accounting_status']=='UNRESOLVED_NO_RETRY')
     check('metadata accounting recovery is idempotent', len((accounting/'experiment-cost-lines.jsonl').read_text().splitlines())==1)
