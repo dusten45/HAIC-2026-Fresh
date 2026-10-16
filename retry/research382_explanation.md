@@ -124,3 +124,6 @@ B는 미리 고른 N1 직선64/코너94의 한 행동 모델 자격을 통과한
 
 
 **416은 signed진행속도대수와물리적후진안전을분리하는정적계약을검사했다.** r>0이면C식은유한음수sigma에도정의되며값을자르거나epsilon을넣지않는다. 기존sigma/bodyforward<−.1안전중단은유지한다. 5364저장행에11연산유래gamma16·외향interval·Decimal100·정확유리수부호검사를통과했고411C nominal188행pedal은float32까지일치했다. 414미소음수는내적반올림부호반전이아니지만의미있는후진이아니다. strict-negative판단이달라지는76행(중복포함)은모두미소상태이며signedC제동0이었다. 정확vertex의기존projection거부122개고유위치와piecewise기울기pedal점프는남았다. 첫경계예외기록을보존하고상태검사재실행없이나머지정적경계집계만완료했다. 실행정책은변경하지않았고기존C+시간선택의119직전한상태최소대조는설계로만남겼다. COM속도/origin사영기준점차이도저장1816raw표본에서최대sigma0.08404m/s·raw0.14711m/s²로확인해exactchain-rule주장을정정했다. 실행법칙은유지했다. 정적CPU5.185초·native/model0, 원장v436연구29,880·예비84,000사용0이다. [416 수학·오차·경계·다음최소대조](domain416_result.md)
+
+
+**417은416의고정Cpre119/history118에서두recipe source까지만실행했다.** 연구용signedC는기존의미있는후진조건만유지하며strict음수정의역한줄을바꿨고저장411정상188행명령은정확히일치했다. prefix·nominal13body/wheel/rawfirstpre·연속부모vs복원fullrawhull·독립반복·부모/RNG게이트를통과했다. 411actual중간rawhull미보존범위는명시했다. Aexit .50–.52/B .44–.46초로source양성이나보장이득.04초가사전.08초기준에미달해actual0으로닫았다. 다른창/pulse/horizon/재주행은없고H1전체실패로확대하지않았다. 모델784tick/6world·CPU1.703초, 실제/guardianquery0, 원장v437연구29,880·예비84,000사용0이다. [417 C source·시간게이트·비용](paired417_result.md)

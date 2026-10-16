@@ -1,0 +1,205 @@
+{
+  "stage": 417,
+  "status": "SOURCE_NO_QUALIFIED_TIME_GAIN",
+  "source_gate_passed": false,
+  "actual_gate_passed": false,
+  "actual_executed": false,
+  "normal188_commands_exact": true,
+  "signed_copy_guard": "Onlystrictsigma<0replacedbyexistingmeaningfulsigma<-.1domainstop, noepsilon/clip. Bodyforwardguardkept. COMorigin/projection/phase/finish/positive-targetunchanged.",
+  "source_arrival": {
+    "A": {
+      "reached": true,
+      "rawtick_bracket": [
+        25,
+        26
+      ],
+      "elapsed_bracket_s": [
+        0.5,
+        0.52
+      ],
+      "interpolated": false
+    },
+    "B": {
+      "reached": true,
+      "rawtick_bracket": [
+        22,
+        23
+      ],
+      "elapsed_bracket_s": [
+        0.44,
+        0.46
+      ],
+      "interpolated": false
+    }
+  },
+  "source_gain_bracket_s": [
+    0.04,
+    0.08
+  ],
+  "gain_rawtick_bracket": [
+    2,
+    4
+  ],
+  "required_guaranteed_gain_rawticks": 4,
+  "guaranteed_gain_rawticks": 2,
+  "promotion": false,
+  "stop_reason": "BothsourcearmsqualifiedbutBupper23 >Alower25-4=21. Guaranteed2ticks=.04s, failsrequired4ticks=.08s. Noactualpair/newwindow/pulse/horizon/rerun.",
+  "source_diagnostics": {
+    "A": {
+      "valid": true,
+      "actions": 13,
+      "goal_reached": true,
+      "safety": [],
+      "domain": null,
+      "progress_gain_m": 67.06367147348169,
+      "max_post_path_error_m": 0.9994621621517847,
+      "max_damage": 0.0,
+      "max_force_ratio": 0.9632787199864492,
+      "clipped_wheel_samples": 0,
+      "total_wheel_samples": 208,
+      "grass_samples": 0
+    },
+    "B": {
+      "valid": true,
+      "actions": 13,
+      "goal_reached": true,
+      "safety": [],
+      "domain": null,
+      "progress_gain_m": 75.7070206625001,
+      "max_post_path_error_m": 0.9910912083930808,
+      "max_damage": 0.0,
+      "max_force_ratio": 1.2477855832450748,
+      "clipped_wheel_samples": 26,
+      "total_wheel_samples": 208,
+      "grass_samples": 0
+    }
+  },
+  "qualification": {
+    "prefix-qualification.json": {
+      "passed": true,
+      "rows": 118,
+      "max_body_errors": {
+        "speed_m_s": 0.0,
+        "yaw_rate_rad_s": 0.0,
+        "position_m": 0.0,
+        "time_s": 0.0
+      },
+      "max_wheel_errors": {
+        "joint_angle": 0.0,
+        "omega": 0.0,
+        "lateral_slip_m_s": 0.0,
+        "longitudinal_slip_m_s": 0.0,
+        "force_ratio": 0.0
+      },
+      "max_raw_first_pre": {
+        "position_m": 0.0,
+        "speed_m_s": 0.0,
+        "yaw_rad_s": 0.0,
+        "time_s": 0.0
+      }
+    },
+    "nominal-qualification.json": {
+      "passed": true,
+      "rows": 13,
+      "max_body_errors": {
+        "speed_m_s": 1.1777481631725095e-05,
+        "yaw_rate_rad_s": 9.804964065551758e-06,
+        "position_m": 1.375408659158321e-05,
+        "time_s": 0.0
+      },
+      "max_wheel_errors": {
+        "joint_angle": 4.76837158203125e-07,
+        "omega": 1.8516317794592396e-05,
+        "lateral_slip_m_s": 3.688554647851561e-05,
+        "longitudinal_slip_m_s": 2.9105947504604046e-05,
+        "force_ratio": 5.936645016912934e-06
+      },
+      "max_raw_first_pre": {
+        "position_m": 1.375408659158321e-05,
+        "speed_m_s": 1.1274499854607711e-05,
+        "yaw_rad_s": 9.804964065551758e-06,
+        "time_s": 0.0
+      }
+    },
+    "continuous_parent_full_rawhull": {
+      "passed": true,
+      "rows": 13,
+      "max_errors": {
+        "origin_position_m": 1.4557206652139423e-05,
+        "COM_position_m": 1.4557206652139423e-05,
+        "COM_speed_m_s": 1.6295005934807705e-05,
+        "origin_speed_m_s": 1.6294884787271258e-05,
+        "yaw_rad_s": 1.043081283569336e-05,
+        "time_s": 0.0
+      }
+    }
+  },
+  "source_independent_repeats_exact": true,
+  "post_candidate_reference_unchanged": true,
+  "source_parent_memory_RNG_unchanged": true,
+  "raw_hull_reference_scope": "411actualhasrawtiresandboundarypre/postbutnotintermediaterawhulls. Sourcefullrawhullgate continuousparent vsrestoredbranches +existingactualCOMmetadata; actualrawfirstpre matchesboundary. Do notclaimhistoricalactualmidtickhullreference. Ifactualopens, collectallrawhullsandcompareprefix+firstchanged+matchingrecipe13torealrawphase.",
+  "actual_first_changed_transition_fidelity": false,
+  "actual_live_parent_gate_executed": false,
+  "actual_guardian_suffix_code_executed": false,
+  "actual_code_validation_scope": "Compiledandreviewedconditionalcode only, actualgatefailedbeforeanyreset; noactualfidelity/guardianclaim.",
+  "full_lap_claim": false,
+  "legal_pixel_claim": false,
+  "H1_whole_rejected": false,
+  "original_C_preserved": true,
+  "protected_preserved": true,
+  "original408_preserved": true,
+  "SEALED_used": 0,
+  "SEALED_future_allowed": 0,
+  "cost": {
+    "stage": 417,
+    "new_wrapper_actions": 0,
+    "new_environment_resets": 0,
+    "new_model_integration_ticks": 784,
+    "source_physics_ticks": 784,
+    "model_reserved_ticks": 784,
+    "unconfirmed_model_ticks": 0,
+    "source_world_initializations": 6,
+    "source_zero_time_contact_setups": 6,
+    "model_tick_cap": 8192,
+    "model_world_cap": 160,
+    "model_CPU_s": 1.7030788689999998,
+    "model_wall_s": 1.735322696971707,
+    "model_CPU_cap_s": 45,
+    "model_wall_cap_s": 90,
+    "normal188_static_verification_included_in_model_region": true,
+    "actual_CPU_s": 0.0,
+    "actual_wall_s": 0.0,
+    "actual_wrapper_cap": 400,
+    "actual_reset_cap": 2,
+    "actual_CPU_cap_s": 90,
+    "actual_wall_cap_s": 180,
+    "actual_guardian_model_ticks": 0,
+    "actual_guardian_query_count": 0,
+    "model_native_CPU_wall_exclusive": true,
+    "worker_execution_CPU_s": 1.7528509460000001,
+    "worker_execution_wall_s": 1.7836364780087024,
+    "wholeworker_CPU_s_before_final_serialization": 2.442674685,
+    "implementation_wall_s": 225.778550863266,
+    "implementation_CPU_s": null,
+    "preparation_CPU_fully_measured": false,
+    "report_git_fully_timed": false,
+    "new_actor_calls": 0,
+    "new_learning_fits": 0,
+    "new_SEALED_queries": 0,
+    "new_paid_resources": 0,
+    "new_reserve_use": 0,
+    "actual_cumulative_wrapper_actions": 1318184,
+    "research_before": 29880,
+    "research_remaining": 29880,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064,
+    "recorded_trace_payload_CPU_s": 0.033223683000001225,
+    "recorded_trace_payload_wall_s": 0.07615638663992286,
+    "dispatch_overhead_isolated": false,
+    "extra_uninstrumented_benchmark": false,
+    "posthoc_stored_analysis_CPU_s": 0.028793810999999996,
+    "posthoc_stored_analysis_wall_s": 0.031223441939800978
+  },
+  "plan_sha256": "c6b04a4ea23a023419e82a0515f85fa48bd949afa30bfccb78b74e1255b584ea"
+}
