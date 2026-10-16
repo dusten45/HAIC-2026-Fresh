@@ -1,0 +1,89 @@
+{
+  "stage": 409,
+  "status": "DESIGN_ONLY_NOT_REGISTERED_NOT_EXECUTED",
+  "H": 13,
+  "raw_ticks_per_full_action": 4,
+  "simulated_control_period_s": 0.08,
+  "goal_distance_m": 3.24,
+  "goal_deadline_actions": 13,
+  "pulse": [
+    0.0,
+    0.0,
+    0.30000001192092896
+  ],
+  "recipes": [
+    "existingnominalownpredictedstatefeedback",
+    "onepulsefirstaction_then_same_nominalfeedback"
+  ],
+  "absolute_frame_failure_arc_track_seed_trigger_forbidden": true,
+  "nominal_valid_always_passthrough": true,
+  "progress_deadline_persistent_until_real_goal_hit": true,
+  "model_observability_failure_not_classified_as_danger": true,
+  "cached_prior_outcome_mapping": [
+    {
+      "state": "reset_Cbase",
+      "cached_nominal_safe": true,
+      "cached_nominal_progress_feasible": true,
+      "would_intervene_on_cached_outcome": false,
+      "no_new_forecast": true,
+      "scope": "Previouslyselectedposthocanchors, notfalsepositiveestimate/generalization. reset/Ounusedalternative irrelevant because nominalvalid."
+    },
+    {
+      "state": "O268_pre92",
+      "cached_nominal_safe": true,
+      "cached_nominal_progress_feasible": true,
+      "would_intervene_on_cached_outcome": false,
+      "no_new_forecast": true,
+      "scope": "Previouslyselectedposthocanchors, notfalsepositiveestimate/generalization. reset/Ounusedalternative irrelevant because nominalvalid."
+    },
+    {
+      "state": "C268_pre91",
+      "cached_nominal_safe": false,
+      "cached_nominal_progress_feasible": true,
+      "would_intervene_on_cached_outcome": true,
+      "no_new_forecast": true,
+      "scope": "Previouslyselectedposthocanchors, notfalsepositiveestimate/generalization. reset/Ounusedalternative irrelevant because nominalvalid."
+    }
+  ],
+  "compute_proxy": {
+    "source406_CPU_per_tick_s": 0.0015448216384194831,
+    "source406_wall_per_tick_s": 0.001569194097166083,
+    "nominal_52tick_CPU_s": 0.08033072519781312,
+    "nominal_pluspulse104tick_CPU_s": 0.16066145039562624,
+    "duplicateboth208tick_CPU_s": 0.3213229007912525,
+    "full189boundary_nominal_ticks": 9828,
+    "full189boundary_nominal_CPU_s": 15.18250706238668,
+    "full189boundary_worst_two_recipe_ticks": 19656,
+    "full189boundary_worst_two_recipe_CPU_s": 30.36501412477336,
+    "scope": "Aggregate406ratioonly, notmeasured perquerylatency/bound; setup/capture/observermix changes; no realtimeclaim"
+  },
+  "future_stored_reference_validation_design": {
+    "status": "UNEXECUTED_NO_RESERVATION",
+    "O268_full13_windows": 173,
+    "O268_terminal_partial_windows": 12,
+    "C268_full13_windows": 91,
+    "C268_tail12_windows_censored_separate": true,
+    "queries": 276,
+    "each_full_forecast_tick_upper": 52,
+    "nominal_duplicate_pluspulse_duplicate_max_branches": 4,
+    "branch_ticks_worst": 57408,
+    "conservative_prefix_reconstruction_ticks": 1152,
+    "total_worst_ticks": 58560,
+    "proposed_tick_cap": 60000,
+    "proposed_world_cap": 1200,
+    "proposed_CPU_cap_s": 180,
+    "proposed_wall_cap_s": 300,
+    "max_parallel": 1,
+    "native_actor_learning_SEALED_reserve": 0,
+    "scope": "Frozen sourcefidelity/isolation andclassificationvalidation acrossstoredstates; notgain/thresholdsearch. Terminalaware modelmustfirstqualify. Allcapsfuturedesignnotcurrentauthorization/execution."
+  },
+  "future_actual_promotion_gates": [
+    "Terminal-awaremodel/read-onlycausalinput contract qualified",
+    "AllqualifiedO268 nominalwindows safe/progressvalid->zero interventions; availabilityreportedseparately",
+    "KnownCpre91 unsafe nominal vsvalidpulse reproducedwithoutframeinput",
+    "Missedknownunsafe/windows, falsepositive, source/fidelity/isolationfailure->stop no tuning",
+    "Compute max/p95/wallCPU andreservedcost fitregisteredbudget; no80msruntimeclaimuntilmeasured",
+    "No action-safe fallback/recursivefeasibility guarantee ->unavailable forcandidate deployment; stopresearch oninfeasible, neverreturn knownunsafe nominal"
+  ],
+  "current_new_wrapper_actor_model_learning_SEALED": 0
+}

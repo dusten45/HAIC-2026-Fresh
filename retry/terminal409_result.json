@@ -1,0 +1,156 @@
+{
+  "stage": 409,
+  "source_checks": {
+    "wrapper_breaks_on_terminal": true,
+    "FPS50": true,
+    "official_finish_sets_newlap": true,
+    "newlap_returns_truncated": true,
+    "tracker_keeps_crossing_candidate_time": true
+  },
+  "stored_rows": 189,
+  "corrected_contract_pass_rows": 189,
+  "nonterminal_full_repeat_rows": 188,
+  "normal_partial_terminal_rows": 1,
+  "terminal_raw_ticks": 3,
+  "terminal_wheel_samples": 12,
+  "total_raw_ticks": 755,
+  "total_wheel_samples": 3020,
+  "clock_continuous": true,
+  "wrapper_elapsed_counter_delta": 755,
+  "initial_raw_time": 1.0200000000000005,
+  "final_raw_time": 16.119999999999745,
+  "last_pre_time": 16.059999999999746,
+  "official_finish_timestamp": 16.099999999999746,
+  "last_post_time": 16.119999999999745,
+  "official_lap_ms": 15080,
+  "observed_delta_vs_O268_ms": 300,
+  "damage": 0,
+  "qualification_timestamp": 15.259999999999764,
+  "finish_confirmation_lag_s": 0.019999999999999574,
+  "finish_timestamp_is_candidate_crossing_not_required_to_equal_confirmation": true,
+  "original408_status_preserved": "QUALIFICATION_OR_TECHNICAL_STOP",
+  "original408_completed_safe_preserved": false,
+  "original408_changed": false,
+  "original408_DONE_mark_still_not_run": true,
+  "separate_corrected_measurement_contract_pass": true,
+  "controls": [
+    {
+      "name": "unchanged_full188",
+      "synthetic": true,
+      "expected_pass": true,
+      "actual_pass": true,
+      "classification": "nonterminal",
+      "errors": []
+    },
+    {
+      "name": "unchanged_partial_finish189",
+      "synthetic": true,
+      "expected_pass": true,
+      "actual_pass": true,
+      "classification": "official_finish",
+      "errors": []
+    },
+    {
+      "name": "drop_one_wheel_sample",
+      "synthetic": true,
+      "expected_pass": false,
+      "actual_pass": false,
+      "classification": "official_finish",
+      "errors": [
+        "missing_or_extra_wheel_samples",
+        "wheel_tick_coverage_or_order"
+      ]
+    },
+    {
+      "name": "drop_whole_rawtick_samples_clock_unchanged",
+      "synthetic": true,
+      "expected_pass": false,
+      "actual_pass": false,
+      "classification": "official_finish",
+      "errors": [
+        "missing_or_extra_wheel_samples",
+        "wheel_tick_coverage_or_order"
+      ]
+    },
+    {
+      "name": "duplicate_wheel_same_count",
+      "synthetic": true,
+      "expected_pass": false,
+      "actual_pass": false,
+      "classification": "official_finish",
+      "errors": [
+        "wheel_tick_coverage_or_order"
+      ]
+    },
+    {
+      "name": "wrong_tick_label_same_count",
+      "synthetic": true,
+      "expected_pass": false,
+      "actual_pass": false,
+      "classification": "official_finish",
+      "errors": [
+        "wheel_tick_coverage_or_order"
+      ]
+    },
+    {
+      "name": "clock_advances_unlogged_tick",
+      "synthetic": true,
+      "expected_pass": false,
+      "actual_pass": false,
+      "classification": "official_finish",
+      "errors": [
+        "clock_tick_mismatch"
+      ]
+    },
+    {
+      "name": "short_repeat_without_terminal",
+      "synthetic": true,
+      "expected_pass": false,
+      "actual_pass": false,
+      "classification": "nonterminal",
+      "errors": [
+        "short_nonterminal_repeat"
+      ]
+    },
+    {
+      "name": "future_finish_timestamp",
+      "synthetic": true,
+      "expected_pass": false,
+      "actual_pass": false,
+      "classification": "official_finish",
+      "errors": [
+        "missing_or_future_finish_timestamp"
+      ]
+    },
+    {
+      "name": "completed_missing_finish_timestamp",
+      "synthetic": true,
+      "expected_pass": false,
+      "actual_pass": false,
+      "classification": "official_finish",
+      "errors": [
+        "missing_or_future_finish_timestamp"
+      ]
+    },
+    {
+      "name": "other_terminal_is_not_official_lap",
+      "synthetic": true,
+      "expected_pass": true,
+      "actual_pass": true,
+      "classification": "other_terminal",
+      "errors": []
+    }
+  ],
+  "negative_controls_rejected": 8,
+  "no_new_driving_inference": true,
+  "new_wrapper_actions": 0,
+  "new_resets": 0,
+  "new_actor_calls": 0,
+  "new_model_integration_ticks": 0,
+  "new_learning_fits": 0,
+  "new_SEALED_queries": 0,
+  "new_paid_resources": 0,
+  "new_reserve_use": 0,
+  "CPU_s": 0.06675149200000001,
+  "wall_s": 0.06677164905704558
+}
