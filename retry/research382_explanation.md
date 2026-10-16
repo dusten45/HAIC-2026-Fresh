@@ -121,3 +121,6 @@ B는 미리 고른 N1 직선64/코너94의 한 행동 모델 자격을 통과한
 
 
 **415는412의H2 유일한patch의형상·source2×2까지만검사했다.** 30–50%의최대곡률전이점주변4선분을고정Hermite로바꾸고원래속도노드/새ds를썼다. 곡률전이0.10028→0.03224와도로·장애물·footprint·3mguard를통과했다. 첫rectangle여유문구의과장을저장거리의보수적확장인증으로정정해조향wheel외곽+.35m에도도로여유1.075m를확인했다. 같은진입의old/new×nominal/fullgas 네arm이독립반복·복원·prefix/nominalbodywheelhull·부모/RNG게이트와13행동·공통exit를통과했다. 도착은양쪽nominal .58–.60/양쪽gas .46–.48초여서geometry효과±.02,interaction±.04초로추가이득미식별이다. 이patch는승격하지않았다. 414정지상태에서기존C268식은음의feed항을대수상제거했지만극소음의sigma정의역으로runtime미자격이다. source784tick/10world·CPU1.515초, staticCPU2.253초이며native0, 원장v435연구29,880·예비84,000사용0이다. H1/H2전체실패로확대하지않고추가실험없이닫았다. [415 형상·2×2·정적식·비용](geometry415_result.md)
+
+
+**416은 signed진행속도대수와물리적후진안전을분리하는정적계약을검사했다.** r>0이면C식은유한음수sigma에도정의되며값을자르거나epsilon을넣지않는다. 기존sigma/bodyforward<−.1안전중단은유지한다. 5364저장행에11연산유래gamma16·외향interval·Decimal100·정확유리수부호검사를통과했고411C nominal188행pedal은float32까지일치했다. 414미소음수는내적반올림부호반전이아니지만의미있는후진이아니다. strict-negative판단이달라지는76행(중복포함)은모두미소상태이며signedC제동0이었다. 정확vertex의기존projection거부122개고유위치와piecewise기울기pedal점프는남았다. 첫경계예외기록을보존하고상태검사재실행없이나머지정적경계집계만완료했다. 실행정책은변경하지않았고기존C+시간선택의119직전한상태최소대조는설계로만남겼다. COM속도/origin사영기준점차이도저장1816raw표본에서최대sigma0.08404m/s·raw0.14711m/s²로확인해exactchain-rule주장을정정했다. 실행법칙은유지했다. 정적CPU5.185초·native/model0, 원장v436연구29,880·예비84,000사용0이다. [416 수학·오차·경계·다음최소대조](domain416_result.md)
