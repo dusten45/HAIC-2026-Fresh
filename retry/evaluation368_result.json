@@ -1,0 +1,2559 @@
+{
+  "stage": 368,
+  "candidate_archive_sha256": "65df88a5b2391675e49c3f39259adab0f8a791da5ab58ea620cbe130b0a9ce34",
+  "candidate_modified": false,
+  "registered_order": [
+    "T2950",
+    "T2953",
+    "T2956",
+    "T2959",
+    "O0",
+    "O2",
+    "N0",
+    "N1",
+    "N3",
+    "T2951",
+    "T2952",
+    "T2954",
+    "T2955",
+    "T2957",
+    "T2958",
+    "T29511"
+  ],
+  "batch_status": {
+    "stage": 368,
+    "attempted": [
+      "T2950",
+      "T2953",
+      "T2956",
+      "T2959",
+      "O0",
+      "O2",
+      "N0",
+      "N1",
+      "N3",
+      "T2951",
+      "T2952",
+      "T2954",
+      "T2955",
+      "T2957",
+      "T2958",
+      "T29511"
+    ],
+    "evaluated": [
+      "T2950",
+      "T2953",
+      "T2956",
+      "T2959",
+      "O0",
+      "O2",
+      "N0",
+      "N1",
+      "N3",
+      "T2951",
+      "T2952",
+      "T2954",
+      "T2955",
+      "T2957",
+      "T2958",
+      "T29511"
+    ],
+    "stop_reason": "all16_evaluated",
+    "all16_evaluated": true,
+    "wall_s": 463.86800534900976,
+    "runner_CPU_s": 415.306270655,
+    "unmeasured": []
+  },
+  "aggregate": {
+    "table_complete": true,
+    "measured_conditions": 18,
+    "planned_conditions": 18,
+    "completed": 18,
+    "completion_fraction_of18": 1.0,
+    "completed_among_measured": 1.0,
+    "actual_DNF": 0,
+    "censored": 0,
+    "unmeasured": [],
+    "versus_historical357": {
+      "historical_completed_all18": 18,
+      "common_completed_count": 18,
+      "common_completed_conditions": [
+        "T2950",
+        "T2953",
+        "T2956",
+        "T2959",
+        "O0",
+        "O2",
+        "N0",
+        "N1",
+        "N2",
+        "N3",
+        "T2951",
+        "T2952",
+        "T2954",
+        "T2955",
+        "T2957",
+        "T2958",
+        "T29510",
+        "T29511"
+      ],
+      "gains": [],
+      "losses": [],
+      "common_lap_delta_ms": {
+        "sum": 0,
+        "mean": 0,
+        "median": 0.0,
+        "min": 0,
+        "max": 0,
+        "new_faster": 0,
+        "ties": 18,
+        "new_slower": 0
+      },
+      "scope": "Newminushistorical,conditionalonbothfinishing;notfreshpairedcontrolorunbiasedgeneralization."
+    },
+    "versus_historical296": {
+      "historical_completed_all18": 17,
+      "common_completed_count": 17,
+      "common_completed_conditions": [
+        "T2953",
+        "T2956",
+        "T2959",
+        "O0",
+        "O2",
+        "N0",
+        "N1",
+        "N2",
+        "N3",
+        "T2951",
+        "T2952",
+        "T2954",
+        "T2955",
+        "T2957",
+        "T2958",
+        "T29510",
+        "T29511"
+      ],
+      "gains": [
+        "T2950"
+      ],
+      "losses": [],
+      "common_lap_delta_ms": {
+        "sum": 11220,
+        "mean": 660,
+        "median": 1140,
+        "min": -5680,
+        "max": 1800,
+        "new_faster": 2,
+        "ties": 0,
+        "new_slower": 15
+      },
+      "scope": "Newminushistorical,conditionalonbothfinishing;notfreshpairedcontrolorunbiasedgeneralization."
+    }
+  },
+  "table": [
+    {
+      "condition": "T2950",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 332,
+        "lap_ms": 26540,
+        "damage": 0.0,
+        "visited": 338,
+        "total_tiles": 338,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": false,
+        "actual_DNF": true,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 315,
+        "lap_ms": null,
+        "damage": 0.2,
+        "visited": 208,
+        "total_tiles": 338,
+        "retire_reason": "off_track"
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 332,
+        "lap_ms": 26540,
+        "damage": 0.0,
+        "visited": 338,
+        "total_tiles": 338,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": null,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 64,
+        "known_birth_supported_retained_contexts": 23,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [
+          {
+            "action": 163,
+            "uid": [
+              163,
+              0
+            ],
+            "positive_history": false,
+            "raw_road_neighbors": 0,
+            "area_pixels": 4,
+            "posthoc_label": "fixture_supported"
+          }
+        ],
+        "retained_exclusions": [],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 56,
+        "ambiguous_transfer_edges": 0,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 26,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 332,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1328,
+        "damage": 0.0,
+        "unique_tiles": 338,
+        "speed_m_s": 45.679689412352054,
+        "off_track_counter": 3,
+        "last_tile_growth_action": 329,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 27.5599999999995,
+        "lap_ms": 26540,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "T2953",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 319,
+        "lap_ms": 25440,
+        "damage": 0.2,
+        "visited": 316,
+        "total_tiles": 316,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 298,
+        "lap_ms": 23800,
+        "damage": 0.2,
+        "visited": 316,
+        "total_tiles": 316,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 319,
+        "lap_ms": 25440,
+        "damage": 0.2,
+        "visited": 316,
+        "total_tiles": 316,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 1640,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 75,
+        "known_birth_supported_retained_contexts": 16,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [],
+        "retained_exclusions": [],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 68,
+        "ambiguous_transfer_edges": 0,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 31,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 319,
+        "collision_event_actions": [
+          186
+        ],
+        "raw_collision_flags": 2,
+        "new_obstacle_hit_intervals": [
+          {
+            "object_index": 2,
+            "action": 186,
+            "raw_interval_s": [
+              15.839999999999751,
+              15.85999999999975
+            ]
+          }
+        ],
+        "fixture_touching": [
+          {
+            "fixture_pair": [
+              2,
+              0,
+              4,
+              0
+            ],
+            "first_raw_time_s": 15.85999999999975,
+            "last_raw_time_s": 15.87999999999975,
+            "touching_raw_endpoint_count": 2,
+            "endpoint_sample_weight_s": 0.04
+          }
+        ],
+        "raw_observation_count": 1273,
+        "damage": 0.2,
+        "unique_tiles": 316,
+        "speed_m_s": 43.90176818307686,
+        "off_track_counter": 4,
+        "last_tile_growth_action": 315,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 26.459999999999525,
+        "lap_ms": 25440,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "T2956",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 315,
+        "lap_ms": 25120,
+        "damage": 0.0,
+        "visited": 323,
+        "total_tiles": 323,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 292,
+        "lap_ms": 23320,
+        "damage": 0.0,
+        "visited": 323,
+        "total_tiles": 323,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 315,
+        "lap_ms": 25120,
+        "damage": 0.0,
+        "visited": 323,
+        "total_tiles": 323,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 1800,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 61,
+        "known_birth_supported_retained_contexts": 15,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [
+          {
+            "action": 113,
+            "uid": [
+              113,
+              0
+            ],
+            "positive_history": false,
+            "raw_road_neighbors": 0,
+            "area_pixels": 5,
+            "posthoc_label": "unresolved"
+          },
+          {
+            "action": 154,
+            "uid": [
+              154,
+              0
+            ],
+            "positive_history": false,
+            "raw_road_neighbors": 0,
+            "area_pixels": 3,
+            "posthoc_label": "unresolved"
+          }
+        ],
+        "retained_exclusions": [
+          {
+            "action": 114,
+            "uid": [
+              113,
+              0
+            ],
+            "age": 1
+          },
+          {
+            "action": 115,
+            "uid": [
+              113,
+              0
+            ],
+            "age": 2
+          },
+          {
+            "action": 116,
+            "uid": [
+              113,
+              0
+            ],
+            "age": 3
+          },
+          {
+            "action": 117,
+            "uid": [
+              113,
+              0
+            ],
+            "age": 4
+          },
+          {
+            "action": 118,
+            "uid": [
+              113,
+              0
+            ],
+            "age": 5
+          },
+          {
+            "action": 119,
+            "uid": [
+              113,
+              0
+            ],
+            "age": 6
+          },
+          {
+            "action": 120,
+            "uid": [
+              113,
+              0
+            ],
+            "age": 7
+          },
+          {
+            "action": 121,
+            "uid": [
+              113,
+              0
+            ],
+            "age": 8
+          },
+          {
+            "action": 155,
+            "uid": [
+              154,
+              0
+            ],
+            "age": 1
+          },
+          {
+            "action": 156,
+            "uid": [
+              154,
+              0
+            ],
+            "age": 2
+          },
+          {
+            "action": 157,
+            "uid": [
+              154,
+              0
+            ],
+            "age": 3
+          },
+          {
+            "action": 158,
+            "uid": [
+              154,
+              0
+            ],
+            "age": 4
+          },
+          {
+            "action": 159,
+            "uid": [
+              154,
+              0
+            ],
+            "age": 5
+          },
+          {
+            "action": 160,
+            "uid": [
+              154,
+              0
+            ],
+            "age": 6
+          },
+          {
+            "action": 161,
+            "uid": [
+              154,
+              0
+            ],
+            "age": 7
+          },
+          {
+            "action": 162,
+            "uid": [
+              154,
+              0
+            ],
+            "age": 8
+          }
+        ],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 55,
+        "ambiguous_transfer_edges": 0,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 23,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 315,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1257,
+        "damage": 0.0,
+        "unique_tiles": 323,
+        "speed_m_s": 47.343535627980124,
+        "off_track_counter": 4,
+        "last_tile_growth_action": 311,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 26.13999999999953,
+        "lap_ms": 25120,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "T2959",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 280,
+        "lap_ms": 22340,
+        "damage": 0.0,
+        "visited": 278,
+        "total_tiles": 278,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 265,
+        "lap_ms": 21180,
+        "damage": 0.4,
+        "visited": 278,
+        "total_tiles": 278,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 280,
+        "lap_ms": 22340,
+        "damage": 0.0,
+        "visited": 278,
+        "total_tiles": 278,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 1160,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 61,
+        "known_birth_supported_retained_contexts": 29,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [
+          {
+            "action": 35,
+            "uid": [
+              35,
+              0
+            ],
+            "positive_history": false,
+            "raw_road_neighbors": 0,
+            "area_pixels": 12,
+            "posthoc_label": "unresolved"
+          }
+        ],
+        "retained_exclusions": [
+          {
+            "action": 36,
+            "uid": [
+              35,
+              0
+            ],
+            "age": 1
+          },
+          {
+            "action": 37,
+            "uid": [
+              35,
+              0
+            ],
+            "age": 2
+          },
+          {
+            "action": 38,
+            "uid": [
+              35,
+              0
+            ],
+            "age": 3
+          },
+          {
+            "action": 39,
+            "uid": [
+              35,
+              0
+            ],
+            "age": 4
+          },
+          {
+            "action": 40,
+            "uid": [
+              35,
+              0
+            ],
+            "age": 5
+          },
+          {
+            "action": 41,
+            "uid": [
+              35,
+              0
+            ],
+            "age": 6
+          },
+          {
+            "action": 42,
+            "uid": [
+              35,
+              0
+            ],
+            "age": 7
+          },
+          {
+            "action": 43,
+            "uid": [
+              35,
+              0
+            ],
+            "age": 8
+          }
+        ],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 53,
+        "ambiguous_transfer_edges": 0,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 34,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 280,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1118,
+        "damage": 0.0,
+        "unique_tiles": 278,
+        "speed_m_s": 45.48063041569965,
+        "off_track_counter": 4,
+        "last_tile_growth_action": 276,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 23.35999999999959,
+        "lap_ms": 22340,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "O0",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 324,
+        "lap_ms": 25840,
+        "damage": 0.0,
+        "visited": 326,
+        "total_tiles": 326,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 304,
+        "lap_ms": 24320,
+        "damage": 0.0,
+        "visited": 326,
+        "total_tiles": 326,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 324,
+        "lap_ms": 25840,
+        "damage": 0.0,
+        "visited": 326,
+        "total_tiles": 326,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 1520,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 69,
+        "known_birth_supported_retained_contexts": 13,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [],
+        "retained_exclusions": [],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 69,
+        "ambiguous_transfer_edges": 7,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 47,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 324,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1293,
+        "damage": 0.0,
+        "unique_tiles": 326,
+        "speed_m_s": 46.86606456612398,
+        "off_track_counter": 4,
+        "last_tile_growth_action": 320,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 26.859999999999516,
+        "lap_ms": 25840,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "O2",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 283,
+        "lap_ms": 22600,
+        "damage": 0.0,
+        "visited": 289,
+        "total_tiles": 289,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 280,
+        "lap_ms": 22360,
+        "damage": 0.2,
+        "visited": 285,
+        "total_tiles": 289,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 283,
+        "lap_ms": 22600,
+        "damage": 0.0,
+        "visited": 289,
+        "total_tiles": 289,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 240,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 63,
+        "known_birth_supported_retained_contexts": 19,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [
+          {
+            "action": 137,
+            "uid": [
+              137,
+              0
+            ],
+            "positive_history": false,
+            "raw_road_neighbors": 0,
+            "area_pixels": 6,
+            "posthoc_label": "unresolved"
+          }
+        ],
+        "retained_exclusions": [
+          {
+            "action": 138,
+            "uid": [
+              137,
+              0
+            ],
+            "age": 1
+          },
+          {
+            "action": 139,
+            "uid": [
+              137,
+              0
+            ],
+            "age": 2
+          },
+          {
+            "action": 140,
+            "uid": [
+              137,
+              0
+            ],
+            "age": 3
+          },
+          {
+            "action": 141,
+            "uid": [
+              137,
+              0
+            ],
+            "age": 4
+          },
+          {
+            "action": 142,
+            "uid": [
+              137,
+              0
+            ],
+            "age": 5
+          },
+          {
+            "action": 143,
+            "uid": [
+              137,
+              0
+            ],
+            "age": 6
+          },
+          {
+            "action": 144,
+            "uid": [
+              137,
+              0
+            ],
+            "age": 7
+          },
+          {
+            "action": 145,
+            "uid": [
+              137,
+              0
+            ],
+            "age": 8
+          }
+        ],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 59,
+        "ambiguous_transfer_edges": 4,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 39,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 283,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1131,
+        "damage": 0.0,
+        "unique_tiles": 289,
+        "speed_m_s": 47.11410444628487,
+        "off_track_counter": 3,
+        "last_tile_growth_action": 280,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 23.619999999999585,
+        "lap_ms": 22600,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "N0",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 320,
+        "lap_ms": 25580,
+        "damage": 0.0,
+        "visited": 325,
+        "total_tiles": 325,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 301,
+        "lap_ms": 24040,
+        "damage": 0.0,
+        "visited": 325,
+        "total_tiles": 325,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 320,
+        "lap_ms": 25580,
+        "damage": 0.0,
+        "visited": 325,
+        "total_tiles": 325,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 1540,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 61,
+        "known_birth_supported_retained_contexts": 14,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [],
+        "retained_exclusions": [],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 60,
+        "ambiguous_transfer_edges": 6,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 26,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 320,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1280,
+        "damage": 0.0,
+        "unique_tiles": 325,
+        "speed_m_s": 46.846223172431664,
+        "off_track_counter": 3,
+        "last_tile_growth_action": 317,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 26.599999999999522,
+        "lap_ms": 25580,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "N1",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 238,
+        "lap_ms": 19000,
+        "damage": 0.0,
+        "visited": 238,
+        "total_tiles": 238,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 224,
+        "lap_ms": 17860,
+        "damage": 0.0,
+        "visited": 238,
+        "total_tiles": 238,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 238,
+        "lap_ms": 19000,
+        "damage": 0.0,
+        "visited": 238,
+        "total_tiles": 238,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 1140,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 64,
+        "known_birth_supported_retained_contexts": 32,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [
+          {
+            "action": 80,
+            "uid": [
+              80,
+              0
+            ],
+            "positive_history": false,
+            "raw_road_neighbors": 0,
+            "area_pixels": 3,
+            "posthoc_label": "unresolved"
+          }
+        ],
+        "retained_exclusions": [
+          {
+            "action": 81,
+            "uid": [
+              80,
+              0
+            ],
+            "age": 1
+          },
+          {
+            "action": 82,
+            "uid": [
+              80,
+              0
+            ],
+            "age": 2
+          },
+          {
+            "action": 83,
+            "uid": [
+              80,
+              0
+            ],
+            "age": 3
+          },
+          {
+            "action": 84,
+            "uid": [
+              80,
+              0
+            ],
+            "age": 4
+          },
+          {
+            "action": 85,
+            "uid": [
+              80,
+              0
+            ],
+            "age": 5
+          },
+          {
+            "action": 86,
+            "uid": [
+              80,
+              0
+            ],
+            "age": 6
+          },
+          {
+            "action": 87,
+            "uid": [
+              80,
+              0
+            ],
+            "age": 7
+          },
+          {
+            "action": 88,
+            "uid": [
+              80,
+              0
+            ],
+            "age": 8
+          }
+        ],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 55,
+        "ambiguous_transfer_edges": 0,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 23,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 238,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 951,
+        "damage": 0.0,
+        "unique_tiles": 238,
+        "speed_m_s": 46.71700936683616,
+        "off_track_counter": 3,
+        "last_tile_growth_action": 235,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 20.019999999999662,
+        "lap_ms": 19000,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "N2",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 292,
+        "lap_ms": 23320,
+        "damage": 0.0,
+        "visited": 292,
+        "total_tiles": 292,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 363,
+        "lap_ms": 29000,
+        "damage": 0.6000000000000001,
+        "visited": 292,
+        "total_tiles": 292,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 292,
+        "lap_ms": 23320,
+        "damage": 0.0,
+        "visited": 292,
+        "total_tiles": 292,
+        "retire_reason": null,
+        "source_stage": 367,
+        "new_in368": false,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": -5680
+    },
+    {
+      "condition": "N3",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 254,
+        "lap_ms": 20280,
+        "damage": 0.0,
+        "visited": 256,
+        "total_tiles": 256,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 247,
+        "lap_ms": 19720,
+        "damage": 0.0,
+        "visited": 256,
+        "total_tiles": 256,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 254,
+        "lap_ms": 20280,
+        "damage": 0.0,
+        "visited": 256,
+        "total_tiles": 256,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 560,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 61,
+        "known_birth_supported_retained_contexts": 56,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [
+          {
+            "action": 189,
+            "uid": [
+              189,
+              0
+            ],
+            "positive_history": false,
+            "raw_road_neighbors": 0,
+            "area_pixels": 4,
+            "posthoc_label": "unresolved"
+          },
+          {
+            "action": 205,
+            "uid": [
+              205,
+              0
+            ],
+            "positive_history": false,
+            "raw_road_neighbors": 0,
+            "area_pixels": 4,
+            "posthoc_label": "fixture_supported"
+          }
+        ],
+        "retained_exclusions": [],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 50,
+        "ambiguous_transfer_edges": 1,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 26,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 254,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1015,
+        "damage": 0.0,
+        "unique_tiles": 256,
+        "speed_m_s": 47.110176820725705,
+        "off_track_counter": 3,
+        "last_tile_growth_action": 251,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 21.299999999999635,
+        "lap_ms": 20280,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "T2951",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 270,
+        "lap_ms": 21540,
+        "damage": 0.0,
+        "visited": 267,
+        "total_tiles": 267,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 264,
+        "lap_ms": 21040,
+        "damage": 0.0,
+        "visited": 257,
+        "total_tiles": 267,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 270,
+        "lap_ms": 21540,
+        "damage": 0.0,
+        "visited": 267,
+        "total_tiles": 267,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 500,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 66,
+        "known_birth_supported_retained_contexts": 21,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [],
+        "retained_exclusions": [],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 59,
+        "ambiguous_transfer_edges": 1,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 22,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 270,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1078,
+        "damage": 0.0,
+        "unique_tiles": 267,
+        "speed_m_s": 46.33610890470731,
+        "off_track_counter": 4,
+        "last_tile_growth_action": 266,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 22.559999999999608,
+        "lap_ms": 21540,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "T2952",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 285,
+        "lap_ms": 22740,
+        "damage": 0.0,
+        "visited": 288,
+        "total_tiles": 288,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 265,
+        "lap_ms": 21140,
+        "damage": 0.0,
+        "visited": 288,
+        "total_tiles": 288,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 285,
+        "lap_ms": 22740,
+        "damage": 0.0,
+        "visited": 288,
+        "total_tiles": 288,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 1600,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 58,
+        "known_birth_supported_retained_contexts": 14,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [],
+        "retained_exclusions": [],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 52,
+        "ambiguous_transfer_edges": 0,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 40,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 285,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1138,
+        "damage": 0.0,
+        "unique_tiles": 288,
+        "speed_m_s": 47.46238849566764,
+        "off_track_counter": 4,
+        "last_tile_growth_action": 281,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 23.759999999999582,
+        "lap_ms": 22740,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "T2954",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 356,
+        "lap_ms": 28440,
+        "damage": 0.0,
+        "visited": 357,
+        "total_tiles": 357,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 344,
+        "lap_ms": 27440,
+        "damage": 0.0,
+        "visited": 357,
+        "total_tiles": 357,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 356,
+        "lap_ms": 28440,
+        "damage": 0.0,
+        "visited": 357,
+        "total_tiles": 357,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 1000,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 68,
+        "known_birth_supported_retained_contexts": 27,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [
+          {
+            "action": 92,
+            "uid": [
+              92,
+              0
+            ],
+            "positive_history": true,
+            "raw_road_neighbors": 0,
+            "area_pixels": 4,
+            "posthoc_label": "fixture_supported"
+          }
+        ],
+        "retained_exclusions": [],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 64,
+        "ambiguous_transfer_edges": 5,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 25,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 356,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1423,
+        "damage": 0.0,
+        "unique_tiles": 357,
+        "speed_m_s": 46.18930470488159,
+        "off_track_counter": 3,
+        "last_tile_growth_action": 353,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 29.45999999999946,
+        "lap_ms": 28440,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "T2955",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 320,
+        "lap_ms": 25580,
+        "damage": 0.0,
+        "visited": 320,
+        "total_tiles": 320,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 299,
+        "lap_ms": 23860,
+        "damage": 0.0,
+        "visited": 320,
+        "total_tiles": 320,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 320,
+        "lap_ms": 25580,
+        "damage": 0.0,
+        "visited": 320,
+        "total_tiles": 320,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 1720,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 70,
+        "known_birth_supported_retained_contexts": 15,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [
+          {
+            "action": 253,
+            "uid": [
+              253,
+              0
+            ],
+            "positive_history": false,
+            "raw_road_neighbors": 0,
+            "area_pixels": 3,
+            "posthoc_label": "unresolved"
+          }
+        ],
+        "retained_exclusions": [
+          {
+            "action": 254,
+            "uid": [
+              253,
+              0
+            ],
+            "age": 1
+          },
+          {
+            "action": 255,
+            "uid": [
+              253,
+              0
+            ],
+            "age": 2
+          },
+          {
+            "action": 256,
+            "uid": [
+              253,
+              0
+            ],
+            "age": 3
+          },
+          {
+            "action": 257,
+            "uid": [
+              253,
+              0
+            ],
+            "age": 4
+          },
+          {
+            "action": 258,
+            "uid": [
+              253,
+              0
+            ],
+            "age": 5
+          },
+          {
+            "action": 259,
+            "uid": [
+              253,
+              0
+            ],
+            "age": 6
+          },
+          {
+            "action": 260,
+            "uid": [
+              253,
+              0
+            ],
+            "age": 7
+          },
+          {
+            "action": 261,
+            "uid": [
+              253,
+              0
+            ],
+            "age": 8
+          }
+        ],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 64,
+        "ambiguous_transfer_edges": 1,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 21,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 320,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1280,
+        "damage": 0.0,
+        "unique_tiles": 320,
+        "speed_m_s": 46.85690249333813,
+        "off_track_counter": 3,
+        "last_tile_growth_action": 317,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 26.599999999999522,
+        "lap_ms": 25580,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "T2957",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 329,
+        "lap_ms": 26260,
+        "damage": 0.2,
+        "visited": 327,
+        "total_tiles": 327,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 318,
+        "lap_ms": 25400,
+        "damage": 0.2,
+        "visited": 327,
+        "total_tiles": 327,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 329,
+        "lap_ms": 26260,
+        "damage": 0.2,
+        "visited": 327,
+        "total_tiles": 327,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 860,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 66,
+        "known_birth_supported_retained_contexts": 51,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [
+          {
+            "action": 191,
+            "uid": [
+              191,
+              0
+            ],
+            "positive_history": false,
+            "raw_road_neighbors": 0,
+            "area_pixels": 6,
+            "posthoc_label": "unresolved"
+          }
+        ],
+        "retained_exclusions": [
+          {
+            "action": 192,
+            "uid": [
+              191,
+              0
+            ],
+            "age": 1
+          },
+          {
+            "action": 193,
+            "uid": [
+              191,
+              0
+            ],
+            "age": 2
+          },
+          {
+            "action": 194,
+            "uid": [
+              191,
+              0
+            ],
+            "age": 3
+          },
+          {
+            "action": 195,
+            "uid": [
+              191,
+              0
+            ],
+            "age": 4
+          },
+          {
+            "action": 196,
+            "uid": [
+              191,
+              0
+            ],
+            "age": 5
+          },
+          {
+            "action": 197,
+            "uid": [
+              191,
+              0
+            ],
+            "age": 6
+          },
+          {
+            "action": 198,
+            "uid": [
+              191,
+              0
+            ],
+            "age": 7
+          },
+          {
+            "action": 199,
+            "uid": [
+              191,
+              0
+            ],
+            "age": 8
+          }
+        ],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 55,
+        "ambiguous_transfer_edges": 0,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 27,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 329,
+        "collision_event_actions": [
+          265
+        ],
+        "raw_collision_flags": 1,
+        "new_obstacle_hit_intervals": [
+          {
+            "object_index": 4,
+            "action": 265,
+            "raw_interval_s": [
+              22.139999999999617,
+              22.159999999999616
+            ]
+          }
+        ],
+        "fixture_touching": [
+          {
+            "fixture_pair": [
+              4,
+              0,
+              0,
+              0
+            ],
+            "first_raw_time_s": 22.159999999999616,
+            "last_raw_time_s": 22.159999999999616,
+            "touching_raw_endpoint_count": 1,
+            "endpoint_sample_weight_s": 0.02
+          },
+          {
+            "fixture_pair": [
+              4,
+              0,
+              2,
+              0
+            ],
+            "first_raw_time_s": 22.159999999999616,
+            "last_raw_time_s": 22.159999999999616,
+            "touching_raw_endpoint_count": 1,
+            "endpoint_sample_weight_s": 0.02
+          }
+        ],
+        "raw_observation_count": 1314,
+        "damage": 0.2,
+        "unique_tiles": 327,
+        "speed_m_s": 45.878490132168196,
+        "off_track_counter": 4,
+        "last_tile_growth_action": 325,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 27.279999999999507,
+        "lap_ms": 26260,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "T2958",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 304,
+        "lap_ms": 24240,
+        "damage": 0.0,
+        "visited": 304,
+        "total_tiles": 304,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 307,
+        "lap_ms": 24480,
+        "damage": 0.0,
+        "visited": 294,
+        "total_tiles": 304,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 304,
+        "lap_ms": 24240,
+        "damage": 0.0,
+        "visited": 304,
+        "total_tiles": 304,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": -240,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 65,
+        "known_birth_supported_retained_contexts": 11,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [],
+        "retained_exclusions": [],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 61,
+        "ambiguous_transfer_edges": 2,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 22,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 304,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1213,
+        "damage": 0.0,
+        "unique_tiles": 304,
+        "speed_m_s": 47.88007028397974,
+        "off_track_counter": 4,
+        "last_tile_growth_action": 300,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 25.25999999999955,
+        "lap_ms": 24240,
+        "retire_reason": null
+      }
+    },
+    {
+      "condition": "T29510",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 252,
+        "lap_ms": 20120,
+        "damage": 0.0,
+        "visited": 250,
+        "total_tiles": 250,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 237,
+        "lap_ms": 18940,
+        "damage": 0.4,
+        "visited": 250,
+        "total_tiles": 250,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 252,
+        "lap_ms": 20120,
+        "damage": 0.0,
+        "visited": 250,
+        "total_tiles": 250,
+        "retire_reason": null,
+        "source_stage": 366,
+        "new_in368": false,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 1180
+    },
+    {
+      "condition": "T29511",
+      "historical357": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 275,
+        "lap_ms": 21980,
+        "damage": 0.0,
+        "visited": 277,
+        "total_tiles": 277,
+        "retire_reason": null
+      },
+      "historical296": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 267,
+        "lap_ms": 21300,
+        "damage": 0.0,
+        "visited": 272,
+        "total_tiles": 277,
+        "retire_reason": null
+      },
+      "frozen365": {
+        "completed": true,
+        "actual_DNF": false,
+        "censored": false,
+        "technical_error": null,
+        "native_actions": 275,
+        "lap_ms": 21980,
+        "damage": 0.0,
+        "visited": 277,
+        "total_tiles": 277,
+        "retire_reason": null,
+        "source_stage": 368,
+        "new_in368": true,
+        "stop_reason": "official_finish"
+      },
+      "new_minus_historical357_lap_ms": 0,
+      "new_minus_historical296_lap_ms": 680,
+      "support_audit": {
+        "passed": true,
+        "technical_error": null,
+        "known_supported_direct_contexts": 70,
+        "known_birth_supported_retained_contexts": 16,
+        "supported_direct_losses": 0,
+        "supported_retained_losses": 0,
+        "losses": [],
+        "missing_birth_GT_direct": 0,
+        "missing_birth_GT_retained": 0,
+        "low_births": [
+          {
+            "action": 160,
+            "uid": [
+              160,
+              0
+            ],
+            "positive_history": true,
+            "raw_road_neighbors": 0,
+            "area_pixels": 4,
+            "posthoc_label": "fixture_supported"
+          },
+          {
+            "action": 163,
+            "uid": [
+              163,
+              0
+            ],
+            "positive_history": true,
+            "raw_road_neighbors": 0,
+            "area_pixels": 4,
+            "posthoc_label": "fixture_supported"
+          }
+        ],
+        "retained_exclusions": [],
+        "preserved_low_retained": [],
+        "all_positive_transfer_edges": 63,
+        "ambiguous_transfer_edges": 0,
+        "confirmed_distinct_supported_fixture_transfers": 0,
+        "ambiguous_low_birth_edges": 0,
+        "prior62_ambiguities_and_missing_GT_still_unresolved": true,
+        "scope": "Thisactualconditionposthocbirthcirclelabels;noGTtoactor,notsemanticorocclusiontruth."
+      },
+      "historical357_trajectory_comparison": {
+        "same_initial_case_physics_accessRNG_runtime_qualified": true,
+        "whole_original_semantics_commands_pixels_physics_accessRNG_rawticks_exact": true,
+        "first_differences": {
+          "diagnostic_metadata": 14,
+          "routing": null,
+          "path": null,
+          "target": null,
+          "full_control": null,
+          "original_state_projection": null,
+          "physics_or_RNG": null
+        },
+        "historical_not_new_control": true,
+        "scope": "Striponlynewpositive_historymetadatafield;originalstateprojectionexcludesagentpickledigest. Historicalcomparisonnotfreshpairedcontrol;afterbranchdifferenceswouldbecoupled."
+      },
+      "diagnostics": {
+        "native_actions": 275,
+        "collision_event_actions": [],
+        "raw_collision_flags": 0,
+        "new_obstacle_hit_intervals": [],
+        "fixture_touching": [],
+        "raw_observation_count": 1099,
+        "damage": 0.0,
+        "unique_tiles": 277,
+        "speed_m_s": 46.55013093346029,
+        "off_track_counter": 3,
+        "last_tile_growth_action": 272,
+        "actual_DNF": false,
+        "protocol_stop": false,
+        "completed": true,
+        "finish_time_s": 22.9999999999996,
+        "lap_ms": 21980,
+        "retire_reason": null
+      }
+    }
+  ],
+  "support_audit_new368": {
+    "new_conditions_audited": 16,
+    "all_new_audited_passed": true,
+    "known_supported_direct_contexts": 1042,
+    "known_birth_supported_retained_contexts": 372,
+    "supported_direct_losses": 0,
+    "supported_retained_losses": 0,
+    "missing_birth_GT_direct": 0,
+    "missing_birth_GT_retained": 0,
+    "all_positive_transfer_edges": 943,
+    "ambiguous_transfer_edges": 27,
+    "confirmed_distinct_supported_fixture_transfers": 0,
+    "ambiguous_low_birth_edges": 0,
+    "scope": "New368only;prior366/367auditsremainseparate. Prior365cache62ambiguousedgesand12direct/16retainedmissingGTremainunresolved. Birthcirclelabelsnotsemanticocclusiontruth."
+  },
+  "support_audit_all_measured365": {
+    "conditions_audited": 18,
+    "known_supported_direct_contexts": 1177,
+    "known_birth_supported_retained_contexts": 418,
+    "supported_direct_losses": 0,
+    "supported_retained_losses": 0,
+    "scope": "Combinedactual365auditsfromthisbatchandprior2;no inferenceofunmeasuredcasegatepass."
+  },
+  "cost": {
+    "stage": 368,
+    "new_wrapper_actions": 4804,
+    "new_candidate_runs": 16,
+    "new_baseline_runs": 0,
+    "new_environment_resets": 16,
+    "new_actor_act_calls": 4804,
+    "new_actor_commit_calls": 4804,
+    "actor_resets": 16,
+    "new_cached_actor_calls": 0,
+    "new_standalone_diagnostic_calls": 0,
+    "new_native_auxiliary": 0,
+    "total_existing_cap": 21646,
+    "per_condition_max_cap": 2000,
+    "additional_research": 0,
+    "new_source_physics_ticks": 0,
+    "new_learning_fits": 0,
+    "new_tuning": 0,
+    "new_paid_resources": 0,
+    "raw_step_ticks": 19191,
+    "raw_reset_ticks": 816,
+    "measurements": {
+      "wall_s": 423.73798860493116,
+      "runner_CPU_s": 363.722055706,
+      "actor_CPU_s": 57.278883,
+      "reset_wall_s": 6.577386450080667,
+      "raw_step_render_wall_s": 158.39675423211884,
+      "raw_contact_observer_wall_s": 3.7745375125668943,
+      "capture_wall_s": 158.6916739055887,
+      "journal_wall_s": 3.6516703091328964,
+      "artifact_wall_s": 0.6606789309880696
+    },
+    "batch_wall_s": 463.86800534900976,
+    "batch_runner_CPU_s": 415.306270655,
+    "technical_error": null,
+    "actual_cumulative_wrapper_actions": 1296563,
+    "research_remaining": 16842,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1397405,
+    "historical357_296_and_prior2_365_reexecuted_or_recounted": false,
+    "scope": "Only368fresh16-or-stoppedpartialepisodescharged. Batchincludesintercaseposthoc/qualifiedhistoricalcomparisons. Rawstepincludesrender;componentsseparate. Coding/registration/closure/gitnotfullytimed. No newgrantorautomaticextension."
+  },
+  "prior_uncertainty_62_and_missingGT_not_resolved": true,
+  "limits": [
+    "RepeatedknownTRAIN/knowncasesafteradaptiveresearch;notindependentgeneralizationorunbiasedbenchmark.18tablecombines16newmaximumand2prior365episodes.",
+    "Historical357and296verifiedsameconditionrecords,notnewpairedcontrols. CommonfinishlapdeltaexcludesDNFandisconditional. Damageonlydiagnostic,officialcompletion/lapprimary.",
+    "No knownsupportedlossdoesnotprovesemanticmaterial/occlusiontruth orunique2mdedupidentity. Existing62ambiguousedgesandmissingGTremainunresolved;actualuncertaintymetricsnotacure.",
+    "Originalstateprojectionexcludesagentpickledigest;hidden solver/OpenCV RNG/warmstart/islandstate notfullycaptured. No tuning,retry,paidresources,protectedopening,automaticpromotionorextension."
+  ],
+  "promotion": false,
+  "champion296_preserved": true,
+  "original357_and_its_retained_failure_preserved": true,
+  "new_DEV_opening": false,
+  "new_HOLDOUT_opening": false,
+  "new_SEALED_opening": false,
+  "next_step": "Reportfrozenoutcomesandanyunmeasuredconditions;noautomaticfurtherexperimentorbudgetgrant.",
+  "authorization_end_utc": "2026-10-17T10:01:55Z"
+}
