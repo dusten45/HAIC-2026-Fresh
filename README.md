@@ -382,4 +382,4 @@ python -m pip list
 
 ## 개인 연구 기록 (공식 안내와 별도)
 
-[기술 경과와 선택 기준](retry/research382_explanation.md) · [현재 12행동 재현 게이트](retry/replay391_result.md) · [직전 최소 반증](retry/probe390_result.md) · [시간 손실 진단](retry/loss389_result.md) · [방법군 비교](retry/methods380_result.md)
+[기술 경과와 선택 기준](retry/research382_explanation.md) · [현재 저장 행 제어식 반증](retry/scalar392_result.md) · [12행동 재현 게이트](retry/replay391_result.md) · [직전 최소 반증](retry/probe390_result.md) · [시간 손실 진단](retry/loss389_result.md) · [방법군 비교](retry/methods380_result.md)
