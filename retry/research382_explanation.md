@@ -115,3 +115,6 @@ B는 미리 고른 N1 직선64/코너94의 한 행동 모델 자격을 통과한
 **413은412의H1 첫 고정primitive를 실제 pair로 확인했다.** 개발 규칙의117직전 한 snapshot과 nominal/첫gas1·brake0 후ownnominal 두recipe만 동결했다. source116prefix·nominal13의body/wheel 동일phase·독립반복·부모/RNG·COM자격을 통과해 실제129행동씩 한 번 실행했다. 두native의초기/fullfork/prefix가같았고 첫changed전이/13행동 모두body·wheel·rawhull기준을통과했다. 같은originalarc30m exit가 A0.66–0.68초/B0.56–0.58초로 실제 이득[0.08,0.12]초였고 sourcebracket도맞았다. 손상/안전위반0으로 다음GT승격기준을통과했다.
 
 이는한상태국소양성이지H1전체·lap·독립일반화·픽셀296증거가아니다. exit속도/yaw/pose가달라후속제동비용은미확인이다. raworigin/COM정보와계측payload비용을기록했지만전체tracerdispatchoverhead/parent1step raw전체는별도미보존이라는범위도남겼다. source728tick/6world·CPU2.203초, 실제258wrapper/reset2·CPU16.808초, 준비wall143.854초별도였다. 원장v433으로연구30,076·예비84,000·사용0을유지했고다른window/pedal/horizon/재주행/튜닝은없었다. [413 첫반사실·bracket이득·fidelity·비용](headroom413_result.md)
+
+
+**414는 413의 고정 첫 가속을 한 번만 전체 주행으로 이어갔으나 완주하지 못했다.** 초기/fullfork·116prefix·13suffix는 정확히 재현됐고 기존 13행동 fidelity를 통과했다. 국소 이득은 70%까지 남았지만 76.38% marker에서 확실한 손실로 뒤집혔고 90%에서 1.02–1.12초 뒤졌다. 196행동에서 진행 deadline으로 검열 중단됐다. 관측 경과 15.68초를 랩타임으로 쓰지 않았다. 뒤 구간 목표 속도 양수에도 음의 feed가 제동을 유지해 정지한 기록을 남겼으며 이 후보는 승격하지 않았다. 실제196/reset1·CPU11.678초, 새 모델0, 원장v434 연구29,880·예비84,000사용0이다. 추가 rollout/재시도 없이 종료했다. [414 후속 비용·공통 arc·중단 근거](carry414_result.md)
