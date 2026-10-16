@@ -1,0 +1,233 @@
+{
+  "stage": 378,
+  "diagnostic_only_not_deployable_policy": true,
+  "not_improvement_candidate": true,
+  "policy374_archive_sha256": "919832e8ed5d280e65c9b75719c4dcfc494a51198131dc29f71079089a00b04b",
+  "policy_archive_unchanged": true,
+  "qualified_prefix_actions": 138,
+  "pre_intervention_qualification": {
+    "passed": true,
+    "prefix_actions": 138,
+    "step": 139,
+    "pixels_physics_accessRNG_and_candidate_original_state_exact": true,
+    "calculated374": [
+      -0.17092639207839966,
+      0.3984036445617676,
+      0.08810915052890778
+    ],
+    "executed139": [
+      -0.17092639207839966,
+      0.3998677730560303,
+      0.08215318620204926
+    ],
+    "steering_tracker_and_nominalmemory_unchanged": true
+  },
+  "intervention_applied": true,
+  "only_explicit_override_actions": [
+    139
+  ],
+  "steering_tracker_nominal_memory_preserved_at139": true,
+  "post139_comparison": {
+    "executed139_equals296": true,
+    "post139_physics_equals296": true,
+    "post139_RNG_equals296": true,
+    "input140_pixels_equals296": true,
+    "candidate139_tracker_preserved": true,
+    "candidate139_nominal_memory_preserved": true
+  },
+  "outcomes": {
+    "378_diagnostic": {
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "native_actions": 303,
+      "lap_ms": null,
+      "damage": 0.2,
+      "unique_tiles": 216,
+      "total_tiles": 250,
+      "retire_reason": "off_track",
+      "stop_reason": "actual_retirement"
+    },
+    "375_untreated374": {
+      "completed": false,
+      "actual_DNF": true,
+      "censored": false,
+      "technical_error": null,
+      "native_actions": 303,
+      "lap_ms": null,
+      "damage": 0.6000000000000001,
+      "unique_tiles": 216,
+      "total_tiles": 250,
+      "retire_reason": "off_track",
+      "stop_reason": "actual_retirement"
+    },
+    "377_unchanged296": {
+      "completed": true,
+      "actual_DNF": false,
+      "censored": false,
+      "technical_error": null,
+      "native_actions": 237,
+      "lap_ms": 18940,
+      "damage": 0.4,
+      "unique_tiles": 250,
+      "total_tiles": 250,
+      "retire_reason": null,
+      "stop_reason": "official_finish"
+    }
+  },
+  "diagnostics": {
+    "378_diagnostic": {
+      "collision_event_actions": [
+        202
+      ],
+      "raw_collision_flags": 1,
+      "raw_observation_count": 1212,
+      "damage": 0.2,
+      "unique_tiles": 216,
+      "speed_m_s": 5.0591783250915785e-06,
+      "off_track_counter": 101,
+      "last_tile_growth_action": 202,
+      "completed": false,
+      "actual_DNF": true,
+      "protocol_stop": false,
+      "lap_ms": null,
+      "retire_reason": "off_track",
+      "touching_fixture_pair_count": 2,
+      "touching_raw_endpoint_count": 407
+    },
+    "375_untreated374": {
+      "collision_event_actions": [
+        202,
+        203,
+        205
+      ],
+      "raw_collision_flags": 3,
+      "raw_observation_count": 1212,
+      "damage": 0.6000000000000001,
+      "unique_tiles": 216,
+      "speed_m_s": 6.130093874038347e-05,
+      "off_track_counter": 101,
+      "last_tile_growth_action": 202,
+      "completed": false,
+      "actual_DNF": true,
+      "protocol_stop": false,
+      "lap_ms": null,
+      "retire_reason": "off_track",
+      "touching_fixture_pair_count": 1,
+      "touching_raw_endpoint_count": 407
+    },
+    "377_unchanged296": {
+      "collision_event_actions": [
+        179,
+        204
+      ],
+      "raw_collision_flags": 2,
+      "raw_observation_count": 948,
+      "damage": 0.4,
+      "unique_tiles": 250,
+      "speed_m_s": 44.939129790957125,
+      "off_track_counter": 3,
+      "last_tile_growth_action": 234,
+      "completed": true,
+      "actual_DNF": false,
+      "protocol_stop": false,
+      "lap_ms": 18940,
+      "retire_reason": null,
+      "touching_fixture_pair_count": 2,
+      "touching_raw_endpoint_count": 3
+    }
+  },
+  "first_actual_differences": {
+    "against375_untreated374": {
+      "executed": 139,
+      "returned_candidate_control": 140,
+      "features": 140,
+      "tracker_before": 141,
+      "tracker_after": 140,
+      "path": 140,
+      "target": 142,
+      "pre_memory": 143,
+      "post_memory": 142,
+      "pre_physics": 140,
+      "post_physics": 139,
+      "raw_observations": 139,
+      "pre_RNG": null,
+      "post_RNG": null,
+      "input_pixels": 140
+    },
+    "against377_unchanged296": {
+      "executed": 140,
+      "returned_candidate_control": 139,
+      "features": 139,
+      "tracker_before": 140,
+      "tracker_after": 139,
+      "path": 141,
+      "target": 141,
+      "pre_memory": 142,
+      "post_memory": 141,
+      "pre_physics": 141,
+      "post_physics": 140,
+      "raw_observations": 140,
+      "pre_RNG": null,
+      "post_RNG": null,
+      "input_pixels": 141
+    }
+  },
+  "support_audit": {
+    "audited": true,
+    "passed": true,
+    "known_supported_direct_contexts": 168,
+    "known_birth_supported_retained_contexts": 26,
+    "supported_direct_losses": 0,
+    "supported_retained_losses": 0,
+    "missing_birth_GT_direct": 0,
+    "missing_birth_GT_retained": 0,
+    "unresolved_births": 10,
+    "all_tracked_hazards_routed": true,
+    "tracking_reconstruction_max_error": 3.552713678800501e-15,
+    "scope": "Original374tracker/routingonownchangedobservations;no head/controller/tracker/memorymodification. Posthoccirclebirthlabelsnotsemantic/occlusiontruth."
+  },
+  "cost": {
+    "stage": 378,
+    "new_wrapper_actions": 303,
+    "new_environment_resets": 1,
+    "new_actor_resets": 1,
+    "new_actor_act_calls": 303,
+    "new_actor_commit_calls": 303,
+    "total_native_cap": 2000,
+    "additional_research": 0,
+    "new_cached_actor_calls": 0,
+    "new_source_physics_rollout_ticks": 0,
+    "new_learning_fits": 0,
+    "new_policy_archive_changes": 0,
+    "new_paid_resources": 0,
+    "raw_step_ticks": 1212,
+    "raw_reset_ticks": 51,
+    "measurements": {
+      "wall_s": 26.301620004931465,
+      "runner_CPU_s": 22.860141772,
+      "actor_CPU_s": 3.457175,
+      "reset_wall_s": 0.4854247550247237,
+      "raw_step_render_wall_s": 10.31905716471374,
+      "raw_contact_observer_wall_s": 0.2596075382316485,
+      "capture_wall_s": 8.92519847175572,
+      "journal_wall_s": 0.25704613886773586,
+      "artifact_wall_s": 0.04838436306454241
+    },
+    "actual_cumulative_wrapper_actions": 1312121,
+    "research_remaining": 35943,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064,
+    "scope": "One378diagnosticactualrunonlyincluding138prefix;references375/377notrerun/recharged. Coding/registration/closure/gitnotfullytimed."
+  },
+  "local_result": "Qualifiedsingle139pedalreplacementdidnotrescueofficialDNF",
+  "causal_limit": "OnepostselectedknownTRAINintervention,notuniquesufficientcause/generalization/safety. After139ownobservationsandnormal374wholecontrolscouple. No secondtime/value/interventionorpolicyupdate.",
+  "no372materials_or_other_split": true,
+  "champion296_unchanged": true,
+  "candidate365_rejected_unchanged": true,
+  "SEALED16_pending_preserved": true,
+  "promotion": false,
+  "automatic_followup": false
+}
