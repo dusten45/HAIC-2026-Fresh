@@ -1,0 +1,245 @@
+{
+  "stage": 379,
+  "review_only": true,
+  "new_candidate_implemented": false,
+  "new_threshold_search": false,
+  "new_native_actions": 0,
+  "new_actor_calls": 0,
+  "new_model_forward_calls": 0,
+  "model_algebra_only": true,
+  "count_feature_semantics": {
+    "index": 11,
+    "definition": "len(allcurrenttrackerpoints):direct+retained,allages/behind/outofretentionwindowdirectbirths;notuniquephysicalobjectsandnotGTcount.",
+    "risk_roles": {
+      "near": "Existenceofanyforwardtrackedcirclewithinexistinglookahead+2.6+radius;selectslateralsafebudget.",
+      "distance": "Minimumhypotofalltrackedpoints,default100,notGTdistance/exclusivelyfront.",
+      "routing": "Everyhazardfootprintparticipatesinexistingallowedmask/path;notcountscalar.",
+      "head": "Oneof16standardizedaffinepedalresidualinputs;learnedstatisticalfeature,thenresidual/outputclipsandpositiveglobalscales."
+    },
+    "conditional_raw_count_derivative_sign": {
+      "gas": 1,
+      "brake": -1
+    }
+  },
+  "corpus": {
+    "trajectories": 25,
+    "contexts": 7108,
+    "groups": {
+      "296_actual_T29510_control": {
+        "contexts": 237,
+        "totals": {
+          "raw_hazard_point_contexts": 218,
+          "direct_point_contexts": 81,
+          "retained_point_contexts": 137,
+          "fixture_birth_supported_point_contexts": 118,
+          "unknown_point_contexts": 100,
+          "known_duplicate_frames": 18,
+          "known_duplicate_excess_point_contexts": 36,
+          "known_multi_fixture_frames": 0,
+          "known_retained_only_fixture_frames": 13,
+          "known_retained_only_fixture_instances": 13,
+          "raw_behind_or_zero_forward_point_contexts": 24,
+          "direct_outside_retention_window_point_contexts": 8,
+          "same_fixture_DD_pairs": 0,
+          "same_fixture_DR_pairs": 31,
+          "same_fixture_RR_pairs": 35
+        },
+        "same_fixture_birth_pair_distance_m": {
+          "count": 66,
+          "min": 2.307208614566632,
+          "median": 5.8832075198073355,
+          "max": 14.91558159459173
+        },
+        "different_fixture_birth_pair_distance_m": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "max": null
+        },
+        "pair_distance_ranges_overlap": false,
+        "single_distance_threshold_cannot_separate_all_labeled_pairs": false,
+        "scope": "Repeatedcontexts/birth-compatiblefixtures,notindependentobjects,notcurrentsemanticIDtruth. UnknownbirthsnevernegativeGT;no thresholdchosenornewcountmappingcomputed."
+      },
+      "296_old6_saved_replay": {
+        "contexts": 1754,
+        "totals": {
+          "raw_hazard_point_contexts": 1324,
+          "direct_point_contexts": 464,
+          "retained_point_contexts": 860,
+          "fixture_birth_supported_point_contexts": 664,
+          "unknown_point_contexts": 660,
+          "known_duplicate_frames": 117,
+          "known_duplicate_excess_point_contexts": 217,
+          "known_multi_fixture_frames": 0,
+          "known_retained_only_fixture_frames": 75,
+          "known_retained_only_fixture_instances": 75,
+          "raw_behind_or_zero_forward_point_contexts": 129,
+          "direct_outside_retention_window_point_contexts": 69,
+          "same_fixture_DD_pairs": 0,
+          "same_fixture_DR_pairs": 181,
+          "same_fixture_RR_pairs": 174
+        },
+        "same_fixture_birth_pair_distance_m": {
+          "count": 355,
+          "min": 1.973172698731735,
+          "median": 5.089079373481004,
+          "max": 24.43137638441409
+        },
+        "different_fixture_birth_pair_distance_m": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "max": null
+        },
+        "pair_distance_ranges_overlap": false,
+        "single_distance_threshold_cannot_separate_all_labeled_pairs": false,
+        "scope": "Repeatedcontexts/birth-compatiblefixtures,notindependentobjects,notcurrentsemanticIDtruth. UnknownbirthsnevernegativeGT;no thresholdchosenornewcountmappingcomputed."
+      },
+      "374_actual18": {
+        "contexts": 5117,
+        "totals": {
+          "raw_hazard_point_contexts": 3527,
+          "direct_point_contexts": 1487,
+          "retained_point_contexts": 2040,
+          "fixture_birth_supported_point_contexts": 1599,
+          "unknown_point_contexts": 1928,
+          "known_duplicate_frames": 128,
+          "known_duplicate_excess_point_contexts": 152,
+          "known_multi_fixture_frames": 7,
+          "known_retained_only_fixture_frames": 247,
+          "known_retained_only_fixture_instances": 247,
+          "raw_behind_or_zero_forward_point_contexts": 262,
+          "direct_outside_retention_window_point_contexts": 187,
+          "same_fixture_DD_pairs": 0,
+          "same_fixture_DR_pairs": 118,
+          "same_fixture_RR_pairs": 63
+        },
+        "same_fixture_birth_pair_distance_m": {
+          "count": 181,
+          "min": 2.0719345960676567,
+          "median": 5.873556375887848,
+          "max": 15.527257359990855
+        },
+        "different_fixture_birth_pair_distance_m": {
+          "count": 11,
+          "min": 33.878520970815465,
+          "median": 37.120998981257245,
+          "max": 38.33858168107708
+        },
+        "pair_distance_ranges_overlap": false,
+        "single_distance_threshold_cannot_separate_all_labeled_pairs": false,
+        "scope": "Repeatedcontexts/birth-compatiblefixtures,notindependentobjects,notcurrentsemanticIDtruth. UnknownbirthsnevernegativeGT;no thresholdchosenornewcountmappingcomputed."
+      }
+    },
+    "overall": {
+      "contexts": 7108,
+      "totals": {
+        "raw_hazard_point_contexts": 5069,
+        "direct_point_contexts": 2032,
+        "retained_point_contexts": 3037,
+        "fixture_birth_supported_point_contexts": 2381,
+        "unknown_point_contexts": 2688,
+        "known_duplicate_frames": 263,
+        "known_duplicate_excess_point_contexts": 405,
+        "known_multi_fixture_frames": 7,
+        "known_retained_only_fixture_frames": 335,
+        "known_retained_only_fixture_instances": 335,
+        "raw_behind_or_zero_forward_point_contexts": 415,
+        "direct_outside_retention_window_point_contexts": 264,
+        "same_fixture_DD_pairs": 0,
+        "same_fixture_DR_pairs": 330,
+        "same_fixture_RR_pairs": 272
+      },
+      "same_fixture_birth_pair_distance_m": {
+        "count": 602,
+        "min": 1.973172698731735,
+        "median": 5.363116050110852,
+        "max": 24.43137638441409
+      },
+      "different_fixture_birth_pair_distance_m": {
+        "count": 11,
+        "min": 33.878520970815465,
+        "median": 37.120998981257245,
+        "max": 38.33858168107708
+      },
+      "pair_distance_ranges_overlap": false,
+      "single_distance_threshold_cannot_separate_all_labeled_pairs": false,
+      "scope": "Repeatedcontexts/birth-compatiblefixtures,notindependentobjects,notcurrentsemanticIDtruth. UnknownbirthsnevernegativeGT;no thresholdchosenornewcountmappingcomputed."
+    },
+    "scope": "ExistingadaptiveTRAIN,repeatedprefixesandstalledframes.334isoldactual296pixelsreplayedalready,37418arenativeexisting,377onecontrol. Notindependent25trials/populationestimate."
+  },
+  "natural_count_only_contrasts_from376": [
+    {
+      "step": 139,
+      "count296": 3.0,
+      "count374": 2.0,
+      "steering_same": true,
+      "gas_delta_374_minus296": -0.0014641284942626953,
+      "brake_delta_374_minus296": 0.0059559643268585205,
+      "path_same": true,
+      "target_same": true,
+      "scope": "Existing376fixed374pixelstraces,notnewcounterfactualexecutionornewconditions."
+    },
+    {
+      "step": 173,
+      "count296": 2.0,
+      "count374": 1.0,
+      "steering_same": true,
+      "gas_delta_374_minus296": -0.0014641284942626953,
+      "brake_delta_374_minus296": 0.005955971777439117,
+      "path_same": true,
+      "target_same": true,
+      "scope": "Existing376fixed374pixelstraces,notnewcounterfactualexecutionornewconditions."
+    },
+    {
+      "step": 174,
+      "count296": 2.0,
+      "count374": 1.0,
+      "steering_same": true,
+      "gas_delta_374_minus296": -0.0014641284942626953,
+      "brake_delta_374_minus296": 0.0059559643268585205,
+      "path_same": true,
+      "target_same": true,
+      "scope": "Existing376fixed374pixelstraces,notnewcounterfactualexecutionornewconditions."
+    }
+  ],
+  "prior_count_effect_not_new": "339alreadycomparedrouting-onlyvsallhazard-derivedfeatures;countchangedpedalswithoutpathchange.242riskbasis,248featureaddition,279outputablation,298parameterablationnotcountrepresentation-onlywholeTRAIN.",
+  "dedicated_count_definition_only_full_native_ablation_found": false,
+  "absence_scope": "Reviewedpublicresult/sourcefeaturelineages224-248/279/298/339/342/349/357/365/374-378andcodekeywordinventory,notproofeveryarchivedexperimentabsent.",
+  "source_only_safe_alternative_not_yet_justified": true,
+  "no372data_or_newsplit": true,
+  "champion296_unchanged": true,
+  "candidate365_rejected_unchanged": true,
+  "SEALED16_pending_preserved": true,
+  "cost": {
+    "stage": 379,
+    "new_wrapper_actions": 0,
+    "new_actor_calls": 0,
+    "new_environment_resets": 0,
+    "new_model_forward_calls": 0,
+    "new_candidate_implementations": 0,
+    "new_threshold_search": 0,
+    "new_learning_fits": 0,
+    "new_source_physics_rollout_ticks": 0,
+    "new_paid_resources": 0,
+    "audit_wall_s": 4.567004446987994,
+    "audit_CPU_s": 4.4867218179999995,
+    "actual_cumulative_wrapper_actions": 1312121,
+    "research_remaining": 35943,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064,
+    "scope": "ReadoldTRAINJSON/immutablemodelparameteralgebra/GTbirth-labelpoint-pairdistancesonly;noforward/candidatecountfunction/thresholdfit. Coding/review/report/gitnotfullytimed."
+  },
+  "conclusion": {
+    "status": "Insufficientgroundingforonesafelegalcountreplacement;no candidate/cachecontractregistered",
+    "raw_count_is_not_unique_physical_object_count": true,
+    "count_effect_is_not_new_evidence": true,
+    "no_count_definition_only_full_method_comparison_found_within_reviewed_scope": true,
+    "no_geometry_threshold_selected": true,
+    "no_counterfactual_candidate_implemented_or_executed": true,
+    "separate_fixture_close_pair_coverage_inadequate": true,
+    "unknown_birth_point_context_fraction": 0.5302821069244427,
+    "reason": "Duplicatebirth-compatiblepointsinflatelen,whileknownretained-onlyhazardsandmultiplefixturesevidencewouldbelostbynaivecollapse. Observedlabeleddistancegapismainlyfarapart11pairs/7contexts;53%unknownandnoclose-distinctvalidation. No proofage/direct/binary/clusterreplacementpreservesusefulriskwithfrozenhead."
+  }
+}
