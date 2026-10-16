@@ -1,0 +1,127 @@
+{
+  "stage": 412,
+  "status": "PROPOSALS_ONLY_NO_EXECUTION_NO_RESERVATION",
+  "hypotheses": [
+    {
+      "id": "H1",
+      "name": "Fixedpath actualsteering/tirestate speedtiming",
+      "premise": "Feasiblelongitudinaltimingheadroomexists atsamepath whennominalbrakesbelowtarget; wholeCarstateincludingjointlag/omega/gas/slip matters, notonlyv²curvature. Fullgasfirstprimitive testsheadroom, isnotcompleteplanner.",
+      "observed_support": {
+        "common60to70_Otime_s": 1.536500270495361,
+        "Ctime_s": 1.2988251251126013,
+        "O_brake_below_target_s": 0.2565002704953882,
+        "O_rear_clip_time_s": 0.0
+      },
+      "conditional_gain_s": [
+        0.480962074399084,
+        0.961924148798168
+      ],
+      "gain_assumption": "25-50percent of1.923848s descriptive referencegap incommon30-70percent physicallyrecoverable. Notforecast/bound; minimaltestonlyonewindow expectedgainunproven.",
+      "minimal_falsification": "OnefrozenknownOdevelopmentanchor, samestate/path/steering/nominalmemory. Compareoriginalnominal vsfirstactiongas1brake0 thenownnominal for13actions. No otherpulse/gain/earliertime retry. Fullgasprimitiveonlynecessaryheadroomtest beforebuildingstate-aware speedplanner.",
+      "observations": "Currenthull/steeringjoint/wheelomega/gas/brake/contacts/damage; sourceforwardtireforcevector andactuatorlag; rawhullpose/velocity collectedfutureforlengthaudit. No currentfutureforceobservation usedintriggers.",
+      "prior_difference": "399staticenvelopes/398Cfailed,251localpulse tostudent0/8,330loworder selectorfailed. Newpremise is410-411sourceactual13/closedloopfidelity andrealwheelstate, notnewgain orclaimlocalpulsegeneralizes.",
+      "source_proposal": {
+        "model_tick_cap": 4096,
+        "world_cap": 64,
+        "CPU_cap_s": 30,
+        "wall_cap_s": 60,
+        "max_parallel": 1,
+        "native_actor_learning_SEALED_reserve": 0,
+        "expected_prefix_plus_duplicate_forecast_tick_upper": 1000
+      },
+      "actual_proposal": {
+        "status": "ONLY_AFTER_SOURCE_GATES_SEPARATE_REGISTRATION",
+        "wrapper_formula": "2*(k-1+13), k<=185",
+        "wrapper_cap": 394,
+        "reset_cap": 2,
+        "CPU_cap_s": 60,
+        "wall_cap_s": 120,
+        "source_budget_separate": true
+      },
+      "promote": "Sourceandcounterfactual391 pluswheelgatepass; allsafe/road/damage0/forwardgoal; sameoriginalarc commonexit30m reachedwithin13; candidatearrivalupper <=baselinearrivallower-.08s. PromoteonlylargerGTtest, notwholelap/pixel.",
+      "stop": "Firstsource/restore/isolation/body-or-wheel mismatch, safety/domain, bothinfeasible, commonexitnotreached/crossingbracketsoverlap, ornogain ->stoprecipe; no nextpedal oranchor retuning."
+    },
+    {
+      "id": "H2",
+      "name": "Geometry expandsfeasible-speed envelope: jointpath-speed",
+      "premise": "Changingcurvaturetransition canallowfasterfeasiblevelocity evenifH1fixedpathheadroomabsent. Directchordshortening isnotobserveddominantgain.",
+      "conditional_gain_s": [
+        0.3104006129694233,
+        0.6208012259388466
+      ],
+      "gain_assumption": "25-50percent of1.241602s referencegap incommon30-50plus90-100percent physicallyrecoverable byfeasiblecurvature/timingchange, notpathlengthbudget. OverlapsH1. Notforecast.",
+      "minimal_falsification": "Beforefuturemodel chooseonegeometry-onlylargestcurvaturechange within30-50percent, earliesttie. Unique4segment cubicHermitepatch, fixedoldendpointpositions/tangents, endpointderivativescaledbyoriginalpatchlength, samecountnodessampledatoriginalnormalizedarcpositions. No freeweight sweep/repair. Ifcorridor/geometry gatefailsstop. Sameanchor 2x2 old/newpath xnominal/H1fullgasfirstprimitive, duplicated13actionforecasts. Primitive isnecessaryjointheadroomtest nottimeoptimalplanner.",
+      "observations": "Actualsteeringlag/slip/omega andfullsourcefootprint/contact, continuousroad/obstaclecorridor andoriginalpath3mguard; progress/exit measuredoriginalreferencearc. Speednodesmappedbyoldcorrespondingnodes andslopesrecomputednewds, noartificialarcgain.",
+      "prior_difference": "186simplegeometricalarc/goalchange didnotpreservecontactprediction orlap;310/311pixelpathcost changesnotGTpath-timejointplanning;267CEMnegativeand268positive retained. Nowvehicle-awarecoupledfeasibility andcommonexit/equalentrystate tested, butfuturewheel/controlcounterfactualfidelitystillrequired.",
+      "source_proposal": {
+        "model_tick_cap": 4096,
+        "world_cap": 64,
+        "CPU_cap_s": 30,
+        "wall_cap_s": 60,
+        "max_parallel": 1,
+        "native_actor_learning_SEALED_reserve": 0,
+        "expected_prefix_plus4arms_duplicates_tick_upper": 1208
+      },
+      "actual_proposal": {
+        "status": "ONLY_SOURCEQUALIFIED_SAFE_ARMS_SEPARATE_REGISTRATION",
+        "wrapper_formula": "atmost4*(k-1+13), k<=185",
+        "wrapper_cap": 788,
+        "reset_cap": 4,
+        "CPU_cap_s": 120,
+        "wall_cap_s": 240,
+        "source_budget_separate": true,
+        "unsafe_arms_not_executed": true
+      },
+      "promote": "Allsameentry/source/wheel/corridorgates; jointcandidate safeatcommonexitwithin13 andarrivalbracketgain>=.08. Need2x2controls toattributeinteraction; missingunsafe arm=>conditionalclassification notimputedtimes. OnlythenlargerGTtest.",
+      "stop": "Patchinvalid/clearanceunknown/increasedcurvaturetransition, sourcefailure, original3m/road/damage/domainviolation, nonarrival ornogain ->stoponepatch/recipe, noalternatepatch/controlsearch."
+    }
+  ],
+  "max_active_deep_lines": 2,
+  "sensitivity": {
+    "scope": "Conditional sensitivity only, notexpectedphysicalperformance/recoverablebound; H1/H2overlap cannotadd.",
+    "H1_30to70_reference_speed_gap_s": 1.923848297596336,
+    "H1_if25to50percent_gap_recovered_s": [
+      0.480962074399084,
+      0.961924148798168
+    ],
+    "H2_30to50plus90to100_reference_speed_gap_s": 1.2416024518776931,
+    "H2_if25to50percent_gap_recovered_s": [
+      0.3104006129694233,
+      0.6208012259388466
+    ],
+    "nonlaunch_reference_speed_gap_s": 3.7697121694756666,
+    "gap_to11_99_s": 2.789999999999999,
+    "gap_to11_00_s": 3.7799999999999994,
+    "fraction_of_nonlaunch_reference_gap_needed_for11_99": 0.7401095560004156,
+    "fraction_needed_for11_00": 1.002729075871531,
+    "O_to_C_60to70_sameposition_time_difference_s": -0.2376751453827597,
+    "shared_30to50_speed_gap_s": 0.924893857008644
+  },
+  "shared_speed_gap_s": 0.924893857008644,
+  "gains_not_additive": true,
+  "eleven_seconds_achievability_unproven": true,
+  "minimum_common_gates": {
+    "source391": {
+      "position_m": 0.1,
+      "speed_m_s": 0.5,
+      "yaw_rate_rad_s": 0.05,
+      "discrete_exact": true
+    },
+    "proposed_new_wheel_measurement_tolerances": {
+      "joint_rad": 0.01,
+      "omega_rad_s": 1.0,
+      "lateral_longitudinal_slip_m_s": 0.5,
+      "force_limit_ratio_abs": 0.05,
+      "scope": "Proposedpre-executionfidelitytolerancesonly, notpassed/safetyclassifier; sameCar.step samplephase, neverrelaxafterfailure."
+    },
+    "parent_RNG_memory_and_independent_query_repeat": true,
+    "terminal_contract409": true,
+    "goal_m": 3.24,
+    "deadline_actions": 13,
+    "safety_existing3m_road_damage_collision_reverse": true,
+    "qclip_alone_not_safetyclassifier": true
+  },
+  "research_balance": 30334,
+  "final_reserve": 84000,
+  "current_new_native_actor_model_learning_SEALED_reserve_paid": 0
+}
