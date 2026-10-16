@@ -1,0 +1,620 @@
+{
+  "stage": 391,
+  "status": "PASSED",
+  "technical_error": null,
+  "states": [
+    {
+      "state_step": 64,
+      "phase": "straight",
+      "initialization": {
+        "bodies": true,
+        "tiles": true,
+        "progress": true
+      },
+      "rows_completed": 12,
+      "passed": true,
+      "first_mismatch": null,
+      "rows": [
+        {
+          "relative_action": 1,
+          "actual_step": 64,
+          "elapsed_model_s": 0.08,
+          "errors": {
+            "speed_m_s": 7.946137401404485e-07,
+            "yaw_rate_rad_s": 3.3574178814888e-07,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 0.0
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 2,
+          "actual_step": 65,
+          "elapsed_model_s": 0.16,
+          "errors": {
+            "speed_m_s": 4.262531405174741e-06,
+            "yaw_rate_rad_s": 2.2043241187930107e-06,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 0.0
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 3,
+          "actual_step": 66,
+          "elapsed_model_s": 0.24,
+          "errors": {
+            "speed_m_s": 1.5901233680892801e-06,
+            "yaw_rate_rad_s": 1.634878572076559e-06,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 1.1920928955078128e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 4,
+          "actual_step": 67,
+          "elapsed_model_s": 0.32,
+          "errors": {
+            "speed_m_s": 2.869574728947555e-07,
+            "yaw_rate_rad_s": 2.9103830456733704e-11,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 1.1920928955078128e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 5,
+          "actual_step": 68,
+          "elapsed_model_s": 0.4,
+          "errors": {
+            "speed_m_s": 2.3854245938537133e-06,
+            "yaw_rate_rad_s": 7.275957614183426e-12,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 1.1920928955078128e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 6,
+          "actual_step": 69,
+          "elapsed_model_s": 0.48,
+          "errors": {
+            "speed_m_s": 2.3854541595369483e-06,
+            "yaw_rate_rad_s": 3.2741809263825417e-11,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 1.1920928955078128e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 7,
+          "actual_step": 70,
+          "elapsed_model_s": 0.56,
+          "errors": {
+            "speed_m_s": 5.083846161824113e-07,
+            "yaw_rate_rad_s": 7.275957614183426e-12,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 1.1920928955078128e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 8,
+          "actual_step": 71,
+          "elapsed_model_s": 0.64,
+          "errors": {
+            "speed_m_s": 2.385473109711711e-06,
+            "yaw_rate_rad_s": 1.1808515409938991e-07,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 1.1920928955078128e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 9,
+          "actual_step": 72,
+          "elapsed_model_s": 0.72,
+          "errors": {
+            "speed_m_s": 2.0987188023013914e-06,
+            "yaw_rate_rad_s": 3.813579496636521e-08,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 1.1920928955078128e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 10,
+          "actual_step": 73,
+          "elapsed_model_s": 0.8,
+          "errors": {
+            "speed_m_s": 1.877073913192362e-06,
+            "yaw_rate_rad_s": 2.4735125059294205e-10,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 1.1920928955078128e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 11,
+          "actual_step": 74,
+          "elapsed_model_s": 0.88,
+          "errors": {
+            "speed_m_s": 2.8675680852074947e-07,
+            "yaw_rate_rad_s": 2.6753646520383256e-10,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 1.1920928955078128e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 12,
+          "actual_step": 75,
+          "elapsed_model_s": 0.96,
+          "errors": {
+            "speed_m_s": 1.081915634415509e-06,
+            "yaw_rate_rad_s": 1.6959596921273246e-11,
+            "position_m": 7.62939453125e-06
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 1.1920928955078128e-07
+          },
+          "passed": true
+        }
+      ],
+      "max_errors": {
+        "speed_m_s": 4.262531405174741e-06,
+        "yaw_rate_rad_s": 2.2043241187930107e-06,
+        "position_m": 7.62939453125e-06
+      },
+      "model_ticks": 48
+    },
+    {
+      "state_step": 94,
+      "phase": "corner",
+      "initialization": {
+        "bodies": true,
+        "tiles": true,
+        "progress": true
+      },
+      "rows_completed": 12,
+      "passed": true,
+      "first_mismatch": null,
+      "rows": [
+        {
+          "relative_action": 1,
+          "actual_step": 94,
+          "elapsed_model_s": 0.08,
+          "errors": {
+            "speed_m_s": 3.438589153859084e-06,
+            "yaw_rate_rad_s": 2.6226043701171875e-06,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 2.3841857910156255e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 2,
+          "actual_step": 95,
+          "elapsed_model_s": 0.16,
+          "errors": {
+            "speed_m_s": 6.129916052088902e-06,
+            "yaw_rate_rad_s": 9.5367431640625e-07,
+            "position_m": 0.0
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 2.3841857910156255e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 3,
+          "actual_step": 96,
+          "elapsed_model_s": 0.24,
+          "errors": {
+            "speed_m_s": 9.878623458803304e-06,
+            "yaw_rate_rad_s": 2.384185791015625e-07,
+            "position_m": 3.814697265625e-06
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 2.3841857910156255e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 4,
+          "actual_step": 97,
+          "elapsed_model_s": 0.32,
+          "errors": {
+            "speed_m_s": 8.923622374368279e-08,
+            "yaw_rate_rad_s": 8.344650268554688e-07,
+            "position_m": 7.62939453125e-06
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 3.5762786865234375e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 5,
+          "actual_step": 98,
+          "elapsed_model_s": 0.4,
+          "errors": {
+            "speed_m_s": 7.377186108215028e-06,
+            "yaw_rate_rad_s": 4.76837158203125e-07,
+            "position_m": 7.62939453125e-06
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 3.5762786865234375e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 6,
+          "actual_step": 99,
+          "elapsed_model_s": 0.48,
+          "errors": {
+            "speed_m_s": 4.472199861993431e-06,
+            "yaw_rate_rad_s": 1.6689300537109375e-06,
+            "position_m": 1.1444091796875e-05
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 3.5762786865234375e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 7,
+          "actual_step": 100,
+          "elapsed_model_s": 0.56,
+          "errors": {
+            "speed_m_s": 7.687519421040179e-06,
+            "yaw_rate_rad_s": 1.7881393432617188e-07,
+            "position_m": 1.1444091796875e-05
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 2.3841857910156255e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 8,
+          "actual_step": 101,
+          "elapsed_model_s": 0.64,
+          "errors": {
+            "speed_m_s": 3.2167346404321506e-06,
+            "yaw_rate_rad_s": 1.7881393432617188e-07,
+            "position_m": 1.1444091796875e-05
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 2.3841857910156255e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 9,
+          "actual_step": 102,
+          "elapsed_model_s": 0.72,
+          "errors": {
+            "speed_m_s": 5.006910399174558e-06,
+            "yaw_rate_rad_s": 1.1920928955078125e-07,
+            "position_m": 1.1444091796875e-05
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 2.3841857910156255e-07
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 10,
+          "actual_step": 103,
+          "elapsed_model_s": 0.8,
+          "errors": {
+            "speed_m_s": 3.223686320552588e-06,
+            "yaw_rate_rad_s": 1.0132789611816406e-06,
+            "position_m": 1.1444091796875e-05
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 0.0
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 11,
+          "actual_step": 104,
+          "elapsed_model_s": 0.88,
+          "errors": {
+            "speed_m_s": 3.5356198750946533e-06,
+            "yaw_rate_rad_s": 2.384185791015625e-07,
+            "position_m": 1.1444091796875e-05
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 0.0
+          },
+          "passed": true
+        },
+        {
+          "relative_action": 12,
+          "actual_step": 105,
+          "elapsed_model_s": 0.96,
+          "errors": {
+            "speed_m_s": 0.0,
+            "yaw_rate_rad_s": 8.195638656616211e-08,
+            "position_m": 1.1444091796875e-05
+          },
+          "discrete_matches": {
+            "collision": true,
+            "damage": true,
+            "wheel_road_contacts": true
+          },
+          "diagnostics": {
+            "visited_match": true,
+            "offtrackcounter_match": true,
+            "angle_abs_error_rad": 0.0
+          },
+          "passed": true
+        }
+      ],
+      "max_errors": {
+        "speed_m_s": 9.878623458803304e-06,
+        "yaw_rate_rad_s": 2.6226043701171875e-06,
+        "position_m": 1.1444091796875e-05
+      },
+      "model_ticks": 48
+    }
+  ],
+  "unexecuted_state_steps": [],
+  "new_wrapper_actions": 0,
+  "new_actor_calls": 0,
+  "new_environment_resets": 0,
+  "new_learning_fits": 0,
+  "source_model_world_initializations": 2,
+  "source_model_zero_time_contact_setups": 2,
+  "source_physics_ticks": 96,
+  "reserved_ticks": 96,
+  "unconfirmed_reserved_ticks": 0,
+  "model_tick_cap": 96,
+  "CPU_s": 0.08264519199999998,
+  "wall_s": 0.08374279306735843,
+  "CPU_cap_s": 60,
+  "new_paid_resources": 0,
+  "python_version": "3.11.16",
+  "numpy_version": "1.26.0",
+  "Box2D_version": "2.3.5",
+  "source_hashes_rechecked": true,
+  "protected_hashes_rechecked": true,
+  "scope": "KnownTRAIN storedcontrols;12step fidelity only,notcounterfactual ranking/optimization/generalization/officialtiming qualification",
+  "registered_action_ranges": [
+    [
+      64,
+      75
+    ],
+    [
+      94,
+      105
+    ]
+  ],
+  "registered_limits": {
+    "speed_m_s": 0.5,
+    "yaw_rate_rad_s": 0.05,
+    "position_m": 0.1
+  },
+  "cost": {
+    "stage": 391,
+    "new_wrapper_actions": 0,
+    "new_actor_calls": 0,
+    "new_environment_resets": 0,
+    "new_learning_fits": 0,
+    "new_source_physics_rollout_ticks": 96,
+    "source_model_world_initializations": 2,
+    "zero_time_contact_setups": 2,
+    "model_CPU_s": 0.08264519199999998,
+    "model_wall_s": 0.08374279306735843,
+    "unconfirmed_reserved_ticks": 0,
+    "new_paid_resources": 0,
+    "actual_cumulative_wrapper_actions": 1313925,
+    "research_remaining": 34139,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064,
+    "scope": "Only2storedsnapshots x12storedactualcontrols;model96ticks,no wrapper/actor/reset. Preparation/import/report/git timingnotfullymeasured;CPU60s applies modelrun."
+  },
+  "checks": {
+    "frozen_sources_and_protected_hashes_exact": true,
+    "all24rows_pass_registered390criteria": true,
+    "no_threshold_or_horizon_reselection": true,
+    "first_gate_mismatch": null,
+    "native_actor_reset_fit_allzero": true,
+    "model96ticks_confirmed": true,
+    "CPU_under60": true,
+    "SEALED_zero": true
+  },
+  "research_status": "ACTIVE_296_UNCHANGED_FINAL_SEALED_DEFERRED",
+  "authorization_end_KST": "2026-10-20T19:01:55+09:00",
+  "next_experiments_executed": false
+}
