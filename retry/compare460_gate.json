@@ -9,5 +9,55 @@
   "CPU_s": 23.581749423999998,
   "wall_s": 23.50311456702184,
   "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
-  "plan_sha256": "14a57b17647126b42db3364725eef307ea690e9c6d7585eea146fe444c9c254f"
+  "plan_sha256": "14a57b17647126b42db3364725eef307ea690e9c6d7585eea146fe444c9c254f",
+  "fresh_preflight": {
+    "passed": true,
+    "ticks": 1569,
+    "worlds": 47,
+    "actual": 0
+  },
+  "roots": {
+    "NoPulse": {
+      "passed": true,
+      "records": {
+        "nominal": {
+          "repeat_exact": true,
+          "held_first_passed": true,
+          "status": "ACTIVE",
+          "native_factual_qualified": true,
+          "native_scope": "Saved same-root nominal13 only; fullgas model consistency only"
+        },
+        "fullgas": {
+          "repeat_exact": true,
+          "held_first_passed": true,
+          "status": "ACTIVE",
+          "native_factual_qualified": false,
+          "native_scope": "Saved same-root nominal13 only; fullgas model consistency only"
+        }
+      },
+      "ticks": 216,
+      "worlds": 6
+    },
+    "Pulse": {
+      "passed": true,
+      "records": {
+        "nominal": {
+          "repeat_exact": true,
+          "held_first_passed": true,
+          "status": "ACTIVE",
+          "native_factual_qualified": true,
+          "native_scope": "Saved same-root nominal13 only; fullgas model consistency only"
+        },
+        "fullgas": {
+          "repeat_exact": true,
+          "held_first_passed": true,
+          "status": "ACTIVE",
+          "native_factual_qualified": false,
+          "native_scope": "Saved same-root nominal13 only; fullgas model consistency only"
+        }
+      },
+      "ticks": 216,
+      "worlds": 6
+    }
+  }
 }
