@@ -1,0 +1,353 @@
+{
+  "stage": 450,
+  "status": "MODEL270_COMPARISON_COMPLETED",
+  "error": null,
+  "branches": {
+    "nominal": {
+      "status": "MODEL_EXIT270_REACHED",
+      "actions_each": 36,
+      "tail_actions_each": 23,
+      "initial13_same_child_continuation": true,
+      "model_tail_crossing": {
+        "reached": true,
+        "rawtick_bracket": [
+          140,
+          141
+        ],
+        "elapsed_bracket_s": [
+          2.8,
+          2.82
+        ],
+        "interpolated": false
+      },
+      "observed_native_wrapper_delta_ticks": 80,
+      "cumulative_from_original_root_s": [
+        4.4,
+        4.42
+      ],
+      "factual_source_passed": true,
+      "held_first_passed": true,
+      "independent_repeat_exact": true,
+      "future_candidate_actual_qualified": false,
+      "same_native_live_solver": false
+    },
+    "fullgas": {
+      "status": "MODEL_EXIT270_REACHED",
+      "actions_each": 34,
+      "tail_actions_each": 21,
+      "initial13_same_child_continuation": true,
+      "model_tail_crossing": {
+        "reached": true,
+        "rawtick_bracket": [
+          135,
+          136
+        ],
+        "elapsed_bracket_s": [
+          2.7,
+          2.72
+        ],
+        "interpolated": false
+      },
+      "observed_native_wrapper_delta_ticks": 64,
+      "cumulative_from_original_root_s": [
+        3.98,
+        4.0
+      ],
+      "factual_source_passed": false,
+      "held_first_passed": true,
+      "independent_repeat_exact": true,
+      "future_candidate_actual_qualified": false,
+      "same_native_live_solver": false
+    }
+  },
+  "gain270_bracket_s": [
+    0.40000000000000036,
+    0.43999999999999995
+  ],
+  "new_actual_actions_resets_learning_seed_HOLDOUT_SEALED_reserve_paid": 0,
+  "details": {
+    "nominal": {
+      "body_exit_bracket_sample_ranges": {
+        "speed_m_s": [
+          61.086093708380176,
+          61.770276249802734
+        ],
+        "yaw_rad_s": [
+          1.489556074142456,
+          1.4905887842178345
+        ],
+        "path_error_m": [
+          0.08710353080911898,
+          0.18051637985818306
+        ],
+        "heading_error_rad": [
+          0.01414657072935266,
+          0.05319665612992449
+        ]
+      },
+      "lower_crossing_preclip_tire_ranges": {
+        "gas": [
+          0.0,
+          0.8166971802711487
+        ],
+        "brake": [
+          0.0,
+          0.0
+        ],
+        "joint_angle": [
+          2.384185791015625e-07,
+          0.07135415077209473
+        ],
+        "omega": [
+          105.37816394873437,
+          123.58823503251705
+        ],
+        "force_ratio": [
+          0.5653034237291616,
+          0.9750395076978582
+        ],
+        "lateral_slip_m_s": [
+          1.7679667679467457,
+          2.4396935605227554
+        ],
+        "longitudinal_slip_m_s": [
+          -2.6441923679607697,
+          4.082914715272381
+        ]
+      },
+      "first_braking_window": {
+        "common_original_root_arc_window_m": [
+          190,
+          250
+        ],
+        "phase": "raw_preclip",
+        "raw_boundaries": 45,
+        "wrappers_touching_window": 12,
+        "wheel_samples": 180,
+        "clipped_wheel_samples": 5,
+        "clipped_fraction": 0.027777777777777776,
+        "ranges": {
+          "gas": [
+            0.0,
+            1.0
+          ],
+          "brake": [
+            0.0,
+            0.30000001192092896
+          ],
+          "joint_angle": [
+            -0.0005509853363037109,
+            0.1956629753112793
+          ],
+          "omega": [
+            79.47841427660292,
+            193.635547349582
+          ],
+          "force_ratio": [
+            0.013601750630243055,
+            1.068964158564989
+          ],
+          "lateral_slip_m_s": [
+            -0.05299357862645593,
+            4.662563644545912
+          ],
+          "longitudinal_slip_m_s": [
+            -2.980846028240478,
+            4.563215759356353
+          ]
+        },
+        "speed_sample_range_m_s": [
+          44.41288755061959,
+          100.00000068057474
+        ],
+        "commanded_braking_raw_boundaries": 32,
+        "commanded_fullgas_raw_boundaries": 1,
+        "commanded_coast_raw_boundaries": 0
+      },
+      "sample_ranges_not_continuous_time_bounds": true
+    },
+    "fullgas": {
+      "body_exit_bracket_sample_ranges": {
+        "speed_m_s": [
+          59.42349809536401,
+          60.07039228893231
+        ],
+        "yaw_rad_s": [
+          1.4206904172897339,
+          1.5185776948928833
+        ],
+        "path_error_m": [
+          0.05501502874265849,
+          0.09949451405052613
+        ],
+        "heading_error_rad": [
+          0.00668286843385532,
+          0.033765065095988964
+        ]
+      },
+      "lower_crossing_preclip_tire_ranges": {
+        "gas": [
+          0.0,
+          0.76944899559021
+        ],
+        "brake": [
+          0.0,
+          0.0
+        ],
+        "joint_angle": [
+          2.384185791015625e-07,
+          0.07312583923339844
+        ],
+        "omega": [
+          102.65648493154002,
+          119.95201633261091
+        ],
+        "force_ratio": [
+          0.5623376622297641,
+          0.9151737593554192
+        ],
+        "lateral_slip_m_s": [
+          1.6307278233343823,
+          2.4179606543316368
+        ],
+        "longitudinal_slip_m_s": [
+          -2.4324261003747836,
+          3.752746144940133
+        ]
+      },
+      "first_braking_window": {
+        "common_original_root_arc_window_m": [
+          190,
+          250
+        ],
+        "phase": "raw_preclip",
+        "raw_boundaries": 44,
+        "wrappers_touching_window": 12,
+        "wheel_samples": 176,
+        "clipped_wheel_samples": 0,
+        "clipped_fraction": 0.0,
+        "ranges": {
+          "gas": [
+            0.0,
+            1.0
+          ],
+          "brake": [
+            0.0,
+            0.30000001192092896
+          ],
+          "joint_angle": [
+            -0.00028884410858154297,
+            0.18952953815460205
+          ],
+          "omega": [
+            76.27877647701095,
+            193.70572958305576
+          ],
+          "force_ratio": [
+            0.0046983837552522735,
+            0.972223274254181
+          ],
+          "lateral_slip_m_s": [
+            -0.048201516611698025,
+            4.249364530737466
+          ],
+          "longitudinal_slip_m_s": [
+            -3.1969367170597707,
+            4.6010872612298925
+          ]
+        },
+        "speed_sample_range_m_s": [
+          43.09073660280035,
+          100.00000219058745
+        ],
+        "commanded_braking_raw_boundaries": 32,
+        "commanded_fullgas_raw_boundaries": 2,
+        "commanded_coast_raw_boundaries": 0
+      },
+      "sample_ranges_not_continuous_time_bounds": true
+    }
+  },
+  "verification": {
+    "nominal": {
+      "native_root_state_memory_ledger_RNG_preserved": true,
+      "own_nominal_only": true,
+      "independent_repeat_exact": true,
+      "held_first_passed": true,
+      "same_live_H13_continuation": true,
+      "short449_prefix_exact": true,
+      "initial_source_rows": 13,
+      "full_factual_source_rows": 36,
+      "new_candidate_native_future_qualified": false
+    },
+    "fullgas": {
+      "native_root_state_memory_ledger_RNG_preserved": true,
+      "own_nominal_only": true,
+      "independent_repeat_exact": true,
+      "held_first_passed": true,
+      "same_live_H13_continuation": true,
+      "short449_prefix_exact": true,
+      "initial_source_rows": 0,
+      "full_factual_source_rows": 0,
+      "new_candidate_native_future_qualified": false
+    }
+  },
+  "closure_checks": {
+    "source_and_protected_preserved": true,
+    "observer_posts": 568,
+    "streams": 6,
+    "baseline_source_before_candidate": true,
+    "actual_actions_resets": 0,
+    "saved_CPU_s": 0.8397247479999999
+  },
+  "comparison": {
+    "native60_gain_s": [
+      0.3400000000000001,
+      0.3800000000000001
+    ],
+    "mixed90_gain_s": [
+      0.3600000000000001,
+      0.40000000000000013
+    ],
+    "mixed270_gain_s": [
+      0.40000000000000036,
+      0.43999999999999995
+    ],
+    "conservative_change_from90_s": [
+      2.220446049250313e-16,
+      0.07999999999999985
+    ],
+    "conservative_change_from60_s": [
+      0.02000000000000024,
+      0.09999999999999987
+    ],
+    "no_gain_addition": true
+  },
+  "cost": {
+    "model_ticks": 568,
+    "model_worlds": 6,
+    "model_CPU_s": 10.53266171,
+    "model_wall_s": 10.574454674962908,
+    "static": {
+      "stage": 450,
+      "passed": true,
+      "error": null,
+      "tests": 220,
+      "failures": 0,
+      "errors": 0,
+      "audit_completed": true,
+      "CPU_s": 17.795053602000003,
+      "wall_s": 17.90734490705654,
+      "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+      "plan_sha256": "893ecc48aca22efdc2856ae9bcab065ac55519601cb161c8400c130086896371"
+    },
+    "saved_audit_CPU_s": 0.8397247479999999,
+    "old_model_or_native_prefix_recharged": false,
+    "full_project_overhead_measured": false
+  },
+  "single_hypothesis_only": true,
+  "all_branch_terminal_states_equal_required": false,
+  "terminal_debt_resolved": false,
+  "hidden_native_solver_warmstart_preserved": false,
+  "native270_or_wholelap_pixel_generalization_promoted": false,
+  "deadline_utc": "2026-10-20T10:01:55Z"
+}
