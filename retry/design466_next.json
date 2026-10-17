@@ -1,0 +1,105 @@
+{
+  "stage": "466_DESIGN_ONLY",
+  "execution_authorized": false,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "target": "11-second native range remains unchanged",
+  "hypothesis": "H2A fixed4 longitudinal reachability reprojection; coupled proxies diagnostic only",
+  "root": {
+    "native_pre_step": 126,
+    "new_root_search": false
+  },
+  "reference": {
+    "operator": "exact original four backward-B / forward-A(v_left) passes on current scaled-node upper caps",
+    "passes": 4,
+    "changed_nodes": 222,
+    "clock_before_s": 10.027245238641758,
+    "clock_after_s": 12.260071760867067,
+    "private_projected_data_sha256": "85ac335bf32d11da78e2d76a213b6096a0d357bc4f5d334196695343717d213f",
+    "exact_coupled_feasibility": false
+  },
+  "arms": [
+    "PulseOnceOriginalReference",
+    "CommonPulseProjected4Reference"
+  ],
+  "controller": {
+    "point_derivative_feedforward_both": true,
+    "feedback": 1.5,
+    "action_hold_s": 0.08,
+    "steering_line_model_pedal_map_same": true,
+    "first_full_vector_fullgas_same": true,
+    "subsequent_difference": "reference nodes and their point derivative only; no secant",
+    "no_new_pace_ratio_at_zero_node": true,
+    "inject_nodes_immutable_before_first_act": true,
+    "own_profile_digest_and_readers_required": true
+  },
+  "cohorts": {
+    "H": 13,
+    "independent": 2,
+    "held_first": 1,
+    "extra_main": 0,
+    "guardian": 0,
+    "tail": 0
+  },
+  "cost": {
+    "old_source_ticks": 1242,
+    "old_source_worlds": 35,
+    "cohorts_ticks": 216,
+    "cohorts_worlds": 6,
+    "planned_ticks": 1458,
+    "planned_worlds": 41,
+    "hard_ticks": 2048,
+    "hard_worlds": 64,
+    "whole_CPU_s": 180,
+    "wall_s": 300,
+    "actual_actions": 0,
+    "resets": 0
+  },
+  "gates": {
+    "fixed4_discrete_q_residual_tolerance": 1e-08,
+    "current_root_below_projected_target": true,
+    "current_root_below_discrete_backward_join_ceiling": true,
+    "root_physical_join_not_certified": true,
+    "command_changes_after_common_first_pulse": true,
+    "repeat_source_immutable_and_prepared_memory_once": true,
+    "strict_positive_original_reference_common60m_time_bracket": true,
+    "positive_progress_at1_04s": true,
+    "safety_or_tracking_error_only_is_not_promotion": true,
+    "unsupported_or_resource_stop_not_hypothesis_failure": true
+  },
+  "storage": {
+    "current_free": {
+      "/tmp": {
+        "free": 3542233088,
+        "total": 9466122240
+      },
+      "/workspace": {
+        "free": 903577600,
+        "total": 33770192896
+      }
+    },
+    "observed_max_bytes_per_tick": 91890.08943089431,
+    "fixed_header_bytes": 770314,
+    "model_payload_with_metadata_bytes": 285695870.9430894,
+    "model_required_bytes": 822566782.9430895,
+    "workspace_full_plain_raw_retention_required_bytes": 886787954.0373983,
+    "future_manifest_growth_not_yet_measured": true,
+    "start_fresh_gate_mandatory": true,
+    "measured_fixed_header_bytes": 770306,
+    "fixed_header_bytes_is_conservative_allowance": true,
+    "last_read_free": {
+      "/tmp": 3542233088,
+      "/workspace": 903483392
+    }
+  },
+  "compression": {
+    "implemented": false,
+    "executed": false,
+    "old_files_transformed": 0,
+    "proposal": "file-unit gzip from first output chunk with explicit path descriptor and mandatory actual-file readback",
+    "requires_separate_zero_physics_validation_before_use": true,
+    "compression_ratio_not_guaranteed": true
+  },
+  "research_remaining": 26346,
+  "reserve": 84000,
+  "reserve_used": 0
+}
