@@ -1,0 +1,502 @@
+{
+  "stage": 460,
+  "status": "FOUR_MODEL_PARENTS_COMPLETED_REPEAT_EXACT",
+  "error": null,
+  "last_stage": "four_model_parents",
+  "closed_at_utc": "2026-10-17T10:26:57.475559+00:00",
+  "worker_pid": 178029,
+  "policies": [
+    {
+      "arm": "NoPulse-1",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 63,
+      "planner_decisions": 8,
+      "guardian_decisions": 55,
+      "finish_ticks": {
+        "lo": 248,
+        "hi": 249
+      },
+      "official_model_finish": true,
+      "signature": "d8fc7046f96e300861e7466de60cf257c3d90bf7ef0f37d8e017d9bc6ccad32e",
+      "model_ticks": 16722,
+      "model_worlds": 159,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "actual_DONE_allowed": false
+    },
+    {
+      "arm": "Pulse-1",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 64,
+      "planner_decisions": 8,
+      "guardian_decisions": 56,
+      "finish_ticks": {
+        "lo": 251,
+        "hi": 252
+      },
+      "official_model_finish": true,
+      "signature": "b3c03b1d78eff03ef5b2fc04ead38f05cb1b1ec24b2b4788c328b93bb76fe006",
+      "model_ticks": 16165,
+      "model_worlds": 161,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "actual_DONE_allowed": false
+    },
+    {
+      "arm": "NoPulse-2",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 63,
+      "planner_decisions": 8,
+      "guardian_decisions": 55,
+      "finish_ticks": {
+        "lo": 248,
+        "hi": 249
+      },
+      "official_model_finish": true,
+      "signature": "d8fc7046f96e300861e7466de60cf257c3d90bf7ef0f37d8e017d9bc6ccad32e",
+      "model_ticks": 16722,
+      "model_worlds": 159,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "actual_DONE_allowed": false
+    },
+    {
+      "arm": "Pulse-2",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 64,
+      "planner_decisions": 8,
+      "guardian_decisions": 56,
+      "finish_ticks": {
+        "lo": 251,
+        "hi": 252
+      },
+      "official_model_finish": true,
+      "signature": "b3c03b1d78eff03ef5b2fc04ead38f05cb1b1ec24b2b4788c328b93bb76fe006",
+      "model_ticks": 16165,
+      "model_worlds": 161,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "actual_DONE_allowed": false
+    }
+  ],
+  "details": {
+    "NoPulse-1": {
+      "status": "FINISHED",
+      "error": null,
+      "observed_parent_actions": 63,
+      "verified_decisions": 63,
+      "recipe_counts": {
+        "fullgas": 1,
+        "nominal": 62
+      },
+      "planner_recipe_counts": {
+        "fullgas": 1,
+        "nominal": 7
+      },
+      "guardian_recipe_counts": {
+        "nominal": 55
+      },
+      "planner_status_counts": {
+        "MODEL_TIME_CHOICE": 1,
+        "GUARDIAN_REFERENCE_ONLY": 7
+      },
+      "planner_decisions": 8,
+      "pending_queries": 0,
+      "own_pending_confirmations": 0,
+      "guardian_finish_certificates": 13,
+      "own_model_finish": true,
+      "finish_ticks": {
+        "lo": 248,
+        "hi": 249
+      },
+      "remaining_model_finish_s": [
+        4.96,
+        4.98
+      ],
+      "actual_finish_witness": false
+    },
+    "Pulse-1": {
+      "status": "FINISHED",
+      "error": null,
+      "observed_parent_actions": 64,
+      "verified_decisions": 64,
+      "recipe_counts": {
+        "fullgas": 2,
+        "neutralbrake": 1,
+        "nominal": 61
+      },
+      "planner_recipe_counts": {
+        "fullgas": 2,
+        "neutralbrake": 1,
+        "nominal": 5
+      },
+      "guardian_recipe_counts": {
+        "nominal": 56
+      },
+      "planner_status_counts": {
+        "MODEL_TIME_CHOICE": 3,
+        "GUARDIAN_REFERENCE_ONLY": 5
+      },
+      "planner_decisions": 8,
+      "pending_queries": 1,
+      "own_pending_confirmations": 1,
+      "guardian_finish_certificates": 13,
+      "own_model_finish": true,
+      "finish_ticks": {
+        "lo": 251,
+        "hi": 252
+      },
+      "remaining_model_finish_s": [
+        5.02,
+        5.04
+      ],
+      "actual_finish_witness": false
+    },
+    "NoPulse-2": {
+      "status": "FINISHED",
+      "error": null,
+      "observed_parent_actions": 63,
+      "verified_decisions": 63,
+      "recipe_counts": {
+        "fullgas": 1,
+        "nominal": 62
+      },
+      "planner_recipe_counts": {
+        "fullgas": 1,
+        "nominal": 7
+      },
+      "guardian_recipe_counts": {
+        "nominal": 55
+      },
+      "planner_status_counts": {
+        "MODEL_TIME_CHOICE": 1,
+        "GUARDIAN_REFERENCE_ONLY": 7
+      },
+      "planner_decisions": 8,
+      "pending_queries": 0,
+      "own_pending_confirmations": 0,
+      "guardian_finish_certificates": 13,
+      "own_model_finish": true,
+      "finish_ticks": {
+        "lo": 248,
+        "hi": 249
+      },
+      "remaining_model_finish_s": [
+        4.96,
+        4.98
+      ],
+      "actual_finish_witness": false
+    },
+    "Pulse-2": {
+      "status": "FINISHED",
+      "error": null,
+      "observed_parent_actions": 64,
+      "verified_decisions": 64,
+      "recipe_counts": {
+        "fullgas": 2,
+        "neutralbrake": 1,
+        "nominal": 61
+      },
+      "planner_recipe_counts": {
+        "fullgas": 2,
+        "neutralbrake": 1,
+        "nominal": 5
+      },
+      "guardian_recipe_counts": {
+        "nominal": 56
+      },
+      "planner_status_counts": {
+        "MODEL_TIME_CHOICE": 3,
+        "GUARDIAN_REFERENCE_ONLY": 5
+      },
+      "planner_decisions": 8,
+      "pending_queries": 1,
+      "own_pending_confirmations": 1,
+      "guardian_finish_certificates": 13,
+      "own_model_finish": true,
+      "finish_ticks": {
+        "lo": 251,
+        "hi": 252
+      },
+      "remaining_model_finish_s": [
+        5.02,
+        5.04
+      ],
+      "actual_finish_witness": false
+    }
+  },
+  "hybrid_total_NoPulse_minus_Pulse_bracket_s": [
+    0.24,
+    0.28
+  ],
+  "four_full_model_arms_repeat_exact": true,
+  "verification": {
+    "observer_posts": 67343,
+    "observer_streams": 687,
+    "meter_consistent": true,
+    "source_protected_preserved": true,
+    "static": {
+      "stage": 460,
+      "passed": true,
+      "error": null,
+      "tests": 260,
+      "failures": 0,
+      "errors": 0,
+      "audit_completed": true,
+      "CPU_s": 23.581749423999998,
+      "wall_s": 23.50311456702184,
+      "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+      "plan_sha256": "14a57b17647126b42db3364725eef307ea690e9c6d7585eea146fe444c9c254f"
+    },
+    "preflight": {
+      "passed": true,
+      "ticks": 1569,
+      "worlds": 47,
+      "actual": 0
+    }
+  },
+  "cost": {
+    "model_ticks": 67343,
+    "reserved_ticks": 67343,
+    "worlds": 687,
+    "whole_modelworker_CPU_s": 839.454623801,
+    "whole_modelworker_wall_s": 839.4421955539146,
+    "ticks_by_tag": {
+      "qualification_replay_required_first13": 104,
+      "qualification_replay_required_continuation": 412,
+      "qualification_replay_repeat_first13": 104,
+      "qualification_replay_repeat_continuation": 412,
+      "qualification_restore_required": 48,
+      "qualification_restore_repeat": 48,
+      "qualification_parent_step": 4,
+      "qualification_pending_required": 1,
+      "qualification_pending_repeat": 1,
+      "qualification435_guardian_required": 1,
+      "qualification435_guardian_repeat": 1,
+      "qualification435_parent_own_step": 1,
+      "460_root_nominal": 208,
+      "460_root_held_first": 16,
+      "460_root_fullgas": 208,
+      "planner_required_initial13": 4768,
+      "planner_repeat_initial13": 4768,
+      "planner_required_tail": 17450,
+      "planner_repeat_tail": 17450,
+      "460_parent_NoPulse-1": 250,
+      "guardian_required": 10166,
+      "guardian_repeat": 10166,
+      "460_parent_Pulse-1": 253,
+      "460_parent_NoPulse-2": 250,
+      "460_parent_Pulse-2": 253
+    },
+    "worlds_by_tag": {
+      "qualification_parent": 1,
+      "qualification_replay_required": 2,
+      "qualification_replay_repeat": 2,
+      "qualification_restore_required": 12,
+      "qualification_restore_repeat": 12,
+      "qualification_pending_parent": 1,
+      "qualification_pending_required": 1,
+      "qualification_pending_repeat": 1,
+      "qualification435_parent": 1,
+      "qualification435_guardian_required": 1,
+      "qualification435_guardian_repeat": 1,
+      "460_root_held": 4,
+      "460_root_required": 4,
+      "460_root_repeat": 4,
+      "460_model_parent": 4,
+      "planner_required": 96,
+      "planner_independent_repeat": 96,
+      "guardian_required": 222,
+      "guardian_repeat": 222
+    },
+    "whole_project_overhead_fully_measured": false
+  },
+  "new_actual_actions": 0,
+  "new_resets": 0,
+  "new_seed_learning_HOLDOUT_SEALED_reserve_paid": 0,
+  "actual_gate_opened": false,
+  "actual_finish_witness": false,
+  "original456_failure_preserved": true,
+  "research_remaining": 26695,
+  "actual_cumulative_wrapper_actions": 1321369,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "plan_sha256": "14a57b17647126b42db3364725eef307ea690e9c6d7585eea146fe444c9c254f",
+  "prefix_observed_elapsed_s": {
+    "NoPulse": 9.28,
+    "Pulse": 8.96
+  },
+  "hybrid_total_brackets_s": {
+    "NoPulse-1": [
+      14.24,
+      14.26
+    ],
+    "Pulse-1": [
+      13.98,
+      14.0
+    ],
+    "NoPulse-2": [
+      14.24,
+      14.26
+    ],
+    "Pulse-2": [
+      13.98,
+      14.0
+    ]
+  },
+  "planned_cost": {
+    "quotas": {
+      "NoPulse-1": 8,
+      "Pulse-1": 8,
+      "NoPulse-2": 8,
+      "Pulse-2": 8
+    },
+    "parts": {
+      "planner": {
+        "queries": 32,
+        "ticks": 246528,
+        "worlds": 192
+      },
+      "guardian": {
+        "queries": 368,
+        "ticks": 76544,
+        "worlds": 1472
+      },
+      "parents": {
+        "actions": 400,
+        "ticks": 1600,
+        "worlds": 4
+      },
+      "qualification": {
+        "ticks": 1674,
+        "worlds": 47
+      }
+    },
+    "ticks": 326346,
+    "worlds": 1715
+  },
+  "hybrid_is_not_native_lap": true,
+  "planner_alternative_pair_status_counts": {
+    "FINISHED": 88,
+    "EARLY_PHYSICAL_INELIGIBLE": 8
+  },
+  "saved_model_crossing_from_root_s": {
+    "NoPulse-1": {
+      "510": [
+        0.84,
+        0.86
+      ],
+      "570": [
+        1.62,
+        1.64
+      ],
+      "630": [
+        2.48,
+        2.5
+      ],
+      "690": [
+        3.24,
+        3.26
+      ],
+      "750": [
+        4.24,
+        4.26
+      ]
+    },
+    "Pulse-1": {
+      "510": [
+        0.88,
+        0.9
+      ],
+      "570": [
+        1.68,
+        1.7
+      ],
+      "630": [
+        2.58,
+        2.6
+      ],
+      "690": [
+        3.36,
+        3.38
+      ],
+      "750": [
+        4.32,
+        4.34
+      ]
+    },
+    "NoPulse-2": {
+      "510": [
+        0.84,
+        0.86
+      ],
+      "570": [
+        1.62,
+        1.64
+      ],
+      "630": [
+        2.48,
+        2.5
+      ],
+      "690": [
+        3.24,
+        3.26
+      ],
+      "750": [
+        4.24,
+        4.26
+      ]
+    },
+    "Pulse-2": {
+      "510": [
+        0.88,
+        0.9
+      ],
+      "570": [
+        1.68,
+        1.7
+      ],
+      "630": [
+        2.58,
+        2.6
+      ],
+      "690": [
+        3.36,
+        3.38
+      ],
+      "750": [
+        4.32,
+        4.34
+      ]
+    }
+  },
+  "crossing_tail_NoPulse_minus_Pulse_bracket_s": {
+    "510": [
+      -0.06000000000000005,
+      -0.020000000000000018
+    ],
+    "570": [
+      -0.07999999999999985,
+      -0.040000000000000036
+    ],
+    "630": [
+      -0.1200000000000001,
+      -0.08000000000000007
+    ],
+    "690": [
+      -0.13999999999999968,
+      -0.10000000000000009
+    ],
+    "750": [
+      -0.09999999999999964,
+      -0.0600000000000005
+    ]
+  },
+  "saved_audit_CPU_s": 19.308803978,
+  "saved_audit_wall_s": 22.135139654041268
+}
