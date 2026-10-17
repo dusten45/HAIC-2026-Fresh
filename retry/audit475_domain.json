@@ -1,0 +1,75 @@
+{
+  "stage": 475,
+  "runs": {
+    "473_Original": {
+      "wrappers": 81,
+      "lateral_alone_proves_empty": 6,
+      "pedal_invariant_front_proves_empty": 9,
+      "qzero_fails": 9,
+      "qzero_fails_without_known_empty_proof": 0,
+      "qzero_feasible_witness": 72,
+      "categories": {
+        "NONEMPTY_QZERO_WITNESS": 72,
+        "PROVEN_EMPTY_INVARIANT_FRONT": 3,
+        "PROVEN_EMPTY_LATERAL": 6
+      }
+    },
+    "473_P4": {
+      "wrappers": 51,
+      "lateral_alone_proves_empty": 7,
+      "pedal_invariant_front_proves_empty": 5,
+      "qzero_fails": 7,
+      "qzero_fails_without_known_empty_proof": 0,
+      "qzero_feasible_witness": 44,
+      "categories": {
+        "NONEMPTY_QZERO_WITNESS": 44,
+        "PROVEN_EMPTY_LATERAL": 7
+      }
+    },
+    "472_nativeP4": {
+      "wrappers": 171,
+      "lateral_alone_proves_empty": 5,
+      "pedal_invariant_front_proves_empty": 3,
+      "qzero_fails": 6,
+      "qzero_fails_without_known_empty_proof": 1,
+      "qzero_feasible_witness": 165,
+      "categories": {
+        "NONEMPTY_QZERO_WITNESS": 165,
+        "PROVEN_EMPTY_LATERAL": 5,
+        "UNRESOLVED_QZERO_FAILURE_NOT_EMPTY_PROOF": 1
+      }
+    },
+    "442_nativeC0": {
+      "wrappers": 189,
+      "lateral_alone_proves_empty": 1,
+      "pedal_invariant_front_proves_empty": 4,
+      "qzero_fails": 4,
+      "qzero_fails_without_known_empty_proof": 0,
+      "qzero_feasible_witness": 185,
+      "categories": {
+        "NONEMPTY_QZERO_WITNESS": 185,
+        "PROVEN_EMPTY_INVARIANT_FRONT": 3,
+        "PROVEN_EMPTY_LATERAL": 1
+      }
+    },
+    "442_nativeP": {
+      "wrappers": 173,
+      "lateral_alone_proves_empty": 6,
+      "pedal_invariant_front_proves_empty": 4,
+      "qzero_fails": 10,
+      "qzero_fails_without_known_empty_proof": 2,
+      "qzero_feasible_witness": 163,
+      "categories": {
+        "NONEMPTY_QZERO_WITNESS": 163,
+        "PROVEN_EMPTY_INVARIANT_FRONT": 2,
+        "PROVEN_EMPTY_LATERAL": 6,
+        "UNRESOLVED_QZERO_FAILURE_NOT_EMPTY_PROOF": 2
+      }
+    }
+  },
+  "new_physics": 0,
+  "new_native": 0,
+  "exactness": "conditional on saved vf/vs/limit and preceding saved reaction identity; not independently regenerated state",
+  "qzero_failure_is_not_empty_proof": true,
+  "allocator_search_executed": false
+}

@@ -1,0 +1,478 @@
+{
+  "stage": 475,
+  "status": "SAVED_RECONSTRUCTION_COMPLETE_NO_INTEGRATION",
+  "plan_sha256": "8b11f750571a7cf41a082fb6cd3d2b04e072781e4fc64d6ce683a5991c35e0c0",
+  "numpy_version": "1.26.0",
+  "runs": {
+    "473_Original": {
+      "wrappers": 81,
+      "raw_states": 324,
+      "wheel_samples": 1296,
+      "all_commands_exact_float32": true,
+      "action_transport_dtype": "float64 model",
+      "all_raw": {
+        "gas": {
+          "n": 1296,
+          "exact": 1296,
+          "max_abs_error": 0.0
+        },
+        "brake": {
+          "n": 1296,
+          "exact": 1296,
+          "max_abs_error": 0.0
+        },
+        "omega": {
+          "n": 1296,
+          "exact": 1296,
+          "max_abs_error": 0.0
+        },
+        "long_force": {
+          "n": 1296,
+          "exact": 1296,
+          "max_abs_error": 0.0
+        },
+        "lat_force": {
+          "n": 1296,
+          "exact": 1296,
+          "max_abs_error": 0.0
+        },
+        "force_ratio": {
+          "n": 1296,
+          "exact": 1296,
+          "max_abs_error": 0.0
+        },
+        "slip": {
+          "n": 1296,
+          "exact": 1296,
+          "max_abs_error": 0.0
+        }
+      },
+      "wrapper_first_raw": {
+        "gas": {
+          "n": 324,
+          "exact": 324,
+          "max_abs_error": 0.0
+        },
+        "brake": {
+          "n": 324,
+          "exact": 324,
+          "max_abs_error": 0.0
+        },
+        "omega": {
+          "n": 324,
+          "exact": 324,
+          "max_abs_error": 0.0
+        },
+        "long_force": {
+          "n": 324,
+          "exact": 324,
+          "max_abs_error": 0.0
+        },
+        "lat_force": {
+          "n": 324,
+          "exact": 324,
+          "max_abs_error": 0.0
+        },
+        "force_ratio": {
+          "n": 324,
+          "exact": 324,
+          "max_abs_error": 0.0
+        },
+        "slip": {
+          "n": 324,
+          "exact": 324,
+          "max_abs_error": 0.0
+        }
+      },
+      "branches": {
+        "brake_linear": 288,
+        "no_brake": 1008
+      },
+      "necessary_empty_conditions": {
+        "lateral_alone_raw_states": 26,
+        "pedal_invariant_front_violation_raw_states": 28,
+        "lateral_alone_wrapper_firsts": 6,
+        "pedal_invariant_front_violation_wrapper_firsts": 9
+      }
+    },
+    "473_P4": {
+      "wrappers": 51,
+      "raw_states": 204,
+      "wheel_samples": 816,
+      "all_commands_exact_float32": true,
+      "action_transport_dtype": "float64 model",
+      "all_raw": {
+        "gas": {
+          "n": 816,
+          "exact": 816,
+          "max_abs_error": 0.0
+        },
+        "brake": {
+          "n": 816,
+          "exact": 816,
+          "max_abs_error": 0.0
+        },
+        "omega": {
+          "n": 816,
+          "exact": 816,
+          "max_abs_error": 0.0
+        },
+        "long_force": {
+          "n": 816,
+          "exact": 816,
+          "max_abs_error": 0.0
+        },
+        "lat_force": {
+          "n": 816,
+          "exact": 816,
+          "max_abs_error": 0.0
+        },
+        "force_ratio": {
+          "n": 816,
+          "exact": 816,
+          "max_abs_error": 0.0
+        },
+        "slip": {
+          "n": 816,
+          "exact": 816,
+          "max_abs_error": 0.0
+        }
+      },
+      "wrapper_first_raw": {
+        "gas": {
+          "n": 204,
+          "exact": 204,
+          "max_abs_error": 0.0
+        },
+        "brake": {
+          "n": 204,
+          "exact": 204,
+          "max_abs_error": 0.0
+        },
+        "omega": {
+          "n": 204,
+          "exact": 204,
+          "max_abs_error": 0.0
+        },
+        "long_force": {
+          "n": 204,
+          "exact": 204,
+          "max_abs_error": 0.0
+        },
+        "lat_force": {
+          "n": 204,
+          "exact": 204,
+          "max_abs_error": 0.0
+        },
+        "force_ratio": {
+          "n": 204,
+          "exact": 204,
+          "max_abs_error": 0.0
+        },
+        "slip": {
+          "n": 204,
+          "exact": 204,
+          "max_abs_error": 0.0
+        }
+      },
+      "branches": {
+        "no_brake": 624,
+        "brake_linear": 192
+      },
+      "necessary_empty_conditions": {
+        "lateral_alone_raw_states": 33,
+        "pedal_invariant_front_violation_raw_states": 20,
+        "lateral_alone_wrapper_firsts": 7,
+        "pedal_invariant_front_violation_wrapper_firsts": 5
+      }
+    },
+    "472_nativeP4": {
+      "wrappers": 171,
+      "raw_states": 682,
+      "wheel_samples": 2728,
+      "all_commands_exact_float32": true,
+      "action_transport_dtype": "float32 native",
+      "all_raw": {
+        "gas": {
+          "n": 2728,
+          "exact": 2728,
+          "max_abs_error": 0.0
+        },
+        "brake": {
+          "n": 2728,
+          "exact": 2728,
+          "max_abs_error": 0.0
+        },
+        "omega": {
+          "n": 2728,
+          "exact": 2728,
+          "max_abs_error": 0.0
+        },
+        "long_force": {
+          "n": 2728,
+          "exact": 2728,
+          "max_abs_error": 0.0
+        },
+        "lat_force": {
+          "n": 2728,
+          "exact": 2728,
+          "max_abs_error": 0.0
+        },
+        "force_ratio": {
+          "n": 2728,
+          "exact": 2728,
+          "max_abs_error": 0.0
+        },
+        "slip": {
+          "n": 2728,
+          "exact": 2728,
+          "max_abs_error": 0.0
+        }
+      },
+      "wrapper_first_raw": {
+        "gas": {
+          "n": 684,
+          "exact": 684,
+          "max_abs_error": 0.0
+        },
+        "brake": {
+          "n": 684,
+          "exact": 684,
+          "max_abs_error": 0.0
+        },
+        "omega": {
+          "n": 684,
+          "exact": 684,
+          "max_abs_error": 0.0
+        },
+        "long_force": {
+          "n": 684,
+          "exact": 684,
+          "max_abs_error": 0.0
+        },
+        "lat_force": {
+          "n": 684,
+          "exact": 684,
+          "max_abs_error": 0.0
+        },
+        "force_ratio": {
+          "n": 684,
+          "exact": 684,
+          "max_abs_error": 0.0
+        },
+        "slip": {
+          "n": 684,
+          "exact": 684,
+          "max_abs_error": 0.0
+        }
+      },
+      "branches": {
+        "no_brake": 2136,
+        "brake_linear": 592
+      },
+      "necessary_empty_conditions": {
+        "lateral_alone_raw_states": 26,
+        "pedal_invariant_front_violation_raw_states": 10,
+        "lateral_alone_wrapper_firsts": 5,
+        "pedal_invariant_front_violation_wrapper_firsts": 3
+      }
+    },
+    "442_nativeC0": {
+      "wrappers": 189,
+      "raw_states": 755,
+      "wheel_samples": 3020,
+      "all_commands_exact_float32": true,
+      "action_transport_dtype": "float32 native",
+      "all_raw": {
+        "gas": {
+          "n": 3020,
+          "exact": 3020,
+          "max_abs_error": 0.0
+        },
+        "brake": {
+          "n": 3020,
+          "exact": 3020,
+          "max_abs_error": 0.0
+        },
+        "omega": {
+          "n": 3020,
+          "exact": 3020,
+          "max_abs_error": 0.0
+        },
+        "long_force": {
+          "n": 3020,
+          "exact": 3020,
+          "max_abs_error": 0.0
+        },
+        "lat_force": {
+          "n": 3020,
+          "exact": 3020,
+          "max_abs_error": 0.0
+        },
+        "force_ratio": {
+          "n": 3020,
+          "exact": 3020,
+          "max_abs_error": 0.0
+        },
+        "slip": {
+          "n": 3020,
+          "exact": 3020,
+          "max_abs_error": 0.0
+        }
+      },
+      "wrapper_first_raw": {
+        "gas": {
+          "n": 756,
+          "exact": 756,
+          "max_abs_error": 0.0
+        },
+        "brake": {
+          "n": 756,
+          "exact": 756,
+          "max_abs_error": 0.0
+        },
+        "omega": {
+          "n": 756,
+          "exact": 756,
+          "max_abs_error": 0.0
+        },
+        "long_force": {
+          "n": 756,
+          "exact": 756,
+          "max_abs_error": 0.0
+        },
+        "lat_force": {
+          "n": 756,
+          "exact": 756,
+          "max_abs_error": 0.0
+        },
+        "force_ratio": {
+          "n": 756,
+          "exact": 756,
+          "max_abs_error": 0.0
+        },
+        "slip": {
+          "n": 756,
+          "exact": 756,
+          "max_abs_error": 0.0
+        }
+      },
+      "branches": {
+        "no_brake": 2380,
+        "brake_linear": 640
+      },
+      "necessary_empty_conditions": {
+        "lateral_alone_raw_states": 3,
+        "pedal_invariant_front_violation_raw_states": 13,
+        "lateral_alone_wrapper_firsts": 1,
+        "pedal_invariant_front_violation_wrapper_firsts": 4
+      }
+    },
+    "442_nativeP": {
+      "wrappers": 173,
+      "raw_states": 689,
+      "wheel_samples": 2756,
+      "all_commands_exact_float32": true,
+      "action_transport_dtype": "float32 native",
+      "all_raw": {
+        "gas": {
+          "n": 2756,
+          "exact": 2756,
+          "max_abs_error": 0.0
+        },
+        "brake": {
+          "n": 2756,
+          "exact": 2756,
+          "max_abs_error": 0.0
+        },
+        "omega": {
+          "n": 2756,
+          "exact": 2756,
+          "max_abs_error": 0.0
+        },
+        "long_force": {
+          "n": 2756,
+          "exact": 2756,
+          "max_abs_error": 0.0
+        },
+        "lat_force": {
+          "n": 2756,
+          "exact": 2756,
+          "max_abs_error": 0.0
+        },
+        "force_ratio": {
+          "n": 2756,
+          "exact": 2756,
+          "max_abs_error": 0.0
+        },
+        "slip": {
+          "n": 2756,
+          "exact": 2756,
+          "max_abs_error": 0.0
+        }
+      },
+      "wrapper_first_raw": {
+        "gas": {
+          "n": 692,
+          "exact": 692,
+          "max_abs_error": 0.0
+        },
+        "brake": {
+          "n": 692,
+          "exact": 692,
+          "max_abs_error": 0.0
+        },
+        "omega": {
+          "n": 692,
+          "exact": 692,
+          "max_abs_error": 0.0
+        },
+        "long_force": {
+          "n": 692,
+          "exact": 692,
+          "max_abs_error": 0.0
+        },
+        "lat_force": {
+          "n": 692,
+          "exact": 692,
+          "max_abs_error": 0.0
+        },
+        "force_ratio": {
+          "n": 692,
+          "exact": 692,
+          "max_abs_error": 0.0
+        },
+        "slip": {
+          "n": 692,
+          "exact": 692,
+          "max_abs_error": 0.0
+        }
+      },
+      "branches": {
+        "no_brake": 2164,
+        "brake_linear": 592
+      },
+      "necessary_empty_conditions": {
+        "lateral_alone_raw_states": 25,
+        "pedal_invariant_front_violation_raw_states": 13,
+        "lateral_alone_wrapper_firsts": 6,
+        "pedal_invariant_front_violation_wrapper_firsts": 4
+      }
+    }
+  },
+  "new_physics": 0,
+  "new_native": 0,
+  "new_resets": 0,
+  "new_actor_calls": 0,
+  "import_guard_attempts": [],
+  "CPU_s": 0.532206934,
+  "wall_s": 0.5199571449775249,
+  "sources_and_protected_preserved": true,
+  "limits": [
+    "vf/vs/friction_limit are stored inputs, not independent before-state reconstruction",
+    "all later omega starts use preceding observed omega and arithmetic reaction; no solver or trajectory regenerated",
+    "native original action scalar dtype inferred from source and float32 transport; recorded agreement cannot prove every historical dtype",
+    "all runs damage0; no damaged engine/grip certification",
+    "no allocator search implemented; no maximality or hold safety certification"
+  ]
+}
