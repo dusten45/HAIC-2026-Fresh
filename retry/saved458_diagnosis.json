@@ -1,0 +1,72 @@
+{
+  "stage": 458,
+  "scope": "SAVED457_DIAGNOSIS_ONLY_NO_NEW_INTEGRATION",
+  "observed_selections": [
+    {
+      "decision": 1,
+      "recipe": "fullgas",
+      "query_local_gain_bracket_s": [
+        0.36,
+        0.4
+      ],
+      "P_post_speed_m_s": 62.2308,
+      "C0_same_elapsed_action_post_speed_m_s": 53.7325,
+      "P_post_path_error_m": 0.0888,
+      "C0_post_path_error_m": 0.051
+    },
+    {
+      "decision": 2,
+      "recipe": "fullgas",
+      "query_local_gain_bracket_s": [
+        0.2,
+        0.24
+      ],
+      "P_post_speed_m_s": 64.4084,
+      "C0_same_elapsed_action_post_speed_m_s": 46.4378,
+      "P_post_path_error_m": 0.6925,
+      "C0_post_path_error_m": 0.4573
+    },
+    {
+      "decision": 3,
+      "recipe": "neutralbrake",
+      "query_local_gain_bracket_s": [
+        0.36,
+        0.4
+      ],
+      "P_post_speed_m_s": 56.7073,
+      "C0_same_elapsed_action_post_speed_m_s": 39.1246,
+      "P_post_path_error_m": 0.58,
+      "C0_post_path_error_m": 0.7675
+    }
+  ],
+  "query_local_gains_added": false,
+  "full_parent_model_gain_s": [
+    0.96,
+    1.0
+  ],
+  "crossing_gain_s": {
+    "510": [
+      0.18000000000000005,
+      0.22000000000000008
+    ],
+    "570": [
+      0.3600000000000001,
+      0.40000000000000013
+    ],
+    "630": [
+      0.56,
+      0.6000000000000001
+    ],
+    "690": [
+      0.6600000000000001,
+      0.6999999999999997
+    ],
+    "750": [
+      0.8799999999999999,
+      0.9199999999999999
+    ]
+  },
+  "native_suffix_commands_to_replay": false,
+  "new_model_native_integration": 0,
+  "causal_individual_component_identified": false
+}
