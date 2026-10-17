@@ -1,0 +1,316 @@
+{
+  "stage": 421,
+  "status": "COMPLETED_MODEL_CLOSEDLOOP_PILOT_POSITIVE_MODEL_ONLY",
+  "preflight": {
+    "status": "STATIC_FULL_RECEIPT_PREFLIGHT_PASSED",
+    "tests": 12,
+    "checks": [
+      "bytes_encode_decode",
+      "full_recorded_structure_digest",
+      "full_context_parent_digest",
+      "full_context_state_memory_rng_bytes",
+      "typed_receipts_selector_equal",
+      "immutable_parent_not_changed",
+      "existing_receipt_preserved",
+      "partial_write_no_target_no_orphan",
+      "failed_publish_no_target_no_orphan",
+      "legacy_partial_not_overwritten_or_used",
+      "encoding_failure_before_file_creation",
+      "nonfinite_not_masked_no_partial"
+    ],
+    "full_recorded_structure_bytes": 220515,
+    "canonical_digest_roundtrip": true,
+    "fixture_scope": "Beforeany421integration: bytes+fullrecordedreceiptshape roundtrip/digests/typedselector equivalence andpartialfileerror cleanup; model0. 420 lostglobalRNGtokennotrecovered; staticfixturecontextreconstructedtransparently."
+  },
+  "policies": {
+    "C0": {
+      "policy": "C0",
+      "status": "FINISHED",
+      "error": null,
+      "decisions": 3,
+      "total_model_actions": 71,
+      "continuation_actions": 68,
+      "finish_ticks": {
+        "lo": 281,
+        "hi": 282
+      },
+      "remaining_time_bracket_s": [
+        5.62,
+        5.64
+      ],
+      "official_finish": true,
+      "max_post_path_error_m": 1.1346976966968438,
+      "damage": 0.0,
+      "predicted_progress_goal_ok": true,
+      "long_tail_actual_physics_qualified": false,
+      "actual_ledger_unchanged": true,
+      "selected_recipes": [
+        "nominal",
+        "nominal",
+        "nominal"
+      ],
+      "model_parent_first_transitions_passed": true,
+      "max_force_ratio": 1.1147238425536137,
+      "clipped_wheel_samples": 6,
+      "total_wheel_samples": 1132,
+      "confirmed_raw_ticks": 283,
+      "current_input_model_clock_ticks": [
+        523,
+        527,
+        531
+      ]
+    },
+    "P": {
+      "policy": "P",
+      "status": "FINISHED",
+      "error": null,
+      "decisions": 3,
+      "total_model_actions": 63,
+      "continuation_actions": 60,
+      "finish_ticks": {
+        "lo": 249,
+        "hi": 250
+      },
+      "remaining_time_bracket_s": [
+        4.98,
+        5.0
+      ],
+      "official_finish": true,
+      "max_post_path_error_m": 1.1792806056093452,
+      "damage": 0.0,
+      "predicted_progress_goal_ok": true,
+      "long_tail_actual_physics_qualified": false,
+      "actual_ledger_unchanged": true,
+      "selected_recipes": [
+        "fullgas",
+        "nominal",
+        "fullgas"
+      ],
+      "model_parent_first_transitions_passed": true,
+      "max_force_ratio": 1.4073357571714995,
+      "clipped_wheel_samples": 44,
+      "total_wheel_samples": 1000,
+      "confirmed_raw_ticks": 250,
+      "current_input_model_clock_ticks": [
+        523,
+        527,
+        531
+      ]
+    }
+  },
+  "model_gain_bracket_s": [
+    0.62,
+    0.66
+  ],
+  "strict_model_gain": true,
+  "runtime_receipt_checks": [
+    {
+      "relative_decision": 1,
+      "receipt_digest_verified": true,
+      "typed_selector_equal": true,
+      "parent_root_current_clock": 523,
+      "chosen_recipe": "fullgas",
+      "status": "MODEL_TIME_CHOICE",
+      "local_query_gain_rawticks": [
+        29,
+        31
+      ],
+      "full_receipt_bytes": 220480,
+      "long_tail_physics_qualified": false
+    },
+    {
+      "relative_decision": 2,
+      "receipt_digest_verified": true,
+      "typed_selector_equal": true,
+      "parent_root_current_clock": 527,
+      "chosen_recipe": "nominal",
+      "status": "GUARDIAN_REFERENCE_ONLY",
+      "local_query_gain_rawticks": null,
+      "full_receipt_bytes": 220368,
+      "long_tail_physics_qualified": false
+    },
+    {
+      "relative_decision": 3,
+      "receipt_digest_verified": true,
+      "typed_selector_equal": true,
+      "parent_root_current_clock": 531,
+      "chosen_recipe": "fullgas",
+      "status": "MODEL_TIME_CHOICE",
+      "local_query_gain_rawticks": [
+        1,
+        3
+      ],
+      "full_receipt_bytes": 220379,
+      "long_tail_physics_qualified": false
+    }
+  ],
+  "actual13_qualification_passed": true,
+  "actual13_qualification_max": {
+    "nominal_1": {
+      "passed": true,
+      "max_body_position_m": 1.375408659158321e-05,
+      "max_body_speed_m_s": 1.1777481631725095e-05,
+      "max_wheel_omega_rad_s": 1.8516317794592396e-05,
+      "max_force_ratio_error": 5.936645016912934e-06,
+      "max_raw_hull_origin_error_m": 1.4557206652139423e-05
+    },
+    "nominal_2": {
+      "passed": true,
+      "max_body_position_m": 1.375408659158321e-05,
+      "max_body_speed_m_s": 1.1777481631725095e-05,
+      "max_wheel_omega_rad_s": 1.8516317794592396e-05,
+      "max_force_ratio_error": 5.936645016912934e-06,
+      "max_raw_hull_origin_error_m": 1.4557206652139423e-05
+    },
+    "fullgas_1": {
+      "passed": true,
+      "max_body_position_m": 1.5986494650116168e-05,
+      "max_body_speed_m_s": 1.5322877402468293e-05,
+      "max_wheel_omega_rad_s": 4.23348755873576e-05,
+      "max_force_ratio_error": 8.46118738984103e-06,
+      "max_raw_hull_origin_error_m": 1.629639386237627e-05
+    },
+    "fullgas_2": {
+      "passed": true,
+      "max_body_position_m": 1.5986494650116168e-05,
+      "max_body_speed_m_s": 1.5322877402468293e-05,
+      "max_wheel_omega_rad_s": 4.23348755873576e-05,
+      "max_force_ratio_error": 8.46118738984103e-06,
+      "max_raw_hull_origin_error_m": 1.629639386237627e-05
+    }
+  },
+  "initial_parent_gate_passed": true,
+  "immutable_actual_root_ledger_unchanged": true,
+  "selector_recipe_gain_horizon_projection_ledger_unchanged": true,
+  "prior420_original_failure_code_partial_cost_preserved": true,
+  "prior420_single_witness_not_policy_comparison": true,
+  "new_states_and_long_tail_actual_physics_qualified": false,
+  "actual_gate_opened": false,
+  "actual_performance_or_pixel_claim": false,
+  "cost": {
+    "stage": 421,
+    "new_wrapper_actions": 0,
+    "new_environment_resets": 0,
+    "new_model_integration_ticks": 5643,
+    "reserved_model_ticks": 5643,
+    "unconfirmed_model_ticks": 0,
+    "new_model_world_initializations": 31,
+    "confirmed_worlds": 31,
+    "zero_time_contact_setups": 31,
+    "max_held_worlds": 7,
+    "concurrently_stepped_worlds": 1,
+    "model_tick_cap": 32768,
+    "model_world_cap": 64,
+    "whole_model_worker_CPU_s": 17.03021805,
+    "model_execution_wall_s": 16.377340792911127,
+    "CPU_cap_s": 150,
+    "wall_cap_s": 240,
+    "ticks_by_tag": {
+      "qualification_required": 104,
+      "qualification_repeat": 104,
+      "qualification_parent_step": 4,
+      "C0_guard_required": 156,
+      "C0_guard_repeat": 156,
+      "parent_C0_advance": 12,
+      "parent_C0_final_C_tail": 271,
+      "planner_required_initial13": 468,
+      "planner_repeat_initial13": 468,
+      "planner_required_tail": 1825,
+      "planner_repeat_tail": 1825,
+      "parent_P_advance": 12,
+      "parent_P_final_C_tail": 238
+    },
+    "worlds_by_tag": {
+      "qualification_parent": 1,
+      "qualification_required": 2,
+      "qualification_repeat": 2,
+      "pilot_parent": 2,
+      "C0_guard_required": 3,
+      "C0_guard_repeat": 3,
+      "planner_required": 9,
+      "planner_independent_repeat": 9
+    },
+    "timed_step_and_constructor_CPU_by_tag": {
+      "qualification_parent_world_setup": 0.007981470000000046,
+      "qualification_required_world_setup": 0.010548149000000118,
+      "qualification_required": 0.01684957900000006,
+      "qualification_repeat_world_setup": 0.009831684999999979,
+      "qualification_repeat": 0.017515644000000163,
+      "qualification_parent_step": 0.00012044899999996694,
+      "pilot_parent_world_setup": 0.009693770000000157,
+      "C0_guard_required_world_setup": 0.015545163000000084,
+      "C0_guard_required": 0.03360533699999735,
+      "C0_guard_repeat_world_setup": 0.013553015999999918,
+      "C0_guard_repeat": 0.03337842399999946,
+      "parent_C0_advance": 0.0020618279999999878,
+      "parent_C0_final_C_tail": 0.04997655600000117,
+      "planner_required_world_setup": 0.05240910599999715,
+      "planner_required_initial13": 0.11881741200000207,
+      "planner_independent_repeat_world_setup": 0.05096579600000162,
+      "planner_repeat_initial13": 0.12790134199999947,
+      "planner_required_tail": 0.5191077689999908,
+      "planner_repeat_tail": 0.5092726790000022,
+      "parent_P_advance": 0.006375278000000151,
+      "parent_P_final_C_tail": 0.07188498099999308
+    },
+    "timed_step_and_constructor_wall_by_tag": {
+      "qualification_parent_world_setup": 0.008836723980493844,
+      "qualification_required_world_setup": 0.015497689950279891,
+      "qualification_required": 0.05425357760395855,
+      "qualification_repeat_world_setup": 0.012927087023854256,
+      "qualification_repeat": 0.04820364515762776,
+      "qualification_parent_step": 0.0020068130688741803,
+      "pilot_parent_world_setup": 0.013461344060488045,
+      "C0_guard_required_world_setup": 0.02039211697410792,
+      "C0_guard_required": 0.07707383122760803,
+      "C0_guard_repeat_world_setup": 0.02082569187041372,
+      "C0_guard_repeat": 0.07783497031778097,
+      "parent_C0_advance": 0.006381584098562598,
+      "parent_C0_final_C_tail": 0.12689551629591733,
+      "planner_required_world_setup": 0.0711807917105034,
+      "planner_required_initial13": 0.24584694392979145,
+      "planner_independent_repeat_world_setup": 0.0654984200373292,
+      "planner_repeat_initial13": 0.2617634440539405,
+      "planner_required_tail": 0.9575029229745269,
+      "planner_repeat_tail": 0.9904768164269626,
+      "parent_P_advance": 0.008206882048398256,
+      "parent_P_final_C_tail": 0.14660828188061714
+    },
+    "CPU_tag_scope": "Step/constructorregionsonly; remainingorchestration/hash/snapshot/IO/importoverheadincludedwholeworkerbutnotfullyallocatedbytag.",
+    "static_preflight_CPU_s": 0.09574148999999998,
+    "static_preflight_wall_s": 0.09979390096850693,
+    "posthoc_readonly_CPU_s": 0.04941371299999997,
+    "posthoc_readonly_wall_s": 0.04941502306610346,
+    "preparation_interval_wall_s": 125.54052114486694,
+    "preparation_scope": "Implementationstartafterinitialread/design; wholepreparationnotfullymeasured.",
+    "preparation_CPU_s": null,
+    "preparation_total_fully_measured": false,
+    "report_git_fully_timed": false,
+    "prior420_cost_separate": {
+      "model_ticks": 2387,
+      "worlds": 19,
+      "CPU_s": 7.149609397,
+      "wall_s": 6.474664613022469,
+      "included_in_421_cost": false
+    },
+    "new_actor_calls": 0,
+    "new_learning_fits": 0,
+    "new_SEALED_queries": 0,
+    "new_paid_resources": 0,
+    "new_reserve_use": 0,
+    "research_before": 29618,
+    "research_remaining": 29618,
+    "actual_cumulative_wrapper_actions": 1318446,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064,
+    "actual_gate_opened": false
+  },
+  "protected_preserved": true,
+  "original408_preserved": true,
+  "prior417_promotion_unchanged": true,
+  "SEALED_used": 0,
+  "SEALED_future_allowed": 0,
+  "plan_sha256": "4c5155a4f7c474fa5497f14bcb835d82bbff3384ee17da5565a4b663dbf5772c",
+  "next_actual_condition": "Notautomatic. FreshseparatelyauthorizedboundedC0/P actualcalibrationafterfrozenroot/current-statequeries, actualprefix/fullfork/liveparent/restore/repeat/bodywheelrawhullfirstchangedandmatchingsegmentgates, persistentactualprogress/guardian/coststop. Pnewq1.407andlongtailunvalidated; short13calibrationcannotcertifymodel.62-.66finishgain, wholeactualcarryrequiresseparateevidence."
+}

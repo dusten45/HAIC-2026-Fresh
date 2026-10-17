@@ -136,3 +136,8 @@ B는 미리 고른 N1 직선64/코너94의 한 행동 모델 자격을 통과한
 
 
 **420은모델폐루프pilot이증거직렬화기술오류로중단됐다.** 실제418root A/B13body/wheel/rawhull·명령·복원·독립반복·살아있는부모/RNG게이트와C0세decision+nominaltail model finish[281,282]tick을통과했다. P첫질의세recipe13+같은childtail·반복은완료됐지만immutablebytes JSON저장오류가나서P부모0행동이며폐루프비교는없다. 첫query fullgaswitness[251,252] vsnominal[281,282]의모델차이.58–.62초는정책성과로확대하지않았다. 원실행·오류·tmp를보존하고직렬화만정적으로고쳐4테스트통과후모델은재개하지않았다. 모델2387tick/19world·workerCPU7.150초, actual0·원장v440연구29,618·예비84,000사용0이다. 긴tail실제fidelity·actualgate는열지않았다. [420 부분증거·오류·비용·미완료범위](pilot420_result.md)
+
+
+**421은 전체 receipt 정적 preflight 12개를 통과한 뒤 동일한 모델 폐루프 pilot을 완료했다.** 무손실 bytes·digest·typed selector·부분 파일 실패 처리를 확인했고 420 원코드/오류/tmp/비용은 전체 manifest로 보존했다. 실제418 root A/B13 자격·복원/독립반복·부모/RNG 게이트 뒤 C0/P 각각 현재 모델 상태 세 decision을 수행했다. P는 fullgas→nominal→fullgas를 선택했고 같은 C nominal tail에서 C0 finish[281,282]/P[249,250]tick으로 모델 이득 .62–.66초였다. runtime receipt 세 개 모두 digest/선택 재계산이 일치했다. 420 단일 witness와 구분하며 세 번째 질의 이득 .02–.06초에도 보편 .08 기준을 넣지 않았다.
+
+P force ratio 최대1.407은 실제418 보정 범위1.248을 넘으므로 새 상태/긴 tail 실제 fidelity·픽셀 성능·일반화는 미검증이며 실제 게이트는 닫혔다. 모델5643tick/31world·whole CPU17.030초/wall16.377초, 정적 preflight .096초/저장 분석 .049초 CPU이고 준비 wall125.541초는 초기 읽기/설계를 제외한 부분 구간이다. 새 actual/reset/actor/학습/SEALED/예비0, 원장v441 연구29,618·예비84,000사용0이다. 추가 실행 없이 별도 승인된 제한 실제 보정만 제안했다. [421 완료 비교·증거 저장·자격·비용·한계](pilot421_result.md)
