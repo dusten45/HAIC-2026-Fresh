@@ -1,0 +1,452 @@
+{
+  "stage": 476,
+  "status": "PURE_SEARCH_VALIDATION_COMPLETE",
+  "plan_sha256": "bfa2d00c0cc330c7aa3bc6fae5ed795fab8259977583e4196d1647597992434a",
+  "numpy_version": "1.26.0",
+  "q0_telemetry_identity": {
+    "473_Original": {
+      "wheel_first_samples": 324,
+      "exact": 324
+    },
+    "473_P4": {
+      "wheel_first_samples": 204,
+      "exact": 204
+    },
+    "472_nativeP4": {
+      "wheel_first_samples": 684,
+      "exact": 684
+    },
+    "442_nativeC0": {
+      "wheel_first_samples": 756,
+      "exact": 756
+    },
+    "442_nativeP": {
+      "wheel_first_samples": 692,
+      "exact": 692
+    }
+  },
+  "before_state": {
+    "available": 535,
+    "all_exact": 535,
+    "nonzero_damage": 0,
+    "max_abs_error": 0.0
+  },
+  "fixtures": {
+    "cases": [
+      {
+        "name": "native32_gas_boundary_0.0",
+        "exhaustive": true,
+        "rank_count": 49,
+        "selected_rank": 48,
+        "objective": 523.8006406246091,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_brake_boundary_0.0",
+        "exhaustive": true,
+        "rank_count": 49,
+        "selected_rank": 48,
+        "objective": 523.8006406246091,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_gas_boundary_0.1",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1036831901,
+        "objective": 3967.7869432279545,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_brake_boundary_0.1",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1036831997,
+        "objective": 163.0020499871877,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_gas_boundary_0.5",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1056964560,
+        "objective": 18727.747232077596,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_brake_boundary_0.5",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1056964656,
+        "objective": 163.0020499871877,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_gas_boundary_0.9",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1063675542,
+        "objective": 22417.800014996345,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_brake_boundary_0.9",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1063675542,
+        "objective": 163.0020499871877,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_gas_boundary_1.0",
+        "exhaustive": true,
+        "rank_count": 49,
+        "selected_rank": 1065353216,
+        "objective": 22417.800014996345,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_brake_boundary_1.0",
+        "exhaustive": true,
+        "rank_count": 49,
+        "selected_rank": 1065353216,
+        "objective": 163.0020499871877,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_subnormal_full",
+        "exhaustive": true,
+        "rank_count": 129,
+        "selected_rank": 0,
+        "objective": 0.0,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_negative_zero",
+        "exhaustive": true,
+        "rank_count": 1,
+        "selected_rank": 0,
+        "objective": 0.0,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_opposed_interior",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1056964611,
+        "objective": 141.96174046464216,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_brake_zero_lock_damage_-1.0_0.2",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1045220605,
+        "objective": 545.6666666666667,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_brake_zero_lock_damage_-1.0_0.9",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1063675542,
+        "objective": 545.6666666666667,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_brake_zero_lock_damage_1.0_0.2",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1045220509,
+        "objective": 545.6508968869846,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_brake_zero_lock_damage_1.0_0.9",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1063675542,
+        "objective": 545.6666666666667,
+        "witness_passed": true
+      },
+      {
+        "name": "native32_lateral_tie_full",
+        "exhaustive": false,
+        "rank_count": 1065353217,
+        "selected_rank": 1065353216,
+        "objective": 19.5,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_gas_boundary_0.0",
+        "exhaustive": true,
+        "rank_count": 49,
+        "selected_rank": 48,
+        "objective": 523.8006406246091,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_brake_boundary_0.0",
+        "exhaustive": true,
+        "rank_count": 49,
+        "selected_rank": 48,
+        "objective": 523.8006406246091,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_gas_boundary_0.1",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1036831901,
+        "objective": 3967.7869432279545,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_brake_boundary_0.1",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1036831997,
+        "objective": 163.0020499871877,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_gas_boundary_0.5",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1056964560,
+        "objective": 18727.747232077596,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_brake_boundary_0.5",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1056964656,
+        "objective": 163.0020499871877,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_gas_boundary_0.9",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1063675542,
+        "objective": 22417.800014996345,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_brake_boundary_0.9",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1063675542,
+        "objective": 163.0020499871877,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_gas_boundary_1.0",
+        "exhaustive": true,
+        "rank_count": 49,
+        "selected_rank": 1065353216,
+        "objective": 22417.800014996345,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_brake_boundary_1.0",
+        "exhaustive": true,
+        "rank_count": 49,
+        "selected_rank": 1065353216,
+        "objective": 163.0020499871877,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_subnormal_full",
+        "exhaustive": true,
+        "rank_count": 129,
+        "selected_rank": 0,
+        "objective": 0.0,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_negative_zero",
+        "exhaustive": true,
+        "rank_count": 1,
+        "selected_rank": 0,
+        "objective": 0.0,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_opposed_interior",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1056964611,
+        "objective": 141.96174046464216,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_brake_zero_lock_damage_-1.0_0.2",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1045220605,
+        "objective": 545.6666666666667,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_brake_zero_lock_damage_-1.0_0.9",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1063675542,
+        "objective": 545.6666666666667,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_brake_zero_lock_damage_1.0_0.2",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1045220509,
+        "objective": 545.6508968869846,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_brake_zero_lock_damage_1.0_0.9",
+        "exhaustive": true,
+        "rank_count": 97,
+        "selected_rank": 1063675542,
+        "objective": 545.6666666666667,
+        "witness_passed": true
+      },
+      {
+        "name": "model64_lateral_tie_full",
+        "exhaustive": false,
+        "rank_count": 1065353217,
+        "selected_rank": 1065353216,
+        "objective": 19.5,
+        "witness_passed": true
+      }
+    ],
+    "total": 36,
+    "exhaustive_cases": 34,
+    "exhaustively_compared_command_values": 2786,
+    "observed_fixture_branches": [
+      "linear",
+      "lock",
+      "none",
+      "zero_clamp"
+    ],
+    "unsupported": [
+      {
+        "name": "NaN",
+        "reason": "nonfinite_intermediate"
+      },
+      {
+        "name": "overflow",
+        "reason": "nonfinite_intermediate"
+      },
+      {
+        "name": "nonpositive_limit",
+        "reason": "state_domain"
+      },
+      {
+        "name": "wrong_scalar_dtype",
+        "reason": "state_scalar_dtype"
+      },
+      {
+        "name": "wheel_identity",
+        "reason": "wheel_identity_set"
+      },
+      {
+        "name": "none_nonzero",
+        "reason": "none_branch_nonzero_q0"
+      }
+    ],
+    "repeated_gas_plateau_fixture": [
+      [
+        0.1,
+        0.15,
+        0.15,
+        0.15
+      ],
+      [
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4
+      ]
+    ],
+    "damage": "engine .8 synthetic arithmetic supported; actual saved damage0 only; no physical damage validation",
+    "all_passed": true,
+    "new_physics": 0
+  },
+  "query_count": 40,
+  "query_summary": {
+    "473_Original": {
+      "n": 8,
+      "changed": 2,
+      "objective_strictly_lower": 2,
+      "objective_still_positive": 2,
+      "max_search_CPU_s": 0.020000710000000144,
+      "mean_search_CPU_s": 0.008001272000000031,
+      "max_search_wall_s": 0.021329014911316335,
+      "max_proof_bytes": 1738,
+      "max_wheel_evaluations": 1035
+    },
+    "473_P4": {
+      "n": 8,
+      "changed": 1,
+      "objective_strictly_lower": 1,
+      "objective_still_positive": 2,
+      "max_search_CPU_s": 0.019997885999999854,
+      "mean_search_CPU_s": 0.005499632375000035,
+      "max_search_wall_s": 0.018045141943730414,
+      "max_proof_bytes": 1664,
+      "max_wheel_evaluations": 1133
+    },
+    "472_nativeP4": {
+      "n": 8,
+      "changed": 1,
+      "objective_strictly_lower": 1,
+      "objective_still_positive": 0,
+      "max_search_CPU_s": 0.00410253599999999,
+      "mean_search_CPU_s": 0.00330620074999996,
+      "max_search_wall_s": 0.005262504098936915,
+      "max_proof_bytes": 1132,
+      "max_wheel_evaluations": 228
+    },
+    "442_nativeC0": {
+      "n": 8,
+      "changed": 0,
+      "objective_strictly_lower": 0,
+      "objective_still_positive": 0,
+      "max_search_CPU_s": 0.004001617000000124,
+      "mean_search_CPU_s": 0.0024864073749999993,
+      "max_search_wall_s": 0.00484626495745033,
+      "max_proof_bytes": 1077,
+      "max_wheel_evaluations": 240
+    },
+    "442_nativeP": {
+      "n": 8,
+      "changed": 0,
+      "objective_strictly_lower": 0,
+      "objective_still_positive": 0,
+      "max_search_CPU_s": 0.004006503999999467,
+      "mean_search_CPU_s": 0.0025019608749997646,
+      "max_search_wall_s": 0.004529255907982588,
+      "max_proof_bytes": 1090,
+      "max_wheel_evaluations": 208
+    }
+  },
+  "total_search_CPU_s": 0.17436378699999833,
+  "total_verification_CPU_s": 0.032058997000000033,
+  "max_query_CPU_s": 0.020000710000000144,
+  "max_query_wall_s": 0.021329014911316335,
+  "max_proof_bytes": 1738,
+  "new_physics": 0,
+  "new_native": 0,
+  "new_world": 0,
+  "new_reset": 0,
+  "new_actor": 0,
+  "import_guard_attempts": [],
+  "whole_analysis_CPU_s": 4.917568210000001,
+  "whole_analysis_wall_s": 4.997340682079084,
+  "protection_verified": true,
+  "caveat": "Saved arithmetic interventions only; no fresh dynamics or80ms safety effect",
+  "CPU_and_IO_include": "read all535 full snapshots, hash manifests, fixtures,40searches and independent validation; preparation/report not fully measured"
+}
