@@ -1,30 +1,25 @@
 {
   "stage": 457,
-  "status": "RUNNING_NOT_FINAL",
-  "recorded_at_utc": "2026-10-17T09:29:37.310970+00:00",
+  "status": "FOUR_MODEL_PARENTS_COMPLETED_REPEAT_EXACT",
+  "recorded_at_utc": "2026-10-17T09:35:41.308522+00:00",
   "checkpoint": {
     "pid": 176121,
-    "phase": "GUARDIAN_QUERY",
-    "at_utc": "2026-10-17T09:29:35.692076+00:00",
-    "model_ticks": 31825,
-    "reserved_ticks": 31825,
-    "model_worlds": 482,
-    "CPU_s": 506.843477124,
-    "wall_s": 513.053018241073,
+    "phase": "CLOSED",
+    "at_utc": "2026-10-17T09:33:21.154206+00:00",
+    "model_ticks": 48689,
+    "reserved_ticks": 48689,
+    "model_worlds": 669,
+    "CPU_s": 730.338852207,
+    "wall_s": 738.5151468450204,
     "actual_actions": 0,
     "resets": 0,
-    "arm": "C0-2",
-    "parent_action": 63,
-    "planner_used": 0,
-    "current_decision": 64
+    "arm": "P-2",
+    "parent_action": 64,
+    "planner_used": 8,
+    "status": "FOUR_MODEL_PARENTS_COMPLETED_REPEAT_EXACT",
+    "error": null
   },
   "checkpoint_legacy_stage_label": 456,
-  "preflight": {
-    "passed": true,
-    "ticks": 1353,
-    "worlds": 41,
-    "actual": 0
-  },
   "completed_model_arms": [
     {
       "arm": "C0-1",
@@ -63,20 +58,63 @@
       "actual_root_unchanged": true,
       "actual_finish_witness": false,
       "actual_DONE_allowed": false
+    },
+    {
+      "arm": "C0-2",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 76,
+      "planner_decisions": 0,
+      "guardian_decisions": 76,
+      "finish_ticks": {
+        "lo": 300,
+        "hi": 301
+      },
+      "official_model_finish": true,
+      "signature": "88fc89b3490361ffc928e4d815d50fbee68e778c1126cc20f6ca35a8c664bf94",
+      "model_ticks": 7503,
+      "model_worlds": 153,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "actual_DONE_allowed": false
+    },
+    {
+      "arm": "P-2",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 64,
+      "planner_decisions": 8,
+      "guardian_decisions": 56,
+      "finish_ticks": {
+        "lo": 251,
+        "hi": 252
+      },
+      "official_model_finish": true,
+      "signature": "b3c03b1d78eff03ef5b2fc04ead38f05cb1b1ec24b2b4788c328b93bb76fe006",
+      "model_ticks": 16165,
+      "model_worlds": 161,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "actual_DONE_allowed": false
     }
   ],
   "meter_snapshot": {
-    "ticks": 31923,
-    "reserved_ticks": 31923,
-    "worlds": 484,
-    "CPU_s": 508.007505448,
-    "execution_wall_s": 514.2272430830635
+    "ticks": 48689,
+    "reserved_ticks": 48689,
+    "worlds": 669,
+    "CPU_s": 730.335064588,
+    "execution_wall_s": 738.511174113024
   },
+  "gain_bracket_s": [
+    0.96,
+    1.0
+  ],
+  "saved_audit_passed": true,
+  "worker_exit_code": 0,
   "new_actual_actions": 0,
   "new_resets": 0,
   "actual_gate_opened": false,
   "research_remaining": 27059,
   "reserve": 84000,
-  "reserve_used": 0,
-  "process_alive_checked": true
+  "reserve_used": 0
 }

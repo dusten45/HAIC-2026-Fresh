@@ -1,0 +1,434 @@
+{
+  "stage": 457,
+  "status": "FOUR_MODEL_PARENTS_COMPLETED_REPEAT_EXACT",
+  "error": null,
+  "last_stage": "four_model_parents",
+  "closed_at_utc": "2026-10-17T09:33:21.154206+00:00",
+  "worker_pid": 176121,
+  "policies": [
+    {
+      "arm": "C0-1",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 76,
+      "planner_decisions": 0,
+      "guardian_decisions": 76,
+      "finish_ticks": {
+        "lo": 300,
+        "hi": 301
+      },
+      "official_model_finish": true,
+      "signature": "88fc89b3490361ffc928e4d815d50fbee68e778c1126cc20f6ca35a8c664bf94",
+      "model_ticks": 7503,
+      "model_worlds": 153,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "actual_DONE_allowed": false
+    },
+    {
+      "arm": "P-1",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 64,
+      "planner_decisions": 8,
+      "guardian_decisions": 56,
+      "finish_ticks": {
+        "lo": 251,
+        "hi": 252
+      },
+      "official_model_finish": true,
+      "signature": "b3c03b1d78eff03ef5b2fc04ead38f05cb1b1ec24b2b4788c328b93bb76fe006",
+      "model_ticks": 16165,
+      "model_worlds": 161,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "actual_DONE_allowed": false
+    },
+    {
+      "arm": "C0-2",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 76,
+      "planner_decisions": 0,
+      "guardian_decisions": 76,
+      "finish_ticks": {
+        "lo": 300,
+        "hi": 301
+      },
+      "official_model_finish": true,
+      "signature": "88fc89b3490361ffc928e4d815d50fbee68e778c1126cc20f6ca35a8c664bf94",
+      "model_ticks": 7503,
+      "model_worlds": 153,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "actual_DONE_allowed": false
+    },
+    {
+      "arm": "P-2",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 64,
+      "planner_decisions": 8,
+      "guardian_decisions": 56,
+      "finish_ticks": {
+        "lo": 251,
+        "hi": 252
+      },
+      "official_model_finish": true,
+      "signature": "b3c03b1d78eff03ef5b2fc04ead38f05cb1b1ec24b2b4788c328b93bb76fe006",
+      "model_ticks": 16165,
+      "model_worlds": 161,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "actual_DONE_allowed": false
+    }
+  ],
+  "details": {
+    "C0-1": {
+      "status": "FINISHED",
+      "error": null,
+      "observed_parent_actions": 76,
+      "verified_decisions": 76,
+      "recipe_counts": {
+        "nominal": 76
+      },
+      "planner_recipe_counts": {},
+      "guardian_recipe_counts": {
+        "nominal": 76
+      },
+      "planner_status_counts": {},
+      "planner_decisions": 0,
+      "pending_queries": 0,
+      "own_pending_confirmations": 0,
+      "guardian_finish_certificates": 13,
+      "own_model_finish": true,
+      "finish_ticks": {
+        "lo": 300,
+        "hi": 301
+      },
+      "remaining_model_finish_s": [
+        6.0,
+        6.02
+      ],
+      "actual_finish_witness": false
+    },
+    "P-1": {
+      "status": "FINISHED",
+      "error": null,
+      "observed_parent_actions": 64,
+      "verified_decisions": 64,
+      "recipe_counts": {
+        "fullgas": 2,
+        "neutralbrake": 1,
+        "nominal": 61
+      },
+      "planner_recipe_counts": {
+        "fullgas": 2,
+        "neutralbrake": 1,
+        "nominal": 5
+      },
+      "guardian_recipe_counts": {
+        "nominal": 56
+      },
+      "planner_status_counts": {
+        "MODEL_TIME_CHOICE": 3,
+        "GUARDIAN_REFERENCE_ONLY": 5
+      },
+      "planner_decisions": 8,
+      "pending_queries": 1,
+      "own_pending_confirmations": 1,
+      "guardian_finish_certificates": 13,
+      "own_model_finish": true,
+      "finish_ticks": {
+        "lo": 251,
+        "hi": 252
+      },
+      "remaining_model_finish_s": [
+        5.02,
+        5.04
+      ],
+      "actual_finish_witness": false
+    },
+    "C0-2": {
+      "status": "FINISHED",
+      "error": null,
+      "observed_parent_actions": 76,
+      "verified_decisions": 76,
+      "recipe_counts": {
+        "nominal": 76
+      },
+      "planner_recipe_counts": {},
+      "guardian_recipe_counts": {
+        "nominal": 76
+      },
+      "planner_status_counts": {},
+      "planner_decisions": 0,
+      "pending_queries": 0,
+      "own_pending_confirmations": 0,
+      "guardian_finish_certificates": 13,
+      "own_model_finish": true,
+      "finish_ticks": {
+        "lo": 300,
+        "hi": 301
+      },
+      "remaining_model_finish_s": [
+        6.0,
+        6.02
+      ],
+      "actual_finish_witness": false
+    },
+    "P-2": {
+      "status": "FINISHED",
+      "error": null,
+      "observed_parent_actions": 64,
+      "verified_decisions": 64,
+      "recipe_counts": {
+        "fullgas": 2,
+        "neutralbrake": 1,
+        "nominal": 61
+      },
+      "planner_recipe_counts": {
+        "fullgas": 2,
+        "neutralbrake": 1,
+        "nominal": 5
+      },
+      "guardian_recipe_counts": {
+        "nominal": 56
+      },
+      "planner_status_counts": {
+        "MODEL_TIME_CHOICE": 3,
+        "GUARDIAN_REFERENCE_ONLY": 5
+      },
+      "planner_decisions": 8,
+      "pending_queries": 1,
+      "own_pending_confirmations": 1,
+      "guardian_finish_certificates": 13,
+      "own_model_finish": true,
+      "finish_ticks": {
+        "lo": 251,
+        "hi": 252
+      },
+      "remaining_model_finish_s": [
+        5.02,
+        5.04
+      ],
+      "actual_finish_witness": false
+    }
+  },
+  "model_remaining_finish_gain_bracket_s": [
+    0.96,
+    1.0
+  ],
+  "four_full_model_arms_repeat_exact": true,
+  "verification": {
+    "observer_posts": 48689,
+    "observer_streams": 669,
+    "meter_consistent": true,
+    "source_protected_preserved": true,
+    "static": {
+      "stage": 457,
+      "passed": true,
+      "error": null,
+      "tests": 255,
+      "failures": 0,
+      "errors": 0,
+      "audit_completed": true,
+      "CPU_s": 22.224518228,
+      "wall_s": 22.115550960064866,
+      "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+      "plan_sha256": "c94fc457f1c2c42f092287bedcfab4e78966f198ec8f01078978fd9db6f36ada"
+    },
+    "preflight": {
+      "passed": true,
+      "ticks": 1353,
+      "worlds": 41,
+      "actual": 0
+    }
+  },
+  "cost": {
+    "model_ticks": 48689,
+    "reserved_ticks": 48689,
+    "worlds": 669,
+    "whole_modelworker_CPU_s": 730.335064588,
+    "whole_modelworker_wall_s": 738.511174113024,
+    "ticks_by_tag": {
+      "qualification_replay_required_first13": 104,
+      "qualification_replay_required_continuation": 412,
+      "qualification_replay_repeat_first13": 104,
+      "qualification_replay_repeat_continuation": 412,
+      "qualification_restore_required": 48,
+      "qualification_restore_repeat": 48,
+      "qualification_parent_step": 4,
+      "qualification_pending_required": 1,
+      "qualification_pending_repeat": 1,
+      "qualification435_guardian_required": 1,
+      "qualification435_guardian_repeat": 1,
+      "qualification435_parent_own_step": 1,
+      "457_root_nominal": 104,
+      "457_root_held_first": 8,
+      "457_root_fullgas": 104,
+      "guardian_required": 12324,
+      "guardian_repeat": 12324,
+      "457_parent_C0-1": 301,
+      "planner_required_initial13": 2304,
+      "planner_repeat_initial13": 2304,
+      "planner_required_tail": 8486,
+      "planner_repeat_tail": 8486,
+      "457_parent_P-1": 253,
+      "457_parent_C0-2": 301,
+      "457_parent_P-2": 253
+    },
+    "worlds_by_tag": {
+      "qualification_parent": 1,
+      "qualification_replay_required": 2,
+      "qualification_replay_repeat": 2,
+      "qualification_restore_required": 12,
+      "qualification_restore_repeat": 12,
+      "qualification_pending_parent": 1,
+      "qualification_pending_required": 1,
+      "qualification_pending_repeat": 1,
+      "qualification435_parent": 1,
+      "qualification435_guardian_required": 1,
+      "qualification435_guardian_repeat": 1,
+      "457_root_held": 2,
+      "457_root_required": 2,
+      "457_root_repeat": 2,
+      "457_model_parent": 4,
+      "guardian_required": 264,
+      "guardian_repeat": 264,
+      "planner_required": 48,
+      "planner_independent_repeat": 48
+    },
+    "whole_project_overhead_fully_measured": false
+  },
+  "new_actual_actions": 0,
+  "new_resets": 0,
+  "new_seed_learning_HOLDOUT_SEALED_reserve_paid": 0,
+  "actual_gate_opened": false,
+  "actual_finish_witness": false,
+  "original456_failure_preserved": true,
+  "research_remaining": 27059,
+  "actual_cumulative_wrapper_actions": 1321005,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "plan_sha256": "c94fc457f1c2c42f092287bedcfab4e78966f198ec8f01078978fd9db6f36ada",
+  "saved_model_crossing_from_root_s": {
+    "C0-1": {
+      "510": [
+        1.08,
+        1.1
+      ],
+      "570": [
+        2.06,
+        2.08
+      ],
+      "630": [
+        3.16,
+        3.18
+      ],
+      "690": [
+        4.04,
+        4.06
+      ],
+      "750": [
+        5.22,
+        5.24
+      ]
+    },
+    "P-1": {
+      "510": [
+        0.88,
+        0.9
+      ],
+      "570": [
+        1.68,
+        1.7
+      ],
+      "630": [
+        2.58,
+        2.6
+      ],
+      "690": [
+        3.36,
+        3.38
+      ],
+      "750": [
+        4.32,
+        4.34
+      ]
+    },
+    "C0-2": {
+      "510": [
+        1.08,
+        1.1
+      ],
+      "570": [
+        2.06,
+        2.08
+      ],
+      "630": [
+        3.16,
+        3.18
+      ],
+      "690": [
+        4.04,
+        4.06
+      ],
+      "750": [
+        5.22,
+        5.24
+      ]
+    },
+    "P-2": {
+      "510": [
+        0.88,
+        0.9
+      ],
+      "570": [
+        1.68,
+        1.7
+      ],
+      "630": [
+        2.58,
+        2.6
+      ],
+      "690": [
+        3.36,
+        3.38
+      ],
+      "750": [
+        4.32,
+        4.34
+      ]
+    }
+  },
+  "crossing_model_gain_bracket_s": {
+    "510": [
+      0.18000000000000005,
+      0.22000000000000008
+    ],
+    "570": [
+      0.3600000000000001,
+      0.40000000000000013
+    ],
+    "630": [
+      0.56,
+      0.6000000000000001
+    ],
+    "690": [
+      0.6600000000000001,
+      0.6999999999999997
+    ],
+    "750": [
+      0.8799999999999999,
+      0.9199999999999999
+    ]
+  },
+  "saved_audit_CPU_s": 12.99800024,
+  "saved_audit_wall_s": 15.4496474849293,
+  "planner_alternative_pair_status_counts": {
+    "FINISHED": 42,
+    "EARLY_PHYSICAL_INELIGIBLE": 6
+  }
+}
