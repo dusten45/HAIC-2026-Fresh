@@ -1,0 +1,32 @@
+"""Stored-only partial-parent and short unsafe initial-horizon diagnosis."""
+import json,sys,time
+from pathlib import Path
+import numpy as np
+from retry.loss389_analyze import read,save,sha
+from retry.executor397 import canonical_projection
+from retry.paired417_common import arrival
+
+def prepare(root):
+ d=root/'stage428';assert not(d/'stop-analysis-plan.json').exists();p=read(d/'plan.json');files=[Path(__file__),d/'plan.json',d/'analysis.json',d/'analysis-plan.json',d/'parent_C0-private.json',d/'parent_P-private.json',d/'result.json',d/'decisions-private.json',Path(p['fixed_plan'])]+list(d.glob('P_decision36_*-private.json'))
+ save(d/'stop-analysis-plan.json',dict(scope='SavedonlypartialP/initial8unsafe/dynamicparentstate/candidateexclusion/observedarc. Nofinishimputationornative/modelcalls.',sources={str(f):sha(f) for f in files},protected=p['protected'],original408_preserve=p['original408_preserve']));(d/'stop-analysis-plan.sha256').write_text(sha(d/'stop-analysis-plan.json')+'\n')
+
+def run(root):
+ d=root/'stage428';p=read(d/'stop-analysis-plan.json');assert not(d/'stop-analysis.json').exists();cpu=time.process_time();wall=time.perf_counter()
+ for f,h in {**p['sources'],**p['protected'],**p['original408_preserve']}.items():assert sha(f)==h,f
+ plan=read(d/'plan.json');fixed=read(Path(plan['fixed_plan']));line=np.asarray(fixed['line']);L=sum(fixed['free_profile']['ds']);base=read(d/'analysis.json');dec=read(d/'decisions-private.json');parents={};markers={};current={}
+ for name in ['C0','P']:
+  x=read(d/('parent_'+name+'-private.json'));rows=x['rows'];tires=[t for row in rows for t in row['tires']];steps=[s for s in dec if s['policy']==name];h=rows[0]['raw_hull'][0];start=canonical_projection(line,h['origin_position'],h['COM_linear_velocity'],'FIRST_LAP')['arc'];markers[name]={str(f):arrival(rows,line,start,f*L) for f in [.7,.75,.8,.85,.9,.95] if f*L>start}
+  parents[name]=dict(recorded_parent_status=x['status'],report_status='SCOPE_CENSORED_DECISION64' if name=='C0' else 'TECHNICAL_STOP_BEFORE_DECISION36',committed_decisions=len(rows),planner_decisions=sum(s['planner_used'] for s in steps),guardian_decisions=sum(not s['planner_used'] for s in steps),selected_recipes=[s['selected_recipe'] for s in steps],fullgas_decisions=[s['relative_decision'] for s in steps if s['selected_recipe']=='fullgas'],raw_ticks=sum(z['predicted']['raw_ticks'] for z in rows),observed_model_time_s=sum(z['predicted']['raw_ticks'] for z in rows)/50,official_finish=False,finish_ticks=None,estimated_remaining_time=None,damage=x['final_state']['physical']['damage'],max_post_path_error_m=max(z['path_error_m'] for z in rows),max_raw_path_error_m=max(canonical_projection(line,h['origin_position'],h['origin_linear_velocity'],z['memory_after']['C']['phase'])['path_error_m'] for z in rows for h in z['raw_hull']),max_force_ratio=max(t['force_ratio'] for t in tires),clipped_wheel_samples=sum(t['clipped'] for t in tires),wheel_samples=len(tires),all_selected_first_model_transitions_passed=all(s['selected_first_check']['passed'] and s['selected_first_check']['wheel']['clipped_flag_mismatches']==0 for s in steps),all_parent_rows_safety_flags_clear=all(not z['safety'] for z in rows),actual_qualified=False,query_CPU_p95_s=float(np.percentile([s['query_CPU_s'] for s in steps],95)),query_wall_p95_s=float(np.percentile([s['query_wall_s'] for s in steps],95)),query_CPU_max_s=max(s['query_CPU_s'] for s in steps),query_wall_max_s=max(s['query_wall_s'] for s in steps))
+ for recipe in ['nominal','neutralbrake','fullgas']:
+  a=read(d/('P_decision36_'+recipe+'_1-private.json'));b=read(d/('P_decision36_'+recipe+'_2-private.json'));assert a['rows']==b['rows'] and a['status']==b['status'] and a['error']==b['error'];rows=a['rows'];q=a['model_ledger'];current[recipe]=dict(status=a['status'],error=a['error'],initial_actions=a['initial_actions'],tail_actions=a['tail_actions'],official_finish=False,finish_ticks=None,independent_repeat_exact=True,initial_progress_goal_reached=q['actual_root_goal_reached'],predicted_deadline_missed=q['deadline_missed'],max_post_path_error_m=max(z['path_error_m'] for z in rows),max_raw_path_error_m=max(canonical_projection(line,h['origin_position'],h['origin_linear_velocity'],z['memory_after']['C']['phase'])['path_error_m'] for z in rows for h in z['raw_hull']),max_force_ratio=max(t['force_ratio'] for z in rows for t in z['tires']),chosen_or_committed_to_parent=False)
+ gains={}
+ for key,a in markers['C0'].items():
+  b=markers['P'].get(key)
+  if a['reached'] and b and b['reached']:
+   x,y=a['rawtick_bracket'],b['rawtick_bracket'];gains[key]=[(x[0]-y[1])/50,(x[1]-y[0])/50]
+  else:gains[key]=None
+ unsafe=[dict(decision=s['relative_decision'],recipe=k,tail_status=v['status'],tail_actions=v['tail_actions'],finish_ticks=v['finish_ticks']) for s in base['runtime_receipts'] for k,v in s['recipes'].items() if v['status']!='FINISHED'];assert len(unsafe)==4 and all(s['finish_ticks'] is None for s in unsafe)
+ assert parents['P']['committed_decisions']==35 and current['fullgas']['initial_actions']==8 and current['fullgas']['status']=='UNSAFE';assert current['nominal']['initial_actions']==current['neutralbrake']['initial_actions']==13
+ out=dict(stage=428,status='PARTIAL_INITIAL_UNSAFE_REPRESENTATION_STOP_NO_RETRY',parents=parents,failed_query=36,decision36_initial_branches=current,prior_failed_tails_excluded=unsafe,completed_candidate_status_counts=base['distinct_candidate_status_counts'],observed_model_arc_markers=markers,observed_model_arc_gain_brackets_s=gains,last_selected_witness=base['runtime_receipts'][-1],overall_candidate_max_force_ratio=max(base['all_candidate_max_force_ratio'],max(v['max_force_ratio'] for v in current.values())),official_parent_gain=None,actual_calls=0,model_calls=0,new_states_actual_qualified=False,diagnosis='Fullgascurrent36childunsafeat8beforeH13(path>3m). Frozen419partialinitialreceiptcannotrepresentnonfinished<13; globalstopwithoutpadding/waiver. Nominal/neutral13initialsafe; tail36notrunandchoice36notcommitted. Existing4failedtailswerescoreexcludedwithouttimeestimate.',CPU_s=time.process_time()-cpu,wall_s=time.perf_counter()-wall);save(d/'stop-analysis.json',out);print(json.dumps(dict(parents={n:dict(decisions=v['committed_decisions'],maxq=v['max_force_ratio']) for n,v in parents.items()},failed_recipe=current['fullgas'],prior_unsafe_tails=unsafe,observed_arc_gains=gains,CPU_s=out['CPU_s'])))
+if __name__=='__main__':
+ root=Path(sys.argv[2]);prepare(root) if sys.argv[1]=='prepare' else run(root)
