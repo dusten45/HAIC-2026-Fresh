@@ -1,0 +1,16 @@
+{
+  "scope": "synthetic linear screening only; not a forecast or authorization",
+  "logical_payload_forecast_bytes": 303413092.9430894,
+  "write_including_readback_CPU_s_if_linear_min_max": [
+    17.81602545788099,
+    334.924413999111
+  ],
+  "extra_full_read_CPU_s_if_linear_min_max": [
+    3.319605750881707,
+    5.851478434765742
+  ],
+  "future_worker_CPU_cap_s": 180,
+  "physics_and_live_file_count_overhead_excluded": true,
+  "CPU_feasibility_certified": false,
+  "reason": "token structure/file count/cache/fsync change cost; mixed case projection alone can exceed future180s. Guard scans per serialization token may be costly. Must qualify production IO and whole-worker cap before execution."
+}

@@ -1,0 +1,130 @@
+{
+  "stage": 467,
+  "status": "IO_SYNTHETIC_GATE_PASSED",
+  "tests": 11,
+  "test_wall_s": 1.5885319239459932,
+  "benchmark": [
+    {
+      "case": "repeated",
+      "logical_bytes": 2181977,
+      "stored_bytes": 10799,
+      "stored_over_logical": 0.004949181407503379,
+      "write_including_full_readback_CPU_s": 0.12812287499999986,
+      "write_including_full_readback_wall_s": 0.12854691303800792,
+      "additional_full_readbacks": [
+        {
+          "CPU_s": 0.023872744999999806,
+          "wall_s": 0.025129690999165177
+        },
+        {
+          "CPU_s": 0.03200445700000021,
+          "wall_s": 0.030409047030843794
+        },
+        {
+          "CPU_s": 0.023999072000000066,
+          "wall_s": 0.022501096944324672
+        }
+      ],
+      "descriptor": {
+        "schema": "HAIC_EVIDENCE467_DESCRIPTOR_V1",
+        "kind": "gzip-json-receipt",
+        "logical_name": "repeated",
+        "physical_relative_path": "repeated.json.gz",
+        "descriptor_relative_path": "repeated.descriptor.json",
+        "stored_sha256": "44dc0f9fef5c80ef77ef121084b3f0c7a3dd4f480807635529988e5f5608380f",
+        "logical_sha256": "ed4ec11ffd3b2cf8da2e6978996ced60c87328451d1f8f77a840ab4ea24c9d2a",
+        "receipt_digest": "5a3a2a254dc21a143e08e72fed231f7f97205e3a5961aa35578d644266f7a5f2",
+        "stored_bytes": 10799,
+        "logical_bytes": 2181977
+      }
+    },
+    {
+      "case": "mixed",
+      "logical_bytes": 1674269,
+      "stored_bytes": 746993,
+      "stored_over_logical": 0.44616068266210507,
+      "write_including_full_readback_CPU_s": 1.8481521619999999,
+      "write_including_full_readback_wall_s": 1.8461484720464796,
+      "additional_full_readbacks": [
+        {
+          "CPU_s": 0.03177022000000029,
+          "wall_s": 0.03188679798040539
+        },
+        {
+          "CPU_s": 0.024002145999999946,
+          "wall_s": 0.024271321948617697
+        },
+        {
+          "CPU_s": 0.024008505999999485,
+          "wall_s": 0.025142868980765343
+        }
+      ],
+      "descriptor": {
+        "schema": "HAIC_EVIDENCE467_DESCRIPTOR_V1",
+        "kind": "gzip-json-receipt",
+        "logical_name": "mixed",
+        "physical_relative_path": "mixed.json.gz",
+        "descriptor_relative_path": "mixed.descriptor.json",
+        "stored_sha256": "f5efba7d434e9913dd4dcca85dc837ae7d8d11c5d1cde6f06f9ce0e5f5f207fb",
+        "logical_sha256": "a3ab87ffa0085eb21c8eb7924e1b6ed3749ace7a13603705fd6cd3f31fc0c24d",
+        "receipt_digest": "ce9ed9bb3a206ab0d776622812110b57a6480d4a898090d242bd01ef9da9b81e",
+        "stored_bytes": 746993,
+        "logical_bytes": 1674269
+      }
+    },
+    {
+      "case": "entropy",
+      "logical_bytes": 1866861,
+      "stored_bytes": 1445194,
+      "stored_over_logical": 0.7741304789162128,
+      "write_including_full_readback_CPU_s": 0.18000142500000038,
+      "write_including_full_readback_wall_s": 0.17652043199632317,
+      "additional_full_readbacks": [
+        {
+          "CPU_s": 0.03199121799999993,
+          "wall_s": 0.03511370497290045
+        },
+        {
+          "CPU_s": 0.03600091599999988,
+          "wall_s": 0.03486628097016364
+        },
+        {
+          "CPU_s": 0.036003379999999474,
+          "wall_s": 0.033719668979756534
+        }
+      ],
+      "descriptor": {
+        "schema": "HAIC_EVIDENCE467_DESCRIPTOR_V1",
+        "kind": "gzip-json-receipt",
+        "logical_name": "entropy",
+        "physical_relative_path": "entropy.json.gz",
+        "descriptor_relative_path": "entropy.descriptor.json",
+        "stored_sha256": "ead47cce4ac2ff6c0978474fc5f3e5635e6cd3697467241c57e01fd9f4702ed2",
+        "logical_sha256": "e0cbae01c6b5be1a85d7f43acd2638c9894d10f4f5b1f66ceca710ec0dd24f4b",
+        "receipt_digest": "061a8d810eeb05a7d0709ec1b815fd7dec983e597adfcda962e8c17576fff165",
+        "stored_bytes": 1445194,
+        "logical_bytes": 1866861
+      }
+    }
+  ],
+  "benchmark_total_logical_bytes": 5723107,
+  "benchmark_total_stored_bytes": 2202986,
+  "retained_tmp_file_bytes": 2302968,
+  "peak_RSS_KiB": 99096,
+  "peak_scope": "whole worker high-water RSS; retained file bytes are final observed allocation, not sampled transient RSS",
+  "CPU_s": 4.881316857,
+  "wall_s": 4.477994253044017,
+  "free_before": {
+    "/tmp": 3542233088,
+    "/workspace": 903274496
+  },
+  "free_after": {
+    "/tmp": 3539582976,
+    "/workspace": 900452352
+  },
+  "new_physics_native_world_reset": 0,
+  "protected_hashes_verified": 18,
+  "uncertainty": "Three synthetic cases, three warm full reads each; excludes cold-cache latency and representative real-run compression prediction. Full JSON parse remains in memory.",
+  "retained_files_verified": 102,
+  "scope_note": "main-body timer excludes Python/stdlib startup; process high-water RSS includes imports. No physics/native benchmark."
+}
