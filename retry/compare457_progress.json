@@ -1,0 +1,62 @@
+{
+  "stage": 457,
+  "status": "RUNNING_NOT_FINAL",
+  "recorded_at_utc": "2026-10-17T09:24:47.997485+00:00",
+  "checkpoint": {
+    "pid": 176121,
+    "phase": "PLANNER_QUERY",
+    "at_utc": "2026-10-17T09:24:43.794432+00:00",
+    "model_ticks": 13366,
+    "reserved_ticks": 13366,
+    "model_worlds": 213,
+    "CPU_s": 217.530852901,
+    "wall_s": 221.15536726999562,
+    "actual_actions": 0,
+    "resets": 0,
+    "arm": "P-1",
+    "parent_action": 3,
+    "planner_used": 3,
+    "current_decision": 4
+  },
+  "checkpoint_legacy_stage_label": 456,
+  "preflight": {
+    "passed": true,
+    "ticks": 1353,
+    "worlds": 41,
+    "actual": 0
+  },
+  "completed_model_arms": [
+    {
+      "arm": "C0-1",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 76,
+      "planner_decisions": 0,
+      "guardian_decisions": 76,
+      "finish_ticks": {
+        "lo": 300,
+        "hi": 301
+      },
+      "official_model_finish": true,
+      "signature": "88fc89b3490361ffc928e4d815d50fbee68e778c1126cc20f6ca35a8c664bf94",
+      "model_ticks": 7503,
+      "model_worlds": 153,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "actual_DONE_allowed": false
+    }
+  ],
+  "meter_snapshot": {
+    "ticks": 13554,
+    "reserved_ticks": 13554,
+    "worlds": 218,
+    "CPU_s": 221.653120391,
+    "execution_wall_s": 225.3117332990514
+  },
+  "new_actual_actions": 0,
+  "new_resets": 0,
+  "actual_gate_opened": false,
+  "research_remaining": 27059,
+  "reserve": 84000,
+  "reserve_used": 0
+}
