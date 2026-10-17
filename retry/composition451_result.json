@@ -1,0 +1,208 @@
+{
+  "stage": 451,
+  "status": "B_COMPOSITION_SCOPE_COMPLETED",
+  "error": null,
+  "branches": {
+    "nominal": {
+      "status": "FIRST_INTERVENTION_RECOVERY_WITNESSED",
+      "prefix_actions": 36,
+      "B_actions_each": 14,
+      "choices": [
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "neutralbrake",
+        "nominal"
+      ],
+      "first_neutral_decision": 13,
+      "recovery_decision": 14,
+      "baseline_source_passed": true,
+      "independent_repeat_exact": true,
+      "held_first_passed": true,
+      "same_live_parent_prefix_to_B": true,
+      "nominal_only_tail_ranking_disabled": true,
+      "actual_native_DONE_allowed": false,
+      "common_exit_timing_rank": false
+    },
+    "fullgas": {
+      "status": "CENSORED_NO_RECOVERY14",
+      "prefix_actions": 34,
+      "B_actions_each": 14,
+      "choices": [
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "neutralbrake"
+      ],
+      "first_neutral_decision": 14,
+      "recovery_decision": null,
+      "baseline_source_passed": false,
+      "independent_repeat_exact": true,
+      "held_first_passed": true,
+      "same_live_parent_prefix_to_B": true,
+      "nominal_only_tail_ranking_disabled": true,
+      "actual_native_DONE_allowed": false,
+      "common_exit_timing_rank": false
+    }
+  },
+  "both_first_intervention_recovery_witnessed": false,
+  "new_actual_actions_resets_learning_seed_HOLDOUT_SEALED_reserve_paid": 0,
+  "common_exit_gain_or_wholelap_claim": false,
+  "details": {
+    "nominal": {
+      "status": "FIRST_INTERVENTION_RECOVERY_WITNESSED",
+      "prefix_replay_exact": true,
+      "prefix_actions": 36,
+      "B_actions_each": 14,
+      "neutral_events": [
+        {
+          "decision": 13,
+          "kind": "NEUTRAL_INTERVENTION",
+          "rejected_nominal": {
+            "recipe": "nominal",
+            "valid": false,
+            "kind": "REGISTERED_PHYSICAL_INELIGIBILITY",
+            "actions": 13,
+            "reasons": [
+              "path_error_over3m"
+            ]
+          },
+          "selected_neutral": {
+            "recipe": "neutralbrake",
+            "valid": true,
+            "kind": "SAFE_PROGRESS_H13",
+            "actions": 13
+          },
+          "first_selected_parent_physical_passed": true
+        }
+      ],
+      "first_neutral": 13,
+      "recovery": 14,
+      "required_repeat_exact": true,
+      "held_first_current_context_exact": true,
+      "held_first_passed": true,
+      "selected_parent_unsafe_rows": 0,
+      "nominal_only_ranking_blocked": true,
+      "native_ledger_unmodified": true,
+      "all_current_views_bound": true,
+      "missing_recovery_is_censor_not_infeasibility": false
+    },
+    "fullgas": {
+      "status": "CENSORED_NO_RECOVERY14",
+      "prefix_replay_exact": true,
+      "prefix_actions": 34,
+      "B_actions_each": 14,
+      "neutral_events": [
+        {
+          "decision": 14,
+          "kind": "NEUTRAL_INTERVENTION",
+          "rejected_nominal": {
+            "recipe": "nominal",
+            "valid": false,
+            "kind": "REGISTERED_PHYSICAL_INELIGIBILITY",
+            "actions": 13,
+            "reasons": [
+              "path_error_over3m"
+            ]
+          },
+          "selected_neutral": {
+            "recipe": "neutralbrake",
+            "valid": true,
+            "kind": "SAFE_PROGRESS_H13",
+            "actions": 13
+          },
+          "first_selected_parent_physical_passed": true
+        }
+      ],
+      "first_neutral": 14,
+      "recovery": null,
+      "required_repeat_exact": true,
+      "held_first_current_context_exact": true,
+      "held_first_passed": true,
+      "selected_parent_unsafe_rows": 0,
+      "nominal_only_ranking_blocked": true,
+      "native_ledger_unmodified": true,
+      "all_current_views_bound": true,
+      "missing_recovery_is_censor_not_infeasibility": true
+    }
+  },
+  "verification": {
+    "source_and_protected_preserved": true,
+    "observer_posts": 7312,
+    "observer_streams": 126,
+    "current_query_roots": 56,
+    "shadow_worlds": 120,
+    "expected_nonselected_rejected_worlds": 8,
+    "selected_parent_failures": 0,
+    "actual_calls_resets": 0,
+    "model_prefix_and_B_same_live_parent": true,
+    "nominal_completion_reuse_blocked": true,
+    "candidate_B15_not_executed": true,
+    "saved_CPU_s": 3.487158488
+  },
+  "cost": {
+    "model_ticks": 7312,
+    "model_worlds": 126,
+    "model_CPU_s": 133.713754897,
+    "model_wall_s": 134.95294390595518,
+    "prefix_replay_ticks": 840,
+    "parent_B_ticks": 224,
+    "held_first_ticks": 8,
+    "shadow_ticks": 6240,
+    "static_attempts": [
+      {
+        "stage": 451,
+        "passed": false,
+        "error": null,
+        "tests": 225,
+        "failures": 0,
+        "errors": 1,
+        "audit_completed": false,
+        "CPU_s": 16.872774844000002,
+        "wall_s": 16.956807037000544,
+        "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+        "plan_sha256": "0818dc7dffaf53ee39b1673fce23a06b5e397d185d4ba5bc5ddca3d8c6643bf9"
+      },
+      {
+        "stage": 451,
+        "passed": true,
+        "error": null,
+        "tests": 229,
+        "failures": 0,
+        "errors": 0,
+        "audit_completed": true,
+        "CPU_s": 21.186302987999998,
+        "wall_s": 21.39631198591087,
+        "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+        "plan_sha256": "1ebfcced7cf42a6ae7d159a6a3236643c1858a73d9d53d9a230d219209615a86"
+      }
+    ],
+    "saved_audit_CPU_s": 3.487158488,
+    "full_project_overhead_measured": false,
+    "old_model_cost_recharged": false
+  },
+  "candidate_recovery_beyond14_unknown": true,
+  "whole_policy_or_native_lap_qualified": false,
+  "new_common_exit_gain": null,
+  "single_hypothesis_scope": true,
+  "deadline_utc": "2026-10-20T10:01:55Z"
+}
