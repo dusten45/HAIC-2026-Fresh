@@ -1,0 +1,45 @@
+{
+  "stage": 461,
+  "passed": true,
+  "new_actual_actions": 0,
+  "new_model_ticks": 0,
+  "new_worlds": 0,
+  "new_resets": 0,
+  "scientific_reproduction_exact": true,
+  "constructors_and_steps_forbidden": true,
+  "clock_components_close": true,
+  "nominal_pedals_float32_exact": true,
+  "next_root_binding_passed": true,
+  "budget": {
+    "parts": {
+      "first_fixed": {
+        "queries": 2,
+        "ticks": 208,
+        "worlds": 4
+      },
+      "guardian": {
+        "queries": 198,
+        "ticks": 41184,
+        "worlds": 792
+      },
+      "parents": {
+        "actions": 200,
+        "ticks": 800,
+        "worlds": 2
+      },
+      "qualification": {
+        "ticks": 1458,
+        "worlds": 41
+      }
+    },
+    "ticks": 43650,
+    "worlds": 839,
+    "empirical_raw_bytes_at_hard_with_margin_and_reserve": 4527961708.406581,
+    "storage_estimate_is_not_a_guarantee": true
+  },
+  "contract_json_sha256": "f58a083de2c4b2bbb481d6e91080640d9f029316088866b2ee7c1bcf2c7218a1",
+  "storage_estimate_fits_current_tmp": true,
+  "storage_guaranteed": false,
+  "CPU_s": 3.369647454,
+  "wall_s": 3.3774311440065503
+}

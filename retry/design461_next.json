@@ -1,0 +1,25 @@
+{
+  "stage": "461_NEXT_DESIGN_ONLY",
+  "execution_authorized_by_this_file": false,
+  "root": {"trace": "458P", "native_pre_step": 126, "original_pre23_offset_m": 522.611849, "observed_prefix_elapsed_s": 10.0},
+  "order": [
+    {"arm": "Original", "first_recipe": "nominal"},
+    {"arm": "SecantOnce", "first_recipe": "fullgas"}
+  ],
+  "intervention": "Only the first 80ms feedforward is reference secant; full float32 command must equal existing fullgas recipe at frozen root; then original guardian for both",
+  "parent_cap": 100,
+  "first_fixed_queries_per_arm": 1,
+  "first_fixed_copies": 2,
+  "guardian_recipes_max": 2,
+  "guardian_copies": 2,
+  "H": 13,
+  "raw_ticks_per_action_max": 4,
+  "qualification": {"old_ticks": 1242, "old_worlds": 35, "root_ticks": 216, "root_worlds": 6},
+  "hard": {"ticks": 49152, "worlds": 896, "CPU_s": 1800, "wall_s": 2400, "max_parallel": 1, "actual_actions": 0},
+  "storage": {"observed_max_bytes_per_tick": 64959.16009776336, "empirical_margin": 1.25, "final_dump_reserve_bytes": 536870912, "estimate_is_not_upper_bound": true},
+  "whole_arm_repeats_per_policy": 1,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "research_remaining": 26695,
+  "reserve": 84000,
+  "reserve_used": 0
+}

@@ -1,0 +1,787 @@
+{
+  "trace_input_hashes": {
+    "442P": {
+      "trace": "a4476c56da83f94a83e072863665bee7a8f63521b286dc54d8d3b2079583d4bc",
+      "query_records": "9931c196baeeaae07d5f76ea98547b3582b5d7d5f5657e3606e53b280a1e3c31"
+    },
+    "458P": {
+      "trace": "2a9785f016cfc2c3aef82d6db52ce1058c87efcabf076ec6f657f938b2238959",
+      "query_records": "c1c175b5f3c5711cf0fdfa558dba4384925442448a0f092c706370376b9ad09a"
+    }
+  },
+  "fixed_profile_input_sha256": "1cf68d1c876c2ad91d7f7c94b5114a2b106681a613dea6aa1d1ce30071e74248",
+  "pace_input_sha256": "fb17857c9a5ae97cc969452906b91111ffc2e81bb497738936c159a59e0409d6",
+  "control_source_hashes": {
+    "retry/signed417_executor.py": "11889e888bd065f5ff5019b6398e3099d9c8316cf61e26dc9f7fa7acbb555c72",
+    "retry/executor397.py": "108b59b169274eaa442a0357acf8e6a069bb11e49cdce2ed33986761937bb7be",
+    "retry/scalar392_audit.py": "52ddad4269613eb53577d1362325e681d0f68401899b28977ea717c8b678da94",
+    "retry/paired417_common.py": "4a0bae8e06d15443b03996c6e035283ba953652fa0ee52d6fb6af3a34c7f4322",
+    "retry/racing258_plan.py": "51f4e8e4e024e16b5475924a14ffae9ed672470421119b8c2c14d5937c66bd4a",
+    "retry/racing258_run.py": "6ec73b3c0d0beb9e237cea5ed0881a336a9d4ad0396700894430465fcc1b090c",
+    "retry/pace268_profile.py": "7af5a396e2a17b6d45e78c3447a8e5e25a4594bd909d3898d8fcb911ee144162",
+    "retry/source_vehicle_transition.py": "dff10a57ec276c1e8df0701af3c8a196823620205137991276e50b6095759461",
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece"
+  },
+  "protected_and_original_hashes_preserved": 18,
+  "next_root_binding": {
+    "native_step": 126,
+    "offset_m": 522.611849,
+    "observed_prefix_elapsed_s": 10.0,
+    "root_state_memory_ledger_binding_passed": true,
+    "secant_fullgas_float32_alias": true,
+    "source_hashes": {
+      "dispatch": "53c52760b8ad2a6fb57ae3183d5c3678260eb34a9ab6248bc0f4c6b58f37a3c4",
+      "query": "4c9d0b137e0d5e9511c5e42e279d5ac4f67fe3ff62210f1134df9f3f9a452cc3",
+      "native": "f9eb2bc7b32c49cb385f37fb306ed473e499dea8dac8395938b5cf79f9f8d0b3"
+    }
+  },
+  "reference_clock_excess_bracket_s": {
+    "442P": {
+      "0": [
+        0.0,
+        0.0
+      ],
+      "60": [
+        0.60471773,
+        0.62471773
+      ],
+      "120": [
+        0.90497004,
+        0.92497004
+      ],
+      "180": [
+        1.12755875,
+        1.14755875
+      ],
+      "240": [
+        1.34783951,
+        1.36783951
+      ],
+      "270": [
+        1.46154953,
+        1.48154953
+      ],
+      "330": [
+        1.72438788,
+        1.74438788
+      ],
+      "390": [
+        2.17377899,
+        2.19377899
+      ],
+      "450": [
+        2.44073363,
+        2.46073363
+      ],
+      "510": [
+        2.62021441,
+        2.64021441
+      ],
+      "570": [
+        2.72251298,
+        2.74251298
+      ],
+      "630": [
+        2.76183986,
+        2.78183986
+      ],
+      "690": [
+        2.88767972,
+        2.90767972
+      ],
+      "750": [
+        2.89796115,
+        2.91796115
+      ]
+    },
+    "458P": {
+      "0": [
+        0.0,
+        0.0
+      ],
+      "60": [
+        0.24471773,
+        0.26471773
+      ],
+      "120": [
+        0.50497004,
+        0.52497004
+      ],
+      "180": [
+        0.70755875,
+        0.72755875
+      ],
+      "240": [
+        0.88783951,
+        0.90783951
+      ],
+      "270": [
+        1.04154953,
+        1.06154953
+      ],
+      "330": [
+        1.32438788,
+        1.34438788
+      ],
+      "390": [
+        1.79377899,
+        1.81377899
+      ],
+      "450": [
+        2.08073363,
+        2.10073363
+      ],
+      "510": [
+        2.32021441,
+        2.34021441
+      ],
+      "570": [
+        2.54251298,
+        2.56251298
+      ],
+      "630": [
+        2.76183986,
+        2.78183986
+      ],
+      "690": [
+        2.98767972,
+        3.00767972
+      ],
+      "750": [
+        3.09796115,
+        3.11796115
+      ]
+    }
+  },
+  "stage": 461,
+  "scope": "SAVED_ONLY_DESCRIPTIVE_NO_CAUSAL_TIME_ATTRIBUTION",
+  "new_actual_actions": 0,
+  "new_model_ticks": 0,
+  "new_worlds": 0,
+  "new_resets": 0,
+  "profile": {
+    "reference_clock_by_common_boundary_s": {
+      "0": 0.0,
+      "60": 0.9752822673696324,
+      "120": 1.5150299606617856,
+      "180": 1.9324412536171327,
+      "240": 2.5121604935061423,
+      "270": 2.938450469577549,
+      "330": 3.7556121174962893,
+      "390": 4.526221010034767,
+      "450": 5.059266371036358,
+      "510": 5.75978559428375,
+      "570": 6.337487018394503,
+      "630": 7.018160143974964,
+      "690": 7.572320278556078,
+      "750": 8.422038854305297
+    },
+    "common_reference_from_pre23_to_profile_end_s": 8.960214412176867,
+    "reference_whole_profile_clock_s": 10.027245238641758,
+    "base_profile_clock_s": 15.316710464806208,
+    "scaled_squared_speed_gradient_min": -223.40157481912263,
+    "scaled_squared_speed_gradient_max": 106.92137346326037,
+    "scaled_gradient_brake_allowance_exceeded_segments": 54,
+    "scaled_gradient_drive_allowance_exceeded_segments": 166,
+    "lateral_accel_ratio_to_base_allowance_max": 2.4171084934121545
+  },
+  "data": {
+    "442P": {
+      "official_native_lap_s": 13.76,
+      "common_prefix_elapsed_s": 1.76,
+      "qualified_s": {
+        "dt": 11.979999999999773,
+        "reference_s": 8.946946576819446,
+        "speed_tracking_s": 3.0972470053096792,
+        "heading_s": 0.04796877553628877,
+        "body_slip_correction_s": -0.006336403926120261,
+        "origin_COM_correction_s": -0.001042463232292492,
+        "geometry_sampling_residual_s": -0.10478349050722806,
+        "actual_brake_s": 2.959999999999946,
+        "under_target_braking_s": 2.659999999999951,
+        "held_sign_conflict_s": 0.19999999999999707,
+        "clipped_s": 1.6999999999999638,
+        "gas_ramp_deficit_s": 0.442485822677603
+      },
+      "excluded_finish_boundary_s": 0.02000000000022517,
+      "bins": {
+        "0": {
+          "dt": 1.5999999999999925,
+          "reference_s": 0.9797775325733602,
+          "speed_tracking_s": 0.6515442546484849,
+          "heading_s": 0.009624029636158517,
+          "body_slip_correction_s": -0.0029186188721083825,
+          "origin_COM_correction_s": -0.0002974683622785904,
+          "geometry_sampling_residual_s": -0.03772972962362393,
+          "actual_brake_s": 0.40000000000000036,
+          "under_target_braking_s": 0.3400000000000003,
+          "held_sign_conflict_s": 0.06000000000000005,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.0034809842109680203
+        },
+        "60": {
+          "dt": 0.8399999999999821,
+          "reference_s": 0.5365975856011742,
+          "speed_tracking_s": 0.30847629016035166,
+          "heading_s": 2.0259299406833077e-05,
+          "body_slip_correction_s": -1.8392310389666076e-06,
+          "origin_COM_correction_s": -1.3594218411093907e-07,
+          "geometry_sampling_residual_s": -0.00509215988772763,
+          "actual_brake_s": 0.0,
+          "under_target_braking_s": 0.0,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.0
+        },
+        "120": {
+          "dt": 0.6399999999999864,
+          "reference_s": 0.41783567856213244,
+          "speed_tracking_s": 0.22433222910227849,
+          "heading_s": 3.216348762845131e-06,
+          "body_slip_correction_s": 4.2055091065456044e-07,
+          "origin_COM_correction_s": -5.233565315104432e-08,
+          "geometry_sampling_residual_s": -0.002171492228444932,
+          "actual_brake_s": 0.0,
+          "under_target_braking_s": 0.0,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.0
+        },
+        "180": {
+          "dt": 0.7799999999999834,
+          "reference_s": 0.5770343927350137,
+          "speed_tracking_s": 0.1956982807557484,
+          "heading_s": 0.0008954533839141209,
+          "body_slip_correction_s": 0.00013816115780172485,
+          "origin_COM_correction_s": 1.8628351655000145e-05,
+          "geometry_sampling_residual_s": 0.006215083615850419,
+          "actual_brake_s": 0.6399999999999864,
+          "under_target_braking_s": 0.6599999999999859,
+          "held_sign_conflict_s": 0.019999999999999574,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.010064371109008576
+        },
+        "240": {
+          "dt": 0.5599999999999881,
+          "reference_s": 0.42872814549298166,
+          "speed_tracking_s": 0.1450755001379585,
+          "heading_s": 0.002855069300469086,
+          "body_slip_correction_s": -0.0008057268301602152,
+          "origin_COM_correction_s": -0.00014207281979037537,
+          "geometry_sampling_residual_s": -0.0157109152814706,
+          "actual_brake_s": 0.0,
+          "under_target_braking_s": 0.0,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.3799999999999919,
+          "gas_ramp_deficit_s": 0.021029026508330852
+        },
+        "270": {
+          "dt": 1.0799999999999779,
+          "reference_s": 0.8210209288210981,
+          "speed_tracking_s": 0.2654549801899185,
+          "heading_s": 0.003172893530028803,
+          "body_slip_correction_s": -0.00012157505190406583,
+          "origin_COM_correction_s": -3.9847863089816725e-05,
+          "geometry_sampling_residual_s": -0.009487379626073615,
+          "actual_brake_s": 0.2999999999999936,
+          "under_target_braking_s": 0.25999999999999446,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.03999999999999915,
+          "gas_ramp_deficit_s": 0.030528548240660973
+        },
+        "330": {
+          "dt": 1.2199999999999749,
+          "reference_s": 0.766956739034919,
+          "speed_tracking_s": 0.4621044819071639,
+          "heading_s": 0.0019623639080752864,
+          "body_slip_correction_s": -0.00040310715984499666,
+          "origin_COM_correction_s": -7.84609563321872e-05,
+          "geometry_sampling_residual_s": -0.010542016734006048,
+          "actual_brake_s": 0.25999999999999446,
+          "under_target_braking_s": 0.2199999999999953,
+          "held_sign_conflict_s": 0.03999999999999915,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.017899820804595564
+        },
+        "390": {
+          "dt": 0.799999999999983,
+          "reference_s": 0.5345995742150773,
+          "speed_tracking_s": 0.2678535976007242,
+          "heading_s": 0.00011918262795118939,
+          "body_slip_correction_s": 6.99945590026769e-06,
+          "origin_COM_correction_s": -1.5900425931410082e-06,
+          "geometry_sampling_residual_s": -0.002577763857076901,
+          "actual_brake_s": 0.1599999999999966,
+          "under_target_braking_s": 0.17999999999999616,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.05764072895049926
+        },
+        "450": {
+          "dt": 0.8599999999999817,
+          "reference_s": 0.6933618042896645,
+          "speed_tracking_s": 0.1720083263800854,
+          "heading_s": 0.003160445266563238,
+          "body_slip_correction_s": -0.00012564611781243348,
+          "origin_COM_correction_s": -4.366736029483226e-05,
+          "geometry_sampling_residual_s": -0.00836126245822425,
+          "actual_brake_s": 0.1599999999999966,
+          "under_target_braking_s": 0.23999999999999488,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.3799999999999919,
+          "gas_ramp_deficit_s": 0.07459974288940271
+        },
+        "510": {
+          "dt": 0.6799999999999855,
+          "reference_s": 0.5740812959815376,
+          "speed_tracking_s": 0.11000036577774483,
+          "heading_s": 0.002035865764283814,
+          "body_slip_correction_s": 7.641669400653514e-05,
+          "origin_COM_correction_s": -2.935461415888541e-05,
+          "geometry_sampling_residual_s": -0.0061645896034283176,
+          "actual_brake_s": 0.0799999999999983,
+          "under_target_braking_s": 0.19999999999999574,
+          "held_sign_conflict_s": 0.03999999999999915,
+          "clipped_s": 0.019999999999999574,
+          "gas_ramp_deficit_s": 0.08999999999999808
+        },
+        "570": {
+          "dt": 0.7399999999999842,
+          "reference_s": 0.6931974587055851,
+          "speed_tracking_s": 0.045932360687170486,
+          "heading_s": 0.0015090568581941786,
+          "body_slip_correction_s": -3.186731009066592e-05,
+          "origin_COM_correction_s": -2.3276646335513093e-06,
+          "geometry_sampling_residual_s": -0.000604681276241352,
+          "actual_brake_s": 0.23999999999999488,
+          "under_target_braking_s": 0.19999999999999574,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.0850387942790967
+        },
+        "630": {
+          "dt": 0.6599999999999859,
+          "reference_s": 0.5460942199399526,
+          "speed_tracking_s": 0.11750348781697288,
+          "heading_s": 1.2647489045670025e-05,
+          "body_slip_correction_s": -1.162456221044942e-06,
+          "origin_COM_correction_s": 1.2594065968616177e-09,
+          "geometry_sampling_residual_s": -0.0036091940491707174,
+          "actual_brake_s": 0.0,
+          "under_target_braking_s": 0.0,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.0
+        },
+        "690": {
+          "dt": 0.8599999999999817,
+          "reference_s": 0.8464028822009411,
+          "speed_tracking_s": 0.004697501882744563,
+          "heading_s": 0.015249056058239034,
+          "body_slip_correction_s": -0.001362548790807255,
+          "origin_COM_correction_s": -0.00045118115585880876,
+          "geometry_sampling_residual_s": -0.00453571019527693,
+          "actual_brake_s": 0.7199999999999847,
+          "under_target_braking_s": 0.3599999999999923,
+          "held_sign_conflict_s": 0.03999999999999915,
+          "clipped_s": 0.47999999999998977,
+          "gas_ramp_deficit_s": 0.05063718843459975
+        },
+        "750": {
+          "dt": 0.6599999999999859,
+          "reference_s": 0.5312583386660101,
+          "speed_tracking_s": 0.126565348262331,
+          "heading_s": 0.007349236065196113,
+          "body_slip_correction_s": -0.0007863099647514212,
+          "origin_COM_correction_s": 2.5066273513361696e-05,
+          "geometry_sampling_residual_s": -0.00441167930231324,
+          "actual_brake_s": 0.0,
+          "under_target_braking_s": 0.0,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.3999999999999915,
+          "gas_ramp_deficit_s": 0.0015666172504424723
+        }
+      },
+      "control_summary": {
+        "under_target_braking_actions": 34,
+        "future13_target_below_initial_speed": 26,
+        "hold_conflict_actions": 5,
+        "hold_conflict_s": 0.19999999999999707,
+        "secant_qualified_actions": 149,
+        "secant_changed_actions": 24,
+        "secant_underbrake_retained": 34,
+        "first_conflict_changed_nominal": {
+          "step": 133,
+          "offset_m": 546.419387,
+          "elapsed_s": 10.56,
+          "held_conflict_s": 0.04,
+          "secant_changes_brake_to_drive": false,
+          "secant_fullgas_recipe_alias": false
+        }
+      },
+      "formula_max_float32_pedal_error": 0.0,
+      "actual_control_exposure_s": {
+        "archived_non_nominal": 0.0799999999999983,
+        "fullgas": 0.3199999999999932,
+        "nominal": 11.579999999999782
+      },
+      "time_components_by_selected_control": {
+        "archived_non_nominal": {
+          "dt": 0.0799999999999983,
+          "reference_s": 0.051655635141434786,
+          "speed_tracking_s": 0.026790670774059083,
+          "heading_s": 1.099899864917374e-05,
+          "body_slip_correction_s": -1.4381977514141132e-06,
+          "origin_COM_correction_s": 4.63632755192831e-07,
+          "geometry_sampling_residual_s": 0.001543669650851471,
+          "actual_brake_s": 0.0799999999999983,
+          "under_target_braking_s": 0.019999999999999574,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.019999999999999574,
+          "gas_ramp_deficit_s": 0.0
+        },
+        "fullgas": {
+          "dt": 0.3199999999999932,
+          "reference_s": 0.2760071843109557,
+          "speed_tracking_s": 0.04946169527563822,
+          "heading_s": 0.0018902622910073644,
+          "body_slip_correction_s": 4.7347555042670895e-05,
+          "origin_COM_correction_s": -2.2870117997450752e-05,
+          "geometry_sampling_residual_s": -0.007383619314653351,
+          "actual_brake_s": 0.0,
+          "under_target_braking_s": 0.23999999999999488,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.03999999999999915,
+          "gas_ramp_deficit_s": 0.06199999999999868
+        },
+        "nominal": {
+          "dt": 11.579999999999782,
+          "reference_s": 8.619283757367056,
+          "speed_tracking_s": 3.0209946392599814,
+          "heading_s": 0.04606751424663223,
+          "body_slip_correction_s": -0.006382313283411519,
+          "origin_COM_correction_s": -0.0010200567470502343,
+          "geometry_sampling_residual_s": -0.09894354084342617,
+          "actual_brake_s": 2.8799999999999475,
+          "under_target_braking_s": 2.3999999999999564,
+          "held_sign_conflict_s": 0.19999999999999707,
+          "clipped_s": 1.639999999999965,
+          "gas_ramp_deficit_s": 0.3804858226776044
+        }
+      }
+    },
+    "458P": {
+      "official_native_lap_s": 14.0,
+      "common_prefix_elapsed_s": 1.76,
+      "qualified_s": {
+        "dt": 12.219999999999768,
+        "reference_s": 8.947896737389328,
+        "speed_tracking_s": 3.3469469305394584,
+        "heading_s": 0.03600388328928721,
+        "body_slip_correction_s": -0.0063593848140891356,
+        "origin_COM_correction_s": -0.0009770481212624173,
+        "geometry_sampling_residual_s": -0.10351111828295537,
+        "actual_brake_s": 2.7999999999999465,
+        "under_target_braking_s": 2.899999999999946,
+        "held_sign_conflict_s": 0.3199999999999932,
+        "clipped_s": 1.1799999999999788,
+        "gas_ramp_deficit_s": 0.4792490369081399
+      },
+      "excluded_finish_boundary_s": 0.0200000000002305,
+      "bins": {
+        "0": {
+          "dt": 1.2400000000000002,
+          "reference_s": 0.9796649277182967,
+          "speed_tracking_s": 0.29125049949763054,
+          "heading_s": 0.010328780273626268,
+          "body_slip_correction_s": -0.002565664684367027,
+          "origin_COM_correction_s": -0.00031266275831415004,
+          "geometry_sampling_residual_s": -0.03836588004687206,
+          "actual_brake_s": 0.2400000000000002,
+          "under_target_braking_s": 0.3200000000000003,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.18000000000000016,
+          "gas_ramp_deficit_s": 0.017533736765384694
+        },
+        "60": {
+          "dt": 0.7799999999999834,
+          "reference_s": 0.5321029123336878,
+          "speed_tracking_s": 0.2524973221706458,
+          "heading_s": 8.119097384882321e-05,
+          "body_slip_correction_s": -6.880161780722424e-06,
+          "origin_COM_correction_s": -3.327596490323894e-07,
+          "geometry_sampling_residual_s": -0.004674212556769315,
+          "actual_brake_s": 0.0,
+          "under_target_braking_s": 0.0,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.0
+        },
+        "120": {
+          "dt": 0.6199999999999868,
+          "reference_s": 0.41513533001101477,
+          "speed_tracking_s": 0.20657390229860614,
+          "heading_s": 6.439321307164998e-06,
+          "body_slip_correction_s": 2.890248224376788e-07,
+          "origin_COM_correction_s": -5.720954491357956e-08,
+          "geometry_sampling_residual_s": -0.0017159034462188479,
+          "actual_brake_s": 0.0,
+          "under_target_braking_s": 0.0,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.0
+        },
+        "180": {
+          "dt": 0.7799999999999834,
+          "reference_s": 0.5914679755783623,
+          "speed_tracking_s": 0.18054284545224267,
+          "heading_s": 0.0009546792434081852,
+          "body_slip_correction_s": 0.0001740947714384695,
+          "origin_COM_correction_s": 2.172313149707331e-05,
+          "geometry_sampling_residual_s": 0.006838681823034714,
+          "actual_brake_s": 0.6199999999999868,
+          "under_target_braking_s": 0.6399999999999864,
+          "held_sign_conflict_s": 0.03999999999999915,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.0
+        },
+        "240": {
+          "dt": 0.5799999999999876,
+          "reference_s": 0.42542444705653804,
+          "speed_tracking_s": 0.16787987703204194,
+          "heading_s": 0.002619780768683155,
+          "body_slip_correction_s": -0.0007969593891287163,
+          "origin_COM_correction_s": -0.00013854081093101164,
+          "geometry_sampling_residual_s": -0.014988604657215797,
+          "actual_brake_s": 0.019999999999999574,
+          "under_target_braking_s": 0.0,
+          "held_sign_conflict_s": 0.019999999999999574,
+          "clipped_s": 0.05999999999999872,
+          "gas_ramp_deficit_s": 0.0290812711715692
+        },
+        "270": {
+          "dt": 1.079999999999977,
+          "reference_s": 0.8091320841106739,
+          "speed_tracking_s": 0.2769368883745438,
+          "heading_s": 0.002675098655113941,
+          "body_slip_correction_s": -0.0004046012564331084,
+          "origin_COM_correction_s": -7.459116547882947e-05,
+          "geometry_sampling_residual_s": -0.008264878718442678,
+          "actual_brake_s": 0.27999999999999403,
+          "under_target_braking_s": 0.23999999999999488,
+          "held_sign_conflict_s": 0.03999999999999915,
+          "clipped_s": 0.03999999999999915,
+          "gas_ramp_deficit_s": 0.028880331993102408
+        },
+        "330": {
+          "dt": 1.2399999999999753,
+          "reference_s": 0.7685320739532369,
+          "speed_tracking_s": 0.4808106639864536,
+          "heading_s": 0.0019029449253771431,
+          "body_slip_correction_s": -0.0003150797693129086,
+          "origin_COM_correction_s": -6.98601630116118e-05,
+          "geometry_sampling_residual_s": -0.010860742932767767,
+          "actual_brake_s": 0.2799999999999949,
+          "under_target_braking_s": 0.2199999999999962,
+          "held_sign_conflict_s": 0.03999999999999915,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.016965436935424443
+        },
+        "390": {
+          "dt": 0.8199999999999825,
+          "reference_s": 0.5374247264731631,
+          "speed_tracking_s": 0.28344332057136373,
+          "heading_s": 0.00010933974231943483,
+          "body_slip_correction_s": 8.455617460747154e-06,
+          "origin_COM_correction_s": -1.2882746926604425e-06,
+          "geometry_sampling_residual_s": -0.0009845541296319062,
+          "actual_brake_s": 0.25999999999999446,
+          "under_target_braking_s": 0.19999999999999574,
+          "held_sign_conflict_s": 0.05999999999999872,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.0
+        },
+        "450": {
+          "dt": 0.93999999999998,
+          "reference_s": 0.7003392875045167,
+          "speed_tracking_s": 0.23652663581865277,
+          "heading_s": 0.005705207791431899,
+          "body_slip_correction_s": -0.0006151463146776108,
+          "origin_COM_correction_s": -6.107993431154968e-05,
+          "geometry_sampling_residual_s": -0.0018949048656322267,
+          "actual_brake_s": 0.13999999999999702,
+          "under_target_braking_s": 0.23999999999999488,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.41999999999999105,
+          "gas_ramp_deficit_s": 0.13932076168060006
+        },
+        "510": {
+          "dt": 0.799999999999983,
+          "reference_s": 0.5753744315298084,
+          "speed_tracking_s": 0.22591338776565792,
+          "heading_s": 0.0015205608260627143,
+          "body_slip_correction_s": -5.8708422699097344e-05,
+          "origin_COM_correction_s": -3.335456005986631e-05,
+          "geometry_sampling_residual_s": -0.0027163171387870784,
+          "actual_brake_s": 0.1599999999999966,
+          "under_target_braking_s": 0.1599999999999966,
+          "held_sign_conflict_s": 0.09999999999999787,
+          "clipped_s": 0.03999999999999915,
+          "gas_ramp_deficit_s": 0.16141609239577903
+        },
+        "570": {
+          "dt": 0.8999999999999808,
+          "reference_s": 0.6779369004658173,
+          "speed_tracking_s": 0.22053217566281494,
+          "heading_s": 0.001072493470178188,
+          "body_slip_correction_s": -6.917842794517854e-05,
+          "origin_COM_correction_s": -9.475489907883306e-06,
+          "geometry_sampling_residual_s": 0.0005370843190233374,
+          "actual_brake_s": 0.3199999999999932,
+          "under_target_braking_s": 0.33999999999999275,
+          "held_sign_conflict_s": 0.019999999999999574,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.04455894970893765
+        },
+        "630": {
+          "dt": 0.799999999999983,
+          "reference_s": 0.5635454064770897,
+          "speed_tracking_s": 0.24122761478957291,
+          "heading_s": 2.748869489804834e-05,
+          "body_slip_correction_s": -3.221022308656037e-06,
+          "origin_COM_correction_s": 3.17459487419132e-07,
+          "geometry_sampling_residual_s": -0.004797606398756529,
+          "actual_brake_s": 0.0,
+          "under_target_braking_s": 0.0,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.0
+        },
+        "690": {
+          "dt": 0.9599999999999795,
+          "reference_s": 0.8471502055674485,
+          "speed_tracking_s": 0.12381061868037627,
+          "heading_s": 0.007014987434630931,
+          "body_slip_correction_s": -0.001475965958965006,
+          "origin_COM_correction_s": -0.0003067999867919593,
+          "geometry_sampling_residual_s": -0.016193045736719217,
+          "actual_brake_s": 0.47999999999998977,
+          "under_target_braking_s": 0.5399999999999885,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.3599999999999923,
+          "gas_ramp_deficit_s": 0.04149245625734241
+        },
+        "750": {
+          "dt": 0.6799999999999855,
+          "reference_s": 0.5246660286096745,
+          "speed_tracking_s": 0.1590011784388558,
+          "heading_s": 0.0019848911684012837,
+          "body_slip_correction_s": -0.00023081882019276148,
+          "origin_COM_correction_s": 8.95440044655677e-06,
+          "geometry_sampling_residual_s": -0.005430233797199917,
+          "actual_brake_s": 0.0,
+          "under_target_braking_s": 0.0,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.0799999999999983,
+          "gas_ramp_deficit_s": 0.0
+        }
+      },
+      "control_summary": {
+        "under_target_braking_actions": 37,
+        "future13_target_below_initial_speed": 24,
+        "hold_conflict_actions": 7,
+        "hold_conflict_s": 0.3199999999999932,
+        "secant_qualified_actions": 152,
+        "secant_changed_actions": 27,
+        "secant_underbrake_retained": 31,
+        "first_conflict_changed_nominal": {
+          "step": 126,
+          "offset_m": 522.611849,
+          "elapsed_s": 10.0,
+          "held_conflict_s": 0.06,
+          "secant_changes_brake_to_drive": true,
+          "secant_fullgas_recipe_alias": true
+        }
+      },
+      "formula_max_float32_pedal_error": 0.0,
+      "actual_control_exposure_s": {
+        "archived_non_nominal": 0.15999999999999837,
+        "fullgas": 0.1599999999999966,
+        "neutralbrake": 0.0799999999999983,
+        "nominal": 11.819999999999775
+      },
+      "time_components_by_selected_control": {
+        "archived_non_nominal": {
+          "dt": 0.15999999999999837,
+          "reference_s": 0.10848619798656567,
+          "speed_tracking_s": 0.05082954733807996,
+          "heading_s": 9.94608832597078e-06,
+          "body_slip_correction_s": -3.303336369417054e-07,
+          "origin_COM_correction_s": 4.115963009800542e-07,
+          "geometry_sampling_residual_s": 0.0006742273243627288,
+          "actual_brake_s": 0.0799999999999983,
+          "under_target_braking_s": 0.09999999999999964,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.019999999999999574,
+          "gas_ramp_deficit_s": 0.006436607122421272
+        },
+        "fullgas": {
+          "dt": 0.1599999999999966,
+          "reference_s": 0.12355046540822823,
+          "speed_tracking_s": 0.03662524370301481,
+          "heading_s": 0.0005431706555290089,
+          "body_slip_correction_s": 3.002481423945848e-05,
+          "origin_COM_correction_s": -1.888934611320556e-06,
+          "geometry_sampling_residual_s": -0.0007470156464035992,
+          "actual_brake_s": 0.0,
+          "under_target_braking_s": 0.1599999999999966,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.08799999999999812
+        },
+        "neutralbrake": {
+          "dt": 0.0799999999999983,
+          "reference_s": 0.07488203432869156,
+          "speed_tracking_s": 0.006516168274510334,
+          "heading_s": 0.00027964213621026516,
+          "body_slip_correction_s": 8.85378056794268e-06,
+          "origin_COM_correction_s": 7.711814045146777e-07,
+          "geometry_sampling_residual_s": -0.0016874697013863175,
+          "actual_brake_s": 0.0799999999999983,
+          "under_target_braking_s": 0.019999999999999574,
+          "held_sign_conflict_s": 0.0,
+          "clipped_s": 0.0,
+          "gas_ramp_deficit_s": 0.0
+        },
+        "nominal": {
+          "dt": 11.819999999999775,
+          "reference_s": 8.640978039665843,
+          "speed_tracking_s": 3.2529759712238544,
+          "heading_s": 0.03517112440922196,
+          "body_slip_correction_s": -0.006397933075259595,
+          "origin_COM_correction_s": -0.0009763419643565911,
+          "geometry_sampling_residual_s": -0.10175086025952818,
+          "actual_brake_s": 2.63999999999995,
+          "under_target_braking_s": 2.6199999999999504,
+          "held_sign_conflict_s": 0.3199999999999932,
+          "clipped_s": 1.1599999999999793,
+          "gas_ramp_deficit_s": 0.3848124297857205
+        }
+      }
+    }
+  },
+  "clock_identity": "For each positive-progress FIRST_LAP raw interval inside profile domain: drho=int(ds/r); invr=drho/ds; dt=drho+dt(1-v*invr)+dt*v(1-cosheading)*invr+dt(v*cosheading-sigmaCOM)*invr+dt(sigmaCOM-sigmaOrigin)*invr+[dt*sigmaOrigin*invr-drho]. Signed convention, exact closure; residual contains discrete geometry/sampling. Midpoint spatial bins, no independent causal attribution. Prefix1.76 and profile-end straddling intervals excluded explicitly.",
+  "storage": {
+    "/workspace": {
+      "total": 33770192896,
+      "used": 30299361280,
+      "free": 1736069120
+    },
+    "/tmp": {
+      "total": 9466122240,
+      "used": 3996327936,
+      "free": 5469794304
+    }
+  },
+  "private_input_manifest_sha256": "e5d7aa9c26abdbd8035e006d4ec20119d3acb50b34d6b4143e51e4b227b061d4"
+}
