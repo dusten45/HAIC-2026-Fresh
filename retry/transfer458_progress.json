@@ -1,0 +1,62 @@
+{
+  "stage": 458,
+  "status": "RUNNING_NOT_FINAL",
+  "recorded_at_utc": "2026-10-17T09:50:35.212257+00:00",
+  "checkpoint": {
+    "stage": 458,
+    "phase": "NATIVE_TRANSITION_VERIFIED",
+    "pid": 177068,
+    "at_utc": "2026-10-17T09:50:35.126766+00:00",
+    "actual_actions": 248,
+    "resets": 2,
+    "arm_actions": {
+      "C0": 188,
+      "P": 60
+    },
+    "model_ticks": 8555,
+    "model_reserved_ticks": 8555,
+    "model_worlds": 193,
+    "model_CPU_s": 186.78010093199998,
+    "model_wall_s": 189.57638551015407,
+    "actual_CPU_s": 108.03598863300002,
+    "actual_wall_s": 109.16205145185813,
+    "arm": "P",
+    "native_step": 60,
+    "prefix_verified": 60,
+    "suffix_verified": 0,
+    "planner_used": 0
+  },
+  "completed_native_arms": [
+    {
+      "arm": "C0",
+      "status": "COMPLETED_SAFE_OFFICIAL",
+      "completed": true,
+      "lap_ms": 14980,
+      "native_actions": 188,
+      "prefix_exact_rows": 112,
+      "verified_suffix_transitions": 76,
+      "planner_decisions": 0,
+      "pending_queries": 0
+    }
+  ],
+  "meter_snapshot": {
+    "actual_actions": 248,
+    "resets": 2,
+    "actual_CPU_s": 108.03598863300002,
+    "actual_wall_s": 109.16247937793378,
+    "model_ticks": 8555,
+    "model_worlds": 193,
+    "model_CPU_s": 186.78010093199998
+  },
+  "source_preflight": {
+    "passed": true,
+    "ticks": 1353,
+    "worlds": 41,
+    "actual_actions": 0,
+    "resets": 0
+  },
+  "research_before458": 27059,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "no_pair_gain_before_both_official_finishes": true
+}
