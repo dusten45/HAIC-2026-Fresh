@@ -133,3 +133,6 @@ B는 미리 고른 N1 직선64/코너94의 한 행동 모델 자격을 통과한
 
 
 **419는signedC+guardian기준의상태기반3recipe plannerprotocol을정적으로구현했다.** 절대행동/arc구간/seed트리거없이현재상태에서질의하고, terminal가중치대신각13적격child의긴Cnominalwitness를officialfinish/실패까지확인하는방법을선택했다. 모든적격recipe를보고엄격한finishbracket지배로선택하며417의.08을보편기준으로쓰지않는다. 미완료tail시간추정·Otail의C이식·분기memorycommit·예측actualgoal갱신은거부한다. 412/414/418저장fixture와synthetic포함36정적검사가통과했고새actual/model0이다. 긴tailphysics/실시간성은미자격이며후속3decision모델폐루프와조건부actual보정은설계만남겼다. 필수3852tick+자격중복3852tick의비용을분리했고관측rate상한이아닌경험적추정임을명시했다. 정적CPU.244초, 원장v439연구29,618·예비84,000사용0유지다. [419 코드·단위/경계·후속비용·제안](planner419_result.md)
+
+
+**420은모델폐루프pilot이증거직렬화기술오류로중단됐다.** 실제418root A/B13body/wheel/rawhull·명령·복원·독립반복·살아있는부모/RNG게이트와C0세decision+nominaltail model finish[281,282]tick을통과했다. P첫질의세recipe13+같은childtail·반복은완료됐지만immutablebytes JSON저장오류가나서P부모0행동이며폐루프비교는없다. 첫query fullgaswitness[251,252] vsnominal[281,282]의모델차이.58–.62초는정책성과로확대하지않았다. 원실행·오류·tmp를보존하고직렬화만정적으로고쳐4테스트통과후모델은재개하지않았다. 모델2387tick/19world·workerCPU7.150초, actual0·원장v440연구29,618·예비84,000사용0이다. 긴tail실제fidelity·actualgate는열지않았다. [420 부분증거·오류·비용·미완료범위](pilot420_result.md)
