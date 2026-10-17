@@ -1,0 +1,234 @@
+{
+  "stage": 483,
+  "status": "H6_COMPARISON_COMPLETE",
+  "error": null,
+  "outcome": {
+    "status": "H6_COMPARISON_COMPLETE",
+    "verdict": "LOCAL_HYPOTHESIS_PROMOTION_GATE_PASSED",
+    "primary": true,
+    "common_executed_own_actions": 4,
+    "same_elapsed_common_prefix": true,
+    "control_common_min_margin_m": 0.9678868196002819,
+    "variant_common_min_margin_m": 1.520388786917295,
+    "common_margin_gain_m": 0.5525019673170131,
+    "registered_effect_cut_m": 0.25,
+    "root_inclusive_margin_upper_bound_m": 2.792997172049724,
+    "max_possible_common_margin_gain_m": 1.825110352449442,
+    "root_dominates_identifiability": false,
+    "independent_arm_repeats_exact": true,
+    "held_first_passed": true,
+    "source_gate_passed": true,
+    "unselected_independently_repeated": false,
+    "unselected_warm_counterfactual_observed": false,
+    "posthoc_root": true,
+    "whole_finish_improvement": null,
+    "native_promotion": false,
+    "no_followup": true,
+    "parents": [
+      {
+        "arm": "control",
+        "repetition": 1,
+        "status": "EMPTY_FINITE_CANDIDATE_DOMAIN",
+        "error": "all_existing_candidates_ineligible",
+        "actions": 4,
+        "safe_own_actions": 4,
+        "raw_ticks": 16,
+        "raw_lengths": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "margins_m": [
+          2.1272166559530303,
+          1.6559470249978785,
+          1.6559470249978785,
+          0.9678868196002819
+        ],
+        "own_M80": [
+          0.09067094228473405,
+          0.7170929644528212,
+          1.743617261419932,
+          2.0949106711530914
+        ],
+        "official_own_finish": false,
+        "query_count": 5
+      },
+      {
+        "arm": "control",
+        "repetition": 2,
+        "status": "EMPTY_FINITE_CANDIDATE_DOMAIN",
+        "error": "all_existing_candidates_ineligible",
+        "actions": 4,
+        "safe_own_actions": 4,
+        "raw_ticks": 16,
+        "raw_lengths": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "margins_m": [
+          2.1272166559530303,
+          1.6559470249978785,
+          1.6559470249978785,
+          0.9678868196002819
+        ],
+        "own_M80": [
+          0.09067094228473405,
+          0.7170929644528212,
+          1.743617261419932,
+          2.0949106711530914
+        ],
+        "official_own_finish": false,
+        "query_count": 5
+      },
+      {
+        "arm": "control",
+        "repetition": "held",
+        "status": "HELD_FIRST_SAFE",
+        "error": null,
+        "actions": 1,
+        "safe_own_actions": 1,
+        "raw_ticks": 4,
+        "raw_lengths": [
+          4
+        ],
+        "margins_m": [
+          2.1272166559530303
+        ],
+        "own_M80": [
+          0.09067094228473405
+        ],
+        "official_own_finish": false,
+        "query_count": 1
+      },
+      {
+        "arm": "variant",
+        "repetition": 1,
+        "status": "H6_SAFE_CENSORED",
+        "error": null,
+        "actions": 6,
+        "safe_own_actions": 6,
+        "raw_ticks": 24,
+        "raw_lengths": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "margins_m": [
+          2.1875075128323527,
+          1.6144690944520004,
+          1.520388786917295,
+          1.8292163408742605,
+          2.2526754469908,
+          1.1290306537978778
+        ],
+        "own_M80": [
+          0.13573435686307245,
+          0.45345574230112806,
+          0.6501823535533469,
+          1.0296489552058454,
+          0.9826826127701347,
+          0.8945410330340717
+        ],
+        "official_own_finish": false,
+        "query_count": 6
+      },
+      {
+        "arm": "variant",
+        "repetition": 2,
+        "status": "H6_SAFE_CENSORED",
+        "error": null,
+        "actions": 6,
+        "safe_own_actions": 6,
+        "raw_ticks": 24,
+        "raw_lengths": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "margins_m": [
+          2.1875075128323527,
+          1.6144690944520004,
+          1.520388786917295,
+          1.8292163408742605,
+          2.2526754469908,
+          1.1290306537978778
+        ],
+        "own_M80": [
+          0.13573435686307245,
+          0.45345574230112806,
+          0.6501823535533469,
+          1.0296489552058454,
+          0.9826826127701347,
+          0.8945410330340717
+        ],
+        "official_own_finish": false,
+        "query_count": 6
+      },
+      {
+        "arm": "variant",
+        "repetition": "held",
+        "status": "HELD_FIRST_SAFE",
+        "error": null,
+        "actions": 1,
+        "safe_own_actions": 1,
+        "raw_ticks": 4,
+        "raw_lengths": [
+          4
+        ],
+        "margins_m": [
+          2.1875075128323527
+        ],
+        "own_M80": [
+          0.13573435686307245
+        ],
+        "official_own_finish": false,
+        "query_count": 1
+      }
+    ]
+  },
+  "model_ticks": 408,
+  "charged_ticks": 408,
+  "reserved_ticks": 408,
+  "worlds": 86,
+  "wrapper_slots": 102,
+  "allocator_calls": 24,
+  "allocator_CPU_s": 0.3158673959999869,
+  "allocator_wall_s": 0.3022865178063512,
+  "whole_accounted_CPU_s": 127.825758751,
+  "whole_accounted_wall_s": 127.09891667496413,
+  "preparation": {
+    "measured_CPU_s": 33.086054049,
+    "measured_wall_s": 32.783992027980275,
+    "development_conservative_charge": {
+      "CPU_s": 20.0,
+      "wall_s": 20.0,
+      "kind": "Conservative charge, not measurement, for pre-registration import/stub-fixture corrections and development static checks. New physics0."
+    },
+    "CPU_s": 53.086054049,
+    "wall_s": 52.7839937210083,
+    "scope": "Formal registration/static/fullsource/root121 authentication/storage/frozeninputs, plus separately identified conservative development charge. No model constructor/step."
+  },
+  "peak_live_worlds": 2,
+  "peak_integrating_constructor_or_step": 1,
+  "closed_worlds": 86,
+  "readback_files": 774,
+  "raw_bytes": 42420812,
+  "plan_sha256": "6b917be6d7ef2c99ebcf6844decb7ddf99916e75b5dc6953e96a76a7dde5d22f",
+  "static_tests": 36,
+  "root121_authenticated_once": true,
+  "new_native_actual_reset_HOLDOUT_SEALED": 0,
+  "research_remaining": 26175,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "best_native_s": 13.64,
+  "no_followup": true
+}
