@@ -1,22 +1,22 @@
 {
   "stage": 457,
   "status": "RUNNING_NOT_FINAL",
-  "recorded_at_utc": "2026-10-17T09:24:47.997485+00:00",
+  "recorded_at_utc": "2026-10-17T09:29:37.310970+00:00",
   "checkpoint": {
     "pid": 176121,
-    "phase": "PLANNER_QUERY",
-    "at_utc": "2026-10-17T09:24:43.794432+00:00",
-    "model_ticks": 13366,
-    "reserved_ticks": 13366,
-    "model_worlds": 213,
-    "CPU_s": 217.530852901,
-    "wall_s": 221.15536726999562,
+    "phase": "GUARDIAN_QUERY",
+    "at_utc": "2026-10-17T09:29:35.692076+00:00",
+    "model_ticks": 31825,
+    "reserved_ticks": 31825,
+    "model_worlds": 482,
+    "CPU_s": 506.843477124,
+    "wall_s": 513.053018241073,
     "actual_actions": 0,
     "resets": 0,
-    "arm": "P-1",
-    "parent_action": 3,
-    "planner_used": 3,
-    "current_decision": 4
+    "arm": "C0-2",
+    "parent_action": 63,
+    "planner_used": 0,
+    "current_decision": 64
   },
   "checkpoint_legacy_stage_label": 456,
   "preflight": {
@@ -44,19 +44,39 @@
       "actual_root_unchanged": true,
       "actual_finish_witness": false,
       "actual_DONE_allowed": false
+    },
+    {
+      "arm": "P-1",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 64,
+      "planner_decisions": 8,
+      "guardian_decisions": 56,
+      "finish_ticks": {
+        "lo": 251,
+        "hi": 252
+      },
+      "official_model_finish": true,
+      "signature": "b3c03b1d78eff03ef5b2fc04ead38f05cb1b1ec24b2b4788c328b93bb76fe006",
+      "model_ticks": 16165,
+      "model_worlds": 161,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "actual_DONE_allowed": false
     }
   ],
   "meter_snapshot": {
-    "ticks": 13554,
-    "reserved_ticks": 13554,
-    "worlds": 218,
-    "CPU_s": 221.653120391,
-    "execution_wall_s": 225.3117332990514
+    "ticks": 31923,
+    "reserved_ticks": 31923,
+    "worlds": 484,
+    "CPU_s": 508.007505448,
+    "execution_wall_s": 514.2272430830635
   },
   "new_actual_actions": 0,
   "new_resets": 0,
   "actual_gate_opened": false,
   "research_remaining": 27059,
   "reserve": 84000,
-  "reserve_used": 0
+  "reserve_used": 0,
+  "process_alive_checked": true
 }
