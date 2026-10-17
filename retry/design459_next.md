@@ -1,5 +1,7 @@
 # 459 다음 한 실험 — 두 초기 history에 동일 후반 정책 적용
 
+**460 정정:** 아래 기존 비용표는 네 arm 중 두 planner arm을 누락했다. 실행에 사용하지 않는다. 수정된326,346ticks/1,715worlds와 승인 cap은 [design460.md](design460.md)를 따른다. 기존459 오류 기록은 보존한다.
+
 **설계만 확정한다.459의 새 actual/model 적분0이며 이 문서가 실행 승인을 대신하지 않는다.** H1의 confound를 가장 적은 변경으로 분리하는 단일 bounded model-only 비교다. H2용 profile/tracker/path 변경 연구선은 동시에 시작하지 않는다.
 
 ## 입력과 정책
