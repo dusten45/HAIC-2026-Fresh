@@ -1,0 +1,246 @@
+{
+  "stage": 439,
+  "status": "STATIC_CONTRACT_AND_SAVED_AUDIT_PASSED",
+  "deadline_KST": "2026-10-20 19:01:55",
+  "plan_sha256": "3895d380f7ce930cb16512f8c3c4a5c3f28dfc21bbbc417192517fdf506e4305",
+  "static_result": {
+    "stage": 439,
+    "passed": true,
+    "error": null,
+    "tests": 171,
+    "failures": 0,
+    "errors": 0,
+    "audit_completed": true,
+    "CPU_s": 18.842993649,
+    "wall_s": 20.71844443306327,
+    "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+    "plan_sha256": "3895d380f7ce930cb16512f8c3c4a5c3f28dfc21bbbc417192517fdf506e4305"
+  },
+  "static_versions_preserved": [
+    166,
+    167,
+    170,
+    171
+  ],
+  "current_position_tolerance_m": 0.1,
+  "observed_438_discrepancy_not_used_as_epsilon": true,
+  "continuous_bound": "Original projection/advance expressions with outward interval arithmetic, same proven branch, equal winding. Full replay arc errors telescope; exact-rational ideal bounds only IEEE operation roundoff. No fitted epsilon.",
+  "actual_authority": "Own valid native observation+previous actual ledger+own ticket commit factual actual ledger before forecast verification. Forecast failure preserves actual fact and latches next execution stop. No model value/permission replaces actual truth.",
+  "discrete_rules": "Exact numeric goal-side and ledger goal-hit, clock/age/deadline/DONE; numeric goal reversal rejected even if both DONE. No native fact commit means model cannot grant actual DONE.",
+  "datasets": {
+    "C0": {
+      "prefix": {
+        "rows": 118,
+        "physical_pass": 118,
+        "geometry_supported": 118,
+        "geometry_stop_actions": [],
+        "ledger_pass": 118,
+        "discrete_equal": 118,
+        "first_conservative_stop": null,
+        "fresh_current_first_pass": 0,
+        "memory_exact_mismatch_fields": {},
+        "geometry_branch_counts": {
+          "IDENTICAL_POSITION_SAME_SOURCE_BRANCH": 236
+        },
+        "continuous_bound_max_width_m": 1.163016349892132e-10,
+        "ledger_comparison_prefix_pass_count": 118,
+        "scope": "Stored replay inspection; no actual authority. Prefix memory/ledger are reconstructed diagnostics, not authenticated archived model fields.",
+        "prefix_model_memory_ledger_authenticated": false
+      },
+      "suffix": {
+        "rows": 71,
+        "physical_pass": 71,
+        "geometry_supported": 71,
+        "geometry_stop_actions": [],
+        "ledger_pass": 71,
+        "discrete_equal": 71,
+        "first_conservative_stop": null,
+        "fresh_current_first_pass": 1,
+        "memory_exact_mismatch_fields": {
+          "after/C/previous_arc": 70,
+          "after/C/s": 70,
+          "after/laststeer": 70,
+          "before/C/previous_arc": 69,
+          "before/C/s": 69,
+          "before/laststeer": 69
+        },
+        "geometry_branch_counts": {
+          "IDENTICAL_POSITION_SAME_SOURCE_BRANCH": 1,
+          "SAME_UNIQUE_INTERIOR_OUTWARD_FLOAT_EVALUATION": 141
+        },
+        "continuous_bound_max_width_m": 0.2826638757424007,
+        "ledger_comparison_prefix_pass_count": 71,
+        "scope": "Full trajectory replay and fresh-current eligibility are distinct; after first stop no tail qualification.",
+        "prefix_model_memory_ledger_authenticated": true
+      }
+    },
+    "P": {
+      "prefix": {
+        "rows": 118,
+        "physical_pass": 118,
+        "geometry_supported": 118,
+        "geometry_stop_actions": [],
+        "ledger_pass": 118,
+        "discrete_equal": 118,
+        "first_conservative_stop": null,
+        "fresh_current_first_pass": 0,
+        "memory_exact_mismatch_fields": {},
+        "geometry_branch_counts": {
+          "IDENTICAL_POSITION_SAME_SOURCE_BRANCH": 236
+        },
+        "continuous_bound_max_width_m": 1.163016349892132e-10,
+        "ledger_comparison_prefix_pass_count": 118,
+        "scope": "Stored replay inspection; no actual authority. Prefix memory/ledger are reconstructed diagnostics, not authenticated archived model fields.",
+        "prefix_model_memory_ledger_authenticated": false
+      },
+      "suffix": {
+        "rows": 59,
+        "physical_pass": 59,
+        "geometry_supported": 59,
+        "geometry_stop_actions": [],
+        "ledger_pass": 59,
+        "discrete_equal": 59,
+        "first_conservative_stop": null,
+        "fresh_current_first_pass": 1,
+        "memory_exact_mismatch_fields": {
+          "after/laststeer": 58,
+          "before/laststeer": 57,
+          "after/C/previous_arc": 55,
+          "after/C/s": 55,
+          "before/C/previous_arc": 54,
+          "before/C/s": 54
+        },
+        "geometry_branch_counts": {
+          "IDENTICAL_POSITION_SAME_SOURCE_BRANCH": 7,
+          "SAME_UNIQUE_INTERIOR_OUTWARD_FLOAT_EVALUATION": 111
+        },
+        "continuous_bound_max_width_m": 0.2808868317941915,
+        "ledger_comparison_prefix_pass_count": 59,
+        "scope": "Full trajectory replay and fresh-current eligibility are distinct; after first stop no tail qualification.",
+        "prefix_model_memory_ledger_authenticated": true
+      }
+    }
+  },
+  "current_restore_checks": {
+    "total": 24,
+    "passed": 24
+  },
+  "stored438_current_check": {
+    "new_static_contract_pass": true,
+    "actual_candidate_matches_native": true,
+    "model_progress_is_not_actual_value": true,
+    "progress_interval_width_m": 0.2637456063926038,
+    "continuous_difference_m": -6.979243948990188e-06,
+    "old438_recertified": false
+  },
+  "adapter": {
+    "stored437_fixture_canonical_pass": true,
+    "recorded438_live_canonical_pass": true,
+    "recorded438_parent_memory_RNG_ledger_unchanged": true,
+    "original437_live_snapshot_not_available": true,
+    "original437_438_statuses_preserved": true
+  },
+  "field_audit": [
+    {
+      "field": "progress/goal model vs actual",
+      "rule": "Outward interval from unchanged0.1m endpoint bounds and original expression; exact discrete goal hit/age/clock/deadline/DONE.",
+      "conflict_resolved": true
+    },
+    {
+      "field": "actual progress/goal claimed telemetry",
+      "rule": "Exact own observed geometry derivation. Never use model value as actual.",
+      "conflict_resolved": true
+    },
+    {
+      "field": "memory index/laststeer/C fields",
+      "rule": "Exact at identical copied current inputs before physics. Accumulated future replay memory drift does not qualify as fresh current.",
+      "full_replay_continuous_drift_not_waived": true
+    },
+    {
+      "field": "restore pre position/COM velocity/angle/yaw/time",
+      "rule": "Exact current copy prerequisite for nominal-memory equality; physical future body tolerance remains unchanged."
+    },
+    {
+      "field": "body/wheel/raw hull/COM metadata/grass/contact/collision/phase/clipping/raw count/finish",
+      "rule": "Existing fidelity and exact discrete checks retained; physical speed comparison is registered magnitude, not a newly invented post-velocity exact check."
+    },
+    {
+      "field": "adapter state/memory/RNG/actual event",
+      "rule": "Exact canonical same-observation comparison; native official tracker/ticket authority only, no model DONE."
+    }
+  ],
+  "unsupported_conservative_stops": [
+    "Different projection segments",
+    "Interior/vertex transition without same-branch proof",
+    "Distinct/nonadjacent projection ambiguity",
+    "Unwrap half-period cut/winding mismatch",
+    "Current restored inputs or nominal memory not exact",
+    "Goal-side/deadline/DONE/clock/age mismatch",
+    "Native ticket/env/root or claimed progress tamper, NaN/nonfinite",
+    "Physical/safety/progress/clip failure"
+  ],
+  "limits": [
+    "Prefix model memory and ledger fields were not recorded; reconstructed diagnostics do not authenticate absent fields.",
+    "Full replay future controller memory drifts; only copied current-input first transitions retain exact nominal memory comparison.",
+    "Recorded/synthetic ticket commit tests are static and create no live authority certification.",
+    "NativeAuthority439 is a library, not a new actual runner. Future integration must retain existing authenticated current-query/restore/RNG/selector/guardian gates. No actual restart authorized by439."
+  ],
+  "cost": {
+    "stage": 439,
+    "new_wrapper_actions": 0,
+    "new_environment_resets": 0,
+    "new_model_integration_ticks": 0,
+    "new_model_worlds": 0,
+    "new_actor_learning_HOLDOUT_SEALED_reserve_paid": 0,
+    "static_and_stored_audit_CPU_s": 70.19008021600001,
+    "static_and_stored_audit_wall_s": 76.05053558503278,
+    "static_runs_tests": [
+      166,
+      167,
+      170,
+      171
+    ],
+    "closure_CPU_s": 23.163140379999998,
+    "closure_wall_s": 28.403289759065956,
+    "preparation": {
+      "wall_s": 551.2461349964142,
+      "CPU_s": null,
+      "fully_measured": false
+    },
+    "timing_scope": "Each static worker includes source checks/tests/full saved audit, measured after module imports. Four passed static versions preserved; no replayed physics. Closure separately measured. Preparation/report/Git/import overhead not fully measured. Prior costs not recharged.",
+    "prior_cost_recharged": 0,
+    "research_remaining": 28207,
+    "actual_cumulative_wrapper_actions": 1319857,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064
+  },
+  "verification": {
+    "plan_and_current_sources_match": true,
+    "static_pass_archives_reconciled": 4,
+    "prior_files_verified": 14969,
+    "old437_438_failures_and_costs_preserved": true,
+    "protected_archives_and_previous_reports_preserved": true,
+    "saved_actual_model_rows_checked": 366,
+    "full_suffix_comparisons": 130,
+    "prefix_conditional_diagnostics": 236,
+    "restored_current_first_checks": 24,
+    "stored438_current_first_check": 1,
+    "constructors_forbidden_and_zero_attempts": true,
+    "new_actual_actions": 0,
+    "new_model_ticks": 0,
+    "new_worlds": 0,
+    "new_actor_learning_HOLDOUT_SEALED_reserve_paid": 0,
+    "IEEE_binary64_verified": {
+      "radix": 2,
+      "mant_dig": 53,
+      "rounds": 1
+    },
+    "closure_CPU_s": 23.163140379999998,
+    "closure_wall_s": 28.403289759065956
+  },
+  "new_actual_followup_authorized": false,
+  "pixel_promotion": false,
+  "generalization": false,
+  "original438_failure_preserved": true
+}
