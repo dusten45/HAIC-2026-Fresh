@@ -1,0 +1,23 @@
+{
+  "stage": 463,
+  "status": "STOP_PARTIAL_RETAINED",
+  "original_files_removed": 0,
+  "new_actual_actions": 0,
+  "new_model_ticks": 0,
+  "uncompressed_bytes_by_volume": {
+    "model": 890158797,
+    "native": 537578277
+  },
+  "forecast_archive_bytes": 390488700,
+  "workspace_free_bytes_before": 1074954240,
+  "required_free_reserve_bytes": 536870912,
+  "forecast_basis": "462 empirical gzip ratio times1.5, floor0.25 plus32MiB; estimate is not a guaranteed bound; every compressed write checks512MiB reserve",
+  "prior462_gzip_ratio": 0.12613586814096853,
+  "tmp_is_not_shared_or_durable": true,
+  "error": "TypeError: TarFile.__init__() got an unexpected keyword argument 'compresslevel'",
+  "archives": {},
+  "workspace_private_archives_verified": false,
+  "CPU_s": 2.179710846,
+  "wall_s": 2.216041279025376,
+  "workspace_free_bytes_after": 1074290688
+}
