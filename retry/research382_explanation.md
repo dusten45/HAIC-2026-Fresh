@@ -181,3 +181,8 @@ P fullgas1·3·11·14,나머지nominal이며35receipt/99선택첫모델전이를
 ## 429: 조기 물리 unsafe의 정적 표현과 증거 공백
 
 [429 보고서](protocol429_result.md): H13 이전의 확인된 물리 중단을 별도 부적격 타입으로 보존하고, 기술/정의역/restore/repeat/parent/RNG 오류는 전역 중단으로 유지했다. import 오류의 원실패를 보존한 뒤 같은 assertions의 정적 56개가 통과했다. 저장된 정상 35개 선택과 unsafe tail 4개의 미완료 의미는 유지됐다. 질의 36의 원 context/RNG 인증이 없어 UNBOUND로 남기며 원선택을 추정하지 않는다. 모델·실제 실행·SEALED·reserve는 0이다. C0≤80/P planner≤64→guardian 포함 총≤100의 순수 최악 비용은 519,038 ticks/882 worlds지만 실행하지 않았다. 승인 종료에 따라 결과 정리로 닫으며 자동 후속 실험을 열지 않는다.
+
+
+## 430: 승인 기간 정정과 모델 전용 pilot의 최초 오류
+
+[기간 정정](authorization430_correction.md): 429의 기간 종료 판단은 오판이다. 10월 16일 명시적 3일 연장·자율 진행에 따라 종료는 2026년 10월 20일 19:01:55 KST이며 원429 보고서는 보존했다. [430 보고서](pilot430_result.md): 정적64개 및 423/427 재현·복원/pending 확인1134ticks32worlds 통과 후 동일 root의 C0는71행동 모델 finish, P는37행동 뒤 질의38 복합 물리 사유 감사 오류로 중단했다. 새36/37 early 부적격은 적분 전에 저장한 원 context/RNG와 인증되어 제외됐으나38의 두 허용 사유를 연결한 문자열을 audit429가 받지 못했다. 이 구현 공백에 대해 실행 중 수정·재시도하지 않았다. P 완료가 없어 전체 gain은None이다. 모델38213ticks366worlds/CPU245.642초, 실제·학습·SEALED·reserve0, 연구잔액28444. 다음은 복합 사유 집합의 별도 정적 감사 수정이며 actual gate는 닫혀 있다.
