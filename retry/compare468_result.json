@@ -1,0 +1,222 @@
+{
+  "stage": 468,
+  "status": "H13_COMPARISON_COMPLETE",
+  "error": null,
+  "last_stage": "OriginalReference_vs_Projected4Reference_CommonPulse",
+  "closed_at_utc": "2026-10-17T12:22:55.080597+00:00",
+  "details": {
+    "OriginalReferenceCommonPulse": {
+      "status": "COMPLETE_H13",
+      "scope_exit": null,
+      "error": null,
+      "actions": 13,
+      "observed_raw_posts": 52,
+      "wheel_samples": 208,
+      "independent_repeat_exact": true,
+      "held_first_passed": true,
+      "first_fullgas_alias": true,
+      "raw60m_crossing_from_root_s": [
+        0.7,
+        0.72
+      ],
+      "crossing_censored": false,
+      "elapsed_s": 1.04,
+      "fixed1_04s_complete": true,
+      "progress_delta_m": 87.7958620263363,
+      "endpoint_speed_m_s": 70.3413353527442,
+      "speed_change_m_s": -10.690664486403321,
+      "common_original_endpoint_reference_m_s": 67.96807169053012,
+      "own_endpoint_reference_m_s": 67.96807169053012,
+      "own_endpoint_speed_minus_reference_m_s": 2.3732636622140717,
+      "endpoint_reference_m_s": 67.96807169053012,
+      "endpoint_speed_minus_reference_m_s": 2.3732636622140717,
+      "endpoint_reference_deficit_m_s": -2.3732636622140717,
+      "own_reference_pointmass_brake_debt_proxy": {
+        "future_lower_nodes": 10,
+        "max_required_deceleration_over_original_B": 1.9585330788477195,
+        "minimum_distance_minus_original_B_braking_distance_m": -0.5997764408160295,
+        "exact_physical_feasibility": false
+      },
+      "common_original_reference_pointmass_brake_debt_proxy": {
+        "future_lower_nodes": 10,
+        "max_required_deceleration_over_original_B": 1.9585330788477195,
+        "minimum_distance_minus_original_B_braking_distance_m": -0.5997764408160295,
+        "exact_physical_feasibility": false,
+        "current_speed_defines_lower_reference": true
+      },
+      "max_path_error_m": 1.178061762256134,
+      "max_abs_yaw_rad_s": 1.7420825958251953,
+      "mean_abs_lateral_slip_m_s": 1.4617250677938727,
+      "max_force_ratio": 1.1583607328601038,
+      "clipped_wheel_samples": 7,
+      "gas_ramp_by_wheel": {
+        "0": {
+          "first": 0.0,
+          "last": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0
+        },
+        "1": {
+          "first": 0.0,
+          "last": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0
+        },
+        "2": {
+          "first": 1.0,
+          "last": 0.0,
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "3": {
+          "first": 1.0,
+          "last": 0.0,
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      },
+      "native_same_command_prefix_actions": 2,
+      "native_first_command_divergence": 3,
+      "native_factual_calibration": {
+        "certified_prefix_actions": 13,
+        "fresh_current_first_pass": 1
+      },
+      "native_factual_scope": "13-step physical/geometry/ledger policy replay; exact same-command scope separately counted",
+      "after_first_same_command_native_factual_actions": 1,
+      "actual_finish_witness": false
+    },
+    "Projected4ReferenceCommonPulse": {
+      "status": "COMPLETE_H13",
+      "scope_exit": null,
+      "error": null,
+      "actions": 13,
+      "observed_raw_posts": 52,
+      "wheel_samples": 208,
+      "independent_repeat_exact": true,
+      "held_first_passed": true,
+      "first_fullgas_alias": true,
+      "raw60m_crossing_from_root_s": [
+        0.64,
+        0.66
+      ],
+      "crossing_censored": false,
+      "elapsed_s": 1.04,
+      "fixed1_04s_complete": true,
+      "progress_delta_m": 90.02908461529239,
+      "endpoint_speed_m_s": 62.43374275201761,
+      "speed_change_m_s": -18.59825708712991,
+      "common_original_endpoint_reference_m_s": 70.34174846382625,
+      "own_endpoint_reference_m_s": 67.32169207983543,
+      "own_endpoint_speed_minus_reference_m_s": -4.887949327817822,
+      "endpoint_reference_m_s": 70.34174846382625,
+      "endpoint_speed_minus_reference_m_s": -7.9080057118086415,
+      "endpoint_reference_deficit_m_s": 7.9080057118086415,
+      "own_reference_pointmass_brake_debt_proxy": {
+        "future_lower_nodes": 10,
+        "max_required_deceleration_over_original_B": 0.05305198989822289,
+        "minimum_distance_minus_original_B_braking_distance_m": 104.73324817349223,
+        "exact_physical_feasibility": false
+      },
+      "common_original_reference_pointmass_brake_debt_proxy": {
+        "future_lower_nodes": 6,
+        "max_required_deceleration_over_original_B": 0.05305198989822289,
+        "minimum_distance_minus_original_B_braking_distance_m": 104.73324817349227,
+        "exact_physical_feasibility": false,
+        "current_speed_defines_lower_reference": true
+      },
+      "max_path_error_m": 1.281736736660708,
+      "max_abs_yaw_rad_s": 1.7420825958251953,
+      "mean_abs_lateral_slip_m_s": 1.5749511603399848,
+      "max_force_ratio": 1.0667468119456165,
+      "clipped_wheel_samples": 5,
+      "gas_ramp_by_wheel": {
+        "0": {
+          "first": 0.0,
+          "last": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0
+        },
+        "1": {
+          "first": 0.0,
+          "last": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0
+        },
+        "2": {
+          "first": 1.0,
+          "last": 0.0,
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "3": {
+          "first": 1.0,
+          "last": 0.0,
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      },
+      "native_same_command_prefix_actions": 1,
+      "native_first_command_divergence": null,
+      "native_factual_calibration": null,
+      "native_factual_scope": "First command only; later projected reference model consistency only",
+      "after_first_same_command_native_factual_actions": 0,
+      "actual_finish_witness": false
+    }
+  },
+  "OriginalReferenceCommonPulse_minus_Projected4ReferenceCommonPulse_60m_bracket_s": [
+    0.039999999999999925,
+    0.07999999999999996
+  ],
+  "Projected4ReferenceCommonPulse_minus_OriginalReferenceCommonPulse_fixed1_04s_progress_m": 2.233222588956096,
+  "all_gates_complete": true,
+  "model_only_promotion_criterion_passed": true,
+  "research_outcome": "PROMOTION_CRITERIA_PASS_MODEL_ONLY",
+  "actual_promotion": false,
+  "time_extrapolation": false,
+  "actual_finish_witness": false,
+  "verification": {
+    "source_protected_hashes_preserved": true,
+    "protected_hash_count": 18,
+    "ledger475_unchanged": true,
+    "observer_posts": 1353,
+    "observer_streams": 41,
+    "meter_consistent": true,
+    "static": {
+      "passed": true,
+      "tests": 59,
+      "failures": 0,
+      "errors": 0,
+      "CPU_s": 12.393997367,
+      "wall_s": 12.69952150201425
+    },
+    "preflight": {
+      "passed": true,
+      "ticks": 1137,
+      "worlds": 35,
+      "actual_actions": 0,
+      "resets": 0
+    }
+  },
+  "cost": {
+    "model_ticks": 1353,
+    "reserved_ticks": 1353,
+    "worlds": 41,
+    "wholeworker_CPU_s": 34.90978981,
+    "wholeworker_wall_s": 34.698178586084396
+  },
+  "scope_ticks": 1458,
+  "scope_worlds": 41,
+  "hard_ticks": 1536,
+  "hard_worlds": 41,
+  "new_actual_actions": 0,
+  "new_resets": 0,
+  "new_seed_learning_HOLDOUT_SEALED_reserve_paid": 0,
+  "research_remaining": 26346,
+  "actual_cumulative_wrapper_actions": 1321718,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "plan_sha256": "9d745d655bbbfb6cd1bf6a6e9e20f70773b7f079668622b92c379afd6018eb19",
+  "saved_audit_CPU_s": 4.625505653,
+  "saved_audit_wall_s": 4.838625772972591
+}

@@ -1,0 +1,78 @@
+{
+  "stage": 468,
+  "all54_prepared_once_policy_phase_records_verified": true,
+  "all6_before_constructor_node_proofs_verified": true,
+  "arms": {
+    "OriginalReferenceCommonPulse": {
+      "brake_actions": 4,
+      "gas_actions": 9,
+      "own_reference_constructor_proofs_verified": 3,
+      "driver_records_verified": 27,
+      "nodes_digest": "04e96447b75d39f7ff2ee8b46fcf7c5129c264141dc13b240a29b18156d8ef22",
+      "policy_digest": "1b10492cd3607c3ecfab9b06884efe0bf25d5b4078dc854567da5f5bda8cd6f3"
+    },
+    "Projected4ReferenceCommonPulse": {
+      "brake_actions": 5,
+      "gas_actions": 8,
+      "own_reference_constructor_proofs_verified": 3,
+      "driver_records_verified": 27,
+      "nodes_digest": "2a657da029bc5b59d41856a495a86eb5f0e8f9fce8bff706be90832ba0aff146",
+      "policy_digest": "6bab6d13e154b8b452b31614fa9981507a723133ef766edafd3e3aaae46c5f7c"
+    }
+  },
+  "scientific_scope_unchanged_from466": true,
+  "static_attempt1_preserved": true,
+  "static_attempt1_tests": 52,
+  "static_attempt1_errors": 1,
+  "static_attempt1_model_native_ticks": 0,
+  "final_static_tests": 59,
+  "new_actual_actions": 0,
+  "new_resets": 0,
+  "model_only_promotion_criterion_passed": true,
+  "actual_promotion": false,
+  "new_root_or_tail": 0,
+  "plan_sha256": "9d745d655bbbfb6cd1bf6a6e9e20f70773b7f079668622b92c379afd6018eb19",
+  "storage_preflight": {
+    "/tmp": {
+      "free_bytes": 3537461248,
+      "required_bytes": 764531820.7073171,
+      "shortage_bytes": 0
+    },
+    "/workspace": {
+      "free_bytes": 891727872,
+      "required_bytes": 822949495.5780488,
+      "shortage_bytes": 0
+    }
+  },
+  "world_audit": {
+    "old_source_full_replay_and_current_restores": {
+      "worlds": 29,
+      "ticks_in_1242_source_cap": true
+    },
+    "old_source_pending_guardian": {
+      "worlds": 3,
+      "ticks_in_1242_source_cap": true
+    },
+    "old_source_parent_pending": {
+      "worlds": 3,
+      "ticks_in_1242_source_cap": true
+    },
+    "OriginalReferenceCommonPulse": {
+      "independent_worlds": 2,
+      "held_first_worlds": 1,
+      "ticks": 108
+    },
+    "Projected4ReferenceCommonPulse": {
+      "independent_worlds": 2,
+      "held_first_worlds": 1,
+      "ticks": 108
+    },
+    "total_worlds": 41,
+    "total_scope_ticks": 1458,
+    "hard_ticks": 1536,
+    "separate_main_worlds": 0,
+    "extra_probe_worlds": 0,
+    "actual_actions": 0,
+    "resets": 0
+  }
+}
