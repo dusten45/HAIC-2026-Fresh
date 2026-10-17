@@ -1,0 +1,35 @@
+{
+  "stage": 490,
+  "status": "REGISTERED_DIAGNOSTICS_ONLY_AFTER_PRESERVED_PROJECTION_STOP",
+  "registered_utc": "2026-10-17T18:14:56.415170+00:00",
+  "source_sha256": "ce531dd33f2c8ca8275f074f9922bfcba4f019d851728c990d3ea850432cca9d",
+  "immutable_attempt_pins": {
+    "retention-private.json": "b428004fd06d9453f0deaef438cde99c0cd9e276054957110317c80cad44bc36",
+    "result.json": "bf7621fce2fad8db381703f26354f0993507af89cea40be8c0df7cd80de65441",
+    "stop.json": "1c2117ef22e1206ac3f849d43692c8dd1ea2c3ce39a957a5ab1af3a95db986df",
+    "input-manifest-private.json": "8352db032e5083830d976adfaf713af87c0b22e6df6e23744ebc8f7ccfbab13b",
+    "arrays-private.npz": "76699f9f4a2c3aca419297e439463da8010ec0f3ecbba1c27c7a3802858693fc",
+    "plan-private.json": "4dbceedd516fe5755997e4b92525648223646cdc6686150619fbc64d57d842f3"
+  },
+  "reason": "One input/profile/P4 build already completed; exact source seam projection failed. Finish ONLY previously unattempted numeric checks and generic synthetic test using saved arrays. No repeated map probes, no line transformation, no second build/profile/P4/constructor.",
+  "global_caps_unchanged": true,
+  "cumulative_CPU_s": 30,
+  "cumulative_active_wall_s": 45,
+  "cumulative_clock_note": "Sum nonoverlapping numeric worker wall times; human diagnosis/implementation interval is separately outside active calculation timing.",
+  "global_retained_bytes": 8388608,
+  "global_files": 32,
+  "perfile_temp_bytes": 1048576,
+  "completion_raw_file_limit": 17,
+  "outside_companions_file_limit": 15,
+  "outside_reserved_bytes": 262144,
+  "additional_calls": {
+    "segment_proxy_checks": 321,
+    "scalar_pedal_queries": 963,
+    "canonical_queries": 3,
+    "competitor_distance_batches": 1
+  },
+  "new_build_profile_P4_executor_instance": 0,
+  "all_original_result_statuses_preserved": true,
+  "not_native_or_dynamic_qualification": true,
+  "no_retry_of_failed_source_projection": true
+}
