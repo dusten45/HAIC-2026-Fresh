@@ -1,0 +1,131 @@
+{
+  "stage": 486,
+  "status": "DESIGN_ONLY_NO_OPTIMIZATION_OR_EXECUTION_AUTHORIZATION",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "automatic_extension": false,
+  "hypothesis": "On the already exposed first485 DEV snapshot, replacing only the fixed B16 search candidate ordering by exact feasibility-first lexicographic ordering is sufficient to pass the unchanged geometry preparation gate within the original finite evaluation budget.",
+  "claim_scope": "One known-failure structural sufficiency test; no independent DEV/generalization, ranking-policy, physical safety, lap-time or pixel promotion.",
+  "current_phase": {
+    "new_seed_draws": 0,
+    "new_resets": 0,
+    "new_steps": 0,
+    "new_worlds": 0,
+    "new_model_ticks": 0,
+    "new_road_solver_calls": 0,
+    "new_coordinate_searches": 0,
+    "new_profile_evaluations": 0,
+    "original_initial_expression_reconstructed_for_analysis": true,
+    "no_alternative_path_constructed": true
+  },
+  "inputs": {
+    "use": "Only first485 saved native snapshot and frozen mass model. Preserve failed485 output. Both485 assigned slots and their histories remain unchanged; second identity is not a replacement or test input.",
+    "snapshot_sha256": "cb7381f870fc114d58f0bd4aded0254282db7634ad6998fbd04cee39122ec08e",
+    "baseline_final_sha256": "e548c71daf944d4ed1c19c0493e9c2288f613e6a758adf4a0d46650a2194533b",
+    "initial_material_sha256": "4faf329eb5e400f739f47cb46d46053e1b835a5db254819200a363959aa32154",
+    "initial_coefficients_sha256": "dcc00ffd06cb543078bd3f270a2c637a49a216d9544f94b1a4a2e0b8dad4a5a0",
+    "baseline": "Existing saved soft-score final result only, no baseline solver rerun.",
+    "missing_raw": "Stop technical if original full snapshot/source/material is missing or mismatched; hashes cannot recreate lost raw. No reset or rematerialization."
+  },
+  "intervention": {
+    "old_key": "estimated_time_s + 1000*violation + 0.001*sum(cyclic_coefficient_differences_squared)",
+    "new_key": [
+      "violation",
+      "estimated_time_s + 0.001*sum(cyclic_coefficient_differences_squared)"
+    ],
+    "comparison": "Exact tuple <, no epsilon/rounding/bucketing or hidden feasibility thresholds. Original time/roughness relative weight is preserved. The changed choices may change later trial vectors, which is the intended causal intervention.",
+    "unchanged": [
+      "physical snapshot/obstacles/radii/native mass model",
+      "source geometry(center,normal) and B16/taper",
+      "original deterministic obstacle-away weighted-fit initialization and clipping",
+      "coefficient/offset bound 40/6-1.4-0.35",
+      "obstacle radii +2.9+0.25 and segment-distance interpolation",
+      "curvature target tan(0.4)/3.24 and violation coefficients",
+      "profile() including four passes and standing-start/terminal conventions",
+      "six step passes [2,2,1,1,0.4,0.4], coordinate0..15, directions -1 then+1",
+      "strict improvement acceptance and no feasible archive/extra candidate/side restarts",
+      "existing tiny-repair entry and exit conditions"
+    ]
+  },
+  "evaluations": {
+    "road_solver_calls": 1,
+    "first_objective": 1,
+    "coordinate_trial_objectives": 192,
+    "final_objective": 1,
+    "total_objectives": 194,
+    "no_op_or_duplicate_trials_count": true,
+    "existing_conditional_projection_calls": 1,
+    "projection_clearance_evaluations_max": 100,
+    "extra_baseline_objectives": 0,
+    "alternative_solver_calls": 0,
+    "geometry_draws": 0,
+    "actual_actions": 0,
+    "resets": 0,
+    "model_worlds": 0,
+    "model_ticks": 0,
+    "analytical_profile_evaluations_in_objectives": 194,
+    "unchanged_center_profile_evaluations": 1,
+    "conditional_projection_profile_evaluations_max": 1,
+    "total_analytical_profile_evaluations_max": 196
+  },
+  "prerequisites": [
+    "Explicit separate authorization;486 itself permits analysis/design only. Freeze implementation, inputs, ordering, output journal and gates before the one invocation.",
+    "Zero-world tests prove identical source evaluations/initialization/trial schedule and preserved time-vs-roughness term; ordering examples must show feasibility dominates arbitrary time gains without loosening a constraint.",
+    "Pin source closure, interpreter/NumPy/BLAS versions and full saved first485 inputs; preserve protected/main/Participants/backups and all485 hashes. No protected performance/raw access.",
+    "Fresh per-volume space for all new outputs, temporary bytes and512MiB reserve; include import, static checks, input hashing, initialization, analytical evaluations, optional original repair, logs and full decoded readbacks in whole caps."
+  ],
+  "decision": {
+    "success": "Final candidate passes unchanged source free_feasible: min(segment_clearance)>=-1e-6 and original aggregate violation<=1e-8, or the original conditional repair passes its unchanged exit assertions. Record final current residual components even if legacy summary fields are stale after repair. Result is an eligible geometry input only.",
+    "repair": "Only if pre-repair minclearance>=-0.001 and maxabs(curvature)<=tan(0.4)/3.24; use the original max3updates/<=100clearance-evaluation method once, no new threshold or radius. Exit requires minclearance>=0 and original exact curvature assertion. Fresh post-repair residuals are computed from already produced final arrays.",
+    "reject": "One completed, correctly implemented and within-budget candidate remains geometry-ineligible: reject ranking-change-alone sufficiency for this case and budget. Do not infer all B16 paths, richer planners or physical routes are impossible.",
+    "inconclusive": "Missing/mismatched input, nonfinite/numerical/schema/source/resource/deadline or readback failure. Preserve all completed evaluations; no rerun or rescue.",
+    "precedence": "Validated eligibility/ineligibility only after implementation, input and resource evidence is valid. A technical failure cannot establish geometric impossibility.",
+    "no_promotion": [
+      "No source/P4/native prefix/quarter-root/model ranking comparison",
+      "No native/pixel/whole-lap gain or independent-DEV count",
+      "No automatic second case/seed/checkpoint/alternative solver or follow-up"
+    ]
+  },
+  "hard_caps": {
+    "whole_CPU_s": 60,
+    "whole_wall_s": 90,
+    "total_retained_output_bytes": 8388608,
+    "max_retained_files": 32,
+    "max_file_bytes": 2097152,
+    "max_temporary_bytes": 2097152,
+    "termination_reserved_files": 2,
+    "termination_reserved_bytes": 65536,
+    "free_reserve_bytes_each_volume": 536870912,
+    "preflight_required_bytes_each_volume": 547356672,
+    "research_remaining": 26175,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "paid_resources": 0
+  },
+  "evidence": {
+    "all_evaluations": "Retain initial/final full arrays privately; for all194 invocations retain ordered trial/accepted coefficient vectors, source-order violation components, all six clearance values, time/roughness/key and exact path/profile hashes. No full per-trial map/image copies are needed. All files count before creation; reserve termination slots/bytes inside existing caps.",
+    "readback": "Every retained JSON/schema and file length/SHA plus full decoded receipt hashes verified twice; independent reconstruction/source algebra audit before declaring success.",
+    "privacy": "No seeds, identity values, coordinates or private input documents in public repository. Only source code, registered method and aggregate findings."
+  },
+  "alternative_designs_not_selected": [
+    {
+      "method": "centerline unchanged",
+      "finding": "Already fails inflated-obstacle clearance; blocked speed profile has interior zeros unsupported by current lap executor. No drop-in fallback."
+    },
+    {
+      "method": "centerline-normal corridor/lattice with explicit avoidance",
+      "design": "Intersect road/taper offset intervals with all original inflated-obstacle exclusions; keep both available sides. Search complete segment/heading or triple-state transitions and certify interpolated segments plus original curvature before any speed timing. Fixed discretization and caps must be registered separately.",
+      "limit": "No path constructed now. Discrete search exhaustion is not continuous or physical infeasibility. More representation and search changes prevent a clean one-change explanation, so not the next minimum test."
+    },
+    {
+      "method": "continuous feasibility constrained construction",
+      "design": "Feasibility phase first, then retain feasible certificate while refining time; use explicit nonlinear clearance/road/curvature constraints.",
+      "limit": "Local numerical solver failure is not impossibility; new solver/dependency/initialization would need its own budget and gate. Not selected."
+    }
+  ],
+  "source_sha256": {
+    "retry/racing258_plan.py": "51f4e8e4e024e16b5475924a14ffae9ed672470421119b8c2c14d5937c66bd4a",
+    "retry/racing258_feasibility.py": "87cf75e076cf35af5865bb2c2b34e460ee4bc2b627add153cee39f6cbfca64ab",
+    "retry/bootstrap485.py": "d3bd1652f19addc7c8e08551a867d9f8e5b28a633f9f1db33d04eb350af8ce62",
+    "retry/executor397.py": "108b59b169274eaa442a0357acf8e6a069bb11e49cdce2ed33986761937bb7be"
+  }
+}

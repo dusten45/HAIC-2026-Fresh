@@ -1,0 +1,82 @@
+{
+  "stage": 486,
+  "status": "SAVED_ONLY_ANALYSIS_NO_NEW_EXPERIMENT",
+  "new_actual": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "new_model_ticks": 0,
+  "new_seed_draws": 0,
+  "road_solver_calls": 0,
+  "new_profile_calls": 0,
+  "new_optimization_objective_calls": 0,
+  "final": {
+    "min_clearance_m": -0.06758597796398558,
+    "negative_obstacles": 2,
+    "vertex_only_min_clearance_m": -0.06758597796398558,
+    "violating_minima_on_segment_interior": 1,
+    "max_segment_interpolation_clearance_drop_m": 0.017484978148148755,
+    "max_abs_curvature": 0.12923296068187975,
+    "curvature_limit": 0.13049173417844498,
+    "max_abs_offset": 4.563231092482845,
+    "offset_bound": 4.916666666666668,
+    "violation_components": {
+      "obstacle_squared": 0.006123175333201345,
+      "curvature_weighted_squared": 0.0,
+      "offset_squared": 0.0
+    },
+    "objective": {
+      "total": 28.546858505071853,
+      "estimated_time": 22.198219469927615,
+      "penalty": 6.1231753332013446,
+      "roughness": 0.22546370194289184
+    }
+  },
+  "initial": {
+    "provenance": "Source-only reconstruction, not original durable intermediate. No coordinate search or speed-profile evaluation.",
+    "feasible": false,
+    "min_clearance_m": -0.45242559583701203,
+    "negative_obstacles": 3,
+    "max_abs_curvature": 0.11900955309000015,
+    "violation": 0.2262209951791678
+  },
+  "centerline": {
+    "min_clearance_m": -4.050283743160341,
+    "safe_drop_in": false,
+    "interior_stop_profile_not_legal_lap_reference": true
+  },
+  "inflation": {
+    "vehicle_disk_m": 2.9,
+    "extra_clearance_m": 0.25,
+    "min_gap_with_vehicle_disk_but_without_extra_buffer_m": 0.18241402203601442,
+    "hull_vertex_radius_m": 2.8635642126552705,
+    "wheel_outer_radius_triangle_bound_m": 2.583016742309363,
+    "fixture_skin_or_contact_tolerance_not_certified": true,
+    "buffer_not_relaxed": true,
+    "physical_impossibility_proved": false,
+    "dynamic_safety_proved": false
+  },
+  "search": {
+    "dimension": 16,
+    "knot_nominal_arc_spacing_m": 70.43750037855622,
+    "evaluations": 194,
+    "trial_evaluations": 192,
+    "passes": 6,
+    "initial_sides": "one deterministic assignment; not an invariant homotopy proof",
+    "finite_schedule": true,
+    "convergence_or_optimality_certificate": false,
+    "feasible_initial_discarded": false,
+    "missing": [
+      "original initial objective",
+      "accepted-trial trace",
+      "intermediate paths",
+      "stationarity or completeness certificate"
+    ]
+  },
+  "research_remaining": 26175,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "HOLDOUT_SEALED_queries": 0,
+  "first_DEV_status": "485 preparation-ineligible; permanently exposed DEV",
+  "second_DEV_status": "485 identity-frozen only; no native/solver opening",
+  "new_comparison_performed": false
+}
