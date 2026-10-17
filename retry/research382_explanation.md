@@ -166,3 +166,8 @@ P177직전 guardian 첫모델1tick이 현재root시각의 event를 예측해 Chi
 **426은 첫 정적 실패로 모델/실제 승격을 차단했다.** 초기 guardian 완료 인증이 확인 후에도 pending 후보 필드를 요구해425 AT_ROOT 양성에서 `guardian_finish_confirmation_metadata`로 실패했다. FinishLineTracker가 완료 시후보/from-back을 비우는 구현을 놓친 원실패·계획·소스를 보존했다. 별도 guardian426_confirmed 수정본은 현재등록후보/phase/corridor와정리된model official metadata를 대조하고 시간순위/Evidence/actualDONE권한을 분리했다. 동결 assertions를 유지한 별도 정적28대조가425 pending/423 partial/408-409·미래/과거임의event·phase/corridor/확인누락·미발행actualDONE·planner음수/zero-event거부를 통과했다.
 
 사용자의 첫정적실패시 모델/실제미개방 규칙에 따라 수정정적통과후에도 보유부모/독립모델확인과P12 실제재현은 미실행이다. 새 model/native/reset0·C0재실행0,425공식finishNone/365행동비용판정은 유지했다. 측정정적CPU/wall합1.967/2.372초, 초기동결준비wall165.964초 부분구간이며 이후수정준비전체는미계측이다. v446연구28,621·예비84,000사용0·학습/SEALED0을 유지하고 보호파일/420–425전체를 보존했다. 후속승인시 정적수정본의모델확인부터검증해야하며 이번단계에서새적분은없다. [426 첫실패·정적수정28대조·비용·미실행게이트](recovery426_result.md)
+
+
+**427은 새 승인의 동결 계획에서426수정본hash와동일28정적대조를 검증한 뒤 모델·실제 기술 재현을 통과했다.** 저장425마지막 root의 보유부모+독립nominal2회는 정상정리metadata/AT_ROOT model확인·부모/RNG/memory/ledger불변을 통과했고 actualDONE권한은없었다. 이후P12만한번초기부터실행해425의176행동 command/state/memory/rawhull/wheel/clip과177질의직전fullsnapshot을정확재현했다. 실제177번째action의1raw/4wheel과nativeofficialfinish를확인한뒤DONE을기록했다. 공식P14.080초이며425과거C0 15.080초와차이1.000초/rawbracket .98–1.02초다. 새동시pair나모델완료의actual대체가아니다.
+
+실제59suffix선택전이·12receipt선택재계산·부모/RNG/actualledger/clip차이0을통과했고q최대1.4584433·suffix43/932clip·damage0/새neutral0이었다. 비용actual177/reset1·모델19202tick/161world(자격2/3포함), 모델CPU74.280/실제모델제외10.144/whole84.546초, 정적.606초·저장분석1.100초를분리했다. 준비3.693초는초기검토제외부분구간이다. querywall p95/최대4.291/4.466초로실시간성은미자격이다. v447연구28,444·예비84,000사용0·학습/SEALED0,425실패365비용/finishNone·426첫정적실패gate를보존했다. 독립일반화/픽셀296가아닌동결정책기술재현이며추가실험없이닫았다. [427 모델자격·실제재현·과거대조·비용](recovery427_result.md)
