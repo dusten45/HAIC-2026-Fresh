@@ -1,0 +1,221 @@
+{
+  "stage": 446,
+  "status": "ARCHIVAL_EXTENSION_COMPLETED",
+  "error": null,
+  "branches": {
+    "nominal": {
+      "status": "COMMON_EXIT_REACHED",
+      "actions_each": 7,
+      "hit": {
+        "reached": true,
+        "rawtick_bracket": [
+          27,
+          28
+        ],
+        "elapsed_bracket_s": [
+          0.54,
+          0.56
+        ],
+        "interpolated": false
+      },
+      "cumulative_from_original_root_s": [
+        1.58,
+        1.6
+      ],
+      "independent_repeat_exact": true,
+      "held_first_passed": true,
+      "actual_physics_qualified": false,
+      "same_original_live_world": false,
+      "archived_prefix_ticks_not_recharged": 52
+    },
+    "fullgas": {
+      "status": "COMMON_EXIT_REACHED",
+      "actions_each": 3,
+      "hit": {
+        "reached": true,
+        "rawtick_bracket": [
+          9,
+          10
+        ],
+        "elapsed_bracket_s": [
+          0.18,
+          0.2
+        ],
+        "interpolated": false
+      },
+      "cumulative_from_original_root_s": [
+        1.22,
+        1.24
+      ],
+      "independent_repeat_exact": true,
+      "held_first_passed": true,
+      "actual_physics_qualified": false,
+      "same_original_live_world": false,
+      "archived_prefix_ticks_not_recharged": 52
+    }
+  },
+  "gain60_bracket_s": [
+    0.3400000000000001,
+    0.3800000000000001
+  ],
+  "actual_actions_resets_learning_seed_SEALED_reserve_paid": 0,
+  "original_live_continuation": false,
+  "actual_qualification": false,
+  "plan_sha256": "159a4926a91daebfd3007e1f0c84a21ec9ec87a2e62286ca254a8f20e349d148",
+  "details": {
+    "nominal": {
+      "body_exit_bracket_sample_ranges": {
+        "speed_m_s": [
+          56.113618192331415,
+          56.767293366408246
+        ],
+        "yaw_rad_s": [
+          -0.03799491003155708,
+          -0.011596404016017914
+        ],
+        "path_error_m": [
+          0.004180801813534071,
+          0.027965612791558955
+        ],
+        "heading_error_rad": [
+          0.02170156071306779,
+          0.021933541990533642
+        ]
+      },
+      "lower_crossing_preclip_tire_ranges": {
+        "joint_angle": [
+          1.1920928955078125e-07,
+          0.0013824701309204102
+        ],
+        "omega": [
+          99.56571980404533,
+          110.92455835675699
+        ],
+        "force_ratio": [
+          0.439369266905133,
+          0.7680515339038197
+        ],
+        "lateral_slip_m_s": [
+          -0.14061310078693623,
+          0.06011792038736985
+        ],
+        "longitudinal_slip_m_s": [
+          -2.306295947978441,
+          3.7439532484934404
+        ]
+      },
+      "command_equals_own_nominal_for_entire_continuation": true,
+      "sample_ranges_not_continuous_time_bounds": true
+    },
+    "fullgas": {
+      "body_exit_bracket_sample_ranges": {
+        "speed_m_s": [
+          61.89717798475631,
+          62.56800075445249
+        ],
+        "yaw_rad_s": [
+          -0.1958259791135788,
+          -0.007555038668215275
+        ],
+        "path_error_m": [
+          0.14832162880779354,
+          0.19560151968218162
+        ],
+        "heading_error_rad": [
+          0.03908823559404929,
+          0.03923939297319959
+        ]
+      },
+      "lower_crossing_preclip_tire_ranges": {
+        "joint_angle": [
+          0.0,
+          0.0024298429489135742
+        ],
+        "omega": [
+          109.90835497353635,
+          122.04519224355474
+        ],
+        "force_ratio": [
+          0.44837608182118965,
+          0.7811358038903555
+        ],
+        "lateral_slip_m_s": [
+          -0.3634819453093314,
+          0.4225553233774235
+        ],
+        "longitudinal_slip_m_s": [
+          -2.331680658295923,
+          3.793042373084006
+        ]
+      },
+      "command_equals_own_nominal_for_entire_continuation": true,
+      "sample_ranges_not_continuous_time_bounds": true
+    }
+  },
+  "cost": {
+    "stage": 446,
+    "model_ticks": 88,
+    "model_worlds": 6,
+    "nominal_required_repeat_ticks": 56,
+    "fullgas_required_repeat_ticks": 24,
+    "held_first_ticks": 8,
+    "model_CPU_s": 3.2629513,
+    "model_wall_s": 3.2627803130308166,
+    "static_attempts": [
+      {
+        "stage": 446,
+        "passed": false,
+        "error": null,
+        "tests": 189,
+        "failures": 0,
+        "errors": 1,
+        "audit_completed": false,
+        "CPU_s": 13.665892007,
+        "wall_s": 13.707969369017519,
+        "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+        "plan_sha256": "e37fbf3cd25207c438c71c8836c58402dad66ce59e4c38e11fa10ffbf15c775b"
+      },
+      {
+        "stage": 446,
+        "passed": true,
+        "error": null,
+        "tests": 193,
+        "failures": 0,
+        "errors": 0,
+        "audit_completed": true,
+        "CPU_s": 17.960082197,
+        "wall_s": 18.025377096026205,
+        "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+        "plan_sha256": "159a4926a91daebfd3007e1f0c84a21ec9ec87a2e62286ca254a8f20e349d148"
+      }
+    ],
+    "saved_audit_CPU_s": 0.076681515,
+    "saved_audit_wall_s": 0.08071965700946748,
+    "preparation_report_git_import_overhead_fully_measured": false,
+    "new_actual_actions_resets_learning_seed_SEALED_reserve_paid": 0,
+    "research_remaining": 27516,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "verification": {
+    "source_hashes_and_protected_preserved": true,
+    "observer_posts": 88,
+    "streams": 6,
+    "independent_repeats_exact": true,
+    "held_first_passed": true,
+    "prefix_not_reexecuted_or_recharged": true,
+    "actual_native_authority": false,
+    "source_RNG_restored_from_archive_not_new_seed": true,
+    "hidden_solver_warmstart_identity_unproven": true,
+    "saved_CPU_s": 0.076681515,
+    "saved_wall_s": 0.08071965700946748
+  },
+  "old30_gain_bracket_s": [
+    0.26,
+    0.3
+  ],
+  "no_gain_addition_to_previous_local_or_whole_lap": true,
+  "terminal_debt_resolved": false,
+  "promotion_to_actual_or_pixel": false,
+  "deadline_utc": "2026-10-20T10:01:55Z"
+}
