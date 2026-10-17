@@ -1,0 +1,386 @@
+{
+  "stage": 422,
+  "status": "ACTUAL13_CALIBRATION_PAIRED_COMPLETED",
+  "actual13_transition_clipping_qualified": true,
+  "arms": {
+    "C0": {
+      "status": "COMPLETED_SAFE_13",
+      "prefix_exact_rows": 118,
+      "suffix_rows": 13,
+      "actual_actions": 131,
+      "resets": 1,
+      "arrival": {
+        "reached": true,
+        "rawtick_bracket": [
+          25,
+          26
+        ],
+        "elapsed_bracket_s": [
+          0.5,
+          0.52
+        ],
+        "interpolated": false
+      },
+      "damage": 0.0,
+      "max_post_path_error_m": 1.3791508604064684,
+      "first_selected_fidelity": {
+        "passed": true,
+        "body": {
+          "speed_m_s": 1.3639243434226955e-05,
+          "yaw_rate_rad_s": 5.960464477539062e-07,
+          "position_m": 7.62939453125e-06,
+          "time_s": 0.0
+        },
+        "wheel": {
+          "joint_angle": 0.0,
+          "omega": 1.0056656606138858e-05,
+          "lateral_slip_m_s": 1.0187570524067269e-05,
+          "longitudinal_slip_m_s": 1.796221158656408e-05,
+          "force_ratio": 3.621646163409764e-06
+        },
+        "raw_hull": {
+          "origin_position_m": 3.814697265625e-06,
+          "COM_position_m": 3.814697265625e-06,
+          "COM_speed_m_s": 1.627295246464655e-05,
+          "origin_speed_m_s": 1.627264468595513e-05,
+          "yaw_rad_s": 7.152557373046875e-07,
+          "time_s": 0.0
+        },
+        "clipped_flag_mismatches": 0
+      },
+      "matching_witness_comparisons": 91,
+      "matching_witness_fidelity": {
+        "passed": true,
+        "body": {
+          "speed_m_s": 1.553169657597664e-05,
+          "yaw_rate_rad_s": 9.804964065551758e-06,
+          "position_m": 1.375408659158321e-05,
+          "time_s": 0.0
+        },
+        "wheel": {
+          "joint_angle": 4.76837158203125e-07,
+          "omega": 1.880947120014298e-05,
+          "lateral_slip_m_s": 3.688554647851561e-05,
+          "longitudinal_slip_m_s": 2.9105947504604046e-05,
+          "force_ratio": 5.936645016912934e-06
+        },
+        "raw_hull": {
+          "origin_position_m": 1.4557206652139423e-05,
+          "COM_position_m": 1.4557206652139423e-05,
+          "COM_speed_m_s": 2.2797750631298186e-05,
+          "origin_speed_m_s": 2.2800549274393234e-05,
+          "yaw_rad_s": 1.043081283569336e-05,
+          "time_s": 0.0
+        },
+        "clipped_flag_mismatches": 0
+      },
+      "witness_divergences": [],
+      "prior421_matching_prefix_rows": 13,
+      "prior421_matching_prefix_fidelity": {
+        "passed": true,
+        "body": {
+          "speed_m_s": 1.1777481631725095e-05,
+          "yaw_rate_rad_s": 9.804964065551758e-06,
+          "position_m": 1.375408659158321e-05,
+          "time_s": 0.0
+        },
+        "wheel": {
+          "joint_angle": 4.76837158203125e-07,
+          "omega": 1.8516317794592396e-05,
+          "lateral_slip_m_s": 3.688554647851561e-05,
+          "longitudinal_slip_m_s": 2.9105947504604046e-05,
+          "force_ratio": 5.936645016912934e-06
+        },
+        "raw_hull": {
+          "origin_position_m": 1.4557206652139423e-05,
+          "COM_position_m": 1.4557206652139423e-05,
+          "COM_speed_m_s": 1.6295005934807705e-05,
+          "origin_speed_m_s": 1.6294884787271258e-05,
+          "yaw_rad_s": 1.043081283569336e-05,
+          "time_s": 0.0
+        },
+        "clipped_flag_mismatches": 0
+      },
+      "selected_recipes": [
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal"
+      ],
+      "first_three_match421": null,
+      "neutral_guardian_steps": [],
+      "query_count": 13,
+      "query_parent_unchanged_all": true,
+      "max_force_ratio": 0.9632770584815805,
+      "clipped_wheel_samples": 0,
+      "total_wheel_samples": 208,
+      "first_clip": null,
+      "actual_finish_observed": false,
+      "terminal_metadata_nonterminal_all": true,
+      "actual_progress_deadline_passed": true,
+      "model_ticks": 1352,
+      "model_worlds": 26,
+      "actual_exclusive_CPU_s": 7.122918672000001,
+      "actual_exclusive_wall_s": 7.115755212143995
+    },
+    "P": {
+      "status": "COMPLETED_SAFE_13",
+      "prefix_exact_rows": 118,
+      "suffix_rows": 13,
+      "actual_actions": 131,
+      "resets": 1,
+      "arrival": {
+        "reached": true,
+        "rawtick_bracket": [
+          22,
+          23
+        ],
+        "elapsed_bracket_s": [
+          0.44,
+          0.46
+        ],
+        "interpolated": false
+      },
+      "damage": 0.0,
+      "max_post_path_error_m": 1.3791508604064684,
+      "first_selected_fidelity": {
+        "passed": true,
+        "body": {
+          "speed_m_s": 7.64374549078184e-06,
+          "yaw_rate_rad_s": 1.6689300537109375e-06,
+          "position_m": 1.9073486328125e-06,
+          "time_s": 0.0
+        },
+        "wheel": {
+          "joint_angle": 0.0,
+          "omega": 1.1447749983517497e-05,
+          "lateral_slip_m_s": 1.2168035937065724e-05,
+          "longitudinal_slip_m_s": 1.5395718065747133e-05,
+          "force_ratio": 3.128050795941917e-06
+        },
+        "raw_hull": {
+          "origin_position_m": 1.9073486328125e-06,
+          "COM_position_m": 1.9073486328125e-06,
+          "COM_speed_m_s": 1.4934654331000274e-05,
+          "origin_speed_m_s": 1.4938197423930433e-05,
+          "yaw_rad_s": 2.2649765014648438e-06,
+          "time_s": 0.0
+        },
+        "clipped_flag_mismatches": 0
+      },
+      "matching_witness_comparisons": 69,
+      "matching_witness_fidelity": {
+        "passed": true,
+        "body": {
+          "speed_m_s": 2.0101153253904158e-05,
+          "yaw_rate_rad_s": 1.3723969459533691e-05,
+          "position_m": 1.6655205914090136e-05,
+          "time_s": 0.0
+        },
+        "wheel": {
+          "joint_angle": 9.5367431640625e-07,
+          "omega": 4.126311173990871e-05,
+          "lateral_slip_m_s": 6.268282277233084e-05,
+          "longitudinal_slip_m_s": 4.22313508465777e-05,
+          "force_ratio": 1.1573050044622057e-05
+        },
+        "raw_hull": {
+          "origin_position_m": 1.6655205914090136e-05,
+          "COM_position_m": 1.6655205914090136e-05,
+          "COM_speed_m_s": 2.6748569396772837e-05,
+          "origin_speed_m_s": 2.6801339345183806e-05,
+          "yaw_rad_s": 1.621246337890625e-05,
+          "time_s": 0.0
+        },
+        "clipped_flag_mismatches": 0
+      },
+      "witness_divergences": [
+        {
+          "step": 121,
+          "witness_origin": 119,
+          "command_delta": 0.16463148593902588,
+          "guardian_override": false,
+          "scope": "Originalwitnesscomparisonstopsbeforechangedpolicycommand"
+        },
+        {
+          "step": 121,
+          "witness_origin": 120,
+          "command_delta": 0.16463148593902588,
+          "guardian_override": false,
+          "scope": "Originalwitnesscomparisonstopsbeforechangedpolicycommand"
+        }
+      ],
+      "prior421_matching_prefix_rows": 13,
+      "prior421_matching_prefix_fidelity": {
+        "passed": true,
+        "body": {
+          "speed_m_s": 2.239140768267589e-05,
+          "yaw_rate_rad_s": 6.973743438720703e-06,
+          "position_m": 8.529922399520072e-06,
+          "time_s": 0.0
+        },
+        "wheel": {
+          "joint_angle": 4.76837158203125e-07,
+          "omega": 1.929000177369744e-05,
+          "lateral_slip_m_s": 4.1053049244510476e-05,
+          "longitudinal_slip_m_s": 2.9883169872846338e-05,
+          "force_ratio": 6.769699700148735e-06
+        },
+        "raw_hull": {
+          "origin_position_m": 8.529922399520072e-06,
+          "COM_position_m": 8.529922399520072e-06,
+          "COM_speed_m_s": 2.239140768267589e-05,
+          "origin_speed_m_s": 2.2392070803789466e-05,
+          "yaw_rad_s": 1.1712312698364258e-05,
+          "time_s": 0.0
+        },
+        "clipped_flag_mismatches": 0
+      },
+      "selected_recipes": [
+        "fullgas",
+        "nominal",
+        "fullgas",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal",
+        "nominal"
+      ],
+      "first_three_match421": [
+        true,
+        true,
+        true
+      ],
+      "neutral_guardian_steps": [],
+      "query_count": 13,
+      "query_parent_unchanged_all": true,
+      "max_force_ratio": 1.4073340197628152,
+      "clipped_wheel_samples": 29,
+      "total_wheel_samples": 208,
+      "first_clip": {
+        "step": 121,
+        "raw_tick": 3,
+        "wheel": 2
+      },
+      "actual_finish_observed": false,
+      "terminal_metadata_nonterminal_all": true,
+      "actual_progress_deadline_passed": true,
+      "model_ticks": 5626,
+      "model_worlds": 38,
+      "actual_exclusive_CPU_s": 7.652503442,
+      "actual_exclusive_wall_s": 7.650758743053302
+    }
+  },
+  "actual_local_exit_gain_bracket_s": [
+    0.04,
+    0.08
+  ],
+  "current_actual_state_queries": 26,
+  "planner_queries": 3,
+  "full_receipt_typed_selector_passed": 3,
+  "actual_parent_memory_RNG_ledger_unchanged": true,
+  "source_memory_committed": false,
+  "static_preflight_tests": 9,
+  "long_actual_finish_gain_qualified": false,
+  "model421_finish_gain_remains_model_only": [
+    0.62,
+    0.66
+  ],
+  "actual_full_lap_performed": false,
+  "pixel_or_generalization_qualified": false,
+  "prior417_gain_gate_unchanged": true,
+  "prior420_421_preserved": true,
+  "protected_preserved": true,
+  "SEALED_used": 0,
+  "SEALED_future_allowed": 0,
+  "cost": {
+    "stage": 422,
+    "new_wrapper_actions": 262,
+    "prefix_wrapper_actions": 236,
+    "suffix_wrapper_actions": 26,
+    "new_environment_resets": 2,
+    "unconfirmed_wrapper_actions": 0,
+    "new_model_integration_ticks": 6978,
+    "reserved_model_ticks": 6978,
+    "unconfirmed_model_ticks": 0,
+    "new_model_world_initializations": 64,
+    "confirmed_worlds": 64,
+    "zero_time_contact_setups": 64,
+    "max_held_worlds": 6,
+    "concurrently_stepped_worlds": 1,
+    "ticks_by_tag": {
+      "guardian_required_initial13": 1196,
+      "guardian_repeat_initial13": 1196,
+      "planner_required_initial13": 468,
+      "planner_repeat_initial13": 468,
+      "planner_required_tail": 1825,
+      "planner_repeat_tail": 1825
+    },
+    "worlds_by_tag": {
+      "guardian_required": 23,
+      "guardian_repeat": 23,
+      "planner_required": 9,
+      "planner_repeat": 9
+    },
+    "model_parent_ticks": 0,
+    "actual_parent_actions": 262,
+    "old_cached_source_ticks_recharged": 0,
+    "model_CPU_s": 26.534238648999995,
+    "model_query_wall_s": 26.01283055485692,
+    "model_CPU_includes_imports": true,
+    "actual_excluding_model_CPU_s": 14.811962149,
+    "actual_excluding_model_wall_s": 14.799420193186961,
+    "wholeworker_CPU_s": 41.413271844,
+    "execution_wall_s": 40.879002006025985,
+    "wholeworker_scope": "Finalresultserialization/report/gitnotfullyincluded; modelqueryregionsincludecontext/snapshot/hash/receipt/cleanup; pertagconstructor/stepCPUonly, notfullcost.",
+    "preparation": {
+      "implementation_interval_wall_s": 111.5382764339447,
+      "preparation_CPU_s": null,
+      "scope": "Implementation interval after initial source reading/design; earlier preparation and CPU not fully measured.",
+      "total_preparation_fully_measured": false
+    },
+    "static_preflight_CPU_s": 0.05463873500000005,
+    "static_preflight_wall_s": 0.056593016954138875,
+    "stored_analysis_CPU_s": 0.290791295,
+    "stored_analysis_wall_s": 0.32192002492956817,
+    "model_caps": {
+      "ticks": 32768,
+      "worlds": 128,
+      "CPU_s": 150,
+      "wall_s": 240
+    },
+    "actual_caps": {
+      "wrappers": 400,
+      "resets": 2,
+      "CPU_s": 90,
+      "wall_s": 180
+    },
+    "new_actor_calls": 0,
+    "new_learning_fits": 0,
+    "new_SEALED_queries": 0,
+    "new_reserve_use": 0,
+    "new_paid_resources": 0,
+    "research_before": 29618,
+    "research_remaining": 29356,
+    "actual_cumulative_wrapper_actions": 1318708,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064
+  },
+  "plan_sha256": "b6b390931ddef54c10068b7d21f39cb8ba42fead09c2d8cc991472f3bf9fb5a0",
+  "next_action": "Closedafteractual13; noautomaticretry/lap/newwindow/gain/horizon/recipe. Actual13doesnotcertifylongfinishgain; anyfurtherboundedworkrequiresseparateauthorization."
+}
