@@ -1,0 +1,72 @@
+{
+  "stage": 452,
+  "status": "SINGLE_CURRENT_DECISION_SCOPE_COMPLETED",
+  "error": null,
+  "result": {
+    "outcome": "NOMINAL_SAFE_RECOVERY_IN_NEW_SINGLE_DECISION",
+    "selected_recipe": "nominal",
+    "new_parent_actions_each": 1,
+    "source_model_replay_actions_each": 48,
+    "required_repeat_exact": true,
+    "held_first_passed": true,
+    "source_replay_exact": true,
+    "nominal_only_ranking_forbidden": true,
+    "original451_status_preserved": "CENSORED_NO_RECOVERY14",
+    "original451_uncensored": false,
+    "common_exit_gain": null,
+    "whole_policy_or_native_lap_qualified": false
+  },
+  "selected_alternatives": [
+    {
+      "recipe": "nominal",
+      "valid": true,
+      "kind": "SAFE_PROGRESS_H13",
+      "actions": 13
+    }
+  ],
+  "verification": {
+    "source_and_protected_preserved": true,
+    "recorded_model_source_replayed_exactly": true,
+    "no_new_policy_selection_in_replay": true,
+    "live_reconstructed_model_parent_to_current_one": true,
+    "current_root_contexts": 2,
+    "current_shadow_worlds": 4,
+    "required_repeat_and_held_exact": true,
+    "own_parent_first_fidelity_and_ledger_passed": true,
+    "nominal_only_completion_blocked": true,
+    "original451_censor_preserved": true,
+    "second_new_decision_not_executed": true,
+    "observer_posts": 796,
+    "streams": 7,
+    "actual_calls_resets": 0,
+    "saved_CPU_s": 0.658182878
+  },
+  "cost": {
+    "model_ticks": 796,
+    "model_worlds": 7,
+    "model_CPU_s": 10.641228557,
+    "model_wall_s": 10.72842282091733,
+    "recorded_model_replay_ticks": 576,
+    "fresh_current_shadow_ticks": 208,
+    "required_parent_ticks": 8,
+    "held_first_ticks": 4,
+    "static": {
+      "stage": 452,
+      "passed": true,
+      "error": null,
+      "tests": 234,
+      "failures": 0,
+      "errors": 0,
+      "audit_completed": true,
+      "CPU_s": 19.840702604,
+      "wall_s": 19.93720735399984,
+      "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+      "plan_sha256": "04c6fc9bbb2682cb7a6e9fde2f072ac16b8bcbee65d635cdd10074e207eddf7b"
+    },
+    "saved_audit_CPU_s": 0.658182878,
+    "old_cost_recharged": false,
+    "full_project_overhead_measured": false
+  },
+  "whole_policy_or_native_lap_qualified": false,
+  "deadline_utc": "2026-10-20T10:01:55Z"
+}
