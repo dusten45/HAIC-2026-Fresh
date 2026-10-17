@@ -1,0 +1,38 @@
+{
+  "stage": 494,
+  "status": "STATIC_CALLBACK_IMPLEMENTATION_ONLY",
+  "authority": "Explicit494 implementation/fake callback/static checkpoint. New physics forbidden until checkpoint review.",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "requirements": [
+    "Only isolated native/model tap aliases opt in; original modules and492/493 remain unchanged.",
+    "Bound readonly native controller accessor; direct tracker-post damage/phase/event/contact read.",
+    "raw_clock=ledger_before.last_clock_tick+ordinal; preforce hull one raw tick earlier.",
+    "Immediate immutable sidecar before legacy mutation; external SHA/pointer avoids self-reference.",
+    "BeginContact latch separate from event/current contact; wrapper-return damage retained.",
+    "Authenticate each owner receipt and compare all measurements for cold repeats; only provenance identity excluded.",
+    "Exact int/range tests reject bool clocks/counts; production serializer/read_ref roundtrip.",
+    "Production fakeenv/controller callback tests with world/reset/step poison; exception restoration/partial terminal/DONE timing."
+  ],
+  "caps": {
+    "CPU_s": 90,
+    "wall_s": 120,
+    "RSS_bytes": 268435456,
+    "new_bytes": 16777216,
+    "new_files": 160,
+    "perfile_bytes": 2097152,
+    "synthetic_receipt_files": 128,
+    "synthetic_receipt_bytes": 8388608,
+    "actual": 0,
+    "resets": 0,
+    "model_worlds": 0,
+    "model_ticks": 0
+  },
+  "accounting": {
+    "research_remaining": 26101,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "best_s": 13.64,
+    "new_debit": 0
+  },
+  "no_auto_followup": true
+}
