@@ -1,0 +1,498 @@
+{
+  "stage": 482,
+  "source_private_sha256": "cce8b302e53f9e47568d97519d130d17a7036e577d29eba7bda57672defdf2f8",
+  "source_analyzer_sha256": "d45dafed29c5625761150975211f0dd540d61e06d7549489c9d86717010814d2",
+  "source_renderer_sha256": "44cb41ffed6d6284e45b680304d52528246030818eeb3f68eb056e8e29468525",
+  "new_physics": 0,
+  "new_worlds": 0,
+  "baseline_safe_prefix": 73,
+  "baseline_unsafe_action": 74,
+  "online_safe_actions": 125,
+  "strict_eligible_margin_tradeoffs_over1mm": [
+    {
+      "action": 3,
+      "gap_m": 0.10749776179269888,
+      "M80_advantage": 0.07180967721893539,
+      "best_aliases": [
+        "nominal",
+        "qstar"
+      ],
+      "selected_aliases": [
+        "zero"
+      ]
+    },
+    {
+      "action": 4,
+      "gap_m": 0.013101407455333058,
+      "M80_advantage": 0.05533615093854194,
+      "best_aliases": [
+        "nominal"
+      ],
+      "selected_aliases": [
+        "qstar"
+      ]
+    },
+    {
+      "action": 62,
+      "gap_m": 0.00866020708956583,
+      "M80_advantage": 0.1158216099959688,
+      "best_aliases": [
+        "nominal",
+        "qstar"
+      ],
+      "selected_aliases": [
+        "zero"
+      ]
+    },
+    {
+      "action": 122,
+      "gap_m": 0.06029085687932234,
+      "M80_advantage": 0.0450634145783384,
+      "best_aliases": [
+        "nominal",
+        "qstar"
+      ],
+      "selected_aliases": [
+        "zero"
+      ]
+    }
+  ],
+  "exact_zero_M80_tie_margin_tradeoffs_over1mm": 20,
+  "tie_actions": [
+    6,
+    7,
+    10,
+    11,
+    12,
+    16,
+    17,
+    21,
+    22,
+    26,
+    39,
+    44,
+    55,
+    56,
+    59,
+    66,
+    87,
+    90,
+    91,
+    96,
+    97,
+    100,
+    105
+  ],
+  "timeline": [
+    {
+      "action": 118,
+      "pre_time_s": 12.13999999999983,
+      "pre_speed_m_s": 95.33165646140685,
+      "pre_reference_m_s": 96.07370044119197,
+      "speed_excess_m_s": -0.742043979785123,
+      "pre_profile_curvature_m_inv": 0.0010496572236722008,
+      "pre_smoothing_delta_rad": -1.9733026194482858e-05,
+      "post_time_s": 12.219999999999828,
+      "post_signed_error_m": 0.011834005693288236,
+      "hold_guard_max_error_m": 0.011834005693288236,
+      "post_normal_m_s": 0.17992318248310166,
+      "post_heading_deg": 0.13433559474235707,
+      "post_yaw_rad_s": 0.07116836309432983,
+      "front": {
+        "max_abs_lateral_slip_m_s": 0.1538484892694214,
+        "max_abs_longitudinal_slip_m_s": 1.8699794272044414,
+        "max_force_ratio": 0.38463084168753936,
+        "max_abs_raw_lateral_N": 12.615576120092555,
+        "max_abs_raw_longitudinal_N": 153.3383130307642,
+        "clipped_samples": 0,
+        "samples": 8
+      },
+      "rear": {
+        "max_abs_lateral_slip_m_s": 0.15900572666441803,
+        "max_abs_longitudinal_slip_m_s": 2.8855761516828693,
+        "max_force_ratio": 0.5924132680148246,
+        "max_abs_raw_lateral_N": 13.038469586482279,
+        "max_abs_raw_longitudinal_N": 236.61724443799528,
+        "clipped_samples": 0,
+        "samples": 8
+      },
+      "steering": {
+        "target_joint_rad": 0.0023248703218996525,
+        "max_abs_pre_force_lag_rad": 7.886579260230064e-05,
+        "last_pre_force_lag_rad": 2.891756594181061e-07,
+        "last_pre_force_joint_rad": 0.0023245811462402344
+      },
+      "own_M80": 0.0
+    },
+    {
+      "action": 119,
+      "pre_time_s": 12.219999999999828,
+      "pre_speed_m_s": 97.18905463657568,
+      "pre_reference_m_s": 89.91844667704054,
+      "speed_excess_m_s": 7.270607959535141,
+      "pre_profile_curvature_m_inv": 0.0011291579952911448,
+      "pre_smoothing_delta_rad": -3.508600216565452e-05,
+      "post_time_s": 12.299999999999827,
+      "post_signed_error_m": 0.01512110368888335,
+      "hold_guard_max_error_m": 0.015121103688883348,
+      "post_normal_m_s": 0.04477872953548302,
+      "post_heading_deg": 0.051768531737823614,
+      "post_yaw_rad_s": 0.06449154019355774,
+      "front": {
+        "max_abs_lateral_slip_m_s": 0.15446772219365812,
+        "max_abs_longitudinal_slip_m_s": 4.062226024819353,
+        "max_force_ratio": 0.8333536073781883,
+        "max_abs_raw_lateral_N": 12.666353219879966,
+        "max_abs_raw_longitudinal_N": 333.1025340351869,
+        "clipped_samples": 0,
+        "samples": 8
+      },
+      "rear": {
+        "max_abs_lateral_slip_m_s": 0.15890132798517698,
+        "max_abs_longitudinal_slip_m_s": 1.5012618123734285,
+        "max_force_ratio": 0.3091501275413301,
+        "max_abs_raw_lateral_N": 13.029908894784512,
+        "max_abs_raw_longitudinal_N": 123.10346861462114,
+        "clipped_samples": 0,
+        "samples": 8
+      },
+      "steering": {
+        "target_joint_rad": 0.0021845262963324785,
+        "max_abs_pre_force_lag_rad": 0.00014053168706595898,
+        "last_pre_force_lag_rad": 3.4156255424022675e-07,
+        "last_pre_force_joint_rad": 0.0021848678588867188
+      },
+      "own_M80": 0.0
+    },
+    {
+      "action": 120,
+      "pre_time_s": 12.299999999999827,
+      "pre_speed_m_s": 89.51898249092335,
+      "pre_reference_m_s": 82.09649171760587,
+      "speed_excess_m_s": 7.422490773317477,
+      "pre_profile_curvature_m_inv": 0.0009127915137136568,
+      "pre_smoothing_delta_rad": 0.001099931684922277,
+      "post_time_s": 12.379999999999825,
+      "post_signed_error_m": 0.03317685451609117,
+      "hold_guard_max_error_m": 0.03317685451609117,
+      "post_normal_m_s": 0.48133293715569825,
+      "post_heading_deg": 0.3469377094714728,
+      "post_yaw_rad_s": 0.1533273458480835,
+      "front": {
+        "max_abs_lateral_slip_m_s": 0.5042643191832212,
+        "max_abs_longitudinal_slip_m_s": 2.404344457510504,
+        "max_force_ratio": 0.49353403543207863,
+        "max_abs_raw_lateral_N": 41.34967417302414,
+        "max_abs_raw_longitudinal_N": 197.15624551586134,
+        "clipped_samples": 0,
+        "samples": 8
+      },
+      "rear": {
+        "max_abs_lateral_slip_m_s": 0.3134354954720493,
+        "max_abs_longitudinal_slip_m_s": 1.9616955058536973,
+        "max_force_ratio": 0.40724843414314144,
+        "max_abs_raw_lateral_N": 25.701710628708042,
+        "max_abs_raw_longitudinal_N": 160.85903148000318,
+        "clipped_samples": 0,
+        "samples": 8
+      },
+      "steering": {
+        "target_joint_rad": 0.006584253162145615,
+        "max_abs_pre_force_lag_rad": 0.004399862140417099,
+        "last_pre_force_lag_rad": 8.568167686462402e-08,
+        "last_pre_force_joint_rad": 0.00658416748046875
+      },
+      "own_M80": 0.0
+    },
+    {
+      "action": 121,
+      "pre_time_s": 12.379999999999825,
+      "pre_speed_m_s": 82.22405852867894,
+      "pre_reference_m_s": 74.16552124897906,
+      "speed_excess_m_s": 8.058537279699877,
+      "pre_profile_curvature_m_inv": 0.0006967523740204046,
+      "pre_smoothing_delta_rad": 0.006759930326900872,
+      "post_time_s": 12.459999999999823,
+      "post_signed_error_m": 0.20700282795027614,
+      "hold_guard_max_error_m": 0.20700282795027614,
+      "post_normal_m_s": 3.489265189594741,
+      "post_heading_deg": 2.5839311802664344,
+      "post_yaw_rad_s": 0.6745468974113464,
+      "front": {
+        "max_abs_lateral_slip_m_s": 2.471335330738725,
+        "max_abs_longitudinal_slip_m_s": 2.7856932753456363,
+        "max_force_ratio": 0.6626096010997945,
+        "max_abs_raw_lateral_N": 202.64949712057546,
+        "max_abs_raw_longitudinal_N": 228.42684857834217,
+        "clipped_samples": 0,
+        "samples": 8
+      },
+      "rear": {
+        "max_abs_lateral_slip_m_s": 1.2255737050510334,
+        "max_abs_longitudinal_slip_m_s": 2.653102278970536,
+        "max_force_ratio": 0.5991116708521533,
+        "max_abs_raw_lateral_N": 100.49704381418474,
+        "max_abs_raw_longitudinal_N": 217.55438687558396,
+        "clipped_samples": 0,
+        "samples": 8
+      },
+      "steering": {
+        "target_joint_rad": 0.03362397477030754,
+        "max_abs_pre_force_lag_rad": 0.02703980728983879,
+        "last_pre_force_lag_rad": 1.9744038581848145e-07,
+        "last_pre_force_joint_rad": 0.03362417221069336
+      },
+      "own_M80": 0.0
+    },
+    {
+      "action": 122,
+      "pre_time_s": 12.459999999999823,
+      "pre_speed_m_s": 74.91129592284366,
+      "pre_reference_m_s": 66.09323367038735,
+      "speed_excess_m_s": 8.818062252456315,
+      "pre_profile_curvature_m_inv": 0.0004804110798390395,
+      "pre_smoothing_delta_rad": 0.013107598105141172,
+      "post_time_s": 12.539999999999822,
+      "post_signed_error_m": 0.8727833440469697,
+      "hold_guard_max_error_m": 0.8727833440469697,
+      "post_normal_m_s": 11.62908117540982,
+      "post_heading_deg": 8.708985159137594,
+      "post_yaw_rad_s": 1.7364174127578735,
+      "front": {
+        "max_abs_lateral_slip_m_s": 5.318633864089065,
+        "max_abs_longitudinal_slip_m_s": 1.3764518178300449,
+        "max_force_ratio": 1.090671605587098,
+        "max_abs_raw_lateral_N": 436.12797685530336,
+        "max_abs_raw_longitudinal_N": 112.86904906206368,
+        "clipped_samples": 2,
+        "samples": 8
+      },
+      "rear": {
+        "max_abs_lateral_slip_m_s": 2.6842790985800775,
+        "max_abs_longitudinal_slip_m_s": 1.4994072641234624,
+        "max_force_ratio": 0.6066050763823975,
+        "max_abs_raw_lateral_N": 220.11088608356636,
+        "max_abs_raw_longitudinal_N": 122.95139565812391,
+        "clipped_samples": 0,
+        "samples": 8
+      },
+      "steering": {
+        "target_joint_rad": 0.08605436980724335,
+        "max_abs_pre_force_lag_rad": 0.05243067443370819,
+        "last_pre_force_lag_rad": 4.3213367462158203e-07,
+        "last_pre_force_joint_rad": 0.08605480194091797
+      },
+      "own_M80": 0.09067160558709797
+    },
+    {
+      "action": 123,
+      "pre_time_s": 12.539999999999822,
+      "pre_speed_m_s": 75.0966987200184,
+      "pre_reference_m_s": 57.26069078615251,
+      "speed_excess_m_s": 17.836007933865886,
+      "pre_profile_curvature_m_inv": 0.0014655457843975378,
+      "pre_smoothing_delta_rad": 0.01759657514428531,
+      "post_time_s": 12.61999999999982,
+      "post_signed_error_m": 1.3440529750021215,
+      "hold_guard_max_error_m": 1.3440529750021215,
+      "post_normal_m_s": 2.626431824939926,
+      "post_heading_deg": 1.9435692904276156,
+      "post_yaw_rad_s": 2.573664426803589,
+      "front": {
+        "max_abs_lateral_slip_m_s": 8.342255448700598,
+        "max_abs_longitudinal_slip_m_s": 1.251135216460355,
+        "max_force_ratio": 1.7170934764392891,
+        "max_abs_raw_lateral_N": 684.064946793449,
+        "max_abs_raw_longitudinal_N": 102.59308774974912,
+        "clipped_samples": 6,
+        "samples": 8
+      },
+      "rear": {
+        "max_abs_lateral_slip_m_s": 3.79580210971487,
+        "max_abs_longitudinal_slip_m_s": 1.2136822463795056,
+        "max_force_ratio": 0.787631825203882,
+        "max_abs_raw_lateral_N": 311.2557729966194,
+        "max_abs_raw_longitudinal_N": 99.52194420311946,
+        "clipped_samples": 0,
+        "samples": 8
+      },
+      "steering": {
+        "target_joint_rad": 0.15644066035747528,
+        "max_abs_pre_force_lag_rad": 0.07038585841655731,
+        "last_pre_force_lag_rad": 1.9818544387817383e-06,
+        "last_pre_force_joint_rad": 0.15644264221191406
+      },
+      "own_M80": 0.7170934764392891
+    },
+    {
+      "action": 124,
+      "pre_time_s": 12.61999999999982,
+      "pre_speed_m_s": 74.87937264506778,
+      "pre_reference_m_s": 53.43780558457257,
+      "speed_excess_m_s": 21.441567060495203,
+      "pre_profile_curvature_m_inv": 0.07324988455906607,
+      "pre_smoothing_delta_rad": 0.018688098076812154,
+      "post_time_s": 12.699999999999818,
+      "post_signed_error_m": 0.06534655953819084,
+      "hold_guard_max_error_m": 1.3440529750021215,
+      "post_normal_m_s": -25.992052290808868,
+      "post_heading_deg": -20.943925525654436,
+      "post_yaw_rad_s": 2.8447046279907227,
+      "front": {
+        "max_abs_lateral_slip_m_s": 13.354228049606945,
+        "max_abs_longitudinal_slip_m_s": 1.487898218524478,
+        "max_force_ratio": 2.743616869365127,
+        "max_abs_raw_lateral_N": 1095.0467000677695,
+        "max_abs_raw_longitudinal_N": 122.0076539190072,
+        "clipped_samples": 8,
+        "samples": 8
+      },
+      "rear": {
+        "max_abs_lateral_slip_m_s": 4.608821950188144,
+        "max_abs_longitudinal_slip_m_s": 1.2036960391455267,
+        "max_force_ratio": 0.9610011870897054,
+        "max_abs_raw_lateral_N": 377.9233999154278,
+        "max_abs_raw_longitudinal_N": 98.70307520993319,
+        "clipped_samples": 0,
+        "samples": 8
+      },
+      "steering": {
+        "target_joint_rad": 0.23119306564331055,
+        "max_abs_pre_force_lag_rad": 0.07475042343139648,
+        "last_pre_force_lag_rad": 3.337860107421875e-06,
+        "last_pre_force_joint_rad": 0.23119640350341797
+      },
+      "own_M80": 1.7436168693651268
+    },
+    {
+      "action": 125,
+      "pre_time_s": 12.699999999999818,
+      "pre_speed_m_s": 72.49118983416538,
+      "pre_reference_m_s": 53.23706608143712,
+      "speed_excess_m_s": 19.254123752728262,
+      "pre_profile_curvature_m_inv": 0.07337928534566243,
+      "pre_smoothing_delta_rad": 0.007704054531886884,
+      "post_time_s": 12.779999999999816,
+      "post_signed_error_m": -2.0321006231968526,
+      "hold_guard_max_error_m": 2.0321006231968526,
+      "post_normal_m_s": -29.76311167158349,
+      "post_heading_deg": -25.24825530646061,
+      "post_yaw_rad_s": 2.9799509048461914,
+      "front": {
+        "max_abs_lateral_slip_m_s": 15.075302291237676,
+        "max_abs_longitudinal_slip_m_s": 1.1636116388090016,
+        "max_force_ratio": 3.094907834211751,
+        "max_abs_raw_lateral_N": 1236.1747878814895,
+        "max_abs_raw_longitudinal_N": 95.41615438233814,
+        "clipped_samples": 8,
+        "samples": 8
+      },
+      "rear": {
+        "max_abs_lateral_slip_m_s": 4.834716272238666,
+        "max_abs_longitudinal_slip_m_s": 0.8351064876675309,
+        "max_force_ratio": 0.9994882472625655,
+        "max_abs_raw_lateral_N": 396.4467343235706,
+        "max_abs_raw_longitudinal_N": 68.47873198873754,
+        "clipped_samples": 0,
+        "samples": 8
+      },
+      "steering": {
+        "target_joint_rad": 0.26200926303863525,
+        "max_abs_pre_force_lag_rad": 0.030812382698059082,
+        "last_pre_force_lag_rad": 3.6954879760742188e-06,
+        "last_pre_force_joint_rad": 0.26201295852661133
+      },
+      "own_M80": 2.094907834211751
+    }
+  ],
+  "query126_guard_sequence": [
+    {
+      "aliases": [
+        "nominal"
+      ],
+      "first_path_guard_raw_tick": 2,
+      "first_path_guard_time_s": 12.819999999999816,
+      "path_error_at_first_guard_m": 3.123511751944593,
+      "signed_error_at_first_guard_m": -3.123511751944593,
+      "normal_velocity_at_first_guard_m_s": -39.97634391056605,
+      "heading_at_first_guard_deg": -35.83025457839856,
+      "yaw_at_first_guard_rad_s": 3.0361790657043457,
+      "road_contacts_at_first_guard": 4,
+      "first_road_loss_raw_tick": 4,
+      "grass_any": false
+    },
+    {
+      "aliases": [
+        "qstar"
+      ],
+      "first_path_guard_raw_tick": 2,
+      "first_path_guard_time_s": 12.819999999999816,
+      "path_error_at_first_guard_m": 3.1412874324800786,
+      "signed_error_at_first_guard_m": -3.1412874324800786,
+      "normal_velocity_at_first_guard_m_s": -40.57463813681329,
+      "heading_at_first_guard_deg": -35.77927404643359,
+      "yaw_at_first_guard_rad_s": 3.0646283626556396,
+      "road_contacts_at_first_guard": 4,
+      "first_road_loss_raw_tick": 4,
+      "grass_any": false
+    },
+    {
+      "aliases": [
+        "zero"
+      ],
+      "first_path_guard_raw_tick": 2,
+      "first_path_guard_time_s": 12.819999999999816,
+      "path_error_at_first_guard_m": 3.1412874324800786,
+      "signed_error_at_first_guard_m": -3.1412874324800786,
+      "normal_velocity_at_first_guard_m_s": -40.57463813681329,
+      "heading_at_first_guard_deg": -35.77927404643359,
+      "yaw_at_first_guard_rad_s": 3.0646283626556396,
+      "road_contacts_at_first_guard": 4,
+      "first_road_loss_raw_tick": 4,
+      "grass_any": false
+    }
+  ],
+  "last_segment_projection": {
+    "actions": [
+      118,
+      125
+    ],
+    "all_pre_force_interior": true,
+    "strictly_increasing_projected_arc": true,
+    "raw_arc_delta_range_m": [
+      1.147666703778782,
+      1.943779114112317
+    ],
+    "own_all_four_road_contacts": true,
+    "own_grass_any": false,
+    "interpretation": "Changing tangent at consecutive polyline segments explains signed normal/heading jumps. No projection tie/branch discontinuity observed in this window; not a smooth curvature derivative."
+  },
+  "all125_max_last_pre_force_servo_lag_rad": 3.338535316288471e-05,
+  "limits": [
+    "Unselected forecasts observed once; differences are saved cold model observations, not repeated warm counterfactuals.",
+    "No continuation after query126 was observed.",
+    "80ms versus longer horizon not experimentally compared.",
+    "472 success suffix begins from another state; no cross-run causal inference."
+  ],
+  "exact_equal_M80_tie_margin_tradeoffs_over1mm": 23,
+  "exact_positive_M80_ties": [
+    {
+      "action": 6,
+      "selected_M80": 0.29937632021901694
+    },
+    {
+      "action": 7,
+      "selected_M80": 0.03779912940043029
+    },
+    {
+      "action": 66,
+      "selected_M80": 0.31555685386628074
+    }
+  ],
+  "review_correction": {
+    "original_findings_sha256": "ba9eea98484d2b0a0ba3b98731072099a5557486fed83610fc97aa5444495a5c",
+    "original_renderer_sha256": "fcc4302058d724d46990031715bff8bb811ba04cad8edb913d37f33ab812ce3f",
+    "correction_script_sha256": "bc56fd94b6046e81972ce0dc952e7a3e601eada10186161e1a3dcc165a088d38",
+    "reason": "Exact equal-M80 ties comprise20 zero and3 positive; M80_advantage==0 did not imply selected_M80==0. No risk/geometry/timeseries/plot changed."
+  }
+}
