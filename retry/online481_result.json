@@ -1,0 +1,163 @@
+{
+  "stage": 481,
+  "status": "B200_MODEL_PAIR_COMPLETE",
+  "error": null,
+  "outcome": {
+    "status": "B200_MODEL_PAIR_COMPLETE",
+    "fixtures": [
+      {
+        "name": "source",
+        "passed": true,
+        "status": "ACTIVE",
+        "raw_ticks": 4,
+        "selected": [
+          "nominal",
+          "qstar"
+        ]
+      },
+      {
+        "name": "pending",
+        "complete_tracker_history_replayed": true,
+        "passed": true,
+        "status": "FINISHED",
+        "raw_ticks": 1,
+        "same_event": true,
+        "selected": [
+          "nominal",
+          "qstar"
+        ]
+      }
+    ],
+    "parents": [
+      {
+        "arm": "baseline",
+        "status": "UNSAFE",
+        "error": "path_error_over3m",
+        "actions": 74,
+        "official_own_model_finish": false,
+        "event_time_s": null,
+        "confirmation_time_s": null,
+        "finish_ticks": null,
+        "max_path_error_m": 3.740236334422771,
+        "last_path_error_m": 3.740236334422771,
+        "history_proof": {
+          "stage": 481,
+          "scope": "OWN_FINITE_POLICY_HISTORY",
+          "policy_digest": "50aa3539e139c882b96f7672bc1e0e70f15230e9d48545932e8fc4e9f3bb9f4d",
+          "parent_token": "01a88dd5e1f7-world9-baseline",
+          "actions": 74,
+          "raw_ticks": 296,
+          "root_raw_clock": 139,
+          "current_raw_clock": 435,
+          "state_digest": "ac28c34d1707be55f866187aec880d144279ccb2fcc23ec4b32eba215134c924",
+          "memory_digest": "46c36e11f72393be6f463065ff9fab4507b9a27c2bcdf8af7c848a8da97c1b63",
+          "ledger_digest": "087717b08568180c277050444d12600798ef0e2aece36b6cb9bf96694f26b1ad",
+          "event_time_s": null,
+          "event_raw_clock": null,
+          "pending": false,
+          "own_model_finished": false,
+          "physical_safe": false,
+          "progress_deadline_missed": false,
+          "terminal_nonfinish": false,
+          "actual_DONE_allowed": false,
+          "actual_execution_allowed": false,
+          "historical_proof": null,
+          "memory_scope": "ACTUAL_CURRENT_CONTROLLER_INCLUDING_LEGITIMATE_DONE"
+        },
+        "undispatched_preparation": null,
+        "actual_controller_memory_digest": "46c36e11f72393be6f463065ff9fab4507b9a27c2bcdf8af7c848a8da97c1b63",
+        "policy_digest": "50aa3539e139c882b96f7672bc1e0e70f15230e9d48545932e8fc4e9f3bb9f4d"
+      },
+      {
+        "arm": "online",
+        "status": "EMPTY_FINITE_CANDIDATE_DOMAIN",
+        "error": "all_current_three_commands_ineligible",
+        "actions": 125,
+        "official_own_model_finish": false,
+        "event_time_s": null,
+        "confirmation_time_s": null,
+        "finish_ticks": null,
+        "max_path_error_m": 2.0321006231968526,
+        "last_path_error_m": 2.0321006231968526,
+        "history_proof": {
+          "stage": 481,
+          "scope": "OWN_FINITE_POLICY_HISTORY",
+          "policy_digest": "3ee2c6df70f3c035aab8d57944493623ac7420558857ebbf54263eea6a4d7121",
+          "parent_token": "01a88dd5e1f7-world10-online",
+          "actions": 125,
+          "raw_ticks": 500,
+          "root_raw_clock": 139,
+          "current_raw_clock": 639,
+          "state_digest": "e4907149462411f4bc82aaff82f8d61a48b9ff2116be8fbde34e89697ffc222f",
+          "memory_digest": "70a2fa1900fb3ecd876bc55a8bcb42e4068e6d96d29927b910d667ce1c0b1376",
+          "ledger_digest": "ea62df41dbf2746441a158206c8bbcfc4bd0813bffe847a00fd9b280ff40bedf",
+          "event_time_s": null,
+          "event_raw_clock": null,
+          "pending": false,
+          "own_model_finished": false,
+          "physical_safe": true,
+          "progress_deadline_missed": false,
+          "terminal_nonfinish": false,
+          "actual_DONE_allowed": false,
+          "actual_execution_allowed": false,
+          "historical_proof": null,
+          "memory_scope": "LAST_COMMITTED_OWN_CHAIN_BEFORE_UNDISPATCHED_PREPARATION"
+        },
+        "undispatched_preparation": {
+          "context_sha256": "59bc4d7b4691df6d8c25a308e7018ba78bf2dddd4418d0112e534b9be700ba65",
+          "allocation_number": 202,
+          "committed_memory_digest": "70a2fa1900fb3ecd876bc55a8bcb42e4068e6d96d29927b910d667ce1c0b1376",
+          "prepared_after_memory_digest": "00de2803193976908ae9e3a204e195df0eaff70a7c5c02ae7af75a0a0e468790",
+          "actual_controller_memory_digest": "00de2803193976908ae9e3a204e195df0eaff70a7c5c02ae7af75a0a0e468790",
+          "nominal_calls": 1,
+          "own_step_performed": false
+        },
+        "actual_controller_memory_digest": "00de2803193976908ae9e3a204e195df0eaff70a7c5c02ae7af75a0a0e468790",
+        "policy_digest": "3ee2c6df70f3c035aab8d57944493623ac7420558857ebbf54263eea6a4d7121"
+      }
+    ],
+    "finish_time_gain_bracket_s": null,
+    "both_own_finish": false,
+    "unselected_independently_repeated": false,
+    "unselected_warm_counterfactual_observed": false,
+    "native_promotion": false,
+    "online_query_aggregate": {
+      "queries": 126,
+      "selected_alias_counts": {
+        "nominal": 113,
+        "qstar": 113,
+        "zero": 10
+      },
+      "own_holds": 125,
+      "empty_domain_queries": 1,
+      "max_own_M80": 2.094907834211751,
+      "max_own_post_path_error_m": 2.0321006231968526,
+      "unselected_independent_repeats": false,
+      "unselected_warm_counterfactual_observed": false
+    }
+  },
+  "model_ticks": 2344,
+  "reserved_ticks": 2344,
+  "charged_ticks": 2356,
+  "model_worlds": 392,
+  "allocator_calls": 202,
+  "preparation_cost": {
+    "CPU_s": 2.67924383,
+    "wall_s": 2.332295742002316,
+    "scope": "Registration+integratedstatic+source/input/space verification andimports; added to worker caps"
+  },
+  "allocator_CPU_s": 3.9844756910000063,
+  "allocator_wall_s": 3.931509779416956,
+  "whole_CPU_s": 501.160169924,
+  "whole_wall_s": 500.55429543100763,
+  "readback_files": 4350,
+  "raw_bytes": 329731405,
+  "new_actual_native_reset_HOLDOUT_SEALED": 0,
+  "no_policy_or_native_promotion": true,
+  "no_followup": true,
+  "best_native_s": 13.64,
+  "research_remaining": 26175,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "plan_sha256": "01a88dd5e1f7d3f9203e28f406b0671934008ada21763db98a577b899399d721"
+}

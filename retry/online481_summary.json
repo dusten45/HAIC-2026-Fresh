@@ -1,0 +1,90 @@
+{
+  "stage": 481,
+  "mode": "SAVED_ONLY_POSTPROCESS_NO_NEW_EXPERIMENT",
+  "main_result_sha256": "2bf1c93349a36c754c008e193790d611949646545badcdc410fa75b22906e538",
+  "source_code_sha256": "c51af4182ccf0f69592be1330ddb9ce02b8e124abe815a05dd544ef042140bd9",
+  "retention_manifest_sha256": "d1e85fd165192fb4bd8ff0f542c532e54796695c015118e62ee5e328f7bb45d1",
+  "parents": [
+    {
+      "arm": "baseline",
+      "status": "UNSAFE",
+      "actions": 74,
+      "official_own_model_finish": false,
+      "max_path_error_m": 3.740236334422771,
+      "last_path_error_m": 3.740236334422771
+    },
+    {
+      "arm": "online",
+      "status": "EMPTY_FINITE_CANDIDATE_DOMAIN",
+      "actions": 125,
+      "official_own_model_finish": false,
+      "max_path_error_m": 2.0321006231968526,
+      "last_path_error_m": 2.0321006231968526
+    }
+  ],
+  "same_entire_row_prefix": 2,
+  "first_command_divergence_action": 3,
+  "interventions": {
+    "gas_reductions": 6,
+    "brake_reductions": 6
+  },
+  "online_selected_independent_repeats": 125,
+  "empty_query": 126,
+  "all_empty_candidates": [
+    {
+      "aliases": [
+        "nominal"
+      ],
+      "M80": 1.9534458529079588,
+      "valid": false,
+      "status": "UNSAFE",
+      "error": "path_error_over3m,road_loss_or_grass",
+      "safety": [
+        "path_error_over3m",
+        "road_loss_or_grass"
+      ],
+      "forecast_post_path_error_m": 4.479845360932195,
+      "progress_deadline_missed": false
+    },
+    {
+      "aliases": [
+        "qstar"
+      ],
+      "M80": 1.9455745331837453,
+      "valid": false,
+      "status": "UNSAFE",
+      "error": "path_error_over3m,road_loss_or_grass",
+      "safety": [
+        "path_error_over3m",
+        "road_loss_or_grass"
+      ],
+      "forecast_post_path_error_m": 4.536364839160982,
+      "progress_deadline_missed": false
+    },
+    {
+      "aliases": [
+        "zero"
+      ],
+      "M80": 1.9455745331837453,
+      "valid": false,
+      "status": "UNSAFE",
+      "error": "path_error_over3m,road_loss_or_grass",
+      "safety": [
+        "path_error_over3m",
+        "road_loss_or_grass"
+      ],
+      "forecast_post_path_error_m": 4.536364839160982,
+      "progress_deadline_missed": false
+    }
+  ],
+  "empty_own_dispatch": false,
+  "finish_gain": null,
+  "core_step_and_observer_CPU_s": 1.8914820720000876,
+  "constructor_CPU_s": 2.9934341430005915,
+  "postprocess_CPU_s": 1.031002635,
+  "postprocess_wall_s": 0.6523360850987956,
+  "new_physics": 0,
+  "new_native": 0,
+  "new_worlds": 0,
+  "new_reset": 0
+}
