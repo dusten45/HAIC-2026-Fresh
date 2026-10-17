@@ -1,0 +1,633 @@
+{
+  "stage": 479,
+  "status": "FINITE_HOLD_COMPARISON_COMPLETE",
+  "error": null,
+  "outcome": {
+    "status": "FINITE_HOLD_COMPARISON_COMPLETE",
+    "prefix_exact_actions": 68,
+    "nominal_calls": 69,
+    "diagnostics": [
+      {
+        "root": 47,
+        "options": {
+          "nominal": {
+            "command": [
+              -0.13969720900058746,
+              0.780729353427887,
+              0.0
+            ],
+            "M80": 1.1743972554879316,
+            "valid": true,
+            "repeat_exact": true,
+            "active_pedal": 0.780729353427887
+          },
+          "qstar": {
+            "command": [
+              -0.13969720900058746,
+              1.609823385706477e-15,
+              0.0
+            ],
+            "M80": 0.49637786084565705,
+            "valid": true,
+            "repeat_exact": true,
+            "active_pedal": 1.609823385706477e-15
+          },
+          "zero": {
+            "command": [
+              -0.13969720900058746,
+              0.0,
+              0.0
+            ],
+            "M80": 0.49637786084565705,
+            "valid": true,
+            "repeat_exact": true,
+            "active_pedal": 0.0
+          }
+        },
+        "source_join": {
+          "passed": true,
+          "body_errors": {
+            "position_m": 2.384185791015625e-07,
+            "speed_m_s": 0.0,
+            "yaw_rad_s": 4.76837158203125e-07,
+            "time_s": 0.0
+          },
+          "discrete_exact": true,
+          "wheel": {
+            "passed": true,
+            "max_errors": {
+              "joint_angle": 0.0,
+              "omega": 2.5634478220126766e-06,
+              "lateral_slip_m_s": 2.829109917001915e-06,
+              "longitudinal_slip_m_s": 4.785569629461861e-06,
+              "force_ratio": 7.550339384820859e-07
+            },
+            "grass_exact": true,
+            "clipped_flag_mismatches": 0
+          },
+          "hull": {
+            "passed": true,
+            "max_errors": {
+              "origin_position_m": 0.0,
+              "COM_position_m": 0.0,
+              "COM_speed_m_s": 2.967530704722776e-06,
+              "origin_speed_m_s": 2.9561763099650307e-06,
+              "yaw_rad_s": 7.152557373046875e-07,
+              "time_s": 0.0
+            },
+            "COM_mass_metadata_exact": true
+          },
+          "phase_exact": true,
+          "raw_discrete_exact": true
+        },
+        "parent_isolated": true,
+        "nominal_calls": 1,
+        "allocator_calls": 1,
+        "selected": "qstar",
+        "held_M80": 0.49637786084565705,
+        "held_valid": true,
+        "held_safety": [],
+        "held_path_error_m": 0.3526376463055362,
+        "held_progress_m": 306.9290624003107,
+        "held_source_join": {
+          "passed": true,
+          "body_errors": {
+            "position_m": 0.0,
+            "speed_m_s": 0.0,
+            "yaw_rad_s": 0.0,
+            "time_s": 0.0
+          },
+          "discrete_exact": true,
+          "wheel": {
+            "passed": true,
+            "max_errors": {
+              "joint_angle": 0.0,
+              "omega": 0.0,
+              "lateral_slip_m_s": 0.0,
+              "longitudinal_slip_m_s": 0.0,
+              "force_ratio": 0.0
+            },
+            "grass_exact": true,
+            "clipped_flag_mismatches": 0
+          },
+          "hull": {
+            "passed": true,
+            "max_errors": {
+              "origin_position_m": 0.0,
+              "COM_position_m": 0.0,
+              "COM_speed_m_s": 0.0,
+              "origin_speed_m_s": 0.0,
+              "yaw_rad_s": 0.0,
+              "time_s": 0.0
+            },
+            "COM_mass_metadata_exact": true
+          },
+          "phase_exact": true,
+          "raw_discrete_exact": true
+        },
+        "archived_warm_qstar_M80": 0.49637786084565705,
+        "cold_qstar_gap": 0.0,
+        "source_two_trace_gap_bound": 0.1,
+        "uncertainty_is_not_optimizer_epsilon": true,
+        "status": "POSITIVE_CONTROL_PASSED"
+      },
+      {
+        "root": 69,
+        "options": {
+          "nominal": {
+            "command": [
+              -0.15889166295528412,
+              0.8559432625770569,
+              0.0
+            ],
+            "M80": 1.1809580990598034,
+            "valid": true,
+            "repeat_exact": true,
+            "active_pedal": 0.8559432625770569
+          },
+          "qstar": {
+            "command": [
+              -0.15889166295528412,
+              0.7737106084823608,
+              0.0
+            ],
+            "M80": 1.0530179550449161,
+            "valid": true,
+            "repeat_exact": true,
+            "active_pedal": 0.7737106084823608
+          },
+          "zero": {
+            "command": [
+              -0.15889166295528412,
+              0.0,
+              0.0
+            ],
+            "M80": 0.528171822388199,
+            "valid": true,
+            "repeat_exact": true,
+            "active_pedal": 0.0
+          }
+        },
+        "source_join": {
+          "passed": true,
+          "body_errors": {
+            "position_m": 0.0,
+            "speed_m_s": 1.0640497976055485e-06,
+            "yaw_rad_s": 4.76837158203125e-07,
+            "time_s": 0.0
+          },
+          "discrete_exact": true,
+          "wheel": {
+            "passed": true,
+            "max_errors": {
+              "joint_angle": 0.0,
+              "omega": 3.5385027388201706e-06,
+              "lateral_slip_m_s": 1.0179132914345246e-05,
+              "longitudinal_slip_m_s": 5.922804909630486e-06,
+              "force_ratio": 2.2313874479262807e-06
+            },
+            "grass_exact": true,
+            "clipped_flag_mismatches": 0
+          },
+          "hull": {
+            "passed": true,
+            "max_errors": {
+              "origin_position_m": 0.0,
+              "COM_position_m": 0.0,
+              "COM_speed_m_s": 4.93354997388451e-06,
+              "origin_speed_m_s": 4.908613988163779e-06,
+              "yaw_rad_s": 7.152557373046875e-07,
+              "time_s": 0.0
+            },
+            "COM_mass_metadata_exact": true
+          },
+          "phase_exact": true,
+          "raw_discrete_exact": true
+        },
+        "parent_isolated": true,
+        "nominal_calls": 1,
+        "allocator_calls": 1,
+        "selected": "zero",
+        "held_M80": 0.528171822388199,
+        "held_valid": true,
+        "held_safety": [],
+        "held_path_error_m": 0.5384955716154242,
+        "held_progress_m": 407.78125457302326,
+        "held_source_join": {
+          "passed": true,
+          "body_errors": {
+            "position_m": 0.0,
+            "speed_m_s": 3.225364082481974e-06,
+            "yaw_rad_s": 7.152557373046875e-07,
+            "time_s": 0.0
+          },
+          "discrete_exact": true,
+          "wheel": {
+            "passed": true,
+            "max_errors": {
+              "joint_angle": 0.0,
+              "omega": 5.841115694238397e-06,
+              "lateral_slip_m_s": 1.065004471456632e-05,
+              "longitudinal_slip_m_s": 1.0781284345284803e-05,
+              "force_ratio": 2.058504116275728e-06
+            },
+            "grass_exact": true,
+            "clipped_flag_mismatches": 0
+          },
+          "hull": {
+            "passed": true,
+            "max_errors": {
+              "origin_position_m": 0.0,
+              "COM_position_m": 0.0,
+              "COM_speed_m_s": 8.167193399799544e-06,
+              "origin_speed_m_s": 8.177030210276826e-06,
+              "yaw_rad_s": 7.152557373046875e-07,
+              "time_s": 0.0
+            },
+            "COM_mass_metadata_exact": true
+          },
+          "phase_exact": true,
+          "raw_discrete_exact": true
+        },
+        "archived_warm_qstar_M80": 1.0530189348149999,
+        "cold_qstar_gap": 0.5248461326567171,
+        "source_two_trace_gap_bound": 0.1,
+        "uncertainty_is_not_optimizer_epsilon": true,
+        "warm_own_M80_improvement": 0.5248471124268008,
+        "status": "MECHANISM_LOCAL_OWN_HOLD_IMPROVED",
+        "promotion": false
+      }
+    ],
+    "driver": [
+      {
+        "action": 1,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 2,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 3,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 4,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 5,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 6,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 7,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 8,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 9,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 10,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 11,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 12,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 13,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 14,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 15,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 16,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 17,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 18,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 19,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 20,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 21,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 22,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 23,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 24,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 25,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 26,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 27,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 28,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 29,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 30,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 31,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 32,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 33,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 34,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 35,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 36,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 37,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 38,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 39,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 40,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 41,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 42,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 43,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 44,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 45,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 46,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 47,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 48,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 49,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 50,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 51,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 52,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 53,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 54,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 55,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 56,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 57,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 58,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 59,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 60,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 61,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 62,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 63,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 64,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 65,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 66,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 67,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 68,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      },
+      {
+        "action": 69,
+        "nominal_calls": 1,
+        "allocator_calls": 1
+      }
+    ],
+    "no_policy_promotion": true
+  },
+  "model_ticks": 328,
+  "reserved_ticks": 328,
+  "model_worlds": 14,
+  "allocator_calls": 69,
+  "preparation_cost": {
+    "CPU_s": 1.67686933,
+    "wall_s": 1.3004682960454375,
+    "scope": "Registration process including imports, source hashing, input receipt, storage preflight and static gate; added to worker caps"
+  },
+  "allocator_CPU_s": 0.4107195040000027,
+  "allocator_wall_s": 0.4218907649628818,
+  "whole_CPU_s": 16.771181594999998,
+  "whole_wall_s": 15.978570153005421,
+  "readback_files": 250,
+  "raw_bytes": 36442244,
+  "new_actual_native_reset_HOLDOUT_SEALED": 0,
+  "no_policy_or_native_promotion": true,
+  "no_followup": true,
+  "best_native_s": 13.64,
+  "research_remaining": 26175,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "plan_sha256": "4462dd76dc3faab89fd8528f815ef47010958256cb0344e1bc76e793b659a0fb"
+}
