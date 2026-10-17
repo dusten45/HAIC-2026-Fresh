@@ -176,3 +176,8 @@ P177직전 guardian 첫모델1tick이 현재root시각의 event를 예측해 Chi
 **428은 적격FIRST_LAP마다planner를질의하는모델전용확장에서P36 initial8 unsafe receipt경계로중단했다.** 양쪽부모64상한·worst508012tick/671world·측정/중단규칙을동결했고, 정적28개와423C0/427P 실제fullreplay각2회·12current state각2복원·부모/RNG/phase/body/wheel/rawhull/clip게이트를통과했다. C0는64회공식미종료scope검열, P는35회적용뒤36번째미선택fullgas가8행동에서postpath3.51m/q2.871로unsafe였다. nominal/neutral initial13은통과했지만419는미완료<13initial을표현못해첫기술오류에서중단했다. padding/waiver/시간추정/36선택commit은없다.
 
 P fullgas1·3·11·14,나머지nominal이며35receipt/99선택첫모델전이를통과했다. 15/21/22/23 fullgas unsafe tail4개는시간None으로제외했고, 완료witness82개·전체candidate최대q4.060392는actual미자격이다. 부모P q1.407336/clip31/560·관측2.8초는미완주이며마지막선택witness[215,216]을부모finish로쓰지않았다. 새완주gainNone/actualgateclosed다. 비용37254tick/337world·wholeCPU129.690초/wall128.900초, 자격1132/guardian6524/planner29202/부모396을분리했다. 준비148.306초부분구간·정적.714초·저장진단을별도기록했고 actual/학습/SEALED/예비0·v448연구28,444·예비84,000사용0을유지했다. 초기unsafe부분receipt정적규약검토와C0완료비교범위만후속판단으로남기고재개/실제실험은없다. [428 scope64·모든선택·unsafe8·비용·남은경계](pilot428_result.md)
+
+
+## 429: 조기 물리 unsafe의 정적 표현과 증거 공백
+
+[429 보고서](protocol429_result.md): H13 이전의 확인된 물리 중단을 별도 부적격 타입으로 보존하고, 기술/정의역/restore/repeat/parent/RNG 오류는 전역 중단으로 유지했다. import 오류의 원실패를 보존한 뒤 같은 assertions의 정적 56개가 통과했다. 저장된 정상 35개 선택과 unsafe tail 4개의 미완료 의미는 유지됐다. 질의 36의 원 context/RNG 인증이 없어 UNBOUND로 남기며 원선택을 추정하지 않는다. 모델·실제 실행·SEALED·reserve는 0이다. C0≤80/P planner≤64→guardian 포함 총≤100의 순수 최악 비용은 519,038 ticks/882 worlds지만 실행하지 않았다. 승인 종료에 따라 결과 정리로 닫으며 자동 후속 실험을 열지 않는다.
