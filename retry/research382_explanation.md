@@ -196,3 +196,8 @@ P fullgas1·3·11·14,나머지nominal이며35receipt/99선택첫모델전이를
 ## 433: runner 복구 통과 후 H13 종료 벡터 경계 중단
 
 [433](pilot433_result.md): 클래스 참조를 바로잡아 정적74개와1134ticks/32worlds 선행 재현·복원/pending 게이트를 통과했다. 같은 root의 C0는71행동 모델finish, P는41행동 뒤 질의42 nominal의 end13 remaining_path=-0.180309m와 tail1 official 확인 조합을 기존419가 거부해 invalid_terminal_vector에서 중단했다. 430의 복합 사유 문제는 이번38–40에서 처리됐지만 새 정의역 오류를 우회하지 않았다. 선택42/parent42없음, P검열·전체gainNone·64후guardian전환미도달. H13 전체finish-tracker snapshot이 별도 보존되지 않은 한계도 남는다. 모델39065ticks390worlds/CPU261.000초, 실제·학습·SEALED·reserve0, 연구잔여28444·예비84000. 432 원실패/비용과 기존계약을 보존하고 모델재시도하지 않았다. 다음은 완전한H13상태와공식이벤트/확인경계를 보존하는 별도 정적 계약 검토다.
+
+
+## 434: 이벤트/확인/기하 분리와 prospective 불변 H13
+
+[434](boundary434_result.md)은 모델/실제 적분0의 정적 단계다. source tracker의 event와뒤늦은confirmation, signed remaining path를 분리하고 관측controller phase를 덮어쓰지 않았다. 모든 계속할정상H13도 별도initial-boundary로 봉인하며, 음수/무crossing은기록만보존하고continuation을거부한다. 같은child의등록event를후속공식확인한경우에만새완료타입을만들고419strict선택은유지한다. 최종102개통과, 기존41개선택/bracket/memory/ledger 유지. 이전97+4통과소스/기록도보존했다. 정적CPU합17.124초, 새모델/실제/학습/SEALED/reserve0·연구잔여28444·예비84000. 433의빠진H13tracker는소급인증하지않는다. observer의preclip/posttick자료연결·실제모델fidelity/비용과unsafe/censored runtime후보경로는미검증이며Current/parentpending음수경로는기존거부를유지한다. 다음모델은이선행범위의별도검토·승인후계획만제안하며434에서는실행하지않았다.
