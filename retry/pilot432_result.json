@@ -1,0 +1,72 @@
+{
+  "stage": 432,
+  "status": "STATIC_GATE_FAILED_MODEL_NOT_STARTED",
+  "error": "AttributeError: module 'retry.test_pilot432' has no attribute 'Scope430'",
+  "static": {
+    "stage": 432,
+    "passed": false,
+    "error": "AttributeError: module 'retry.test_pilot432' has no attribute 'Scope430'",
+    "tests": 0,
+    "failures": 0,
+    "errors": 0,
+    "CPU_s": 1.6723463490000001,
+    "wall_s": 1.6716393620008603,
+    "new_model_ticks": 0,
+    "new_actual_actions": 0,
+    "plan_sha256": "32882fd79be56b7a4bd5b0778f07631b0febb8887effe15bde0357b8ebe9e6d9"
+  },
+  "failed_class_reference": "test_pilot432.Scope430",
+  "defined_test_class": "test_pilot432.Scope432",
+  "failure_kind": "Static runner test-class naming error introduced while copying430; not simulator/physics or composite-audit failure.",
+  "source_unchanged_after_freeze": true,
+  "new_retry_after_failure": 0,
+  "model_qualification_started": false,
+  "model_pilot_started": false,
+  "official_finish_comparison": null,
+  "guardian_transition_after64_observed": false,
+  "prior431_static": {
+    "passed": true,
+    "tests": 74,
+    "commit": "5020e4cdf0fb9a6d1fbca273bb2cca90e0f59bf4"
+  },
+  "worst_model_ticks_reconfirmed": 519038,
+  "worst_model_worlds_reconfirmed": 882,
+  "caps": {
+    "ticks": 524288,
+    "worlds": 1024,
+    "CPU_s": 1800,
+    "wall_s": 2400,
+    "max_parallel": 1
+  },
+  "cost": {
+    "stage": 432,
+    "new_wrapper_actions": 0,
+    "new_environment_resets": 0,
+    "new_model_integration_ticks": 0,
+    "new_model_world_initializations": 0,
+    "new_actor_calls": 0,
+    "new_learning_fits": 0,
+    "new_SEALED_queries": 0,
+    "new_reserve_use": 0,
+    "new_paid_resources": 0,
+    "static_CPU_s": 1.6723463490000001,
+    "static_wall_s": 1.6716393620008603,
+    "preparation": {
+      "implementation_interval_wall_s": 22.763861417770386,
+      "CPU_s": null,
+      "total_preparation_fully_measured": false
+    },
+    "timing_scope": "Recorded failed static run only. Preparation/report/git not fully measured.",
+    "research_remaining": 28444,
+    "actual_cumulative_wrapper_actions": 1319620,
+    "final_reserved_actions": 84000,
+    "final_reserve_used": 0,
+    "B_operating_cap": 1432064
+  },
+  "prior_files_verified": 3753,
+  "original430_failure_code_cost_preserved": true,
+  "protected_archives_preserved": true,
+  "plan_sha256": "32882fd79be56b7a4bd5b0778f07631b0febb8887effe15bde0357b8ebe9e6d9",
+  "deadline_KST": "2026-10-20 19:01:55",
+  "next_action": "Report first new error and preserve current432. A separate static-runner correction must reference Scope432 before a newly authorized static gate; no automatic additional model retry or actual/learning/SEALED/reserve transition."
+}
