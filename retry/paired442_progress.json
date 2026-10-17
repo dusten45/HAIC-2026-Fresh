@@ -1,7 +1,7 @@
 {
   "stage": 442,
-  "status": "RUNNING_ACTUAL_P",
-  "checkpoint_utc": "2026-10-17T05:58:00.437765+00:00",
+  "status": "FRESH_ACTUAL_PAIR_COMPLETED",
+  "checkpoint_utc": "2026-10-17T06:02:38.334330+00:00",
   "deadline_utc": "2026-10-20T10:01:55Z",
   "static179_passed": true,
   "pre_model_qualification_ticks": 1137,
@@ -9,15 +9,23 @@
   "C0_completed": true,
   "C0_actions": 189,
   "C0_lap_ms": 15080,
-  "P_verified_actions": 136,
-  "P_verified_suffix": 18,
-  "actual_charged_actions": 325,
+  "P_verified_actions": 173,
+  "P_verified_suffix": 55,
+  "actual_charged_actions": 362,
   "resets": 2,
-  "model_meter_ticks": 27651,
-  "model_worlds": 271,
-  "actual_CPU_s": 139.96873821500003,
-  "pair_gain_s": null,
+  "model_meter_ticks": 40269,
+  "model_worlds": 461,
+  "actual_CPU_s": 155.69074865200002,
+  "pair_gain_s": 1.32,
   "current_observed_blocker": null,
   "private_checkpoint_at_each_verified_action": true,
-  "no_duplicate_worker": true
+  "no_duplicate_worker": true,
+  "P_lap_ms": 13760,
+  "gain_rawtick_bracket_s": [
+    1.3,
+    1.34
+  ],
+  "worker_normal_exit": true,
+  "worker_alive": false,
+  "research_remaining": 27516
 }

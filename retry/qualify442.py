@@ -1,0 +1,86 @@
+"""Saved423/427 actual traces are calibration targets only, never planner inputs."""
+import copy,json
+from dataclasses import asdict
+import numpy as np
+from retry.pilot420_backend import *
+from retry.paired417_common import shapecheck
+from retry.pilot421_run import compare_frames
+from retry.receipt421_io import load_receipt
+from retry.preflight421 import restore_typed
+from retry.calibrate422_analyze import maxima
+from retry.observer435 import Child
+
+def qualify(root,meter,fixed,pace,state,memory,ledger):
+ d=root/'stage442';ld=ledger.digest();sh=fingerprint(state);mh=fingerprint(memory);rh=rnghash();meter.capture_inputs(state,memory,ledger,'qualification_held_root',gate='SAVED_ACTUAL_QUALIFICATION');held=Child(meter,state,memory,ledger,fixed,pace,'qualification_held_parent',world_tag='qualification_parent');nominal=held.ctrl.act(held.m);ph=fingerprint(snapshot(held.m));cm=fingerprint(held.ctrl.memory());closed=[];records={};first_C0=None
+ def unchanged():
+  if fingerprint(snapshot(held.m))!=ph or fingerprint(held.ctrl.memory())!=cm or fingerprint(state)!=sh or fingerprint(memory)!=mh or ledger.digest()!=ld or rnghash()!=rh:raise TechnicalStop('qualification_live_parent_RNG_memory_ledger_mutation')
+ try:
+  for arm in ['C0','P']:
+   actual=[json.loads(t) for t in (root/'stage423/actual_C0/trace-private.jsonl' if arm=='C0' else root/'stage427/actual_P/trace-private.jsonl').read_text().splitlines()][118:];signatures=[];stats=[]
+   if arm=='C0' and nominal.tolist()!=actual[0]['nominal']:raise TechnicalStop('actual423_current_nominal_not_exact')
+   for rep in range(2):
+    tag='qualification_replay_required' if rep==0 else 'qualification_replay_repeat';meter.capture_inputs(state,memory,ledger,'qualification_'+arm+'_'+str(rep+1)+'_inputs',gate='SAVED_ACTUAL_QUALIFICATION');child=Child(meter,state,memory,ledger,fixed,pace,'qualification_'+arm+'_'+str(rep+1),world_tag=tag);checks=[];phase=True;delta=[]
+    try:
+     for index,row in enumerate(actual):
+      if child.status!='ACTIVE':raise TechnicalStop('qualification_model_ended_before_actual')
+      before=copy.deepcopy(child.ctrl.memory());computed=child.ctrl.act(child.m);delta.append(float(max(abs(computed-np.asarray(row['nominal'])))));child.one(tag+('_first13' if index<13 else '_continuation'),first_override=row['command'],prepared_nominal=computed,prepared_before=before);frame=child.rows[-1];z=shapecheck(frame,row);phase=phase and frame['memory_before']['C']['phase']==row['memory_before']['C']['phase'] and frame['memory_after']['C']['phase']==row['nominal_memory_after']['C']['phase'];checks.append(z)
+      if not z['passed'] or z['wheel']['clipped_flag_mismatches']!=0 or not phase:raise TechnicalStop('actual423_replay_bodywheelrawhull_phase_clip:'+arm+':'+str(index+1))
+      unchanged()
+     if child.status!='FINISHED':raise TechnicalStop('actual423_replay_official_finish_mismatch')
+     original=read(root/'stage433'/(child.label+'-private.json'));require_same=all(child.rows[i]==original['rows'][i] for i in range(len(child.rows))) and snapshot(child.m)==original['final_state'] and child.ctrl.memory()==original['controller_memory']
+     if not require_same:raise TechnicalStop('observer_vs_unobserved433_replay_changed')
+     if arm=='C0' and rep==0:first_C0=copy.deepcopy(child.rows[0])
+     signatures.append(child.signature());stats.append(dict(first13=maxima(checks[:13]),continuation=maxima(checks[13:]),rows=len(checks),phase_exact=phase,max_recomputed_nominal_difference=max(delta),official_finish_ticks=asdict(child.finish_ticks),command_source='STORED_ACTUAL423_C0_427P_CALIBRATION_ONLY; notusedinpilotselection',actual_root_ledger_unchanged=True))
+    finally:
+     try:child.dump(d)
+     finally:child.close()
+   if signatures[0]!=signatures[1]:raise TechnicalStop('actual423_full_replay_independent_repeat:'+arm)
+   records[arm]=dict(independent_repeat_exact=True,replays=stats)
+  # Freshly restore the twelve actually observed427 P query states. These are
+  # calibration targets; subsequent scope435 parents start from the root.
+  restores=[]
+  actual=[json.loads(t) for t in (root/'stage427/actual_P/trace-private.jsonl').read_text().splitlines()]
+  for n in range(12):
+   payload=load_receipt(root/('stage427/actual_P/actual_P_'+str(119+n)+'-receipt-private.json'));ctx,ev=restore_typed(copy.deepcopy(payload));src,mem,rng=ctx.parent.fork_inputs();actual_state=src['terminal_model'];expected=actual[118+n];signatures=[]
+   for rep in range(2):
+    tag='qualification_restore_required' if rep==0 else 'qualification_restore_repeat';meter.capture_inputs(actual_state,mem,ctx.ledger,'qualification_restore'+str(n+1)+'_'+str(rep+1)+'_inputs',context=ctx,gate='SAVED_ACTUAL_RESTORE');child=Child(meter,actual_state,mem,ctx.ledger,fixed,pace,'qualification_restore'+str(n+1)+'_'+str(rep+1),world_tag=tag)
+    try:
+     child.one(tag,first_override=expected['command']);z=shapecheck(child.rows[0],expected)
+     if not z['passed'] or z['wheel']['clipped_flag_mismatches']!=0 or child.rows[0]['memory_after']['C']['phase']!=expected['nominal_memory_after']['C']['phase']:raise TechnicalStop('actual423_current_state_restore_first_transition')
+     original=read(root/'stage433'/(child.label+'-private.json'))
+     if child.rows!=original['rows'] or snapshot(child.m)!=original['final_state'] or child.ctrl.memory()!=original['controller_memory']:raise TechnicalStop('observer_vs_unobserved433_restore_changed')
+     signatures.append(child.signature());unchanged()
+    finally:
+     try:child.dump(d)
+     finally:child.close()
+   if signatures[0]!=signatures[1]:raise TechnicalStop('actual423_current_restore_repeat')
+   restores.append(dict(relative_actual_decision=n+1,passed=True,independent_repeat_exact=True,first_transition=z))
+  held.one('qualification_parent_step',prepared_nominal=nominal,prepared_before=memory);check=compare_frames(held.rows[0],first_C0)
+  if not check['passed'] or check['wheel']['clipped_flag_mismatches']!=0:raise TechnicalStop('qualification_held_parent_first_transition')
+  if ledger.digest()!=ld or rnghash()!=rh:raise TechnicalStop('qualification_actual_root_ledger_RNG_mutation')
+  held.dump(d);q=dict(passed=True,actual423_replays=records,current_actual_state_restores=restores,held_parent_first_transition=check,immutable_actual_root_ledger_unchanged=True,RNG_unchanged=True,observer_vs_stored_unobserved433_rows_state_memory_exact=True,observer_model_steps_extra=0,scope='Qualificationonlyofsaved423C0and427Pactualstatesandcommands/first13/continuation. Noqualificationofnew435modelstatesorwiderclipping. Noactualfuturetraceusedbyselector.')
+  save(d/'qualification.json',q);return q
+ finally:held.close()
+
+from retry.observer435 import GuardianChild
+from retry.terminal410_model import from_actual_full
+def qualify_pending(root,meter,fixed,pace):
+ d=root/'stage442';full=read(root/'stage425/actual_P/final-private.json');last=json.loads((root/'stage425/actual_P/trace-private.jsonl').read_text().splitlines()[-1]);memory=last['nominal_memory_after'];ledger=GoalLedger(**read(root/'stage425/actual_P/result.json')['actual_ledger']);state=from_actual_full(full);failed=read(root/'stage425/actual_P/actual_P_177_nominal_1-private.json')['rows'][0];rh=rnghash();children=[];signatures=[];records=[]
+ meter.capture_inputs(state,memory,ledger,'pending_held_inputs',gate='SAVED_PENDING_QUALIFICATION');held=GuardianChild(meter,state,memory,ledger,fixed,pace,'held_pending_root',world_tag='qualification_pending_parent');ph=fingerprint(snapshot(held.m));nominal=held.ctrl.act(held.m);mh=fingerprint(held.ctrl.memory())
+ try:
+  for rep in range(2):
+   label='pending_nominal_'+str(rep+1);meter.capture_inputs(state,memory,ledger,label+'_inputs',gate='SAVED_PENDING_QUALIFICATION');c=GuardianChild(meter,state,memory,ledger,fixed,pace,label,world_tag='qualification_pending_required' if rep==0 else 'qualification_pending_repeat',confirmation_phase=held.ctrl.phase());children.append(c);c.initial13('qualification_pending_required' if rep==0 else 'qualification_pending_repeat');c.dump(d);z=compare_frames(c.rows[0],failed)
+   if not z['passed'] or z['wheel']['clipped_flag_mismatches'] or c.status!='FINISHED' or len(c.rows)!=1 or c.guardian_certificate['kind']!='AT_ROOT_CONFIRMED_IN_MODEL' or c.guardian_certificate['actual_done_allowed'] or c.first_command!=tuple(nominal):raise TechnicalStop('pending_guardian_model_qualification')
+   if fingerprint(snapshot(held.m))!=ph or fingerprint(held.ctrl.memory())!=mh or rnghash()!=rh:raise TechnicalStop('pending_parent_RNG_memory_changed')
+   original=read(root/'stage433'/(c.label+'-private.json'))
+   if c.rows!=original['rows'] or snapshot(c.m)!=original['final_state'] or c.ctrl.memory()!=original['controller_memory']:raise TechnicalStop('observer_pending_vs_unobserved433_changed')
+   signatures.append(c.signature());records.append(dict(check=z,certificate=c.guardian_certificate));c.close()
+  if signatures[0]!=signatures[1]:raise TechnicalStop('pending_guardian_independent_repeat')
+  if full['wrapper']['finish_time_s'] is not None:raise TechnicalStop('saved425_actual_finish_relabelled')
+  save(d/'pending-qualification.json',dict(passed=True,records=records,model_ticks=2,model_worlds=3,actual_DONE_allowed=False));return True
+ finally:
+  for c in children:
+   if not c.closed:
+    try:c.dump(d)
+    finally:c.close()
+  held.dump(d);held.close()
