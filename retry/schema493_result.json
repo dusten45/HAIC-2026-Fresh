@@ -1,0 +1,148 @@
+{
+  "stage": 493,
+  "status": "INSUFFICIENT_DIRECT_RAW_TICK_EVIDENCE",
+  "synthetic": {
+    "passed": true,
+    "test_count": 20,
+    "tests": [
+      "matching_native_model_direct_capture",
+      "same_clock_wrong_microphase",
+      "other_owner",
+      "neighbor_tick",
+      "different_post_body",
+      "phase_mixed_before_nominal",
+      "other_contacts",
+      "boundary_zero_damage_does_not_fill_missing_tick",
+      "one_missing_tick_rejects_whole_hold",
+      "synthetic_reference_cannot_authorize_real_adapter",
+      "capture_must_equal_its_observed_receipt",
+      "grass_neighbor_tick_rejected",
+      "pre_hull_cannot_be_post_clock",
+      "ledger_partial_coverage_rejected",
+      "actual_event_contact_disagreement_rejected",
+      "raw_damage_disagreement_rejected",
+      "pre_force_grass_disagreement_rejected",
+      "aggregate_contact_not_raw_event_authority",
+      "wrapper_end_damage_check_preserved",
+      "collision_hold_raw_zero_and_wrapper_point2_separated"
+    ],
+    "worlds": 0,
+    "steps": 0,
+    "resets": 0,
+    "synthetic_only": true
+  },
+  "saved492_raw_files": 675,
+  "saved492_raw_bytes": 119416267,
+  "saved492_schema_counts": {
+    "dictionary": 670,
+    "NATIVE_TRACE_CHUNKS492_V1": 1,
+    "NATIVE_TRACE_ROWS492_V1": 2,
+    "NATIVE_PREFIX_ROOT492_V1": 1,
+    "charge_jsonl": 1
+  },
+  "native_holds": 74,
+  "native_raw_action_ticks": 296,
+  "native_complete_holds": 0,
+  "native_missing_damage_ticks": 296,
+  "native_missing_direct_phase_ticks": 296,
+  "native_grass_pre_world_ticks": 296,
+  "native_collision_and_contact_post_ticks": 296,
+  "native_goal_ledger_chain_passed": true,
+  "root_and_two_witnesses_chain_passed": true,
+  "witness_raw_ticks": 8,
+  "witness_missing_damage_ticks": 8,
+  "witness_missing_direct_phase_ticks": 8,
+  "existing_first_cold_ticks": 4,
+  "first_cold_partial_numeric_and_ledger_passed": true,
+  "first_cold_full_raw_gate_passed": false,
+  "model_damage_provenance": "WRAPPER_END_VALUE_BROADCAST_TO_RAW_ROWS_NOT_DIRECT_TRACKER_POST",
+  "collision_schema_note": "Native RAW_STEP_EVENT; model RAW_STEP_EVENT_OR_CONTACTS_LATCH. No guessing event decomposition from aggregate.",
+  "source_gate_passed": false,
+  "root_source_authority_qualified": false,
+  "model_only_resume_contract_proposed": false,
+  "minimum_missing_measurements": {
+    "native_witness_tracker_posts": 8,
+    "direct_damage_values": 8,
+    "direct_controller_phase_values": 8,
+    "model_direct_tracker_posts_needed_for_full_source_gate": true
+  },
+  "native_world_closed_in492": true,
+  "recollection_transport_note": "492 native world was destroyed. New direct native measurements cannot be added to old ticks. Same-case exact prefix reproduction would require a new reset and72prefix+2witness actions; separate authorization and reset identity/root gates required. No such execution in493.",
+  "new_actual_actions": 0,
+  "new_resets": 0,
+  "new_model_worlds": 0,
+  "new_model_ticks": 0,
+  "new_profile_P4_seed_conditions_HOLDOUT_SEALED": 0,
+  "research_remaining": 26101,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "best_s": 13.64,
+  "original492_failure_cost_immutable": true,
+  "preserved_entries": 3895,
+  "CPU_s": 5.497810982,
+  "wall_s": 5.7421757590491325,
+  "RSS_bytes": 87814144,
+  "no_auto_followup": true,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "saved_first_cold_fidelity_summary": {
+    "passed": true,
+    "body": {
+      "errors": {
+        "speed_m_s": 0.0,
+        "yaw_rate_rad_s": 0.0,
+        "position_m": 0.0,
+        "time_s": 0.0
+      },
+      "discrete": {
+        "collision": true,
+        "damage": true,
+        "wheel_road_contacts": true,
+        "raw_ticks": true,
+        "terminated": true,
+        "truncated": true,
+        "finished": true,
+        "finish_timestamp": true
+      },
+      "passed": true
+    },
+    "wheel": {
+      "passed": true,
+      "max_errors": {
+        "joint_angle": 0.0,
+        "omega": 4.181174574569013e-06,
+        "lateral_slip_m_s": 1.0841098401215277e-06,
+        "longitudinal_slip_m_s": 7.5540642683336046e-06,
+        "force_ratio": 1.562980755487331e-06
+      },
+      "grass_exact": true,
+      "clipped_flag_mismatches": 0
+    },
+    "hull": {
+      "passed": true,
+      "max_errors": {
+        "origin_position_m": 0.0,
+        "COM_position_m": 0.0,
+        "COM_speed_m_s": 7.55413559261342e-06,
+        "origin_speed_m_s": 7.5542855171306655e-06,
+        "yaw_rad_s": 0.0,
+        "time_s": 0.0
+      },
+      "COM_mass_metadata_exact": true
+    },
+    "raw_first_pre": {
+      "position_m": 0.0,
+      "speed_m_s": 0.0,
+      "yaw_rad_s": 0.0,
+      "time_s": 0.0
+    }
+  },
+  "scope": "Saved-evidence493 audit only; original492 TECHNICAL_OR_GATE_STOP and all costs remain immutable. Strict raw source gate is incomplete, no policy/effect/native promotion.",
+  "direct_field_stages": {
+    "grass": "CAR_FORCE_PRE_WORLD from same raw_tick4wheel tire samples; not tracker-post grass",
+    "phase_available": "AFTER_NOMINAL_BEFORE_HOLD boundary metadata; not direct tracker-post controller phase",
+    "damage_available": "AFTER_WRAPPER_DAMAGE_UPDATE full return snapshot; not direct tracker-post damage",
+    "native_collision": "Direct tracker-post RAW_STEP_EVENT",
+    "native_contacts": "Direct tracker-post wheel_road_contacts count",
+    "model_collision": "Direct post expression RAW_STEP_EVENT_OR_CONTACTS_LATCH; exact event not separately recorded"
+  }
+}
