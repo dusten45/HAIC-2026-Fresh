@@ -1,0 +1,191 @@
+{
+  "stage": 444,
+  "hypothesis": "H1",
+  "status": "H1_COMPLETED_MODEL_ONLY",
+  "common_exit": {
+    "nominal": {
+      "reached": true,
+      "rawtick_bracket": [
+        47,
+        48
+      ],
+      "elapsed_bracket_s": [
+        0.94,
+        0.96
+      ],
+      "interpolated": false,
+      "observed_exit_speed_endpoints": [
+        35.01634411293558,
+        35.64474824152633
+      ],
+      "terminal_speed": 38.27563224053483,
+      "terminal_yaw": 0.36126628518104553,
+      "terminal_path_error_m": 0.10975905977760833,
+      "terminal_joint_range": [
+        0.020376205444335938,
+        0.020376205444335938
+      ],
+      "terminal_omega_range": [
+        64.14031177368776,
+        77.6239843873561
+      ],
+      "terminal_force_ratio_range": [
+        0.3671454421072628,
+        0.786784220656418
+      ]
+    },
+    "fullgas": {
+      "reached": true,
+      "rawtick_bracket": [
+        33,
+        34
+      ],
+      "elapsed_bracket_s": [
+        0.66,
+        0.68
+      ],
+      "interpolated": false,
+      "observed_exit_speed_endpoints": [
+        43.26037580601124,
+        43.96792206143754
+      ],
+      "terminal_speed": 55.86859041195193,
+      "terminal_yaw": -0.5258607268333435,
+      "terminal_path_error_m": 0.49779680690325573,
+      "terminal_joint_range": [
+        -0.03456830978393555,
+        -0.03456830978393555
+      ],
+      "terminal_omega_range": [
+        97.32192405948268,
+        109.85415969317262
+      ],
+      "terminal_force_ratio_range": [
+        0.4599701378322233,
+        0.7927936031431386
+      ]
+    }
+  },
+  "gain_bracket_s": [
+    0.2599999999999999,
+    0.29999999999999993
+  ],
+  "timing_threshold_met": true,
+  "sampled_exit_speed_debt": false,
+  "promotion": false,
+  "learning": "Report even small/overlapping effects; terminal state debt unresolved, no lap/actual promotion.",
+  "actual_actions_resets_learning_new_seed_SEALED": 0,
+  "plan_sha256": "4daf64bda363241ac1d9fa5ae85f1a9700986050f638697bad06b4921d673a54",
+  "caps": {
+    "ticks": 512,
+    "worlds": 8,
+    "CPU_s": 90,
+    "wall_s": 150
+  },
+  "model_cost": {
+    "ticks": 316,
+    "reserved_ticks": 316,
+    "worlds": 7,
+    "confirmed_worlds": 7,
+    "CPU_s": 5.33810748,
+    "execution_wall_s": 5.361351590021513
+  },
+  "qualification_passed": true,
+  "actual_ledger_not_advanced": true,
+  "source_and_observer_posts_reconciled": true,
+  "arms": [
+    {
+      "label": "nominal1",
+      "recipe": "nominal",
+      "status": "ACTIVE",
+      "error": null,
+      "actions": 13,
+      "safe": true,
+      "progress": true,
+      "initial13_safe": true,
+      "signature": "1b319377eca22c747e1332cb95db0f2a8aebbbab71de06958d9b47420ba71490"
+    },
+    {
+      "label": "nominal2",
+      "recipe": "nominal",
+      "status": "ACTIVE",
+      "error": null,
+      "actions": 13,
+      "safe": true,
+      "progress": true,
+      "initial13_safe": true,
+      "signature": "1b319377eca22c747e1332cb95db0f2a8aebbbab71de06958d9b47420ba71490"
+    },
+    {
+      "label": "fullgas1",
+      "recipe": "fullgas",
+      "status": "ACTIVE",
+      "error": null,
+      "actions": 13,
+      "safe": true,
+      "progress": true,
+      "initial13_safe": true,
+      "signature": "89ae5f05348153beb6a3913ffe66c651235f6ef40040ad6ee85c091c9fe3c3e5"
+    },
+    {
+      "label": "fullgas2",
+      "recipe": "fullgas",
+      "status": "ACTIVE",
+      "error": null,
+      "actions": 13,
+      "safe": true,
+      "progress": true,
+      "initial13_safe": true,
+      "signature": "89ae5f05348153beb6a3913ffe66c651235f6ef40040ad6ee85c091c9fe3c3e5"
+    }
+  ],
+  "common_exit_state_ranges": {
+    "nominal1": {
+      "yaw_rad_s": [
+        0.8471483588218689,
+        0.961625874042511
+      ],
+      "path_error_m": [
+        0.21641287262440345,
+        0.22787488604957476
+      ],
+      "front_joint_rad": [
+        0.07178449630737305,
+        0.07178449630737305
+      ],
+      "wheel_omega": [
+        58.570625104084044,
+        74.63999074840534
+      ],
+      "force_ratio": [
+        0.38744051284398595,
+        0.7910093575233605
+      ]
+    },
+    "fullgas1": {
+      "yaw_rad_s": [
+        0.8200681209564209,
+        1.5599325895309448
+      ],
+      "path_error_m": [
+        0.27121661387601737,
+        0.2802923350631949
+      ],
+      "front_joint_rad": [
+        0.043024539947509766,
+        0.05006206035614014
+      ],
+      "wheel_omega": [
+        72.78501873468532,
+        91.04942879171337
+      ],
+      "force_ratio": [
+        0.21522266485885022,
+        0.91373414635145
+      ]
+    }
+  },
+  "exit_state_warning": "Bracketing raw samples only, not continuous-time bounds. End-of13 states are at the same1.04s but different positions; they are not matched-exit states.",
+  "terminal_debt_resolved": false,
+  "all_four_arms_repeat_exact": true
+}

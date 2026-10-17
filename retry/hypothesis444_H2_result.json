@@ -1,0 +1,59 @@
+{
+  "stage": 444,
+  "hypothesis": "H2",
+  "status": "TECHNICAL_STOP",
+  "error": "AttributeError: 'ForecastLedger' object has no attribute 'digest'",
+  "actual_actions_resets_learning_new_seed_SEALED": 0,
+  "plan_sha256": "0c4e04862dc66bc00c691bb5bf8f131a1e407b8bca0c6af6856e57e4222779c1",
+  "caps": {
+    "ticks": 6656,
+    "worlds": 128,
+    "CPU_s": 240,
+    "wall_s": 480
+  },
+  "model_cost": {
+    "ticks": 228,
+    "reserved_ticks": 228,
+    "worlds": 7,
+    "confirmed_worlds": 7,
+    "CPU_s": 4.948227501,
+    "execution_wall_s": 4.968505605007522
+  },
+  "qualification_passed": true,
+  "actual_ledger_not_advanced": true,
+  "source_and_observer_posts_reconciled": true,
+  "arms": [
+    {
+      "label": "predicate_nominal1",
+      "recipe": "nominal",
+      "status": "UNSAFE",
+      "error": "path_error_over3m",
+      "actions": 14,
+      "safe": false,
+      "progress": true,
+      "initial13_safe": true,
+      "signature": "ac9671a2d83b659fbd2813540f108d609878859c8538abee8f19dd9607b5d8d4"
+    },
+    {
+      "label": "predicate_nominal2",
+      "recipe": "nominal",
+      "status": "UNSAFE",
+      "error": "path_error_over3m",
+      "actions": 14,
+      "safe": false,
+      "progress": true,
+      "initial13_safe": true,
+      "signature": "ac9671a2d83b659fbd2813540f108d609878859c8538abee8f19dd9607b5d8d4"
+    }
+  ],
+  "predicate_safe13_unsafe14": true,
+  "transition14_path_error_m": 4.759863018891486,
+  "both_nominal_predicate_repeats_exact": true,
+  "B_parent_actions": 0,
+  "B_shadow_integrated_ticks": 0,
+  "B_result_unobserved": true,
+  "failure_category": "LEDGER_INPUT_TYPE_WIRING_NOT_PHYSICAL_REFUTATION",
+  "failed_constructor_world_charged": true,
+  "constructed_worlds_without_first_step": 2,
+  "retry_or_post_error_model_fix": false
+}
