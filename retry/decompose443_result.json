@@ -1,0 +1,872 @@
+{
+  "stage": 443,
+  "status": "COMPLETED_SAVED_ONLY",
+  "datasets": {
+    "C0": {
+      "official_lap_s": 15.08,
+      "raw_intervals": 754,
+      "whole": {
+        "reference_clock_s": 10.019226177105162,
+        "speed_tracking_s": 5.248898120742566,
+        "heading_s": 0.04759516987916042,
+        "body_slip_s": -0.011307341892384689,
+        "path_metric_s": -0.1788583473075609,
+        "quadrature_residual_s": -0.0655537785271994,
+        "scored_time_s": 15.059999999999746,
+        "special_time_s": 0.019999999999999574,
+        "total_time_s": 15.079999999999746,
+        "identity_error_s": -3.552713678800501e-15
+      },
+      "prefix": {
+        "reference_clock_s": 6.247226885991527,
+        "speed_tracking_s": 3.354294462360481,
+        "heading_s": 0.03269804132827802,
+        "body_slip_s": -0.008275905976971688,
+        "path_metric_s": -0.12281217539988773,
+        "quadrature_residual_s": -0.06313130830355347,
+        "scored_time_s": 9.439999999999866,
+        "special_time_s": 0.0,
+        "total_time_s": 9.439999999999866,
+        "identity_error_s": 7.105427357601002e-15
+      },
+      "suffix": {
+        "reference_clock_s": 3.7719992911136386,
+        "speed_tracking_s": 1.8946036583820898,
+        "heading_s": 0.014897128550882457,
+        "body_slip_s": -0.0030314359154130013,
+        "path_metric_s": -0.05604617190767322,
+        "quadrature_residual_s": -0.002422470223645959,
+        "scored_time_s": 5.61999999999988,
+        "special_time_s": 0.019999999999999574,
+        "total_time_s": 5.63999999999988,
+        "identity_error_s": -1.7763568394002505e-15
+      },
+      "special_time_ledger": {
+        "stationary_s": 0.0,
+        "reverse_s": 0.0,
+        "revisit_s": 0.0,
+        "nonpositive_proxy_s": 0.0,
+        "outside_reference_support_s": 0.019999999999999574
+      },
+      "spatial_bins": [
+        {
+          "arc_fraction": [
+            0.0,
+            0.1
+          ],
+          "reference_clock_s": 1.7671695412855606,
+          "speed_tracking_s": 1.2638667549774503,
+          "heading_s": 0.01953482133409073,
+          "body_slip_s": -0.006375918667833866,
+          "path_metric_s": -0.07161014737682671,
+          "quadrature_residual_s": -0.05940050347681635,
+          "scored_time_s": 2.9131845480756247,
+          "special_time_s": 0.0,
+          "total_time_s": 2.9131845480756247,
+          "identity_error_s": -4.440892098500626e-16
+        },
+        {
+          "arc_fraction": [
+            0.1,
+            0.2
+          ],
+          "reference_clock_s": 0.8338544180196705,
+          "speed_tracking_s": 0.4870782684622685,
+          "heading_s": 0.00018169783549675872,
+          "body_slip_s": -3.825525160581469e-05,
+          "path_metric_s": 6.553612291734906e-05,
+          "quadrature_residual_s": -0.007102935830489473,
+          "scored_time_s": 1.314038729358258,
+          "special_time_s": 0.0,
+          "total_time_s": 1.314038729358258,
+          "identity_error_s": -2.220446049250313e-16
+        },
+        {
+          "arc_fraction": [
+            0.2,
+            0.3
+          ],
+          "reference_clock_s": 0.5880702929486558,
+          "speed_tracking_s": 0.29891941238144165,
+          "heading_s": 6.02030663619829e-06,
+          "body_slip_s": 6.860890363034061e-07,
+          "path_metric_s": -9.162139411358996e-06,
+          "quadrature_residual_s": -0.00039439254049826325,
+          "scored_time_s": 0.8865928570458602,
+          "special_time_s": 0.0,
+          "total_time_s": 0.8865928570458602,
+          "identity_error_s": 1.1102230246251565e-16
+        },
+        {
+          "arc_fraction": [
+            0.3,
+            0.4
+          ],
+          "reference_clock_s": 1.0879118588008427,
+          "speed_tracking_s": 0.3444741221204033,
+          "heading_s": 0.006616101898132877,
+          "body_slip_s": -0.0006608221409647286,
+          "path_metric_s": -0.02261886829829919,
+          "quadrature_residual_s": 0.00642218628416433,
+          "scored_time_s": 1.4221445786642795,
+          "special_time_s": 0.0,
+          "total_time_s": 1.4221445786642795,
+          "identity_error_s": -4.440892098500626e-16
+        },
+        {
+          "arc_fraction": [
+            0.4,
+            0.5
+          ],
+          "reference_clock_s": 1.1610992071964932,
+          "speed_tracking_s": 0.5655128466657621,
+          "heading_s": 0.005603660739873003,
+          "body_slip_s": -0.0012373439790931396,
+          "path_metric_s": -0.025634762712442062,
+          "quadrature_residual_s": -0.0022288419235777,
+          "scored_time_s": 1.7031147659870154,
+          "special_time_s": 0.0,
+          "total_time_s": 1.7031147659870154,
+          "identity_error_s": 2.220446049250313e-16
+        },
+        {
+          "arc_fraction": [
+            0.5,
+            0.6
+          ],
+          "reference_clock_s": 0.7944375858743622,
+          "speed_tracking_s": 0.3901271132200534,
+          "heading_s": 0.0005975044519499947,
+          "body_slip_s": 2.41466233518049e-05,
+          "path_metric_s": -0.003239236461189926,
+          "quadrature_residual_s": -0.0007258850289996795,
+          "scored_time_s": 1.1812212286795276,
+          "special_time_s": 0.0,
+          "total_time_s": 1.1812212286795276,
+          "identity_error_s": 0.0
+        },
+        {
+          "arc_fraction": [
+            0.6,
+            0.7
+          ],
+          "reference_clock_s": 0.9120155088435189,
+          "speed_tracking_s": 0.3998974526915971,
+          "heading_s": 0.0037427171869962375,
+          "body_slip_s": -0.00034437480530940737,
+          "path_metric_s": -0.012260009095737387,
+          "quadrature_residual_s": -0.0013096391841685377,
+          "scored_time_s": 1.3017416556368968,
+          "special_time_s": 0.0,
+          "total_time_s": 1.3017416556368968,
+          "identity_error_s": 0.0
+        },
+        {
+          "arc_fraction": [
+            0.7,
+            0.8
+          ],
+          "reference_clock_s": 0.9200177722570531,
+          "speed_tracking_s": 0.6072179624693197,
+          "heading_s": 0.0018572235897439781,
+          "body_slip_s": -0.00024114168856404264,
+          "path_metric_s": -0.004202174939015204,
+          "quadrature_residual_s": 0.003360017308450502,
+          "scored_time_s": 1.5280096589969876,
+          "special_time_s": 0.0,
+          "total_time_s": 1.5280096589969876,
+          "identity_error_s": 2.220446049250313e-16
+        },
+        {
+          "arc_fraction": [
+            0.8,
+            0.9
+          ],
+          "reference_clock_s": 0.7867506318727657,
+          "speed_tracking_s": 0.46250492407297533,
+          "heading_s": 1.880067808192991e-05,
+          "body_slip_s": -7.988649479642979e-07,
+          "path_metric_s": -1.6813303080179477e-05,
+          "quadrature_residual_s": -0.0022622173963244793,
+          "scored_time_s": 1.2469945270594704,
+          "special_time_s": 0.0,
+          "total_time_s": 1.2469945270594704,
+          "identity_error_s": -2.220446049250313e-16
+        },
+        {
+          "arc_fraction": [
+            0.9,
+            1.0
+          ],
+          "reference_clock_s": 1.1678993600062406,
+          "speed_tracking_s": 0.42929926368129584,
+          "heading_s": 0.009436621858158774,
+          "body_slip_s": -0.002433519206453835,
+          "path_metric_s": -0.03933270910447627,
+          "quadrature_residual_s": -0.001911566738939767,
+          "scored_time_s": 1.5629574504958255,
+          "special_time_s": 0.011768487055626447,
+          "total_time_s": 1.574725937551452,
+          "identity_error_s": 0.0
+        }
+      ],
+      "spatial_crossing_brackets": [
+        {
+          "fraction": 0.1,
+          "step": 37,
+          "time_bracket_s": [
+            2.9000000000000026,
+            2.9200000000000026
+          ]
+        },
+        {
+          "fraction": 0.2,
+          "step": 53,
+          "time_bracket_s": [
+            4.219999999999976,
+            4.239999999999975
+          ]
+        },
+        {
+          "fraction": 0.3,
+          "step": 64,
+          "time_bracket_s": [
+            5.099999999999957,
+            5.119999999999957
+          ]
+        },
+        {
+          "fraction": 0.4,
+          "step": 82,
+          "time_bracket_s": [
+            6.519999999999927,
+            6.539999999999926
+          ]
+        },
+        {
+          "fraction": 0.5,
+          "step": 103,
+          "time_bracket_s": [
+            8.219999999999892,
+            8.239999999999892
+          ]
+        },
+        {
+          "fraction": 0.6,
+          "step": 118,
+          "time_bracket_s": [
+            9.419999999999867,
+            9.439999999999866
+          ]
+        },
+        {
+          "fraction": 0.7,
+          "step": 135,
+          "time_bracket_s": [
+            10.719999999999839,
+            10.739999999999839
+          ]
+        },
+        {
+          "fraction": 0.8,
+          "step": 154,
+          "time_bracket_s": [
+            12.239999999999807,
+            12.259999999999806
+          ]
+        },
+        {
+          "fraction": 0.9,
+          "step": 169,
+          "time_bracket_s": [
+            13.47999999999978,
+            13.49999999999978
+          ]
+        }
+      ],
+      "origin_velocity_sensitivity": {
+        "reference_clock_s": 10.019226177105162,
+        "speed_tracking_s": 5.248236014963352,
+        "heading_s": 0.04758183994232479,
+        "body_slip_s": -0.012112359698733706,
+        "path_metric_s": -0.17799224246410472,
+        "quadrature_residual_s": -0.06493942984826441,
+        "scored_time_s": 15.059999999999746,
+        "special_time_s": 0.019999999999999574,
+        "total_time_s": 15.079999999999746,
+        "identity_error_s": -1.0658141036401503e-14
+      },
+      "whole_diagnostics": {
+        "command_time_s": {
+          "brake": 3.1999999999999407,
+          "fullgas": 1.4399999999999693,
+          "partialgas": 10.439999999999834,
+          "coast": 0.0
+        },
+        "speed_bin_time_s": {
+          "0_1": 0.020000000000000018,
+          "1_10": 0.3600000000000003,
+          "10_30": 1.140000000000001,
+          "30_60": 7.17999999999988,
+          "60_plus": 6.379999999999864
+        },
+        "brake_below_current_target_s": 3.1999999999999407,
+        "brake_below_current_target_actions": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          80,
+          81,
+          82,
+          91,
+          92,
+          93,
+          94,
+          114,
+          115,
+          117,
+          118,
+          119,
+          130,
+          131,
+          135,
+          136,
+          144,
+          145,
+          146,
+          147,
+          148,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172
+        ],
+        "command_override_actions": [
+          91
+        ],
+        "front_clip_wheel_fraction": 0.009946949602122016,
+        "rear_clip_wheel_fraction": 0.019230769230769232,
+        "clipped_raw_time_s": 0.5399999999999885,
+        "path_error_time_mean_m": 0.2466650718854513,
+        "path_error_max_m": 1.4136128250421844,
+        "steering_abs_time_mean": 0.05361049429461264,
+        "joint_lag_abs_time_mean_rad": 0.004112044938298654,
+        "force_ratio_max": 1.2319861938422425,
+        "curvature_abs_time_mean": 0.0162953534239844,
+        "current_trigger_count": 22,
+        "first_current_trigger_step": 23
+      },
+      "prefix_diagnostics": {
+        "command_time_s": {
+          "brake": 1.919999999999968,
+          "fullgas": 1.2799999999999727,
+          "partialgas": 6.239999999999925,
+          "coast": 0.0
+        },
+        "speed_bin_time_s": {
+          "0_1": 0.020000000000000018,
+          "1_10": 0.3600000000000003,
+          "10_30": 1.140000000000001,
+          "30_60": 4.419999999999939,
+          "60_plus": 3.4999999999999254
+        },
+        "brake_below_current_target_s": 1.919999999999968,
+        "brake_below_current_target_actions": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          80,
+          81,
+          82,
+          91,
+          92,
+          93,
+          94,
+          114,
+          115,
+          117,
+          118
+        ],
+        "command_override_actions": [
+          91
+        ],
+        "front_clip_wheel_fraction": 0.009533898305084746,
+        "rear_clip_wheel_fraction": 0.03072033898305085,
+        "clipped_raw_time_s": 0.41999999999999105,
+        "path_error_time_mean_m": 0.21566050434512676,
+        "path_error_max_m": 1.4136128250421844,
+        "steering_abs_time_mean": 0.05778470388768412,
+        "joint_lag_abs_time_mean_rad": 0.004094423037605663,
+        "force_ratio_max": 1.2319861938422425,
+        "curvature_abs_time_mean": 0.01788397358217184,
+        "current_trigger_count": 22,
+        "first_current_trigger_step": 23
+      },
+      "pre119_arc_fraction": 0.6013539536659266
+    },
+    "P": {
+      "official_lap_s": 13.76,
+      "raw_intervals": 688,
+      "whole": {
+        "reference_clock_s": 10.013977403284308,
+        "speed_tracking_s": 3.8893981885359596,
+        "heading_s": 0.06342359251798643,
+        "body_slip_s": -0.010726821920911598,
+        "path_metric_s": -0.1496651774646843,
+        "quadrature_residual_s": -0.06640718495289627,
+        "scored_time_s": 13.739999999999775,
+        "special_time_s": 0.019999999999999574,
+        "total_time_s": 13.759999999999774,
+        "identity_error_s": -1.0658141036401503e-14
+      },
+      "prefix": {
+        "reference_clock_s": 6.247226885991527,
+        "speed_tracking_s": 3.354294462360481,
+        "heading_s": 0.03269804132827802,
+        "body_slip_s": -0.008275905976971688,
+        "path_metric_s": -0.12281217539988773,
+        "quadrature_residual_s": -0.06313130830355347,
+        "scored_time_s": 9.439999999999866,
+        "special_time_s": 0.0,
+        "total_time_s": 9.439999999999866,
+        "identity_error_s": 7.105427357601002e-15
+      },
+      "suffix": {
+        "reference_clock_s": 3.7667505172927975,
+        "speed_tracking_s": 0.5351037261754821,
+        "heading_s": 0.03072555118970844,
+        "body_slip_s": -0.0024509159439399103,
+        "path_metric_s": -0.02685300206479656,
+        "quadrature_residual_s": -0.0032758766493427294,
+        "scored_time_s": 4.299999999999908,
+        "special_time_s": 0.019999999999999574,
+        "total_time_s": 4.319999999999908,
+        "identity_error_s": 8.881784197001252e-16
+      },
+      "special_time_ledger": {
+        "stationary_s": 0.0,
+        "reverse_s": 0.0,
+        "revisit_s": 0.0,
+        "nonpositive_proxy_s": 0.0,
+        "outside_reference_support_s": 0.019999999999999574
+      },
+      "spatial_bins": [
+        {
+          "arc_fraction": [
+            0.0,
+            0.1
+          ],
+          "reference_clock_s": 1.7671695412855606,
+          "speed_tracking_s": 1.2638667549774503,
+          "heading_s": 0.01953482133409073,
+          "body_slip_s": -0.006375918667833866,
+          "path_metric_s": -0.07161014737682671,
+          "quadrature_residual_s": -0.05940050347681635,
+          "scored_time_s": 2.9131845480756247,
+          "special_time_s": 0.0,
+          "total_time_s": 2.9131845480756247,
+          "identity_error_s": -4.440892098500626e-16
+        },
+        {
+          "arc_fraction": [
+            0.1,
+            0.2
+          ],
+          "reference_clock_s": 0.8338544180196705,
+          "speed_tracking_s": 0.4870782684622685,
+          "heading_s": 0.00018169783549675872,
+          "body_slip_s": -3.825525160581469e-05,
+          "path_metric_s": 6.553612291734906e-05,
+          "quadrature_residual_s": -0.007102935830489473,
+          "scored_time_s": 1.314038729358258,
+          "special_time_s": 0.0,
+          "total_time_s": 1.314038729358258,
+          "identity_error_s": -2.220446049250313e-16
+        },
+        {
+          "arc_fraction": [
+            0.2,
+            0.3
+          ],
+          "reference_clock_s": 0.5880702929486558,
+          "speed_tracking_s": 0.29891941238144165,
+          "heading_s": 6.02030663619829e-06,
+          "body_slip_s": 6.860890363034061e-07,
+          "path_metric_s": -9.162139411358996e-06,
+          "quadrature_residual_s": -0.00039439254049826325,
+          "scored_time_s": 0.8865928570458602,
+          "special_time_s": 0.0,
+          "total_time_s": 0.8865928570458602,
+          "identity_error_s": 1.1102230246251565e-16
+        },
+        {
+          "arc_fraction": [
+            0.3,
+            0.4
+          ],
+          "reference_clock_s": 1.0879118588008427,
+          "speed_tracking_s": 0.3444741221204033,
+          "heading_s": 0.006616101898132877,
+          "body_slip_s": -0.0006608221409647286,
+          "path_metric_s": -0.02261886829829919,
+          "quadrature_residual_s": 0.00642218628416433,
+          "scored_time_s": 1.4221445786642795,
+          "special_time_s": 0.0,
+          "total_time_s": 1.4221445786642795,
+          "identity_error_s": -4.440892098500626e-16
+        },
+        {
+          "arc_fraction": [
+            0.4,
+            0.5
+          ],
+          "reference_clock_s": 1.1610992071964932,
+          "speed_tracking_s": 0.5655128466657621,
+          "heading_s": 0.005603660739873003,
+          "body_slip_s": -0.0012373439790931396,
+          "path_metric_s": -0.025634762712442062,
+          "quadrature_residual_s": -0.0022288419235777,
+          "scored_time_s": 1.7031147659870154,
+          "special_time_s": 0.0,
+          "total_time_s": 1.7031147659870154,
+          "identity_error_s": 2.220446049250313e-16
+        },
+        {
+          "arc_fraction": [
+            0.5,
+            0.6
+          ],
+          "reference_clock_s": 0.7944375858743622,
+          "speed_tracking_s": 0.3901271132200534,
+          "heading_s": 0.0005975044519499947,
+          "body_slip_s": 2.41466233518049e-05,
+          "path_metric_s": -0.003239236461189926,
+          "quadrature_residual_s": -0.0007258850289996795,
+          "scored_time_s": 1.1812212286795276,
+          "special_time_s": 0.0,
+          "total_time_s": 1.1812212286795276,
+          "identity_error_s": 0.0
+        },
+        {
+          "arc_fraction": [
+            0.6,
+            0.7
+          ],
+          "reference_clock_s": 0.9120155088435186,
+          "speed_tracking_s": 0.21106900472655968,
+          "heading_s": 0.004591285411288965,
+          "body_slip_s": -9.393270491911141e-05,
+          "path_metric_s": -0.010921006640664666,
+          "quadrature_residual_s": -0.004170620649314329,
+          "scored_time_s": 1.1124902389864693,
+          "special_time_s": 0.0,
+          "total_time_s": 1.1124902389864693,
+          "identity_error_s": -2.220446049250313e-16
+        },
+        {
+          "arc_fraction": [
+            0.7,
+            0.8
+          ],
+          "reference_clock_s": 0.9200177722570531,
+          "speed_tracking_s": 0.0795527960475284,
+          "heading_s": 0.0028738559927359536,
+          "body_slip_s": -2.826846864253862e-05,
+          "path_metric_s": -0.00467423096724519,
+          "quadrature_residual_s": 0.0016237737282780156,
+          "scored_time_s": 0.9993656985897076,
+          "special_time_s": 0.0,
+          "total_time_s": 0.9993656985897076,
+          "identity_error_s": 1.1102230246251565e-16
+        },
+        {
+          "arc_fraction": [
+            0.8,
+            0.9
+          ],
+          "reference_clock_s": 0.7867506318727657,
+          "speed_tracking_s": 0.1614030663142766,
+          "heading_s": 2.3894687301017164e-05,
+          "body_slip_s": -6.572243874045733e-07,
+          "path_metric_s": 1.412136295493734e-05,
+          "quadrature_residual_s": 0.00019650618186281478,
+          "scored_time_s": 0.9483875631947738,
+          "special_time_s": 0.0,
+          "total_time_s": 0.9483875631947738,
+          "identity_error_s": 0.0
+        },
+        {
+          "arc_fraction": [
+            0.9,
+            1.0
+          ],
+          "reference_clock_s": 1.1626505861853973,
+          "speed_tracking_s": 0.08739480362021601,
+          "heading_s": 0.02339474986048097,
+          "body_slip_s": -0.0023164561958531034,
+          "path_metric_s": -0.011037420354477454,
+          "quadrature_residual_s": -0.0006264716975055533,
+          "scored_time_s": 1.2594597914182577,
+          "special_time_s": 0.01780505941790155,
+          "total_time_s": 1.2772648508361593,
+          "identity_error_s": 4.440892098500626e-16
+        }
+      ],
+      "spatial_crossing_brackets": [
+        {
+          "fraction": 0.1,
+          "step": 37,
+          "time_bracket_s": [
+            2.9000000000000026,
+            2.9200000000000026
+          ]
+        },
+        {
+          "fraction": 0.2,
+          "step": 53,
+          "time_bracket_s": [
+            4.219999999999976,
+            4.239999999999975
+          ]
+        },
+        {
+          "fraction": 0.3,
+          "step": 64,
+          "time_bracket_s": [
+            5.099999999999957,
+            5.119999999999957
+          ]
+        },
+        {
+          "fraction": 0.4,
+          "step": 82,
+          "time_bracket_s": [
+            6.519999999999927,
+            6.539999999999926
+          ]
+        },
+        {
+          "fraction": 0.5,
+          "step": 103,
+          "time_bracket_s": [
+            8.219999999999892,
+            8.239999999999892
+          ]
+        },
+        {
+          "fraction": 0.6,
+          "step": 118,
+          "time_bracket_s": [
+            9.419999999999867,
+            9.439999999999866
+          ]
+        },
+        {
+          "fraction": 0.7,
+          "step": 132,
+          "time_bracket_s": [
+            10.519999999999843,
+            10.539999999999843
+          ]
+        },
+        {
+          "fraction": 0.8,
+          "step": 145,
+          "time_bracket_s": [
+            11.519999999999822,
+            11.539999999999822
+          ]
+        },
+        {
+          "fraction": 0.9,
+          "step": 157,
+          "time_bracket_s": [
+            12.479999999999801,
+            12.499999999999801
+          ]
+        }
+      ],
+      "origin_velocity_sensitivity": {
+        "reference_clock_s": 10.013977403284308,
+        "speed_tracking_s": 3.888872696623338,
+        "heading_s": 0.06341138798821991,
+        "body_slip_s": -0.011692380478578741,
+        "path_metric_s": -0.14864892160900195,
+        "quadrature_residual_s": -0.0659201858085246,
+        "scored_time_s": 13.739999999999775,
+        "special_time_s": 0.019999999999999574,
+        "total_time_s": 13.759999999999774,
+        "identity_error_s": -1.4210854715202004e-14
+      },
+      "whole_diagnostics": {
+        "command_time_s": {
+          "brake": 2.959999999999946,
+          "fullgas": 3.27999999999993,
+          "partialgas": 7.519999999999897,
+          "coast": 0.0
+        },
+        "speed_bin_time_s": {
+          "0_1": 0.020000000000000018,
+          "1_10": 0.3600000000000003,
+          "10_30": 1.140000000000001,
+          "30_60": 4.7999999999999305,
+          "60_plus": 7.439999999999841
+        },
+        "brake_below_current_target_s": 2.5599999999999543,
+        "brake_below_current_target_actions": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          80,
+          81,
+          82,
+          91,
+          92,
+          93,
+          94,
+          114,
+          115,
+          117,
+          118,
+          133,
+          139,
+          140,
+          154,
+          155,
+          156,
+          157,
+          158
+        ],
+        "command_override_actions": [
+          91,
+          119,
+          121,
+          129,
+          132
+        ],
+        "front_clip_wheel_fraction": 0.0377906976744186,
+        "rear_clip_wheel_fraction": 0.06758720930232558,
+        "clipped_raw_time_s": 1.6999999999999638,
+        "path_error_time_mean_m": 0.3476644819982675,
+        "path_error_max_m": 2.772067128889512,
+        "steering_abs_time_mean": 0.055992384735598234,
+        "joint_lag_abs_time_mean_rad": 0.004523433893155012,
+        "force_ratio_max": 2.0726140628591887,
+        "curvature_abs_time_mean": 0.016487580984917243,
+        "current_trigger_count": 22,
+        "first_current_trigger_step": 23
+      },
+      "prefix_diagnostics": {
+        "command_time_s": {
+          "brake": 1.919999999999968,
+          "fullgas": 1.2799999999999727,
+          "partialgas": 6.239999999999925,
+          "coast": 0.0
+        },
+        "speed_bin_time_s": {
+          "0_1": 0.020000000000000018,
+          "1_10": 0.3600000000000003,
+          "10_30": 1.140000000000001,
+          "30_60": 4.419999999999939,
+          "60_plus": 3.4999999999999254
+        },
+        "brake_below_current_target_s": 1.919999999999968,
+        "brake_below_current_target_actions": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          80,
+          81,
+          82,
+          91,
+          92,
+          93,
+          94,
+          114,
+          115,
+          117,
+          118
+        ],
+        "command_override_actions": [
+          91
+        ],
+        "front_clip_wheel_fraction": 0.009533898305084746,
+        "rear_clip_wheel_fraction": 0.03072033898305085,
+        "clipped_raw_time_s": 0.41999999999999105,
+        "path_error_time_mean_m": 0.21566050434512676,
+        "path_error_max_m": 1.4136128250421844,
+        "steering_abs_time_mean": 0.05778470388768412,
+        "joint_lag_abs_time_mean_rad": 0.004094423037605663,
+        "force_ratio_max": 1.2319861938422425,
+        "curvature_abs_time_mean": 0.01788397358217184,
+        "current_trigger_count": 22,
+        "first_current_trigger_step": 23
+      },
+      "pre119_arc_fraction": 0.6013539536659266
+    }
+  },
+  "reference_clock_s": 10.027245238641765,
+  "reference_not_physical_bound": true,
+  "witness_audit": {
+    "prefix_pre90_physical_and_commands_exact_historical_C": true,
+    "pre91_physical_exact": true,
+    "actual_C0_only_nominal_override_step": 91,
+    "C0_after91_own_nominal_to_safe_official_finish": true,
+    "historical_pre91_nominal13_valid": false,
+    "historical_pre91_nominal13_safety": [
+      "path_error_over3m"
+    ],
+    "historical_pre91_neutral13_valid": true,
+    "historical_only_not_new_current_model_qualification": true,
+    "latest_442_nominal_tail_from_each_early_root_unobserved": true
+  },
+  "new_actual_model_training": 0,
+  "research_remaining": 27516,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "CPU_s": 3.621956901,
+  "wall_s": 3.6367987380363047
+}
