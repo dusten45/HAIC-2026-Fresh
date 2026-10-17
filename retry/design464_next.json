@@ -1,0 +1,139 @@
+{
+  "stage": "464_NEXT_DESIGN_ONLY",
+  "execution_authorized": false,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "hypotheses": [
+    "H2A_scaled_reference_reachability_mismatch",
+    "H2B_held_point_derivative_vs_reference_secant"
+  ],
+  "selected": "H2B_S13_increment_beyond_same_first_fullgas",
+  "root": {
+    "source": "463 fixed pre126, identical to458P pre126",
+    "native_pre_step": 126,
+    "observed_prefix_elapsed_s": 10.0,
+    "new_root_search": false
+  },
+  "selected_contract": {
+    "arms": [
+      "PulseOnce",
+      "S13"
+    ],
+    "actions_per_trajectory": 13,
+    "independent_trajectories_per_arm": 2,
+    "held_first_per_arm": 1,
+    "old_source_cap": {
+      "ticks": 1242,
+      "worlds": 35
+    },
+    "hard": {
+      "ticks": 2048,
+      "worlds": 64,
+      "CPU_s": 180,
+      "wall_s": 300,
+      "max_parallel": 1,
+      "actual_actions": 0,
+      "resets": 0
+    },
+    "same_trajectories_serve_root_qualification_and_falsification": true,
+    "separate_main_rollouts": 0,
+    "policy": {
+      "PulseOnce": "first fullgas alias then old nominal",
+      "S13": "recompute secant at each of13 80ms boundaries; nominal steer and controller memory once; no guardian selector in this diagnostic window"
+    },
+    "primary": "PulseOnce minus S13 raw20ms first-crossing bracket at root+60m",
+    "secondary": [
+      "progress at1.04s",
+      "speed/reference error",
+      "whole raw physical/path/tire checks",
+      "brake/gas-ramp/clipping exposure",
+      "slope crossings and interior minima"
+    ],
+    "no_native_promotion_from_H13": true,
+    "first_command_equal_for_both": true,
+    "strict_domain": "finite FIRST_LAP, sigma>0, positive r,0<s<s+sigma*0.08<L",
+    "no_clamp_periodic_extension": true,
+    "full_policy_rollout_certified": false,
+    "promotion": {
+      "all_gates_and_repeat_exact": true,
+      "strict_positive_root_plus60m_bracket": true,
+      "positive_progress_gain_at1_04s": true,
+      "next_scope": "design whole model comparison only; native0",
+      "no_arbitrary_gain_threshold": true
+    },
+    "stops": [
+      "technical/fidelity/RNG/authority/IO/resource globalstop",
+      "unsupported early progress globalstop",
+      "typed physical unsafe negative with unchanged registered semantics",
+      "pending/finish scope exit; no tail/fallback"
+    ],
+    "binding_requirements": {
+      "ctrl_act_once": true,
+      "prepared_before_and_prepared_nominal_required": true,
+      "first_current_native_factual_exact": true,
+      "full_float32_commands_compared_each_step": true,
+      "factual_same_command_scope_ends_at_first_command_divergence": true,
+      "H13_physical_closed_loop_calibration_is_not_H13_fresh_current_proof": true,
+      "static_five_math_checks_do_not_qualify_new_controller": true,
+      "scope_1458_41_enforced_separately_from_hard": true
+    }
+  },
+  "storage": {
+    "observed_max_model_bytes_per_tick": 85798.43826506023,
+    "observed_fixed_bytes_per_world": 769473,
+    "empirical_margin": 1.25,
+    "reserve_bytes": 536870912,
+    "archive_payload_margin": 1.1,
+    "archive_metadata_allowance_bytes": 33554432,
+    "free_bytes": {
+      "/tmp": 3667374080,
+      "/workspace": 922124288
+    },
+    "new_raw_volume": "/tmp",
+    "new_private_archive_volume": "/workspace",
+    "existing_delete_move": 0,
+    "estimates_not_guaranteed": true
+  },
+  "research_remaining": 26346,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "future_guarded_cost_illustration": {
+    "selected": false,
+    "execution_authorized": false,
+    "whole_arms": 4,
+    "parent_actions_per_arm": 70,
+    "first_fixed_queries": 4,
+    "guardian_queries_max": 276,
+    "parts": {
+      "first_fixed": {
+        "ticks": 416,
+        "worlds": 8
+      },
+      "guardian": {
+        "ticks": 57408,
+        "worlds": 1104
+      },
+      "parents": {
+        "ticks": 1120,
+        "worlds": 4
+      },
+      "qualification": {
+        "ticks": 1458,
+        "worlds": 41
+      }
+    },
+    "planned_ticks": 60402,
+    "planned_worlds": 1157,
+    "hard_example": {
+      "ticks": 65536,
+      "worlds": 1280,
+      "CPU_s": 1800,
+      "wall_s": 2400
+    },
+    "actual_actions": 0,
+    "resets": 0,
+    "exact_recursive_future_guardian_included": false,
+    "native_promotion_included": false,
+    "model_volume_required_bytes": 8455759235.673735,
+    "current_storage_fits": false
+  }
+}

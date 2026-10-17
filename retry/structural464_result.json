@@ -1,0 +1,231 @@
+{
+  "stage": 464,
+  "status": "SAVED_ANALYSIS_AND_DESIGN_ONLY",
+  "new_actual_actions": 0,
+  "new_model_ticks": 0,
+  "new_worlds": 0,
+  "new_resets": 0,
+  "new_seed_learning_HOLDOUT_SEALED_reserve_paid": 0,
+  "source_hashes": {
+    "retry/design464_math.py": "3f8e06c5737125182e2a2e9c7a04e92d241a08950c121426da55a88ddecb3ed6",
+    "retry/analyze464.py": "093589144ba0b5f39350610d5eed6accdf3972ebd5098bf195743b7f985df2a5",
+    "retry/static464.py": "b8868d16dc0ac7563b9b5f27cf969fb5ec63e2dd8bc1b70b1598d04d735a863e",
+    "retry/design464_next.md": "9fb7e4ec80d3a1a66b0640018ccd018dd38a169aa6bc2dc56cc6c255753bb3f6",
+    "retry/signed417_executor.py": "11889e888bd065f5ff5019b6398e3099d9c8316cf61e26dc9f7fa7acbb555c72",
+    "retry/scalar392_audit.py": "52ddad4269613eb53577d1362325e681d0f68401899b28977ea717c8b678da94",
+    "retry/pilot420_backend.py": "06ccb21e6a5819be69e488f8aa8463c172448208c3409fcecee7a6a2fab5746d",
+    "retry/guardian426_confirmed.py": "8e710b6f40a6bddd8cdbb24b6eeaf5b8fca23ac4397656965a1a44cccb4407b4",
+    "retry/pilot436_run.py": "285e1b34638275387210218af13da966d562ccbccc0a8010dcc2c83596677476",
+    "retry/pilot428_run.py": "a4194049622b1b8412f4be272bcfd446a84ab329d4a4105facb4a5b7d8fecf83",
+    "retry/observer435.py": "c7e31d7b81fd2984eeb09921220fcd3b64df0a48752f5c7c2c3bf0636ad11bb0",
+    "retry/planner419.py": "293a09615498a12cd2acfb07d7598af2c115ef1fab11470bfe2e8f8552ac2365",
+    "retry/paired417_common.py": "4a0bae8e06d15443b03996c6e035283ba953652fa0ee52d6fb6af3a34c7f4322",
+    "retry/racing258_plan.py": "51f4e8e4e024e16b5475924a14ffae9ed672470421119b8c2c14d5937c66bd4a",
+    "retry/racing258_run.py": "6ec73b3c0d0beb9e237cea5ed0881a336a9d4ad0396700894430465fcc1b090c",
+    "retry/pace268_profile.py": "7af5a396e2a17b6d45e78c3447a8e5e25a4594bd909d3898d8fcb911ee144162",
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece"
+  },
+  "private_manifest_sha256": "34547cf0f53316e3e14149b115a96e7cc1c870bd31d7d2de0a7dd8a915e6f286",
+  "input_files": 31,
+  "protected_files_verified": 18,
+  "best_native_s": 13.76,
+  "latest_native_s": 13.78,
+  "best_updated": false,
+  "single_pulse_native_gain_s": 0.22,
+  "model462_gain_bracket_s": [
+    0.2,
+    0.24
+  ],
+  "H2A_prior_reference_summary": {
+    "reference_clock_by_common_boundary_s": {
+      "0": 0.0,
+      "60": 0.9752822673696324,
+      "120": 1.5150299606617856,
+      "180": 1.9324412536171327,
+      "240": 2.5121604935061423,
+      "270": 2.938450469577549,
+      "330": 3.7556121174962893,
+      "390": 4.526221010034767,
+      "450": 5.059266371036358,
+      "510": 5.75978559428375,
+      "570": 6.337487018394503,
+      "630": 7.018160143974964,
+      "690": 7.572320278556078,
+      "750": 8.422038854305297
+    },
+    "common_reference_from_pre23_to_profile_end_s": 8.960214412176867,
+    "reference_whole_profile_clock_s": 10.027245238641758,
+    "base_profile_clock_s": 15.316710464806208,
+    "scaled_squared_speed_gradient_min": -223.40157481912263,
+    "scaled_squared_speed_gradient_max": 106.92137346326037,
+    "scaled_gradient_brake_allowance_exceeded_segments": 54,
+    "scaled_gradient_drive_allowance_exceeded_segments": 166,
+    "lateral_accel_ratio_to_base_allowance_max": 2.4171084934121545
+  },
+  "H2A_lateral_interpretation": {
+    "base_allowance_fraction_of_nominal_aggregate_friction": 0.4,
+    "max_demand_fraction_under_same_pointmass_allroad_grip1_assumptions": 0.9668433973648618,
+    "aggregate_longitudinal_remaining_fraction_at_that_same_proxy_point": 0.25537001580446345,
+    "exact_tyre_or_path_feasibility_certified": false
+  },
+  "saved_proposal_summary": {
+    "P442": {
+      "eligible_saved_actions": 170,
+      "changed_from_nominal": 25,
+      "crossed_node_actions": 155,
+      "interior_valley_actions": 11,
+      "endpoint_drives_despite_interior_target_below_speed": 2,
+      "ineligible_saved_actions": 3,
+      "root13_changed_from_dispatched_relative_actions": [
+        4,
+        7,
+        8,
+        13
+      ]
+    },
+    "P458": {
+      "eligible_saved_actions": 173,
+      "changed_from_nominal": 28,
+      "crossed_node_actions": 163,
+      "interior_valley_actions": 13,
+      "endpoint_drives_despite_interior_target_below_speed": 1,
+      "ineligible_saved_actions": 3,
+      "root13_changed_from_dispatched_relative_actions": [
+        1,
+        4,
+        5,
+        11
+      ]
+    },
+    "Original463": {
+      "eligible_saved_actions": 173,
+      "changed_from_nominal": 28,
+      "crossed_node_actions": 163,
+      "interior_valley_actions": 13,
+      "endpoint_drives_despite_interior_target_below_speed": 1,
+      "ineligible_saved_actions": 3,
+      "root13_changed_from_dispatched_relative_actions": [
+        1,
+        4,
+        5,
+        11
+      ],
+      "root13_observed_progress_m": 77.7729755550796,
+      "root13_observed_duration_s": 1.0399999999999778
+    },
+    "PulseOnce463": {
+      "eligible_saved_actions": 171,
+      "changed_from_nominal": 28,
+      "crossed_node_actions": 161,
+      "interior_valley_actions": 13,
+      "endpoint_drives_despite_interior_target_below_speed": 2,
+      "ineligible_saved_actions": 2,
+      "root13_changed_from_dispatched_relative_actions": [
+        3,
+        10,
+        13
+      ],
+      "root13_observed_progress_m": 87.79584249939046,
+      "root13_observed_duration_s": 1.0399999999999778
+    }
+  },
+  "storage_observations": {
+    "462": {
+      "retained_raw_bytes": 901363757,
+      "ticks": 10766,
+      "bytes_per_tick": 83723.18010403121,
+      "fixed_max_bytes": {
+        "world*-before-constructor-private.json": 368983,
+        "world*-before-first-step-private.json": 369298,
+        "*-runtime-link-private.json": 30338
+      },
+      "fixed_sum_bytes": 768619,
+      "current_raw_file_bytes": 901363757
+    },
+    "463": {
+      "retained_raw_bytes": 890158797,
+      "ticks": 10375,
+      "bytes_per_tick": 85798.43826506023,
+      "fixed_max_bytes": {
+        "world*-before-constructor-private.json": 368983,
+        "world*-before-first-step-private.json": 369298,
+        "*-runtime-link-private.json": 31192
+      },
+      "fixed_sum_bytes": 769473,
+      "current_raw_file_bytes": 890158797
+    }
+  },
+  "current_storage": {
+    "/tmp": {
+      "total": 9466122240,
+      "used": 5798748160,
+      "free": 3667374080
+    },
+    "/workspace": {
+      "total": 33770192896,
+      "used": 31113388032,
+      "free": 922042368
+    }
+  },
+  "selected_future_cost": {
+    "parts": {
+      "old_source": {
+        "ticks": 1242,
+        "worlds": 35
+      },
+      "PulseOnce_trajectories": {
+        "ticks": 104,
+        "worlds": 2
+      },
+      "PulseOnce_held_first": {
+        "ticks": 4,
+        "worlds": 1
+      },
+      "S13_trajectories": {
+        "ticks": 104,
+        "worlds": 2
+      },
+      "S13_held_first": {
+        "ticks": 4,
+        "worlds": 1
+      }
+    },
+    "ticks": 1458,
+    "worlds": 41,
+    "trajectory_worlds": 4,
+    "held_first_worlds": 2,
+    "separate_main_parent_worlds": 0,
+    "actual_actions": 0,
+    "resets": 0,
+    "model_payload_forecast_bytes": 251192394.9585542,
+    "model_volume_required_bytes": 788063306.9585543,
+    "archive_forecast_bytes": 309866066.45440966,
+    "workspace_required_bytes": 846736978.4544096,
+    "current_model_volume_fits": true,
+    "current_workspace_retention_fits": true,
+    "estimates_are_not_guaranteed_bounds": true
+  },
+  "execution_authorized": false,
+  "ledger": {
+    "version": 475,
+    "research_remaining": 26346,
+    "actual_cumulative_wrapper_actions": 1321718,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "CPU_s": 0.48333056099999994,
+  "wall_s": 0.49316778406500816,
+  "post_review_contract_hashes": {
+    "design464_next.md": "cf276489cb4ac0556aaf4bfbef50cea04a53132b242fbae374258b1653a3381e",
+    "design464_next.json": "3682929793f450d096f25fe9c9b4a00c6ba27df49cfdceef9c286d9ad76fb1fc"
+  },
+  "post_review_final_manifest_sha256": "c02df50d81767dab7c43ab5c95bb04b66e77f87ae413d9af3455f197494beccf",
+  "post_review_reconciliation": {
+    "new_actual_model_ticks": 0,
+    "new_worlds_resets": 0,
+    "numerical_analysis_repeated": false,
+    "initial_manifest_and_contract_drafts_preserved": true,
+    "memory_and_factual_scope_conditions_added": true
+  }
+}
