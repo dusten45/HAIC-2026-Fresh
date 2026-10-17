@@ -1,0 +1,88 @@
+{
+  "stage": 492,
+  "status": "TECHNICAL_SOURCE_SCHEMA_STOP_NO_POLICY_VERDICT",
+  "worker_status": "TECHNICAL_OR_GATE_STOP",
+  "error": "KeyError: 'damage'",
+  "static_passed": true,
+  "static_tests": 7,
+  "native_root_after_actions": 72,
+  "root_before_witness1": true,
+  "natural_witnesses": 2,
+  "actual_actions": 74,
+  "resets": 1,
+  "native_raw": {
+    "D492-A": {
+      "reset_raw": 51,
+      "action_raw": 296
+    }
+  },
+  "model_worlds": 1,
+  "model_integrated_ticks": 4,
+  "model_charged_ticks": 4,
+  "source_warm_gate_passed": false,
+  "source_completed_copies": 0,
+  "H6_executed": false,
+  "allocator_calls": 0,
+  "policy_verdict": null,
+  "native_promotion": false,
+  "root_authority_source_qualified": false,
+  "worker_CPU_s": 49.925785223,
+  "worker_wall_s": 50.769790283055045,
+  "worker_RSS_bytes": 94871552,
+  "native_exclusive": {
+    "CPU_s": 44.54174045800001,
+    "wall_s": 45.10615331900772
+  },
+  "model_exclusive": {
+    "CPU_s": 1.2197279980000033,
+    "wall_s": 1.2235975640360266
+  },
+  "research_remaining": 26101,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "geometry_profile_P4_seed_newcondition_HOLDOUT_SEALED": 0,
+  "model_live_worlds_after_close": 0,
+  "native_bodies_after_close": 0,
+  "native_joints_after_close": 0,
+  "preserved_entries": 3223,
+  "source_alias_modules": 71,
+  "binding": {
+    "input_manifest_sha256": "8352db032e5083830d976adfaf713af87c0b22e6df6e23744ebc8f7ccfbab13b",
+    "projection491_sha256": "5562b90568366e470237ed249e34be8184783008fe21151f9711b6f449f8bc6c",
+    "runtime492_sha256": "2ae566773767ce56cb57ae12e07840622460391d5e0bf4e1d6b7f0b067996a36",
+    "line_sha256": "c5f8b3179c45965bdd0d51b54d09a0bd5f4ea9f8edf73082faa8d619c52c8f09",
+    "nodes_sha256": "ab227466528eb6b688207008df79fa638021eaf8a9c6cf55c363058af526d7bc"
+  },
+  "full_raw_readbacks": 2,
+  "no_retry": true,
+  "no_auto_followup": true,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "raw_retained_bytes": 119416267,
+  "raw_retained_files": 675,
+  "schema_mismatch": {
+    "native_post_keys": [
+      "position",
+      "velocity",
+      "progress",
+      "time",
+      "tracker_after",
+      "collision",
+      "wheel_road_contacts"
+    ],
+    "source_comparator_required_keys": [
+      "damage",
+      "collision",
+      "grass",
+      "wheel_road_contacts",
+      "phase"
+    ],
+    "first_missing_key": "damage",
+    "native_missing_keys": [
+      "damage",
+      "grass",
+      "phase"
+    ],
+    "raw_fields_not_filled_or_inferred": true
+  },
+  "scope": "One already exposed first485 knownDEV; finite491 binding and natural native prefix only. No source/warm/H6/policy/generalization qualification."
+}
