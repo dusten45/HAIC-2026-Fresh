@@ -1,0 +1,1067 @@
+{
+  "stage": 477,
+  "allocation_summary": {
+    "Projected4Reference": {
+      "calls": 0,
+      "interventions": 0,
+      "strict_first_raw_objective_reductions": 0,
+      "first_intervention": null,
+      "intervention_events": [],
+      "max_objective_q0": null,
+      "max_objective_selected": null
+    },
+    "AllocationP4": {
+      "calls": 74,
+      "interventions": 7,
+      "strict_first_raw_objective_reductions": 7,
+      "first_intervention": {
+        "action": 47,
+        "physical_time_s": 6.45999999999995,
+        "elapsed_from_root_s": 3.679999999999948,
+        "arc_m": 302.2945775648112,
+        "changed": true,
+        "nominal_pedals": [
+          0.780729353427887,
+          0.0
+        ],
+        "actual_pedals": [
+          1.609823385706477e-15,
+          0.0
+        ],
+        "objective_q0": 0.7521388411078263,
+        "objective_selected": 0.49637786084565705,
+        "first_raw_force_identity_exact": true,
+        "first_raw_only": true
+      },
+      "intervention_events": [
+        {
+          "action": 47,
+          "physical_time_s": 6.45999999999995,
+          "elapsed_from_root_s": 3.679999999999948,
+          "arc_m": 302.2945775648112,
+          "changed": true,
+          "nominal_pedals": [
+            0.780729353427887,
+            0.0
+          ],
+          "actual_pedals": [
+            1.609823385706477e-15,
+            0.0
+          ],
+          "objective_q0": 0.7521388411078263,
+          "objective_selected": 0.49637786084565705,
+          "first_raw_force_identity_exact": true,
+          "first_raw_only": true
+        },
+        {
+          "action": 69,
+          "physical_time_s": 8.219999999999914,
+          "elapsed_from_root_s": 5.439999999999912,
+          "arc_m": 402.71287243053854,
+          "changed": true,
+          "nominal_pedals": [
+            0.8559432625770569,
+            0.0
+          ],
+          "actual_pedals": [
+            0.7737106084823608,
+            0.0
+          ],
+          "objective_q0": 0.554423367340148,
+          "objective_selected": 0.528171822388199,
+          "first_raw_force_identity_exact": true,
+          "first_raw_only": true
+        },
+        {
+          "action": 70,
+          "physical_time_s": 8.299999999999912,
+          "elapsed_from_root_s": 5.51999999999991,
+          "arc_m": 407.8547533194897,
+          "changed": true,
+          "nominal_pedals": [
+            0.8759978413581848,
+            0.0
+          ],
+          "actual_pedals": [
+            5.495603548378051e-15,
+            0.0
+          ],
+          "objective_q0": 1.2991684774707708,
+          "objective_selected": 1.0799555832685819,
+          "first_raw_force_identity_exact": true,
+          "first_raw_only": true
+        },
+        {
+          "action": 71,
+          "physical_time_s": 8.37999999999991,
+          "elapsed_from_root_s": 5.599999999999908,
+          "arc_m": 412.9512499294946,
+          "changed": true,
+          "nominal_pedals": [
+            0.8744217753410339,
+            0.0
+          ],
+          "actual_pedals": [
+            3.877334397154502e-15,
+            0.0
+          ],
+          "objective_q0": 1.3666965787170637,
+          "objective_selected": 1.358987713414535,
+          "first_raw_force_identity_exact": true,
+          "first_raw_only": true
+        },
+        {
+          "action": 72,
+          "physical_time_s": 8.459999999999908,
+          "elapsed_from_root_s": 5.6799999999999065,
+          "arc_m": 418.10607647608987,
+          "changed": true,
+          "nominal_pedals": [
+            0.8692636489868164,
+            0.0
+          ],
+          "actual_pedals": [
+            1.1486562975738732e-14,
+            0.0
+          ],
+          "objective_q0": 1.7203275652775822,
+          "objective_selected": 1.714931858116604,
+          "first_raw_force_identity_exact": true,
+          "first_raw_only": true
+        },
+        {
+          "action": 73,
+          "physical_time_s": 8.539999999999907,
+          "elapsed_from_root_s": 5.759999999999905,
+          "arc_m": 423.2677909557717,
+          "changed": true,
+          "nominal_pedals": [
+            0.8659738898277283,
+            0.0
+          ],
+          "actual_pedals": [
+            3.789985395018323e-15,
+            0.0
+          ],
+          "objective_q0": 1.8597400740220142,
+          "objective_selected": 1.8545816351286764,
+          "first_raw_force_identity_exact": true,
+          "first_raw_only": true
+        },
+        {
+          "action": 74,
+          "physical_time_s": 8.619999999999905,
+          "elapsed_from_root_s": 5.839999999999903,
+          "arc_m": 428.401762191076,
+          "changed": true,
+          "nominal_pedals": [
+            0.8644583225250244,
+            0.0
+          ],
+          "actual_pedals": [
+            5.61133408347788e-15,
+            0.0
+          ],
+          "objective_q0": 0.9848231431411876,
+          "objective_selected": 0.9735897050621765,
+          "first_raw_force_identity_exact": true,
+          "first_raw_only": true
+        }
+      ],
+      "max_objective_q0": 1.8597400740220142,
+      "max_objective_selected": 1.8545816351286764
+    }
+  },
+  "integrated_qualification": {
+    "passed": true,
+    "worlds": 47,
+    "ticks": 1464,
+    "source": true,
+    "three_root_laws": true,
+    "candidate_pending": {
+      "passed": true,
+      "worlds": 3,
+      "ticks": 3,
+      "independent_repeat_exact": true,
+      "held_first_passed": true,
+      "full_ForecastLedger_preserved": true,
+      "certificate": {
+        "kind": "AT_ROOT_CONFIRMED_IN_MODEL",
+        "model_confirmation_qualified": true,
+        "event_time_s": 14.779999999999774,
+        "confirmation_time_s": 14.799999999999773,
+        "planner_ranking_eligible": false,
+        "actual_done_allowed": false
+      },
+      "cohorts": [
+        {
+          "label": "AllocationP4_pending_1",
+          "rows": 1,
+          "certificate": {
+            "kind": "AT_ROOT_CONFIRMED_IN_MODEL",
+            "model_confirmation_qualified": true,
+            "event_time_s": 14.779999999999774,
+            "confirmation_time_s": 14.799999999999773,
+            "planner_ranking_eligible": false,
+            "actual_done_allowed": false
+          },
+          "phase": "FINISH_CONFIRM",
+          "actual_DONE_allowed": false
+        },
+        {
+          "label": "AllocationP4_pending_2",
+          "rows": 1,
+          "certificate": {
+            "kind": "AT_ROOT_CONFIRMED_IN_MODEL",
+            "model_confirmation_qualified": true,
+            "event_time_s": 14.779999999999774,
+            "confirmation_time_s": 14.799999999999773,
+            "planner_ranking_eligible": false,
+            "actual_done_allowed": false
+          },
+          "phase": "FINISH_CONFIRM",
+          "actual_DONE_allowed": false
+        }
+      ],
+      "actual_DONE_allowed": false,
+      "historical_recipe_authority_claimed": false
+    },
+    "first_raw_and_boundaries": true,
+    "actual": 0
+  },
+  "allocator_cost": {
+    "calls": 104,
+    "CPU_s": 0.8159612830000498,
+    "wall_s": 0.8122464962070808
+  },
+  "status": "WHOLE_COMPARISON_COMPLETE",
+  "error": null,
+  "details": {
+    "Projected4Reference": {
+      "status": "UNSAFE",
+      "error": "path_error_over3m",
+      "actions": 51,
+      "raw_ticks": 204,
+      "elapsed_s": 4.08,
+      "own_model_finish": false,
+      "remaining_finish_bracket_s": null,
+      "official_event_time_s": null,
+      "confirmation_time_s": null,
+      "whole_arm_runs": 1,
+      "whole_arm_repeated": false,
+      "qualification_prefix13_exact": true,
+      "common_boundary_crossings": {
+        "60": {
+          "bracket_s": [
+            1.2,
+            1.22
+          ],
+          "safe_through_crossing": true,
+          "speed_m_s": 63.09502825246292,
+          "path_error_m": 0.1971828689238079,
+          "max_force_ratio": 0.7977545361467446,
+          "common_original": {
+            "reference_m_s": 90.47886168398473,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 15,
+              "max_required_deceleration_over_B": 0.03631871584433883,
+              "minimum_distance_margin_m": 171.4660071754703,
+              "exact_physical_feasibility": false
+            }
+          },
+          "own": {
+            "reference_m_s": 68.31710914434268,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 26,
+              "max_required_deceleration_over_B": 0.03631871584433883,
+              "minimum_distance_margin_m": 171.4660071754703,
+              "exact_physical_feasibility": false
+            }
+          }
+        },
+        "120": {
+          "bracket_s": [
+            2.0,
+            2.02
+          ],
+          "safe_through_crossing": true,
+          "speed_m_s": 89.08246142272138,
+          "path_error_m": 0.06668003734214907,
+          "max_force_ratio": 0.6866176200557002,
+          "common_original": {
+            "reference_m_s": 132.1751515226883,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 73,
+              "max_required_deceleration_over_B": 0.23555066377371933,
+              "minimum_distance_margin_m": 88.41879014016456,
+              "exact_physical_feasibility": false
+            }
+          },
+          "own": {
+            "reference_m_s": 92.97663693058486,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 125,
+              "max_required_deceleration_over_B": 0.23555066377371933,
+              "minimum_distance_margin_m": 88.41879014016455,
+              "exact_physical_feasibility": false
+            }
+          }
+        },
+        "180": {
+          "bracket_s": [
+            2.62,
+            2.64
+          ],
+          "safe_through_crossing": true,
+          "speed_m_s": 100.00000635135964,
+          "path_error_m": 0.05548210922231826,
+          "max_force_ratio": 0.9374746772161275,
+          "common_original": {
+            "reference_m_s": 150.05469110540707,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 101,
+              "max_required_deceleration_over_B": 0.6927996593222524,
+              "minimum_distance_margin_m": 17.10088197780061,
+              "exact_physical_feasibility": false
+            }
+          },
+          "own": {
+            "reference_m_s": 108.72828730058188,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 166,
+              "max_required_deceleration_over_B": 0.6927996593222524,
+              "minimum_distance_margin_m": 17.100881977800583,
+              "exact_physical_feasibility": false
+            }
+          }
+        },
+        "240": {
+          "bracket_s": [
+            3.38,
+            3.4
+          ],
+          "safe_through_crossing": true,
+          "speed_m_s": 50.9561146777682,
+          "path_error_m": 1.1071465633687834,
+          "max_force_ratio": 0.9483800197774159,
+          "common_original": {
+            "reference_m_s": 56.46789858941534,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 1,
+              "max_required_deceleration_over_B": 0.015602995264487022,
+              "minimum_distance_margin_m": 50.24019937306311,
+              "exact_physical_feasibility": false
+            }
+          },
+          "own": {
+            "reference_m_s": 56.33028788679345,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 1,
+              "max_required_deceleration_over_B": 0.015602995264487022,
+              "minimum_distance_margin_m": 50.24019937306311,
+              "exact_physical_feasibility": false
+            }
+          }
+        }
+      },
+      "first_raw_physical_failure": {
+        "raw_tick": 202,
+        "elapsed_s": 4.04,
+        "reasons": [
+          "path_error_over3m"
+        ],
+        "progress_from_root_m": 278.29277335499
+      },
+      "first_action_safety_failure": {
+        "action": 51,
+        "reasons": [
+          "path_error_over3m"
+        ]
+      },
+      "endpoint_progress_delta_m": 280.66113953183503,
+      "endpoint_speed_m_s": 62.99802560786871,
+      "endpoint_common_original": {
+        "reference_m_s": 84.76412100669332,
+        "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+        "brake_debt_proxy": {
+          "lower_nodes": 12,
+          "max_required_deceleration_over_B": 0.7747497722103597,
+          "minimum_distance_margin_m": 2.419552850793954,
+          "exact_physical_feasibility": false
+        }
+      },
+      "endpoint_own": {
+        "reference_m_s": 66.40727649032988,
+        "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+        "brake_debt_proxy": {
+          "lower_nodes": 21,
+          "max_required_deceleration_over_B": 0.7747497722103597,
+          "minimum_distance_margin_m": 2.419552850793954,
+          "exact_physical_feasibility": false
+        }
+      },
+      "endpoint_phase": "FIRST_LAP",
+      "endpoint_ledger_done": false,
+      "max_path_error_m": 4.003375823188803,
+      "max_force_ratio": 3.958907211604097,
+      "clipped_wheel_samples": 82,
+      "wheel_samples": 816,
+      "brake_actions": 12,
+      "first_command": [
+        -0.013707535341382027,
+        0.7267574667930603,
+        0.0
+      ],
+      "first_nominal": [
+        -0.013707535341382027,
+        0.7267574667930603,
+        0.0
+      ],
+      "forced_first_pulse": false,
+      "actual_finish_witness": false
+    },
+    "AllocationP4": {
+      "status": "UNSAFE",
+      "error": "path_error_over3m",
+      "actions": 74,
+      "raw_ticks": 296,
+      "elapsed_s": 5.92,
+      "own_model_finish": false,
+      "remaining_finish_bracket_s": null,
+      "official_event_time_s": null,
+      "confirmation_time_s": null,
+      "whole_arm_runs": 1,
+      "whole_arm_repeated": false,
+      "qualification_prefix13_exact": true,
+      "common_boundary_crossings": {
+        "60": {
+          "bracket_s": [
+            1.2,
+            1.22
+          ],
+          "safe_through_crossing": true,
+          "speed_m_s": 63.09502825246292,
+          "path_error_m": 0.1971828689238079,
+          "max_force_ratio": 0.7977545361467446,
+          "common_original": {
+            "reference_m_s": 90.47886168398473,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 15,
+              "max_required_deceleration_over_B": 0.03631871584433883,
+              "minimum_distance_margin_m": 171.4660071754703,
+              "exact_physical_feasibility": false
+            }
+          },
+          "own": {
+            "reference_m_s": 68.31710914434268,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 26,
+              "max_required_deceleration_over_B": 0.03631871584433883,
+              "minimum_distance_margin_m": 171.4660071754703,
+              "exact_physical_feasibility": false
+            }
+          }
+        },
+        "120": {
+          "bracket_s": [
+            2.0,
+            2.02
+          ],
+          "safe_through_crossing": true,
+          "speed_m_s": 89.08246142272138,
+          "path_error_m": 0.06668003734214907,
+          "max_force_ratio": 0.6866176200557002,
+          "common_original": {
+            "reference_m_s": 132.1751515226883,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 73,
+              "max_required_deceleration_over_B": 0.23555066377371933,
+              "minimum_distance_margin_m": 88.41879014016456,
+              "exact_physical_feasibility": false
+            }
+          },
+          "own": {
+            "reference_m_s": 92.97663693058486,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 125,
+              "max_required_deceleration_over_B": 0.23555066377371933,
+              "minimum_distance_margin_m": 88.41879014016455,
+              "exact_physical_feasibility": false
+            }
+          }
+        },
+        "180": {
+          "bracket_s": [
+            2.62,
+            2.64
+          ],
+          "safe_through_crossing": true,
+          "speed_m_s": 100.00000635135964,
+          "path_error_m": 0.05548210922231826,
+          "max_force_ratio": 0.9374746772161275,
+          "common_original": {
+            "reference_m_s": 150.05469110540707,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 101,
+              "max_required_deceleration_over_B": 0.6927996593222524,
+              "minimum_distance_margin_m": 17.10088197780061,
+              "exact_physical_feasibility": false
+            }
+          },
+          "own": {
+            "reference_m_s": 108.72828730058188,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 166,
+              "max_required_deceleration_over_B": 0.6927996593222524,
+              "minimum_distance_margin_m": 17.100881977800583,
+              "exact_physical_feasibility": false
+            }
+          }
+        },
+        "240": {
+          "bracket_s": [
+            3.38,
+            3.4
+          ],
+          "safe_through_crossing": true,
+          "speed_m_s": 50.9561146777682,
+          "path_error_m": 1.1071465633687834,
+          "max_force_ratio": 0.9483800197774159,
+          "common_original": {
+            "reference_m_s": 56.46789858941534,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 1,
+              "max_required_deceleration_over_B": 0.015602995264487022,
+              "minimum_distance_margin_m": 50.24019937306311,
+              "exact_physical_feasibility": false
+            }
+          },
+          "own": {
+            "reference_m_s": 56.33028788679345,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 1,
+              "max_required_deceleration_over_B": 0.015602995264487022,
+              "minimum_distance_margin_m": 50.24019937306311,
+              "exact_physical_feasibility": false
+            }
+          }
+        },
+        "300": {
+          "bracket_s": [
+            4.46,
+            4.48
+          ],
+          "safe_through_crossing": true,
+          "speed_m_s": 46.43683919437842,
+          "path_error_m": 0.43056662672060747,
+          "max_force_ratio": 0.8441185182196931,
+          "common_original": {
+            "reference_m_s": 62.12847733385307,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 0,
+              "max_required_deceleration_over_B": null,
+              "minimum_distance_margin_m": null,
+              "exact_physical_feasibility": false
+            }
+          },
+          "own": {
+            "reference_m_s": 55.34807749776641,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 0,
+              "max_required_deceleration_over_B": null,
+              "minimum_distance_margin_m": null,
+              "exact_physical_feasibility": false
+            }
+          }
+        },
+        "360": {
+          "bracket_s": [
+            5.48,
+            5.5
+          ],
+          "safe_through_crossing": true,
+          "speed_m_s": 65.33855089535342,
+          "path_error_m": 0.5635501954728903,
+          "max_force_ratio": 1.8580259847766845,
+          "common_original": {
+            "reference_m_s": 74.6175593819065,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 9,
+              "max_required_deceleration_over_B": 0.021785153672419854,
+              "minimum_distance_margin_m": 103.34948949119584,
+              "exact_physical_feasibility": false
+            }
+          },
+          "own": {
+            "reference_m_s": 71.27759179104952,
+            "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+            "brake_debt_proxy": {
+              "lower_nodes": 14,
+              "max_required_deceleration_over_B": 0.021785153672419854,
+              "minimum_distance_margin_m": 103.34948949119584,
+              "exact_physical_feasibility": false
+            }
+          }
+        }
+      },
+      "first_raw_physical_failure": {
+        "raw_tick": 294,
+        "elapsed_s": 5.88,
+        "reasons": [
+          "path_error_over3m"
+        ],
+        "progress_from_root_m": 385.03200392399776
+      },
+      "first_action_safety_failure": {
+        "action": 74,
+        "reasons": [
+          "path_error_over3m"
+        ]
+      },
+      "endpoint_progress_delta_m": 387.5301747100177,
+      "endpoint_speed_m_s": 64.65465095813892,
+      "endpoint_common_original": {
+        "reference_m_s": 97.80652055674257,
+        "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+        "brake_debt_proxy": {
+          "lower_nodes": 8,
+          "max_required_deceleration_over_B": 0.022089072230982748,
+          "minimum_distance_margin_m": 76.7727874297863,
+          "exact_physical_feasibility": false
+        }
+      },
+      "endpoint_own": {
+        "reference_m_s": 83.21486137374163,
+        "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+        "brake_debt_proxy": {
+          "lower_nodes": 13,
+          "max_required_deceleration_over_B": 0.022089072230982748,
+          "minimum_distance_margin_m": 76.7727874297863,
+          "exact_physical_feasibility": false
+        }
+      },
+      "endpoint_phase": "FIRST_LAP",
+      "endpoint_ledger_done": false,
+      "max_path_error_m": 3.740236334422771,
+      "max_force_ratio": 2.8825926241295488,
+      "clipped_wheel_samples": 130,
+      "wheel_samples": 1184,
+      "brake_actions": 16,
+      "first_command": [
+        -0.013707535341382027,
+        0.7267574667930603,
+        0.0
+      ],
+      "first_nominal": [
+        -0.013707535341382027,
+        0.7267574667930603,
+        0.0
+      ],
+      "forced_first_pulse": false,
+      "actual_finish_witness": false
+    }
+  },
+  "both_safe_own_model_finishes": false,
+  "remaining_finish_gain_bracket_s": null,
+  "full_window_model_gain_criterion_passed": false,
+  "common_boundaries": {
+    "60": {
+      "OldP4": {
+        "bracket_s": [
+          1.2,
+          1.22
+        ],
+        "safe_through_crossing": true,
+        "speed_m_s": 63.09502825246292,
+        "path_error_m": 0.1971828689238079,
+        "max_force_ratio": 0.7977545361467446,
+        "common_original": {
+          "reference_m_s": 90.47886168398473,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 15,
+            "max_required_deceleration_over_B": 0.03631871584433883,
+            "minimum_distance_margin_m": 171.4660071754703,
+            "exact_physical_feasibility": false
+          }
+        },
+        "own": {
+          "reference_m_s": 68.31710914434268,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 26,
+            "max_required_deceleration_over_B": 0.03631871584433883,
+            "minimum_distance_margin_m": 171.4660071754703,
+            "exact_physical_feasibility": false
+          }
+        }
+      },
+      "AllocatedP4": {
+        "bracket_s": [
+          1.2,
+          1.22
+        ],
+        "safe_through_crossing": true,
+        "speed_m_s": 63.09502825246292,
+        "path_error_m": 0.1971828689238079,
+        "max_force_ratio": 0.7977545361467446,
+        "common_original": {
+          "reference_m_s": 90.47886168398473,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 15,
+            "max_required_deceleration_over_B": 0.03631871584433883,
+            "minimum_distance_margin_m": 171.4660071754703,
+            "exact_physical_feasibility": false
+          }
+        },
+        "own": {
+          "reference_m_s": 68.31710914434268,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 26,
+            "max_required_deceleration_over_B": 0.03631871584433883,
+            "minimum_distance_margin_m": 171.4660071754703,
+            "exact_physical_feasibility": false
+          }
+        }
+      },
+      "OldP4_minus_allocation_s": [
+        -0.020000000000000018,
+        0.020000000000000018
+      ],
+      "both_safe": true
+    },
+    "120": {
+      "OldP4": {
+        "bracket_s": [
+          2.0,
+          2.02
+        ],
+        "safe_through_crossing": true,
+        "speed_m_s": 89.08246142272138,
+        "path_error_m": 0.06668003734214907,
+        "max_force_ratio": 0.6866176200557002,
+        "common_original": {
+          "reference_m_s": 132.1751515226883,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 73,
+            "max_required_deceleration_over_B": 0.23555066377371933,
+            "minimum_distance_margin_m": 88.41879014016456,
+            "exact_physical_feasibility": false
+          }
+        },
+        "own": {
+          "reference_m_s": 92.97663693058486,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 125,
+            "max_required_deceleration_over_B": 0.23555066377371933,
+            "minimum_distance_margin_m": 88.41879014016455,
+            "exact_physical_feasibility": false
+          }
+        }
+      },
+      "AllocatedP4": {
+        "bracket_s": [
+          2.0,
+          2.02
+        ],
+        "safe_through_crossing": true,
+        "speed_m_s": 89.08246142272138,
+        "path_error_m": 0.06668003734214907,
+        "max_force_ratio": 0.6866176200557002,
+        "common_original": {
+          "reference_m_s": 132.1751515226883,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 73,
+            "max_required_deceleration_over_B": 0.23555066377371933,
+            "minimum_distance_margin_m": 88.41879014016456,
+            "exact_physical_feasibility": false
+          }
+        },
+        "own": {
+          "reference_m_s": 92.97663693058486,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 125,
+            "max_required_deceleration_over_B": 0.23555066377371933,
+            "minimum_distance_margin_m": 88.41879014016455,
+            "exact_physical_feasibility": false
+          }
+        }
+      },
+      "OldP4_minus_allocation_s": [
+        -0.020000000000000018,
+        0.020000000000000018
+      ],
+      "both_safe": true
+    },
+    "180": {
+      "OldP4": {
+        "bracket_s": [
+          2.62,
+          2.64
+        ],
+        "safe_through_crossing": true,
+        "speed_m_s": 100.00000635135964,
+        "path_error_m": 0.05548210922231826,
+        "max_force_ratio": 0.9374746772161275,
+        "common_original": {
+          "reference_m_s": 150.05469110540707,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 101,
+            "max_required_deceleration_over_B": 0.6927996593222524,
+            "minimum_distance_margin_m": 17.10088197780061,
+            "exact_physical_feasibility": false
+          }
+        },
+        "own": {
+          "reference_m_s": 108.72828730058188,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 166,
+            "max_required_deceleration_over_B": 0.6927996593222524,
+            "minimum_distance_margin_m": 17.100881977800583,
+            "exact_physical_feasibility": false
+          }
+        }
+      },
+      "AllocatedP4": {
+        "bracket_s": [
+          2.62,
+          2.64
+        ],
+        "safe_through_crossing": true,
+        "speed_m_s": 100.00000635135964,
+        "path_error_m": 0.05548210922231826,
+        "max_force_ratio": 0.9374746772161275,
+        "common_original": {
+          "reference_m_s": 150.05469110540707,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 101,
+            "max_required_deceleration_over_B": 0.6927996593222524,
+            "minimum_distance_margin_m": 17.10088197780061,
+            "exact_physical_feasibility": false
+          }
+        },
+        "own": {
+          "reference_m_s": 108.72828730058188,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 166,
+            "max_required_deceleration_over_B": 0.6927996593222524,
+            "minimum_distance_margin_m": 17.100881977800583,
+            "exact_physical_feasibility": false
+          }
+        }
+      },
+      "OldP4_minus_allocation_s": [
+        -0.020000000000000018,
+        0.020000000000000018
+      ],
+      "both_safe": true
+    },
+    "240": {
+      "OldP4": {
+        "bracket_s": [
+          3.38,
+          3.4
+        ],
+        "safe_through_crossing": true,
+        "speed_m_s": 50.9561146777682,
+        "path_error_m": 1.1071465633687834,
+        "max_force_ratio": 0.9483800197774159,
+        "common_original": {
+          "reference_m_s": 56.46789858941534,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 1,
+            "max_required_deceleration_over_B": 0.015602995264487022,
+            "minimum_distance_margin_m": 50.24019937306311,
+            "exact_physical_feasibility": false
+          }
+        },
+        "own": {
+          "reference_m_s": 56.33028788679345,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 1,
+            "max_required_deceleration_over_B": 0.015602995264487022,
+            "minimum_distance_margin_m": 50.24019937306311,
+            "exact_physical_feasibility": false
+          }
+        }
+      },
+      "AllocatedP4": {
+        "bracket_s": [
+          3.38,
+          3.4
+        ],
+        "safe_through_crossing": true,
+        "speed_m_s": 50.9561146777682,
+        "path_error_m": 1.1071465633687834,
+        "max_force_ratio": 0.9483800197774159,
+        "common_original": {
+          "reference_m_s": 56.46789858941534,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 1,
+            "max_required_deceleration_over_B": 0.015602995264487022,
+            "minimum_distance_margin_m": 50.24019937306311,
+            "exact_physical_feasibility": false
+          }
+        },
+        "own": {
+          "reference_m_s": 56.33028788679345,
+          "terminal_reference_domain": "ACTIVE_OR_STOPPED_WITH_REMAINING_REFERENCE",
+          "brake_debt_proxy": {
+            "lower_nodes": 1,
+            "max_required_deceleration_over_B": 0.015602995264487022,
+            "minimum_distance_margin_m": 50.24019937306311,
+            "exact_physical_feasibility": false
+          }
+        }
+      },
+      "OldP4_minus_allocation_s": [
+        -0.020000000000000018,
+        0.020000000000000018
+      ],
+      "both_safe": true
+    }
+  },
+  "source_root_qualification_passed": true,
+  "observer_raw_ticks_reconciled": true,
+  "observer_raw_ticks": 1964,
+  "first_pulse_forced": false,
+  "reference_only_treatment": false,
+  "actual_promotion": false,
+  "actual_finish_witness": false,
+  "pixel_or_generalization_promotion": false,
+  "whole_arm_repetition_claimed": false,
+  "cost": {
+    "ticks": 1964,
+    "reserved_ticks": 1964,
+    "worlds": 49,
+    "CPU_s": 55.443894852,
+    "wall_s": 55.03820884693414
+  },
+  "static": {
+    "stage": 477,
+    "passed": true,
+    "plan_sha256": "a5695c469d717faacbcf87104dab4d5d5e9540a2fb8a1469aa9b53532daa5c01",
+    "checks": {
+      "plan_bound": true,
+      "sources_protected18_ledger": true,
+      "counts49_worlds_304allocator": true,
+      "nominal_once_AST": true,
+      "two_whole_laws_only": true,
+      "syntax": true,
+      "source_growth_and_file_quotas_registered": true
+    },
+    "new_physics": 0,
+    "new_world": 0,
+    "new_actual": 0,
+    "new_reset": 0
+  },
+  "preflight_counts": {
+    "source": {
+      "ticks": 1137,
+      "worlds": 35
+    },
+    "root": {
+      "ticks": 1461,
+      "worlds": 44
+    }
+  },
+  "storage_forecast": {
+    "model_payload_bytes": 536491719,
+    "raw_payload_forecast_bytes": 536491719,
+    "allocator_extra_bytes": 16777216,
+    "tmp_required_bytes": 1123694279,
+    "workspace_required_bytes": 603979776,
+    "runtime_free_stop_bytes": 536870912,
+    "semantic_actual_growth_bytes": 856,
+    "semantic_growth_hard_allowance_bytes": 8808,
+    "header_hard_budget_each": 826078,
+    "perfile_caps": {
+      "allocator_input": 4096,
+      "allocator_proof": 8192,
+      "own_reference": 65536,
+      "runtime_link": 262144,
+      "constructor_firststep_inputs": 2097152,
+      "other": 33554432
+    },
+    "empirical_margin": 1.25,
+    "temp_bytes": 33554432,
+    "reserve_bytes_each_volume": 536870912,
+    "new_raw_single_copy": true,
+    "archive_bytes": 0,
+    "workspace_new_raw_archive_copy": false,
+    "estimates_not_guaranteed": true
+  },
+  "storage_preflight": {
+    "/tmp": {
+      "free_bytes": 2325364736,
+      "required_bytes": 1123694279,
+      "shortage_bytes": 0
+    },
+    "/workspace": {
+      "free_bytes": 858480640,
+      "required_bytes": 603979776,
+      "shortage_bytes": 0
+    }
+  },
+  "protected18_and_ledger476_unchanged": true,
+  "new_actual_actions": 0,
+  "new_resets": 0,
+  "new_seed_learning_HOLDOUT_SEALED_reserve_paid": 0,
+  "diagnostic_reference_clock_s": 12.26,
+  "goal11_99_s_unchanged": true,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "plan_sha256": "a5695c469d717faacbcf87104dab4d5d5e9540a2fb8a1469aa9b53532daa5c01",
+  "new_archive_created": false,
+  "workspace_raw_copies": 0,
+  "reproduction_limit": "Raw remains only on this executor /tmp. If lost exact raw cannot be reverified; hashes cannot reconstruct raw.",
+  "saved_audit_CPU_s": 0.7324359760000001,
+  "saved_audit_wall_s": 0.7010470390086994,
+  "combined_closure_cost": {
+    "conservative_elapsed_wall_through_readback_s": 220.09918880462646,
+    "whole_CPU_hard_s": 600,
+    "whole_wall_hard_s": 900,
+    "all_caps_passed": true,
+    "includes_postworker_gap_in_wall": true,
+    "preparation_and_prose_not_fully_CPU_measured": true,
+    "closure_at_utc": "2026-10-17T14:33:14.085033+00:00",
+    "measured_worker_plus_function_CPU_subtotal_s": 57.850446385,
+    "postprocessing_CPU_conservative_charge_s": 30.0,
+    "charged_whole_CPU_s": 85.443894852,
+    "postprocessing_charge_scope": "Includes separately run analysis/spatial/readback, interpreter startup, metadata/hash/publication work; conservative charge, not an exact measured CPU total. Recorded reader function CPU subtotal is separate."
+  },
+  "baseline_all51_rows_exact473": true,
+  "candidate_closed_without_promotion": true,
+  "native_resets_actions_zero": true
+}
