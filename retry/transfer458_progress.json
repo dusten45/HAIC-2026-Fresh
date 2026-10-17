@@ -1,62 +1,73 @@
 {
   "stage": 458,
-  "status": "RUNNING_NOT_FINAL",
-  "recorded_at_utc": "2026-10-17T09:50:35.212257+00:00",
+  "status": "NATIVE_FULL_PAIR_COMPLETED",
+  "recorded_at_utc": "2026-10-17T09:59:12.113185+00:00",
   "checkpoint": {
     "stage": 458,
-    "phase": "NATIVE_TRANSITION_VERIFIED",
+    "phase": "CLOSED",
     "pid": 177068,
-    "at_utc": "2026-10-17T09:50:35.126766+00:00",
-    "actual_actions": 248,
+    "at_utc": "2026-10-17T09:55:44.453275+00:00",
+    "actual_actions": 364,
     "resets": 2,
     "arm_actions": {
       "C0": 188,
-      "P": 60
+      "P": 176
     },
-    "model_ticks": 8555,
-    "model_reserved_ticks": 8555,
-    "model_worlds": 193,
-    "model_CPU_s": 186.78010093199998,
-    "model_wall_s": 189.57638551015407,
-    "actual_CPU_s": 108.03598863300002,
-    "actual_wall_s": 109.16205145185813,
-    "arm": "P",
-    "native_step": 60,
-    "prefix_verified": 60,
-    "suffix_verified": 0,
-    "planner_used": 0
+    "model_ticks": 24467,
+    "model_reserved_ticks": 24467,
+    "model_worlds": 353,
+    "model_CPU_s": 441.62331386499983,
+    "model_wall_s": 445.9525840263814,
+    "actual_CPU_s": 160.37486134900013,
+    "actual_wall_s": 162.08660862967372,
+    "status": "NATIVE_FULL_PAIR_COMPLETED",
+    "error": null
   },
-  "completed_native_arms": [
+  "actual": [
     {
       "arm": "C0",
-      "status": "COMPLETED_SAFE_OFFICIAL",
       "completed": true,
       "lap_ms": 14980,
       "native_actions": 188,
       "prefix_exact_rows": 112,
       "verified_suffix_transitions": 76,
-      "planner_decisions": 0,
-      "pending_queries": 0
+      "planner_decisions": 0
+    },
+    {
+      "arm": "P",
+      "completed": true,
+      "lap_ms": 14000,
+      "native_actions": 176,
+      "prefix_exact_rows": 112,
+      "verified_suffix_transitions": 64,
+      "planner_decisions": 8
     }
   ],
-  "meter_snapshot": {
-    "actual_actions": 248,
-    "resets": 2,
-    "actual_CPU_s": 108.03598863300002,
-    "actual_wall_s": 109.16247937793378,
-    "model_ticks": 8555,
-    "model_worlds": 193,
-    "model_CPU_s": 186.78010093199998
+  "official_lap_gain_s": 0.98,
+  "target_s": 11.99,
+  "target_achieved_by_P": false,
+  "cost": {
+    "model_ticks": 24467,
+    "model_reserved_ticks": 24467,
+    "model_worlds": 353,
+    "model_CPU_s": 441.62331386499983,
+    "model_wall_s": 445.9525840263814,
+    "actual_actions": 364,
+    "actual_resets": 2,
+    "actual_raw_action_ticks": 1450,
+    "actual_raw_ticks_including_reset": 1552,
+    "actual_exclusive_CPU_s": 160.37486134900013,
+    "actual_exclusive_wall_s": 162.08660862967372,
+    "wholeworker_CPU_s": 602.06344596,
+    "wholeworker_wall_s": 608.1026453380473,
+    "whole_project_overhead_fully_measured": false
   },
-  "source_preflight": {
-    "passed": true,
-    "ticks": 1353,
-    "worlds": 41,
-    "actual_actions": 0,
-    "resets": 0
-  },
-  "research_before458": 27059,
+  "saved_audit_passed": true,
+  "ledger_version": 474,
+  "research_remaining": 26695,
+  "actual_cumulative_wrapper_actions": 1321369,
   "reserve": 84000,
   "reserve_used": 0,
-  "no_pair_gain_before_both_official_finishes": true
+  "worker_exit_code": 0,
+  "further_experiments_started": 0
 }
