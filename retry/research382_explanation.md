@@ -201,3 +201,8 @@ P fullgas1·3·11·14,나머지nominal이며35receipt/99선택첫모델전이를
 ## 434: 이벤트/확인/기하 분리와 prospective 불변 H13
 
 [434](boundary434_result.md)은 모델/실제 적분0의 정적 단계다. source tracker의 event와뒤늦은confirmation, signed remaining path를 분리하고 관측controller phase를 덮어쓰지 않았다. 모든 계속할정상H13도 별도initial-boundary로 봉인하며, 음수/무crossing은기록만보존하고continuation을거부한다. 같은child의등록event를후속공식확인한경우에만새완료타입을만들고419strict선택은유지한다. 최종102개통과, 기존41개선택/bracket/memory/ledger 유지. 이전97+4통과소스/기록도보존했다. 정적CPU합17.124초, 새모델/실제/학습/SEALED/reserve0·연구잔여28444·예비84000. 433의빠진H13tracker는소급인증하지않는다. observer의preclip/posttick자료연결·실제모델fidelity/비용과unsafe/censored runtime후보경로는미검증이며Current/parentpending음수경로는기존거부를유지한다. 다음모델은이선행범위의별도검토·승인후계획만제안하며434에서는실행하지않았다.
+
+
+## 435: observer 모델 연결 검증과 parent pending 범위 중단
+
+[435](pilot435_result.md): 정적108개, observer423/427 재현·12복원·pending/heldparent1134ticks32worlds 통과. 저장된unobserved433rows/state/memory와정확히같고post/action15반복쌍도같았다.458world stream/40763rawpost를검증하고192initial/192final을독립봉인했다. 새q42nominal의H13pending은같은child/event확인으로완료증명을만들었으며433을소급인증하지않는다. C0모델71완료/P54뒤q55Current.pending음수remaining=-0.180311m를기존validate가거부해중단, action55없음·전체gainNone·64후guardian미도달. 모델40763ticks458worlds/CPU586.330초, 실제/학습/SEALED/reserve0·연구28444·예비84000. 적분전합성fixture중복vertex와H13저장시점을수정·보존·재검증했고적분후에는수정/재시도하지않았다. 다음은parent현재pendingrouting의별도계약검토이며434의historical정적한계와433원실패는그대로다.
