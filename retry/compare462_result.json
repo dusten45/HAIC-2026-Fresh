@@ -1,0 +1,353 @@
+{
+  "stage": 462,
+  "status": "TWO_MODEL_PARENTS_COMPLETED_NO_ARM_REPEAT",
+  "error": null,
+  "last_stage": "two_model_parents",
+  "closed_at_utc": "2026-10-17T10:55:49.463890+00:00",
+  "worker_pid": 179010,
+  "policies": [
+    {
+      "arm": "Original",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 51,
+      "fixed_first_queries": 1,
+      "guardian_decisions": 50,
+      "finish_ticks": {
+        "lo": 199,
+        "hi": 200
+      },
+      "official_model_finish": true,
+      "signature": "7dfa3056660576ed1b6a5234f085d27ccaf2d4a5febfb99f5ddc97a2f4f23af4",
+      "model_ticks": 4803,
+      "model_worlds": 103,
+      "original_factual_same_control_rows": 4,
+      "original_first_command_divergence": 5,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "whole_arm_repeated": false
+    },
+    {
+      "arm": "SecantOnce",
+      "status": "FINISHED",
+      "error": null,
+      "parent_actions": 48,
+      "fixed_first_queries": 1,
+      "guardian_decisions": 47,
+      "finish_ticks": {
+        "lo": 188,
+        "hi": 189
+      },
+      "official_model_finish": true,
+      "signature": "467c81e4100914226a31b485dadd6f314b5117e56eee5dec337d5a1a455b410d",
+      "model_ticks": 4610,
+      "model_worlds": 99,
+      "original_factual_same_control_rows": 0,
+      "original_first_command_divergence": null,
+      "actual_root_unchanged": true,
+      "actual_finish_witness": false,
+      "whole_arm_repeated": false
+    }
+  ],
+  "details": {
+    "Original": {
+      "status": "FINISHED",
+      "error": null,
+      "observed_parent_actions": 51,
+      "verified_decisions": 51,
+      "recipe_counts": {
+        "nominal": 51
+      },
+      "fixed_first_recipe": "nominal",
+      "guardian_recipe_counts": {
+        "nominal": 50
+      },
+      "pending_queries": 1,
+      "own_pending_confirmations": 1,
+      "guardian_finish_certificates": 13,
+      "own_model_finish": true,
+      "finish_ticks": {
+        "lo": 199,
+        "hi": 200
+      },
+      "remaining_model_finish_s": [
+        3.98,
+        4.0
+      ],
+      "observed_parent": {
+        "observed_raw_ticks": 201,
+        "max_path_error_m": 1.2505605571545029,
+        "clipped_wheel_samples": 26,
+        "clipped_raw_ticks": 24,
+        "grass_wheel_samples": 0,
+        "max_force_ratio": 1.5573926144738695,
+        "mean_abs_tire_lateral_slip_m_s": 1.1305242168953784
+      },
+      "response": {
+        "first80ms": {
+          "speed_change_m_s": -7.74361534424412,
+          "endpoint_speed_minus_reference_m_s": -30.110437278275114,
+          "observed_raw_ticks": 4,
+          "max_path_error_m": 0.561298402838702,
+          "clipped_wheel_samples": 2,
+          "clipped_raw_ticks": 2,
+          "grass_wheel_samples": 0,
+          "max_force_ratio": 1.0427647274005327,
+          "mean_abs_tire_lateral_slip_m_s": 1.6157322247066332
+        },
+        "first13actions": {
+          "speed_change_m_s": -13.605621454103158,
+          "endpoint_speed_minus_reference_m_s": -17.018375647051386,
+          "observed_raw_ticks": 52,
+          "max_path_error_m": 0.8051967799097648,
+          "clipped_wheel_samples": 2,
+          "clipped_raw_ticks": 2,
+          "grass_wheel_samples": 0,
+          "max_force_ratio": 1.0427647274005327,
+          "mean_abs_tire_lateral_slip_m_s": 1.1981666115958591
+        }
+      },
+      "whole_arm_repeated": false,
+      "actual_finish_witness": false
+    },
+    "SecantOnce": {
+      "status": "FINISHED",
+      "error": null,
+      "observed_parent_actions": 48,
+      "verified_decisions": 48,
+      "recipe_counts": {
+        "fullgas": 1,
+        "nominal": 46,
+        "neutralbrake": 1
+      },
+      "fixed_first_recipe": "fullgas",
+      "guardian_recipe_counts": {
+        "nominal": 46,
+        "neutralbrake": 1
+      },
+      "pending_queries": 0,
+      "own_pending_confirmations": 0,
+      "guardian_finish_certificates": 13,
+      "own_model_finish": true,
+      "finish_ticks": {
+        "lo": 188,
+        "hi": 189
+      },
+      "remaining_model_finish_s": [
+        3.76,
+        3.78
+      ],
+      "observed_parent": {
+        "observed_raw_ticks": 190,
+        "max_path_error_m": 1.3369314885498342,
+        "clipped_wheel_samples": 18,
+        "clipped_raw_ticks": 17,
+        "grass_wheel_samples": 0,
+        "max_force_ratio": 1.2454734908837453,
+        "mean_abs_tire_lateral_slip_m_s": 1.13208515797797
+      },
+      "response": {
+        "first80ms": {
+          "speed_change_m_s": 2.4766223251886856,
+          "endpoint_speed_minus_reference_m_s": -20.305181052912644,
+          "observed_raw_ticks": 4,
+          "max_path_error_m": 0.50409113563658,
+          "clipped_wheel_samples": 1,
+          "clipped_raw_ticks": 1,
+          "grass_wheel_samples": 0,
+          "max_force_ratio": 1.0149306680114056,
+          "mean_abs_tire_lateral_slip_m_s": 1.7911607843944566
+        },
+        "first13actions": {
+          "speed_change_m_s": -10.690664486403321,
+          "endpoint_speed_minus_reference_m_s": 2.3732636622140717,
+          "observed_raw_ticks": 52,
+          "max_path_error_m": 1.178061762256134,
+          "clipped_wheel_samples": 7,
+          "clipped_raw_ticks": 6,
+          "grass_wheel_samples": 0,
+          "max_force_ratio": 1.1583607328601038,
+          "mean_abs_tire_lateral_slip_m_s": 1.4617250677938727
+        }
+      },
+      "whole_arm_repeated": false,
+      "actual_finish_witness": false
+    }
+  },
+  "model_tail_Original_minus_SecantOnce_bracket_s": [
+    0.2,
+    0.24
+  ],
+  "whole_arm_repeated": false,
+  "independent_query_copies": 2,
+  "verification": {
+    "observer_posts": 10766,
+    "observer_streams": 243,
+    "meter_consistent": true,
+    "source_protected_preserved": true,
+    "static": {
+      "stage": 462,
+      "passed": true,
+      "error": null,
+      "tests": 264,
+      "failures": 0,
+      "errors": 0,
+      "audit_completed": true,
+      "CPU_s": 23.860824508,
+      "wall_s": 23.91295631194953,
+      "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+      "plan_sha256": "5105a52f27fbe819746aa197a695feabd4a95e62b80765dc8da0723a785e3f0a"
+    },
+    "preflight": {
+      "passed": true,
+      "ticks": 1353,
+      "worlds": 41,
+      "actual": 0
+    }
+  },
+  "cost": {
+    "model_ticks": 10766,
+    "reserved_ticks": 10766,
+    "worlds": 243,
+    "whole_modelworker_CPU_s": 212.750621343,
+    "whole_modelworker_wall_s": 213.8225232330151,
+    "ticks_by_tag": {
+      "qualification_replay_required_first13": 104,
+      "qualification_replay_required_continuation": 412,
+      "qualification_replay_repeat_first13": 104,
+      "qualification_replay_repeat_continuation": 412,
+      "qualification_restore_required": 48,
+      "qualification_restore_repeat": 48,
+      "qualification_parent_step": 4,
+      "qualification_pending_required": 1,
+      "qualification_pending_repeat": 1,
+      "qualification435_guardian_required": 1,
+      "qualification435_guardian_repeat": 1,
+      "qualification435_parent_own_step": 1,
+      "460_root_nominal": 104,
+      "460_root_held_first": 8,
+      "460_root_fullgas": 104,
+      "guardian_required": 4511,
+      "guardian_repeat": 4511,
+      "462_parent_Original": 201,
+      "462_parent_SecantOnce": 190
+    },
+    "worlds_by_tag": {
+      "qualification_parent": 1,
+      "qualification_replay_required": 2,
+      "qualification_replay_repeat": 2,
+      "qualification_restore_required": 12,
+      "qualification_restore_repeat": 12,
+      "qualification_pending_parent": 1,
+      "qualification_pending_required": 1,
+      "qualification_pending_repeat": 1,
+      "qualification435_parent": 1,
+      "qualification435_guardian_required": 1,
+      "qualification435_guardian_repeat": 1,
+      "460_root_held": 2,
+      "460_root_required": 2,
+      "460_root_repeat": 2,
+      "462_model_parent": 2,
+      "guardian_required": 100,
+      "guardian_repeat": 100
+    },
+    "whole_project_overhead_fully_measured": false
+  },
+  "new_actual_actions": 0,
+  "new_resets": 0,
+  "new_seed_learning_HOLDOUT_SEALED_reserve_paid": 0,
+  "actual_gate_opened": false,
+  "actual_finish_witness": false,
+  "research_remaining": 26695,
+  "actual_cumulative_wrapper_actions": 1321369,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "plan_sha256": "5105a52f27fbe819746aa197a695feabd4a95e62b80765dc8da0723a785e3f0a",
+  "observed_prefix_elapsed_s": 10.0,
+  "planned_cost": {
+    "parts": {
+      "first_fixed": {
+        "queries": 2,
+        "ticks": 208,
+        "worlds": 4
+      },
+      "guardian": {
+        "queries": 198,
+        "ticks": 41184,
+        "worlds": 792
+      },
+      "parents": {
+        "actions": 200,
+        "ticks": 800,
+        "worlds": 2
+      },
+      "qualification": {
+        "ticks": 1458,
+        "worlds": 41
+      }
+    },
+    "ticks": 43650,
+    "worlds": 839,
+    "empirical_raw_bytes_at_hard_with_margin_and_reserve": 4527961708.406581,
+    "storage_estimate_is_not_a_guarantee": true
+  },
+  "saved_model_crossing_from_root_s": {
+    "Original": {
+      "570": [
+        0.64,
+        0.66
+      ],
+      "630": [
+        1.54,
+        1.56
+      ],
+      "690": [
+        2.32,
+        2.34
+      ],
+      "750": [
+        3.28,
+        3.3
+      ]
+    },
+    "SecantOnce": {
+      "570": [
+        0.56,
+        0.58
+      ],
+      "630": [
+        1.3,
+        1.32
+      ],
+      "690": [
+        2.02,
+        2.04
+      ],
+      "750": [
+        3.04,
+        3.06
+      ]
+    }
+  },
+  "crossing_model_gain_bracket_s": {
+    "570": [
+      0.06000000000000005,
+      0.09999999999999998
+    ],
+    "630": [
+      0.21999999999999997,
+      0.26
+    ],
+    "690": [
+      0.2799999999999998,
+      0.31999999999999984
+    ],
+    "750": [
+      0.21999999999999975,
+      0.2599999999999998
+    ]
+  },
+  "saved_audit_CPU_s": 8.536037903,
+  "saved_audit_wall_s": 10.523398625897244
+}

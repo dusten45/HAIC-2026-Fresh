@@ -9,5 +9,32 @@
   "CPU_s": 23.860824508,
   "wall_s": 23.91295631194953,
   "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
-  "plan_sha256": "5105a52f27fbe819746aa197a695feabd4a95e62b80765dc8da0723a785e3f0a"
+  "plan_sha256": "5105a52f27fbe819746aa197a695feabd4a95e62b80765dc8da0723a785e3f0a",
+  "fresh_preflight": {
+    "passed": true,
+    "ticks": 1353,
+    "worlds": 41,
+    "actual": 0
+  },
+  "root": {
+    "passed": true,
+    "records": {
+      "nominal": {
+        "repeat_exact": true,
+        "held_first_passed": true,
+        "status": "ACTIVE",
+        "native_factual_qualified": true,
+        "native_scope": "Saved same-root nominal13 only; fullgas model consistency only"
+      },
+      "fullgas": {
+        "repeat_exact": true,
+        "held_first_passed": true,
+        "status": "ACTIVE",
+        "native_factual_qualified": false,
+        "native_scope": "Saved same-root nominal13 only; fullgas model consistency only"
+      }
+    },
+    "ticks": 216,
+    "worlds": 6
+  }
 }
