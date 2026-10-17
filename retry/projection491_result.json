@@ -1,0 +1,90 @@
+{
+  "stage": 491,
+  "status": "FINITE_SOURCE_ENDPOINT_REGRESSION_PASSED",
+  "synthetic": {
+    "passed": true,
+    "tests": [
+      "JSON_numpy_integer_float_bool_array_signedzero_nonfinite_gate",
+      "normsquare_endpoint_roundoff_reproduced",
+      "closed_seam_all_three_phases",
+      "ds_squared_dot_difference_kept_separate",
+      "nonseam_shared_vertex_outgoing",
+      "signedzero_numeric_identity_owner_bytes_unchanged",
+      "distinct_nonadjacent_minimizers_rejected",
+      "crossing_interiors_rejected",
+      "adjacent_distinct_feet_rejected",
+      "global_duplicate_vertex_ids_including_signedzero_rejected",
+      "true_interior_output_unchanged",
+      "overflow_underflow_nonfinite_failclosed",
+      "optin_act_code_identity_original_global_unchanged"
+    ],
+    "count": 13,
+    "profile_world_step_reset_seed": 0
+  },
+  "cases": [
+    {
+      "label": "current",
+      "stations": 321,
+      "samples": 3210,
+      "old_errors": 165,
+      "fixed_errors": 0,
+      "repaired_old_errors": 165,
+      "remaining_ambiguities": 0,
+      "old_accepted_fixed_rejected": 0,
+      "policy_outputs_changed_by_exact_endpoint_identity": 0,
+      "tie_metadata_only_changes": 6,
+      "cursor_mismatches_fixed": 981,
+      "maximum_cursor_arc_gap_m": 3.5000002393665,
+      "stale18_cursor_mismatches": 303,
+      "normsquare_dot_differences": 158,
+      "endpoint_quotient_below1": 57,
+      "endpoint_quotient_above1": 101,
+      "seam_phase_checks": 3,
+      "cursor_comparison_pose_count": 2568,
+      "stale18_pose_count": 321
+    },
+    {
+      "label": "N1",
+      "stations": 238,
+      "samples": 2380,
+      "old_errors": 153,
+      "fixed_errors": 0,
+      "repaired_old_errors": 153,
+      "remaining_ambiguities": 0,
+      "old_accepted_fixed_rejected": 0,
+      "policy_outputs_changed_by_exact_endpoint_identity": 0,
+      "tie_metadata_only_changes": 15,
+      "cursor_mismatches_fixed": 768,
+      "maximum_cursor_arc_gap_m": 3.5067756869686946,
+      "stale18_cursor_mismatches": 227,
+      "normsquare_dot_differences": 112,
+      "endpoint_quotient_below1": 56,
+      "endpoint_quotient_above1": 56,
+      "seam_phase_checks": 3,
+      "cursor_comparison_pose_count": 1904,
+      "stale18_pose_count": 238
+    }
+  ],
+  "counts": {
+    "original_calls": 5597,
+    "fixed_calls": 6162,
+    "cursor_calls": 5031,
+    "term_audits": 321
+  },
+  "worker_closing_resource": {
+    "CPU_s": 5.918695624,
+    "wall_s": 5.890265468973666,
+    "RSS_bytes": 34537472
+  },
+  "raw_bytes": 635848,
+  "raw_files": 11,
+  "new_world_reset_step_profile_P4_path_transform_seed": 0,
+  "original490_failures_and_sources_preserved": true,
+  "source_integration": "Opt-in projection491/CoherentExecutor491; original397/417 globals and callers preserved.",
+  "scope": "Binary64 endpoint identity and fixed finite saved-pose source regression; no fulltube continuity/dynamics/wholelap claim.",
+  "research_remaining": 26175,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "no_auto_followup": true
+}
