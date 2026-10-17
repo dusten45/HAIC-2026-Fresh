@@ -191,3 +191,8 @@ P fullgas1·3·11·14,나머지nominal이며35receipt/99선택첫모델전이를
 ## 431–432: 복합 사유 감사 통과와 다음 정적 runner 오류
 
 [431](audit431_result.md)은 별도 exact-token-set 감사와 wire/chooser 진입 검사를 추가해 정적74개를 통과했다. 15개 허용 조합/64개 순서, 저장된430질의38, 오류·변조 거부, 기존37개 선택 유지를 확인했다. 모델·실제 실행0이며5020e4c로 별도 커밋·push했다. 이후 [432](pilot432_result.md)의 별도 동결 계획에서 worst519038ticks/882worlds를 재확인했지만, static432가 Scope432가 아닌 Scope430을 찾는 클래스 참조 오류로 suite 구성에서 중단했다. 정적검사0·모델미시작·실제/학습/SEALED/reserve0, 연구잔액28444·예비84000을 유지했다. 첫 새 오류 규칙에 따라 원실패와 코드를 보존하고 재시도하지 않았다. 다음은 별도 정적 runner 참조 정정이며 모델 완료 비교·64후guardian전환은 새로 관측되지 않았다. 종료20Oct19:01:55KST와430 원실패·비용은 그대로다.
+
+
+## 433: runner 복구 통과 후 H13 종료 벡터 경계 중단
+
+[433](pilot433_result.md): 클래스 참조를 바로잡아 정적74개와1134ticks/32worlds 선행 재현·복원/pending 게이트를 통과했다. 같은 root의 C0는71행동 모델finish, P는41행동 뒤 질의42 nominal의 end13 remaining_path=-0.180309m와 tail1 official 확인 조합을 기존419가 거부해 invalid_terminal_vector에서 중단했다. 430의 복합 사유 문제는 이번38–40에서 처리됐지만 새 정의역 오류를 우회하지 않았다. 선택42/parent42없음, P검열·전체gainNone·64후guardian전환미도달. H13 전체finish-tracker snapshot이 별도 보존되지 않은 한계도 남는다. 모델39065ticks390worlds/CPU261.000초, 실제·학습·SEALED·reserve0, 연구잔여28444·예비84000. 432 원실패/비용과 기존계약을 보존하고 모델재시도하지 않았다. 다음은 완전한H13상태와공식이벤트/확인경계를 보존하는 별도 정적 계약 검토다.
