@@ -1,0 +1,75 @@
+{
+  "stage": 465,
+  "static": {
+    "stage": 465,
+    "passed": true,
+    "error": null,
+    "tests": 277,
+    "failures": 0,
+    "errors": 0,
+    "audit_completed": true,
+    "CPU_s": 23.679181589,
+    "wall_s": 23.60623926401604,
+    "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+    "plan_sha256": "cdde56972933fc6a698174a32f4c7dfb640766e13d5c91e0fafbb8fd6fb50d41"
+  },
+  "planned_scope": {
+    "ticks": 1458,
+    "worlds": 41
+  },
+  "hard": {
+    "ticks": 2048,
+    "worlds": 64,
+    "CPU_s": 180,
+    "wall_s": 300,
+    "max_parallel": 1,
+    "actual_actions": 0,
+    "resets": 0
+  },
+  "budget_parts": {
+    "old_source": {
+      "ticks": 1242,
+      "worlds": 35
+    },
+    "PulseOnce_trajectories": {
+      "ticks": 104,
+      "worlds": 2
+    },
+    "PulseOnce_held_first": {
+      "ticks": 4,
+      "worlds": 1
+    },
+    "S13_trajectories": {
+      "ticks": 104,
+      "worlds": 2
+    },
+    "S13_held_first": {
+      "ticks": 4,
+      "worlds": 1
+    }
+  },
+  "storage_forecast": {
+    "observed_bytes_per_tick": 85798.43826506023,
+    "old_fixed_bytes_per_world": 769473,
+    "source_manifest_growth_bytes": 841,
+    "new_fixed_bytes_per_world_allowance": 788380,
+    "full_private_plan_bytes_allowance": 1666720,
+    "raw_metadata_allowance_bytes": 16777216,
+    "model_payload_bytes": 270411517.9585542,
+    "archive_forecast_bytes": 331007101.7544097,
+    "model_required_bytes": 807282429.9585543,
+    "workspace_required_bytes": 869544733.7544097,
+    "scope_ticks": 1458,
+    "scope_worlds": 41,
+    "estimates_not_guaranteed": true
+  },
+  "storage_start_free_bytes": {
+    "/tmp": 3667374080,
+    "/workspace": 921288704
+  },
+  "plan_sha256": "cdde56972933fc6a698174a32f4c7dfb640766e13d5c91e0fafbb8fd6fb50d41",
+  "contract_sha256": "cf276489cb4ac0556aaf4bfbef50cea04a53132b242fbae374258b1653a3381e",
+  "contract_json_sha256": "3682929793f450d096f25fe9c9b4a00c6ba27df49cfdceef9c286d9ad76fb1fc",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "new_actual_model_reset": 0
+}
