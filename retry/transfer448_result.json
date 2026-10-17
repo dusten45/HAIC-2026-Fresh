@@ -1,0 +1,259 @@
+{
+  "stage": 448,
+  "status": "NATIVE_EXIT60_PAIR_COMPLETED",
+  "error": null,
+  "gain60_bracket_s": [
+    0.3400000000000001,
+    0.3800000000000001
+  ],
+  "actual": [
+    {
+      "arm": "nominal",
+      "status": "NATIVE_EXIT60_VERIFIED",
+      "error": null,
+      "prefix_exact_rows": 22,
+      "suffix_rows": 20,
+      "verified_suffix_transitions": 20,
+      "native_actions": 42,
+      "confirmed_native_facts": 42,
+      "unconfirmed_native_actions": 0,
+      "successful_native_dispatch_records": 42,
+      "reset_ticks": 51,
+      "raw_action_ticks": 168,
+      "crossing_from_original_root": {
+        "reached": true,
+        "rawtick_bracket": [
+          79,
+          80
+        ],
+        "elapsed_bracket_s": [
+          1.58,
+          1.6
+        ],
+        "interpolated": false
+      },
+      "authority_halted": false,
+      "awaiting_verification": false,
+      "actual_facts_retained_after_failure": true,
+      "model_ticks": 1456,
+      "model_worlds": 40,
+      "actual_exclusive_CPU_s": 18.17691338599999,
+      "actual_exclusive_wall_s": 18.41336802218575,
+      "fresh_current_query_count": 20,
+      "damage": 0.0,
+      "no_actual_finish_or_wholelap_claim": true
+    },
+    {
+      "arm": "fullgas",
+      "status": "NATIVE_EXIT60_VERIFIED",
+      "error": null,
+      "prefix_exact_rows": 22,
+      "suffix_rows": 16,
+      "verified_suffix_transitions": 16,
+      "native_actions": 38,
+      "confirmed_native_facts": 38,
+      "unconfirmed_native_actions": 0,
+      "successful_native_dispatch_records": 38,
+      "reset_ticks": 51,
+      "raw_action_ticks": 152,
+      "crossing_from_original_root": {
+        "reached": true,
+        "rawtick_bracket": [
+          61,
+          62
+        ],
+        "elapsed_bracket_s": [
+          1.22,
+          1.24
+        ],
+        "interpolated": false
+      },
+      "authority_halted": false,
+      "awaiting_verification": false,
+      "actual_facts_retained_after_failure": true,
+      "model_ticks": 1040,
+      "model_worlds": 32,
+      "actual_exclusive_CPU_s": 17.012270971999982,
+      "actual_exclusive_wall_s": 17.183243685984053,
+      "fresh_current_query_count": 16,
+      "damage": 0.0,
+      "no_actual_finish_or_wholelap_claim": true
+    }
+  ],
+  "details": {
+    "nominal": {
+      "body_exit_bracket_sample_ranges": {
+        "speed_m_s": [
+          56.11361551596139,
+          56.767293366408246
+        ],
+        "yaw_rad_s": [
+          -0.03799330070614815,
+          -0.011594800278544426
+        ],
+        "path_error_m": [
+          0.004180801813534071,
+          0.027965612791558955
+        ],
+        "heading_error_rad": [
+          0.021701679922357334,
+          0.021933541990533642
+        ]
+      },
+      "lower_crossing_preclip_tire_ranges": {
+        "joint_angle": [
+          1.1920928955078125e-07,
+          0.001382589340209961
+        ],
+        "omega": [
+          99.56571631809433,
+          110.92455205037253
+        ],
+        "force_ratio": [
+          0.4393689898836305,
+          0.7680514247850267
+        ],
+        "lateral_slip_m_s": [
+          -0.14061399947274822,
+          0.06011777199262269
+        ],
+        "longitudinal_slip_m_s": [
+          -2.3062978303919834,
+          3.7439526820789624
+        ]
+      },
+      "sample_ranges_not_continuous_time_bounds": true,
+      "same_crossing_bracket_as_live447_model": true
+    },
+    "fullgas": {
+      "body_exit_bracket_sample_ranges": {
+        "speed_m_s": [
+          61.897168632129116,
+          62.56799057922973
+        ],
+        "yaw_rad_s": [
+          -0.19582585990428925,
+          -0.007555038668215275
+        ],
+        "path_error_m": [
+          0.14832162880779354,
+          0.19560151968218162
+        ],
+        "heading_error_rad": [
+          0.03908835480333882,
+          0.039239512182489215
+        ]
+      },
+      "lower_crossing_preclip_tire_ranges": {
+        "joint_angle": [
+          1.1920928955078125e-07,
+          0.002429962158203125
+        ],
+        "omega": [
+          109.90833892254285,
+          122.04517507934305
+        ],
+        "force_ratio": [
+          0.4483759821881376,
+          0.7811358576740868
+        ],
+        "lateral_slip_m_s": [
+          -0.36348380149308923,
+          0.42255344446948584
+        ],
+        "longitudinal_slip_m_s": [
+          -2.3316799760100793,
+          3.7930424587696194
+        ]
+      },
+      "sample_ranges_not_continuous_time_bounds": true,
+      "same_crossing_bracket_as_live447_model": true
+    }
+  },
+  "factual_verification": {
+    "nominal": {
+      "confirmed_native_facts": 42,
+      "fresh_current_pairs": 20,
+      "verified_suffix": 20,
+      "native_fact_before_forecast_comparison": true,
+      "independent_pairs_exact": true,
+      "command_memory_current_exact": true,
+      "clipping_mismatches": 0,
+      "max_progress_comparison_interval_width_m": 0.21487668102913915,
+      "max_abs_progress_model_actual_m": 4.7540731884510024e-07
+    },
+    "fullgas": {
+      "confirmed_native_facts": 38,
+      "fresh_current_pairs": 16,
+      "verified_suffix": 16,
+      "native_fact_before_forecast_comparison": true,
+      "independent_pairs_exact": true,
+      "command_memory_current_exact": true,
+      "clipping_mismatches": 0,
+      "max_progress_comparison_interval_width_m": 0.2597828678542271,
+      "max_abs_progress_model_actual_m": 7.134532893360301e-07
+    }
+  },
+  "verification": {
+    "source_hashes_and_protected_preserved": true,
+    "original_main_preserved": true,
+    "source_g1_passed": true,
+    "static_tests": 207,
+    "observer_posts": 2712,
+    "observer_streams": 78,
+    "native_facts": 80,
+    "raw_native_action_ticks": 320,
+    "actual_resets": 2,
+    "actual_raw_ticks_including_reset": 422,
+    "first_error_no_retry": true,
+    "saved_CPU_s": 2.9321133319999997
+  },
+  "cost": {
+    "model_ticks": 2712,
+    "model_worlds": 78,
+    "model_CPU_s": 65.94762982600002,
+    "model_wall_s": 66.41105293494184,
+    "actual_wrapper_actions": 80,
+    "actual_resets": 2,
+    "actual_exclusive_CPU_s": 35.20225902399996,
+    "actual_exclusive_wall_s": 35.60648672725074,
+    "whole_worker_CPU_s": 101.245946088,
+    "whole_worker_wall_s": 102.11113903601654,
+    "model_region_cleanup_included": true,
+    "static_attempts": [
+      {
+        "stage": 448,
+        "passed": false,
+        "error": null,
+        "tests": 203,
+        "failures": 1,
+        "errors": 0,
+        "audit_completed": false,
+        "CPU_s": 15.271871950000001,
+        "wall_s": 15.352642075973563,
+        "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+        "plan_sha256": "63101ed99015aaa5222d321f218fa1b124e0771617aaafbde02e370718868ddb"
+      },
+      {
+        "stage": 448,
+        "passed": true,
+        "error": null,
+        "tests": 207,
+        "failures": 0,
+        "errors": 0,
+        "audit_completed": true,
+        "CPU_s": 17.568331385,
+        "wall_s": 17.591832336969674,
+        "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+        "plan_sha256": "a8632ebb29a75322ae48abc2fd427153719b79cebeac791e56962ff88f8ce0ac"
+      }
+    ],
+    "saved_audit_CPU_s": 2.9321133319999997,
+    "project_overhead_fully_measured": false
+  },
+  "terminal_debt_resolved": false,
+  "wholelap_pixel_generalization_promoted": false,
+  "no_gain_addition": true,
+  "new_learning_seed_HOLDOUT_SEALED_reserve_paid": 0,
+  "deadline_utc": "2026-10-20T10:01:55Z"
+}
