@@ -1,0 +1,96 @@
+{
+  "stage": 480,
+  "status": "ONE_ONLINE_WHOLE_COMPARISON_DESIGNED_NOT_EXECUTED",
+  "selected": "B200",
+  "counts": {
+    "mode": "ONCE_EACH_SELECTED_REPEAT",
+    "parent_actions_each": 200,
+    "parent_horizon_s": 16.0,
+    "parts": {
+      "baseline_parent": {
+        "worlds": 1,
+        "wrapper_slots": 200,
+        "charged_ticks": 800
+      },
+      "online_parent": {
+        "worlds": 1,
+        "wrapper_slots": 200,
+        "charged_ticks": 800
+      },
+      "online_shadows": {
+        "worlds": 800,
+        "wrapper_slots": 800,
+        "charged_ticks": 3200
+      },
+      "source_fixture": {
+        "worlds": 5,
+        "wrapper_slots": 5,
+        "charged_ticks": 20
+      },
+      "pending_fixture": {
+        "worlds": 5,
+        "wrapper_slots": 5,
+        "charged_ticks": 20
+      }
+    },
+    "charged_ticks": 4840,
+    "positive_ticks_max": 4840,
+    "worlds": 812,
+    "wrapper_slots": 1210,
+    "zero_time_constructor_steps_max": 812,
+    "allocator_calls_max": 402,
+    "nominal_calls_max": 402,
+    "selector_queries_max": 202,
+    "candidate_worlds_per_query": 4,
+    "full_lap_independent_repetitions": 0,
+    "dedup_credit_in_worst_case": 0,
+    "early_stop_credit": 0,
+    "old35_H13_pending_replays": 0,
+    "native": 0,
+    "resets": 0,
+    "HOLDOUT": 0,
+    "SEALED": 0
+  },
+  "storage": {
+    "rate_fraction": [
+      9110561,
+      82
+    ],
+    "empirical_bytes_per_tick": 111104.40243902439,
+    "margin": 1.25,
+    "header_hard_each_bytes": 829464,
+    "model_raw_hard_bytes": 1364580771,
+    "model_includes_misc_metadata_bytes": 18874368,
+    "allocator_input_proof_exact_max_bytes": 4939776,
+    "allocator_proof_hard_budget_bytes": 16777216,
+    "selection_summary_exact_max_bytes": 13238272,
+    "selection_summary_hard_budget_bytes": 16777216,
+    "temp_bytes": 33554432,
+    "reserve_each_bytes": 536870912,
+    "tmp_required_bytes": 1968560547,
+    "tmp_free_bytes": 2129297408,
+    "tmp_shortage_bytes": 0,
+    "tmp_headroom_after_all_reserves_bytes": 160736861,
+    "workspace_required_bytes": 603979776,
+    "workspace_free_bytes": 855531520,
+    "workspace_shortage_bytes": 0,
+    "dedup_compression_manifest_intern_savings_credited_bytes": 0,
+    "archive_bytes": 0,
+    "delete_move_oldfiles": false,
+    "raw_single_tmp_copy": true
+  },
+  "CPU_s": 0.219950169,
+  "wall_s": 0.18983471998944879,
+  "import_guard_attempts": [],
+  "new_physics": 0,
+  "new_world": 0,
+  "new_positive_ticks": 0,
+  "new_native": 0,
+  "new_reset": 0,
+  "new_search": 0,
+  "protected18_ledger_verified": true,
+  "raw_files": 3,
+  "raw_bytes": 63258,
+  "contract_sha256": "973f3a3c07e37b61156b16c5eb6e196fa53d0677bb618ed29acd017f3e92bad7",
+  "deadline_KST": "2026-10-20 19:01:55"
+}

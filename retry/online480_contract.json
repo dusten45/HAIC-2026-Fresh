@@ -1,0 +1,424 @@
+{
+  "stage": 480,
+  "status": "DESIGN_ONLY_SINGLE_PROPOSED_CONTRACT_NOT_IMPLEMENTED_NOT_AUTHORIZED_NOT_EXECUTED",
+  "new_physics": 0,
+  "new_world": 0,
+  "new_positive_ticks": 0,
+  "new_native": 0,
+  "new_reset": 0,
+  "new_allocator_search": 0,
+  "question": "From the same full pre23/P4 input, compare frozen first-raw allocation with online re-selection of three held80ms commands until each parent own official finish, typed stop or equal predeclared200-action cap.",
+  "prior_evidence": {
+    "stage479_status": "FINITE_HOLD_COMPARISON_COMPLETE",
+    "warm69_M80_before": 1.0530189348149999,
+    "warm69_M80_after": 0.528171822388199,
+    "scope": "One hold only; does not certify future path safety or whole-lap improvement"
+  },
+  "alternatives": [
+    {
+      "id": "A",
+      "counts": {
+        "mode": "ALL_CANDIDATES_TWICE",
+        "parent_actions_each": 250,
+        "parent_horizon_s": 20.0,
+        "parts": {
+          "baseline_parent": {
+            "worlds": 1,
+            "wrapper_slots": 250,
+            "charged_ticks": 1000
+          },
+          "online_parent": {
+            "worlds": 1,
+            "wrapper_slots": 250,
+            "charged_ticks": 1000
+          },
+          "online_shadows": {
+            "worlds": 1500,
+            "wrapper_slots": 1500,
+            "charged_ticks": 6000
+          },
+          "source_fixture": {
+            "worlds": 7,
+            "wrapper_slots": 7,
+            "charged_ticks": 28
+          },
+          "pending_fixture": {
+            "worlds": 7,
+            "wrapper_slots": 7,
+            "charged_ticks": 28
+          }
+        },
+        "charged_ticks": 8056,
+        "positive_ticks_max": 8056,
+        "worlds": 1516,
+        "wrapper_slots": 2014,
+        "zero_time_constructor_steps_max": 1516,
+        "allocator_calls_max": 502,
+        "nominal_calls_max": 502,
+        "selector_queries_max": 252,
+        "candidate_worlds_per_query": 6,
+        "full_lap_independent_repetitions": 0,
+        "dedup_credit_in_worst_case": 0,
+        "early_stop_credit": 0,
+        "old35_H13_pending_replays": 0,
+        "native": 0,
+        "resets": 0,
+        "HOLDOUT": 0,
+        "SEALED": 0
+      },
+      "storage": {
+        "rate_fraction": [
+          9110561,
+          82
+        ],
+        "empirical_bytes_per_tick": 111104.40243902439,
+        "margin": 1.25,
+        "header_hard_each_bytes": 829464,
+        "model_raw_hard_bytes": 2395163125,
+        "model_includes_misc_metadata_bytes": 18874368,
+        "allocator_input_proof_exact_max_bytes": 6168576,
+        "allocator_proof_hard_budget_bytes": 16777216,
+        "selection_summary_exact_max_bytes": 16515072,
+        "selection_summary_hard_budget_bytes": 16777216,
+        "temp_bytes": 33554432,
+        "reserve_each_bytes": 536870912,
+        "tmp_required_bytes": 2999142901,
+        "tmp_free_bytes": 2129297408,
+        "tmp_shortage_bytes": 869845493,
+        "tmp_headroom_after_all_reserves_bytes": -869845493,
+        "workspace_required_bytes": 603979776,
+        "workspace_free_bytes": 855531520,
+        "workspace_shortage_bytes": 0,
+        "dedup_compression_manifest_intern_savings_credited_bytes": 0,
+        "archive_bytes": 0,
+        "delete_move_oldfiles": false,
+        "raw_single_tmp_copy": true
+      },
+      "selected": false,
+      "reason": "All three candidates independently twice; honest stronger repeat evidence, but worst storage does not fit."
+    },
+    {
+      "id": "B250",
+      "counts": {
+        "mode": "ONCE_EACH_SELECTED_REPEAT",
+        "parent_actions_each": 250,
+        "parent_horizon_s": 20.0,
+        "parts": {
+          "baseline_parent": {
+            "worlds": 1,
+            "wrapper_slots": 250,
+            "charged_ticks": 1000
+          },
+          "online_parent": {
+            "worlds": 1,
+            "wrapper_slots": 250,
+            "charged_ticks": 1000
+          },
+          "online_shadows": {
+            "worlds": 1000,
+            "wrapper_slots": 1000,
+            "charged_ticks": 4000
+          },
+          "source_fixture": {
+            "worlds": 5,
+            "wrapper_slots": 5,
+            "charged_ticks": 20
+          },
+          "pending_fixture": {
+            "worlds": 5,
+            "wrapper_slots": 5,
+            "charged_ticks": 20
+          }
+        },
+        "charged_ticks": 6040,
+        "positive_ticks_max": 6040,
+        "worlds": 1012,
+        "wrapper_slots": 1510,
+        "zero_time_constructor_steps_max": 1012,
+        "allocator_calls_max": 502,
+        "nominal_calls_max": 502,
+        "selector_queries_max": 252,
+        "candidate_worlds_per_query": 4,
+        "full_lap_independent_repetitions": 0,
+        "dedup_credit_in_worst_case": 0,
+        "early_stop_credit": 0,
+        "old35_H13_pending_replays": 0,
+        "native": 0,
+        "resets": 0,
+        "HOLDOUT": 0,
+        "SEALED": 0
+      },
+      "storage": {
+        "rate_fraction": [
+          9110561,
+          82
+        ],
+        "empirical_bytes_per_tick": 111104.40243902439,
+        "margin": 1.25,
+        "header_hard_each_bytes": 829464,
+        "model_raw_hard_bytes": 1697130175,
+        "model_includes_misc_metadata_bytes": 18874368,
+        "allocator_input_proof_exact_max_bytes": 6168576,
+        "allocator_proof_hard_budget_bytes": 16777216,
+        "selection_summary_exact_max_bytes": 16515072,
+        "selection_summary_hard_budget_bytes": 16777216,
+        "temp_bytes": 33554432,
+        "reserve_each_bytes": 536870912,
+        "tmp_required_bytes": 2301109951,
+        "tmp_free_bytes": 2129297408,
+        "tmp_shortage_bytes": 171812543,
+        "tmp_headroom_after_all_reserves_bytes": -171812543,
+        "workspace_required_bytes": 603979776,
+        "workspace_free_bytes": 855531520,
+        "workspace_shortage_bytes": 0,
+        "dedup_compression_manifest_intern_savings_credited_bytes": 0,
+        "archive_bytes": 0,
+        "delete_move_oldfiles": false,
+        "raw_single_tmp_copy": true
+      },
+      "selected": false,
+      "reason": "Each candidate once and only selected candidate repeated independently; still fails current space even without assuming early stops/dedup."
+    }
+  ],
+  "selected": {
+    "id": "B200",
+    "counts": {
+      "mode": "ONCE_EACH_SELECTED_REPEAT",
+      "parent_actions_each": 200,
+      "parent_horizon_s": 16.0,
+      "parts": {
+        "baseline_parent": {
+          "worlds": 1,
+          "wrapper_slots": 200,
+          "charged_ticks": 800
+        },
+        "online_parent": {
+          "worlds": 1,
+          "wrapper_slots": 200,
+          "charged_ticks": 800
+        },
+        "online_shadows": {
+          "worlds": 800,
+          "wrapper_slots": 800,
+          "charged_ticks": 3200
+        },
+        "source_fixture": {
+          "worlds": 5,
+          "wrapper_slots": 5,
+          "charged_ticks": 20
+        },
+        "pending_fixture": {
+          "worlds": 5,
+          "wrapper_slots": 5,
+          "charged_ticks": 20
+        }
+      },
+      "charged_ticks": 4840,
+      "positive_ticks_max": 4840,
+      "worlds": 812,
+      "wrapper_slots": 1210,
+      "zero_time_constructor_steps_max": 812,
+      "allocator_calls_max": 402,
+      "nominal_calls_max": 402,
+      "selector_queries_max": 202,
+      "candidate_worlds_per_query": 4,
+      "full_lap_independent_repetitions": 0,
+      "dedup_credit_in_worst_case": 0,
+      "early_stop_credit": 0,
+      "old35_H13_pending_replays": 0,
+      "native": 0,
+      "resets": 0,
+      "HOLDOUT": 0,
+      "SEALED": 0
+    },
+    "storage": {
+      "rate_fraction": [
+        9110561,
+        82
+      ],
+      "empirical_bytes_per_tick": 111104.40243902439,
+      "margin": 1.25,
+      "header_hard_each_bytes": 829464,
+      "model_raw_hard_bytes": 1364580771,
+      "model_includes_misc_metadata_bytes": 18874368,
+      "allocator_input_proof_exact_max_bytes": 4939776,
+      "allocator_proof_hard_budget_bytes": 16777216,
+      "selection_summary_exact_max_bytes": 13238272,
+      "selection_summary_hard_budget_bytes": 16777216,
+      "temp_bytes": 33554432,
+      "reserve_each_bytes": 536870912,
+      "tmp_required_bytes": 1968560547,
+      "tmp_free_bytes": 2129297408,
+      "tmp_shortage_bytes": 0,
+      "tmp_headroom_after_all_reserves_bytes": 160736861,
+      "workspace_required_bytes": 603979776,
+      "workspace_free_bytes": 855531520,
+      "workspace_shortage_bytes": 0,
+      "dedup_compression_manifest_intern_savings_credited_bytes": 0,
+      "archive_bytes": 0,
+      "delete_move_oldfiles": false,
+      "raw_single_tmp_copy": true
+    },
+    "reason": "Same200-action cap for both parents gives16s after physical pre23=2.78s (up to18.78s). Space leaves reserve512MiB plus additional headroom; enough horizon to attempt own finish, never guaranteed. Cap exhaustion is SCOPE_CENSORED, not completion or inferred gain."
+  },
+  "policy": {
+    "domain": "Every current safe nonterminal model parent in FIRST_LAP or FINISH_CONFIRM from fixed pre23; no location/index/fixture trigger, no learned lookup, no new reference/steering/phase law.",
+    "baseline": "Frozen477/476 first-raw minimax only, qstar recomputed once from its own current wheels at each80ms boundary; no three-command rescue.",
+    "online": "Call SourceC once at each current80ms boundary; preserve before and after-nominal memory, full state/full ForecastLedger/RNG/P4nodes/finish history. Compute frozen476 qstar once. Candidate commands preserve the same complete nominal float32 steering and inactive pedal0, varying only original active pedal among q0/qstar/+0. Both inactive -> one complete command.",
+    "dedup": "Deduplicate only identical complete IEEE754 float32 command bit patterns with stable provenance aliases. No near-equality/different steering merge. Worst counts assume all3distinct and one separate selected repeat even if aliases occur.",
+    "hold": "Unchanged source80ms hold,4raw20ms and no within-hold controller update. Only original source official finish/termination may legally end at1..4raw; record actual length and repeat all produced raw exactly, never pad/step after terminal.",
+    "valid": "Every produced raw passes original physical guard, original progress ledger/deadline and phase/finish checks. No future-safe claim from M80. A terminal non-finish candidate is ineligible.",
+    "score": "Exact max over actually produced raw and four wheels of max(0,force_ratio-1), finite/nonnegative per-value check. Among valid candidates minimum exact score, exact ties largest original active pedal; no epsilon/weights/new branch/new braking.",
+    "selection_repeat": "Evaluate each distinct candidate ONCE in a fresh restored world. Choose from those scores. Repeat ONLY the selected complete command in a separate fresh restored world. Require identical full raw trace, command/memory/phase/RNG/ledger/status/terminal event and observed raw length. No second scores for unselected candidates.",
+    "own_dispatch": "Shadow/repeat worlds use prepared AFTER nominal memory and original BEFORE nominal field without SourceC.act. Restore full ForecastLedger BEFORE Stream. Parent stamp of full physical/memory/ledger/RNG/reference/rows/status stays exact after every forecast; no forecast commits it. Only then apply selected command to same live parent using prepared nominal/before once; check its own hold against selected prediction under existing source tolerances and exact discrete flags. Only own official physical finish permits parent DONE; preserve separate after-nominal and legitimate after-DONE memory.",
+    "empty": "No valid candidate => EMPTY_FINITE_CANDIDATE_DOMAIN; no parent rescue/extra command. Failure is about these3commands, not all controls.",
+    "lookahead_limit": "M80 does not constrain cumulative heading/velocity/path error or certify safety after current hold. Re-selection every boundary can still become unsafe/empty/infeasible later."
+  },
+  "validation": {
+    "reuse": "Pin retained477 source35/H13/pending and479 once/isolation/repeat/source evidence, inputs and source closure; old qualification worlds are NOT rerun. Any frozen-source mismatch stops before physics.",
+    "fixtures": [
+      {
+        "name": "pre23 current-source fixture",
+        "worlds": 5,
+        "charged_ticks": 20,
+        "allocator": 1,
+        "layout": "one held parent; up to3single shadows; one independent selected repeat; one held own step. qstar first force exact and qstar shadow versus saved477 first row under original bounds. Compare same-command available factual source only."
+      },
+      {
+        "name": "stored435 pending finish fixture",
+        "worlds": 5,
+        "charged_ticks": 20,
+        "allocator": 1,
+        "layout": "same3once+selectedrepeat+held own layout, full before/after memory and ForecastLedger restored; authenticated saved435 tracker/history and same official pending event; early source terminal may yield1raw but each reserved slot charges4.",
+        "known477_observed_pending_worlds": 3,
+        "known477_observed_pending_ticks": 3
+      }
+    ],
+    "fixture_gate": "Both small fixtures pass before either whole parent starts. No extra probes. Pending fixture must confirm the same authenticated event under original FINISH_CONFIRM geometry. Forecast may not mark held/actual DONE; only held own physical confirmation completes model ledger.",
+    "source_tolerances": {
+      "position_m": 0.1,
+      "body_speed_m_s": 0.5,
+      "yaw_rad_s": 0.05,
+      "joint_rad": 0.01,
+      "wheel_omega_rad_s": 1.0,
+      "wheel_slip_m_s": 0.5,
+      "force_ratio": 0.05,
+      "raw_time_s": 1e-08,
+      "clipped_grass_contacts_damage_collision_flags_exact": true
+    },
+    "first_force": "All dispatched commands first raw force equations exact against CURRENT prepared wheel inputs; no trace-driven command. Identical current inputs/commands/memory source joins exact where applicable.",
+    "repeat_scope": "All chosen forecasts independently repeated exactly. Unselected commands evaluated once: their repeatability and the entire candidate ranking are NOT independently repeated or certified. Past479 repeats do not certify all future roots.",
+    "ranking_uncertainty": "Retain all one-pass scores, validity/status, best-second and qstar gaps, selected repeat equality and own-vs-selected errors per query. No invented confidence interval or epsilon. Warm-start/contact/island state is omitted from exports; cold-vs-own source uncertainty remains. Only chosen command has live own hold counterpart at new roots. No unselected warm counterfactual is observed, so do NOT infer a0.10 two-command live gap bound or proven live-optimal ordering from one selected join. No extra warm qstar probe is authorized.",
+    "pending_history": "Old PendingParent436 recipe whitelist accepts nominal/fullgas/neutralbrake histories and is not an authority for new qstar/zero histories. New integration must bind every parent action to its frozen policy/nominal/qstar proof, finite candidate command IDs and selected-repeat receipt, verify complete observed tracker/ledger/memory/clock chain and existing phase/corridor rules. No blanket bypass or recertification of old435 lap.",
+    "finish": "Whole parents retain pre23 episode root clockmap/tracker history. Pending shadows use existing guardian confirmation semantics for at/before-current-root events, not negative remaining time or their future DONE as parent DONE. Own whole-parent official event must lie in retained raw history with qualified_time<=event<=confirmation. Event bracket from original whole root and confirmation time separately retained. No finish beyond cap or after typed stop.",
+    "technical": "Source hash/restore/phase/numeric/RNG/isolation/selected-repeat/own join error stops dependent experiment globally, preserves charged partial records, no retry/tolerance widening. Unsafe/progress/finite-domain failures are physical outcomes, not rewritten as technical nulls."
+  },
+  "outcome": {
+    "primary": "Each full model parent own official event+raw safety+progress and typed end status. Both finish -> conservative strict time improvement only if event TickBracket difference lower bound>0. One finishes/one unsafe or censored -> feasibility/status contrast only, no numeric finish-time gain. Neither finishes -> no completion or lap gain claim.",
+    "caps": "Both parents own<=200 actions; no extra episode replicate. Natural stop earlier is recorded with no worst-cost credit. Exact same-command shared prefixes may be verified but not substituted for a fresh second parent.",
+    "promotion": "No native/pixel/HOLDOUT/SEALED/generalization or paid-resource promotion; model-only one pair. 479 local effect is not proof this policy finishes. Even a successful model pair does not authorize native execution."
+  },
+  "time_budget": {
+    "proposed_whole_CPU_s": 900,
+    "proposed_whole_wall_s": 1200,
+    "allocator_query_CPU_s": 0.25,
+    "allocator_query_wall_s": 0.5,
+    "allocator_calls": 402,
+    "allocator_aggregate_CPU_s": 110,
+    "allocator_aggregate_wall_s": 220,
+    "allocator_kernel_wheel_evaluations_per_query": 100000,
+    "allocator_worst_evaluations": 40200000,
+    "includes": "Preparation/import/source checks, every constructor including zero steps, fixtures, parents, candidate shadows, selected repeats, allocation inputs/proofs, all telemetry, whole worker close, double full readback and final summaries. Combine separately measured process costs before pass; include independent post-audit or explicitly retain any unmeasured cost as a limitation.",
+    "estimate": "479 registration+required execution/readbacks CPU16.772/wall15.980 for36,442,244B. Scaling CPU by conservative model raw forecast gives about628s;25%\u2248785s, not a guarantee. Proposed900/1200 are hard resource stops, not performance predictions.",
+    "checkpoint": "At every query and whole-parent action; durable workspace summary at least every10min. Stop at earliest absolute deadline or caps. Sequential worlds/parents; max live worlds2. No external/paid compute."
+  },
+  "storage_rules": {
+    "selected": {
+      "rate_fraction": [
+        9110561,
+        82
+      ],
+      "empirical_bytes_per_tick": 111104.40243902439,
+      "margin": 1.25,
+      "header_hard_each_bytes": 829464,
+      "model_raw_hard_bytes": 1364580771,
+      "model_includes_misc_metadata_bytes": 18874368,
+      "allocator_input_proof_exact_max_bytes": 4939776,
+      "allocator_proof_hard_budget_bytes": 16777216,
+      "selection_summary_exact_max_bytes": 13238272,
+      "selection_summary_hard_budget_bytes": 16777216,
+      "temp_bytes": 33554432,
+      "reserve_each_bytes": 536870912,
+      "tmp_required_bytes": 1968560547,
+      "tmp_free_bytes": 2129297408,
+      "tmp_shortage_bytes": 0,
+      "tmp_headroom_after_all_reserves_bytes": 160736861,
+      "workspace_required_bytes": 603979776,
+      "workspace_free_bytes": 855531520,
+      "workspace_shortage_bytes": 0,
+      "dedup_compression_manifest_intern_savings_credited_bytes": 0,
+      "archive_bytes": 0,
+      "delete_move_oldfiles": false,
+      "raw_single_tmp_copy": true
+    },
+    "per_file_caps": {
+      "allocator_input": 4096,
+      "allocator_proof": 8192,
+      "decision_summary": 65536,
+      "constructor_firststep_input": 2097152,
+      "other_atomic": 33554432
+    },
+    "new_integration_manifest_allowance_bytes": 8192,
+    "unbounded_history_forbidden": "Per-query histories must use authenticated references to retained full streams, not quadratic duplicate history serialization. Extra metadata total18MiB and output-class caps are strict; exceeding them stops, never drops evidence.",
+    "registration": "Before any future authorized execution freeze actual integration/phase/pending-history/nominal-once/sourceclosure/byte budgets/latest disk once; verify source manifest growth fits registered header allowance. No experiment implemented by480.",
+    "retention": "New raw one/tmp copy only; workspace fullpre23 input/RNG/P4geometry, plan, code, aggregates, complete content hashes and reproducibility conditions. No old deletion/move/rewrite/new archive. Double full length/SHA/JSON readback within whole caps. Final mutable control records hashed after last write. Lost/tmp cannot be reconstructed by hashes; no automatic rerun."
+  },
+  "manifest_review": {
+    "semantic_entries": 312,
+    "pretty_serialized_bytes": 38164,
+    "samples": [
+      {
+        "record": "world1-before-constructor-private.json",
+        "bytes": 369060,
+        "exact_full_manifest_dictionary_copies": 0,
+        "sha256": "5189ddaa875c25343bc2a86050e6732db9703d791f7a1cd7ede4e860a49f7eb0"
+      },
+      {
+        "record": "world1-before-first-step-private.json",
+        "bytes": 369376,
+        "exact_full_manifest_dictionary_copies": 0,
+        "sha256": "6b31f161108f2631fb638c17dbeab9ce641a431322bbdde4496c0a258904c361"
+      },
+      {
+        "record": "prefix-runtime-link-private.json",
+        "bytes": 39753,
+        "exact_full_manifest_dictionary_copies": 1,
+        "sha256": "a6c83e9abd3c815de0ea8d9bcd3012b7f5351e68d755c6e920f982d65cbb2bbd"
+      },
+      {
+        "record": "prefix-observer-private.json",
+        "bytes": 2315511,
+        "exact_full_manifest_dictionary_copies": 1,
+        "sha256": "c712226aa139b46ec52c3862287a4c79e38a1da0ba4c8e60a66b6f45ce79a183"
+      },
+      {
+        "record": "4462dd76dc3f-world1-prefix-observer-final-private.json",
+        "bytes": 2693234,
+        "exact_full_manifest_dictionary_copies": 1,
+        "sha256": "234bfd92228fbca7c62da264bc44c06802248a2cdf52ce1085af392a6a632927"
+      }
+    ],
+    "conclusion": "The same full map is repeated in observer links; full state dominates constructor/first-step records. No logical need to repeat unchanged source bytes if an immutable complete authority object is retained and every record authenticates its digest and resolves it exactly.",
+    "possible_future_format": "New records only: immutable complete source-authority object once; each receipt binds plan SHA, authority SHA, geometry identity and current input/state/memory/full-ledger/RNG digests. Resolver must reconstruct the exact former map/Authority, reject missing/mismatched references and check input/constructor/step bindings before integration. Existing evidence stays untouched.",
+    "selected_contract": "Retain current inline manifest format in this proposal; zero storage saving credited. No new resolver implemented or required to claim space fit. No old evidence deletion/rewrite/compression/input-check omission.",
+    "history_growth": "Do not serialize full cumulative pending history into every query/child receipt. Retain original full parent stream once plus append-only authenticated decision/history prefix references; validate the full in-memory chain and final retained stream. New finite-command history binding must be implemented and statically checked, not bypassed by an old recipe whitelist."
+  },
+  "best_native_s": 13.64,
+  "research_remaining": 26175,
+  "reserve_actions": 84000,
+  "reserve_used": 0,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "deadline_KST": "2026-10-20 19:01:55",
+  "automatic_extension": false,
+  "no_execution_in480": true
+}
