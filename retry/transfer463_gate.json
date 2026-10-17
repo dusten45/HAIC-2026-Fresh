@@ -1,0 +1,70 @@
+{
+  "stage": 463,
+  "static": {
+    "stage": 463,
+    "passed": true,
+    "error": null,
+    "tests": 271,
+    "failures": 0,
+    "errors": 0,
+    "audit_completed": true,
+    "CPU_s": 24.621645739999998,
+    "wall_s": 24.576882204040885,
+    "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+    "plan_sha256": "3da07e798ab47fa26169a936edd77f4b88c971673147369bd30a942b02c3282f"
+  },
+  "planned": {
+    "parts": {
+      "first_fixed": {
+        "queries": 2,
+        "ticks": 208,
+        "worlds": 4
+      },
+      "guardian": {
+        "queries": 138,
+        "ticks": 28704,
+        "worlds": 552
+      },
+      "qualification": {
+        "ticks": 1458,
+        "worlds": 41
+      },
+      "model_parents": {
+        "ticks": 0,
+        "worlds": 0
+      }
+    },
+    "ticks": 30370,
+    "worlds": 597,
+    "actual_actions": 390,
+    "resets": 2,
+    "raw_native_ticks_including_reset": 1662,
+    "model_storage_bytes": 4425037912.061119,
+    "native_storage_bytes": 1299113520.7301588,
+    "storage_estimate_is_not_a_guarantee": true
+  },
+  "hard": {
+    "ticks": 32768,
+    "worlds": 768,
+    "CPU_s": 1800,
+    "wall_s": 2400,
+    "max_parallel": 1
+  },
+  "actual_caps": {
+    "actions": 390,
+    "arm_actions": 195,
+    "resets": 2,
+    "arm_resets": 1,
+    "CPU_s": 240,
+    "wall_s": 480,
+    "exclusive_of_model": true
+  },
+  "plan_sha256": "3da07e798ab47fa26169a936edd77f4b88c971673147369bd30a942b02c3282f",
+  "contract_json_sha256": "2fed4e239d6600166f736430194e7916b10b30ec80c6cd41982c508e2dce5f06",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "storage_start_free_bytes": {
+    "/tmp": 4562669568,
+    "/workspace": 1619857408
+  },
+  "new_actual_model_reset": 0
+}

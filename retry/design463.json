@@ -1,0 +1,54 @@
+{
+  "stage": 463,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "execution": {
+    "order": [
+      "Original",
+      "SecantOnce"
+    ],
+    "prefix_actions": 125,
+    "suffix_actions": 70,
+    "horizon": 13,
+    "independent_copies": 2,
+    "max_parallel": 1,
+    "whole_pair_runs": 1,
+    "first_recipes": {
+      "Original": "nominal",
+      "SecantOnce": "fullgas"
+    },
+    "guardian_after_first": true
+  },
+  "hard": {
+    "ticks": 32768,
+    "worlds": 768,
+    "CPU_s": 1800,
+    "wall_s": 2400,
+    "max_parallel": 1
+  },
+  "actual": {
+    "actions": 390,
+    "arm_actions": 195,
+    "resets": 2,
+    "arm_resets": 1,
+    "CPU_s": 240,
+    "wall_s": 480,
+    "exclusive_of_model": true
+  },
+  "storage": {
+    "model_bytes_per_tick": 83723.18010403121,
+    "fixed_bytes_per_world": 768619,
+    "native_bytes_per_action": 1563574.582010582,
+    "empirical_margin": 1.25,
+    "final_dump_reserve_bytes": 536870912,
+    "model_volume": "/tmp",
+    "native_volume": "/workspace"
+  },
+  "scope": {
+    "model_parents": 0,
+    "new_seed_learning_HOLDOUT_SEALED_reserve_paid": 0,
+    "planner": 0,
+    "full_secant_controller": 0,
+    "new_root": 0,
+    "no_retry": true
+  }
+}
