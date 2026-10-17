@@ -1,0 +1,33 @@
+{
+  "stage": "next_after447",
+  "status": "PROPOSAL_ONLY_NOT_AUTHORIZED_OR_EXECUTED",
+  "choice": "minimal_known_condition_actual_transfer",
+  "question": "Does the single pre23 fullgas pulse retain the common+60m gain in native physics?",
+  "reason": "447 now observes live continuation directly; another longer model-only run would leave actual transfer uncertainty unchanged.",
+  "split": "DEV known condition only",
+  "arms": [
+    "own nominal throughout",
+    "first pre23 fullgas then own nominal"
+  ],
+  "no_policy_selection_or_retuning": true,
+  "prefix_actions_per_arm": 22,
+  "postroot_action_cap_per_arm": 26,
+  "actual_wrapper_cap": 96,
+  "resets": 2,
+  "maximum_raw_native_ticks_including_reset": 486,
+  "model_planned_upper_ticks": 5624,
+  "model_hard_ticks": 6144,
+  "model_world_hard_cap": 128,
+  "model_CPU_cap_s": 180,
+  "model_wall_cap_s": 300,
+  "actual_exclusive_CPU_cap_s": 90,
+  "actual_exclusive_wall_cap_s": 180,
+  "sequential_workers": 1,
+  "guard": "Before candidate dispatch require reproduced prefix/source root; every later action needs fresh current-input independent model safety/repeat checks of at most H13, stopping forecast at common exit when reached. No fallback or pulse modification. Commit native facts before forecast comparison and block next dispatch on first mismatch.",
+  "model_cost_arithmetic": "52 maximum current decisions x2 independent copies x13 actions x4 ticks=5408; initial source allowance4x13x4=208; held-first allowance2x4=8; total5624. Allowances are ceilings, reused gates counted once.",
+  "gate": "Freeze source hashes, native/model binding, permissions and cost ledger before any new call. First technical/source/memory/ledger/RNG/fidelity/safety/repeat/deadline error stops both arms; no retry. Censor at26 postroot actions or if exit absent.",
+  "promotion": "Require both native common+60m crossings, valid factual gates and positive nonoverlapping crossing brackets; local result only, no whole-lap/pixel/SEALED promotion and no gain addition.",
+  "unresolved": "Native transfer, terminal debt beyond+60m, unseen-condition generalization, pixel performance.",
+  "new_seed_learning_HOLDOUT_SEALED_reserve_paid": 0,
+  "deadline_utc": "2026-10-20T10:01:55Z"
+}
