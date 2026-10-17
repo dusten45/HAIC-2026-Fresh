@@ -1,0 +1,1374 @@
+{
+  "stage": 474,
+  "status": "SAVED_ONLY_COMPLETE_TWO_HYPOTHESES_NO_EXECUTION",
+  "analysis_result": {
+    "stage": 474,
+    "status": "SAVED_ONLY_ANALYSIS_COMPLETE",
+    "plan_sha256": "7bb0437926e21d72e9713247dea69818bec2a86cb646d9b023ad3bf78ead1f1d",
+    "CPU_s": 2.044269252,
+    "wall_s": 2.0664723759982735,
+    "new_model_ticks": 0,
+    "new_model_worlds": 0,
+    "new_native_actions": 0,
+    "new_resets": 0,
+    "new_actor_calls": 0,
+    "import_guard_attempts": [],
+    "ledger_unchanged": true,
+    "sources_preserved": true,
+    "protected18_preserved": true
+  },
+  "pursuit_arithmetic_runs": {
+    "473_Original": {
+      "wrappers": 81,
+      "max_source_float32_error_rad": 0.0,
+      "cursor_mismatches": 0,
+      "pursuit_clip_actions": 0,
+      "counterfactual_steer_changed_actions": 81,
+      "max_abs_counterfactual_steer_delta_rad": 0.022966861724853516,
+      "actual_nominal_override_actions": 0
+    },
+    "473_P4": {
+      "wrappers": 51,
+      "max_source_float32_error_rad": 0.0,
+      "cursor_mismatches": 0,
+      "pursuit_clip_actions": 0,
+      "counterfactual_steer_changed_actions": 51,
+      "max_abs_counterfactual_steer_delta_rad": 0.026241376996040344,
+      "actual_nominal_override_actions": 0
+    },
+    "472_nativeP4": {
+      "wrappers": 171,
+      "max_source_float32_error_rad": 0.0,
+      "cursor_mismatches": 0,
+      "pursuit_clip_actions": 0,
+      "counterfactual_steer_changed_actions": 171,
+      "max_abs_counterfactual_steer_delta_rad": 0.025558948516845703,
+      "actual_nominal_override_actions": 2
+    },
+    "442_nativeC0": {
+      "wrappers": 189,
+      "max_source_float32_error_rad": 0.0,
+      "cursor_mismatches": 0,
+      "pursuit_clip_actions": 0,
+      "counterfactual_steer_changed_actions": 189,
+      "max_abs_counterfactual_steer_delta_rad": 0.02032572031021118,
+      "actual_nominal_override_actions": 1
+    },
+    "442_nativeP": {
+      "wrappers": 173,
+      "max_source_float32_error_rad": 0.0,
+      "cursor_mismatches": 0,
+      "pursuit_clip_actions": 0,
+      "counterfactual_steer_changed_actions": 173,
+      "max_abs_counterfactual_steer_delta_rad": 0.020723747089505196,
+      "actual_nominal_override_actions": 1
+    }
+  },
+  "source_facts": {
+    "steering_units": "radians; direct desired front joint angle after env sign inversion",
+    "front_wheels": [
+      0,
+      1
+    ],
+    "wheelbase_m": 3.24,
+    "rear_axle_local_m": [
+      0.0,
+      -1.6400000000000001
+    ],
+    "pursuit_control_position": "hull local origin",
+    "pursuit_velocity": "COM linear velocity",
+    "steer_action_limit_rad": 0.4,
+    "front_joint_limits_rad": [
+      -0.4,
+      0.4
+    ],
+    "preview": "clamp(3.24+0.22*COM_speed,6,25)m",
+    "controller_prefilter": "0.8*current_pursuit+0.2*previous_steer",
+    "prefilter_mean_age_s": 0.02,
+    "prefilter_pole_time_constant_s": 0.04970679476476895,
+    "servo_error_gain_per_s": 50.0,
+    "servo_command_rate_limit_rad_s": 3.0,
+    "servo_rate_saturation_error_rad": 0.06,
+    "servo_multiplier_note": "All servo gain/rate numbers are before steering_multiplier; requested motor speed is not guaranteed actual joint speed",
+    "wrapper_hold_s": 0.08,
+    "raw_dt_s": 0.02,
+    "steering_sign_chain_consistent": true,
+    "sign_check_kind": "pure coordinate algebra; no physics response inferred",
+    "force_update_order": [
+      "set target steering/gas/brake",
+      "joint motorSpeed from current joint error",
+      "road/grip friction limit",
+      "wheel-local vf/vs",
+      "engine wheel omega update",
+      "brake omega update",
+      "force_long=(omega*radius-vf)*82 and force_lat=-vs*82",
+      "joint force-vector friction clipping",
+      "wheel omega reaction",
+      "ApplyForceToCenter",
+      "world.Step",
+      "tracker update"
+    ]
+  },
+  "source_equations_versus_unknown": {
+    "proven": [
+      "No explicit steering sign/radian mismatch in this control path",
+      "Formula wheelbase equals source axle separation",
+      "Pure-pursuit geometry uses hull origin rather than rear-axle point",
+      "Command prefilter, joint motor dynamics and80ms hold are separate delays",
+      "Longitudinal and lateral tyre demands share clipping"
+    ],
+    "unproven": [
+      "Actuator lag caused either473 failure",
+      "Removing smoothing improves lap or safety",
+      "Pure-pursuit origin choice is the dominant failure",
+      "P4 reference is exact tyre-feasible",
+      "All surviving steering errors are numerical or tracking error"
+    ],
+    "prior_limitations": [
+      "179 rear-axle geometry change failed previously; do not recycle as generic cure",
+      "380 did not obtain either requested original personal document; no direct original-methodology reread claim",
+      "Historical static audit is a local Git document, not the two missing personal originals"
+    ]
+  },
+  "matched_upstream_windows": [
+    {
+      "selected_by": "473_Original",
+      "common_spatial_prefix_bounds": [
+        402.52330907641493,
+        432.52330907641493
+      ],
+      "runs": {
+        "473_Original": {
+          "samples": 24,
+          "excluded_after_first_pre_guard_ticks": 2,
+          "time_pre_range": [
+            8.739999999999903,
+            9.199999999999893
+          ],
+          "arc_pre_range": [
+            403.12665519392925,
+            432.52330907641493
+          ],
+          "max_path_error": 3.26180399452591,
+          "speed_COM_range": [
+            58.583000720158154,
+            67.78614703221125
+          ],
+          "max_abs_heading_error": 0.5856683116891652,
+          "max_abs_yaw_minus_v_kappa": 2.3282359147360507,
+          "mean_abs_front_joint_error": 0.015402854032193622,
+          "max_abs_front_joint_error": 0.09187410771846771,
+          "servo_rate_command_saturated_ticks": 3,
+          "max_abs_prefilter_delta": 0.02296686433494105,
+          "mean_abs_joint_error_to_unfiltered_target": 0.02697840320632855,
+          "actual_steer_matches_filtered_nominal_ticks": 24,
+          "steer_saturated_ticks": 0,
+          "gas_command_ticks": 24,
+          "brake_command_ticks": 0,
+          "first_command_saturation": null,
+          "first_front_clip": {
+            "pre_time": 8.739999999999903,
+            "pre_arc": 403.12665519392925,
+            "raw_tick": 299,
+            "before_first_pre_guard": true
+          },
+          "first_rear_clip": {
+            "pre_time": 8.739999999999903,
+            "pre_arc": 403.12665519392925,
+            "raw_tick": 299,
+            "before_first_pre_guard": true
+          },
+          "front": {
+            "max_force_ratio": 1.306639686082836,
+            "clipped_wheel_samples": 20,
+            "max_raw_lat_abs_N": 455.52984218611937,
+            "max_raw_long_abs_N": 168.22012195449497,
+            "max_lateral_slip_abs": 5.555241977879504,
+            "max_longitudinal_slip_abs": 2.051464901884085,
+            "vector_clip_lat_loss_integral_N_s": 11.043215574674434,
+            "clipped_with_lat_only_within_limit_wheel_samples": 2,
+            "clipped_with_lat_only_above_limit_wheel_samples": 18,
+            "lat_only_ratio_max": 1.2489712508778168,
+            "long_only_ratio_max": 0.511355022826794,
+            "first_combined_clip_lat_only_within": {
+              "pre_time": 8.799999999999901,
+              "pre_arc": 406.6921271639247,
+              "raw_tick": 302,
+              "before_first_pre_guard": true
+            },
+            "first_clip_lat_only_above": {
+              "pre_time": 8.739999999999903,
+              "pre_arc": 403.12665519392925,
+              "raw_tick": 299,
+              "before_first_pre_guard": true
+            },
+            "inferred_limit_max_abs_error": 1.1368683772161603e-13
+          },
+          "rear": {
+            "max_force_ratio": 5.860763456990991,
+            "clipped_wheel_samples": 48,
+            "max_raw_lat_abs_N": 1903.9356389085651,
+            "max_raw_long_abs_N": 1281.469057563276,
+            "max_lateral_slip_abs": 23.21872730376299,
+            "max_longitudinal_slip_abs": 15.627671433698488,
+            "vector_clip_lat_loss_integral_N_s": 305.6558054881822,
+            "clipped_with_lat_only_within_limit_wheel_samples": 7,
+            "clipped_with_lat_only_above_limit_wheel_samples": 41,
+            "lat_only_ratio_max": 4.829178011393415,
+            "long_only_ratio_max": 3.513937439778394,
+            "first_combined_clip_lat_only_within": {
+              "pre_time": 8.739999999999903,
+              "pre_arc": 403.12665519392925,
+              "raw_tick": 299,
+              "before_first_pre_guard": true
+            },
+            "first_clip_lat_only_above": {
+              "pre_time": 8.799999999999901,
+              "pre_arc": 406.6921271639247,
+              "raw_tick": 302,
+              "before_first_pre_guard": true
+            },
+            "inferred_limit_max_abs_error": 5.684341886080802e-14
+          },
+          "wheel_samples_each_axle": 48,
+          "max_nearest_saved_grid_arc_error_m": 0.5675018711348798,
+          "boundary_geometry": {
+            "preview_m": [
+              16.37054793945486,
+              18.09857347464826
+            ],
+            "preview_seconds_at_boundary_speed": [
+              0.2679723037488209,
+              0.2742856248868464
+            ],
+            "distance_at_80ms_hold": [
+              4.774744705256313,
+              5.403117627144821
+            ],
+            "target_bodyright_m": [
+              -5.695194974416555,
+              9.274548621687615
+            ],
+            "target_bodyforward_m": [
+              15.178873152811004,
+              17.754550908617585
+            ],
+            "target_chord_m": [
+              16.212138538322026,
+              18.33467802579137
+            ]
+          }
+        },
+        "472_nativeP4": {
+          "samples": 28,
+          "excluded_after_first_pre_guard_ticks": 0,
+          "time_pre_range": [
+            8.499999999999908,
+            9.039999999999896
+          ],
+          "arc_pre_range": [
+            402.8928889697394,
+            431.7877094448294
+          ],
+          "max_path_error": 0.30114327450544603,
+          "speed_COM_range": [
+            44.15195493825225,
+            61.866056638388464
+          ],
+          "max_abs_heading_error": 0.12594279407043985,
+          "max_abs_yaw_minus_v_kappa": 0.3945471225380244,
+          "mean_abs_front_joint_error": 0.0039826370775699615,
+          "max_abs_front_joint_error": 0.020638182759284973,
+          "servo_rate_command_saturated_ticks": 0,
+          "max_abs_prefilter_delta": 0.005159314126033335,
+          "mean_abs_joint_error_to_unfiltered_target": 0.00780295315506716,
+          "actual_steer_matches_filtered_nominal_ticks": 28,
+          "steer_saturated_ticks": 0,
+          "gas_command_ticks": 28,
+          "brake_command_ticks": 0,
+          "first_command_saturation": null,
+          "first_front_clip": null,
+          "first_rear_clip": null,
+          "front": {
+            "max_force_ratio": 0.8099473990268966,
+            "clipped_wheel_samples": 0,
+            "max_raw_lat_abs_N": 226.29219275042556,
+            "max_raw_long_abs_N": 182.655312453127,
+            "max_lateral_slip_abs": 2.7596608872003117,
+            "max_longitudinal_slip_abs": 2.227503810403988,
+            "vector_clip_lat_loss_integral_N_s": 0.0,
+            "clipped_with_lat_only_within_limit_wheel_samples": 0,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.6646782313789401,
+            "long_only_ratio_max": 0.5058653141840064,
+            "first_combined_clip_lat_only_within": null,
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 1.1368683772161603e-13
+          },
+          "rear": {
+            "max_force_ratio": 0.9471090730504966,
+            "clipped_wheel_samples": 0,
+            "max_raw_lat_abs_N": 190.6280015493287,
+            "max_raw_long_abs_N": 311.539354496689,
+            "max_lateral_slip_abs": 2.3247317262113256,
+            "max_longitudinal_slip_abs": 3.799260420691329,
+            "vector_clip_lat_loss_integral_N_s": 0.0,
+            "clipped_with_lat_only_within_limit_wheel_samples": 0,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.49493115498688267,
+            "long_only_ratio_max": 0.8542698378417198,
+            "first_combined_clip_lat_only_within": null,
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 5.684341886080802e-14
+          },
+          "wheel_samples_each_axle": 56,
+          "max_nearest_saved_grid_arc_error_m": 0.5505030807635762,
+          "boundary_geometry": {
+            "preview_m": [
+              13.228990205805562,
+              16.701301926076546
+            ],
+            "preview_seconds_at_boundary_speed": [
+              0.27295178756961097,
+              0.29135856431070717
+            ],
+            "distance_at_80ms_hold": [
+              3.632360074838386,
+              4.895018882209653
+            ],
+            "target_bodyright_m": [
+              -4.139391729159515,
+              -2.2093628444141613
+            ],
+            "target_bodyforward_m": [
+              12.684494316240214,
+              16.626772724081352
+            ],
+            "target_chord_m": [
+              13.342824286715482,
+              16.866468717527614
+            ]
+          }
+        },
+        "442_nativeC0": {
+          "samples": 28,
+          "excluded_after_first_pre_guard_ticks": 0,
+          "time_pre_range": [
+            8.899999999999899,
+            9.439999999999888
+          ],
+          "arc_pre_range": [
+            403.0055688264012,
+            432.3812426194922
+          ],
+          "max_path_error": 0.30943647778168343,
+          "speed_COM_range": [
+            45.02901027738213,
+            62.760453059530136
+          ],
+          "max_abs_heading_error": 0.11697964954457873,
+          "max_abs_yaw_minus_v_kappa": 0.3817582613475212,
+          "mean_abs_front_joint_error": 0.004011245178324836,
+          "max_abs_front_joint_error": 0.020193830132484436,
+          "servo_rate_command_saturated_ticks": 0,
+          "max_abs_prefilter_delta": 0.005048239680328526,
+          "mean_abs_joint_error_to_unfiltered_target": 0.007887406735387808,
+          "actual_steer_matches_filtered_nominal_ticks": 28,
+          "steer_saturated_ticks": 0,
+          "gas_command_ticks": 28,
+          "brake_command_ticks": 0,
+          "first_command_saturation": null,
+          "first_front_clip": null,
+          "first_rear_clip": null,
+          "front": {
+            "max_force_ratio": 0.821661772020127,
+            "clipped_wheel_samples": 0,
+            "max_raw_lat_abs_N": 232.08044611997707,
+            "max_raw_long_abs_N": 182.8275214715647,
+            "max_lateral_slip_abs": 2.8302493429265496,
+            "max_longitudinal_slip_abs": 2.2296039203849354,
+            "vector_clip_lat_loss_integral_N_s": 0.0,
+            "clipped_with_lat_only_within_limit_wheel_samples": 0,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.6809152097007057,
+            "long_only_ratio_max": 0.5058920644744687,
+            "first_combined_clip_lat_only_within": null,
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 1.1368683772161603e-13
+          },
+          "rear": {
+            "max_force_ratio": 0.9527182561183406,
+            "clipped_wheel_samples": 0,
+            "max_raw_lat_abs_N": 195.83704587953275,
+            "max_raw_long_abs_N": 311.7682395339839,
+            "max_lateral_slip_abs": 2.3882566570674726,
+            "max_longitudinal_slip_abs": 3.8020517016339497,
+            "vector_clip_lat_loss_integral_N_s": 0.0,
+            "clipped_with_lat_only_within_limit_wheel_samples": 0,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.5080087116625464,
+            "long_only_ratio_max": 0.8528880558113309,
+            "first_combined_clip_lat_only_within": null,
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 5.684341886080802e-14
+          },
+          "wheel_samples_each_axle": 56,
+          "max_nearest_saved_grid_arc_error_m": 0.3592602944277701,
+          "boundary_geometry": {
+            "preview_m": [
+              13.422209639323512,
+              16.898036399141606
+            ],
+            "preview_seconds_at_boundary_speed": [
+              0.2721890540608604,
+              0.2900044514156514
+            ],
+            "distance_at_80ms_hold": [
+              3.7026216870267312,
+              4.966558690596948
+            ],
+            "target_bodyright_m": [
+              -4.104378051741458,
+              -2.1851841542594714
+            ],
+            "target_bodyforward_m": [
+              12.75212409728902,
+              16.713698325523836
+            ],
+            "target_chord_m": [
+              13.396364737654626,
+              17.048451797380682
+            ]
+          }
+        },
+        "442_nativeP": {
+          "samples": 28,
+          "excluded_after_first_pre_guard_ticks": 0,
+          "time_pre_range": [
+            8.899999999999899,
+            9.439999999999888
+          ],
+          "arc_pre_range": [
+            403.0055688264012,
+            432.3812426194922
+          ],
+          "max_path_error": 0.30943647778168343,
+          "speed_COM_range": [
+            45.02901027738213,
+            62.760453059530136
+          ],
+          "max_abs_heading_error": 0.11697964954457873,
+          "max_abs_yaw_minus_v_kappa": 0.3817582613475212,
+          "mean_abs_front_joint_error": 0.004011245178324836,
+          "max_abs_front_joint_error": 0.020193830132484436,
+          "servo_rate_command_saturated_ticks": 0,
+          "max_abs_prefilter_delta": 0.005048239680328526,
+          "mean_abs_joint_error_to_unfiltered_target": 0.007887406735387808,
+          "actual_steer_matches_filtered_nominal_ticks": 28,
+          "steer_saturated_ticks": 0,
+          "gas_command_ticks": 28,
+          "brake_command_ticks": 0,
+          "first_command_saturation": null,
+          "first_front_clip": null,
+          "first_rear_clip": null,
+          "front": {
+            "max_force_ratio": 0.821661772020127,
+            "clipped_wheel_samples": 0,
+            "max_raw_lat_abs_N": 232.08044611997707,
+            "max_raw_long_abs_N": 182.8275214715647,
+            "max_lateral_slip_abs": 2.8302493429265496,
+            "max_longitudinal_slip_abs": 2.2296039203849354,
+            "vector_clip_lat_loss_integral_N_s": 0.0,
+            "clipped_with_lat_only_within_limit_wheel_samples": 0,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.6809152097007057,
+            "long_only_ratio_max": 0.5058920644744687,
+            "first_combined_clip_lat_only_within": null,
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 1.1368683772161603e-13
+          },
+          "rear": {
+            "max_force_ratio": 0.9527182561183406,
+            "clipped_wheel_samples": 0,
+            "max_raw_lat_abs_N": 195.83704587953275,
+            "max_raw_long_abs_N": 311.7682395339839,
+            "max_lateral_slip_abs": 2.3882566570674726,
+            "max_longitudinal_slip_abs": 3.8020517016339497,
+            "vector_clip_lat_loss_integral_N_s": 0.0,
+            "clipped_with_lat_only_within_limit_wheel_samples": 0,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.5080087116625464,
+            "long_only_ratio_max": 0.8528880558113309,
+            "first_combined_clip_lat_only_within": null,
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 5.684341886080802e-14
+          },
+          "wheel_samples_each_axle": 56,
+          "max_nearest_saved_grid_arc_error_m": 0.3592602944277701,
+          "boundary_geometry": {
+            "preview_m": [
+              13.422209639323512,
+              16.898036399141606
+            ],
+            "preview_seconds_at_boundary_speed": [
+              0.2721890540608604,
+              0.2900044514156514
+            ],
+            "distance_at_80ms_hold": [
+              3.7026216870267312,
+              4.966558690596948
+            ],
+            "target_bodyright_m": [
+              -4.104378051741458,
+              -2.1851841542594714
+            ],
+            "target_bodyforward_m": [
+              12.75212409728902,
+              16.713698325523836
+            ],
+            "target_chord_m": [
+              13.396364737654626,
+              17.048451797380682
+            ]
+          }
+        }
+      }
+    },
+    {
+      "selected_by": "473_P4",
+      "common_spatial_prefix_bounds": [
+        294.3682773674809,
+        324.3682773674809
+      ],
+      "runs": {
+        "473_Original": {
+          "samples": 26,
+          "excluded_after_first_pre_guard_ticks": 2,
+          "time_pre_range": [
+            6.8199999999999426,
+            7.319999999999932
+          ],
+          "arc_pre_range": [
+            294.9837811322391,
+            323.94274196977784
+          ],
+          "max_path_error": 0.5183873705461234,
+          "speed_COM_range": [
+            49.46977169453372,
+            65.80719369649407
+          ],
+          "max_abs_heading_error": 0.22256681374880571,
+          "max_abs_yaw_minus_v_kappa": 0.8338024911266158,
+          "mean_abs_front_joint_error": 0.0066130734406984765,
+          "max_abs_front_joint_error": 0.03959198296070099,
+          "servo_rate_command_saturated_ticks": 0,
+          "max_abs_prefilter_delta": 0.009897778774865543,
+          "mean_abs_joint_error_to_unfiltered_target": 0.013348068789627115,
+          "actual_steer_matches_filtered_nominal_ticks": 26,
+          "steer_saturated_ticks": 0,
+          "gas_command_ticks": 26,
+          "brake_command_ticks": 0,
+          "first_command_saturation": null,
+          "first_front_clip": {
+            "pre_time": 6.8199999999999426,
+            "pre_arc": 294.9837811322391,
+            "raw_tick": 203,
+            "before_first_pre_guard": true
+          },
+          "first_rear_clip": {
+            "pre_time": 6.8199999999999426,
+            "pre_arc": 294.9837811322391,
+            "raw_tick": 203,
+            "before_first_pre_guard": true
+          },
+          "front": {
+            "max_force_ratio": 1.0930359152958564,
+            "clipped_wheel_samples": 6,
+            "max_raw_lat_abs_N": 330.15934665939676,
+            "max_raw_long_abs_N": 186.08539993006428,
+            "max_lateral_slip_abs": 4.026333495846302,
+            "max_longitudinal_slip_abs": 2.269334145488589,
+            "vector_clip_lat_loss_integral_N_s": 1.2804149940946739,
+            "clipped_with_lat_only_within_limit_wheel_samples": 6,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.9799120221695432,
+            "long_only_ratio_max": 0.6144896321071578,
+            "first_combined_clip_lat_only_within": {
+              "pre_time": 6.8199999999999426,
+              "pre_arc": 294.9837811322391,
+              "raw_tick": 203,
+              "before_first_pre_guard": true
+            },
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 5.684341886080802e-14
+          },
+          "rear": {
+            "max_force_ratio": 1.2319881831081398,
+            "clipped_wheel_samples": 29,
+            "max_raw_lat_abs_N": 314.3210000052227,
+            "max_raw_long_abs_N": 355.1546782306575,
+            "max_lateral_slip_abs": 3.8331829268929596,
+            "max_longitudinal_slip_abs": 4.331154612568994,
+            "vector_clip_lat_loss_integral_N_s": 7.126180076524315,
+            "clipped_with_lat_only_within_limit_wheel_samples": 29,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.8176940132345522,
+            "long_only_ratio_max": 0.9798329126664848,
+            "first_combined_clip_lat_only_within": {
+              "pre_time": 6.8199999999999426,
+              "pre_arc": 294.9837811322391,
+              "raw_tick": 203,
+              "before_first_pre_guard": true
+            },
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 1.1368683772161603e-13
+          },
+          "wheel_samples_each_axle": 52,
+          "max_nearest_saved_grid_arc_error_m": 0.4936863902095183,
+          "boundary_geometry": {
+            "preview_m": [
+              14.388772940585415,
+              17.27129445014409
+            ],
+            "preview_seconds_at_boundary_speed": [
+              0.2708007299349833,
+              0.28393528721041217
+            ],
+            "distance_at_80ms_hold": [
+              4.054099251121969,
+              5.102288890961488
+            ],
+            "target_bodyright_m": [
+              -5.559767055707471,
+              -0.8829507475630693
+            ],
+            "target_bodyforward_m": [
+              13.045144857833517,
+              17.625035056834108
+            ],
+            "target_chord_m": [
+              14.180508244614872,
+              17.70199398631677
+            ]
+          }
+        },
+        "473_P4": {
+          "samples": 25,
+          "excluded_after_first_pre_guard_ticks": 1,
+          "time_pre_range": [
+            6.339999999999953,
+            6.8199999999999426
+          ],
+          "arc_pre_range": [
+            295.4287634931425,
+            324.3682773674809
+          ],
+          "max_path_error": 3.114593281192849,
+          "speed_COM_range": [
+            55.191566638512434,
+            64.86685896519748
+          ],
+          "max_abs_heading_error": 0.5164657390184431,
+          "max_abs_yaw_minus_v_kappa": 2.387012348882327,
+          "mean_abs_front_joint_error": 0.016027507781982423,
+          "max_abs_front_joint_error": 0.08831244707107544,
+          "servo_rate_command_saturated_ticks": 3,
+          "max_abs_prefilter_delta": 0.022077074496733712,
+          "mean_abs_joint_error_to_unfiltered_target": 0.02925279522745646,
+          "actual_steer_matches_filtered_nominal_ticks": 25,
+          "steer_saturated_ticks": 0,
+          "gas_command_ticks": 22,
+          "brake_command_ticks": 3,
+          "first_command_saturation": null,
+          "first_front_clip": {
+            "pre_time": 6.339999999999953,
+            "pre_arc": 295.4287634931425,
+            "raw_tick": 179,
+            "before_first_pre_guard": true
+          },
+          "first_rear_clip": {
+            "pre_time": 6.339999999999953,
+            "pre_arc": 295.4287634931425,
+            "raw_tick": 179,
+            "before_first_pre_guard": true
+          },
+          "front": {
+            "max_force_ratio": 1.4171046051426759,
+            "clipped_wheel_samples": 16,
+            "max_raw_lat_abs_N": 467.1050395161142,
+            "max_raw_long_abs_N": 239.36807754361243,
+            "max_lateral_slip_abs": 5.696402920928222,
+            "max_longitudinal_slip_abs": 2.919122896873322,
+            "vector_clip_lat_loss_integral_N_s": 13.292307138273607,
+            "clipped_with_lat_only_within_limit_wheel_samples": 2,
+            "clipped_with_lat_only_above_limit_wheel_samples": 14,
+            "lat_only_ratio_max": 1.3353529920294944,
+            "long_only_ratio_max": 1.0179754017149298,
+            "first_combined_clip_lat_only_within": {
+              "pre_time": 6.47999999999995,
+              "pre_arc": 303.46776129154637,
+              "raw_tick": 186,
+              "before_first_pre_guard": true
+            },
+            "first_clip_lat_only_above": {
+              "pre_time": 6.339999999999953,
+              "pre_arc": 295.4287634931425,
+              "raw_tick": 179,
+              "before_first_pre_guard": true
+            },
+            "inferred_limit_max_abs_error": 1.1368683772161603e-13
+          },
+          "rear": {
+            "max_force_ratio": 3.958907211604097,
+            "clipped_wheel_samples": 49,
+            "max_raw_lat_abs_N": 1249.6091657983561,
+            "max_raw_long_abs_N": 970.8290461533231,
+            "max_lateral_slip_abs": 15.239136168272637,
+            "max_longitudinal_slip_abs": 11.839378611625893,
+            "vector_clip_lat_loss_integral_N_s": 242.29233225176995,
+            "clipped_with_lat_only_within_limit_wheel_samples": 8,
+            "clipped_with_lat_only_above_limit_wheel_samples": 41,
+            "lat_only_ratio_max": 3.1763013626804866,
+            "long_only_ratio_max": 2.5168311268987122,
+            "first_combined_clip_lat_only_within": {
+              "pre_time": 6.339999999999953,
+              "pre_arc": 295.4287634931425,
+              "raw_tick": 179,
+              "before_first_pre_guard": true
+            },
+            "first_clip_lat_only_above": {
+              "pre_time": 6.419999999999951,
+              "pre_arc": 299.9971180401346,
+              "raw_tick": 183,
+              "before_first_pre_guard": true
+            },
+            "inferred_limit_max_abs_error": 1.1368683772161603e-13
+          },
+          "wheel_samples_each_axle": 50,
+          "max_nearest_saved_grid_arc_error_m": 0.6016797639915694,
+          "boundary_geometry": {
+            "preview_m": [
+              15.626323650518437,
+              17.510708972343444
+            ],
+            "preview_seconds_at_boundary_speed": [
+              0.26994846446531856,
+              0.277547341738496
+            ],
+            "distance_at_80ms_hold": [
+              4.504117691097614,
+              5.189348717215799
+            ],
+            "target_bodyright_m": [
+              -6.382773366085626,
+              9.728523887787249
+            ],
+            "target_bodyforward_m": [
+              14.033880490212729,
+              17.616710900362982
+            ],
+            "target_chord_m": [
+              15.417185134011511,
+              19.03042770275129
+            ]
+          }
+        },
+        "472_nativeP4": {
+          "samples": 27,
+          "excluded_after_first_pre_guard_ticks": 0,
+          "time_pre_range": [
+            6.379999999999952,
+            6.899999999999941
+          ],
+          "arc_pre_range": [
+            294.9772509879792,
+            324.04686736218366
+          ],
+          "max_path_error": 0.5384870896540629,
+          "speed_COM_range": [
+            46.968687060171476,
+            64.11610368385065
+          ],
+          "max_abs_heading_error": 0.2204293911871602,
+          "max_abs_yaw_minus_v_kappa": 0.5644247016469928,
+          "mean_abs_front_joint_error": 0.006058347583920868,
+          "max_abs_front_joint_error": 0.030290111899375916,
+          "servo_rate_command_saturated_ticks": 0,
+          "max_abs_prefilter_delta": 0.007572265317878649,
+          "mean_abs_joint_error_to_unfiltered_target": 0.011909657406430239,
+          "actual_steer_matches_filtered_nominal_ticks": 27,
+          "steer_saturated_ticks": 0,
+          "gas_command_ticks": 27,
+          "brake_command_ticks": 0,
+          "first_command_saturation": null,
+          "first_front_clip": null,
+          "first_rear_clip": {
+            "pre_time": 6.45999999999995,
+            "pre_arc": 298.94525138941196,
+            "raw_tick": 273,
+            "before_first_pre_guard": true
+          },
+          "front": {
+            "max_force_ratio": 0.9522119723912006,
+            "clipped_wheel_samples": 0,
+            "max_raw_lat_abs_N": 284.7166688296056,
+            "max_raw_long_abs_N": 182.56076522127537,
+            "max_lateral_slip_abs": 3.47215449792202,
+            "max_longitudinal_slip_abs": 2.226350795381407,
+            "vector_clip_lat_loss_integral_N_s": 0.0,
+            "clipped_with_lat_only_within_limit_wheel_samples": 0,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.8456869913948901,
+            "long_only_ratio_max": 0.5745624671207841,
+            "first_combined_clip_lat_only_within": null,
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 1.1368683772161603e-13
+          },
+          "rear": {
+            "max_force_ratio": 1.016501970480234,
+            "clipped_wheel_samples": 3,
+            "max_raw_lat_abs_N": 238.75037653275308,
+            "max_raw_long_abs_N": 311.4231762696632,
+            "max_lateral_slip_abs": 2.911589957716501,
+            "max_longitudinal_slip_abs": 3.797843613044673,
+            "vector_clip_lat_loss_integral_N_s": 0.06657122628562381,
+            "clipped_with_lat_only_within_limit_wheel_samples": 3,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.6247265192523719,
+            "long_only_ratio_max": 0.858148061982042,
+            "first_combined_clip_lat_only_within": {
+              "pre_time": 6.45999999999995,
+              "pre_arc": 298.94525138941196,
+              "raw_tick": 273,
+              "before_first_pre_guard": true
+            },
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 5.684341886080802e-14
+          },
+          "wheel_samples_each_axle": 54,
+          "max_nearest_saved_grid_arc_error_m": 0.44448696168149127,
+          "boundary_geometry": {
+            "preview_m": [
+              13.573111153237726,
+              17.04562021469345
+            ],
+            "preview_seconds_at_boundary_speed": [
+              0.2716311465124443,
+              0.2889821283666977
+            ],
+            "distance_at_80ms_hold": [
+              3.757494964813718,
+              5.020225532615799
+            ],
+            "target_bodyright_m": [
+              -6.058074343559483,
+              -0.9103446687717929
+            ],
+            "target_bodyforward_m": [
+              13.395114732433342,
+              16.97071647596976
+            ],
+            "target_chord_m": [
+              14.701338831791695,
+              16.99511533128601
+            ]
+          }
+        },
+        "442_nativeC0": {
+          "samples": 26,
+          "excluded_after_first_pre_guard_ticks": 0,
+          "time_pre_range": [
+            6.8199999999999426,
+            7.319999999999932
+          ],
+          "arc_pre_range": [
+            294.98378291245973,
+            323.9427418052173
+          ],
+          "max_path_error": 0.5183878180877415,
+          "speed_COM_range": [
+            49.46975328146236,
+            65.80718256178889
+          ],
+          "max_abs_heading_error": 0.22256669453951616,
+          "max_abs_yaw_minus_v_kappa": 0.8338007587718359,
+          "mean_abs_front_joint_error": 0.0066130763063063985,
+          "max_abs_front_joint_error": 0.03959199786186218,
+          "servo_rate_command_saturated_ticks": 0,
+          "max_abs_prefilter_delta": 0.009897781185769339,
+          "mean_abs_joint_error_to_unfiltered_target": 0.013348067611237477,
+          "actual_steer_matches_filtered_nominal_ticks": 26,
+          "steer_saturated_ticks": 0,
+          "gas_command_ticks": 26,
+          "brake_command_ticks": 0,
+          "first_command_saturation": null,
+          "first_front_clip": {
+            "pre_time": 6.8199999999999426,
+            "pre_arc": 294.98378291245973,
+            "raw_tick": 291,
+            "before_first_pre_guard": true
+          },
+          "first_rear_clip": {
+            "pre_time": 6.8199999999999426,
+            "pre_arc": 294.98378291245973,
+            "raw_tick": 291,
+            "before_first_pre_guard": true
+          },
+          "front": {
+            "max_force_ratio": 1.0930355073948081,
+            "clipped_wheel_samples": 6,
+            "max_raw_lat_abs_N": 330.1592716113032,
+            "max_raw_long_abs_N": 186.08558273212634,
+            "max_lateral_slip_abs": 4.026332580625649,
+            "max_longitudinal_slip_abs": 2.2693363747820285,
+            "vector_clip_lat_loss_integral_N_s": 1.2804114564528333,
+            "clipped_with_lat_only_within_limit_wheel_samples": 6,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.979910965232184,
+            "long_only_ratio_max": 0.6144880684251749,
+            "first_combined_clip_lat_only_within": {
+              "pre_time": 6.8199999999999426,
+              "pre_arc": 294.98378291245973,
+              "raw_tick": 291,
+              "before_first_pre_guard": true
+            },
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 1.1368683772161603e-13
+          },
+          "rear": {
+            "max_force_ratio": 1.2319861938422425,
+            "clipped_wheel_samples": 29,
+            "max_raw_lat_abs_N": 314.3207573962827,
+            "max_raw_long_abs_N": 355.1540570595683,
+            "max_lateral_slip_abs": 3.83317996824735,
+            "max_longitudinal_slip_abs": 4.331147037311808,
+            "vector_clip_lat_loss_integral_N_s": 7.126099087377306,
+            "clipped_with_lat_only_within_limit_wheel_samples": 29,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.8176933796018682,
+            "long_only_ratio_max": 0.9798323671892064,
+            "first_combined_clip_lat_only_within": {
+              "pre_time": 6.8199999999999426,
+              "pre_arc": 294.98378291245973,
+              "raw_tick": 291,
+              "before_first_pre_guard": true
+            },
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 1.1368683772161603e-13
+          },
+          "wheel_samples_each_axle": 52,
+          "max_nearest_saved_grid_arc_error_m": 0.4936867461505585,
+          "boundary_geometry": {
+            "preview_m": [
+              14.38876978987174,
+              17.271292438715278
+            ],
+            "preview_seconds_at_boundary_speed": [
+              0.27080073721742376,
+              0.2839353052789334
+            ],
+            "distance_at_80ms_hold": [
+              4.054098105407905,
+              5.102288159532828
+            ],
+            "target_bodyright_m": [
+              -5.559764471569174,
+              -0.8829490043748569
+            ],
+            "target_bodyforward_m": [
+              13.045142704823352,
+              17.625034873121837
+            ],
+            "target_chord_m": [
+              14.180505250819829,
+              17.701993690472673
+            ]
+          }
+        },
+        "442_nativeP": {
+          "samples": 26,
+          "excluded_after_first_pre_guard_ticks": 0,
+          "time_pre_range": [
+            6.8199999999999426,
+            7.319999999999932
+          ],
+          "arc_pre_range": [
+            294.98378291245973,
+            323.9427418052173
+          ],
+          "max_path_error": 0.5183878180877415,
+          "speed_COM_range": [
+            49.46975328146236,
+            65.80718256178889
+          ],
+          "max_abs_heading_error": 0.22256669453951616,
+          "max_abs_yaw_minus_v_kappa": 0.8338007587718359,
+          "mean_abs_front_joint_error": 0.0066130763063063985,
+          "max_abs_front_joint_error": 0.03959199786186218,
+          "servo_rate_command_saturated_ticks": 0,
+          "max_abs_prefilter_delta": 0.009897781185769339,
+          "mean_abs_joint_error_to_unfiltered_target": 0.013348067611237477,
+          "actual_steer_matches_filtered_nominal_ticks": 26,
+          "steer_saturated_ticks": 0,
+          "gas_command_ticks": 26,
+          "brake_command_ticks": 0,
+          "first_command_saturation": null,
+          "first_front_clip": {
+            "pre_time": 6.8199999999999426,
+            "pre_arc": 294.98378291245973,
+            "raw_tick": 291,
+            "before_first_pre_guard": true
+          },
+          "first_rear_clip": {
+            "pre_time": 6.8199999999999426,
+            "pre_arc": 294.98378291245973,
+            "raw_tick": 291,
+            "before_first_pre_guard": true
+          },
+          "front": {
+            "max_force_ratio": 1.0930355073948081,
+            "clipped_wheel_samples": 6,
+            "max_raw_lat_abs_N": 330.1592716113032,
+            "max_raw_long_abs_N": 186.08558273212634,
+            "max_lateral_slip_abs": 4.026332580625649,
+            "max_longitudinal_slip_abs": 2.2693363747820285,
+            "vector_clip_lat_loss_integral_N_s": 1.2804114564528333,
+            "clipped_with_lat_only_within_limit_wheel_samples": 6,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.979910965232184,
+            "long_only_ratio_max": 0.6144880684251749,
+            "first_combined_clip_lat_only_within": {
+              "pre_time": 6.8199999999999426,
+              "pre_arc": 294.98378291245973,
+              "raw_tick": 291,
+              "before_first_pre_guard": true
+            },
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 1.1368683772161603e-13
+          },
+          "rear": {
+            "max_force_ratio": 1.2319861938422425,
+            "clipped_wheel_samples": 29,
+            "max_raw_lat_abs_N": 314.3207573962827,
+            "max_raw_long_abs_N": 355.1540570595683,
+            "max_lateral_slip_abs": 3.83317996824735,
+            "max_longitudinal_slip_abs": 4.331147037311808,
+            "vector_clip_lat_loss_integral_N_s": 7.126099087377306,
+            "clipped_with_lat_only_within_limit_wheel_samples": 29,
+            "clipped_with_lat_only_above_limit_wheel_samples": 0,
+            "lat_only_ratio_max": 0.8176933796018682,
+            "long_only_ratio_max": 0.9798323671892064,
+            "first_combined_clip_lat_only_within": {
+              "pre_time": 6.8199999999999426,
+              "pre_arc": 294.98378291245973,
+              "raw_tick": 291,
+              "before_first_pre_guard": true
+            },
+            "first_clip_lat_only_above": null,
+            "inferred_limit_max_abs_error": 1.1368683772161603e-13
+          },
+          "wheel_samples_each_axle": 52,
+          "max_nearest_saved_grid_arc_error_m": 0.4936867461505585,
+          "boundary_geometry": {
+            "preview_m": [
+              14.38876978987174,
+              17.271292438715278
+            ],
+            "preview_seconds_at_boundary_speed": [
+              0.27080073721742376,
+              0.2839353052789334
+            ],
+            "distance_at_80ms_hold": [
+              4.054098105407905,
+              5.102288159532828
+            ],
+            "target_bodyright_m": [
+              -5.559764471569174,
+              -0.8829490043748569
+            ],
+            "target_bodyforward_m": [
+              13.045142704823352,
+              17.625034873121837
+            ],
+            "target_chord_m": [
+              14.180505250819829,
+              17.701993690472673
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "failure_time_alignment": {
+    "473_Original": {
+      "first_failed_pre": {
+        "pre_time": 9.199999999999893,
+        "pre_arc": 432.52330907641493,
+        "raw_tick": 322,
+        "pre_path_error_m": 3.26180399452591,
+        "heading_error_rad": 0.5856683116891652,
+        "velocity_heading_error_rad": 0.3302377373611298,
+        "yaw": 3.923034906387329,
+        "desired_yaw_v_kappa_polyline": 1.5947989916512786,
+        "front_joint_error": 0.03188227117061615,
+        "steer_target_joint": -0.16159604489803314,
+        "command": [
+          0.16159604489803314,
+          0.8993178009986877,
+          0.0
+        ]
+      },
+      "front_lateral_slip_abs_m_s": 1.907470796917778,
+      "rear_lateral_slip_abs_m_s": 23.21872730376299,
+      "events": {
+        "first_lateral_only_exceeds_limit": {
+          "pre_time": 8.739999999999903,
+          "pre_arc": 403.12665519392925,
+          "raw_tick": 299,
+          "heading_error_rad": -0.0957680550294171,
+          "front_joint_error": 2.8908252716064453e-06,
+          "command": [
+            -0.1604606807231903,
+            0.7696157097816467,
+            0.0
+          ]
+        },
+        "first_joint_servo_rate_cap_in_failure_window": {
+          "pre_time": 9.019999999999897,
+          "pre_arc": 420.47512027958305,
+          "raw_tick": 313,
+          "heading_error_rad": 0.20381891700115773,
+          "front_joint_error": 0.0626308280043304,
+          "command": [
+            -0.003254715818911791,
+            0.8666191697120667,
+            0.0
+          ]
+        },
+        "first_abs_heading_over_point2_in_failure_window": {
+          "pre_time": 8.999999999999897,
+          "pre_arc": 419.15549263512224,
+          "raw_tick": 312,
+          "heading_error_rad": 0.2299646930771786,
+          "front_joint_error": 4.954636096954346e-06,
+          "command": [
+            -0.06587963551282883,
+            0.8468251824378967,
+            0.0
+          ]
+        }
+      }
+    },
+    "473_P4": {
+      "first_failed_pre": {
+        "pre_time": 6.8199999999999426,
+        "pre_arc": 324.3682773674809,
+        "raw_tick": 203,
+        "pre_path_error_m": 3.114593281192849,
+        "heading_error_rad": 0.47667973004915254,
+        "velocity_heading_error_rad": 0.3232170928239584,
+        "yaw": 0.5013989210128784,
+        "desired_yaw_v_kappa_polyline": 0.8703482442638503,
+        "front_joint_error": 7.450580596923828e-08,
+        "steer_target_joint": -0.1542874127626419,
+        "command": [
+          0.1542874127626419,
+          0.0,
+          0.152647465467453
+        ]
+      },
+      "front_lateral_slip_abs_m_s": 0.8876651691498978,
+      "rear_lateral_slip_abs_m_s": 10.569192002883199,
+      "events": {
+        "first_lateral_only_exceeds_limit": {
+          "pre_time": 6.339999999999953,
+          "pre_arc": 295.4287634931425,
+          "raw_tick": 179,
+          "heading_error_rad": -0.11758717610559799,
+          "front_joint_error": 3.3676624298095703e-06,
+          "command": [
+            -0.19151005148887634,
+            0.7251643538475037,
+            0.0
+          ]
+        },
+        "first_joint_servo_rate_cap_in_failure_window": {
+          "pre_time": 6.619999999999947,
+          "pre_arc": 311.8229804107568,
+          "raw_tick": 193,
+          "heading_error_rad": 0.22227597415866107,
+          "front_joint_error": 0.07425246015191078,
+          "command": [
+            -0.006245281547307968,
+            0.8229089379310608,
+            0.0
+          ]
+        },
+        "first_abs_heading_over_point2_in_failure_window": {
+          "pre_time": 6.359999999999952,
+          "pre_arc": 296.61767740626175,
+          "raw_tick": 180,
+          "heading_error_rad": -0.2577488129553487,
+          "front_joint_error": 3.725290298461914e-06,
+          "command": [
+            -0.19151005148887634,
+            0.7251643538475037,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "claim": "Kinematic pursuit/preview plus finite steering/hold response may contribute to lateral-state error; simple command saturation/sign/unit error or prefilter lag alone is unsupported.",
+      "supported": "665 stored cursor and float32 nominal steering calculations match exactly; no pursuit or command saturation in data. Filter and servo/hold exist. Rate-cap events occur after lateral-alone excess in both failure windows; P4 joint reaches target at first failed state.",
+      "unknown": "Cause of the earlier lateral-state departure; ideal geometry at hull origin is not a physical tracking theorem. Different safe trajectories are not a matched intervention.",
+      "action": "No sign flip, rear-axle repair, preview tune or filter-removal trial promoted."
+    },
+    {
+      "id": "H2",
+      "claim": "Independent longitudinal mapping competes for wheel lateral capacity and may amplify loss; a scalar feasible speed profile does not certify its execution.",
+      "supported": "Raw long/lat demand and clipping algebra show conditional lateral-force loss; P4 common30m rear49/50clipped,41alreadylat-alone>1,8combinedonly. Safe442P rear29/52combined-only and no lat-alone>1 proves clipping is not sufficient for failure.",
+      "unknown": "Causal effect of changing pedal allocation; removing longitudinal demand cannot immediately unclamp lateral-alone excess at fixed wheel state.",
+      "action": "One conditional allocation-only falsification proposal; source inverse/reconstruction gate still unqualified."
+    }
+  ],
+  "coordinate_contract": {
+    "arc": "same fixed-line canonical projection of hull origin; FIRST_LAP terminal vertex convention",
+    "time": "physical seconds; wrapper elapsed=physical minus reset1.02; modelroot2.78=elapsed1.76",
+    "pre": "raw_hull at pre-world time; COM and origin velocity retained separately",
+    "post": "model observer afterWorld; native next pre-world snapshot or wrapper post; timestamp pre+0.02",
+    "path_guard": "post_path_error is pure post geometry for all runs; frozen_guard_path_error separately retains model observer max(pre,post), reconstructed similarly for native; first_frozen_guard post report time does not timestamp its pre component",
+    "tire": "same pre-world tick after engine/brake omega update before joint solver/world and vector friction clip; wheel-frame point velocity",
+    "steering": "front wheels0,1; joint target=-steer command; limits±0.4rad; motor rate cap3rad/s times configured multiplier",
+    "prefilter": "stored float64 laststeer reconstructs clipped pursuit=(after-.2before)/.8; fixed .8/.2 80ms filter has mean age.02s; diagnostic reconstruction is not a simulated ablation",
+    "curvature": "polyline signed turn density diagnostic; v*kappa is not exact controller target; no driver act invoked",
+    "grids": "nearest observed raw pre sample to common5m arc; no interpolated state or extrapolation beyond observed endpoint"
+  },
+  "inference_limits": [
+    "Different closed-loop trajectories, times and controls; spatial alignment is diagnostic, not a randomized counterfactual.",
+    "Clipped with lat-only<=1 establishes algebraic combined-demand contribution at the same wheel state; it is not dynamic evidence from removing longitudinal demand. Lat-only>1 cannot become unclipped merely by removing longitudinal force at that fixed state.",
+    "Raw force demand and common vector clipping establish a mechanism in code; their association here does not isolate its causal contribution.",
+    "Lateral tracking/delay and longitudinal-lateral friction competition are at most two candidate explanations; no policy change or new experiment selected."
+  ],
+  "prospective_cost": {
+    "qualification": {
+      "source": {
+        "ticks": 1242,
+        "worlds": 35
+      },
+      "root_Original_oldP4_changedP4": {
+        "ticks": 324,
+        "worlds": 9
+      },
+      "changed_pending_pair_and_held": {
+        "ticks": 108,
+        "worlds": 3
+      },
+      "total": {
+        "ticks": 1674,
+        "worlds": 47
+      }
+    },
+    "arithmetic": "whole:1674+2*250*4=3674,47+2=49; one native:1674+250*2*13*4=27674,47+500=547; native pair:1674+500*2*13*4=53674,47+1000=1047",
+    "empirical_model_bytes_per_tick": 93191.31411677753,
+    "latest_header_base_bytes": 783270,
+    "source_manifest_growth_bytes": 620,
+    "future_manifest_allowance_bytes": 8192,
+    "header_bytes_each": 826090,
+    "margin": 1.25,
+    "raw_temp_bytes": 33554432,
+    "reserve_each_bytes": 536870912,
+    "workspace_metadata_allowance_bytes": 67108864,
+    "native_bytes_per_raw_tick": 392413.3711615487,
+    "native_bytes_per_action": 1563574.582010582,
+    "variants": {
+      "whole_model_pair": {
+        "planned_model_ticks": 3674,
+        "planned_model_worlds": 49,
+        "hard_model_ticks": 4096,
+        "hard_model_worlds": 49,
+        "actual_actions_cap": 0,
+        "resets_cap": 0,
+        "whole_CPU_cap_s": 300,
+        "whole_wall_cap_s": 600,
+        "model_raw_forecast_bytes": 536492307,
+        "native_raw_forecast_bytes": 0,
+        "tmp_required_bytes": 1123694867,
+        "tmp_free_bytes": 2331701248,
+        "tmp_shortage_bytes": 0,
+        "workspace_required_bytes": 603979776,
+        "workspace_free_bytes": 860688384,
+        "workspace_shortage_bytes": 0,
+        "execution_authorized": false,
+        "allocation_proof_extra_bytes": 16777216,
+        "max_model_calls_if_one_partial_terminal_per_world": 1060,
+        "per_model_or_actual_call_proof_hard_bytes": 4096
+      },
+      "single_native_bridge": {
+        "planned_model_ticks": 27674,
+        "planned_model_worlds": 547,
+        "hard_model_ticks": 32768,
+        "hard_model_worlds": 576,
+        "actual_actions_cap": 272,
+        "resets_cap": 1,
+        "whole_CPU_cap_s": 1800,
+        "whole_wall_cap_s": 2400,
+        "model_raw_forecast_bytes": 4311818435,
+        "native_raw_forecast_bytes": 609030186,
+        "tmp_required_bytes": 5558382829,
+        "tmp_free_bytes": 2331701248,
+        "tmp_shortage_bytes": 3226681581,
+        "workspace_required_bytes": 603979776,
+        "workspace_free_bytes": 860688384,
+        "workspace_shortage_bytes": 0,
+        "execution_authorized": false,
+        "allocation_proof_extra_bytes": 67108864,
+        "max_model_calls_if_one_partial_terminal_per_world": 8624,
+        "per_model_or_actual_call_proof_hard_bytes": 4096
+      },
+      "fresh_native_pair": {
+        "planned_model_ticks": 53674,
+        "planned_model_worlds": 1047,
+        "hard_model_ticks": 65536,
+        "hard_model_worlds": 1088,
+        "actual_actions_cap": 544,
+        "resets_cap": 2,
+        "whole_CPU_cap_s": 3600,
+        "whole_wall_cap_s": 4800,
+        "model_raw_forecast_bytes": 8551892741,
+        "native_raw_forecast_bytes": 1218060371,
+        "tmp_required_bytes": 10441041752,
+        "tmp_free_bytes": 2331701248,
+        "tmp_shortage_bytes": 8109340504,
+        "workspace_required_bytes": 603979776,
+        "workspace_free_bytes": 860688384,
+        "workspace_shortage_bytes": 0,
+        "execution_authorized": false,
+        "allocation_proof_extra_bytes": 100663296,
+        "max_model_calls_if_one_partial_terminal_per_world": 17200,
+        "per_model_or_actual_call_proof_hard_bytes": 4096
+      }
+    },
+    "estimates_not_guarantees": true,
+    "all_new_auxiliary_must_be_recosted_before_any_integration": true
+  },
+  "source_methodology": {
+    "historical_git_commit": "3e584dff988f0b90fce3dd563b7f6351a13d21f8",
+    "historical_path": "retry/static_control_audit_20261016.md",
+    "original_two_personal_documents_directly_read": false,
+    "applied": "Stored formula reproduction→actual action change→small fixed-root falsification→own safe finish; execution law and physical envelope are separate premises."
+  },
+  "new_physics": 0,
+  "new_native": 0,
+  "new_reset": 0,
+  "new_actor": 0,
+  "new_archive_created": false,
+  "checkpoint_within10minutes": true,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "remaining_blocker": "Proposed allocation not implemented or statically qualified; future native storage insufficient.",
+  "goal11_99_unchanged": true,
+  "whole_P4_or_control_family_impossibility_proven": false
+}

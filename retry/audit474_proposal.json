@@ -1,0 +1,144 @@
+{
+  "stage": 474,
+  "status": "PROPOSED_ONLY_NOT_IMPLEMENTED_NOT_QUALIFIED_NOT_AUTHORIZED",
+  "target": "Falsify whether independent longitudinal pedal allocation materially worsens lateral retention under the fixed P4 law",
+  "single_changed_assumption": "Replace only the independent algebraic pedal allocation by lateral-priority first-raw wheel-force allocation",
+  "fixed": [
+    "existing common pre23 state/before-memory/RNG/actual ledger",
+    "frozen P4 nodes and point-FF plus feedback",
+    "pursuit geometry/preview/steering/filter/joint servo",
+    "80ms command hold and original phase/own terminal law",
+    "all existing3m/road-contact/damage/progress/fidelity/authority thresholds"
+  ],
+  "rule": {
+    "nominal": "Compute unchanged P4 nominal steering/gas/brake once. Gas and brake must be mutually exclusive.",
+    "choice": "Let q0 be the active nominal float32 pedal. Among finite float32 q in[0,q0], choose the largest q whose ORIGINAL first20ms per-wheel force equations satisfy sqrt(F_long(q)^2+F_lat^2)<=current per-wheel friction limit for all wheels. The inactive pedal stays0; q0=0 has only q=0.",
+    "current_inputs_only": "Current native/model wheel local velocity/omega/appliedgas/brake/joint/contact/grip and original source constants; never cached future raw force or failure-position/time.",
+    "force_map": "Original one-call rear gas+0.1 ramp, engine omega update, brake omega update and current wheel-frame demand. No world.Step or simulated transition in the allocator.",
+    "no_monotonicity_assumption": "Gas ramp/rolling-longitudinal sign and brake clamp are piecewise; intersect feasible intervals, quantize actual dispatched pedal and recheck original equations. Do not assume q=0 feasible.",
+    "quantization": "Optimization domain is the finite float32 dispatched active pedal, not a possibly open real-lambda supremum. If maximal feasible command cannot be certified, technical/domain stop. No arbitrary epsilon or threshold relaxation.",
+    "brake_branch_proof": {
+      "fixed_profile_nominal_brake_max": 0.3,
+      "source_lock_threshold": 0.9,
+      "proof": "effective_mass*brake_accel/(4*1.6*15/(.02*.54))=0.3; q<=q0 excludes0.9 lock branch for this fixed model only"
+    },
+    "infeasible": "Empty certified set stops that arm with state/domain evidence; no neutral/guardian rescue.",
+    "scope": "First raw tick conditional algebraic feasibility only; does not certify all4rawticks/80ms or restore feasibility when lateral demand alone is excessive."
+  },
+  "preregistered_gates": [
+    "Saved full-before wheel-state/command→stored first-raw force reconstruction under existing source; no new physics. Missing source fields or mismatch closes the gate.",
+    "q=q0 identity whenever nominal is certified feasible; only gas/brake magnitude may change; steering/node/phase/memory boundary and current-input causality remain exact.",
+    "Boundary, finite/zero, ramp, rolling sign, brake clamp and float32 quantization tests. No source-equation fit, parameter sweep or failure-location trigger.",
+    "Fresh source35 +Original/oldP4/newP4 H13 independent2+held each +new pending pair/held; all counted in future budget. No physics before revised source/space/time gates.",
+    "Two fixed-root model whole arms once each, oldP4 vsallocatorP4, max250actions each. Exact own H13 prefix before14; raw unsafe/progress/domain closes arm, technical/source/numeric stops all; no in-run repair or rescue."
+  ],
+  "pass_and_stop": {
+    "mechanism": "Report every joint/slip/force/time change and counterexample; lower clipping alone does not pass.",
+    "whole": "Candidate must have its own safe model finish before further transfer. If both finish, report paired finish brackets; if baseline is unsafe report safety recovery only, never fabricate baseline finish or full time gain.",
+    "negative": "No command change, invalid algebra, ineligibility, unsafe/domain/censor or no safe own finish closes this one candidate; do not retune a coefficient or add a pulse.",
+    "promotion": "No native, pixel, HOLDOUT/SEALED or generalization promotion from this analysis/model screen. Native requires a separate complete contract; current native storage forecasts fail."
+  },
+  "cost": {
+    "qualification": {
+      "source": {
+        "ticks": 1242,
+        "worlds": 35
+      },
+      "root_Original_oldP4_changedP4": {
+        "ticks": 324,
+        "worlds": 9
+      },
+      "changed_pending_pair_and_held": {
+        "ticks": 108,
+        "worlds": 3
+      },
+      "total": {
+        "ticks": 1674,
+        "worlds": 47
+      }
+    },
+    "arithmetic": "whole:1674+2*250*4=3674,47+2=49; one native:1674+250*2*13*4=27674,47+500=547; native pair:1674+500*2*13*4=53674,47+1000=1047",
+    "empirical_model_bytes_per_tick": 93191.31411677753,
+    "latest_header_base_bytes": 783270,
+    "source_manifest_growth_bytes": 620,
+    "future_manifest_allowance_bytes": 8192,
+    "header_bytes_each": 826090,
+    "margin": 1.25,
+    "raw_temp_bytes": 33554432,
+    "reserve_each_bytes": 536870912,
+    "workspace_metadata_allowance_bytes": 67108864,
+    "native_bytes_per_raw_tick": 392413.3711615487,
+    "native_bytes_per_action": 1563574.582010582,
+    "variants": {
+      "whole_model_pair": {
+        "planned_model_ticks": 3674,
+        "planned_model_worlds": 49,
+        "hard_model_ticks": 4096,
+        "hard_model_worlds": 49,
+        "actual_actions_cap": 0,
+        "resets_cap": 0,
+        "whole_CPU_cap_s": 300,
+        "whole_wall_cap_s": 600,
+        "model_raw_forecast_bytes": 536492307,
+        "native_raw_forecast_bytes": 0,
+        "tmp_required_bytes": 1123694867,
+        "tmp_free_bytes": 2331701248,
+        "tmp_shortage_bytes": 0,
+        "workspace_required_bytes": 603979776,
+        "workspace_free_bytes": 860688384,
+        "workspace_shortage_bytes": 0,
+        "execution_authorized": false,
+        "allocation_proof_extra_bytes": 16777216,
+        "max_model_calls_if_one_partial_terminal_per_world": 1060,
+        "per_model_or_actual_call_proof_hard_bytes": 4096
+      },
+      "single_native_bridge": {
+        "planned_model_ticks": 27674,
+        "planned_model_worlds": 547,
+        "hard_model_ticks": 32768,
+        "hard_model_worlds": 576,
+        "actual_actions_cap": 272,
+        "resets_cap": 1,
+        "whole_CPU_cap_s": 1800,
+        "whole_wall_cap_s": 2400,
+        "model_raw_forecast_bytes": 4311818435,
+        "native_raw_forecast_bytes": 609030186,
+        "tmp_required_bytes": 5558382829,
+        "tmp_free_bytes": 2331701248,
+        "tmp_shortage_bytes": 3226681581,
+        "workspace_required_bytes": 603979776,
+        "workspace_free_bytes": 860688384,
+        "workspace_shortage_bytes": 0,
+        "execution_authorized": false,
+        "allocation_proof_extra_bytes": 67108864,
+        "max_model_calls_if_one_partial_terminal_per_world": 8624,
+        "per_model_or_actual_call_proof_hard_bytes": 4096
+      },
+      "fresh_native_pair": {
+        "planned_model_ticks": 53674,
+        "planned_model_worlds": 1047,
+        "hard_model_ticks": 65536,
+        "hard_model_worlds": 1088,
+        "actual_actions_cap": 544,
+        "resets_cap": 2,
+        "whole_CPU_cap_s": 3600,
+        "whole_wall_cap_s": 4800,
+        "model_raw_forecast_bytes": 8551892741,
+        "native_raw_forecast_bytes": 1218060371,
+        "tmp_required_bytes": 10441041752,
+        "tmp_free_bytes": 2331701248,
+        "tmp_shortage_bytes": 8109340504,
+        "workspace_required_bytes": 603979776,
+        "workspace_free_bytes": 860688384,
+        "workspace_shortage_bytes": 0,
+        "execution_authorized": false,
+        "allocation_proof_extra_bytes": 100663296,
+        "max_model_calls_if_one_partial_terminal_per_world": 17200,
+        "per_model_or_actual_call_proof_hard_bytes": 4096
+      }
+    },
+    "estimates_not_guarantees": true,
+    "all_new_auxiliary_must_be_recosted_before_any_integration": true
+  },
+  "new_execution_now": 0
+}
