@@ -1,0 +1,194 @@
+{
+  "stage": 478,
+  "status": "ONE_DESIGN_ONLY_NOT_IMPLEMENTED_NOT_AUTHORIZED_NOT_EXECUTED",
+  "new_physics": 0,
+  "new_native": 0,
+  "new_world": 0,
+  "new_reset": 0,
+  "design_comparison": [
+    {
+      "id": "A",
+      "assumption": "The first20ms objective misses the actual held80ms evolution; exact finite heldcommand comparisons can distinguish this locally",
+      "selected": true
+    },
+    {
+      "id": "B",
+      "assumption": "Anticipatory limit from existing reference/preview could constrain later demand before slip grows",
+      "selected": false,
+      "reason": "Needs a new preview-to-force/speed-cap interpretation and target/FF consistency proof; data does not identify its bound. No arbitrary weights or coefficient introduced"
+    }
+  ],
+  "selected": "A: finite actual80ms held-source mechanism comparison",
+  "generic_candidate": {
+    "domain": "Current FIRST_LAP full state and frozen originalP4 reference/preview/nominal; not currentlocation/action-index lookup",
+    "nominal": "Call SourceC nominal once at80ms boundary; steering/reference/memory/hold unchanged",
+    "commands": [
+      "same nominal steering, active pedal q0",
+      "same steering, active pedal qstar from frozen476 first-raw minimax",
+      "same steering, active pedal+0"
+    ],
+    "inactive_pedal": 0,
+    "original_active_branch_preserved": true,
+    "qstar_is_not_reoptimized_for_horizon": true,
+    "finite_scope": "Best of only3fixedcommands, not a continuous/global80ms optimum",
+    "hold": "Each candidate uses original Car.step/TerminalVehicleTransition and source80ms command hold, 4raw20ms, no20ms feedback or reallocation",
+    "selection": "Keep candidates passing every existing raw physical guard and original progress/phase criteria; amongthem minimize exact observed/predicted max_(4raw,wheel) max(0,norm/limit-1), exact tieslargestactivepedal",
+    "no_weights_no_epsilon": true,
+    "all_unsafe": "Typed empty finitecandidate domain; no parentdispatch/rescue/extra command. Not all-control impossibility",
+    "inputs": "Actual currentwheel/body/fullstate, controllerbefore/after nominal, existingP4nodes/preview andledger/RNG only. Archived477 traces are validationtargets and comparisonoutcomes, never candidate inputs"
+  },
+  "diagnostic_scope": {
+    "roots": [
+      "pre47 positivecontrol",
+      "pre69 firstlate-hold-growth"
+    ],
+    "posthoc_root_labels_not_policy_triggers": true,
+    "not_whole_lap_or_online_policy_qualification": true,
+    "no_full_tail_before_state_saved": "477 minimalwheel/hull/tires cannot exactly restore these roots; no telemetry assembly",
+    "prefix": "One fresh source model from same pre23 fullstate/memory/RNG/ledger. Replay frozen477 oldallocation law68actions, require every produced row equal477. Capturefullpre47 after46actions, fullpre69 after68actions. No rootsearch",
+    "prefix_pause47": "Prepare nominal/qstar once, pausebefore original47dispatch. Fresh held47 parent and candidate shadows use that prepared context. Prefix then dispatches oldqstar via same preparednominal/beforememory; nevercall SourceCtwice",
+    "held69": "Atpre69 keep prefixworld itself pausedasheldparent; prepare nominal/qstar once. Candidate forecasts do not mutate its body/memory/RNG/ledger/clock. Only its own selectedheldstep commits prediction aftershadowgates",
+    "root47_held": "One extra independent held47 parent from capturedfullinput; score/ownstep only, no continuation",
+    "shadow_repeats": "3commands x2independent fullrestores perroot, eachone4rawheldstep. Repeatallcommand/memory/phase/RNG/rawtracesexact",
+    "validations": "Knownsource/kernel/phase APIs pinned and retained; no rerun35source/H13/pending. New integration only checks required parentisolation/once-nominal/currentinput and pairedfirsthold joins within these14worlds"
+  },
+  "source_fidelity": {
+    "first_raw": "qstar/source-order beforeforce exact against original trace and duplicated roots; no surrogate force model",
+    "independent_repeats": "exact entire4raw traces for samecold-restored command",
+    "live_vs_restored": "Saved source explicitly omits warmstart impulses/manifold/islandhistory. Cannot assume fullcoldshadow equalsliveparentbitwise. Compareqstarshadow to477andliveprefix with EXISTING registered body/wheel/rawhull tolerances and exactdiscrete flags; mismatchstops all dependent work",
+    "existing_tolerances": {
+      "position_m": 0.1,
+      "body_speed_m_s": 0.5,
+      "yaw_rad_s": 0.05,
+      "joint_rad": 0.01,
+      "wheel_omega_rad_s": 1.0,
+      "wheel_slip_m_s": 0.5,
+      "force_ratio": 0.05,
+      "raw_time_s": 1e-08,
+      "clipped_grass_contacts_damage_collision_flags_exact": true
+    },
+    "distinction": "These are existing source-fidelity checks, not softened safety thresholds or epsilon in exactscore/ties. Sourceuncertainty is reported with finitecommand ranking; no liveglobal-optimality claim",
+    "held_own": "Selectedforecast\u2192sameheldparent own4raw joins under existingsourcefidelity checks; ownraw guards andfullledger observed. Predictionnever commitsparent",
+    "no_redundant_probe": true
+  },
+  "counts": {
+    "prefix": {
+      "worlds": 1,
+      "actions": 68,
+      "positive_ticks": 272
+    },
+    "two_root_command_shadows": {
+      "worlds": 12,
+      "actions": 12,
+      "positive_ticks": 48
+    },
+    "extra_held47": {
+      "worlds": 1,
+      "actions": 1,
+      "positive_ticks": 4
+    },
+    "held69_reuses_prefix": {
+      "worlds": 0,
+      "actions": 1,
+      "positive_ticks": 4
+    },
+    "total": {
+      "worlds": 14,
+      "actions": 82,
+      "positive_ticks": 328,
+      "charged_positive_hard": 328,
+      "zero_time_constructor_steps": 14
+    },
+    "pure_allocator": {
+      "prefix_qstar": 68,
+      "extra_pre69_qstar": 1,
+      "max_calls": 69,
+      "pre47_qstar_reused_from_prefix": true,
+      "shadow_and_held_recompute_qstar": false
+    },
+    "no_hidden_parent_or_repeat": true,
+    "native": 0,
+    "reset": 0,
+    "actor": 0,
+    "HOLDOUT": 0,
+    "SEALED": 0
+  },
+  "mechanism_criteria": {
+    "positivecontrol": "pre47 chosenheldaction remains within existingrawsafety/progress; matchknownsafeqstarresponse/sourcebounds. No required gain whereqstaralreadybest",
+    "cold_selection_comparator": "Exact comparison to qstar shadow from the SAME cold root; exactfinite3command ranking only",
+    "primary": "pre69 warmheld69 OWN80mspeakM strictly below archived477 warmqstar69, with ownrawsafety/progresspass, only after exactprefix68 and sourcejoins. Coldscore reduction alone is not mechanism success",
+    "ranking_transfer": "Report coldqstar-vs-selected gap and sourcefidelity uncertainty separately. Existingforce_ratio bound0.05pertrace implies up to0.10 uncertainty for a two-command score difference if both joins pass; this is not an optimizer epsilon or new safetythreshold. Small gap is source-bound-order-uncertain; own outcome that reverses ranking is FORECAST_RANKING_NOT_TRANSFERRED, not success",
+    "null": "Noalternative lowers80msM inthese3commands => horizon-only explanation notsupported by thisfinitecomparison; no globalnegative claim",
+    "separation": "Mreductionwithoutguard/progresspass is not promotion. Alloptionsunsafe => finitecandidate domainclosed. Any source/restore/isolation/numericerror => technicalstop, not scientificnull",
+    "finish": "No lapfinish criterion or finishgain; these are two one-hold mechanism tests. No native/pixel/generalization promotion",
+    "no_tune_after_outcome": true,
+    "no_more_commands_roots_horizons": true
+  },
+  "caps": {
+    "whole_CPU_s": 180,
+    "whole_wall_s": 300,
+    "allocator_query_CPU_s": 0.25,
+    "allocator_query_wall_s": 0.5,
+    "allocator_aggregate_CPU_s": 30,
+    "allocator_aggregate_wall_s": 60,
+    "allocator_wheel_evaluations": 100000,
+    "includes": "Allprefix,12shadows,repeats,2held ownsteps,constructors,telemetry,proofs,finalreadbacks andpostprocessing. Separateprocesscosts combined beforepass; no excluded parentprefix"
+  },
+  "storage": {
+    "empirical_model_rate_bytes_per_tick": 93191.31411677753,
+    "latest477_raw_rate_bytes_per_tick": 79625.84623217923,
+    "margin": 1.25,
+    "base_header_bytes": 784160,
+    "latest477_header_parts": {
+      "constructor": 369106,
+      "first_step": 369434,
+      "runtime_link": 39318,
+      "own_reference": 6302
+    },
+    "current_new_source_manifest_bytes": 1448,
+    "future_additional_manifest_bytes": 8192,
+    "header_bytes_each": 829464,
+    "model_raw_hard_forecast_bytes": 68695303,
+    "allocator_input_bytes_each": 4096,
+    "allocator_proof_bytes_each": 8192,
+    "allocator_69_input_proof_bytes": 847872,
+    "selection_summary_bytes_each": 65536,
+    "extra_fullproof_budget_bytes": 16777216,
+    "other_atomic_file_hard_bytes": 33554432,
+    "temp_bytes": 33554432,
+    "reserve_each_bytes": 536870912,
+    "tmp_required_bytes": 655897863,
+    "tmp_free_bytes": 2166296576,
+    "tmp_shortage_bytes": 0,
+    "workspace_required_bytes": 603979776,
+    "workspace_free_bytes": 856932352,
+    "workspace_shortage_bytes": 0,
+    "new_raw_single_tmp_copy": true,
+    "new_archive": false,
+    "delete_or_move_oldfiles": false,
+    "workspace": "Existing fullpre23 input/RNG/P4geometry and complete identity/plan/code/result/manifest/repro; newprefix fullroots remain one/tmpcopy, not duplicated raw",
+    "tmp_loss": "Hashes cannot reconstruct lostraw; future rerun is not authorized"
+  },
+  "implementation": "No newpolicy/search/shadow code or simulation is implemented in478. Before any authorizedfutureexecution freeze actualintegrationcode, unchangedsourceclosure, exactnominal-once preparation path, slotcaps, latestfree anddeadline in one registration. If larger than thisscope/cost, stop rather than open extra microgates",
+  "source_sha256": {
+    "/workspace/HAIC-2026-Fresh/retry/contract478.py": "ed32c2af5d53031505afb1d728f06e037a6afccee7549b884a283deb34290f56",
+    "/workspace/HAIC-2026-Fresh/retry/audit478.py": "9605e9f5e163ca741370b8a4d4f1d65d1b00d172b43005b7f298bc8491df201e",
+    "/workspace/HAIC-2026-Fresh/retry/summarize478.py": "44629e71b9ec16deed744b512eb0624f630b113a71a14717035445de4d4112e6",
+    "/workspace/HAIC-2026-Fresh/retry/allocator476.py": "824b42661bd2ad6b381d807d1795f0549e25bf10cde196b855e456af8ab3622f",
+    "/workspace/HAIC-2026-Fresh/retry/adapter476.py": "dcf05b70a09d4e574bfc29c95444ba4e3e93833f2e59e87bb1faf2bce1ba1874",
+    "/workspace/HAIC-2026-Fresh/retry/audit476_verify.py": "d7cd5f1b90f30e42edc075a76800f89673f7e72a22001794b50d585eac47c2f6",
+    "/workspace/HAIC-2026-Fresh/retry/audit476_boundaries.py": "a5d56eb03f4dfda04e6b4705e748566bdf2002cf0f8b33fc5b609030b0a89d14",
+    "/workspace/HAIC-2026-Fresh/retry/live477.py": "6a7521e347423c7e76a88d18df95ffe1d9be7dcfb0ad07eeb70305a43b784fb9",
+    "/workspace/HAIC-2026-Fresh/retry/law477.py": "2fd5b63843a9735381469931e9065b9f6870512c62225a5b78968805562f2c20",
+    "/workspace/HAIC-2026-Fresh/retry/pending477.py": "370050babf69407f31fac5940c4c19b4f8d20ce707c88304a55891b52592d795",
+    "/workspace/HAIC-2026-Fresh/retry/meter477.py": "ea2e27eebb21fafae2fd6f51031f378fce313339d041bf5312e41102c288b450",
+    "/workspace/HAIC-2026-Fresh/retry/quota477.py": "9892544ff9a5aa1080b562800cbc6b376ad887549aea6d99d8c3c226cdd95a67"
+  },
+  "best_native_s": 13.64,
+  "research_remaining": 26175,
+  "reserve_actions": 84000,
+  "reserve_used": 0,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "deadline_KST": "2026-10-20 19:01:55",
+  "extension_sha256": "3b0dc9c16c5356e107e73dbd8a8f88e75a2434f9e24f046358783fbde8307078"
+}
