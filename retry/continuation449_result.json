@@ -1,0 +1,231 @@
+{
+  "stage": 449,
+  "status": "MODEL90_COMPARISON_COMPLETED",
+  "error": null,
+  "branches": {
+    "nominal": {
+      "status": "MODEL_EXIT90_REACHED",
+      "actions_each": 6,
+      "model_tail_crossing": {
+        "reached": true,
+        "rawtick_bracket": [
+          22,
+          23
+        ],
+        "elapsed_bracket_s": [
+          0.44,
+          0.46
+        ],
+        "interpolated": false
+      },
+      "observed_native_wrapper_delta_ticks": 80,
+      "cumulative_from_original_root_s": [
+        2.04,
+        2.06
+      ],
+      "held_first_passed": true,
+      "independent_repeat_exact": true,
+      "factual_source_passed": true,
+      "future_candidate_actual_qualified": false,
+      "same_native_live_solver": false
+    },
+    "fullgas": {
+      "status": "MODEL_EXIT90_REACHED",
+      "actions_each": 5,
+      "model_tail_crossing": {
+        "reached": true,
+        "rawtick_bracket": [
+          19,
+          20
+        ],
+        "elapsed_bracket_s": [
+          0.38,
+          0.4
+        ],
+        "interpolated": false
+      },
+      "observed_native_wrapper_delta_ticks": 64,
+      "cumulative_from_original_root_s": [
+        1.66,
+        1.68
+      ],
+      "held_first_passed": true,
+      "independent_repeat_exact": true,
+      "factual_source_passed": false,
+      "future_candidate_actual_qualified": false,
+      "same_native_live_solver": false
+    }
+  },
+  "gain90_bracket_s": [
+    0.3600000000000001,
+    0.40000000000000013
+  ],
+  "new_actual_actions_resets_learning_seed_HOLDOUT_SEALED_reserve_paid": 0,
+  "details": {
+    "nominal": {
+      "body_exit_bracket_sample_ranges": {
+        "speed_m_s": [
+          71.52399268578857,
+          72.1930078461671
+        ],
+        "yaw_rad_s": [
+          -0.0931263118982315,
+          -0.08917506784200668
+        ],
+        "path_error_m": [
+          0.001471175514567612,
+          0.008386697601409258
+        ],
+        "heading_error_rad": [
+          0.008280276758345386,
+          0.009163707944897664
+        ]
+      },
+      "lower_crossing_preclip_tire_ranges": {
+        "joint_angle": [
+          -0.004926204681396484,
+          0.0
+        ],
+        "omega": [
+          128.1737640279855,
+          139.48416515565484
+        ],
+        "force_ratio": [
+          0.454111302195182,
+          0.7780664404211715
+        ],
+        "lateral_slip_m_s": [
+          -0.1795419446161759,
+          -0.1280431212669555
+        ],
+        "longitudinal_slip_m_s": [
+          -2.300883765449001,
+          3.7932856053683963
+        ]
+      },
+      "sample_ranges_not_continuous_time_bounds": true,
+      "elapsed60_to90_conservative_s": [
+        0.43999999999999995,
+        0.48
+      ]
+    },
+    "fullgas": {
+      "body_exit_bracket_sample_ranges": {
+        "speed_m_s": [
+          76.6781559128906,
+          77.34318565458192
+        ],
+        "yaw_rad_s": [
+          -0.06054994463920593,
+          -0.040542807430028915
+        ],
+        "path_error_m": [
+          0.04318988408493384,
+          0.06667693241956872
+        ],
+        "heading_error_rad": [
+          0.014311313135298511,
+          0.01576718733027366
+        ]
+      },
+      "lower_crossing_preclip_tire_ranges": {
+        "joint_angle": [
+          -0.00366365909576416,
+          0.0
+        ],
+        "omega": [
+          137.79863272323723,
+          148.92985949900088
+        ],
+        "force_ratio": [
+          0.4516286572217966,
+          0.7766718416286328
+        ],
+        "lateral_slip_m_s": [
+          -0.1542621846789416,
+          -0.004462329172838508
+        ],
+        "longitudinal_slip_m_s": [
+          -2.3114720750918565,
+          3.7886405019907556
+        ]
+      },
+      "sample_ranges_not_continuous_time_bounds": true,
+      "elapsed60_to90_conservative_s": [
+        0.41999999999999993,
+        0.45999999999999996
+      ]
+    }
+  },
+  "verification": {
+    "nominal": {
+      "own_native_root_state_memory_ledger_RNG": true,
+      "independent_repeats_exact": true,
+      "held_first_passed": true,
+      "own_nominal_only": true,
+      "baseline_factual_source_rows": 6,
+      "baseline_fresh_current_first_pass": 1
+    },
+    "fullgas": {
+      "own_native_root_state_memory_ledger_RNG": true,
+      "independent_repeats_exact": true,
+      "held_first_passed": true,
+      "own_nominal_only": true,
+      "baseline_factual_source_rows": 0,
+      "baseline_fresh_current_first_pass": null
+    }
+  },
+  "closure_checks": {
+    "source_and_protected_hashes_preserved": true,
+    "observer_posts": 96,
+    "streams": 6,
+    "same_actual_wrapper_end_states": true,
+    "actual_native_calls": 0,
+    "new_seed": 0,
+    "baseline_before_candidate": true,
+    "source_qualification_not_new_native_future_for_candidate": true,
+    "saved_CPU_s": 0.37916579699999997
+  },
+  "comparison_to60": {
+    "native60_gain_bracket_s": [
+      0.3400000000000001,
+      0.3800000000000001
+    ],
+    "mixed_native_model90_gain_bracket_s": [
+      0.3600000000000001,
+      0.40000000000000013
+    ],
+    "conservative_gain_change_s": [
+      -0.020000000000000018,
+      0.06000000000000005
+    ],
+    "increase_established": false,
+    "no_gain_addition": true
+  },
+  "cost": {
+    "model_ticks": 96,
+    "model_worlds": 6,
+    "model_CPU_s": 3.243750506,
+    "model_wall_s": 3.290256139007397,
+    "static": {
+      "stage": 449,
+      "passed": true,
+      "error": null,
+      "tests": 214,
+      "failures": 0,
+      "errors": 0,
+      "audit_completed": true,
+      "CPU_s": 18.501450876,
+      "wall_s": 18.6054955519503,
+      "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+      "plan_sha256": "4f5cbf5f56b90e5f8c743a364ae98a674eb9787e6db0ff26a4f2c6adc90bd05e"
+    },
+    "saved_audit_CPU_s": 0.37916579699999997,
+    "old_native_prefix_recharged": false,
+    "full_project_overhead_measured": false
+  },
+  "terminal_debt_resolved": false,
+  "hidden_native_solver_warmstart_preserved": false,
+  "native90_transfer_or_wholelap_pixel_generalization_promoted": false,
+  "deadline_utc": "2026-10-20T10:01:55Z"
+}
