@@ -1,0 +1,31 @@
+{
+  "stage": 465,
+  "status": "VERIFIED",
+  "original_files_removed": 0,
+  "new_actual_actions": 0,
+  "new_model_ticks": 0,
+  "uncompressed_bytes_by_volume": {
+    "model": 124327291
+  },
+  "forecast_archive_bytes": 170314452,
+  "workspace_free_bytes_before": 919441408,
+  "required_free_reserve_bytes": 536870912,
+  "forecast_basis": "full raw bytes times1.1 plus32MiB; every compressed write checks512MiB reserve",
+  "tmp_is_not_shared_or_durable": true,
+  "archives": {
+    "model": {
+      "files": 319,
+      "uncompressed_bytes": 124327291,
+      "archive_bytes": 15095687,
+      "archive_sha256": "6d07abd7e67d9d9a5dae3326b441e5bfb98e96628860c076197595beb6b4ad36",
+      "all_members_SHA256_verified": true,
+      "originals_SHA256_reverified": true
+    }
+  },
+  "workspace_private_archives_verified": true,
+  "archive_bytes": 15095687,
+  "prior_retention_failure_preserved": false,
+  "CPU_s": 1.58648645,
+  "wall_s": 1.598956807050854,
+  "workspace_free_bytes_after": 904278016
+}
