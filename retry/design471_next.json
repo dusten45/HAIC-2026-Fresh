@@ -1,0 +1,202 @@
+{
+  "stage": 471,
+  "status": "NOT_STARTED_STORAGE_GATE_FAILED",
+  "at_utc": "2026-10-17T12:54:47.621903+00:00",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "authorization_extension_sha256": "3b0dc9c16c5356e107e73dbd8a8f88e75a2434f9e24f046358783fbde8307078",
+  "authority": "Current user explicitly requested one conditional single-candidate P4 transfer; no fresh paired gain claim",
+  "native": {
+    "arms": 1,
+    "prefix_actions": 125,
+    "suffix_actions": 70,
+    "max_actions": 195,
+    "max_resets": 1,
+    "prefix": "same saved458/463 native start/commands/state/memory/RNG/pixels/ledger exact125; stop on first mismatch",
+    "injection": "P4 immutable nodes only after prefix125 and before native126 C.act",
+    "policy": "one global first fullgas at native126; thereafter P4 point-FF/phase/own terminal tracker, no guardian/neutral/rescue/rank",
+    "actual_action_charge_unit": "attempted wrapper env.step; charge195 cap before call, reset counted separately",
+    "failure": "stop candidate at first invalid shadow/unsafe/domain/adapter/fidelity failure; no refund/retry or risk-rejection bypass",
+    "historical13_780s": "reference only, not a fresh pair or causal/statistical gain"
+  },
+  "shadow": {
+    "current_queries": 70,
+    "independent_copies": 2,
+    "horizon_actions": 13,
+    "max_raw_ticks": 7280,
+    "max_worlds": 140,
+    "control": "all13 actions P4 own reference; local shadow action0 is not a pulse reset",
+    "global_index": "first-fullgas iff global native step126; forecast can extend fixed P4 law to suffix index82, while actual stops at70",
+    "observation": "current actual state/memory/RNG/read-only GoalLedger and same nodes/source digest; immutable parent",
+    "qualification": "both H13 valid incl existing finish/progress/safety/numeric gates; compare actual first transition with selected shadow, preserve actual fact even on mismatch",
+    "no_extra_model_parent_held_or_guardian": true
+  },
+  "planned": {
+    "source": {
+      "ticks": 1242,
+      "worlds": 35
+    },
+    "root": {
+      "ticks": 216,
+      "worlds": 6
+    },
+    "current_P4_shadows": {
+      "ticks": 7280,
+      "worlds": 140
+    },
+    "total_ticks": 8738,
+    "total_worlds": 181
+  },
+  "hard": {
+    "model_ticks": 9216,
+    "model_worlds": 185,
+    "actual_actions": 195,
+    "resets": 1,
+    "whole_CPU_s": 900,
+    "wall_s": 1200,
+    "max_parallel": 1
+  },
+  "remaining_headroom": {
+    "ticks": 478,
+    "worlds": 4,
+    "additional_execution_authority": false
+  },
+  "source_gate": {
+    "old_qualifications_reused_as_protocol_not_cached_pass": true,
+    "existing_Query463_reusable_unchanged": false,
+    "reason": "old nominal/neutral guardian after first is not P4",
+    "integration_fixture": "before any reset: actual plus every current/future/pending shadow bind same frozen P4 nodes/digest; act once; SourceC FIRST_LAP/FINISH_CONFIRM own nodes[-1]; no model DONE commits actual DONE",
+    "first_frame_and_charge_fact": "reuse NativeAuthority439 charge-before-call, observed fact commit before forecast compare, next dispatch blocked on mismatch",
+    "unresolved_before_execution": [
+      "new P4-specific current/terminal/pending integration fixture and production adapter not implemented because pre-integration storage gate failed",
+      "any additional physical parent/held/pending qualification would need explicit recosting before integration; 4 spare worlds are not permission"
+    ]
+  },
+  "storage": {
+    "model_rate_bytes_per_tick": 93191.31411677753,
+    "model_header_parts": {
+      "constructor": 368993,
+      "first_step": 369308,
+      "runtime_link": 33757,
+      "own_reference": 6177
+    },
+    "model_header_base_bytes": 778235,
+    "actual_new_manifest_growth_bytes": 119,
+    "prospective_manifest_allowance_bytes": 4096,
+    "margin": 1.25,
+    "native_rate_bytes_per_action": 1563574.582010582,
+    "native_rate_bytes_per_raw_tick": 392413.3711615487,
+    "native_source_samples": [
+      {
+        "source": "stage453/actual_baseline",
+        "bytes": 295515596,
+        "actions": 189,
+        "raw_ticks": 755,
+        "bytes_per_action": 1563574.582010582,
+        "bytes_per_raw_tick": 391411.3854304636,
+        "fixed_bytes": 7588018,
+        "maximum_file_bytes": 5827956
+      },
+      {
+        "source": "stage453/actual_candidate",
+        "bytes": 293917615,
+        "actions": 188,
+        "raw_ticks": 749,
+        "bytes_per_action": 1563391.569148936,
+        "bytes_per_raw_tick": 392413.3711615487,
+        "fixed_bytes": 7536305,
+        "maximum_file_bytes": 5779485
+      },
+      {
+        "source": "stage458/actual_C0",
+        "bytes": 290273368,
+        "actions": 188,
+        "raw_ticks": 749,
+        "bytes_per_action": 1544007.2765957448,
+        "bytes_per_raw_tick": 387547.8878504673,
+        "fixed_bytes": 4190066,
+        "maximum_file_bytes": 2831663
+      },
+      {
+        "source": "stage458/actual_P",
+        "bytes": 271537433,
+        "actions": 176,
+        "raw_ticks": 701,
+        "bytes_per_action": 1542826.3238636365,
+        "bytes_per_raw_tick": 387357.2510699001,
+        "fixed_bytes": 3741377,
+        "maximum_file_bytes": 2436105
+      },
+      {
+        "source": "stage463-native/actual_Original",
+        "bytes": 271013685,
+        "actions": 176,
+        "raw_ticks": 701,
+        "bytes_per_action": 1539850.4829545454,
+        "bytes_per_raw_tick": 386610.10699001426,
+        "fixed_bytes": 3260486,
+        "maximum_file_bytes": 2012285
+      },
+      {
+        "source": "stage463-native/actual_SecantOnce",
+        "bytes": 266342258,
+        "actions": 173,
+        "raw_ticks": 690,
+        "bytes_per_action": 1539550.6242774567,
+        "bytes_per_raw_tick": 386003.27246376814,
+        "fixed_bytes": 3154442,
+        "maximum_file_bytes": 1919254
+      }
+    ],
+    "native_prefix_raw_ticks": 500,
+    "native_suffix_raw_ticks": 280,
+    "native_reset_raw_ticks": 51,
+    "native_total_raw_ticks": 831,
+    "prefix_raw_forecast_bytes": 245258357,
+    "suffix_raw_forecast_bytes": 137344680,
+    "reset_raw_forecast_bytes": 25016353,
+    "native_fixed_allowance_bytes": 16777216,
+    "native_metadata_bytes": 33554432,
+    "model_metadata_and_plan_bytes": 18874368,
+    "model_raw_bytes": 1241782147,
+    "native_raw_bytes": 457951038,
+    "combined_raw_bytes": 1699733185,
+    "archive_worst_allowance_bytes": 1903260936,
+    "archive_multiplier": 1.1,
+    "archive_metadata_bytes": 33554432,
+    "temp_bytes": 33554432,
+    "reserve_each_bytes": 536870912,
+    "tmp_required_bytes": 4173419465,
+    "workspace_required_bytes": 603979776,
+    "free_at_gate": {
+      "/tmp": 3255185408,
+      "/workspace": 866295808
+    },
+    "tmp_shortage_bytes": 918234057,
+    "workspace_shortage_bytes": 0,
+    "favorable_zero_growth_required_tmp_bytes": 4077628750,
+    "favorable_zero_growth_shortage_bytes": 822443342,
+    "placement": "new raw and full verified archive both same executor/tmp; workspace code/aggregate/input/privateplan/manifest/repro only",
+    "compression_credit": 0,
+    "workspace_new_raw_archive_copies": 0,
+    "old_files_deleted_moved_transformed": 0,
+    "tmp_persistent_or_shared_assumed": false,
+    "loss_limit": "If/tmp lost, exact new raw/archive cannot be reverified; hashes cannot reconstruct raw"
+  },
+  "research_budget": {
+    "before": 26346,
+    "proposed_max_charge": 195,
+    "after_max_charge": 26151,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "actual_charge_now": 0
+  },
+  "actual": {
+    "model_ticks": 0,
+    "model_worlds": 0,
+    "native_calls": 0,
+    "resets": 0,
+    "worker_started": false,
+    "ledger_changed": false
+  },
+  "conclusion": "Resource stop before integration; no native result, no new policy falsification or promotion. Pending fixture remains a prerequisite."
+}
