@@ -1,0 +1,52 @@
+{
+  "stage": 470,
+  "post_finish_reference_debt_not_applicable": true,
+  "matched_180m": {
+    "OriginalReferenceCommonPulse": {
+      "boundary_m": 180,
+      "raw_tick": 107,
+      "speed_m_s": 89.94430621637105,
+      "path_error_m": 0.03574852669148713,
+      "brake_debt_proxy": {
+        "common_original": {
+          "lower_nodes": 17,
+          "max_required_deceleration_over_B": 1.5135220591825633,
+          "minimum_distance_margin_m": -9.791203106076413,
+          "exact_physical_feasibility": false
+        },
+        "own": {
+          "lower_nodes": 17,
+          "max_required_deceleration_over_B": 1.5135220591825633,
+          "minimum_distance_margin_m": -9.791203106076413,
+          "exact_physical_feasibility": false
+        }
+      },
+      "scope": "first raw post crossing+180m; different states, not a causal isolation"
+    },
+    "Projected4ReferenceCommonPulse": {
+      "boundary_m": 180,
+      "raw_tick": 110,
+      "speed_m_s": 82.31727889392742,
+      "path_error_m": 0.0019664965503566273,
+      "brake_debt_proxy": {
+        "common_original": {
+          "lower_nodes": 14,
+          "max_required_deceleration_over_B": 1.1354217994309155,
+          "minimum_distance_margin_m": -2.5824830342791607,
+          "exact_physical_feasibility": false
+        },
+        "own": {
+          "lower_nodes": 25,
+          "max_required_deceleration_over_B": 3.2040502507229642,
+          "minimum_distance_margin_m": -2.582483034279269,
+          "exact_physical_feasibility": false
+        }
+      },
+      "scope": "first raw post crossing+180m; different states, not a causal isolation"
+    }
+  },
+  "model_ticks_added": 0,
+  "worlds_added": 0,
+  "raw_control_unchanged": true,
+  "prior_analysis_sha256": "8e90b1ec25bbb4eec2f02e577c232fbab5a6e3d194f8d8f75a00f9126dc362f8"
+}

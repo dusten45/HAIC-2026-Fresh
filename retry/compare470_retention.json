@@ -1,0 +1,34 @@
+{
+  "stage": 470,
+  "status": "VERIFIED",
+  "original_files_removed": 0,
+  "new_actual_actions": 0,
+  "new_model_ticks": 0,
+  "uncompressed_bytes_by_volume": {
+    "model": 138331916
+  },
+  "forecast_archive_bytes": 185719539,
+  "tmp_free_bytes_before": 3272683520,
+  "required_free_reserve_bytes": 536870912,
+  "forecast_basis": "full raw bytes times1.1 plus32MiB; every compressed write checks512MiB reserve",
+  "tmp_is_not_shared_or_durable": true,
+  "workspace_raw_archive_copies": 0,
+  "raw_and_archive_location": "same selected executor /tmp",
+  "reproduction_limit": "If /tmp is lost, exact new raw and archive cannot be reverified; manifest hashes cannot reconstruct raw.",
+  "archives": {
+    "model": {
+      "files": 346,
+      "uncompressed_bytes": 138331916,
+      "archive_bytes": 17430314,
+      "archive_sha256": "30d27add973393ced66716ccd0759dd538b7b2b7c44b20f4abb58599c829d1bc",
+      "all_members_SHA256_verified": true,
+      "originals_SHA256_reverified": true
+    }
+  },
+  "current_executor_tmp_archives_verified": true,
+  "archive_bytes": 17430314,
+  "prior_retention_failure_preserved": false,
+  "CPU_s": 1.8843402439999999,
+  "wall_s": 1.9074517659610137,
+  "tmp_free_bytes_after": 3255189504
+}

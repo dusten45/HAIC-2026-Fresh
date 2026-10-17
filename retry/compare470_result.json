@@ -1,0 +1,369 @@
+{
+  "stage": 470,
+  "revision": "469-revision1",
+  "status": "WHOLE_COMPARISON_COMPLETE",
+  "error": null,
+  "details": {
+    "OriginalReferenceCommonPulse": {
+      "status": "UNSAFE",
+      "error": "path_error_over3m",
+      "actions": 34,
+      "raw_ticks": 136,
+      "elapsed_s": 2.72,
+      "own_model_finish": false,
+      "remaining_finish_bracket_s": null,
+      "official_event_time_s": null,
+      "confirmation_time_s": null,
+      "whole_arm_runs": 1,
+      "whole_arm_repeated": false,
+      "qualification_prefix13_exact": true,
+      "common_boundary_crossings": {
+        "60": {
+          "bracket_s": [
+            0.7,
+            0.72
+          ],
+          "safe_through_crossing": true
+        },
+        "120": {
+          "bracket_s": [
+            1.46,
+            1.48
+          ],
+          "safe_through_crossing": true
+        },
+        "180": {
+          "bracket_s": [
+            2.12,
+            2.14
+          ],
+          "safe_through_crossing": true
+        }
+      },
+      "first_raw_physical_failure": {
+        "raw_tick": 136,
+        "elapsed_s": 2.72,
+        "reasons": [
+          "path_error_over3m"
+        ],
+        "progress_from_root_m": 221.40166444524073
+      },
+      "first_action_safety_failure": {
+        "action": 34,
+        "raw_end_tick": 136,
+        "reasons": [
+          "path_error_over3m"
+        ]
+      },
+      "endpoint_progress_delta_m": 221.40166444524073,
+      "endpoint_speed_m_s": 61.75681951728637,
+      "endpoint_reference_m_s": {
+        "common_original": 58.89842995835966,
+        "own": 58.89842995835966
+      },
+      "endpoint_brake_debt_proxy": {
+        "common_original": {
+          "lower_nodes": 0,
+          "max_required_deceleration_over_B": null,
+          "minimum_distance_margin_m": null,
+          "exact_physical_feasibility": false
+        },
+        "own": {
+          "lower_nodes": 0,
+          "max_required_deceleration_over_B": null,
+          "minimum_distance_margin_m": null,
+          "exact_physical_feasibility": false
+        }
+      },
+      "endpoint_phase": "FIRST_LAP",
+      "endpoint_ledger_done": false,
+      "endpoint_tracker": {
+        "center": [
+          218.5438549803711,
+          -52.315295929197745
+        ],
+        "forward": [
+          0.12302181117240697,
+          0.9924039671302511
+        ],
+        "half_width": 6.666666666666667,
+        "half_depth": 0.875,
+        "qualification_ratio": 0.95,
+        "departed_start_area": true,
+        "crossing_from_back": false,
+        "previous_longitudinal": -52.9480461774546,
+        "previous_lateral": 4.561304816256274,
+        "qualified_time_s": null,
+        "candidate_crossing_time_s": null,
+        "finish_time_s": null
+      },
+      "max_path_error_m": 3.089853611977171,
+      "max_force_ratio": 2.3779272760965178,
+      "clipped_wheel_samples": 49,
+      "wheel_samples": 544,
+      "mean_abs_lateral_slip_m_s": 1.64948331509361,
+      "brake_actions": 12,
+      "actual_finish_witness": false
+    },
+    "Projected4ReferenceCommonPulse": {
+      "status": "FINISHED",
+      "error": null,
+      "actions": 46,
+      "raw_ticks": 182,
+      "elapsed_s": 3.64,
+      "own_model_finish": true,
+      "remaining_finish_bracket_s": [
+        3.62,
+        3.64
+      ],
+      "official_event_time_s": 14.659999999999776,
+      "confirmation_time_s": 14.659999999999776,
+      "whole_arm_runs": 1,
+      "whole_arm_repeated": false,
+      "qualification_prefix13_exact": true,
+      "common_boundary_crossings": {
+        "60": {
+          "bracket_s": [
+            0.64,
+            0.66
+          ],
+          "safe_through_crossing": true
+        },
+        "120": {
+          "bracket_s": [
+            1.46,
+            1.48
+          ],
+          "safe_through_crossing": true
+        },
+        "180": {
+          "bracket_s": [
+            2.18,
+            2.2
+          ],
+          "safe_through_crossing": true
+        },
+        "240": {
+          "bracket_s": [
+            3.14,
+            3.16
+          ],
+          "safe_through_crossing": true
+        }
+      },
+      "first_raw_physical_failure": null,
+      "first_action_safety_failure": null,
+      "endpoint_progress_delta_m": 275.1457943382211,
+      "endpoint_speed_m_s": 80.30494997804763,
+      "endpoint_reference_m_s": null,
+      "endpoint_brake_debt_proxy": null,
+      "endpoint_phase": "DONE",
+      "endpoint_ledger_done": true,
+      "endpoint_tracker": {
+        "center": [
+          218.5438549803711,
+          -52.315295929197745
+        ],
+        "forward": [
+          0.12302181117240697,
+          0.9924039671302511
+        ],
+        "half_width": 6.666666666666667,
+        "half_depth": 0.875,
+        "qualification_ratio": 0.95,
+        "departed_start_area": true,
+        "crossing_from_back": false,
+        "previous_longitudinal": 0.9464712311253736,
+        "previous_lateral": 0.3111730473979367,
+        "qualified_time_s": 13.919999999999792,
+        "candidate_crossing_time_s": null,
+        "finish_time_s": 14.659999999999776
+      },
+      "max_path_error_m": 1.5891954867187943,
+      "max_force_ratio": 1.8183400140558215,
+      "clipped_wheel_samples": 40,
+      "wheel_samples": 728,
+      "mean_abs_lateral_slip_m_s": 1.408968478740805,
+      "brake_actions": 14,
+      "actual_finish_witness": false,
+      "endpoint_reference_debt_domain": "NOT_APPLICABLE_AFTER_OWN_MODEL_FINISH; geometric wrap must not create a next-lap braking target"
+    }
+  },
+  "both_safe_own_model_finishes": false,
+  "remaining_finish_gain_bracket_s": null,
+  "full_window_model_gain_criterion_passed": false,
+  "common_boundaries": {
+    "60": {
+      "Original_bracket_s": [
+        0.7,
+        0.72
+      ],
+      "P4_bracket_s": [
+        0.64,
+        0.66
+      ],
+      "Original_minus_P4_s": [
+        0.039999999999999925,
+        0.07999999999999996
+      ],
+      "both_safe": true
+    },
+    "120": {
+      "Original_bracket_s": [
+        1.46,
+        1.48
+      ],
+      "P4_bracket_s": [
+        1.46,
+        1.48
+      ],
+      "Original_minus_P4_s": [
+        -0.020000000000000018,
+        0.020000000000000018
+      ],
+      "both_safe": true
+    },
+    "180": {
+      "Original_bracket_s": [
+        2.12,
+        2.14
+      ],
+      "P4_bracket_s": [
+        2.18,
+        2.2
+      ],
+      "Original_minus_P4_s": [
+        -0.08000000000000007,
+        -0.040000000000000036
+      ],
+      "both_safe": true
+    }
+  },
+  "prior60m_gain_added": false,
+  "actual_promotion": false,
+  "whole_arm_repetition_claimed": false,
+  "actual_finish_witness": false,
+  "source_root_qualification_passed": true,
+  "cost": {
+    "ticks": 1671,
+    "reserved_ticks": 1671,
+    "worlds": 43,
+    "CPU_s": 40.88716828,
+    "wall_s": 41.62236864201259
+  },
+  "static": {
+    "stage": 470,
+    "passed": true,
+    "error": null,
+    "tests": 67,
+    "failures": 0,
+    "errors": 0,
+    "audit_completed": true,
+    "CPU_s": 12.855492887,
+    "wall_s": 12.886646982980892,
+    "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+    "plan_sha256": "2dc816906b9cc5580abfe7df8a2a865094e50201b05ede1debaeddb1b04f505f"
+  },
+  "preflight_counts": {
+    "source": {
+      "ticks": 1137,
+      "worlds": 35
+    },
+    "root": {
+      "ticks": 1353,
+      "worlds": 41
+    }
+  },
+  "storage_forecast": {
+    "observed_bytes_per_tick": 93191.31411677753,
+    "observed_ratio_fraction": [
+      126087848,
+      1353
+    ],
+    "empirical_margin": 1.25,
+    "source_manifest_growth_bytes": 837,
+    "future_manifest_allowance_bytes": 4096,
+    "fixed_header_base_bytes": 777215,
+    "header_bytes_each": 808398,
+    "hard_ticks": 2048,
+    "hard_worlds": 43,
+    "scope_ticks": 2018,
+    "scope_worlds": 43,
+    "full_private_plan_bytes_allowance": 2097152,
+    "raw_metadata_allowance_bytes": 16777216,
+    "raw_payload_forecast_bytes": 292205247,
+    "model_payload_bytes": 292205247,
+    "archive_forecast_bytes": 354980204,
+    "archive_temporary_allowance_bytes": 33554432,
+    "reserve_bytes_each_volume": 536870912,
+    "tmp_required_bytes": 1217610795,
+    "workspace_metadata_allowance_bytes": 67108864,
+    "workspace_required_bytes": 603979776,
+    "model_required_bytes": 1217610795,
+    "runtime_free_stop_bytes": 536870912,
+    "simultaneous_raw_archive_temp": true,
+    "workspace_new_raw_archive_copy": false,
+    "retention_format": "FULL_PRIVATE_RAW_PLAIN_ARCHIVE_NO_COMPRESSION_CREDIT",
+    "estimates_not_guaranteed": true
+  },
+  "storage_free_at_start": {
+    "/tmp": 3410366464,
+    "/workspace": 868261888
+  },
+  "protected18_and_ledger475_unchanged": true,
+  "new_actual_actions": 0,
+  "new_resets": 0,
+  "new_seed_learning_HOLDOUT_SEALED_reserve_paid": 0,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "plan_sha256": "2dc816906b9cc5580abfe7df8a2a865094e50201b05ede1debaeddb1b04f505f",
+  "raw_archive_storage": "/tmp on this executor only; not assumed shared or durable",
+  "workspace_raw_archive_copies": 0,
+  "reproduction_limit": "Workspace retains code, full private plan/input material, hashes/manifest and conditions. If /tmp is lost, exact new raw/archive cannot be reverified; hashes do not reconstruct raw.",
+  "saved_audit_CPU_s": 4.455322589,
+  "saved_audit_wall_s": 4.484381897025742,
+  "matched_180m_saved_diagnostics": {
+    "OriginalReferenceCommonPulse": {
+      "boundary_m": 180,
+      "raw_tick": 107,
+      "speed_m_s": 89.94430621637105,
+      "path_error_m": 0.03574852669148713,
+      "brake_debt_proxy": {
+        "common_original": {
+          "lower_nodes": 17,
+          "max_required_deceleration_over_B": 1.5135220591825633,
+          "minimum_distance_margin_m": -9.791203106076413,
+          "exact_physical_feasibility": false
+        },
+        "own": {
+          "lower_nodes": 17,
+          "max_required_deceleration_over_B": 1.5135220591825633,
+          "minimum_distance_margin_m": -9.791203106076413,
+          "exact_physical_feasibility": false
+        }
+      },
+      "scope": "first raw post crossing+180m; different states, not a causal isolation"
+    },
+    "Projected4ReferenceCommonPulse": {
+      "boundary_m": 180,
+      "raw_tick": 110,
+      "speed_m_s": 82.31727889392742,
+      "path_error_m": 0.0019664965503566273,
+      "brake_debt_proxy": {
+        "common_original": {
+          "lower_nodes": 14,
+          "max_required_deceleration_over_B": 1.1354217994309155,
+          "minimum_distance_margin_m": -2.5824830342791607,
+          "exact_physical_feasibility": false
+        },
+        "own": {
+          "lower_nodes": 25,
+          "max_required_deceleration_over_B": 3.2040502507229642,
+          "minimum_distance_margin_m": -2.582483034279269,
+          "exact_physical_feasibility": false
+        }
+      },
+      "scope": "first raw post crossing+180m; different states, not a causal isolation"
+    }
+  },
+  "terminal_domain_audit": "post-DONE reference/debt queries removed; initial analysis retained privately; raw/model/control unchanged"
+}
