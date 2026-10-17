@@ -1,0 +1,572 @@
+{
+  "stage": 496,
+  "mode": "SAVED_ONLY",
+  "queries": 26,
+  "unique_contexts": 6,
+  "independent_DEV_conditions": 1,
+  "new_conditions": 0,
+  "occurrences": [
+    6,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "unique_rank_disagreements": 1,
+  "unique_candidate_traces": 12,
+  "all_unique_nominal_qstar_same": true,
+  "all_unique_eligible_M80_zero": true,
+  "root_ceiling_binds_all_count": 2,
+  "pre_speed_range_m_s": [
+    47.30104766896842,
+    68.15969173534283
+  ],
+  "pre_speed_excess_range_m_s": [
+    -5.224424525896914,
+    -1.8906999916323173
+  ],
+  "pre_abs_heading_range_deg": [
+    0.8438382043032283,
+    7.989850457483442
+  ],
+  "pre_abs_normal_velocity_range_m_s": [
+    0.9162536550172097,
+    7.313298447639061
+  ],
+  "pedal_span_range": [
+    0.2740239202976227,
+    0.8728867769241333
+  ],
+  "margin_spread_range_m": [
+    0.0,
+    0.0560604409319021
+  ],
+  "same_context_rank_gain_range_m": [
+    0.0,
+    0.0022931846934639566
+  ],
+  "max_abs_steer_increment_rad": 0.04167634470916764,
+  "contexts_public": [
+    {
+      "id": "C1",
+      "occurrences": 6,
+      "active_branch": "gas",
+      "pre_speed_m_s": 62.79312258391365,
+      "speed_excess_m_s": -5.224424525896914,
+      "pre_error_m": 0.24525853029963005,
+      "pre_heading_deg": 0.8438382043032283,
+      "pre_normal_velocity_m_s": 0.9162536550172097,
+      "steer_increment_rad": 0.008281558977749522,
+      "pedal_span": 0.8385534286499023,
+      "margin_spread_m": 0.0,
+      "rank_gain_m": 0.0,
+      "root_ceiling_binds_all": true,
+      "candidates": [
+        {
+          "aliases": [
+            "nominal",
+            "qstar"
+          ],
+          "valid": true,
+          "M80": 0.0,
+          "margin_m": 2.75474146970037,
+          "post": {
+            "error_m": 0.13752609330945098,
+            "signed_error_m": -0.13752609330945098,
+            "heading_deg": 1.3812484120369002,
+            "normal_velocity_m_s": 1.5170082392297217,
+            "body_lateral_m_s": 0.06127498011322362,
+            "speed_m_s": 65.47464274584361,
+            "sigma": 65.45706630072846
+          },
+          "tires": {
+            "front": {
+              "max_force_ratio": 0.49956999855382955,
+              "max_abs_lat_N": 24.295325070871286,
+              "max_abs_long_N": 199.77167305227,
+              "max_abs_lat_slip_m_s": 0.29628445208379617,
+              "clipped": 0
+            },
+            "rear": {
+              "max_force_ratio": 0.7989451670908779,
+              "max_abs_lat_N": 28.76091255813833,
+              "max_abs_long_N": 319.3593285399952,
+              "max_abs_lat_slip_m_s": 0.3507428360748577,
+              "clipped": 0
+            }
+          }
+        },
+        {
+          "aliases": [
+            "zero"
+          ],
+          "valid": true,
+          "M80": 0.0,
+          "margin_m": 2.75474146970037,
+          "post": {
+            "error_m": 0.14020194062946872,
+            "signed_error_m": -0.14020194062946872,
+            "heading_deg": 1.3899022617153058,
+            "normal_velocity_m_s": 1.4603317575135664,
+            "body_lateral_m_s": 0.06018132614635404,
+            "speed_m_s": 62.68538110995008,
+            "sigma": 62.668368704296775
+          },
+          "tires": {
+            "front": {
+              "max_force_ratio": 0.4718143970846353,
+              "max_abs_lat_N": 24.295325070871286,
+              "max_abs_long_N": 187.2265358398876,
+              "max_abs_lat_slip_m_s": 0.29628445208379617,
+              "clipped": 0
+            },
+            "rear": {
+              "max_force_ratio": 0.41120682739889586,
+              "max_abs_lat_N": 28.792098075209083,
+              "max_abs_long_N": 162.09846568372495,
+              "max_abs_lat_slip_m_s": 0.35112314725864735,
+              "clipped": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "occurrences": 4,
+      "active_branch": "gas",
+      "pre_speed_m_s": 65.47464274584361,
+      "speed_excess_m_s": -5.148203139477872,
+      "pre_error_m": 0.13752609330945098,
+      "pre_heading_deg": 1.3812484120369002,
+      "pre_normal_velocity_m_s": 1.5170082392297217,
+      "steer_increment_rad": 0.006217007871208106,
+      "pedal_span": 0.8728867769241333,
+      "margin_spread_m": 0.0,
+      "rank_gain_m": 0.0,
+      "root_ceiling_binds_all": true,
+      "candidates": [
+        {
+          "aliases": [
+            "nominal",
+            "qstar"
+          ],
+          "valid": true,
+          "M80": 0.0,
+          "margin_m": 2.862473906690549,
+          "post": {
+            "error_m": 0.01189187009383596,
+            "signed_error_m": -0.01189187009383596,
+            "heading_deg": 1.3433932146103522,
+            "normal_velocity_m_s": 1.5258723097477884,
+            "body_lateral_m_s": 0.0721154303423016,
+            "speed_m_s": 68.15968484175748,
+            "sigma": 68.14260305728017
+          },
+          "tires": {
+            "front": {
+              "max_force_ratio": 0.49955935586683864,
+              "max_abs_lat_N": 29.169560768453607,
+              "max_abs_long_N": 199.50837143333905,
+              "max_abs_lat_slip_m_s": 0.3557263508348001,
+              "clipped": 0
+            },
+            "rear": {
+              "max_force_ratio": 0.8001409351611483,
+              "max_abs_lat_N": 14.765098482301482,
+              "max_abs_long_N": 320.0560286453024,
+              "max_abs_lat_slip_m_s": 0.1800621766134327,
+              "clipped": 0
+            }
+          }
+        },
+        {
+          "aliases": [
+            "zero"
+          ],
+          "valid": true,
+          "M80": 0.0,
+          "margin_m": 2.862473906690549,
+          "post": {
+            "error_m": 0.015256428387161333,
+            "signed_error_m": -0.015256428387161333,
+            "heading_deg": 1.3493081584315831,
+            "normal_velocity_m_s": 1.4629936770337564,
+            "body_lateral_m_s": 0.07624250073186055,
+            "speed_m_s": 65.36589661696102,
+            "sigma": 65.34952249282466
+          },
+          "tires": {
+            "front": {
+              "max_force_ratio": 0.4770076884493462,
+              "max_abs_lat_N": 29.011809691329745,
+              "max_abs_long_N": 190.7402914301713,
+              "max_abs_lat_slip_m_s": 0.35380255721133835,
+              "clipped": 0
+            },
+            "rear": {
+              "max_force_ratio": 0.41604046984768595,
+              "max_abs_lat_N": 14.765098482301482,
+              "max_abs_long_N": 165.7598849993003,
+              "max_abs_lat_slip_m_s": 0.1800621766134327,
+              "clipped": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "occurrences": 4,
+      "active_branch": "brake",
+      "pre_speed_m_s": 68.15969173534283,
+      "speed_excess_m_s": -1.8906999916323173,
+      "pre_error_m": 0.01189217708934867,
+      "pre_heading_deg": 1.343400044799523,
+      "pre_normal_velocity_m_s": 1.5258782439309204,
+      "steer_increment_rad": -0.0076052025207330246,
+      "pedal_span": 0.282497376203537,
+      "margin_spread_m": 0.009354564971065127,
+      "rank_gain_m": 0.0,
+      "root_ceiling_binds_all": false,
+      "candidates": [
+        {
+          "aliases": [
+            "nominal",
+            "qstar"
+          ],
+          "valid": true,
+          "M80": 0.0,
+          "margin_m": 2.888493625342729,
+          "post": {
+            "error_m": 0.11150637465727065,
+            "signed_error_m": 0.11150637465727066,
+            "heading_deg": 1.485010518395076,
+            "normal_velocity_m_s": 1.6030284011889657,
+            "body_lateral_m_s": -0.02477938247416057,
+            "speed_m_s": 60.90032093746114,
+            "sigma": 60.8792196913754
+          },
+          "tires": {
+            "front": {
+              "max_force_ratio": 0.9478215219495983,
+              "max_abs_lat_N": 29.787102171808783,
+              "max_abs_long_N": 378.9502461367097,
+              "max_abs_lat_slip_m_s": 0.3632573435586437,
+              "clipped": 0
+            },
+            "rear": {
+              "max_force_ratio": 0.24592353412494813,
+              "max_abs_lat_N": 11.817379214350694,
+              "max_abs_long_N": 98.36886975128888,
+              "max_abs_lat_slip_m_s": 0.14411438066281335,
+              "clipped": 0
+            }
+          }
+        },
+        {
+          "aliases": [
+            "zero"
+          ],
+          "valid": true,
+          "M80": 0.0,
+          "margin_m": 2.879139060371664,
+          "post": {
+            "error_m": 0.12086093962833615,
+            "signed_error_m": 0.12086093962833616,
+            "heading_deg": 1.4984113495466422,
+            "normal_velocity_m_s": 1.7985205336922587,
+            "body_lateral_m_s": -0.019051593226731337,
+            "speed_m_s": 68.05077942335592,
+            "sigma": 68.02700863639477
+          },
+          "tires": {
+            "front": {
+              "max_force_ratio": 0.47917135000757044,
+              "max_abs_lat_N": 30.62776977569979,
+              "max_abs_long_N": 191.31548886232082,
+              "max_abs_lat_slip_m_s": 0.373509387508534,
+              "clipped": 0
+            },
+            "rear": {
+              "max_force_ratio": 0.4170927721682387,
+              "max_abs_lat_N": 12.912721203670344,
+              "max_abs_long_N": 166.8371088292754,
+              "max_abs_lat_slip_m_s": 0.15747220980085785,
+              "clipped": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "occurrences": 4,
+      "active_branch": "brake",
+      "pre_speed_m_s": 60.90032093746114,
+      "speed_excess_m_s": -2.2000246033414754,
+      "pre_error_m": 0.11150637465727065,
+      "pre_heading_deg": 1.485010518395076,
+      "pre_normal_velocity_m_s": 1.6030284011889657,
+      "steer_increment_rad": -0.04167634470916764,
+      "pedal_span": 0.2785809338092804,
+      "margin_spread_m": 0.02555458725967119,
+      "rank_gain_m": 0.0,
+      "root_ceiling_binds_all": false,
+      "candidates": [
+        {
+          "aliases": [
+            "nominal",
+            "qstar"
+          ],
+          "valid": true,
+          "M80": 0.0,
+          "margin_m": 2.6525430666428154,
+          "post": {
+            "error_m": 0.34745693335718464,
+            "signed_error_m": 0.34745693335718464,
+            "heading_deg": 3.6733784820479367,
+            "normal_velocity_m_s": 3.8977364279592,
+            "body_lateral_m_s": -0.43214668375259296,
+            "speed_m_s": 54.10741263754944,
+            "sigma": 53.96683938371975
+          },
+          "tires": {
+            "front": {
+              "max_force_ratio": 0.6910144026834188,
+              "max_abs_lat_N": 209.59880118107344,
+              "max_abs_long_N": 240.31868448334302,
+              "max_abs_lat_slip_m_s": 2.556082941232603,
+              "clipped": 0
+            },
+            "rear": {
+              "max_force_ratio": 0.5175049010939226,
+              "max_abs_lat_N": 70.32998389238287,
+              "max_abs_long_N": 194.6882250951353,
+              "max_abs_lat_slip_m_s": 0.857682730394913,
+              "clipped": 0
+            }
+          }
+        },
+        {
+          "aliases": [
+            "zero"
+          ],
+          "valid": true,
+          "M80": 0.0,
+          "margin_m": 2.626988479383144,
+          "post": {
+            "error_m": 0.373011520616856,
+            "signed_error_m": 0.37301152061685605,
+            "heading_deg": 3.892163101541785,
+            "normal_velocity_m_s": 4.534110041305912,
+            "body_lateral_m_s": -0.38387404375436607,
+            "speed_m_s": 61.15608257964546,
+            "sigma": 60.987771582684864
+          },
+          "tires": {
+            "front": {
+              "max_force_ratio": 0.5479718842483259,
+              "max_abs_lat_N": 216.88492769180493,
+              "max_abs_long_N": 88.99669007922941,
+              "max_abs_lat_slip_m_s": 2.644938142582987,
+              "clipped": 0
+            },
+            "rear": {
+              "max_force_ratio": 0.30053055585943794,
+              "max_abs_lat_N": 79.71881861317848,
+              "max_abs_long_N": 91.9052966775811,
+              "max_abs_lat_slip_m_s": 0.9721807147948596,
+              "clipped": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "C5",
+      "occurrences": 4,
+      "active_branch": "brake",
+      "pre_speed_m_s": 54.10740888078924,
+      "speed_excess_m_s": -2.074924321100312,
+      "pre_error_m": 0.34745693335718464,
+      "pre_heading_deg": 3.6733784820479367,
+      "pre_normal_velocity_m_s": 3.8977353433399657,
+      "steer_increment_rad": -0.03617113752888489,
+      "pedal_span": 0.2779281437397003,
+      "margin_spread_m": 0.0560604409319021,
+      "rank_gain_m": 0.0,
+      "root_ceiling_binds_all": false,
+      "candidates": [
+        {
+          "aliases": [
+            "nominal",
+            "qstar"
+          ],
+          "valid": true,
+          "M80": 0.0,
+          "margin_m": 2.1655107039181214,
+          "post": {
+            "error_m": 0.8344892960818786,
+            "signed_error_m": 0.8344892960818787,
+            "heading_deg": 7.989850457483442,
+            "normal_velocity_m_s": 7.313298329984055,
+            "body_lateral_m_s": -0.7466293153803059,
+            "speed_m_s": 47.301047669734196,
+            "sigma": 46.73226699178117
+          },
+          "tires": {
+            "front": {
+              "max_force_ratio": 0.7299563325537934,
+              "max_abs_lat_N": 235.77322508798733,
+              "max_abs_long_N": 224.68411396867867,
+              "max_abs_lat_slip_m_s": 2.8752832327803333,
+              "clipped": 0
+            },
+            "rear": {
+              "max_force_ratio": 0.5629727881576687,
+              "max_abs_lat_N": 93.7806834840267,
+              "max_abs_long_N": 204.732315568969,
+              "max_abs_lat_slip_m_s": 1.1436668717564231,
+              "clipped": 0
+            }
+          }
+        },
+        {
+          "aliases": [
+            "zero"
+          ],
+          "valid": true,
+          "M80": 0.0,
+          "margin_m": 2.1094502629862193,
+          "post": {
+            "error_m": 0.8905497370137808,
+            "signed_error_m": 0.8905497370137808,
+            "heading_deg": 8.408486412091863,
+            "normal_velocity_m_s": 8.628091822067404,
+            "body_lateral_m_s": -0.6918775679965204,
+            "speed_m_s": 54.32756590182808,
+            "sigma": 53.63805037776305
+          },
+          "tires": {
+            "front": {
+              "max_force_ratio": 0.6194303878002486,
+              "max_abs_lat_N": 246.35710249383848,
+              "max_abs_long_N": 75.80720530855983,
+              "max_abs_lat_slip_m_s": 3.004354908461445,
+              "clipped": 0
+            },
+            "rear": {
+              "max_force_ratio": 0.32508408381297416,
+              "max_abs_lat_N": 107.21916319547063,
+              "max_abs_long_N": 80.98266315332928,
+              "max_abs_lat_slip_m_s": 1.307550770676471,
+              "clipped": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "C6",
+      "occurrences": 4,
+      "active_branch": "brake",
+      "pre_speed_m_s": 47.30104766896842,
+      "speed_excess_m_s": -2.044219488254562,
+      "pre_error_m": 0.8344892960818786,
+      "pre_heading_deg": 7.989850457483442,
+      "pre_normal_velocity_m_s": 7.313298447639061,
+      "steer_increment_rad": -0.0009700028547230954,
+      "pedal_span": 0.2740239202976227,
+      "margin_spread_m": 0.0022931846934639566,
+      "rank_gain_m": 0.0022931846934639566,
+      "root_ceiling_binds_all": false,
+      "candidates": [
+        {
+          "aliases": [
+            "nominal",
+            "qstar"
+          ],
+          "valid": true,
+          "M80": 0.0,
+          "margin_m": 1.6454338134095563,
+          "post": {
+            "error_m": 1.25887847826695,
+            "signed_error_m": 1.25887847826695,
+            "heading_deg": -10.502415326719023,
+            "normal_velocity_m_s": -6.728781887319554,
+            "body_lateral_m_s": -0.6866809692036057,
+            "speed_m_s": 40.62508147682781,
+            "sigma": 40.06395810840185
+          },
+          "tires": {
+            "front": {
+              "max_force_ratio": 0.5429536960740539,
+              "max_abs_lat_N": 117.78672431471747,
+              "max_abs_long_N": 182.46666037412126,
+              "max_abs_lat_slip_m_s": 1.4364234672526521,
+              "clipped": 0
+            },
+            "rear": {
+              "max_force_ratio": 0.47146821861176696,
+              "max_abs_lat_N": 77.29916694906687,
+              "max_abs_long_N": 172.5551903245614,
+              "max_abs_lat_slip_m_s": 0.9426727676715472,
+              "clipped": 0
+            }
+          }
+        },
+        {
+          "aliases": [
+            "zero"
+          ],
+          "valid": true,
+          "M80": 0.0,
+          "margin_m": 1.6477269981030203,
+          "post": {
+            "error_m": 1.2010286748128813,
+            "signed_error_m": 1.2010286748128813,
+            "heading_deg": -10.06219597433336,
+            "normal_velocity_m_s": -7.656143745203634,
+            "body_lateral_m_s": -0.6615356040586213,
+            "speed_m_s": 47.5529164990332,
+            "sigma": 46.93254020950501
+          },
+          "tires": {
+            "front": {
+              "max_force_ratio": 0.31591570172438965,
+              "max_abs_lat_N": 123.10452491271383,
+              "max_abs_long_N": 53.57469553913988,
+              "max_abs_lat_slip_m_s": 1.5012746940574857,
+              "clipped": 0
+            },
+            "rear": {
+              "max_force_ratio": 0.2407128287971221,
+              "max_abs_lat_N": 91.36666067281612,
+              "max_abs_long_N": 63.88221133488992,
+              "max_abs_lat_slip_m_s": 1.1142275691806844,
+              "clipped": 0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "new_world_reset_step_seed_tuning": 0,
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "best_s": 13.64,
+  "CPU_s": 9.013680567,
+  "wall_s": 9.003110292949714,
+  "RSS_bytes": 76488704,
+  "no_auto_execution": true,
+  "analysis_source_executed_sha256": "9fe7dc6e93c94eca31f4e81edfe5b360143eacff3a3b2b7c9707cdd2732aa372",
+  "published_source_note": "Executed v1 preserved privately; publication removes a no-op assertion and stale experiment-deadline check. Metrics not rerun.",
+  "authorization": {
+    "explicit_user_end_KST": "2026-10-16T19:01:55+09:00",
+    "new_physics_authorized": false,
+    "stale_Oct20_metadata_confers_no_authority": true
+  }
+}

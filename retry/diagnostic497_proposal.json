@@ -1,0 +1,64 @@
+{
+  "stage": 497,
+  "status": "PROPOSAL_ONLY_NOT_EXECUTABLE_AFTER_AUTHORIZATION_END",
+  "new_physics_authorized": false,
+  "automatic_execution": false,
+  "purpose": "One saved-root steering-filter mechanism falsification; never a whole-lap or 11-second performance claim.",
+  "root": {
+    "selection": "Posthoc diagnostic fixture: unique495 C4, largest absolute saved nominal steering increment among six exact contexts. Selected using saved command contrast, not a fitted outcome/trigger.",
+    "safety": "Both existing 80ms candidates valid, no force clipping; root path error 0.11150637465727065m. H6 safety remains unknown.",
+    "identity": "Same already-exposed DEV condition; no new seed, HOLDOUT or SEALED.",
+    "binding": "Full state, before-nominal memory, RNG, ledger, frozen490 inputs and491 projection. Private source path/hash references remain private."
+  },
+  "hypotheses": {
+    "H1": "Existing longitudinal finite candidates/ranking lack useful preventive contrast in tested natural-quarter condition. A new trigger or stronger/opposite pedal branch remains untested.",
+    "H2": "Steering command smoothing contributes to lateral response; end-hold servo tracking failure is not supported by482. Test only smoothing, not all lateral control."
+  },
+  "arms": [
+    "Original frozen SourceC/P4 nominal controller with .8 new + .2 previous steering smoothing.",
+    "Identical law and gains except remove that one steering smoothing operation; keep physical actuator limits and correctly store returned laststeer."
+  ],
+  "fixed": [
+    "Same root and exact time boundaries, 80ms holds, line/P4, observation, steering preview, pedal law and safety guards.",
+    "No finite allocator, ranking, trigger, profile regeneration, parameter sweep, extra root or rescue. Endogenous later pedal differences are logged as consequences of each arm state, not held artificially equal."
+  ],
+  "prephysics_gates": [
+    "New explicit authorization is required; do not infer extension from old metadata.",
+    "Verify full saved495 root history, state/memory/RNG/ledger, immutable source hashes and canonical domain without integration. Stop if any root receipt is absent or incompatible.",
+    "AST/source difference limited to the single smoothing operation and coherent laststeer update; poison physics during static checks.",
+    "First control hold in the counted cold parent must match its saved495 nominal trace, both physical tolerances and discrete flags/direct-capture boundaries. Stop immediately on mismatch; no calibration worlds. Descendant-root model consistency is not a new native witness qualification."
+  ],
+  "execution_if_separately_authorized": {
+    "arms": 2,
+    "cold_H6_parents_per_arm": 2,
+    "held_first_parent_per_arm": 1,
+    "worlds_max": 6,
+    "wrapper_holds_max": 26,
+    "charged_model_ticks_max": 104,
+    "native_actions": 0,
+    "resets": 0,
+    "new_seed_disclosures": 0,
+    "allocator_calls": 0,
+    "CPU_s_max": 180,
+    "wall_s_max": 240,
+    "private_storage_bytes_max": 67108864,
+    "private_files_max": 512,
+    "fullstates_max": 32,
+    "fullstate_bytes_each_max": 524288,
+    "trace_capture": "Full direct tick receipts and root-inclusive path guards; preforce and returned states kept separate. Stop before a write would exceed cap.",
+    "cleanup": "Close every world on success/error; require body/joint and live-world zero. All gates and teardown fit total caps."
+  },
+  "comparison": {
+    "horizon": "Six own holds per arm; equal raw elapsed time, common prefix if an arm terminates. No extrapolation after termination.",
+    "primary": "Canonical unwrapped progress difference at equal elapsed time, with root-inclusive minimum safety margin; no seed averaging over repeat copies.",
+    "mechanism_secondary": [
+      "Time-aligned front lateral/longitudinal force, force clipping, body lateral velocity, path-normal velocity, signed error and heading.",
+      "End-hold joint tracking and actual steering increments. Maxima at different ticks/wheels must not be vector-summed."
+    ],
+    "local_support": "Both cold repeats and held first exactly reproduce under the registered signature; variant completes H6 safely; variant progress >= control +0.25m at equal time; variant minimum margin >= control -0.25m. This supports a local progress/safety tradeoff only, never deployment.",
+    "falsification": "Technical gates pass and variant becomes unsafe earlier, or loses >=0.25m progress without >=0.25m minimum-margin compensation. Reject only this filter-removal intervention at this fixture.",
+    "other": "TECHNICAL_STOP for failed gates/caps, otherwise NO_INFORMATION including mixed tradeoffs, root domination, or effects below thresholds. No automatic follow-up.",
+    "eleven_second_gate": "Any future promotion would separately need preregistered natural-trigger DEV evaluation and actual complete-lap improvement toward11s, then untouched HOLDOUT/SEALED. No short-margin result satisfies that gate."
+  },
+  "budget": "Proposal spends nothing: actual-action research balance26027; reserve84000/used0 unchanged."
+}
