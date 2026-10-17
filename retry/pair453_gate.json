@@ -1,0 +1,40 @@
+{
+  "stage": 453,
+  "status": "IMPLEMENTATION_STATIC_PASSED_MODEL_NATIVE_NOT_STARTED",
+  "static": {
+    "stage": 453,
+    "passed": true,
+    "error": null,
+    "tests": 242,
+    "failures": 0,
+    "errors": 0,
+    "audit_completed": true,
+    "CPU_s": 20.772763866000002,
+    "wall_s": 20.876526976004243,
+    "new_actual_model_reset_actor_learning_SEALED_reserve_paid": 0,
+    "plan_sha256": "00c23e778788fd08b8a6f2464e4adf72274c04e9457a86a24668040954ef9274"
+  },
+  "source_preflight": {
+    "ticks_cap": 1458,
+    "worlds_cap": 41,
+    "before_native_reset": true
+  },
+  "actual_caps": {
+    "actions": 440,
+    "resets": 2,
+    "arm_actions": 220,
+    "CPU_s": 240,
+    "wall_s": 480
+  },
+  "model_caps": {
+    "planned_ticks": 83826,
+    "planned_worlds": 1625,
+    "hard_ticks": 98304,
+    "hard_worlds": 1792,
+    "CPU_s": 3000,
+    "wall_s": 4200
+  },
+  "permission": "Explicit453fixedpolicyknownDEVpair",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "native_model_calls_at_static_gate": 0
+}
