@@ -1,10 +1,16 @@
 {
-  "status": "PILOT_PASS_COLD_RUNNING_NO_ACTUAL",
+  "status": "NEW_SOURCE_LAUNCH_SAFE_COLD_320MS_BELOW_500MS_GATE_NOT_PROMOTED",
   "snapshot_utc": "2026-10-18T14:33:30.150816+00:00",
   "baseline_actual_s": 14.22,
   "pilot_new_prefix_endlaunch_progress_gain_m": 17.953333994263083,
   "pilot_new_prefix_endlaunch_speed_gain_m_s": 26.76216965126195,
-  "last_cost_checkpoint": {
+  "research_remaining": 23107,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "deadline_KST": "2026-10-20 19:01:55",
+  "prior_in_progress_checkpoint": {
     "current_case": "cold-candidate",
     "completed_cases": 0,
     "model_ticks": 36060,
@@ -37,10 +43,10 @@
       }
     }
   },
-  "research_remaining": 23107,
-  "reserve": 84000,
-  "reserve_used": 0,
-  "new_seeds": 0,
-  "protected_queries": 0,
-  "deadline_KST": "2026-10-20 19:01:55"
+  "completed_utc": "2026-10-18T14:47:52.463932+00:00",
+  "candidate_cold_model_s": 13.899999999999793,
+  "cold_gain_ms": 320,
+  "carry_regression_run": false,
+  "native_actions": 0,
+  "actual_best_s": 14.22
 }
