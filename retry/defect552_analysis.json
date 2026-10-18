@@ -1,0 +1,109 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "arm": "baseline541",
+      "near_ref_seconds": 2.42,
+      "near_ref_low_force_seconds": 1.92,
+      "noncap_near_ref_seconds": 1.0,
+      "noncap_near_ref_low_force_seconds": 0.52,
+      "high_rejection_reasons": {
+        "FORCE_PEAK": 44,
+        "CLIP_HISTORY": 1,
+        "REFERENCE_WITH_NUMERIC_RESERVE": 37,
+        "FORECAST_FOOTPRINT_MARGIN": 1
+      },
+      "reference_rejections_low_force": 28,
+      "reference_rejections_before_first_hold": 37,
+      "normal_vs_actual_max_wheel_lateral_force_error_N": {
+        "n": 587,
+        "min": 0.6534995547535489,
+        "p05": 12.044076523645744,
+        "median": 78.38391720297057,
+        "p95": 231.58016930885225,
+        "max": 330.48354522012215
+      },
+      "absolute_source_yaw_torque": {
+        "n": 587,
+        "min": 0.05529710063366622,
+        "p05": 1.732596435207134,
+        "median": 51.0903404202694,
+        "p95": 496.36725108196816,
+        "max": 854.7948986042647
+      },
+      "instantaneous_grid_feasible_acceleration_range_width_m_s2": {
+        "n": 147,
+        "min": 31.84993370316969,
+        "p05": 87.65254976380376,
+        "median": 138.69196888003933,
+        "p95": 221.7029365885464,
+        "max": 230.99954579118287
+      },
+      "finite_grid_only": true
+    },
+    {
+      "arm": "candidate551",
+      "near_ref_seconds": 3.34,
+      "near_ref_low_force_seconds": 2.64,
+      "noncap_near_ref_seconds": 0.46,
+      "noncap_near_ref_low_force_seconds": 0.12,
+      "high_rejection_reasons": {
+        "REFERENCE_WITH_NUMERIC_RESERVE": 56,
+        "FORCE_PEAK": 37,
+        "CLIP_HISTORY": 1,
+        "FORECAST_FOOTPRINT_MARGIN": 2
+      },
+      "reference_rejections_low_force": 40,
+      "reference_rejections_before_first_hold": 56,
+      "normal_vs_actual_max_wheel_lateral_force_error_N": {
+        "n": 566,
+        "min": 0.552298314933392,
+        "p05": 10.883601671237727,
+        "median": 86.20173552125198,
+        "p95": 251.8010915755856,
+        "max": 376.671701682474
+      },
+      "absolute_source_yaw_torque": {
+        "n": 566,
+        "min": 0.010645133912192684,
+        "p05": 1.697230084922765,
+        "median": 59.70899804464159,
+        "p95": 531.1240366308311,
+        "max": 868.3566332918281
+      },
+      "instantaneous_grid_feasible_acceleration_range_width_m_s2": {
+        "n": 142,
+        "min": 24.645241061762675,
+        "p05": 51.40038247514562,
+        "median": 138.78637517843043,
+        "p95": 222.0780620210155,
+        "max": 230.8477046266678
+      },
+      "finite_grid_only": true
+    }
+  ],
+  "selected_root_index": 60,
+  "selected_partial_HIGH_peak_force": 0.032990427384639906,
+  "selected_first_hold_pass": false,
+  "selected_ticks_to_ref_veto": 1,
+  "selected_partial_margin_m": 5.2311319730011165,
+  "selected_root_sha256": "0b14c1d11943af9448ce69003c983dccac10cad81bec27137344aa9a4c4d1d0e",
+  "reference_clock_old_s": 13.909663909251172,
+  "reference_clock551_s": 13.501469669648488,
+  "surrogate_gain_s": 0.4081942396026843,
+  "observed_source_gain_s": 0.44,
+  "surrogate_not_actual_bound": true,
+  "no_new_candidate": true,
+  "cost": {
+    "force_evaluations": 21964,
+    "model_ticks": 0
+  },
+  "CPU_s": 0.32854227199999997,
+  "wall_s": 0.33256518700363813,
+  "new_native_actions": 0,
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0
+}

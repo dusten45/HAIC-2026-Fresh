@@ -1,0 +1,107 @@
+{
+  "status": "POSITIVE_SOURCE_STATE_BRAKING_REACHABILITY_WITNESS",
+  "chosen_structure": "Source-state-dependent braking reachability for retiming; no uniform brake constant/cap/gain replacement.",
+  "source551_whole_model_s": 13.22,
+  "actual_champion541_s": 13.66,
+  "prior551_gain_ms": 440,
+  "prior551_500ms_gate_passed": false,
+  "source_surrogate_gain_s": 0.4081942396026843,
+  "source_whole_observed_gain_s": 0.44,
+  "source_compatible_scalar80_lower_distance_m": 25.985336039580186,
+  "source_COM_distance_upper_m": 13.418499088539711,
+  "conservative_stopping_distance_advantage_m": 12.566836951040475,
+  "old_design_progress_gate_passed": true,
+  "physical_bounds_and_current551_reference_preserved": true,
+  "whole_lap_time_gain_from_probe_s": null,
+  "new_racing_candidate": false,
+  "actual_promotion": false,
+  "range_algebra": {
+    "baseline541": {
+      "sampled_before_hold_states": 147,
+      "instant_grid_min_acceleration_m_s2": {
+        "min": -219.11924835088416,
+        "median": -101.12774290283267,
+        "p95": -55.72623629861047,
+        "max": -8.856330163068765
+      },
+      "instant_grid_max_acceleration_m_s2": {
+        "min": 2.408494457425589,
+        "median": 22.993603540100924,
+        "p95": 35.63695188790586,
+        "max": 42.07017001442274
+      },
+      "not_multitick_capacity": true,
+      "finite_19_pedal_algebra_only": true
+    },
+    "candidate551": {
+      "sampled_before_hold_states": 142,
+      "instant_grid_min_acceleration_m_s2": {
+        "min": -219.11922374102375,
+        "median": -110.98792089632693,
+        "p95": -51.18568337141235,
+        "max": -7.284929073644085
+      },
+      "instant_grid_max_acceleration_m_s2": {
+        "min": 0.19918869699602687,
+        "median": 18.779510393535546,
+        "p95": 34.95100937253129,
+        "max": 41.57690839631845
+      },
+      "not_multitick_capacity": true,
+      "finite_19_pedal_algebra_only": true
+    }
+  },
+  "aligned_lateral_force_mismatch": [
+    {
+      "arm": "baseline541",
+      "pre_force_state_aligned_unclipped_lateral_error_N": {
+        "n": 587,
+        "median": 79.15121171620575,
+        "p95": 224.78814180395162,
+        "max": 330.7507815987632
+      },
+      "pre_force_state_aligned_applied_lateral_error_N": {
+        "n": 587,
+        "median": 79.15121171620575,
+        "p95": 224.78814180395162,
+        "max": 330.7507815987632
+      }
+    },
+    {
+      "arm": "candidate551",
+      "pre_force_state_aligned_unclipped_lateral_error_N": {
+        "n": 566,
+        "median": 84.40644352415234,
+        "p95": 254.46349946587782,
+        "max": 374.2052263490783
+      },
+      "pre_force_state_aligned_applied_lateral_error_N": {
+        "n": 566,
+        "median": 84.40644352415231,
+        "p95": 254.46349946587782,
+        "max": 374.2052263490784
+      }
+    }
+  ],
+  "science_cost": {
+    "analysis_model_ticks": 0,
+    "probe_model_ticks": 1795,
+    "analysis_force_algebra_evaluations": 21964,
+    "probe_explicit_force_evaluations": 7292,
+    "probe_integrator_wheel_evaluations": 7180,
+    "probe_geometry_checks": 1861,
+    "analysis_CPU_s": 0.32854227199999997,
+    "probe_CPU_s": 15.074531472
+  },
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "conditional_actual_max_actions": 1000,
+  "conditional_actual_max_resets": 2,
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "summary_CPU_s": 0.011165290999999994
+}

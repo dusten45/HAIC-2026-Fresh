@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "checks": {
+    "source_pins": true,
+    "private_input_pins": true,
+    "finite": true,
+    "raw_count": true,
+    "no_prefix_replay": true,
+    "root_is_first_noncap_ref_veto": true,
+    "original551_440ms_gate_preserved": true,
+    "target_event_recomputed": true,
+    "surrogate_and_gate_recomputed": true,
+    "absolute_bounds": true,
+    "metrics_match": true,
+    "source_balance": true,
+    "all_model_body_checked": true,
+    "bounded_brake_calls": true,
+    "selected_FINALs": true,
+    "fresh537_witness": true,
+    "same_source_time_discretization_still_positive": true,
+    "caps": true,
+    "actual0": true,
+    "main_preserved": true,
+    "no_deeper_execution": true
+  },
+  "source_torque_yaw_balance_max_error": 0.0,
+  "source_COM_path_distance_to_first_below_target_upper_m": 13.218499088539712,
+  "source_COM_distance_upper_with_guard_m": 13.418499088539711,
+  "source_compatible_scalar80_Euler_lower_distance_m": 25.985336039580186,
+  "conservative_COM_vs_discrete80_advantage_m": 12.566836951040475,
+  "stopping_raw_index": 10,
+  "clipped_at_end": 6,
+  "wheel_samples_at_end": 64,
+  "preliminary_alignment_correction": "Originalanalysis lateral mismatch used after-step speed/station for before-step forces. This read-only pre-force alignment supersedes those mismatch statistics only; original retained. Selection and stopping gate unchanged.",
+  "aligned_normal_force_mismatch": [
+    {
+      "arm": "baseline541",
+      "pre_force_state_aligned_unclipped_lateral_error_N": {
+        "n": 587,
+        "median": 79.15121171620575,
+        "p95": 224.78814180395162,
+        "max": 330.7507815987632
+      },
+      "pre_force_state_aligned_applied_lateral_error_N": {
+        "n": 587,
+        "median": 79.15121171620575,
+        "p95": 224.78814180395162,
+        "max": 330.7507815987632
+      }
+    },
+    {
+      "arm": "candidate551",
+      "pre_force_state_aligned_unclipped_lateral_error_N": {
+        "n": 566,
+        "median": 84.40644352415234,
+        "p95": 254.46349946587782,
+        "max": 374.2052263490783
+      },
+      "pre_force_state_aligned_applied_lateral_error_N": {
+        "n": 566,
+        "median": 84.40644352415231,
+        "p95": 254.46349946587782,
+        "max": 374.2052263490784
+      }
+    }
+  ],
+  "new_model_ticks": 0,
+  "new_native_actions": 0,
+  "CPU_s": 0.116162762,
+  "wall_s": 0.11765739700058475
+}
