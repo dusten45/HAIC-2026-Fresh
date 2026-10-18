@@ -1,0 +1,23 @@
+{
+  "registered_utc": "2026-10-18T21:43:28.723951+00:00",
+  "scope": "Repair final verification bookkeeping cap: last132raw replay was computed but lost before postprocessing. Repeat ONLY same unchanged baseline incumbent132raw, compare every state/force on the fly, save trace on every exit. NO new direction/LP/proposal or accepted-step change. Original and first recovery failures retained.",
+  "caps": {
+    "additional_model_ticks": 132,
+    "additional_explicit_wheel_forces": 528,
+    "additional_geometry_checks": 133,
+    "CPU_s": 10,
+    "wall_s": 20
+  },
+  "parent_contract_sha256": "171dd04deefadd3c93cde1e76fc951cfffa0ff205fc863ba8fdd86216543eb63",
+  "first_recovery_contract_sha256": "4f9113f2802c2c62e192170d8fafa4dc5664bd5d2bc334eaa9f57ef6fd815b09",
+  "first_recovery_result_sha256": "5f8b58e6a2a9cb222375f1aeba2d72e72eda6ebe1b942f397f2a952105d6d70a",
+  "source_sha256": {
+    "retry/sequential560_finalize.py": "161a7ebca48d1a090b818db99e616354d57743e4f49f9e25599d9b35fcae2499",
+    "retry/period556_model.py": "d1e04f2f50f4bb39406effa9458f69f77b4264e0e672653c0eaca82d3aa15cd4",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "registered_utc": "2026-10-18T21:41:56.236235+00:00",
+  "scope": "Serialization recovery from saved results plus ONLY the original unexecuted final baseline-incumbent132raw replay. Three rejected trials already trigger original stop. No scientific rerun or new direction/LP/step.",
+  "original_contract_sha256": "171dd04deefadd3c93cde1e76fc951cfffa0ff205fc863ba8fdd86216543eb63",
+  "original_failure_sha256": "ef0292237ad654d3910fdda876cce5070e4b49a2085ad51aa538357046719b20",
+  "caps": {
+    "additional_model_ticks": 132,
+    "additional_explicit_wheel_forces": 528,
+    "additional_geometry_checks": 133,
+    "CPU_s": 10,
+    "wall_s": 20
+  },
+  "accounting": "Main CPU/perf-wall floats were lost before JSON serialization. Do NOT invent aggregate measured CPU or assert aggregateCPU600 audit. Retain original hard timer bound600 and approximate registration-to-failure file wall separately. Recovery CPU/wall measured directly.",
+  "source_sha256": {
+    "retry/sequential560_recover.py": "81ffca8e57433c358ccf280b81b2834c7cfa71217891cbef9cc13d984fc76311",
+    "retry/sequential560_model.py": "b2e5ff6292a0f4d3ab01f794008d5a3ddb68e63e658e2f2d103b408ed05a55e6",
+    "retry/transcribe559_model.py": "9396f721f48748c2e2259e5926298b50fcc5b7726d08af9acb59ca1f229efca3",
+    "retry/period556_model.py": "d1e04f2f50f4bb39406effa9458f69f77b4264e0e672653c0eaca82d3aa15cd4",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "completed": true,
+  "scientific_stop_reason": "THREE_REJECTED_TRIALS",
+  "exact_feasible_initialization": true,
+  "accepted_count": 0,
+  "direction_count": 1,
+  "trials": [
+    {
+      "trial": 1,
+      "radius": 1.0,
+      "label": "trial-00-00",
+      "predicted_gain_ms": [
+        8.577943780635918,
+        8.438476075985431
+      ],
+      "actual_gain_ms": [
+        5.176095692545735,
+        6.1016774523259265
+      ],
+      "prediction_max_error_ms": 3.4018480880901834,
+      "actual_predicted_ratio": 0.6627582793500072,
+      "agreement": true,
+      "physical_safe": false,
+      "source_feasible": false,
+      "accepted": false,
+      "branch_changes": {
+        "contact_raw_changes": 50,
+        "new_clipped_samples": 8,
+        "freed_clipped_samples": 4,
+        "pedal_mode_changes": 1,
+        "brake_lock_changes": 0
+      },
+      "active_constraints": {
+        "body": {
+          "min_slack": 4.710829139357472,
+          "near_or_violated": 0
+        },
+        "clip": {
+          "min_slack": -0.01184210526315789,
+          "near_or_violated": 18
+        },
+        "footprint": {
+          "min_slack": 0.47837408657968117,
+          "near_or_violated": 0
+        },
+        "force": {
+          "min_slack": -0.004634556874080209,
+          "near_or_violated": 2
+        },
+        "gate_position": {
+          "min_slack": -0.9107557361829152,
+          "near_or_violated": 3
+        },
+        "path": {
+          "min_slack": 0.9735508120407341,
+          "near_or_violated": 0
+        },
+        "reference": {
+          "min_slack": 0.13459962493589295,
+          "near_or_violated": 0
+        },
+        "return_angle": {
+          "min_slack": 0.07835568976004297,
+          "near_or_violated": 0
+        },
+        "return_direction": {
+          "min_slack": 0.0483285935841475,
+          "near_or_violated": 0
+        },
+        "return_speed": {
+          "min_slack": 0.603933089366052,
+          "near_or_violated": 0
+        }
+      },
+      "incumbent_preserved_on_reject": true
+    },
+    {
+      "trial": 2,
+      "radius": 0.5,
+      "label": "trial-00-01",
+      "predicted_gain_ms": [
+        5.781617834108664,
+        6.3220403465979595
+      ],
+      "actual_gain_ms": [
+        2.9956496777789887,
+        4.837040274107807
+      ],
+      "prediction_max_error_ms": 2.7859681563296745,
+      "actual_predicted_ratio": 0.6471341006946311,
+      "agreement": true,
+      "physical_safe": false,
+      "source_feasible": false,
+      "accepted": false,
+      "branch_changes": {
+        "contact_raw_changes": 36,
+        "new_clipped_samples": 6,
+        "freed_clipped_samples": 1,
+        "pedal_mode_changes": 1,
+        "brake_lock_changes": 0
+      },
+      "active_constraints": {
+        "body": {
+          "min_slack": 4.689739549251357,
+          "near_or_violated": 0
+        },
+        "clip": {
+          "min_slack": -0.015131578947368413,
+          "near_or_violated": 23
+        },
+        "footprint": {
+          "min_slack": -0.09981036207181909,
+          "near_or_violated": 4
+        },
+        "force": {
+          "min_slack": 0.0026805358714130367,
+          "near_or_violated": 0
+        },
+        "gate_position": {
+          "min_slack": -1.4598851234936006,
+          "near_or_violated": 3
+        },
+        "path": {
+          "min_slack": 0.2992864184787547,
+          "near_or_violated": 0
+        },
+        "reference": {
+          "min_slack": 0.11363269813589305,
+          "near_or_violated": 0
+        },
+        "return_angle": {
+          "min_slack": 0.07367285865245903,
+          "near_or_violated": 0
+        },
+        "return_direction": {
+          "min_slack": 0.04369472004715254,
+          "near_or_violated": 0
+        },
+        "return_speed": {
+          "min_slack": 0.5754570765554092,
+          "near_or_violated": 0
+        }
+      },
+      "incumbent_preserved_on_reject": true
+    },
+    {
+      "trial": 3,
+      "radius": 0.25,
+      "label": "trial-00-02",
+      "predicted_gain_ms": [
+        2.935588836421922,
+        3.441635876653375
+      ],
+      "actual_gain_ms": [
+        1.7406128019998857,
+        2.8697306190768046
+      ],
+      "prediction_max_error_ms": 1.1949760344220364,
+      "actual_predicted_ratio": 0.7229388375830712,
+      "agreement": true,
+      "physical_safe": false,
+      "source_feasible": false,
+      "accepted": false,
+      "branch_changes": {
+        "contact_raw_changes": 20,
+        "new_clipped_samples": 3,
+        "freed_clipped_samples": 0,
+        "pedal_mode_changes": 1,
+        "brake_lock_changes": 0
+      },
+      "active_constraints": {
+        "body": {
+          "min_slack": 4.624443114861663,
+          "near_or_violated": 0
+        },
+        "clip": {
+          "min_slack": -0.009999999999999995,
+          "near_or_violated": 21
+        },
+        "footprint": {
+          "min_slack": 0.625888113693273,
+          "near_or_violated": 0
+        },
+        "force": {
+          "min_slack": 0.0012589626832071321,
+          "near_or_violated": 0
+        },
+        "gate_position": {
+          "min_slack": -0.6069219762180126,
+          "near_or_violated": 3
+        },
+        "path": {
+          "min_slack": 1.3248183389314008,
+          "near_or_violated": 0
+        },
+        "reference": {
+          "min_slack": 0.04873050940131485,
+          "near_or_violated": 0
+        },
+        "return_angle": {
+          "min_slack": 0.07752438806546251,
+          "near_or_violated": 0
+        },
+        "return_direction": {
+          "min_slack": 0.047540618802564064,
+          "near_or_violated": 0
+        },
+        "return_speed": {
+          "min_slack": 0.5634944876538555,
+          "near_or_violated": 0
+        }
+      },
+      "incumbent_preserved_on_reject": true
+    }
+  ],
+  "final_incumbent": "baseline",
+  "final_fresh_replay_exact": true,
+  "final_feasible": true,
+  "baseline_times_s": [
+    1.6,
+    2.56
+  ],
+  "final_times_s": [
+    1.6,
+    2.56
+  ],
+  "cumulative_gain_ms": [
+    0.0,
+    0.0
+  ],
+  "final_raw_brackets": [
+    [
+      1.58,
+      1.6
+    ],
+    [
+      2.54,
+      2.56
+    ]
+  ],
+  "final_fullstate_gate_differences": "exactly zero versus baseline because every raw state/force matched",
+  "final_stats": {
+    "min_margin": 1.156639315944597,
+    "max_path": 1.325266986494288,
+    "max_reference_overspeed": 4.849744226625191,
+    "max_force": 1.0589543761741076,
+    "max_clip_fraction": 0.1,
+    "max_body": 95.42433219436607,
+    "final_clip_history": [
+      31,
+      688
+    ]
+  },
+  "errors_preserved": [
+    "main NumPy int64 JSON serialization failure",
+    "first recovery integration cap incorrectly applied to postprocessing"
+  ],
+  "finalization_error": null,
+  "cost": {
+    "model_ticks": 6204,
+    "explicit_wheel_force_evaluations": 24816,
+    "internal_wheel_force_evaluations": 24816,
+    "geometry_checks": 5985,
+    "body_checks": 6204,
+    "main_model_ticks": 5940,
+    "first_recovery": {
+      "model_ticks": 132,
+      "explicit_wheel_force_evaluations": 528,
+      "geometry_checks": 0,
+      "CPU_s": 0.7771765530000001,
+      "wall_s": 0.7786772340041352
+    },
+    "finalization": {
+      "model_ticks": 132,
+      "explicit_wheel_force_evaluations": 528,
+      "geometry_checks": 133,
+      "CPU_s": 1.8739162230000002,
+      "wall_s": 1.8740077990078134
+    },
+    "main_measured_CPU_s": null,
+    "aggregate_measured_CPU_s": null,
+    "main_registration_to_failure_file_wall_estimate_s": 81.55248737335205,
+    "aggregate_CPU600_independently_verified": false
+  },
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "new_seeds": 0,
+  "HOLDOUT_queries": 0,
+  "SEALED_queries": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "actual_baseline_s": 13.66,
+  "no_lap_gain_observation": true
+}

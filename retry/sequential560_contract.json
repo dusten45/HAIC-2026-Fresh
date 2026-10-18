@@ -1,0 +1,52 @@
+{
+  "registered_utc": "2026-10-18T21:37:39.300445+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "hypothesis": "Bounded sequential feasible optimization can accumulate source time improvement from exact feasible reset-reachable551 rather than rejecting all sub5ms steps. Preserve559 verdict unchanged.",
+  "selection": "Same deterministic first551 tracking before-action progress>=533station37. First20holds controls40, fixed12hold follow and1fixed measurement-buffer hold. Frozen physical planes at saved20/32hold endpoints; no synthetic periodic goal, no window selection after outcomes.",
+  "transcription": "Independent33node4raw replay and sequential132raw must EXACTLY match all saved root/contact/force values. Stop before directions on mismatch. Exact feasible baseline retained forever.",
+  "objective": "Minimize average arrival time to both frozen common-space planes. Source raw signed-plane interpolation convention and raw brackets reported; not native or full-lap performance.",
+  "global_safety": "Every raw: preclipforce<=1.059,footprint>=.50,path<=3,ORIGINAL551reference overspeed<=4.85,all hull/wheel<100,cumulative clipping<=10% from true saved tracking history. All model body hard100 even rejected forecasts.",
+  "return_design": "Main gate position aperture components +/-.7m (Euclidean<=1m); follow gate components +/-.35m (Euclidean<=.5m),body heading difference<=.08rad,velocity direction difference<=.05rad,speed>=baseline-.5m/s. Full world/mechanical state differences logged. NO comparative yaw,omega/gas/joint equality,periodicity,no-new-clip mask or frozen contact branch. Return apertures are local handoff design, not physical necessity.",
+  "linearization": "40 one-sided exact source rollouts per direction, steering1e-5/pedal1e-4 actual float32 difference. FD points stay inside action bounds, preferably same local brake-lock regime; LP/trials MAY change pedal/lock/contact/clip branch. Derivative clipping-count discontinuities are handled by actual validation, never presumed smooth.",
+  "LP": "scipy HiGHS one per trial, average two-gate time derivative objective; G*delta>=-.75*g_inc for physical/return constraints, and predicted BOTH arrival times nonworsening. No no-new-clip mask. ZERO delta feasible. Steps bounded by steering .004*radius,pedal .04*radius and action bounds.",
+  "acceptance": "Actual full source rollout physical+return feasible, both common-plane times<=incumbent+0.5microsecond, mean actual gain>1microsecond. No5ms per-step requirement. Feasible beneficial accepted state immutable and retained; rejects never replace it.",
+  "prediction_recovery": "Agreement if mean actual/predicted in[.25,2] and max time error<=max(.5ms,.5*maxabs(predicted)). Safe beneficial mismatches MAY be accepted but next radius halves;2consecutive accepted mismatches stop. Safe agreement ratio>=.75 permits radius double up to2 ONLY if no contact/clip/pedal/lock branch change; otherwise do not grow. Unsafe/nonbeneficial/unbracketed trial: incumbent unchanged,radius halved, resolve same linear model; max3trials/direction, radius floor.125. No successful trial after3 -> stop. Relinearize after every acceptance.",
+  "limits": "Directions<=6,acceptedsteps<=6,trials<=3/direction (18total),radius initial1,max2,min.125. Two consecutive accepted mean gains<.02ms -> numerical stagnation stop. Float32-identical controls/LP failure ->stop. No stop solely for gain<5ms. No new iteration/window/target/threshold after outcomes.",
+  "final": "Fresh exact source replay of final incumbent with full132raw safety, same-space two times,12hold continued following-state/gate metrics, immutable saved accepted trajectory identity. No actual/full-lap promotion.",
+  "caps": {
+    "model_ticks": 36000,
+    "explicit_wheel_force_evaluations": 150000,
+    "geometry_checks": 36000,
+    "CPU_s": 600,
+    "wall_s": 700,
+    "directions": 6,
+    "acceptances": 6,
+    "trials": 18,
+    "FD_rollouts": 240
+  },
+  "budget_recovery": "Before next direction require reserve40FD+3trials+1final replay (5808ticks) and CPU<480s. Soft stop preserves final replay; hard timer/domain/cost checkpoints incumbent and terminates without rerun. Rejected/FD source forecasts charged and private.",
+  "actual_cap": 0,
+  "new_seed_HOLDOUT_SEALED_other_environment_paid": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "source_sha256": {
+    "retry/sequential560_model.py": "b2e5ff6292a0f4d3ab01f794008d5a3ddb68e63e658e2f2d103b408ed05a55e6",
+    "retry/transcribe559_model.py": "9396f721f48748c2e2259e5926298b50fcc5b7726d08af9acb59ca1f229efca3",
+    "retry/period556_model.py": "d1e04f2f50f4bb39406effa9458f69f77b4264e0e672653c0eaca82d3aa15cd4",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131"
+  },
+  "private_inputs_sha256": {
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response551-private/frozen-paths-private.json": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "/workspace/haic-response551-private/cold-candidate-private.json": "5e28759abfbc2455599c9f3bd4143ff7b8cf644deae63a86c7c290608e466ac8"
+  },
+  "segment_sha256": "0721c0d46922057e1279381f14ca2a4476fdc7a45726246b96599710b86831c6"
+}
