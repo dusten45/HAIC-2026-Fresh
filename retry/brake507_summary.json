@@ -1,0 +1,62 @@
+{
+  "one_hold": {
+    "fixed504": {
+      "holds": 6,
+      "RMSE_m_s": 0.26213963985499517,
+      "max_abs_m_s": 0.6244949340820085,
+      "maximum_excess_braking_m_s": 0.6244949340820085,
+      "contact_mismatches": 20,
+      "wheel_tick_comparisons": 96,
+      "source_prepose_mismatches": 0
+    },
+    "geometry": {
+      "holds": 6,
+      "RMSE_m_s": 0.003312010812399977,
+      "max_abs_m_s": 0.008112525192004227,
+      "maximum_excess_braking_m_s": 5.2717552350145525e-05,
+      "contact_mismatches": 0,
+      "wheel_tick_comparisons": 96,
+      "source_prepose_mismatches": 0
+    },
+    "projected_travel_loss_geometry_vs504_by_fixture_m": {
+      "edge_entry": -0.031157684326169388,
+      "asym_side_exit": 0.0007017836087088725,
+      "edge_exit": 0.0003387451171859013,
+      "gap_reentry": -0.0013551330566388131,
+      "asym_steer": 0.006979626452707777,
+      "interior": 0.0
+    }
+  },
+  "two_hold": {
+    "fixed504": {
+      "holds": 4,
+      "RMSE_m_s": 0.07852614778831837,
+      "max_abs_m_s": 0.144948762258295,
+      "maximum_excess_braking_m_s": 0.030592346191383513,
+      "contact_mismatches": 14,
+      "wheel_tick_comparisons": 64,
+      "source_prepose_mismatches": 0
+    },
+    "geometry": {
+      "holds": 4,
+      "RMSE_m_s": 0.026711328371778937,
+      "max_abs_m_s": 0.05280309552962592,
+      "maximum_excess_braking_m_s": 0.0,
+      "contact_mismatches": 0,
+      "wheel_tick_comparisons": 64,
+      "source_prepose_mismatches": 0
+    },
+    "projected_travel_loss_geometry_vs504_by_fixture_m": {
+      "asym_steer": 0.011782659327849387,
+      "gap_reentry": -0.0021768188476531947
+    }
+  },
+  "original506_technical_stop_preserved": true,
+  "confirmation_only_metrics": true,
+  "runtime_versions": {
+    "box2d-py": "2.3.5",
+    "numpy": "1.26.0",
+    "gymnasium": "0.29.1"
+  },
+  "python_version": "3.11.16"
+}

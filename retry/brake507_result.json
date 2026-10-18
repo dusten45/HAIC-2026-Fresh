@@ -1,0 +1,422 @@
+{
+  "status": "GEOMETRY_LOCAL_GATE_PASS",
+  "one_hold_gate": {
+    "speed_gate": true,
+    "contact_gate": true,
+    "cost_gate": true,
+    "pass_all": true,
+    "abstentions": 0,
+    "physical_coverage_gate": true
+  },
+  "one_hold": [
+    {
+      "phase": "one_hold",
+      "fixture": "interior",
+      "arm": "fixed504",
+      "holds": [
+        {
+          "error_m_s": 1.5258788721439487e-06,
+          "hull_error_m_s": 1.5258789005656581e-06,
+          "forecast_error_m_s": 1.535923431106312e-06,
+          "contact_mismatch_wheel_ticks": 0,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 0,
+          "transition_wheel_ticks": 0,
+          "entry_events": 0,
+          "exit_events": 0,
+          "asymmetric_contact_samples": 0,
+          "projected_travel_m": 6.317887573242185
+        }
+      ]
+    },
+    {
+      "phase": "one_hold",
+      "fixture": "interior",
+      "arm": "geometry",
+      "holds": [
+        {
+          "error_m_s": 1.5258788721439487e-06,
+          "hull_error_m_s": 1.5258789005656581e-06,
+          "forecast_error_m_s": 1.535923431106312e-06,
+          "contact_mismatch_wheel_ticks": 0,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 0,
+          "transition_wheel_ticks": 0,
+          "entry_events": 0,
+          "exit_events": 0,
+          "asymmetric_contact_samples": 0,
+          "projected_travel_m": 6.317887573242185
+        }
+      ]
+    },
+    {
+      "phase": "one_hold",
+      "fixture": "edge_exit",
+      "arm": "fixed504",
+      "holds": [
+        {
+          "error_m_s": 0.006806945800747144,
+          "hull_error_m_s": 0.006806945800775566,
+          "forecast_error_m_s": 0.006807279800653987,
+          "contact_mismatch_wheel_ticks": 4,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 4,
+          "transition_wheel_ticks": 4,
+          "entry_events": 0,
+          "exit_events": 4,
+          "asymmetric_contact_samples": 0,
+          "projected_travel_m": 6.552566986083985
+        }
+      ]
+    },
+    {
+      "phase": "one_hold",
+      "fixture": "edge_exit",
+      "arm": "geometry",
+      "holds": [
+        {
+          "error_m_s": 1.6784667991487368e-05,
+          "hull_error_m_s": 1.6784667963065658e-05,
+          "forecast_error_m_s": 1.7036991167174165e-05,
+          "contact_mismatch_wheel_ticks": 0,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 4,
+          "transition_wheel_ticks": 4,
+          "entry_events": 0,
+          "exit_events": 4,
+          "asymmetric_contact_samples": 0,
+          "projected_travel_m": 6.552228240966799
+        }
+      ]
+    },
+    {
+      "phase": "one_hold",
+      "fixture": "edge_entry",
+      "arm": "fixed504",
+      "holds": [
+        {
+          "error_m_s": -0.6244949340820085,
+          "hull_error_m_s": -0.6244949340820369,
+          "forecast_error_m_s": -0.6244946864290313,
+          "contact_mismatch_wheel_ticks": 4,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 4,
+          "transition_wheel_ticks": 4,
+          "entry_events": 4,
+          "exit_events": 0,
+          "asymmetric_contact_samples": 0,
+          "projected_travel_m": 6.493114013671877
+        }
+      ]
+    },
+    {
+      "phase": "one_hold",
+      "fixture": "edge_entry",
+      "arm": "geometry",
+      "holds": [
+        {
+          "error_m_s": 9.155273431815658e-06,
+          "hull_error_m_s": 9.155273431815658e-06,
+          "forecast_error_m_s": 9.512939229239237e-06,
+          "contact_mismatch_wheel_ticks": 0,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 4,
+          "transition_wheel_ticks": 4,
+          "entry_events": 4,
+          "exit_events": 0,
+          "asymmetric_contact_samples": 0,
+          "projected_travel_m": 6.524271697998047
+        }
+      ]
+    },
+    {
+      "phase": "one_hold",
+      "fixture": "gap_reentry",
+      "arm": "fixed504",
+      "holds": [
+        {
+          "error_m_s": -0.030592346191383513,
+          "hull_error_m_s": -0.030592346191411934,
+          "forecast_error_m_s": -0.03059201219147667,
+          "contact_mismatch_wheel_ticks": 4,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 8,
+          "transition_wheel_ticks": 6,
+          "entry_events": 2,
+          "exit_events": 4,
+          "asymmetric_contact_samples": 0,
+          "projected_travel_m": 6.551819000244143
+        }
+      ]
+    },
+    {
+      "phase": "one_hold",
+      "fixture": "gap_reentry",
+      "arm": "geometry",
+      "holds": [
+        {
+          "error_m_s": 1.6784667991487368e-05,
+          "hull_error_m_s": 1.6784667963065658e-05,
+          "forecast_error_m_s": 1.692584261547836e-05,
+          "contact_mismatch_wheel_ticks": 0,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 8,
+          "transition_wheel_ticks": 6,
+          "entry_events": 2,
+          "exit_events": 4,
+          "asymmetric_contact_samples": 0,
+          "projected_travel_m": 6.553174133300782
+        }
+      ]
+    },
+    {
+      "phase": "one_hold",
+      "fixture": "asym_side_exit",
+      "arm": "fixed504",
+      "holds": [
+        {
+          "error_m_s": 0.017800341754565352,
+          "hull_error_m_s": 0.01780240745446804,
+          "forecast_error_m_s": 0.0178003424957609,
+          "contact_mismatch_wheel_ticks": 4,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 2,
+          "transition_wheel_ticks": 2,
+          "entry_events": 0,
+          "exit_events": 2,
+          "asymmetric_contact_samples": 2,
+          "projected_travel_m": 6.354971790528322
+        }
+      ]
+    },
+    {
+      "phase": "one_hold",
+      "fixture": "asym_side_exit",
+      "arm": "geometry",
+      "holds": [
+        {
+          "error_m_s": -5.2717552350145525e-05,
+          "hull_error_m_s": -5.0589248047572255e-05,
+          "forecast_error_m_s": -5.270697246828604e-05,
+          "contact_mismatch_wheel_ticks": 0,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 2,
+          "transition_wheel_ticks": 2,
+          "entry_events": 0,
+          "exit_events": 2,
+          "asymmetric_contact_samples": 2,
+          "projected_travel_m": 6.354270006919613
+        }
+      ]
+    },
+    {
+      "phase": "one_hold",
+      "fixture": "asym_steer",
+      "arm": "fixed504",
+      "holds": [
+        {
+          "error_m_s": 0.144948762258295,
+          "hull_error_m_s": 0.1448167141405463,
+          "forecast_error_m_s": 0.1449492541334081,
+          "contact_mismatch_wheel_ticks": 4,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 2,
+          "transition_wheel_ticks": 2,
+          "entry_events": 0,
+          "exit_events": 2,
+          "asymmetric_contact_samples": 2,
+          "projected_travel_m": 6.539514394145474
+        }
+      ]
+    },
+    {
+      "phase": "one_hold",
+      "fixture": "asym_steer",
+      "arm": "geometry",
+      "holds": [
+        {
+          "error_m_s": 0.008112525192004227,
+          "hull_error_m_s": 0.007980840657353383,
+          "forecast_error_m_s": 0.008113071634468838,
+          "contact_mismatch_wheel_ticks": 0,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 2,
+          "transition_wheel_ticks": 2,
+          "entry_events": 0,
+          "exit_events": 2,
+          "asymmetric_contact_samples": 2,
+          "projected_travel_m": 6.532534767692766
+        }
+      ]
+    }
+  ],
+  "two_hold": [
+    {
+      "phase": "two_hold",
+      "fixture": "gap_reentry",
+      "arm": "fixed504",
+      "holds": [
+        {
+          "error_m_s": -0.030592346191383513,
+          "hull_error_m_s": -0.030592346191411934,
+          "forecast_error_m_s": -0.03059201219147667,
+          "contact_mismatch_wheel_ticks": 4,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 8,
+          "transition_wheel_ticks": 6,
+          "entry_events": 2,
+          "exit_events": 4,
+          "asymmetric_contact_samples": 0,
+          "projected_travel_m": 6.551819000244143
+        },
+        {
+          "error_m_s": -4.5776367443295385e-06,
+          "hull_error_m_s": -4.577636715907829e-06,
+          "forecast_error_m_s": -4.480802985540322e-06,
+          "contact_mismatch_wheel_ticks": 6,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 0,
+          "transition_wheel_ticks": 2,
+          "entry_events": 2,
+          "exit_events": 0,
+          "asymmetric_contact_samples": 0,
+          "projected_travel_m": 6.203045501708985
+        }
+      ]
+    },
+    {
+      "phase": "two_hold",
+      "fixture": "gap_reentry",
+      "arm": "geometry",
+      "holds": [
+        {
+          "error_m_s": 1.6784667991487368e-05,
+          "hull_error_m_s": 1.6784667963065658e-05,
+          "forecast_error_m_s": 1.692584261547836e-05,
+          "contact_mismatch_wheel_ticks": 0,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 8,
+          "transition_wheel_ticks": 6,
+          "entry_events": 2,
+          "exit_events": 4,
+          "asymmetric_contact_samples": 0,
+          "projected_travel_m": 6.553174133300782
+        },
+        {
+          "error_m_s": 3.051757815342171e-06,
+          "hull_error_m_s": 3.051757815342171e-06,
+          "forecast_error_m_s": 3.0739739287355405e-06,
+          "contact_mismatch_wheel_ticks": 0,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 0,
+          "transition_wheel_ticks": 2,
+          "entry_events": 2,
+          "exit_events": 0,
+          "asymmetric_contact_samples": 0,
+          "projected_travel_m": 6.2038671875
+        }
+      ]
+    },
+    {
+      "phase": "two_hold",
+      "fixture": "asym_steer",
+      "arm": "fixed504",
+      "holds": [
+        {
+          "error_m_s": 0.144948762258295,
+          "hull_error_m_s": 0.1448167141405463,
+          "forecast_error_m_s": 0.1449492541334081,
+          "contact_mismatch_wheel_ticks": 4,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 2,
+          "transition_wheel_ticks": 2,
+          "entry_events": 0,
+          "exit_events": 2,
+          "asymmetric_contact_samples": 2,
+          "projected_travel_m": 6.539514394145474
+        },
+        {
+          "error_m_s": 0.05214775353964285,
+          "hull_error_m_s": 0.051981911300941874,
+          "forecast_error_m_s": 0.052147762620279536,
+          "contact_mismatch_wheel_ticks": 0,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 0,
+          "transition_wheel_ticks": 0,
+          "entry_events": 0,
+          "exit_events": 0,
+          "asymmetric_contact_samples": 4,
+          "projected_travel_m": 6.22072541255039
+        }
+      ]
+    },
+    {
+      "phase": "two_hold",
+      "fixture": "asym_steer",
+      "arm": "geometry",
+      "holds": [
+        {
+          "error_m_s": 0.008112525192004227,
+          "hull_error_m_s": 0.007980840657353383,
+          "forecast_error_m_s": 0.008113071634468838,
+          "contact_mismatch_wheel_ticks": 0,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 2,
+          "transition_wheel_ticks": 2,
+          "entry_events": 0,
+          "exit_events": 2,
+          "asymmetric_contact_samples": 2,
+          "projected_travel_m": 6.532534767692766
+        },
+        {
+          "error_m_s": 0.05280309552962592,
+          "hull_error_m_s": 0.052636885172660186,
+          "forecast_error_m_s": 0.05280311282125183,
+          "contact_mismatch_wheel_ticks": 0,
+          "prepose_oracle_mismatches": 0,
+          "postpose_oracle_mismatches": 0,
+          "transition_wheel_ticks": 0,
+          "entry_events": 0,
+          "exit_events": 0,
+          "asymmetric_contact_samples": 4,
+          "projected_travel_m": 6.2159223796752485
+        }
+      ]
+    }
+  ],
+  "two_hold_gate": {
+    "speed_gate": true,
+    "contact_gate": true,
+    "cost_gate": true,
+    "pass_all": true,
+    "abstentions": 0
+  },
+  "probe_prepose_mismatches": 0,
+  "probe_postpose_mismatches": 2,
+  "counts": {
+    "worlds": 17,
+    "closed": 17,
+    "raw_ticks": 84,
+    "zero_dt_contact_primes": 17
+  },
+  "live_worlds": 0,
+  "CPU_s_including_test_child": 0.5751452690000002,
+  "wall_s": 0.575679202000174,
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "native_actions_resets_seeds_HOLDOUT_SEALED": 0,
+  "scope": "New physical road-sensor geometry fixtures; never mixed with forced503 schedules; no track/lap/generalization qualification",
+  "future_actual_contacts_given_to_candidate": false,
+  "source_sha256": {
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69",
+    "core/obstacle_contacts.py": "5cd59eedfc4091f82c49a55e5d243412b8a22fc52050c86a16c88691ca342806",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake504_diagnostic.py": "4cfa67035e7131eb11325dcdfa1812fe8d5674d237cacbd43c800e64f4c54fdc",
+    "retry/brake506_geometry.py": "4f69de71c0e1ad0d7707c9c9681f4e504367ccbce5c33ae6c0f369e7c6ed4392",
+    "retry/test_brake506.py": "54edd5669c4323d84583ed6a057c85bb9d49fc35ce60d742ffe645ea91c3983c",
+    "retry/brake507_confirm.py": "59392a1bd0bc083bd45b7624c0e6a4d5e8be2a6fdc5a294ac651f21837f62f80",
+    "retry/brake506_diagnostic.py": "91a98cc2b02d2c4db899f601c1088761ed7e347ed49fe0122ca0cc0f96fb3688"
+  }
+}

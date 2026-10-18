@@ -1,0 +1,43 @@
+{
+  "registered_utc": "2026-10-18T04:24:21.586596+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "scope": "NEW physical road-polygon sensor fixtures, not forced503 events; no track or protected cases",
+  "candidate": "504 planar response plus convex road/wheel-footprint distance and sum of Box2D polygon skins. Current observed contact starts hold. Geometry at pre-world pose updates NEXT force contact, semi-implicit COM translation; no future actual contact lookup.",
+  "timing_probe": "One dynamic wheel, source FrictionDetector and static road sensor, prime World.Step(0), then4x.02. Require observed post-step contacts match PRE-step actual geometry exactly and differ from POST-step geometry on at least one sample. Otherwise stop before vehicle trials, no delay fitting.",
+  "selection": "First feasible fixed33-sample brake bracket then verified adjacent float32 boundary; no global monotonicity/minimality claim across contact switches.",
+  "fixtures": "Six fixed definitions in brake506_diagnostic.fixtures: interior, edge exit, entry, gap reentry, lateral asymmetric edge, steering+yaw asymmetric edge. Source VariablesContactDetector; no manual wheel.tiles changes.",
+  "gates": {
+    "source": "Pre-world actual-pose oracle must match source post-step sensor memberships exactly",
+    "contact": "Geometry candidate must match actual force-time tile memberships on every wheel/tick",
+    "speed": "No abstentions and assembly/hull absolute end-target error<=0.15m/s",
+    "cost": "Excess braking<=0.4m/s all cases; interior projected-travel loss vs504<=0.016m. Report progress loss for every condition; not lap time.",
+    "coverage": "Observed exit, entry, gap exit+entry, and asymmetric contact sampling required",
+    "conditional_followup": "Only full first gate pass allows SAME candidate on gap_reentry/asym_steer with2 consecutive holds; targets initial speed-1.6*h, same gates; otherwise STOP, no changes/retry"
+  },
+  "caps": {
+    "worlds_total_including_probe": 17,
+    "positive_dt_raw_ticks": 68,
+    "zero_dt_contact_primes": 17,
+    "CPU_s": 60,
+    "wall_s": 90,
+    "private_bytes": 16777216,
+    "native_actions": 0,
+    "environment_resets": 0,
+    "seed_generation": 0
+  },
+  "privilege": "Exact current body/wheel state, known full synthetic road polygons/material and source constants. Not pixel policy or actual-track perception qualification.",
+  "source_sha256": {
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69",
+    "core/obstacle_contacts.py": "5cd59eedfc4091f82c49a55e5d243412b8a22fc52050c86a16c88691ca342806",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake504_diagnostic.py": "4cfa67035e7131eb11325dcdfa1812fe8d5674d237cacbd43c800e64f4c54fdc",
+    "retry/brake506_geometry.py": "4f69de71c0e1ad0d7707c9c9681f4e504367ccbce5c33ae6c0f369e7c6ed4392",
+    "retry/test_brake506.py": "54edd5669c4323d84583ed6a057c85bb9d49fc35ce60d742ffe645ea91c3983c",
+    "retry/brake506_diagnostic.py": "91a98cc2b02d2c4db899f601c1088761ed7e347ed49fe0122ca0cc0f96fb3688"
+  },
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "no_505_hidden_schedule_given_to_candidate": true
+}

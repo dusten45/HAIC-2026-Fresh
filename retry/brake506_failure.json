@@ -1,0 +1,20 @@
+{
+  "status": "TECHNICAL_STOP_AT_REGISTERED_RAW_TICK_CAP",
+  "error": "AssertionError counts.raw_ticks<68 entering asym_steer fixed504 follow-up",
+  "reason": "Resource arithmetic: two fixtures x two arms x two holds x four ticks =32 follow-up ticks, not16; required total84 including probe, registered68",
+  "caps_exceeded": false,
+  "external_shell_wall_s": 0.470625909,
+  "first_phase_detail_lost": true,
+  "first_phase_pass_inferred_only_from_conditional_execution_path": true,
+  "inferred_not_counter_receipt": {
+    "created_and_closed_worlds": 16,
+    "positive_dt_steps": 68,
+    "zero_dt_primes": 16
+  },
+  "probe_prepose_mismatches": 0,
+  "probe_postpose_mismatches": 2,
+  "worker_conservative_CPU_wall_charge_s": 5,
+  "source_sha256": "91a98cc2b02d2c4db899f601c1088761ed7e347ed49fe0122ca0cc0f96fb3688",
+  "original_contract_sha256": "7394b2e0c416729f4ffdebc491cf6ebdfe9f855fda897b862e63f240b922a044",
+  "new_wrapper_action_reset_seed": 0
+}
