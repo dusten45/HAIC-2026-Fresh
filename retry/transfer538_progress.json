@@ -1,0 +1,32 @@
+{
+  "status": "NATIVE_CANDIDATE_RUNNING_NOT_FINAL",
+  "snapshot_utc": "2026-10-18T13:24:08.066128+00:00",
+  "pilot_pass": true,
+  "cold_model_finish_s": 14.22,
+  "carry_model_finish_s": 14.7,
+  "actual_fresh_baseline_finish_s": 15.1,
+  "last_charge": {
+    "budget": "candidate",
+    "index": 103,
+    "attempted_actual_actions": 292,
+    "research_remaining": 23182,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "model_ticks": 55076,
+    "explicit_force_evaluations": 228528,
+    "planner_cost": {
+      "force_evaluations": 219204,
+      "forecast_calls": 2459,
+      "forecast_ticks": 53908,
+      "geometry_checks": 56367
+    },
+    "CPU_s": 1084.503666257,
+    "wall_s": 1084.5674186569959
+  },
+  "actual_candidate_finish_s": null,
+  "no_restart": true,
+  "old537_failure_preserved": true,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "In-progress aggregate checkpoint only. Current actual candidate not finished; model gain is not an actual gain."
+}
