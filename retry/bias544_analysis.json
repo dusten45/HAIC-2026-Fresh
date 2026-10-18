@@ -1,0 +1,33 @@
+{
+  "status": "SAVED541_DYNAMIC_GEOMETRY_DIAGNOSIS",
+  "created_utc": "2026-10-18T16:41:18.996069+00:00",
+  "minimum_action": 71,
+  "minimum_sample_at_hold_end": false,
+  "signed_normal_tracking_error_m": 1.3395747655022996,
+  "body_minus_reference_heading_rad": -0.04233864141917887,
+  "pose_only_clearance_m": {
+    "actual": 0.5271545103953896,
+    "position_on_reference_keep_actual_orientation": 1.865528847829715,
+    "orientation_to_reference_keep_actual_center": 0.6077628543753208,
+    "position_and_orientation_on_reference": 1.9473376198774683
+  },
+  "interpretation": "Pose ablations are geometric counterfactuals only, not realizable dynamics or additive effects. Select one local counter-bias reference shape, then measure source-model common-plane time and terminal safety rather than static surrogate.",
+  "prior_failures": {
+    "smooth531": "surrogate14.746595 but scalar18.580911 vs17.250273 baseline",
+    "joint532_533": "time objective/primal feasibility do not establish converged or physical optimum",
+    "dynamic534": "nominal box1.608604 vs dynamic wheel.437175; position error1.250157 plus heading-.120377rad; force/pathdistance alone insufficient"
+  },
+  "new_model_ticks": 0,
+  "new_native_actions": 0,
+  "geometry_pose_checks": 4,
+  "CPU_s": 0.290066265,
+  "wall_s": 0.29020529500121484,
+  "source_sha256": {
+    "/workspace/HAIC-2026-Fresh/retry/feasible531_result.md": "05c295986564c10c93275be3a8cbe1e3fa55ebb82054da40807200923ac98f83",
+    "/workspace/HAIC-2026-Fresh/retry/joint532_result.md": "b70facdd374fb41eabfa7b134adcd320c4e83a946eb93e2820f5315605385478",
+    "/workspace/HAIC-2026-Fresh/retry/joint533_result.md": "810f6bb5aff7caddb42f27f66645d0565ce24b8a9413de2449b23907a814c197",
+    "/workspace/HAIC-2026-Fresh/retry/frozen534_result.md": "fdb8b999b99a0504c76203be951a17e0c57b5a52203dc3ff1a25656a36fe05ba",
+    "/workspace/HAIC-2026-Fresh/retry/frozen534_audit.json": "7f46a12c0104a215da789ee086d428222c45a607ac8edbce7980c8b613d19a58",
+    "/workspace/haic-response541-private/native-full-records-private.json": "34aeee82278c5da67aa7cac60ac287153111bf291b4c78593cf7473d3147feef"
+  }
+}
