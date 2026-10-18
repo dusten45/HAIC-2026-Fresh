@@ -1,0 +1,270 @@
+{
+  "phase": "pilot",
+  "passed": false,
+  "learning_gate": false,
+  "promotion_eligible": false,
+  "reason": "DIRECTION_MODEL_PREDICTION_INACCURATE",
+  "feasible_initialization": true,
+  "canonical_replay_exact": true,
+  "unified_floor_m": 0.5251524480367317,
+  "basis_coefficients": 12,
+  "basis_covers_all32holds": true,
+  "local_models": [
+    {
+      "model": 1,
+      "QP_success": true,
+      "QP_status": 0,
+      "QP_iterations": 2,
+      "predicted_full_step_time_gain_s": 0.0009484872364348086,
+      "linear_constraint_minimum": -7.007283642224138e-12,
+      "direction_norm_inf": 0.01213712264014366,
+      "finite_difference": [
+        {
+          "column": 0,
+          "sign": 1.0,
+          "signature_changes": {
+            "contact_ids": true,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": true
+          }
+        },
+        {
+          "column": 1,
+          "sign": 1.0,
+          "signature_changes": {
+            "contact_ids": true,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": true
+          }
+        },
+        {
+          "column": 2,
+          "sign": 1.0,
+          "signature_changes": {
+            "contact_ids": true,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": false
+          }
+        },
+        {
+          "column": 3,
+          "sign": 1.0,
+          "signature_changes": {
+            "contact_ids": false,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": false
+          }
+        },
+        {
+          "column": 4,
+          "sign": 1.0,
+          "signature_changes": {
+            "contact_ids": false,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": false
+          }
+        },
+        {
+          "column": 5,
+          "sign": 1.0,
+          "signature_changes": {
+            "contact_ids": false,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": false
+          }
+        },
+        {
+          "column": 6,
+          "sign": -1.0,
+          "signature_changes": {
+            "contact_ids": true,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": true
+          }
+        },
+        {
+          "column": 7,
+          "sign": -1.0,
+          "signature_changes": {
+            "contact_ids": true,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": true
+          }
+        },
+        {
+          "column": 8,
+          "sign": -1.0,
+          "signature_changes": {
+            "contact_ids": true,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": false
+          }
+        },
+        {
+          "column": 9,
+          "sign": -1.0,
+          "signature_changes": {
+            "contact_ids": false,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": false
+          }
+        },
+        {
+          "column": 10,
+          "sign": -1.0,
+          "signature_changes": {
+            "contact_ids": false,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": false
+          }
+        },
+        {
+          "column": 11,
+          "sign": -1.0,
+          "signature_changes": {
+            "contact_ids": false,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": false
+          }
+        }
+      ],
+      "direction_checks": [
+        {
+          "step_fraction": 0.25,
+          "predicted_time_s": 1.9997624482439567,
+          "actual_time_s": 1.999770155297619,
+          "time_prediction_error_s": 7.707053662375785e-06,
+          "force_linearization_error": 0.0013471071424171477,
+          "footprint_linearization_error_m": 0.6503960596262384,
+          "remaining_normalized_constraint_error": 0.0006782273927261606,
+          "feasible": true,
+          "reliable": false,
+          "signature_changes": {
+            "contact_ids": true,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": true
+          }
+        },
+        {
+          "step_fraction": 0.5,
+          "predicted_time_s": 1.9995253264348478,
+          "actual_time_s": 1.9995587344573054,
+          "time_prediction_error_s": 3.340802245754837e-05,
+          "force_linearization_error": 0.004393983068457841,
+          "footprint_linearization_error_m": 1.3004242987408228,
+          "remaining_normalized_constraint_error": 0.0027235280403452578,
+          "feasible": true,
+          "reliable": false,
+          "signature_changes": {
+            "contact_ids": true,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": true
+          }
+        }
+      ],
+      "direction_prediction_reliable": false
+    }
+  ],
+  "initial": {
+    "rollout": 1,
+    "feedback": false,
+    "objective_s": 1.9999995700530653,
+    "crossing": {
+      "lower_s": 1.98,
+      "upper_s": 2.0,
+      "time_s": 1.9999995700530653,
+      "speed": 90.36512104154632,
+      "heading_error": 0.012253161128947782,
+      "yaw_error": 0.0072035706839689295
+    },
+    "terminal": {
+      "path_error": 1.0270201224790356,
+      "heading_error": 0.06177521728868777,
+      "yaw_error": 0.3501383627811896,
+      "speed_deficit": 0.0,
+      "speed": 74.39713811699549
+    },
+    "physical_safe": true,
+    "feasible": true,
+    "minimum_constraint": 0.0,
+    "min_margin_m": 0.5271524480367317,
+    "force_peak": 0.9862122101145647,
+    "max_reference_overspeed_m_s": 4.848650409861875,
+    "max_body_speed_m_s": 95.4787501395147,
+    "max_path_error_m": 1.4288686185516597,
+    "max_running_clipping": 0.06458333333333334,
+    "raw_ticks": 128,
+    "stop_reason": null
+  },
+  "selected": {
+    "rollout": 16,
+    "feedback": false,
+    "objective_s": 1.9999995700530653,
+    "crossing": {
+      "lower_s": 1.98,
+      "upper_s": 2.0,
+      "time_s": 1.9999995700530653,
+      "speed": 90.36512104154632,
+      "heading_error": 0.012253161128947782,
+      "yaw_error": 0.0072035706839689295
+    },
+    "terminal": {
+      "path_error": 1.0270201224790356,
+      "heading_error": 0.06177521728868777,
+      "yaw_error": 0.3501383627811896,
+      "speed_deficit": 0.0,
+      "speed": 74.39713811699549
+    },
+    "physical_safe": true,
+    "feasible": true,
+    "minimum_constraint": 0.0,
+    "min_margin_m": 0.5271524480367317,
+    "force_peak": 0.9862122101145647,
+    "max_reference_overspeed_m_s": 4.848650409861875,
+    "max_body_speed_m_s": 95.4787501395147,
+    "max_path_error_m": 1.4288686185516597,
+    "max_running_clipping": 0.06458333333333334,
+    "raw_ticks": 128,
+    "stop_reason": null
+  },
+  "interpolated_time_gain_s": 0.0,
+  "core_rollouts": 16,
+  "core_raw_ticks": 2048,
+  "feedback_return_validation": null,
+  "feedback_return_not_run": true,
+  "interpretation": "Two-local-model finite feasible method. Unreliable prediction, no feasible/useful direction, and local effect are separate outcomes; no wholelap/native/optimality claim.",
+  "cases": [],
+  "model_integrator_ticks": 2048,
+  "source_wheel_force_evaluations_in_integrator": 8192,
+  "explicit_force_evaluations": 8192,
+  "planner_cost": {
+    "force_evaluations": 8192,
+    "forecast_calls": 16,
+    "forecast_ticks": 2048,
+    "geometry_checks": 2048,
+    "shooting_rollouts": 16,
+    "core_rollouts": 16,
+    "core_raw_ticks": 2048
+  },
+  "CPU_s": 25.735489376,
+  "wall_s": 25.74881280000409,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0
+}

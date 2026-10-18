@@ -1,0 +1,73 @@
+{
+  "status": "SAVED546_AUDIT_PASS",
+  "source_private_pins": true,
+  "unified_floor_m": 0.5251524480367317,
+  "basis12coversall32holds": true,
+  "cached_initial_trajectory_exact": true,
+  "local_models": 1,
+  "QP_success": true,
+  "accepted_updates": 0,
+  "classification": "registered_pointwise_constraint_prediction_gate_failed; feasible_small_improving_directions_exist; useful_gain_not_demonstrated",
+  "direction_diagnostics": [
+    {
+      "step_fraction": 0.25,
+      "actual_gain_s": 0.00022941475544624446,
+      "predicted_minimum_margin_m": 0.5266524480360483,
+      "actual_minimum_margin_m": 0.5266428999349958,
+      "minimum_margin_prediction_error_m": 9.54810105247006e-06,
+      "all_sample_geometry_prediction_max_error_m": 0.6503960596262384,
+      "force_prediction_max_error": 0.0013471071424171477,
+      "time_prediction_error_s": 7.707053662375785e-06,
+      "modified_commands_in_old_fixed_tail": 12,
+      "signatures": {
+        "contact_ids": true,
+        "effective_friction": false,
+        "clip_pattern": false,
+        "projection_segment": true
+      },
+      "actual_conservative_gain_s": -0.020000000000000018
+    },
+    {
+      "step_fraction": 0.5,
+      "actual_gain_s": 0.00044083559575991416,
+      "predicted_minimum_margin_m": 0.5261524480353649,
+      "actual_minimum_margin_m": 0.5261124110304989,
+      "minimum_margin_prediction_error_m": 4.003700486598927e-05,
+      "all_sample_geometry_prediction_max_error_m": 1.3004242987408228,
+      "force_prediction_max_error": 0.004393983068457841,
+      "time_prediction_error_s": 3.340802245754837e-05,
+      "modified_commands_in_old_fixed_tail": 12,
+      "signatures": {
+        "contact_ids": true,
+        "effective_friction": false,
+        "clip_pattern": false,
+        "projection_segment": true
+      },
+      "actual_conservative_gain_s": -0.020000000000000018
+    }
+  ],
+  "largest_linearized_geometry_change_baseline_margin_m": 5.219518583986115,
+  "inactive_constraint_accuracy_caveat": "Minimum-margin prediction is accurate at testedsteps although all-samplepointwise modelerror fails. No posthoc gate change; contactID/projectionchanges alone are not causal proof; effectivefriction andclippatternsunchanged.",
+  "second_model_backtracking_feedback_not_run": true,
+  "core_rollouts": 16,
+  "model_integrator_ticks": 2048,
+  "integrator_internal_wheel_force_evaluations": 8192,
+  "explicit_force_evaluations": 8192,
+  "geometry_checks": 2048,
+  "experiment_CPU_s": 25.735489376,
+  "experiment_wall_s": 25.74881280000409,
+  "selected_gain_s": 0.0,
+  "cost_correction_to545": {
+    "naive_full_replay": 234612,
+    "causal_prefix_caching_forward": 118332,
+    "not_an_impossibility_lower_bound": true,
+    "actually_executed": false
+  },
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_model_ticks": 0,
+  "new_native_actions": 0,
+  "CPU_s": 0.049902566999999995,
+  "wall_s": 0.04990313800226431
+}
