@@ -1,0 +1,101 @@
+{
+  "phase": "recovery",
+  "passed": false,
+  "learning_gate": false,
+  "promotion_eligible": false,
+  "solver": {
+    "success": false,
+    "status": 9,
+    "message": "Iteration limit reached",
+    "iterations": 6,
+    "function_evaluations": 246,
+    "callback_count": 6,
+    "rollout_count": 248
+  },
+  "feasible_initialization": true,
+  "warmstart_replay_bit_identical": true,
+  "baseline": {
+    "rollout": 3,
+    "feedback": false,
+    "objective_s": 1.9999995700530653,
+    "crossing": {
+      "lower_s": 1.98,
+      "upper_s": 2.0,
+      "time_s": 1.9999995700530653,
+      "speed": 90.36512104154632,
+      "heading_error": 0.012253161128947782,
+      "yaw_error": 0.0072035706839689295
+    },
+    "terminal": {
+      "path_error": 1.0270201224790356,
+      "heading_error": 0.06177521728868777,
+      "yaw_error": 0.3501383627811896,
+      "speed_deficit": 0.0,
+      "speed": 74.39713811699549
+    },
+    "physical_safe": true,
+    "feasible": true,
+    "minimum_constraint": 0.0002699180276248825,
+    "min_margin_m": 0.5271524480367317,
+    "force_peak": 0.9862122101145647,
+    "max_reference_overspeed_m_s": 4.848650409861875,
+    "max_body_speed_m_s": 95.4787501395147,
+    "max_path_error_m": 1.4288686185516597,
+    "max_running_clipping": 0.06458333333333334,
+    "raw_ticks": 128,
+    "stop_reason": null
+  },
+  "optimized": {
+    "rollout": 249,
+    "feedback": false,
+    "objective_s": 1.9999995700530653,
+    "crossing": {
+      "lower_s": 1.98,
+      "upper_s": 2.0,
+      "time_s": 1.9999995700530653,
+      "speed": 90.36512104154632,
+      "heading_error": 0.012253161128947782,
+      "yaw_error": 0.0072035706839689295
+    },
+    "terminal": {
+      "path_error": 1.0270201224790356,
+      "heading_error": 0.06177521728868777,
+      "yaw_error": 0.3501383627811896,
+      "speed_deficit": 0.0,
+      "speed": 74.39713811699549
+    },
+    "physical_safe": true,
+    "feasible": true,
+    "minimum_constraint": 0.0002699180276248825,
+    "min_margin_m": 0.5271524480367317,
+    "force_peak": 0.9862122101145647,
+    "max_reference_overspeed_m_s": 4.848650409861875,
+    "max_body_speed_m_s": 95.4787501395147,
+    "max_path_error_m": 1.4288686185516597,
+    "max_running_clipping": 0.06458333333333334,
+    "raw_ticks": 128,
+    "stop_reason": null
+  },
+  "interpolated_shooting_gain_s": 0.0,
+  "feedback_validation": null,
+  "feedback_validation_not_run": true,
+  "interpretation": "Finite feasible control-shooting mechanism only. No path solver continuation, no optimum/global lap/native claim. Only >=5ms feasible shooting gain admits feedback validation; >=20ms conservative common-plane gain and nonworse dynamic margin/terminal required for local performance.",
+  "cases": [],
+  "model_integrator_ticks": 43757,
+  "source_wheel_force_evaluations_in_integrator": 175028,
+  "explicit_force_evaluations": 175752,
+  "planner_cost": {
+    "force_evaluations": 175752,
+    "forecast_calls": 918,
+    "forecast_ticks": 43629,
+    "geometry_checks": 44298,
+    "shooting_rollouts": 249
+  },
+  "CPU_s": 407.82930481299996,
+  "wall_s": 408.03462641499937,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0
+}
