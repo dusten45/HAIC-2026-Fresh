@@ -1,0 +1,297 @@
+{
+  "phase": "pilot",
+  "passed": false,
+  "learning_gate": false,
+  "promotion_eligible": false,
+  "full12hold_alternative_safe_witness": true,
+  "window_progress_gain_m": 0.015030334894618136,
+  "window_end_speed_gain_m_s": -0.017541988155386434,
+  "local_window_holds": 16,
+  "interpretation": "Fixed-backup rejection can be avoidable in this root only if a same-threshold witness exists. Single-root learning is not a deployable policy, whole-lap500ms proof, or native admission.",
+  "original_rejection": {
+    "reason": "FORCE_PEAK",
+    "raw_model_ticks": 17,
+    "first_hold_pass": true
+  },
+  "cases": [
+    {
+      "clipping_trajectory": [
+        {
+          "index": 156,
+          "clipped": 49,
+          "samples": 2112,
+          "fraction": 0.023200757575757576
+        },
+        {
+          "index": 157,
+          "clipped": 49,
+          "samples": 2128,
+          "fraction": 0.023026315789473683
+        },
+        {
+          "index": 158,
+          "clipped": 49,
+          "samples": 2144,
+          "fraction": 0.0228544776119403
+        },
+        {
+          "index": 159,
+          "clipped": 50,
+          "samples": 2160,
+          "fraction": 0.023148148148148147
+        },
+        {
+          "index": 160,
+          "clipped": 50,
+          "samples": 2176,
+          "fraction": 0.02297794117647059
+        },
+        {
+          "index": 161,
+          "clipped": 51,
+          "samples": 2192,
+          "fraction": 0.023266423357664233
+        },
+        {
+          "index": 162,
+          "clipped": 52,
+          "samples": 2208,
+          "fraction": 0.02355072463768116
+        },
+        {
+          "index": 163,
+          "clipped": 53,
+          "samples": 2224,
+          "fraction": 0.023830935251798562
+        },
+        {
+          "index": 164,
+          "clipped": 53,
+          "samples": 2240,
+          "fraction": 0.023660714285714285
+        },
+        {
+          "index": 165,
+          "clipped": 53,
+          "samples": 2256,
+          "fraction": 0.02349290780141844
+        },
+        {
+          "index": 166,
+          "clipped": 58,
+          "samples": 2272,
+          "fraction": 0.025528169014084508
+        },
+        {
+          "index": 167,
+          "clipped": 63,
+          "samples": 2288,
+          "fraction": 0.027534965034965036
+        },
+        {
+          "index": 168,
+          "clipped": 65,
+          "samples": 2304,
+          "fraction": 0.028211805555555556
+        },
+        {
+          "index": 169,
+          "clipped": 65,
+          "samples": 2320,
+          "fraction": 0.028017241379310345
+        },
+        {
+          "index": 170,
+          "clipped": 65,
+          "samples": 2336,
+          "fraction": 0.027825342465753425
+        },
+        {
+          "index": 171,
+          "clipped": 65,
+          "samples": 2352,
+          "fraction": 0.027636054421768707
+        }
+      ],
+      "max_cumulative_clipping_fraction": 0.02826086956521739,
+      "label": "root156-baseline",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 64,
+      "actions": 16,
+      "completed_before": 155,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.057256329060278,
+          "samples": 2352,
+          "clipped": 65
+        }
+      },
+      "min_margin_m": 1.386119200820796,
+      "max_path_error_m": 0.5416499545827202,
+      "max_reference_overspeed_m_s": 4.149847967507689,
+      "max_body_speed_m_s": 82.56284626648652,
+      "mode_counts": {
+        "BACKUP": 4,
+        "SOURCE_RESPONSE": 6,
+        "SOURCE_FULL": 6
+      },
+      "high_fraction": 0.0,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    },
+    {
+      "clipping_trajectory": [
+        {
+          "index": 156,
+          "clipped": 50,
+          "samples": 2112,
+          "fraction": 0.023674242424242424
+        },
+        {
+          "index": 157,
+          "clipped": 50,
+          "samples": 2128,
+          "fraction": 0.023496240601503758
+        },
+        {
+          "index": 158,
+          "clipped": 50,
+          "samples": 2144,
+          "fraction": 0.02332089552238806
+        },
+        {
+          "index": 159,
+          "clipped": 51,
+          "samples": 2160,
+          "fraction": 0.02361111111111111
+        },
+        {
+          "index": 160,
+          "clipped": 51,
+          "samples": 2176,
+          "fraction": 0.0234375
+        },
+        {
+          "index": 161,
+          "clipped": 52,
+          "samples": 2192,
+          "fraction": 0.023722627737226276
+        },
+        {
+          "index": 162,
+          "clipped": 53,
+          "samples": 2208,
+          "fraction": 0.024003623188405796
+        },
+        {
+          "index": 163,
+          "clipped": 54,
+          "samples": 2224,
+          "fraction": 0.024280575539568347
+        },
+        {
+          "index": 164,
+          "clipped": 54,
+          "samples": 2240,
+          "fraction": 0.024107142857142858
+        },
+        {
+          "index": 165,
+          "clipped": 54,
+          "samples": 2256,
+          "fraction": 0.023936170212765957
+        },
+        {
+          "index": 166,
+          "clipped": 59,
+          "samples": 2272,
+          "fraction": 0.02596830985915493
+        },
+        {
+          "index": 167,
+          "clipped": 64,
+          "samples": 2288,
+          "fraction": 0.027972027972027972
+        },
+        {
+          "index": 168,
+          "clipped": 66,
+          "samples": 2304,
+          "fraction": 0.028645833333333332
+        },
+        {
+          "index": 169,
+          "clipped": 66,
+          "samples": 2320,
+          "fraction": 0.028448275862068967
+        },
+        {
+          "index": 170,
+          "clipped": 66,
+          "samples": 2336,
+          "fraction": 0.028253424657534245
+        },
+        {
+          "index": 171,
+          "clipped": 66,
+          "samples": 2352,
+          "fraction": 0.02806122448979592
+        }
+      ],
+      "max_cumulative_clipping_fraction": 0.028695652173913042,
+      "label": "root156-high-then-original-policy",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 64,
+      "actions": 16,
+      "completed_before": 155,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.0585695403315019,
+          "samples": 2352,
+          "clipped": 66
+        }
+      },
+      "min_margin_m": 1.3847001219282509,
+      "max_path_error_m": 0.5421416755372281,
+      "max_reference_overspeed_m_s": 4.134669679855975,
+      "max_body_speed_m_s": 82.54553811242258,
+      "mode_counts": {
+        "OFFLINE_HIGH_WITNESS_FIRST": 1,
+        "SOURCE_RESPONSE": 8,
+        "BACKUP": 1,
+        "SOURCE_FULL": 6
+      },
+      "high_fraction": 0.0,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    }
+  ],
+  "model_integrator_ticks": 12748,
+  "source_wheel_force_evaluations_in_integrator": 50992,
+  "explicit_force_evaluations": 52400,
+  "planner_cost": {
+    "force_evaluations": 52400,
+    "forecast_calls": 614,
+    "forecast_ticks": 12620,
+    "geometry_checks": 13234
+  },
+  "CPU_s": 75.434167213,
+  "wall_s": 75.44377436500508,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0
+}

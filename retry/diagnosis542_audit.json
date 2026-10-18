@@ -1,0 +1,75 @@
+{
+  "status": "SAVED542_AUDIT_PASS",
+  "source_private_pins": true,
+  "finite_witness_exists": true,
+  "local_effect_gate_pass": false,
+  "promotion_eligible": false,
+  "fresh_original_high_rejection_raw": 17,
+  "fresh_original_policy_certificates": 31,
+  "paired_trajectory": [
+    {
+      "raw_ticks": 4,
+      "progress_gain_m": 0.016185759240784137,
+      "speed_gain_m_s": 0.4924479848687824
+    },
+    {
+      "raw_ticks": 8,
+      "progress_gain_m": 0.029679716013674806,
+      "speed_gain_m_s": 0.02681755909438266
+    },
+    {
+      "raw_ticks": 16,
+      "progress_gain_m": 0.031215235761237636,
+      "speed_gain_m_s": 0.00533088099275858
+    },
+    {
+      "raw_ticks": 32,
+      "progress_gain_m": 0.029431497063910683,
+      "speed_gain_m_s": -0.030791617541247263
+    },
+    {
+      "raw_ticks": 48,
+      "progress_gain_m": 0.02096709223030757,
+      "speed_gain_m_s": -0.020624996500814063
+    },
+    {
+      "raw_ticks": 64,
+      "progress_gain_m": 0.015030334894618136,
+      "speed_gain_m_s": -0.017541988155386434
+    }
+  ],
+  "first_pedal_commands": {
+    "baseline": [
+      [
+        0.6823983192443848,
+        0.0
+      ],
+      [
+        0.7241373658180237,
+        0.0
+      ]
+    ],
+    "candidate": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.609375,
+        0.0
+      ]
+    ]
+  },
+  "model_integrator_ticks": 12748,
+  "explicit_force_evaluations": 52400,
+  "geometry_checks": 13234,
+  "experiment_CPU_s": 75.434167213,
+  "experiment_wall_s": 75.44377436500508,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_model_ticks": 0,
+  "new_native_actions": 0,
+  "CPU_s": 0.036779099,
+  "wall_s": 0.03679836700030137
+}
