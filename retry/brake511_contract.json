@@ -1,0 +1,44 @@
+{
+  "registered_utc": "2026-10-18T05:30:03.011049+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "physical_caps": {
+    "worlds": 2,
+    "resets": 2,
+    "actions": 80,
+    "prefix_actions": 48,
+    "braking_actions_reserved": 32,
+    "reset_raw_ticks": 102,
+    "action_raw_ticks": 320,
+    "total_raw_ticks": 422
+  },
+  "resources": {
+    "CPU_s": 180,
+    "wall_s": 240,
+    "private_bytes": 33554432,
+    "private_files": 1024
+  },
+  "case": "Same verified initial DEV case index0 frome0ac6effdf65b723f5467068c53f2133a4874050; reuse510 private binding and historical first24 action/observation hashes as post-dispatch audit only. No new seeds or protected reads.",
+  "case_private_sha256": "5a3f5677267d25c6a69b1b9190e73ff1f35558caf123162e7e385efbfd21dcc8",
+  "reference": "Same24 PixelAgent(adaptive) acceleration/steering prefix; then hold24th steering and zero acceleration in both arms. Reference act once per call; goal controller is new diagnostic, not PixelAgent improvement.",
+  "physical_intent": "At action25 boundary, each arm independently sets absolute goal=current assembly COM speed-2m/s; require exact shared trigger model/obs/reference fingerprint and goal. Each hold requests end=max(goal,current speed-0.8), maxdecel10m/s^2. Both arms use exactly that law.",
+  "conversions": "Steady arm uses original effective-mass torque brake convention; response arm inverses physical four-tick response at exact requested end speed (no nominal-brake re-decoding). Only brake differs.",
+  "stops": "First wrapper boundary in goal+/-0.10m/s ->GOAL_BAND; below band ->EXCESS_BRAKING; input/effects/contact-friction/physical prediction>.15m/s/margin<.25m/collision/damage/termination stop before next action. Never modify a command inside its four-tick hold. Max40 each, no continuation after goal or cap. Technical/identity failure stops pair.",
+  "pass": "Report per-arm gate; response local gate only if GOAL_BAND reached with all checks. Pair pass requires both goal bands. Progress/distance/work compared only on common complete-action time interval, not unequal final times.",
+  "budget": "Initial25963, charge attempted actual env.step before call; full80=>25883. Resets/raw separately counted; reserve84000used0.",
+  "failure_analysis": "Saved-only largest brake prediction error: actual force oracle vs observed forces, and measured-contact-conditioned four-tick forecast; no new physical run or threshold changes.",
+  "retention": "Every raw tick, action, live charge, trigger/current full model inputs and reference memory, closure saved privately; publish only aggregates.",
+  "source_sha256": {
+    "env_wrapper.py": "8687215412da0a1f34534623d5050030d85c629a70cb922e9d2199c513a3941e",
+    "damage.py": "b74d15bd2de623cea1345e0469625d4b58f1634d073151a35edf1f05ea35fa30",
+    "local_runner.py": "48eedfb0c32a8e1f4dd724e65ac69eb678105ee434ac797ce2c9f442461fd398",
+    "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69",
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "retry/pixel_agent.py": "efbd995b5c66e86cbd223bca1feb81867e39233652521e6618ab7aebadc74b51",
+    "retry/brake509_adapter.py": "da9ee42fd055fcb9ed6c0da91d33c47c6eeea9b1ffe4ee592252b408393c62c1",
+    "retry/brake508_corridor.py": "10c2a4e021cce37b81a08ac0eb00e4040b0bb4dabdf5eac6989e18472b061407",
+    "retry/brake510_common.py": "28b84e6dbd7aab3ce123c153abdb9acfa1867172f35257ea6b8fea92b5cd1eb0",
+    "retry/brake511_control.py": "5519346571a675a41b39a2eff53a6ad53484318a6ae0fbdc74feb3e54f2b23d2",
+    "retry/test_brake511.py": "0537131d64d3d9cf5160cfbfbf18b8307ccf5ab27dcd9bbf1298cc6177903f95",
+    "retry/brake511_run.py": "4697517dac5464cf18e10e8ec1dfc2fe0b93451a99a8fab81995fb442635ff03"
+  }
+}
