@@ -1,0 +1,88 @@
+{
+  "status": "PLANAR_CORRECTION_REJECTED_STOP",
+  "cases": {
+    "straight_rolling": {
+      "error_m_s": 1.5258788721439487e-06,
+      "forecast_error_m_s": 1.535923431106312e-06,
+      "hull_error_m_s": 1.5258789005656581e-06
+    },
+    "straight_spinning": {
+      "error_m_s": -1.3732910133512632e-05,
+      "forecast_error_m_s": -1.3398910226669614e-05,
+      "hull_error_m_s": -1.3732910161934342e-05
+    },
+    "steering_ramp": {
+      "error_m_s": 0.021132691279959204,
+      "forecast_error_m_s": 0.02113277581729278,
+      "hull_error_m_s": 0.02093836781517666
+    },
+    "steering_reversal": {
+      "error_m_s": -0.007477813129966648,
+      "forecast_error_m_s": -0.007477807420826821,
+      "hull_error_m_s": -0.007553465202605025
+    },
+    "lateral_yaw": {
+      "error_m_s": -9.224867574175732e-05,
+      "forecast_error_m_s": -9.217778001868737e-05,
+      "hull_error_m_s": -9.199889936439831e-05
+    },
+    "left_low_friction": {
+      "error_m_s": -5.2907548067082644e-05,
+      "forecast_error_m_s": -5.258917381922856e-05,
+      "hull_error_m_s": -5.284457157017641e-05
+    },
+    "left_contact_loss": {
+      "error_m_s": 0.0403464525089845,
+      "forecast_error_m_s": 0.04034678650889134,
+      "hull_error_m_s": 0.04034640374722187
+    },
+    "steer_yaw_asym": {
+      "error_m_s": 0.012074419667854386,
+      "forecast_error_m_s": 0.012074499902070102,
+      "hull_error_m_s": 0.011977051222586965
+    },
+    "steer_yaw_contact_loss": {
+      "error_m_s": 0.4906263829524846,
+      "forecast_error_m_s": 0.49062682775308986,
+      "hull_error_m_s": 0.4905562902645926
+    }
+  },
+  "planar": {
+    "count": 9,
+    "RMSE": 0.16431351987361167,
+    "max_abs": 0.4906263829524846
+  },
+  "prior_frozen": {
+    "count": 9,
+    "RMSE": 0.39455613456858973,
+    "max_abs": 1.1558705444949169
+  },
+  "prior_scalar": {
+    "count": 9,
+    "RMSE": 5.901423428944241,
+    "max_abs": 8.962792968749994
+  },
+  "abstentions": 0,
+  "paired_initial_inputs_exact": 9,
+  "worlds": 9,
+  "closed_worlds": 9,
+  "live_worlds": 0,
+  "raw_ticks": 36,
+  "CPU_s_including_test_child": 0.214336206,
+  "wall_s": 0.21532159900016268,
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "native_actions_resets_seeds_HOLDOUT_SEALED": 0,
+  "source_sha256": {
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/brake503_diagnostic.py": "3f7ed732624d874677384420565255728fc5f89607a69d2c82f7625c4a780026",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/test_brake504.py": "dcda63a2ec6167836e5861ac7a1c60103c3c267ebced106c63c14fb4b2cb848a",
+    "retry/brake504_diagnostic.py": "4cfa67035e7131eb11325dcdfa1812fe8d5674d237cacbd43c800e64f4c54fdc"
+  },
+  "contacts_frozen_no_future_schedule_given_to_candidate": true,
+  "no_second_correction_or_tuning": true,
+  "scope": "One mechanistic correction on fixed503 synthetic cases; no track or original501 evidence"
+}

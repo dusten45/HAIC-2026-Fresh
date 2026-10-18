@@ -1,0 +1,385 @@
+{
+  "status": "FROZEN_KINEMATICS_CANDIDATE_REJECTED",
+  "cases": {
+    "straight_rolling": {
+      "scalar": {
+        "error_m_s": -0.06583251953125568,
+        "forecast_error_m_s": -0.06583251953125568,
+        "hull_error_m_s": -0.06583251953125568
+      },
+      "response": {
+        "error_m_s": 1.5258788721439487e-06,
+        "forecast_error_m_s": 1.535923431106312e-06,
+        "hull_error_m_s": 1.5258789005656581e-06
+      }
+    },
+    "straight_spinning": {
+      "scalar": {
+        "error_m_s": 8.962792968749994,
+        "forecast_error_m_s": 8.962792968749994,
+        "hull_error_m_s": 8.962792968749994
+      },
+      "response": {
+        "error_m_s": -1.3732910133512632e-05,
+        "forecast_error_m_s": -1.3398910226669614e-05,
+        "hull_error_m_s": -1.3732910161934342e-05
+      }
+    },
+    "steering_ramp": {
+      "scalar": {
+        "error_m_s": -0.14905374713696062,
+        "forecast_error_m_s": -0.14905374713696062,
+        "hull_error_m_s": -0.14924835794643343
+      },
+      "response": {
+        "error_m_s": -0.08830067933047303,
+        "forecast_error_m_s": -0.08830066928591407,
+        "hull_error_m_s": -0.08849521749863243
+      }
+    },
+    "steering_reversal": {
+      "scalar": {
+        "error_m_s": -1.3646302786886793,
+        "forecast_error_m_s": -1.3646302786886793,
+        "hull_error_m_s": -1.3647038960923226
+      },
+      "response": {
+        "error_m_s": -0.18617885259099864,
+        "forecast_error_m_s": -0.18617881668876635,
+        "hull_error_m_s": -0.18625421385833363
+      }
+    },
+    "lateral_yaw": {
+      "scalar": {
+        "error_m_s": -0.29890888407146576,
+        "forecast_error_m_s": -0.29890888407146576,
+        "hull_error_m_s": -0.2989086916186352
+      },
+      "response": {
+        "error_m_s": -0.007830779194009096,
+        "forecast_error_m_s": -0.007830753307359828,
+        "hull_error_m_s": -0.00783052928250072
+      }
+    },
+    "left_low_friction": {
+      "scalar": {
+        "error_m_s": 8.894065621976083,
+        "forecast_error_m_s": 8.894065621976083,
+        "hull_error_m_s": 8.894065620878905
+      },
+      "response": {
+        "error_m_s": 0.1255403776911237,
+        "forecast_error_m_s": 0.12554073198843696,
+        "hull_error_m_s": 0.12554048384322414
+      }
+    },
+    "left_contact_loss": {
+      "scalar": {
+        "error_m_s": 8.962792968749994,
+        "forecast_error_m_s": 8.962792968749994,
+        "hull_error_m_s": 8.962792968749994
+      },
+      "response": {
+        "error_m_s": 0.0403464525089845,
+        "forecast_error_m_s": 0.04034678650889134,
+        "hull_error_m_s": 0.04034640374722187
+      }
+    },
+    "steer_yaw_asym": {
+      "scalar": {
+        "error_m_s": -0.3282748593755258,
+        "forecast_error_m_s": -0.3282748593755258,
+        "hull_error_m_s": -0.32837249500839505
+      },
+      "response": {
+        "error_m_s": -0.07158949101277301,
+        "forecast_error_m_s": -0.07158944195549566,
+        "hull_error_m_s": -0.07168700131677497
+      }
+    },
+    "steer_yaw_contact_loss": {
+      "scalar": {
+        "error_m_s": 8.460944974286875,
+        "forecast_error_m_s": 8.460944974286875,
+        "hull_error_m_s": 8.460894751846254
+      },
+      "response": {
+        "error_m_s": 1.1558705444949169,
+        "forecast_error_m_s": 1.155871298942202,
+        "hull_error_m_s": 1.1557983163413894
+      }
+    }
+  },
+  "scalar": {
+    "count": 9,
+    "RMSE": 5.901423428944241,
+    "max_abs": 8.962792968749994
+  },
+  "response": {
+    "count": 9,
+    "RMSE": 0.39455613456858973,
+    "max_abs": 1.1558705444949169
+  },
+  "source_law_gate_pass": true,
+  "source_force_oracle_error_N": {
+    "count": 288,
+    "RMSE": 7.349861792837452e-05,
+    "max_abs": 0.00020482022505504874
+  },
+  "source_omega_oracle_error_rad_s": {
+    "count": 288,
+    "RMSE": 4.900047310783597e-07,
+    "max_abs": 1.3799815405945992e-06
+  },
+  "same_tick_torque_identity_residual": {
+    "count": 288,
+    "RMSE": 1.2999434301747885e-14,
+    "max_abs": 2.375877272697835e-14
+  },
+  "saved_only_actual_current_omega_velocity_conditional_force_residual_N": {
+    "frozen_geometry": {
+      "count": 144,
+      "RMSE": 245.71793131369412,
+      "max_abs": 795.4070373366405
+    },
+    "heading": {
+      "count": 144,
+      "RMSE": 83.84621451892775,
+      "max_abs": 299.4430042796213
+    },
+    "offset": {
+      "count": 144,
+      "RMSE": 20.942772234488636,
+      "max_abs": 159.99999705331132
+    },
+    "friction": {
+      "count": 144,
+      "RMSE": 6.87729176277364e-05,
+      "max_abs": 0.00020482022505504874
+    }
+  },
+  "per_fixture_conditional_force_residual_N": {
+    "straight_rolling": {
+      "frozen_geometry": {
+        "count": 16,
+        "RMSE": 1.576845478912272e-07,
+        "max_abs": 3.472839563401849e-07
+      },
+      "heading": {
+        "count": 16,
+        "RMSE": 1.1796437693245783e-07,
+        "max_abs": 1.8395442760964068e-07
+      },
+      "offset": {
+        "count": 16,
+        "RMSE": 0.0,
+        "max_abs": 0.0
+      },
+      "friction": {
+        "count": 16,
+        "RMSE": 0.0,
+        "max_abs": 0.0
+      }
+    },
+    "straight_spinning": {
+      "frozen_geometry": {
+        "count": 16,
+        "RMSE": 7.6096409092402e-07,
+        "max_abs": 1.6161387928028743e-06
+      },
+      "heading": {
+        "count": 16,
+        "RMSE": 4.580230796650445e-07,
+        "max_abs": 9.06569952939551e-07
+      },
+      "offset": {
+        "count": 16,
+        "RMSE": 0.0,
+        "max_abs": 0.0
+      },
+      "friction": {
+        "count": 16,
+        "RMSE": 0.0,
+        "max_abs": 0.0
+      }
+    },
+    "steering_ramp": {
+      "frozen_geometry": {
+        "count": 16,
+        "RMSE": 446.2175372734438,
+        "max_abs": 795.4070373366405
+      },
+      "heading": {
+        "count": 16,
+        "RMSE": 125.57927762774683,
+        "max_abs": 263.7136759066028
+      },
+      "offset": {
+        "count": 16,
+        "RMSE": 4.34877278139515e-05,
+        "max_abs": 9.220268846653393e-05
+      },
+      "friction": {
+        "count": 16,
+        "RMSE": 4.34877278139515e-05,
+        "max_abs": 9.220268846653393e-05
+      }
+    },
+    "steering_reversal": {
+      "frozen_geometry": {
+        "count": 16,
+        "RMSE": 356.3449249595283,
+        "max_abs": 634.3309210041593
+      },
+      "heading": {
+        "count": 16,
+        "RMSE": 195.1116343807036,
+        "max_abs": 299.4430042796213
+      },
+      "offset": {
+        "count": 16,
+        "RMSE": 8.67987320499247e-05,
+        "max_abs": 0.00015682910287110564
+      },
+      "friction": {
+        "count": 16,
+        "RMSE": 8.67987320499247e-05,
+        "max_abs": 0.00015682910287110564
+      }
+    },
+    "lateral_yaw": {
+      "frozen_geometry": {
+        "count": 16,
+        "RMSE": 108.76508806849004,
+        "max_abs": 184.84422197696625
+      },
+      "heading": {
+        "count": 16,
+        "RMSE": 50.85825117828397,
+        "max_abs": 84.57108129681902
+      },
+      "offset": {
+        "count": 16,
+        "RMSE": 9.263317188318373e-05,
+        "max_abs": 0.00013007216116945724
+      },
+      "friction": {
+        "count": 16,
+        "RMSE": 9.263317188318373e-05,
+        "max_abs": 0.00013007216116945724
+      }
+    },
+    "left_low_friction": {
+      "frozen_geometry": {
+        "count": 16,
+        "RMSE": 43.19491654561315,
+        "max_abs": 103.15952867270434
+      },
+      "heading": {
+        "count": 16,
+        "RMSE": 34.08798397761447,
+        "max_abs": 60.48063818359282
+      },
+      "offset": {
+        "count": 16,
+        "RMSE": 0.0001156290690408279,
+        "max_abs": 0.00020482022505504874
+      },
+      "friction": {
+        "count": 16,
+        "RMSE": 0.0001156290690408279,
+        "max_abs": 0.00020482022505504874
+      }
+    },
+    "left_contact_loss": {
+      "frozen_geometry": {
+        "count": 16,
+        "RMSE": 11.983228289193175,
+        "max_abs": 28.309110775322928
+      },
+      "heading": {
+        "count": 16,
+        "RMSE": 11.336841476565922,
+        "max_abs": 28.309110775322907
+      },
+      "offset": {
+        "count": 16,
+        "RMSE": 11.009261787173006,
+        "max_abs": 28.309110775322893
+      },
+      "friction": {
+        "count": 16,
+        "RMSE": 2.400601747561938e-05,
+        "max_abs": 6.779972053798651e-05
+      }
+    },
+    "steer_yaw_asym": {
+      "frozen_geometry": {
+        "count": 16,
+        "RMSE": 334.4825639909877,
+        "max_abs": 778.5785555809709
+      },
+      "heading": {
+        "count": 16,
+        "RMSE": 32.27043636081275,
+        "max_abs": 86.9011978417881
+      },
+      "offset": {
+        "count": 16,
+        "RMSE": 8.387933348001101e-05,
+        "max_abs": 0.0001913237808613981
+      },
+      "friction": {
+        "count": 16,
+        "RMSE": 8.387933348001101e-05,
+        "max_abs": 0.0001913237808613981
+      }
+    },
+    "steer_yaw_contact_loss": {
+      "frozen_geometry": {
+        "count": 16,
+        "RMSE": 302.63194020922117,
+        "max_abs": 640.0136113531914
+      },
+      "heading": {
+        "count": 16,
+        "RMSE": 67.19022964700162,
+        "max_abs": 160.0393094273821
+      },
+      "offset": {
+        "count": 16,
+        "RMSE": 61.85623278744102,
+        "max_abs": 159.99999705331132
+      },
+      "friction": {
+        "count": 16,
+        "RMSE": 5.9826481050695005e-05,
+        "max_abs": 0.00011230670005081313
+      }
+    }
+  },
+  "measured_heading_drift_rad": 0.2409542053937912,
+  "measured_wheel_offset_drift_m_s": 3.8431280959665712,
+  "measured_friction_changes": 8,
+  "worlds": 18,
+  "closed_worlds": 18,
+  "closure_evidence": "All18 world-finally body/joint0 assertions precede saved bench-raw.json; raw saved after fixed loop",
+  "raw_ticks": 72,
+  "live_worlds": 0,
+  "execution_source_changed": false,
+  "physical_retry": 0,
+  "formatter_failure": "numpy.bool_ not JSON serializable at final result; complete private raw saved first",
+  "workload_charge": {
+    "worker_CPU_s_conservative": 5.0,
+    "worker_wall_s_conservative": 5.0,
+    "external_shell_wall_s": 0.322266297,
+    "closing_CPU_s": 0.006298138000000002,
+    "closing_wall_s": 0.0062981450000734185
+  },
+  "original_preregistered_closed_loop_substitution_summary_recovered": false,
+  "scope": "New synthetic fixtures only; no old501 raw or track evidence",
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "native_actions_resets_seeds_HOLDOUT_SEALED": 0
+}

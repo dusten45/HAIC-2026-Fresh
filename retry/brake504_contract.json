@@ -1,0 +1,31 @@
+{
+  "registered_utc": "2026-10-18T04:05:25.161821+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "hypothesis": "One correction only: propagate rigid-body angular momentum and source steering-servo angle instead of frozen heading/velocity offset. Friction stays frozen; no oracle future contacts.",
+  "fixtures": "Exact same nine503 definitions, no changes or extra points. Reuse saved scalar and frozen502 controls; verify exact common initial wheel/COM input before candidate step.",
+  "decision": "No abstention, RMSE<=0.5*original scalar RMSE and all assembly/hull maxabs<=0.15m/s. Otherwise stop this correction without further tuning, even if relative improvement.",
+  "pure_gate": "Straight symmetry reduces to502; force-free steering conserves total angular momentum and linear velocity",
+  "caps": {
+    "worlds": 9,
+    "raw_ticks": 36,
+    "CPU_s": 60,
+    "wall_s": 90,
+    "private_bytes": 16777216,
+    "native_actions": 0,
+    "racing_resets": 0,
+    "seed_generation": 0
+  },
+  "old503_raw_sha256": "1a00440fe80d0f4c65136bf4bc43884d4cbf0c140593975409bea61ef1162844",
+  "source_sha256": {
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/brake503_diagnostic.py": "3f7ed732624d874677384420565255728fc5f89607a69d2c82f7625c4a780026",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/test_brake504.py": "dcda63a2ec6167836e5861ac7a1c60103c3c267ebced106c63c14fb4b2cb848a",
+    "retry/brake504_diagnostic.py": "4cfa67035e7131eb11325dcdfa1812fe8d5674d237cacbd43c800e64f4c54fdc"
+  },
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "Synthetic source mechanics; no old501 raw reconstruction, protected data or track generalization"
+}

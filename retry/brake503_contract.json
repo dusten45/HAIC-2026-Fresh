@@ -1,0 +1,29 @@
+{
+  "registered_utc": "2026-10-18T04:01:01.752334+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "candidate": "Frozen502; no candidate or fixture changes after first world",
+  "fixtures": "Nine deterministic definitions in brake503_diagnostic.fixtures; two straight controls, steer ramp/reversal, lateral+yaw, asymmetric friction, contact loss, two combinations",
+  "baseline": "Same initial world/target/steering/contact schedule, original effective-mass brake mapping",
+  "decision": "Full fixed matrix; pass only source force max error<=1e-3N and omega<=1e-5rad/s, no abstentions, candidate RMSE<=0.5*scalar, assembly and hull maximum speed error<=0.15m/s. Any scientific failure rejects this frozen approximation; technical error stops, no retries or grid changes.",
+  "analysis": "Same-tick torque identity and ordered frozen->actual heading->offset->friction->omega->COM velocity conditional force residuals; not independent causal effect sizes or sums of maxima",
+  "caps": {
+    "worlds": 18,
+    "raw_ticks": 72,
+    "CPU_s": 60,
+    "wall_s": 90,
+    "private_bytes": 16777216,
+    "native_actions": 0,
+    "racing_resets": 0,
+    "seed_generation": 0
+  },
+  "split": "Synthetic source fixtures, no track or protected data. No generalization claim.",
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "source_sha256": {
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/test_brake502_response.py": "4f6d5f566b77486bd193d7786f06ec10d2f4a9035b928efc03a5c2bd710dabd2",
+    "retry/brake503_diagnostic.py": "3f7ed732624d874677384420565255728fc5f89607a69d2c82f7625c4a780026"
+  }
+}
