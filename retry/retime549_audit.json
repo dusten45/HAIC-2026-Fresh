@@ -1,0 +1,92 @@
+{
+  "passed": true,
+  "checks": {
+    "source_pins": true,
+    "private_input_pins": true,
+    "baseline541_exact": true,
+    "backup_exact": true,
+    "geometry_and_cap_metadata_unchanged": true,
+    "cap90": true,
+    "steady_design_force": true,
+    "design_gate": true,
+    "common-plane-baseline_summary_exact": true,
+    "common-plane-baseline_raw_count": true,
+    "common-plane-baseline_finite": true,
+    "common-plane-baseline_float32_action_domain": true,
+    "common-plane-baseline_metrics": true,
+    "common-plane-baseline_crossing_bracket": true,
+    "common-plane-baseline_safe_pass_consistent": true,
+    "common-plane-candidate_summary_exact": true,
+    "common-plane-candidate_raw_count": true,
+    "common-plane-candidate_finite": true,
+    "common-plane-candidate_float32_action_domain": true,
+    "common-plane-candidate_metrics": true,
+    "common-plane-candidate_crossing_bracket": true,
+    "common-plane-candidate_safe_pass_consistent": true,
+    "pilot_caps": true,
+    "no_native": true,
+    "main_preserved": true,
+    "failed_pilot_stops_deeper": true
+  },
+  "design_force_ratio_independent": 0.9990000000000002,
+  "whole_lap_saved541_exposure": {
+    "near_reference_s": 2.42,
+    "near_reference_low_force_s": 1.92,
+    "near_reference_noncap_s": 1.0,
+    "near_reference_noncap_low_force_s": 0.52
+  },
+  "cases": [
+    {
+      "label": "common-plane-baseline",
+      "physical_safe_from_trace": true,
+      "pass_safety": true,
+      "min_margin_m": 0.5846345167459028,
+      "peak_force": 1.0579302344972412,
+      "max_cumulative_clipping": 0.031762295081967214,
+      "max_reference_overspeed": 4.848821878699681,
+      "max_path_error": 1.3754463459131578,
+      "crossing": {
+        "lower_s": 2.56,
+        "upper_s": 2.58,
+        "time_s": 2.5600516302242937,
+        "speed": 62.33396522845163,
+        "heading_error": 0.07316520191227724,
+        "yaw_error": 0.14948915966729093
+      },
+      "first_failure": null,
+      "commands": 45,
+      "raw_ticks": 180
+    },
+    {
+      "label": "common-plane-candidate",
+      "physical_safe_from_trace": true,
+      "pass_safety": true,
+      "min_margin_m": 0.5991129719904389,
+      "peak_force": 1.0589856190749751,
+      "max_cumulative_clipping": 0.03877005347593583,
+      "max_reference_overspeed": 4.849389951547607,
+      "max_path_error": 1.4669675432555285,
+      "crossing": {
+        "lower_s": 2.42,
+        "upper_s": 2.44,
+        "time_s": 2.4365518773796877,
+        "speed": 66.55879109869477,
+        "heading_error": 0.08404313172705023,
+        "yaw_error": 0.26253092922325383
+      },
+      "first_failure": null,
+      "commands": 43,
+      "raw_ticks": 172
+    }
+  ],
+  "actual_gain_measured": false,
+  "model_pilot_passed": false,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "CPU_s": 0.11298191100000002,
+  "wall_s": 0.11458701900119195,
+  "checked_utc": "2026-10-18T18:27:53.794836+00:00"
+}

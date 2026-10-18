@@ -1,0 +1,77 @@
+{
+  "registered_utc": "2026-10-18T18:18:51.195982+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "authorization": "Follow-up delegation quotes Oct16 extension and explicit user continued-autonomy approval; supersedes initial Oct16 deadline. Same549, no duplicate execution.",
+  "hypothesis": "ONE whole-path axle-force-coupled retiming on unchanged533geometry/cap90; effective curvature=max reference and observed541 dynamic curvature neighboring bins. Shared longitudinal/lateral per-wheel circle .999*400N; body mass for tire force, effective longitudinal mass for existing power bound. Fixed backup and537tracking/540launch. Not a physical optimality bound.",
+  "method_comparison": {
+    "joint_path_control": "531533 finite global methods did not converge to required optimality and534 lacked dynamic footprint safety; whole-control finite differences costly. Not repeated.",
+    "local_control": "545548 full32hold reduced basis yielded only1.097ms after numerical fix; same basis/window closed.",
+    "learned_policy_or_model": "380 documents earlier intervention/recursive/whole-policy failures; no new distinguishing evidence for reopening.",
+    "selected": "541 whole-lap reference-near/low-force evidence supports separating designed reference from force boundary via coupled-force retiming."
+  },
+  "design_gate": "Algebra only: cap90/geometry/backup unchanged, exact old profile reconstruction, finite convergence, steady design peak<=.9990000001, positive whole scalar clock gain AND selected32hold proxy>=.02s; scalar gain never actual gain.",
+  "probe_selection": "Highest frozen scalar proxy over saved541 actions entry25..115,32holds, ties earliest. Same saved source root/history, baseline541 profile vsone candidate. Fixed world plane at oldactual end entry+31 with frozen path tangent. No root search from propagation outcomes.",
+  "pilot_gate": "Both arms<=64holds, raw footprint>=.5251524480367317, unchanged537controller admission .5, body<100, force/internal1.059, reference4.85,path3,clip10%, projection. Both cross fixed world plane and continue at least12 own-policy holds; conservative crossing baseline.lower-candidate.upper>=.02s; crossing candidate speed>=baseline-.15,abs heading<=baseline+.02,abs yaw<=baseline+.05; continuation terminal own-reference path<=base+.10,heading<=base+.02,yawerror<=base+.05,speeddeficit<=base+.15. Any safety/no-cross/effect failure stops549, no second candidate.",
+  "full_gate": "Only pilot pass: cold source finish>=500officialms improvement vs54113.66; then carry same legacy root source finish>=500officialms vs54114.46, all full/native safety retained. No local gain extrapolation.",
+  "native_gate": "Only both full gates: ONE fresh541 baseline vs549candidate pair, official finish and>=500ms; all existing native safety;1000actions/2resets/2worlds/4102raw, no retries.",
+  "design_caps": {
+    "CPU_s": 60,
+    "wall_s": 90,
+    "force_bound_evaluations": 1000000,
+    "integrator_ticks": 0
+  },
+  "phase_caps": {
+    "pilot": {
+      "model_ticks": 100000,
+      "force": 500000,
+      "geometry": 105000,
+      "CPU_s": 1600,
+      "wall_s": 1800
+    },
+    "cold": {
+      "model_ticks": 140000,
+      "force": 700000,
+      "geometry": 145000,
+      "CPU_s": 2200,
+      "wall_s": 2400
+    },
+    "carry": {
+      "model_ticks": 110000,
+      "force": 550000,
+      "geometry": 115000,
+      "CPU_s": 1500,
+      "wall_s": 1740
+    }
+  },
+  "native_caps": {
+    "model_ticks": 195000,
+    "force": 900000,
+    "geometry": 210000,
+    "CPU_s": 4200,
+    "wall_s": 4500,
+    "actions": 1000,
+    "resets": 2,
+    "worlds": 2,
+    "raw": 4102
+  },
+  "source_kernel_hard_cap_unchanged": 200000,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "single_workload": true,
+  "persistence": "Exclusive STARTED; no rerun. Perhold and exception cost/trace checkpoint; CPU/wall/deadline caps; all states/profile arrays private outside repo. Modeldriver/sourcepins admitted before model, thresholds alreadyfixed.",
+  "source_sha256": {
+    "retry/retime549_design.py": "24cc2b671ab124de34a799f70028d4abbc2db7d3101b9909890fe7b213f7009e",
+    "retry/profile539_profile.py": "cac85dfe1ce4aa93520e84d2d3c2b879b31a5d9056a530b80d6f89c3ffe8a8a3",
+    "retry/envelope500.py": "1b5b027bd6a0e1631fc11165fc131ab67394e3908f926adb33605e3f7bdab964"
+  },
+  "private_inputs_sha256": {
+    "/workspace/haic-response549-input-private/saved541-candidate-rows-private.json": "6897bfd18714c77b90b5ae98f875e4d9a35d6ef48cf1e4086263ef726474c0e1",
+    "/workspace/haic-response549-input-private/provenance-private.json": "766b2448a3df03afe821fd5696e2cb8b2b3885a3f2dc2c503d65d8cd45eddf52",
+    "/workspace/haic-response541-private/frozen-paths-private.json": "0228d846f7a0678cec2c76958bc6acffe382e1aecf56681ed9d455db6efeaaaa",
+    "/workspace/haic-response541-private/native-full-records-private.json": "34aeee82278c5da67aa7cac60ac287153111bf291b4c78593cf7473d3147feef",
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f"
+  }
+}
