@@ -1,0 +1,84 @@
+{
+  "status": "ADAPTER_PURE_PASS_NATIVE_IDENTITY_UNCONFIRMED",
+  "observed_utc": "2026-10-18T04:56:45.240902+00:00",
+  "pure_tests_passed": 7,
+  "actual_source_force_effect_contexts": 32,
+  "actual_source_wheel_comparisons": 128,
+  "test_runner_elapsed_s": 0.045,
+  "external_command_wall_s": 0.114642869,
+  "CPU_s_exact_not_instrumented": null,
+  "real_worlds": 0,
+  "real_wrapper_actions": 0,
+  "actual_resets": 0,
+  "track_seeds_selected": 0,
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "reserved_native_caps_not_spent": {
+    "arms": 2,
+    "actions_each": 32,
+    "actions": 64,
+    "resets": 2,
+    "raw_action_ticks": 256,
+    "reset_warmup_and_initial_ticks": 102,
+    "raw_total": 358,
+    "research_before": 26027,
+    "research_if_all64": 25963,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "checks": {
+    "body_and_assembly_COM_frames": true,
+    "source_negative_action_steer_sign": true,
+    "road_and_grass_grip_scaling": true,
+    "engine_steering_effects": true,
+    "four_tick_damage_update_after_hold": true,
+    "float32_values_preserved_through_wrapper_float64_conversion": true,
+    "nominal_memory_once": true,
+    "source_sensor_phase": "Reused507 physical sensor result; core source hashes unchanged, no new native claim"
+  },
+  "reference": {
+    "code": "retry/pixel_agent.py:PixelAgent(adaptive=True)",
+    "source_sha256": "efbd995b5c66e86cbd223bca1feb81867e39233652521e6618ab7aebadc74b51",
+    "scope": "Available public diagnostic reference, tested on synthetic pixels. Not reconstruction of old champion116 archive."
+  },
+  "native_identity": {
+    "confirmed": false,
+    "missing": [
+      "Exact previously DEV-registered track_id and seed pair",
+      "Binding of that pair to complete reset options/base/wrapper settings"
+    ],
+    "public_evidence_reviewed": [
+      "README.md installation-example disclaimer",
+      "retry/README.md private disjoint {track_id,seed} plan format",
+      "retry/evaluate.py reset reads seed and track_id from private case",
+      "retry/champion_dev_survey_result.json anonymized DEV condition numbers",
+      "retry/near8_dev163_result.json DEV_index without reset seed binding"
+    ],
+    "not_done": [
+      "No guessed seed",
+      "No track geometry generation/reset to search for matching identity",
+      "No private seed-list reconstruction assumption"
+    ]
+  },
+  "retrieval_scope_incident": {
+    "description": "An initial overbroad legacy filename pattern included public protected-evaluation aggregates; at least one aggregate appeared in output. Count of files read is not asserted. No output was used for case/reference/criterion selection. Later inspection restricted to explicit DEV evidence and source.",
+    "corrects_registration_note": "Original contract described one aggregate; that is a known exposed example, not an exhaustive read count.",
+    "new_protected_evaluations": 0,
+    "protected_identity_seed_queries": 0
+  },
+  "source_sha256": {
+    "env_wrapper.py": "8687215412da0a1f34534623d5050030d85c629a70cb922e9d2199c513a3941e",
+    "damage.py": "b74d15bd2de623cea1345e0469625d4b58f1634d073151a35edf1f05ea35fa30",
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69",
+    "core/track_variables.py": "cd28fdfc79f12614262f61b1ac13d670d03fad940d753a2ec185390617c0ed58",
+    "retry/pixel_agent.py": "efbd995b5c66e86cbd223bca1feb81867e39233652521e6618ab7aebadc74b51",
+    "retry/brake509_adapter.py": "da9ee42fd055fcb9ed6c0da91d33c47c6eeea9b1ffe4ee592252b408393c62c1",
+    "retry/test_brake509.py": "349d1a2e6a769eb800ecc9163bda41b03fa5cf9d3273c9880b0007b120255637",
+    "retry/brake508_corridor.py": "10c2a4e021cce37b81a08ac0eb00e4040b0bb4dabdf5eac6989e18472b061407",
+    "retry/brake506_geometry.py": "4f69de71c0e1ad0d7707c9c9681f4e504367ccbce5c33ae6c0f369e7c6ed4392",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e"
+  },
+  "next": "Run registered short native pair only after exact DEV reset identity is established; adapter work is complete and independent of restoring unrelated prior records."
+}
