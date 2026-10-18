@@ -1,0 +1,60 @@
+{
+  "registered_utc": "2026-10-18T06:25:13.930343+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "hypothesis": "Anticipating end-of-hold crossing below the current/future40m speed floor and reducing brake only can avoid target-below braking and improve curve exit recovery/window transit. Prior499 numbers are hypothesis motivation only, not current loss. One filter, no sweep.",
+  "static_collection": "Same existing DEV,1reset/51warmuprawticks/0wrapperactions already collected exact source road/obstacle/full initial model inputs, identity matched. Static obstacles required because stored map lacked coordinates. Collection world closed.",
+  "common_path": "First100 source centerline stations, smoothly offset away from each nearby known obstacle. Desired center-obstacle lateral separation3.8m, Gaussian arc width16m, totaloffset clip+/-3.8m using original centerline normals. Same fixed path for both. Only static-map configuration before model experiment; original preconfiguration code and collection contract preserved.",
+  "curve_steering": "Own path projection, lookahead max7m/0.3s*COMspeed along curved path, curvature2cross(hullforward,targetdelta)/distance^2, wheel targetatan3.24m*curvature clipped+/-0.4rad, source action negativefloat32. Recomputed per4tick only. Curve validity is tested, not inherited from513 straight.",
+  "common_speed_reference": "Curvature cap min80m/s,sqrt(80m/s^2/abs(curvature)); backward pass decel45m/s^2, forward pass accel25m/s^2 with node0speed0. Spatial interpolation in speed squared; feedforward=(node_next_speed^2-node_speed^2)/(2ds)*progress_speed/max(target,1), feedback2/s*(target-actual). Map source500 steady pedal conversion clips acceleration/range. First24holds fixedgas0.32/brake0 with common curve steering.",
+  "candidate": "Only if nominalbrake>0 and predicted min4raw speed <min(current and next40m reference)-0.15m/s, reduce brake toward inverse endtarget floor+0.002. If coast remains below target, release brake0; otherwise float32 bracketed binary boundary in[0,nominalbrake]. Gas andsteer bits preserved per own nominal. No future actual states/contact. Predicate uses current map+source response. Physical error allowance is sample-based, not global certificate.",
+  "model_matrix": "Exact collected reset and observed old DEV trigger stress state x reference/release=4own trajectories, at most160actions-equivalent each. Model-only, native constructors/reset/step poisoned. Two pure tests path projection/reference and brake-only anticipatory release withcoherent fakebody. Count all integrator calls.",
+  "model_safety_gate": "All4 reach same curve window end, full hull/wheel road AND all known obstaclecircle sampled clearance>=0.50m; max positive speed-reference tracking error<=5m/s inwindow. Any safety failure completes4tick then stops that trajectory; no parameter rescue. Source curve model remains rigid approximation until native calibration.",
+  "measurement": "Same fixed path first abs curvature>0.02 contiguous curve, begin20m before and end40m after.20ms source-step crossing brackets/linear interpolation. Measure window transit, brake applied while actual<current/future40m floor-0.5m/s, first brake release station, time from corner_end to50m/s recovery, exit speed and road/obstacle margin. No official finish/lap13.640 comparison.",
+  "conditional_native_information": "Only if ALL4 model safety gates pass and each start has >=1differentbrake decision plus either window gain>=0.08s or nonnegativewindowgain and recovery50 gain>=0.08s. Otherwise no additional native this package. If eligible then one fresh paired reference/release actualrun,160actions each,2resets; reference serves curve source calibration, raw prediction error>0.15m/s or safety failure aborts pair. No extra collection or exploratorydriving.",
+  "native_effect_gate": "If reached, candidate must reduce below-floor braking and improve same-window bracket-certifiedtime>=0.08s without worsening recovery or safety; small accuracy-only gain doesnotpromote. Both actualfirst/lastwindow events required, no finish ->no lapclaim.",
+  "cost_caps": {
+    "model_ticks_including_tests_and_conditional_native_predictions": 200000,
+    "model_CPU_s": 180,
+    "model_wall_s": 240,
+    "native_pair_actions": 320,
+    "native_pair_resets": 2,
+    "all_native_worlds": 3,
+    "all_native_resets": 3,
+    "all_native_actions": 320,
+    "all_reset_raw_ticks": 153,
+    "all_action_raw_ticks": 1280,
+    "all_raw_ticks": 1433,
+    "overall_CPU_s": 360,
+    "overall_wall_s": 480,
+    "private_bytes": 67108864,
+    "private_files": 3000
+  },
+  "budget": {
+    "research_start": 25804,
+    "research_if_full": 25484,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "retention": "Map/state/raw/commands private, sourceandaggregates public. No scientific retry/criterion change after MODEL_STARTED; preserve failures for technical repairs. No protectedquery/newseed/paidresources.",
+  "private_inputs_sha256": {
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response512-private/trigger-scalar-private.json": "694c33f4109f51b4d9f124e8601cf5e38a122587d32f1fe0f2228aa1845eb0ea"
+  },
+  "source_sha256": {
+    "retry/corner515_control.py": "d93e9bbd987f500bfdd1d40c9fe43d4b8e8d94af4d1b8bb29e44c17365a8ec59",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/corner515_preflight.py": "fc082b17d3b8bc30df84f03784acd3047f135494e8b679a418a25839a26d40ab",
+    "retry/test_corner515.py": "40ff4172a814a107193a7527395a2d144a9900636b9b4b58c12cc60c1ae64da5",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/envelope500.py": "1b5b027bd6a0e1631fc11165fc131ab67394e3908f926adb33605e3f7bdab964",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake506_geometry.py": "4f69de71c0e1ad0d7707c9c9681f4e504367ccbce5c33ae6c0f369e7c6ed4392",
+    "retry/brake508_corridor.py": "10c2a4e021cce37b81a08ac0eb00e4040b0bb4dabdf5eac6989e18472b061407",
+    "retry/brake510_common.py": "28b84e6dbd7aab3ce123c153abdb9acfa1867172f35257ea6b8fea92b5cd1eb0",
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69",
+    "core/track_variables.py": "cd28fdfc79f12614262f61b1ac13d670d03fad940d753a2ec185390617c0ed58"
+  }
+}

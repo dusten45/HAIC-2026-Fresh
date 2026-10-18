@@ -1,0 +1,81 @@
+{
+  "reference_model_force_audit": [
+    {
+      "start": "exact_reset",
+      "phases": {
+        "entry": {
+          "sample_time_s": 0.5,
+          "braking_s": 0.5,
+          "gas_s": 0.0,
+          "clipped_wheels": 0,
+          "wheel_samples": 100,
+          "peak_force_ratio": 0.5547374643414769,
+          "mean_force_ratio": 0.238405030134632,
+          "mean_speed_m_s": 41.72171115000889
+        },
+        "corner": {
+          "sample_time_s": 0.8,
+          "braking_s": 0.0,
+          "gas_s": 0.8,
+          "clipped_wheels": 0,
+          "wheel_samples": 160,
+          "peak_force_ratio": 0.7324229987113714,
+          "mean_force_ratio": 0.37469377498702583,
+          "mean_speed_m_s": 31.35166802997544
+        },
+        "exit": {
+          "sample_time_s": 0.9,
+          "braking_s": 0.0,
+          "gas_s": 0.9,
+          "clipped_wheels": 0,
+          "wheel_samples": 180,
+          "peak_force_ratio": 0.6609806699301991,
+          "mean_force_ratio": 0.4551560653809598,
+          "mean_speed_m_s": 44.01795870944262
+        }
+      }
+    },
+    {
+      "start": "observed_trigger_stress",
+      "phases": {
+        "entry": {
+          "sample_time_s": 0.5,
+          "braking_s": 0.5,
+          "gas_s": 0.0,
+          "clipped_wheels": 0,
+          "wheel_samples": 100,
+          "peak_force_ratio": 0.552431460026167,
+          "mean_force_ratio": 0.23775438548894068,
+          "mean_speed_m_s": 41.72546042897838
+        },
+        "corner": {
+          "sample_time_s": 0.8,
+          "braking_s": 0.0,
+          "gas_s": 0.8,
+          "clipped_wheels": 0,
+          "wheel_samples": 160,
+          "peak_force_ratio": 0.7338327960986022,
+          "mean_force_ratio": 0.3746592700571679,
+          "mean_speed_m_s": 31.355050855501425
+        },
+        "exit": {
+          "sample_time_s": 0.9,
+          "braking_s": 0.0,
+          "gas_s": 0.9,
+          "clipped_wheels": 0,
+          "wheel_samples": 180,
+          "peak_force_ratio": 0.6609746912465405,
+          "mean_force_ratio": 0.45512967428946305,
+          "mean_speed_m_s": 44.01796662019868
+        }
+      }
+    }
+  ],
+  "wheel_force_evaluations": 880,
+  "new_integrated_trajectories": 0,
+  "new_native_actions": 0,
+  "new_native_resets": 0,
+  "CPU_s": 0.084065423,
+  "wall_s": 0.08408963900001254,
+  "scope": "Predicted source-order wheel force accounting on saved nominal model states, not actual native force measurements or a capacity certificate."
+}

@@ -1,0 +1,204 @@
+{
+  "status": "CURVE_MODEL_NO_NATIVE",
+  "safety_pass": true,
+  "native_pair_eligible": false,
+  "arms": [
+    {
+      "start": "exact_reset",
+      "arm": "reference",
+      "stop": "MODEL_WINDOW_END",
+      "actions": 60,
+      "raw_ticks": 240,
+      "min_margin_m": 0.9909560042475596,
+      "max_tracking_overspeed_m_s": 0.1343629404938227,
+      "changed_brake_actions": 0,
+      "below_future_floor_braking_s": 0.02,
+      "first_brake_release_station": 119.70895977979534,
+      "events": {
+        "begin": {
+          "lower": 2.520000000000002,
+          "upper": 2.540000000000002,
+          "time": 2.5386347473744473,
+          "speed": 52.63767986331614
+        },
+        "corner_exit": {
+          "lower": 3.820000000000003,
+          "upper": 3.840000000000003,
+          "time": 3.8294844098288703,
+          "speed": 32.96081972718323
+        },
+        "recovery50": {
+          "lower": 4.499999999999992,
+          "upper": 4.519999999999992,
+          "time": 4.518782761042515,
+          "speed": 50.0
+        },
+        "end": {
+          "lower": 4.719999999999987,
+          "upper": 4.739999999999987,
+          "time": 4.730600346879537,
+          "speed": 55.31020872809377
+        }
+      },
+      "window_time_s": 2.1919655995050893,
+      "recovery50_after_exit_s": 0.6892983512136448,
+      "pass_gate": true
+    },
+    {
+      "start": "exact_reset",
+      "arm": "release",
+      "stop": "MODEL_WINDOW_END",
+      "actions": 59,
+      "raw_ticks": 236,
+      "min_margin_m": 0.9885863266259707,
+      "max_tracking_overspeed_m_s": 0.4310465984696954,
+      "changed_brake_actions": 1,
+      "below_future_floor_braking_s": 0.0,
+      "first_brake_release_station": 119.75571776203758,
+      "events": {
+        "begin": {
+          "lower": 2.520000000000002,
+          "upper": 2.540000000000002,
+          "time": 2.5386347473744473,
+          "speed": 52.63767986331614
+        },
+        "corner_exit": {
+          "lower": 3.800000000000003,
+          "upper": 3.820000000000003,
+          "time": 3.8154074489303578,
+          "speed": 33.051622601430864
+        },
+        "recovery50": {
+          "lower": 4.499999999999992,
+          "upper": 4.519999999999992,
+          "time": 4.508585149417499,
+          "speed": 50.0
+        },
+        "end": {
+          "lower": 4.699999999999988,
+          "upper": 4.719999999999987,
+          "time": 4.719257589474812,
+          "speed": 55.28575194397525
+        }
+      },
+      "window_time_s": 2.1806228421003646,
+      "recovery50_after_exit_s": 0.6931777004871411,
+      "pass_gate": true
+    },
+    {
+      "start": "observed_trigger_stress",
+      "arm": "reference",
+      "stop": "MODEL_WINDOW_END",
+      "actions": 36,
+      "raw_ticks": 144,
+      "min_margin_m": 0.9908423325164921,
+      "max_tracking_overspeed_m_s": 0.12860512686883396,
+      "changed_brake_actions": 0,
+      "below_future_floor_braking_s": 0.02,
+      "first_brake_release_station": 119.70350877028311,
+      "events": {
+        "begin": {
+          "lower": 0.6000000000000002,
+          "upper": 0.6200000000000002,
+          "time": 0.6187589730123829,
+          "speed": 52.631849495222745
+        },
+        "corner_exit": {
+          "lower": 1.9000000000000012,
+          "upper": 1.9200000000000013,
+          "time": 1.9095397927338345,
+          "speed": 32.96222508743707
+        },
+        "recovery50": {
+          "lower": 2.580000000000002,
+          "upper": 2.600000000000002,
+          "time": 2.5987982781085694,
+          "speed": 50.0
+        },
+        "end": {
+          "lower": 2.800000000000002,
+          "upper": 2.820000000000002,
+          "time": 2.8106420843924997,
+          "speed": 55.31070155433961
+        }
+      },
+      "window_time_s": 2.191883111380117,
+      "recovery50_after_exit_s": 0.689258485374735,
+      "pass_gate": true
+    },
+    {
+      "start": "observed_trigger_stress",
+      "arm": "release",
+      "stop": "MODEL_WINDOW_END",
+      "actions": 35,
+      "raw_ticks": 140,
+      "min_margin_m": 0.9885228377420077,
+      "max_tracking_overspeed_m_s": 0.4244307470223774,
+      "changed_brake_actions": 1,
+      "below_future_floor_braking_s": 0.0,
+      "first_brake_release_station": 119.74982543343883,
+      "events": {
+        "begin": {
+          "lower": 0.6000000000000002,
+          "upper": 0.6200000000000002,
+          "time": 0.6187589730123829,
+          "speed": 52.631849495222745
+        },
+        "corner_exit": {
+          "lower": 1.8800000000000012,
+          "upper": 1.9000000000000012,
+          "time": 1.8955497266662342,
+          "speed": 33.05189378435175
+        },
+        "recovery50": {
+          "lower": 2.580000000000002,
+          "upper": 2.600000000000002,
+          "time": 2.588692682238459,
+          "speed": 50.0
+        },
+        "end": {
+          "lower": 2.780000000000002,
+          "upper": 2.800000000000002,
+          "time": 2.7994020560010053,
+          "speed": 55.28636765894459
+        }
+      },
+      "window_time_s": 2.1806430829886225,
+      "recovery50_after_exit_s": 0.6931429555722248,
+      "pass_gate": true
+    }
+  ],
+  "comparisons": [
+    {
+      "start": "exact_reset",
+      "different_brake_decisions": 1,
+      "window_time_gain_s": 0.01134275740472468,
+      "recovery50_gain_s": -0.003879349273496313,
+      "below_floor_braking_reduction_s": 0.02,
+      "information_gate": false
+    },
+    {
+      "start": "observed_trigger_stress",
+      "different_brake_decisions": 1,
+      "window_time_gain_s": 0.011240028391494405,
+      "recovery50_gain_s": -0.003884470197489831,
+      "below_floor_braking_reduction_s": 0.02,
+      "information_gate": false
+    }
+  ],
+  "model_ticks_including_pure_fixtures": 1208,
+  "pure_fixture_model_ticks": 128,
+  "CPU_s": 7.554943679,
+  "wall_s": 7.555889568000566,
+  "native_counts_so_far": {
+    "worlds": 1,
+    "resets": 1,
+    "actions": 0,
+    "raw_ticks": 51,
+    "closed": 1
+  },
+  "research_remaining": 25804,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "Current DEV first actual curve and obstacle-avoiding path, fixed finite model screen. Curve prediction not yet native-qualified; no lap record or old499 condition equivalence."
+}
