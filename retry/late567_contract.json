@@ -1,0 +1,24 @@
+{
+  "study": "HAIC personal retry 567",
+  "registered_utc": "2026-10-18T23:39:24+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "incumbent": "Exact saved 565 full-source safe trajectory; no reset/replay prefix integration for local fitting.",
+  "start_rule": "Use the first stored 4-raw hold whose progress brackets s=800, selected from the incumbent tape before any candidate evaluation. This is action 133 (raw 529-532); the preceding checkpoint is global raw 528. Variable holds are 133-152 inclusive (80 source raws), with the 800-900m interval and the saved action-153 handoff both covered.",
+  "local_calibration": "At this late checkpoint, build a fresh float32 one-sided finite-difference Jacobian for the 40 pedal/steer controls on holds 133-152. Validate it using two fixed, opposite, normalized 0.05 perturbations and saved controls from hold 153 onward. Derive coordinatewise positive empirical error margins once before proposals: twice the largest positive slack overprediction among the two checks plus propagated control ULP and 4 binary64 ULPs. These are numerical targets, not physical safety relaxations or universal bounds.",
+  "small_refutation": "First solve one bounded local linear proposal for diagnostic finish-center-plane time, with s=900 crossing as a reported intermediate metric. If it has no interior-feasible descent direction, stop candidate testing. Otherwise test no more than four sequential proposals. Every accepted incumbent requires exact source raw checks, a fresh unchanged 537 feedback continuation from the saved 153 handoff, safe finish, and a strictly improved interpolated whole finish-plane diagnostic. Official tracker candidate raw/time is reported separately and is the only official sampled finish score.",
+  "safety": "Preserve exact raw force ratio, cumulative clipping, footprint margin, path, reference, projection continuity, body domain, visited contacts, elapsed clock, tracker qualification/departure/forward crossing/width confirmation, and original feedback policy. No rounding near thresholds. Any cap, domain, integrity, or calibration failure stops the study without retry.",
+  "stopping_and_promotion": "At most 6 local linearizations, 240 FD columns, 2 fixed calibration checks, 4 actual feedback candidates, and 2 accepted safe improvements. Stop after two consecutive non-improving safe continuations, two calibration prediction mismatches, duplicate/float32-zero step, trust radius below 0.125, or any gate/cap failure. Candidate promotion requires safe full-source finish plus >=1 microsecond improvement in the continuous whole finish-plane diagnostic. Raw tracker score remains separately disclosed; a raw tie is not called an official improvement.",
+  "cost_caps": {
+    "local_model_ticks": 42000,
+    "candidate_model_ticks": 85000,
+    "independent_replay_model_ticks": 1200,
+    "total_model_ticks": 128500,
+    "total_CPU_seconds": 1740,
+    "total_wall_seconds": 2200,
+    "candidate_CPU_seconds": 250,
+    "candidate_wall_seconds": 350
+  },
+  "partition": "DEV only. No HOLDOUT or SEALED access. No native actions, resets, worlds, seeds, paid compute, or other environment. Preserve main dfb7a2de2178825ca5c5ce20bab01ba67052ba31, Participants, existing users' changes and prior backups.",
+  "reproducibility": "Record source/input hashes, exact start checkpoint hash, finite-difference columns, fixed calibration errors, every candidate raw/tape, cost counters, and independent source replay. Private full-state tapes remain outside the public repository.",
+  "authorized_until_utc": "2026-10-20T10:01:55+00:00"
+}
