@@ -1,0 +1,38 @@
+{
+  "source_and_input_pins_verified": true,
+  "conditioned_force_error_max_by_raw": [
+    1.0051954146828024e-07,
+    0.08488020954137587,
+    0.10949104037170931,
+    0.11234752690397576
+  ],
+  "first_force_evaluation_matches_source_to_ratio_error": 1.0051954146828024e-07,
+  "uncertainty_margin": 0.19,
+  "admission_ratio": 1.06,
+  "first_cold_failure": {
+    "action_index": 204,
+    "raw_in_hold": 2,
+    "episode_s": 16.279999999999742,
+    "violations": [
+      "FORCE_UNCERTAINTY_MARGIN"
+    ],
+    "current_force_peak": 1.0661619204191515,
+    "current_margin_m": 3.979821291340999,
+    "current_path_error_m": 1.0153286370736223,
+    "current_reference_overspeed_m_s": -1.0744335303607926
+  },
+  "first_failure_wheel": 1,
+  "first_failure_predicted_ratio": 1.0661619204191515,
+  "predicted_plus_empirical_margin": 1.2561619204191514,
+  "physical_raw_force_gate": 1.25,
+  "original_model_samples_within10m": 23,
+  "original_model_local_max_ratio": 1.1659368047033807,
+  "original_model_local_high_ratio_samples": 2,
+  "interpretation": "First force evaluation from exact actualroot matches; forceerrors appear after propagation, so accumulated coldinitialhistory alone is insufficient. Onehold and finite local sensitivity do not isolate unique heading/offset/yaw/spin defect. Static pooledhistory/squaredspeed scaling cannot certify force under changed closedloop trajectory. No threshold lowering or rescue.",
+  "model_integrator_ticks": 0,
+  "explicit_force_evaluations": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "CPU_s": 0.070565906,
+  "wall_s": 0.07056641999952262
+}
