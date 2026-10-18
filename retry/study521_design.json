@@ -1,0 +1,61 @@
+{
+  "objective_evaluations": 194,
+  "coefficient_dimension": 16,
+  "fixed_coordinate_passes": 6,
+  "initial_scalar_clock_s": 19.84840218840801,
+  "final_scalar_clock_s": 19.72048159235944,
+  "scalar_clock_gain_s": 0.1279205960485683,
+  "geometric_screen_pass": false,
+  "geometric_feasible": true,
+  "violation": 0.0,
+  "max_track_normal_offset_m": 4.264816229742083,
+  "minimum_obstacle_point_clearance_m": 2.5091608233008245,
+  "max_curvature": 0.11453140640838252,
+  "initial_path_length_m": 995.4452893670465,
+  "candidate_path_length_m": 993.265150596484,
+  "history": [
+    {
+      "step": 2.0,
+      "score": 19.815184095127787,
+      "clock": 19.791184095127786,
+      "violation": 0.0
+    },
+    {
+      "step": 2.0,
+      "score": 19.801209849568128,
+      "clock": 19.76120984956813,
+      "violation": 0.0
+    },
+    {
+      "step": 1.0,
+      "score": 19.79227530197494,
+      "clock": 19.76027530197494,
+      "violation": 0.0
+    },
+    {
+      "step": 1.0,
+      "score": 19.779877972534052,
+      "clock": 19.73787797253405,
+      "violation": 0.0
+    },
+    {
+      "step": 0.4,
+      "score": 19.770638914905085,
+      "clock": 19.727518914905087,
+      "violation": 0.0
+    },
+    {
+      "step": 0.4,
+      "score": 19.76904159235944,
+      "clock": 19.72048159235944,
+      "violation": 0.0
+    }
+  ],
+  "CPU_s": 0.517844902,
+  "wall_s": 0.370021810002072,
+  "model_integrator_ticks": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "frozen_paths_private_sha256": "ac4c1f7357cf503f8ed75dc902f4938b1df9856f022a807fc78c4f9f89236325",
+  "scope": "Exactly194 objective calls on currentDEV map, not old lost-run reproduction; scalar clock is a screen, not actual gain or feasible bound."
+}

@@ -1,0 +1,55 @@
+{
+  "status": "MODEL_CANDIDATE_NOT_PROMOTED",
+  "propose_later_native": false,
+  "design_screen_pass": false,
+  "arms": [
+    {
+      "start": "cold",
+      "variant": "baseline",
+      "stop": "MODEL_SOURCE_STYLE_FINISH",
+      "actions": 255,
+      "raw_ticks": 1020,
+      "reused_prior_model": true,
+      "min_margin_m": 0.979788682867275,
+      "max_path_error_m": 1.2034404592195909,
+      "max_reference_overspeed_m_s": 4.317375426708068,
+      "max_unused_launch_reference_difference": 2.191204520900982,
+      "force_groups": {
+        "launch": {
+          "peak": 2.2554338426103855,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 0.9341124597874415,
+          "samples": 3696,
+          "clipped": 0
+        }
+      },
+      "visited_tiles": 283,
+      "model_finish_episode_s": 20.379999999999654,
+      "pass_gate": true,
+      "reused_prior_model_integrator_ticks": 1020,
+      "new_model_integrator_ticks": 0
+    }
+  ],
+  "cold_finish_gain_s": null,
+  "same_actual_exit_finish_gain_s": null,
+  "descriptive_scalar_reference_clocks_s": {
+    "baseline": 19.84840218840801,
+    "spline": 19.72048159235944
+  },
+  "clocks_are_not_feasible_or_optimal_bounds": true,
+  "new_model_integrator_ticks": 0,
+  "reused_prior_model_ticks_not_new": 1020,
+  "new_model_wheel_force_evaluations": 0,
+  "CPU_s": 0.063620597,
+  "wall_s": 0.06401698300032876,
+  "native_actions": 0,
+  "native_resets": 0,
+  "native_worlds": 0,
+  "research_remaining": 24938,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "One spline-path change; same519 speed laws, steady pedals, gains, steering rule, launch. Geometry-induced profile changes are reported, no separate cap tuning. No native permitted."
+}

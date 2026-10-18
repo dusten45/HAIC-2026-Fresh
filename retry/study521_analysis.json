@@ -1,0 +1,43 @@
+{
+  "holds": 13,
+  "raw_ticks": 52,
+  "source_force_evaluations": 208,
+  "model_integrator_ticks": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "oracle_vector_error_max_N": 0.0,
+  "engine_multipliers": [
+    1.0
+  ],
+  "low_gas_start": {
+    "holds": 10,
+    "preceded_by_brake": 3,
+    "mean_desired_acceleration": 34.71454808553602,
+    "mean_realized_four_tick_acceleration": 24.22876991717871,
+    "mean_target_deficit": 0.8388622534685855,
+    "mean_first_tick_rear_gas": 0.18717117086052898,
+    "mean_final_tick_rear_gas": 0.48717117086052897,
+    "mean_first_tick_rear_pre_engine_slip": 0.3988919749793853,
+    "mean_projected_source_acceleration": 23.202419318604086
+  },
+  "near_full_gas_start": {
+    "holds": 3,
+    "preceded_by_brake": 0,
+    "mean_desired_acceleration": 34.54099792320155,
+    "mean_realized_four_tick_acceleration": 33.59723998545601,
+    "mean_target_deficit": 0.07550063501964151,
+    "mean_first_tick_rear_gas": 1.0,
+    "mean_final_tick_rear_gas": 1.0,
+    "mean_first_tick_rear_pre_engine_slip": 2.0054632146768796,
+    "mean_projected_source_acceleration": 33.57451828604312
+  },
+  "clipped_wheel_samples": 0,
+  "time_in_affected_holds_s": 1.04,
+  "share_of_520_model_finish_time": 0.05143422354104847,
+  "observed_whole_model_effect_s": 0.16,
+  "large_time_gain_established": false,
+  "decision": "Proceed with one path-only spline smoothing hypothesis. 1.04s temporal occupancy is not recoverable time or an effect upper bound; satisfying short-term goals is not itself a faster-lap objective.",
+  "source_mechanism": "Source first ramps rear gas by0.1, then omega gains dt*40000*engine*g/(1.6*(abs(omega)+5)); longitudinal force82*(omega_after*.54-v_forward), combined-friction clipped, then tyre impulse subtracts wheel omega. Low gas and prior braking suppress immediate drive; three near-full-gas states show ramp alone is insufficient explanation. Healthyengine/no clipping do not imply instantaneous target feasibility.",
+  "CPU_s": 0.06887319399999992,
+  "wall_s": 0.06887369100149954
+}
