@@ -1,0 +1,125 @@
+{
+  "status": "JOINT_PATH_SPEED_NOT_PROMOTED",
+  "pass_design_gate": false,
+  "initialization": "Only531restoredendpoint+unchanged528periodic/launchprofile",
+  "initial_time_s": 17.372707591622103,
+  "initial_max_normalized_violation": 3.091216171924316e-11,
+  "initial_geometry": {
+    "samples": 9339,
+    "min_road_margin_m": 1.2520000000005944,
+    "min_obstacle_margin_m": 1.2519999999690878,
+    "minimum_outer_rectangle_margin_m": 1.2519999999690878,
+    "outside_samples": 0,
+    "intersecting_samples": 0,
+    "max_sample_spacing_m": 0.21875001302229746,
+    "road_filter_radius_m": 12.0,
+    "max_local_edges": 16,
+    "max_local_road_polys": 12
+  },
+  "variables": 839,
+  "path_variables": 273,
+  "periodic_speed_variables": 283,
+  "launch_speed_variables": 283,
+  "optimizer_success": false,
+  "optimizer_status": null,
+  "optimizer_message": "RuntimeError:GEOMETRY_JACOBIAN_CAP",
+  "iterations": 108,
+  "optimality": null,
+  "solver_converged": false,
+  "max_normalized_violation": 0.0,
+  "residual_categories": {
+    "geometry": {
+      "minimum": 0.0012289933001747855,
+      "violated": 0
+    },
+    "lateral_minus": {
+      "minimum": 0.008471857134313643,
+      "violated": 0
+    },
+    "lateral_plus": {
+      "minimum": 0.01200808275614984,
+      "violated": 0
+    },
+    "periodic_forward_force": {
+      "minimum": 0.002274144160749947,
+      "violated": 0
+    },
+    "periodic_forward_power": {
+      "minimum": 0.010150014253659807,
+      "violated": 0
+    },
+    "periodic_backward80": {
+      "minimum": 0.009895618571813342,
+      "violated": 0
+    },
+    "launch_periodic_cap": {
+      "minimum": 0.0030120766132127885,
+      "violated": 0
+    },
+    "launch_forward_force": {
+      "minimum": 6.204172318031304e-05,
+      "violated": 0
+    },
+    "launch_forward_power": {
+      "minimum": 0.006694998714657799,
+      "violated": 0
+    },
+    "launch_backward80": {
+      "minimum": 0.014367366172738899,
+      "violated": 0
+    }
+  },
+  "geometry": {
+    "samples": 9339,
+    "min_road_margin_m": 1.253519800692061,
+    "min_obstacle_margin_m": 1.2532289933001748,
+    "minimum_outer_rectangle_margin_m": 1.2532289933001748,
+    "outside_samples": 0,
+    "intersecting_samples": 0,
+    "max_sample_spacing_m": 0.21875001302229746,
+    "road_filter_radius_m": 12.0,
+    "max_local_edges": 16,
+    "max_local_road_polys": 12
+  },
+  "independent530screen": {
+    "samples": 2480,
+    "spacing_at_most_m": 0.5,
+    "minimum_outer_rectangle_margin_m": 1.2532289933001757,
+    "outside_samples": 0,
+    "pass_geometry": true
+  },
+  "design_speed_clock_s": 17.02325578991901,
+  "regenerated528_profile_clock_s": 16.209395532760137,
+  "baseline528_scalar_clock_s": 17.25027295686793,
+  "scalar_screen_gain_s": 1.0408774241077943,
+  "design_periodic_speed_excess_over_regenerated_m_s": 0.0,
+  "design_launch_speed_excess_over_regenerated_m_s": 0.0,
+  "design_speed_conservative_or_equal": true,
+  "performance_gate_profile": "Alwaysregenerated528;designspeednotdeployed",
+  "candidate_length_m": 993.1593458565432,
+  "candidate_max_abs_curvature": 0.0903752025380258,
+  "optimizer_cost": {
+    "CPU_s": 95.33171697099999,
+    "wall_s": 95.41342289599925
+  },
+  "evaluation_cost": {
+    "objective": 172,
+    "gradient": 171,
+    "constraints": 172,
+    "jacobians": 171,
+    "geometry_jacobians": 171
+  },
+  "geometry_cost": {
+    "calls": 46584,
+    "segment_samples": 4688046
+  },
+  "CPU_s": 97.766933384,
+  "wall_s": 97.84985932999916,
+  "model_integrator_ticks": 0,
+  "force_evaluations": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "native_worlds": 0,
+  "frozen_paths_sha256": "9e63dfad63e56ad268185e89bf6628b7883b6659b2cba71eb9ce5c74b0e9dda3",
+  "scope": "OnejointNLPwithactualds/speedtimeandexplicitunchangedlateral/source-forward/back80constraints. Numericaldesignnotphysicsbound/gain. Same528controller/path-only;nativewouldcompare525vs532package."
+}
