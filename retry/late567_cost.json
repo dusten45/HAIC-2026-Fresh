@@ -1,21 +1,32 @@
 {
-  "baseline_replay": {
-    "fresh_source_ticks": 80,
+  "initial_baseline_replay": {
+    "ticks": 80,
     "force_evaluations": 320,
     "geometry_checks": 80,
-    "body_checks": 80,
-    "CPU_s": 1.029738328,
-    "wall_s": 1.0298439559992403
+    "CPU_seconds": 1.029738328,
+    "wall_seconds": 1.029843956
   },
-  "candidate_runs": 0,
-  "aggregate_cap_from_contract": {
+  "calibration_attempt_including_initial_replay": {
+    "ticks": 1224,
+    "force_evaluations": 4900,
+    "geometry_checks": 1224,
+    "CPU_seconds": 14.497968429,
+    "wall_seconds": 14.499356929
+  },
+  "new_work_after_baseline": {
+    "ticks": 1144,
+    "force_evaluations": 4580,
+    "geometry_checks": 1144
+  },
+  "candidate_full_feedback_calls": 0,
+  "independent_replay_ticks": 0,
+  "caps": {
     "local_model_ticks": 42000,
     "candidate_model_ticks": 85000,
     "independent_replay_model_ticks": 1200,
     "total_model_ticks": 128500,
     "total_CPU_seconds": 1740,
-    "total_wall_seconds": 2200,
-    "candidate_CPU_seconds": 250,
-    "candidate_wall_seconds": 350
-  }
+    "total_wall_seconds": 2200
+  },
+  "no_native_HOLDOUT_SEALED_paid_or_reserve_usage": true
 }
