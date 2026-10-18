@@ -1,0 +1,112 @@
+{
+  "status": "ACTUAL_OFFICIAL_FINISH_PAIR_PASS",
+  "arms": [
+    {
+      "budget": 80.0,
+      "stop": "OFFICIAL_FINISH",
+      "initial_identity": true,
+      "actions": 275,
+      "reset_ticks": 51,
+      "official_finish": true,
+      "official_finish_episode_s": 21.9399999999996,
+      "confirmation_episode_s": 21.9599999999996,
+      "reference_arc_event": {
+        "lower": 21.9199999999996,
+        "upper": 21.9399999999996,
+        "time": 21.939635077429212
+      },
+      "unwrapped_progress": 996.5595494883893,
+      "reference_path_length": 995.4452893670465,
+      "visited_tiles": 283,
+      "tile_count": 283,
+      "min_margin_m": 0.9895570702081662,
+      "max_path_error_m": 1.131427210390032,
+      "max_tracking_overspeed_m_s": 4.452499515736768,
+      "max_unused_startup_reference_difference_m_s": 5.2544263999121625,
+      "force_groups": {
+        "launch": {
+          "peak": 2.255467414712997,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 0.78694338798836,
+          "samples": 4008,
+          "clipped": 0
+        }
+      },
+      "source_force_oracle_max_N": 0.00020898494724215053,
+      "source_COM_impulse_max_m_s": 2.119440008556356e-05,
+      "max_prediction_errors": {
+        "position_m": 0.0009729609486522746,
+        "speed_m_s": 0.009768469058684559,
+        "angle_rad": 0.00040983970033278694,
+        "yaw_rad_s": 0.008894216024111223
+      }
+    },
+    {
+      "budget": 100.0,
+      "stop": "OFFICIAL_FINISH",
+      "initial_identity": true,
+      "actions": 259,
+      "reset_ticks": 51,
+      "official_finish": true,
+      "official_finish_episode_s": 20.699999999999626,
+      "confirmation_episode_s": 20.719999999999626,
+      "reference_arc_event": {
+        "lower": 20.679999999999627,
+        "upper": 20.699999999999626,
+        "time": 20.691744223515137
+      },
+      "unwrapped_progress": 997.0460939459011,
+      "reference_path_length": 995.4452893670465,
+      "visited_tiles": 283,
+      "tile_count": 283,
+      "min_margin_m": 0.9518360820869536,
+      "max_path_error_m": 1.2367973044733642,
+      "max_tracking_overspeed_m_s": 4.557685367410727,
+      "max_unused_startup_reference_difference_m_s": 5.2544263999121625,
+      "force_groups": {
+        "launch": {
+          "peak": 2.255467414712997,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 0.9646799428605184,
+          "samples": 3760,
+          "clipped": 0
+        }
+      },
+      "source_force_oracle_max_N": 0.00020157600526435752,
+      "source_COM_impulse_max_m_s": 1.803923647537811e-05,
+      "max_prediction_errors": {
+        "position_m": 0.0013059557081642457,
+        "speed_m_s": 0.013068677347519042,
+        "angle_rad": 0.000563088218406449,
+        "yaw_rad_s": 0.012172028634485077
+      }
+    }
+  ],
+  "both_actual_official_finishes": true,
+  "official_finish_gain_s": 1.2399999999999736,
+  "practical_effect_gate": true,
+  "counts": {
+    "worlds": 2,
+    "closed": 2,
+    "resets": 2,
+    "actions": 534,
+    "raw_attempts": 2236,
+    "raw_completed": 2236
+  },
+  "all_model_integrator_ticks": 5550,
+  "all_model_wheel_force_evaluations": 22192,
+  "research_remaining": 24938,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "native_CPU_s": 60.337413571,
+  "native_wall_s": 60.347695231001126,
+  "total_CPU_s": 108.12884019600001,
+  "total_wall_s": 108.14932578900334,
+  "scope": "Actual native sourcefinish only, sameknownDEV andexactreset; closedreferencechangedasreported; no old13.640/pixel/independent evaluation claim. ArcL/TimeLimit notfinish."
+}

@@ -1,0 +1,86 @@
+{
+  "status": "FULL_MODEL_NO_NATIVE",
+  "native_pair_eligible": false,
+  "arms": [
+    {
+      "start": "cold",
+      "budget": 80.0,
+      "stop": "MODEL_DYNAMICS_GUARD",
+      "actions": 6,
+      "raw_ticks": 24,
+      "model_finish_episode_s": null,
+      "model_finish_confirmation_episode_s": null,
+      "reference_arc_cross_episode_s": null,
+      "unwrapped_progress_end": 5.994995196443702,
+      "reference_laps": 0,
+      "visited_tiles": 4,
+      "tile_count": 283,
+      "min_margin_m": 5.157080875844215,
+      "max_path_error_m": 0.09083232498858287,
+      "max_reference_overspeed_m_s": 5.254221585610761,
+      "force_groups": {
+        "launch": {
+          "peak": 2.2554338426103855,
+          "samples": 96,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        }
+      },
+      "pass_gate": false
+    },
+    {
+      "start": "cold",
+      "budget": 100.0,
+      "stop": "MODEL_DYNAMICS_GUARD",
+      "actions": 6,
+      "raw_ticks": 24,
+      "model_finish_episode_s": null,
+      "model_finish_confirmation_episode_s": null,
+      "reference_arc_cross_episode_s": null,
+      "unwrapped_progress_end": 5.994995196443702,
+      "reference_laps": 0,
+      "visited_tiles": 4,
+      "tile_count": 283,
+      "min_margin_m": 5.157080875844215,
+      "max_path_error_m": 0.09083232498858287,
+      "max_reference_overspeed_m_s": 5.254221585610761,
+      "force_groups": {
+        "launch": {
+          "peak": 2.2554338426103855,
+          "samples": 96,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        }
+      },
+      "pass_gate": false
+    }
+  ],
+  "cold_model_finish_gain_s": null,
+  "path_changes": {
+    "max_existing150_point_displacement_m": 0.2863754697031337,
+    "max_existing150_arc_change_m": 0.05810122519409333,
+    "max_80_existing150_speed_change_m_s": 3.7707944335490247,
+    "seam_point_distance_m": 7.000000416713519,
+    "path_length_m": 995.4452893670465,
+    "obstacle_count": 6
+  },
+  "model_integrator_ticks": 48,
+  "model_wheel_force_evaluations": 192,
+  "CPU_s": 0.333955367,
+  "wall_s": 0.3365479790008976,
+  "native_actions": 0,
+  "native_resets": 0,
+  "native_worlds": 0,
+  "research_remaining": 25472,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "Model source tracker on predicted hull/contacts/visited ledger is an estimate. Only actual native finish may establish lap performance. Full closed reference differs from finite517prefix as reported."
+}

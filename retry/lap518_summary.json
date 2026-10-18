@@ -1,0 +1,93 @@
+{
+  "both_actual_source_finishes": true,
+  "source_finish_proofs": [
+    {
+      "budget": 80.0,
+      "official_finish_episode_s": 21.9399999999996,
+      "source_confirmation_episode_s": 21.9599999999996,
+      "qualification_episode_s": 20.379999999999633,
+      "source_event_not_ref_arc": true,
+      "source_visited_tiles": 283,
+      "max_reference_laps": 1,
+      "last_wrapper_actual_raw_ticks": 2
+    },
+    {
+      "budget": 100.0,
+      "official_finish_episode_s": 20.699999999999626,
+      "source_confirmation_episode_s": 20.719999999999626,
+      "qualification_episode_s": 19.239999999999657,
+      "source_event_not_ref_arc": true,
+      "source_visited_tiles": 283,
+      "max_reference_laps": 1,
+      "last_wrapper_actual_raw_ticks": 4
+    }
+  ],
+  "native_actions": 534,
+  "native_resets": 2,
+  "native_raw_ticks": 2236,
+  "reset_raw_ticks": 102,
+  "action_raw_ticks": 2134,
+  "closed_worlds": 2,
+  "precharge_contiguous": true,
+  "all_raw_errors": 0,
+  "all534_own_state_commands_verified": true,
+  "paired24action_observation_prefix_exact": true,
+  "terminal_partial_holds": [
+    {
+      "budget": 80.0,
+      "index": 275,
+      "actual_raw_ticks": 2
+    }
+  ],
+  "source_force_captures": 8536,
+  "all_model_integrator_ticks": 5550,
+  "preflight_model_ticks_including_original48_no_reintegration": 3414,
+  "native_4tick_forecast_model_ticks": 2136,
+  "model_wheel_force_evaluations": 22192,
+  "source_force_oracle_max_N": 0.00020898494724215053,
+  "source_COM_impulse_max_m_s": 2.119440008556356e-05,
+  "actual_finish_gain_s": 1.2399999999999736,
+  "actual_trajectory_diagnostic": [
+    {
+      "budget": 80.0,
+      "actual_COM_chord_path_m": 988.1793675514398,
+      "actual_max_speed_m_s": 81.03718656573045,
+      "actual_time_below40_m_s": 8.84,
+      "actual_time_above75_m_s": 0.68
+    },
+    {
+      "budget": 100.0,
+      "actual_COM_chord_path_m": 987.9294562096158,
+      "actual_max_speed_m_s": 80.17187881578084,
+      "actual_time_below40_m_s": 6.34,
+      "actual_time_above75_m_s": 0.78
+    }
+  ],
+  "CPU_s_model_native_workers": 108.12884019600001,
+  "wall_s_model_native_workers": 108.14932578900334,
+  "preparation_recovery_publication_allowance_CPU_s": 3.0,
+  "preparation_recovery_publication_allowance_wall_s": 3.0,
+  "private_files": 3328,
+  "private_bytes": 32879807,
+  "research_remaining": 24938,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "model_states_reintegrated_during_continuation": 0,
+  "scope": "One fresh full80/100knownDEV actual official finish pair. Corrected launch-vs-running evaluation contract retained original failed result. No11s/13.640/pixel/independent evaluation claim.",
+  "continuation_reused_prefix_proof": [
+    {
+      "budget": 80,
+      "reused_model_ticks": 24,
+      "first_new_action": 7
+    },
+    {
+      "budget": 100,
+      "reused_model_ticks": 24,
+      "first_new_action": 7
+    }
+  ],
+  "model_control_source_unchanged_between_original_and_continuation": true,
+  "closed_path_change_is_not_exact_oldprefix": true
+}
