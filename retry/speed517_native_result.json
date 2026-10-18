@@ -1,0 +1,214 @@
+{
+  "status": "NATIVE_WINDOW_EFFECT_PASS",
+  "arms": [
+    {
+      "budget": 80.0,
+      "stop": "WINDOW_END",
+      "initial_identity": true,
+      "actions": 109,
+      "reset_ticks": 51,
+      "events": {
+        "begin": {
+          "lower": 2.5200000000000022,
+          "upper": 2.5400000000000023,
+          "time": 2.538633847592667,
+          "speed": 52.637726168793606,
+          "path_error_raw_post": 0.006308111205398746,
+          "yaw_raw_post": -0.014173811301589012,
+          "heading_error_raw_post": -0.0006056014783578645
+        },
+        "corner_exit": {
+          "lower": 3.8199999999999843,
+          "upper": 3.839999999999984,
+          "time": 3.8288643610959308,
+          "speed": 32.96949231612704,
+          "path_error_raw_post": 0.5790022071697136,
+          "yaw_raw_post": 1.8826769590377808,
+          "heading_error_raw_post": -0.22602557205405427
+        },
+        "prior_window_end": {
+          "lower": 4.719999999999965,
+          "upper": 4.739999999999965,
+          "time": 4.72965210577001,
+          "speed": 55.311997032968634,
+          "path_error_raw_post": 0.08389601909711417,
+          "yaw_raw_post": -0.17363832890987396,
+          "heading_error_raw_post": 0.010896848790078018
+        },
+        "next_approach": {
+          "lower": 6.499999999999927,
+          "upper": 6.519999999999927,
+          "time": 6.50922326613533,
+          "speed": 59.11973556250047,
+          "path_error_raw_post": 0.0009230522035584074,
+          "yaw_raw_post": 0.0013242305722087622,
+          "heading_error_raw_post": -0.00011096276633537627
+        },
+        "next_entry": {
+          "lower": 6.899999999999919,
+          "upper": 6.919999999999918,
+          "time": 6.914971226812373,
+          "speed": 40.20841493547628,
+          "path_error_raw_post": 0.6588516092907126,
+          "yaw_raw_post": -1.0562689304351807,
+          "heading_error_raw_post": 0.04175028845394291
+        },
+        "next_exit": {
+          "lower": 7.759999999999901,
+          "upper": 7.779999999999901,
+          "time": 7.766649314915526,
+          "speed": 30.165806810825593,
+          "path_error_raw_post": 0.23848276555848139,
+          "yaw_raw_post": 2.1628568172454834,
+          "heading_error_raw_post": -0.20740531658054584
+        },
+        "end": {
+          "lower": 8.699999999999882,
+          "upper": 8.719999999999882,
+          "time": 8.706201870691629,
+          "speed": 54.229950847684854,
+          "path_error_raw_post": 0.018755075521870238,
+          "yaw_raw_post": 0.10056120157241821,
+          "heading_error_raw_post": -0.0075323092890178245
+        }
+      },
+      "min_margin_m": 0.9895575873398144,
+      "max_path_error_m": 0.9828423159016711,
+      "max_tracking_overspeed_m_s": 2.5884496184756074,
+      "peak_force_ratio": 0.7979012198015362,
+      "clipped_wheel_samples": 0,
+      "wheel_samples": 1240,
+      "source_force_oracle_max_N": 0.00020898494708614345,
+      "source_COM_impulse_max_m_s": 1.657852615847468e-05,
+      "max_prediction_errors": {
+        "position_m": 0.0009728993726855855,
+        "speed_m_s": 0.009610236815543516,
+        "angle_rad": 0.0004101081610773938,
+        "yaw_rad_s": 0.008896231306041003
+      },
+      "official_finish": false,
+      "window_time_s": 6.167568023098962,
+      "window_duration_lower_s": 6.159999999999879,
+      "window_duration_upper_s": 6.199999999999879,
+      "next_window_time_s": 2.196978604556299,
+      "next_duration_lower_s": 2.1799999999999553,
+      "next_duration_upper_s": 2.2199999999999545
+    },
+    {
+      "budget": 100.0,
+      "stop": "WINDOW_END",
+      "initial_identity": true,
+      "actions": 105,
+      "reset_ticks": 51,
+      "events": {
+        "begin": {
+          "lower": 2.5200000000000022,
+          "upper": 2.5400000000000023,
+          "time": 2.5280027818410353,
+          "speed": 55.5794088046085,
+          "path_error_raw_post": 0.007534486964294403,
+          "yaw_raw_post": -0.017400449141860008,
+          "heading_error_raw_post": -0.0009374801404672395
+        },
+        "corner_exit": {
+          "lower": 3.699999999999987,
+          "upper": 3.7199999999999864,
+          "time": 3.7170478164871055,
+          "speed": 36.028677671540144,
+          "path_error_raw_post": 0.53843998115215,
+          "yaw_raw_post": 1.8750842809677124,
+          "heading_error_raw_post": -0.24182032608237458
+        },
+        "prior_window_end": {
+          "lower": 4.5599999999999685,
+          "upper": 4.579999999999968,
+          "time": 4.569607186014774,
+          "speed": 57.57725692184845,
+          "path_error_raw_post": 0.09790353185440878,
+          "yaw_raw_post": -0.15321657061576843,
+          "heading_error_raw_post": 0.008868025891213271
+        },
+        "next_approach": {
+          "lower": 6.299999999999931,
+          "upper": 6.319999999999931,
+          "time": 6.312901367582753,
+          "speed": 61.822231359377525,
+          "path_error_raw_post": 0.0007262117171203627,
+          "yaw_raw_post": 0.0017504756106063724,
+          "heading_error_raw_post": -0.00017891206137932159
+        },
+        "next_entry": {
+          "lower": 6.679999999999923,
+          "upper": 6.699999999999923,
+          "time": 6.6910874740748,
+          "speed": 44.658455676260616,
+          "path_error_raw_post": 0.7433893243458406,
+          "yaw_raw_post": -0.9968741536140442,
+          "heading_error_raw_post": 0.029402828660852087
+        },
+        "next_exit": {
+          "lower": 7.459999999999908,
+          "upper": 7.479999999999907,
+          "time": 7.47412959886447,
+          "speed": 31.40071238744797,
+          "path_error_raw_post": 0.3444127977142258,
+          "yaw_raw_post": 1.8220453262329102,
+          "heading_error_raw_post": -0.24515043472172016
+        },
+        "end": {
+          "lower": 8.379999999999889,
+          "upper": 8.399999999999888,
+          "time": 8.3813807626533,
+          "speed": 55.81380785024547,
+          "path_error_raw_post": 0.034661048993576894,
+          "yaw_raw_post": 0.0988287627696991,
+          "heading_error_raw_post": -0.009209345574418215
+        }
+      },
+      "min_margin_m": 0.9518306618284342,
+      "max_path_error_m": 1.1313200784694422,
+      "max_tracking_overspeed_m_s": 0.8200964530217334,
+      "peak_force_ratio": 0.9001218391440209,
+      "clipped_wheel_samples": 0,
+      "wheel_samples": 1176,
+      "source_force_oracle_max_N": 0.00019514564645008146,
+      "source_COM_impulse_max_m_s": 2.0924482589876984e-05,
+      "max_prediction_errors": {
+        "position_m": 0.0012268648026551522,
+        "speed_m_s": 0.011402076717786258,
+        "angle_rad": 0.0005345104363154024,
+        "yaw_rad_s": 0.011450100186795265
+      },
+      "official_finish": false,
+      "window_time_s": 5.853377980812265,
+      "window_duration_lower_s": 5.839999999999886,
+      "window_duration_upper_s": 5.879999999999886,
+      "next_window_time_s": 2.068479395070548,
+      "next_duration_lower_s": 2.059999999999958,
+      "next_duration_upper_s": 2.099999999999957
+    }
+  ],
+  "interpolated_window_gain_s": 0.3141900422866968,
+  "bracket_certified_gain_lower_s": 0.27999999999999314,
+  "next_window_gain_s": 0.1284992094857511,
+  "next_window_gain_lower_s": 0.0799999999999983,
+  "practical_effect_gate": true,
+  "counts": {
+    "worlds": 2,
+    "closed": 2,
+    "resets": 2,
+    "actions": 214,
+    "raw_attempts": 958,
+    "raw_completed": 958
+  },
+  "all_model_integrator_ticks": 2096,
+  "all_model_wheel_force_evaluations": 8384,
+  "research_remaining": 25472,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "native_CPU_s": 24.223495345,
+  "native_wall_s": 24.233073860999866,
+  "total_CPU_s": 37.824056864999996,
+  "total_wall_s": 37.83859074300017,
+  "scope": "One fixed extended DEV spatial window through nextcurve, plus separate common downstream window; no sum of516 gains, no full lap/13.640/pixel claim."
+}

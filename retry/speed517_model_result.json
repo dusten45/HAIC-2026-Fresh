@@ -1,0 +1,305 @@
+{
+  "status": "EXTENSION_MODEL_NATIVE_ELIGIBLE",
+  "native_pair_eligible": true,
+  "arms": [
+    {
+      "start": "cold",
+      "budget": 80.0,
+      "stop": "MODEL_WINDOW_END",
+      "actions": 109,
+      "raw_ticks": 436,
+      "min_margin_m": 0.9909560042475596,
+      "max_path_error_m": 0.9820993437226117,
+      "max_tracking_overspeed_m_s": 2.5278075264654376,
+      "peak_force_ratio": 0.7864129805132443,
+      "clipped_wheel_samples": 0,
+      "wheel_samples": 1240,
+      "previous516_model_prefix_exact": true,
+      "events": {
+        "begin": {
+          "lower": 2.520000000000002,
+          "upper": 2.540000000000002,
+          "time": 2.5386347473744473,
+          "speed": 52.63767986331614,
+          "path_error_raw_post": 0.006300451730485866,
+          "yaw_raw_post": -0.014173894647095824,
+          "heading_error_raw_post": -0.0006057280185062242
+        },
+        "corner_exit": {
+          "lower": 3.820000000000003,
+          "upper": 3.840000000000003,
+          "time": 3.8294844098288703,
+          "speed": 32.96081972718323,
+          "path_error_raw_post": 0.5609190294711263,
+          "yaw_raw_post": 1.8948818117499324,
+          "heading_error_raw_post": -0.2265893712534095
+        },
+        "prior_window_end": {
+          "lower": 4.719999999999987,
+          "upper": 4.739999999999987,
+          "time": 4.730600346879537,
+          "speed": 55.31020872809377,
+          "path_error_raw_post": 0.0846749869903081,
+          "yaw_raw_post": -0.17092832205558434,
+          "heading_error_raw_post": 0.011013182516609543
+        },
+        "next_approach": {
+          "lower": 6.499999999999949,
+          "upper": 6.519999999999949,
+          "time": 6.510533291275718,
+          "speed": 59.09375004749719,
+          "path_error_raw_post": 0.0009129888179070273,
+          "yaw_raw_post": 0.001330191965853095,
+          "heading_error_raw_post": -0.00011305633795632986
+        },
+        "next_entry": {
+          "lower": 6.899999999999941,
+          "upper": 6.91999999999994,
+          "time": 6.916227942478062,
+          "speed": 40.20635545275452,
+          "path_error_raw_post": 0.6609039639679719,
+          "yaw_raw_post": -1.0502049055397606,
+          "heading_error_raw_post": 0.04314089649964492
+        },
+        "next_exit": {
+          "lower": 7.7599999999999225,
+          "upper": 7.779999999999922,
+          "time": 7.76723264227661,
+          "speed": 30.200291858222986,
+          "path_error_raw_post": 0.23386744044075006,
+          "yaw_raw_post": 2.1662464200736364,
+          "heading_error_raw_post": -0.20949202250790577
+        },
+        "end": {
+          "lower": 8.699999999999903,
+          "upper": 8.719999999999903,
+          "time": 8.706691814645175,
+          "speed": 54.231228567635185,
+          "path_error_raw_post": 0.01894478060321447,
+          "yaw_raw_post": 0.10091906607933755,
+          "heading_error_raw_post": -0.0076967001298404725
+        }
+      },
+      "whole_window_time_s": 6.168057067270729,
+      "next_window_time_s": 2.1961585233694576,
+      "pass_gate": true
+    },
+    {
+      "start": "cold",
+      "budget": 100.0,
+      "stop": "MODEL_WINDOW_END",
+      "actions": 105,
+      "raw_ticks": 420,
+      "min_margin_m": 0.9566849250263034,
+      "max_path_error_m": 1.1302287630852985,
+      "max_tracking_overspeed_m_s": 0.8200663250940181,
+      "peak_force_ratio": 0.8680309520547117,
+      "clipped_wheel_samples": 0,
+      "wheel_samples": 1176,
+      "previous516_model_prefix_exact": true,
+      "events": {
+        "begin": {
+          "lower": 2.520000000000002,
+          "upper": 2.540000000000002,
+          "time": 2.528003337313325,
+          "speed": 55.57937614935069,
+          "path_error_raw_post": 0.007532129226196284,
+          "yaw_raw_post": -0.017399371810748417,
+          "heading_error_raw_post": -0.000937565808020957
+        },
+        "corner_exit": {
+          "lower": 3.700000000000003,
+          "upper": 3.720000000000003,
+          "time": 3.7178510221313696,
+          "speed": 36.024619104838244,
+          "path_error_raw_post": 0.5133021635072312,
+          "yaw_raw_post": 1.8920505052870873,
+          "heading_error_raw_post": -0.24334270728369445
+        },
+        "prior_window_end": {
+          "lower": 4.559999999999991,
+          "upper": 4.57999999999999,
+          "time": 4.57071457067803,
+          "speed": 57.57532101040462,
+          "path_error_raw_post": 0.09815852140296975,
+          "yaw_raw_post": -0.15031540175552308,
+          "heading_error_raw_post": 0.008871800579587585
+        },
+        "next_approach": {
+          "lower": 6.299999999999954,
+          "upper": 6.319999999999953,
+          "time": 6.314383793738038,
+          "speed": 61.793459323988706,
+          "path_error_raw_post": 0.0007041519815592292,
+          "yaw_raw_post": 0.001748380535646499,
+          "heading_error_raw_post": -0.00018171048594783912
+        },
+        "next_entry": {
+          "lower": 6.6799999999999455,
+          "upper": 6.699999999999945,
+          "time": 6.692497265296558,
+          "speed": 44.65635066859702,
+          "path_error_raw_post": 0.744232366372755,
+          "yaw_raw_post": -0.9893933631204673,
+          "heading_error_raw_post": 0.031161252144263685
+        },
+        "next_exit": {
+          "lower": 7.459999999999929,
+          "upper": 7.4799999999999285,
+          "time": 7.474964321267052,
+          "speed": 31.458354309060756,
+          "path_error_raw_post": 0.3430148161537666,
+          "yaw_raw_post": 1.8298126714855563,
+          "heading_error_raw_post": -0.2477439037003033
+        },
+        "end": {
+          "lower": 8.37999999999991,
+          "upper": 8.39999999999991,
+          "time": 8.381969387983336,
+          "speed": 55.81778990568366,
+          "path_error_raw_post": 0.03530557024567432,
+          "yaw_raw_post": 0.09875685598161689,
+          "heading_error_raw_post": -0.00940320695843111
+        }
+      },
+      "whole_window_time_s": 5.853966050670011,
+      "next_window_time_s": 2.0675855942452976,
+      "pass_gate": true
+    },
+    {
+      "start": "actual_carry",
+      "budget": 80.0,
+      "stop": "MODEL_WINDOW_END",
+      "actions": 49,
+      "raw_ticks": 196,
+      "min_margin_m": 1.2368449275097044,
+      "max_path_error_m": 0.798251046990696,
+      "max_tracking_overspeed_m_s": 2.5883168056076755,
+      "peak_force_ratio": 0.7867899731982306,
+      "clipped_wheel_samples": 0,
+      "wheel_samples": 784,
+      "previous516_model_prefix_exact": null,
+      "events": {
+        "next_approach": {
+          "lower": 1.700000000000001,
+          "upper": 1.720000000000001,
+          "time": 1.7092256189171684,
+          "speed": 59.119684789591524,
+          "path_error_raw_post": 0.0009247819755297856,
+          "yaw_raw_post": 0.0013251820116176036,
+          "heading_error_raw_post": -0.00011100880696890414
+        },
+        "next_entry": {
+          "lower": 2.1000000000000014,
+          "upper": 2.1200000000000014,
+          "time": 2.1149725818920304,
+          "speed": 40.20891385188925,
+          "path_error_raw_post": 0.6587754283467638,
+          "yaw_raw_post": -1.0560327501454152,
+          "heading_error_raw_post": 0.04177101487020618
+        },
+        "next_exit": {
+          "lower": 2.960000000000002,
+          "upper": 2.980000000000002,
+          "time": 2.9666966515213176,
+          "speed": 30.15910909812611,
+          "path_error_raw_post": 0.23272467359616322,
+          "yaw_raw_post": 2.160803943834364,
+          "heading_error_raw_post": -0.20840615519521455
+        },
+        "end": {
+          "lower": 3.900000000000003,
+          "upper": 3.920000000000003,
+          "time": 3.9065918160419484,
+          "speed": 54.224315755575354,
+          "path_error_raw_post": 0.018909754601203692,
+          "yaw_raw_post": 0.10078933493804948,
+          "heading_error_raw_post": -0.007660518842337538
+        }
+      },
+      "whole_window_time_s": null,
+      "next_window_time_s": 2.19736619712478,
+      "pass_gate": true
+    },
+    {
+      "start": "actual_carry",
+      "budget": 100.0,
+      "stop": "MODEL_WINDOW_END",
+      "actions": 47,
+      "raw_ticks": 188,
+      "min_margin_m": 1.194833261911661,
+      "max_path_error_m": 0.8964270700676569,
+      "max_tracking_overspeed_m_s": 0.8014477590377567,
+      "peak_force_ratio": 0.7812883747264994,
+      "clipped_wheel_samples": 0,
+      "wheel_samples": 752,
+      "previous516_model_prefix_exact": null,
+      "events": {
+        "next_approach": {
+          "lower": 1.660000000000001,
+          "upper": 1.680000000000001,
+          "time": 1.6729035807051287,
+          "speed": 61.82217620418044,
+          "path_error_raw_post": 0.0007259144314170279,
+          "yaw_raw_post": 0.0017514439682356224,
+          "heading_error_raw_post": -0.00017906836683900806
+        },
+        "next_entry": {
+          "lower": 2.0400000000000014,
+          "upper": 2.0600000000000014,
+          "time": 2.051088672190446,
+          "speed": 44.65934635281797,
+          "path_error_raw_post": 0.7432946176295276,
+          "yaw_raw_post": -0.9963876006276168,
+          "heading_error_raw_post": 0.02943103778910583
+        },
+        "next_exit": {
+          "lower": 2.820000000000002,
+          "upper": 2.840000000000002,
+          "time": 2.834174002222717,
+          "speed": 31.39534841324739,
+          "path_error_raw_post": 0.33961170119418455,
+          "yaw_raw_post": 1.8229662449532782,
+          "heading_error_raw_post": -0.2460445078105531
+        },
+        "end": {
+          "lower": 3.740000000000003,
+          "upper": 3.760000000000003,
+          "time": 3.741745868568128,
+          "speed": 55.8076326392367,
+          "path_error_raw_post": 0.03505393546630104,
+          "yaw_raw_post": 0.09877706284197453,
+          "heading_error_raw_post": -0.009339744061605426
+        }
+      },
+      "whole_window_time_s": null,
+      "next_window_time_s": 2.0688422878629993,
+      "pass_gate": true
+    }
+  ],
+  "comparisons": [
+    {
+      "start": "cold",
+      "whole_extended_window_gain_s": 0.3140910166007176,
+      "next_window_gain_s": 0.12857292912415996,
+      "information_gate": true
+    },
+    {
+      "start": "actual_carry",
+      "whole_extended_window_gain_s": null,
+      "next_window_gain_s": 0.12852390926178092,
+      "information_gate": true
+    }
+  ],
+  "model_integrator_ticks": 1240,
+  "model_wheel_force_evaluations": 4960,
+  "CPU_s": 13.600561520000001,
+  "wall_s": 13.605515380000725,
+  "native_actions": 0,
+  "native_resets": 0,
+  "native_worlds": 0,
+  "research_remaining": 25686,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "Whole extended spatialwindow and separate next approach window; cold whole gain not constructed by adding516 gain. Actualcarry starts differ, compared only through common nextwindow events."
+}
