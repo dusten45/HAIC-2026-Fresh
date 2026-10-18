@@ -1,0 +1,26 @@
+{
+  "completed": true,
+  "cases": [
+    {
+      "initial_peak": 0.9987884459269507,
+      "initial_analytic_source_vector_error_N": 1.8040978488897963e-08,
+      "rejected_peak": 1.0978829975558668,
+      "rejected_clipped_wheels": 1,
+      "global_force_guard_pass": false
+    },
+    {
+      "initial_peak": 0.9989990511507385,
+      "initial_analytic_source_vector_error_N": 3.5764104211466474e-07,
+      "rejected_peak": 1.045264196352865,
+      "rejected_clipped_wheels": 2,
+      "global_force_guard_pass": true
+    }
+  ],
+  "cost": {
+    "explicit_source_wheel_evaluations": 16,
+    "model_ticks": 0,
+    "CPU_s": 0.007212275000000018,
+    "wall_s": 0.007211625001218636
+  },
+  "no_gate_relaxation_or_replay": true
+}

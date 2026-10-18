@@ -1,0 +1,40 @@
+{
+  "completed": true,
+  "steady_stations": 283,
+  "optimistic_station_clock_s": 11.506991393614035,
+  "source551_s": 13.22,
+  "target_clock_s": 12.22,
+  "optimistic_clock_gate": true,
+  "source_checks": 2,
+  "source_checks_passed": 0,
+  "source_failure_counts": {
+    "SOURCE_FORCE_OR_CLIP": 2
+  },
+  "max_abs_beta_rad": 0.04784319336302547,
+  "max_abs_joint_rad": 0.2708730211467054,
+  "max_steady_ratio": 0.9989990511507397,
+  "max_equilibrium_residual": 2.2737367544323206e-15,
+  "finite_branch_only": true,
+  "instantaneous_station_clock_omits_launch_transitions_and_geometry": true,
+  "model_clock_is_not_actual_gain_or_bound": true,
+  "full_controller_candidate": false,
+  "deep_phases_executed": 0,
+  "cost": {
+    "analytic_wheel_evaluations": 164588,
+    "explicit_source_wheel_evaluations": 16,
+    "model_ticks": 2,
+    "geometry": 4,
+    "nonlinear_solves": 1154
+  },
+  "CPU_s": 3.699951308,
+  "wall_s": 3.705630734002625,
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "new_seeds": 0,
+  "HOLDOUT_queries": 0,
+  "SEALED_queries": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0
+}

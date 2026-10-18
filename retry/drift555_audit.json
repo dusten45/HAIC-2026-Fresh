@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "checks": {
+    "original_source_and_inputs_pinned": true,
+    "recovery_source_and_inputs_pinned": true,
+    "both_started_pins": true,
+    "executed_recovery_source_pinned": true,
+    "original_numerical_failure_preserved": true,
+    "physical_and_effect_gates_unchanged": true,
+    "diagnostic_inputs_pinned": true,
+    "all283_finite_equilibria": true,
+    "optimistic_clock_recomputed": true,
+    "predeclared_two_extreme_fixtures": true,
+    "actual_source_force_matches_initial_algebra": true,
+    "two_failures_after_one_tick": true,
+    "one_force_failure_one_clip_only": true,
+    "discrete_speed_drift_explained": true,
+    "original_aggregate_caps_respected": true,
+    "no_deep_actual_protected_or_reserve": true,
+    "main_preserved": true
+  },
+  "scientific_cost": {
+    "analytic_wheel_evaluations": 165116,
+    "explicit_source_wheel_evaluations": 32,
+    "model_ticks": 2,
+    "internal_wheel_evaluations": 8,
+    "geometry": 4,
+    "nonlinear_solves": 1156,
+    "CPU_s": 3.7249238430000005,
+    "wall_s": 3.7321218330034753
+  },
+  "source_discrete_turn_diagnostics": [
+    {
+      "observed_speed_drift_m_s": 0.12210524851053606,
+      "continuous_normal_force_euler_speed_drift_m_s": 0.12210524860265792,
+      "absolute_drift_error_m_s": 9.212186569129699e-11,
+      "exact_discrete_turn_required_tangential_force_N": -44.62105956228175
+    },
+    {
+      "observed_speed_drift_m_s": 0.11429540012400707,
+      "continuous_normal_force_euler_speed_drift_m_s": 0.11429539810930578,
+      "absolute_drift_error_m_s": 2.0147012946836185e-09,
+      "exact_discrete_turn_required_tangential_force_N": -41.74947575459221
+    }
+  ],
+  "no_additional_force_calls_or_model_ticks": true,
+  "audit_CPU_s": 0.007568483999999997,
+  "audit_wall_s": 0.008864727002219297
+}

@@ -1,0 +1,52 @@
+{
+  "registered_utc": "2026-10-18T20:33:35.598436+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "recovery_reason": "Original first-station near-zero-gas bound-scaled gradient termination left residual above1e-7. Disable gtol only; physical/admission/clock gates unchanged; original failure retained.",
+  "original_contract_sha256": "2a439acc01371f0e7e6ab8a2c117c8873f917963daf44efb514c4604dfa5a7c6",
+  "hypothesis": "A quasi-steady free-body/sideslip force-allocation planner at the SAME 90m/s COM ceiling has a branch capable of an optimistic diagnostic clock <=12.22s, one second below source551. No PP, speed-reference or nominal backup is used in this mechanism screen. The old curve is a diagnostic seed; neither its feasibility nor a different free-corridor trajectory is proved.",
+  "scope": "One analytic branch: constant-speed, constant-curvature, zero net body torque, equal rear gas, unpowered rolling front wheels, all tires UNCLIPPED. Body sideslip and front joint angle are solved jointly. Not a full trajectory or transient reachability claim.",
+  "constants": {
+    "speed_ceiling": 90.0,
+    "minimum_speed": 1.0,
+    "beta_search_rad": [
+      -0.6,
+      0.6
+    ],
+    "joint_limit_rad": 0.4,
+    "maximum_raw_force_ratio": 0.999,
+    "normalized_equilibrium_residual": 1e-07,
+    "speed_bisections": 12,
+    "least_squares_max_nfev": 70
+  },
+  "stop_promotion": {
+    "numerical_low_speed_branch_failure": "stop; solver/branch failure, not physical impossibility",
+    "optimistic_clock_above12_22": "stop this quasi-steady branch, no source propagation",
+    "next_check": "Only if every station has a branch and optimistic clock <=12.22: independently propagate max-abs-beta and max-force states for 4 raw ticks each, deduplicated. Initial states are synthetic mechanism fixtures on the same known DEV map, not reachable-state certificates.",
+    "source_witness": "all footprint>=.50, raw force<=1.059, all hull/wheel speed<100, no clip; speed drift<=.15, yaw drift<=.05, sideslip drift<=.02 rad. These last residual tolerances are diagnostic, not physical necessities.",
+    "deep": "No full controller/cold/carry/native authorized by this mechanism alone. Future candidate gates remain cold >=500ms vs54113.66, carry nonworsening vs54114.46, fresh native pair >=500ms with <=1000 actions/2 resets/2 worlds/4102 raw."
+  },
+  "caps": {
+    "CPU_s": 89,
+    "wall_s": 119,
+    "analytic_wheel_evaluations": 1999472,
+    "explicit_source_wheel_evaluations": 40,
+    "model_ticks": 8,
+    "geometry": 10
+  },
+  "split": "known DEV only; no new seed, HOLDOUT, SEALED, reserve or external compute",
+  "source_sha256": {
+    "retry/drift555_recovery.py": "c7d5521bc57ec5dabefda3b8124280e088983dd2a4fc8bdee19dd1377c026e42",
+    "retry/drift555_mechanism.py": "a776bbc549137712e3a34f445f4fe6fd0fcd104893f2626fd6c261e404e97c6e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf"
+  },
+  "private_inputs_sha256": {
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response551-private/frozen-paths-private.json": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef"
+  }
+}
