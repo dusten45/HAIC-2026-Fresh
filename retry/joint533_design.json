@@ -1,0 +1,126 @@
+{
+  "status": "JOINT_PATH_SPEED_NOT_PROMOTED",
+  "pass_design_gate": false,
+  "initialization": "Only532lastacceptedx;original531geometrybasis/objectivenormalizationunchanged",
+  "initial_time_s": 17.02325578991901,
+  "objective_normalization_s": 17.372707591622103,
+  "initial_max_normalized_violation": 0.0,
+  "initial_geometry": {
+    "samples": 9339,
+    "min_road_margin_m": 1.253519800692061,
+    "min_obstacle_margin_m": 1.2532289933001748,
+    "minimum_outer_rectangle_margin_m": 1.2532289933001748,
+    "outside_samples": 0,
+    "intersecting_samples": 0,
+    "max_sample_spacing_m": 0.21875001302229746,
+    "road_filter_radius_m": 12.0,
+    "max_local_edges": 16,
+    "max_local_road_polys": 12
+  },
+  "variables": 839,
+  "path_variables": 273,
+  "periodic_speed_variables": 283,
+  "launch_speed_variables": 283,
+  "optimizer_success": false,
+  "optimizer_status": 0,
+  "optimizer_message": "The maximum number of function evaluations is exceeded.",
+  "iterations": 320,
+  "optimality": 2.4976774215602638e-05,
+  "solver_converged": false,
+  "max_normalized_violation": 0.0,
+  "residual_categories": {
+    "geometry": {
+      "minimum": 1.4929266154650733e-05,
+      "violated": 0
+    },
+    "lateral_minus": {
+      "minimum": 0.0039007731020966885,
+      "violated": 0
+    },
+    "lateral_plus": {
+      "minimum": 0.016681814391018124,
+      "violated": 0
+    },
+    "periodic_forward_force": {
+      "minimum": 0.0014870546709219445,
+      "violated": 0
+    },
+    "periodic_forward_power": {
+      "minimum": 0.00954847036467834,
+      "violated": 0
+    },
+    "periodic_backward80": {
+      "minimum": 0.006793803066001178,
+      "violated": 0
+    },
+    "launch_periodic_cap": {
+      "minimum": 0.0043746845622558705,
+      "violated": 0
+    },
+    "launch_forward_force": {
+      "minimum": 8.228921573913417e-05,
+      "violated": 0
+    },
+    "launch_forward_power": {
+      "minimum": 0.008633377860289004,
+      "violated": 0
+    },
+    "launch_backward80": {
+      "minimum": 0.01127707493843759,
+      "violated": 0
+    }
+  },
+  "geometry": {
+    "samples": 9339,
+    "min_road_margin_m": 1.2520149292661547,
+    "min_obstacle_margin_m": 1.2523146970171892,
+    "minimum_outer_rectangle_margin_m": 1.2520149292661547,
+    "outside_samples": 0,
+    "intersecting_samples": 0,
+    "max_sample_spacing_m": 0.21875001302229746,
+    "road_filter_radius_m": 12.0,
+    "max_local_edges": 16,
+    "max_local_road_polys": 12
+  },
+  "independent530screen": {
+    "samples": 2448,
+    "spacing_at_most_m": 0.5,
+    "minimum_outer_rectangle_margin_m": 1.2520149292661547,
+    "outside_samples": 0,
+    "pass_geometry": true
+  },
+  "design_speed_clock_s": 14.969722660477188,
+  "regenerated528_profile_clock_s": 14.40717610658,
+  "baseline528_scalar_clock_s": 17.25027295686793,
+  "scalar_screen_gain_s": 2.8430968502879317,
+  "design_periodic_speed_excess_over_regenerated_m_s": 0.0,
+  "design_launch_speed_excess_over_regenerated_m_s": 0.0,
+  "design_speed_conservative_or_equal": true,
+  "performance_gate_profile": "Alwaysregenerated528;designspeednotdeployed",
+  "candidate_length_m": 978.6098315287799,
+  "candidate_max_abs_curvature": 0.08390595780326082,
+  "optimizer_cost": {
+    "CPU_s": 317.682542849,
+    "wall_s": 317.8115081299984
+  },
+  "evaluation_cost": {
+    "objective": 581,
+    "gradient": 579,
+    "constraints": 581,
+    "jacobians": 579,
+    "geometry_jacobians": 579
+  },
+  "geometry_cost": {
+    "calls": 158648,
+    "segment_samples": 15858381
+  },
+  "CPU_s": 319.956557777,
+  "wall_s": 320.08648894699945,
+  "model_integrator_ticks": 0,
+  "force_evaluations": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "native_worlds": 0,
+  "frozen_paths_sha256": "98b3eaf4eb335d95a588de33921d54c36ef4e1c2266d648980e6b52c114114d3",
+  "scope": "OnejointNLPwithactualds/speedtimeandexplicitunchangedlateral/source-forward/back80constraints. Numericaldesignnotphysicsbound/gain. Same528controller/path-only;nativewouldcompare525vs533package."
+}
