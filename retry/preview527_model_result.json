@@ -1,0 +1,130 @@
+{
+  "status": "CORRECTED_MODEL_NOT_PROMOTED",
+  "native_pair_eligible": false,
+  "probe_pass": true,
+  "probe": [
+    {
+      "index": 75,
+      "mode": "BACKUP",
+      "old_high_rejected_by_reference": true,
+      "old_action_unchanged": false,
+      "raw_ticks": 4,
+      "peak": 0.5033569201644729,
+      "max_reference_overspeed": 0.0,
+      "min_margin": 5.2600212917012374,
+      "pass_gate": true
+    },
+    {
+      "index": 74,
+      "mode": "HIGH",
+      "old_high_rejected_by_reference": false,
+      "old_action_unchanged": true,
+      "raw_ticks": 4,
+      "peak": 0.012517884286143872,
+      "max_reference_overspeed": 0.0,
+      "min_margin": 5.2814936270534885,
+      "pass_gate": true
+    },
+    {
+      "index": 70,
+      "mode": "HIGH",
+      "old_high_rejected_by_reference": false,
+      "old_action_unchanged": true,
+      "raw_ticks": 4,
+      "peak": 0.024631977314940247,
+      "max_reference_overspeed": 0.0,
+      "min_margin": 5.2767598360615455,
+      "pass_gate": true
+    }
+  ],
+  "arms": [
+    {
+      "history_clipped_before": 0,
+      "history_samples_before": 0,
+      "resumed_prior_model_ticks": 0,
+      "variant": "baseline",
+      "completed_before": 0,
+      "stop": "MODEL_SOURCE_STYLE_FINISH",
+      "raw_ticks": 920,
+      "actions": 230,
+      "force_groups": {
+        "launch": {
+          "peak": 2.25546701731417,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.0568401654816066,
+          "samples": 3296,
+          "clipped": 16
+        }
+      },
+      "min_margin_m": 0.9885159625653317,
+      "max_path_error_m": 1.3907024802822718,
+      "max_reference_overspeed_m_s": 2.5546610022005396,
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "HIGH": 199,
+        "BACKUP": 7
+      },
+      "high_fraction": 0.9660194174757282,
+      "first_failure": null,
+      "model_finish_episode_s": 18.399999999999697,
+      "pass_safety": true,
+      "start": "cold",
+      "reused_model": true
+    },
+    {
+      "end_progress": 996.4566266153705,
+      "history_samples_before": 0,
+      "variant": "candidate",
+      "completed_before": 0,
+      "stop": "MODEL_SOURCE_STYLE_FINISH",
+      "raw_ticks": 905,
+      "actions": 227,
+      "force_groups": {
+        "launch": {
+          "peak": 2.25546701731417,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.0596745300874106,
+          "samples": 3236,
+          "clipped": 10
+        }
+      },
+      "min_margin_m": 0.9433383931891755,
+      "max_path_error_m": 1.8277216793765696,
+      "max_reference_overspeed_m_s": 4.648312527085082,
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "HIGH": 188,
+        "BACKUP": 15
+      },
+      "high_fraction": 0.9261083743842364,
+      "first_failure": null,
+      "model_finish_episode_s": 18.099999999999703,
+      "pass_safety": true,
+      "start": "cold"
+    }
+  ],
+  "cold_finish_gain_s": 0.2999999999999936,
+  "carry_finish_gain_s": null,
+  "model_integrator_ticks": 10981,
+  "source_wheel_force_evaluations_in_integrator": 43924,
+  "explicit_force_evaluations": 43980,
+  "planner_cost": {
+    "force_evaluations": 43980,
+    "forecast_calls": 222,
+    "forecast_ticks": 10064
+  },
+  "CPU_s": 21.822095433,
+  "wall_s": 21.82488481299879,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 24155,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "527backward80+finiteholdtrackingcertificate,force/path/overspeed5 within12holds. Baseline52518.40frozen;526failurepreserved. Same524model/path/steering/forward/top80/margin.19/force1.25/cumulativeclip."
+}

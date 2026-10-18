@@ -1,0 +1,53 @@
+{
+  "source_input_pins_verified": true,
+  "all_three_small_probes_pass": true,
+  "first_cold_command_change_from_failed526": 75,
+  "common_first74_commands_bit_exact": true,
+  "hold75": {
+    "mode": "BACKUP",
+    "selected_action_has_brake": true,
+    "selected_action_has_gas": false,
+    "start_speed_m_s": 79.80705034519202,
+    "end_speed_m_s": 72.24339176619085,
+    "end_reference_m_s": 74.75838057330274,
+    "end_reference_speed_deficit_m_s": 2.514988807111891,
+    "old526_end_overspeed_m_s": 5.4971478210610485
+  },
+  "mode_time_partition": {
+    "FIXED_LAUNCH": {
+      "raw_ticks": 96,
+      "time_s": 1.92,
+      "mean_signed_reference_speed_deficit_m_s": 3.6194397665629343,
+      "mean_positive_reference_speed_deficit_m_s": 4.1481500954080595,
+      "peak": 2.25546701731417
+    },
+    "HIGH": {
+      "raw_ticks": 749,
+      "time_s": 14.98,
+      "mean_signed_reference_speed_deficit_m_s": 3.650140175711663,
+      "mean_positive_reference_speed_deficit_m_s": 3.7391525045093688,
+      "peak": 1.0363432493832336
+    },
+    "BACKUP": {
+      "raw_ticks": 60,
+      "time_s": 1.2,
+      "mean_signed_reference_speed_deficit_m_s": 5.274504366828597,
+      "mean_positive_reference_speed_deficit_m_s": 5.274504366828597,
+      "peak": 1.0596745300874106
+    }
+  },
+  "certified_tracking_decisions": 203,
+  "reference_and_force_certificates_all_pass": true,
+  "baseline_backup_holds": 7,
+  "candidate_backup_holds": 15,
+  "interpretation": "527firstchanges526at75, eliminatingheldpositivegasreferencecrossing. Existingbackup100actionplacesendingvelocitybelowcandidate80reference;15vs7BACKUPholdsis descriptive,not isolated recovered/losttime. Coarsebackup commandlibrary is a concrete nextresponse-design hypothesis, not proof of cause of entireeffectshortfall. No newbrakevalue/threshold/candidate/fullcarry/native run.",
+  "model_integrator_ticks": 0,
+  "explicit_force_evaluations": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 24155,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "CPU_s": 0.08341900299999999,
+  "wall_s": 0.08352541800195468
+}
