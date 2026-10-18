@@ -1,0 +1,115 @@
+{
+  "registered_utc": "2026-10-18T23:04:41.326960+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "question": "Can fixed positive empirical interior goals repair final564nonlinear infeasibility,then actual unchangedfeedback safely improve terminal time? Separate safe finite program,actualfeedback finite success,wholefinish.",
+  "interior_rule": "Two times (maximum positive slack overoptimism across last TWO564 restoration predictions + maximum propagated fullfloat32controlULP + fourbinary64ULPs). Force is physical slack,clipping uses prefix orderstat target>0. Same fixed arrays for all565iterations. Empirical numerical interior,not universal errorbound or relaxed safety.",
+  "interior_immutable_sha256": "ee29de2ddf30cbf200a70dcf056306ba73a7d3e8edc2b9633a9568738816c6c2",
+  "interior_scope": "Physical slack margins and prefix-orderstat margins are coordinatewise arrays fixed from final TWO564restoration predictions and fullfloat32ULP propagation. No buffer trials,rounding,threshold relaxation or online buffer enlargement. These are numerical targets,not physical constants or universal error bounds.",
+  "start": "Fresh exact original551prefix136raw,seed180raw verified against561+562;fresh final564point180raw must match saved states/forces before derivatives. Same20variableholds35..54,fixed55..67,initialtracking3/160,reference and original551planes54/66/75. Seed is safe policy incumbent;unsafe restoration centers remain numerical only.",
+  "safety": "Unchanged563physical/strict-prefix gates,launch history and all forecastbody<100. Locally-safe program only opens fresh unchanged551/537feedback12hold68..79. Exact ratio>1,never round small positives tozero. Same tracker/visited/clock. Actualcontinuation safety+terminal gain>1microsecond to adopt. No5ms individual gate.",
+  "method": "Start at exact last564unsafe point with frozen seedfeedback derivative tape. Fresh40float32FD per linearization. At each prefix,rank topK exemptions and require remaining ratios<=1-fixedprefixmargin;union uses maximum applicable prefix margin per sample. All physical linearizedslacks>=fixedphysicalmargin. Restoration LP1 min scaled elastic eta;eta>1e-8 stops as linearized internal-target infeasible in currenttrust,not proof nonlinear infeasibility. LP2 minimizes normalizedL1 movement at besteta (feasibility first),with frozen terminal<=bestincumbent+5ms numericfilter. After exactsafe actualcontinuation,run terminaltime LP under same fixedinterior goals. Numerical radius starts1,range.125..1,scales steer.003/pedal.03;correctionwithin.5rho ofcenter andrho ofsafeincumbent. Recompute rank membership and log difference vsseed.",
+  "progress": "Up to8linearizations/FD320,6restorationlinearizations,10sourceproposals,4finitefeedbackcalls,2safe time-improving accepts. No arbitrary three-trialstop. Continue residual reduction while >=10%;two consecutive nondecreasing restoration steps stop. If insufficient reduction,contractradius*.5 and relinearize bestobserved numericalcenter;rho<.125 stops. Unsafe center may advance only on measured interior merit improvement;physical/adoptedincumbent remains safe. A safe-but-nonimproving finite point may be a working linearization point,but not best policy incumbent. Two nonimproving safe time attempts or2acceptedpredictionmismatches stop. Duplicate/quantizedzerostep stops.",
+  "budgets": {
+    "preparation": {
+      "model_ticks": 300,
+      "force": 1500,
+      "geometry": 400,
+      "CPU_s": 10,
+      "wall_s": 15
+    },
+    "local": {
+      "model_ticks": 62000,
+      "force": 250000,
+      "geometry": 63000,
+      "CPU_s": 800,
+      "wall_s": 950
+    },
+    "finite": {
+      "model_ticks": 60000,
+      "force": 300000,
+      "geometry": 70000,
+      "CPU_s": 900,
+      "wall_s": 1050
+    },
+    "full": {
+      "model_ticks": 120000,
+      "force": 580000,
+      "geometry": 140000,
+      "CPU_s": 1500,
+      "wall_s": 1700
+    },
+    "verification": {
+      "model_ticks": 1600,
+      "force": 8000,
+      "geometry": 1800,
+      "CPU_s": 40,
+      "wall_s": 60
+    }
+  },
+  "aggregate": {
+    "model_ticks": 243900,
+    "force": 1139500,
+    "geometry": 275200,
+    "CPU_s": 3300,
+    "wall_s": 4000
+  },
+  "caps": {
+    "linearizations": 8,
+    "FD_columns": 320,
+    "restorations": 6,
+    "candidates": 10,
+    "finite_feedback_calls": 4,
+    "accepted": 2
+  },
+  "finite_case": {
+    "model_ticks": 20000,
+    "force": 100000,
+    "geometry": 25000,
+    "CPU_s": 300,
+    "wall_s": 350
+  },
+  "reserve_rule": "Optimization stopCPU>=1650;before proposal reserve one finitecase20000ticks;beforeFD reserve7200+2*180localticks. Local62000 coversseed+starting360+FD57600+10proposals1800+10refresh1800=61560. Full120000/CPU1500 and independenttape1600/CPU40 reserved separately. No newincumbent ->reuse completed562/563wholeproof,do not repeat whole selector/replay.",
+  "whole": "Final NEW finiteincumbent only:one fresh whole existingfeedback suffix and one independent actualtape replay fromreset. Newwholeincumbent only safe officialfinish<13.22;otherwise retain existingwholeproof. Source estimates are not native/pixel records.",
+  "storage": "ExclusiveSTARTED;frozen sources/inputs;atomicJSONsafe percase+phasefinallycostFIRST+outercostbefore result;private raw states/actions/FD,tapes. Initial564tuple-list failure preserved;565uses canonical comparisons.",
+  "actual_cap": 0,
+  "new_seed_HOLDOUT_SEALED_other_environment_paid": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "source_sha256": {
+    "retry/interior565_model.py": "c1290da433e54e0967ff1dcba36015833952d49e552b8cd0a2f77bdf5b52fccb",
+    "retry/interior565_design.py": "9590018dd920902f73a6bb6100af9ae1ef3074a36ec76d9df0796b69aadf9a8e",
+    "retry/filter564_model.py": "507dbc9f65e6a5a205b91096a232f9f93bca0d0a3506f9df449db976d468edc5",
+    "retry/continuation563_model.py": "3a6fd75bbbae3dbda6ffc64610c9d442f111e602a9b932501ee30873e1284da3",
+    "retry/handoff562_model.py": "e7addc1dabf391149cb10827316a6e9405069f4a8809a9ef4ada805cbe9d0b0b",
+    "retry/clip561_core.py": "d0f60f7741c4605a3c3b6a515977ee5c978efd633665d3e807afef6b816a531b",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "retry/preview527_control.py": "8049458f5f302fd194a2e0fde5a833ac4a2241f498055df1dc84203017da2717",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131",
+    "core/finish_line.py": "7c16dda1378dcd65aed46d9da96608aa055124c2f27d8fb00c309078361d4204",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363"
+  },
+  "inputs_sha256": {
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response551-private/frozen-paths-private.json": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "/workspace/haic-response551-private/cold-candidate-private.json": "5e28759abfbc2455599c9f3bd4143ff7b8cf644deae63a86c7c290608e466ac8",
+    "/workspace/haic-response519-private/model-ledger-private.json": "28ff0ff7ffec9784e4817b4b55500c40ecd3730e9d09977294ad1dfd9b70763f",
+    "/workspace/haic-response560-private/segment-private.json": "0721c0d46922057e1279381f14ca2a4476fdc7a45726246b96599710b86831c6",
+    "/workspace/haic-response561-private/branch-00-00-private.json": "e7313dd198268f10b07016b28bb2b9357bb2a550898356234e4aeef47fa76236",
+    "/workspace/haic-response562-private/prefix-modified-private.json": "c87772ee076352d632d09b424bb88689b141a6a6d3dd13f70b295bc59ec8040f",
+    "/workspace/haic-response562-private/feedback-suffix-private.json": "f5645d215bbcfcee3e5a1706302128e0be0339c512a8381f2f002b801c4c2985",
+    "/workspace/HAIC-2026-Fresh/retry/handoff562_result.json": "216e2def91549d2b95120f9606ee14a034bc185cbc64d5895435c307f8f13b4f",
+    "/workspace/haic-response564-private/trial-00-02-surrogate-private.json": "792e38377374660bbd41ccba329e25eff08736af380243b86b44abd7fba05b77",
+    "/workspace/HAIC-2026-Fresh/retry/interior565_design.json": "68ecb626ba849f28800ca4e4cfea70643ffaef425605d7a9f70499fe99a38cde",
+    "/workspace/haic-response565-private/interior-targets-private.json": "ee29de2ddf30cbf200a70dcf056306ba73a7d3e8edc2b9633a9568738816c6c2",
+    "/workspace/HAIC-2026-Fresh/retry/continuation563_result.json": "d04d48decc7f48813cbe9bfd5ff43ae0f24be60c3b081bd1bc0783032fad2606",
+    "/workspace/HAIC-2026-Fresh/retry/filter564_recovery_result.json": "3d26868a258f8d8e93e9f94f462e803d2e1d21b15a35d422b1c3f2698b767529"
+  }
+}

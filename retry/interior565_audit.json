@@ -1,0 +1,137 @@
+{
+  "passed": true,
+  "design_CPU_s": 0.13439392300000003,
+  "design_wall_s": 0.1360138340096455,
+  "model_plus_design_CPU_s": 895.8140903209999,
+  "model_plus_design_wall_s": 896.2666062290082,
+  "checks": {
+    "source_and_input_hashes": true,
+    "single_frozen_empirical_interior_design": true,
+    "contract_before_exclusive_starts": true,
+    "completed_without_technical_error": true,
+    "prefix_and_seed_fullstate_force_exact": true,
+    "initial_history_and_handoff_exact": true,
+    "bounded_directions_trials_FD_restorations": true,
+    "restoration_relinearizes_measured_rank_force_active_sets": true,
+    "exact_program_gate_before_fresh_feedback": true,
+    "feedback_from_changed_program_and_same_history": true,
+    "only_exact_safe_actual_terminal_gain_adopted": true,
+    "accepted_handoff_and_actual_feedback_hash_exact": true,
+    "no_unsafe_numerical_center_adopted": true,
+    "existing_whole_success_preserved": true,
+    "last564_restoration_state_force_exact": true,
+    "targets_unchanged_across_candidates": true,
+    "safe_program_and_continuation_counts": true,
+    "rank_membership_disclosed": true,
+    "final_new_candidate_whole_then_exact_replay": true,
+    "whole_starts_at_final_actual_handoff": true,
+    "whole_global_safety_and_original_history": true,
+    "whole_official_finish_direct_from_tracker": true,
+    "whole_time_measured_not_finite_gain": true,
+    "cost_FIRST_and_all_body_ticks": true,
+    "all_phase_and_total_caps": true,
+    "design_plus_model_aggregate_cost": true,
+    "cost_reconciled": true,
+    "no_native_protected_reserve": true,
+    "main_and_Participants_preserved": true,
+    "rejected_programs_have_exact_measured_violation": true
+  },
+  "rejection_evidence": [
+    {
+      "label": "trial-00",
+      "first_failure": null,
+      "max_clip": 0.1,
+      "max_clip_history": [
+        30,
+        300
+      ],
+      "max_force": 1.0589853162392602,
+      "min_prefix_order_slack": 0.00018425487832696152,
+      "new_clips_vs_seed": 1,
+      "freed_clips_vs_seed": 0
+    },
+    {
+      "label": "trial-01",
+      "first_failure": {
+        "index": 52,
+        "raw": 1,
+        "reasons": [
+          "PATH"
+        ],
+        "tracking_history": [
+          29,
+          436
+        ],
+        "force_ratio": 0.653253155996685
+      },
+      "max_clip": 0.09666666666666666,
+      "max_clip_history": [
+        29,
+        300
+      ],
+      "max_force": 1.0589295264170975,
+      "min_prefix_order_slack": 0.00016025100447980556,
+      "new_clips_vs_seed": 1,
+      "freed_clips_vs_seed": 2
+    },
+    {
+      "label": "trial-02",
+      "first_failure": null,
+      "max_clip": 0.1,
+      "max_clip_history": [
+        30,
+        300
+      ],
+      "max_force": 1.058989978340987,
+      "min_prefix_order_slack": 0.0001948025266190756,
+      "new_clips_vs_seed": 1,
+      "freed_clips_vs_seed": 1
+    }
+  ],
+  "trial_summary": [
+    {
+      "label": "trial-00",
+      "kind": "interior_restore",
+      "local_program_safe": true,
+      "feedback_safe": true,
+      "accepted": true,
+      "terminal_gain_ms": 7.308294868674015,
+      "interior_violation": 0.009007188639274504,
+      "physical_violation": 0.0
+    },
+    {
+      "label": "trial-01",
+      "kind": "interior_time",
+      "local_program_safe": false,
+      "feedback_safe": false,
+      "accepted": false,
+      "terminal_gain_ms": null,
+      "interior_violation": 0.041081779407035834,
+      "physical_violation": 0.04069718996883687
+    },
+    {
+      "label": "trial-02",
+      "kind": "interior_restore",
+      "local_program_safe": true,
+      "feedback_safe": true,
+      "accepted": true,
+      "terminal_gain_ms": 4.027047505350101,
+      "interior_violation": 0.0005458822770481979,
+      "physical_violation": 0.0
+    }
+  ],
+  "not_exercised": [],
+  "scope_counts": {
+    "linearizations": 3,
+    "FD": 120,
+    "restorations": 2,
+    "candidates": 3,
+    "finite_feedback": 2,
+    "accepted": 2
+  },
+  "model_ticks": 0,
+  "force_calls": 0,
+  "geometry_calls": 0,
+  "CPU_s": 0.282551336,
+  "wall_s": 0.2863967599987518
+}

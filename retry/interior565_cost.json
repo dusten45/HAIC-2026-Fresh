@@ -1,0 +1,73 @@
+{
+  "phases": {
+    "preparation": {
+      "force_evaluations": 544,
+      "forecast_calls": 0,
+      "forecast_ticks": 0,
+      "geometry_checks": 136,
+      "body_checks": 136,
+      "max_all_model_body": 83.54803078778195,
+      "CPU_s": 1.4351021039999998,
+      "wall_s": 1.456453249003971,
+      "model_ticks": 136,
+      "internal_wheel_force_evaluations": 544
+    },
+    "local": {
+      "force_evaluations": 90000,
+      "forecast_calls": 0,
+      "forecast_ticks": 0,
+      "geometry_checks": 22500,
+      "body_checks": 22500,
+      "max_all_model_body": 95.28752355100488,
+      "CPU_s": 275.30930122,
+      "wall_s": 275.41103040891176,
+      "model_ticks": 22500,
+      "internal_wheel_force_evaluations": 90000
+    },
+    "finite": {
+      "force_evaluations": 32504,
+      "forecast_calls": 394,
+      "forecast_ticks": 7930,
+      "geometry_checks": 8420,
+      "body_checks": 8026,
+      "max_all_model_body": 95.26805206423181,
+      "CPU_s": 96.48221994500003,
+      "wall_s": 96.50632423599018,
+      "model_ticks": 8026,
+      "internal_wheel_force_evaluations": 32104
+    },
+    "full": {
+      "force_evaluations": 173292,
+      "forecast_calls": 2188,
+      "forecast_ticks": 41969,
+      "geometry_checks": 44551,
+      "body_checks": 42363,
+      "max_all_model_body": 97.00210731485966,
+      "CPU_s": 511.580967715,
+      "wall_s": 511.6660129649972,
+      "model_ticks": 42363,
+      "internal_wheel_force_evaluations": 169452
+    },
+    "verification": {
+      "force_evaluations": 2648,
+      "forecast_calls": 0,
+      "forecast_ticks": 0,
+      "geometry_checks": 662,
+      "body_checks": 662,
+      "max_all_model_body": 96.92791035913311,
+      "CPU_s": 10.247174712999936,
+      "wall_s": 10.339072290997137,
+      "model_ticks": 662,
+      "internal_wheel_force_evaluations": 2648
+    }
+  },
+  "total": {
+    "model_ticks": 73687,
+    "force_evaluations": 298988,
+    "internal_wheel_force_evaluations": 294748,
+    "geometry_checks": 76269,
+    "body_checks": 73687,
+    "CPU_s": 895.6796963979999,
+    "wall_s": 896.1305923949985
+  }
+}
