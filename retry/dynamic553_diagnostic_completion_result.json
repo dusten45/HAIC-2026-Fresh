@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checks": {
+    "prefix28not_replayed": true,
+    "all19_original_queries_reproduce": true,
+    "no_policy_retry": true,
+    "same_root_speed": true,
+    "global_caps": true
+  },
+  "recovered_future_speed_m_s": 50.111998358080704,
+  "goal_speed_m_s": 50.03133355493426,
+  "goal_error_m_s": 0.08066480314644764,
+  "recovered_future_yaw_rad_s": 2.079554533906055,
+  "recovered_goal_hold_number": 8,
+  "pure_lateral_ratio_lower_bounds_before_hold": [
+    0.445651713955243,
+    0.6196720143934787,
+    0.3944718273679122,
+    0.4334655271094179
+  ],
+  "first_raw_all_pedals_impossible_proved": false,
+  "failure_raw_counts": {
+    "1": 7,
+    "2": 12,
+    "3": 0,
+    "4": 0
+  },
+  "failures_with_lateral_alone_over_limit": 12,
+  "source_failed_queries": 19,
+  "not_a_continuous_control_impossibility_proof": true,
+  "model_ticks": 40,
+  "new_completion_model_ticks": 12,
+  "cost": {
+    "force_evaluations": 268,
+    "geometry_checks": 40
+  },
+  "CPU_s": 0.45039574,
+  "wall_s": 0.450673662002373,
+  "new_native_actions": 0,
+  "new_resets": 0
+}

@@ -1,0 +1,31 @@
+{
+  "registered_utc": "2026-10-18T19:44:28.497537+00:00",
+  "scope": "First diagnostic had incorrect algebra assertion all19 failfirstraw; prefix reconstruction succeeded28ticks with allstored endvel matches. Reuse exactsaved recoveredstate, replay ONLY original19failed4tickqueries to identify failuretick/components. No prefix replay, no newcontrols or planner/candidate retry.",
+  "same_total_caps": {
+    "model_ticks": 100,
+    "force_evaluations": 1000,
+    "geometry_checks": 100,
+    "CPU_s": 10,
+    "wall_s": 15
+  },
+  "precharge": {
+    "passed": false,
+    "error": "AssertionError:",
+    "model_ticks": 28,
+    "cost": {
+      "force_evaluations": 144,
+      "geometry_checks": 28
+    },
+    "CPU_s": 0.287494758,
+    "wall_s": 0.28772251099871937,
+    "new_native_actions": 0,
+    "new_resets": 0
+  },
+  "source_sha256": "0fd42f81662c10b9a5e427f382d927d0c29f962124a7b4417bb7f5e4bd9a783a",
+  "input_sha256": {
+    "/workspace/HAIC-2026-Fresh/retry/dynamic553_diagnostic_contract.json": "a8cb83b427c87b5dfe68e58bed286783db1e6c0dc146e7aec5cf8c58f02d72d5",
+    "/workspace/HAIC-2026-Fresh/retry/dynamic553_diagnostic_result.json": "597e51a9600bc59ff83549e544f7b4058ef9f93ac3cc1786d0acab14ce920b54",
+    "/workspace/haic-response553-private/diagnostic-error-private.json": "399f8561d97e9f0e237d40d150d10cfee7befed57cef020bfa561ec0f410d3bb",
+    "/workspace/haic-response553-private/fixed-segment-candidate-private.json": "8cd6319e3c070606b7212383ac7135f75c3e973780e055ee9726ddc4edb3d52d"
+  }
+}

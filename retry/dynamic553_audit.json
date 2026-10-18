@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "checks": {
+    "source_pins": true,
+    "input_pins": true,
+    "phase_contract_pin": true,
+    "trigger_exact": true,
+    "pilot_failure_preserved": true,
+    "no_execution": true,
+    "first_failure_before26": true,
+    "no_gate_performance_claim": true,
+    "initial_backup_failure": true,
+    "no_full_accel_proposal_tested": true,
+    "diagnostic_original_error_preserved": true,
+    "diagnostic_completion_passed": true,
+    "diagnostic_precharge": true,
+    "diagnostic_input_pins": true,
+    "reconstructed7savedends": true,
+    "reconstruction_not_new_policy": true,
+    "old19_queries_reproduced": true,
+    "no_continuous_infeasibility_claim": true,
+    "all_primary_model_body_checked": true,
+    "diagnostic_within_original_total_cap": true,
+    "diagnostic_own_cap": true,
+    "no_deeper_execution": true,
+    "actual0": true,
+    "main_preserved": true,
+    "prior551_gate_preserved": true
+  },
+  "initial_backup_only": true,
+  "late_brake_performance_unobserved": true,
+  "first3_goal_planned_end_speed": 50.033245046147485,
+  "goal_speed": 50.03133355493426,
+  "coasting_failure": {
+    "u": 0.0,
+    "reason": "FORCE",
+    "raw": 2,
+    "peak_force_ratio": 1.164637878354559,
+    "pure_lateral_ratio_max": 1.1643962246006574,
+    "limiting_wheel": 1,
+    "speed": 50.0869438880415
+  },
+  "coasting_new_joint_rates": [
+    2.5141850113868713,
+    2.5141850113868713
+  ],
+  "coasting_new_joint_angles": [
+    0.1953197419643402,
+    0.1953197419643402
+  ],
+  "coasting_exact_goal_speed_same_yaw_offset_lateral_lower_bound": 1.1624518652585063,
+  "scaled_state_is_algebraic_sensitivity_not_reachable_candidate": true,
+  "reconstructed_velocity_match_max_error": 0.0,
+  "combined_new_model_cost": {
+    "model_ticks": 568,
+    "force": 2732,
+    "geometry": 569,
+    "CPU_s": 4.47420401,
+    "wall_s": 4.474856444001489
+  },
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_native_actions": 0,
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "CPU_s": 0.04094715499999999,
+  "wall_s": 0.04241046099923551
+}

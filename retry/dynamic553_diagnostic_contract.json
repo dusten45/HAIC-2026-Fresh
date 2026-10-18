@@ -1,0 +1,20 @@
+{
+  "registered_utc": "2026-10-18T19:43:03.424416+00:00",
+  "reason": "553 failed backup summary retained controls/end speeds but omitted intermediate fullstates. Reconstruct exactlythe7chosenholds once to freeze force-deadend state and explain failure. No policy change, no pilotretry, no additionalcandidate/window/goal.",
+  "caps": {
+    "model_ticks": 100,
+    "force_evaluations": 1000,
+    "geometry_checks": 100,
+    "CPU_s": 10,
+    "wall_s": 15
+  },
+  "source_sha256": "77c51ae4da9e5dfb5aa11de8315e8c4f45a08011d6743d853ed6e6d73e219f87",
+  "input_sha256": {
+    "/workspace/haic-response553-private/entry-private.json": "f29eb8d7b1daaba3ab0e244ff9072f09db2b85bd53af3852db0037f61a43ef64",
+    "/workspace/haic-response553-private/fixed-segment-candidate-private.json": "8cd6319e3c070606b7212383ac7135f75c3e973780e055ee9726ddc4edb3d52d",
+    "/workspace/haic-response553-private/frozen-paths-private.json": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f"
+  },
+  "original553_failure_preserved": true,
+  "new_actual_cap": 0
+}
