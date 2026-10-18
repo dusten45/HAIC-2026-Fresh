@@ -1,0 +1,85 @@
+{
+  "status": "JOINT541_ACTUAL_PROMOTED_EXISTING_DEV_ONLY",
+  "finalized_utc": "2026-10-18T16:09:30.235286+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "actual_baseline_s": 14.219999999999764,
+  "actual_candidate_s": 13.659999999999776,
+  "actual_gain_ms": 560,
+  "arms": {
+    "baseline": {
+      "official_finish_s": 14.219999999999764,
+      "actions": 178,
+      "action_raw_ticks": 711,
+      "max_body_speed_m_s": 86.80603053522034,
+      "max_cumulative_running_clipping": 0.09210526315789473,
+      "final_running_clipped": 68,
+      "final_running_samples": 2460,
+      "launch": {
+        "peak": 2.255467414712997,
+        "samples": 384,
+        "clipped": 46
+      },
+      "min_margin_m": 0.5454535643036398,
+      "max_path_error_m": 1.5269842269972507,
+      "max_reference_overspeed_m_s": 4.849652386033412
+    },
+    "candidate": {
+      "official_finish_s": 13.659999999999776,
+      "actions": 171,
+      "action_raw_ticks": 683,
+      "max_body_speed_m_s": 95.75630529539026,
+      "max_cumulative_running_clipping": 0.1,
+      "final_running_clipped": 65,
+      "final_running_samples": 2348,
+      "launch": {
+        "peak": 2.403901738164386,
+        "samples": 384,
+        "clipped": 55
+      },
+      "min_margin_m": 0.5271545833699623,
+      "max_path_error_m": 1.5093407620851094,
+      "max_reference_overspeed_m_s": 4.848802621239244
+    }
+  },
+  "model_phase_passes": {
+    "pilot": true,
+    "cold": true,
+    "carry": true
+  },
+  "cold_model_s": 13.659999999999798,
+  "carry_model_s": 14.459999999999859,
+  "carry_gain_vs538_ms": 240,
+  "prior539_carry_was_observed": false,
+  "component_effects_not_assumed_additive": true,
+  "counts": {
+    "worlds": 2,
+    "closed": 2,
+    "resets": 2,
+    "actions": 349,
+    "raw_attempts": 1496,
+    "raw_completed": 1496
+  },
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "all_model_integrator_ticks": 281465,
+  "all_integrator_internal_wheel_evaluations": 1125860,
+  "all_explicit_force_evaluations": 1153964,
+  "all_geometry_checks": 292414,
+  "core_CPU_through_native_exit_s": 4023.3563800869997,
+  "core_wall_through_native_exit_s": 4023.6497875569985,
+  "import_failure_before_world_reset_action": true,
+  "actual_scientific_retries": 0,
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "new_model_ticks_in_finalization": 0,
+  "new_actual_actions_in_finalization": 0,
+  "supporting_sha256": {
+    "retry/joint541_contract.json": "4a3d1908529f0a16d08cae019078b672beaeac756e2be660023b6738709a9bbd",
+    "retry/joint541_gate_result.json": "2102a84e0c8c547eb935d6a3e4ed779d0e3548b2aa28785cc677a8d3e10aa46a",
+    "retry/joint541_native_result.json": "f188ed2941c93ace5637569e2904386726c73827d289c6716539e49376d17327",
+    "retry/joint541_audit.json": "5da2b26a6440b4046fbb10e62269100dba785a8d554a96991a2bf40bc3567764"
+  },
+  "finalization_CPU_s": 0.10741777300000001,
+  "finalization_wall_s": 0.10742173199832905
+}

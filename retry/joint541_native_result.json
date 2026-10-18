@@ -1,0 +1,146 @@
+{
+  "status": "ACTUAL_OFFICIAL_FINISH_PAIR_PASS",
+  "arms": [
+    {
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "SOURCE_FULL": 44,
+        "SOURCE_RESPONSE": 99,
+        "BACKUP": 10,
+        "NOMINAL": 1
+      },
+      "high_fraction": 0.0,
+      "budget": "baseline",
+      "stop": "OFFICIAL_FINISH",
+      "initial_identity": true,
+      "actions": 178,
+      "reset_ticks": 51,
+      "official_finish": true,
+      "official_finish_episode_s": 14.219999999999764,
+      "confirmation_episode_s": 14.219999999999764,
+      "reference_arc_event": {
+        "lower": 14.199999999999765,
+        "upper": 14.219999999999764,
+        "time": 14.207180591347448
+      },
+      "unwrapped_progress": 979.6597196111485,
+      "reference_path_length": 978.6098315287799,
+      "visited_tiles": 283,
+      "tile_count": 283,
+      "min_margin_m": 0.5454535643036398,
+      "max_path_error_m": 1.5269842269972507,
+      "max_tracking_overspeed_m_s": 4.849652386033412,
+      "max_unused_startup_reference_difference_m_s": 2.191204343467215,
+      "force_groups": {
+        "launch": {
+          "peak": 2.255467414712997,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.058926317528542,
+          "samples": 2460,
+          "clipped": 68
+        }
+      },
+      "source_force_oracle_max_N": 0.0002946874010181479,
+      "source_COM_impulse_max_m_s": 2.120481825537382e-05,
+      "max_prediction_errors": {
+        "position_m": 3.970680833853824e-05,
+        "speed_m_s": 0.00010332450921168856,
+        "angle_rad": 2.8460018700271483e-05,
+        "yaw_rad_s": 0.00024217758031408465,
+        "max_force_ratio_error": 0.00019683367333056534
+      }
+    },
+    {
+      "mode_counts": {
+        "SOURCE_LAUNCH": 24,
+        "SOURCE_RESPONSE": 72,
+        "BACKUP": 10,
+        "SOURCE_FULL": 64,
+        "NOMINAL": 1
+      },
+      "high_fraction": 0.0,
+      "budget": "candidate",
+      "stop": "OFFICIAL_FINISH",
+      "initial_identity": true,
+      "actions": 171,
+      "reset_ticks": 51,
+      "official_finish": true,
+      "official_finish_episode_s": 13.659999999999776,
+      "confirmation_episode_s": 13.659999999999776,
+      "reference_arc_event": {
+        "lower": 13.639999999999777,
+        "upper": 13.659999999999776,
+        "time": 13.648734120507738
+      },
+      "unwrapped_progress": 979.5287837088547,
+      "reference_path_length": 978.6098315287799,
+      "visited_tiles": 283,
+      "tile_count": 283,
+      "min_margin_m": 0.5271545833699623,
+      "max_path_error_m": 1.5093407620851094,
+      "max_tracking_overspeed_m_s": 4.848802621239244,
+      "max_unused_startup_reference_difference_m_s": 5.165318907111271,
+      "force_groups": {
+        "launch": {
+          "peak": 2.403901738164386,
+          "samples": 384,
+          "clipped": 55
+        },
+        "running": {
+          "peak": 1.0588991224139637,
+          "samples": 2348,
+          "clipped": 65
+        }
+      },
+      "source_force_oracle_max_N": 0.00031449383200822767,
+      "source_COM_impulse_max_m_s": 2.4549949150689192e-05,
+      "max_prediction_errors": {
+        "position_m": 4.022107951640826e-05,
+        "speed_m_s": 0.00011010291106572367,
+        "angle_rad": 2.848674186778366e-05,
+        "yaw_rad_s": 0.00024356089978994078,
+        "max_force_ratio_error": 0.0001790663416635363
+      }
+    }
+  ],
+  "both_actual_official_finishes": true,
+  "official_finish_gain_s": 0.5599999999999881,
+  "official_finish_gain_ms": 560,
+  "practical_effect_gate": true,
+  "counts": {
+    "worlds": 2,
+    "closed": 2,
+    "resets": 2,
+    "actions": 349,
+    "raw_attempts": 1496,
+    "raw_completed": 1496
+  },
+  "native_model_integrator_ticks": 133145,
+  "all_model_integrator_ticks": 281465,
+  "native_explicit_force_evaluations": 549036,
+  "all_model_wheel_force_evaluations": 1153964,
+  "native_planner_cost": {
+    "force_evaluations": 537876,
+    "forecast_calls": 6734,
+    "forecast_ticks": 131749,
+    "geometry_checks": 138483,
+    "analytic_wheel_bounds": 96,
+    "launch_full_calls": 139,
+    "launch_filter_calls": 443
+  },
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "native_CPU_s": 2567.508921777,
+  "native_wall_s": 2567.6358261440037,
+  "preflight_model_ticks": 148320,
+  "preflight_explicit_force_evaluations": 604928,
+  "native_geometry_checks": 138483,
+  "all_geometry_checks": 292414,
+  "total_CPU_s": 4023.3497575280003,
+  "total_wall_s": 4023.6440706120047,
+  "scope": "541 singlejoint540source-launch/539cap90 versusfresh538fixed.32/cap80;tracking/geometry/steering/safetyunchanged. Newprefixesnotassumedequal. OneexistingDEVnotpixel/generalization/11sclaim."
+}

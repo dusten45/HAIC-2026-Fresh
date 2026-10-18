@@ -28,6 +28,10 @@ def run():
   for p in D.glob('action-candidate-*.json'):
    q=read(p);assert not q['record']['flags'];certificate(q['governor_detail'])
   assert len(read(D/'launch-prefix-baseline-private.json'))==len(read(D/'launch-prefix-candidate-private.json'))==24
+  reg=read(D/'native-recovery-registration-private.json');assert sha(G/'retry/joint541_native_recovery.py')==reg['native_source_sha256'];assert sha(G/'retry/joint541_gate_result.json')==reg['gate_result_sha256'];assert all(sha(G/f'retry/joint541_{phase}_result.json')==h for phase,h in reg['phase_sha256'].items())
+  rawfiles=list(D.glob('raw-*.json'));assert len(rawfiles)==native['counts']['raw_completed']==native['counts']['raw_attempts'];assert all(not read(p)['errors'] and read(p)['body_speed_max']<100 for p in rawfiles)
+  assert not list(D.glob('error-*.json'))
+
  else:assert not charges and not (D/'NATIVE_STARTED.json').exists()
  ticks=sum(r['model_integrator_ticks'] for r in phases.values())+(native['native_model_integrator_ticks'] if native else 0);forces=sum(r['explicit_force_evaluations'] for r in phases.values())+(native['native_explicit_force_evaluations'] if native else 0);assert ticks<=545000 and forces<=2650000
  out=dict(status='SAVED_RECORD_AUDIT_PASS',phase_results={k:r['passed'] for k,r in phases.items()},source_private_pins=True,unchanged539cap90_and537tracking=True,fresh_certificates=certs,model_integrator_ticks=ticks,explicit_force_evaluations=forces,native_actions=len(charges),research_remaining=23107-len(charges),reserve=84000,reserve_used=0,new_model_ticks=0,new_native_actions=0,CPU_s=time.process_time()-cpu,wall_s=time.perf_counter()-wall)
