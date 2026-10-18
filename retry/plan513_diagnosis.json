@@ -1,0 +1,20 @@
+{
+  "physical_goal_m_s": 30.0,
+  "planning_target_m_s": 29.85,
+  "current_distance_to_gate_m": 1.7080084108139744,
+  "maximum_brake_forecast_crossing_speed_m_s": 29.850005473839804,
+  "maximum_brake_forecast_crossing_excess_over_planning_target_m_s": 5.473839802760949e-06,
+  "maximum_brake_forecast_target_distance_lateness_m": null,
+  "preceding_command_forecast_next_state_crossing_speed_m_s": 29.849993868601594,
+  "preceding_command_forecast_next_target_lateness_m": null,
+  "next_state_position_error_m": 3.599266837109047e-06,
+  "next_state_station_error_m": 3.4777316528789015e-06,
+  "next_state_speed_error_m_s": 1.8815597897514635e-06,
+  "model_ticks": 10,
+  "CPU_s": 0.007116762999999998,
+  "wall_s": 0.007120316000509774,
+  "native_worlds": 0,
+  "native_resets": 0,
+  "native_actions": 0,
+  "interpretation": "Strict planning target feasibility lost near saturated brake boundary under tiny native/model discrepancy. No proof physical30+/-0.5 goal is unreachable; no action dispatched or threshold changed."
+}

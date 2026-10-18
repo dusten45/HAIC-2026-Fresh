@@ -1,0 +1,95 @@
+{
+  "status": "MODEL_PREFLIGHT_PASS",
+  "calibration": [
+    {
+      "root": "reset_reconstructed",
+      "actions": 24,
+      "ticks": 96,
+      "max_position_error_m": 9.991524598228488e-05,
+      "max_speed_error_m_s": 0.00023656907871583144,
+      "max_angle_error_rad": null,
+      "max_yaw_error_rad_s": null,
+      "max_margin_error_m": 6.943560579397712e-05,
+      "friction_mismatches": 0,
+      "pass_gate": true
+    },
+    {
+      "root": "trigger_copied",
+      "actions": 4,
+      "ticks": 16,
+      "max_position_error_m": 3.0310864928346006e-05,
+      "max_speed_error_m_s": 0.00012143383786877848,
+      "max_angle_error_rad": 1.2478913489211152e-06,
+      "max_yaw_error_rad_s": 5.923093860715767e-06,
+      "max_margin_error_m": 2.083341078584766e-05,
+      "friction_mismatches": 0,
+      "pass_gate": true
+    }
+  ],
+  "calibration_pass": true,
+  "safety": [
+    {
+      "start": "reset_reconstructed",
+      "arm": "scalar",
+      "stop": "MODEL_GATE",
+      "model_raw_ticks": 144,
+      "min_margin_m": 5.091972708258195,
+      "max_lateral_m": 0.17705996461130669,
+      "crossing": {
+        "elapsed_s": 2.880000000000002,
+        "speed_m_s": 28.746186964344787
+      },
+      "steering_safe_to_gate": true
+    },
+    {
+      "start": "reset_reconstructed",
+      "arm": "response",
+      "stop": "MODEL_GATE",
+      "model_raw_ticks": 143,
+      "min_margin_m": 5.091972708258195,
+      "max_lateral_m": 0.17705996461130669,
+      "crossing": {
+        "elapsed_s": 2.860000000000002,
+        "speed_m_s": 29.346198169992498
+      },
+      "steering_safe_to_gate": true
+    },
+    {
+      "start": "trigger_copied",
+      "arm": "scalar",
+      "stop": "MODEL_GATE",
+      "model_raw_ticks": 48,
+      "min_margin_m": 4.858307171219148,
+      "max_lateral_m": 0.42295145628860986,
+      "crossing": {
+        "elapsed_s": 0.9600000000000005,
+        "speed_m_s": 28.764218967768734
+      },
+      "steering_safe_to_gate": true
+    },
+    {
+      "start": "trigger_copied",
+      "arm": "response",
+      "stop": "MODEL_GATE",
+      "model_raw_ticks": 47,
+      "min_margin_m": 4.858307171219148,
+      "max_lateral_m": 0.42295145628860986,
+      "crossing": {
+        "elapsed_s": 0.9400000000000005,
+        "speed_m_s": 29.364468123305357
+      },
+      "steering_safe_to_gate": true
+    }
+  ],
+  "safety_pass": true,
+  "hypothetical_model_ticks": 5244,
+  "CPU_s_including_test_child": 4.917342445000001,
+  "wall_s": 4.918483313000252,
+  "native_worlds": 0,
+  "native_resets": 0,
+  "native_actions": 0,
+  "research_remaining": 25875,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "limits": "Rigid planar/joint approximation, no solver warm-start/broadphase history. Reset layout reconstructed; trigger copied. No universal safety claim. Four own predicted arm/start trajectories only; no protected data or future actual contact input to candidates."
+}
