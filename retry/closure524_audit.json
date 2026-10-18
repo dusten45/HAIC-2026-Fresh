@@ -1,0 +1,20 @@
+{
+  "source_and_input_pins_verified": true,
+  "per_wheel_error_records": 16,
+  "per_tick_commanded_vs_observed_joint_rate_records": 16,
+  "front_motor_relative_rate_max_absolute_tracking_error_rad_s": 7.450580596923828e-07,
+  "rear_relative_joint_rate_max_abs_rad_s": 0.0003025531768798828,
+  "motor_torque_limit_source_N_m": 64.8,
+  "motor_saturation_established": false,
+  "interpretation": "Very small actual commanded-vs-observed relative-rate errors in thishold do not support motor saturation as dominant explanation. Impulses/motor torque not saved, so saturation is not directly measured. Offset-lever timing explains the dominant local force-input discrepancy; finite-solver approximations remain elsewhere.",
+  "model_integrator_ticks": 0,
+  "explicit_force_evaluations": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "original523_source_and_results_preserved": true,
+  "validation_pass": true,
+  "uncertainty_margin_unchanged": 0.19,
+  "physical_limit_unchanged": 1.25,
+  "CPU_s": 0.0028439009999999994,
+  "wall_s": 0.002843880000000354
+}

@@ -1,0 +1,192 @@
+{
+  "status": "SAVED_MODEL_CORRECTION_PASS",
+  "failure_force_gate": true,
+  "separate_holds_force_gate": true,
+  "kinematic_gate": true,
+  "arms": [
+    {
+      "label": "failure",
+      "action_index": 41,
+      "arm": "original",
+      "force_ratio": {
+        "RMSE": 0.05536785628541675,
+        "max_abs": 0.11234752690397576
+      },
+      "postclip_vector_error_N": {
+        "RMSE": 24.712462071751116,
+        "max_abs": 39.26381152451415
+      },
+      "kinematic_errors": {
+        "position_m": 0.00695396962523398,
+        "speed_m_s": 0.02690262870353166,
+        "angle_rad": 0.001446550006505093,
+        "yaw_rad_s": 0.027403892247082062
+      },
+      "max_predicted_ratio": 1.178769383780067,
+      "reused_model_ticks_not_new": 4
+    },
+    {
+      "label": "failure",
+      "action_index": 41,
+      "arm": "corrected",
+      "force_ratio": {
+        "RMSE": 0.00010593596995644274,
+        "max_abs": 0.00022269618270143177
+      },
+      "postclip_vector_error_N": {
+        "RMSE": 0.047803660936368016,
+        "max_abs": 0.0923985781641601
+      },
+      "kinematic_errors": {
+        "position_m": 4.929509558446123e-05,
+        "speed_m_s": 3.707908452099673e-05,
+        "angle_rad": 3.718323996154682e-05,
+        "yaw_rad_s": 0.00025643193463853464
+      },
+      "max_force_input_errors": {
+        "wheel_heading_rad": 2.514642293932612e-05,
+        "wheel_offset_velocity_m_s": 0.0007232051500564946,
+        "wheel_world_velocity_m_s": 0.000930527478137674,
+        "omega_rad_s": 0.00020285710810696855,
+        "joint_angle_rad": 6.064772605895996e-06,
+        "joint_rate_rad_s": 0.0003039836883544922
+      },
+      "max_predicted_ratio": 1.2636764070600615,
+      "reused_model_ticks_not_new": 0
+    },
+    {
+      "label": "normal",
+      "action_index": 111,
+      "arm": "original",
+      "force_ratio": {
+        "RMSE": 9.311224951547973e-07,
+        "max_abs": 1.843506474419332e-06
+      },
+      "postclip_vector_error_N": {
+        "RMSE": 0.00042888321910799295,
+        "max_abs": 0.0007636450420648773
+      },
+      "kinematic_errors": {
+        "position_m": 4.384427566568614e-06,
+        "speed_m_s": 5.712037072669318e-06,
+        "angle_rad": 4.337286019229225e-08,
+        "yaw_rad_s": 2.1315236971557877e-06
+      },
+      "max_force_input_errors": {
+        "wheel_heading_rad": 8.039293253325752e-08,
+        "wheel_offset_velocity_m_s": 6.610926555876874e-06,
+        "wheel_world_velocity_m_s": 8.95814892264278e-06,
+        "omega_rad_s": 7.589008035324696e-06,
+        "joint_angle_rad": 3.702007234096527e-08,
+        "joint_rate_rad_s": 1.8579885363578796e-06
+      },
+      "max_predicted_ratio": 0.19797309270401522,
+      "reused_model_ticks_not_new": 0
+    },
+    {
+      "label": "normal",
+      "action_index": 111,
+      "arm": "corrected",
+      "force_ratio": {
+        "RMSE": 8.237663105251552e-07,
+        "max_abs": 1.600522098910151e-06
+      },
+      "postclip_vector_error_N": {
+        "RMSE": 0.0003713265885936342,
+        "max_abs": 0.0006547133908926477
+      },
+      "kinematic_errors": {
+        "position_m": 4.383764880560792e-06,
+        "speed_m_s": 5.828540480479205e-06,
+        "angle_rad": 4.3366098045893864e-08,
+        "yaw_rad_s": 2.1315236183715863e-06
+      },
+      "max_force_input_errors": {
+        "wheel_heading_rad": 8.038617038685913e-08,
+        "wheel_offset_velocity_m_s": 4.859579090166786e-06,
+        "wheel_world_velocity_m_s": 8.188427291002528e-06,
+        "omega_rad_s": 5.9737284203720264e-06,
+        "joint_angle_rad": 3.702007234096527e-08,
+        "joint_rate_rad_s": 1.8579885363578796e-06
+      },
+      "max_predicted_ratio": 0.19797309270401522,
+      "reused_model_ticks_not_new": 0
+    },
+    {
+      "label": "turn",
+      "action_index": 225,
+      "arm": "original",
+      "force_ratio": {
+        "RMSE": 0.03699671004441808,
+        "max_abs": 0.06907643790982432
+      },
+      "postclip_vector_error_N": {
+        "RMSE": 22.03493450416988,
+        "max_abs": 32.22443376034545
+      },
+      "kinematic_errors": {
+        "position_m": 0.001226262256930378,
+        "speed_m_s": 0.010461027344099705,
+        "angle_rad": 0.0005309666234190047,
+        "yaw_rad_s": 0.01131455646071533
+      },
+      "max_force_input_errors": {
+        "wheel_heading_rad": 0.00031216541386758223,
+        "wheel_offset_velocity_m_s": 0.39298376079555913,
+        "wheel_world_velocity_m_s": 0.392982106429594,
+        "omega_rad_s": 0.33055029860963003,
+        "joint_angle_rad": 3.904104232788086e-06,
+        "joint_rate_rad_s": 0.0001952648162841797
+      },
+      "max_predicted_ratio": 0.8013713785609053,
+      "reused_model_ticks_not_new": 0
+    },
+    {
+      "label": "turn",
+      "action_index": 225,
+      "arm": "corrected",
+      "force_ratio": {
+        "RMSE": 6.036560129317183e-05,
+        "max_abs": 0.0001549176735957114
+      },
+      "postclip_vector_error_N": {
+        "RMSE": 0.030594663949503265,
+        "max_abs": 0.06484950237097523
+      },
+      "kinematic_errors": {
+        "position_m": 1.5419322159364235e-05,
+        "speed_m_s": 9.315937134601882e-06,
+        "angle_rad": 2.510602774830062e-05,
+        "yaw_rad_s": 0.00022281429431281197
+      },
+      "max_force_input_errors": {
+        "wheel_heading_rad": 1.775652587188148e-05,
+        "wheel_offset_velocity_m_s": 0.000572663505705915,
+        "wheel_world_velocity_m_s": 0.0005599337452873407,
+        "omega_rad_s": 0.00019082268570969063,
+        "joint_angle_rad": 3.904104232788086e-06,
+        "joint_rate_rad_s": 0.0001952648162841797
+      },
+      "max_predicted_ratio": 0.8013713785609053,
+      "reused_model_ticks_not_new": 0
+    }
+  ],
+  "separate_holds_aggregate_force_ratio_RMSE": {
+    "original": 0.026160624562285732,
+    "corrected": 4.268890025768141e-05
+  },
+  "new_model_integrator_ticks": 20,
+  "reused_diagnostic_ticks_not_new": 4,
+  "source_wheel_force_evaluations_in_integrator": 80,
+  "additional_explicit_force_evaluations": 80,
+  "uncertainty_margin_unchanged": 0.19,
+  "physical_force_limit_unchanged": 1.25,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 24641,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "CPU_s": 0.128514546,
+  "wall_s": 0.07096429900047951,
+  "scope": "ThreeexistingDEVholds,saved-onlymodelaccuracyvalidation. Failurecaseisexpectedtoaccuratelypredictunsafephysicalratio>1.25,nottohideit. Finitejoint/motor/solverapproximationsremain; no globalerrorbound/nativeeligibility/full-lapgainclaim. Actualfuturelabelsneverpolicyinput."
+}
