@@ -1,0 +1,43 @@
+{
+  "native_charge_receipts": 64,
+  "native_raw_receipts": 358,
+  "native_raw_error_rows": 0,
+  "paired_action_observation_speed_progress_margin_rows_exact": 32,
+  "physical_forecast_native_evidence_rows": 0,
+  "synthetic_steady_request_assumption_residual": {
+    "0.0/reference": {
+      "max_actual_minus_interpreted_target_abs_m_s": 0.10486163120407355,
+      "max_actual_minus_command_physics_prediction_abs_m_s": 0.002138165267076886,
+      "effective_friction_mismatches": 0,
+      "min_margin_m": 2.8353576875306756
+    },
+    "0.0/adapter": {
+      "max_actual_minus_interpreted_target_abs_m_s": 0.002148334978045341,
+      "max_actual_minus_command_physics_prediction_abs_m_s": 0.002148307068686961,
+      "effective_friction_mismatches": 0,
+      "min_margin_m": 2.834970708790766
+    },
+    "0.4/reference": {
+      "max_actual_minus_interpreted_target_abs_m_s": 0.10135028226241616,
+      "max_actual_minus_command_physics_prediction_abs_m_s": 0.0021359199335364565,
+      "effective_friction_mismatches": 0,
+      "min_margin_m": 2.80013322804798
+    },
+    "0.4/adapter": {
+      "max_actual_minus_interpreted_target_abs_m_s": 0.0021423187349753903,
+      "max_actual_minus_command_physics_prediction_abs_m_s": 0.0021422802984005784,
+      "effective_friction_mismatches": 0,
+      "min_margin_m": 2.7997209468118247
+    }
+  },
+  "private_files": 562,
+  "private_bytes": 502511,
+  "initial_fingerprint_coverage": [
+    "old exact road and obstacle hashes",
+    "new paired observation stack hash",
+    "observed_state body/rolling-wheel fields, assembly position, hull angle and clock",
+    "raw environment RNG state"
+  ],
+  "full_solver_or_full_planar_checkpoint_claimed": false,
+  "native_brake_forecast_errors_are_null_not_zero": true
+}

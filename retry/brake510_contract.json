@@ -1,0 +1,60 @@
+{
+  "registered_utc": "2026-10-18T05:10:43.701086+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "case_provenance": {
+    "source_commit": "e0ac6effdf65b723f5467068c53f2133a4874050",
+    "source_paths": [
+      "research/initial_probe.py",
+      "research/README.md",
+      "research/results/initial_probe.json"
+    ],
+    "case_index": 0,
+    "DEV_confirmed": true,
+    "full_case_private": true,
+    "core_source_matches_initial": true
+  },
+  "case_private_sha256": "5a3f5677267d25c6a69b1b9190e73ff1f35558caf123162e7e385efbfd21dcc8",
+  "physical_caps": {
+    "synthetic_worlds": 4,
+    "synthetic_ticks": 48,
+    "synthetic_zero_primes": 4,
+    "native_worlds": 2,
+    "native_actions": 64,
+    "native_resets": 2,
+    "native_reset_ticks": 102,
+    "native_action_ticks": 256,
+    "native_total_ticks": 358,
+    "all_positive_ticks": 406,
+    "all_worlds": 6
+  },
+  "resource_caps": {
+    "CPU_s": 180,
+    "wall_s": 240,
+    "private_bytes": 33554432,
+    "private_files": 1024
+  },
+  "synthetic": "508 same mixed40m-radius corridor, actualdefault grass.6; healthy vs damage.4 sourceeffects(grip.8,engine.9,steering.9); reference andadapter same3 nominal holds: acceleration.25 then two brake.03; no future effect changes. Max4world48ticks.",
+  "synthetic_gates": "All12holds complete. Adapter braking physical prediction and interpreted target error<=.15m/s; effective-friction mismatches0, source actualpose membership oracle0; hull/wheel margin>=.25m; steer/gas unchanged. Separate baseline target-convention residual from actual-command model residual. All pass before native.",
+  "native": "One exact historical DEV case, same reset/base/TimeLimit1224/skip4/warm50 settings. New frozen PixelAgent(adaptive=True) reference for both arms; no past champion claim. Old road+obstacle SHA must match, then full new initialbody/RNG/obs identity pair exact. At most32actions perarm.",
+  "native_stops": "First input/effect/source contact/predicted effective friction mismatch, physical speed error>.15m/s, margin<.25m, collision/damage/termination stops that arm before next dispatch; four-tick command remains fixed inside wrapper. No recursive reset, rescue, seed draw or retry. Technical/initialidentity error stops pair.",
+  "native_charging": "Attempted actual env.step charged and immutable receipt persisted immediately before call; resets/rawticks tracked separately, no model-only debit. Prior26027, full64=>25963, reserve84000used0.",
+  "native_interpretation": "Synthetic/actual full map+wheel state privilege; inspect legal pixel reference single memory update; swap exclusive brake only. If no actual brake change, report prefix uninformative for brake efficacy. Compare common complete-hold prefix, no record/11s/ranking claim.",
+  "source_sha256": {
+    "env_wrapper.py": "8687215412da0a1f34534623d5050030d85c629a70cb922e9d2199c513a3941e",
+    "damage.py": "b74d15bd2de623cea1345e0469625d4b58f1634d073151a35edf1f05ea35fa30",
+    "local_runner.py": "48eedfb0c32a8e1f4dd724e65ac69eb678105ee434ac797ce2c9f442461fd398",
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69",
+    "core/track_variables.py": "cd28fdfc79f12614262f61b1ac13d670d03fad940d753a2ec185390617c0ed58",
+    "retry/pixel_agent.py": "efbd995b5c66e86cbd223bca1feb81867e39233652521e6618ab7aebadc74b51",
+    "retry/brake509_adapter.py": "da9ee42fd055fcb9ed6c0da91d33c47c6eeea9b1ffe4ee592252b408393c62c1",
+    "retry/brake508_corridor.py": "10c2a4e021cce37b81a08ac0eb00e4040b0bb4dabdf5eac6989e18472b061407",
+    "retry/brake506_geometry.py": "4f69de71c0e1ad0d7707c9c9681f4e504367ccbce5c33ae6c0f369e7c6ed4392",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake510_common.py": "28b84e6dbd7aab3ce123c153abdb9acfa1867172f35257ea6b8fea92b5cd1eb0",
+    "retry/test_brake510.py": "22457276f1896206c84b0523adca3e1f256e3835dda444d51a668167351ad691",
+    "retry/test_brake509.py": "349d1a2e6a769eb800ecc9163bda41b03fa5cf9d3273c9880b0007b120255637",
+    "retry/brake510_run.py": "36702a35145c01bf2673beddbe9f9a08470b4b5230bea9330964ec9fc11bed36"
+  },
+  "protected_access": "This step reads only designated initial DEV commit paths and specified current code; prior509 overbroad aggregate incident preserved, no new protected reads."
+}
