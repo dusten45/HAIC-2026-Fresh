@@ -1,0 +1,88 @@
+{
+  "status": "DESIGN_NOT_PROMOTED",
+  "feasibility": {
+    "success": true,
+    "message": "Optimization terminated successfully",
+    "iterations": 11,
+    "initial_slack_m": 0.3061129596121491,
+    "final_slack": 0.0,
+    "max_normalized_violation": 3.091216171924316e-11,
+    "geometry": {
+      "samples": 9339,
+      "min_road_margin_m": 1.2520000000005944,
+      "min_obstacle_margin_m": 1.2519999999690878,
+      "minimum_outer_rectangle_margin_m": 1.2519999999690878,
+      "outside_samples": 0,
+      "intersecting_samples": 0,
+      "max_sample_spacing_m": 0.21875001302229746,
+      "road_filter_radius_m": 12.0,
+      "max_local_edges": 16,
+      "max_local_road_polys": 12
+    },
+    "independent530screen": {
+      "samples": 2475,
+      "spacing_at_most_m": 0.5,
+      "minimum_outer_rectangle_margin_m": 1.2519999999690923,
+      "outside_samples": 0,
+      "pass_geometry": true
+    },
+    "pass_feasibility": true,
+    "CPU_s": 9.348468943,
+    "wall_s": 9.353566319998208
+  },
+  "performance": {
+    "success": false,
+    "message": "Iteration limit reached",
+    "iterations": 120,
+    "smooth_surrogate": 14.746595060443683,
+    "max_normalized_violation": 6.185105760891929e-10,
+    "geometry": {
+      "samples": 9339,
+      "min_road_margin_m": 1.252000299605379,
+      "min_obstacle_margin_m": 1.2519999993814894,
+      "minimum_outer_rectangle_margin_m": 1.2519999993814894,
+      "outside_samples": 0,
+      "intersecting_samples": 0,
+      "max_sample_spacing_m": 0.21875001302229746,
+      "road_filter_radius_m": 12.0,
+      "max_local_edges": 16,
+      "max_local_road_polys": 12
+    },
+    "independent530screen": {
+      "samples": 2473,
+      "spacing_at_most_m": 0.5,
+      "minimum_outer_rectangle_margin_m": 1.2519999993814885,
+      "outside_samples": 0,
+      "pass_geometry": true
+    },
+    "scalar_gain_s": -1.3306381327307975,
+    "pass_performance": false,
+    "CPU_s": 119.90496033400001,
+    "wall_s": 119.94830048400036
+  },
+  "pass_design_gate": false,
+  "initial_scalar_clock_s": 17.25027295686793,
+  "candidate_scalar_clock_s": 18.58091108959873,
+  "scalar_screen_gain_s": -1.3306381327307975,
+  "candidate_length_m": 993.9717530977016,
+  "candidate_max_abs_curvature": 0.12759710956916337,
+  "normalized_final_minimum": -6.185105760891929e-10,
+  "geometry_cost": {
+    "calls": 36197,
+    "segment_samples": 6413484
+  },
+  "optimizer_cost": {
+    "geometry_jacobians": 131,
+    "performance_objective_calls": 33180,
+    "constraint_calls": 431
+  },
+  "CPU_s": 129.40462088,
+  "wall_s": 129.4542363420005,
+  "model_integrator_ticks": 0,
+  "force_evaluations": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "native_worlds": 0,
+  "frozen_paths_sha256": "7211be4dd76a9e057bed413c3792001dd24a52f183d6c7aa155ddb83da67f1bc",
+  "scope": "Onefeasibility-firstprocedure. Feasibilitynotperformance;smoothtime-likeobjectiveisnophysicalbound;finalactualscalarprofileonlyscreen. Same528control/top80/back80/backup100back45."
+}

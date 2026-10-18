@@ -1,0 +1,63 @@
+{
+  "baseline": {
+    "geometry": {
+      "samples": 9339,
+      "min_road_margin_m": 1.433548384362357,
+      "min_obstacle_margin_m": 0.9468870403878509,
+      "minimum_outer_rectangle_margin_m": 0.9468870403878509,
+      "outside_samples": 0,
+      "intersecting_samples": 0,
+      "max_sample_spacing_m": 0.21875001302229746,
+      "road_filter_radius_m": 12.0,
+      "max_local_edges": 16,
+      "max_local_road_polys": 12
+    },
+    "nominal1_25_max_violation_m": 0.3031129596121491,
+    "computational1_252_max_normalized_violation": 0.3051129596121491,
+    "road_violating_segments": 0,
+    "obstacle_violating_segment_pairs": 18,
+    "minimum_segment_length_m": 2.9514536398490807,
+    "max_abs_curvature": 0.10375325192886753,
+    "max_profile_rebuild_error": 1.8189894035458565e-12,
+    "worst_road_segment_obstacle_gap_m": 1.2314511729712356,
+    "worst_obstacle_segment_road_gap_m": 2.518393598362745,
+    "worst_road_and_obstacle_same_segment": false
+  },
+  "candidate": {
+    "geometry": {
+      "samples": 9339,
+      "min_road_margin_m": 1.252000299605379,
+      "min_obstacle_margin_m": 1.2519999993814894,
+      "minimum_outer_rectangle_margin_m": 1.2519999993814894,
+      "outside_samples": 0,
+      "intersecting_samples": 0,
+      "max_sample_spacing_m": 0.21875001302229746,
+      "road_filter_radius_m": 12.0,
+      "max_local_edges": 16,
+      "max_local_road_polys": 12
+    },
+    "nominal1_25_max_violation_m": 0.0,
+    "computational1_252_max_normalized_violation": 6.185105760891929e-10,
+    "road_violating_segments": 0,
+    "obstacle_violating_segment_pairs": 0,
+    "minimum_segment_length_m": 2.935319609558978,
+    "max_abs_curvature": 0.12759710956916337,
+    "max_profile_rebuild_error": 0.0,
+    "worst_road_segment_obstacle_gap_m": 6.732854789575751,
+    "worst_obstacle_segment_road_gap_m": 1.2520651758970176,
+    "worst_road_and_obstacle_same_segment": false
+  },
+  "source_pins_verified": true,
+  "private_input_pins_verified": true,
+  "controller_function_identity": true,
+  "geometry_filter_required_radius_upper_bound_m": 11.863938671668903,
+  "geometry_filter_radius_m": 12.0,
+  "model_started": false,
+  "native_started": false,
+  "CPU_s": 0.5592804699999999,
+  "wall_s": 0.559314477002772,
+  "model_ticks": 0,
+  "force_evaluations": 0,
+  "native_actions": 0,
+  "scope": "Read-onlyresidualsnotglobalcorridorinfeasibilityproof. Feasibilitysuccessaloneisnoperformancegain."
+}

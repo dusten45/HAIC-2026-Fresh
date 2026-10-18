@@ -1,0 +1,46 @@
+{
+  "baseline": {
+    "exact_sampled": {
+      "samples": 7075,
+      "min_road_margin_m": 1.433548384362357,
+      "min_obstacle_margin_m": 0.9468870403878509,
+      "minimum_outer_rectangle_margin_m": 0.9468870403878509,
+      "outside_samples": 0,
+      "intersecting_samples": 0,
+      "max_sample_spacing_m": 0.29166668402972995,
+      "road_filter_radius_m": 12.0,
+      "max_local_edges": 16,
+      "max_local_road_polys": 12
+    },
+    "approx530_road_min_margin_m": 1.4111456360924062,
+    "approx530_obstacle_min_margin_m": 1.0189034848714107,
+    "nominal_1_25_max_violation_m": 0.3031129596121491,
+    "constraints_violating_1_25": 18,
+    "old_outerbox_screen_pass": true
+  },
+  "candidate": {
+    "exact_sampled": {
+      "samples": 7075,
+      "min_road_margin_m": 0.5007222015373014,
+      "min_obstacle_margin_m": 1.0167734587166886,
+      "minimum_outer_rectangle_margin_m": 0.5007222015373014,
+      "outside_samples": 0,
+      "intersecting_samples": 0,
+      "max_sample_spacing_m": 0.29166668402972995,
+      "road_filter_radius_m": 12.0,
+      "max_local_edges": 16,
+      "max_local_road_polys": 12
+    },
+    "approx530_road_min_margin_m": 1.204814565057342,
+    "approx530_obstacle_min_margin_m": 1.217943289918986,
+    "nominal_1_25_max_violation_m": 0.7492777984626986,
+    "constraints_violating_1_25": 12,
+    "old_outerbox_screen_pass": false
+  },
+  "CPU_s": 0.424193222,
+  "wall_s": 0.4242168990022037,
+  "model_ticks": 0,
+  "force_evaluations": 0,
+  "native_actions": 0,
+  "interpretation": "530normal-roadapproximationandnode/midpointorientationarenotactualpolygon-edgeclearance.531usessegment-tangentouterboxand25samples/segmentagainststoredunion/edges/circles;1.25nominalnotlowered."
+}
