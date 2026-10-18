@@ -1,0 +1,43 @@
+{
+  "status": "COLD_MODEL_RUNNING_NO_NATIVE",
+  "snapshot_utc": "2026-10-18T13:53:51.028086+00:00",
+  "pilot_pass": true,
+  "candidate_primary_cap": 90,
+  "baseline_actual_s": 14.22,
+  "last_cost_checkpoint": {
+    "current_case": "cold-candidate",
+    "completed_cases": 0,
+    "model_ticks": 10648,
+    "cost": {
+      "force_evaluations": 43864,
+      "forecast_calls": 520,
+      "forecast_ticks": 10440,
+      "geometry_checks": 10960
+    },
+    "CPU_s": 100.258327253,
+    "wall_s": 100.26905503300077,
+    "safety": {
+      "min_margin_m": 1.1162264144890317,
+      "max_path_error_m": 1.5274105083251484,
+      "max_reference_overspeed_m_s": 0.0,
+      "force_groups": {
+        "launch": {
+          "peak": 2.25546701731417,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.0589384513535558,
+          "samples": 448,
+          "clipped": 35
+        }
+      }
+    }
+  },
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "research_remaining": 23107,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "deadline_KST": "2026-10-20 19:01:55"
+}

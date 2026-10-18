@@ -1,0 +1,108 @@
+{
+  "status": "SAVED_538_ACTUAL_ANALYSIS",
+  "actual_s": 14.22,
+  "groups_overlap": true,
+  "groups": {
+    "fixed_launch": {
+      "seconds": 1.92,
+      "mean_speed": 32.9248336495926,
+      "mean_reference": 36.54459527720145,
+      "mean_surplus": -3.619761627608853,
+      "mean_peak_force": 0.8167160323897201,
+      "max_peak_force": 2.255467414712997,
+      "min_margin": 5.115780929105214,
+      "max_body_speed": 52.88010550775327,
+      "max_path_error": 0.09082981417522765
+    },
+    "flat_top80": {
+      "seconds": 5.38,
+      "mean_speed": 84.38668342876795,
+      "mean_reference": 80.0,
+      "mean_surplus": 4.386683428767956,
+      "mean_peak_force": 0.3242552948460537,
+      "max_peak_force": 0.9266712946265698,
+      "min_margin": 0.9403855457993806,
+      "max_body_speed": 86.80603053522034,
+      "max_path_error": 0.9029984456329709
+    },
+    "top80_with_force_below_0_7": {
+      "seconds": 4.66,
+      "mean_speed": 84.76527458925766,
+      "mean_reference": 80.0,
+      "mean_surplus": 4.765274589257644,
+      "mean_peak_force": 0.2515271323212397,
+      "max_peak_force": 0.6993378936381187,
+      "min_margin": 0.9403855457993806,
+      "max_body_speed": 86.80603053522034,
+      "max_path_error": 0.8332536910319316
+    },
+    "positive_ff": {
+      "seconds": 6.72,
+      "mean_speed": 56.06715462784583,
+      "mean_reference": 58.62428062973321,
+      "mean_surplus": -2.5571260018873554,
+      "mean_peak_force": 0.869759057981176,
+      "max_peak_force": 2.255467414712997,
+      "min_margin": 0.5454535643036398,
+      "max_body_speed": 83.42928133573754,
+      "max_path_error": 1.5269842269972507
+    },
+    "negative_ff": {
+      "seconds": 2.12,
+      "mean_speed": 66.50387003808943,
+      "mean_reference": 68.06314523602936,
+      "mean_surplus": -1.559275197939933,
+      "mean_peak_force": 0.7943694253621466,
+      "max_peak_force": 1.058251736134808,
+      "min_margin": 0.7789157873661947,
+      "max_body_speed": 85.99439454642864,
+      "max_path_error": 1.5163562201339285
+    },
+    "non_top_near_constant": {
+      "seconds": 0.0
+    },
+    "reference_band_above_4": {
+      "seconds": 5.24,
+      "mean_speed": 83.95340852098926,
+      "mean_reference": 79.18082666680051,
+      "mean_surplus": 4.77258185418876,
+      "mean_peak_force": 0.3174270074239257,
+      "max_peak_force": 1.0116921879307659,
+      "min_margin": 0.6920738217553618,
+      "max_body_speed": 86.80603053522034,
+      "max_path_error": 1.324859180861633
+    },
+    "near_force_admission": {
+      "seconds": 1.94,
+      "mean_speed": 59.417339258566884,
+      "mean_reference": 61.059916701260995,
+      "mean_surplus": -1.642577442694131,
+      "mean_peak_force": 1.0108021268638132,
+      "max_peak_force": 1.058926317528542,
+      "min_margin": 0.5454535643036398,
+      "max_body_speed": 84.2204093455635,
+      "max_path_error": 1.4589067918397884
+    },
+    "footprint_below_1": {
+      "seconds": 0.54,
+      "mean_speed": 64.54979277459975,
+      "mean_reference": 61.60063160331743,
+      "mean_surplus": 2.9491611712823107,
+      "mean_peak_force": 0.7968578452292125,
+      "max_peak_force": 1.0589162058175172,
+      "min_margin": 0.5454535643036398,
+      "max_body_speed": 86.32628850932659,
+      "max_path_error": 1.3322737812065881
+    }
+  },
+  "longest_flat_run": {
+    "seconds": 1.6400000000000001,
+    "first_action": 53,
+    "last_action": 73
+  },
+  "interpretation": "Actual nominal cap80 is distinct from speeds near84.85 allowed by reference band. Top exposure and low force are evidence for a new current-path reference-cap test, not recoverable-time or physical-limit proof. Prior529useddifferentGaussianpath/policy.",
+  "CPU_s": 0.050731758,
+  "wall_s": 0.05388444599520881,
+  "native_actions": 0,
+  "model_ticks": 0
+}

@@ -1,0 +1,35 @@
+{
+  "candidate": "One90primary referencecap; fixed533geometry/538source-response/backup80/othercriteria.90=0.9*solverbody100 reference reserve, not body safety proof. Allowed+4.85 band consumes part of reserve; allbody<100 remains explicit.",
+  "geometry_identical": true,
+  "baseline80_arithmetic_exact": true,
+  "backup_identical": true,
+  "scalar_reference_clocks_s": {
+    "baseline": 14.40717610658,
+    "candidate": 13.909663909251172
+  },
+  "scalar_clock_is_not_physical_bound_or_recoverable_gain": true,
+  "roots": [
+    {
+      "label": "cap-plateau",
+      "index": 53,
+      "holds": 16
+    },
+    {
+      "label": "next-braking",
+      "index": 67,
+      "holds": 12
+    },
+    {
+      "label": "footprint",
+      "index": 157,
+      "holds": 12
+    }
+  ],
+  "root_selection": "Firstactionlongestactual538flat80run,16hold; maxactualspeedactionthere withnegativeffwithin12holds,12hold; globalactualminimumfootprintbeforestate,12hold. Determinedfrom538only, before539outcomes.",
+  "frozen_paths_sha256": "0228d846f7a0678cec2c76958bc6acffe382e1aecf56681ed9d455db6efeaaaa",
+  "pilot_roots_sha256": "35af8f00733fde9418c52006dad76bcda5492736d530ee29de30f7f02c1a011e",
+  "CPU_s": 0.081910934,
+  "wall_s": 0.08191119199909735,
+  "native_actions": 0,
+  "model_ticks": 0
+}
