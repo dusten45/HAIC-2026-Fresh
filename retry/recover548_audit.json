@@ -1,0 +1,66 @@
+{
+  "status": "SAVED548_REPAIR_AUDIT_PASS",
+  "unit_tests_passed": 9,
+  "physical_and_terminal_limits_unchanged": true,
+  "trust_algorithm_loop_unchanged_except_risk_predicate_and_reuse_assertions": true,
+  "original547_result_preserved": true,
+  "corrected_reported_boundary": {
+    "slack": 0.10000000000000009,
+    "band": 0.1,
+    "old_risk_flag": false,
+    "repaired_risk_flag": true,
+    "repaired_reserve_m": 0.025000000000000022
+  },
+  "verified_reusable_records": 20,
+  "initial_and_first_FD_cache_hits": 15,
+  "first_gradient_J_g0_bit_exact": true,
+  "new_source_ticks_for_reused_initial_and_J": 0,
+  "accepted_feasible_updates": [
+    {
+      "model": 1,
+      "radius": 0.0125,
+      "gain_s": 0.0006909441252134219,
+      "rho": 0.8620477605030586,
+      "minimum_margin_m": 0.5254814597608605
+    },
+    {
+      "model": 2,
+      "radius": 0.0125,
+      "gain_s": 0.0003326087146966472,
+      "rho": 0.9723953461164887,
+      "minimum_margin_m": 0.5253581644715379
+    },
+    {
+      "model": 3,
+      "radius": 0.003125,
+      "gain_s": 7.3601516745736e-05,
+      "rho": 0.951114069907556,
+      "minimum_margin_m": 0.5251825338918827
+    }
+  ],
+  "new_rollouts": 34,
+  "combined_rollouts": 54,
+  "new_model_ticks": 4352,
+  "combined_model_ticks": 6912,
+  "combined_integrator_wheel_evaluations": 27648,
+  "combined_explicit_force_evaluations": 27648,
+  "combined_geometry_checks": 6912,
+  "new_experiment_CPU_s": 55.471607004,
+  "combined_experiment_CPU_s": 88.976537073,
+  "known_worker_CPU_with_units_prepare_and_audit_s": 89.763991525,
+  "known_worker_wall_s": 89.77291221198539,
+  "selected_model_time_gain_s": 0.001097154356655805,
+  "learning_5ms_pass": false,
+  "feedback_native_not_run": true,
+  "final_minimum_margin_m": 0.5251825338918827,
+  "final_floor_slack_m": 3.0085855151074092e-05,
+  "tiny_negative_constraints_only_requested_affine_command_roundoff": true,
+  "actual_float32_command_bounds_valid": true,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_model_ticks_in_audit": 0,
+  "new_native_actions": 0,
+  "CPU_s": 0.27156868,
+  "wall_s": 0.27159082800062606
+}
