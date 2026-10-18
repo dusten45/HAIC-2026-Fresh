@@ -1,0 +1,300 @@
+{
+  "phase": "pilot",
+  "passed": false,
+  "learning_gate": false,
+  "promotion_eligible": false,
+  "reason": "NO_ADMISSIBLE_TRUST_STEP_IN_FINITE_ATTEMPTS",
+  "reconstruction_of_missing546_pointwise_data": [
+    {
+      "step_fraction": 0.25,
+      "exact_previous_summary_and_signature_reconstruction": true,
+      "actual_gain_s": 0.00022941475544624446,
+      "predicted_gain_s": 0.00023712180910870215,
+      "rho": 0.9674974913044603,
+      "risk": {
+        "passed": true,
+        "risky_constraints": 76,
+        "violating_risky_predictions": 0,
+        "unexpectedly_near_risk": 0,
+        "max_risky_geometry_optimism_m": 9.54810105247006e-06,
+        "max_inactive_geometry_absolute_error_m": 0.6503960596262384,
+        "active_geometry_samples": 1,
+        "bad_constraint_indices": []
+      },
+      "branch_changes": {
+        "contact_ids": true,
+        "effective_friction": false,
+        "clip_pattern": false,
+        "projection_segment": true
+      }
+    },
+    {
+      "step_fraction": 0.5,
+      "exact_previous_summary_and_signature_reconstruction": true,
+      "actual_gain_s": 0.00044083559575991416,
+      "predicted_gain_s": 0.0004742436182174043,
+      "rho": 0.9295551459752588,
+      "risk": {
+        "passed": true,
+        "risky_constraints": 76,
+        "violating_risky_predictions": 0,
+        "unexpectedly_near_risk": 0,
+        "max_risky_geometry_optimism_m": 4.003700486598927e-05,
+        "max_inactive_geometry_absolute_error_m": 1.3004242987408228,
+        "active_geometry_samples": 1,
+        "bad_constraint_indices": []
+      },
+      "branch_changes": {
+        "contact_ids": true,
+        "effective_friction": false,
+        "clip_pattern": false,
+        "projection_segment": true
+      }
+    }
+  ],
+  "accepted_feasible_updates": 0,
+  "rejection_counts": {
+    "exact_constraint": 4,
+    "model_reliability": 0,
+    "objective": 0,
+    "numerical": 0
+  },
+  "unified_floor_m": 0.5251524480367317,
+  "basis_coefficients": 12,
+  "initial": {
+    "rollout": 1,
+    "feedback": false,
+    "objective_s": 1.9999995700530653,
+    "crossing": {
+      "lower_s": 1.98,
+      "upper_s": 2.0,
+      "time_s": 1.9999995700530653,
+      "speed": 90.36512104154632,
+      "heading_error": 0.012253161128947782,
+      "yaw_error": 0.0072035706839689295
+    },
+    "terminal": {
+      "path_error": 1.0270201224790356,
+      "heading_error": 0.06177521728868777,
+      "yaw_error": 0.3501383627811896,
+      "speed_deficit": 0.0,
+      "speed": 74.39713811699549
+    },
+    "physical_safe": true,
+    "feasible": true,
+    "minimum_constraint": 0.0,
+    "min_margin_m": 0.5271524480367317,
+    "force_peak": 0.9862122101145647,
+    "max_reference_overspeed_m_s": 4.848650409861875,
+    "max_body_speed_m_s": 95.4787501395147,
+    "max_path_error_m": 1.4288686185516597,
+    "max_running_clipping": 0.06458333333333334,
+    "raw_ticks": 128,
+    "stop_reason": null
+  },
+  "selected": {
+    "rollout": 20,
+    "feedback": false,
+    "objective_s": 1.9999995700530653,
+    "crossing": {
+      "lower_s": 1.98,
+      "upper_s": 2.0,
+      "time_s": 1.9999995700530653,
+      "speed": 90.36512104154632,
+      "heading_error": 0.012253161128947782,
+      "yaw_error": 0.0072035706839689295
+    },
+    "terminal": {
+      "path_error": 1.0270201224790356,
+      "heading_error": 0.06177521728868777,
+      "yaw_error": 0.3501383627811896,
+      "speed_deficit": 0.0,
+      "speed": 74.39713811699549
+    },
+    "physical_safe": true,
+    "feasible": true,
+    "minimum_constraint": 0.0,
+    "min_margin_m": 0.5271524480367317,
+    "force_peak": 0.9862122101145647,
+    "max_reference_overspeed_m_s": 4.848650409861875,
+    "max_body_speed_m_s": 95.4787501395147,
+    "max_path_error_m": 1.4288686185516597,
+    "max_running_clipping": 0.06458333333333334,
+    "raw_ticks": 128,
+    "stop_reason": null
+  },
+  "interpolated_time_gain_s": 0.0,
+  "local_models": [
+    {
+      "index": 1,
+      "center_time_s": 1.9999995700530653,
+      "radius_initial": 0.05,
+      "trials": [
+        {
+          "attempt": 1,
+          "radius": 0.05,
+          "LP_success": true,
+          "LP_status": 0,
+          "predicted_gain_s": 0.0011020980621282335,
+          "direction_norm_inf": 0.05,
+          "linear_reserved_constraint_minimum": -3.1086244689504383e-15,
+          "actual_gain_s": 0.0008745258071174433,
+          "rho": 0.7935099762617029,
+          "exact_feasible": false,
+          "exact_min_margin_m": 0.5254138742460306,
+          "risk": {
+            "passed": false,
+            "risky_constraints": 77,
+            "violating_risky_predictions": 1,
+            "unexpectedly_near_risk": 0,
+            "max_risky_geometry_optimism_m": 0.00023857379070013618,
+            "max_inactive_geometry_absolute_error_m": 2.980437275756346,
+            "active_geometry_samples": 2,
+            "bad_constraint_indices": [
+              1024
+            ]
+          },
+          "branch_changes": {
+            "contact_ids": true,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": true
+          },
+          "accepted": false,
+          "classification": "EXACT_NONLINEAR_CONSTRAINT_REJECTION",
+          "radius_after_rejection": 0.025
+        },
+        {
+          "attempt": 2,
+          "radius": 0.025,
+          "LP_success": true,
+          "LP_status": 0,
+          "predicted_gain_s": 0.0009791393652221264,
+          "direction_norm_inf": 0.025,
+          "linear_reserved_constraint_minimum": -1.3322676295501878e-15,
+          "actual_gain_s": 0.0007433715937281704,
+          "rho": 0.759209179134096,
+          "exact_feasible": false,
+          "exact_min_margin_m": 0.5251788533933573,
+          "risk": {
+            "passed": false,
+            "risky_constraints": 77,
+            "violating_risky_predictions": 2,
+            "unexpectedly_near_risk": 0,
+            "max_risky_geometry_optimism_m": 0.0004735946433742644,
+            "max_inactive_geometry_absolute_error_m": 3.976022119527868,
+            "active_geometry_samples": 1,
+            "bad_constraint_indices": [
+              521,
+              1024
+            ]
+          },
+          "branch_changes": {
+            "contact_ids": true,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": true
+          },
+          "accepted": false,
+          "classification": "EXACT_NONLINEAR_CONSTRAINT_REJECTION",
+          "radius_after_rejection": 0.0125
+        },
+        {
+          "attempt": 3,
+          "radius": 0.0125,
+          "LP_success": true,
+          "LP_status": 0,
+          "predicted_gain_s": 0.0008105503800983527,
+          "direction_norm_inf": 0.0125,
+          "linear_reserved_constraint_minimum": -4.440892098500626e-16,
+          "actual_gain_s": 0.0006968774690261359,
+          "rho": 0.859758364361727,
+          "exact_feasible": false,
+          "exact_min_margin_m": 0.5254721526219602,
+          "risk": {
+            "passed": false,
+            "risky_constraints": 76,
+            "violating_risky_predictions": 1,
+            "unexpectedly_near_risk": 0,
+            "max_risky_geometry_optimism_m": 0.00018029541477182498,
+            "max_inactive_geometry_absolute_error_m": 2.521074828075909,
+            "active_geometry_samples": 1,
+            "bad_constraint_indices": [
+              1024
+            ]
+          },
+          "branch_changes": {
+            "contact_ids": true,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": true
+          },
+          "accepted": false,
+          "classification": "EXACT_NONLINEAR_CONSTRAINT_REJECTION",
+          "radius_after_rejection": 0.00625
+        },
+        {
+          "attempt": 4,
+          "radius": 0.00625,
+          "LP_success": true,
+          "LP_status": 0,
+          "predicted_gain_s": 0.0006393058848815111,
+          "direction_norm_inf": 0.00625,
+          "linear_reserved_constraint_minimum": -5.583641188300348e-18,
+          "actual_gain_s": 0.0005728900866279751,
+          "rho": 0.8961126436903588,
+          "exact_feasible": false,
+          "exact_min_margin_m": 0.5254939513991606,
+          "risk": {
+            "passed": false,
+            "risky_constraints": 76,
+            "violating_risky_predictions": 1,
+            "unexpectedly_near_risk": 0,
+            "max_risky_geometry_optimism_m": 0.00015849663757128152,
+            "max_inactive_geometry_absolute_error_m": 1.5312089380154248,
+            "active_geometry_samples": 1,
+            "bad_constraint_indices": [
+              1024
+            ]
+          },
+          "branch_changes": {
+            "contact_ids": true,
+            "effective_friction": false,
+            "clip_pattern": false,
+            "projection_segment": true
+          },
+          "accepted": false,
+          "classification": "EXACT_NONLINEAR_CONSTRAINT_REJECTION",
+          "radius_after_rejection": 0.003125
+        }
+      ],
+      "accepted_update": false,
+      "radius_final": 0.003125
+    }
+  ],
+  "core_rollouts": 20,
+  "core_raw_ticks": 2560,
+  "feedback_return_validation": null,
+  "feedback_return_not_run": true,
+  "interpretation": "Separate feasible sequential-linear trust-region experiment. Exact all-constraint checks unchanged; inactive prediction error alone cannot reject. No retrospective546success, physicalbound, full-lap or nativeclaim.",
+  "cases": [],
+  "model_integrator_ticks": 2560,
+  "source_wheel_force_evaluations_in_integrator": 10240,
+  "explicit_force_evaluations": 10240,
+  "planner_cost": {
+    "force_evaluations": 10240,
+    "forecast_calls": 20,
+    "forecast_ticks": 2560,
+    "geometry_checks": 2560,
+    "shooting_rollouts": 20,
+    "core_rollouts": 20,
+    "core_raw_ticks": 2560
+  },
+  "CPU_s": 33.504930069,
+  "wall_s": 33.504061227999046,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0
+}
