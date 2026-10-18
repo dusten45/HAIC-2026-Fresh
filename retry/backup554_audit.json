@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "checks": {
+    "source_pins": true,
+    "input_pins": true,
+    "contract_pin": true,
+    "same_segment": true,
+    "initial_feedback_exact551": true,
+    "finite": true,
+    "initialization_executed": true,
+    "all_committed_refs_and_plan_states": true,
+    "all_raw_bounds": true,
+    "raw_counts": true,
+    "reported_metrics": true,
+    "crossing_replay": true,
+    "effect_gate_recomputed": true,
+    "caps": true,
+    "all_model_body_checked": true,
+    "actual0": true,
+    "main_preserved": true,
+    "old553_failure_preserved": true,
+    "no_deeper_execution": true
+  },
+  "crossings": {
+    "gate": {
+      "lower_s": 0.5,
+      "upper_s": 0.52,
+      "time_s": 0.5056964492819277,
+      "speed": 47.7705390467158
+    },
+    "return": {
+      "lower_s": 1.5,
+      "upper_s": 1.52,
+      "time_s": 1.508125779168367,
+      "speed": 66.50088223287746
+    }
+  },
+  "conservative_gain_s": {
+    "gate": 0.0,
+    "return": -0.020000000000000018
+  },
+  "speed_pass": {
+    "gate": true,
+    "return": false
+  },
+  "accepted_retiming_actions": 1,
+  "regenerated_feedback_failures": 0,
+  "successful_retained_revalidations": 6,
+  "proposal_rejections": {
+    "FEEDBACK_NO_ADMISSIBLE_ACTION": 5,
+    "PROPOSED_FIRST_FORCE": 1
+  },
+  "mode_counts": {
+    "ACCEPTED_STATEFUL_RETIMING": 1,
+    "REGENERATED_551_FEEDBACK": 6,
+    "SOURCE_RESPONSE": 8,
+    "SOURCE_FULL": 4
+  },
+  "max_overspeed_original551_reference": 6.102463741030661,
+  "max_overspeed_committed_reference": 2.9220031829073605,
+  "new_model_ticks_in_audit": 0,
+  "new_native_actions": 0,
+  "CPU_s": 0.06566635299999998,
+  "wall_s": 0.06719906299986178
+}

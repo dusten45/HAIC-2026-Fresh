@@ -1,0 +1,110 @@
+{
+  "status": "FEASIBLE_INITIAL_BACKUP_AND_SAFE_EXECUTION_EFFECT_GATE_NOT_MET",
+  "categories": {
+    "initialization": "PASS exact551feedback28states",
+    "modified_proposals": {
+      "accepted": 1,
+      "rejected": 6,
+      "valid_current_backup_preserved": true,
+      "retained_revalidated": 6,
+      "regenerated_feedback_failures": 0
+    },
+    "execution_safety": "PASS19holds76raw/freshfollowup",
+    "effect": "FAIL bothconservative20mscriteria/returnterminalspeed"
+  },
+  "interpolated_time_gain_s": {
+    "gate": 0.017552847613852895,
+    "return": 0.01187422083163292
+  },
+  "conservative_time_gain_s": {
+    "gate": 0.0,
+    "return": -0.020000000000000018
+  },
+  "crossing_speed_difference_m_s": {
+    "gate": 0.5916825782444661,
+    "return": -0.38218551716494176
+  },
+  "initial_state_exact551": true,
+  "initial551_feedback_recertification_model_ticks": 3342,
+  "baseline_performance_rerun_model_ticks": 0,
+  "baseline_counter_field_clarification": "Inheritedphasefieldbaseline_model_ticks_recomputed0 means no independentbaselineperformanceevaluation; fresh551backuprecertification3342ticks IS included in total26500.",
+  "committed_reference_and_actual_plan_states_verified": true,
+  "max_original551_reference_overspeed_m_s": 6.102463741030661,
+  "max_committed_reference_overspeed_m_s": 2.9220031829073605,
+  "selected_FINAL_min_margin_m": 1.1363626866147944,
+  "min_executed_margin_m": 1.1363626866147944,
+  "peak_force_ratio": 1.0589253841846387,
+  "max_clipping": 0.1,
+  "rejected_proposals": [
+    {
+      "reason": "FEEDBACK_NO_ADMISSIBLE_ACTION",
+      "propagated_raw": 4,
+      "last_HIGH_reason": "FORCE_PEAK",
+      "trial_reasons": {
+        "FORCE_PEAK": 12,
+        "REFERENCE_WITH_NUMERIC_RESERVE": 9
+      }
+    },
+    {
+      "reason": "FEEDBACK_NO_ADMISSIBLE_ACTION",
+      "propagated_raw": 4,
+      "last_HIGH_reason": "FORCE_PEAK",
+      "trial_reasons": {
+        "FORCE_PEAK": 20
+      }
+    },
+    {
+      "reason": "FEEDBACK_NO_ADMISSIBLE_ACTION",
+      "propagated_raw": 4,
+      "last_HIGH_reason": "FORCE_PEAK",
+      "trial_reasons": {
+        "FORCE_PEAK": 20
+      }
+    },
+    {
+      "reason": "FEEDBACK_NO_ADMISSIBLE_ACTION",
+      "propagated_raw": 4,
+      "last_HIGH_reason": "REFERENCE_WITH_NUMERIC_RESERVE",
+      "trial_reasons": {
+        "REFERENCE_WITH_NUMERIC_RESERVE": 6,
+        "FORCE_PEAK": 14
+      }
+    },
+    {
+      "reason": "FEEDBACK_NO_ADMISSIBLE_ACTION",
+      "propagated_raw": 4,
+      "last_HIGH_reason": "REFERENCE_WITH_NUMERIC_RESERVE",
+      "trial_reasons": {
+        "REFERENCE_WITH_NUMERIC_RESERVE": 11,
+        "FORCE_PEAK": 9
+      }
+    },
+    {
+      "reason": "PROPOSED_FIRST_FORCE",
+      "propagated_raw": 1,
+      "last_HIGH_reason": null,
+      "trial_reasons": {}
+    }
+  ],
+  "science_cost": {
+    "model_ticks": 26500,
+    "explicit_force": 111232,
+    "geometry": 28543,
+    "CPU_s": 250.946205575,
+    "wall_s": 250.97043352699984
+  },
+  "deeper_executed": [],
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "actual541_s": 13.66,
+  "prior551_source_model_s": 13.22,
+  "prior551_500ms_gate_passed": false,
+  "whole_lap_gain_from554_unobserved": true,
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "summary_CPU_s": 0.005634823000000001
+}

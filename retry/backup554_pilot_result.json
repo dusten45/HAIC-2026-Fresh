@@ -1,0 +1,370 @@
+{
+  "phase": "pilot",
+  "passed": false,
+  "case": {
+    "crossings": {
+      "gate": {
+        "lower_s": 0.5,
+        "upper_s": 0.52,
+        "time_s": 0.5056964492819277,
+        "speed": 47.7705390467158,
+        "yaw": 2.2541732763416182
+      },
+      "return": {
+        "lower_s": 1.5,
+        "upper_s": 1.52,
+        "time_s": 1.508125779168367,
+        "speed": 66.50088223287746,
+        "yaw": 0.008609747755024377
+      }
+    },
+    "dynamic_trigger_verified": true,
+    "clipping_trajectory": [
+      {
+        "index": 26,
+        "clipped": 0,
+        "samples": 32,
+        "fraction": 0.0
+      },
+      {
+        "index": 27,
+        "clipped": 0,
+        "samples": 48,
+        "fraction": 0.0
+      },
+      {
+        "index": 28,
+        "clipped": 0,
+        "samples": 64,
+        "fraction": 0.0
+      },
+      {
+        "index": 29,
+        "clipped": 0,
+        "samples": 80,
+        "fraction": 0.0
+      },
+      {
+        "index": 30,
+        "clipped": 0,
+        "samples": 96,
+        "fraction": 0.0
+      },
+      {
+        "index": 31,
+        "clipped": 1,
+        "samples": 112,
+        "fraction": 0.008928571428571428
+      },
+      {
+        "index": 32,
+        "clipped": 2,
+        "samples": 128,
+        "fraction": 0.015625
+      },
+      {
+        "index": 33,
+        "clipped": 3,
+        "samples": 144,
+        "fraction": 0.020833333333333332
+      },
+      {
+        "index": 34,
+        "clipped": 4,
+        "samples": 160,
+        "fraction": 0.025
+      },
+      {
+        "index": 35,
+        "clipped": 5,
+        "samples": 176,
+        "fraction": 0.028409090909090908
+      },
+      {
+        "index": 36,
+        "clipped": 5,
+        "samples": 192,
+        "fraction": 0.026041666666666668
+      },
+      {
+        "index": 37,
+        "clipped": 8,
+        "samples": 208,
+        "fraction": 0.038461538461538464
+      },
+      {
+        "index": 38,
+        "clipped": 14,
+        "samples": 224,
+        "fraction": 0.0625
+      },
+      {
+        "index": 39,
+        "clipped": 20,
+        "samples": 240,
+        "fraction": 0.08333333333333333
+      },
+      {
+        "index": 40,
+        "clipped": 25,
+        "samples": 256,
+        "fraction": 0.09765625
+      },
+      {
+        "index": 41,
+        "clipped": 26,
+        "samples": 272,
+        "fraction": 0.09558823529411764
+      },
+      {
+        "index": 42,
+        "clipped": 28,
+        "samples": 288,
+        "fraction": 0.09722222222222222
+      },
+      {
+        "index": 43,
+        "clipped": 30,
+        "samples": 304,
+        "fraction": 0.09868421052631579
+      },
+      {
+        "index": 44,
+        "clipped": 31,
+        "samples": 320,
+        "fraction": 0.096875
+      }
+    ],
+    "max_cumulative_clipping_fraction": 0.1,
+    "label": "fixed-segment-candidate",
+    "stop": "PROBE_COMPLETE",
+    "pass_safety": true,
+    "raw_ticks": 76,
+    "actions": 19,
+    "completed_before": 25,
+    "force_groups": {
+      "launch": {
+        "peak": 0.0,
+        "samples": 0,
+        "clipped": 0
+      },
+      "running": {
+        "peak": 1.0589253841846387,
+        "samples": 320,
+        "clipped": 31
+      }
+    },
+    "min_margin_m": 1.1363626866147944,
+    "max_path_error_m": 1.7494190077700695,
+    "max_reference_overspeed_m_s": 2.9220031829073605,
+    "max_body_speed_m_s": 84.74256345883119,
+    "mode_counts": {
+      "ACCEPTED_STATEFUL_RETIMING": 1,
+      "REGENERATED_551_FEEDBACK": 6,
+      "SOURCE_RESPONSE": 8,
+      "SOURCE_FULL": 4
+    },
+    "high_fraction": 0.0,
+    "first_failure": null,
+    "model_finish_episode_s": null
+  },
+  "baseline551_saved_prefix_reused": true,
+  "baseline_model_ticks_recomputed": 0,
+  "conservative_time_gain_s": {
+    "gate": 0.0,
+    "return": -0.020000000000000018
+  },
+  "terminal_speed_pass": {
+    "gate": true,
+    "return": false
+  },
+  "fresh_followup_certified": true,
+  "not_whole_lap_or_actual_gain": true,
+  "cases": [
+    {
+      "crossings": {
+        "gate": {
+          "lower_s": 0.5,
+          "upper_s": 0.52,
+          "time_s": 0.5056964492819277,
+          "speed": 47.7705390467158,
+          "yaw": 2.2541732763416182
+        },
+        "return": {
+          "lower_s": 1.5,
+          "upper_s": 1.52,
+          "time_s": 1.508125779168367,
+          "speed": 66.50088223287746,
+          "yaw": 0.008609747755024377
+        }
+      },
+      "dynamic_trigger_verified": true,
+      "clipping_trajectory": [
+        {
+          "index": 26,
+          "clipped": 0,
+          "samples": 32,
+          "fraction": 0.0
+        },
+        {
+          "index": 27,
+          "clipped": 0,
+          "samples": 48,
+          "fraction": 0.0
+        },
+        {
+          "index": 28,
+          "clipped": 0,
+          "samples": 64,
+          "fraction": 0.0
+        },
+        {
+          "index": 29,
+          "clipped": 0,
+          "samples": 80,
+          "fraction": 0.0
+        },
+        {
+          "index": 30,
+          "clipped": 0,
+          "samples": 96,
+          "fraction": 0.0
+        },
+        {
+          "index": 31,
+          "clipped": 1,
+          "samples": 112,
+          "fraction": 0.008928571428571428
+        },
+        {
+          "index": 32,
+          "clipped": 2,
+          "samples": 128,
+          "fraction": 0.015625
+        },
+        {
+          "index": 33,
+          "clipped": 3,
+          "samples": 144,
+          "fraction": 0.020833333333333332
+        },
+        {
+          "index": 34,
+          "clipped": 4,
+          "samples": 160,
+          "fraction": 0.025
+        },
+        {
+          "index": 35,
+          "clipped": 5,
+          "samples": 176,
+          "fraction": 0.028409090909090908
+        },
+        {
+          "index": 36,
+          "clipped": 5,
+          "samples": 192,
+          "fraction": 0.026041666666666668
+        },
+        {
+          "index": 37,
+          "clipped": 8,
+          "samples": 208,
+          "fraction": 0.038461538461538464
+        },
+        {
+          "index": 38,
+          "clipped": 14,
+          "samples": 224,
+          "fraction": 0.0625
+        },
+        {
+          "index": 39,
+          "clipped": 20,
+          "samples": 240,
+          "fraction": 0.08333333333333333
+        },
+        {
+          "index": 40,
+          "clipped": 25,
+          "samples": 256,
+          "fraction": 0.09765625
+        },
+        {
+          "index": 41,
+          "clipped": 26,
+          "samples": 272,
+          "fraction": 0.09558823529411764
+        },
+        {
+          "index": 42,
+          "clipped": 28,
+          "samples": 288,
+          "fraction": 0.09722222222222222
+        },
+        {
+          "index": 43,
+          "clipped": 30,
+          "samples": 304,
+          "fraction": 0.09868421052631579
+        },
+        {
+          "index": 44,
+          "clipped": 31,
+          "samples": 320,
+          "fraction": 0.096875
+        }
+      ],
+      "max_cumulative_clipping_fraction": 0.1,
+      "label": "fixed-segment-candidate",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 76,
+      "actions": 19,
+      "completed_before": 25,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.0589253841846387,
+          "samples": 320,
+          "clipped": 31
+        }
+      },
+      "min_margin_m": 1.1363626866147944,
+      "max_path_error_m": 1.7494190077700695,
+      "max_reference_overspeed_m_s": 2.9220031829073605,
+      "max_body_speed_m_s": 84.74256345883119,
+      "mode_counts": {
+        "ACCEPTED_STATEFUL_RETIMING": 1,
+        "REGENERATED_551_FEEDBACK": 6,
+        "SOURCE_RESPONSE": 8,
+        "SOURCE_FULL": 4
+      },
+      "high_fraction": 0.0,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    }
+  ],
+  "model_integrator_ticks": 26500,
+  "source_wheel_force_evaluations_in_integrator": 106000,
+  "explicit_force_evaluations": 111232,
+  "planner_cost": {
+    "force_evaluations": 111232,
+    "forecast_calls": 2042,
+    "forecast_ticks": 26067,
+    "geometry_checks": 28543,
+    "model_body_checks": 26500,
+    "max_all_model_body_speed_m_s": 90.60625183001635
+  },
+  "CPU_s": 250.946205575,
+  "wall_s": 250.97043352699984,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0
+}
