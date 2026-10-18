@@ -1,0 +1,177 @@
+{
+  "stage": 498,
+  "status": "NO_INFORMATION",
+  "error": null,
+  "outcome": {
+    "verdict": "NO_INFORMATION",
+    "success": false,
+    "reject": false,
+    "common_holds": 6,
+    "common_time_s": 0.48,
+    "progress_gain_m": 0.009233679310341358,
+    "margin_gain_m": -0.11794035266944847,
+    "control_common_min_margin_m": 1.6454336599107797,
+    "variant_common_min_margin_m": 1.5274933072413313,
+    "control_status": "ACTIVE",
+    "variant_status": "ACTIVE",
+    "variant_H6_safe": true,
+    "exact_cold_repeats": true,
+    "held_first_passed": true,
+    "posthoc_root": true,
+    "native_promotion": false,
+    "whole_lap_improvement": null
+  },
+  "static_passed": true,
+  "worlds": 6,
+  "closed_worlds": 6,
+  "live_worlds": 0,
+  "actual_ticks": 104,
+  "charged_ticks": 104,
+  "holds": 26,
+  "actual_actions": 0,
+  "resets": 0,
+  "new_seeds": 0,
+  "allocator_calls": 0,
+  "CPU_s": 38.829036867,
+  "wall_s": 39.35708458709996,
+  "RSS_bytes": 129728512,
+  "state_objects": 14,
+  "files": 245,
+  "bytes": 12838436,
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "no_retry": true,
+  "no_followup": true,
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "prior_static_attempt": {
+    "status": "TECHNICAL_STOP",
+    "error": "CodeGate498Error: 498_CODE_GATE:dependency.control_code:semantic_code_mismatch",
+    "worlds": 0,
+    "CPU_s": 7.41683773,
+    "wall_s": 7.434556029038504,
+    "source_preserved": true,
+    "cause": "Independently compiling a function alone omits module import optimization, producing LOAD_METHOD versus LOAD_ATTR. Reference now compiles the complete pinned module without executing it."
+  },
+  "whole_accounting": {
+    "CPU_s": 7.66683773,
+    "wall_s": 7.934556029038504,
+    "files": 59,
+    "bytes": 553825,
+    "physics": 0
+  },
+  "qualified_worker_CPU_s": 31.162199136999998,
+  "qualified_worker_wall_s": 31.422528558061458,
+  "static_summary": {
+    "lifecycle_checks": 23,
+    "synthetic_code_binding_checks": 22,
+    "pre_reference_global_mutation_rejections": [
+      "np",
+      "copy",
+      "sensor",
+      "policy",
+      "Controller"
+    ],
+    "saved_nominal_history_checks": [
+      "ledger",
+      "policy",
+      "row"
+    ],
+    "independent_dependency_anchors": true,
+    "outer_preparation_physics_calls": 0,
+    "full_nominal_control_once": true,
+    "laststeer_consistent": true
+  },
+  "first_counted_control_source": {
+    "passed": true,
+    "fidelity": {
+      "passed": true,
+      "body_errors": {
+        "position_m": 0.0,
+        "speed_m_s": 0.0,
+        "yaw_rad_s": 0.0,
+        "time_s": 0.0
+      },
+      "discrete_exact": true,
+      "wheel": {
+        "passed": true,
+        "max_errors": {
+          "joint_angle": 0.0,
+          "omega": 0.0,
+          "lateral_slip_m_s": 0.0,
+          "longitudinal_slip_m_s": 0.0,
+          "force_ratio": 0.0
+        },
+        "grass_exact": true,
+        "clipped_flag_mismatches": 0
+      },
+      "hull": {
+        "passed": true,
+        "max_errors": {
+          "origin_position_m": 0.0,
+          "COM_position_m": 0.0,
+          "COM_speed_m_s": 0.0,
+          "origin_speed_m_s": 0.0,
+          "yaw_rad_s": 0.0,
+          "time_s": 0.0
+        },
+        "COM_mass_metadata_exact": true
+      },
+      "phase_exact": true,
+      "raw_discrete_exact": true
+    },
+    "direct": {
+      "passed": true,
+      "raw_ticks": 4,
+      "damage_phase_direct": true,
+      "pre_force_grass_exact": true,
+      "raw_event_contact_exact": true,
+      "no_fields_deleted": true,
+      "safe": true,
+      "wrapper_return_damage_included": true,
+      "scope": "RAW_DISCRETE_FLAGS_ONLY_PHYSICAL_FIDELITY_AND_HISTORY_SEPARATE"
+    },
+    "existing_native_qualification": false
+  },
+  "arms": [
+    {
+      "arm": "control",
+      "actions": 6,
+      "raw_ticks": 24,
+      "safe_actions": 6,
+      "final_progress_m": 21.89031138196708,
+      "min_margin_m": 1.6454336599107797,
+      "mechanism": {
+        "front_first_hold_max_abs_lateral_N": 209.59880118107344,
+        "front_H6_max_abs_lateral_N": 235.77312871241259,
+        "front_H6_max_force_ratio": 0.7299555230658739,
+        "front_clip_count": 0,
+        "final_abs_heading_deg": 18.36053925141312,
+        "final_abs_body_lateral_m_s": 0.7072897291084229,
+        "final_speed_m_s": 33.011741163317694
+      }
+    },
+    {
+      "arm": "variant",
+      "actions": 6,
+      "raw_ticks": 24,
+      "safe_actions": 6,
+      "final_progress_m": 21.899545061277422,
+      "min_margin_m": 1.5274933072413313,
+      "mechanism": {
+        "front_first_hold_max_abs_lateral_N": 260.18528804690163,
+        "front_H6_max_abs_lateral_N": 260.18528804690163,
+        "front_H6_max_force_ratio": 0.7877012232231937,
+        "front_clip_count": 0,
+        "final_abs_heading_deg": 17.9679809590558,
+        "final_abs_body_lateral_m_s": 0.8060581723276287,
+        "final_speed_m_s": 32.99953639769599
+      }
+    }
+  ],
+  "prior497_preserved": true,
+  "new_physical_attempts": 1,
+  "no_new_physics_after_completion": true,
+  "private_raw_and_failed_static_files": 306,
+  "private_raw_and_failed_static_bytes": 13395905
+}
