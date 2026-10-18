@@ -1,0 +1,563 @@
+{
+  "exact_feasible_initialization": true,
+  "final_fresh_replay_exact": true,
+  "final_feasible": true,
+  "baseline_times_s": [
+    1.6,
+    2.56
+  ],
+  "final_times_s": [
+    1.6,
+    2.56
+  ],
+  "cumulative_gain_ms": [
+    0.0,
+    0.0
+  ],
+  "baseline_brackets": [
+    [
+      1.58,
+      1.6
+    ],
+    [
+      2.54,
+      2.56
+    ]
+  ],
+  "final_brackets": [
+    [
+      1.58,
+      1.6
+    ],
+    [
+      2.54,
+      2.56
+    ]
+  ],
+  "final_stats": {
+    "min_margin": 1.156639315944597,
+    "max_path": 1.325266986494288,
+    "max_reference_overspeed": 4.849744226625191,
+    "max_force": 1.0589543761741076,
+    "max_clip_fraction": 0.1,
+    "final_clip_history": [
+      31,
+      688
+    ],
+    "max_body": 95.42433219436607
+  },
+  "final_active_constraints": {
+    "footprint": {
+      "min_slack": 0.6566393159445969,
+      "near_boundary": 0
+    },
+    "path": {
+      "min_slack": 1.674733013505712,
+      "near_boundary": 0
+    },
+    "return_angle": {
+      "min_slack": 0.08,
+      "near_boundary": 0
+    },
+    "clip": {
+      "min_slack": 0.0,
+      "near_boundary": 1
+    },
+    "gate_position": {
+      "min_slack": 0.35,
+      "near_boundary": 0
+    },
+    "force": {
+      "min_slack": 4.5623825892349146e-05,
+      "near_boundary": 0
+    },
+    "return_speed": {
+      "min_slack": 0.5,
+      "near_boundary": 0
+    },
+    "return_direction": {
+      "min_slack": 0.05,
+      "near_boundary": 0
+    },
+    "body": {
+      "min_slack": 4.575667805633927,
+      "near_boundary": 0
+    },
+    "reference": {
+      "min_slack": 0.0002557733748087543,
+      "near_boundary": 0
+    },
+    "prefix_orderstat": {
+      "min_slack": 0.0004705654386415459,
+      "near_boundary": 0
+    }
+  },
+  "final_world_state_differences": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "completed": true,
+  "error": null,
+  "stop_reason": "NO_ACCEPTED_BRANCH_OR_TWO_POLLS",
+  "preflight_passed": true,
+  "accepted_count": 0,
+  "accepted_steps": [],
+  "directions": [
+    {
+      "direction": 1,
+      "incumbent_before": "baseline",
+      "proposals": [
+        {
+          "label": "branch-00-00",
+          "kind": "rank_branch",
+          "physical_safe": true,
+          "source_feasible": false,
+          "accepted": false,
+          "predicted_gain_ms": [
+            7.703806928485324,
+            7.543933762033098
+          ],
+          "actual_gain_ms": [
+            4.284410830951657,
+            5.243420933064513
+          ],
+          "prediction_error_ms": 3.419396097533667,
+          "agreement": true,
+          "branch_changes": {
+            "contact_raw_changes": 42,
+            "new_clipped_samples": 4,
+            "freed_clipped_samples": 5,
+            "pedal_mode_changes": 1,
+            "brake_lock_changes": 0
+          },
+          "active_constraints": {
+            "footprint": {
+              "min_slack": 0.4353404666194589,
+              "near_boundary": 0
+            },
+            "path": {
+              "min_slack": 0.9146318278522201,
+              "near_boundary": 0
+            },
+            "return_angle": {
+              "min_slack": 0.0789434538612143,
+              "near_boundary": 0
+            },
+            "clip": {
+              "min_slack": 0.003333333333333341,
+              "near_boundary": 0
+            },
+            "gate_position": {
+              "min_slack": -0.9584155926008663,
+              "near_boundary": 3
+            },
+            "force": {
+              "min_slack": 0.00308842823202804,
+              "near_boundary": 0
+            },
+            "return_speed": {
+              "min_slack": 0.5679519595393145,
+              "near_boundary": 0
+            },
+            "return_direction": {
+              "min_slack": 0.04892173524234418,
+              "near_boundary": 0
+            },
+            "body": {
+              "min_slack": 4.713272477624827,
+              "near_boundary": 0
+            },
+            "reference": {
+              "min_slack": 0.1370286660399156,
+              "near_boundary": 0
+            },
+            "prefix_orderstat": {
+              "min_slack": 0.0059476922889999395,
+              "near_boundary": 0
+            }
+          },
+          "rank_branch_nonexempt_samples": 500
+        },
+        {
+          "label": "branch-00-01",
+          "kind": "reconstructed_rank_branch",
+          "physical_safe": false,
+          "source_feasible": false,
+          "accepted": false,
+          "predicted_gain_ms": [
+            8.294449121978984,
+            8.12196302072348
+          ],
+          "actual_gain_ms": [
+            4.911386160828313,
+            5.794159711861813
+          ],
+          "prediction_error_ms": 3.3830629611506704,
+          "agreement": true,
+          "branch_changes": {
+            "contact_raw_changes": 47,
+            "new_clipped_samples": 7,
+            "freed_clipped_samples": 5,
+            "pedal_mode_changes": 1,
+            "brake_lock_changes": 0
+          },
+          "active_constraints": {
+            "footprint": {
+              "min_slack": 0.4356158638027712,
+              "near_boundary": 0
+            },
+            "path": {
+              "min_slack": 1.0118732121387037,
+              "near_boundary": 0
+            },
+            "return_angle": {
+              "min_slack": 0.07812058686805683,
+              "near_boundary": 0
+            },
+            "clip": {
+              "min_slack": -0.005263157894736831,
+              "near_boundary": 9
+            },
+            "gate_position": {
+              "min_slack": -0.8789016727938105,
+              "near_boundary": 3
+            },
+            "force": {
+              "min_slack": -0.0041817069584551,
+              "near_boundary": 2
+            },
+            "return_speed": {
+              "min_slack": 0.5928393323907812,
+              "near_boundary": 0
+            },
+            "return_direction": {
+              "min_slack": 0.04809517799416581,
+              "near_boundary": 0
+            },
+            "body": {
+              "min_slack": 4.709893036364804,
+              "near_boundary": 0
+            },
+            "reference": {
+              "min_slack": 0.1336691736106328,
+              "near_boundary": 0
+            },
+            "prefix_orderstat": {
+              "min_slack": -0.0023582767549741313,
+              "near_boundary": 9
+            }
+          },
+          "rank_branch_nonexempt_samples": 500
+        },
+        {
+          "label": "poll-00-00",
+          "kind": "time_coordinate_poll",
+          "physical_safe": false,
+          "source_feasible": false,
+          "accepted": false,
+          "predicted_gain_ms": [
+            1.211303444862699,
+            0.9176697920981506
+          ],
+          "actual_gain_ms": [
+            0.7397392214556486,
+            0.6858125948721039
+          ],
+          "prediction_error_ms": 0.4715642234070503,
+          "agreement": true,
+          "branch_changes": {
+            "contact_raw_changes": 10,
+            "new_clipped_samples": 1,
+            "freed_clipped_samples": 0,
+            "pedal_mode_changes": 1,
+            "brake_lock_changes": 0
+          },
+          "active_constraints": {
+            "footprint": {
+              "min_slack": 0.6579345664032288,
+              "near_boundary": 0
+            },
+            "path": {
+              "min_slack": 1.674733013505712,
+              "near_boundary": 0
+            },
+            "return_angle": {
+              "min_slack": 0.07795635410783379,
+              "near_boundary": 0
+            },
+            "clip": {
+              "min_slack": -0.003333333333333327,
+              "near_boundary": 9
+            },
+            "gate_position": {
+              "min_slack": 0.0776707598431784,
+              "near_boundary": 0
+            },
+            "force": {
+              "min_slack": -0.003533429115574638,
+              "near_boundary": 4
+            },
+            "return_speed": {
+              "min_slack": 0.5616176720188975,
+              "near_boundary": 0
+            },
+            "return_direction": {
+              "min_slack": 0.0479468073952712,
+              "near_boundary": 0
+            },
+            "body": {
+              "min_slack": 4.540562842640625,
+              "near_boundary": 0
+            },
+            "reference": {
+              "min_slack": -0.034635053332445764,
+              "near_boundary": 39
+            },
+            "prefix_orderstat": {
+              "min_slack": -0.0006079128627225483,
+              "near_boundary": 8
+            }
+          },
+          "coordinate": 1
+        },
+        {
+          "label": "poll-00-01",
+          "kind": "critical_clip_relief_poll",
+          "physical_safe": true,
+          "source_feasible": true,
+          "accepted": false,
+          "predicted_gain_ms": [
+            -0.1895518768767512,
+            -0.20970459867062122
+          ],
+          "actual_gain_ms": [
+            -0.18872728913144066,
+            -0.21458717707778519
+          ],
+          "prediction_error_ms": 0.00488257840716396,
+          "agreement": false,
+          "branch_changes": {
+            "contact_raw_changes": 3,
+            "new_clipped_samples": 0,
+            "freed_clipped_samples": 0,
+            "pedal_mode_changes": 0,
+            "brake_lock_changes": 0
+          },
+          "active_constraints": {
+            "footprint": {
+              "min_slack": 0.6565348476959445,
+              "near_boundary": 0
+            },
+            "path": {
+              "min_slack": 1.674733013505712,
+              "near_boundary": 0
+            },
+            "return_angle": {
+              "min_slack": 0.07944368411500939,
+              "near_boundary": 0
+            },
+            "clip": {
+              "min_slack": 0.0,
+              "near_boundary": 1
+            },
+            "gate_position": {
+              "min_slack": 0.27751310822917785,
+              "near_boundary": 0
+            },
+            "force": {
+              "min_slack": 4.5623825892349146e-05,
+              "near_boundary": 0
+            },
+            "return_speed": {
+              "min_slack": 0.46606731203380036,
+              "near_boundary": 0
+            },
+            "return_direction": {
+              "min_slack": 0.04944383398721271,
+              "near_boundary": 0
+            },
+            "body": {
+              "min_slack": 4.588228594356153,
+              "near_boundary": 0
+            },
+            "reference": {
+              "min_slack": 0.012739943652468,
+              "near_boundary": 0
+            },
+            "prefix_orderstat": {
+              "min_slack": 0.0016525820986952322,
+              "near_boundary": 0
+            }
+          },
+          "coordinate": 9
+        }
+      ],
+      "LP_statuses": [
+        {
+          "branch": 1,
+          "status": 0,
+          "success": true,
+          "nonexempt_count": 500,
+          "reconstruction": false
+        },
+        {
+          "branch": 2,
+          "status": 0,
+          "success": true,
+          "nonexempt_count": 500,
+          "reconstruction": true
+        }
+      ]
+    }
+  ],
+  "incumbent_preserved": true,
+  "cost": {
+    "explicit_wheel_force_evaluations": 3168,
+    "geometry_checks": 798,
+    "body_checks": 792,
+    "residual_calls": 0,
+    "unsafe_forecast_raw": 6,
+    "max_forecast_force": 1.063181706958455,
+    "max_body_speed": 95.45943715735937,
+    "evaluations": 6,
+    "directions": 1,
+    "LP_branches": 2,
+    "polls": 2,
+    "source_proposals": 4,
+    "reused_FD_columns": 40,
+    "fresh_FD_columns": 0,
+    "model_ticks": 792,
+    "internal_wheel_force_evaluations": 3168,
+    "CPU_s": 13.205195523999999,
+    "wall_s": 13.205653960001655
+  },
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "new_seeds": 0,
+  "HOLDOUT_queries": 0,
+  "SEALED_queries": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "actual_baseline_s": 13.66,
+  "no_lap_gain_observation": true
+}

@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "checks": {
+    "numpy_basic_roundtrip": true,
+    "nonfinite_preserves_old": true,
+    "atomic_replace_failure_preserves_old": true,
+    "exclusive_preserves_old": true,
+    "finally_numpy_cost_survives_exception": true,
+    "strict_ties_f32_history_denominator_equivalence": true,
+    "exact1_unclipped": true,
+    "nextafter_above1_clipped": true,
+    "active_identity_can_swap": true,
+    "saved560_exact_four_case_classification": true
+  },
+  "synthetic_equivalence_cases": 81229,
+  "saved_cases": [
+    {
+      "label": "baseline",
+      "prefixes": 132,
+      "order_all_pass": true,
+      "count_all_pass": true,
+      "first_bad_raw": null,
+      "minimum_order_slack": 0.0004705654386415459
+    },
+    {
+      "label": "trial-00-00",
+      "prefixes": 132,
+      "order_all_pass": false,
+      "count_all_pass": false,
+      "first_bad_raw": 31,
+      "minimum_order_slack": -0.0062709822190383235
+    },
+    {
+      "label": "trial-00-01",
+      "prefixes": 132,
+      "order_all_pass": false,
+      "count_all_pass": false,
+      "first_bad_raw": 27,
+      "minimum_order_slack": -0.0026696016665246347
+    },
+    {
+      "label": "trial-00-02",
+      "prefixes": 132,
+      "order_all_pass": false,
+      "count_all_pass": false,
+      "first_bad_raw": 26,
+      "minimum_order_slack": -0.003990169501674412
+    }
+  ],
+  "model_ticks": 0,
+  "force_calls": 0,
+  "geometry_calls": 0,
+  "CPU_s": 0.522408353,
+  "wall_s": 0.525044098001672,
+  "domain": "Finite ratios, integer source counts,10% budget; synthetic histories up to1e6 so source float fraction agrees with exact integer floor. No claim beyond tested floating denominator domain."
+}
