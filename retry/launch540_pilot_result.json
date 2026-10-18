@@ -1,0 +1,211 @@
+{
+  "phase": "pilot",
+  "passed": true,
+  "launch_end_progress_gain_m": 17.953333994263083,
+  "launch_end_speed_gain_m_s": 26.76216965126195,
+  "firstcorner_window_progress_gain_m": 22.876336158232732,
+  "baseline_prefix_reused": true,
+  "baseline_is_new_evidence": false,
+  "launch_candidate_prefix_new": true,
+  "cases": [
+    {
+      "clipping_trajectory": [
+        {
+          "index": 25,
+          "clipped": 0,
+          "samples": 16,
+          "fraction": 0.0
+        },
+        {
+          "index": 26,
+          "clipped": 0,
+          "samples": 32,
+          "fraction": 0.0
+        },
+        {
+          "index": 27,
+          "clipped": 0,
+          "samples": 48,
+          "fraction": 0.0
+        },
+        {
+          "index": 28,
+          "clipped": 0,
+          "samples": 64,
+          "fraction": 0.0
+        },
+        {
+          "index": 29,
+          "clipped": 0,
+          "samples": 80,
+          "fraction": 0.0
+        },
+        {
+          "index": 30,
+          "clipped": 0,
+          "samples": 96,
+          "fraction": 0.0
+        },
+        {
+          "index": 31,
+          "clipped": 0,
+          "samples": 112,
+          "fraction": 0.0
+        },
+        {
+          "index": 32,
+          "clipped": 1,
+          "samples": 128,
+          "fraction": 0.0078125
+        },
+        {
+          "index": 33,
+          "clipped": 2,
+          "samples": 144,
+          "fraction": 0.013888888888888888
+        },
+        {
+          "index": 34,
+          "clipped": 3,
+          "samples": 160,
+          "fraction": 0.01875
+        },
+        {
+          "index": 35,
+          "clipped": 3,
+          "samples": 176,
+          "fraction": 0.017045454545454544
+        },
+        {
+          "index": 36,
+          "clipped": 5,
+          "samples": 192,
+          "fraction": 0.026041666666666668
+        },
+        {
+          "index": 37,
+          "clipped": 8,
+          "samples": 208,
+          "fraction": 0.038461538461538464
+        },
+        {
+          "index": 38,
+          "clipped": 11,
+          "samples": 224,
+          "fraction": 0.049107142857142856
+        },
+        {
+          "index": 39,
+          "clipped": 16,
+          "samples": 240,
+          "fraction": 0.06666666666666667
+        },
+        {
+          "index": 40,
+          "clipped": 20,
+          "samples": 256,
+          "fraction": 0.078125
+        },
+        {
+          "index": 41,
+          "clipped": 24,
+          "samples": 272,
+          "fraction": 0.08823529411764706
+        },
+        {
+          "index": 42,
+          "clipped": 28,
+          "samples": 288,
+          "fraction": 0.09722222222222222
+        },
+        {
+          "index": 43,
+          "clipped": 30,
+          "samples": 304,
+          "fraction": 0.09868421052631579
+        },
+        {
+          "index": 44,
+          "clipped": 31,
+          "samples": 320,
+          "fraction": 0.096875
+        },
+        {
+          "index": 45,
+          "clipped": 31,
+          "samples": 336,
+          "fraction": 0.09226190476190477
+        },
+        {
+          "index": 46,
+          "clipped": 31,
+          "samples": 352,
+          "fraction": 0.08806818181818182
+        },
+        {
+          "index": 47,
+          "clipped": 31,
+          "samples": 368,
+          "fraction": 0.08423913043478261
+        },
+        {
+          "index": 48,
+          "clipped": 31,
+          "samples": 384,
+          "fraction": 0.08072916666666667
+        }
+      ],
+      "max_cumulative_clipping_fraction": 0.1,
+      "label": "launch-firstcorner-candidate",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 192,
+      "actions": 48,
+      "completed_before": 0,
+      "force_groups": {
+        "launch": {
+          "peak": 2.403901474800934,
+          "samples": 384,
+          "clipped": 55
+        },
+        "running": {
+          "peak": 1.0589303853840912,
+          "samples": 384,
+          "clipped": 31
+        }
+      },
+      "min_margin_m": 1.1136709112211653,
+      "max_path_error_m": 1.5094639214252903,
+      "max_reference_overspeed_m_s": 4.042207200217234,
+      "max_body_speed_m_s": 81.99811851343162,
+      "mode_counts": {
+        "SOURCE_LAUNCH": 24,
+        "SOURCE_RESPONSE": 14,
+        "BACKUP": 4,
+        "SOURCE_FULL": 6
+      },
+      "high_fraction": 0.0,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    }
+  ],
+  "model_integrator_ticks": 25104,
+  "source_wheel_force_evaluations_in_integrator": 100416,
+  "explicit_force_evaluations": 102432,
+  "planner_cost": {
+    "force_evaluations": 102432,
+    "forecast_calls": 1152,
+    "forecast_ticks": 24912,
+    "geometry_checks": 26064,
+    "analytic_wheel_bounds": 96,
+    "launch_full_calls": 139,
+    "launch_filter_calls": 443
+  },
+  "CPU_s": 183.070399845,
+  "wall_s": 183.08630018700205,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 23107,
+  "reserve": 84000,
+  "reserve_used": 0
+}

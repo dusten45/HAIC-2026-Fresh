@@ -1,0 +1,77 @@
+{
+  "status": "SAVED538_LAUNCH_ANALYSIS",
+  "groups": {
+    "launch_first_0_48s": {
+      "seconds": 0.48,
+      "start_speed": 2.191204343467215,
+      "end_speed": 22.56756396286405,
+      "mean_rear_gas": 0.30499999374151227,
+      "mean_rear_slip_m_s": 8.519114619463174,
+      "mean_peak_force": 1.7670055207829405,
+      "force_peak": 2.255467414712997,
+      "clipped": 46,
+      "samples": 96,
+      "min_margin": 5.157084421730925
+    },
+    "launch_middle_0_48_to_1_28s": {
+      "seconds": 0.8,
+      "start_speed": 23.187207025423806,
+      "end_speed": 41.849409812344106,
+      "mean_rear_gas": 0.3199999928474426,
+      "mean_rear_slip_m_s": 2.805292537661812,
+      "mean_peak_force": 0.5808501887850099,
+      "force_peak": 0.8624121699281091,
+      "clipped": 0,
+      "samples": 160,
+      "min_margin": 5.13133726439777
+    },
+    "launch_last_0_64s": {
+      "seconds": 0.64,
+      "start_speed": 42.23192872931743,
+      "end_speed": 52.8414737889305,
+      "mean_rear_gas": 0.3199999928474426,
+      "mean_rear_slip_m_s": 1.9413416431727843,
+      "mean_peak_force": 0.39883122060069437,
+      "force_peak": 0.4468655671718446,
+      "clipped": 0,
+      "samples": 128,
+      "min_margin": 5.115780929105214
+    },
+    "postlaunch_first_0_96s": {
+      "seconds": 0.96,
+      "start_speed": 53.2672251202122,
+      "end_speed": 47.252047533479264,
+      "mean_rear_gas": 0.5381770824392637,
+      "mean_rear_slip_m_s": 2.636165660135331,
+      "mean_peak_force": 0.7944360388806656,
+      "force_peak": 1.058251736134808,
+      "clipped": 1,
+      "samples": 192,
+      "min_margin": 3.8451923354372823
+    },
+    "firstcorner_to_3_84s": {
+      "seconds": 0.96,
+      "start_speed": 46.25700025879235,
+      "end_speed": 65.57762137603586,
+      "mean_rear_gas": 0.5601846486330032,
+      "mean_rear_slip_m_s": 2.9844361907473824,
+      "mean_peak_force": 0.9894561901674134,
+      "force_peak": 1.058926317528542,
+      "clipped": 34,
+      "samples": 192,
+      "min_margin": 1.1112486319782635
+    }
+  },
+  "launch_end_reference_m_s": 66.49664905220347,
+  "launch_end_speed_m_s": 52.8414737889305,
+  "launch_end_positive_deficit_m_s": 13.655175263272966,
+  "launch_final_clipping": [
+    46,
+    384
+  ],
+  "interpretation": "Fixed.32 spends clipping budget early while laterlaunch has unused force/engine input and speed deficit; current-state source-force allocation is a structural candidate, not a fixedgas sweep. Exposure/deficit is not recoverable-time gain. Launch2.5/15% is separate from tracking1.06/10%.",
+  "model_ticks": 0,
+  "native_actions": 0,
+  "CPU_s": 0.09026446199999999,
+  "wall_s": 0.09414572900277562
+}

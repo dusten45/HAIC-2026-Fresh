@@ -1,0 +1,46 @@
+{
+  "status": "PILOT_PASS_COLD_RUNNING_NO_ACTUAL",
+  "snapshot_utc": "2026-10-18T14:33:30.150816+00:00",
+  "baseline_actual_s": 14.22,
+  "pilot_new_prefix_endlaunch_progress_gain_m": 17.953333994263083,
+  "pilot_new_prefix_endlaunch_speed_gain_m_s": 26.76216965126195,
+  "last_cost_checkpoint": {
+    "current_case": "cold-candidate",
+    "completed_cases": 0,
+    "model_ticks": 36060,
+    "cost": {
+      "force_evaluations": 146948,
+      "forecast_calls": 1805,
+      "forecast_ticks": 35748,
+      "geometry_checks": 37553,
+      "analytic_wheel_bounds": 96,
+      "launch_full_calls": 139,
+      "launch_filter_calls": 443
+    },
+    "CPU_s": 295.20128811,
+    "wall_s": 295.2186605809984,
+    "safety": {
+      "min_margin_m": 0.6318569335042701,
+      "max_path_error_m": 1.5094639214252903,
+      "max_reference_overspeed_m_s": 4.849931309761203,
+      "force_groups": {
+        "launch": {
+          "peak": 2.403901474800934,
+          "samples": 384,
+          "clipped": 55
+        },
+        "running": {
+          "peak": 1.0589303853840912,
+          "samples": 864,
+          "clipped": 31
+        }
+      }
+    }
+  },
+  "research_remaining": 23107,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "deadline_KST": "2026-10-20 19:01:55"
+}
