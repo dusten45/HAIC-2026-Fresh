@@ -1,0 +1,29 @@
+{
+  "status": "STORED545_CHECK_AND546_INPUT_FREEZE",
+  "created_utc": "2026-10-18T17:19:42.455885+00:00",
+  "unified_margin_floor_m": 0.5251524480367317,
+  "stored545_feasible_points": 53,
+  "stored545_points_satisfying_final_floor": 39,
+  "diagnostic_best_gain_original_floor_s": 0.0026420630418086954,
+  "diagnostic_best_gain_unified_floor_s": 4.019113550857156e-06,
+  "common_plane_baseline_hold": 24.999994625663316,
+  "old_fixed_tail_start_after_hold": 20,
+  "old_solver_iterations": 6,
+  "old_solver_converged": false,
+  "full_lap_cost_correction": {
+    "naive_full_replay": 234612,
+    "causal_prefix_caching_forward": 118332,
+    "not_an_impossibility_lower_bound": true,
+    "actually_executed": false
+  },
+  "private_inputs_sha256": {
+    "/workspace/haic-response546-private/frozen-paths-private.json": "6ca4b19463922c15e1a4977475820cd9df0833455825d7c3af205803263f602c",
+    "/workspace/haic-response546-private/fresh-feasible541-baseline-private.json": "3e05cc591348b84fb5783a5c132c45b586d4431053760b2f04fac75e78d3c789",
+    "/workspace/haic-response546-private/entry-private.json": "d5011cd9f7c771172dd5df78d484bf98854ecc201d671ee38f440397e6d053ef",
+    "/workspace/haic-response546-private/gate-private.json": "5758e0ca3b26a9f5c06b350207d226518b98b6d5ae661f5a65a954c58fa4c64d"
+  },
+  "new_model_ticks": 0,
+  "new_native_actions": 0,
+  "CPU_s": 0.011024172000000002,
+  "wall_s": 0.011024327999621164
+}
