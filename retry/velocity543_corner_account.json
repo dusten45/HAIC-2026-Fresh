@@ -1,0 +1,38 @@
+{
+  "status": "SAVED541_DESCRIPTIVE_CORNER_ACCOUNT",
+  "groups": {
+    "firstcorner": {
+      "mean_abs_actual_velocity_curvature_1_m": 0.035522614490479484,
+      "mean_abs_reference_discrete_curvature_1_m": 0.03489144420570127,
+      "mean_abs_curvature_mismatch_1_m": 0.006543706813387959,
+      "max_path_error_m": 1.5093407620851094,
+      "minimum_footprint_margin_m": 1.1129624559345372
+    },
+    "firstexit_and_fast": {
+      "mean_abs_actual_velocity_curvature_1_m": 0.004258882508553525,
+      "mean_abs_reference_discrete_curvature_1_m": 0.006790957698728408,
+      "mean_abs_curvature_mismatch_1_m": 0.005241362227917807,
+      "max_path_error_m": 1.4288655502228784,
+      "minimum_footprint_margin_m": 0.5271545833699623
+    },
+    "middlecorner": {
+      "mean_abs_actual_velocity_curvature_1_m": 0.017858148223980727,
+      "mean_abs_reference_discrete_curvature_1_m": 0.017943201075532066,
+      "mean_abs_curvature_mismatch_1_m": 0.0032549886810502417,
+      "max_path_error_m": 1.375507873027157,
+      "minimum_footprint_margin_m": 0.584740183278103
+    },
+    "latecorner": {
+      "mean_abs_actual_velocity_curvature_1_m": 0.03260806624715812,
+      "mean_abs_reference_discrete_curvature_1_m": 0.0323907925318952,
+      "mean_abs_curvature_mismatch_1_m": 0.004332109667134007,
+      "max_path_error_m": 1.3585208710335681,
+      "minimum_footprint_margin_m": 0.5422638297563793
+    }
+  },
+  "method": "Actual20msvelocity-directionturn/(dt*meanCOMspeed) versus frozenpath discretecurvature atcurrentownstation; descriptive, referencepolygonnodesarenotinstantaneousvehiclecurvature targets. No causal/laptime attribution, no root/gate changes.",
+  "new_model_ticks": 0,
+  "new_native_actions": 0,
+  "CPU_s": 0.115047978,
+  "wall_s": 0.11505825899803312
+}

@@ -1,0 +1,48 @@
+{
+  "status": "SAVED543_AUDIT_PASS",
+  "source_private_pins": true,
+  "original537pedal_and_certifier_unchanged_after_canonical_wrapper_removal": true,
+  "feedback_command_recomputations": 64,
+  "fresh_FINAL_certificates": 64,
+  "primary_safe": true,
+  "sustained_effect_gate_pass": false,
+  "terminal_state_gate_pass": true,
+  "secondary_risk_not_run": true,
+  "cold_carry_native_not_run": true,
+  "phase_metrics": {
+    "primary_first_front_lateral_clip-baseline": {
+      "clipped_wheel_decomposition": {
+        "front/lateral": 10,
+        "rear/longitudinal": 20,
+        "rear/lateral": 1
+      },
+      "min_intervention_margin_m": 1.1136250601379702,
+      "min_return_to_original_margin_m": 4.556792254293483,
+      "max_running_clipping": 0.1,
+      "terminal_path_error_m": 0.20977889983343997
+    },
+    "primary_first_front_lateral_clip-candidate": {
+      "clipped_wheel_decomposition": {
+        "front/lateral": 10,
+        "rear/longitudinal": 19,
+        "rear/lateral": 2
+      },
+      "min_intervention_margin_m": 0.6117259050666957,
+      "min_return_to_original_margin_m": 4.69464388435573,
+      "max_running_clipping": 0.1,
+      "terminal_path_error_m": 0.19165406467057372
+    }
+  },
+  "model_integrator_ticks": 23875,
+  "explicit_force_evaluations": 97728,
+  "geometry_checks": 24849,
+  "experiment_CPU_s": 235.116817355,
+  "experiment_wall_s": 235.1270128019969,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_model_ticks": 0,
+  "new_native_actions": 0,
+  "CPU_s": 0.11702644500000003,
+  "wall_s": 0.1170340819953708
+}

@@ -1,0 +1,504 @@
+{
+  "phase": "pilot",
+  "passed": false,
+  "records": [
+    {
+      "root_label": "primary_first_front_lateral_clip",
+      "trajectory": [
+        {
+          "holds": 16,
+          "progress_gain_m": 0.4283999638752789,
+          "speed_gain_m_s": 0.5618232754230661
+        },
+        {
+          "holds": 32,
+          "progress_gain_m": 0.7571901094960936,
+          "speed_gain_m_s": -0.0020251094985610507
+        }
+      ],
+      "terminal_baseline": {
+        "path_error_m": 0.20977889983343997,
+        "velocity_heading_error_rad": 0.02098841738453506,
+        "yaw_error_rad_s": 0.46869488549101446
+      },
+      "terminal_candidate": {
+        "path_error_m": 0.19165406467057372,
+        "velocity_heading_error_rad": 0.019230239395061886,
+        "yaw_error_rad_s": 0.47514399194677714
+      },
+      "terminal_nonworsening": true,
+      "effect_pass": false
+    }
+  ],
+  "reason": "SUSTAINED_EFFECT_OR_TERMINAL_STATE_FAILED",
+  "cases": [
+    {
+      "clipping_trajectory": [
+        {
+          "index": 32,
+          "clipped": 1,
+          "samples": 128,
+          "fraction": 0.0078125
+        },
+        {
+          "index": 33,
+          "clipped": 2,
+          "samples": 144,
+          "fraction": 0.013888888888888888
+        },
+        {
+          "index": 34,
+          "clipped": 3,
+          "samples": 160,
+          "fraction": 0.01875
+        },
+        {
+          "index": 35,
+          "clipped": 3,
+          "samples": 176,
+          "fraction": 0.017045454545454544
+        },
+        {
+          "index": 36,
+          "clipped": 5,
+          "samples": 192,
+          "fraction": 0.026041666666666668
+        },
+        {
+          "index": 37,
+          "clipped": 8,
+          "samples": 208,
+          "fraction": 0.038461538461538464
+        },
+        {
+          "index": 38,
+          "clipped": 11,
+          "samples": 224,
+          "fraction": 0.049107142857142856
+        },
+        {
+          "index": 39,
+          "clipped": 16,
+          "samples": 240,
+          "fraction": 0.06666666666666667
+        },
+        {
+          "index": 40,
+          "clipped": 20,
+          "samples": 256,
+          "fraction": 0.078125
+        },
+        {
+          "index": 41,
+          "clipped": 24,
+          "samples": 272,
+          "fraction": 0.08823529411764706
+        },
+        {
+          "index": 42,
+          "clipped": 28,
+          "samples": 288,
+          "fraction": 0.09722222222222222
+        },
+        {
+          "index": 43,
+          "clipped": 30,
+          "samples": 304,
+          "fraction": 0.09868421052631579
+        },
+        {
+          "index": 44,
+          "clipped": 31,
+          "samples": 320,
+          "fraction": 0.096875
+        },
+        {
+          "index": 45,
+          "clipped": 31,
+          "samples": 336,
+          "fraction": 0.09226190476190477
+        },
+        {
+          "index": 46,
+          "clipped": 31,
+          "samples": 352,
+          "fraction": 0.08806818181818182
+        },
+        {
+          "index": 47,
+          "clipped": 31,
+          "samples": 368,
+          "fraction": 0.08423913043478261
+        },
+        {
+          "index": 48,
+          "clipped": 31,
+          "samples": 384,
+          "fraction": 0.08072916666666667
+        },
+        {
+          "index": 49,
+          "clipped": 31,
+          "samples": 400,
+          "fraction": 0.0775
+        },
+        {
+          "index": 50,
+          "clipped": 31,
+          "samples": 416,
+          "fraction": 0.07451923076923077
+        },
+        {
+          "index": 51,
+          "clipped": 31,
+          "samples": 432,
+          "fraction": 0.07175925925925926
+        },
+        {
+          "index": 52,
+          "clipped": 31,
+          "samples": 448,
+          "fraction": 0.06919642857142858
+        },
+        {
+          "index": 53,
+          "clipped": 31,
+          "samples": 464,
+          "fraction": 0.0668103448275862
+        },
+        {
+          "index": 54,
+          "clipped": 31,
+          "samples": 480,
+          "fraction": 0.06458333333333334
+        },
+        {
+          "index": 55,
+          "clipped": 31,
+          "samples": 496,
+          "fraction": 0.0625
+        },
+        {
+          "index": 56,
+          "clipped": 31,
+          "samples": 512,
+          "fraction": 0.060546875
+        },
+        {
+          "index": 57,
+          "clipped": 31,
+          "samples": 528,
+          "fraction": 0.058712121212121215
+        },
+        {
+          "index": 58,
+          "clipped": 31,
+          "samples": 544,
+          "fraction": 0.05698529411764706
+        },
+        {
+          "index": 59,
+          "clipped": 31,
+          "samples": 560,
+          "fraction": 0.055357142857142855
+        },
+        {
+          "index": 60,
+          "clipped": 31,
+          "samples": 576,
+          "fraction": 0.05381944444444445
+        },
+        {
+          "index": 61,
+          "clipped": 31,
+          "samples": 592,
+          "fraction": 0.052364864864864864
+        },
+        {
+          "index": 62,
+          "clipped": 31,
+          "samples": 608,
+          "fraction": 0.05098684210526316
+        },
+        {
+          "index": 63,
+          "clipped": 31,
+          "samples": 624,
+          "fraction": 0.049679487179487176
+        }
+      ],
+      "max_cumulative_clipping_fraction": 0.1,
+      "label": "primary_first_front_lateral_clip-baseline",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 128,
+      "actions": 32,
+      "completed_before": 31,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.058929273333069,
+          "samples": 624,
+          "clipped": 31
+        }
+      },
+      "min_margin_m": 1.1136250601379702,
+      "max_path_error_m": 1.5094106085050005,
+      "max_reference_overspeed_m_s": 4.8482287245638815,
+      "max_body_speed_m_s": 95.09464292973738,
+      "mode_counts": {
+        "SOURCE_RESPONSE": 19,
+        "SOURCE_FULL": 13
+      },
+      "high_fraction": 0.0,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    },
+    {
+      "clipping_trajectory": [
+        {
+          "index": 32,
+          "clipped": 0,
+          "samples": 128,
+          "fraction": 0.0
+        },
+        {
+          "index": 33,
+          "clipped": 1,
+          "samples": 144,
+          "fraction": 0.006944444444444444
+        },
+        {
+          "index": 34,
+          "clipped": 2,
+          "samples": 160,
+          "fraction": 0.0125
+        },
+        {
+          "index": 35,
+          "clipped": 2,
+          "samples": 176,
+          "fraction": 0.011363636363636364
+        },
+        {
+          "index": 36,
+          "clipped": 5,
+          "samples": 192,
+          "fraction": 0.026041666666666668
+        },
+        {
+          "index": 37,
+          "clipped": 8,
+          "samples": 208,
+          "fraction": 0.038461538461538464
+        },
+        {
+          "index": 38,
+          "clipped": 11,
+          "samples": 224,
+          "fraction": 0.049107142857142856
+        },
+        {
+          "index": 39,
+          "clipped": 16,
+          "samples": 240,
+          "fraction": 0.06666666666666667
+        },
+        {
+          "index": 40,
+          "clipped": 20,
+          "samples": 256,
+          "fraction": 0.078125
+        },
+        {
+          "index": 41,
+          "clipped": 24,
+          "samples": 272,
+          "fraction": 0.08823529411764706
+        },
+        {
+          "index": 42,
+          "clipped": 28,
+          "samples": 288,
+          "fraction": 0.09722222222222222
+        },
+        {
+          "index": 43,
+          "clipped": 30,
+          "samples": 304,
+          "fraction": 0.09868421052631579
+        },
+        {
+          "index": 44,
+          "clipped": 31,
+          "samples": 320,
+          "fraction": 0.096875
+        },
+        {
+          "index": 45,
+          "clipped": 31,
+          "samples": 336,
+          "fraction": 0.09226190476190477
+        },
+        {
+          "index": 46,
+          "clipped": 31,
+          "samples": 352,
+          "fraction": 0.08806818181818182
+        },
+        {
+          "index": 47,
+          "clipped": 31,
+          "samples": 368,
+          "fraction": 0.08423913043478261
+        },
+        {
+          "index": 48,
+          "clipped": 31,
+          "samples": 384,
+          "fraction": 0.08072916666666667
+        },
+        {
+          "index": 49,
+          "clipped": 31,
+          "samples": 400,
+          "fraction": 0.0775
+        },
+        {
+          "index": 50,
+          "clipped": 31,
+          "samples": 416,
+          "fraction": 0.07451923076923077
+        },
+        {
+          "index": 51,
+          "clipped": 31,
+          "samples": 432,
+          "fraction": 0.07175925925925926
+        },
+        {
+          "index": 52,
+          "clipped": 31,
+          "samples": 448,
+          "fraction": 0.06919642857142858
+        },
+        {
+          "index": 53,
+          "clipped": 31,
+          "samples": 464,
+          "fraction": 0.0668103448275862
+        },
+        {
+          "index": 54,
+          "clipped": 31,
+          "samples": 480,
+          "fraction": 0.06458333333333334
+        },
+        {
+          "index": 55,
+          "clipped": 31,
+          "samples": 496,
+          "fraction": 0.0625
+        },
+        {
+          "index": 56,
+          "clipped": 31,
+          "samples": 512,
+          "fraction": 0.060546875
+        },
+        {
+          "index": 57,
+          "clipped": 31,
+          "samples": 528,
+          "fraction": 0.058712121212121215
+        },
+        {
+          "index": 58,
+          "clipped": 31,
+          "samples": 544,
+          "fraction": 0.05698529411764706
+        },
+        {
+          "index": 59,
+          "clipped": 31,
+          "samples": 560,
+          "fraction": 0.055357142857142855
+        },
+        {
+          "index": 60,
+          "clipped": 31,
+          "samples": 576,
+          "fraction": 0.05381944444444445
+        },
+        {
+          "index": 61,
+          "clipped": 31,
+          "samples": 592,
+          "fraction": 0.052364864864864864
+        },
+        {
+          "index": 62,
+          "clipped": 31,
+          "samples": 608,
+          "fraction": 0.05098684210526316
+        },
+        {
+          "index": 63,
+          "clipped": 31,
+          "samples": 624,
+          "fraction": 0.049679487179487176
+        }
+      ],
+      "max_cumulative_clipping_fraction": 0.1,
+      "label": "primary_first_front_lateral_clip-candidate",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 128,
+      "actions": 32,
+      "completed_before": 31,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.0589861252276531,
+          "samples": 624,
+          "clipped": 31
+        }
+      },
+      "min_margin_m": 0.6117259050666957,
+      "max_path_error_m": 1.4498075020956351,
+      "max_reference_overspeed_m_s": 4.84967395232583,
+      "max_body_speed_m_s": 95.09599540342742,
+      "mode_counts": {
+        "SOURCE_RESPONSE": 19,
+        "SOURCE_FULL": 13
+      },
+      "high_fraction": 0.0,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    }
+  ],
+  "model_integrator_ticks": 23875,
+  "source_wheel_force_evaluations_in_integrator": 95500,
+  "explicit_force_evaluations": 97728,
+  "planner_cost": {
+    "force_evaluations": 97728,
+    "forecast_calls": 1230,
+    "forecast_ticks": 23619,
+    "geometry_checks": 24849
+  },
+  "CPU_s": 235.116817355,
+  "wall_s": 235.1270128019969,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0
+}
