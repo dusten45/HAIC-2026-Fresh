@@ -1,0 +1,117 @@
+{
+  "stage": 500,
+  "status": "DESIGN_AND_PURE_IMPLEMENTATION_COMPLETE_NOT_EXECUTED",
+  "automatic_execution": false,
+  "new_physics_authorized_in_500": false,
+  "purpose": "One H_A fixed future-braking-envelope model screen. H_B path/curvature/preview alignment parked; no second candidate, gain/profile sweep, new root or fallback.",
+  "code_pins": {
+    "retry/envelope500.py": "1b5b027bd6a0e1631fc11165fc131ab67394e3908f926adb33605e3f7bdab964",
+    "retry/verify500.py": "896374587038f2eded30b9dfd2aa8bff94324fd365dd0c76064de0116824fbef",
+    "retry/storage500.py": "52f3f2f3c6cb3d4ad981d0650b590d81559874ea8ea3a4811c84a4bf06efba63",
+    "retry/test_envelope500.py": "416bfbc69e4bbd2695fa70b1b3cadbd0fa0708750d795ccf034ac2e21669ff4b",
+    "retry/scalar392_audit.py": "52ddad4269613eb53577d1362325e681d0f68401899b28977ea717c8b678da94",
+    "retry/signed417_executor.py": "11889e888bd065f5ff5019b6398e3099d9c8316cf61e26dc9f7fa7acbb555c72",
+    "retry/paired417_common.py": "4a0bae8e06d15443b03996c6e035283ba953652fa0ee52d6fb6af3a34c7f4322"
+  },
+  "root": {
+    "source": "Existing473 pre23 root from453 paired native before-nominal receipts. Saved500 equality check verifies full paired root,472/453 first22 rows,472 pre23 memory. No495C4 authority transfer.",
+    "split": "Already exposed DEV diagnostic condition only; no new seed, HOLDOUT or SEALED.",
+    "bindings": "Before-nominal memory, full physical/finish snapshot, exact global RNG receipt and GoalLedger identity; exact frozen line/P4; existing473 source qualification preserved. No fresh whole-domain physics qualification claimed."
+  },
+  "law": {
+    "implementation": "retry.envelope500.solve and act",
+    "constants": {
+      "effective_mass": 29.249793766661764,
+      "rear_traction_accel": 35.0188778925416,
+      "brake_accel": 91.16873397261595,
+      "power": 80000,
+      "time_rationals": "k/50,k=1,2,3,4"
+    },
+    "domain": "FIRST_LAP,0<s<L,v>=0,sigma>=0, finite floats, strictly increasing arcs with0 start, P4 node0=0 and all future speeds>0. Stationary interior v=sigma=0 supported. Reverse/ambiguous projection/other phase STOP or explicit unchanged qualified phase handoff.",
+    "surrogate": "v_hat=v+a*t, s_hat=s+sigma*t+a*t²/2; low=max(-B,-v/tau,-sigma/tau), high=min(rear,80000/(exact_mass*binary64(v+2.7))).",
+    "constraints": "Every future node at each exact20ms boundary: if not yet crossed, v_hat²<=r²+2B(d-travel); if crossed, earliest crossing speed<=r. d=0 checks present v<=r, seam equality owned by crossed branch. Terminal remains unwrapped fixedL; within-hold overshoot pastL allowed, final-node crossing still checked, no launch-zero reuse. Current s>=L requires own valid finish handoff or STOP, never fabricated DONE.",
+    "partition": "Each node/time partitions acceleration at switch=2(d-sigma*t)/t²; uncrossed quadratic E and crossed sqrt inequality meet continuously. Nonnegative speed/progress makes each monotone in a. Intersection is closed lower interval or empty. Stable larger quadratic root/crossed root give real upper cut; Decimal80 seeds, exact Fraction predicates certify selected binary64 and immediately larger float infeasible.",
+    "numeric_failure": "EMPTY_SET means exact admissible lower endpoint infeasible. EMPTY_BINARY64 means real set has no representable feasible binary64. ROOT_ROUNDING/MAXIMALITY certificate stops are not empty-set proofs. At most8 ULP correction; no policy fallback.",
+    "pedal": "Use source392 finite map with exact frozen mass; compareAST-isolated original map. Float32 round, decode fixed scalar inverse, exact residual recheck; move adjacent pedal toward less acceleration if necessary. Adjacent more-accelerating pedal must fail or be bounded by1. Unrepresentable mapping STOP. Preserve nominal steering float32 bits. Scalar inverse is not physical realised acceleration or tyre feasibility.",
+    "continuous_scope": "Speed/progress nonnegative for whole80ms; envelope at four sample boundaries and exact node crossings only. No continuous-time stopping-envelope claim between samples.",
+    "caller": "Invoke frozen SourceC nominal exactly once with own state, after fixed P4 injection from pre23. Convert nominal ndarray to lossless Pythonfloat list before pure act. Retain resulting memory and unchanged geometry/steering/preview. Route by post-nominal phase and current own finish tracker; qualified FINISH_CONFIRM law unchanged."
+  },
+  "factual_replay_scope": {
+    "role": "One counted observed-trajectory calibration world. Future472 commands are permitted only here; it is not an online feedback baseline.",
+    "input": "Replay actual472 commands global23..171, same Original reference until125 and P4 injection before126; call original nominal once for memory, compare stored nominal/memory under existing field-specific qualifications. Do not replace own evolving state with native snapshots.",
+    "compare_available": [
+      "All171 fulltrace row schema and682raw ticks validated in500; replay uses remaining149 holds.",
+      "Stored actual commands exact float32; discrete indices/phase/ledger/flags exact under original qualification. Continuous physical/wheel/hull/time/safety fields use pinned existing473/472 tolerances; full model/native bytes are not assumed identical.",
+      "Raw pre-force tire/hull arrays and wrapper sensors, controller memory, official event/confirmation clocks and actual ledger.",
+      "Native after-receipt tracker-post position/velocity/progress/time/tracker/collision/wheel-road-contact; wrapper-return full physical/controller/RNG/elapsed and damage. 500 inspected23/126/171 full after-receipt schemas plus source generator; before execution check all required23..171 receipts with original manifest."
+    ],
+    "missing": [
+      "Historical tracker-post direct damage",
+      "Historical tracker-post direct controller phase",
+      "Historical495-style sealed direct provenance"
+    ],
+    "prohibited": "No filling absent tickdamage from final wrapperdamage or tickphase from nominal phase. Old routing copies remain derived. New model direct495 capture is new evidence and cannot reconstruct missing old measurements.",
+    "qualification": "Existing473 Original factual/source and P4 independent model repeats retained. EarlyP4 native factual scope remains0; full472 late suffix observations do not qualify every new earlyP4 state. Matching whole factual trace is calibration on this observed trajectory only.",
+    "extra_native_collection_needed_for_this_limited_screen": false,
+    "stronger_claim_would_require": "A separately authorised native replay with direct capture at those microphases to claim native direct damage/phase agreement, or new states/native evidence for broader transition fidelity. Not required solely because format changed."
+  },
+  "prephysics_gates": [
+    "Current user deadline and separate authority for four-world execution;500 itself only pure work.",
+    "Pin law/source/defaults/closures/constants and complete original473 root/input/RNG/ledger provenance. Reuse applicable498 source gates; no495root or491projection transfer.",
+    "All existing receipt manifest/field coverage and comparison tolerances validated without constructors/reset/steps. Missing required historical fields report MISSING; optional absent directdamage/phase excluded by declared scope.",
+    "Pure law/negative/root/node/float32 fixtures pass; no runtime import or nominal call creates physics during preparation. Candidate cannot read factual futurecommands/states/labels.",
+    "Route all runtime legacy save/receipt/capture/observer/child/stream/manifest/closing writes through lossless codec then Store500 final-byte admission. Before construction, dry-run format/type/path/category routing under physics poison, ensure no untracked writer, full-state refs roundtrip, max512KiB object and4MiB metadata chunks. Store500 alone is not installed into runtime in500.",
+    "Disk preflight and callback/cold/held ownership exact. Then run counted factual replay; first discrepancy stops before all candidate worlds."
+  ],
+  "future_caps": {
+    "worlds": 4,
+    "factual_full": 1,
+    "candidate_cold_full": 2,
+    "candidate_held_first": 1,
+    "holds": 448,
+    "charged_ticks": 1792,
+    "actual_actions": 0,
+    "reset": 0,
+    "new_seed": 0,
+    "allocator": 0,
+    "CPU_s": 600,
+    "wall_s": 900,
+    "bytes": 268435456,
+    "files_including_atomic_temporary": 2688,
+    "final_files_max": 2687,
+    "state_objects": 320,
+    "bytes_per_state": 524288,
+    "ticks_files": 1792,
+    "bytes_per_tick_final_serialized": 16384,
+    "bundles": 448,
+    "bytes_per_bundle_final_serialized": 65536,
+    "other_files": 128,
+    "other_aggregate_bytes": 16777216,
+    "other_perfile_bytes": 4194304
+  },
+  "storage": {
+    "implementation": "retry/storage500.py; accepts final serialised bytes, including codec envelope. Codec481 semantic hashes/reference format retained by future adapter; generic byte-intern helper is not a replacement for481 semantic refs.",
+    "capacity": "160MiB states+28MiB ticks+28MiB bundles+16MiB other=232MiB final; max4MiB simultaneous atomic copy<=236MiB, within256MiB. 24MiB total headroom,20MiB afterworst temp. Max2687 finalfiles+1temp. Worstcase metadata uses127 files; category128 only ifothercategories use fewer.",
+    "closing": "Reserve8 otherfiles and256KiB for closing before release. All artifacts/manifests/control/logs included, no per-hold extra files outside declared categories. Large per-worldobserver/child metadata chunked<=4MiB, aggregate<=16MiB.",
+    "state_interning": "Full states lossless, only exact repeated states deduplicated; no quantization or truncation. Stop immediately at first repeat mismatch or state cap. Root and all own hold states included in320; no materialised copies of old raw inputs.",
+    "measured_existing495": "432tickfiles max2619B;108bundlefiles max32197B including codec.25 existing fullstates max492658B. These samples support sizing only; future schema growth stops at caps. Bundles duplicate partialdirectcapture payload and refs; cost not removed.",
+    "write_failure": "A failed filesystem write sets a permanent failed flag; all later outputs are blocked, including closeout writes. Preserve already admitted temporary evidence, close worlds in memory and report the typed stop without creating further disk artifacts. No retry or cleanup of evidence.",
+    "admission": "All size/category/count checks before write using actual serializedbytes. Immutable exclusivepublish and readback. Statebyteintern readback. Unexpected write failure stops immediately; no continuation/resume/rescue. Closure must account failed/temp artifacts and preserve evidence. Any runtime writer bypass or inability to include closure within caps is prephysics TECHNICAL_STOP.",
+    "disk": "Keep512MiB free reserve on each volume; /tmp preflight needs256MiB+512MiB, workspace ownmetadata<=16MiB+512MiB within same256MiB combined output cap. Recheck before each write. No deleting existing raw/backups to fit."
+  },
+  "decision": {
+    "screen_pass": "Factual calibration passes; candidate both own model safe complete officialevent+ledger; binary exact cold/model repeat and held first equality; episode upper<=13.14s including fixed1.76s prefix. No actual performance/11.99/HOLDOUT promotion.",
+    "reject_this_package": "Technical gates pass, then own-modelunsafe or exactEMPTY_SET or unfinished149holds. Reject only frozen referenceactivation+executor package.",
+    "technical_stop": "Source/scope/capture/writer/EMPTY_BINARY64/uncertified numeric or float32 mapping/cap/teardown failure. Keep separate from physical-performance rejection.",
+    "no_information": "Safe finish but<.50s improvement or mixed evidence.",
+    "no_followup": "No extra world/reset/root/parameter sweep/rescue, no automated continuation.",
+    "goal": "11.99s unchanged; separately preregistered actual complete lap then independentDEV/HOLDOUT/SEALED gates still required."
+  },
+  "current_500_spend": {
+    "new_physics": 0,
+    "research_remaining": 26027,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "deadline_KST": "2026-10-20T19:01:55+09:00"
+}

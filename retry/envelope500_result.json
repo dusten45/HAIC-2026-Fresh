@@ -1,0 +1,58 @@
+{
+  "stage": 500,
+  "status": "PURE_SCALAR_VALIDATION_PASS",
+  "counts": {
+    "fixtures": 60,
+    "feasible": 44,
+    "empty": 16,
+    "grid_points": 15552,
+    "mapped": 44,
+    "mapping_stop": 0,
+    "independent_checks": 88
+  },
+  "source_pedal_exact_checks": 40,
+  "negative_domains": {
+    "terminal": "TERMINAL_HANDOFF_NO_ACTION",
+    "reverse": "REVERSE_OR_NEGATIVE_SPEED",
+    "negative_speed": "REVERSE_OR_NEGATIVE_SPEED",
+    "nan": "NONFINITE_OR_NONSCALAR",
+    "infinity": "NONFINITE_OR_NONSCALAR",
+    "duplicates": "NODE_DOMAIN",
+    "zero_node_speed": "NODE_SPEED_DOMAIN",
+    "start_no_launch": "FIRST_LAP_DOMAIN_NO_WRAP",
+    "past_terminal": "FIRST_LAP_DOMAIN_NO_WRAP"
+  },
+  "max_float32_scalar_mapping_error_m_s2": 4.471311413567491e-06,
+  "max_float32_ulp_adjustments": 1,
+  "saved_contexts": {
+    "count": 17,
+    "scalar_feasible": 17,
+    "statuses": [
+      "SCALAR_FEASIBLE"
+    ],
+    "per_context_results_private": true
+  },
+  "saved_contexts_scope": "Fixed evenly spaced prior472 holds plus23/126/171. Off-policy scalar diagnostics only, no dynamics or actual promotion.",
+  "source_pins": {
+    "code": "1b5b027bd6a0e1631fc11165fc131ab67394e3908f926adb33605e3f7bdab964",
+    "verify": "896374587038f2eded30b9dfd2aa8bff94324fd365dd0c76064de0116824fbef"
+  },
+  "exact_model": {
+    "mass": 7.3019199669361115,
+    "effective_mass": 29.249793766661764,
+    "rear_traction_accel": 35.0188778925416,
+    "brake_accel": 91.16873397261595,
+    "lateral_accel": 87.648180601539
+  },
+  "times": "Exact rationals k/50 k1..4, not exact binary64 .02.",
+  "continuous_time_envelope_claimed": false,
+  "maximality": "Monotone admissible set + algebraic partition + independent Fraction feasible and nextafter infeasible. Decimal80 seeds only; grid is counterexample search, not continuum proof.",
+  "no_physics_world_reset_integration_seed_HOLDOUT_SEALED": 0,
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "CPU_s": 4.990895285,
+  "wall_s": 4.994503331021406,
+  "CPU_cap_s": 180,
+  "wall_cap_s": 240
+}

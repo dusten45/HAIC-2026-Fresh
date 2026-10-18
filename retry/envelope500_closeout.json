@@ -1,0 +1,94 @@
+{
+  "stage": 500,
+  "numeric_status": "PURE_SCALAR_VALIDATION_PASS",
+  "boundary_storage_tests": 18,
+  "counts": {
+    "fixtures": 60,
+    "feasible": 44,
+    "empty": 16,
+    "grid_points": 15552,
+    "mapped": 44,
+    "mapping_stop": 0,
+    "independent_checks": 88
+  },
+  "saved_contexts": {
+    "count": 17,
+    "scalar_feasible": 17,
+    "statuses": [
+      "SCALAR_FEASIBLE"
+    ],
+    "per_context_results_private": true
+  },
+  "source": {
+    "factual_replay_supported": [
+      "stored commands and wrapper sensors/memory",
+      "raw pre-force wheel and hull measurements",
+      "direct post-tracker position/velocity/progress/time/tracker/collision/road-contact in sampled native after receipts",
+      "wrapper-return full physical/RNG/controller/elapsed/tracker and damage",
+      "own actual ledger/event completion under existing authority"
+    ],
+    "missing_direct_measurements": [
+      "each tracker-post damage",
+      "each tracker-post controller phase",
+      "495-style sealed direct capture provenance"
+    ],
+    "derived_not_direct": [
+      "routing posts.damage copied from final wrapper row.damage",
+      "routing/model posts.phase assigned hold controller phase",
+      "grass derived from tire pre-force records; not tracker-post grass measurement",
+      "guard path_error=max(pre-force projection,tracker-post projection) distinct from pure post projection"
+    ],
+    "qualification_limits": [
+      "preserve original473 source/root checks; not proof every future state is physically qualified",
+      "Original factual range and P4 model self-consistency remain distinct",
+      "472 suffix actual checks do not create early P4 native factual observations",
+      "do not transfer495 C4 qualification",
+      "new replay may measure direct fields but cannot retrospectively fill old missing fields"
+    ]
+  },
+  "root_prefix_saved_checks": {
+    "paired_full_pre23_exact": true,
+    "472_453_first22_exact": true,
+    "pre23_memory_exact": true,
+    "prior473_source_qualification_retained": true
+  },
+  "storage_measured": {
+    "direct_tick_files": 432,
+    "tick_max_bytes": 2619,
+    "bundle_files": 108,
+    "bundle_max_bytes": 32197,
+    "fullstate_files_stat_only": 25,
+    "fullstate_max_bytes": 492658
+  },
+  "cost_accounting": {
+    "successful_numeric_runs": 4,
+    "successful_numeric_CPU_s": 19.935347444,
+    "successful_numeric_wall_s": 19.95212654210627,
+    "first_failed_numeric_CPU_upper_s": 1.0,
+    "first_failed_numeric_wall_s": 0.380987401,
+    "source_parser_CPU_s": 0.137625988,
+    "source_parser_wall_s": 0.14007141103502363,
+    "other_preparation_boundary_fixture_and_closure_allowance_CPU_s": 10.0,
+    "other_preparation_boundary_fixture_and_closure_allowance_wall_s": 20.0,
+    "CPU_cap_s": 180,
+    "wall_cap_s": 240,
+    "scope": "Cumulative process workloads, not conversational implementation elapsed. Earlier successful runs repeated only after concrete typed-domain/zero-sign/output-privacy changes; no new physics or parameter tuning.",
+    "charged_CPU_s": 31.072973432,
+    "charged_wall_s": 40.47318535414129
+  },
+  "new_physics": 0,
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "next_four_worlds_executed": false,
+  "runtime_writer_adapter_installed": false,
+  "code_pins": {
+    "retry/envelope500.py": "1b5b027bd6a0e1631fc11165fc131ab67394e3908f926adb33605e3f7bdab964",
+    "retry/verify500.py": "896374587038f2eded30b9dfd2aa8bff94324fd365dd0c76064de0116824fbef",
+    "retry/storage500.py": "52f3f2f3c6cb3d4ad981d0650b590d81559874ea8ea3a4811c84a4bf06efba63",
+    "retry/test_envelope500.py": "416bfbc69e4bbd2695fa70b1b3cadbd0fa0708750d795ccf034ac2e21669ff4b",
+    "retry/scalar392_audit.py": "52ddad4269613eb53577d1362325e681d0f68401899b28977ea717c8b678da94",
+    "retry/signed417_executor.py": "11889e888bd065f5ff5019b6398e3099d9c8316cf61e26dc9f7fa7acbb555c72",
+    "retry/paired417_common.py": "4a0bae8e06d15443b03996c6e035283ba953652fa0ee52d6fb6af3a34c7f4322"
+  }
+}
