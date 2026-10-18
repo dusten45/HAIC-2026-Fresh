@@ -1,0 +1,86 @@
+{
+  "uniform": {
+    "fixed504": {
+      "target_RMSE_m_s": 0.002023202015932453,
+      "max_target_abs_m_s": 0.00220600313291186,
+      "max_closed_speed_error_m_s": 0.0022059965056584474,
+      "max_open_speed_error_m_s": 0.0022289508431043714,
+      "max_closed_position_error_m": 0.00017660824671209888,
+      "max_open_position_error_m": 0.015378118544295528,
+      "minimum_clearance_m": 2.0098515613184658,
+      "closed_mu_mismatches": 0,
+      "closed_tile_mismatches": 72,
+      "open_mu_mismatches": 0,
+      "material_transitions": 0,
+      "mechanical_brake_work_J": 10131.307461093636,
+      "final_arc_progress_m": 36.73146745788668,
+      "max_excess_braking_m_s": 0.00220600313291186,
+      "max_norm_minus_sigma_m_s": 0.016782596045509024
+    },
+    "geometry": {
+      "target_RMSE_m_s": 0.002023202015932453,
+      "max_target_abs_m_s": 0.00220600313291186,
+      "max_closed_speed_error_m_s": 0.0022059965056584474,
+      "max_open_speed_error_m_s": 0.0022289508431043714,
+      "max_closed_position_error_m": 0.00017660824671209888,
+      "max_open_position_error_m": 0.015378118544295528,
+      "minimum_clearance_m": 2.0098515613184658,
+      "closed_mu_mismatches": 0,
+      "closed_tile_mismatches": 0,
+      "open_mu_mismatches": 0,
+      "material_transitions": 0,
+      "mechanical_brake_work_J": 10131.307461093636,
+      "final_arc_progress_m": 36.73146745788668,
+      "max_excess_braking_m_s": 0.00220600313291186,
+      "max_norm_minus_sigma_m_s": 0.016782596045509024
+    }
+  },
+  "material_stripes": {
+    "fixed504": {
+      "target_RMSE_m_s": 0.013711776830507257,
+      "max_target_abs_m_s": 0.028987067944953537,
+      "max_closed_speed_error_m_s": 0.028987024667131323,
+      "max_open_speed_error_m_s": 0.043186234730086426,
+      "max_closed_position_error_m": 0.0182027584252475,
+      "max_open_position_error_m": 0.2214446360898997,
+      "minimum_clearance_m": 1.7574719081491712,
+      "closed_mu_mismatches": 24,
+      "closed_tile_mismatches": 73,
+      "open_mu_mismatches": 40,
+      "material_transitions": 16,
+      "mechanical_brake_work_J": 10085.141552351339,
+      "final_arc_progress_m": 36.74589575728617,
+      "max_excess_braking_m_s": 0.028987067944953537,
+      "max_norm_minus_sigma_m_s": 0.05545527200627731
+    },
+    "geometry": {
+      "target_RMSE_m_s": 0.0032859410117270817,
+      "max_target_abs_m_s": 0.005931729003236796,
+      "max_closed_speed_error_m_s": 0.005931722837971165,
+      "max_open_speed_error_m_s": 0.00374924191360293,
+      "max_closed_position_error_m": 0.0012954921187134632,
+      "max_open_position_error_m": 0.010564611894142439,
+      "minimum_clearance_m": 1.7584001968105465,
+      "closed_mu_mismatches": 0,
+      "closed_tile_mismatches": 0,
+      "open_mu_mismatches": 0,
+      "material_transitions": 16,
+      "mechanical_brake_work_J": 10063.749663252795,
+      "final_arc_progress_m": 36.74552940500067,
+      "max_excess_braking_m_s": 0.005931729003236796,
+      "max_norm_minus_sigma_m_s": 0.05529283431273058
+    }
+  },
+  "saved_same_tick_force_check": {
+    "max_force_vector_error_N": 0.00019936985949888544,
+    "max_omega_error_rad_s": 1.1653769576014383e-06,
+    "force_limit_saturated_wheel_ticks": {
+      "uniform/fixed504": 0,
+      "material_stripes/geometry": 33,
+      "material_stripes/fixed504": 33,
+      "uniform/geometry": 0
+    },
+    "extra_worlds": 0,
+    "extra_physical_steps": 0
+  }
+}

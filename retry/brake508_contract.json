@@ -1,0 +1,48 @@
+{
+  "registered_utc": "2026-10-18T04:40:59.796202+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "physical_budget": {
+    "worlds": 4,
+    "positive_ticks": 128,
+    "zero_dt_primes": 4,
+    "failure_analysis_extra_worlds": 0,
+    "failure_analysis_extra_ticks": 0
+  },
+  "resource_caps": {
+    "CPU_s": 90,
+    "wall_s": 120,
+    "private_bytes": 16777216,
+    "private_files": 256,
+    "native_actions": 0,
+    "environment_resets": 0,
+    "track_seed_generation": 0
+  },
+  "fixtures": "Two fixed40m-radius,4.5m-halfwidth polygon corridors,4m stations[-8,64]; uniform friction1 vs source-sensor material stripes. Source grass multiplier.35, low material.35, high1, fixed generator. No hidden contact assignment.",
+  "controls": "Same60m/s COM initial velocity,1.5rad/s yaw, front angle and constant steer atan(3.24/40), same goals initial speed-.8*h for8holds. Exact initial state/map pair check. Current full dynamics observed each hold.",
+  "prediction_modes": "Closed root reset each hold vs open model shadow initialized once and receiving only selected command thereafter. Neither candidate nor open model receives future actual contacts/state.",
+  "gates": {
+    "safety": "All32holds complete; geometry-arm whole hull/wheel fixture sampled clearance>=.25m from true outer/inner/end strip boundaries",
+    "speed": "Every geometry end-target and closed speed forecast absolute error<=.15m/s",
+    "contact": "No effective-friction mismatches in geometry closed forecasts; source prepose polygon oracle matches sensor membership exactly in both arms; mixed condition must have>=4wheel material transitions",
+    "cost": "No end speed more than.2m/s below goal (25% of requested.8 drop); final arc-progress loss vs504<=0.5% in each condition",
+    "open_model": "Measure speed/position/contact drift; no extra requirement that open model equals closed model"
+  },
+  "failure_branch": "Saved-only single worst geometry hold. Compare same-command current-force source oracle and measured-contact-conditioned forecast to original prediction. No new worlds/physics or threshold/fixture changes.",
+  "pure_gate": "Full branch budget arithmetic; accelerated AABB contact equivalence to full polygon search; forecast bit equality to506",
+  "retention": "Save every completed tick and hold and every world closure immediately. No favorable rerun selection.",
+  "source_sha256": {
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake504_diagnostic.py": "4cfa67035e7131eb11325dcdfa1812fe8d5674d237cacbd43c800e64f4c54fdc",
+    "retry/brake506_geometry.py": "4f69de71c0e1ad0d7707c9c9681f4e504367ccbce5c33ae6c0f369e7c6ed4392",
+    "retry/brake508_corridor.py": "10c2a4e021cce37b81a08ac0eb00e4040b0bb4dabdf5eac6989e18472b061407",
+    "retry/test_brake508.py": "0939c1e57daa67bf3d3ea6137a1587da24ee7cb2b0c359ff9f85c698f09de13c",
+    "retry/brake508_diagnostic.py": "9bb0f8ab2000eeb192dd9d6d4881dda04a8864fdc22f13287a38c9c4cd40d5a5"
+  },
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "New fixed synthetic curve/material conditions; exact whole map and body state privilege; braking feedback only, same feedforward steering. No track, protected data, pixel or lap qualification."
+}
