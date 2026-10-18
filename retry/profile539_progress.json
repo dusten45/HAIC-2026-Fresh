@@ -1,10 +1,22 @@
 {
-  "status": "COLD_MODEL_RUNNING_NO_NATIVE",
+  "status": "CAP90_MODEL_SAFE_FINISH_240MS_BELOW_500MS_GATE_NOT_PROMOTED",
   "snapshot_utc": "2026-10-18T13:53:51.028086+00:00",
   "pilot_pass": true,
   "candidate_primary_cap": 90,
   "baseline_actual_s": 14.22,
-  "last_cost_checkpoint": {
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "research_remaining": 23107,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "deadline_KST": "2026-10-20 19:01:55",
+  "completed_utc": "2026-10-18T14:05:50.021030+00:00",
+  "candidate_cold_model_s": 13.97999999999979,
+  "cold_gain_ms": 240,
+  "carry_runs": 0,
+  "native_actions": 0,
+  "actual_best_s": 14.22,
+  "prior_in_progress_checkpoint": {
     "current_case": "cold-candidate",
     "completed_cases": 0,
     "model_ticks": 10648,
@@ -33,11 +45,5 @@
         }
       }
     }
-  },
-  "new_seeds": 0,
-  "protected_queries": 0,
-  "research_remaining": 23107,
-  "reserve": 84000,
-  "reserve_used": 0,
-  "deadline_KST": "2026-10-20 19:01:55"
+  }
 }
