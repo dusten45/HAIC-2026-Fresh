@@ -1,0 +1,42 @@
+{
+  "status": "SAVED541_CORNER_FRAME_DIAGNOSIS",
+  "groups": {
+    "firstcorner": {
+      "mean_abs_body_velocity_heading_rad": 0.019502698704756877,
+      "max_abs_body_velocity_heading_rad": 0.057748120581042076,
+      "seconds": 1.6
+    },
+    "firstexit_and_fast": {
+      "mean_abs_body_velocity_heading_rad": 0.0014534336033112352,
+      "max_abs_body_velocity_heading_rad": 0.005304792014539715,
+      "seconds": 2.88
+    },
+    "middlecorner": {
+      "mean_abs_body_velocity_heading_rad": 0.004282766016963388,
+      "max_abs_body_velocity_heading_rad": 0.009003155502038979,
+      "seconds": 2.0
+    },
+    "latecorner": {
+      "mean_abs_body_velocity_heading_rad": 0.014100945469455894,
+      "max_abs_body_velocity_heading_rad": 0.035404814223444006,
+      "seconds": 1.68
+    }
+  },
+  "primary_action": 32,
+  "risk_action": 55,
+  "actual_minimum_margin_action": 71,
+  "actual_minimum_margin_m": 0.5271545833699623,
+  "hypothesis": "Body-heading pursuit may treat body/velocity sideslip as geometric heading error. Test velocity-direction pursuit with identical target/lookahead/gain/clamp and unchanged source pedal certification. It can also understeer: not assumed better.",
+  "past_failure_preserved": "512 held nonzero24thsteer on straight approach: actual margin failure action34/cross-track4.945. New feedback recalculates each action including forecasts; no frozen command/geometryonly safety. 533 solver nonconvergence preserved/no optimizer resume.",
+  "new_model_ticks": 0,
+  "new_native_actions": 0,
+  "CPU_s": 0.12239982000000002,
+  "wall_s": 0.12240033399575623,
+  "source_sha256": {
+    "/workspace/HAIC-2026-Fresh/retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "/workspace/HAIC-2026-Fresh/retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "/workspace/HAIC-2026-Fresh/retry/plan512_result.md": "bb0979a487b4623f63b731e1bc7a894b9701262eb24126243bc5a9968eae85bd",
+    "/workspace/HAIC-2026-Fresh/retry/joint533_result.md": "810f6bb5aff7caddb42f27f66645d0565ce24b8a9413de2449b23907a814c197",
+    "/workspace/haic-response541-private/native-full-records-private.json": "34aeee82278c5da67aa7cac60ac287153111bf291b4c78593cf7473d3147feef"
+  }
+}
