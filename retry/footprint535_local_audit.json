@@ -1,0 +1,45 @@
+{
+  "first_pedal_intervention_index": 158,
+  "lead_before_original_failed_hold_s": 0.56,
+  "first_intervention_steering_bit_identical_to534": true,
+  "identical_executed_prefix_raw": 68,
+  "identical_prefix_states": 68,
+  "rejected_HIGH_reason": "FORECAST_FOOTPRINT_MARGIN",
+  "rejected_HIGH_footprint_visibility": {
+    "hold": 9,
+    "raw_in_hold": 1,
+    "raw_from_root": 33,
+    "margin_m": 0.4708456291705526
+  },
+  "selected_FINAL_min_margin_m": 0.5000000933744452,
+  "selected_FINAL_ok": true,
+  "windows": [
+    {
+      "window": "early-recovery-private.json",
+      "commands": 36,
+      "steering_rule_identical": 36,
+      "fresh_final_certificates": 36,
+      "minimum_selected_forecast_margin_m": 0.5000000024405155
+    },
+    {
+      "window": "regression-obstacle-private.json",
+      "commands": 24,
+      "steering_rule_identical": 24,
+      "fresh_final_certificates": 24,
+      "minimum_selected_forecast_margin_m": 0.6066776142544791
+    },
+    {
+      "window": "regression-curvature-private.json",
+      "commands": 24,
+      "steering_rule_identical": 24,
+      "fresh_final_certificates": 24,
+      "minimum_selected_forecast_margin_m": 0.8036742174861299
+    }
+  ],
+  "source_input_pins_verified": true,
+  "extra_model_ticks": 0,
+  "extra_force_evaluations": 0,
+  "CPU_s": 0.10763196,
+  "wall_s": 0.10763163299998268,
+  "scope": "Samefeedbacksteeringrulethroughout;afterpedalinterventionsteervaluesmaydifferbecauseownstatetrajectorydiffers. Localrecoverynotglobalfinish/actualgain."
+}

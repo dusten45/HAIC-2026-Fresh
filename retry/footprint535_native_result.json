@@ -1,0 +1,132 @@
+{
+  "status": "ACTUAL_FULL_PAIR_NOT_QUALIFIED",
+  "arms": [
+    {
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "HIGH": 199,
+        "BACKUP": 7
+      },
+      "high_fraction": 0.9660194174757282,
+      "budget": "baseline",
+      "stop": "OFFICIAL_FINISH",
+      "initial_identity": true,
+      "actions": 230,
+      "reset_ticks": 51,
+      "official_finish": true,
+      "official_finish_episode_s": 18.399999999999675,
+      "confirmation_episode_s": 18.399999999999675,
+      "reference_arc_event": {
+        "lower": 18.379999999999676,
+        "upper": 18.399999999999675,
+        "time": 18.382203652834608
+      },
+      "unwrapped_progress": 996.6033071248014,
+      "reference_path_length": 995.4452893670465,
+      "visited_tiles": 283,
+      "tile_count": 283,
+      "min_margin_m": 0.9882576743056799,
+      "max_path_error_m": 1.390558827526948,
+      "max_tracking_overspeed_m_s": 2.5544297447653648,
+      "max_unused_startup_reference_difference_m_s": 2.191204343467215,
+      "force_groups": {
+        "launch": {
+          "peak": 2.255467414712997,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.0570167345816543,
+          "samples": 3296,
+          "clipped": 16
+        }
+      },
+      "source_force_oracle_max_N": 0.00024296935989642145,
+      "source_COM_impulse_max_m_s": 2.4097171487026317e-05,
+      "max_prediction_errors": {
+        "position_m": 4.729551245590441e-05,
+        "speed_m_s": 4.774008051811052e-05,
+        "angle_rad": 3.4991522862279356e-05,
+        "yaw_rad_s": 0.0002883087999210332,
+        "max_force_ratio_error": 0.00023438642409923105
+      }
+    },
+    {
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "HIGH": 7,
+        "RESPONSE": 1
+      },
+      "high_fraction": 0.875,
+      "budget": "candidate",
+      "stop": "NO_ADMISSIBLE_ACTION",
+      "initial_identity": true,
+      "actions": 32,
+      "reset_ticks": 51,
+      "official_finish": false,
+      "official_finish_episode_s": null,
+      "confirmation_episode_s": null,
+      "reference_arc_event": null,
+      "unwrapped_progress": 103.40462313932305,
+      "reference_path_length": 978.6098315287799,
+      "visited_tiles": 31,
+      "tile_count": 283,
+      "min_margin_m": 3.828413618210061,
+      "max_path_error_m": 0.2623692093125149,
+      "max_tracking_overspeed_m_s": 0.0,
+      "max_unused_startup_reference_difference_m_s": 2.191204343467215,
+      "force_groups": {
+        "launch": {
+          "peak": 2.255467414712997,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 0.7800905248092982,
+          "samples": 128,
+          "clipped": 0
+        }
+      },
+      "source_force_oracle_max_N": 0.000167766848993868,
+      "source_COM_impulse_max_m_s": 1.6852944184842867e-05,
+      "max_prediction_errors": {
+        "position_m": 2.211807428614243e-05,
+        "speed_m_s": 1.7735072248115102e-05,
+        "angle_rad": 4.845587635582405e-07,
+        "yaw_rad_s": 4.279471119657437e-06,
+        "max_force_ratio_error": 4.632390460612701e-06
+      }
+    }
+  ],
+  "both_actual_official_finishes": false,
+  "official_finish_gain_s": null,
+  "practical_effect_gate": false,
+  "counts": {
+    "worlds": 2,
+    "closed": 2,
+    "resets": 2,
+    "actions": 262,
+    "raw_attempts": 1150,
+    "raw_completed": 1150
+  },
+  "all_model_integrator_ticks": 36026,
+  "all_model_wheel_force_evaluations": 149236,
+  "native_planner_cost": {
+    "force_evaluations": 46704,
+    "forecast_calls": 264,
+    "forecast_ticks": 11644,
+    "geometry_checks": 1776
+  },
+  "research_remaining": 23893,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "native_CPU_s": 72.305265476,
+  "native_wall_s": 72.31435631199929,
+  "prior535_reserved_model_ticks": 120000,
+  "prior535_reserved_explicit_force_evaluations": 600000,
+  "prior535_CPU_cap_reached_s": 600,
+  "all_geometry_checks": 25184,
+  "total_CPU_s": 316.383114534,
+  "total_wall_s": 316.4765525769981,
+  "scope": "535samefixed533pathwithwholefootprint12hold/freshcertcontroller vsfreshactual525policy.533unconverged/534failurepreserved. Actualpackagecomparisonnotpath-alone/optimality/pixel/11sclaim;528actualunvalidated."
+}

@@ -1,0 +1,244 @@
+{
+  "rows": [
+    {
+      "root": "actual",
+      "before_action": 32,
+      "mode": "RESPONSE",
+      "safe_command": true,
+      "force_only_controller": null,
+      "certificate_failure_reasons": {
+        "FORCE_PEAK": 16
+      },
+      "HIGH_report": {
+        "mode": "HIGH",
+        "ok": false,
+        "reason": "FORCE_PEAK",
+        "peak": 1.083161795904032,
+        "max_reference_overspeed": 0.0,
+        "clipped": 2,
+        "samples": 184,
+        "model_ticks": 17,
+        "first_hold": {
+          "speed": 71.98929966941327,
+          "reference": 76.82009903349059,
+          "positive_deficit": 4.830799364077322,
+          "progress_gain": 5.710041228851338,
+          "min_footprint_margin_m": 3.8225704889852024
+        },
+        "min_footprint_margin_m": 3.789396679558408,
+        "first_footprint_violation": null,
+        "first_hold_pass": true
+      },
+      "FINAL_report": {
+        "mode": "FINAL",
+        "ok": true,
+        "reason": "CERTIFIED_12HOLD_FLOAT32",
+        "peak": 1.0599996292159088,
+        "max_reference_overspeed": 0.0,
+        "clipped": 1,
+        "samples": 304,
+        "model_ticks": 48,
+        "first_hold": {
+          "speed": 68.24010600497188,
+          "reference": 77.02013824528441,
+          "positive_deficit": 8.780032240312536,
+          "progress_gain": 5.517703230054963,
+          "min_footprint_margin_m": 3.828413828165533
+        },
+        "min_footprint_margin_m": 2.5147034990010138,
+        "first_footprint_violation": null,
+        "first_hold_pass": true
+      },
+      "full_signed_grid_count": 0,
+      "full_signed_grid_safe_count": 0,
+      "full_signed_grid_first_hold_safe_count": 0,
+      "full_signed_grid_failure_reasons": {}
+    },
+    {
+      "root": "model",
+      "before_action": 32,
+      "mode": "RESPONSE",
+      "safe_command": true,
+      "force_only_controller": null,
+      "certificate_failure_reasons": {
+        "FORCE_PEAK": 16
+      },
+      "HIGH_report": {
+        "mode": "HIGH",
+        "ok": false,
+        "reason": "FORCE_PEAK",
+        "peak": 1.0831625965193585,
+        "max_reference_overspeed": 0.0,
+        "clipped": 2,
+        "samples": 184,
+        "model_ticks": 17,
+        "first_hold": {
+          "speed": 71.98930926608769,
+          "reference": 76.8201135104382,
+          "positive_deficit": 4.830804244350517,
+          "progress_gain": 5.710042101997928,
+          "min_footprint_margin_m": 3.8225731766372153
+        },
+        "min_footprint_margin_m": 3.7893993213073247,
+        "first_footprint_violation": null,
+        "first_hold_pass": true
+      },
+      "FINAL_report": {
+        "mode": "FINAL",
+        "ok": true,
+        "reason": "CERTIFIED_12HOLD_FLOAT32",
+        "peak": 1.0599993815623265,
+        "max_reference_overspeed": 0.0,
+        "clipped": 1,
+        "samples": 304,
+        "model_ticks": 48,
+        "first_hold": {
+          "speed": 68.24004653656081,
+          "reference": 77.02015636172054,
+          "positive_deficit": 8.780109825159727,
+          "progress_gain": 5.517700563077483,
+          "min_footprint_margin_m": 3.8284165965172288
+        },
+        "min_footprint_margin_m": 2.5147169475561992,
+        "first_footprint_violation": null,
+        "first_hold_pass": true
+      },
+      "full_signed_grid_count": 0,
+      "full_signed_grid_safe_count": 0,
+      "full_signed_grid_first_hold_safe_count": 0,
+      "full_signed_grid_failure_reasons": {}
+    },
+    {
+      "root": "actual",
+      "before_action": 33,
+      "mode": "NO_ADMISSIBLE_ACTION",
+      "safe_command": false,
+      "force_only_controller": {
+        "mode": "NO_ADMISSIBLE_ACTION",
+        "available": false
+      },
+      "certificate_failure_reasons": {
+        "FORCE_PEAK": 9
+      },
+      "HIGH_report": {
+        "mode": "HIGH",
+        "ok": false,
+        "reason": "FORCE_PEAK",
+        "peak": 1.072697780013184,
+        "max_reference_overspeed": 0.0,
+        "clipped": 2,
+        "samples": 200,
+        "model_ticks": 17,
+        "first_hold": {
+          "speed": 63.85580839976029,
+          "reference": 71.32898073080113,
+          "positive_deficit": 7.473172331040843,
+          "progress_gain": 5.27673061152511,
+          "min_footprint_margin_m": 3.799699737271485
+        },
+        "min_footprint_margin_m": 3.799699737271485,
+        "first_footprint_violation": null,
+        "first_hold_pass": true
+      },
+      "FINAL_report": null,
+      "full_signed_grid_count": 11,
+      "full_signed_grid_safe_count": 2,
+      "full_signed_grid_first_hold_safe_count": 7,
+      "full_signed_grid_failure_reasons": {
+        "FORCE_PEAK": 9
+      }
+    },
+    {
+      "root": "model",
+      "before_action": 33,
+      "mode": "RESPONSE",
+      "safe_command": true,
+      "force_only_controller": null,
+      "certificate_failure_reasons": {
+        "FORCE_PEAK": 21
+      },
+      "HIGH_report": {
+        "mode": "HIGH",
+        "ok": false,
+        "reason": "FORCE_PEAK",
+        "peak": 1.07269543551265,
+        "max_reference_overspeed": 0.0,
+        "clipped": 2,
+        "samples": 200,
+        "model_ticks": 17,
+        "first_hold": {
+          "speed": 63.85577515098926,
+          "reference": 71.32901277343458,
+          "positive_deficit": 7.473237622445325,
+          "progress_gain": 5.276727642194288,
+          "min_footprint_margin_m": 3.799701547823217
+        },
+        "min_footprint_margin_m": 3.799701547823217,
+        "first_footprint_violation": null,
+        "first_hold_pass": true
+      },
+      "FINAL_report": {
+        "mode": "FINAL",
+        "ok": true,
+        "reason": "CERTIFIED_12HOLD_FLOAT32",
+        "peak": 1.059999896444548,
+        "max_reference_overspeed": 0.0,
+        "clipped": 1,
+        "samples": 320,
+        "model_ticks": 48,
+        "first_hold": {
+          "speed": 62.586525397502314,
+          "reference": 71.40200709822001,
+          "positive_deficit": 8.815481700717697,
+          "progress_gain": 5.2116116770601195,
+          "min_footprint_margin_m": 3.799793829129953
+        },
+        "min_footprint_margin_m": 1.800152297963784,
+        "first_footprint_violation": null,
+        "first_hold_pass": true
+      },
+      "full_signed_grid_count": 0,
+      "full_signed_grid_safe_count": 0,
+      "full_signed_grid_first_hold_safe_count": 0,
+      "full_signed_grid_failure_reasons": {}
+    }
+  ],
+  "actual_vs_model_differences": [
+    {
+      "before_action": 32,
+      "position_m": 1.484438677336782e-05,
+      "velocity_vector_m_s": 1.7411848108271224e-05,
+      "angle_rad": 1.8711621940781242e-07,
+      "yaw_rad_s": 3.917319783204674e-06,
+      "wheel_omega_max": 2.4025735228860867e-05,
+      "lever_max_m": 9.288862189483567e-06,
+      "relative_joint_max_rad": 7.508788257837296e-08,
+      "wheel_relative_rates_max_rad_s": 5.190959200263023e-06
+    },
+    {
+      "before_action": 33,
+      "position_m": 2.5644894024798674e-05,
+      "velocity_vector_m_s": 5.302233904657287e-05,
+      "angle_rad": 1.859272664717082e-07,
+      "yaw_rad_s": 7.837931432219669e-07,
+      "wheel_omega_max": 0.00010421820275041682,
+      "lever_max_m": 6.95538305304926e-06,
+      "relative_joint_max_rad": 2.0489096641540527e-08,
+      "wheel_relative_rates_max_rad_s": 3.5762786865234375e-07
+    }
+  ],
+  "model_integrator_ticks": 2876,
+  "source_force_evaluations_in_integrator": 11504,
+  "explicit_force_evaluations": 11824,
+  "cost": {
+    "force_evaluations": 11824,
+    "forecast_calls": 112,
+    "forecast_ticks": 2876,
+    "geometry_checks": 2826
+  },
+  "CPU_s": 22.739449211,
+  "wall_s": 22.742217626000638,
+  "native_actions": 0,
+  "native_resets": 0,
+  "scope": "Savedactual/modelcurrentroots,unchanged535policy/futurebackup. Noactualfuturetraceinput,nonewcontrol/nativetry. Predictedfailureisnotobservedfuturecollisionorproofallpedalpoliciesimpossible."
+}

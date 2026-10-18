@@ -1,0 +1,143 @@
+{
+  "status": "FOOTPRINT_MODEL_NATIVE_ELIGIBLE",
+  "native_pair_eligible": true,
+  "technical_recovery_only": true,
+  "controller_path_thresholds_unchanged": true,
+  "pilot_pass": true,
+  "regression_pass": true,
+  "cached_cold": {
+    "max_speed_m_s": 79.8935614501973,
+    "max_body_speed_m_s": 81.63267510948454,
+    "end_progress": 979.6633181459136,
+    "history_samples_before": 0,
+    "variant": "candidate",
+    "completed_before": 0,
+    "stop": "MODEL_SOURCE_STYLE_FINISH",
+    "raw_ticks": 755,
+    "actions": 189,
+    "force_groups": {
+      "launch": {
+        "peak": 2.25546701731417,
+        "samples": 384,
+        "clipped": 46
+      },
+      "running": {
+        "peak": 1.0596858795824247,
+        "samples": 2636,
+        "clipped": 8
+      }
+    },
+    "min_margin_m": 0.5000000024405155,
+    "max_path_error_m": 1.401151943687208,
+    "max_reference_overspeed_m_s": 3.7082983448722757,
+    "mode_counts": {
+      "FIXED_LAUNCH": 24,
+      "HIGH": 148,
+      "RESPONSE": 13,
+      "BACKUP": 4
+    },
+    "high_fraction": 0.896969696969697,
+    "first_failure": null,
+    "model_finish_episode_s": 15.099999999999767,
+    "pass_safety": true,
+    "start": "cold"
+  },
+  "cached_528carry": {
+    "max_speed_m_s": 79.66108967002715,
+    "max_body_speed_m_s": 79.66717500918963,
+    "end_progress": 997.4199516281986,
+    "history_samples_before": 352,
+    "variant": "baseline",
+    "completed_before": 46,
+    "stop": "MODEL_SOURCE_STYLE_FINISH",
+    "raw_ticks": 729,
+    "actions": 183,
+    "force_groups": {
+      "launch": {
+        "peak": 0.0,
+        "samples": 0,
+        "clipped": 0
+      },
+      "running": {
+        "peak": 1.059999992999077,
+        "samples": 3268,
+        "clipped": 13
+      }
+    },
+    "min_margin_m": 0.9264845996008433,
+    "max_path_error_m": 1.7572438348171968,
+    "max_reference_overspeed_m_s": 4.849992414887289,
+    "mode_counts": {
+      "HIGH": 169,
+      "RESPONSE": 11,
+      "BACKUP": 3
+    },
+    "high_fraction": 0.9234972677595629,
+    "first_failure": null,
+    "model_finish_episode_s": 18.239999999999778,
+    "pass_safety": true
+  },
+  "new_carry": {
+    "max_speed_m_s": 79.78135818309032,
+    "max_body_speed_m_s": 81.71217055213654,
+    "end_progress": 979.4483568743652,
+    "history_samples_before": 352,
+    "variant": "candidate",
+    "completed_before": 46,
+    "stop": "MODEL_SOURCE_STYLE_FINISH",
+    "raw_ticks": 592,
+    "actions": 148,
+    "force_groups": {
+      "launch": {
+        "peak": 0.0,
+        "samples": 0,
+        "clipped": 0
+      },
+      "running": {
+        "peak": 1.0479403282010873,
+        "samples": 2720,
+        "clipped": 5
+      }
+    },
+    "min_margin_m": 0.5010187299731279,
+    "max_path_error_m": 1.3574077260124076,
+    "max_reference_overspeed_m_s": 4.052181063831213,
+    "mode_counts": {
+      "HIGH": 133,
+      "RESPONSE": 11,
+      "BACKUP": 4
+    },
+    "high_fraction": 0.8986486486486487,
+    "first_failure": null,
+    "model_finish_episode_s": 15.519999999999836,
+    "pass_safety": true
+  },
+  "gain_vs525_cold_s": 3.2999999999999297,
+  "package_gain_vs528_cold_s": 2.899999999999938,
+  "gain_vs525_carry_s": 3.1199999999999335,
+  "package_gain_vs528_carry_s": 2.719999999999942,
+  "technical_error": null,
+  "model_integrator_ticks": 23334,
+  "source_wheel_force_evaluations_in_integrator": 93336,
+  "explicit_force_evaluations": 94148,
+  "planner_cost": {
+    "force_evaluations": 94148,
+    "forecast_calls": 666,
+    "forecast_ticks": 22742,
+    "geometry_checks": 23408
+  },
+  "prior535_partial_cost_counts_exact": false,
+  "prior535_budget_reserved_model_ticks": 120000,
+  "prior535_budget_reserved_explicit_force_evaluations": 600000,
+  "prior535_budget_reserved_geometry_checks": 130000,
+  "prior535_CPU_cap_reached_s": 600,
+  "CPU_s": 244.077849058,
+  "wall_s": 244.16219326099963,
+  "native_actions": 0,
+  "native_resets": 0,
+  "native_worlds": 0,
+  "research_remaining": 24155,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "Same535fixedcontroller/path. Reusecompletedearly/regression/cold/528carry;repeatonlyincompletecandidatecarryafterCPUstop. Priorpartialcarryneverfinish/gainclaim;countsboundedconservatively,notfabricatedexact."
+}
