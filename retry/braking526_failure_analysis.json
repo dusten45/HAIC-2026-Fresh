@@ -1,0 +1,64 @@
+{
+  "source_input_and_prefix_pins_verified": true,
+  "first_failure": {
+    "action_index": 75,
+    "raw_in_hold": 4,
+    "episode_s": 6.0,
+    "mode": "HIGH",
+    "held_positive_gas": true,
+    "held_brake_zero": true,
+    "start_speed_m_s": 79.80705034519202,
+    "end_speed_m_s": 79.83731782540015,
+    "start_reference_m_s": 80.0,
+    "end_reference_m_s": 74.3401700043391,
+    "start_spatial_feedforward_m_s2": 0.0,
+    "end_spatial_feedforward_m_s2": -80.00000000000004,
+    "reference_drop_within_hold_m_s": 5.6598299956609,
+    "speed_change_within_hold_m_s": 0.030267480208124198,
+    "overspeed_gate_m_s": 5,
+    "observed_overspeed_m_s": 5.4971478210610485,
+    "governor_forecast_force_peak": 0.8122765529908059
+  },
+  "failing_hold_raw": [
+    {
+      "raw": 1,
+      "speed_m_s": 79.81447851597756,
+      "reference_m_s": 79.02097695262702,
+      "overspeed_m_s": 0.7935015633505316,
+      "current_force_peak": 0.010762459448166062
+    },
+    {
+      "raw": 2,
+      "speed_m_s": 79.82206465816236,
+      "reference_m_s": 77.59734234326044,
+      "overspeed_m_s": 2.224722314901925,
+      "current_force_peak": 0.0732134839979094
+    },
+    {
+      "raw": 3,
+      "speed_m_s": 79.82961971891731,
+      "reference_m_s": 76.03904394907156,
+      "overspeed_m_s": 3.790575769845759,
+      "current_force_peak": 0.047678634717236365
+    },
+    {
+      "raw": 4,
+      "speed_m_s": 79.83731782540015,
+      "reference_m_s": 74.3401700043391,
+      "overspeed_m_s": 5.4971478210610485,
+      "current_force_peak": 0.04191006573914183
+    }
+  ],
+  "interpretation": "Hold began in top80 segment withff0,gaspositive,brake0. Held action crossed backward80 reference boundary; desiredspeedfell>5.6m/s during80ms whileactualspeedstayed~79.8. Failure precedes nextcontrollerupdate, not proof of insufficientphysicalbrakecapacity. Existinggovernorcertifiesforce/path butdoesnotcheckreferenceoverspeed; physicalsafetyalone doesnotcertifytrackingofsteepreference. No threshold relaxation/latecontinuation/newcandidate.",
+  "cached_baseline_body_ticks_not_new": 1668,
+  "cached_baseline_forecast_ticks_not_new": 18915,
+  "new_model_integrator_ticks": 0,
+  "new_force_evaluations": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 24155,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "CPU_s": 0.16578860299999998,
+  "wall_s": 0.03316017399993143
+}

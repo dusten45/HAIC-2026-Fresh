@@ -1,0 +1,169 @@
+{
+  "status": "CORRECTED_MODEL_NOT_PROMOTED",
+  "native_pair_eligible": false,
+  "probe_progress_gain_m": 12.675926001045127,
+  "probe_pass": true,
+  "probe": [
+    {
+      "end_progress": 727.3492098123515,
+      "history_samples_before": 1792,
+      "variant": "baseline",
+      "completed_before": 136,
+      "stop": "PROBE_COMPLETE",
+      "raw_ticks": 128,
+      "actions": 32,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 0.8880074147403114,
+          "samples": 2304,
+          "clipped": 9
+        }
+      },
+      "min_margin_m": 1.1034123528966393,
+      "max_path_error_m": 1.3844922770069388,
+      "max_reference_overspeed_m_s": 0.0,
+      "mode_counts": {
+        "HIGH": 32
+      },
+      "high_fraction": 1.0,
+      "first_failure": null,
+      "model_finish_episode_s": null,
+      "pass_safety": true
+    },
+    {
+      "end_progress": 740.0251358133967,
+      "history_samples_before": 1792,
+      "variant": "candidate",
+      "completed_before": 136,
+      "stop": "PROBE_COMPLETE",
+      "raw_ticks": 128,
+      "actions": 32,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 0.9125259738578257,
+          "samples": 2304,
+          "clipped": 9
+        }
+      },
+      "min_margin_m": 1.1046524715461217,
+      "max_path_error_m": 1.856361811493895,
+      "max_reference_overspeed_m_s": 3.407777652619629,
+      "mode_counts": {
+        "HIGH": 32
+      },
+      "high_fraction": 1.0,
+      "first_failure": null,
+      "model_finish_episode_s": null,
+      "pass_safety": true
+    }
+  ],
+  "arms": [
+    {
+      "history_clipped_before": 0,
+      "history_samples_before": 0,
+      "resumed_prior_model_ticks": 0,
+      "variant": "baseline",
+      "completed_before": 0,
+      "stop": "MODEL_SOURCE_STYLE_FINISH",
+      "raw_ticks": 920,
+      "actions": 230,
+      "force_groups": {
+        "launch": {
+          "peak": 2.25546701731417,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.0568401654816066,
+          "samples": 3296,
+          "clipped": 16
+        }
+      },
+      "min_margin_m": 0.9885159625653317,
+      "max_path_error_m": 1.3907024802822718,
+      "max_reference_overspeed_m_s": 2.5546610022005396,
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "HIGH": 199,
+        "BACKUP": 7
+      },
+      "high_fraction": 0.9660194174757282,
+      "first_failure": null,
+      "model_finish_episode_s": 18.399999999999697,
+      "pass_safety": true,
+      "start": "cold",
+      "reused_model": true
+    },
+    {
+      "end_progress": 316.85009659921815,
+      "history_samples_before": 0,
+      "variant": "candidate",
+      "completed_before": 0,
+      "stop": "REFERENCE_OVERSPEED",
+      "raw_ticks": 300,
+      "actions": 75,
+      "force_groups": {
+        "launch": {
+          "peak": 2.25546701731417,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.0529701949913384,
+          "samples": 816,
+          "clipped": 4
+        }
+      },
+      "min_margin_m": 1.0434650553788003,
+      "max_path_error_m": 1.4119586775109918,
+      "max_reference_overspeed_m_s": 5.4971478210610485,
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "HIGH": 48,
+        "BACKUP": 3
+      },
+      "high_fraction": 0.9411764705882353,
+      "first_failure": {
+        "action_index": 75,
+        "raw_in_hold": 4,
+        "episode_s": 5.99999999999996,
+        "violations": [
+          "REFERENCE_OVERSPEED"
+        ]
+      },
+      "model_finish_episode_s": null,
+      "pass_safety": false,
+      "start": "cold"
+    }
+  ],
+  "cold_finish_gain_s": null,
+  "carry_finish_gain_s": null,
+  "model_integrator_ticks": 6094,
+  "source_wheel_force_evaluations_in_integrator": 24376,
+  "explicit_force_evaluations": 24388,
+  "planner_cost": {
+    "force_evaluations": 24388,
+    "forecast_calls": 122,
+    "forecast_ticks": 5538
+  },
+  "CPU_s": 13.347808566,
+  "wall_s": 13.35022736999963,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 24155,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "original_input_anchor_failure_retained": true,
+  "reused_failed_forecast_ticks_not_reintegrated": 4,
+  "scope": "526correctedprobeanchor;526onlyhighreferencebackward45to80. Same524model/525governor/backup100back45/.19margin/1.25force. Baseline52518.40actualfrozen; priorverifiedmodelsreusedwithoutintegration."
+}
