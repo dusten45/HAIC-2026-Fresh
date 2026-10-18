@@ -1,0 +1,78 @@
+{
+  "registered_utc": "2026-10-18T22:12:06.592966+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "question": "New full-source handoff diagnosis, preserving561 aperture failure. Reproduce reset->original actions1..34->same561 first candidate actions35..67 exactly, then fixed551 suffix68..last once. If fixed fails, ONE unchanged551/537 feedback suffix from the SAME altered after67 checkpoint. Never start feedback at an unsafe failed state, reset history or restore baseline physical state.",
+  "finish": "Unchanged FinishLineTracker and hull/contact visited sensors; qualification.95,departure/forward crossing/width confirmation. Clock1.02+accumulated actual raw elapsed; source officialfinish=tracker.finish_time-1.02,not holdcount/arc/local plane subtraction.",
+  "safety": "Every actual raw original global criteria: footprint>=.50,path<=3,tracking force<=1.059/clip<=.10,reference overspeed<=4.85,body<100,projection continuity. Saved launch first24holds peak<=2.5/clip<=.15 by end24; no tracking reference veto in launch. All forecast body<100. Position aperture/yaw delta diagnostics ONLY,not suffix veto.",
+  "suffix_order": "Fixed stored commands first,including full last saved command if candidate finish not yet confirmed. If nofinish/firstsafetyviolation/NO_COMMAND then feedback from unchanged altered handoff root+actuallaunch/trackingcounts+visited+tracker+elapsed. Budget/domain/technical errors stop,not silently retry.",
+  "feedback": "Unchanged structure537 choose,551candidate/backup,actualcurrentfullstate/progress/history and12holdfullgeometry certification; selected action freshly FINAL-certified. No parameter/action-family expansion. At most300 model action decisions and original1224limit with50warmup accounting.",
+  "verification": "If a suffix safely finishes,independently replay entire recorded reset/prefix/modified/winning suffix command tape to samefinish,comparing every source root/force/visited/tracker. If both fail,independently replay both actual command tapes to first physicalfailure or lastsafe policyfailure root WITHOUT rerunning chooser. No candidate fulltime claim without safefinish.",
+  "phase_caps": {
+    "preparation": {
+      "model_ticks": 300,
+      "force": 1200,
+      "geometry": 300,
+      "CPU_s": 20,
+      "wall_s": 30
+    },
+    "fixed": {
+      "model_ticks": 1000,
+      "force": 5000,
+      "geometry": 1100,
+      "CPU_s": 30,
+      "wall_s": 45
+    },
+    "feedback": {
+      "model_ticks": 130000,
+      "force": 600000,
+      "geometry": 145000,
+      "CPU_s": 1800,
+      "wall_s": 2100
+    },
+    "verification": {
+      "model_ticks": 2500,
+      "force": 12000,
+      "geometry": 2600,
+      "CPU_s": 60,
+      "wall_s": 90
+    }
+  },
+  "aggregate_caps": {
+    "model_ticks": 133800,
+    "force": 618200,
+    "geometry": 149000,
+    "CPU_s": 1910,
+    "wall_s": 2265
+  },
+  "storage": "Exclusive per-phaseSTARTED,atomicJSON-safe perhold ledgers and phasefinally costFIRST,fullcheckpoint including current tracker/visited/history/clock; originalfailure raw saved. No native world/reset/step.",
+  "source_kernel_hardcap_unchanged": 200000,
+  "actual_cap": 0,
+  "new_seed_HOLDOUT_SEALED_other_environment_paid": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "source_sha256": {
+    "retry/handoff562_model.py": "e7addc1dabf391149cb10827316a6e9405069f4a8809a9ef4ada805cbe9d0b0b",
+    "retry/clip561_core.py": "d0f60f7741c4605a3c3b6a515977ee5c978efd633665d3e807afef6b816a531b",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "retry/preview527_control.py": "8049458f5f302fd194a2e0fde5a833ac4a2241f498055df1dc84203017da2717",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131",
+    "core/finish_line.py": "7c16dda1378dcd65aed46d9da96608aa055124c2f27d8fb00c309078361d4204",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363"
+  },
+  "private_inputs_sha256": {
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response551-private/frozen-paths-private.json": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "/workspace/haic-response551-private/cold-candidate-private.json": "5e28759abfbc2455599c9f3bd4143ff7b8cf644deae63a86c7c290608e466ac8",
+    "/workspace/haic-response519-private/model-ledger-private.json": "28ff0ff7ffec9784e4817b4b55500c40ecd3730e9d09977294ad1dfd9b70763f",
+    "/workspace/haic-response560-private/segment-private.json": "0721c0d46922057e1279381f14ca2a4476fdc7a45726246b96599710b86831c6",
+    "/workspace/haic-response561-private/branch-00-00-private.json": "e7313dd198268f10b07016b28bb2b9357bb2a550898356234e4aeef47fa76236"
+  }
+}

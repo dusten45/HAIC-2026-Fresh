@@ -1,0 +1,142 @@
+{
+  "completed": true,
+  "checks": {
+    "saved551_tracker_exact": true,
+    "original_prefix_exact": true,
+    "candidate_fullstate_commands_exact": true,
+    "fixed_uses_unchanged_altered_handoff": true,
+    "feedback_uses_same_altered_handoff": true
+  },
+  "fixed": {
+    "stop": "FOOTPRINT",
+    "safe_finish": false,
+    "finish_s": null,
+    "actual_raw": 18,
+    "commands": 5,
+    "first_failure_reason": "FOOTPRINT",
+    "first_failure_index": 72,
+    "first_failure_raw": 2,
+    "first_failure_episode_s": 5.719999999999966,
+    "initial_handoff_hash": "208289895e5ff08711d121e20828577a8ac72371e55fff8fbcbc485a7a6a190c",
+    "final_global_raw": 286,
+    "tracking_history": [
+      30,
+      760
+    ],
+    "visited_count": 107,
+    "minimum_suffix_margin": -0.036950908614037825,
+    "maximum_suffix_path": 1.7804265612954133,
+    "maximum_suffix_reference_overspeed": 4.712652977645135
+  },
+  "feedback": {
+    "stop": "SOURCE_FINISH",
+    "safe_finish": true,
+    "finish_s": 13.219999999999807,
+    "actual_raw": 394,
+    "commands": 99,
+    "first_failure_reason": null,
+    "first_failure_index": null,
+    "first_failure_raw": null,
+    "first_failure_episode_s": null,
+    "initial_handoff_hash": "208289895e5ff08711d121e20828577a8ac72371e55fff8fbcbc485a7a6a190c",
+    "final_global_raw": 662,
+    "tracking_history": [
+      81,
+      2264
+    ],
+    "visited_count": 283,
+    "minimum_suffix_margin": 0.5438779403773628,
+    "maximum_suffix_path": 1.5628231960852192,
+    "maximum_suffix_reference_overspeed": 4.849804302964017
+  },
+  "winning_suffix": "feedback-suffix",
+  "whole_source_finish_s": 13.219999999999807,
+  "baseline551_source_finish_s": 13.219999999999807,
+  "whole_source_gain_ms": 0.0,
+  "independent_verification": [
+    {
+      "case": "feedback-suffix",
+      "raw_records": 662,
+      "fullstate_force_exact": true,
+      "checkpoint_exact": true,
+      "finish_same": true,
+      "stop": "SOURCE_FINISH"
+    }
+  ],
+  "prior561_aperture_failure_preserved": true,
+  "cost": {
+    "model_ticks": 42057,
+    "force_evaluations": 171932,
+    "internal_wheel_force_evaluations": 168228,
+    "geometry_checks": 44185,
+    "body_checks": 42057,
+    "CPU_s": 526.2287387419999,
+    "wall_s": 526.4773243640084
+  },
+  "phase_costs": {
+    "preparation": {
+      "force_evaluations": 1072,
+      "forecast_calls": 0,
+      "forecast_ticks": 0,
+      "geometry_checks": 268,
+      "body_checks": 268,
+      "max_all_model_body": 95.28672752237517,
+      "model_ticks": 268,
+      "internal_wheel_force_evaluations": 1072,
+      "CPU_s": 3.652199993,
+      "wall_s": 3.697953701004735,
+      "error": null
+    },
+    "fixed": {
+      "force_evaluations": 72,
+      "forecast_calls": 0,
+      "forecast_ticks": 0,
+      "geometry_checks": 18,
+      "body_checks": 18,
+      "max_all_model_body": 87.93448343277169,
+      "model_ticks": 18,
+      "internal_wheel_force_evaluations": 72,
+      "CPU_s": 0.2952428359999999,
+      "wall_s": 0.29864371300209314,
+      "error": null
+    },
+    "feedback": {
+      "force_evaluations": 168140,
+      "forecast_calls": 2128,
+      "forecast_ticks": 40715,
+      "geometry_checks": 43237,
+      "body_checks": 41109,
+      "max_all_model_body": 97.00393826492316,
+      "model_ticks": 41109,
+      "internal_wheel_force_evaluations": 164436,
+      "CPU_s": 511.14671831299995,
+      "wall_s": 511.2481278949999,
+      "error": null
+    },
+    "verification": {
+      "force_evaluations": 2648,
+      "forecast_calls": 0,
+      "forecast_ticks": 0,
+      "geometry_checks": 662,
+      "body_checks": 662,
+      "max_all_model_body": 96.93233159086249,
+      "model_ticks": 662,
+      "internal_wheel_force_evaluations": 2648,
+      "CPU_s": 11.134577599999943,
+      "wall_s": 11.232599055001629,
+      "error": null
+    }
+  },
+  "error": null,
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "new_seeds": 0,
+  "HOLDOUT_queries": 0,
+  "SEALED_queries": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "actual_baseline_s": 13.66,
+  "no_native_gain_observation": true
+}
