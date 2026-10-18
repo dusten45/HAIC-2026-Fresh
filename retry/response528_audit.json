@@ -1,0 +1,58 @@
+{
+  "source_input_pins_verified": true,
+  "float32_mutually_exclusive_pedal_actions_verified": 225,
+  "steering_unchanged_for_current_state": true,
+  "numerical_selected_commands_final_fresh_certificates_verified": 15,
+  "max_certification_calls_per_intervention": 28,
+  "nonmonotone_coarse_cases": 0,
+  "nonmonotone_not_observed_is_not_monotonicity_proof": true,
+  "cold_model_528_finish_s": 17.999999999999705,
+  "cold_model_527_finish_s": 18.099999999999703,
+  "incremental_model_gain_vs527_s": 0.09999999999999787,
+  "profile_time_partition": {
+    "launch": {
+      "time_s": 1.9200000000000013,
+      "wheel_samples": 384,
+      "mean_speed_m_s": 32.37466746923222,
+      "mean_force_ratio": 0.5896192964517536
+    },
+    "source_forward": {
+      "time_s": 8.479999999999908,
+      "wheel_samples": 1696,
+      "mean_speed_m_s": 55.24150264076798,
+      "mean_force_ratio": 0.6101138951082812
+    },
+    "backward80": {
+      "time_s": 3.5800000000000027,
+      "wheel_samples": 716,
+      "mean_speed_m_s": 59.32547456763587,
+      "mean_force_ratio": 0.41051360774468204
+    },
+    "top80": {
+      "time_s": 1.580000000000001,
+      "wheel_samples": 316,
+      "mean_speed_m_s": 78.87525019019701,
+      "mean_force_ratio": 0.12287426179425512
+    },
+    "curvature_transition": {
+      "time_s": 2.4400000000000017,
+      "wheel_samples": 488,
+      "mean_speed_m_s": 47.45396052091724,
+      "mean_force_ratio": 0.5238105313417314
+    }
+  },
+  "reference_path_length_m": 995.4452893670465,
+  "mean_speed_needed_for_11_5s_on_reference_length_m_s": 86.56045994496057,
+  "source_scalar_reference_clock_s": 17.25027295686793,
+  "clock_not_feasible_or_optimal_lower_bound": true,
+  "decision": "Stoprepeatpedaldosefineadjustments:sharedstateimprovementaddsjust.10swholemodelvs527, .40vs525below.50gate. Nextstructuralquestionisfixedtop80 orpathlength/curvature; knownreference995m needs86.6m/saveragefor11.5s evenbeforelaunchcost. Currentreferenceoccupancyisnotcausalorarecoverablegainupperbound. No newcap/pathcandidateexecuted.",
+  "new_model_integrator_ticks": 0,
+  "new_force_evaluations": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 24155,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "CPU_s": 0.257838962,
+  "wall_s": 0.25791835699783405
+}
