@@ -1,0 +1,181 @@
+{
+  "passed": true,
+  "checks": {
+    "source_and_input_hashes": true,
+    "started_pin": true,
+    "completed_two_states": true,
+    "same_synthetic_fixture_poses": true,
+    "fullstate_schema_coverage": true,
+    "fullstate_residuals_recomputed": true,
+    "float32_commands": true,
+    "independent_four_source_raw": true,
+    "source_force_guard_failed_both": true,
+    "clip_distinct_from_force": true,
+    "local_contact_regime_not_global_map_periodicity": true,
+    "no_stability_transition_after_gate_failure": true,
+    "finite_solver_calls_and_iterations": true,
+    "cost_reconciles_every_source_tick": true,
+    "all_caps": true,
+    "no_native_protected_or_reserve": true,
+    "main_preserved": true
+  },
+  "cases": [
+    {
+      "label": "fixture0",
+      "fullstate_difference": {
+        "velocity": {
+          "max_abs": 1.3605578885744762e-08,
+          "normalized_max": 0.00013605578885744762
+        },
+        "yaw": {
+          "max_abs": 1.205225519385067e-08,
+          "normalized_max": 0.001205225519385067
+        },
+        "angular_momentum": {
+          "max_abs": 2.3104951196728507e-07,
+          "normalized_max": 0.023104951196728504
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 4.5944503312966845e-08,
+          "normalized_max": 0.00045944503312966845
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 2.2052454973220392e-08,
+          "normalized_max": 0.00022052454973220392
+        },
+        "levers": {
+          "max_abs": 4.440892098500626e-16,
+          "normalized_max": 4.440892098500626e-10
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "fullstate_normalized_max": 0.023104951196728504,
+      "independent_period_peak": 1.1153579385669183,
+      "independent_period_clipped_wheels": 4,
+      "independent_period_wheel_samples": 16,
+      "initial_footprint": 4.358366175330631,
+      "initial_path_error": 0.0,
+      "initial_old551_overspeed": -5.748130429934257,
+      "road_ids_changed": true,
+      "friction_unchanged": true,
+      "gas_memory_unchanged": true,
+      "joint_rates_unchanged": true,
+      "solver_log_rows": 40,
+      "residual_calls": 40
+    },
+    {
+      "label": "fixture1",
+      "fullstate_difference": {
+        "velocity": {
+          "max_abs": 3.9851837385640465e-08,
+          "normalized_max": 0.00039851837385640465
+        },
+        "yaw": {
+          "max_abs": 4.792276175891175e-08,
+          "normalized_max": 0.004792276175891175
+        },
+        "angular_momentum": {
+          "max_abs": 9.187103060526169e-07,
+          "normalized_max": 0.09187103060526168
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 7.539767921116436e-08,
+          "normalized_max": 0.0007539767921116436
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 8.592049649536193e-08,
+          "normalized_max": 0.0008592049649536193
+        },
+        "levers": {
+          "max_abs": 4.440892098500626e-16,
+          "normalized_max": 4.440892098500626e-10
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "fullstate_normalized_max": 0.09187103060526168,
+      "independent_period_peak": 1.0627152571866367,
+      "independent_period_clipped_wheels": 8,
+      "independent_period_wheel_samples": 16,
+      "initial_footprint": 3.6972689085306842,
+      "initial_path_error": 0.0,
+      "initial_old551_overspeed": 5.5578271960160635,
+      "road_ids_changed": true,
+      "friction_unchanged": true,
+      "gas_memory_unchanged": true,
+      "joint_rates_unchanged": true,
+      "solver_log_rows": 48,
+      "residual_calls": 48
+    }
+  ],
+  "scientific_cost": {
+    "explicit_wheel_force_evaluations": 1448,
+    "geometry_checks": 2,
+    "body_checks": 360,
+    "residual_calls": 88,
+    "unsafe_forecast_raw": 352,
+    "max_forecast_force": 1.1203454849887053,
+    "max_body_speed": 80.31380011088825,
+    "model_ticks": 360,
+    "internal_wheel_force_evaluations": 1440,
+    "CPU_s": 2.2859417939999997,
+    "wall_s": 2.28843742099707
+  },
+  "audit_model_ticks": 0,
+  "audit_force_calls": 0,
+  "audit_CPU_s": 0.007236589999999987,
+  "audit_wall_s": 0.008805887002381496
+}

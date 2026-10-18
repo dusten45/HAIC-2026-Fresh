@@ -1,0 +1,64 @@
+{
+  "registered_utc": "2026-10-18T20:44:45.950031+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "hypothesis": "At the SAME two555 synthetic fixtures, source four-raw relative-periodic mechanical states exist including wheel omega, gas memory, steering joint/rates and lagged wheel offsets. Constant gas/steer, no braking in periodic-state branch. This is a new discrete shooting representation, not more iterations of555 continuous equilibrium.",
+  "representation": "Mechanical full state modulo SE(2), including mass/inertia, wheel headings/friction, joints/rates, omega/gas, yaw/angular momentum, offsets/levers and steering memory. Global roads are not SE(2) invariant: road tile identities are logged, all accepted validations require original map footprint/friction. Synthetic fixture, not reachable native state.",
+  "solve": {
+    "period_raw": 4,
+    "variables": "beta,delta,gas, four wheel omega; speed and initial yaw=v*k fixed from same555fixture",
+    "bounds": "beta +/-.6, delta +/-.4, gas[0,1], omega[0,500]",
+    "max_nfev": 60,
+    "max_residual_calls_per_state": 800,
+    "gtol": null,
+    "ftol": 1e-11,
+    "xtol": 1e-11,
+    "solver_gate": "velocity body-frame <=1e-4m/s, yaw<=1e-5rad/s, wheel omega<=1e-4rad/s; independently verify ALL signature fields after float32 actions; normalized maximum<=1. No solver_success substitution."
+  },
+  "validation": {
+    "independent_period_raw": 4,
+    "exact_cycles": 8,
+    "perturbed_cycles": 8,
+    "perturbation": "one deterministic vx +=1e-3m/s in body coordinates and rear wheel3 omega +=1e-2rad/s, same synthetic pose; no multiple perturbation search",
+    "finite_stability": "report initial/final/max normalized deviation from matched unperturbed period phases; contraction is diagnostic, not a necessary physical gate or asymptotic stability proof",
+    "safety": "accepted validation: footprint>=.50, raw force<=1.059, hull/all wheels<100, clipping<=10% cumulatively from fixture validation start, position error to original seed path<=3m; diagnostic speed reference is each synthetic branch target, overspeed<=4.85. Also log old551 reference overspeed separately; this is NOT an old551 compliant participant controller."
+  },
+  "transition": {
+    "trigger": "Both original fixtures pass independent four-raw mechanical fullstate and safety; exact multi-period safety failures are logged separately, not evidence that the periodic state does not exist. Minimum transition may still run in fresh initial fixture if periodic existence passes; perturbed stability is diagnostic.",
+    "target": "Only next seed station after first555fixture, same speed as source fixture, its existing signed curvature. Solve once using same budget/parameterization; no alternate target.",
+    "controls": "4 holds x steer and signed pedal, continuous solver then float32 independent validation; negative pedal is brake, positive gas. No PP/reference steering. One initial linear command interpolation; max_nfev60/max residual calls1000.",
+    "endpoint": "ALL mechanical signature normalized residual<=1 using transition tolerances: velocity .15m/s,yaw .05,angular momentum I*.05,joints .02,rates .15,omega .5,gas .02,headings .02,offsets .15; levers/constants/friction unchanged; pose angle free moduloSE2.",
+    "after": "If endpoint+physical safety pass, three additional constant-target holds must stay safe and within same endpoint tolerances. No cold/carry/native or lap-time claim."
+  },
+  "caps": {
+    "model_ticks": 30000,
+    "explicit_wheel_force_evaluations": 125000,
+    "geometry_checks": 300,
+    "CPU_s": 300,
+    "wall_s": 360,
+    "periodic_states_max": 3,
+    "transition_rollouts_max": 1000
+  },
+  "stop": "Budget/deadline/model body domain -> stop with checkpoint; failure of both original periodic gates -> no transition. No parameter/speed/curvature sweep or rerun. Finite solver failure is not physical impossibility. Unsafe solver trials are forecasts only, counted and retained, never accepted validation.",
+  "actual_cap": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_seed_HOLDOUT_SEALED_other_environment_paid": 0,
+  "source_sha256": {
+    "retry/period556_model.py": "d1e04f2f50f4bb39406effa9458f69f77b4264e0e672653c0eaca82d3aa15cd4",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131"
+  },
+  "private_inputs_sha256": {
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response551-private/frozen-paths-private.json": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "/workspace/haic-response555-recovery-private/steady-branches-private.json": "5096c207ec9be8f58faadf18f925c0cdca911bb7474093906749ab67098bd316",
+    "/workspace/haic-response555-recovery-private/source-witnesses-private.json": "943bc24b9ae7343d3e92e9fdb6ec20fea0cbcdff291345b957bc02236a1de300"
+  }
+}
