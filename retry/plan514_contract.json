@@ -1,0 +1,61 @@
+{
+  "registered_utc": "2026-10-18T06:13:33.253327+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "native_permission": {
+    "worlds": 0,
+    "actions": 0,
+    "resets": 0
+  },
+  "budget": {
+    "research_start_and_end": 25804,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "one_repair": "Replace nominal exact29.85 stopping boundary with guarded future backup to physical interval center30.0. Before EVERY forecast hold, inject adverse+0.001m axis position and+0.002m/s axis velocity with coherent wheel rolling-speed shift; then first requested action followed by max-brake backup with common513 steering recomputed every4ticks. Require exact guarded predicted crossing<=30.0, no epsilon. No target/gain sweep.",
+  "target_roles": "Measured/model physical crossing acceptance remains29.5..30.5m/s. Original/scalar retain legacy29.85 internal node for fixed comparisons. Modified internal node30.0 is preferred physical center;0.5m/s physical tolerance is not consumed as a posthoc feasibility epsilon. The per-hold adverse state forecast creates planning reserve before actual action selection, reserving a max-brake continuation under sampled uncertainty. No general recursive-feasibility proof.",
+  "allowance_basis": "513 short saved calibration maxima position0.00009991524598m/speed0.0002365690787m/s, each multiplied8 and rounded upward to0.001 coordinate units ->position0.001m/speed0.002m/s. Includes selected prefix accumulation, conservative relative to sampled one-hold errors; not a global bound. Independent wheel slip/joint/contact/yaw/geometry errors are not enclosed. Coherent wheel perturbation only.",
+  "matrix": "3 same frozen roots: reconstructed reset completed0; copied original DEV trigger completed24; copied513 native response stopping state completed35. Each x scalar/original/modified x none/persistent_positive/alternating =27 own trajectories. Current map/state only; no future native data. Starts use common513 steering, first24 fixedgas0.32, all pedal caps unchanged.",
+  "perturbations": "none unchanged; persistent starts+allowance and injects+allowance after every complete4tick wrapper hold; alternating starts+allowance then after first hold negative, then positive, etc. Same local-step schedule across three laws in each root. All projections coherent along fixed straight axis. Discrete injections are model tests, not actual/native trajectories.",
+  "repair_gate": "Modified all9 conditions must reach same gate in physical29.5..30.5 band, full hull/wheel sampled margin>=0.5m through complete4tick hold, no plan empty/horizon/invalid/pedal failures. Failed original/scalar comparisons retained. Finite matrix evidence only.",
+  "time_gate": "Six start/trigger x disturbance pairs vs scalar. Require both complete and baseline crossing lower bracket minus modified upper bracket>=0.08s in ALL six to claim practical time effect; otherwise do not repeat native on this approach. Stop-root feasibility repair is not counted as time gain. Report interpolated and20ms bracket differences, not lap time.",
+  "caps": {
+    "model_ticks_including_pure_fixtures": 200000,
+    "CPU_s": 180,
+    "wall_s": 240,
+    "model_holds_per_trajectory": 200,
+    "backup_forecast_ticks": 104,
+    "private_bytes": 67108864,
+    "private_files": 256,
+    "native_worlds": 0,
+    "native_actions": 0,
+    "native_resets": 0
+  },
+  "stops": "First raw safety violation flagged, complete same4tick hold then stop trajectory; plan empty before dispatch stops. No criterion/goal/allowance/gain tuning after MODEL_STARTED. Resource/identity/storage failure stops worker; preserve original and failed artifacts for technical recovery only. No physical retry or protected evaluation.",
+  "pure_tests": "Physical band/center ordering, exact prescribed coordinate/rolling-speed perturb andinverse within binary64 rounding, zero identity, adverse future hold injection yields finite max-brake backup; count every fixture integrator call. Native constructors/reset/step poisoned in worker.",
+  "retention": "3 source roots/static roads stored once plus per-model-tick dynamic state/command/margin privately,27 immutable traces. Public code+aggregate only. Existing513/512 untouched.",
+  "private_inputs_sha256": {
+    "/workspace/haic-response513-private/initial-reconstructed-private.json": "e504d5179876be6eb0936df2d2c972286e3500abee3ff879ef53698188e104da",
+    "/workspace/haic-response512-private/trigger-scalar-private.json": "694c33f4109f51b4d9f124e8601cf5e38a122587d32f1fe0f2228aa1845eb0ea",
+    "/workspace/haic-response513-private/plan-stop-response-private.json": "9dbb925daf7863c058a4a459ca8872c5cf9967d0f8667dfa6ac3215aa777c273",
+    "/workspace/haic-response511-private/map-steady-private.json": "f1e235b5208a9a33df63e6dbbffcaa41a0b4e46f6153d095656c6d25cdd5a0c6"
+  },
+  "source_sha256": {
+    "retry/plan514_control.py": "ea0978bf952ddb4f38746cd39023cfaabd41dae47217617357ee5fb483ee1e05",
+    "retry/plan514_run.py": "11d467d45c365fdb96cf389bf032741ef74c292766b51d99f7ddf99ec7d59d59",
+    "retry/test_plan514.py": "e691ae4a24fc8ffefdc5e7c82b3dced00059b1665c130aef136da97a8afac2ae",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/plan513_control.py": "fd1f462b7c82d9115227bb8a233936c0c320f448a99fae7e820239c032775841",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/envelope500.py": "1b5b027bd6a0e1631fc11165fc131ab67394e3908f926adb33605e3f7bdab964",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake506_geometry.py": "4f69de71c0e1ad0d7707c9c9681f4e504367ccbce5c33ae6c0f369e7c6ed4392",
+    "retry/brake508_corridor.py": "10c2a4e021cce37b81a08ac0eb00e4040b0bb4dabdf5eac6989e18472b061407",
+    "retry/brake510_common.py": "28b84e6dbd7aab3ce123c153abdb9acfa1867172f35257ea6b8fea92b5cd1eb0",
+    "retry/plan513_preflight_result.json": "44e489050a1f332e46f296ee924f6db23c598285a7cb9ee0a805151216dd66c2",
+    "retry/plan513_result.json": "c3a8f5df8f7bb41bb26c49f2132ef1e8ca06f2d53d08b6e7c3a1ac106a2656de",
+    "retry/test_brake509.py": "349d1a2e6a769eb800ecc9163bda41b03fa5cf9d3273c9880b0007b120255637",
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69"
+  }
+}

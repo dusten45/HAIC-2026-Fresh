@@ -1,0 +1,41 @@
+{
+  "trajectory_count": 27,
+  "model_goal_pass_counts_of9": {
+    "scalar": 6,
+    "original": 2,
+    "guarded": 9
+  },
+  "planning_empty_counts_of9": {
+    "scalar": 3,
+    "original": 7,
+    "guarded": 0
+  },
+  "all27_trajectories_raw_safety_errors": 0,
+  "guarded_goal_speed_range_m_s": [
+    29.99456167284595,
+    29.994652801479212
+  ],
+  "minimum_sampled_margin_all_trajectories_m": 4.858307033602942,
+  "guarded_scalar_comparable_time_gain_range_s": [
+    0.015974786822681164,
+    0.016034209487283735
+  ],
+  "bracket_certified_0_08s_time_gate": false,
+  "native_followup_on_this_approach": false,
+  "model_integrator_ticks_total": 26121,
+  "closed_loop_model_plant_ticks": 1668,
+  "pure_fixture_model_ticks": 17,
+  "backup_prediction_model_ticks": 24436,
+  "native_actions": 0,
+  "native_resets": 0,
+  "native_worlds": 0,
+  "source_and_input_pins_match": true,
+  "research_remaining": 25804,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "private_files": 31,
+  "private_bytes": 5846478,
+  "protected_queries": 0,
+  "new_seeds": 0,
+  "limitation": "Guarded package combines predeclared center node30.0 and per-hold residual backup; this comparison does not isolate their individual causal contributions or prove arbitrary bounded-state safety."
+}

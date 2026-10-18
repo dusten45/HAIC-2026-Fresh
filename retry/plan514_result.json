@@ -1,0 +1,515 @@
+{
+  "status": "MODEL_REPAIR_ONLY_NO_TIME_EFFECT",
+  "repair_pass": true,
+  "time_effect_gate": false,
+  "results": [
+    {
+      "root": "reset_reconstructed",
+      "schedule": "none",
+      "arm": "scalar",
+      "stop": "MODEL_GATE",
+      "actions": 36,
+      "raw_ticks": 144,
+      "min_margin_m": 5.091972708258195,
+      "crossing": {
+        "time_lower_s": 2.8600000000000003,
+        "time_upper_s": 2.8800000000000003,
+        "interpolated_time_s": 2.8696737578533265,
+        "speed_m_s": 29.657580159754517,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "reset_reconstructed",
+      "schedule": "none",
+      "arm": "original",
+      "stop": "MODEL_GATE",
+      "actions": 36,
+      "raw_ticks": 144,
+      "min_margin_m": 5.091972708258195,
+      "crossing": {
+        "time_lower_s": 2.8400000000000003,
+        "time_upper_s": 2.8600000000000003,
+        "interpolated_time_s": 2.85447396926375,
+        "speed_m_s": 29.849999419953093,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "reset_reconstructed",
+      "schedule": "none",
+      "arm": "guarded",
+      "stop": "MODEL_GATE",
+      "actions": 36,
+      "raw_ticks": 144,
+      "min_margin_m": 5.091972708258195,
+      "crossing": {
+        "time_lower_s": 2.8400000000000003,
+        "time_upper_s": 2.8600000000000003,
+        "interpolated_time_s": 2.8536519660191897,
+        "speed_m_s": 29.994569094733286,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "reset_reconstructed",
+      "schedule": "persistent_positive",
+      "arm": "scalar",
+      "stop": "MODEL_GATE",
+      "actions": 36,
+      "raw_ticks": 144,
+      "min_margin_m": 5.091991020902319,
+      "crossing": {
+        "time_lower_s": 2.8600000000000003,
+        "time_upper_s": 2.8800000000000003,
+        "interpolated_time_s": 2.8683120913706577,
+        "speed_m_s": 29.661660241663892,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "reset_reconstructed",
+      "schedule": "persistent_positive",
+      "arm": "original",
+      "stop": "PLAN_STOP:RESPONSE_STOPPING_SET_EMPTY",
+      "actions": 31,
+      "raw_ticks": 124,
+      "min_margin_m": 5.091991020902319,
+      "crossing": null,
+      "goal_pass": false,
+      "planning_empty": true,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "reset_reconstructed",
+      "schedule": "persistent_positive",
+      "arm": "guarded",
+      "stop": "MODEL_GATE",
+      "actions": 36,
+      "raw_ticks": 144,
+      "min_margin_m": 5.091991020902319,
+      "crossing": {
+        "time_lower_s": 2.8400000000000003,
+        "time_upper_s": 2.8600000000000003,
+        "interpolated_time_s": 2.8523373045479765,
+        "speed_m_s": 29.99456167284595,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "reset_reconstructed",
+      "schedule": "alternating",
+      "arm": "scalar",
+      "stop": "MODEL_GATE",
+      "actions": 36,
+      "raw_ticks": 144,
+      "min_margin_m": 5.091975808427466,
+      "crossing": {
+        "time_lower_s": 2.8600000000000003,
+        "time_upper_s": 2.8800000000000003,
+        "interpolated_time_s": 2.869665912024127,
+        "speed_m_s": 29.658564295951138,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "reset_reconstructed",
+      "schedule": "alternating",
+      "arm": "original",
+      "stop": "PLAN_STOP:RESPONSE_STOPPING_SET_EMPTY",
+      "actions": 32,
+      "raw_ticks": 128,
+      "min_margin_m": 5.091975808427466,
+      "crossing": null,
+      "goal_pass": false,
+      "planning_empty": true,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "reset_reconstructed",
+      "schedule": "alternating",
+      "arm": "guarded",
+      "stop": "MODEL_GATE",
+      "actions": 36,
+      "raw_ticks": 144,
+      "min_margin_m": 5.091975808427466,
+      "crossing": {
+        "time_lower_s": 2.8400000000000003,
+        "time_upper_s": 2.8600000000000003,
+        "interpolated_time_s": 2.853644514473845,
+        "speed_m_s": 29.99456954241549,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "trigger_copied",
+      "schedule": "none",
+      "arm": "scalar",
+      "stop": "MODEL_GATE",
+      "actions": 12,
+      "raw_ticks": 48,
+      "min_margin_m": 4.858307171219148,
+      "crossing": {
+        "time_lower_s": 0.94,
+        "time_upper_s": 0.96,
+        "interpolated_time_s": 0.9498865380177616,
+        "speed_m_s": 29.656935138703464,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "trigger_copied",
+      "schedule": "none",
+      "arm": "original",
+      "stop": "MODEL_GATE",
+      "actions": 12,
+      "raw_ticks": 48,
+      "min_margin_m": 4.858307171219148,
+      "crossing": {
+        "time_lower_s": 0.92,
+        "time_upper_s": 0.9400000000000001,
+        "interpolated_time_s": 0.9346743631500282,
+        "speed_m_s": 29.849999549099653,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "trigger_copied",
+      "schedule": "none",
+      "arm": "guarded",
+      "stop": "MODEL_GATE",
+      "actions": 12,
+      "raw_ticks": 48,
+      "min_margin_m": 4.858307171219148,
+      "crossing": {
+        "time_lower_s": 0.92,
+        "time_upper_s": 0.9400000000000001,
+        "interpolated_time_s": 0.9338523285304778,
+        "speed_m_s": 29.994571735507552,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "trigger_copied",
+      "schedule": "persistent_positive",
+      "arm": "scalar",
+      "stop": "MODEL_GATE",
+      "actions": 12,
+      "raw_ticks": 48,
+      "min_margin_m": 4.858307033602942,
+      "crossing": {
+        "time_lower_s": 0.94,
+        "time_upper_s": 0.96,
+        "interpolated_time_s": 0.9496099488680493,
+        "speed_m_s": 29.6574024886838,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "trigger_copied",
+      "schedule": "persistent_positive",
+      "arm": "original",
+      "stop": "PLAN_STOP:RESPONSE_STOPPING_SET_EMPTY",
+      "actions": 7,
+      "raw_ticks": 28,
+      "min_margin_m": 4.858307033602942,
+      "crossing": null,
+      "goal_pass": false,
+      "planning_empty": true,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "trigger_copied",
+      "schedule": "persistent_positive",
+      "arm": "guarded",
+      "stop": "MODEL_GATE",
+      "actions": 12,
+      "raw_ticks": 48,
+      "min_margin_m": 4.858307033602942,
+      "crossing": {
+        "time_lower_s": 0.92,
+        "time_upper_s": 0.9400000000000001,
+        "interpolated_time_s": 0.9335832955061006,
+        "speed_m_s": 29.994564030280145,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "trigger_copied",
+      "schedule": "alternating",
+      "arm": "scalar",
+      "stop": "MODEL_GATE",
+      "actions": 12,
+      "raw_ticks": 48,
+      "min_margin_m": 4.858307033602942,
+      "crossing": {
+        "time_lower_s": 0.94,
+        "time_upper_s": 0.96,
+        "interpolated_time_s": 0.949888909975422,
+        "speed_m_s": 29.657887539994466,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "trigger_copied",
+      "schedule": "alternating",
+      "arm": "original",
+      "stop": "PLAN_STOP:RESPONSE_STOPPING_SET_EMPTY",
+      "actions": 8,
+      "raw_ticks": 32,
+      "min_margin_m": 4.858307033602942,
+      "crossing": null,
+      "goal_pass": false,
+      "planning_empty": true,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "trigger_copied",
+      "schedule": "alternating",
+      "arm": "guarded",
+      "stop": "MODEL_GATE",
+      "actions": 12,
+      "raw_ticks": 48,
+      "min_margin_m": 4.858307033602942,
+      "crossing": {
+        "time_lower_s": 0.92,
+        "time_upper_s": 0.9400000000000001,
+        "interpolated_time_s": 0.9338556819905083,
+        "speed_m_s": 29.994574199394837,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 31
+    },
+    {
+      "root": "native_stop_copied",
+      "schedule": "none",
+      "arm": "scalar",
+      "stop": "PLAN_STOP:EMPTY_SET",
+      "actions": 0,
+      "raw_ticks": 0,
+      "min_margin_m": 5.2674431106811825,
+      "crossing": null,
+      "goal_pass": false,
+      "planning_empty": true,
+      "first_brake_global_action": null
+    },
+    {
+      "root": "native_stop_copied",
+      "schedule": "none",
+      "arm": "original",
+      "stop": "PLAN_STOP:RESPONSE_STOPPING_SET_EMPTY",
+      "actions": 0,
+      "raw_ticks": 0,
+      "min_margin_m": 5.2674431106811825,
+      "crossing": null,
+      "goal_pass": false,
+      "planning_empty": true,
+      "first_brake_global_action": null
+    },
+    {
+      "root": "native_stop_copied",
+      "schedule": "none",
+      "arm": "guarded",
+      "stop": "MODEL_GATE",
+      "actions": 1,
+      "raw_ticks": 4,
+      "min_margin_m": 5.206856023928289,
+      "crossing": {
+        "time_lower_s": 0.04,
+        "time_upper_s": 0.06,
+        "interpolated_time_s": 0.054302405479932564,
+        "speed_m_s": 29.994652801479212,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 36
+    },
+    {
+      "root": "native_stop_copied",
+      "schedule": "persistent_positive",
+      "arm": "scalar",
+      "stop": "PLAN_STOP:EMPTY_SET",
+      "actions": 0,
+      "raw_ticks": 0,
+      "min_margin_m": 5.267410780517171,
+      "crossing": null,
+      "goal_pass": false,
+      "planning_empty": true,
+      "first_brake_global_action": null
+    },
+    {
+      "root": "native_stop_copied",
+      "schedule": "persistent_positive",
+      "arm": "original",
+      "stop": "PLAN_STOP:RESPONSE_STOPPING_SET_EMPTY",
+      "actions": 0,
+      "raw_ticks": 0,
+      "min_margin_m": 5.267410780517171,
+      "crossing": null,
+      "goal_pass": false,
+      "planning_empty": true,
+      "first_brake_global_action": null
+    },
+    {
+      "root": "native_stop_copied",
+      "schedule": "persistent_positive",
+      "arm": "guarded",
+      "stop": "MODEL_GATE",
+      "actions": 1,
+      "raw_ticks": 4,
+      "min_margin_m": 5.206856027042594,
+      "crossing": {
+        "time_lower_s": 0.04,
+        "time_upper_s": 0.06,
+        "interpolated_time_s": 0.05427114355141862,
+        "speed_m_s": 29.994648756192927,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 36
+    },
+    {
+      "root": "native_stop_copied",
+      "schedule": "alternating",
+      "arm": "scalar",
+      "stop": "PLAN_STOP:EMPTY_SET",
+      "actions": 0,
+      "raw_ticks": 0,
+      "min_margin_m": 5.267410780517171,
+      "crossing": null,
+      "goal_pass": false,
+      "planning_empty": true,
+      "first_brake_global_action": null
+    },
+    {
+      "root": "native_stop_copied",
+      "schedule": "alternating",
+      "arm": "original",
+      "stop": "PLAN_STOP:RESPONSE_STOPPING_SET_EMPTY",
+      "actions": 0,
+      "raw_ticks": 0,
+      "min_margin_m": 5.267410780517171,
+      "crossing": null,
+      "goal_pass": false,
+      "planning_empty": true,
+      "first_brake_global_action": null
+    },
+    {
+      "root": "native_stop_copied",
+      "schedule": "alternating",
+      "arm": "guarded",
+      "stop": "MODEL_GATE",
+      "actions": 1,
+      "raw_ticks": 4,
+      "min_margin_m": 5.206856024825606,
+      "crossing": {
+        "time_lower_s": 0.04,
+        "time_upper_s": 0.06,
+        "interpolated_time_s": 0.05427114355141862,
+        "speed_m_s": 29.994648756192927,
+        "kind": "raw_linear_interpolation"
+      },
+      "goal_pass": true,
+      "planning_empty": false,
+      "first_brake_global_action": 36
+    }
+  ],
+  "comparable_time_results": [
+    {
+      "root": "reset_reconstructed",
+      "schedule": "none",
+      "both_goal_pass": true,
+      "interpolated_gain_s": 0.016021791834136767,
+      "certified_gain_lower_s": 0.0
+    },
+    {
+      "root": "reset_reconstructed",
+      "schedule": "persistent_positive",
+      "both_goal_pass": true,
+      "interpolated_gain_s": 0.015974786822681164,
+      "certified_gain_lower_s": 0.0
+    },
+    {
+      "root": "reset_reconstructed",
+      "schedule": "alternating",
+      "both_goal_pass": true,
+      "interpolated_gain_s": 0.01602139755028187,
+      "certified_gain_lower_s": 0.0
+    },
+    {
+      "root": "trigger_copied",
+      "schedule": "none",
+      "both_goal_pass": true,
+      "interpolated_gain_s": 0.016034209487283735,
+      "certified_gain_lower_s": -1.1102230246251565e-16
+    },
+    {
+      "root": "trigger_copied",
+      "schedule": "persistent_positive",
+      "both_goal_pass": true,
+      "interpolated_gain_s": 0.01602665336194864,
+      "certified_gain_lower_s": -1.1102230246251565e-16
+    },
+    {
+      "root": "trigger_copied",
+      "schedule": "alternating",
+      "both_goal_pass": true,
+      "interpolated_gain_s": 0.01603322798491369,
+      "certified_gain_lower_s": -1.1102230246251565e-16
+    }
+  ],
+  "model_ticks_including_pure_fixtures": 26121,
+  "pure_fixture_model_ticks": 17,
+  "CPU_s": 21.325446915,
+  "wall_s": 21.332770729999538,
+  "native_worlds": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 25804,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "Finite saved DEV model states and two-coordinate bounded injections; empirical allowances, no unobserved-state safety proof. Physical crossing band unchanged, no lap/finish/native gain claim. No native allowed regardless outcome."
+}
