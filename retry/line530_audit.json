@@ -1,0 +1,71 @@
+{
+  "baseline": {
+    "constraints": {
+      "road": {
+        "minimum": 0.16114563609240617,
+        "violated_samples": 0
+      },
+      "segment_length": {
+        "minimum": 0.9514536398490807,
+        "violated_samples": 0
+      },
+      "curvature": {
+        "minimum": 0.02673848224957745,
+        "violated_samples": 0
+      },
+      "obstacles": {
+        "minimum": -0.2310965151285893,
+        "violated_samples": 24
+      }
+    },
+    "max_profile_rebuild_error": 1.8189894035458565e-12,
+    "geometry": {
+      "samples": 2474,
+      "spacing_at_most_m": 0.5,
+      "minimum_outer_rectangle_margin_m": 0.9468870403878509,
+      "outside_samples": 0,
+      "pass_geometry": true
+    },
+    "max_normal_offset_m": 3.5572262922009132
+  },
+  "candidate": {
+    "constraints": {
+      "road": {
+        "minimum": -0.04518543494265792,
+        "violated_samples": 6
+      },
+      "segment_length": {
+        "minimum": 0.9124961734161063,
+        "violated_samples": 0
+      },
+      "curvature": {
+        "minimum": 0.009132320227690338,
+        "violated_samples": 0
+      },
+      "obstacles": {
+        "minimum": -0.03205671008101407,
+        "violated_samples": 6
+      }
+    },
+    "max_profile_rebuild_error": 0.0,
+    "geometry": {
+      "samples": 2471,
+      "spacing_at_most_m": 0.5,
+      "minimum_outer_rectangle_margin_m": 0.5007222015373014,
+      "outside_samples": 0,
+      "pass_geometry": false
+    },
+    "max_normal_offset_m": 3.7551752808856
+  },
+  "source_pins_verified": true,
+  "private_input_pins_verified": true,
+  "controller_function_identity": true,
+  "optimizer_run_count": 1,
+  "model_runs": 0,
+  "native_runs": 0,
+  "force_evaluations": 0,
+  "model_ticks": 0,
+  "CPU_s": 2.407840019,
+  "wall_s": 2.4079719399996975,
+  "conclusion": "Single SLSQP run not feasible/no scalar improvement; not proof corridor infeasible or path-design family ineffective. Frozen procedure stops before risk/full/native. No repair/restart/sweep."
+}
