@@ -1,0 +1,90 @@
+{
+  "candidate_evaluated": true,
+  "candidate_physical_safe": true,
+  "candidate_comparison_pass": true,
+  "candidate_gain_ms": [
+    0.43709252596974,
+    0.5326627679714813
+  ],
+  "candidate_gate_position_errors_m": [
+    0.01717304696160989,
+    0.01904275821885048
+  ],
+  "candidate_times_s": [
+    0.47956290747403024,
+    0.6394673372320285
+  ],
+  "candidate_raw_brackets": [
+    [
+      0.46,
+      0.48
+    ],
+    [
+      0.62,
+      0.64
+    ]
+  ],
+  "candidate_stats": {
+    "min_margin": 1.136854569296058,
+    "max_path": 1.325266986494288,
+    "max_reference_overspeed": -1.5214953387937769,
+    "max_force": 1.0589716356485899,
+    "max_clip_fraction": 0.1,
+    "max_body": 64.30096409092837
+  },
+  "improvement_gate_pass": false,
+  "completed": true,
+  "transcription": {
+    "independent_node_raw_exact": true,
+    "node_raw_compared": 36,
+    "sequential_raw_exact": true,
+    "exact_feasible": true,
+    "baseline_min_constraint": 0.0,
+    "baseline_times_s": [
+      0.48,
+      0.64
+    ],
+    "entry_action": 35,
+    "source_reset_reachable": true,
+    "native_reachability_claim": false
+  },
+  "direction": {
+    "success": true,
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "zero_direction_linear_feasible": true,
+    "predicted_gain_ms": [
+      0.4383414407253516,
+      0.5348798915116483
+    ],
+    "linear_min_slack": -6.071532165918825e-18,
+    "predicted_average_gain_ms": 0.4866106661185
+  },
+  "cost": {
+    "explicit_wheel_force_evaluations": 2160,
+    "geometry_checks": 518,
+    "body_checks": 540,
+    "residual_calls": 0,
+    "unsafe_forecast_raw": 1,
+    "max_forecast_force": 1.0590361375309074,
+    "max_body_speed": 64.30096409092837,
+    "node_ticks": 36,
+    "FD_rollouts": 12,
+    "candidate_rollouts": 1,
+    "model_ticks": 540,
+    "internal_wheel_force_evaluations": 2160,
+    "CPU_s": 7.876836430999999,
+    "wall_s": 7.8635922230023425
+  },
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "new_seeds": 0,
+  "HOLDOUT_queries": 0,
+  "SEALED_queries": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "actual_baseline_s": 13.66,
+  "no_lap_gain_observation": true
+}

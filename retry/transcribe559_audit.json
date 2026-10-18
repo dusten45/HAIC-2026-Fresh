@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "checks": {
+    "source_inputs_segment_pinned": true,
+    "started_pin": true,
+    "predeclared_first_crossing_selection": true,
+    "true_tracking_history": true,
+    "independent_node_defects_exact": true,
+    "sequential_fullstate_force_exact": true,
+    "saved_world_safety_reproduced": true,
+    "one_sensitivity_direction_one_candidate": true,
+    "LP_prediction_recomputed": true,
+    "zero_direction_feasible": true,
+    "same_physical_plane_times_recomputed": true,
+    "overlapping_raw_brackets_preserved": true,
+    "candidate_unchanged_global_safety": true,
+    "no_new_clipping_and_gate_comparison": true,
+    "effect_failure_not_transcription_failure": true,
+    "all_source_force_geometry_reconciled": true,
+    "caps_and_domain": true,
+    "native_protected_reserve_zero": true,
+    "main_preserved": true
+  },
+  "predicted_gain_ms": [
+    0.4383414407253516,
+    0.5348798915116484
+  ],
+  "observed_interpolated_gain_ms": [
+    0.43709252596974,
+    0.5326627679714813
+  ],
+  "prediction_error_ms": [
+    -0.0012489147556115632,
+    -0.0022171235401671208
+  ],
+  "baseline_crossings": [
+    {
+      "time": 0.48,
+      "raw_bracket": [
+        0.46,
+        0.48
+      ]
+    },
+    {
+      "time": 0.64,
+      "raw_bracket": [
+        0.62,
+        0.64
+      ]
+    }
+  ],
+  "candidate_crossings": [
+    {
+      "time": 0.47956290747403024,
+      "raw_bracket": [
+        0.46,
+        0.48
+      ]
+    },
+    {
+      "time": 0.6394673372320285,
+      "raw_bracket": [
+        0.62,
+        0.64
+      ]
+    }
+  ],
+  "scientific_cost": {
+    "explicit_wheel_force_evaluations": 2160,
+    "geometry_checks": 518,
+    "body_checks": 540,
+    "residual_calls": 0,
+    "unsafe_forecast_raw": 1,
+    "max_forecast_force": 1.0590361375309074,
+    "max_body_speed": 64.30096409092837,
+    "node_ticks": 36,
+    "FD_rollouts": 12,
+    "candidate_rollouts": 1,
+    "model_ticks": 540,
+    "internal_wheel_force_evaluations": 2160,
+    "CPU_s": 7.876836430999999,
+    "wall_s": 7.8635922230023425
+  },
+  "audit_source_ticks": 0,
+  "audit_force_evaluations": 0,
+  "audit_geometry_evaluations": 0,
+  "audit_CPU_s": 0.072072884,
+  "audit_wall_s": 0.07437676799600013
+}

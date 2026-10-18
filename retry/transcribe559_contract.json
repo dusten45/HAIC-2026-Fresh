@@ -1,0 +1,52 @@
+{
+  "registered_utc": "2026-10-18T21:23:28.858666+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "hypothesis": "First verify exact feasible world/fullstate source transcription on a reset-reachable saved551 segment, without periodicity. Only then inspect one constrained common-space arrival-time improvement direction.",
+  "selection": "First551 tracking before-action progress>=existing533station37, no outcome selection; optimize first6holds, fixed next2follow, fixed ninth control ONLY as late-crossing measurement buffer. The same physical planes at saved6/8hold endpoints; no558 target or synthetic state.",
+  "transcription": "For each of9 holds, independently source-propagate saved node+saved float32 action and compare ALL4raw fullroot excluding immutable roads, INCLUDING contacts/pose/gas/omega/joints and forces EXACTLY. Then sequential36raw replay must match every saved fullstate and force. Canonical tuple/list normalization only. Any mismatch stops before sensitivity/time study.",
+  "representation": "Saved hold nodes with exact zero defects; source-condensed forward state sensitivities of12 controls. No periodicity condition, no arbitrary target state/time or world-frame quotient.",
+  "direction": {
+    "variables": "First6holds x steering and signed pedal; final3controls fixed. One LP minimizing average arrival time to the two frozen physical planes. No basis/window/step sweep or repeated nonlinear solve.",
+    "finite_difference": "12 one-sided source rollouts, steering step1e-5/pedal1e-4; direction chosen inside action bounds and SAME brake-lock/pedal branch; divide by actual float32 perturbation. Source geometry and all world state responses included.",
+    "trust_box": "steering delta<=.002rad,pedal delta<=.02, existing +/-float32(.4) and[-1,1] and same pedal/lock branch. These are finite design choices, not physical necessity.",
+    "LP": "Keep half the baseline slack in linearized constraints G*delta>=-.5*g0; constraints include all raw safety, no NEW clipped samples vs frozen baseline mask, two-sided world/fullstate gate-state comparison tolerances, and both plane arrival times nonworsening. ZERO delta must be feasible. One scipy HiGHS linprog; select full solution as ONE candidate, no backtracking.",
+    "candidate_gate": "All real source raw safety; primary+follow interpolated gains each>=5ms and full gate comparison tolerances. Report raw crossing brackets and interpolation convention; no native or full-lap gain inference. Even effect failure retains transcription evidence."
+  },
+  "safety": "source footprint>=.50,path<=3,ORIGINAL551reference overspeed<=4.85,preclip force<=1.059,hull/allwheel<100,cumulative clipping<=10% INCLUDING true saved tracking history. No-new-clip LP mask is conservative design only. All trial model body hard100. Unsafe finite-difference/trial forecasts counted, never actual execution.",
+  "gate_measurement": "First forward plane crossing within36raw, signed plane interpolation defines model time. Interpolate numeric world state solely as a comparison metric between raw states; it is NOT a physically reachable intermediate source state. Record exact raw brackets and preserve ALL actual raw safety. World position tolerance components.1m plus Euclidean<=.15,angle.02,velocity components.15,yaw.05,M=I*.05,omega.5,gas/joints.02,rates.15,heading.02,offset.15,lever.1; unchanged friction/constants. Contact IDs compared exactly for transcription, logged separately for changed trajectory.",
+  "caps": {
+    "model_ticks": 800,
+    "explicit_wheel_force_evaluations": 4000,
+    "geometry_checks": 700,
+    "CPU_s": 90,
+    "wall_s": 120,
+    "node_replays": 9,
+    "FD_rollouts": 12,
+    "LP_solves": 1,
+    "candidate_rollouts": 1
+  },
+  "stop": "Mismatch -> no time experiment. FD crossing not bracketed/LP failure -> stop classification, no alternate direction. Candidate failure -> stop with full record, no smaller step/other controls. Deadline/domain/cost -> checkpoint and no rerun.",
+  "actual_cap": 0,
+  "new_seed_HOLDOUT_SEALED_other_environment_paid": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "source_sha256": {
+    "retry/transcribe559_model.py": "9396f721f48748c2e2259e5926298b50fcc5b7726d08af9acb59ca1f229efca3",
+    "retry/period556_model.py": "d1e04f2f50f4bb39406effa9458f69f77b4264e0e672653c0eaca82d3aa15cd4",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131"
+  },
+  "private_inputs_sha256": {
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response551-private/frozen-paths-private.json": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "/workspace/haic-response551-private/cold-candidate-private.json": "5e28759abfbc2455599c9f3bd4143ff7b8cf644deae63a86c7c290608e466ac8"
+  },
+  "segment_sha256": "552bd9c65f31f5527779c6a5d480ff6f023550a2e91c2525085f2882b9d58a48"
+}
