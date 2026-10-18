@@ -1,0 +1,221 @@
+{
+  "status": "PATH_MODEL_NOT_PROMOTED",
+  "native_pair_eligible": false,
+  "probe_pass": true,
+  "probes": [
+    {
+      "label": "obstacle",
+      "arms": [
+        {
+          "max_speed_m_s": 76.70075950076419,
+          "max_body_speed_m_s": 76.91316863147357,
+          "end_progress": 630.515584039334,
+          "history_samples_before": 1520,
+          "variant": "baseline",
+          "completed_before": 119,
+          "stop": "PROBE_COMPLETE",
+          "raw_ticks": 96,
+          "actions": 24,
+          "force_groups": {
+            "launch": {
+              "peak": 0.0,
+              "samples": 0,
+              "clipped": 0
+            },
+            "running": {
+              "peak": 0.9266638442609108,
+              "samples": 1904,
+              "clipped": 20
+            }
+          },
+          "min_margin_m": 1.0390291909312748,
+          "max_path_error_m": 1.6097652852924922,
+          "max_reference_overspeed_m_s": 0.3803658191194472,
+          "mode_counts": {
+            "HIGH": 24
+          },
+          "high_fraction": 1.0,
+          "first_failure": null,
+          "model_finish_episode_s": null,
+          "pass_safety": true
+        },
+        {
+          "max_speed_m_s": 78.99223788594227,
+          "max_body_speed_m_s": 79.81350615725886,
+          "end_progress": 654.2084966114874,
+          "history_samples_before": 1520,
+          "variant": "candidate",
+          "completed_before": 119,
+          "stop": "PROBE_COMPLETE",
+          "raw_ticks": 96,
+          "actions": 24,
+          "force_groups": {
+            "launch": {
+              "peak": 0.0,
+              "samples": 0,
+              "clipped": 0
+            },
+            "running": {
+              "peak": 1.047751007092223,
+              "samples": 1904,
+              "clipped": 21
+            }
+          },
+          "min_margin_m": 1.086839702391744,
+          "max_path_error_m": 1.0097552457018917,
+          "max_reference_overspeed_m_s": 0.7086655532644954,
+          "mode_counts": {
+            "HIGH": 23,
+            "RESPONSE": 1
+          },
+          "high_fraction": 0.9583333333333334,
+          "first_failure": null,
+          "model_finish_episode_s": null,
+          "pass_safety": true
+        }
+      ],
+      "pass_gate": true
+    },
+    {
+      "label": "curvature",
+      "arms": [
+        {
+          "max_speed_m_s": 73.25220076978187,
+          "max_body_speed_m_s": 73.36376959556972,
+          "end_progress": 737.6200582396648,
+          "history_samples_before": 1904,
+          "variant": "baseline",
+          "completed_before": 143,
+          "stop": "PROBE_COMPLETE",
+          "raw_ticks": 96,
+          "actions": 24,
+          "force_groups": {
+            "launch": {
+              "peak": 0.0,
+              "samples": 0,
+              "clipped": 0
+            },
+            "running": {
+              "peak": 0.9010194581815704,
+              "samples": 2288,
+              "clipped": 20
+            }
+          },
+          "min_margin_m": 1.0863521743797107,
+          "max_path_error_m": 1.702908582970531,
+          "max_reference_overspeed_m_s": 0.0,
+          "mode_counts": {
+            "HIGH": 24
+          },
+          "high_fraction": 1.0,
+          "first_failure": null,
+          "model_finish_episode_s": null,
+          "pass_safety": true
+        },
+        {
+          "max_speed_m_s": 78.58915508543262,
+          "max_body_speed_m_s": 79.23410755577201,
+          "end_progress": 755.0875603271339,
+          "history_samples_before": 1904,
+          "variant": "candidate",
+          "completed_before": 143,
+          "stop": "PROBE_COMPLETE",
+          "raw_ticks": 96,
+          "actions": 24,
+          "force_groups": {
+            "launch": {
+              "peak": 0.0,
+              "samples": 0,
+              "clipped": 0
+            },
+            "running": {
+              "peak": 1.0490747935128697,
+              "samples": 2288,
+              "clipped": 22
+            }
+          },
+          "min_margin_m": 0.8390165725456866,
+          "max_path_error_m": 1.3106126608296913,
+          "max_reference_overspeed_m_s": 0.0,
+          "mode_counts": {
+            "HIGH": 23,
+            "RESPONSE": 1
+          },
+          "high_fraction": 0.9583333333333334,
+          "first_failure": null,
+          "model_finish_episode_s": null,
+          "pass_safety": true
+        }
+      ],
+      "pass_gate": true
+    }
+  ],
+  "arms": [
+    {
+      "max_speed_m_s": 79.8935614501973,
+      "max_body_speed_m_s": 81.63267510948454,
+      "end_progress": 869.6879373445458,
+      "history_samples_before": 0,
+      "variant": "candidate",
+      "completed_before": 0,
+      "stop": "MARGIN",
+      "raw_ticks": 660,
+      "actions": 165,
+      "force_groups": {
+        "launch": {
+          "peak": 2.25546701731417,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.0596858795824247,
+          "samples": 2256,
+          "clipped": 9
+        }
+      },
+      "min_margin_m": 0.4371746418296284,
+      "max_path_error_m": 1.4216558263413956,
+      "max_reference_overspeed_m_s": 3.7082983448722757,
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "HIGH": 130,
+        "RESPONSE": 8,
+        "BACKUP": 3
+      },
+      "high_fraction": 0.9219858156028369,
+      "first_failure": {
+        "action_index": 165,
+        "raw_in_hold": 4,
+        "episode_s": 13.199999999999807,
+        "violations": [
+          "MARGIN"
+        ]
+      },
+      "model_finish_episode_s": null,
+      "pass_safety": false,
+      "start": "cold"
+    }
+  ],
+  "comparison528_carry": null,
+  "gain_vs525_cold_s": null,
+  "gain_vs525_carry_s": null,
+  "path_gain_vs528_cold_s": null,
+  "path_gain_vs528_carry_s": null,
+  "model_integrator_ticks": 19958,
+  "source_wheel_force_evaluations_in_integrator": 79832,
+  "explicit_force_evaluations": 80780,
+  "planner_cost": {
+    "force_evaluations": 80780,
+    "forecast_calls": 577,
+    "forecast_ticks": 18914
+  },
+  "CPU_s": 34.586170085,
+  "wall_s": 34.59176263699919,
+  "native_actions": 0,
+  "native_resets": 0,
+  "native_worlds": 0,
+  "research_remaining": 24155,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "Onlypathgenerationvs528fixedtop80controller. Nativewouldbe525vs534package;nofictitiousactual528/feasiblebound/11sclaim."
+}

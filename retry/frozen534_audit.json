@@ -1,0 +1,113 @@
+{
+  "first_failure": {
+    "action_index": 165,
+    "raw_in_hold": 4,
+    "episode_s": 13.199999999999807,
+    "violations": [
+      "MARGIN"
+    ]
+  },
+  "limiting_part": {
+    "part": "wheel3",
+    "road_margin_m": 0.4371746418296284,
+    "obstacle_margin_m": 31.477183130602473,
+    "margin_m": 0.4371746418296284
+  },
+  "all_body_parts": [
+    {
+      "part": "hull1",
+      "road_margin_m": 1.6603400411341382,
+      "obstacle_margin_m": 29.068863311209196,
+      "margin_m": 1.6603400411341382
+    },
+    {
+      "part": "hull2",
+      "road_margin_m": 1.6802295511531737,
+      "obstacle_margin_m": 29.88448438246664,
+      "margin_m": 1.6802295511531737
+    },
+    {
+      "part": "hull3",
+      "road_margin_m": 0.8754672843586386,
+      "obstacle_margin_m": 31.057377429480777,
+      "margin_m": 0.8754672843586386
+    },
+    {
+      "part": "hull4",
+      "road_margin_m": 0.8918585328442552,
+      "obstacle_margin_m": 32.24482773305372,
+      "margin_m": 0.8918585328442552
+    },
+    {
+      "part": "wheel1",
+      "road_margin_m": 1.059233021518389,
+      "obstacle_margin_m": 29.20461167878521,
+      "margin_m": 1.059233021518389
+    },
+    {
+      "part": "wheel2",
+      "road_margin_m": 3.1049981489629515,
+      "obstacle_margin_m": 30.87775773102629,
+      "margin_m": 3.1049981489629515
+    },
+    {
+      "part": "wheel3",
+      "road_margin_m": 0.4371746418296284,
+      "obstacle_margin_m": 31.477183130602473,
+      "margin_m": 0.4371746418296284
+    },
+    {
+      "part": "wheel4",
+      "road_margin_m": 2.637176031132464,
+      "obstacle_margin_m": 33.04591176933385,
+      "margin_m": 2.637176031132464
+    }
+  ],
+  "actual_pose_margin_m": 0.4371746418296284,
+  "actual_pose_path_error_m": 1.250157434155093,
+  "actual_pose_heading_minus_segment_rad": -0.12037690565572934,
+  "speed_m_s": 41.374383082219296,
+  "reference_m_s": 48.952394573840635,
+  "reference_ff_m_s2": 29.060501099332047,
+  "nominal_outerbox_at_same_projection": {
+    "road_margin_m": 1.6086042569261305,
+    "obstacle_margin_m": 29.525904040095252
+  },
+  "last_control_mode": "RESPONSE",
+  "baseline_replay": [
+    {
+      "label": "obstacle",
+      "raw_rows": 96,
+      "root_states_identical_to_cached528": 96,
+      "all_identical": true
+    },
+    {
+      "label": "curvature",
+      "raw_rows": 96,
+      "root_states_identical_to_cached528": 96,
+      "all_identical": true
+    }
+  ],
+  "source_pins_verified": true,
+  "private_input_pins_verified": true,
+  "controller_function_identity": true,
+  "fixed533_path_SHA_unchanged": true,
+  "path_optimization_iterations": 0,
+  "extra_model_ticks": 0,
+  "extra_force_evaluations": 0,
+  "native_actions": 0,
+  "CPU_s": 0.167759623,
+  "wall_s": 0.1687977640031022,
+  "scope": "Stoppedposegeometrydiagnosticnotnewtrajectory/counterfactualphysics. Shared528forecastchecksforce/ref/pathbutnotwhole-bodymargin;staticnominal1.25isnottrackinginvariance. Noactualfinish/gainclaim.",
+  "attempted_forecasts_max_force_peak": 1.0615707433205164,
+  "selected_final_forecast_force_peak": 1.0599999966003038,
+  "selected_final_forecast_reference_overspeed": 0.0,
+  "selected_final_certified": true,
+  "last_two_holds_summary": {
+    "raw_samples": 8,
+    "previous_hold_end_margin_m": 0.6707544027241634,
+    "previous_hold_end_path_error_m": 1.4216558263413956,
+    "failed_hold_end_margin_m": 0.4371746418296284,
+    "failed_hold_end_path_error_m": 1.250157434155093
+  }
+}
