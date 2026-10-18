@@ -1,11 +1,28 @@
 {
-  "status": "NATIVE_CANDIDATE_RUNNING_NOT_FINAL",
+  "status": "ACTUAL_PAIR_COMPLETED_PASS",
   "snapshot_utc": "2026-10-18T13:24:08.066128+00:00",
   "pilot_pass": true,
   "cold_model_finish_s": 14.22,
   "carry_model_finish_s": 14.7,
   "actual_fresh_baseline_finish_s": 15.1,
-  "last_charge": {
+  "actual_candidate_finish_s": 14.22,
+  "no_restart": true,
+  "old537_failure_preserved": true,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "Completed538pairaggregate; prior_in_progress_charge retains original snapshot, final_counts are final.",
+  "completed_utc": "2026-10-18T13:37:00.414203+00:00",
+  "actual_gain_s": 0.8799999999999812,
+  "final_counts": {
+    "worlds": 2,
+    "closed": 2,
+    "resets": 2,
+    "actions": 367,
+    "raw_attempts": 1568,
+    "raw_completed": 1568
+  },
+  "research_remaining": 23107,
+  "prior_in_progress_charge": {
     "budget": "candidate",
     "index": 103,
     "attempted_actual_actions": 292,
@@ -22,11 +39,5 @@
     },
     "CPU_s": 1084.503666257,
     "wall_s": 1084.5674186569959
-  },
-  "actual_candidate_finish_s": null,
-  "no_restart": true,
-  "old537_failure_preserved": true,
-  "reserve": 84000,
-  "reserve_used": 0,
-  "scope": "In-progress aggregate checkpoint only. Current actual candidate not finished; model gain is not an actual gain."
+  }
 }

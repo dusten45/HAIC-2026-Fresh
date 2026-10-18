@@ -1,0 +1,141 @@
+{
+  "status": "ACTUAL_OFFICIAL_FINISH_PAIR_PASS",
+  "arms": [
+    {
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "HIGH": 146,
+        "RESPONSE": 13,
+        "BACKUP": 6
+      },
+      "high_fraction": 0.8848484848484849,
+      "budget": "baseline",
+      "stop": "OFFICIAL_FINISH",
+      "initial_identity": true,
+      "actions": 189,
+      "reset_ticks": 51,
+      "official_finish": true,
+      "official_finish_episode_s": 15.099999999999746,
+      "confirmation_episode_s": 15.099999999999746,
+      "reference_arc_event": {
+        "lower": 15.079999999999746,
+        "upper": 15.099999999999746,
+        "time": 15.086755923940908
+      },
+      "unwrapped_progress": 979.6071074023024,
+      "reference_path_length": 978.6098315287799,
+      "visited_tiles": 283,
+      "tile_count": 283,
+      "min_margin_m": 0.500035545165379,
+      "max_path_error_m": 1.4020869878659215,
+      "max_tracking_overspeed_m_s": 3.7481721782488933,
+      "max_unused_startup_reference_difference_m_s": 2.191204343467215,
+      "force_groups": {
+        "launch": {
+          "peak": 2.255467414712997,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.0580468787546384,
+          "samples": 2636,
+          "clipped": 8
+        }
+      },
+      "source_force_oracle_max_N": 0.0002848310323742358,
+      "source_COM_impulse_max_m_s": 2.276525421740457e-05,
+      "max_prediction_errors": {
+        "position_m": 2.8527946148290642e-05,
+        "speed_m_s": 3.21882478004909e-05,
+        "angle_rad": 2.0386430254204502e-05,
+        "yaw_rad_s": 0.00018704872794206295,
+        "max_force_ratio_error": 0.00012508607361783053
+      }
+    },
+    {
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "SOURCE_FULL": 44,
+        "SOURCE_RESPONSE": 99,
+        "BACKUP": 10,
+        "NOMINAL": 1
+      },
+      "high_fraction": 0.0,
+      "budget": "candidate",
+      "stop": "OFFICIAL_FINISH",
+      "initial_identity": true,
+      "actions": 178,
+      "reset_ticks": 51,
+      "official_finish": true,
+      "official_finish_episode_s": 14.219999999999764,
+      "confirmation_episode_s": 14.219999999999764,
+      "reference_arc_event": {
+        "lower": 14.199999999999765,
+        "upper": 14.219999999999764,
+        "time": 14.207180591347448
+      },
+      "unwrapped_progress": 979.6597196111485,
+      "reference_path_length": 978.6098315287799,
+      "visited_tiles": 283,
+      "tile_count": 283,
+      "min_margin_m": 0.5454535643036398,
+      "max_path_error_m": 1.5269842269972507,
+      "max_tracking_overspeed_m_s": 4.849652386033412,
+      "max_unused_startup_reference_difference_m_s": 2.191204343467215,
+      "force_groups": {
+        "launch": {
+          "peak": 2.255467414712997,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.058926317528542,
+          "samples": 2460,
+          "clipped": 68
+        }
+      },
+      "source_force_oracle_max_N": 0.0002946874010181479,
+      "source_COM_impulse_max_m_s": 2.120481825537382e-05,
+      "max_prediction_errors": {
+        "position_m": 3.970680833853824e-05,
+        "speed_m_s": 0.00010332450921168856,
+        "angle_rad": 2.8460018700271483e-05,
+        "yaw_rad_s": 0.00024217758031408465,
+        "max_force_ratio_error": 0.00019683367333056534
+      }
+    }
+  ],
+  "both_actual_official_finishes": true,
+  "official_finish_gain_s": 0.8799999999999812,
+  "practical_effect_gate": true,
+  "counts": {
+    "worlds": 2,
+    "closed": 2,
+    "resets": 2,
+    "actions": 367,
+    "raw_attempts": 1568,
+    "raw_completed": 1568
+  },
+  "native_model_integrator_ticks": 89678,
+  "all_model_integrator_ticks": 244169,
+  "native_explicit_force_evaluations": 371080,
+  "all_model_wheel_force_evaluations": 1001416,
+  "native_planner_cost": {
+    "force_evaluations": 359344,
+    "forecast_calls": 4222,
+    "forecast_ticks": 88210,
+    "geometry_checks": 92432
+  },
+  "research_remaining": 23107,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "native_CPU_s": 1785.087138456,
+  "native_wall_s": 1785.181784692999,
+  "preflight_model_ticks": 154491,
+  "preflight_explicit_force_evaluations": 630336,
+  "native_geometry_checks": 92432,
+  "all_geometry_checks": 253157,
+  "total_CPU_s": 3476.017291811,
+  "total_wall_s": 3476.226481040998,
+  "scope": "538 same533path/profile/launch/steering;unchanged537source-response full-domain vsfresh536.537firstholdfailurepreserved,538newgates. ExistingDEVpackageeffectnotpixel/generalization/11sclaim."
+}
