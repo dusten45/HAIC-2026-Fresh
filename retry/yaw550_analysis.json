@@ -1,0 +1,136 @@
+{
+  "passed": true,
+  "analysis_only": true,
+  "new_model_ticks": 0,
+  "new_native_actions": 0,
+  "closure_max_absolute_error": 0.0,
+  "cases": [
+    {
+      "arm": "baseline",
+      "crossing_source_state": {
+        "speed": 62.333965228451625,
+        "yaw": 2.523654190912864,
+        "fixed_plane_yaw_target": 2.6731433505801543,
+        "signed_yaw_error": -0.14948915966729048,
+        "absolute_yaw_error": 0.14948915966729048,
+        "yaw_inertia": 19.17065204580336,
+        "angular_momentum": 48.38008413303428,
+        "joint_angular_momentum": -1.2244889645494199e-05
+      },
+      "post_cross_samples": [
+        {
+          "after_cross_s": 0.21994836977570653,
+          "yaw": 1.7790207047169937,
+          "path_yaw_target": 0.8295172231050832,
+          "yaw_error": 0.9495034816119104,
+          "sideslip_rad": -0.004941755231212963,
+          "velocity_turn_rate": 1.6307542252787943,
+          "margin": 2.42043335774738,
+          "path_error": 0.12182053712071302,
+          "force_peak": 1.0328648781362217
+        },
+        {
+          "after_cross_s": 0.41994836977570627,
+          "yaw": 0.7282098991073102,
+          "path_yaw_target": 0.35157016307068456,
+          "yaw_error": 0.3766397360366256,
+          "sideslip_rad": -0.004601489178039242,
+          "velocity_turn_rate": 0.7445674468343106,
+          "margin": 4.124085587413026,
+          "path_error": 0.22571793221887532,
+          "force_peak": 0.9118470494312857
+        },
+        {
+          "after_cross_s": 0.8199483697757062,
+          "yaw": -0.20944669942747748,
+          "path_yaw_target": -0.04960777878051888,
+          "yaw_error": 0.1598389206469586,
+          "sideslip_rad": 0.00019439508821264063,
+          "velocity_turn_rate": -0.20207878738319812,
+          "margin": 5.025014893254433,
+          "path_error": 0.09268399801315362,
+          "force_peak": 0.7182615858379877
+        }
+      ],
+      "post_cross_min_margin": 0.5846345167459028,
+      "post_cross_peak_force": 1.0579302344972412,
+      "post_cross_max_abs_sideslip": 0.007216017652734696,
+      "terminal": {
+        "path_error": 0.1267802523180602,
+        "heading_error": 0.018892102455286233,
+        "yaw_error": 0.2439006537935987,
+        "speed_deficit": 0.0,
+        "speed": 93.9182791652179
+      },
+      "saved_raw_ticks": 180,
+      "saved_post12_pass": true
+    },
+    {
+      "arm": "candidate",
+      "crossing_source_state": {
+        "speed": 66.55879109869478,
+        "yaw": 2.5917907747796134,
+        "fixed_plane_yaw_target": 2.8543217040028677,
+        "signed_yaw_error": -0.2625309292232543,
+        "absolute_yaw_error": 0.2625309292232543,
+        "yaw_inertia": 19.17065204580336,
+        "angular_momentum": 49.68639871072497,
+        "joint_angular_momentum": 7.959190189475512e-05
+      },
+      "post_cross_samples": [
+        {
+          "after_cross_s": 0.20344812262031242,
+          "yaw": 2.0284218818731103,
+          "path_yaw_target": 0.8787686914201926,
+          "yaw_error": 1.1496531904529177,
+          "sideslip_rad": -0.00493465450587902,
+          "velocity_turn_rate": 2.1103820879325723,
+          "margin": 2.2107832361591724,
+          "path_error": 0.30462605585972535,
+          "force_peak": 0.9748737670076274
+        },
+        {
+          "after_cross_s": 0.40344812262031216,
+          "yaw": 0.4758042215742091,
+          "path_yaw_target": 0.36746824512361986,
+          "yaw_error": 0.10833597645058923,
+          "sideslip_rad": -0.005087708868480622,
+          "velocity_turn_rate": 0.52066451843351,
+          "margin": 4.31047659652079,
+          "path_error": 0.3520318946034361,
+          "force_peak": 0.8864855245923604
+        },
+        {
+          "after_cross_s": 0.8034481226203125,
+          "yaw": -0.4321738320299747,
+          "path_yaw_target": -0.08798002856176533,
+          "yaw_error": 0.3441938034682094,
+          "sideslip_rad": 0.0012748337071964108,
+          "velocity_turn_rate": -0.39530326441610164,
+          "margin": 4.9395799747601385,
+          "path_error": 0.11337624893713492,
+          "force_peak": 0.6956732682067677
+        }
+      ],
+      "post_cross_min_margin": 0.5991129719904389,
+      "post_cross_peak_force": 1.058934583129607,
+      "post_cross_max_abs_sideslip": 0.008707802246225893,
+      "terminal": {
+        "path_error": 0.10399915342839275,
+        "heading_error": 0.013173365899322356,
+        "yaw_error": 0.24722885424568486,
+        "speed_deficit": 0.0,
+        "speed": 94.84178299091081
+      },
+      "saved_raw_ticks": 172,
+      "saved_post12_pass": true
+    }
+  ],
+  "next_gate_rule": "First reference vertex beyond both saved549 endpoints with curvature sign opposite the endpoint segment; no outcome selection or alternative gate.",
+  "next_gate_distance_from_farther_end_m": 78.44456358020636,
+  "source_explanation": "Yaw=(angular momentum - wheel joint angular momentum)/assembly inertia; tire force depends on actual wheel slip and rotational offset, not abs(yaw-v*kappa_reference). No source physical rule imposes candidate <= baseline+.05. That549 relational veto is a prereg diagnostic, not a proven necessary safety condition. No causal isolation from one coupled speed/profile pair.",
+  "continuation_needed": "Saved post12 is safe and terminal recovered, but next full bend beyond saved endpoints is unobserved. One next-curvature-sign-reversal common plane can test finite-horizon risk and persistence; original549 fail unchanged.",
+  "private_continuation_input_sha256": "17df51b7f605808a86ca87d249dc2a73a0e8bd44aadca0f3cadcd70c5881291e",
+  "CPU_s": 0.028500370999999997,
+  "wall_s": 0.028500439002527855
+}

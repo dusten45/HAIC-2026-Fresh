@@ -1,0 +1,67 @@
+{
+  "passed": false,
+  "finite_horizon_safety_recovered": false,
+  "conservative_gain_from549_entry_s": null,
+  "interpolated_gain_from549_entry_s": null,
+  "original549_gate_passed": false,
+  "whole_lap_or_native_promotion": false,
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "replayed_saved549_ticks": 0,
+  "cases": [
+    {
+      "arm": "baseline",
+      "passed": false,
+      "crossing": {
+        "lower_s": 4.46,
+        "upper_s": 4.48,
+        "time_s": 4.475088373300424,
+        "speed": 85.6784159394457,
+        "yaw": 0.03786030283534844,
+        "yaw_target": 0.2897197048998131,
+        "yaw_error": 0.25185940206446467,
+        "heading_error": 0.0038584745194249243,
+        "sideslip_rad": 0.004439381866708804,
+        "path_error": 0.5103868263791804
+      },
+      "first_failure": null,
+      "raw_ticks": 44,
+      "holds": 11,
+      "continued_from_saved_completed": 130,
+      "saved_prefix_ticks_replayed": 0,
+      "min_margin_m": 1.0727135869984663,
+      "peak_force": 0.8622805006902804,
+      "max_reference_overspeed": 4.847771060822794,
+      "max_path_error": 0.7061614814553634,
+      "max_body_speed": 95.75828593144286,
+      "max_cumulative_clipping": 0.025943396226415096,
+      "terminal": {
+        "path_error": 0.51193722546184,
+        "heading_error": 0.003609506061859657,
+        "yaw_error": 0.21554429648210416,
+        "speed_deficit": 3.9128754787336817,
+        "speed": 85.37590696811668
+      },
+      "fresh12hold_witness_passed": false,
+      "fresh12hold_witness_min_margin_m": 0.5002572354731977
+    }
+  ],
+  "cost": {
+    "force_evaluations": 18296,
+    "forecast_calls": 226,
+    "forecast_ticks": 4445,
+    "geometry_checks": 4716,
+    "executed_ticks": 44,
+    "model_body_checks": 4489,
+    "max_all_model_body_speed_m_s": 96.05142616324903
+  },
+  "model_ticks": 4489,
+  "integrator_wheel_force_evaluations": 17956,
+  "CPU_s": 42.151390438,
+  "wall_s": 42.154196673000115,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_seeds": 0,
+  "protected_queries": 0
+}

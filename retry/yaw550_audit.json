@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "checks": {
+    "source_pins": true,
+    "input_pins": true,
+    "original549_failure_preserved": true,
+    "actual_cap0": true,
+    "analysis_no_integrator": true,
+    "source_saved_yaw_balance": true,
+    "all_new_model_body_checked": true,
+    "completion_pins": true,
+    "original550_failure_preserved": true,
+    "completion_precharge": true,
+    "baseline_starts_at_saved_endpoint": true,
+    "baseline_summary_exact": true,
+    "baseline_no_replay": true,
+    "baseline_finite": true,
+    "baseline_holds_cap": true,
+    "baseline_raw_metrics": true,
+    "baseline_crossing_recomputed": true,
+    "baseline_registered_gate_consistent": true,
+    "baseline_raw_safe_report_consistent": true,
+    "candidate_starts_at_saved_endpoint": true,
+    "candidate_summary_exact": true,
+    "candidate_no_replay": true,
+    "candidate_finite": true,
+    "candidate_holds_cap": true,
+    "candidate_raw_metrics": true,
+    "candidate_crossing_recomputed": true,
+    "candidate_registered_gate_consistent": true,
+    "candidate_raw_safe_report_consistent": true,
+    "source_new_yaw_balance": true,
+    "new_executed_raw_only": true,
+    "cost_caps": true,
+    "independent_question_gate": true,
+    "main_preserved": true,
+    "no_deeper_execution": true
+  },
+  "cases": [
+    {
+      "arm": "baseline",
+      "raw_safe": true,
+      "fresh12hold_certified": false,
+      "crossing": {
+        "lower_s": 4.46,
+        "upper_s": 4.48,
+        "time_s": 4.475088373300424
+      },
+      "min_margin_m": 1.0727135869984663,
+      "peak_force": 0.8622805006902804,
+      "max_clipping": 0.025943396226415096
+    },
+    {
+      "arm": "candidate",
+      "raw_safe": true,
+      "fresh12hold_certified": false,
+      "crossing": {
+        "lower_s": 4.26,
+        "upper_s": 4.28,
+        "time_s": 4.26884905806885
+      },
+      "min_margin_m": 1.0859632318530725,
+      "peak_force": 0.823821198720466,
+      "max_clipping": 0.03485576923076923
+    }
+  ],
+  "source_new_yaw_balance_max_error": 0.0,
+  "conservative_gain_from549_entry_s": 0.17999999999999972,
+  "new_model_ticks": 0,
+  "new_native_actions": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "CPU_s": 0.07028651300000002,
+  "wall_s": 0.07207778000156395
+}
