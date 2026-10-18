@@ -1,0 +1,30 @@
+{
+  "native_pair_eligible": true,
+  "baseline_replay": [
+    {
+      "start": "exact_reset",
+      "exact_rows": 240
+    },
+    {
+      "start": "trigger_stress",
+      "exact_rows": 144
+    }
+  ],
+  "comparisons": [
+    {
+      "start": "exact_reset",
+      "window_gain_s": 0.14925436614038423
+    },
+    {
+      "start": "trigger_stress",
+      "window_gain_s": 0.14921111912034357
+    }
+  ],
+  "reason": "Original in-memory asdict tuples compared with deserialized JSON lists. All persisted JSON states/commands exact384rows. Data/margins/gains unchanged; no model reintegration, no criterion change.",
+  "original_model_result_sha256": "b36f79a2171199abcd376afdb23d0bac0b18e10c408cdf8ce2f4c05a166a0e83",
+  "original_runner_sha256": "378bef930567250f532f1d4844b1b2c8e599296d741b088349259a6da0bd3798",
+  "fixed_runner_sha256": "71f83bb40060b7817042c3c72e531aae611df651835eb9d76cf3c9f4312aab57",
+  "new_model_integrator_ticks": 0,
+  "native_actions": 0,
+  "native_resets": 0
+}
