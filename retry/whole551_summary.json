@@ -1,0 +1,68 @@
+{
+  "status": "SAFE_WHOLE_SOURCE_COLD_440MS_BELOW_500MS_GATE",
+  "finalized_utc": "2026-10-18T19:01:52.926962+00:00",
+  "fixed_candidate549_sha256": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+  "baseline541_reused_no_reintegration": true,
+  "baseline_cold_model_s": 13.66,
+  "candidate_cold_source_finish_s": 13.219999999999807,
+  "gain_ms": 440,
+  "effect_gate_ms": 500,
+  "shortfall_ms": 60,
+  "safe_whole_source_finish": true,
+  "first_safety_failure": null,
+  "carry_preregistered_nonworsening_vs14_46": true,
+  "carry_executed": false,
+  "carry_not_executed_reason": "Cold500ms effect gate not met; no candidate carry observation.",
+  "actual_cap": 0,
+  "new_actual_actions": 0,
+  "new_resets": 0,
+  "actual_baseline541_s": 13.66,
+  "actual_candidate_measured": false,
+  "no_retroactive549_or550_pass": true,
+  "no_new_candidate_or_tuning": true,
+  "new_scientific_cost": {
+    "model_ticks": 73065,
+    "force": 297888,
+    "geometry": 76699,
+    "CPU_s": 748.555725062,
+    "wall_s": 748.5976972999997
+  },
+  "rejections": {
+    "baseline541": {
+      "tracking_decisions": 147,
+      "source_full_rejection_reasons": {
+        "FORCE_PEAK": 44,
+        "CLIP_HISTORY": 1,
+        "REFERENCE_WITH_NUMERIC_RESERVE": 37,
+        "FORECAST_FOOTPRINT_MARGIN": 1
+      },
+      "rejected_first_hold_pass": {
+        "True": 27,
+        "False": 56
+      },
+      "not_causal_time_attribution": true
+    },
+    "candidate551": {
+      "tracking_decisions": 142,
+      "source_full_rejection_reasons": {
+        "REFERENCE_WITH_NUMERIC_RESERVE": 56,
+        "FORCE_PEAK": 37,
+        "CLIP_HISTORY": 1,
+        "FORECAST_FOOTPRINT_MARGIN": 2
+      },
+      "rejected_first_hold_pass": {
+        "False": 77,
+        "True": 19
+      },
+      "not_causal_time_attribution": true
+    }
+  },
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_seeds": 0,
+  "protected_queries": 0,
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "summary_CPU_s": 0.08179252000000001,
+  "summary_wall_s": 0.08179279500473058
+}

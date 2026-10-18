@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "registered_utc": "2026-10-18T18:46:25.257373+00:00",
+  "checks": {
+    "source_pins": true,
+    "input_pins": true,
+    "same_tracking_function": true,
+    "baseline_profile_exact": true,
+    "backup_exact": true,
+    "candidate549_frozen_sha": true,
+    "legacy_carry_completed46": true,
+    "prior541_audit_passed": true,
+    "cold_summary_exact": true,
+    "cold_first_action": true,
+    "cold_source_finish": true,
+    "cold_unchanged_global_limits": true,
+    "carry_summary_exact": true,
+    "carry_first_action": true,
+    "carry_source_finish": true,
+    "carry_unchanged_global_limits": true
+  },
+  "baseline_reuse": {
+    "cold": {
+      "source_finish_s": 13.659999999999798,
+      "raw_ticks": 683,
+      "saved_actions": 171,
+      "model_ticks_reused": 67816,
+      "recomputed_model_ticks": 0
+    },
+    "carry": {
+      "source_finish_s": 14.459999999999859,
+      "raw_ticks": 539,
+      "saved_actions": 135,
+      "model_ticks_reused": 46174,
+      "recomputed_model_ticks": 0
+    }
+  },
+  "baseline_private_record_sha256": {
+    "/workspace/haic-response541-private/cold-candidate-private.json": "43d3b999abfa2384c672336f1ed8e5998525d654b77b5dbd6318da891ddb1294",
+    "/workspace/haic-response541-private/carry-candidate-private.json": "a026ac249aea040fe499e46a7d984b8bfca5047b250324ead2682e462a389222"
+  },
+  "frozen_paths_sha256": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+  "new_model_ticks": 0,
+  "new_native_actions": 0,
+  "CPU_s": 0.10381717899999998,
+  "wall_s": 0.10381728199718054
+}
