@@ -1,0 +1,1121 @@
+{
+  "completed": true,
+  "periodic_states": [
+    {
+      "label": "fixture0-max",
+      "direction": "max",
+      "solver_success": true,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully",
+      "nit": 6,
+      "unique_evaluations": 55,
+      "feasible_iterate_found": true,
+      "admitted": true,
+      "speed": 42.91847264738106,
+      "mechanical_periodic": true,
+      "validation_safe": true,
+      "first_failure": null,
+      "signature_difference": {
+        "velocity": {
+          "max_abs": 2.672030285921778e-08,
+          "normalized_max": 0.0002672030285921778
+        },
+        "yaw": {
+          "max_abs": 2.6324567858893033e-08,
+          "normalized_max": 0.0026324567858893033
+        },
+        "angular_momentum": {
+          "max_abs": 5.046589706125815e-07,
+          "normalized_max": 0.05046589706125814
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 3.8441854144366516e-08,
+          "normalized_max": 0.00038441854144366516
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 4.805731013135528e-08,
+          "normalized_max": 0.0004805731013135528
+        },
+        "levers": {
+          "max_abs": 2.220446049250313e-16,
+          "normalized_max": 2.220446049250313e-10
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "selected_scaled_period_residual": 1.9064569123372622e-10,
+      "selected_min_inequality": 1.630710233513355e-09
+    },
+    {
+      "label": "fixture0-min",
+      "direction": "min",
+      "solver_success": true,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully",
+      "nit": 6,
+      "unique_evaluations": 55,
+      "feasible_iterate_found": true,
+      "admitted": true,
+      "speed": 5.000000000000099,
+      "mechanical_periodic": true,
+      "validation_safe": true,
+      "first_failure": null,
+      "signature_difference": {
+        "velocity": {
+          "max_abs": 1.6379376077679808e-08,
+          "normalized_max": 0.00016379376077679808
+        },
+        "yaw": {
+          "max_abs": 8.545967933315524e-09,
+          "normalized_max": 0.0008545967933315523
+        },
+        "angular_momentum": {
+          "max_abs": 1.6383172685152658e-07,
+          "normalized_max": 0.016383172685152658
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 2.0750860585394548e-08,
+          "normalized_max": 0.00020750860585394548
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 1.4517385182877263e-08,
+          "normalized_max": 0.00014517385182877263
+        },
+        "levers": {
+          "max_abs": 4.440892098500626e-16,
+          "normalized_max": 4.440892098500626e-10
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "selected_scaled_period_residual": 2.225274897682539e-11,
+      "selected_min_inequality": 0.9431301378910372
+    },
+    {
+      "label": "fixture1-max",
+      "direction": "max",
+      "solver_success": true,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully",
+      "nit": 5,
+      "unique_evaluations": 45,
+      "feasible_iterate_found": true,
+      "admitted": true,
+      "speed": 75.55051476538827,
+      "mechanical_periodic": true,
+      "validation_safe": true,
+      "first_failure": null,
+      "signature_difference": {
+        "velocity": {
+          "max_abs": 6.026340315656853e-09,
+          "normalized_max": 6.026340315656853e-05
+        },
+        "yaw": {
+          "max_abs": 2.1138666372877424e-08,
+          "normalized_max": 0.0021138666372877424
+        },
+        "angular_momentum": {
+          "max_abs": 4.0524189159896196e-07,
+          "normalized_max": 0.040524189159896196
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 3.021634142896801e-08,
+          "normalized_max": 0.0003021634142896801
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 3.7863059354492634e-08,
+          "normalized_max": 0.00037863059354492634
+        },
+        "levers": {
+          "max_abs": 4.440892098500626e-16,
+          "normalized_max": 4.440892098500626e-10
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "selected_scaled_period_residual": 2.118942141748903e-10,
+      "selected_min_inequality": 2.54082876960382e-09
+    },
+    {
+      "label": "fixture1-min",
+      "direction": "min",
+      "solver_success": true,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully",
+      "nit": 8,
+      "unique_evaluations": 73,
+      "feasible_iterate_found": true,
+      "admitted": true,
+      "speed": 5.0,
+      "mechanical_periodic": true,
+      "validation_safe": true,
+      "first_failure": null,
+      "signature_difference": {
+        "velocity": {
+          "max_abs": 6.272976804666541e-09,
+          "normalized_max": 6.272976804666541e-05
+        },
+        "yaw": {
+          "max_abs": 3.3555347944691505e-09,
+          "normalized_max": 0.000335553479446915
+        },
+        "angular_momentum": {
+          "max_abs": 6.432777022169489e-08,
+          "normalized_max": 0.006432777022169488
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 5.288530502411959e-09,
+          "normalized_max": 5.288530502411959e-05
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 5.664951396866513e-09,
+          "normalized_max": 5.664951396866513e-05
+        },
+        "levers": {
+          "max_abs": 4.440892098500626e-16,
+          "normalized_max": 4.440892098500626e-10
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "selected_scaled_period_residual": 3.436460992310862e-13,
+      "selected_min_inequality": 0.9468057271037632
+    },
+    {
+      "label": "transition-target",
+      "direction": "max",
+      "solver_success": true,
+      "solver_status": 0,
+      "solver_message": "Optimization terminated successfully",
+      "nit": 4,
+      "unique_evaluations": 37,
+      "feasible_iterate_found": true,
+      "admitted": true,
+      "speed": 42.91847264738105,
+      "mechanical_periodic": true,
+      "validation_safe": true,
+      "first_failure": null,
+      "signature_difference": {
+        "velocity": {
+          "max_abs": 6.731548563010392e-08,
+          "normalized_max": 0.0006731548563010392
+        },
+        "yaw": {
+          "max_abs": 5.9434993815443704e-08,
+          "normalized_max": 0.0059434993815443695
+        },
+        "angular_momentum": {
+          "max_abs": 1.1394072316761594e-06,
+          "normalized_max": 0.11394072316761593
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 9.498859299128526e-08,
+          "normalized_max": 0.0009498859299128526
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 1.0800172045577483e-07,
+          "normalized_max": 0.0010800172045577483
+        },
+        "levers": {
+          "max_abs": 2.220446049250313e-16,
+          "normalized_max": 2.220446049250313e-10
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "selected_scaled_period_residual": 3.2093018376144757e-10,
+      "selected_min_inequality": 0.08537474578225257
+    }
+  ],
+  "cycles": [
+    {
+      "label": "fixture0-max-exact",
+      "perturbed": false,
+      "safe": false,
+      "raw_completed": 17,
+      "first_failure": "PATH",
+      "signature_drift": {
+        "velocity": {
+          "max_abs": 2.1021870466597647e-08,
+          "normalized_max": 0.00021021870466597647
+        },
+        "yaw": {
+          "max_abs": 3.3706486934903523e-08,
+          "normalized_max": 0.003370648693490352
+        },
+        "angular_momentum": {
+          "max_abs": 6.461751240749436e-07,
+          "normalized_max": 0.06461751240749436
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 1.0822928686593514e-07,
+          "normalized_max": 0.0010822928686593514
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 6.1533511619416e-08,
+          "normalized_max": 0.00061533511619416
+        },
+        "levers": {
+          "max_abs": 8.881784197001252e-16,
+          "normalized_max": 8.881784197001252e-10
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "initial_error_to_nominal": {
+        "velocity": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "yaw": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "angular_momentum": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "levers": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "end_error_to_nominal": {
+        "velocity": {
+          "max_abs": 2.1021870466597647e-08,
+          "normalized_max": 0.00021021870466597647
+        },
+        "yaw": {
+          "max_abs": 3.3706486934903523e-08,
+          "normalized_max": 0.003370648693490352
+        },
+        "angular_momentum": {
+          "max_abs": 6.461751240749436e-07,
+          "normalized_max": 0.06461751240749436
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 1.0822928686593514e-07,
+          "normalized_max": 0.0010822928686593514
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 6.1533511619416e-08,
+          "normalized_max": 0.00061533511619416
+        },
+        "levers": {
+          "max_abs": 8.881784197001252e-16,
+          "normalized_max": 8.881784197001252e-10
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "initial_error_normalized_max": 0.0,
+      "end_error_normalized_max": 0.06461751240749436,
+      "finite_horizon_error_ratio": null
+    },
+    {
+      "label": "fixture0-max-perturbed",
+      "perturbed": true,
+      "safe": false,
+      "raw_completed": 17,
+      "first_failure": "PATH",
+      "signature_drift": {
+        "velocity": {
+          "max_abs": 0.0009613770509337982,
+          "normalized_max": 9.613770509337982
+        },
+        "yaw": {
+          "max_abs": 9.073692188277249e-05,
+          "normalized_max": 9.07369218827725
+        },
+        "angular_momentum": {
+          "max_abs": 0.0017394854176728813,
+          "normalized_max": 173.9485417672881
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 0.00805988622805387,
+          "normalized_max": 80.5988622805387
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 0.00016564664705320808,
+          "normalized_max": 1.6564664705320808
+        },
+        "levers": {
+          "max_abs": 4.440892098500626e-16,
+          "normalized_max": 4.440892098500626e-10
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "initial_error_to_nominal": {
+        "velocity": {
+          "max_abs": 0.0009999999999985576,
+          "normalized_max": 9.999999999985576
+        },
+        "yaw": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "angular_momentum": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 0.010000000000005116,
+          "normalized_max": 100.00000000005116
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "levers": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "end_error_to_nominal": {
+        "velocity": {
+          "max_abs": 0.0009436428723432755,
+          "normalized_max": 9.436428723432755
+        },
+        "yaw": {
+          "max_abs": 9.073692188277249e-05,
+          "normalized_max": 9.07369218827725
+        },
+        "angular_momentum": {
+          "max_abs": 0.0017394854176728813,
+          "normalized_max": 173.9485417672881
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 0.0019926141415282927,
+          "normalized_max": 19.926141415282927
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 0.00016564664705320808,
+          "normalized_max": 1.6564664705320808
+        },
+        "levers": {
+          "max_abs": 4.440892098500626e-16,
+          "normalized_max": 4.440892098500626e-10
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "initial_error_normalized_max": 100.00000000005116,
+      "end_error_normalized_max": 173.9485417672881,
+      "finite_horizon_error_ratio": null
+    },
+    {
+      "label": "fixture1-max-exact",
+      "perturbed": false,
+      "safe": false,
+      "raw_completed": 25,
+      "first_failure": "PATH",
+      "signature_drift": {
+        "velocity": {
+          "max_abs": 8.595534950472938e-09,
+          "normalized_max": 8.595534950472938e-05
+        },
+        "yaw": {
+          "max_abs": 2.6315253087716428e-08,
+          "normalized_max": 0.002631525308771643
+        },
+        "angular_momentum": {
+          "max_abs": 5.044804041176576e-07,
+          "normalized_max": 0.05044804041176575
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 6.937113994354149e-08,
+          "normalized_max": 0.0006937113994354149
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 4.713523615862414e-08,
+          "normalized_max": 0.0004713523615862414
+        },
+        "levers": {
+          "max_abs": 1.3322676295501878e-15,
+          "normalized_max": 1.3322676295501878e-09
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "initial_error_to_nominal": {
+        "velocity": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "yaw": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "angular_momentum": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "levers": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "end_error_to_nominal": {
+        "velocity": {
+          "max_abs": 8.595534950472938e-09,
+          "normalized_max": 8.595534950472938e-05
+        },
+        "yaw": {
+          "max_abs": 2.6315253087716428e-08,
+          "normalized_max": 0.002631525308771643
+        },
+        "angular_momentum": {
+          "max_abs": 5.044804041176576e-07,
+          "normalized_max": 0.05044804041176575
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 6.937113994354149e-08,
+          "normalized_max": 0.0006937113994354149
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 4.713523615862414e-08,
+          "normalized_max": 0.0004713523615862414
+        },
+        "levers": {
+          "max_abs": 1.3322676295501878e-15,
+          "normalized_max": 1.3322676295501878e-09
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "initial_error_normalized_max": 0.0,
+      "end_error_normalized_max": 0.05044804041176575,
+      "finite_horizon_error_ratio": null
+    },
+    {
+      "label": "fixture1-max-perturbed",
+      "perturbed": true,
+      "safe": false,
+      "raw_completed": 25,
+      "first_failure": "PATH",
+      "signature_drift": {
+        "velocity": {
+          "max_abs": 0.0010634909155236016,
+          "normalized_max": 10.634909155236016
+        },
+        "yaw": {
+          "max_abs": 3.4240954351894004e-05,
+          "normalized_max": 3.4240954351894
+        },
+        "angular_momentum": {
+          "max_abs": 0.0006564212180251161,
+          "normalized_max": 65.64212180251161
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 0.008228816496057334,
+          "normalized_max": 82.28816496057334
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 6.133157584020665e-05,
+          "normalized_max": 0.6133157584020665
+        },
+        "levers": {
+          "max_abs": 1.1102230246251565e-15,
+          "normalized_max": 1.1102230246251565e-09
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "initial_error_to_nominal": {
+        "velocity": {
+          "max_abs": 0.0009999999999976694,
+          "normalized_max": 9.999999999976694
+        },
+        "yaw": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "angular_momentum": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 0.009999999999990905,
+          "normalized_max": 99.99999999990905
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "levers": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "end_error_to_nominal": {
+        "velocity": {
+          "max_abs": 0.000990738066533936,
+          "normalized_max": 9.90738066533936
+        },
+        "yaw": {
+          "max_abs": 3.4240954351894004e-05,
+          "normalized_max": 3.4240954351894
+        },
+        "angular_momentum": {
+          "max_abs": 0.0006564212180251161,
+          "normalized_max": 65.64212180251161
+        },
+        "joints": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "rates": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "omega": {
+          "max_abs": 0.0019026198816334272,
+          "normalized_max": 19.026198816334272
+        },
+        "gas": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "headings": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "offsets": {
+          "max_abs": 6.133157584020665e-05,
+          "normalized_max": 0.6133157584020665
+        },
+        "levers": {
+          "max_abs": 1.1102230246251565e-15,
+          "normalized_max": 1.1102230246251565e-09
+        },
+        "friction": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "steer": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        },
+        "constants": {
+          "max_abs": 0.0,
+          "normalized_max": 0.0
+        }
+      },
+      "initial_error_normalized_max": 99.99999999990905,
+      "end_error_normalized_max": 65.64212180251161,
+      "finite_horizon_error_ratio": null
+    }
+  ],
+  "transition": {
+    "executed": true,
+    "unique_evaluations": 574,
+    "solver_success": false,
+    "solver_status": 9,
+    "solver_message": "Iteration limit reached",
+    "nit": 60,
+    "feasible_iterate_found": true,
+    "passed": false,
+    "endpoint_match": true,
+    "follow_executed": true,
+    "endpoint_safe": true,
+    "endpoint_normalized_errors": {
+      "velocity": 4.65884702312754e-05,
+      "yaw": 6.974996571429415e-06,
+      "angular_momentum": 6.974996574607368e-06,
+      "joints": 7.450580596923828e-06,
+      "rates": 0.0,
+      "omega": 0.00019731580405846216,
+      "gas": 3.073364496231079e-06,
+      "headings": 7.450580596923828e-06,
+      "offsets": 4.2248490631872455e-06,
+      "levers": 8.881784197001252e-10,
+      "friction": 0.0,
+      "steer": 7.450580596923828e-06,
+      "constants": 0.0
+    },
+    "first_failure": null,
+    "follow_safe": false,
+    "follow_end_normalized_errors": {
+      "velocity": 4.7484917284161085e-05,
+      "yaw": 7.075350119123414e-06,
+      "angular_momentum": 7.075350114882088e-06,
+      "joints": 0.0,
+      "rates": 0.0,
+      "omega": 6.872819366776639e-05,
+      "gas": 0.0,
+      "headings": 0.0,
+      "offsets": 4.285634508012967e-06,
+      "levers": 8.881784197001252e-10,
+      "friction": 0.0,
+      "steer": 0.0,
+      "constants": 0.0
+    }
+  },
+  "cost": {
+    "explicit_wheel_force_evaluations": 41572,
+    "geometry_checks": 135,
+    "body_checks": 10388,
+    "residual_calls": 0,
+    "unsafe_forecast_raw": 43,
+    "max_forecast_force": 9.821543151153026,
+    "max_body_speed": 79.1329670692929,
+    "periodic_unique_evaluations": 265,
+    "transition_unique_evaluations": 574,
+    "model_ticks": 10388,
+    "internal_wheel_force_evaluations": 41552,
+    "CPU_s": 57.092993211999996,
+    "wall_s": 57.10950348500046
+  },
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "new_seeds": 0,
+  "HOLDOUT_queries": 0,
+  "SEALED_queries": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "actual_baseline_s": 13.66,
+  "no_lap_gain_observation": true
+}

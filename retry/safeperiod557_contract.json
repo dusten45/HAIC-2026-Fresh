@@ -1,0 +1,62 @@
+{
+  "registered_utc": "2026-10-18T20:53:13.409905+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "hypothesis": "At the same two synthetic curvatures, jointly optimize speed, full mechanical relative-periodicity and preclip-force/clipping/body-speed constraints. No fixed-speed post-filter or speed grid.",
+  "problem": {
+    "variables": "v, beta, delta, gas, four wheel omega; constant steer/gas, brake0; source4raw period including lagged offset memory",
+    "bounds": "v[5,90], beta +/-.6, delta +/-.4, gas[0,1], omega[0,500]. These are finite branch bounds, not physical impossibility claims.",
+    "equalities": "body-frame velocity difference/90, yaw difference*3.24/90, four wheel omega differences*.54/90 ==0. Other mechanical memory follows the parameterization and is independently checked, including all556signature fields.",
+    "inequalities": "all16 raw force ratios<=1.059; for EACH raw prefix, sorted force ratio at rank floor(.1*N)+1 from largest <=.9998 for periodic design, <=.9999 for transition, sufficient for clipping<=10% with float32 reserve; all raw hull/wheel speeds<=99.9. The .9998/.9999 clip reserves is a conservative numerical sufficient condition, not physical necessity.",
+    "objectives": "For each identical feasible set: first maximize v; then minimize v initialized at selected max solution. Two finite local solves, no speed grid. Feasible endpoint witnesses do not certify global extrema or every intermediate speed.",
+    "initialization": "One max initialization per fixture: v=.9*556speed, omega=.9*556omega, beta/delta/gas from556solution. No alternate start. Min starts at selected max witness.",
+    "optimizer": "SLSQP maxiter60,ftol1e-10,eps1e-7; <=700 unique source evaluations/state objective. Cache identical float64 variables across objective/constraints/Jacobian calls. Keep best evaluated feasible iterate according to fixed objective; final convergence and feasible witness are separate.",
+    "feasible_numerical_gate": "max scaled periodic equality<=1e-8, minimum inequality>=-1e-8; independent float32 fullstate normalized residual<=1 and original safety checks determine admitted witness. No feasible iterate means NOT_FOUND, never no safe orbit proof."
+  },
+  "validation": {
+    "independent": "each selected endpoint: float32 independent4raw mechanical comparison then separate accepted4raw safety; same556tolerances and body/path/footprint/clip guards",
+    "cycles": "Admitted MAX witness in each fixture:8 exact cycles and8 cycles with one prescribed body-vx+.001 and rear wheel3 omega+.01 perturbation. Finite error growth diagnostic; no asymptotic stability claim. Physical/map failure stops that rollout without changing existence verdict.",
+    "references": "Synthetic target speed gives mechanical overspeed reference4.85; retain old551 reference overspeed as separate diagnostic. No old551 compliance, whole-road feasibility, native reachability or actual policy promotion is claimed."
+  },
+  "transition": {
+    "trigger": "Both original MAX witnesses independently admitted. Multiple-period or perturbation outcomes remain separate; fresh same source MAX fixture may be used for the preregistered minimal transition.",
+    "target": "Next existing seed curvature after first fixture only. Maximize safe periodic speed with upper bound source MAX speed; same constrained problem, one initialization from source solution; <=700unique evaluations. No alternative curvature.",
+    "control_problem": "4holds x steer/signed pedal; SLSQP min sum squared normalized fullstate endpoint errors, subject to raw force/prefixclip/body constraints throughout16raw; maxiter60/ftol1e-10/eps1e-7, <=1000unique rollouts. One linear interpolation of source/target commands.",
+    "endpoint": "556transition fullstate tolerances: v.15,yaw.05,M=I*.05,joints.02,rates.15,omega.5,gas.02,heading.02,offset.15; lever1e-6/friction1e-8/constants1e-10. Select best feasible iterate; independent float32 validation then3 target holds if endpoint pass."
+  },
+  "caps": {
+    "model_ticks": 38000,
+    "explicit_wheel_force_evaluations": 160000,
+    "geometry_checks": 300,
+    "CPU_s": 480,
+    "wall_s": 540,
+    "periodic_extremum_solves_max": 5,
+    "unique_evals_per_extremum": 700,
+    "transition_unique_rollouts_max": 1000
+  },
+  "stop": "Stop phase on finite solver cap; retain best feasible iterate and classify convergence separately. Stop whole run on deadline/body domain/global compute cap with full checkpoint. No rerun, no alternate initialization, no post-result change of gates. No feasible witness is solver/branch uncertainty, not an infeasibility certificate.",
+  "actual_cap": 0,
+  "new_seed_HOLDOUT_SEALED_other_environment_paid": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "source_sha256": {
+    "retry/safeperiod557_model.py": "2cc859d1792f34a2e88fe40f651255a7d8620db26bb9d37d31d77948a7f1e3c0",
+    "retry/period556_model.py": "d1e04f2f50f4bb39406effa9458f69f77b4264e0e672653c0eaca82d3aa15cd4",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131"
+  },
+  "private_inputs_sha256": {
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response551-private/frozen-paths-private.json": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "/workspace/haic-response555-recovery-private/steady-branches-private.json": "5096c207ec9be8f58faadf18f925c0cdca911bb7474093906749ab67098bd316",
+    "/workspace/haic-response555-recovery-private/source-witnesses-private.json": "943bc24b9ae7343d3e92e9fdb6ec20fea0cbcdff291345b957bc02236a1de300",
+    "/workspace/haic-response556-private/fixture0-period-private.json": "822390e96eb10a92840c1bb9e0ba56d2fecab3f5b9e33b8f39b3c729a9a4008a",
+    "/workspace/haic-response556-private/fixture1-period-private.json": "d8f98c9a0655676442ac16dc1edf90b952c12d06dbfe60966cdebc295a9804ba"
+  }
+}

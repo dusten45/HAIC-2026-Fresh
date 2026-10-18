@@ -1,0 +1,42 @@
+"""Read-only audit and concise summary of constrained557; no new physics."""
+import json,math,subprocess,time
+from pathlib import Path
+from retry.period556_model import rd,sha,load_root,difference
+G=Path(__file__).resolve().parents[1];D=Path('/workspace/haic-response557-private');cpu,wall=time.process_time(),time.perf_counter()
+c=rd(G/'retry/safeperiod557_contract.json');r=rd(G/'retry/safeperiod557_result.json');static=rd(Path('/workspace/haic-response515-private/collected-map-state-private.json'));cases=[rd(p) for p in sorted(D.glob('*-period-private.json'))];checks={};agg=[]
+checks['source_and_input_hashes']=all(sha(G/p)==h for p,h in c['source_sha256'].items()) and all(sha(Path(p))==h for p,h in c['private_inputs_sha256'].items())
+checks['started_pin']=rd(D/'STARTED.json')['contract_sha256']==sha(G/'retry/safeperiod557_contract.json')
+checks['five_local_extremum_solves']=r['completed'] and len(cases)==5 and all(z['solver_success'] and z['nit']<=60 and z['unique_evaluations']<=700 for z in cases)
+for z in cases:
+ initial=load_root(dict(z['initial_root_without_roads'],roads=static['root']['roads']));final=load_root(dict(z['terminal_root_without_roads'],roads=static['root']['roads']));diff=difference(final,initial);log=[json.loads(s) for s in (D/(z['label']+'-solver-private.jsonl')).read_text().splitlines()];feasible=[x for x in log if x['feasible']]
+ selected=(max if z['direction']=='max' else min)(x['speed'] for x in feasible);rows=[x for x in z['rows'] if x['accepted']];raw=z['independent_rows']
+ agg.append(dict(label=z['label'],speed=z['speed'],selected_by_objective=abs(selected-z['speed'])<1e-10,source_log_unique=len(log),reported_unique=z['unique_evaluations'],fullstate_difference=diff,fullstate_normalized_max=max(d['normalized_max'] for d in diff.values()),peak=max(f['ratio'] for row in raw for f in row['forces']),clipped=sum(f['clipped'] for row in raw for f in row['forces']),geometry_min=min(x['margin'] for x in rows),patherror_max=max(x['patherror'] for x in rows),old551_overspeed_max=max(x['old551_overspeed'] for x in rows),validation_raw=len(rows),independent_raw=len(raw),feasible_numerical=z['selected_scaled_period_residual']<=1e-8 and z['selected_min_inequality']>=-1e-8))
+checks['best_feasible_iterates_prespecified']=all(x['selected_by_objective'] and x['source_log_unique']==x['reported_unique'] for x in agg)
+checks['independent_fullstate_all_pass']=all(a['fullstate_difference']==z['signature_difference'] and a['fullstate_normalized_max']<=1 and a['independent_raw']==4 and a['validation_raw']==4 and z['admitted'] for a,z in zip(agg,cases))
+checks['force_clip_speed_period_jointly_feasible']=all(a['feasible_numerical'] and a['peak']<=1.059 and a['clipped']==0 and a['geometry_min']>=.5 and a['patherror_max']<=3 and 5-1e-10<=a['speed']<=90 for a in agg)
+ranges=[]
+for i in range(2):
+ mx=next(x for x in agg if x['label']==f'fixture{i}-max');mn=next(x for x in agg if x['label']==f'fixture{i}-min');old=rd(Path(f'/workspace/haic-response556-private/fixture{i}-period-private.json'))
+ ranges.append(dict(fixture=i,admitted_min_witness_speed=mn['speed'],admitted_max_witness_speed=mx['speed'],min_hits_search_floor=abs(mn['speed']-5)<1e-8,old_unsafe_fixed_speed=old['branch']['speed'],max_speed_change_from_old=mx['speed']-old['branch']['speed'],global_range_or_interior_certified=False))
+cycle=[]
+for p in sorted(D.glob('*cycles-private.json')):
+ z=rd(p);nom=rd(D/(z['label'].replace('-exact','').replace('-perturbed','')+'-period-private.json'));initial=load_root(dict(nom['initial_root_without_roads'],roads=static['root']['roads']));rows=[x for x in z['rows'] if x['accepted']];n=len(rows)//4*4;last=load_root(dict(rows[n-1]['root_without_roads'],roads=static['root']['roads']));err=difference(last,initial);e=max(x['normalized_max'] for x in err.values());e0=z['initial_error_normalized_max'];failure=next(x for x in z['rows'] if not x['accepted'])
+ cycle.append(dict(label=z['label'],perturbed=z['perturbed'],completed_raw=len(rows),completed_full_periods=n//4,last_full_period_error_normalized_max=e,initial_perturb_error_normalized_max=e0,last_full_period_perturb_ratio=e/e0 if z['perturbed'] else None,first_failure=failure['reason'],failure_patherror=failure['patherror'],force_max=max(f['ratio'] for row in z['rows'] for f in row.get('forces',[])),clipped=sum(f['clipped'] for row in rows for f in row['forces'])))
+checks['cycles_stop_on_path_not_period_equation']=len(cycle)==4 and all(x['first_failure']=='PATH' and x['failure_patherror']>3 and x['force_max']<=1.059 and x['clipped']==0 for x in cycle)
+checks['finite_horizon_only_no_asymptotic_claim']=sorted(x['completed_full_periods'] for x in cycle)==[4,4,6,6] and all(x['completed_full_periods']<8 for x in cycle)
+t=rd(D/'transition-private.json');log=[json.loads(s) for s in (D/'transition-solver-private.jsonl').read_text().splitlines()];tr=[x for x in t['rows'] if x['accepted']];follow=[x for x in t['follow_rows'] if x['accepted']];failure=next(x for x in t['follow_rows'] if not x['accepted'])
+transition=dict(solver_success=t['solver_success'],solver_status=t['solver_status'],nit=t['nit'],feasible_iterate_found=t['feasible_iterate_found'],unique_rollouts=len(log),endpoint_raw=len(tr),endpoint_safe=t['endpoint_safe'],endpoint_match=t['endpoint_match'],endpoint_normalized_max=max(t['endpoint_normalized_errors'].values()),force_max=max(f['ratio'] for row in tr for f in row['forces']),clipped=sum(f['clipped'] for row in tr for f in row['forces']),geometry_min=min(x['margin'] for x in tr),patherror_max=max(x['patherror'] for x in tr),follow_raw=len(follow),follow_first_failure=failure['reason'],follow_failure_patherror=failure['patherror'],passed=t['passed'])
+checks['transition_nonconvergence_preserved']=not t['solver_success'] and t['solver_status']==9 and t['nit']==60 and len(log)==t['unique_evaluations']<=1000
+checks['safe_feasible_transition_distinct_from_optimality']=t['feasible_iterate_found'] and len(tr)==16 and t['endpoint_safe'] and t['endpoint_match'] and transition['endpoint_normalized_max']<=1 and transition['force_max']<=1.059 and transition['clipped']==0 and transition['geometry_min']>=.5 and transition['patherror_max']<=3
+checks['follow_path_failure_no_relabel']=not t['passed'] and not t['follow_safe'] and len(follow)==4 and failure['reason']=='PATH' and failure['patherror']>3 and max(t['follow_end_normalized_errors'].values())<=1
+cost=r['cost'];pu=sum(x['reported_unique'] for x in agg);tu=len(log);cycle_raw=sum(x['completed_raw'] for x in cycle);ticks=4*pu+8*len(cases)+cycle_raw+16*tu+len(tr)+len(follow)
+checks['all_source_ticks_reconciled']=pu==cost['periodic_unique_evaluations'] and tu==cost['transition_unique_evaluations'] and ticks==cost['model_ticks']==cost['body_checks'] and cost['internal_wheel_force_evaluations']==4*ticks and cost['explicit_wheel_force_evaluations']==4*ticks+4*5
+checks['geometry_reconciled']=cost['geometry_checks']==5*5+sum(x['completed_raw']+1 for x in cycle)+len(tr)+1+len(follow)+1
+checks['within_all_budgets']=ticks<=38000 and cost['explicit_wheel_force_evaluations']<=160000 and cost['geometry_checks']<=300 and cost['CPU_s']<=480 and cost['wall_s']<=540 and cost['max_body_speed']<100
+checks['native_protected_and_reserve_zero']=all(r[k]==0 for k in ['new_native_actions','new_resets','new_worlds','new_seeds','HOLDOUT_queries','SEALED_queries','reserve_used']) and r['research_remaining']==22758 and r['reserve']==84000 and r['actual_baseline_s']==13.66 and r['no_lap_gain_observation']
+checks['main_preserved']=subprocess.check_output(['git','rev-parse','main'],cwd=G,text=True).strip()=='dfb7a2de2178825ca5c5ce20bab01ba67052ba31'
+out=dict(passed=all(checks.values()),checks=checks,cases=agg,ranges=ranges,cycles=cycle,transition=transition,scientific_cost=cost,source_unique_rollouts=pu+tu,inherited_residual_calls_field_unused=True,audit_source_ticks=0,audit_force_evaluations=0,audit_CPU_s=time.process_time()-cpu,audit_wall_s=time.perf_counter()-wall)
+with (G/'retry/safeperiod557_audit.json').open('x') as f:json.dump(out,f,indent=2,allow_nan=False)
+summary={k:out[k] for k in ['passed','ranges','cycles','transition','scientific_cost','source_unique_rollouts','inherited_residual_calls_field_unused']}
+with (G/'retry/safeperiod557_summary.json').open('x') as f:json.dump(summary,f,indent=2,allow_nan=False)
+print(json.dumps(dict(passed=out['passed'],checks=checks,ranges=ranges,transition=transition),indent=2));raise SystemExit(0 if out['passed'] else 1)
