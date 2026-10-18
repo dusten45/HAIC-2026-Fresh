@@ -1,0 +1,108 @@
+{
+  "passed": true,
+  "checks": {
+    "source_input_goals_hashes": true,
+    "started_pin": true,
+    "same_synthetic_initial": true,
+    "fixed_time_arc_targets": true,
+    "single_run_and_initialization": true,
+    "joint_feasibility_flags": true,
+    "feasible_report_matches_log": true,
+    "independent_validation_gate": true,
+    "every_complete_rollout_accounted": true,
+    "geometry_inside_every_rollout": true,
+    "finite_stopping_not_rerun": true,
+    "budget_and_body_domain": true,
+    "no_false_performance_promotion": true,
+    "actual_protected_reserve_zero": true,
+    "main_preserved": true
+  },
+  "diagnostics": {
+    "unique_evaluations": 1043,
+    "feasible_evaluations": 0,
+    "minimum_observed_scaled_period_residual": 0.00019872433804550836,
+    "best_observed_min_inequality": -3.403137395690049,
+    "closest_joint_tolerance_violation": {
+      "call": 802,
+      "eq_max": 0.00019872433804550836,
+      "ineq_min": -47.74913656437097,
+      "objective": 5695.297660279311,
+      "detail": {
+        "primary_position_error_m": 1.9876170900336005,
+        "primary_angle_error_rad": 0.1768327723435792,
+        "primary_mechanical_normalized_errors": {
+          "velocity": 48.74913656437097,
+          "yaw": 6.3471878341579835,
+          "angular_momentum": 6.347187834157983,
+          "joints": 1.0203997114829368,
+          "rates": 0.0,
+          "omega": 27.455378189080903,
+          "gas": 0.28947083338014423,
+          "headings": 1.0203997114829333,
+          "offsets": 3.6781567852507813,
+          "levers": 8.881784197001252e-10,
+          "friction": 0.0,
+          "steer": 1.0203997114829368,
+          "constants": 0.0
+        },
+        "follow_position_error_m": 2.82772024388085,
+        "follow_velocity_angle_error_rad": 0.17576677757714676,
+        "follow_body_angle_error_rad": 0.1661438104450588,
+        "follow_yaw_error_rad_s": 0.1874585075699794,
+        "follow_speed_error_m_s": 2.690624654912419
+      },
+      "geometry_min": 0.9725079781633976,
+      "patherror_max": 0.6619452512077181
+    },
+    "last_evaluation": {
+      "eq_max": 0.006194696003050895,
+      "ineq_min": -3.463820788360545,
+      "detail": {
+        "primary_position_error_m": 0.9003256678648051,
+        "primary_angle_error_rad": 0.0892764157672109,
+        "primary_mechanical_normalized_errors": {
+          "velocity": 2.457150624845402,
+          "yaw": 1.4652021148424543,
+          "angular_momentum": 1.465202114842451,
+          "joints": 0.32376103181826277,
+          "rates": 0.0,
+          "omega": 2.5727416866024555,
+          "gas": 0.31042616662099554,
+          "headings": 0.32376103181825444,
+          "offsets": 0.850573646168306,
+          "levers": 6.661338147750939e-10,
+          "friction": 0.0,
+          "steer": 0.32376103181826277,
+          "constants": 0.0
+        },
+        "follow_position_error_m": 1.2135367480401815,
+        "follow_velocity_angle_error_rad": 0.029946016832451686,
+        "follow_body_angle_error_rad": 0.032594349156797264,
+        "follow_yaw_error_rad_s": 0.2794869207890974,
+        "follow_speed_error_m_s": 1.389216721210886
+      },
+      "geometry_min": 1.5440468906376899,
+      "patherror_max": 0.608528825113274
+    },
+    "diagnostics_not_executed_candidates": true
+  },
+  "scientific_cost": {
+    "explicit_wheel_force_evaluations": 150192,
+    "geometry_checks": 39634,
+    "body_checks": 37548,
+    "residual_calls": 0,
+    "unsafe_forecast_raw": 2638,
+    "max_forecast_force": 48.77900191843359,
+    "max_body_speed": 62.3410230633505,
+    "unique_evaluations": 1043,
+    "model_ticks": 37548,
+    "internal_wheel_force_evaluations": 150192,
+    "CPU_s": 538.2594782,
+    "wall_s": 538.300428454997
+  },
+  "audit_source_ticks": 0,
+  "audit_force_evaluations": 0,
+  "audit_geometry_evaluations": 0,
+  "audit_CPU_s": 0.021670194000000004,
+  "audit_wall_s": 0.023299852007767186
+}

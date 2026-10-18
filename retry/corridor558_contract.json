@@ -1,0 +1,60 @@
+{
+  "registered_utc": "2026-10-18T21:04:34.241529+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "hypothesis": "A single finite source shooting problem can connect same557 first synthetic safe-periodic initial state to a world-pose road target and compatible safe relative-periodic mechanical state, and plan a short following corridor segment jointly.",
+  "selection": "Use first557fixture only, not sweep. Main6holds=.48s: 12 control variables accommodate world pose plus roughly9 independent mechanical endpoint conditions; selected BEFORE science, not a post-failure extension. Follow2holds=.16s independently gated but included in same design. Targets are original seed arc s0+v0*T and its segment tangent/curvature. No retargeting or duration change.",
+  "variables": "8holds x steer/signed pedal (16), plus endpoint periodic v,beta,delta,gas,omega4 (8). Total24. Periodic v[5,v0]; same beta/joint/gas/omega bounds as557. Signed pedal positive gas/negative brake.",
+  "constraints": {
+    "relative_period": "Endpoint target at world goal has source4raw mechanical relative-period equalities7, same scaled formulation557. Independent float32 ALL signature fields required.",
+    "world_primary": "At exact .48s: distance to fixed goal<=.25m, body angle to road tangent minus target beta<=.02rad; full mechanical target tolerances as557transition.",
+    "world_follow": "At exact .64s: distance to fixed next road goal<=.35m, velocity direction to road tangent<=.03rad, body angle to road tangent<=.08rad, yaw to v0*k_follow<=.15rad/s, speed to v0<=.5m/s.",
+    "all_road": "At EVERY initial/post-raw state in32raw rollout AND4raw periodic target forecast: original source footprint>=.50, distance to original seed path<=3.0. Exact existing margin routine, inside solver constraints, not only post-filter.",
+    "all_physics": "Every raw preclip ratio<=1.059, raw-prefix order statistic buffer.9999 for <=10% clipping; hull/wheel<=99.9; target v0 overspeed<=4.85. Body domain hard100 across every model tick. Target periodic reference is synthetic mechanism only; old551 overspeed separately recorded on independent validation."
+  },
+  "objective": "Sum squared normalized primary position/body-angle/mechanical residuals and follow position/direction/body/yaw/speed errors, plus .01*((v_period-v0)/v0)^2. All declared goal tolerances also inequalities, not only objective preferences.",
+  "initialization": "Single kinematic feedforward atan(3.24*k(s0+v0*(hold+.5)*.08)) for8 steering controls, constant557 initial gas. Endpoint v=v0, beta and gas scaled by k_goal/k_start and its square, delta=atan(3.24*k_goal), omega557initial. No PP, no alternative starts.",
+  "solver": {
+    "method": "SLSQP",
+    "maxiter": 40,
+    "ftol": 1e-08,
+    "eps": 1e-06,
+    "unique_evaluations": 1100,
+    "cache": "identical float64 vector",
+    "feasible": "max scaled period equality<=1e-8 and min inequality>=-1e-7; preserve best feasible objective; numerical convergence, feasible witness and float32 accepted validation separate"
+  },
+  "gates": "No feasible iterate: stop NOT_FOUND, never physical infeasibility. Selected ONE feasible candidate only: independently validate target period4raw with ALL state residuals, then original6holds under unchanged safety and world/mechanical endpoints; only if pass execute preregistered2hold follow from actual predicted endpoint with SAME clip history. No alternate candidate.",
+  "caps": {
+    "model_ticks": 42000,
+    "explicit_wheel_force_evaluations": 175000,
+    "geometry_checks": 42500,
+    "CPU_s": 900,
+    "wall_s": 1000,
+    "unique_solver_evaluations": 1100,
+    "solver_runs": 1
+  },
+  "stop": "finite cap/deadline/model body domain: checkpoint, preserve failure, no restart or extension. Solver nonconvergence and no feasible witness are separate. Unsafe trial forecasts counted, never actual/accepted execution.",
+  "actual_cap": 0,
+  "new_seed_HOLDOUT_SEALED_other_environment_paid": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "source_sha256": {
+    "retry/corridor558_model.py": "e2047708365d207b3156da2e76fd96069817548bedf9e11d22b293af0d546cad",
+    "retry/safeperiod557_model.py": "2cc859d1792f34a2e88fe40f651255a7d8620db26bb9d37d31d77948a7f1e3c0",
+    "retry/period556_model.py": "d1e04f2f50f4bb39406effa9458f69f77b4264e0e672653c0eaca82d3aa15cd4",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131"
+  },
+  "private_inputs_sha256": {
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response551-private/frozen-paths-private.json": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "/workspace/haic-response557-private/fixture0-max-period-private.json": "d1a8b4af248a6b35765012e811384179cef22ee304dd13b4781ad0c71cf61dc5"
+  },
+  "goals_sha256": "fa157f0bcd4f60462e1d0461e15ec5c8ca3d0abe46611ade86537ba9c87f5139"
+}
