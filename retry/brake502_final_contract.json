@@ -1,0 +1,51 @@
+{
+  "stage": "502_RESPONSE_SOURCE_BENCH",
+  "registered_utc": "2026-10-18T03:55:00.701597+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "authorization": "Latest delegated user research instruction; new synthetic mechanics diagnostic, original501 remains closed",
+  "source_sha256": {
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/test_brake502_response.py": "4f6d5f566b77486bd193d7786f06ec10d2f4a9035b928efc03a5c2bd710dabd2",
+    "retry/brake502_diagnostic.py": "b1374aa1ecd36b91ffa43e2745d5ee416251f7afcefb6ecbae7d4d3d8d4be723"
+  },
+  "speed_grid": [
+    60.0,
+    95.0
+  ],
+  "rim_surplus_grid": [
+    0.0,
+    12.0
+  ],
+  "deceleration_grid": [
+    10.0,
+    30.0
+  ],
+  "pure_gate": "3 tests:576 force contexts x4wheels against actual source, angular reaction identity, state-sensitive inverse and float32 lock boundary",
+  "decision_before_execution": {
+    "pass": "response assembly-COM target RMSE <=0.5*scalar RMSE AND maxabs<=0.15m/s AND hull maxabs<=0.15m/s",
+    "failure": "Stop this candidate; no tuning/retry/extra cases",
+    "scope": "Local source-mechanics gate only; no lap or old501 cause certification"
+  },
+  "caps": {
+    "CPU_s": 120,
+    "wall_s": 180,
+    "worlds": 16,
+    "raw_ticks": 64,
+    "racing_resets": 0,
+    "native_actions": 0,
+    "seed_generation": 0,
+    "derived_bytes": 16777216
+  },
+  "split": "Synthetic deterministic source fixtures only; no track ID, splitter draw or protected cases consumed; no independent DEV/HOLDOUT/SEALED generalization claim",
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "storage": "Raw measurements private local only; no off-host durability claim; no user file transfer performed",
+  "supersedes_before_first_world_only": "Initial and execution contracts preserved; corrected pure fixture and expected context count576, no candidate changes, worlds0",
+  "prior_preparation_conservative_charge": {
+    "CPU_s": 2,
+    "wall_s": 2,
+    "physical_worlds": 0
+  }
+}

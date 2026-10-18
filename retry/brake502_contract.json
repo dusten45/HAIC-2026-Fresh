@@ -1,0 +1,45 @@
+{
+  "stage": "502_RESPONSE_SOURCE_BENCH",
+  "registered_utc": "2026-10-18T03:53:39.242424+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "authorization": "Latest delegated user research instruction; new synthetic mechanics diagnostic, original501 remains closed",
+  "source_sha256": {
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/test_brake502_response.py": "69db9187d029fce68fc235c8ef58fdef8745d5dcb1ed8e6a026216ccbdce5181",
+    "retry/brake502_diagnostic.py": "01e4960bd4af200469ff0751ae50e87ee920b544ca5214cc0ac079db03a554c8"
+  },
+  "speed_grid": [
+    60.0,
+    95.0
+  ],
+  "rim_surplus_grid": [
+    0.0,
+    12.0
+  ],
+  "deceleration_grid": [
+    10.0,
+    30.0
+  ],
+  "pure_gate": "3 tests:1152 actual-source force contexts, angular reaction identity, state-sensitive inverse and float32 lock boundary",
+  "decision_before_execution": {
+    "pass": "response assembly-COM target RMSE <=0.5*scalar RMSE AND maxabs<=0.15m/s AND hull maxabs<=0.15m/s",
+    "failure": "Stop this candidate; no tuning/retry/extra cases",
+    "scope": "Local source-mechanics gate only; no lap or old501 cause certification"
+  },
+  "caps": {
+    "CPU_s": 120,
+    "wall_s": 180,
+    "worlds": 16,
+    "raw_ticks": 64,
+    "racing_resets": 0,
+    "native_actions": 0,
+    "seed_generation": 0,
+    "derived_bytes": 16777216
+  },
+  "split": "Synthetic deterministic source fixtures only; no track ID, splitter draw or protected cases consumed; no independent DEV/HOLDOUT/SEALED generalization claim",
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "storage": "Raw measurements private local only; no off-host durability claim; no user file transfer performed"
+}

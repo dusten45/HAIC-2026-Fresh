@@ -1,0 +1,56 @@
+{
+  "status": "SYNTHETIC_RESPONSE_GATE_PASS",
+  "scope": "New synthetic road-free source mechanics DEV bench; not old501 raw analysis, not racing or pixel-policy qualification",
+  "hypothesis": "Four-tick wheel torque/slip response inversion reduces end-speed target error relative to steady effective-mass brake mapping",
+  "scalar": {
+    "RMSE_m_s": 5.577712199379528,
+    "max_abs_m_s": 8.978916931152341,
+    "mean_signed_m_s": 3.856402969360351
+  },
+  "response": {
+    "RMSE_m_s": 1.2227875068060275e-05,
+    "max_abs_m_s": 3.204345699714395e-05,
+    "mean_signed_m_s": -2.765655512604326e-06
+  },
+  "response_forecast_vs_assembly_COM": {
+    "RMSE_m_s": 1.2231375368480934e-05,
+    "max_abs_m_s": 3.202839016580583e-05,
+    "mean_signed_m_s": -2.59363328236617e-06
+  },
+  "response_hull_target_error": {
+    "RMSE_m_s": 1.222787507770275e-05,
+    "max_abs_m_s": 3.204345702556566e-05,
+    "mean_signed_m_s": -2.7656555179333964e-06
+  },
+  "paired_cases": 8,
+  "pure_tests": 3,
+  "source_force_contexts": 576,
+  "worlds": 16,
+  "raw_ticks": 64,
+  "closed_worlds": 16,
+  "live_worlds": 0,
+  "force_capture_rows": 256,
+  "force_limit_saturated_wheel_ticks": 40,
+  "racing_resets_native_actions_seeds_HOLDOUT_SEALED": 0,
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "not_claimed": [
+    "original501 cause decomposition",
+    "old root identity reproduction",
+    "track safety",
+    "lap finish",
+    "full method promotion",
+    "protected or independent DEV generalization"
+  ],
+  "CPU_s_including_test_child_and_preparation_charge": 2.557627172,
+  "wall_s_including_preparation_charge": 2.558730368000397,
+  "source_sha256": {
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/test_brake502_response.py": "4f6d5f566b77486bd193d7786f06ec10d2f4a9035b928efc03a5c2bd710dabd2",
+    "retry/brake502_diagnostic.py": "b1374aa1ecd36b91ffa43e2745d5ee416251f7afcefb6ecbae7d4d3d8d4be723"
+  },
+  "private_raw_bytes": 149945,
+  "private_raw_durable_off_host": false
+}
