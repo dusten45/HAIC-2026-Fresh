@@ -1,0 +1,47 @@
+{
+  "unit_check_pass": true,
+  "analytic_hull_fixture_mass_kg": 7.0600000000000005,
+  "analytic_each_wheel_body_mass_kg": 0.060480000000000006,
+  "analytic_body_mass_sum_kg": 7.301920000000001,
+  "saved_actual_assembly_mass_kg": 7.3019199669361115,
+  "body_mass_roundoff_kg": 3.306388940416127e-08,
+  "separate_wheel_spin_inertia_kg_m2": 1.6,
+  "rolling_radius_m": 0.54,
+  "longitudinal_ideal_rolling_spin_equivalent_mass_kg": 21.947873799725652,
+  "longitudinal_ideal_rolling_effective_mass_kg": 29.249793766661764,
+  "steady_convention_mass_kg": 29.249793766661764,
+  "steady_mass_difference": 0.0,
+  "saved_planar_yaw_inertia_kg_m2": 19.170646100533542,
+  "saved_wheel_body_yaw_inertias_kg_m2": [
+    0.007459200918674469,
+    0.007459200918674469,
+    0.007459200918674469,
+    0.007459200918674469
+  ],
+  "current_wheel_friction_limits_N": [
+    400.0,
+    400.0,
+    400.0,
+    400.0
+  ],
+  "sum_current_friction_limits_N": 1600.0,
+  "candidate_lateral_budget_m_s2": 153.38431605269326,
+  "lateral_source_force_fixture": {
+    "velocity_m_s": [
+      1.0,
+      60.0
+    ],
+    "sum_lateral_force_N": -328.0,
+    "COM_acceleration_m_s2": -44.91969255828874,
+    "incorrect_isotropic_rolling_mass_acceleration_m_s2": -11.213754278631763
+  },
+  "source_force_evaluations": 4,
+  "model_integrator_ticks": 0,
+  "native_worlds": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "explanation": "Body translation uses sum external tyre forces / actual assembly mass.29.24979=7.30192+4*1.6/.54^2 is an ideal straight rolling longitudinal energy/torque convention; it is not isotropic actual mass. Wheel omega spin inertia1.6 is separate from planar body/yaw inertias. In a turn rolling constraints/steering/yaw/finite slip couple directions; Ftotal/m is only a loose COM force-norm bound, not achievable lateral acceleration.70% is arbitrary fixed reserve requiring dynamic falsification, not calibration or optimum.",
+  "units": "Source-consistent world m,s,kg: tyre forces from82*(velocity slip), F/m gives m/s^2, spin torque uses I=1.6kgm^2, engine40000 is source power constant divided by |omega|+5. Stylized model; no real-vehicle accuracy claim.",
+  "CPU_s": 0.009110952999999977,
+  "wall_s": 0.009253270000044722
+}

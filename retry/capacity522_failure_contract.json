@@ -1,0 +1,14 @@
+{
+  "registered_utc": "2026-10-18T08:05:22.876389+00:00",
+  "purpose": "Posthoc descriptive first-safety-failure verification only. No newcandidate, controlchange, trajectory, native action/reset, threshold relaxation or continuation.",
+  "source_sha256": "315da10295a6449c84d802be23c2c43ae104bdc63013f051942c9c6914d14fd4",
+  "caps": {
+    "source_force_evaluations": 8,
+    "model_integrator_ticks": 0,
+    "native_actions": 0,
+    "native_resets": 0,
+    "CPU_s": 10,
+    "wall_s": 15
+  },
+  "hypotheses": "Check aggregate postclip COM force capacity vs perwheel raw demand and matched-index cold model. Inspect real current-state commands and charge continuity without propagation. Differing closedloop states prevent causal solver attribution."
+}

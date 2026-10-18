@@ -1,0 +1,142 @@
+{
+  "status": "MODEL_CANDIDATE_FOR_LATER_NATIVE",
+  "propose_later_native": true,
+  "arms": [
+    {
+      "start": "cold",
+      "variant": "baseline",
+      "stop": "MODEL_SOURCE_STYLE_FINISH",
+      "actions": 255,
+      "raw_ticks": 1020,
+      "reused_prior_model": true,
+      "min_margin_m": 0.979788682867275,
+      "max_path_error_m": 1.2034404592195909,
+      "max_reference_overspeed_m_s": 4.317375426708068,
+      "max_unused_launch_reference_difference": 2.191204520900982,
+      "force_groups": {
+        "launch": {
+          "peak": 2.2554338426103855,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 0.9341124597874415,
+          "samples": 3696,
+          "clipped": 0
+        }
+      },
+      "visited_tiles": 283,
+      "model_finish_episode_s": 20.379999999999654,
+      "pass_gate": true,
+      "reused_prior_model_integrator_ticks": 1020,
+      "new_model_integrator_ticks": 0
+    },
+    {
+      "first_failure": null,
+      "first_failure_raw_index": null,
+      "start": "cold",
+      "variant": "capacity",
+      "stop": "MODEL_SOURCE_STYLE_FINISH",
+      "actions": 228,
+      "raw_ticks": 912,
+      "reused_prior_model": false,
+      "min_margin_m": 0.8774644184632947,
+      "max_path_error_m": 1.4059217784299827,
+      "max_reference_overspeed_m_s": 2.822844087007546,
+      "max_unused_launch_reference_difference": 2.191204520900982,
+      "force_groups": {
+        "launch": {
+          "peak": 2.2554338426103855,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.1845398295487977,
+          "samples": 3264,
+          "clipped": 23
+        }
+      },
+      "visited_tiles": 283,
+      "model_finish_episode_s": 18.2199999999997,
+      "pass_gate": true
+    },
+    {
+      "first_failure": null,
+      "first_failure_raw_index": null,
+      "start": "same_actual_exit_state",
+      "variant": "baseline",
+      "stop": "MODEL_SOURCE_STYLE_FINISH",
+      "actions": 210,
+      "raw_ticks": 840,
+      "reused_prior_model": false,
+      "min_margin_m": 0.9672736753036839,
+      "max_path_error_m": 1.1951041886592109,
+      "max_reference_overspeed_m_s": 1.9908805657914428,
+      "max_unused_launch_reference_difference": 0.0,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 0.9094142496183568,
+          "samples": 3360,
+          "clipped": 0
+        }
+      },
+      "visited_tiles": 283,
+      "model_finish_episode_s": 20.45999999999973,
+      "pass_gate": true
+    },
+    {
+      "first_failure": null,
+      "first_failure_raw_index": null,
+      "start": "same_actual_exit_state",
+      "variant": "capacity",
+      "stop": "MODEL_SOURCE_STYLE_FINISH",
+      "actions": 186,
+      "raw_ticks": 744,
+      "reused_prior_model": false,
+      "min_margin_m": 0.9164376088846342,
+      "max_path_error_m": 1.4188705987623091,
+      "max_reference_overspeed_m_s": 2.6124526689789818,
+      "max_unused_launch_reference_difference": 0.0,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.1662000161933122,
+          "samples": 2976,
+          "clipped": 8
+        }
+      },
+      "visited_tiles": 283,
+      "model_finish_episode_s": 18.53999999999977,
+      "pass_gate": true
+    }
+  ],
+  "cold_finish_gain_s": 2.159999999999954,
+  "same_actual_exit_finish_gain_s": 1.919999999999959,
+  "descriptive_scalar_reference_clocks_s": {
+    "baseline": 19.84840218840801,
+    "capacity": 17.78350518042583
+  },
+  "clocks_are_not_feasible_or_optimal_bounds": true,
+  "new_model_integrator_ticks": 2496,
+  "reused_prior_model_ticks_not_new": 1020,
+  "new_model_wheel_force_evaluations": 9984,
+  "source_wheel_force_evaluations_in_integrator": 9984,
+  "CPU_s": 34.359454434,
+  "wall_s": 34.3659549039985,
+  "native_actions": 0,
+  "native_resets": 0,
+  "native_worlds": 0,
+  "research_remaining": 24938,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "Onlycornerbudget100->source70%153.384316 onfrozen519Gaussianpath; steadygas/forward/back45/top80/steeringfixed. No520inverse/521spline. Modelsource-stylefinishnotactualfinish; allcold/carrygatesneededbeforeconditionalnative."
+}
