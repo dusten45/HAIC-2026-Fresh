@@ -1,0 +1,391 @@
+{
+  "phase": "pilot",
+  "passed": true,
+  "selection_tests": [
+    {
+      "label": "actual33",
+      "available": true,
+      "mode": "RESPONSE",
+      "fresh_final": true,
+      "normal_original_action_equal": true,
+      "below_old_backup": true,
+      "available_stronger_than_backup": true,
+      "FINAL": {
+        "mode": "FINAL",
+        "ok": true,
+        "reason": "CERTIFIED_12HOLD_FLOAT32",
+        "peak": 1.0588784621104945,
+        "max_reference_overspeed": 0.0,
+        "clipped": 1,
+        "samples": 320,
+        "model_ticks": 48,
+        "first_hold": {
+          "speed": 62.52797396720557,
+          "reference": 71.40534250881561,
+          "positive_deficit": 8.87736854161004,
+          "progress_gain": 5.208609069610915,
+          "min_footprint_margin_m": 3.7997962771365392
+        },
+        "min_footprint_margin_m": 1.8016400350801254,
+        "first_footprint_violation": null,
+        "first_hold_pass": true
+      }
+    },
+    {
+      "label": "model33",
+      "available": true,
+      "mode": "RESPONSE",
+      "fresh_final": true,
+      "normal_original_action_equal": true,
+      "below_old_backup": true,
+      "available_stronger_than_backup": true,
+      "FINAL": {
+        "mode": "FINAL",
+        "ok": true,
+        "reason": "CERTIFIED_12HOLD_FLOAT32",
+        "peak": 1.05887412688839,
+        "max_reference_overspeed": 0.0,
+        "clipped": 1,
+        "samples": 320,
+        "model_ticks": 48,
+        "first_hold": {
+          "speed": 62.52793618835324,
+          "reference": 71.40537477848424,
+          "positive_deficit": 8.877438590131007,
+          "progress_gain": 5.208605867050537,
+          "min_footprint_margin_m": 3.7997980889942164
+        },
+        "min_footprint_margin_m": 1.8016495641557575,
+        "first_footprint_violation": null,
+        "first_hold_pass": true
+      }
+    },
+    {
+      "label": "actual32",
+      "available": true,
+      "mode": "RESPONSE",
+      "fresh_final": true,
+      "normal_original_action_equal": true,
+      "below_old_backup": false,
+      "available_stronger_than_backup": true,
+      "FINAL": {
+        "mode": "FINAL",
+        "ok": true,
+        "reason": "CERTIFIED_12HOLD_FLOAT32",
+        "peak": 1.0451549108272216,
+        "max_reference_overspeed": 0.0,
+        "clipped": 1,
+        "samples": 304,
+        "model_ticks": 48,
+        "first_hold": {
+          "speed": 67.29413563923566,
+          "reference": 77.07047952696146,
+          "positive_deficit": 9.776343887725801,
+          "progress_gain": 5.469221235098317,
+          "min_footprint_margin_m": 3.8293868087441494
+        },
+        "min_footprint_margin_m": 2.580629365625257,
+        "first_footprint_violation": null,
+        "first_hold_pass": true
+      }
+    },
+    {
+      "label": "model32",
+      "available": true,
+      "mode": "RESPONSE",
+      "fresh_final": true,
+      "normal_original_action_equal": true,
+      "below_old_backup": false,
+      "available_stronger_than_backup": true,
+      "FINAL": {
+        "mode": "FINAL",
+        "ok": true,
+        "reason": "CERTIFIED_12HOLD_FLOAT32",
+        "peak": 1.0451560869581444,
+        "max_reference_overspeed": 0.0,
+        "clipped": 1,
+        "samples": 304,
+        "model_ticks": 48,
+        "first_hold": {
+          "speed": 67.294146691299,
+          "reference": 77.07049388073702,
+          "positive_deficit": 9.776347189438013,
+          "progress_gain": 5.4692221815972175,
+          "min_footprint_margin_m": 3.829389531664228
+        },
+        "min_footprint_margin_m": 2.5806379440799487,
+        "first_footprint_violation": null,
+        "first_hold_pass": true
+      }
+    },
+    {
+      "label": "normal141",
+      "available": true,
+      "mode": "HIGH",
+      "fresh_final": true,
+      "normal_original_action_equal": true,
+      "below_old_backup": false,
+      "available_stronger_than_backup": false,
+      "FINAL": {
+        "mode": "FINAL",
+        "ok": true,
+        "reason": "CERTIFIED_12HOLD_FLOAT32",
+        "peak": 0.558217935257423,
+        "max_reference_overspeed": 0.0,
+        "clipped": 5,
+        "samples": 2048,
+        "model_ticks": 48,
+        "first_hold": {
+          "speed": 78.1886064831829,
+          "reference": 80.0,
+          "positive_deficit": 1.8113935168171054,
+          "progress_gain": 6.244298357349976,
+          "min_footprint_margin_m": 4.970981216447261
+        },
+        "min_footprint_margin_m": 3.4616832697205995,
+        "first_footprint_violation": null,
+        "first_hold_pass": true
+      }
+    }
+  ],
+  "cases": [
+    {
+      "label": "bridge-actual33",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 48,
+      "actions": 12,
+      "completed_before": 32,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.0585559675529084,
+          "samples": 320,
+          "clipped": 3
+        }
+      },
+      "min_margin_m": 1.4799146461842585,
+      "max_path_error_m": 1.4019938853340692,
+      "max_reference_overspeed_m_s": 0.0,
+      "max_body_speed_m_s": 67.15203705876078,
+      "mode_counts": {
+        "RESPONSE": 1,
+        "BACKUP": 3,
+        "HIGH": 8
+      },
+      "high_fraction": 0.6666666666666666,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    },
+    {
+      "label": "bridge-model33",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 48,
+      "actions": 12,
+      "completed_before": 32,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.0585516086624553,
+          "samples": 320,
+          "clipped": 3
+        }
+      },
+      "min_margin_m": 1.4799244100964146,
+      "max_path_error_m": 1.402001779555315,
+      "max_reference_overspeed_m_s": 0.0,
+      "max_body_speed_m_s": 67.15198991192315,
+      "mode_counts": {
+        "RESPONSE": 1,
+        "BACKUP": 3,
+        "HIGH": 8
+      },
+      "high_fraction": 0.6666666666666666,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    },
+    {
+      "label": "bridge-actual32",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 48,
+      "actions": 12,
+      "completed_before": 31,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.057987425434838,
+          "samples": 304,
+          "clipped": 3
+        }
+      },
+      "min_margin_m": 2.188302421289073,
+      "max_path_error_m": 1.402269303550598,
+      "max_reference_overspeed_m_s": 0.0,
+      "max_body_speed_m_s": 69.54380202650833,
+      "mode_counts": {
+        "RESPONSE": 2,
+        "BACKUP": 3,
+        "HIGH": 7
+      },
+      "high_fraction": 0.5833333333333334,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    },
+    {
+      "label": "bridge-model32",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 48,
+      "actions": 12,
+      "completed_before": 31,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.0579886180739495,
+          "samples": 304,
+          "clipped": 3
+        }
+      },
+      "min_margin_m": 2.1883114333462217,
+      "max_path_error_m": 1.4022760931102145,
+      "max_reference_overspeed_m_s": 0.0,
+      "max_body_speed_m_s": 69.54381370089034,
+      "mode_counts": {
+        "RESPONSE": 2,
+        "BACKUP": 3,
+        "HIGH": 7
+      },
+      "high_fraction": 0.5833333333333334,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    },
+    {
+      "label": "normal141-recovery",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 144,
+      "actions": 36,
+      "completed_before": 140,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.0492937794684831,
+          "samples": 2432,
+          "clipped": 6
+        }
+      },
+      "min_margin_m": 0.5000443609526236,
+      "max_path_error_m": 1.345065403959338,
+      "max_reference_overspeed_m_s": 0.0,
+      "max_body_speed_m_s": 81.45119449980454,
+      "mode_counts": {
+        "HIGH": 25,
+        "RESPONSE": 6,
+        "BACKUP": 5
+      },
+      "high_fraction": 0.6944444444444444,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    },
+    {
+      "label": "regression-obstacle",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 96,
+      "actions": 24,
+      "completed_before": 119,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.0356165702809097,
+          "samples": 1904,
+          "clipped": 21
+        }
+      },
+      "min_margin_m": 1.086839702391744,
+      "max_path_error_m": 1.012481390000788,
+      "max_reference_overspeed_m_s": 0.7086655532644954,
+      "max_body_speed_m_s": 79.81350615725886,
+      "mode_counts": {
+        "HIGH": 23,
+        "RESPONSE": 1
+      },
+      "high_fraction": 0.9583333333333334,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    },
+    {
+      "label": "regression-curvature",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 96,
+      "actions": 24,
+      "completed_before": 143,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.0479584207842105,
+          "samples": 2288,
+          "clipped": 22
+        }
+      },
+      "min_margin_m": 0.8387523123804907,
+      "max_path_error_m": 1.3106126608296913,
+      "max_reference_overspeed_m_s": 0.0,
+      "max_body_speed_m_s": 79.23175479869427,
+      "mode_counts": {
+        "HIGH": 23,
+        "RESPONSE": 1
+      },
+      "high_fraction": 0.9583333333333334,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    }
+  ],
+  "model_integrator_ticks": 28414,
+  "source_wheel_force_evaluations_in_integrator": 113656,
+  "explicit_force_evaluations": 115720,
+  "planner_cost": {
+    "force_evaluations": 115720,
+    "forecast_calls": 1047,
+    "forecast_ticks": 27886,
+    "geometry_checks": 28933
+  },
+  "CPU_s": 292.783956639,
+  "wall_s": 292.8006660539977,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 23893,
+  "reserve": 84000,
+  "reserve_used": 0
+}

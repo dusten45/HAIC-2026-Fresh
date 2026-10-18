@@ -1,0 +1,90 @@
+{
+  "phase": "cold",
+  "passed": true,
+  "case": {
+    "label": "cold-candidate",
+    "stop": "MODEL_SOURCE_STYLE_FINISH",
+    "pass_safety": true,
+    "raw_ticks": 755,
+    "actions": 189,
+    "completed_before": 0,
+    "force_groups": {
+      "launch": {
+        "peak": 2.25546701731417,
+        "samples": 384,
+        "clipped": 46
+      },
+      "running": {
+        "peak": 1.0579886180739495,
+        "samples": 2636,
+        "clipped": 8
+      }
+    },
+    "min_margin_m": 0.5000210003417745,
+    "max_path_error_m": 1.4022760931102145,
+    "max_reference_overspeed_m_s": 3.7495960604258443,
+    "max_body_speed_m_s": 81.63323593484945,
+    "mode_counts": {
+      "FIXED_LAUNCH": 24,
+      "HIGH": 146,
+      "RESPONSE": 11,
+      "BACKUP": 8
+    },
+    "high_fraction": 0.8848484848484849,
+    "first_failure": null,
+    "model_finish_episode_s": 15.099999999999767
+  },
+  "gain_vs525_s": 3.2999999999999297,
+  "gain_vs528_s": 2.899999999999938,
+  "cases": [
+    {
+      "label": "cold-candidate",
+      "stop": "MODEL_SOURCE_STYLE_FINISH",
+      "pass_safety": true,
+      "raw_ticks": 755,
+      "actions": 189,
+      "completed_before": 0,
+      "force_groups": {
+        "launch": {
+          "peak": 2.25546701731417,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.0579886180739495,
+          "samples": 2636,
+          "clipped": 8
+        }
+      },
+      "min_margin_m": 0.5000210003417745,
+      "max_path_error_m": 1.4022760931102145,
+      "max_reference_overspeed_m_s": 3.7495960604258443,
+      "max_body_speed_m_s": 81.63323593484945,
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "HIGH": 146,
+        "RESPONSE": 11,
+        "BACKUP": 8
+      },
+      "high_fraction": 0.8848484848484849,
+      "first_failure": null,
+      "model_finish_episode_s": 15.099999999999767
+    }
+  ],
+  "model_integrator_ticks": 24553,
+  "source_wheel_force_evaluations_in_integrator": 98212,
+  "explicit_force_evaluations": 99260,
+  "planner_cost": {
+    "force_evaluations": 99260,
+    "forecast_calls": 763,
+    "forecast_ticks": 23798,
+    "geometry_checks": 24561
+  },
+  "CPU_s": 252.525841538,
+  "wall_s": 252.53994263499771,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 23893,
+  "reserve": 84000,
+  "reserve_used": 0
+}

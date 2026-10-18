@@ -1,0 +1,139 @@
+{
+  "status": "ACTUAL_OFFICIAL_FINISH_PAIR_PASS",
+  "arms": [
+    {
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "HIGH": 199,
+        "BACKUP": 7
+      },
+      "high_fraction": 0.9660194174757282,
+      "budget": "baseline",
+      "stop": "OFFICIAL_FINISH",
+      "initial_identity": true,
+      "actions": 230,
+      "reset_ticks": 51,
+      "official_finish": true,
+      "official_finish_episode_s": 18.399999999999675,
+      "confirmation_episode_s": 18.399999999999675,
+      "reference_arc_event": {
+        "lower": 18.379999999999676,
+        "upper": 18.399999999999675,
+        "time": 18.382203652834608
+      },
+      "unwrapped_progress": 996.6033071248014,
+      "reference_path_length": 995.4452893670465,
+      "visited_tiles": 283,
+      "tile_count": 283,
+      "min_margin_m": 0.9882576743056799,
+      "max_path_error_m": 1.390558827526948,
+      "max_tracking_overspeed_m_s": 2.5544297447653648,
+      "max_unused_startup_reference_difference_m_s": 2.191204343467215,
+      "force_groups": {
+        "launch": {
+          "peak": 2.255467414712997,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.0570167345816543,
+          "samples": 3296,
+          "clipped": 16
+        }
+      },
+      "source_force_oracle_max_N": 0.00024296935989642145,
+      "source_COM_impulse_max_m_s": 2.4097171487026317e-05,
+      "max_prediction_errors": {
+        "position_m": 4.729551245590441e-05,
+        "speed_m_s": 4.774008051811052e-05,
+        "angle_rad": 3.4991522862279356e-05,
+        "yaw_rad_s": 0.0002883087999210332,
+        "max_force_ratio_error": 0.00023438642409923105
+      }
+    },
+    {
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "HIGH": 146,
+        "RESPONSE": 13,
+        "BACKUP": 6
+      },
+      "high_fraction": 0.8848484848484849,
+      "budget": "candidate",
+      "stop": "OFFICIAL_FINISH",
+      "initial_identity": true,
+      "actions": 189,
+      "reset_ticks": 51,
+      "official_finish": true,
+      "official_finish_episode_s": 15.099999999999746,
+      "confirmation_episode_s": 15.099999999999746,
+      "reference_arc_event": {
+        "lower": 15.079999999999746,
+        "upper": 15.099999999999746,
+        "time": 15.086755923940908
+      },
+      "unwrapped_progress": 979.6071074023024,
+      "reference_path_length": 978.6098315287799,
+      "visited_tiles": 283,
+      "tile_count": 283,
+      "min_margin_m": 0.500035545165379,
+      "max_path_error_m": 1.4020869878659215,
+      "max_tracking_overspeed_m_s": 3.7481721782488933,
+      "max_unused_startup_reference_difference_m_s": 2.191204343467215,
+      "force_groups": {
+        "launch": {
+          "peak": 2.255467414712997,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.0580468787546384,
+          "samples": 2636,
+          "clipped": 8
+        }
+      },
+      "source_force_oracle_max_N": 0.0002848310323742358,
+      "source_COM_impulse_max_m_s": 2.276525421740457e-05,
+      "max_prediction_errors": {
+        "position_m": 2.8527946148290642e-05,
+        "speed_m_s": 3.21882478004909e-05,
+        "angle_rad": 2.0386430254204502e-05,
+        "yaw_rad_s": 0.00018704872794206295,
+        "max_force_ratio_error": 0.00012508607361783053
+      }
+    }
+  ],
+  "both_actual_official_finishes": true,
+  "official_finish_gain_s": 3.2999999999999297,
+  "practical_effect_gate": true,
+  "counts": {
+    "worlds": 2,
+    "closed": 2,
+    "resets": 2,
+    "actions": 419,
+    "raw_attempts": 1777,
+    "raw_completed": 1777
+  },
+  "native_model_integrator_ticks": 35480,
+  "all_model_integrator_ticks": 110872,
+  "native_explicit_force_evaluations": 149688,
+  "all_model_wheel_force_evaluations": 455272,
+  "native_planner_cost": {
+    "force_evaluations": 136284,
+    "forecast_calls": 976,
+    "forecast_ticks": 33804,
+    "geometry_checks": 24648
+  },
+  "research_remaining": 23474,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "native_CPU_s": 505.95601808500004,
+  "native_wall_s": 505.99497573100234,
+  "preflight_model_ticks": 75392,
+  "preflight_explicit_force_evaluations": 305584,
+  "native_geometry_checks": 24648,
+  "all_geometry_checks": 100641,
+  "total_CPU_s": 1284.745018107,
+  "total_wall_s": 1284.8303123689984,
+  "scope": "536fixed533path/535footprintplusbroaderbrake+internal.001buffer vsfreshactual525.535failurepreserved. Actualpackagecomparisonnotpath-alone/optimality/pixel/11sclaim;528actualunvalidated."
+}

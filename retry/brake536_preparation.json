@@ -1,0 +1,45 @@
+{
+  "measurements": [
+    {
+      "stage": "525",
+      "arm": "baseline",
+      "max_force_ratio_error": 0.00015603601187252902
+    },
+    {
+      "stage": "525",
+      "arm": "governor",
+      "max_force_ratio_error": 0.00023438642409923105
+    },
+    {
+      "stage": "535",
+      "arm": "baseline",
+      "max_force_ratio_error": 0.00023438642409923105
+    },
+    {
+      "stage": "535",
+      "arm": "candidate",
+      "max_force_ratio_error": 4.632390460612701e-06
+    }
+  ],
+  "observed_max_force_ratio_error": 0.00023438642409923105,
+  "multiplier": 2,
+  "rounding_unit": 0.001,
+  "fixed_internal_buffer": 0.001,
+  "internal_admission": 1.0590000000000002,
+  "external_prediction_limit": 1.06,
+  "physical_force_limit": 1.25,
+  "uncertainty_margin_unchanged": 0.19,
+  "roots": [
+    "actual33",
+    "model33",
+    "actual32",
+    "model32",
+    "normal141"
+  ],
+  "path_optimization_iterations": 0,
+  "steering_gain_changes": 0,
+  "CPU_s": 0.03968118600000001,
+  "wall_s": 0.039691789002972655,
+  "model_ticks": 0,
+  "force_evaluations": 0
+}

@@ -1,0 +1,52 @@
+{
+  "registered_utc": "2026-10-18T12:07:09.892363+00:00",
+  "native_source_sha256": "2fd1f6a740d9234aa2f82b9c248e60a2681db9715a24b02fe1dbbe6f94f65bc5",
+  "paths_sha256": "98b3eaf4eb335d95a588de33921d54c36ef4e1c2266d648980e6b52c114114d3",
+  "baseline525_paths_sha256": "074cff39ceeaec06bb80b1d907052a36b304cb48d0ce16ae27390caf11fb1f21",
+  "gate_sha256": "81ad4f3e586d4946ad73845f052ec11d777e0a58e89af6ea9442a203aca45cfd",
+  "contract_sha256": "5db338e00385c76089d982992d2a072b1db80a062f4f3a47610d866f1037b4cd",
+  "phase_result_sha256": {
+    "pilot": "7212526cea26ff6f61ec019146711359e57e7fea245a397ab6bc00f96825524e",
+    "cold": "aee909d25df5711ba9f5a122a22fa7f8d66288cc4c663f4f6bc07d200b2f85a4",
+    "carry": "f99bdcfbc5acd23147c55922d9d66d52210fe3a62ff798bbcb6f9658573bea73"
+  },
+  "research_start": 23893,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "caps": {
+    "phases": [
+      "pilot",
+      "cold",
+      "carry"
+    ],
+    "each_phase_model_ticks": 60000,
+    "each_phase_explicit_force": 300000,
+    "each_phase_forecast_geometry": 65000,
+    "each_phase_CPU_s": 600,
+    "each_phase_wall_s": 720,
+    "total_preflight_ticks": 180000,
+    "total_preflight_force": 900000,
+    "total_preflight_geometry": 195000,
+    "total_preflight_CPU_s": 1800,
+    "total_preflight_wall_s": 2160,
+    "native_model_ticks": 80000,
+    "native_explicit_force": 400000,
+    "native_forecast_geometry": 85000,
+    "native_CPU_s": 900,
+    "native_wall_s": 1080,
+    "all_model_ticks": 260000,
+    "all_explicit_force": 1300000,
+    "all_geometry": 280000,
+    "native_actions": 1000,
+    "native_resets": 2,
+    "native_worlds": 2,
+    "native_raw": 4102,
+    "private_files": 8192,
+    "private_bytes": 268435456
+  },
+  "active_entry": "retry.brake536_native_final",
+  "implementation_corrections": "Prepared final entry replaces unexecuted prototype: native-local counters plus explicit preflight totals, c.research_start ledger, counters on exit and close, immediate saved raw-guard abort. Same registered536 controller, paths, thresholds and candidate. Original pinned prototype remains unchanged.",
+  "no_actual_retry": true,
+  "new_seeds": 0,
+  "protected_queries": 0
+}

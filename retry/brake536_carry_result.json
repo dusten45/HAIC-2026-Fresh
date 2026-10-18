@@ -1,0 +1,88 @@
+{
+  "phase": "carry",
+  "passed": true,
+  "case": {
+    "label": "carry-candidate",
+    "stop": "MODEL_SOURCE_STYLE_FINISH",
+    "pass_safety": true,
+    "raw_ticks": 592,
+    "actions": 148,
+    "completed_before": 46,
+    "force_groups": {
+      "launch": {
+        "peak": 0.0,
+        "samples": 0,
+        "clipped": 0
+      },
+      "running": {
+        "peak": 1.0444296105051507,
+        "samples": 2720,
+        "clipped": 5
+      }
+    },
+    "min_margin_m": 0.5010508423528802,
+    "max_path_error_m": 1.3549137018444948,
+    "max_reference_overspeed_m_s": 4.052181063831213,
+    "max_body_speed_m_s": 81.71217055213654,
+    "mode_counts": {
+      "HIGH": 133,
+      "RESPONSE": 6,
+      "BACKUP": 9
+    },
+    "high_fraction": 0.8986486486486487,
+    "first_failure": null,
+    "model_finish_episode_s": 15.519999999999836
+  },
+  "gain_vs525_s": 3.1199999999999335,
+  "gain_vs528_s": 2.719999999999942,
+  "cases": [
+    {
+      "label": "carry-candidate",
+      "stop": "MODEL_SOURCE_STYLE_FINISH",
+      "pass_safety": true,
+      "raw_ticks": 592,
+      "actions": 148,
+      "completed_before": 46,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.0444296105051507,
+          "samples": 2720,
+          "clipped": 5
+        }
+      },
+      "min_margin_m": 0.5010508423528802,
+      "max_path_error_m": 1.3549137018444948,
+      "max_reference_overspeed_m_s": 4.052181063831213,
+      "max_body_speed_m_s": 81.71217055213654,
+      "mode_counts": {
+        "HIGH": 133,
+        "RESPONSE": 6,
+        "BACKUP": 9
+      },
+      "high_fraction": 0.8986486486486487,
+      "first_failure": null,
+      "model_finish_episode_s": 15.519999999999836
+    }
+  ],
+  "model_integrator_ticks": 22425,
+  "source_wheel_force_evaluations_in_integrator": 89700,
+  "explicit_force_evaluations": 90604,
+  "planner_cost": {
+    "force_evaluations": 90604,
+    "forecast_calls": 666,
+    "forecast_ticks": 21833,
+    "geometry_checks": 22499
+  },
+  "CPU_s": 233.479201845,
+  "wall_s": 233.49472471400077,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 23893,
+  "reserve": 84000,
+  "reserve_used": 0
+}
