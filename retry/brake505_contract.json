@@ -1,0 +1,38 @@
+{
+  "registered_utc": "2026-10-18T04:12:53.002147+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "classification": "503 contact loss is an externally assigned hidden event, not geometry-based contact. No geometry available.",
+  "candidate": "504 yaw/steering model with an explicit one-persistent-loss family, unknown future tick2/3/4 and arbitrary nonempty wheel subset, plus no loss. Grass friction floor from current source/grip; current first force known. No future trace/fixture label/schedule input.",
+  "uncertainty_limit": "Only one persistent event, no regain/gain/continuous friction changes/multiple events. At most46 scenarios. Not a general road guarantee.",
+  "fixtures": "Unchanged nine503 fixtures, exact504 initial-state match and saved504 controls, no baseline reintegration.",
+  "decision": {
+    "safety": "No abstentions; actual end-speed overshoot<=0.15m/s; positive sampled progress. This is not road clearance or continuous-time safety.",
+    "cost": "On no-event fixtures, max excess deceleration<=0.4m/s and projected semi-implicit COM travel loss vs504<=0.016m. Respectively25% of requested1.6m/s drop and25% of ideal0.064m braking-distance loss.",
+    "pass": "Both safety and cost, otherwise stop this candidate; no schedule reveal or tuning/retry."
+  },
+  "pure_gate": "Scenario coverage/first tick known; collapsed bounds equal504 exact float32 command; included nominal path respects max target",
+  "caps": {
+    "worlds": 9,
+    "raw_ticks": 36,
+    "CPU_s": 60,
+    "wall_s": 90,
+    "private_bytes": 16777216,
+    "native_actions": 0,
+    "racing_resets": 0,
+    "seed_generation": 0
+  },
+  "source_sha256": {
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "retry/brake503_diagnostic.py": "3f7ed732624d874677384420565255728fc5f89607a69d2c82f7625c4a780026",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake504_diagnostic.py": "4cfa67035e7131eb11325dcdfa1812fe8d5674d237cacbd43c800e64f4c54fdc",
+    "retry/brake505_uncertainty.py": "685015f7b332b503d6e99c082f5844431ccf58eac4253787386c60f7432d9aa7",
+    "retry/test_brake505.py": "253f3325a31f70c4660448c9e0867425f4b362919f7af4fb043df6d2cf450e41",
+    "retry/brake505_diagnostic.py": "82b5fe4d7f97ade2f42efc93b6064bb94f7a9f40e1a52bf6121d2b78f4925041"
+  },
+  "old504_raw_sha256": "777cd415db8f54001a7f2ed7890cabf3c2a6cd05b26abf4394430b7353bb287b",
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "Known synthetic fixtures only; privileged current full wheel/body dynamics, no track, protected data, future contacts or whole-lap qualification"
+}
