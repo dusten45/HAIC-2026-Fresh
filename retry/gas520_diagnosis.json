@@ -1,0 +1,54 @@
+{
+  "arms": [
+    {
+      "arm": "steady",
+      "complete_positive_request_holds": 144,
+      "mean_absolute_four_tick_target_error_m_s": 0.18296326945213742,
+      "mean_signed_four_tick_target_error_m_s": -0.17894706277190153,
+      "max_absolute_four_tick_target_error_m_s": 1.3386994619530128,
+      "gas_zero_holds": 0,
+      "gas_one_holds": 0,
+      "mean_gas": 0.5167736501595451,
+      "mode_counts_all_positive_holds": {},
+      "steering_and_brake_exact_current_nominal": true
+    },
+    {
+      "arm": "response",
+      "complete_positive_request_holds": 134,
+      "mean_absolute_four_tick_target_error_m_s": 0.06429205564046125,
+      "mean_signed_four_tick_target_error_m_s": -0.06429189122140112,
+      "max_absolute_four_tick_target_error_m_s": 1.3335177707229136,
+      "gas_zero_holds": 0,
+      "gas_one_holds": 13,
+      "mean_gas": 0.6252264367527703,
+      "mode_counts_all_positive_holds": {
+        "TARGET_ABOVE_GAS1_END": 13,
+        "LOCAL_FLOAT32_TARGET_BRACKET": 122
+      },
+      "steering_and_brake_exact_current_nominal": true
+    }
+  ],
+  "source_and_input_pins_verified": true,
+  "cold_reference_clock_identical": true,
+  "cold_gain_s": 0.1599999999999966,
+  "effect_gate_s": 0.5,
+  "promotion": false,
+  "carry_cases": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "accounting": {
+    "pure_test_model_ticks": 36,
+    "saved_state_calibration_model_ticks": 588,
+    "cold_body_model_ticks": 1011,
+    "cold_inverse_forecast_ticks": 15860,
+    "total_new_model_ticks": 17495,
+    "source_wheel_force_evaluations_in_new_model_ticks": 69980,
+    "additional_explicit_force_oracles": 4044,
+    "reused_prior_model_ticks_not_new": 1020,
+    "original_result_reused_prior_model_ticks_field": 1036,
+    "accounting_correction": "Original result retained inherited1036 label from518; actual reused519 trace has1020ticks. No reintegration. Original explicitforce4044 counts diagnostics only; tick integrator wheel evaluations69980 are separate."
+  },
+  "CPU_s": 0.43413407299999995,
+  "wall_s": 0.4436825080010749,
+  "scope": "Each trajectory uses its own current state and the same target rule. Across trajectories these are not matched identical numerical goals. Four selected shared roots are matched. No independent native accuracy claim, no whole method-family rejection."
+}
