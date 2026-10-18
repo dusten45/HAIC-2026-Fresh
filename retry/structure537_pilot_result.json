@@ -1,0 +1,97 @@
+{
+  "phase": "pilot",
+  "passed": false,
+  "pairs": [
+    {
+      "label": "ceiling-deficit",
+      "both_safe": true,
+      "first_hold_progress_gain_m": 0.00019896558568177625,
+      "window_progress_gain_m": 6.292026672561207,
+      "window_speed_gain_m_s": 8.130765761688743,
+      "upper_released": true,
+      "mechanism_pass": false
+    }
+  ],
+  "cases": [
+    {
+      "label": "ceiling-deficit-baseline",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 96,
+      "actions": 24,
+      "completed_before": 24,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.0579851070256998,
+          "samples": 384,
+          "clipped": 3
+        }
+      },
+      "min_margin_m": 1.1415999693849688,
+      "max_path_error_m": 1.4022834039117866,
+      "max_reference_overspeed_m_s": 0.0,
+      "max_body_speed_m_s": 70.55647190511998,
+      "mode_counts": {
+        "HIGH": 19,
+        "RESPONSE": 2,
+        "BACKUP": 3
+      },
+      "high_fraction": 0.7916666666666666,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    },
+    {
+      "label": "ceiling-deficit-candidate",
+      "stop": "PROBE_COMPLETE",
+      "pass_safety": true,
+      "raw_ticks": 96,
+      "actions": 24,
+      "completed_before": 24,
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 1.0589545655635415,
+          "samples": 384,
+          "clipped": 35
+        }
+      },
+      "min_margin_m": 1.1119966433964237,
+      "max_path_error_m": 1.5271992243250834,
+      "max_reference_overspeed_m_s": 0.0,
+      "max_body_speed_m_s": 73.83536002362035,
+      "mode_counts": {
+        "SOURCE_FULL": 8,
+        "SOURCE_RESPONSE": 14,
+        "BACKUP": 2
+      },
+      "high_fraction": 0.0,
+      "first_failure": null,
+      "model_finish_episode_s": null
+    }
+  ],
+  "model_integrator_ticks": 13742,
+  "source_wheel_force_evaluations_in_integrator": 54968,
+  "explicit_force_evaluations": 56596,
+  "planner_cost": {
+    "force_evaluations": 56596,
+    "forecast_calls": 666,
+    "forecast_ticks": 13550,
+    "geometry_checks": 14216
+  },
+  "CPU_s": 126.552389995,
+  "wall_s": 126.55987624500267,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 23474,
+  "reserve": 84000,
+  "reserve_used": 0
+}

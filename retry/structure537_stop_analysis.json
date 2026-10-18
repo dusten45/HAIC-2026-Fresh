@@ -1,0 +1,31 @@
+{
+  "status": "PILOT_IMMEDIATE_EFFECT_GATE_FAIL_SAFETY_PASS_STOPPED",
+  "pair": {
+    "label": "ceiling-deficit",
+    "both_safe": true,
+    "first_hold_progress_gain_m": 0.00019896558568177625,
+    "window_progress_gain_m": 6.292026672561207,
+    "window_speed_gain_m_s": 8.130765761688743,
+    "upper_released": true,
+    "mechanism_pass": false
+  },
+  "first_hold_identical_rear_gas_raw_ticks": [
+    1,
+    2,
+    3
+  ],
+  "first_hold_max_rear_gas_difference": 0.00886436700820914,
+  "interpretation": "Source gas rise is limited to .1 per raw tick; first-hold immediate-effect criterion is poorly aligned with delayed engine response. This is a limitation of the registered mechanism test, not a refutation of the observed 24-hold gain. Original criterion/failure retained: no rescue or further model/native admission.",
+  "fresh_certificates": 48,
+  "source_private_pins_pass": true,
+  "checkpoint_counts_pass": true,
+  "model_ticks": 13742,
+  "explicit_force_evaluations": 56596,
+  "research_remaining": 23474,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_model_ticks": 0,
+  "native_actions": 0,
+  "CPU_s": 0.019949860000000003,
+  "wall_s": 0.021717927003919613
+}
