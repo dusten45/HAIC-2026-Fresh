@@ -1,0 +1,48 @@
+{
+  "status": "CLOSED_AUTHORIZATION_EXPIRED_NO_NEW_EXPERIMENT",
+  "checked_at_utc": "2026-10-18T12:01:04.578007+00:00",
+  "request_window_KST": {
+    "start": "2026-10-09T19:01:55+09:00",
+    "end": "2026-10-16T19:01:55+09:00"
+  },
+  "request_window_UTC": {
+    "start": "2026-10-09T10:01:55+00:00",
+    "end": "2026-10-16T10:01:55+00:00"
+  },
+  "branch": "research/personal-retry-20261009",
+  "HEAD": "ecfe8404a6227911bf8a220ad999bf7dd9f56ef6",
+  "main": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+  "source_sha256": {
+    "README.md": "68f86f6a6f70c0bb3fdb0acd562891ff175e355985aa3677a154bb2e032737bf",
+    "agent.py": "2e225fb5d3205f997182d2472e9b24364feee26488a0dc8d45d0d902116a966d",
+    "env_wrapper.py": "8687215412da0a1f34534623d5050030d85c629a70cb922e9d2199c513a3941e",
+    "local_runner.py": "48eedfb0c32a8e1f4dd724e65ac69eb678105ee434ac797ce2c9f442461fd398",
+    "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69",
+    "retry/evaluate.py": "39cc4e537eba020d3e73295326f376b65478cd7f4477ee779469a83e5b904e66",
+    "retry/pixel_agent.py": "efbd995b5c66e86cbd223bca1feb81867e39233652521e6618ab7aebadc74b51"
+  },
+  "this_delegation": {
+    "simulation_actions": 0,
+    "simulation_resets": 0,
+    "model_integrator_calls": 0,
+    "policy_inference_calls": 0,
+    "training_runs": 0,
+    "new_seeds": 0,
+    "protected_queries": 0,
+    "new_paid_resources": 0,
+    "old_research_resumed": false,
+    "promotion": false
+  },
+  "untracked_existing_files_preserved": [
+    "retry/brake536_cold_result.json",
+    "retry/brake536_connection_check.json",
+    "retry/brake536_contract.json",
+    "retry/brake536_control.py",
+    "retry/brake536_model.py",
+    "retry/brake536_native.py",
+    "retry/brake536_native_final.py",
+    "retry/brake536_pilot_result.json",
+    "retry/brake536_preparation.json"
+  ],
+  "blocker": "Requested authorization expired before this delegated turn. Existing records claiming a later deadline do not override this request. No automatic extension."
+}
