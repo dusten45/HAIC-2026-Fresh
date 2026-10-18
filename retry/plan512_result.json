@@ -1,0 +1,59 @@
+{
+  "status": "APPROACH_EFFECT_NOT_SHOWN",
+  "arms": [
+    {
+      "arm": "scalar",
+      "stop": "ROAD_MARGIN",
+      "actions": 34,
+      "initial_identity": true,
+      "trigger_identity": true,
+      "crossing": null,
+      "crossing_goal_pass": false,
+      "min_raw_margin_m": -0.0,
+      "final_progress": 0.1166077738515901,
+      "first_brake_action": 31,
+      "brake_actions": 4,
+      "max_prediction_error_m_s": 7.484996206130745e-05,
+      "max_scalar_request_error_m_s": 0.579936273236882,
+      "official_finish": false
+    }
+  ],
+  "practical_effect_gate": false,
+  "interpolated_gate_time_gain_s": null,
+  "counts": {
+    "worlds": 1,
+    "closed": 1,
+    "resets": 1,
+    "actions": 34,
+    "raw_attempts": 187,
+    "raw_completed": 187
+  },
+  "hypothetical_model_ticks": 136,
+  "research_remaining": 25875,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "CPU_s_including_test_child": 2.382424074,
+  "wall_s": 2.3949946359989553,
+  "scope": "One fixed first-straight speed-limited approach on known DEV; privileged current state/map; no lap finish or 13.640 comparison; no pixel-policy claim",
+  "source_sha256": {
+    "env_wrapper.py": "8687215412da0a1f34534623d5050030d85c629a70cb922e9d2199c513a3941e",
+    "damage.py": "b74d15bd2de623cea1345e0469625d4b58f1634d073151a35edf1f05ea35fa30",
+    "local_runner.py": "48eedfb0c32a8e1f4dd724e65ac69eb678105ee434ac797ce2c9f442461fd398",
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69",
+    "core/track_variables.py": "cd28fdfc79f12614262f61b1ac13d670d03fad940d753a2ec185390617c0ed58",
+    "retry/pixel_agent.py": "efbd995b5c66e86cbd223bca1feb81867e39233652521e6618ab7aebadc74b51",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake504_diagnostic.py": "4cfa67035e7131eb11325dcdfa1812fe8d5674d237cacbd43c800e64f4c54fdc",
+    "retry/brake506_geometry.py": "4f69de71c0e1ad0d7707c9c9681f4e504367ccbce5c33ae6c0f369e7c6ed4392",
+    "retry/brake508_corridor.py": "10c2a4e021cce37b81a08ac0eb00e4040b0bb4dabdf5eac6989e18472b061407",
+    "retry/brake509_adapter.py": "da9ee42fd055fcb9ed6c0da91d33c47c6eeea9b1ffe4ee592252b408393c62c1",
+    "retry/brake510_common.py": "28b84e6dbd7aab3ce123c153abdb9acfa1867172f35257ea6b8fea92b5cd1eb0",
+    "retry/brake511_control.py": "5519346571a675a41b39a2eff53a6ad53484318a6ae0fbdc74feb3e54f2b23d2",
+    "retry/envelope500.py": "1b5b027bd6a0e1631fc11165fc131ab67394e3908f926adb33605e3f7bdab964",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/plan512_run.py": "dad8089f3fb963192dd7ce914666d3b86f8cf9c7128bdc59e8685ec7b5a0d4a5",
+    "retry/test_plan512.py": "6af337e562cc632d5186e43bdc800c868e03909d3a65f6f7c60664d999b534ba"
+  }
+}
