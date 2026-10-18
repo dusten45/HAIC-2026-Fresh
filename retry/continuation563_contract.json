@@ -1,0 +1,99 @@
+{
+  "registered_utc": "2026-10-18T22:41:58.100627+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "premise": "561first global-safe proposal is feasible for NEW563connection because562proved unchanged551/537feedback whole safe13.22. Keep561aperture rejection unchanged. Preserve seed whole-success trajectory separately from finite incumbents.",
+  "program": "Same original reset->actions1..34 prefix. Optimize20holds35..54; keep saved55..67 as program context. Feedback terminal starts from each altered after67 fullstate/history/tracker/visited. No pose aperture,relative yaw,baseline actuator equality or periodic terminal condition.",
+  "terminal": "Actual unchanged551/537feedback12holds,indices68..79,with original reference/global safety/count. Objective is first forward arrival at fixed ORIGINAL551action75 endpoint plane (8feedbackholds plus4hold safety continuation). Original55154/66planes unchanged and recorded,not hard nonworsening constraints. Record recovery time=terminal-plane time minus66plane time and actual end12fullstate/cost. No new arbitrary pose penalty.",
+  "seed": "Fresh source program plus first12 saved562feedback commands must match all seed132+48raw states/forces. Reuse existing full-safe13.22 proof; do not rerun seed selector. Initial finite command tape is a derivative surrogate for alreadyverified identical input.",
+  "linearization": "40fresh one-sided actual-float32 FD per direction,steer1e-5/pedal1e-4,source rollout of program plus CURRENTincumbent recorded feedback12tape. This is frozen-policy derivative ONLY; no claim it equals closed-loop derivative. NONCLIP physical gradients and individual force gradients,never count derivatives. Terminal time derivative objective.",
+  "mode": "Strict initial-history prefix order-stat; primary perprefix rank exemption branch,then ONE reconstruction from actual rejected actual-feedback ranks (unobserved suffix ranks filled only by incumbent surrogate,never physical state). Fixed steer.003/pedal.03 LP trust; no scalar radius retries,no mask/yaw/aperture. If both fail,ONE terminal-time coordinate poll(steer.0005/pedal.005). Max3directions/3acceptances/6LP branches/3polls/9proposals,FD120.",
+  "validation": "Every proposed program is source checked. Only locallyglobal-safe program opens freshly computed feedback12continuation from that exact handoff. Accept if both program+actualfeedbacksafe,terminalplane bracketed and terminalarrival improves>1microsecond. Local plane gains need not individuallyimprove; no5ms gate. Two accepted terminalgains<.02ms or2accepted prediction mismatches stop. No accepted branch/poll ->stop.",
+  "safety": "Original551reference,footprint>=.50,path<=3,trackingforce<=1.059,cumulativeclip<=.10 with actual initial history,body<100 for every model/forecast. Global launch special constraints unchanged. Exact ratio>1 count/prefixstat consistency runtime. Different contact/clip modes allowed and checked.",
+  "whole_validation": "After bounded updates,run ONE whole feedback suffix (if unchanged exact seed,no accepted updates,reuse562full-policy proof and independently replay its complete tape instead of rerunning selector) from final finite-incumbent after67state,starting at same globalclock/history. Distinguish finiteincumbent from provenwholeincumbent. If whole-safe and officialfinish<seed13.22,select new wholeincumbent; onfailure/slower/tie retain seed. Independently replay attempted commandtape and seed if retained,<=2500raw. Never claim finitecontinuation safety implies restoflap.",
+  "budgets": {
+    "preparation": {
+      "model_ticks": 300,
+      "force": 1500,
+      "geometry": 400,
+      "CPU_s": 20,
+      "wall_s": 30
+    },
+    "local": {
+      "model_ticks": 26000,
+      "force": 110000,
+      "geometry": 27000,
+      "CPU_s": 500,
+      "wall_s": 600
+    },
+    "finite": {
+      "model_ticks": 80000,
+      "force": 400000,
+      "geometry": 90000,
+      "CPU_s": 1200,
+      "wall_s": 1400
+    },
+    "full": {
+      "model_ticks": 120000,
+      "force": 580000,
+      "geometry": 140000,
+      "CPU_s": 1600,
+      "wall_s": 1800
+    },
+    "verification": {
+      "model_ticks": 2500,
+      "force": 12000,
+      "geometry": 2600,
+      "CPU_s": 60,
+      "wall_s": 90
+    }
+  },
+  "finite_case_cap": {
+    "model_ticks": 20000,
+    "force": 100000,
+    "geometry": 25000,
+    "CPU_s": 300,
+    "wall_s": 350
+  },
+  "aggregate": {
+    "model_ticks": 228800,
+    "force": 1103500,
+    "geometry": 263000,
+    "CPU_s": 3400,
+    "wall_s": 4000
+  },
+  "budget_reserve_rule": "Stop proposing when remaining finite budget<20000ticks,local<40*180+132,or optimizationCPU>=1500. Full120000/CPU1600 and replay2500/CPU60 reserved separately. Local phase budget includes baseline180+FD21600+9program1188; everyphase counters separate under unchangedkernel200000.",
+  "storage": "Tested clip561atomic JSON-safe writer; per-evaluation/phasefinally cost ledger and outerfinally costFIRST. Immutable finite and seed-whole incumbent. Record unsuccessful partialcontinuation state/commands and cause; no state/history reset.",
+  "actual_cap": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_seed_HOLDOUT_SEALED_other_environment_paid": 0,
+  "source_sha256": {
+    "retry/continuation563_model.py": "3a6fd75bbbae3dbda6ffc64610c9d442f111e602a9b932501ee30873e1284da3",
+    "retry/handoff562_model.py": "e7addc1dabf391149cb10827316a6e9405069f4a8809a9ef4ada805cbe9d0b0b",
+    "retry/clip561_core.py": "d0f60f7741c4605a3c3b6a515977ee5c978efd633665d3e807afef6b816a531b",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "retry/preview527_control.py": "8049458f5f302fd194a2e0fde5a833ac4a2241f498055df1dc84203017da2717",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131",
+    "core/finish_line.py": "7c16dda1378dcd65aed46d9da96608aa055124c2f27d8fb00c309078361d4204",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363"
+  },
+  "private_inputs_sha256": {
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response551-private/frozen-paths-private.json": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "/workspace/haic-response551-private/cold-candidate-private.json": "5e28759abfbc2455599c9f3bd4143ff7b8cf644deae63a86c7c290608e466ac8",
+    "/workspace/haic-response519-private/model-ledger-private.json": "28ff0ff7ffec9784e4817b4b55500c40ecd3730e9d09977294ad1dfd9b70763f",
+    "/workspace/haic-response560-private/segment-private.json": "0721c0d46922057e1279381f14ca2a4476fdc7a45726246b96599710b86831c6",
+    "/workspace/haic-response561-private/branch-00-00-private.json": "e7313dd198268f10b07016b28bb2b9357bb2a550898356234e4aeef47fa76236",
+    "/workspace/haic-response562-private/prefix-modified-private.json": "c87772ee076352d632d09b424bb88689b141a6a6d3dd13f70b295bc59ec8040f",
+    "/workspace/haic-response562-private/feedback-suffix-private.json": "f5645d215bbcfcee3e5a1706302128e0be0339c512a8381f2f002b801c4c2985",
+    "/workspace/HAIC-2026-Fresh/retry/handoff562_result.json": "216e2def91549d2b95120f9606ee14a034bc185cbc64d5895435c307f8f13b4f"
+  }
+}

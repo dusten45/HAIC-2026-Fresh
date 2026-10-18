@@ -1,0 +1,49 @@
+{
+  "phases": {
+    "preparation": {
+      "force_evaluations": 544,
+      "forecast_calls": 0,
+      "forecast_ticks": 0,
+      "geometry_checks": 136,
+      "body_checks": 136,
+      "max_all_model_body": 83.54803078778195,
+      "CPU_s": 1.4073900039999998,
+      "wall_s": 1.4260844610107597,
+      "model_ticks": 136,
+      "internal_wheel_force_evaluations": 544
+    },
+    "local": {
+      "force_evaluations": 30576,
+      "forecast_calls": 0,
+      "forecast_ticks": 0,
+      "geometry_checks": 7644,
+      "body_checks": 7644,
+      "max_all_model_body": 95.31361370499427,
+      "CPU_s": 91.76284951900006,
+      "wall_s": 91.80338145200221,
+      "model_ticks": 7644,
+      "internal_wheel_force_evaluations": 30576
+    },
+    "verification": {
+      "force_evaluations": 2648,
+      "forecast_calls": 0,
+      "forecast_ticks": 0,
+      "geometry_checks": 662,
+      "body_checks": 662,
+      "max_all_model_body": 96.93233159086249,
+      "CPU_s": 10.090940055000004,
+      "wall_s": 10.198211862996686,
+      "model_ticks": 662,
+      "internal_wheel_force_evaluations": 2648
+    }
+  },
+  "total": {
+    "model_ticks": 8442,
+    "force_evaluations": 33768,
+    "internal_wheel_force_evaluations": 33768,
+    "geometry_checks": 8442,
+    "body_checks": 8442,
+    "CPU_s": 103.54307182,
+    "wall_s": 103.74316404099227
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "checks": {
+    "sources_and_inputs_unchanged": true,
+    "registered_before_evaluations": true,
+    "completed_without_technical_error": true,
+    "exact_original_prefix": true,
+    "exact_seed_180raw": true,
+    "initial_history_preserved": true,
+    "FD_and_proposal_caps": true,
+    "fresh_feedback_for_locally_safe_programs": true,
+    "feedback_program_root_history_and_fresh_FINAL": true,
+    "accepted_actual_terminal_gain_and_global_safety": true,
+    "whole_best_retention": true,
+    "whole_finish_measured_separately": true,
+    "independent_whole_tape_replay": true,
+    "phase_finally_cost_FIRST": true,
+    "phase_and_aggregate_caps": true,
+    "cost_reconciled": true,
+    "prior_failures_and_baseline_preserved": true,
+    "no_native_protected_reserve": true,
+    "main_and_Participants_preserved": true,
+    "rejected_proposals_have_measured_force_or_history_violation": true
+  },
+  "rejection_evidence": [
+    {
+      "case": "poll-00-program-private.json",
+      "first_failure": {
+        "index": 38,
+        "raw": 1,
+        "reasons": [
+          "FORCE"
+        ],
+        "history": [
+          9,
+          212
+        ],
+        "force_ratio": 1.0591965639069385
+      },
+      "new_clips_vs_seed": 1,
+      "freed_clips_vs_seed": 0,
+      "final_history": [
+        31,
+        688
+      ]
+    },
+    {
+      "case": "proposal-00-00-program-private.json",
+      "first_failure": {
+        "index": 41,
+        "raw": 2,
+        "reasons": [
+          "CLIP_HISTORY"
+        ],
+        "history": [
+          27,
+          264
+        ],
+        "force_ratio": 1.0109811730580716
+      },
+      "new_clips_vs_seed": 7,
+      "freed_clips_vs_seed": 0,
+      "final_history": [
+        37,
+        688
+      ]
+    }
+  ],
+  "scope_counts": {
+    "FD": 40,
+    "actual_proposals": 2,
+    "finite_feedback_runs": 0,
+    "accepted": 0
+  },
+  "not_exercised": [
+    "fresh_feedback_candidate_continuation",
+    "new_candidate_whole_suffix"
+  ],
+  "model_ticks": 0,
+  "force_calls": 0,
+  "geometry_calls": 0,
+  "CPU_s": 0.13678967,
+  "wall_s": 0.14061396599572618
+}
