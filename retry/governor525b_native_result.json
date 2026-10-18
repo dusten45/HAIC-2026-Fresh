@@ -1,0 +1,130 @@
+{
+  "status": "ACTUAL_OFFICIAL_FINISH_PAIR_PASS",
+  "arms": [
+    {
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "BASELINE": 232
+      },
+      "high_fraction": 0.0,
+      "budget": "baseline",
+      "stop": "OFFICIAL_FINISH",
+      "initial_identity": true,
+      "actions": 256,
+      "reset_ticks": 51,
+      "official_finish": true,
+      "official_finish_episode_s": 20.45999999999963,
+      "confirmation_episode_s": 20.47999999999963,
+      "reference_arc_event": {
+        "lower": 20.439999999999632,
+        "upper": 20.45999999999963,
+        "time": 20.459395259001596
+      },
+      "unwrapped_progress": 996.7199095840708,
+      "reference_path_length": 995.4452893670465,
+      "visited_tiles": 283,
+      "tile_count": 283,
+      "min_margin_m": 0.9744672965371344,
+      "max_path_error_m": 1.184473980464926,
+      "max_tracking_overspeed_m_s": 2.2099724437281623,
+      "max_unused_startup_reference_difference_m_s": 2.191204343467215,
+      "force_groups": {
+        "launch": {
+          "peak": 2.255467414712997,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 0.9446601870296916,
+          "samples": 3712,
+          "clipped": 0
+        }
+      },
+      "source_force_oracle_max_N": 0.00021616449467065695,
+      "source_COM_impulse_max_m_s": 2.0256954697859586e-05,
+      "max_prediction_errors": {
+        "position_m": 3.252911405727439e-05,
+        "speed_m_s": 4.551870508606726e-05,
+        "angle_rad": 2.510602774830062e-05,
+        "yaw_rad_s": 0.00022281429431281197,
+        "max_force_ratio_error": 0.00015603601187252902
+      }
+    },
+    {
+      "mode_counts": {
+        "FIXED_LAUNCH": 24,
+        "HIGH": 199,
+        "BACKUP": 7
+      },
+      "high_fraction": 0.9660194174757282,
+      "budget": "governor",
+      "stop": "OFFICIAL_FINISH",
+      "initial_identity": true,
+      "actions": 230,
+      "reset_ticks": 51,
+      "official_finish": true,
+      "official_finish_episode_s": 18.399999999999675,
+      "confirmation_episode_s": 18.399999999999675,
+      "reference_arc_event": {
+        "lower": 18.379999999999676,
+        "upper": 18.399999999999675,
+        "time": 18.382203652834608
+      },
+      "unwrapped_progress": 996.6033071248014,
+      "reference_path_length": 995.4452893670465,
+      "visited_tiles": 283,
+      "tile_count": 283,
+      "min_margin_m": 0.9882576743056799,
+      "max_path_error_m": 1.390558827526948,
+      "max_tracking_overspeed_m_s": 2.5544297447653648,
+      "max_unused_startup_reference_difference_m_s": 2.191204343467215,
+      "force_groups": {
+        "launch": {
+          "peak": 2.255467414712997,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 1.0570167345816543,
+          "samples": 3296,
+          "clipped": 16
+        }
+      },
+      "source_force_oracle_max_N": 0.00024296935989642145,
+      "source_COM_impulse_max_m_s": 2.4097171487026317e-05,
+      "max_prediction_errors": {
+        "position_m": 4.729551245590441e-05,
+        "speed_m_s": 4.774008051811052e-05,
+        "angle_rad": 3.4991522862279356e-05,
+        "yaw_rad_s": 0.0002883087999210332,
+        "max_force_ratio_error": 0.00023438642409923105
+      }
+    }
+  ],
+  "both_actual_official_finishes": true,
+  "official_finish_gain_s": 2.059999999999956,
+  "practical_effect_gate": true,
+  "counts": {
+    "worlds": 2,
+    "closed": 2,
+    "resets": 2,
+    "actions": 486,
+    "raw_attempts": 2046,
+    "raw_completed": 2046
+  },
+  "all_model_integrator_ticks": 34981,
+  "all_model_wheel_force_evaluations": 147800,
+  "native_planner_cost": {
+    "force_evaluations": 39704,
+    "forecast_calls": 213,
+    "forecast_ticks": 9919
+  },
+  "research_remaining": 24155,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "native_CPU_s": 76.562439239,
+  "native_wall_s": 76.58455542199954,
+  "total_CPU_s": 143.771859391,
+  "total_wall_s": 143.79859247499917,
+  "scope": "525currentstatefinitebackupforcegovernor using524closure; baseline519100 vs153withbrakebackup100. SameDEV/path; bothactualsourcefinishesrequired. No old522/523retrovalidation or pixel/independent claim."
+}
