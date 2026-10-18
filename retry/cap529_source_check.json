@@ -1,0 +1,30 @@
+{
+  "registered_utc": "2026-10-18T09:37:55.905740+00:00",
+  "checked_rules": [
+    "README.md:5executionlimits,damage/finishrules",
+    "core/vendor/car_racing.py:step",
+    "core/vendor/car_dynamics.py:gas/brake/forces",
+    "env_wrapper.py"
+  ],
+  "top80_is_research_profile_constant": true,
+  "repository_rule_or_environment_top80_limit_found": false,
+  "physics_package": "pyBox2D2.3.5",
+  "max_translation_per_step_m": 2.0,
+  "world_timestep_s": 0.02,
+  "translation_clamp_body_speed_equivalent_m_s": 100.0,
+  "chosen_single_primary_cap_m_s": 90.0,
+  "choice": "0.9*2m/.02s=90;10%belowper-bodytranslationclamp100. Notglobalphysicalfeasibilitycertificate;modeldoesnotemulatethisclampsoexecutedmodelbodymaxmustremain<100.",
+  "upstream_source": "https://raw.githubusercontent.com/pybox2d/pybox2d/master/Box2D/Dynamics/b2Island.cpp",
+  "upstream_exact_binary_build_identity_verified": false,
+  "source_sha256": {
+    "README.md": "68f86f6a6f70c0bb3fdb0acd562891ff175e355985aa3677a154bb2e032737bf",
+    "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69",
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "env_wrapper.py": "8687215412da0a1f34534623d5050030d85c629a70cb922e9d2199c513a3941e",
+    "retry/braking526_control.py": "e4cf63962d6f2c5867788cbe51ddb58e8125977c885a08d68e17dab08fa139fb"
+  },
+  "new_model_ticks": 0,
+  "new_force_evaluations": 0,
+  "native_actions": 0,
+  "native_resets": 0
+}

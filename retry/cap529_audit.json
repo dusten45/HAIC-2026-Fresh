@@ -1,0 +1,156 @@
+{
+  "source_input_pins_verified": true,
+  "comparison528_profile_exact": true,
+  "response_algorithm_object_identical": true,
+  "exact_cached_528_minus_529_model_event_s": 0.0,
+  "original_result_rounded18_literal_gain_s": 2.948752353404416e-13,
+  "gain_field_roundoff_explanation": "Modeldriverusedrounded18.00ratherthanexactcached17.999999999999705;2.95e-13isroundoffnotgain. Exactpairedsource-styleeventclocksareequal.",
+  "model_comparisons": [
+    {
+      "name": "528",
+      "model_event_finish_s": 17.999999999999705,
+      "model_confirmation_elapsed_s": 18.0,
+      "event_interval_excludes_later_confirmation": true,
+      "labels": {
+        "launch": {
+          "time_s": 1.92,
+          "wheel_samples": 383.99999999999966,
+          "fullgas_s": 0.0,
+          "mean_speed_m_s": 32.37466746923224,
+          "mean_force_ratio": 0.5896192964517543
+        },
+        "source_forward": {
+          "time_s": 8.479999999999706,
+          "wheel_samples": 1695.9999999999475,
+          "fullgas_s": 0.0,
+          "mean_speed_m_s": 55.24150264076709,
+          "mean_force_ratio": 0.6101138951082787
+        },
+        "backward80": {
+          "time_s": 3.579999999999996,
+          "wheel_samples": 715.9999999999973,
+          "fullgas_s": 0.0,
+          "mean_speed_m_s": 59.32547456763591,
+          "mean_force_ratio": 0.41051360774468326
+        },
+        "top_cap": {
+          "time_s": 1.580000000000001,
+          "wheel_samples": 315.99999999999994,
+          "fullgas_s": 0.0,
+          "mean_speed_m_s": 78.87525019019708,
+          "mean_force_ratio": 0.12287426179425517
+        },
+        "curvature_transition": {
+          "time_s": 2.4400000000000035,
+          "wheel_samples": 488.0,
+          "fullgas_s": 0.0,
+          "mean_speed_m_s": 47.45396052091729,
+          "mean_force_ratio": 0.5238105313417322
+        }
+      },
+      "twelve_disjoint_arc_bin_times_s": [
+        2.2392520803636975,
+        1.7052029150984487,
+        1.1566069881699128,
+        1.0854423091513024,
+        1.5165005097864148,
+        1.404834739294504,
+        1.3704724326292885,
+        1.443049420206404,
+        1.5383984291098867,
+        1.26576196572849,
+        1.62631173343262,
+        1.648166477028736
+      ],
+      "actual_model_COM_chord_distance_m": 984.681450869808,
+      "time_at_least80_m_s": 0.0,
+      "time_at_least85_m_s": 0.0,
+      "max_pre_force_COM_speed_m_s": 79.85447162017267
+    },
+    {
+      "name": "529",
+      "model_event_finish_s": 17.999999999999705,
+      "model_confirmation_elapsed_s": 18.02,
+      "event_interval_excludes_later_confirmation": true,
+      "labels": {
+        "launch": {
+          "time_s": 1.92,
+          "wheel_samples": 383.99999999999966,
+          "fullgas_s": 0.0,
+          "mean_speed_m_s": 32.37466746923224,
+          "mean_force_ratio": 0.5896192964517543
+        },
+        "source_forward": {
+          "time_s": 9.079999999999703,
+          "wheel_samples": 1815.9999999999493,
+          "fullgas_s": 0.3600000000000003,
+          "mean_speed_m_s": 56.51117686111014,
+          "mean_force_ratio": 0.6128802045056558
+        },
+        "backward80": {
+          "time_s": 3.919999999999996,
+          "wheel_samples": 783.9999999999966,
+          "fullgas_s": 0.03999999999999915,
+          "mean_speed_m_s": 59.64862777892685,
+          "mean_force_ratio": 0.4023826298040016
+        },
+        "top_cap": {
+          "time_s": 0.7400000000000002,
+          "wheel_samples": 147.99999999999997,
+          "fullgas_s": 0.040000000000000036,
+          "mean_speed_m_s": 88.71424899173545,
+          "mean_force_ratio": 0.10704024907102945
+        },
+        "curvature_transition": {
+          "time_s": 2.3400000000000056,
+          "wheel_samples": 468.00000000000057,
+          "fullgas_s": 0.120000000000001,
+          "mean_speed_m_s": 46.22703906930399,
+          "mean_force_ratio": 0.5174414017726253
+        }
+      },
+      "twelve_disjoint_arc_bin_times_s": [
+        2.2392520803636975,
+        1.7052029150984487,
+        1.1223824138927354,
+        1.012891892725639,
+        1.5929273616501147,
+        1.4481655185179176,
+        1.3974958868222387,
+        1.3909874554052082,
+        1.5488089951660065,
+        1.2760384503724629,
+        1.635143098572374,
+        1.630703931412862
+      ],
+      "actual_model_COM_chord_distance_m": 984.2038026642323,
+      "time_at_least80_m_s": 1.2000000000000002,
+      "time_at_least85_m_s": 0.8600000000000003,
+      "max_pre_force_COM_speed_m_s": 89.52389514275852
+    }
+  ],
+  "twelve_bin_529_minus_528_s": [
+    0.0,
+    0.0,
+    -0.0342245742771774,
+    -0.0725504164256634,
+    0.07642685186369991,
+    0.04333077922341366,
+    0.027023454192950158,
+    -0.05206196480119574,
+    0.010410566056119785,
+    0.010276484643972905,
+    0.008831365139754022,
+    -0.017462545615874125
+  ],
+  "interpretation": "Localcapentrygain+2.10m/peakspeed+9.67doesnotbecomefullmodelgain. Sourceforwardstilloccupiesmuchtime,andhighercapspendstimeacceleratingthenbraking; binshiftsareactualmodeltimedistributionnotisolatedcausallosses. Thisfixedroute/algorithm80->90caseonly;highercapsorothercontrollersnotrejected. Nextresearchpathlength/curvature,nocapsweep.",
+  "new_model_integrator_ticks": 0,
+  "new_force_evaluations": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "research_remaining": 24155,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "CPU_s": 0.284957901,
+  "wall_s": 0.14448687600088306
+}
