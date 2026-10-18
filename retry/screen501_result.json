@@ -1,0 +1,156 @@
+{
+  "stage": 501,
+  "status": "PACKAGE_REJECTED",
+  "factual": {
+    "holds": 149,
+    "raw_ticks": 594,
+    "episode_upper_s": 13.64,
+    "all_registered_fields_passed": true,
+    "max_recomputed_nominal_difference": 2.0995736122131348e-05,
+    "memory_exact_rows": 1,
+    "memory_scope": "Existing435 full factual body/wheel/hull/phase calibration plus439 continuous geometry/discrete ledger. Future continuous nominal-memory drift is recorded, not certified as fresh copied-current exact. Missing old direct postdamage/phase not filled.",
+    "max_post_position_error_m": 0.0014947578613820523,
+    "max_abs_progress_difference_m": 0.001479177308283397
+  },
+  "candidate": {
+    "holds": 35,
+    "raw_ticks": 140,
+    "all_integrated_holds_safe": true,
+    "official_finish": false,
+    "stop": "EXACT_EMPTY_SET",
+    "cold_second_executed": false,
+    "held_first_executed": false,
+    "episode_finish_upper_s": null,
+    "witness": {
+      "stage": 501,
+      "scope": "STORED_STATE_EXACT_ALGEBRA_ONLY_NO_NEW_PHYSICS",
+      "unexecuted_candidate_hold": 36,
+      "completed_candidate_holds": 35,
+      "root_elapsed_s": 2.8000000000000003,
+      "episode_elapsed_s": 4.56,
+      "physical_time_s": 5.579999999999969,
+      "current_speed_m_s": 95.48628117947858,
+      "sigma_m_s": 95.48544885621865,
+      "admissible_low": "-6415429317920517/70368744177664",
+      "admissible_high": "792281625142643375935439503360000/28442201995461773943568280620227",
+      "failure_count": 40,
+      "law_sha256": "1b5b027bd6a0e1631fc11165fc131ab67394e3908f926adb33605e3f7bdab964",
+      "new_physics": 0,
+      "first_violation": {
+        "kind": "CROSSED",
+        "boundary_s": 0.02,
+        "distance_ahead_m": 0.8394120358545933,
+        "node_speed_m_s": 93.81040543534668,
+        "residual_m2_s2": 164.17867062111952
+      }
+    }
+  },
+  "execution": {
+    "stage": 501,
+    "status": "PACKAGE_REJECTED",
+    "error": null,
+    "static_passed": true,
+    "physics_started": true,
+    "worlds": 2,
+    "confirmed_worlds": 2,
+    "closed_worlds": 2,
+    "live_worlds": 0,
+    "actual_ticks": 734,
+    "charged_ticks": 736,
+    "holds": 184,
+    "created_Box2D_worlds": 2,
+    "factual_passed": true,
+    "actual_action_reset_seed_allocator_HOLDOUT_SEALED": 0,
+    "CPU_s": 148.697312069,
+    "wall_s": 156.9219959579641,
+    "preparation_charge_CPU_s": 12.0,
+    "preparation_charge_wall_s": 20.0,
+    "research_remaining": 26027,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "no_retry_after_physics": true
+  },
+  "static": {
+    "passed": true,
+    "capture_lifecycle_test_count": 23,
+    "io_pure_tests": 10,
+    "source_native_receipts": 298,
+    "original397_417": true,
+    "own_saved_fixture": true,
+    "writer_aliases": 89
+  },
+  "retention": {
+    "raw_files": 1147,
+    "raw_bytes": 86200874,
+    "categories": {
+      "state": 186,
+      "tick": 734,
+      "bundle": 184,
+      "other": 43
+    },
+    "workspace_files_before_final_publication": 18,
+    "workspace_bytes_before_final_publication": 478402,
+    "combined_files_before_final_publication": 1165,
+    "combined_bytes_before_final_publication": 86679276,
+    "private_manifest_sha256": "2a941e4cb46ec1f6a82f1f73a0f310e0ec69fe56ee3d1c4e987df002f7c11764",
+    "closing_bytes_reserved": 1048576,
+    "closing_files_reserved": 8,
+    "physical_caps_passed": true,
+    "raw_copy_delete": 0,
+    "note": "Store runtime summary includes conservative external/console/marker reservations; disk tally separately includes preparation logs and final control files. No quota exception or raw deletion occurred."
+  },
+  "report_format_recovery": {
+    "saved_only": true,
+    "original_error_preserved": true,
+    "completed_manifest_reused": true,
+    "new_physics": 0,
+    "conservative_failed_closeout_CPU_s": 30,
+    "conservative_failed_closeout_wall_s": 30
+  },
+  "model_screen_pass": false,
+  "actual_record_updated": false,
+  "target11_99_claimed": false,
+  "cold_repeat_or_held_claimed": false,
+  "no_retry": true,
+  "no_followup": true,
+  "research_remaining": 26027,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "summary_CPU_s": 0.43038507800000003,
+  "summary_wall_s": 0.43177245697006583,
+  "charged_total_CPU_s_with_publication_allowance": 189.127697147,
+  "charged_total_wall_s_with_publication_allowance": 207.35376841493417,
+  "instrumented_model_step_cost": {
+    "CPU_by_tag": {
+      "501_factual_world_setup": 0.008004955000000091,
+      "501_FACTUAL472_CALIBRATION": 2.431148954999987,
+      "501_candidate_world_setup": 0.007999717000004125,
+      "501_FIXED_ENVELOPE": 0.6520853210000155
+    },
+    "wall_by_tag": {
+      "501_factual_world_setup": 0.0070883589796721935,
+      "501_FACTUAL472_CALIBRATION": 2.440201850491576,
+      "501_candidate_world_setup": 0.008127348031848669,
+      "501_FIXED_ENVELOPE": 0.654044353403151
+    },
+    "ticks_by_tag": {
+      "501_FACTUAL472_CALIBRATION": 594,
+      "501_FIXED_ENVELOPE": 140
+    },
+    "worlds_by_tag": {
+      "501_factual": 1,
+      "501_candidate": 1
+    }
+  },
+  "surrogate_saved_only": {
+    "scope": "Saved35 model transitions; descriptive mismatch only, no causality isolation/newphysics",
+    "holds": 35,
+    "max_abs_speed_surrogate_mismatch_m_s": 2.1305294430196398,
+    "last_hold_speed_surrogate_mismatch_m_s": 0.8471591121317346,
+    "last_hold_scalar_end_speed_m_s": 94.63912206734685,
+    "last_hold_model_end_speed_m_s": 95.48628117947858,
+    "max_wrapper_post_path_error_m": 1.390344377404934,
+    "new_physics": 0
+  },
+  "cost_scope": "Worker includes preparation charges12CPU/20wall. Model.step tag timings include original tracing/direct capture callbacks, not an uninstrumented benchmark. Failed saved-only report formatter is conservatively charged30CPU/wall; summary measured separately; final10CPU/20wall publication allowance also covers saved mismatch/cost extraction and push."
+}
