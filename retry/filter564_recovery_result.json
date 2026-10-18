@@ -1,0 +1,267 @@
+{
+  "final_finite_incumbent": "seed",
+  "finite_plane_times_s": [
+    1.5957155891690484,
+    2.5547565790669355,
+    3.279204947965506
+  ],
+  "finite_cumulative_gain_ms": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "whole_attempt_safe_finish": null,
+  "whole_attempt_finish_s": null,
+  "whole_attempt_failure": null,
+  "whole_incumbent": "seed",
+  "whole_incumbent_finish_s": 13.219999999999807,
+  "whole_gain_vs551_ms": 0.0,
+  "existing_whole_proof_reused": true,
+  "no_redundant_seed_replay": true,
+  "independent_verification": [],
+  "completed": true,
+  "error": null,
+  "stop_reason": "NO_ACCEPTED_GAIN_WITHIN3_TRIALS",
+  "accepted_count": 0,
+  "steps": [],
+  "events": [
+    {
+      "kind": "trust_time",
+      "local_program_safe": false,
+      "feedback_executed": false,
+      "feedback_safe": false,
+      "feedback_failure": null,
+      "accepted": false,
+      "predicted_plane_gain_ms": [
+        5.167703924252587,
+        4.7508487318239645,
+        12.342937813059507
+      ],
+      "actual_plane_gain_ms": null,
+      "terminal_gain_ms": null,
+      "agreement": false,
+      "terminal_prediction_error_ms": null,
+      "actual_terminal_times_s": null,
+      "recovery_component_s": null,
+      "end_feedback_state": null,
+      "local_stats": {
+        "min_margin": 0.7333828332921217,
+        "max_path": 2.95901995400647,
+        "max_reference_overspeed": 4.706360383225757,
+        "max_force": 1.0605469090636341,
+        "max_clip": 0.11666666666666667,
+        "max_body": 95.28006661696567,
+        "tracking_history": [
+          36,
+          688
+        ]
+      },
+      "combined_stats": null,
+      "label": "trial-00-00",
+      "major": 1,
+      "trial": 1,
+      "evaluated": true,
+      "LP": {
+        "restoration": false,
+        "rank_plus_offender_samples": 692,
+        "active_force_samples": [
+          49
+        ],
+        "success": true,
+        "status": 0,
+        "predicted_plane_times_s": [
+          1.5905478852447958,
+          2.5500057303351116,
+          3.2668620101524466
+        ],
+        "step_norm": 1.0000020265579224
+      },
+      "rho": 1.0,
+      "frozen_violation": 0.36357281281163,
+      "center_violation": 0.0,
+      "cosine_vs_rejected_direction": null
+    },
+    {
+      "kind": "restoration",
+      "local_program_safe": false,
+      "feedback_executed": false,
+      "feedback_safe": false,
+      "feedback_failure": null,
+      "accepted": false,
+      "predicted_plane_gain_ms": [
+        4.931300259520821,
+        4.255705893680517,
+        11.957687807989448
+      ],
+      "actual_plane_gain_ms": null,
+      "terminal_gain_ms": null,
+      "agreement": false,
+      "terminal_prediction_error_ms": null,
+      "actual_terminal_times_s": null,
+      "recovery_component_s": null,
+      "end_feedback_state": null,
+      "local_stats": {
+        "min_margin": 0.7513940210990618,
+        "max_path": 2.932702434371413,
+        "max_reference_overspeed": 4.708411243388269,
+        "max_force": 1.0589996016602714,
+        "max_clip": 0.11,
+        "max_body": 95.28213006366353,
+        "tracking_history": [
+          34,
+          688
+        ]
+      },
+      "combined_stats": null,
+      "label": "trial-00-01",
+      "major": 1,
+      "trial": 2,
+      "evaluated": true,
+      "LP": {
+        "restoration": true,
+        "rank_plus_offender_samples": 692,
+        "active_force_samples": [
+          5,
+          49,
+          70,
+          91
+        ],
+        "elastic_success": true,
+        "elastic_status": 0,
+        "predicted_violation_eta": 0.0,
+        "success": true,
+        "status": 0,
+        "predicted_plane_times_s": [
+          1.5907842889095276,
+          2.550500873173255,
+          3.2672472601575167
+        ],
+        "step_norm": 0.37368138631184894
+      },
+      "rho": 1.0,
+      "frozen_violation": 0.059631483895054016,
+      "center_violation": 0.36357281281163,
+      "cosine_vs_rejected_direction": 0.9848646595865678
+    },
+    {
+      "kind": "restoration",
+      "local_program_safe": false,
+      "feedback_executed": false,
+      "feedback_safe": false,
+      "feedback_failure": null,
+      "accepted": false,
+      "predicted_plane_gain_ms": [
+        4.882113047568026,
+        4.207521159377059,
+        11.913943584314524
+      ],
+      "actual_plane_gain_ms": null,
+      "terminal_gain_ms": null,
+      "agreement": false,
+      "terminal_prediction_error_ms": null,
+      "actual_terminal_times_s": null,
+      "recovery_component_s": null,
+      "end_feedback_state": null,
+      "local_stats": {
+        "min_margin": 0.7482075204401479,
+        "max_path": 2.936815963646226,
+        "max_reference_overspeed": 4.7132915703873834,
+        "max_force": 1.0590052324727728,
+        "max_clip": 0.11,
+        "max_body": 95.28704034016144,
+        "tracking_history": [
+          34,
+          688
+        ]
+      },
+      "combined_stats": null,
+      "label": "trial-00-02",
+      "major": 1,
+      "trial": 3,
+      "evaluated": true,
+      "LP": {
+        "restoration": true,
+        "rank_plus_offender_samples": 692,
+        "active_force_samples": [
+          5,
+          49,
+          70,
+          91
+        ],
+        "elastic_success": true,
+        "elastic_status": 0,
+        "predicted_violation_eta": 0.0,
+        "success": true,
+        "status": 0,
+        "predicted_plane_times_s": [
+          1.5908334761214804,
+          2.5505490579075585,
+          3.2672910043811916
+        ],
+        "step_norm": 0.17837882041931152
+      },
+      "rho": 1.0,
+      "frozen_violation": 0.0005232472772842556,
+      "center_violation": 0.059631483895054016,
+      "cosine_vs_rejected_direction": 0.9967502117374174
+    }
+  ],
+  "linearizations": 3,
+  "restoration_linearizations": 2,
+  "FD_columns": 120,
+  "candidates": 3,
+  "finite_feedback_calls": 0,
+  "seed_plane_times_s": [
+    1.5957155891690484,
+    2.5547565790669355,
+    3.279204947965506
+  ],
+  "seed_whole_finish_s": 13.219999999999807,
+  "cost": {
+    "model_ticks": 22456,
+    "force_evaluations": 89824,
+    "internal_wheel_force_evaluations": 89824,
+    "geometry_checks": 22456,
+    "body_checks": 22456,
+    "CPU_s": 275.12542074,
+    "wall_s": 275.4499093129998
+  },
+  "phase_costs": {
+    "preparation": {
+      "force_evaluations": 544,
+      "forecast_calls": 0,
+      "forecast_ticks": 0,
+      "geometry_checks": 136,
+      "body_checks": 136,
+      "max_all_model_body": 83.54803078778195,
+      "CPU_s": 1.364107957,
+      "wall_s": 1.3866829850012437,
+      "model_ticks": 136,
+      "internal_wheel_force_evaluations": 544
+    },
+    "local": {
+      "force_evaluations": 89280,
+      "forecast_calls": 0,
+      "forecast_ticks": 0,
+      "geometry_checks": 22320,
+      "body_checks": 22320,
+      "max_all_model_body": 95.28726754223936,
+      "CPU_s": 273.4470029120001,
+      "wall_s": 273.6085060820187,
+      "model_ticks": 22320,
+      "internal_wheel_force_evaluations": 89280
+    }
+  },
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "new_seeds": 0,
+  "HOLDOUT_queries": 0,
+  "SEALED_queries": 0,
+  "reserve_used": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "actual_baseline_s": 13.66,
+  "prior561_aperture_failure_preserved": true,
+  "no_native_gain_observation": true
+}

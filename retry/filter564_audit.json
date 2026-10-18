@@ -1,0 +1,150 @@
+{
+  "passed": true,
+  "checks": {
+    "source_and_input_hashes": true,
+    "contract_before_exclusive_starts": true,
+    "initial_failure_and_cost_preserved_no_prefix_rerun": true,
+    "recovery_keeps_numerical_algorithm": true,
+    "completed_without_technical_error": true,
+    "prefix_and_seed_fullstate_force_exact": true,
+    "initial_history_and_handoff_exact": true,
+    "bounded_directions_trials_FD_restorations": true,
+    "restoration_relinearizes_measured_rank_force_active_sets": true,
+    "exact_program_gate_before_fresh_feedback": true,
+    "feedback_from_changed_program_and_same_history": true,
+    "only_exact_safe_actual_terminal_gain_adopted": true,
+    "no_unsafe_numerical_center_adopted": true,
+    "existing_whole_success_preserved": true,
+    "final_new_candidate_whole_then_exact_replay": true,
+    "whole_time_measured_not_finite_gain": true,
+    "cost_FIRST_and_all_body_ticks": true,
+    "all_phase_and_total_caps": true,
+    "cost_reconciled": true,
+    "no_native_protected_reserve": true,
+    "main_and_Participants_preserved": true,
+    "rejected_programs_have_exact_measured_violation": true
+  },
+  "rejection_evidence": [
+    {
+      "label": "trial-00-00",
+      "first_failure": {
+        "index": 35,
+        "raw": 2,
+        "reasons": [
+          "FORCE"
+        ],
+        "tracking_history": [
+          4,
+          168
+        ],
+        "force_ratio": 1.0590204823720684
+      },
+      "max_clip": 0.11666666666666667,
+      "max_clip_history": [
+        35,
+        300
+      ],
+      "max_force": 1.0605469090636341,
+      "min_prefix_order_slack": -0.0036357281281163,
+      "new_clips_vs_seed": 6,
+      "freed_clips_vs_seed": 0
+    },
+    {
+      "label": "trial-00-01",
+      "first_failure": {
+        "index": 42,
+        "raw": 1,
+        "reasons": [
+          "CLIP_HISTORY"
+        ],
+        "tracking_history": [
+          28,
+          276
+        ],
+        "force_ratio": 1.0071640727765292
+      },
+      "max_clip": 0.11,
+      "max_clip_history": [
+        33,
+        300
+      ],
+      "max_force": 1.0589996016602714,
+      "min_prefix_order_slack": -9.745503299485314e-05,
+      "new_clips_vs_seed": 4,
+      "freed_clips_vs_seed": 0
+    },
+    {
+      "label": "trial-00-02",
+      "first_failure": {
+        "index": 39,
+        "raw": 2,
+        "reasons": [
+          "FORCE"
+        ],
+        "tracking_history": [
+          16,
+          232
+        ],
+        "force_ratio": 1.0590015714867507
+      },
+      "max_clip": 0.11,
+      "max_clip_history": [
+        33,
+        300
+      ],
+      "max_force": 1.0590052324727728,
+      "min_prefix_order_slack": -3.8202726786451535e-06,
+      "new_clips_vs_seed": 4,
+      "freed_clips_vs_seed": 0
+    }
+  ],
+  "trial_summary": [
+    {
+      "label": "trial-00-00",
+      "kind": "trust_time",
+      "local_program_safe": false,
+      "feedback_safe": false,
+      "accepted": false,
+      "terminal_gain_ms": null,
+      "frozen_violation": 0.36357281281163,
+      "cosine_vs_rejected_direction": null
+    },
+    {
+      "label": "trial-00-01",
+      "kind": "restoration",
+      "local_program_safe": false,
+      "feedback_safe": false,
+      "accepted": false,
+      "terminal_gain_ms": null,
+      "frozen_violation": 0.059631483895054016,
+      "cosine_vs_rejected_direction": 0.9848646595865678
+    },
+    {
+      "label": "trial-00-02",
+      "kind": "restoration",
+      "local_program_safe": false,
+      "feedback_safe": false,
+      "accepted": false,
+      "terminal_gain_ms": null,
+      "frozen_violation": 0.0005232472772842556,
+      "cosine_vs_rejected_direction": 0.9967502117374174
+    }
+  ],
+  "not_exercised": [
+    "fresh_actual_feedback",
+    "new_whole_suffix"
+  ],
+  "scope_counts": {
+    "linearizations": 3,
+    "FD": 120,
+    "restorations": 2,
+    "candidates": 3,
+    "finite_feedback": 0,
+    "accepted": 0
+  },
+  "model_ticks": 0,
+  "force_calls": 0,
+  "geometry_calls": 0,
+  "CPU_s": 0.177603023,
+  "wall_s": 0.1818277010024758
+}
