@@ -1,0 +1,36 @@
+{
+  "arms": [
+    {
+      "variant": "baseline",
+      "metrics": {
+        "gas_s": 12.319999999999826,
+        "mapped_command_at_REAR_s": 0.0,
+        "fullgas_s": 0.0,
+        "positive_feedforward_gas_s": 11.67999999999984,
+        "positive_ff_mapped_saturation_s": 0.0,
+        "positive_ff_mean_reference_deficit_m_s": 1.4411819897531122,
+        "positive_ff_mean_realized_speed_acceleration_m_s2": 23.253862327214485,
+        "positive_ff_mean_gas": 0.46573845517809426
+      }
+    },
+    {
+      "variant": "source_drive",
+      "metrics": {
+        "gas_s": 11.519999999999843,
+        "mapped_command_at_REAR_s": 8.319999999999911,
+        "fullgas_s": 0.0,
+        "positive_feedforward_gas_s": 10.159999999999872,
+        "positive_ff_mapped_saturation_s": 8.319999999999911,
+        "positive_ff_mean_reference_deficit_m_s": 3.2491785288018926,
+        "positive_ff_mean_realized_speed_acceleration_m_s2": 28.313876380069278,
+        "positive_ff_mean_gas": 0.5796221354903041
+      }
+    }
+  ],
+  "CPU_s": 0.49424544499999995,
+  "wall_s": 0.49440380500163883,
+  "model_integrator_ticks": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "interpretation": "Conventionalaccel-command ceiling saturation isnot tire clipping/fullgas. Source-driveprofile usesupto35 butsamepedalmapclampsat35,leavinglessfeedbackheadroom. Savedcomparison ismechanistic evidence,notseparatecausalablation."
+}

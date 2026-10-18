@@ -1,0 +1,87 @@
+{
+  "status": "MODEL_CANDIDATE_NOT_PROMOTED",
+  "propose_later_native": false,
+  "arms": [
+    {
+      "start": "cold",
+      "budget": 100.0,
+      "stop": "MODEL_SOURCE_STYLE_FINISH",
+      "actions": 259,
+      "raw_ticks": 1036,
+      "model_finish_episode_s": 20.699999999999648,
+      "model_finish_confirmation_episode_s": 20.719999999999647,
+      "reference_arc_cross_episode_s": 20.699999999999648,
+      "unwrapped_progress_end": 996.8216271550928,
+      "reference_laps": 1,
+      "visited_tiles": 283,
+      "tile_count": 283,
+      "min_margin_m": 0.9566850215676859,
+      "max_path_error_m": 1.2044079389279825,
+      "max_reference_overspeed_m_s": 4.50582833722558,
+      "force_groups": {
+        "launch": {
+          "peak": 2.2554338426103855,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 0.9426183325717317,
+          "samples": 3760,
+          "clipped": 0
+        }
+      },
+      "max_unused_startup_reference_difference_m_s": 5.254221585610761,
+      "pass_gate": true,
+      "variant": "baseline",
+      "reused_prior_model": true,
+      "reused_prior_model_integrator_ticks": 1036,
+      "new_model_integrator_ticks": 0
+    },
+    {
+      "start": "cold",
+      "variant": "source_drive",
+      "stop": "MODEL_SOURCE_STYLE_FINISH",
+      "actions": 255,
+      "raw_ticks": 1020,
+      "reused_prior_model": false,
+      "min_margin_m": 0.979788682867275,
+      "max_path_error_m": 1.2034404592195909,
+      "max_reference_overspeed_m_s": 4.317375426708068,
+      "max_unused_launch_reference_difference": 2.191204520900982,
+      "force_groups": {
+        "launch": {
+          "peak": 2.2554338426103855,
+          "samples": 384,
+          "clipped": 46
+        },
+        "running": {
+          "peak": 0.9341124597874415,
+          "samples": 3696,
+          "clipped": 0
+        }
+      },
+      "visited_tiles": 283,
+      "model_finish_episode_s": 20.379999999999654,
+      "pass_gate": true
+    }
+  ],
+  "cold_finish_gain_s": 0.3199999999999932,
+  "same_actual_exit_finish_gain_s": null,
+  "descriptive_scalar_reference_clocks_s": {
+    "baseline": 20.96114047351947,
+    "source_drive": 19.84840218840801
+  },
+  "clocks_are_not_feasible_or_optimal_bounds": true,
+  "new_model_integrator_ticks": 1020,
+  "reused_prior_model_ticks_not_new": 1036,
+  "new_model_wheel_force_evaluations": 4080,
+  "CPU_s": 13.955494352,
+  "wall_s": 13.958296992001124,
+  "native_actions": 0,
+  "native_resets": 0,
+  "native_worlds": 0,
+  "research_remaining": 24938,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "scope": "One fixed source-drive forward-rule repair, not lateral-budget sweep. Predicted source-stylefinish isnot actualvalidation; no new native permitted."
+}

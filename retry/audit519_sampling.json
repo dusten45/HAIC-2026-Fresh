@@ -1,0 +1,118 @@
+{
+  "arms": [
+    {
+      "budget": 80.0,
+      "by_limit": {
+        "fixed_launch": {
+          "low40_pre_s": 1.2000000000000006,
+          "low40_post_s": 1.1800000000000006
+        },
+        "forward25": {
+          "low40_pre_s": 3.4200000000000026,
+          "low40_post_s": 3.2600000000000025
+        },
+        "curvature_or_transition": {
+          "low40_pre_s": 2.660000000000002,
+          "low40_post_s": 2.660000000000002
+        },
+        "backward45": {
+          "low40_pre_s": 1.580000000000001,
+          "low40_post_s": 1.740000000000001
+        },
+        "top80": {
+          "low40_pre_s": 0.0,
+          "low40_post_s": 0.0
+        }
+      },
+      "pre_total_s": 8.860000000000007,
+      "post_total_s": 8.840000000000007,
+      "by_zone": {
+        "fixed_launch": {
+          "low40_pre_s": 1.2000000000000006,
+          "low40_post_s": 1.1800000000000006
+        },
+        "straight": {
+          "low40_pre_s": 0.0,
+          "low40_post_s": 0.0
+        },
+        "entry20": {
+          "low40_pre_s": 1.1600000000000006,
+          "low40_post_s": 1.3000000000000007
+        },
+        "corner": {
+          "low40_pre_s": 5.359999999999974,
+          "low40_post_s": 5.339999999999974
+        },
+        "exit20": {
+          "low40_pre_s": 1.1400000000000006,
+          "low40_post_s": 1.0200000000000005
+        },
+        "transition": {
+          "low40_pre_s": 0.0,
+          "low40_post_s": 0.0
+        }
+      }
+    },
+    {
+      "budget": 100.0,
+      "by_limit": {
+        "fixed_launch": {
+          "low40_pre_s": 1.2000000000000006,
+          "low40_post_s": 1.1800000000000006
+        },
+        "forward25": {
+          "low40_pre_s": 2.3800000000000017,
+          "low40_post_s": 2.2400000000000015
+        },
+        "curvature_or_transition": {
+          "low40_pre_s": 2.0000000000000013,
+          "low40_post_s": 1.9800000000000013
+        },
+        "backward45": {
+          "low40_pre_s": 0.7800000000000004,
+          "low40_post_s": 0.9400000000000005
+        },
+        "top80": {
+          "low40_pre_s": 0.0,
+          "low40_post_s": 0.0
+        }
+      },
+      "pre_total_s": 6.360000000000004,
+      "post_total_s": 6.340000000000004,
+      "by_zone": {
+        "fixed_launch": {
+          "low40_pre_s": 1.2000000000000006,
+          "low40_post_s": 1.1800000000000006
+        },
+        "straight": {
+          "low40_pre_s": 0.0,
+          "low40_post_s": 0.0
+        },
+        "entry20": {
+          "low40_pre_s": 0.5600000000000002,
+          "low40_post_s": 0.6800000000000003
+        },
+        "corner": {
+          "low40_pre_s": 4.040000000000002,
+          "low40_post_s": 4.020000000000002
+        },
+        "exit20": {
+          "low40_pre_s": 0.5600000000000002,
+          "low40_post_s": 0.46000000000000013
+        },
+        "transition": {
+          "low40_pre_s": 0.0,
+          "low40_post_s": 0.0
+        }
+      }
+    }
+  ],
+  "CPU_s": 0.219738201,
+  "wall_s": 0.21974240799681866,
+  "model_integrator_ticks": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "scope": "Pre-force versus post20ms speed threshold accounts for prior6.34post vs6.36pre difference; confirmation excluded.",
+  "zone_addon_CPU_s": 0.16656433,
+  "zone_addon_wall_s": 0.1665737250004895
+}

@@ -1,0 +1,56 @@
+{
+  "registered_utc": "2026-10-18T07:28:51.832936+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "one_hypothesis": "Actual100trace forward25 occupies10.22s(meanforce0.48);replaceonlyforward constraint25 bymin(REAR35.0188778925416,80000/(effectiveM29.249793766661764*(node_v+2.7))). Samephysical-mapping convention asoldpubliccode,notexacttyrefeasibility. No lateralbudget sweep.",
+  "invariants": "Samefull518closedpath/obstacleoffset/curvaturebudget100/top80/backward45/steering/gain2/sourcepedals/fixed24gas0.32. FirstlaplaunchforwardenvelopeusesSAMEnewdrivefunction instead25 consistently; actualfixedprefixcommandsunchanged. Nodepower approximation doesnotinclude combinedgrip/gasramp andmustbe model-falsified.",
+  "model_comparisons": "Reuseimmutable full518cold100baseline model1036ticks/policy/pathidentitySHA, no reintegration. One newcoldcandidate; iffullsafeandgain>=0.50s, thenbaseline/newcandidate fromSAMEactual518beforeaction47state(startlongestforward25stretch1.70s). Sameactualvisitedledger verified sourceprogress. No futureactualinputs. Baselinefullmodelstorage reusednotnewcompute.",
+  "safety": "Same518: sampledallhull/wheel road+obstaclemargin>=0.50m,patherror<=3m,running(action25+)referenceoverspeed<=5m/s,projectionincrements[-0.5,max5or2COMtravel],sourceTimeLimit1224includingwarmup50. Registeredlaunchforcepeak<=2.5/first24fraction<=15%; runningforcepeak<=1.25/fraction<=10%. Modelsource-styleFinishLineTracker only,notactualfinish. Modelhull/solver/uncertainty limits retained.",
+  "effect": "Cold AND sameactualcarry modelfinishgain>=0.50s plusall4safety/source-stylefinish outcomes topropose lateractualverification. Ifnot, no promotion; do notchangeparams/thresholds/rescue. Evenifpass native0thisstage. Scalarclockdescriptiveonly notfeasible/optimalbound.",
+  "caps": {
+    "new_model_integrator_ticks": 200000,
+    "new_model_wheel_force_evaluations": 20000,
+    "model_CPU_s": 180,
+    "model_wall_s": 240,
+    "overall_CPU_s": 300,
+    "overall_wall_s": 420,
+    "private_bytes": 100663296,
+    "private_files": 512,
+    "native_worlds": 0,
+    "native_actions": 0,
+    "native_resets": 0
+  },
+  "TimeLimit_max_episode_steps": 1224,
+  "budget": {
+    "research_start_and_end": 24938,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "retention": "CurrentDEVonly,oldpublicsourcecomparisonread-onlyneverexecuted,no lostrawrestore/protectedquery/newseed/paidresources. Code+aggregatespublic; states/commands/rawprivate. No scientificrerunafterMODEL_STARTED.",
+  "private_inputs_sha256": {
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response519-private/model-ledger-private.json": "28ff0ff7ffec9784e4817b4b55500c40ecd3730e9d09977294ad1dfd9b70763f",
+    "/workspace/haic-response519-private/model-input-manifest-private.json": "f7830c86bc974f010f465ddfcd5b31fd403aee212a0cc4101acc78320c48e8e0",
+    "/workspace/haic-response518-private/cold-100-continued-model-private.json": "4d00dff2ed95fc3241e92d5669b2fe9a0407348c6d31f4568b00b9846e137e3d"
+  },
+  "source_sha256": {
+    "retry/drive519_control.py": "2f9da23cda79683f03735f6fc5f1875e90eb1f5b6762c31494175a2594d5a7da",
+    "retry/drive519_model.py": "22b988d69a5cfbab542eafcfe07d183d7327884363d1c9081bded35e44592a76",
+    "retry/test_drive519.py": "ba666036a46abb188e9437f4b7fa5fdb78987f19eafca8c04577f889f6a24f94",
+    "retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/envelope500.py": "1b5b027bd6a0e1631fc11165fc131ab67394e3908f926adb33605e3f7bdab964",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake506_geometry.py": "4f69de71c0e1ad0d7707c9c9681f4e504367ccbce5c33ae6c0f369e7c6ed4392",
+    "retry/brake508_corridor.py": "10c2a4e021cce37b81a08ac0eb00e4040b0bb4dabdf5eac6989e18472b061407",
+    "retry/brake510_common.py": "28b84e6dbd7aab3ce123c153abdb9acfa1867172f35257ea6b8fea92b5cd1eb0",
+    "core/finish_line.py": "7c16dda1378dcd65aed46d9da96608aa055124c2f27d8fb00c309078361d4204",
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "core/vendor/car_racing.py": "fcd3c36087d7b2721efcd27538b2c9576fa48a77b276ca17c2185b410b0a8c69",
+    "retry/audit519_result.json": "c6503de13e4e21696b0b1055647dfd8750ba5e31c4c3630e44fb5c8acb46a561"
+  }
+}
