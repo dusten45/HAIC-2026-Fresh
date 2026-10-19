@@ -1,0 +1,146 @@
+{
+  "study": 591,
+  "status": "PROPOSED_NOT_EXECUTED_NOT_NATIVE_AUTHORIZATION",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "question": "Does fixed577 have a strictly positive verified native cold improvement over actual54113.66s without carry regression? Source13.20s is not native performance. No retrospective500ms pass.",
+  "candidate": {
+    "kind": "finite_global_episode_hold_index_open_loop_tape",
+    "sha256": "bc432812cdd71702ec030edda72a9aa63ca79e61dceb1f970891a659f20cd5a6",
+    "commands": 166,
+    "rule": "At globalhold i=1..166 return exact stored float32 triple. Cold starts1; legacycarry starts47. No reindex,feedback,chooser,phase alignment,steering adaptation,last-command extension or addedhold167. Stop at first safetyfailure,officialfinish or tapeexhaustion. Missingfinish at exhaustion is scientific carry/cold failure.",
+    "meaning": "Defined only for pinned DEV cold and exact recognized legacy before47 handoff; narrow timing program,not arbitrary carry or pixelpolicy. Refuse unmatchedhand off ratherthan patch."
+  },
+  "current_work": {
+    "source_ticks": 0,
+    "force": 0,
+    "geometry_queries": 0,
+    "FD": 0,
+    "native_actions": 0,
+    "resets": 0,
+    "worlds": 0,
+    "new_conditions": 0,
+    "HOLDOUT": 0,
+    "SEALED": 0
+  },
+  "cold_evidence": {
+    "reuse_existing_fullcold": true,
+    "reason": "577 wholeinitial strict selectedcase and independent661raw exactreplay, all originalpins and currenttapehash verified.590 positive adds only304raw prefix evidence. No duplicatecold simulation.",
+    "gate": "Beforefutureexecution recheck allpins,661raw,166commands,completeCP,originalstrictsafe flags,officialraw660/confirmation661 and immutablejournal registration. Any missing/mismatch=>integrityblock; no silentcoldrerun."
+  },
+  "carry_start": {
+    "completed_actions": 46,
+    "next_global_hold": 47,
+    "completed_drive_raw": 184,
+    "tracking_history": [
+      0,
+      352
+    ],
+    "clock_including_reset_s": 4.699999999999988,
+    "episode_elapsed_s": 3.68,
+    "checkpoint_sha256": "f214ec85a254121a332a5c4347b61efda6fb00cdbbed2bd9a716038dcca701b0",
+    "last_actual_raw_record_sha256": "1adfa55b203185c10915955587604044078d0e8cb22590fb36590aeb487aa17a",
+    "last_actual_raw_record": "legacy518 raw1384;close80 offset1149 + reset51 + drive184",
+    "visited_count": 43,
+    "tracker_rule": "Load actualstoredtracker fields from pinnedlastlegacyraw; preserve fullvisitedsetfromledger,physicalrootfrombefore47,clock,actuators,contacts,damage/effects. Checktracker notqualified/notfinished and identical to originallegacyhand off. Source541 used tracker_for reconstruction; disclose that difference; neverreplace live native tracker.",
+    "native_recreation": "Freshpinnedreset51raw then exactlegacy518commands1..46,charged forbothcarryarms. Requireperhold/rawphysical+contact+force+tracker+clock+visited+observation+wrapper identity tostoredlegacy evidence; no stateinjection,teleport,rewind,historyzeroing. Ifidentityfails stopentirecomparison."
+  },
+  "source_sequence": [
+    "Source0 cold evidence gate, carry prefix/initial snapshot and policy-domain gate; no simulation for cold re-use.",
+    "One new fixed577 carry source suffix holds47..166, atmost480raw. Original strict source safety and official tracker; officialepisodefinish<=14.46s, safe toconfirmation. No500ms minimum.",
+    "Only ifsafecomplete: independent carry source replay fromsamepinnedhandoff<=480raw, exactallrows/commands/force/history/clock/tracker/visited/finalCP.",
+    "Onlyallsourcegates and separateexplicitnativeexecutionauthorization: four fresharms in order541cold,577cold,541legacycarry,577legacycarry. No nextarm if prior failure/regression/integrity/coststop."
+  ],
+  "source_safety": {
+    "tracking_force": 1.059,
+    "tracking_clip_prefix": 0.1,
+    "launch_force": 2.5,
+    "launch_clip": 0.15,
+    "footprint_m": 0.5,
+    "path_m": 3,
+    "reference_excess_m_s": 4.85,
+    "body_speed_strict_upper": 100,
+    "ratio_gt1_clip_identity": true,
+    "original_projection_and_finish": true,
+    "phase_rule": "Globalhold1..24 launchforce<=2.5;clip<=.15 atcompletedhold24;launchreference diagnostic notveto. Globalhold25+tracking1.059/prefixclip.10/reference4.85. Separatehistoriesretained andfuturecertcrossing24/25 appliesphasebyglobalindex."
+  },
+  "native": {
+    "scope": "SameapprovedknownDEVseed/geometry/runtime only;4newworldinstances,0newcondition. Privilegedinstrumentationand541feedback;no pixelgeneralizationclaim.",
+    "observation": "Actualrawcar/hull/wheel/joint/actuator/contact/road/force/RNG/tracker/clock/visited and wrapperpixels/damage/effects available onlywithinexistingdiagnosticsauthority. Candidatecommands dependonlyonfixedglobalindex;observation mayabort/log,nevermodifycandidate.541baselinekeepsoriginalfullstatefeedback.",
+    "actuators": "float32tape -> wrapperfloat64 -> eachraw steer(-a0),gas(a1)rear rampincrease<=.1/raw,brake(a2),car.step(.02),Box2D.Step(.02,180,60),clock/contact/trackerthenrender.4rawhold exceptnativeearlyterminal;no sourcecommandclocksubstitution.",
+    "guards": "Freshpre-action certificate of unchangedtape future12holds(oruntiltapeend) and actual4rawhold prediction. No best-actionselection. Certificatesfromactualhistory,requiredoriginalphase-specificsourceguards/margin.50/body<100. Baseline541unchanged537/540 FINAL. Actualtrackingforce<=1.25/reference<=5/margin>=.25/clip<=.10/launch2.5and.15/body<100;collision/damage0;oracle<=.05N,COMimpulse<=.01m/s;predictionposition<=.10m,speed<=.15m/s,angle<=.02rad,yaw<=.05rad/s,forceratioerror<=.19;contactfriction/payload/effects/observationandprojectionguardsunchanged. Phase-specific:globalhold1..24 launchforce<=2.5, launchclip<=.15 checkedatendhold24, no launchreferenceveto;globalhold25+ trackingforce<=1.059,trackingprefixclip<=.10,reference<=4.85. Future12holdcertificate crossing24/25 mustapplybothgroupsusingseparateactualprefixhistories,nottrackingguardsto launch. Nativeactualphasealso useslaunchreference diagnostic only. Footprint/body/path/projection remainallphases.",
+    "force_uncertainty": "1.06 admission - .001 internal=1.059;physical1.25 minus.19 uncertainty=1.06. Oracleerrornotpermissiontoincrease thresholds. Cold source slack extremelysmall;nativecanfail.",
+    "finish": "ActualnativeFinishLineTracker hullorigin/velocity andlivevisited aftereachraw;require info.finished and raw.finish_time_s. Preserve qualification/back-to-front/confirmation. Reportofficialtimestampandconfirmationrawseparately;arc/chordtime diagnostic only. Partialterminalholdallowed;unusedstoredcommandsnotexecuted.",
+    "cold_gate": "Freshbaseline541safeofficialfinish integerraw exactly683(13.66s) underpinnedidentity; otherwise drift/incomparablestop. Candidatecold safeofficialfinish raw strictlyless thanfreshbaseline (positive>=1raw20ms,exactintegercomparison;floatroundoffnotimprovement). No500msminimum. Report source/native discrepancywithouttransferring13.20.",
+    "carry_gate": "Freshlegacycarrybaseline541safeofficialfinish;this is NEWnativecarry evidence,not historical14.46actual. Candidatecarrysafeofficialfinish<=freshnativecarrybaseline AND episodeofficialtime<=14.46s as explicitconservativeprotocoltarget derivedfromoldsourcecarry. Legacy prefixsamebotharms. FailureorDNFblockscombinedpromotion;do not substitutea coldrestart orphasepatchedpolicy.",
+    "promotion": "Onlyallsource/nativesafety,reproduciblepayload/identities,positiveactualcoldgain,carrynonregression andcompleteledger.Otherwise577sourceincumbentand541actualincumbentremainseparate. No nativeexactstateequalitytosource required;use registerederrorguards."
+  },
+  "budgets": {
+    "source_new": {
+      "carry_raw": 480,
+      "independent_carry_raw": 480,
+      "total_model_ticks": 960,
+      "external_force": 3840,
+      "internal_force": 3840,
+      "total_force": 7680,
+      "geometry": 962,
+      "CPU_s": 60,
+      "wall_s": 90
+    },
+    "native_all_four_arms": {
+      "actions": 1332,
+      "per_arm_action_caps": [
+        500,
+        166,
+        500,
+        166
+      ],
+      "resets": 4,
+      "world_instances": 4,
+      "raw_per_world": 1225,
+      "raw_including_reset": 4900,
+      "reset_raw_per_world": 51,
+      "model_ticks": 195000,
+      "external_model_force": 900000,
+      "internal_model_force": 780000,
+      "total_model_force": 1680000,
+      "actual_native_wheel_invocations": 19600,
+      "geometry": 215000,
+      "CPU_s": 6000,
+      "wall_s": 6600
+    },
+    "preparation_and_audit": {
+      "CPU_s": 120,
+      "wall_s": 180
+    },
+    "aggregate": {
+      "model_ticks": 195960,
+      "external_model_force": 903840,
+      "internal_model_force": 783840,
+      "total_model_force": 1687680,
+      "actual_native_wheel_invocations": 19600,
+      "geometry": 215962,
+      "CPU_s": 6180,
+      "wall_s": 6870,
+      "FD": 0,
+      "new_solver": 0,
+      "new_profiles": 0
+    },
+    "reservation": "Beforeeachnativeworld reserveitswholeaction/raw/reset/worldbudget andcleanup;beforeeachhold reservecertificate+hold+durableaudit. Beforecarrysource reserve480replay+audit. Hardkernelcap200000unchanged andaggregate195960. No newphase unlessremainingdeadline coversitsentirewallcap+cleanup. Censorinstead ofextending."
+  },
+  "ledger": {
+    "research_start": 22758,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "max_action_charge": 1332,
+    "minimum_research_remaining": 21426,
+    "rule": "Prechargeeveryattemptedenv.step includingbothbaselinearmsandlegacy46prefixpercarryworld BEFOREcall/fsync;failed,partial,andterminalcallsneverrefunded. Reset/world/rawattemptchargedbeforecall,separatefromresearchactionledger;reset51rawincluded. Sourcecounterssplitattempted/completed/preforcefailure,external/internalkernel/nativephysicalcalls. No reserveuse ordoublechargehistoricalevidence."
+  },
+  "recovery": "Exclusiveimmutablephase/world STARTED andfsyncedperaction/pre-force/rawattemptledger. Any safety/domain/integrity/cost/IO/deadlinefailure stopsalllaterarms;savepartialthenfinallyclose/assertbodyjoint0. Unknownoutcomeconsumesprecharge andblocksreplay;readstoredrecordsforcloseoutonly. Importonlyrecovery allowedonlyprovenbeforeSTARTED/world/reset/action/raw0,withnewregistrationandoriginalfailurepreserved;no scientificrerun/rollback/counterreset.",
+  "blockers": [
+    "No577carrysource ornativeevidenceyet. A finiteepisode-indexpolicyisdefinedbutcarryusefulnessisuntested;unrecognizedhandoff,unsafeorunfinishedby166 => closecandidatewithoutfeedbackpatch.",
+    "No nativecarry541historicalrecord;14.46s issourceonly. Freshnativecarrybaselineismandatoryifnativephaseislaterelected.",
+    "Futureexecutionrunner/certificateimplementationanddependency/runtimehashregistrationnotcreatedby591;notreadyfornativeexecutionuntilreviewedandfrozen. No authorizationimpliedbythisproposal."
+  ],
+  "privacy": "No rawseed/map/pose/actuator/commands/plane/observation/RNG/personaldoc inpublicrepo. Technicalcode,hashes,contractsandaggregatesonly.Designatedcloudonly;preservemainParticipantsuserchangesfailedrunsandbackups;normalresearchbranchcommitpushonly.",
+  "evidence_sha256": "702e6a26b74581c666c73dcd1a4432ae5fc1d550ec063fc3aa93938564e29b04"
+}
