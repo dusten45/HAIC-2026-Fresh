@@ -1,0 +1,26 @@
+{
+  "passed": 9,
+  "failed": 0,
+  "runner_reported_wall_s": 0.095,
+  "tool_wall_s": 0.271358432,
+  "source_ticks": 0,
+  "CPU_measured": false,
+  "preflight_and_test_CPU_wall_charge_s": 5.0,
+  "source_sha256": {
+    "retry/checkpoints574.py": "f7a14a8d69abdc869d143413fafdac2961ebae28775a0ef95cea3739e101e6bf",
+    "retry/causal574_rounding.py": "6cd62ce9bd81e2dc4c424e07b71bb573aaa9b28de03382739ae302e94bc7a815",
+    "retry/wide574_math.py": "932b69bc86d1e90d91cfb497715f44d965053f00121e265e6f8a00dacd08028d",
+    "tests/test_wide574.py": "9ab2a497e780b73accd136edca55072615b42dfaec7f919a2fb1773f0a0a9119"
+  },
+  "scopes": [
+    "boundary clock cloning and no mutable alias",
+    "FD suffix arithmetic",
+    "exact clipping stricter than1e-8",
+    "rank branch sufficient with changing rank",
+    "causal fixedzero controls andaux",
+    "jointquantizedextendedconstraints",
+    "injectedbadsolver/rounder failclosed",
+    "zero-causal error integritystop",
+    "real dimension396-column matrix seed"
+  ]
+}

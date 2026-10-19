@@ -1,0 +1,53 @@
+{
+  "total": {
+    "ticks": 70881,
+    "force": 283524,
+    "geometry": 70881,
+    "body_checks": 70881,
+    "CPU_s": 2055.4532002690003,
+    "wall_s": 2196.1027219800017
+  },
+  "phases": [
+    {
+      "bucket": "local",
+      "label": "cal-1-1",
+      "ticks": 70749,
+      "force": 282996,
+      "geometry": 70749,
+      "CPU_s": 2015.4056634820017,
+      "wall_s": 2155.0319636969216,
+      "body_checks": 70749,
+      "max_body": 96.93070033249028
+    },
+    {
+      "bucket": "checkpoint",
+      "label": "checkpoint-proof-1",
+      "ticks": 132,
+      "force": 528,
+      "geometry": 132,
+      "CPU_s": 4.301303275,
+      "wall_s": 4.62956660099735,
+      "body_checks": 132,
+      "max_body": 96.92906592745479
+    }
+  ],
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "linearizations": 1,
+  "FD_columns_completed": 264,
+  "calibrations": 2,
+  "source_proposals": 0,
+  "measured_error_recoveries": 0,
+  "primitive_queries": 526,
+  "preflight_and_test_CPU_wall_charge_s": 5.0,
+  "finally_first_total": {
+    "ticks": 70881,
+    "force": 283524,
+    "geometry": 70881,
+    "body_checks": 70881,
+    "CPU_s": 2035.869498673,
+    "wall_s": 2176.5159688200074
+  },
+  "reconciliation": "Final result snapshot includes runner journal audit; phase counters unchanged."
+}

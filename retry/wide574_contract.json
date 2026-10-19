@@ -1,0 +1,129 @@
+{
+  "registered_utc": "2026-10-19T02:21:54.306410+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "source_plan": "Latest independently exact573plan. Holds1..34 fixed,prehold35 is globalraw136. Allholds35..166 steer/signedpedal132x2=264variables. Samecommand fullfinish objective andexecution,no feedback.",
+  "horizon": {
+    "first_changed_raw": 137,
+    "prestart_raw": 136,
+    "diagnostic_end_raw": 662,
+    "diagnostic_ticks": 526,
+    "variables": 264,
+    "holds": 132
+  },
+  "FD_cost": {
+    "per_center_checkpoint_suffix": 69696,
+    "two_centers": 139392,
+    "calibration4": 2104,
+    "proposal_pairs6": 6312,
+    "new_whole_replay_max": 662,
+    "seed_postfinish_extension": 1,
+    "checkpoint_one_tick_proofs_two_centers": 264,
+    "registered_max_source_ticks": 148735,
+    "full_prefix_fallback_one_center": 138864
+  },
+  "checkpoint_gate": "Independently reconstruct root/visited/tracker/clock/progress/launch/tracking for everyprehold fromfullcenterrows,verifyeveryrow continuity/exactratio>1 counts/trackercore andfinalCP. Beforeeachcenter compareone freshsource tick fromeach132checkpoint tosavedcenter row. PrefixmaskedFDg/force/order/P/V derivative exact0. Eachnewcenter rebuilds ownCPs. Onlyifcache optimization proof isunsupported whilevalidatedcommonstart remainsintegral useonecenterfull526FD (138864ticks); actualintegrity/domain mismatch terminates.",
+  "caps": {
+    "linearization_centers": 2,
+    "FD_columns": 528,
+    "calibration_rollouts": 4,
+    "diagnostic_strict_pairs": 6,
+    "attempts_per_center": 3,
+    "safe_accepts": 2,
+    "measured_error_recoveries": 4,
+    "LP_cuts_per_solve": 8,
+    "conditional_tail_comparisons": 2,
+    "independent_new_replays": 1,
+    "primitive_queries": 1200
+  },
+  "bounds": "Same steer.003/pedal.03 scales,rho.05 then.025 withatmostone measured-error same-radiusrepair,3attempts/center. Totalnormalizedchange<=.10 from573plan. No alpha sweep. On safeaccept freshnewcenterFD next,not reusepreviousJacobian as exact newcenter.",
+  "error_model": "New264FD andtwofixedoppositeall264calibrations percenter. Freshpositivepredictionerrors divided byACTUAL causalprefix norm,twice max+propagatedfloat32ULP+fourbinary64eps/.05. Holdprefixnorm132aux usedforforce/path/physical/signedsupport rows. No573/572empiricalcoefficient reused asuniversalbound. Zero-prefixerror mustexact0 orintegritystop. Directnonexempt rankbranchforce<=1 with[3,160] exactstartcounts;recordOerrorsdiagnostically,not mixglobalOmaxinto causalR.",
+  "geometry": "Finite eligible-segmentcapsule with exact convexcheck/cuts. Freezeactivecomponentatevery526seedraw,allvertices ofitspolygon. Sourcefullgeometryalwaysauthoritative. Onordinarypositivefootprintreject addexactfailedcomponent atsafeanchor onceperregisteredobservedrecovery;nonpositiveintersectionunsupportedstop.",
+  "rounding": "Reuse573rounding_box/controlenclosure androwabsA_control q,inwardbounds,seedunion;extendcontinuousaux to132causalprefixnorms. Fixedzero controlsq=0 andfixedzero precedingaux=0. Rowroundoffgamma*(absA*box+absb),exactzero rows0. Roundedjointoriginalallrows/bounds/capsule<=1e-8 pluspredictednonexemptforceupper exact<=1 andnominalprefixexactcount. Noresidualorphysicalthresholdrelaxation.",
+  "stopping": "No certified>=1us modelgain,unresolvedfloat32/integrity/domain/IO,duplicatepoint,3boundedattemptswithoutsafeaccept,2failedrepairswithout>=10%violationreduction,orcaps. Smallwholegain>=1us+safeoriginalstrictfinish+candidate raw<=working allowsaccept. Officialpromotion onlyraw<660. Max2accepts is bounded termination,notconvergence. No additional repairchain ornewstudy.",
+  "budgets": {
+    "checkpoint": {
+      "ticks": 264,
+      "force": 1056,
+      "geometry": 264,
+      "CPU_s": 15,
+      "wall_s": 25
+    },
+    "local": {
+      "ticks": 154000,
+      "force": 616000,
+      "geometry": 154000,
+      "CPU_s": 4500,
+      "wall_s": 5600
+    },
+    "evaluation": {
+      "ticks": 3156,
+      "force": 12624,
+      "geometry": 3156,
+      "CPU_s": 130,
+      "wall_s": 170
+    },
+    "verification": {
+      "ticks": 662,
+      "force": 2648,
+      "geometry": 662,
+      "CPU_s": 30,
+      "wall_s": 45
+    }
+  },
+  "aggregate": {
+    "ticks": 160000,
+    "force": 640000,
+    "geometry": 160000,
+    "CPU_s": 4800,
+    "wall_s": 6000
+  },
+  "reserves": "Beforestartingfreshcenter requirefullpredictedFD+2cal+3pairs+finalreplay ticks andCPU/wallreserve;otherwisepreserveselectedandstop. Finallysavecostbeforeaudit. Newacceptedplanonly fullindependentreplay,none:noexistingreplay.",
+  "same_J_comparison": "Atmostone tail-only LP(holds133..166 free,earliercontrols0) vsone expandedLP percenter,conditionalmodelsameJacobian,error/trust/quantization. These areconditionalopportunities notactualgains/globalbounds. Expandedpointonlyone evaluated perattempt.",
+  "actual_actions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "paid_compute": 0,
+  "source_kernel_cap_unchanged": 200000,
+  "input_sha256": {
+    "/workspace/haic-response573-private/final-independent-tape-private.json": "4ebde7a580dd052de3da7a8bbd493c12c24e533ec7c193bb6f696c26cd54a875",
+    "/workspace/HAIC-2026-Fresh/retry/quant573_result.json": "12d06991c5e2cf6d8a41c0a7a05b1fade3bc5f528c630f441f61e06c1f5ca436",
+    "/workspace/HAIC-2026-Fresh/retry/quant573_contract.json": "da865fe68efb83dc29e058b8736bfab82d43ed5984819a122387cf11d9270112",
+    "/workspace/HAIC-2026-Fresh/retry/rounding573.py": "f3d8181bdf7cf50bed4d9014ecfb88e48f116d54183308a2154134a70d07acf3"
+  },
+  "implementation_frozen_utc": "2026-10-19T02:37:07.196610+00:00",
+  "source_sha256": {
+    "retry/wide574_model.py": "ff5352e4a74587c1a58b9c292e19814ee9874cc69b9cabf93987222e66a9429f",
+    "retry/wide574_math.py": "932b69bc86d1e90d91cfb497715f44d965053f00121e265e6f8a00dacd08028d",
+    "retry/checkpoints574.py": "f7a14a8d69abdc869d143413fafdac2961ebae28775a0ef95cea3739e101e6bf",
+    "retry/causal574_rounding.py": "6cd62ce9bd81e2dc4c424e07b71bb573aaa9b28de03382739ae302e94bc7a815",
+    "retry/wide574_design.py": "65b252145557538aaa1009b34168dd5be1029efda6598f0237907c9e6a4befa6",
+    "tests/test_wide574.py": "9ab2a497e780b73accd136edca55072615b42dfaec7f919a2fb1773f0a0a9119",
+    "retry/rounding573.py": "f3d8181bdf7cf50bed4d9014ecfb88e48f116d54183308a2154134a70d07acf3",
+    "retry/geometry571.py": "6dd350e395fdc83d5d2f58fa166ae67e6545006a39c836c12dc23647f3817cf7",
+    "retry/path569_design.py": "98a2c78eab4fa86a03e6e4934f1019a80e8d6117a9d224594bdd25783297736d",
+    "retry/late568_model.py": "0e71a9e08552040b7da4d2b111a04f67bd361db1954cb156ea6b33a3d7f409b2",
+    "retry/durable568.py": "43ed7c3f2bfe06ee575691b7d3b6f20414f06303e6c1fb09789deffe62d27a39",
+    "retry/handoff562_model.py": "e7addc1dabf391149cb10827316a6e9405069f4a8809a9ef4ada805cbe9d0b0b",
+    "retry/clip561_core.py": "d0f60f7741c4605a3c3b6a515977ee5c978efd633665d3e807afef6b816a531b",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "retry/preview527_control.py": "8049458f5f302fd194a2e0fde5a833ac4a2241f498055df1dc84203017da2717",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131",
+    "core/finish_line.py": "7c16dda1378dcd65aed46d9da96608aa055124c2f27d8fb00c309078361d4204",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363"
+  },
+  "tests_sha256": "54f10b06c33ed5339e927e29ee5d6662260e3b7d9ded23820439c00815df4a8a",
+  "design_sha256": "54d67e7a8d2e724da925c9da653596aa7d0fcf2dc1485f63cc98ecd96e98e2ad",
+  "LP_time_limit_wall_s": 30,
+  "BLAS_OMP_threads": 1,
+  "preflight_and_test_CPU_wall_charge_s": 5.0
+}
