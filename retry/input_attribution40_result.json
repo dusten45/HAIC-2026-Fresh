@@ -1,0 +1,131 @@
+{
+  "status": "REJECTION_ATTRIBUTED_TO_CONSERVATIVE_OBSERVED_BOUNDARY",
+  "native_actions": 0,
+  "Agent_changed": false,
+  "core_changed": false,
+  "world_identity_match": true,
+  "baseline": {
+    "vehicle": "estimated",
+    "map": "observed",
+    "admitted": false,
+    "rejections": {
+      "FORECAST_FOOTPRINT_MARGIN": 16,
+      "FORCE_PEAK": 5
+    }
+  },
+  "counterfactuals": [
+    {
+      "label": "measured_vehicle_observed_map",
+      "admitted": false,
+      "mode": "NO_ADMISSIBLE_ACTION",
+      "rejection_counts": {
+        "FORECAST_FOOTPRINT_MARGIN": 16,
+        "FORCE_PEAK": 5
+      },
+      "model_ticks": 583,
+      "CPU_s": 0.5758562239999999,
+      "wall_s": 0.5758652439981233
+    },
+    {
+      "label": "estimated_vehicle_true_map",
+      "admitted": true,
+      "mode": "SOURCE_FULL",
+      "rejection_counts": {
+        "CERTIFIED_12HOLD_FLOAT32": 2
+      },
+      "model_ticks": 96,
+      "CPU_s": 0.10304559400000002,
+      "wall_s": 0.10304725499008782
+    },
+    {
+      "label": "measured_vehicle_true_map",
+      "admitted": true,
+      "mode": "SOURCE_FULL",
+      "rejection_counts": {
+        "CERTIFIED_12HOLD_FLOAT32": 2
+      },
+      "model_ticks": 96,
+      "CPU_s": 0.103235246,
+      "wall_s": 0.10325078602181748
+    }
+  ],
+  "margin_only_counterfactual": {
+    "admitted": true,
+    "mode": "SOURCE_FULL",
+    "model_ticks": 96,
+    "CPU_s": 0.083333977,
+    "wall_s": 0.0833340480166953,
+    "native_actions": 0,
+    "fixed": "Estimated vehicle, observed contact/material road mesh, observed reference paths and estimated history; true geometry used only for margin callback in external harness."
+  },
+  "state_error": {
+    "hull_position_m": 0.0,
+    "hull_velocity_components_m_s": [
+      -0.0032589463584503653,
+      -0.7080710104124748
+    ],
+    "yaw_rad_s": -0.0252742501974679,
+    "wheel_angle_rad_range": [
+      -0.0034450827089670642,
+      -1.1920928955078125e-07
+    ],
+    "wheel_omega_rad_s_range": [
+      -1.2864096411062178,
+      -1.2757952279359088
+    ],
+    "wheel_gas_error_all_zero": true
+  },
+  "geometry_error": {
+    "failed_observed_margin_range_m": [
+      0.33192789074266466,
+      0.4920546392289666
+    ],
+    "same_polygon_true_road_margin_range_m": [
+      1.1731816106893627,
+      1.3304911917259383
+    ],
+    "true_minus_observed_margin_range_m": [
+      0.7712010554060578,
+      0.8718168649505809
+    ],
+    "includes_known_per_side_inset_m": 0.35,
+    "remaining_segmentation_raster_mesh_contributions_not_individually_resolved": true
+  },
+  "forecast_scope": {
+    "HIGH48_report_reproduced": true,
+    "all_49_body_footprint_states_in_image_road_view": true,
+    "visibility_or_unseen_safety_certified": false
+  },
+  "diagnosis": "Vehicle-only replacement retains the same rejection classes. True geometry, including margin-only replacement while retaining observed dynamics contacts, admits SOURCE_FULL. Conservative observed-boundary error is decisive in this checkpoint; a new coding/unit/coordinate interpretation bug is not established.",
+  "limits": "Actual joint rates and actual clipping history unrecorded; hold estimated values fixed. Observation-derived reference paths remain identical in all cells. No Agent receives true inputs.",
+  "additional_limits": [
+    "Measured-root frame conversion residuals were below1e-6 m and1e-6 m/s.",
+    "Same observation-derived reference paths in all cells; this does not reproduce the original full-map13.22s policy or prove a full-lap result.",
+    "Passing an external true-map model counterfactual is not an observation-only or true-state safety certificate.",
+    "The public0.35m inset, pixel classification and row mesh remain unvalidated uncertainty; do not widen the boundary merely to admit the action."
+  ],
+  "cost": {
+    "caps": {
+      "DEV_actions": 150,
+      "model_ticks": 100000,
+      "CPU_s": 900,
+      "wall_s": 2400
+    },
+    "new_DEV_actions": 0,
+    "new_model_ticks": 919,
+    "measured_diagnostic_CPU_s": 1.140688816,
+    "additional_setup_CPU_reservation_s": 60,
+    "stage_wall_s_at_closeout": 289.309434,
+    "prior_combined_DEV_actions": 219,
+    "prior_combined_model_ticks": 159390,
+    "combined_DEV_actions": 219,
+    "combined_model_ticks": 160309,
+    "research_actions_remaining": 20526,
+    "reserve_used": 0,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0
+  },
+  "privacy": "True state and full geometry used exclusively by external diagnostic core calls; no Agent input or submission code change. Raw geometry, states and reports remain private.",
+  "current_Agent_sha256": "b3ae74bee6d643b66c576cedf5e2109c25a9ecf5d78c776b5902c990cdba4a0f",
+  "next": "Stopped without new rollout or gate relaxation. Further progress requires validated observation-boundary estimation, not an established one-line interpretation fix."
+}
