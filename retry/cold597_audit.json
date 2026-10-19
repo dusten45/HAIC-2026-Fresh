@@ -1,0 +1,64 @@
+{
+  "study": 597,
+  "status": "READ_ONLY_AUDIT_PASS",
+  "checks": {
+    "chain_valid_and_closed": true,
+    "all_private_artifacts_pinned": true,
+    "inputs_and_old_results_preserved": true,
+    "code_runtime_pins": true,
+    "pure_tests_frozen": true,
+    "timelimit_warmup_unchanged": true,
+    "primitive_journal_counts": true,
+    "both_force_oracles_charged": true,
+    "phase_accounting": true,
+    "all_forecast_prefix_replay_work_charged": true,
+    "original537_all_completed_summaries_exact": true,
+    "all_geometry_including_internal_nominal": true,
+    "original537_cost_matches": true,
+    "applied_gates_histories_and_first_stop_exact": true,
+    "prefix577_read_exact": true,
+    "fresh_FINAL_first4_applied_exact": true,
+    "whole_TimeLimit_not_extended": true,
+    "conditional_replay_only_after_safe_whole": true,
+    "independent_replay_exact_or_correctly_skipped": true,
+    "official_integer_comparison": true,
+    "caps": true,
+    "native_seed_holdout_sealed_carry_zero": true,
+    "ledger_and_native_incumbent_preserved": true,
+    "protected_main_and_Participants_preserved": true,
+    "aggregate_preparation_audit_caps": true
+  },
+  "geometry_expected": 155713,
+  "events": 275033,
+  "chain_head": "038efff6308f004afe93360c8cac4b090e763530909fb5707d078140f4826c7a",
+  "CPU_s": 21.758142872,
+  "wall_s": 21.774971388993436,
+  "auxiliary_CPU_wall_charge_s": 3,
+  "aggregate_time": {
+    "total_CPU_s": 803.68764345,
+    "total_wall_s": 885.9327017619944,
+    "source_CPU_s": 740.42705568,
+    "source_wall_s": 823.2752023749927,
+    "preparation_audit_CPU_s": 63.26058777000002,
+    "preparation_audit_wall_s": 62.657499387001735,
+    "phases": {
+      "main": {
+        "CPU_s": 726.68915967,
+        "wall_s": 807.924528507996
+      },
+      "replay": {
+        "CPU_s": 13.737896009999986,
+        "wall_s": 15.350673866996658
+      }
+    }
+  },
+  "source_ticks": 0,
+  "force_calls": 0,
+  "geometry_queries": 0,
+  "native_calls": 0,
+  "input_sha256": {
+    "result": "073c225371b1fbcc4bcbf52fbfca0245160dfae028c5f79c8df5b62a798342f9",
+    "contract": "c88314a4a652a96a8d061a2d8dbc572ee285677da618dc84424d93176776647e",
+    "audit_code": "74180155fd4340a2be0b80261e6e46efcfa96b602cc4c642c2f0d81f5d8dc45e"
+  }
+}
