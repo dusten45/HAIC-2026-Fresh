@@ -1,0 +1,118 @@
+{
+  "status": "LOCAL_STATIC_AND_SAMPLED_RUNTIME_AUDIT_ONLY_FAILURE_UNRESOLVED",
+  "scope": {
+    "boundary_and_state_tuning": "Pending user scope approval after automatic approval review block; no such changes performed.",
+    "candidate_code_changed": false,
+    "new_native_runs": 0,
+    "deployment_upload_submission_or_file_attachment": false,
+    "inspection_source": "Existing frozen candidate archive; fresh private extraction without bytecode cache; local README sections4,5,9.",
+    "official_server_runtime_parity": false,
+    "submission_readiness_claim": false
+  },
+  "static_checks": {
+    "violations": [],
+    "direct_imports": [
+      "cv2",
+      "dataclasses",
+      "math",
+      "numpy",
+      "runtime598",
+      "struct",
+      "types"
+    ],
+    "forbidden_native_extensions_found": [],
+    "archive_members": [
+      "agent.py",
+      "runtime598.py",
+      "LICENSE"
+    ],
+    "archive_limits": {
+      "zip_bytes": 33338,
+      "files": 3,
+      "uncompressed_bytes": 104736,
+      "max_file_bytes": 59807,
+      "max_compression_ratio": 3.338367658276125
+    },
+    "archive_limits_pass": true,
+    "archive_bytes_match_current_sources": true,
+    "no_extra_dependencies_needed": true,
+    "installed_versions": {
+      "numpy": "1.26.0",
+      "opencv-python": "4.8.1.78",
+      "torch": "2.1.0+cpu",
+      "gymnasium": "0.29.1"
+    },
+    "api": {
+      "__init__": [
+        "self"
+      ],
+      "reset": [
+        "self",
+        "observation"
+      ],
+      "act": [
+        "self",
+        "observation"
+      ]
+    }
+  },
+  "sampled_API": {
+    "successful_actions_checked": 2,
+    "raw_return_dtype": "float32",
+    "raw_return_shape": [
+      3
+    ],
+    "finite_and_in_range": true,
+    "observation_unchanged_all": true,
+    "reset_returns_none": true,
+    "episode_memory_reset_checked": true,
+    "reset_preserves_resource_counter": true
+  },
+  "measured_runtime": {
+    "profiles": [
+      "BLAS/OMP1 with1GiB address-space cap",
+      "Inherited thread environment with peak-RSS observation"
+    ],
+    "cold_processes": 3,
+    "max_import_constructor_s": 0.09127304799039848,
+    "max_reset_s": 3.6860001273453236e-06,
+    "max_reset_after_act_s": 1.8367019947618246e-05,
+    "max_whole_checked_act_s": 0.870993719989201,
+    "max_RSS_KiB": 55812,
+    "sampled_limits_pass": true,
+    "scope": "Only existing initial and saved failure observations. No complete episode or official-server runtime certification."
+  },
+  "stored_failure": {
+    "status": "FAILURE_PRESERVED",
+    "error": "RuntimeError:NO_ESTIMATED_INPUT_ADMISSIBLE_ACTION",
+    "whole_checked_act_s": 0.5263043199956883,
+    "model_ticks": 297,
+    "returned_action": false,
+    "counter_identical": true,
+    "diagnostics_identical": true
+  },
+  "unresolved_runtime_budget": {
+    "source_default_cumulative_model_limit": 50000,
+    "previous_DEV_harness_limit": 200000,
+    "counter_survives_reset": true,
+    "changed": false,
+    "conclusion": "Source default differs from prior DEV harness configuration. Whole-episode handling under the default budget was not validated; changing this guard is outside the unambiguous read-only audit."
+  },
+  "cost": {
+    "CPU_cap_s": 600,
+    "model_tick_cap": 50000,
+    "new_model_ticks": 1937,
+    "model_tick_budget_remaining": 48063,
+    "measured_CPU_s": 3.0191324390000003,
+    "new_native_actions": 0,
+    "research_actions_remaining": 20133,
+    "research_ledger_unchanged": true,
+    "reserve_used": 0,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0
+  },
+  "source_sha256": {
+    "submit_core/observation_agent.py": "1d58a427f7ef2bc19f8c31926aa6be14402064e75bf220d08b8341d0b12c0580",
+    "submit_core/runtime598.py": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8"
+  }
+}
