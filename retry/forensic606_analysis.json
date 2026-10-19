@@ -1,0 +1,2913 @@
+{
+  "study": 606,
+  "cases": {
+    "H0": {
+      "label": "H0",
+      "first_failure_raw": 126,
+      "kind": "FORCE",
+      "hold": 32,
+      "raw_in_hold": 2,
+      "first_nonzero_applied_command_raw": 97,
+      "first_post_state_diff_raw": 97,
+      "first_post_heading_diff_raw": 97,
+      "base_command_same_as_zero": true,
+      "applied_vs_base_steer_delta": -0.006350263953208923,
+      "applied_vs_base_netpedal_delta": 0.017270147800445557,
+      "candidate_vs_zero_netpedal_delta": 0.017270147800445557,
+      "residual_target_offset_change_from_prior_hold": 0.0,
+      "residual_pedal_change_from_prior_hold": -0.004686482557929427,
+      "candidate_hold_steer_step": -0.045239582657814026,
+      "zero_hold_steer_step": -0.044047802686691284,
+      "unchanged_command_from_immediately_previous_raw": true,
+      "candidate_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "zero_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "current_state_delta": {
+        "center_separation_m": 0.6142678041275675,
+        "velocity_separation_m_s": 3.1126671550404734,
+        "speed_delta_m_s": 2.54876270590087,
+        "angle_delta_rad": 0.03738002920197503,
+        "yaw_delta_rad_s": 0.18013907403554263,
+        "max_joint_delta_rad": 0.006350263953208923,
+        "wheel_heading_delta_rad": [
+          0.04373029315518395,
+          0.04373029315518395,
+          0.03738002920197503,
+          0.03738002920197503
+        ],
+        "wheel_omega_delta_rad_s": [
+          4.453836305756511,
+          5.019748592236695,
+          4.380813209242277,
+          4.97481405523888
+        ],
+        "wheel_gas_memory_delta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "same_friction": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "same_contacts": false,
+        "physical_state_equal": false
+      },
+      "wheels": [
+        {
+          "wheel": 0,
+          "axle": "front",
+          "zero_ratio": 0.8430339920520228,
+          "candidate_ratio": 0.9274653776457731,
+          "ratio_delta": 0.0844313855937503,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.03683314299239182,
+          "postclip_lateral_over_mu_delta": -0.0923368229944147,
+          "candidate_postclip_lateral_squared_share": 0.9783728969336271,
+          "omega_drive_delta": 4.453836305756511,
+          "omega_braked_delta": 4.712888522763194,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 1,
+          "axle": "front",
+          "zero_ratio": 1.0565611815886315,
+          "candidate_ratio": 1.169363842848166,
+          "ratio_delta": 0.11280266125953453,
+          "zero_clipped": true,
+          "candidate_clipped": true,
+          "postclip_longitudinal_over_mu_delta": 0.041366377170586444,
+          "postclip_lateral_over_mu_delta": -0.00880960565777944,
+          "candidate_postclip_lateral_squared_share": 0.9648195730523096,
+          "omega_drive_delta": 5.019748592236695,
+          "omega_braked_delta": 5.2788008092433785,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 2,
+          "axle": "rear",
+          "zero_ratio": 0.4346175276236272,
+          "candidate_ratio": 0.47518434718441327,
+          "ratio_delta": 0.04056681956078606,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.03629709737334044,
+          "postclip_lateral_over_mu_delta": -0.05727154552608227,
+          "candidate_postclip_lateral_squared_share": 0.909207561515513,
+          "omega_drive_delta": 4.380813209242277,
+          "omega_braked_delta": 4.63986542624896,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 3,
+          "axle": "rear",
+          "zero_ratio": 0.504005075774771,
+          "candidate_ratio": 0.5505948095638123,
+          "ratio_delta": 0.0465897337890413,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.02102672817149967,
+          "postclip_lateral_over_mu_delta": -0.06411515216441394,
+          "candidate_postclip_lateral_squared_share": 0.8135910694126511,
+          "omega_drive_delta": 4.97481405523888,
+          "omega_braked_delta": 5.233866272245564,
+          "returned_gas_delta": 0.0
+        }
+      ],
+      "last_raws": [
+        {
+          "raw": 121,
+          "force_ratio_peak": 0.607575493130542,
+          "zero_force_peak": 0.5754684912324987,
+          "footprint": 4.2540450326754025,
+          "zero_footprint": 4.499660013531076,
+          "state_delta": {
+            "center_separation_m": 0.344540123705568,
+            "velocity_separation_m_s": 2.255044487461881,
+            "speed_delta_m_s": 1.9438360723694643,
+            "angle_delta_rad": 0.021450812099258254,
+            "yaw_delta_rad_s": 0.11720631074314491,
+            "max_joint_delta_rad": 0.0036528930068016052,
+            "wheel_heading_delta_rad": [
+              0.02510370510605986,
+              0.02510370510605986,
+              0.021450812099258254,
+              0.021450812099258254
+            ],
+            "wheel_omega_delta_rad_s": [
+              3.3812574685257033,
+              3.7491116503053803,
+              3.350428421983949,
+              3.7243928714307373
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        },
+        {
+          "raw": 122,
+          "force_ratio_peak": 1.0398582219324024,
+          "zero_force_peak": 0.9623462020647824,
+          "footprint": 4.097528476381086,
+          "zero_footprint": 4.330403667341192,
+          "state_delta": {
+            "center_separation_m": 0.39244180489994124,
+            "velocity_separation_m_s": 2.4183040736355594,
+            "speed_delta_m_s": 2.071571197093931,
+            "angle_delta_rad": 0.023854838318570604,
+            "yaw_delta_rad_s": 0.1202013109656157,
+            "max_joint_delta_rad": 0.005158483982086182,
+            "wheel_heading_delta_rad": [
+              0.029013322300656785,
+              0.029013322300656785,
+              0.023854838318570604,
+              0.023854838318570604
+            ],
+            "wheel_omega_delta_rad_s": [
+              3.6148658809052847,
+              4.012543896467008,
+              3.5781418564497045,
+              3.9828202321100434
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 123,
+          "force_ratio_peak": 0.8576842893807602,
+          "zero_force_peak": 0.7906615334241082,
+          "footprint": 3.9304311604593676,
+          "zero_footprint": 4.200140903158792,
+          "state_delta": {
+            "center_separation_m": 0.44338972456827386,
+            "velocity_separation_m_s": 2.586103656104017,
+            "speed_delta_m_s": 2.2103073154912067,
+            "angle_delta_rad": 0.02695489819457486,
+            "yaw_delta_rad_s": 0.15500299380020932,
+            "max_joint_delta_rad": 0.005158483982086182,
+            "wheel_heading_delta_rad": [
+              0.03211338217666104,
+              0.03211338217666104,
+              0.02695489819457486,
+              0.02695489819457486
+            ],
+            "wheel_omega_delta_rad_s": [
+              3.838696359335188,
+              4.232023384247469,
+              3.806622090307613,
+              4.236482328829183
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 124,
+          "force_ratio_peak": 0.7807574423218844,
+          "zero_force_peak": 0.7175570288059829,
+          "footprint": 3.8632989934266893,
+          "zero_footprint": 4.077833111155099,
+          "state_delta": {
+            "center_separation_m": 0.49736503020507733,
+            "velocity_separation_m_s": 2.768511512170062,
+            "speed_delta_m_s": 2.3216514534597152,
+            "angle_delta_rad": 0.030311512924025008,
+            "yaw_delta_rad_s": 0.16783073647250424,
+            "max_joint_delta_rad": 0.005158483982086182,
+            "wheel_heading_delta_rad": [
+              0.03546999690611119,
+              0.03546999690611119,
+              0.030311512924025008,
+              0.030311512924025008
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.06461027232136,
+              4.521517298463749,
+              4.017746599239828,
+              4.507298664134211
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 125,
+          "force_ratio_peak": 0.7299524500811239,
+          "zero_force_peak": 0.6616499669938046,
+          "footprint": 3.8850966766862367,
+          "zero_footprint": 4.076129134868175,
+          "state_delta": {
+            "center_separation_m": 0.5545736359779179,
+            "velocity_separation_m_s": 2.9551756046170445,
+            "speed_delta_m_s": 2.454037775601016,
+            "angle_delta_rad": 0.033777247721264225,
+            "yaw_delta_rad_s": 0.1732867398619593,
+            "max_joint_delta_rad": 0.005158483982086182,
+            "wheel_heading_delta_rad": [
+              0.03893573170335041,
+              0.03893573170335041,
+              0.033777247721264225,
+              0.033777247721264225
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.280221860041365,
+              4.79759899400176,
+              4.219610034330913,
+              4.76670043023779
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        },
+        {
+          "raw": 126,
+          "force_ratio_peak": 1.169363842848166,
+          "zero_force_peak": 1.0565611815886315,
+          "footprint": null,
+          "zero_footprint": 4.077996368311002,
+          "state_delta": {
+            "center_separation_m": 0.6142678041275675,
+            "velocity_separation_m_s": 3.1126671550404734,
+            "speed_delta_m_s": 2.54876270590087,
+            "angle_delta_rad": 0.03738002920197503,
+            "yaw_delta_rad_s": 0.18013907403554263,
+            "max_joint_delta_rad": 0.006350263953208923,
+            "wheel_heading_delta_rad": [
+              0.04373029315518395,
+              0.04373029315518395,
+              0.03738002920197503,
+              0.03738002920197503
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.453836305756511,
+              5.019748592236695,
+              4.380813209242277,
+              4.97481405523888
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        }
+      ],
+      "match_scope": "SAME_RAW_CLOCK_NOT_SAME_PHYSICAL_STATE",
+      "raw_unsaturated_longitudinal_lateral_not_logged": true
+    },
+    "H1": {
+      "label": "H1",
+      "first_failure_raw": 161,
+      "kind": "FORCE",
+      "hold": 41,
+      "raw_in_hold": 1,
+      "first_nonzero_applied_command_raw": 97,
+      "first_post_state_diff_raw": 97,
+      "first_post_heading_diff_raw": 97,
+      "base_command_same_as_zero": false,
+      "applied_vs_base_steer_delta": 0.0038953498005867004,
+      "applied_vs_base_netpedal_delta": 0.006554722785949707,
+      "candidate_vs_zero_netpedal_delta": -0.08328902721405029,
+      "residual_target_offset_change_from_prior_hold": -0.06611741839597551,
+      "residual_pedal_change_from_prior_hold": 0.003093585586298262,
+      "candidate_hold_steer_step": 0.03695254027843475,
+      "zero_hold_steer_step": 0.03448113054037094,
+      "unchanged_command_from_immediately_previous_raw": false,
+      "candidate_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "zero_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "current_state_delta": {
+        "center_separation_m": 2.2349388451969285,
+        "velocity_separation_m_s": 6.24944478554208,
+        "speed_delta_m_s": -2.7485102887472195,
+        "angle_delta_rad": -0.11037427254787635,
+        "yaw_delta_rad_s": 0.20109442287582713,
+        "max_joint_delta_rad": 0.02286750078201294,
+        "wheel_heading_delta_rad": [
+          -0.0875067717658633,
+          -0.0875067717658633,
+          -0.11037427254787635,
+          -0.11037427254787635
+        ],
+        "wheel_omega_delta_rad_s": [
+          -5.142521061517414,
+          -5.104003633980028,
+          -4.6999548103771644,
+          -4.991693248694872
+        ],
+        "wheel_gas_memory_delta": [
+          0.0,
+          0.0,
+          -0.016070127487182617,
+          -0.016070127487182617
+        ],
+        "same_friction": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "same_contacts": false,
+        "physical_state_equal": false
+      },
+      "wheels": [
+        {
+          "wheel": 0,
+          "axle": "front",
+          "zero_ratio": 0.6886756821591733,
+          "candidate_ratio": 0.6974122517123915,
+          "ratio_delta": 0.00873656955321822,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.026505540223162094,
+          "postclip_lateral_over_mu_delta": -0.045893958068787155,
+          "candidate_postclip_lateral_squared_share": 0.4416811872158779,
+          "omega_drive_delta": -5.142521061517414,
+          "omega_braked_delta": -5.142521061517414,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 1,
+          "axle": "front",
+          "zero_ratio": 0.6853426838028893,
+          "candidate_ratio": 0.7836718904105798,
+          "ratio_delta": 0.09832920660769051,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": -0.05554625822565562,
+          "postclip_lateral_over_mu_delta": -0.08166602025871517,
+          "candidate_postclip_lateral_squared_share": 0.5994755432111257,
+          "omega_drive_delta": -5.104003633980028,
+          "omega_braked_delta": -5.104003633980028,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 2,
+          "axle": "rear",
+          "zero_ratio": 0.9968700753861666,
+          "candidate_ratio": 1.059621185688024,
+          "ratio_delta": 0.06275111030185743,
+          "zero_clipped": false,
+          "candidate_clipped": true,
+          "postclip_longitudinal_over_mu_delta": 0.016042143018349164,
+          "postclip_lateral_over_mu_delta": 0.023714612168341975,
+          "candidate_postclip_lateral_squared_share": 0.2058953526312538,
+          "omega_drive_delta": -4.921692122173184,
+          "omega_braked_delta": -4.921692122173184,
+          "returned_gas_delta": -0.08328902721405029
+        },
+        {
+          "wheel": 3,
+          "axle": "rear",
+          "zero_ratio": 1.0407908703410467,
+          "candidate_ratio": 1.000668235152087,
+          "ratio_delta": -0.04012263518895964,
+          "zero_clipped": true,
+          "candidate_clipped": true,
+          "postclip_longitudinal_over_mu_delta": -0.01705761485035917,
+          "postclip_lateral_over_mu_delta": -0.029523351852976165,
+          "candidate_postclip_lateral_squared_share": 0.26518327845406087,
+          "omega_drive_delta": -5.200039100334337,
+          "omega_braked_delta": -5.200039100334337,
+          "returned_gas_delta": -0.08328902721405029
+        }
+      ],
+      "last_raws": [
+        {
+          "raw": 156,
+          "force_ratio_peak": 1.0449550876680411,
+          "zero_force_peak": 1.054959686728952,
+          "footprint": 1.6763959918796243,
+          "zero_footprint": 0.9565425179472392,
+          "state_delta": {
+            "center_separation_m": 2.0789457396670277,
+            "velocity_separation_m_s": 6.28959412598339,
+            "speed_delta_m_s": -2.7982357833773293,
+            "angle_delta_rad": -0.11575710237375036,
+            "yaw_delta_rad_s": -0.14083827855792252,
+            "max_joint_delta_rad": 0.00024862587451934814,
+            "wheel_heading_delta_rad": [
+              -0.11600572824826971,
+              -0.11600572824826971,
+              -0.11575710237375036,
+              -0.11575710237375036
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.17370476477511,
+              -5.753983045224643,
+              -4.605338576066714,
+              -5.296951624333801
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0012288689613342285,
+              0.0012288689613342285
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 157,
+          "force_ratio_peak": 1.044844176889567,
+          "zero_force_peak": 1.0574412037110466,
+          "footprint": 1.4717746493699775,
+          "zero_footprint": 0.8409457277051016,
+          "state_delta": {
+            "center_separation_m": 2.1047792754076493,
+            "velocity_separation_m_s": 6.470608107013835,
+            "speed_delta_m_s": -2.7523370997179555,
+            "angle_delta_rad": -0.11841358869299368,
+            "yaw_delta_rad_s": -0.13282431596216804,
+            "max_joint_delta_rad": 0.00024862587451934814,
+            "wheel_heading_delta_rad": [
+              -0.11866221456751302,
+              -0.11866221456751302,
+              -0.11841358869299368,
+              -0.11841358869299368
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.100245056356002,
+              -5.674960026367941,
+              -4.5436157651634375,
+              -5.226108136275812
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0012288689613342285,
+              0.0012288689613342285
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        },
+        {
+          "raw": 158,
+          "force_ratio_peak": 1.0335143324847633,
+          "zero_force_peak": 1.050528145509446,
+          "footprint": 1.3029925777046298,
+          "zero_footprint": 0.7567583768290711,
+          "state_delta": {
+            "center_separation_m": 2.1318648227131654,
+            "velocity_separation_m_s": 6.664295476328862,
+            "speed_delta_m_s": -2.728037649531636,
+            "angle_delta_rad": -0.12108911029486868,
+            "yaw_delta_rad_s": -0.13377608009375175,
+            "max_joint_delta_rad": 0.02286750078201294,
+            "wheel_heading_delta_rad": [
+              -0.09822160951285575,
+              -0.09822160951285575,
+              -0.12108911029486868,
+              -0.12108911029486868
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.026709441180415,
+              -5.588107737792683,
+              -4.545514923855478,
+              -5.209465187970949
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -0.016070127487182617,
+              -0.016070127487182617
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 159,
+          "force_ratio_peak": 1.0351893493719135,
+          "zero_force_peak": 1.0578298615376414,
+          "footprint": 1.1604795629426936,
+          "zero_footprint": 0.713310108821253,
+          "state_delta": {
+            "center_separation_m": 2.1633972073229812,
+            "velocity_separation_m_s": 6.407436624467915,
+            "speed_delta_m_s": -2.735318368453143,
+            "angle_delta_rad": -0.11702342002248844,
+            "yaw_delta_rad_s": 0.2032845136190078,
+            "max_joint_delta_rad": 0.02286750078201294,
+            "wheel_heading_delta_rad": [
+              -0.0941559192404755,
+              -0.0941559192404755,
+              -0.11702342002248844,
+              -0.11702342002248844
+            ],
+            "wheel_omega_delta_rad_s": [
+              -4.982383089584104,
+              -5.544431437727823,
+              -4.537782386613813,
+              -5.19858724015225
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -0.016070127487182617,
+              -0.016070127487182617
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 160,
+          "force_ratio_peak": 1.0508094548178004,
+          "zero_force_peak": 1.0400825325940384,
+          "footprint": 1.0516510938229633,
+          "zero_footprint": 0.6832617046150381,
+          "state_delta": {
+            "center_separation_m": 2.197970773682806,
+            "velocity_separation_m_s": 6.305716636789919,
+            "speed_delta_m_s": -2.743374298079573,
+            "angle_delta_rad": -0.11439616100539285,
+            "yaw_delta_rad_s": 0.13136295085478356,
+            "max_joint_delta_rad": 0.02286750078201294,
+            "wheel_heading_delta_rad": [
+              -0.09152866022338002,
+              -0.09152866022338002,
+              -0.11439616100539285,
+              -0.11439616100539285
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.094238471154995,
+              -5.2524471683156975,
+              -4.681286119371592,
+              -5.061154921165581
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -0.016070127487182617,
+              -0.016070127487182617
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 161,
+          "force_ratio_peak": 1.059621185688024,
+          "zero_force_peak": 1.0407908703410467,
+          "footprint": null,
+          "zero_footprint": 0.6979881509001448,
+          "state_delta": {
+            "center_separation_m": 2.2349388451969285,
+            "velocity_separation_m_s": 6.24944478554208,
+            "speed_delta_m_s": -2.7485102887472195,
+            "angle_delta_rad": -0.11037427254787635,
+            "yaw_delta_rad_s": 0.20109442287582713,
+            "max_joint_delta_rad": 0.02286750078201294,
+            "wheel_heading_delta_rad": [
+              -0.0875067717658633,
+              -0.0875067717658633,
+              -0.11037427254787635,
+              -0.11037427254787635
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.142521061517414,
+              -5.104003633980028,
+              -4.6999548103771644,
+              -4.991693248694872
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -0.016070127487182617,
+              -0.016070127487182617
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        }
+      ],
+      "match_scope": "SAME_RAW_CLOCK_NOT_SAME_PHYSICAL_STATE",
+      "raw_unsaturated_longitudinal_lateral_not_logged": true,
+      "stored_same_state_original_FINAL_first_raw": {
+        "physical_state_equal_ignoring_steer_latch": true,
+        "original_force_ratios": [
+          0.6974122517123915,
+          0.7836718904105798,
+          1.0564627850640511,
+          0.9978362978123512
+        ],
+        "modified_force_ratios": [
+          0.6974122517123915,
+          0.7836718904105798,
+          1.059621185688024,
+          1.000668235152087
+        ],
+        "same_base_command": true,
+        "original_trial_safe": true,
+        "original_FIRST4_recorded": true,
+        "pedal_components_differ": true,
+        "steer_diff": 0.0038953498005867004
+      },
+      "same_state_original_vs_modified_wheel_delta": [
+        {
+          "wheel": 0,
+          "postclip_long_delta": 0.0,
+          "postclip_lat_delta": 0.0,
+          "omega_braked_delta": 0.0
+        },
+        {
+          "wheel": 1,
+          "postclip_long_delta": 0.0,
+          "postclip_lat_delta": 0.0,
+          "omega_braked_delta": 0.0
+        },
+        {
+          "wheel": 2,
+          "postclip_long_delta": 0.2768203724823479,
+          "postclip_lat_delta": 0.5426205995941871,
+          "omega_braked_delta": 0.032029425228557784
+        },
+        {
+          "wheel": 3,
+          "postclip_long_delta": 1.0930093627112,
+          "postclip_lat_delta": 0.137645613795911,
+          "omega_braked_delta": 0.029858575224395167
+        }
+      ]
+    },
+    "H2": {
+      "label": "H2",
+      "first_failure_raw": 126,
+      "kind": "FORCE",
+      "hold": 32,
+      "raw_in_hold": 2,
+      "first_nonzero_applied_command_raw": 97,
+      "first_post_state_diff_raw": 97,
+      "first_post_heading_diff_raw": 97,
+      "base_command_same_as_zero": true,
+      "applied_vs_base_steer_delta": 0.0035948902368545532,
+      "applied_vs_base_netpedal_delta": 0.01727341115474701,
+      "candidate_vs_zero_netpedal_delta": 0.01727341115474701,
+      "residual_target_offset_change_from_prior_hold": -0.08453853191503277,
+      "residual_pedal_change_from_prior_hold": -0.004683490898517828,
+      "candidate_hold_steer_step": -0.04123462736606598,
+      "zero_hold_steer_step": -0.044047802686691284,
+      "unchanged_command_from_immediately_previous_raw": true,
+      "candidate_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "zero_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "current_state_delta": {
+        "center_separation_m": 0.5955526100216457,
+        "velocity_separation_m_s": 2.8559972326426384,
+        "speed_delta_m_s": 2.571566495072716,
+        "angle_delta_rad": 0.027534786653503063,
+        "yaw_delta_rad_s": 0.09952516640657105,
+        "max_joint_delta_rad": 0.0035948902368545532,
+        "wheel_heading_delta_rad": [
+          0.02393989641664851,
+          0.02393989641664851,
+          0.027534786653503063,
+          0.027534786653503063
+        ],
+        "wheel_omega_delta_rad_s": [
+          4.570300572010396,
+          4.914882100483197,
+          4.541660928343447,
+          4.892263855747373
+        ],
+        "wheel_gas_memory_delta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "same_friction": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "same_contacts": false,
+        "physical_state_equal": false
+      },
+      "wheels": [
+        {
+          "wheel": 0,
+          "axle": "front",
+          "zero_ratio": 0.8430339920520228,
+          "candidate_ratio": 0.873670261629454,
+          "ratio_delta": 0.030636269577431263,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.028139253088257488,
+          "postclip_lateral_over_mu_delta": -0.03649424793041123,
+          "candidate_postclip_lateral_squared_share": 0.9724215242297236,
+          "omega_drive_delta": 4.570300572010396,
+          "omega_braked_delta": 4.829401739331601,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 1,
+          "axle": "front",
+          "zero_ratio": 1.0565611815886315,
+          "candidate_ratio": 1.0957886221556994,
+          "ratio_delta": 0.03922744056706784,
+          "zero_clipped": true,
+          "candidate_clipped": true,
+          "postclip_longitudinal_over_mu_delta": 0.028449384482885337,
+          "postclip_lateral_over_mu_delta": -0.006254807235774207,
+          "candidate_postclip_lateral_squared_share": 0.9598071868154798,
+          "omega_drive_delta": 4.914882100483197,
+          "omega_braked_delta": 5.173983267804402,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 2,
+          "axle": "rear",
+          "zero_ratio": 0.4346175276236272,
+          "candidate_ratio": 0.465434882348272,
+          "ratio_delta": 0.030817354724644808,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.02884115409509,
+          "postclip_lateral_over_mu_delta": -0.044555885831099984,
+          "candidate_postclip_lateral_squared_share": 0.8952514243927999,
+          "omega_drive_delta": 4.541660928343447,
+          "omega_braked_delta": 4.800762095664652,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 3,
+          "axle": "rear",
+          "zero_ratio": 0.504005075774771,
+          "candidate_ratio": 0.5355217075956592,
+          "ratio_delta": 0.03151663182088815,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.022882060702267365,
+          "postclip_lateral_over_mu_delta": -0.048264675378892785,
+          "candidate_postclip_lateral_squared_share": 0.8060136770245769,
+          "omega_drive_delta": 4.892263855747373,
+          "omega_braked_delta": 5.151365023068578,
+          "returned_gas_delta": 0.0
+        }
+      ],
+      "last_raws": [
+        {
+          "raw": 121,
+          "force_ratio_peak": 0.5940743979844033,
+          "zero_force_peak": 0.5754684912324987,
+          "footprint": 4.281488365703849,
+          "zero_footprint": 4.499660013531076,
+          "state_delta": {
+            "center_separation_m": 0.3394031833457458,
+            "velocity_separation_m_s": 2.1720509526352,
+            "speed_delta_m_s": 1.9501950764805116,
+            "angle_delta_rad": 0.018459135453792186,
+            "yaw_delta_rad_s": 0.08114312176686989,
+            "max_joint_delta_rad": 0.001237712800502777,
+            "wheel_heading_delta_rad": [
+              0.019696848254294963,
+              0.019696848254294963,
+              0.018459135453792186,
+              0.018459135453792186
+            ],
+            "wheel_omega_delta_rad_s": [
+              3.4255144028255415,
+              3.7086683994061644,
+              3.4043256688797925,
+              3.6911312098070113
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        },
+        {
+          "raw": 122,
+          "force_ratio_peak": 0.9873090290213308,
+          "zero_force_peak": 0.9623462020647824,
+          "footprint": 4.134653454336806,
+          "zero_footprint": 4.330403667341192,
+          "state_delta": {
+            "center_separation_m": 0.3855802548202858,
+            "velocity_separation_m_s": 2.3182069044339917,
+            "speed_delta_m_s": 2.0787762167557133,
+            "angle_delta_rad": 0.020161480929545617,
+            "yaw_delta_rad_s": 0.0851172737876722,
+            "max_joint_delta_rad": 0.000781714916229248,
+            "wheel_heading_delta_rad": [
+              0.01937976601331637,
+              0.01937976601331637,
+              0.020161480929545617,
+              0.020161480929545617
+            ],
+            "wheel_omega_delta_rad_s": [
+              3.666989268657815,
+              3.9626673559485255,
+              3.6436271355831877,
+              3.943358921180362
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 123,
+          "force_ratio_peak": 0.8120842663819319,
+          "zero_force_peak": 0.7906615334241082,
+          "footprint": 3.9789052895937536,
+          "zero_footprint": 4.200140903158792,
+          "state_delta": {
+            "center_separation_m": 0.43420656622297504,
+            "velocity_separation_m_s": 2.4461602283290307,
+            "speed_delta_m_s": 2.2117484396780966,
+            "angle_delta_rad": 0.021818936287399282,
+            "yaw_delta_rad_s": 0.08287276789268017,
+            "max_joint_delta_rad": 0.000781714916229248,
+            "wheel_heading_delta_rad": [
+              0.021037221371170034,
+              0.021037221371170034,
+              0.021818936287399282,
+              0.021818936287399282
+            ],
+            "wheel_omega_delta_rad_s": [
+              3.9053135054786026,
+              4.214405694119691,
+              3.8800241239646027,
+              4.193654991355174
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 124,
+          "force_ratio_peak": 0.7466242500218293,
+          "zero_force_peak": 0.7175570288059829,
+          "footprint": 3.923642363095168,
+          "zero_footprint": 4.077833111155099,
+          "state_delta": {
+            "center_separation_m": 0.485517832699673,
+            "velocity_separation_m_s": 2.5906696117646244,
+            "speed_delta_m_s": 2.343185527224918,
+            "angle_delta_rad": 0.023647105560855697,
+            "yaw_delta_rad_s": 0.09140846367281963,
+            "max_joint_delta_rad": 0.000781714916229248,
+            "wheel_heading_delta_rad": [
+              0.02286539064462645,
+              0.02286539064462645,
+              0.023647105560855697,
+              0.023647105560855697
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.145771474139394,
+              4.461234630397939,
+              4.119746864067167,
+              4.440253508998893
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 125,
+          "force_ratio_peak": 0.6978531421300019,
+          "zero_force_peak": 0.6616499669938046,
+          "footprint": 3.9644928916366964,
+          "zero_footprint": 4.076129134868175,
+          "state_delta": {
+            "center_separation_m": 0.5395259708357688,
+            "velocity_separation_m_s": 2.7374751757776465,
+            "speed_delta_m_s": 2.474293476561776,
+            "angle_delta_rad": 0.02554428332537162,
+            "yaw_delta_rad_s": 0.09485888822579458,
+            "max_joint_delta_rad": 0.000781714916229248,
+            "wheel_heading_delta_rad": [
+              0.02476256840914237,
+              0.02476256840914237,
+              0.02554428332537162,
+              0.02554428332537162
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.382839217036803,
+              4.713053175127712,
+              4.355659048893713,
+              4.691411830736669
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        },
+        {
+          "raw": 126,
+          "force_ratio_peak": 1.0957886221556994,
+          "zero_force_peak": 1.0565611815886315,
+          "footprint": null,
+          "zero_footprint": 4.077996368311002,
+          "state_delta": {
+            "center_separation_m": 0.5955526100216457,
+            "velocity_separation_m_s": 2.8559972326426384,
+            "speed_delta_m_s": 2.571566495072716,
+            "angle_delta_rad": 0.027534786653503063,
+            "yaw_delta_rad_s": 0.09952516640657105,
+            "max_joint_delta_rad": 0.0035948902368545532,
+            "wheel_heading_delta_rad": [
+              0.02393989641664851,
+              0.02393989641664851,
+              0.027534786653503063,
+              0.027534786653503063
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.570300572010396,
+              4.914882100483197,
+              4.541660928343447,
+              4.892263855747373
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        }
+      ],
+      "match_scope": "SAME_RAW_CLOCK_NOT_SAME_PHYSICAL_STATE",
+      "raw_unsaturated_longitudinal_lateral_not_logged": true
+    },
+    "H3": {
+      "label": "H3",
+      "first_failure_raw": 156,
+      "kind": "FOOTPRINT",
+      "hold": 39,
+      "raw_in_hold": 4,
+      "first_nonzero_applied_command_raw": 97,
+      "first_post_state_diff_raw": 97,
+      "first_post_heading_diff_raw": 97,
+      "base_command_same_as_zero": true,
+      "applied_vs_base_steer_delta": 0.0001964867115020752,
+      "applied_vs_base_netpedal_delta": -0.0009419918060302734,
+      "candidate_vs_zero_netpedal_delta": -0.0009419918060302734,
+      "residual_target_offset_change_from_prior_hold": 0.070781773187581,
+      "residual_pedal_change_from_prior_hold": -0.0008924764938430104,
+      "candidate_hold_steer_step": 0.05285566300153732,
+      "zero_hold_steer_step": 0.055471427738666534,
+      "unchanged_command_from_immediately_previous_raw": true,
+      "candidate_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "zero_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "current_state_delta": {
+        "center_separation_m": 3.0197799628149267,
+        "velocity_separation_m_s": 11.137237090274414,
+        "speed_delta_m_s": -2.7040005106438088,
+        "angle_delta_rad": -0.22043968119218005,
+        "yaw_delta_rad_s": -0.1661727153110628,
+        "max_joint_delta_rad": 0.0001964867115020752,
+        "wheel_heading_delta_rad": [
+          -0.22063616790368212,
+          -0.22063616790368212,
+          -0.22043968119218005,
+          -0.22043968119218005
+        ],
+        "wheel_omega_delta_rad_s": [
+          -4.8904568562290365,
+          -5.773281207031005,
+          -4.326763751602002,
+          -5.318188040607211
+        ],
+        "wheel_gas_memory_delta": [
+          0.0,
+          0.0,
+          -0.0009419918060302734,
+          -0.0009419918060302734
+        ],
+        "same_friction": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "same_contacts": false,
+        "physical_state_equal": false
+      },
+      "wheels": [
+        {
+          "wheel": 0,
+          "axle": "front",
+          "zero_ratio": 0.6638649837425149,
+          "candidate_ratio": 0.6588193322734888,
+          "ratio_delta": -0.005045651469026136,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": -0.019759754233068527,
+          "postclip_lateral_over_mu_delta": 0.03690659259223461,
+          "candidate_postclip_lateral_squared_share": 0.3011552456424832,
+          "omega_drive_delta": -4.8904568562290365,
+          "omega_braked_delta": -4.8904568562290365,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 1,
+          "axle": "front",
+          "zero_ratio": 0.6732933087719107,
+          "candidate_ratio": 0.6573795012672136,
+          "ratio_delta": -0.015913807504697175,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": -0.04410576380434705,
+          "postclip_lateral_over_mu_delta": 0.052477150472784895,
+          "candidate_postclip_lateral_squared_share": 0.5967776799294875,
+          "omega_drive_delta": -5.773281207031005,
+          "omega_braked_delta": -5.773281207031005,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 2,
+          "axle": "rear",
+          "zero_ratio": 0.9961733988834064,
+          "candidate_ratio": 0.996006513173317,
+          "ratio_delta": -0.0001668857100893817,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.05258373272084338,
+          "postclip_lateral_over_mu_delta": 0.08051062564018929,
+          "candidate_postclip_lateral_squared_share": 0.25732484291906466,
+          "omega_drive_delta": -4.157820289091504,
+          "omega_braked_delta": -4.157820289091504,
+          "returned_gas_delta": -0.0009419918060302734
+        },
+        {
+          "wheel": 3,
+          "axle": "rear",
+          "zero_ratio": 1.054959686728952,
+          "candidate_ratio": 1.021125020805715,
+          "ratio_delta": -0.03383466592323692,
+          "zero_clipped": true,
+          "candidate_clipped": true,
+          "postclip_longitudinal_over_mu_delta": 0.04442760886006458,
+          "postclip_lateral_over_mu_delta": 0.06522112848638772,
+          "candidate_postclip_lateral_squared_share": 0.2808259694023384,
+          "omega_drive_delta": -5.143884921818028,
+          "omega_braked_delta": -5.143884921818028,
+          "returned_gas_delta": -0.0009419918060302734
+        }
+      ],
+      "last_raws": [
+        {
+          "raw": 151,
+          "force_ratio_peak": 0.9480019305648334,
+          "zero_force_peak": 0.9917723664919553,
+          "footprint": 2.3248400096437347,
+          "zero_footprint": 1.9470406039578765,
+          "state_delta": {
+            "center_separation_m": 2.505812910543391,
+            "velocity_separation_m_s": 9.49057696295614,
+            "speed_delta_m_s": -2.8821986884988533,
+            "angle_delta_rad": -0.19990186591109627,
+            "yaw_delta_rad_s": -0.25171781905964785,
+            "max_joint_delta_rad": 0.0028122514486312866,
+            "wheel_heading_delta_rad": [
+              -0.20271411735972755,
+              -0.20271411735972755,
+              -0.19990186591109627,
+              -0.19990186591109627
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.165670587508615,
+              -6.377005362280514,
+              -4.524803747202952,
+              -5.752070422973674
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -4.953145980834961e-05,
+              -4.953145980834961e-05
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 152,
+          "force_ratio_peak": 0.9680183310514159,
+          "zero_force_peak": 0.9900816149325152,
+          "footprint": 1.9555743005228186,
+          "zero_footprint": 1.68124192220191,
+          "state_delta": {
+            "center_separation_m": 2.5991757882382074,
+            "velocity_separation_m_s": 9.861382819951093,
+            "speed_delta_m_s": -2.87571319478657,
+            "angle_delta_rad": -0.2047299277983376,
+            "yaw_delta_rad_s": -0.2414030943620662,
+            "max_joint_delta_rad": 0.0028122514486312866,
+            "wheel_heading_delta_rad": [
+              -0.20754217924696894,
+              -0.20754217924696894,
+              -0.2047299277983376,
+              -0.2047299277983376
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.095017044796407,
+              -6.237733704078735,
+              -4.47111038684281,
+              -5.63650781283323
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -4.953145980834961e-05,
+              -4.953145980834961e-05
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 153,
+          "force_ratio_peak": 0.9936655604445969,
+          "zero_force_peak": 1.0075314639889092,
+          "footprint": 1.5470311597348663,
+          "zero_footprint": 1.4714656425954826,
+          "state_delta": {
+            "center_separation_m": 2.6959453603622756,
+            "velocity_separation_m_s": 10.188929320842897,
+            "speed_delta_m_s": -2.8310215810173887,
+            "angle_delta_rad": -0.2094365036940118,
+            "yaw_delta_rad_s": -0.23532879478370772,
+            "max_joint_delta_rad": 0.0028122514486312866,
+            "wheel_heading_delta_rad": [
+              -0.21224875514264308,
+              -0.21224875514264308,
+              -0.2094365036940118,
+              -0.2094365036940118
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.048503581009868,
+              -6.130321376401298,
+              -4.440796269038387,
+              -5.549233018011833
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -4.953145980834961e-05,
+              -4.953145980834961e-05
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        },
+        {
+          "raw": 154,
+          "force_ratio_peak": 1.0453851462495947,
+          "zero_force_peak": 1.052295943017401,
+          "footprint": 1.1352733579542829,
+          "zero_footprint": 1.2608771877835925,
+          "state_delta": {
+            "center_separation_m": 2.7964858303367643,
+            "velocity_separation_m_s": 10.537693445864704,
+            "speed_delta_m_s": -2.7821098782551488,
+            "angle_delta_rad": -0.21403735286042458,
+            "yaw_delta_rad_s": -0.23004245832064196,
+            "max_joint_delta_rad": 0.0001964867115020752,
+            "wheel_heading_delta_rad": [
+              -0.21423383957192665,
+              -0.21423383957192665,
+              -0.21403735286042458,
+              -0.21403735286042458
+            ],
+            "wheel_omega_delta_rad_s": [
+              -4.993203074102624,
+              -6.02552836575471,
+              -4.385158196497585,
+              -5.461950613015603
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -4.953145980834961e-05,
+              -4.953145980834961e-05
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 155,
+          "force_ratio_peak": 1.0341619201181933,
+          "zero_force_peak": 1.058958612032885,
+          "footprint": 0.7562036449367984,
+          "zero_footprint": 1.0966160534596527,
+          "state_delta": {
+            "center_separation_m": 2.90491320193582,
+            "velocity_separation_m_s": 10.825409445762384,
+            "speed_delta_m_s": -2.734399444430508,
+            "angle_delta_rad": -0.21711622688595877,
+            "yaw_delta_rad_s": -0.15394370127670687,
+            "max_joint_delta_rad": 0.0001964867115020752,
+            "wheel_heading_delta_rad": [
+              -0.21731271359746085,
+              -0.21731271359746085,
+              -0.21711622688595877,
+              -0.21711622688595877
+            ],
+            "wheel_omega_delta_rad_s": [
+              -4.935506517654048,
+              -5.932508078347325,
+              -4.335212990213677,
+              -5.408811568977782
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -0.0009419918060302734,
+              -0.0009419918060302734
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 156,
+          "force_ratio_peak": 1.021125020805715,
+          "zero_force_peak": 1.054959686728952,
+          "footprint": 0.40673808028662745,
+          "zero_footprint": 0.9565425179472392,
+          "state_delta": {
+            "center_separation_m": 3.0197799628149267,
+            "velocity_separation_m_s": 11.137237090274414,
+            "speed_delta_m_s": -2.7040005106438088,
+            "angle_delta_rad": -0.22043968119218005,
+            "yaw_delta_rad_s": -0.1661727153110628,
+            "max_joint_delta_rad": 0.0001964867115020752,
+            "wheel_heading_delta_rad": [
+              -0.22063616790368212,
+              -0.22063616790368212,
+              -0.22043968119218005,
+              -0.22043968119218005
+            ],
+            "wheel_omega_delta_rad_s": [
+              -4.8904568562290365,
+              -5.773281207031005,
+              -4.326763751602002,
+              -5.318188040607211
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -0.0009419918060302734,
+              -0.0009419918060302734
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        }
+      ],
+      "match_scope": "SAME_RAW_CLOCK_NOT_SAME_PHYSICAL_STATE",
+      "raw_unsaturated_longitudinal_lateral_not_logged": true,
+      "footprint_context": {
+        "candidate": 0.40673808028662745,
+        "zero": 0.9565425179472392,
+        "candidate_path_error": 1.0524284203702048,
+        "zero_path_error": 0.501032083868286,
+        "reference_excess": -3.8603990664622145,
+        "body_speed": 51.6592188090038,
+        "peak_force": 1.021125020805715,
+        "clip_fraction": 0.020833333333333332,
+        "component_label_missing": true
+      }
+    },
+    "H4": {
+      "label": "H4",
+      "first_failure_raw": 154,
+      "kind": "FORCE",
+      "hold": 39,
+      "raw_in_hold": 2,
+      "first_nonzero_applied_command_raw": 97,
+      "first_post_state_diff_raw": 97,
+      "first_post_heading_diff_raw": 97,
+      "base_command_same_as_zero": true,
+      "applied_vs_base_steer_delta": -0.00680195540189743,
+      "applied_vs_base_netpedal_delta": -0.0018822550773620605,
+      "candidate_vs_zero_netpedal_delta": -0.0018822550773620605,
+      "residual_target_offset_change_from_prior_hold": 0.0,
+      "residual_pedal_change_from_prior_hold": -0.0015266952232049276,
+      "candidate_hold_steer_step": 0.05666697025299072,
+      "zero_hold_steer_step": 0.055471427738666534,
+      "unchanged_command_from_immediately_previous_raw": true,
+      "candidate_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "zero_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "current_state_delta": {
+        "center_separation_m": 1.4397044468621711,
+        "velocity_separation_m_s": 3.7367483693117487,
+        "speed_delta_m_s": -2.911646968293219,
+        "angle_delta_rad": -0.053243445010532464,
+        "yaw_delta_rad_s": -0.07476578501687747,
+        "max_joint_delta_rad": 0.00680195540189743,
+        "wheel_heading_delta_rad": [
+          -0.046441489608635034,
+          -0.046441489608635034,
+          -0.053243445010532464,
+          -0.053243445010532464
+        ],
+        "wheel_omega_delta_rad_s": [
+          -5.413832589639583,
+          -5.827147238812302,
+          -4.8725094769884265,
+          -5.417765328313294
+        ],
+        "wheel_gas_memory_delta": [
+          0.0,
+          0.0,
+          -0.0003555417060852051,
+          -0.0003555417060852051
+        ],
+        "same_friction": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "same_contacts": false,
+        "physical_state_equal": false
+      },
+      "wheels": [
+        {
+          "wheel": 0,
+          "axle": "front",
+          "zero_ratio": 0.4741504045931562,
+          "candidate_ratio": 0.49462282314001704,
+          "ratio_delta": 0.020472418546860827,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": -0.02075371686201022,
+          "postclip_lateral_over_mu_delta": 0.01447225665298621,
+          "candidate_postclip_lateral_squared_share": 1.5888720029817258e-05,
+          "omega_drive_delta": -5.413832589639583,
+          "omega_braked_delta": -5.413832589639583,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 1,
+          "axle": "front",
+          "zero_ratio": 0.48859803526011697,
+          "candidate_ratio": 0.5110220250700701,
+          "ratio_delta": 0.022423989809953138,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": -0.032197695828827866,
+          "postclip_lateral_over_mu_delta": 0.014270551491772893,
+          "candidate_postclip_lateral_squared_share": 0.17873432550451773,
+          "omega_drive_delta": -5.827147238812302,
+          "omega_braked_delta": -5.827147238812302,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 2,
+          "axle": "rear",
+          "zero_ratio": 1.052295943017401,
+          "candidate_ratio": 1.0748830306502302,
+          "ratio_delta": 0.022587087632829128,
+          "zero_clipped": true,
+          "candidate_clipped": true,
+          "postclip_longitudinal_over_mu_delta": 0.04003345353181942,
+          "postclip_lateral_over_mu_delta": 0.062317986712517426,
+          "candidate_postclip_lateral_squared_share": 0.259039528207458,
+          "omega_drive_delta": -4.669863598730387,
+          "omega_braked_delta": -4.669863598730387,
+          "returned_gas_delta": -0.0018822550773620605
+        },
+        {
+          "wheel": 3,
+          "axle": "rear",
+          "zero_ratio": 1.0249221897301641,
+          "candidate_ratio": 1.014270514759318,
+          "ratio_delta": -0.01065167497084607,
+          "zero_clipped": true,
+          "candidate_clipped": true,
+          "postclip_longitudinal_over_mu_delta": 0.04008272303885563,
+          "postclip_lateral_over_mu_delta": 0.050013949902124266,
+          "candidate_postclip_lateral_squared_share": 0.36005692517218907,
+          "omega_drive_delta": -5.2352335024480965,
+          "omega_braked_delta": -5.2352335024480965,
+          "returned_gas_delta": -0.0018822550773620605
+        }
+      ],
+      "last_raws": [
+        {
+          "raw": 149,
+          "force_ratio_peak": 1.0294857521334715,
+          "zero_force_peak": 1.0565319908603863,
+          "footprint": 4.002731246560072,
+          "zero_footprint": 2.6239505608373674,
+          "state_delta": {
+            "center_separation_m": 1.4489287511500417,
+            "velocity_separation_m_s": 3.5385601160106415,
+            "speed_delta_m_s": -3.114026211691744,
+            "angle_delta_rad": -0.0440978205118045,
+            "yaw_delta_rad_s": -0.12302977716104513,
+            "max_joint_delta_rad": 0.009607329964637756,
+            "wheel_heading_delta_rad": [
+              -0.0344904905471668,
+              -0.0344904905471668,
+              -0.0440978205118045,
+              -0.0440978205118045
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.725922468926385,
+              -6.274003212291831,
+              -5.178119173991647,
+              -5.835800966054279
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -8.094310760498047e-05,
+              -8.094310760498047e-05
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        },
+        {
+          "raw": 150,
+          "force_ratio_peak": 1.0584918603666862,
+          "zero_force_peak": 1.0458321211785764,
+          "footprint": 3.6251455249553732,
+          "zero_footprint": 2.2599813478180586,
+          "state_delta": {
+            "center_separation_m": 1.452713260287135,
+            "velocity_separation_m_s": 3.5714348968473284,
+            "speed_delta_m_s": -3.088445423582371,
+            "angle_delta_rad": -0.04622889546363973,
+            "yaw_delta_rad_s": -0.10655374759176572,
+            "max_joint_delta_rad": 0.007997497916221619,
+            "wheel_heading_delta_rad": [
+              -0.03823139754741811,
+              -0.03823139754741811,
+              -0.04622889546363973,
+              -0.04622889546363973
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.65823306484684,
+              -6.156573685501314,
+              -5.101138537541928,
+              -5.749189306398208
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -0.0003555417060852051,
+              -0.0003555417060852051
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 151,
+          "force_ratio_peak": 0.9806316102724772,
+          "zero_force_peak": 0.9917723664919553,
+          "footprint": 3.291492977570432,
+          "zero_footprint": 1.9470406039578765,
+          "state_delta": {
+            "center_separation_m": 1.4533047294324688,
+            "velocity_separation_m_s": 3.6234151757631734,
+            "speed_delta_m_s": -3.0324217566206144,
+            "angle_delta_rad": -0.048041373951304034,
+            "yaw_delta_rad_s": -0.0906239243832152,
+            "max_joint_delta_rad": 0.007997497916221619,
+            "wheel_heading_delta_rad": [
+              -0.040043876035082415,
+              -0.040043876035082415,
+              -0.048041373951304034,
+              -0.048041373951304034
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.604614479165761,
+              -6.085202754295594,
+              -5.0350185210863,
+              -5.671351100944236
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -0.0003555417060852051,
+              -0.0003555417060852051
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 152,
+          "force_ratio_peak": 0.9848923012311532,
+          "zero_force_peak": 0.9900816149325152,
+          "footprint": 2.999044282854247,
+          "zero_footprint": 1.68124192220191,
+          "state_delta": {
+            "center_separation_m": 1.451325419284186,
+            "velocity_separation_m_s": 3.64748734837725,
+            "speed_delta_m_s": -2.981986014268365,
+            "angle_delta_rad": -0.04999480883048768,
+            "yaw_delta_rad_s": -0.09767174395918143,
+            "max_joint_delta_rad": 0.007997497916221619,
+            "wheel_heading_delta_rad": [
+              -0.04199731091426606,
+              -0.04199731091426606,
+              -0.04999480883048768,
+              -0.04999480883048768
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.548486612025542,
+              -5.997186632667294,
+              -5.009986142994762,
+              -5.582247452553148
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -0.0003555417060852051,
+              -0.0003555417060852051
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 153,
+          "force_ratio_peak": 1.0139368564263798,
+          "zero_force_peak": 1.0075314639889092,
+          "footprint": 2.7536270587634597,
+          "zero_footprint": 1.4714656425954826,
+          "state_delta": {
+            "center_separation_m": 1.4467741797017188,
+            "velocity_separation_m_s": 3.6894710231130534,
+            "speed_delta_m_s": -2.9473698015696286,
+            "angle_delta_rad": -0.0517481293101949,
+            "yaw_delta_rad_s": -0.08766602398536127,
+            "max_joint_delta_rad": 0.007997497916221619,
+            "wheel_heading_delta_rad": [
+              -0.04375063139397328,
+              -0.04375063139397328,
+              -0.0517481293101949,
+              -0.0517481293101949
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.477728512257897,
+              -5.9125781595268165,
+              -4.964429418732621,
+              -5.4989933619777105
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -0.0003555417060852051,
+              -0.0003555417060852051
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        },
+        {
+          "raw": 154,
+          "force_ratio_peak": 1.0748830306502302,
+          "zero_force_peak": 1.052295943017401,
+          "footprint": null,
+          "zero_footprint": 1.2608771877835925,
+          "state_delta": {
+            "center_separation_m": 1.4397044468621711,
+            "velocity_separation_m_s": 3.7367483693117487,
+            "speed_delta_m_s": -2.911646968293219,
+            "angle_delta_rad": -0.053243445010532464,
+            "yaw_delta_rad_s": -0.07476578501687747,
+            "max_joint_delta_rad": 0.00680195540189743,
+            "wheel_heading_delta_rad": [
+              -0.046441489608635034,
+              -0.046441489608635034,
+              -0.053243445010532464,
+              -0.053243445010532464
+            ],
+            "wheel_omega_delta_rad_s": [
+              -5.413832589639583,
+              -5.827147238812302,
+              -4.8725094769884265,
+              -5.417765328313294
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              -0.0003555417060852051,
+              -0.0003555417060852051
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        }
+      ],
+      "match_scope": "SAME_RAW_CLOCK_NOT_SAME_PHYSICAL_STATE",
+      "raw_unsaturated_longitudinal_lateral_not_logged": true
+    },
+    "H5": {
+      "label": "H5",
+      "first_failure_raw": 126,
+      "kind": "FORCE",
+      "hold": 32,
+      "raw_in_hold": 2,
+      "first_nonzero_applied_command_raw": 97,
+      "first_post_state_diff_raw": 97,
+      "first_post_heading_diff_raw": 97,
+      "base_command_same_as_zero": true,
+      "applied_vs_base_steer_delta": -0.0035023242235183716,
+      "applied_vs_base_netpedal_delta": 0.01739417016506195,
+      "candidate_vs_zero_netpedal_delta": 0.01739417016506195,
+      "residual_target_offset_change_from_prior_hold": 0.08373177855110459,
+      "residual_pedal_change_from_prior_hold": -0.00460278831973367,
+      "candidate_hold_steer_step": -0.046795472502708435,
+      "zero_hold_steer_step": -0.044047802686691284,
+      "unchanged_command_from_immediately_previous_raw": true,
+      "candidate_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "zero_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "current_state_delta": {
+        "center_separation_m": 0.5302490091319169,
+        "velocity_separation_m_s": 2.5795097919145142,
+        "speed_delta_m_s": 2.57917069954685,
+        "angle_delta_rad": 0.0011172157213725775,
+        "yaw_delta_rad_s": 0.10629274373381747,
+        "max_joint_delta_rad": 0.0035023242235183716,
+        "wheel_heading_delta_rad": [
+          0.004619539944890949,
+          0.004619539944890949,
+          0.0011172157213725775,
+          0.0011172157213725775
+        ],
+        "wheel_omega_delta_rad_s": [
+          4.6254906482142815,
+          4.882839138357369,
+          4.60767836740699,
+          4.87625163512098
+        ],
+        "wheel_gas_memory_delta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "same_friction": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "same_contacts": false,
+        "physical_state_equal": false
+      },
+      "wheels": [
+        {
+          "wheel": 0,
+          "axle": "front",
+          "zero_ratio": 0.8430339920520228,
+          "candidate_ratio": 0.9336935760097752,
+          "ratio_delta": 0.09065958395775242,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.03905220678912724,
+          "postclip_lateral_over_mu_delta": -0.0989579731472725,
+          "candidate_postclip_lateral_squared_share": 0.9793491782846242,
+          "omega_drive_delta": 4.6254906482142815,
+          "omega_braked_delta": 4.886403200690211,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 1,
+          "axle": "front",
+          "zero_ratio": 1.0565611815886315,
+          "candidate_ratio": 1.164373076359649,
+          "ratio_delta": 0.10781189477101738,
+          "zero_clipped": true,
+          "candidate_clipped": true,
+          "postclip_longitudinal_over_mu_delta": 0.04012334058364675,
+          "postclip_lateral_over_mu_delta": -0.008571428132157721,
+          "candidate_postclip_lateral_squared_share": 0.9643517289380349,
+          "omega_drive_delta": 4.882839138357369,
+          "omega_braked_delta": 5.143751690833298,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 2,
+          "axle": "rear",
+          "zero_ratio": 0.4346175276236272,
+          "candidate_ratio": 0.4587942138944404,
+          "ratio_delta": 0.024176686270813208,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.03663017528615675,
+          "postclip_lateral_over_mu_delta": -0.040161031970309735,
+          "candidate_postclip_lateral_squared_share": 0.9030572917290038,
+          "omega_drive_delta": 4.60767836740699,
+          "omega_braked_delta": 4.868590919882919,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 3,
+          "axle": "rear",
+          "zero_ratio": 0.504005075774771,
+          "candidate_ratio": 0.5337484736622403,
+          "ratio_delta": 0.02974339788746927,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.018546447682963624,
+          "postclip_lateral_over_mu_delta": -0.04412849141549935,
+          "candidate_postclip_lateral_squared_share": 0.7974775226843531,
+          "omega_drive_delta": 4.87625163512098,
+          "omega_braked_delta": 5.137164187596909,
+          "returned_gas_delta": 0.0
+        }
+      ],
+      "last_raws": [
+        {
+          "raw": 121,
+          "force_ratio_peak": 0.5847366109631098,
+          "zero_force_peak": 0.5754684912324987,
+          "footprint": 4.664014108697562,
+          "zero_footprint": 4.499660013531076,
+          "state_delta": {
+            "center_separation_m": 0.31699597546897607,
+            "velocity_separation_m_s": 2.0183564968442553,
+            "speed_delta_m_s": 1.964948204804351,
+            "angle_delta_rad": -0.007141684625630695,
+            "yaw_delta_rad_s": 0.02879205073714175,
+            "max_joint_delta_rad": 0.0012400299310684204,
+            "wheel_heading_delta_rad": [
+              -0.008381714556699116,
+              -0.008381714556699116,
+              -0.007141684625630695,
+              -0.007141684625630695
+            ],
+            "wheel_omega_delta_rad_s": [
+              3.57689944063047,
+              3.5701623532478948,
+              3.5856416544524023,
+              3.578214521358774
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        },
+        {
+          "raw": 122,
+          "force_ratio_peak": 1.0200221396263296,
+          "zero_force_peak": 0.9623462020647824,
+          "footprint": 4.542843930540828,
+          "zero_footprint": 4.330403667341192,
+          "state_delta": {
+            "center_separation_m": 0.3571597419348986,
+            "velocity_separation_m_s": 2.1364146762827594,
+            "speed_delta_m_s": 2.0941805093899077,
+            "angle_delta_rad": -0.006490989918259693,
+            "yaw_delta_rad_s": 0.032534735368551226,
+            "max_joint_delta_rad": 0.0007546544075012207,
+            "wheel_heading_delta_rad": [
+              -0.005736335510758472,
+              -0.005736335510758472,
+              -0.006490989918259693,
+              -0.006490989918259693
+            ],
+            "wheel_omega_delta_rad_s": [
+              3.8078050380670874,
+              3.8380062396578722,
+              3.814136424154924,
+              3.8439348481757634
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 123,
+          "force_ratio_peak": 0.8343254424176486,
+          "zero_force_peak": 0.7906615334241082,
+          "footprint": 4.412407915212278,
+          "zero_footprint": 4.200140903158792,
+          "state_delta": {
+            "center_separation_m": 0.39879106975216916,
+            "velocity_separation_m_s": 2.256428751464815,
+            "speed_delta_m_s": 2.2288894137686057,
+            "angle_delta_rad": -0.00475315733931736,
+            "yaw_delta_rad_s": 0.08689162894710734,
+            "max_joint_delta_rad": 0.0007546544075012207,
+            "wheel_heading_delta_rad": [
+              -0.003998502931816139,
+              -0.003998502931816139,
+              -0.00475315733931736,
+              -0.00475315733931736
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.030700237539989,
+              4.0765212045308346,
+              4.043440439381627,
+              4.103890280385357
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 124,
+          "force_ratio_peak": 0.7599901302297901,
+          "zero_force_peak": 0.7175570288059829,
+          "footprint": 4.363323481323711,
+          "zero_footprint": 4.077833111155099,
+          "state_delta": {
+            "center_separation_m": 0.44135241350318244,
+            "velocity_separation_m_s": 2.3618149539357893,
+            "speed_delta_m_s": 2.3497830731797507,
+            "angle_delta_rad": -0.0030166902778301363,
+            "yaw_delta_rad_s": 0.08682335307435851,
+            "max_joint_delta_rad": 0.0007546544075012207,
+            "wheel_heading_delta_rad": [
+              -0.0022620358703289156,
+              -0.0022620358703289156,
+              -0.0030166902778301363,
+              -0.0030166902778301363
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.240873846607357,
+              4.37573979209067,
+              4.241331818419525,
+              4.389209496550336
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 125,
+          "force_ratio_peak": 0.7098474412996564,
+          "zero_force_peak": 0.6616499669938046,
+          "footprint": 4.404631877843354,
+          "zero_footprint": 4.076129134868175,
+          "state_delta": {
+            "center_separation_m": 0.4853876165698307,
+            "velocity_separation_m_s": 2.486502035075651,
+            "speed_delta_m_s": 2.482377652806157,
+            "angle_delta_rad": -0.0010086391533037364,
+            "yaw_delta_rad_s": 0.10040255622632133,
+            "max_joint_delta_rad": 0.0007546544075012207,
+            "wheel_heading_delta_rad": [
+              -0.00025398474580251573,
+              -0.00025398474580251573,
+              -0.0010086391533037364,
+              -0.0010086391533037364
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.455953175044428,
+              4.653408696713768,
+              4.44756938597375,
+              4.656720896309864
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        },
+        {
+          "raw": 126,
+          "force_ratio_peak": 1.164373076359649,
+          "zero_force_peak": 1.0565611815886315,
+          "footprint": null,
+          "zero_footprint": 4.077996368311002,
+          "state_delta": {
+            "center_separation_m": 0.5302490091319169,
+            "velocity_separation_m_s": 2.5795097919145142,
+            "speed_delta_m_s": 2.57917069954685,
+            "angle_delta_rad": 0.0011172157213725775,
+            "yaw_delta_rad_s": 0.10629274373381747,
+            "max_joint_delta_rad": 0.0035023242235183716,
+            "wheel_heading_delta_rad": [
+              0.004619539944890949,
+              0.004619539944890949,
+              0.0011172157213725775,
+              0.0011172157213725775
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.6254906482142815,
+              4.882839138357369,
+              4.60767836740699,
+              4.87625163512098
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        }
+      ],
+      "match_scope": "SAME_RAW_CLOCK_NOT_SAME_PHYSICAL_STATE",
+      "raw_unsaturated_longitudinal_lateral_not_logged": true
+    },
+    "H7": {
+      "label": "H7",
+      "first_failure_raw": 126,
+      "kind": "FORCE",
+      "hold": 32,
+      "raw_in_hold": 2,
+      "first_nonzero_applied_command_raw": 97,
+      "first_post_state_diff_raw": 97,
+      "first_post_heading_diff_raw": 97,
+      "base_command_same_as_zero": true,
+      "applied_vs_base_steer_delta": 0.0060781389474868774,
+      "applied_vs_base_netpedal_delta": 0.017398804426193237,
+      "candidate_vs_zero_netpedal_delta": 0.017398804426193237,
+      "residual_target_offset_change_from_prior_hold": 0.0,
+      "residual_pedal_change_from_prior_hold": -0.004598702820210097,
+      "candidate_hold_steer_step": -0.04300615191459656,
+      "zero_hold_steer_step": -0.044047802686691284,
+      "unchanged_command_from_immediately_previous_raw": true,
+      "candidate_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "zero_saturation": {
+        "steer_at_actuator_limit": false,
+        "pedal_at_actuator_limit": false,
+        "both_actuator_limits": false
+      },
+      "current_state_delta": {
+        "center_separation_m": 0.5536914177914183,
+        "velocity_separation_m_s": 2.6653487270166503,
+        "speed_delta_m_s": 2.6008052664409007,
+        "angle_delta_rad": -0.00869400726267655,
+        "yaw_delta_rad_s": 0.027342771223732854,
+        "max_joint_delta_rad": 0.0060781389474868774,
+        "wheel_heading_delta_rad": [
+          -0.014772146210163428,
+          -0.014772146210163428,
+          -0.00869400726267655,
+          -0.00869400726267655
+        ],
+        "wheel_omega_delta_rad_s": [
+          4.742907653111331,
+          4.772784191091205,
+          4.768574068337884,
+          4.79310426247595
+        ],
+        "wheel_gas_memory_delta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "same_friction": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "same_contacts": false,
+        "physical_state_equal": false
+      },
+      "wheels": [
+        {
+          "wheel": 0,
+          "axle": "front",
+          "zero_ratio": 0.8430339920520228,
+          "candidate_ratio": 0.8820439663714396,
+          "ratio_delta": 0.039009974319416774,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.03089231173724194,
+          "postclip_lateral_over_mu_delta": -0.04543935420330003,
+          "candidate_postclip_lateral_squared_share": 0.97395975833902,
+          "omega_drive_delta": 4.742907653111331,
+          "omega_braked_delta": 5.00388971950423,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 1,
+          "axle": "front",
+          "zero_ratio": 1.0565611815886315,
+          "candidate_ratio": 1.0942386235486226,
+          "ratio_delta": 0.03767744195999101,
+          "zero_clipped": true,
+          "candidate_clipped": true,
+          "postclip_longitudinal_over_mu_delta": 0.027123009328572395,
+          "postclip_lateral_over_mu_delta": -0.0059824473033219805,
+          "candidate_postclip_lateral_squared_share": 0.9592736003068698,
+          "omega_drive_delta": 4.772784191091205,
+          "omega_braked_delta": 5.033766257484103,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 2,
+          "axle": "rear",
+          "zero_ratio": 0.4346175276236272,
+          "candidate_ratio": 0.4489450880274255,
+          "ratio_delta": 0.01432756040379829,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.02992580166285083,
+          "postclip_lateral_over_mu_delta": -0.027475237167687183,
+          "candidate_postclip_lateral_squared_share": 0.8890307282340941,
+          "omega_drive_delta": 4.768574068337884,
+          "omega_braked_delta": 5.0295561347307824,
+          "returned_gas_delta": 0.0
+        },
+        {
+          "wheel": 3,
+          "axle": "rear",
+          "zero_ratio": 0.504005075774771,
+          "candidate_ratio": 0.518992193861718,
+          "ratio_delta": 0.014987118086946971,
+          "zero_clipped": false,
+          "candidate_clipped": false,
+          "postclip_longitudinal_over_mu_delta": 0.020340202665363682,
+          "postclip_lateral_over_mu_delta": -0.02847638891374893,
+          "candidate_postclip_lateral_squared_share": 0.7889846129847548,
+          "omega_drive_delta": 4.79310426247595,
+          "omega_braked_delta": 5.0540863288688485,
+          "returned_gas_delta": 0.0
+        }
+      ],
+      "last_raws": [
+        {
+          "raw": 121,
+          "force_ratio_peak": 0.57167324582078,
+          "zero_force_peak": 0.5754684912324987,
+          "footprint": 4.691196301979852,
+          "zero_footprint": 4.499660013531076,
+          "state_delta": {
+            "center_separation_m": 0.32318096622688813,
+            "velocity_separation_m_s": 2.073575169412901,
+            "speed_delta_m_s": 1.9708873493019894,
+            "angle_delta_rad": -0.010074256735444154,
+            "yaw_delta_rad_s": -0.006626251152352491,
+            "max_joint_delta_rad": 0.0036101266741752625,
+            "wheel_heading_delta_rad": [
+              -0.013684383409619416,
+              -0.013684383409619416,
+              -0.010074256735444154,
+              -0.010074256735444154
+            ],
+            "wheel_omega_delta_rad_s": [
+              3.620424615145936,
+              3.5303526756404295,
+              3.637967896845396,
+              3.545044802220204
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        },
+        {
+          "raw": 122,
+          "force_ratio_peak": 0.9691258692018155,
+          "zero_force_peak": 0.9623462020647824,
+          "footprint": 4.580249583475116,
+          "zero_footprint": 4.330403667341192,
+          "state_delta": {
+            "center_separation_m": 0.36531802591325674,
+            "velocity_separation_m_s": 2.196291831846263,
+            "speed_delta_m_s": 2.100920164652109,
+            "angle_delta_rad": -0.010112696508688623,
+            "yaw_delta_rad_s": -0.0019219886622148241,
+            "max_joint_delta_rad": 0.005036488175392151,
+            "wheel_heading_delta_rad": [
+              -0.015149184684080774,
+              -0.015149184684080774,
+              -0.010112696508688623,
+              -0.010112696508688623
+            ],
+            "wheel_omega_delta_rad_s": [
+              3.8591219717545613,
+              3.7889190649773354,
+              3.8777499398530324,
+              3.8045440924213523
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 123,
+          "force_ratio_peak": 0.7941256924095434,
+          "zero_force_peak": 0.7906615334241082,
+          "footprint": 4.461059591320904,
+          "zero_footprint": 4.200140903158792,
+          "state_delta": {
+            "center_separation_m": 0.40978179415869026,
+            "velocity_separation_m_s": 2.332380876307177,
+            "speed_delta_m_s": 2.2364735036179937,
+            "angle_delta_rad": -0.009959807948260568,
+            "yaw_delta_rad_s": 0.0076444280213934235,
+            "max_joint_delta_rad": 0.005036488175392151,
+            "wheel_heading_delta_rad": [
+              -0.01499629612365272,
+              -0.01499629612365272,
+              -0.009959807948260568,
+              -0.009959807948260568
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.096124329731836,
+              4.046236794634282,
+              4.114750058520599,
+              4.061087750415453
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 124,
+          "force_ratio_peak": 0.727747220668992,
+          "zero_force_peak": 0.7175570288059829,
+          "footprint": 4.422847191062608,
+          "zero_footprint": 4.077833111155099,
+          "state_delta": {
+            "center_separation_m": 0.4561258548117714,
+            "velocity_separation_m_s": 2.4549964848117214,
+            "speed_delta_m_s": 2.3694055298429646,
+            "angle_delta_rad": -0.009673175428071557,
+            "yaw_delta_rad_s": 0.014331626009449039,
+            "max_joint_delta_rad": 0.005036488175392151,
+            "wheel_heading_delta_rad": [
+              -0.014709663603463707,
+              -0.014709663603463707,
+              -0.009673175428071557,
+              -0.009673175428071557
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.326847432805721,
+              4.303372949811774,
+              4.350048683411231,
+              4.321707628168966
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        },
+        {
+          "raw": 125,
+          "force_ratio_peak": 0.6792223400250512,
+          "zero_force_peak": 0.6616499669938046,
+          "footprint": 4.4645854364184006,
+          "zero_footprint": 4.076129134868175,
+          "state_delta": {
+            "center_separation_m": 0.5043076533263324,
+            "velocity_separation_m_s": 2.576288515914176,
+            "speed_delta_m_s": 2.5016729616551885,
+            "angle_delta_rad": -0.009240862687151186,
+            "yaw_delta_rad_s": 0.021615637046016545,
+            "max_joint_delta_rad": 0.005036488175392151,
+            "wheel_heading_delta_rad": [
+              -0.014277350862543337,
+              -0.014277350862543337,
+              -0.009240862687151186,
+              -0.009240862687151186
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.559620345031178,
+              4.562339854840445,
+              4.58442019950806,
+              4.5819615631441195
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": true,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": false
+        },
+        {
+          "raw": 126,
+          "force_ratio_peak": 1.0942386235486226,
+          "zero_force_peak": 1.0565611815886315,
+          "footprint": null,
+          "zero_footprint": 4.077996368311002,
+          "state_delta": {
+            "center_separation_m": 0.5536914177914183,
+            "velocity_separation_m_s": 2.6653487270166503,
+            "speed_delta_m_s": 2.6008052664409007,
+            "angle_delta_rad": -0.00869400726267655,
+            "yaw_delta_rad_s": 0.027342771223732854,
+            "max_joint_delta_rad": 0.0060781389474868774,
+            "wheel_heading_delta_rad": [
+              -0.014772146210163428,
+              -0.014772146210163428,
+              -0.00869400726267655,
+              -0.00869400726267655
+            ],
+            "wheel_omega_delta_rad_s": [
+              4.742907653111331,
+              4.772784191091205,
+              4.768574068337884,
+              4.79310426247595
+            ],
+            "wheel_gas_memory_delta": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "same_friction": [
+              true,
+              true,
+              true,
+              true
+            ],
+            "same_contacts": false,
+            "physical_state_equal": false
+          },
+          "applied_action_same_as_previous": true
+        }
+      ],
+      "match_scope": "SAME_RAW_CLOCK_NOT_SAME_PHYSICAL_STATE",
+      "raw_unsaturated_longitudinal_lateral_not_logged": true
+    },
+    "H6": {
+      "label": "H6",
+      "last_safe_applied_raw": 156,
+      "next_unapplied_raw": 157,
+      "state_delta": {
+        "center_separation_m": 1.891498232931821,
+        "velocity_separation_m_s": 9.866740458272407,
+        "speed_delta_m_s": -2.6199927596561707,
+        "angle_delta_rad": -0.19046030891449905,
+        "yaw_delta_rad_s": -0.22909031609032504,
+        "max_joint_delta_rad": 0.006126806139945984,
+        "wheel_heading_delta_rad": [
+          -0.19658711505444504,
+          -0.19658711505444504,
+          -0.19046030891449905,
+          -0.19046030891449905
+        ],
+        "wheel_omega_delta_rad_s": [
+          -4.699732396166411,
+          -5.742679195045156,
+          -4.110716626896533,
+          -5.29661002904777
+        ],
+        "wheel_gas_memory_delta": [
+          0.0,
+          0.0,
+          0.001421213150024414,
+          0.001421213150024414
+        ],
+        "same_friction": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "same_contacts": false,
+        "physical_state_equal": false
+      },
+      "current_safe_margin": 0.5567588818174253,
+      "zero_current_margin": 0.9565425179472392,
+      "current_path_error": 0.6948590601556407,
+      "current_force_peak": 1.0192731240752906,
+      "original_trial_count": 20,
+      "distinct_first_action_steers": 1,
+      "trial_reasons": {
+        "FORECAST_FOOTPRINT_MARGIN": 12,
+        "FORCE_PEAK": 8
+      },
+      "trials_passing_first_hold": 0,
+      "by_reason": {
+        "FORECAST_FOOTPRINT_MARGIN": {
+          "count": 12,
+          "min_completed_raw": 1,
+          "max_completed_raw": 1,
+          "first_hold_pass": 0
+        },
+        "FORCE_PEAK": {
+          "count": 8,
+          "min_completed_raw": 0,
+          "max_completed_raw": 0,
+          "first_hold_pass": 0
+        }
+      },
+      "modified_action_applied_at_hold40": false,
+      "physical_future_failure_observed": false
+    }
+  },
+  "validated_hold_wheel_streams": 11,
+  "input_log_sha256": {
+    "zero-result-private.json": "bfacd4af040ca67e92a9dcdf13b5dc5d867ff400d35f8482603761f54666e538",
+    "H0-result-private.json": "864387986d766300bb42e321937ee9881b26a888ecf1e1b81c4582c55ff566a8",
+    "H0-hold-032-private.json": "95ac6bac12ecf48166cf4004f08a51ee489d6277f998bdc0e604c5cb5e2ea0be",
+    "zero-hold-032-private.json": "e0c870eed975c2baecde52ed71f4d46b460046367063ab74d65012ee531d8a49",
+    "H0-hold-031-private.json": "33a43012bc0744587ccc03efc6d77d8ec10ffff31cf70729cb7743a3feb69d68",
+    "zero-hold-031-private.json": "83e19019b3912cd44483433710bafdb4c62217997df2d1e25b867560020c35b6",
+    "H0-hold-025-private.json": "37053b2372017bda1f3f1aa966695d51fbbb2b77f0483e2b7f1e47cbbcbd6edd",
+    "H0-hold-026-private.json": "2c4c0b9a78d42661f0e54942dc728ffb2fc37052b1b3f8dfeb9f50f40a72fc92",
+    "H0-hold-027-private.json": "c068a7b86264cd91234df7cadffa7bfc3a6faf2ae479d097373c1fa8eb3765fc",
+    "H0-hold-028-private.json": "2b1b5146159cd724d107b4d59f8cdad974f1d17a9ade544b6ea0f768360bb9cb",
+    "H0-hold-029-private.json": "20bf69e82e5c45c8d265e5ddea26651f2ff85b1ab86c2113048b0d165bd088af",
+    "H0-hold-030-private.json": "dcd4e8b437100d949bb9108b6ef51d693deac834a4fc6004c294ff4cd2389094",
+    "H1-result-private.json": "6e119cb23ece2d61767bc9540f39e55ecd4f4cca74c6763c081db939025bfe78",
+    "H1-hold-041-private.json": "725ea7134784f5f40fd7b357e84a6d202b3b9a1057c695a29cd6c4fed80e2de1",
+    "zero-hold-041-private.json": "5bac886ef77185eae504ec368ca2acee89042a0e07410c227cf1f662cf5cd2f2",
+    "H1-hold-040-private.json": "912e434c8ff147fcd25c7e8d9a2edbfaf3aaddac07baba8535b2f8d1f5747091",
+    "zero-hold-040-private.json": "1222bcb2b54f8a629eb36b2f9f2e85a27d6c48dd8ec103e31d25b4bba9980ffa",
+    "H1-hold-025-private.json": "a1e74e6e1ba3420ab9d18fbea2a4a2a90c2a771ef6e1a87fe7008a82e9cd04d0",
+    "H1-hold-026-private.json": "9835a3eb14a2fdeebd5de033a2fa508b920d0a7329ee99258b07e69111ec9110",
+    "H1-hold-027-private.json": "7579e0826d7d228b8766144104d14bc17ddcdc2cf2676cfdc7412b7f2091f1d2",
+    "H1-hold-028-private.json": "fcc92615f8166422d0d2ad2c4ab150c2deb8c028f204793fb72bf61244b4560c",
+    "H1-hold-029-private.json": "c90d29f48f76f9a31354975eeb2cce6bab0d58d67b2c2b144e65712fab72a5c4",
+    "H1-hold-030-private.json": "3968eee78c52265583a175d7700037cb3da136f3e787a1433cb36ea4535a5f19",
+    "H1-hold-031-private.json": "e6c9a9e852cb895f2b8967cdc8316ca06ac6ff9aecd8bb7b5bd49d3becce4037",
+    "H1-hold-032-private.json": "d38d817f0586af1a44858573f200063f1106f267b7e5a567e2a13d9451fac6f2",
+    "H1-hold-033-private.json": "6b38075f815551ec8e98c269b935a54f4d8bfcd537cf18a1d6eb6b3f57e06d01",
+    "H1-hold-034-private.json": "76ad388ea7ec4063938a495f865dc084fdf953154ed1b2f1c92a0fb8499f3ea8",
+    "H1-hold-035-private.json": "4891dca07e497d728f852963ace73f60be1e7c9ecad491aa70e0409b1da336aa",
+    "H1-hold-036-private.json": "496029e73d738a46bcf069a51a060238dfc2242f2778a9ba13dd4f5439afe8db",
+    "H1-hold-037-private.json": "49a26b11968a88f7dd597662d840346db2d418b5712cb67a6663f755464ed2e8",
+    "H1-hold-038-private.json": "b932a9bb27c248d45bb5086e8ca7ccdee2ded8666fb5c25f58b74d7d58b02299",
+    "H1-hold-039-private.json": "d3a24ae8613a0c9ddfadd58d5a9958c1845c84e2e98458e0f2fb6785cb16097a",
+    "H2-result-private.json": "171e2f53cb27b86a55980c65b9b8834c0c3207c5e82cae1cd70e8b5ebf813b39",
+    "H2-hold-032-private.json": "b3ca1c4f13be8259c930558bf8efa00d7c8be59015ff8bd2d64c04a6fcd40ebd",
+    "H2-hold-031-private.json": "0f5c46182080b1010045fba757aefd6bd808839f64ec37fa4bb450919a534627",
+    "H2-hold-025-private.json": "820448ef5416651da19fdce3730c32b757ae1f965f12c8936029dc485085d10a",
+    "H2-hold-026-private.json": "2f19c0d8306555113e47ee5819c7c1f53b9bbcbf6964aaae698ffac380261f38",
+    "H2-hold-027-private.json": "9408d24ec3639a5a873470b76196799ce3b35d0a7f7e0002f0f8bcde8f26a0c2",
+    "H2-hold-028-private.json": "cffa095f7f9764f8dfc271165282ed37648e10a072bb9547da3de31dac93466d",
+    "H2-hold-029-private.json": "7a46cd37f5d37023ae662dae8d73870ee278850ef64b9dfce6bc2bed1d51cfb0",
+    "H2-hold-030-private.json": "4ce3d5fbdb7eb95dc2bfd57e5b5271c65573825540014aa0effd2f2982152598",
+    "H3-result-private.json": "324a218e5c1c68e26c31331f25b8bf99702b1ee6586ac00c41c96ee9ad5c6da1",
+    "H3-hold-039-private.json": "67cf3842f4478572e1d7909b58c61319f7d66763162a89d4cc6c52c068162d1f",
+    "zero-hold-039-private.json": "04ec5ccccdefb2bc0cadf31b4c1e002afab78c4e57c5fad3200f636264f44b04",
+    "H3-hold-038-private.json": "b7b24bc7eca3453012a334f3676ac52fb39d29383868a1660d9253691472a940",
+    "zero-hold-038-private.json": "2d862318fcaae14592f6c051a26fd88a6285a4f84e8a3d395856f6e2d8669baf",
+    "H3-hold-025-private.json": "462c097dd63cb8e32cdd22cd96aed26f5df46425d6db004996febca2374ad2e8",
+    "H3-hold-026-private.json": "2362e768db5c1ac8496d9bd1c19ac8256e497bd930c7c90c43ce71a7377769cd",
+    "H3-hold-027-private.json": "a6d990351d85b1726d36aaafc9da5596599fd511041193b48172a0c24b0b4869",
+    "H3-hold-028-private.json": "b7f1f7ebdae29db4e6f8c58df2acf6d8a1c76fb482a1a3b71406aa51dee9718f",
+    "H3-hold-029-private.json": "ffdae3e3bebd78729b94a674a78500a07a82b25e7346bd7cc9e325997fc35a7e",
+    "H3-hold-030-private.json": "0b844038a8140fda26670fbeb9d735eaec203cbcc441e712f0074d254d8d5d1e",
+    "H3-hold-031-private.json": "1f85041f3f46acaa61f6519f355773fc9fd9ca5c1d30a34eaa55b483ee421510",
+    "H3-hold-032-private.json": "b66ef26bd9c1dde4d7ad0764815014af29bfacffff25f30b92567b3f8ae20fb4",
+    "H3-hold-033-private.json": "e252eb619305b8400e366865a01f8bcc3e0988f3a52d224680bfcfb35d3114f9",
+    "H3-hold-034-private.json": "e20ae79c8cfe19a4736c7b85f8e2f30218d153385a0d3d6e39bdf2bffa775f2f",
+    "H3-hold-035-private.json": "255e2c67b57b23c89547d54d79e2aac1248973637ec201839158972d378794d0",
+    "H3-hold-036-private.json": "97e13a50740d69150640289daa3b5e690329e72bf037c0ff49c6217d44b1a963",
+    "H3-hold-037-private.json": "e3ea31bf2d6bb0f5a89fdf5e389ac677c78fb3324022b7ccbefb8c81c3d27b37",
+    "H4-result-private.json": "3d842f6b1063272f5d114ed7a62fa8f2582cb16ebe354e9cae00d45519790fea",
+    "H4-hold-039-private.json": "b0e8c80a939e9868527219b33be00e4f85d80b874e9226826136a7a028af6b5f",
+    "H4-hold-038-private.json": "0f228b15ddb89ec67552163ec0aad3fa052795984bb08e7f3fd93b6567b61528",
+    "H4-hold-025-private.json": "d78c5bbe630b06bcfc054f9cda665a893cfc8a433fa5a0c4f19a1345f759f7bd",
+    "H4-hold-026-private.json": "bdfb1af00bfedc84a5e3cce05e9dd7c345d4fcc36813715ae5ef965a4913c34a",
+    "H4-hold-027-private.json": "ba5e002a3bc4847626d29079211146ae6bee10c8899b99d386430d79709f6c22",
+    "H4-hold-028-private.json": "10712107192604baaa181cbb3492889b59b672bdd80615c85fd65dd5437bd638",
+    "H4-hold-029-private.json": "5ac098a6da3f6b271cf77cdc7839030ea7ff88a2517fc33cdc85676614d4f744",
+    "H4-hold-030-private.json": "223ace20e0ca9dde5c4ee4582becc780be13b1c379ed278f2ae2c05535df6525",
+    "H4-hold-031-private.json": "61e9a0fd8077374795bd592cbe048687b23aa47c7a8a163c384bc44c03b0e8b7",
+    "H4-hold-032-private.json": "92f01a863d0c4ee1adad906ac885d9724b89fb8783d86175b3cc0c82854ad773",
+    "H4-hold-033-private.json": "c37a03af132e57f41061cf02e20929dc28d37b444825ceae2aa627e0766ac06a",
+    "H4-hold-034-private.json": "7d797bab5bc7f9bfa47cbca5d6cf1b9a71f84b62b59dc2917146b8b2e15f5691",
+    "H4-hold-035-private.json": "e36261baf8a9a901b5c60012a4655683867507645e4ab87f7c2527f1afa5c13e",
+    "H4-hold-036-private.json": "dc574ed3b8b1da49126afb3dba68a053c7cce01d0f37010bb0586fe2f71c0ddd",
+    "H4-hold-037-private.json": "892045c4ec45e5ee99fe9bd1950059b88a6c41fa7946093d5c91c926349ce5c4",
+    "H5-result-private.json": "96515b46c11441da02c7f3aede9ec493e2959afed2807f81ea44f939cf23e413",
+    "H5-hold-032-private.json": "3b063c39e2920f8b471947c7d5c8624ee06e309ec22b6e1c778b69c6a54c88fe",
+    "H5-hold-031-private.json": "cd973d0bf7ce0c47f3c9d0f63ec55d52c3428d685bcdb59aa4e8c526f6276700",
+    "H5-hold-025-private.json": "2b02f18d8d9d5242aa72a6cf36ce869e9f52c3a6c9491f0aa79f2c92a6477236",
+    "H5-hold-026-private.json": "62bbfd15d4ccbaf7111b9e7c517526cf3c740446d2b60bdae277d859ff826742",
+    "H5-hold-027-private.json": "4896e9055f54b96f83a23817fcfc91fb0b507cfc31e89f83f9887beb0b81bc21",
+    "H5-hold-028-private.json": "35372b7ce6a01672098fc0de21ecd7c0602fc78a8e9f1f2e0296b5ce3a1abe0a",
+    "H5-hold-029-private.json": "d3af37547cd8d9fa8a23007cba3d817592ccd000f3177c65962a79c25f1d2381",
+    "H5-hold-030-private.json": "500f818b13d2354c511b56b02eb2d17f31edf2aad4386719a61b3d11a0513b01",
+    "H7-result-private.json": "48bfb6ace6695a4239d2a88e96396f44b65a19262e930ddaf28468ce7374c7f2",
+    "H7-hold-032-private.json": "d3444481f65d0ab7430f4bd3212baf61199bf6f282a3c295e1431e09a00e5acd",
+    "H7-hold-031-private.json": "f8f35ba95c181fcc28c4be0e8549bec83efb46a31e58152912fee8682bc2bb75",
+    "H7-hold-025-private.json": "35235cf70922d13c427d36e0e9c6e03b95b8e8895f5f476d2ee4dd36746c0ebe",
+    "H7-hold-026-private.json": "a5785afb0f6b12a3d9d70ca4b8b3aed647b79470c1371e89836c52b84bc931c6",
+    "H7-hold-027-private.json": "3726ff472b9fbc6171978cf2dd33562e4a9271c5a704bade543c1a1816e849fe",
+    "H7-hold-028-private.json": "13c56c0fc3b1b8924fef398ae2749ec3e1e9f63a882af457e4a5cdd5a77c9a22",
+    "H7-hold-029-private.json": "17ff2651101f5d14c33b151112f0e2afa72ad7da6009e41035321a840baba2c3",
+    "H7-hold-030-private.json": "a16f3cf04ef733fea8f3bde78888b9275ec2e0e0581eca8b2ab1ee51cc0e9969",
+    "H6-result-private.json": "c1a49abe9738bb3375f463422f236a9ef58bbc0bc12ac3042ae6b55d0e29b4ef",
+    "H6-hold-040-private.json": "e9902eb043c237185a8cf0791fd87ae2e172b9593b819de82b39364550892825"
+  },
+  "proposed_private_input_sha256": "61c488f634fe87cb8a8af124ce827044f4be024c92c8234515e83d13c2ab0406",
+  "limits": [
+    "Same-clock comparisons change state and command together; no steering-only/pedal-only interventions.",
+    "Current force_rows does not read action[0]/planar.steer; steering changes subsequent tick wheel headings/offsets.",
+    "Logged longitudinal/lateral forces are AFTER friction clipping; unsaturated components and slip velocities not recorded.",
+    "No PPtarget coordinates/normal or unclamped steering residual recorded; cannot attribute a target-segment discontinuity from logs.",
+    "Full footprint minimum lacks bodypart/boundary/obstacle contributor; no new geometry query allowed."
+  ],
+  "new_model_tick": 0,
+  "new_chooser": 0,
+  "new_force": 0,
+  "new_geometry_evaluator": 0,
+  "native": 0,
+  "time": {
+    "CPU_s": 5.638621057,
+    "wall_s": 5.642144893005025
+  },
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0
+}

@@ -1,0 +1,29 @@
+{
+  "study": 606,
+  "status": "FROZEN_READ_ONLY_BEFORE_LOG_ANALYSIS",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "cap_CPU_s": 180,
+  "cap_wall_s": 300,
+  "prior_charge_s": 5,
+  "read_sha256": {
+    "retry/residual605_result.json": "c13d53554702a446a5778a8eb64ad026a8bd6766c24c2bcc33c0438c51feeabd",
+    "retry/residual605_audit.json": "03e8be5eda893da7d2af1a3b75687f0cee9ec9afc3d3830f8dd2f8658d3575f1",
+    "retry/residual605_contract.json": "96e3a6fbbfd7630bee91dbf60af25113b91f4fcd1c0f93f413cff04aee17c52a",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "retry/residual604_math.py": "9e852341758270b8622596569d7347c0566f540a1de6b3750206641d93e38a22"
+  },
+  "reader_sha256": "4e1116ef67f98d5cb1b925ddc99d9b34763b40bf072d0c44b1643c968cc2f9ac",
+  "new_model_tick": 0,
+  "new_chooser": 0,
+  "new_force": 0,
+  "new_geometry_evaluator": 0,
+  "native": 0,
+  "method": "Stored same-clock rows and primitive wheel results only; chronological mapping external/internal results validated. Norm/delta/ratio arithmetic on stored values; no trig, slip/force law re-evaluation or counterfactual rollout. Same-state FINAL first-raw witness if already recorded.",
+  "privacy": "Only aggregate differences/ratios/saturationflags/reasons public. Raw state/coordinates/base/applied command bytes and private input packet stay outsideGit.",
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0
+}
