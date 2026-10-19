@@ -712,7 +712,11 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
                 center,radius,residual=new_center,new_radius,new_residual
                 low,high=float(min(angles)),float(max(angles));observed_points=candidate
                 verified+=1
-        inner_points,local_residuals,_=offset_observed_contour(observed_points,center,radius)
+        # The tracer adds actual visible contour samples. Safety geometry
+        # and reference must consume the same observed support; all original
+        # two-sided fit guards, uncertainty and material vetoes still apply.
+        reference_observations,reference_extensions=extend_reference_contour(image,observed_points,center,blocked)
+        inner_points,local_residuals,_=offset_observed_contour(reference_observations,center,radius)
         baseline_inner_points=inner_points
         mixed_updates=0;mixed_records=[];corrected=[];mixed_angles=set()
         for x,y,angle,ox,oy in inner_points:
@@ -730,7 +734,6 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
                 corrected.append((x,y,angle,ox,oy));continue
             corrected.append((float(safe[0]),float(safe[1]),angle,ox,oy));mixed_updates+=1;mixed_records.append(fit);mixed_angles.add(angle)
         curb_inner_points=corrected;inner_points=baseline_inner_points
-        reference_observations,reference_extensions=extend_reference_contour(image,observed_points,center,blocked)
         _,_,centres=offset_observed_contour(reference_observations,center,radius)
         if len(centres)>=3:reference_curves.append(dict(outer_side=side,points=centres))
         if len(inner_points)<2:continue
@@ -1196,11 +1199,26 @@ class Agent:
                 if right>left:intervals.append((left,right))
             geometry_rows.append((world_y,intervals))
         roads,boundary=strip_union_mesh(geometry_rows,self.grip_prior)
+        # Row topology closes a split/merge at an integer sample row. The
+        # existing continuous width-conditioned band can support road between
+        # those rows even when no direct curb fit is possible. Retain that
+        # same evidence only where it actually crosses an interior mesh cap.
+        caps=[edge for edge in boundary if abs(edge[0][1]-edge[1][1])<1e-10
+              and geometry_rows[0][0]<edge[0][1]<geometry_rows[-1][0]]
+        closure_patches=0
+        for polygon in geometry_bands:
+            patch=polygon.copy()
+            for inner,outer in ((0,1),(3,2)):
+                normal=patch[outer]-patch[inner];normal/=np.linalg.norm(normal)
+                inset=.35*abs(float(normal[0]));patch[inner]+=inset*normal;patch[outer]-=inset*normal
+            if not any(min(patch[:,1])<edge[0][1]<max(patch[:,1]) and core.polygon_distance(patch,edge)==0. for edge in caps):continue
+            observed_curb_bands.append(patch);closure_patches+=1
+        self.uncertainty['continuous_band_cap_proposals']=closure_patches
         accepted_patches=0
         for patch in observed_curb_bands:
-            # Every patch has two adjacent direct curb fits and a visible
-            # opposite contour. Coherent grass, obstacles and opaque support
-            # veto the whole patch; no observation gap is bridged.
+            # Patches use adjacent direct curb fits or the existing two-sided
+            # width-conditioned contour. Coherent grass, obstacles and opaque
+            # support veto the whole patch; no observation gap is bridged.
             turns=[]
             for aa,bb,cc in zip(patch,np.roll(patch,-1,axis=0),np.roll(patch,-2,axis=0)):
                 turns.append(float(np.cross(bb-aa,cc-bb)))
