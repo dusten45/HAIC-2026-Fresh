@@ -119,6 +119,40 @@ def observed_reference_curvature(points):
     return np.r_[interior[0],interior,interior[-1]]
 
 
+def object_adjacent_asphalt(image,asphalt,flat,visible_obstacles):
+    """Keep CURRENT road-colour plateaus beside a confirmed orange object.
+
+    An object's contrast is not a road/grass edge. Ignore only its bounded,
+    connected colour support when testing neighbouring observed road pixels;
+    never add foreground, paint, hidden, or inferred road pixels.
+    """
+    if not visible_obstacles:return np.zeros(image.shape,bool)
+    road_low=(102.-2.)/255.;road_high=(107.1+2.)/255.
+    foreground=((image>road_high)&(image<176/255.)).astype(np.uint8)
+    count,labels,stats,centers=cv2.connectedComponentsWithStats(foreground)
+    ignore=np.zeros(image.shape,bool);bound=1.2+math.hypot(1/1.3608,1/1.701)
+    for i in range(1,count):
+        x,y,w,h,area=stats[i]
+        if not (3<=area<=30 and min(w,h)>=2 and max(w,h)<=3*min(w,h)):continue
+        component=labels==i
+        if not np.any(component&(image>164/255.)):continue
+        center=((centers[i,0]-IMAGE_ORIGIN_X)/1.3608,(IMAGE_ORIGIN_Y-centers[i,1])/1.701)
+        if not any(np.linalg.norm(np.asarray(center)-p)<=bound for p,r in visible_obstacles):continue
+        ignore|=component
+    kernel=np.ones((3,3),np.uint8)
+    high=cv2.dilate(np.where(ignore,0.,image).astype(np.float32),kernel)
+    low=cv2.erode(np.where(ignore,1.,image).astype(np.float32),kernel)
+    samples=cv2.filter2D((~ignore).astype(np.float32),-1,kernel,borderType=cv2.BORDER_CONSTANT)
+    paint=cv2.dilate(((image<.35)|(image>.75)).astype(np.uint8),np.ones((3,9),np.uint8))>0
+    candidate=(asphalt.astype(bool)&(image>=road_low)&(image<=road_high)&~ignore&~paint&~flat)
+    candidate&=(high-low<=(5.1+2)/255.)&(samples>=4)
+    # Recovery must be caused by an actual foreground neighbour. This cannot
+    # relax the road/grass or paint test elsewhere in the scene.
+    candidate&=cv2.dilate(ignore.astype(np.uint8),kernel)>0
+    candidate[:5]=False;candidate[54:]=False;candidate[:,0]=False;candidate[:,-1]=False
+    return candidate
+
+
 def detect_observed_obstacles(image,mixed=False):
     asphalt=((image>.36)&(image<.47)).astype(np.uint8)
     # For rechecking an ALREADY observed disk, a half-covered public orange
@@ -333,6 +367,22 @@ def recover_pixel_edge(image,y,index,direction,blocked,max_row=55):
     edge=4.5-float(np.sum(np.clip(fraction,0.,1.)))
     if not -2.5<=edge<=2.5:return None
     return float(index+direction*edge)
+
+
+def recover_plain_run_edge(image,y,index,direction,blocked,paint_near):
+    """Place the same8-sample inversion on a visible road/grass transition."""
+    # Inner plateau offsets are3,4. At most3 exterior shifts keep BOTH
+    # samples in the original enclosing road run, including a steep raster.
+    for exterior in range(4):
+        anchor=index-direction*exterior
+        ids=anchor+direction*np.arange(-3,5)
+        if min(ids)<0 or max(ids)>=84 or paint_near[y,anchor]:continue
+        if not 156/255.<=float(np.mean(image[y,ids[:2]]))<=184/255.:continue
+        measured=recover_pixel_edge(image,y,anchor,direction,blocked)
+        # Keep the original inversion-domain scale relative to the RAW run,
+        # rather than silently expanding it with each search-window shift.
+        if measured is not None and abs(measured-index)<=2.5:return measured
+    return None
 
 
 def _raster_halfplane(ids,row,edges,slope):
@@ -1466,6 +1516,7 @@ class Agent:
     def _map(self,image,transported=None):
         asphalt=((image>.36)&(image<.47)).astype(np.uint8)
         obstacles,obstacle_blocked=detect_observed_obstacles(image)
+        visible_obstacles=obstacles.copy()
         blocked=obstacle_blocked.copy()
         blocked[55:70,34:51]=True
         self.obstacle_tracks,obstacle_counts=update_observed_obstacles(image,obstacles,self.obstacle_tracks,self.joint)
@@ -1525,6 +1576,9 @@ class Agent:
         high=cv2.dilate(image,np.ones((3,3),np.uint8));low=cv2.erode(image,np.ones((3,3),np.uint8))
         flat=high-low<=(5.1+2)/255.
         geometry_asphalt=(asphalt.astype(bool)&flat)|painted.astype(bool)|inferred.astype(bool)
+        adjacent=object_adjacent_asphalt(image,asphalt,flat,visible_obstacles)
+        geometry_asphalt|=adjacent
+        self.uncertainty['raster_object_adjacent_asphalt_pixels']=int(np.sum(adjacent))
         if transported is not None:geometry_asphalt|=transported.astype(bool)
         geometry_asphalt=geometry_asphalt.astype(np.uint8)
         self.uncertainty.update(painted_info)
@@ -1553,17 +1607,7 @@ class Agent:
                     if raw is not None and raw[0]<=ss and raw[1]>=se:
                         for side,index,direction in ((0,raw[0],1),(1,raw[1]-1,-1)):
                             if (a if side==0 else b) is not None:continue
-                            if paint_near[sy,index]:continue
-                            measured=None
-                            # A raster transition can occupy the first nominal
-                            # exterior sample. One exterior pixel phase stays
-                            # inside the same paint halo/profile support.
-                            for anchor in (index,index-direction):
-                                ids=anchor+direction*np.arange(-3,5)
-                                if min(ids)<0 or max(ids)>=84:continue
-                                if not 156/255.<=float(np.mean(image[sy,ids[:2]]))<=184/255.:continue
-                                measured=recover_pixel_edge(image,sy,anchor,direction,blocked)
-                                if measured is not None:break
+                            measured=recover_plain_run_edge(image,sy,index,direction,blocked,paint_near)
                             raw_anchor_refined+=int(measured is not None)
                             if side==0:a=measured
                             else:b=measured

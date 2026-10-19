@@ -1,0 +1,191 @@
+{
+  "status": "GEOMETRY_INPUT_REPAIRS_VALIDATED_REMAINING_REFERENCE_FORCE_STOP",
+  "base_commit": "4318a2e23871bff6bd3510e243be7e678d1d5493",
+  "final_source_sha256": "c65e8b19010b37e0d52e84b1cd6ab9175b660b44d4cba92ad7a3f4daa2ced648",
+  "core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "diagnosis": "The original raw42 footprint failure was a road-mask hole caused by3x3 object-contrast erosion and road flank inset, not obstacle collision. The later raw46 failure was a steep visible road/grass edge whose valid original inversion window lay beyond the former one-exterior-pixel retry.",
+  "changes": [
+    "Preserve directly observed road-colour plateau pixels beside currently confirmed orange objects when only the object foreground caused flatness rejection. Never add foreground, nonasphalt, opaque, or unseen support.",
+    "Reposition the unchanged8-sample monotone road/grass inversion through exterior shifts0..3; its inner plateau stays in the same raw run. Keep each shifted window blocked/paint/plateau guards and final edge within2.5pixels of original raw anchor. Existing0.35m inset unchanged."
+  ],
+  "public_gates": {
+    "object_adjacent_road": {
+      "status": "PASS",
+      "cases": 96,
+      "restored_current_asphalt_pixels": 637,
+      "mesh_samples": 55377,
+      "outside_public_road": 0,
+      "no_opaque_or_nonasphalt_pixels_added": true,
+      "negative_guards": 4
+    },
+    "steep_edges": {
+      "status": "PASS",
+      "public_edges": 144,
+      "old_missed_new_recovered": 22,
+      "max_outward_after_existing_inset_m": 0.0,
+      "guards": [
+        "blocked",
+        "paint in shifted window",
+        "narrow grass gap",
+        "both FOV edges"
+      ]
+    },
+    "full_curved_painted_mesh": {
+      "status": "PASS",
+      "cases": 144,
+      "outside_samples": 0,
+      "samples": 86931
+    }
+  },
+  "causal_same_polygon_comparisons": [
+    {
+      "old_road_margin_m": 0.4167558858941117,
+      "new_same_polygon_road_margin_m": 1.748941507863716,
+      "old_obstacle_margin_m": 2.2559027269421947,
+      "new_same_polygon_obstacle_margin_m": 2.2559027269421947,
+      "high_identical": true,
+      "low_identical": true,
+      "progress_identical": true,
+      "obstacles_identical": true,
+      "model_ticks": 0,
+      "native_actions": 0,
+      "root_without_roads_identical": true
+    },
+    {
+      "old_road_margin_m": 0.49814096914305955,
+      "new_same_polygon_road_margin_m": 1.6206257775256891,
+      "old_obstacle_margin_m": 4.995887051906301,
+      "new_same_polygon_obstacle_margin_m": 4.995887051906301,
+      "high_identical": true,
+      "low_identical": true,
+      "progress_identical": true,
+      "obstacles_identical": true,
+      "root_without_roads_identical": true,
+      "model_ticks": 0,
+      "native_actions": 0
+    }
+  ],
+  "cached_full_gates": [
+    {
+      "label": "phase431-object-road-cached",
+      "status": "PASS",
+      "model_ticks": 100,
+      "CPU_s": 0.125068249
+    },
+    {
+      "label": "phase431-steep-edge-cached",
+      "status": "PASS",
+      "model_ticks": 369,
+      "CPU_s": 0.483951937
+    }
+  ],
+  "paired_native_evidence": {
+    "unchanged_native_action_prefix": 45,
+    "old_failed_call46_input_equals_new_call46_input": true,
+    "model_ticks": 0,
+    "native_actions": 0
+  },
+  "native_runs": [
+    {
+      "label": "runtime598-object-road-support01",
+      "source_sha256": "466e57bd2a61c892d63484f7ef1a9536e0b588114bbde2adfe4e9d60e4c6f0c0",
+      "reset_valid_actions": 45,
+      "failed_call": 46,
+      "progress": 0.1413427561837456,
+      "damage": 0.0,
+      "whole_act_max_s": 1.9326985719962977,
+      "model_ticks": 27178,
+      "CPU_s": 50.28512980400001,
+      "wall_s": 49.76690536100068,
+      "reasons": {
+        "FORECAST_FOOTPRINT_MARGIN": 1,
+        "FORCE_PEAK": 19
+      },
+      "exact_failure_replay": {
+        "error_identical": true,
+        "full_report_identical": true,
+        "diagnostics_identical": true,
+        "counter_identical": true
+      }
+    },
+    {
+      "label": "runtime598-steep-edge-support01",
+      "source_sha256": "c65e8b19010b37e0d52e84b1cd6ab9175b660b44d4cba92ad7a3f4daa2ced648",
+      "reset_valid_actions": 46,
+      "failed_call": 47,
+      "progress": 0.14487632508833923,
+      "damage": 0.0,
+      "whole_act_max_s": 2.0051208109944128,
+      "model_ticks": 27500,
+      "CPU_s": 51.807822413,
+      "wall_s": 51.21717872499721,
+      "reasons": {
+        "REFERENCE_WITH_NUMERIC_RESERVE": 11,
+        "FORCE_PEAK": 10
+      },
+      "exact_failure_replay": {
+        "error_identical": true,
+        "full_report_identical": true,
+        "diagnostics_identical": true,
+        "counter_identical": true
+      }
+    }
+  ],
+  "final_source_validation": {
+    "reset_run": true,
+    "valid_actions": 46,
+    "failed_call": 47,
+    "progress": 0.14487632508833923,
+    "damage": 0,
+    "whole_act_max_s": 2.0051208109944128,
+    "full_course_pass": false,
+    "remaining_reasons": {
+      "REFERENCE_WITH_NUMERIC_RESERVE": 11,
+      "FORCE_PEAK": 10
+    },
+    "remaining_blocker": "At call47 the observed-width reference was unavailable and the adapter fell back to visible row midpoints. Remaining rejections were reference-with-numeric-reserve and force, rather than the repaired footprint margins. No further geometry error was established and no identical native run was repeated."
+  },
+  "phase_usage": {
+    "DEV_actions": 91,
+    "resets": 2,
+    "model_ticks": 55218,
+    "recorded_CPU_s": 118.96237323899999,
+    "additional_setup_probe_CPU_allowance_s": 10.0,
+    "conservative_CPU_charge_s": 128.962373239,
+    "wall_elapsed_s": 787.98086,
+    "actual_physics_raw_ticks": 466,
+    "drive_raw_ticks": 364,
+    "reset_physics_raw_ticks": 102,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0,
+    "research_remaining_start": 19644,
+    "research_remaining_end": 19553
+  },
+  "limits": {
+    "DEV_actions": 400,
+    "model_ticks": 250000,
+    "CPU_s": 1800,
+    "wall_s": 3600
+  },
+  "preserved": {
+    "core": true,
+    "chooser": true,
+    "physics": true,
+    "horizon": true,
+    "speed_formula": true,
+    "admission_margin_m": 0.5,
+    "road_flank_inset_m": 0.35,
+    "reference_and_state_for_each_cached_comparison": true,
+    "external_cumulative_research_ledger": true,
+    "main_pin": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+    "Participants": true,
+    "backups": true
+  },
+  "limitations": [
+    "All public-raster gates are finite checks, not universal material-inversion or safety guarantees.",
+    "Only observation pixels and reset-local own-action memory enter Agent. True map/state offsets were not used for expansion.",
+    "The final source was run from reset, but completion, full-course safety, HOLDOUT/SEALED generalization and official-server runtime parity remain unverified."
+  ],
+  "next_action": "Investigate the observed-width-reference disappearance at the new checkpoint as a separate falsifiable input-observer problem before any further native run; no action smoothing, new planner, or controller relaxation."
+}
