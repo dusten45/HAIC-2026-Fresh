@@ -1,0 +1,118 @@
+{
+  "status": "A_FINITE_SEARCH_NO_PASS",
+  "checks": {
+    "journal_chain_valid": true,
+    "journal_head_exact": true,
+    "external_actual_calls_equal4force_verdicts": true,
+    "internal_actual_calls_equal4completed_ticks": true,
+    "attempts_equal_before_force_events": true,
+    "completed_ticks_equal_after_tick_events": true,
+    "source_pruning_matches_runtime": true,
+    "terminals_saved_before_live_empty": true,
+    "all_terminal_holds_complete": true,
+    "A_no_time_pass": true,
+    "no_B_or_replay": true,
+    "contract_untouched": true
+  },
+  "evaluated_search_children": 1258,
+  "source_pruning": {
+    "REFERENCE": 191,
+    "FORCE": 313,
+    "CLIP_HISTORY": 4
+  },
+  "beam_width_pruned": 602,
+  "terminal_gate_rejections": 52,
+  "terminal_count": 52,
+  "completed_depths": 25,
+  "terminal_raw_brackets": [
+    {
+      "before_raw": 192,
+      "after_raw": 193,
+      "count": 52
+    }
+  ],
+  "terminal_speed_m_s": {
+    "min": 77.8859394733022,
+    "max": 79.40600518474697
+  },
+  "terminal_gate_counts": {
+    "time_pass": 0,
+    "speed_pass": 16,
+    "eligible": 52,
+    "both_pass": 0
+  },
+  "baseline_plane_interpolated_s": 3.851288680188803,
+  "diagnostic_continuous_gain_s": {
+    "min": -0.0004019822017937713,
+    "max": 5.747022297608595e-06,
+    "not_acceptance_metric": true
+  },
+  "B": {
+    "executed": false,
+    "reason": "A gate failed; no continuation or alternative experiment"
+  },
+  "replay": {
+    "executed": false,
+    "reason": "No passing selected A/B plan"
+  },
+  "runtime_cost": {
+    "total": {
+      "attempted_raw": 3965,
+      "external_force": 15860,
+      "internal_force": 14592,
+      "completed_model_ticks": 3648,
+      "geometry_checks": 3648,
+      "CPU_s": 100.728471784,
+      "wall_s": 105.63576140000077
+    },
+    "phases": {
+      "preparation": {
+        "CPU_s": 4.652930925,
+        "wall_s": 2.56268532401009
+      },
+      "prefix_identity": {
+        "attempted_raw": 100,
+        "external_force": 400,
+        "internal_force": 400,
+        "completed_model_ticks": 100,
+        "geometry_checks": 100,
+        "CPU_s": 2.127281231,
+        "wall_s": 2.321250171997235
+      },
+      "search": {
+        "attempted_raw": 3865,
+        "external_force": 15460,
+        "internal_force": 14192,
+        "completed_model_ticks": 3548,
+        "geometry_checks": 3548,
+        "CPU_s": 92.784720951,
+        "wall_s": 99.58365397099988
+      },
+      "audit": {
+        "CPU_s": 1.1635386769999911,
+        "wall_s": 1.1681787929992424
+      }
+    },
+    "external_force": 15860,
+    "internal_force": 14592,
+    "total_force": 30452
+  },
+  "new_source_ticks": 0,
+  "new_force_calls": 0,
+  "new_native_actions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "input_sha256": {
+    "retry/beam579_result.json": "ed80cd6ad768ff349e5e3786dad6a5c4ba4a7ed6db12dcb5b156e7a2e12de8f5",
+    "retry/beam579_contract.json": "4a36258b5ea0d4cc7851941ad01d6b2e8bd67df1be516b522d9ee42a7935ad39",
+    "A-terminals-private.json": "2520e6ac6f16d354ad6e95e18f47bae1794757d98a96d613812eca15f7f4ef09",
+    "raw-journal-private.jsonl": "536be0785d321969046da340da8e598096f7bc8c1279862f9e25ff34c95fc015"
+  },
+  "read_only_analysis_CPU_s": 0.5888271049999999,
+  "read_only_analysis_wall_s": 0.5904554320004536,
+  "final_writer_and_validation_conservative_CPU_wall_charge_s": 1.0,
+  "aggregate_CPU_s": 102.317298889,
+  "aggregate_wall_s": 107.22621683200123,
+  "aggregate_audit_CPU_s": 2.752365781999991,
+  "aggregate_audit_wall_s": 2.758634224999696
+}

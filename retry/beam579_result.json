@@ -1,0 +1,1266 @@
+{
+  "prefix_identity": {
+    "prefix_raw": 96,
+    "independent_probe_raw": 4,
+    "all_stored_fields_exact": true,
+    "probe_not_reused": true,
+    "start_checkpoint_sha256": "27c3a4f7491a79d346aed19bbe26e399b47bbb09cbceb1cad1a4310718e5e1bb"
+  },
+  "A": {
+    "completed_depths": 25,
+    "pruning": {
+      "BEAM_WIDTH": 602,
+      "REFERENCE": 191,
+      "FORCE": 313,
+      "CLIP_HISTORY": 4,
+      "TERMINAL_GATE": 52
+    },
+    "terminal_count": 52,
+    "passing_terminals": 0,
+    "selected": null,
+    "best_terminal": {
+      "global_raw": 196,
+      "hold": 49,
+      "elapsed_s": 3.920000000000003,
+      "progress_m": 205.55079378854055,
+      "COM_speed_m_s": 81.60925427402069,
+      "crossing": {
+        "before_raw": 192,
+        "after_raw": 193,
+        "before_s": 3.840000000000003,
+        "after_s": 3.860000000000003,
+        "fraction": 0.5644340094399982,
+        "COM_speed_m_s": 79.40600518474697,
+        "eligible": true
+      },
+      "factual": false,
+      "checkpoint_sha256": "36548026e9b428a6f26cc5bc681d3070a03bbe6484aef1e01e91170379544eae"
+    },
+    "depths": [
+      {
+        "depth": 1,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 87.5860075736443,
+        "cost": {
+          "total": {
+            "attempted_raw": 148,
+            "external_force": 592,
+            "internal_force": 592,
+            "completed_model_ticks": 148,
+            "geometry_checks": 148,
+            "CPU_s": 7.896084815999999,
+            "wall_s": 6.144722149008885
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 48,
+              "external_force": 192,
+              "internal_force": 192,
+              "completed_model_ticks": 48,
+              "geometry_checks": 48,
+              "CPU_s": 1.1158726599999995,
+              "wall_s": 1.2608009440009482
+            }
+          },
+          "external_force": 592,
+          "internal_force": 592,
+          "total_force": 1184
+        }
+      },
+      {
+        "depth": 2,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 94.22380138295307,
+        "cost": {
+          "total": {
+            "attempted_raw": 356,
+            "external_force": 1424,
+            "internal_force": 1424,
+            "completed_model_ticks": 356,
+            "geometry_checks": 356,
+            "CPU_s": 12.731066111,
+            "wall_s": 11.662640460010152
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 256,
+              "external_force": 1024,
+              "internal_force": 1024,
+              "completed_model_ticks": 256,
+              "geometry_checks": 256,
+              "CPU_s": 5.950853955000001,
+              "wall_s": 6.778721708993544
+            }
+          },
+          "external_force": 1424,
+          "internal_force": 1424,
+          "total_force": 2848
+        }
+      },
+      {
+        "depth": 3,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 100.5730587418542,
+        "cost": {
+          "total": {
+            "attempted_raw": 468,
+            "external_force": 1872,
+            "internal_force": 1872,
+            "completed_model_ticks": 468,
+            "geometry_checks": 468,
+            "CPU_s": 15.376586181,
+            "wall_s": 14.541377255998668
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 368,
+              "external_force": 1472,
+              "internal_force": 1472,
+              "completed_model_ticks": 368,
+              "geometry_checks": 368,
+              "CPU_s": 8.596374025000001,
+              "wall_s": 9.657455139997182
+            }
+          },
+          "external_force": 1872,
+          "internal_force": 1872,
+          "total_force": 3744
+        }
+      },
+      {
+        "depth": 4,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 106.37043662880872,
+        "cost": {
+          "total": {
+            "attempted_raw": 550,
+            "external_force": 2200,
+            "internal_force": 2200,
+            "completed_model_ticks": 550,
+            "geometry_checks": 550,
+            "CPU_s": 17.30462807,
+            "wall_s": 16.60455088299932
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 450,
+              "external_force": 1800,
+              "internal_force": 1800,
+              "completed_model_ticks": 450,
+              "geometry_checks": 450,
+              "CPU_s": 10.524415914,
+              "wall_s": 11.720628707000287
+            }
+          },
+          "external_force": 2200,
+          "internal_force": 2200,
+          "total_force": 4400
+        }
+      },
+      {
+        "depth": 5,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 111.66804043729698,
+        "cost": {
+          "total": {
+            "attempted_raw": 660,
+            "external_force": 2640,
+            "internal_force": 2636,
+            "completed_model_ticks": 659,
+            "geometry_checks": 659,
+            "CPU_s": 19.882521218999997,
+            "wall_s": 19.366744127997663
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 560,
+              "external_force": 2240,
+              "internal_force": 2236,
+              "completed_model_ticks": 559,
+              "geometry_checks": 559,
+              "CPU_s": 13.102309063,
+              "wall_s": 14.482820599994739
+            }
+          },
+          "external_force": 2640,
+          "internal_force": 2636,
+          "total_force": 5276
+        }
+      },
+      {
+        "depth": 6,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 116.65752511878192,
+        "cost": {
+          "total": {
+            "attempted_raw": 748,
+            "external_force": 2992,
+            "internal_force": 2988,
+            "completed_model_ticks": 747,
+            "geometry_checks": 747,
+            "CPU_s": 21.997663211,
+            "wall_s": 21.651571185007924
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 648,
+              "external_force": 2592,
+              "internal_force": 2588,
+              "completed_model_ticks": 647,
+              "geometry_checks": 647,
+              "CPU_s": 15.217451055000002,
+              "wall_s": 16.76764603400079
+            }
+          },
+          "external_force": 2992,
+          "internal_force": 2988,
+          "total_force": 5980
+        }
+      },
+      {
+        "depth": 7,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 121.24748858400757,
+        "cost": {
+          "total": {
+            "attempted_raw": 864,
+            "external_force": 3456,
+            "internal_force": 3380,
+            "completed_model_ticks": 845,
+            "geometry_checks": 845,
+            "CPU_s": 24.482119007999998,
+            "wall_s": 24.327642360003665
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 764,
+              "external_force": 3056,
+              "internal_force": 2980,
+              "completed_model_ticks": 745,
+              "geometry_checks": 745,
+              "CPU_s": 17.701906852,
+              "wall_s": 19.443718290989636
+            }
+          },
+          "external_force": 3456,
+          "internal_force": 3380,
+          "total_force": 6836
+        }
+      },
+      {
+        "depth": 8,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 124.89183756218752,
+        "cost": {
+          "total": {
+            "attempted_raw": 980,
+            "external_force": 3920,
+            "internal_force": 3660,
+            "completed_model_ticks": 915,
+            "geometry_checks": 915,
+            "CPU_s": 26.532091285999996,
+            "wall_s": 26.531111528005567
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 880,
+              "external_force": 3520,
+              "internal_force": 3260,
+              "completed_model_ticks": 815,
+              "geometry_checks": 815,
+              "CPU_s": 19.75187913,
+              "wall_s": 21.647187479000422
+            }
+          },
+          "external_force": 3920,
+          "internal_force": 3660,
+          "total_force": 7580
+        }
+      },
+      {
+        "depth": 9,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 128.6769561292529,
+        "cost": {
+          "total": {
+            "attempted_raw": 1092,
+            "external_force": 4368,
+            "internal_force": 3924,
+            "completed_model_ticks": 981,
+            "geometry_checks": 981,
+            "CPU_s": 28.472980096999997,
+            "wall_s": 28.60394557499967
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 992,
+              "external_force": 3968,
+              "internal_force": 3524,
+              "completed_model_ticks": 881,
+              "geometry_checks": 881,
+              "CPU_s": 21.692767941,
+              "wall_s": 23.72001987299882
+            }
+          },
+          "external_force": 4368,
+          "internal_force": 3924,
+          "total_force": 8292
+        }
+      },
+      {
+        "depth": 10,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 132.34329182264665,
+        "cost": {
+          "total": {
+            "attempted_raw": 1216,
+            "external_force": 4864,
+            "internal_force": 4260,
+            "completed_model_ticks": 1065,
+            "geometry_checks": 1065,
+            "CPU_s": 30.808555918999996,
+            "wall_s": 31.122023554009502
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 1116,
+              "external_force": 4464,
+              "internal_force": 3860,
+              "completed_model_ticks": 965,
+              "geometry_checks": 965,
+              "CPU_s": 24.028343763,
+              "wall_s": 26.238098803994944
+            }
+          },
+          "external_force": 4864,
+          "internal_force": 4260,
+          "total_force": 9124
+        }
+      },
+      {
+        "depth": 11,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 136.05210110365573,
+        "cost": {
+          "total": {
+            "attempted_raw": 1339,
+            "external_force": 5356,
+            "internal_force": 4588,
+            "completed_model_ticks": 1147,
+            "geometry_checks": 1147,
+            "CPU_s": 33.15434604,
+            "wall_s": 33.637890045996755
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 1239,
+              "external_force": 4956,
+              "internal_force": 4188,
+              "completed_model_ticks": 1047,
+              "geometry_checks": 1047,
+              "CPU_s": 26.374133884,
+              "wall_s": 28.753966236996348
+            }
+          },
+          "external_force": 5356,
+          "internal_force": 4588,
+          "total_force": 9944
+        }
+      },
+      {
+        "depth": 12,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 139.70097302320508,
+        "cost": {
+          "total": {
+            "attempted_raw": 1468,
+            "external_force": 5872,
+            "internal_force": 4960,
+            "completed_model_ticks": 1240,
+            "geometry_checks": 1240,
+            "CPU_s": 35.796826321,
+            "wall_s": 36.48730918300862
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 1368,
+              "external_force": 5472,
+              "internal_force": 4560,
+              "completed_model_ticks": 1140,
+              "geometry_checks": 1140,
+              "CPU_s": 29.016614165,
+              "wall_s": 31.603386245988077
+            }
+          },
+          "external_force": 5872,
+          "internal_force": 4960,
+          "total_force": 10832
+        }
+      },
+      {
+        "depth": 13,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 143.46172297699573,
+        "cost": {
+          "total": {
+            "attempted_raw": 1590,
+            "external_force": 6360,
+            "internal_force": 5308,
+            "completed_model_ticks": 1327,
+            "geometry_checks": 1327,
+            "CPU_s": 38.279373121,
+            "wall_s": 39.15429917399888
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 1490,
+              "external_force": 5960,
+              "internal_force": 4908,
+              "completed_model_ticks": 1227,
+              "geometry_checks": 1227,
+              "CPU_s": 31.499160965,
+              "wall_s": 34.27037500399456
+            }
+          },
+          "external_force": 6360,
+          "internal_force": 5308,
+          "total_force": 11668
+        }
+      },
+      {
+        "depth": 14,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 147.32610329591947,
+        "cost": {
+          "total": {
+            "attempted_raw": 1732,
+            "external_force": 6928,
+            "internal_force": 5788,
+            "completed_model_ticks": 1447,
+            "geometry_checks": 1447,
+            "CPU_s": 41.509642858,
+            "wall_s": 42.59387168000103
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 1632,
+              "external_force": 6528,
+              "internal_force": 5388,
+              "completed_model_ticks": 1347,
+              "geometry_checks": 1347,
+              "CPU_s": 34.729430702,
+              "wall_s": 37.7099510049884
+            }
+          },
+          "external_force": 6928,
+          "internal_force": 5788,
+          "total_force": 12716
+        }
+      },
+      {
+        "depth": 15,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 151.33609796134266,
+        "cost": {
+          "total": {
+            "attempted_raw": 1925,
+            "external_force": 7700,
+            "internal_force": 6536,
+            "completed_model_ticks": 1634,
+            "geometry_checks": 1634,
+            "CPU_s": 46.362508322,
+            "wall_s": 47.778319909004495
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 1825,
+              "external_force": 7300,
+              "internal_force": 6136,
+              "completed_model_ticks": 1534,
+              "geometry_checks": 1534,
+              "CPU_s": 39.582296166,
+              "wall_s": 42.894400486999075
+            }
+          },
+          "external_force": 7700,
+          "internal_force": 6536,
+          "total_force": 14236
+        }
+      },
+      {
+        "depth": 16,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 155.5988309591425,
+        "cost": {
+          "total": {
+            "attempted_raw": 2124,
+            "external_force": 8496,
+            "internal_force": 7320,
+            "completed_model_ticks": 1830,
+            "geometry_checks": 1830,
+            "CPU_s": 51.632520095,
+            "wall_s": 53.41372104200127
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 2024,
+              "external_force": 8096,
+              "internal_force": 6920,
+              "completed_model_ticks": 1730,
+              "geometry_checks": 1730,
+              "CPU_s": 44.852307939,
+              "wall_s": 48.5297995669971
+            }
+          },
+          "external_force": 8496,
+          "internal_force": 7320,
+          "total_force": 15816
+        }
+      },
+      {
+        "depth": 17,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 160.13540247827632,
+        "cost": {
+          "total": {
+            "attempted_raw": 2326,
+            "external_force": 9304,
+            "internal_force": 8116,
+            "completed_model_ticks": 2029,
+            "geometry_checks": 2029,
+            "CPU_s": 56.883490662,
+            "wall_s": 59.00894266901014
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 2226,
+              "external_force": 8904,
+              "internal_force": 7716,
+              "completed_model_ticks": 1929,
+              "geometry_checks": 1929,
+              "CPU_s": 50.103278506,
+              "wall_s": 54.12502003199188
+            }
+          },
+          "external_force": 9304,
+          "internal_force": 8116,
+          "total_force": 17420
+        }
+      },
+      {
+        "depth": 18,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 164.89984096935345,
+        "cost": {
+          "total": {
+            "attempted_raw": 2532,
+            "external_force": 10128,
+            "internal_force": 8932,
+            "completed_model_ticks": 2233,
+            "geometry_checks": 2233,
+            "CPU_s": 62.275430322999995,
+            "wall_s": 64.75023940199753
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 2432,
+              "external_force": 9728,
+              "internal_force": 8532,
+              "completed_model_ticks": 2133,
+              "geometry_checks": 2133,
+              "CPU_s": 55.495218167,
+              "wall_s": 59.86631982900144
+            }
+          },
+          "external_force": 10128,
+          "internal_force": 8932,
+          "total_force": 19060
+        }
+      },
+      {
+        "depth": 19,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 169.9312654831899,
+        "cost": {
+          "total": {
+            "attempted_raw": 2738,
+            "external_force": 10952,
+            "internal_force": 9744,
+            "completed_model_ticks": 2436,
+            "geometry_checks": 2436,
+            "CPU_s": 67.67767410900001,
+            "wall_s": 70.49165883800015
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 2638,
+              "external_force": 10552,
+              "internal_force": 9344,
+              "completed_model_ticks": 2336,
+              "geometry_checks": 2336,
+              "CPU_s": 60.897461953,
+              "wall_s": 65.60773903499648
+            }
+          },
+          "external_force": 10952,
+          "internal_force": 9744,
+          "total_force": 20696
+        }
+      },
+      {
+        "depth": 20,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 175.1978947140007,
+        "cost": {
+          "total": {
+            "attempted_raw": 2931,
+            "external_force": 11724,
+            "internal_force": 10480,
+            "completed_model_ticks": 2620,
+            "geometry_checks": 2620,
+            "CPU_s": 72.629327427,
+            "wall_s": 75.76813671900891
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 2831,
+              "external_force": 11324,
+              "internal_force": 10080,
+              "completed_model_ticks": 2520,
+              "geometry_checks": 2520,
+              "CPU_s": 65.84911527099999,
+              "wall_s": 70.88421799799835
+            }
+          },
+          "external_force": 11724,
+          "internal_force": 10480,
+          "total_force": 22204
+        }
+      },
+      {
+        "depth": 21,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 180.8176462119104,
+        "cost": {
+          "total": {
+            "attempted_raw": 3135,
+            "external_force": 12540,
+            "internal_force": 11280,
+            "completed_model_ticks": 2820,
+            "geometry_checks": 2820,
+            "CPU_s": 77.88666839100001,
+            "wall_s": 81.36965010499989
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 3035,
+              "external_force": 12140,
+              "internal_force": 10880,
+              "completed_model_ticks": 2720,
+              "geometry_checks": 2720,
+              "CPU_s": 71.106456235,
+              "wall_s": 76.48573281599965
+            }
+          },
+          "external_force": 12540,
+          "internal_force": 11280,
+          "total_force": 23820
+        }
+      },
+      {
+        "depth": 22,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 186.80138433775605,
+        "cost": {
+          "total": {
+            "attempted_raw": 3342,
+            "external_force": 13368,
+            "internal_force": 12104,
+            "completed_model_ticks": 3026,
+            "geometry_checks": 3026,
+            "CPU_s": 83.229899861,
+            "wall_s": 87.07749173000047
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 3242,
+              "external_force": 12968,
+              "internal_force": 11704,
+              "completed_model_ticks": 2926,
+              "geometry_checks": 2926,
+              "CPU_s": 76.44968770499999,
+              "wall_s": 82.19357257700176
+            }
+          },
+          "external_force": 13368,
+          "internal_force": 12104,
+          "total_force": 25472
+        }
+      },
+      {
+        "depth": 23,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 192.8653204413734,
+        "cost": {
+          "total": {
+            "attempted_raw": 3549,
+            "external_force": 14196,
+            "internal_force": 12928,
+            "completed_model_ticks": 3232,
+            "geometry_checks": 3232,
+            "CPU_s": 88.62486786400001,
+            "wall_s": 92.80528849600523
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 3449,
+              "external_force": 13796,
+              "internal_force": 12528,
+              "completed_model_ticks": 3132,
+              "geometry_checks": 3132,
+              "CPU_s": 81.84465570799999,
+              "wall_s": 87.92136878299061
+            }
+          },
+          "external_force": 14196,
+          "internal_force": 12928,
+          "total_force": 27124
+        }
+      },
+      {
+        "depth": 24,
+        "live": 4,
+        "terminals": 0,
+        "factual_frozen": false,
+        "best_progress_m": 199.10108714969513,
+        "cost": {
+          "total": {
+            "attempted_raw": 3757,
+            "external_force": 15028,
+            "internal_force": 13760,
+            "completed_model_ticks": 3440,
+            "geometry_checks": 3440,
+            "CPU_s": 94.11292390700001,
+            "wall_s": 98.65773268700286
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 3657,
+              "external_force": 14628,
+              "internal_force": 13360,
+              "completed_model_ticks": 3340,
+              "geometry_checks": 3340,
+              "CPU_s": 87.33271175099999,
+              "wall_s": 93.77381171198795
+            }
+          },
+          "external_force": 15028,
+          "internal_force": 13760,
+          "total_force": 28788
+        }
+      },
+      {
+        "depth": 25,
+        "live": 0,
+        "terminals": 52,
+        "factual_frozen": true,
+        "best_progress_m": null,
+        "cost": {
+          "total": {
+            "attempted_raw": 3965,
+            "external_force": 15860,
+            "internal_force": 14592,
+            "completed_model_ticks": 3648,
+            "geometry_checks": 3648,
+            "CPU_s": 99.40564217500001,
+            "wall_s": 104.30707353299658
+          },
+          "phases": {
+            "preparation": {
+              "CPU_s": 4.652930925,
+              "wall_s": 2.56268532401009
+            },
+            "prefix_identity": {
+              "attempted_raw": 100,
+              "external_force": 400,
+              "internal_force": 400,
+              "completed_model_ticks": 100,
+              "geometry_checks": 100,
+              "CPU_s": 2.127281231,
+              "wall_s": 2.321250171997235
+            },
+            "search": {
+              "attempted_raw": 3865,
+              "external_force": 15460,
+              "internal_force": 14192,
+              "completed_model_ticks": 3548,
+              "geometry_checks": 3548,
+              "CPU_s": 92.62543001899999,
+              "wall_s": 99.423147590991
+            }
+          },
+          "external_force": 15860,
+          "internal_force": 14592,
+          "total_force": 30452
+        }
+      }
+    ]
+  },
+  "status": "A_FINITE_SEARCH_NO_PASS",
+  "error": null,
+  "independent_replay": null,
+  "journal": {
+    "events": 18899,
+    "head": "c67b2169721edd1ade08bc8c35e1cc83a7154e18292b1067405bffd34f0a36d8",
+    "kinds": {
+      "BEFORE_FORCE": 3965,
+      "FORCE_VERDICT": 3965,
+      "BEFORE_TICK": 3648,
+      "AFTER_TICK": 3648,
+      "RAW_VERDICT": 3648,
+      "BEAM_DEPTH": 25
+    },
+    "valid": true
+  },
+  "cost": {
+    "total": {
+      "attempted_raw": 3965,
+      "external_force": 15860,
+      "internal_force": 14592,
+      "completed_model_ticks": 3648,
+      "geometry_checks": 3648,
+      "CPU_s": 100.728471784,
+      "wall_s": 105.63576140000077
+    },
+    "phases": {
+      "preparation": {
+        "CPU_s": 4.652930925,
+        "wall_s": 2.56268532401009
+      },
+      "prefix_identity": {
+        "attempted_raw": 100,
+        "external_force": 400,
+        "internal_force": 400,
+        "completed_model_ticks": 100,
+        "geometry_checks": 100,
+        "CPU_s": 2.127281231,
+        "wall_s": 2.321250171997235
+      },
+      "search": {
+        "attempted_raw": 3865,
+        "external_force": 15460,
+        "internal_force": 14192,
+        "completed_model_ticks": 3548,
+        "geometry_checks": 3548,
+        "CPU_s": 92.784720951,
+        "wall_s": 99.58365397099988
+      },
+      "audit": {
+        "CPU_s": 1.1635386769999911,
+        "wall_s": 1.1681787929992424
+      }
+    },
+    "external_force": 15860,
+    "internal_force": 14592,
+    "total_force": 30452
+  },
+  "best_safe_completed": {
+    "global_raw": 196,
+    "hold": 49,
+    "elapsed_s": 3.920000000000003,
+    "progress_m": 205.5513860933077,
+    "COM_speed_m_s": 81.61094581157857,
+    "crossing": {
+      "before_raw": 192,
+      "after_raw": 193,
+      "before_s": 3.840000000000003,
+      "after_s": 3.860000000000003,
+      "fraction": 0.5641466583251106,
+      "COM_speed_m_s": 79.39474905813837,
+      "eligible": true
+    },
+    "factual": false,
+    "checkpoint_sha256": "3a071e795598d5bd7f68da9dd1ce7fd5ff7155236498fd2c7912afd67e125aaf"
+  },
+  "best_safe_partial_prefix": {
+    "global_raw": 196,
+    "hold": 49,
+    "elapsed_s": 3.920000000000003,
+    "progress_m": 205.5513860933077,
+    "COM_speed_m_s": 81.61094581157857,
+    "crossing": null,
+    "factual": false,
+    "checkpoint_sha256": "3a071e795598d5bd7f68da9dd1ce7fd5ff7155236498fd2c7912afd67e125aaf"
+  },
+  "parent_sibling_fingerprints_checked": 21872,
+  "source_native_scope": "Source DEV only; no whole finish or policy promotion",
+  "native_actions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "LP_solves": 0,
+  "nonlinear_solves": 0,
+  "new_FD": 0,
+  "new_calibration": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "paid_compute": 0
+}
