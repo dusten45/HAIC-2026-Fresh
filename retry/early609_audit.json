@@ -1,0 +1,38 @@
+{
+  "study": 609,
+  "status": "PREPARATION_STOP_AUDIT_PASS",
+  "checks": {
+    "technical_stop": true,
+    "no_source_cost": true,
+    "no_arms": true,
+    "no_replay": true,
+    "no_registration": true,
+    "no_frozen_contract": true,
+    "no_full_preflight_record": true,
+    "no_telemetry_or_pair_execution": true,
+    "public_result_pinned": true,
+    "private_result_pinned": true,
+    "all_private_pins": true,
+    "checkpoint_intact": true,
+    "exact_guard_error_identified": true,
+    "no_forbidden_work": true,
+    "original_ledger": true,
+    "original_main": true,
+    "participants_unchanged": true,
+    "only_durable_study_end": true,
+    "budget_including_cleanup_reserve": true
+  },
+  "source_model": 0,
+  "force": 0,
+  "geometry": 0,
+  "native": 0,
+  "new_evaluations": 0,
+  "audit_CPU_s": 0.0010458120000000001,
+  "whole_task_wall_through_audit_s": 434.200270652771,
+  "source_sha256": {
+    "retry/early609.py": "523c0929568872b07b9743881f8932bc80691308754a35c790011e87b38b9f3f",
+    "retry/early609_core.py": "e13dde68f8be0248a463aa9a0362033b7da87772ae199cb14353c8fb2d22e818"
+  },
+  "result_sha256": "d711dac1fafe43a1f2fc27e9a367f228758a581205ef76b546daba865029365d",
+  "cause": "Guard compared raw96 launch proposed_history with tracking history. Saved full checkpoint and prefix are intact. Source registration and actual clone/budget preflight were not reached. No retry or correction executed."
+}

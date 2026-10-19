@@ -1,0 +1,49 @@
+{
+  "study": 609,
+  "decision": "TECHNICAL_PREPARATION_STOP_NO_RETRY",
+  "cause": "raw96 prefix launch proposed_history erroneously compared to checkpoint tracking history; source guard at early609.py:231",
+  "checkpoint_insufficient": false,
+  "checkpoint96_full_digest_root_visited_intact": true,
+  "prefix96_complete": true,
+  "history_matches_launch": true,
+  "checkpoint_reconstruction": 0,
+  "source_arms_started": 0,
+  "source_model_attempted": 0,
+  "source_force": 0,
+  "source_geometry": 0,
+  "native": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "contract_frozen": false,
+  "full_pure_preflight_reached": false,
+  "preliminary_synthetic_core_check": "passed before process; clone/reservation callbacks were no-op stand-ins, not actual full-state/budget preflight",
+  "initial_progress_update_correction": "Earlier statement of completed clone/budget preflight was premature; full actual preflight was not reached. No scientific result or speed conclusion.",
+  "automatic_retry": false,
+  "code_corrected_after_stop": false,
+  "technical_read_only_audit_checks": 19,
+  "audit_status": "PREPARATION_STOP_AUDIT_PASS",
+  "reader_time_including_preparation_charge": {
+    "CPU_s": 11.291510371,
+    "wall_s": 380.5172498226166
+  },
+  "whole_task_wall_through_audit_s": 434.200270652771,
+  "caps": {
+    "model_attempted": 180000,
+    "model_completed": 180000,
+    "external_force": 720000,
+    "internal_force": 720000,
+    "total_force": 1440000,
+    "geometry": 600000,
+    "CPU_s": 5400,
+    "wall_s": 6600
+  },
+  "preserved": {
+    "research_remaining": 22211,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "main": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+    "study608": "all code, costs, result and prior deadline correction retained"
+  },
+  "next_action": "Report exact technical cause and stop; any recovery requires separate explicit authorization.",
+  "privacy": "Only technical code and aggregate failure records; raw state/history/coordinates/commands retained privately."
+}
