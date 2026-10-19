@@ -1,0 +1,67 @@
+{
+  "total": {
+    "attempted_raw": 196,
+    "external_force": 784,
+    "internal_force": 700,
+    "completed_model_ticks": 175,
+    "geometry_checks": 196,
+    "certifications": 21,
+    "sample_cache_misses": 21,
+    "cache_hits": 1,
+    "CPU_s": 7.992372948,
+    "wall_s": 7.199045714005479
+  },
+  "phases": {
+    "preparation": {
+      "CPU_s": 3.2620887050000005,
+      "wall_s": 2.0244850599992787
+    },
+    "prefix": {
+      "attempted_raw": 132,
+      "external_force": 528,
+      "internal_force": 528,
+      "completed_model_ticks": 132,
+      "geometry_checks": 132,
+      "CPU_s": 3.142808919,
+      "wall_s": 3.4540132289985195
+    },
+    "continuation": {
+      "geometry_checks": 64,
+      "attempted_raw": 64,
+      "external_force": 256,
+      "internal_force": 172,
+      "completed_model_ticks": 43,
+      "certifications": 21,
+      "sample_cache_misses": 21,
+      "cache_hits": 1,
+      "CPU_s": 1.4007237310000002,
+      "wall_s": 1.5307686470041517
+    },
+    "audit": {
+      "CPU_s": 0.18675159299999944,
+      "wall_s": 0.18978181199054234
+    }
+  },
+  "modes": {
+    "prefix": {
+      "attempted_raw": 132,
+      "external_force": 528,
+      "internal_force": 528,
+      "completed_model_ticks": 132,
+      "geometry_checks": 132
+    },
+    "forecast": {
+      "geometry_checks": 64,
+      "attempted_raw": 64,
+      "external_force": 256,
+      "internal_force": 172,
+      "completed_model_ticks": 43,
+      "certifications": 21,
+      "sample_cache_misses": 21,
+      "cache_hits": 1
+    }
+  },
+  "external_force": 784,
+  "internal_force": 700,
+  "total_force": 1484
+}

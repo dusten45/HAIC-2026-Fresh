@@ -1,0 +1,146 @@
+{
+  "status": "NO_SAFE_ACTION",
+  "checks": {
+    "status_no_safe_action": true,
+    "prefix_full_rows_exact": true,
+    "prefix_full_checkpoint_exact": true,
+    "prefix_commands_exact": true,
+    "contract_hash_unchanged": true,
+    "journal_head_exact": true,
+    "all_dependencies_exact": true,
+    "all_implementation_exact": true,
+    "all_inputs_exact": true,
+    "attempt196": true,
+    "completed175": true,
+    "external784": true,
+    "internal700": true,
+    "geometry196": true,
+    "forecast21_force_failures": true,
+    "current_root_geometry21": true,
+    "all21_candidates_force_peak": true,
+    "all_candidate_history_lineages_exact": true,
+    "actual_continuation0": true,
+    "replay0": true,
+    "no_planes_observed": true,
+    "all_stage_caps": true
+  },
+  "journal_events": 1310,
+  "journal_kinds": {
+    "BEFORE_FORCE": 196,
+    "FORCE_VERDICT": 196,
+    "BEFORE_TICK": 175,
+    "AFTER_TICK": 175,
+    "BEFORE_GEOMETRY": 196,
+    "GEOMETRY_VERDICT": 196,
+    "RAW_VERDICT": 132,
+    "CHOOSER_STARTED": 1,
+    "CERTIFICATION_STARTED": 21,
+    "CERTIFICATION_FINISHED": 21,
+    "CHOOSER_FINISHED": 1
+  },
+  "selector": {
+    "chooser_calls": 1,
+    "evaluate_requests": 22,
+    "distinct_samples": 21,
+    "cache_hits": 1,
+    "refinements": 0,
+    "fresh_FINAL": 0,
+    "steer_fixed_by_original_nominal": true,
+    "all_rejections": "FORCE_PEAK",
+    "rejected_attempt_in_first_predicted_hold": {
+      "1": 6,
+      "3": 2,
+      "4": 13
+    },
+    "minimum_rejected_peak_ratio": 1.0632746303877518,
+    "maximum_rejected_peak_ratio": 9.757688388355573,
+    "forecast_admission": 1.0590000000000002,
+    "all_fail_before_first_full_hold": true
+  },
+  "interpretation": "This exact581state cannot obtain an admissible first action from this unchanged537finite chooser. No claim of infeasibility for all controls or laws. 581eight-raw viability remains valid; s200/s300returnandgainunobserved. No automaticfollowup.",
+  "runtime_cost": {
+    "total": {
+      "attempted_raw": 196,
+      "external_force": 784,
+      "internal_force": 700,
+      "completed_model_ticks": 175,
+      "geometry_checks": 196,
+      "certifications": 21,
+      "sample_cache_misses": 21,
+      "cache_hits": 1,
+      "CPU_s": 7.992372948,
+      "wall_s": 7.199014997997438
+    },
+    "phases": {
+      "preparation": {
+        "CPU_s": 3.2620887050000005,
+        "wall_s": 2.0244850599992787
+      },
+      "prefix": {
+        "attempted_raw": 132,
+        "external_force": 528,
+        "internal_force": 528,
+        "completed_model_ticks": 132,
+        "geometry_checks": 132,
+        "CPU_s": 3.142808919,
+        "wall_s": 3.4540132289985195
+      },
+      "continuation": {
+        "geometry_checks": 64,
+        "attempted_raw": 64,
+        "external_force": 256,
+        "internal_force": 172,
+        "completed_model_ticks": 43,
+        "certifications": 21,
+        "sample_cache_misses": 21,
+        "cache_hits": 1,
+        "CPU_s": 1.4007237310000002,
+        "wall_s": 1.5307686470041517
+      },
+      "audit": {
+        "CPU_s": 0.18675159299999944,
+        "wall_s": 0.18975391000276431
+      }
+    },
+    "modes": {
+      "prefix": {
+        "attempted_raw": 132,
+        "external_force": 528,
+        "internal_force": 528,
+        "completed_model_ticks": 132,
+        "geometry_checks": 132
+      },
+      "forecast": {
+        "geometry_checks": 64,
+        "attempted_raw": 64,
+        "external_force": 256,
+        "internal_force": 172,
+        "completed_model_ticks": 43,
+        "certifications": 21,
+        "sample_cache_misses": 21,
+        "cache_hits": 1
+      }
+    },
+    "external_force": 784,
+    "internal_force": 700,
+    "total_force": 1484
+  },
+  "source_ticks_added": 0,
+  "native_actions": 0,
+  "new_FD": 0,
+  "new_optimizer": 0,
+  "new_learning": 0,
+  "input_sha256": {
+    "result": "02eb6adec6011e538cfd21d853b52b811e9a5ae3e978d8cb82156797b19f7283",
+    "contract": "89fcd829aca83292f3fc8f165e98c121979d2c9d95d0ba487fadfbdfee80ac6a",
+    "journal_private": "011bd9b0bc4f55937b9aa88dc99f6a4a6ab41dfc9c28d6280c00c6421f9fa0aa",
+    "run_tape_private": "b52f50e6514497566b8aae4bafa87fea1dd214fb039f904ddcd51b61398e53b3"
+  },
+  "read_only_CPU_s": 0.108822344,
+  "read_only_wall_s": 0.11269910099508706,
+  "final_writer_and_validation_CPU_wall_charge_s": 0.5,
+  "aggregate_CPU_s": 8.601195292,
+  "aggregate_wall_s": 7.811714098992525,
+  "aggregate_audit_CPU_s": 0.7955739369999995,
+  "aggregate_audit_wall_s": 0.8024530109978514
+}
