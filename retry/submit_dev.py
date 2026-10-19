@@ -21,6 +21,7 @@ START=time.perf_counter();CPU=time.process_time()
 CHILD_START=resource.getrusage(resource.RUSAGE_CHILDREN)
 ROOT=Path(__file__).resolve().parents[1]
 PRIVATE=Path('/workspace/haic-submission-private')
+DEADLINE=datetime.datetime(2026,10,20,14,59,tzinfo=datetime.timezone.utc)
 BANNED={'ctypes','importlib','multiprocessing','os','pathlib','resource','shutil','signal','socket','subprocess','sys'}
 CALLS={'compile','eval','exec','__import__'}
 
@@ -104,6 +105,7 @@ def ledger_charge(kind):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--label',required=True);parser.add_argument('--steps',type=int,default=120)
     args=parser.parse_args();assert 0<args.steps<=2000
+    if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:raise RuntimeError('AUTHORIZATION_EXPIRED')
     PRIVATE.mkdir(mode=0o700,exist_ok=True);out=PRIVATE/args.label;out.mkdir(mode=0o700,exist_ok=False)
     source,source_hash=package(out);client=None;env=None;rows=[];status='TECHNICAL_FAILURE';error=None;reset=None;summary={}
     try:
@@ -121,6 +123,7 @@ def main():
         from core.vendor.car_racing import CarRacing
         from env_wrapper import CarEnvironment
         case=json.loads(Path('/workspace/haic-response541-private/approved-case-private.json').read_text())
+        if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:raise RuntimeError('AUTHORIZATION_EXPIRED')
         ledger_charge('worlds');raw=CarRacing(**case['base']);env=CarEnvironment(TimeLimit(raw,max_episode_steps=2000*4+200),**case['wrapper'])
         ledger_charge('resets');obs,info=env.reset(seed=case['seed'],options={'track_id':case['track_id']})
         assert obs.shape==(4,84,84) and obs.dtype==np.float32 and np.isfinite(obs).all()
@@ -129,7 +132,7 @@ def main():
         status='ACTION_LIMIT_CENSORED'
         with (out/'decisions-private.jsonl').open('w') as log:
             for i in range(args.steps):
-                if datetime.datetime.now(datetime.timezone.utc)>=datetime.datetime(2026,10,20,10,1,55,tzinfo=datetime.timezone.utc):status='AUTHORIZATION_CENSORED';break
+                if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:status='AUTHORIZATION_CENSORED';break
                 q=client.request(b'A',obs);a=np.asarray(q['action'],np.float32)
                 before=raw.t;ledger_charge('actions');obs,reward,terminated,truncated,info=env.step(a)
                 ticks=round((raw.t-before)/.02)

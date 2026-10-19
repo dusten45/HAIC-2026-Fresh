@@ -14,6 +14,7 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 D=Path('/workspace/haic-runtime-port-private')
 START=json.loads((D/'started-private.json').read_text())
+DEADLINE=datetime.datetime(2026,10,20,14,59,tzinfo=datetime.timezone.utc)
 PHASE=sys.argv[1] if len(sys.argv)>1 else 'baseline'
 assert PHASE in {'baseline','optimized'}
 PREVIOUS=json.loads((D/'baseline-result-private.json').read_text()) if PHASE=='optimized' else None
@@ -32,6 +33,7 @@ def strip_hashes(x):
 
 
 def run():
+    if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:raise RuntimeError('AUTHORIZATION_EXPIRED')
     marker=D/(PHASE+'-UNIT_STARTED-private.json')
     if marker.exists():raise RuntimeError('NO_DUPLICATE_NUMERICAL_RUN')
     marker.write_text(json.dumps({'utc':datetime.datetime.now(datetime.timezone.utc).isoformat()}))
@@ -68,6 +70,7 @@ def run():
     def guarded_tick(*args):
         nonlocal model_attempted,model_completed
         if model_attempted+PRIOR_TICKS>=20000:raise RuntimeError('TOTAL_MODEL_TICK_20000')
+        if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:raise RuntimeError('AUTHORIZATION_EXPIRED')
         if time.process_time()-CPU+10>=1740 or time.time()-START['start_epoch']>=3480:raise RuntimeError('TOTAL_TIME_RESERVE')
         model_attempted+=1
         after=original_tick(*args);model_completed+=1;return after
