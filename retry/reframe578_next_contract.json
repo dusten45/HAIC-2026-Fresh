@@ -1,0 +1,215 @@
+{
+  "study": 578,
+  "status": "PROPOSED_NOT_EXECUTED",
+  "scope": "Read-only representation choice completed; this file does not authorize or launch an experiment. One next pilot only; no automatic follow-on.",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "method": "Reachable full-state spatial-target/steer-pedal primitive beam; no local577basis sweep, continuous trim solver, new FD, LP, or learned-model training.",
+  "question": "Can coupled geometry/steering/pedal transitions from the unchanged reachable launch obtain >=100ms conservative gain at fixed s200 and retain >=80ms total gain at s300 under the existing strict source contract?",
+  "hypothesis_limits": "No verified one-second opportunity. Passing establishes only source-local improvement through s300, not whole finish, native, pixels, robustness, or a final policy promotion.",
+  "data_partition": {
+    "used": "Existing DEV records only",
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "new_seeds": 0,
+    "new_worlds": 0,
+    "native_actions": 0,
+    "pixel_policy_execution": 0
+  },
+  "start": {
+    "prefix": "Exact current577 holds1..24,96raw unchanged. Reconstruct complete prehold25 checkpoint by one fresh source prefix replay, all96raw charged; verify stored rows/forces/history/tracker/clocks. Do not infer a complete checkpoint from COM pose alone.",
+    "identity_probe": "From cloned prehold25 checkpoint, independently evaluate the factual next hold,4raw; compare every stored state/force/history/tracker/clock field. Any mismatch is a technical hard stop; no repair chain.",
+    "state": "Preserve complete planar state, wheel omega, actual gas, joints/rates, angular and linear momentum, contacts/roads/visited, tracker, time/global raw and launch/tracking histories. Never reset counters or transplant factual poses after a changed action."
+  },
+  "actions": {
+    "per_node_max": 13,
+    "enumeration": "Lane offsets -0.75,0,+0.75m, each crossed with pedal modes fullgas,coast,brake0.125,brake0.25; then factual saved action for that absolute hold. Exact float32 action deduplication retains first occurrence; skipped duplicates receive no replacement.",
+    "geometry": "Use existing551 fixed path/project and lap518_control.steering convention. Target station=projected_s+max(7,0.3*COMspeed). Shift target by offset times left unit normal of its fixed path segment; recompute dx,dy. delta=atan(6.48*(-sin(angle)*dy-cos(angle)*dx)/(dx*dx+dy*dy)); action steer=float32(-clip(delta,-0.4,0.4)). Singular target/domain error hard stops.",
+    "pedals": "fullgas=(1,0),coast=(0,0),brake0.125=(0,0.125),brake0.25=(0,0.25), float32(gas,brake). Hold each action for4raw. No inner lookahead or mandatory greedy backup certification; every actual child raw receives original strict checks.",
+    "factual_action_on_altered_state": "Ordinary freshly evaluated action only, with no claimed fallback safety."
+  },
+  "beam": {
+    "width": 4,
+    "stageA": "One protected factual slot plus at most3 competitive nodes. Advance factual slot by actual source evaluation of its saved command, counted among the13 children; exact tape equality checked every raw. Never rely on adding factual actions alone to preserve the factual path. No cached successor used.",
+    "stageB": "At most4 competitive nodes from the ONE selected altered stageA full checkpoint. No factual checkpoint transplant/protected baseline slot/cached successor. Factual actions remain ordinary evaluated candidates.",
+    "ranking": "At each common hold depth, nonterminal children ranked descending fixed-path progress, then descending forward tangent velocity, then lexicographic full action-sequence enumeration IDs. Factual protected slot excluded from competitive selection. Deduplicate only bit-identical full checkpoints including history/clock/tracker/visited; retain first. No approximate COM-only merge.",
+    "terminal_selection": "Freeze terminal nodes at first forward plane crossing after completing and checking the entire crossing hold. At the fixed depth cap (or no live nodes), choose among gate-passing terminals by earliest crossing latest_s, then largest interpolated COMspeed, then lexicographic action IDs. StageA chooses one terminal and starts B once; no alternative-A restart after B failure."
+  },
+  "gates": {
+    "planes": [
+      {
+        "station_m": 200.0,
+        "center": [
+          183.1160973219701,
+          44.68689938746907
+        ],
+        "forward_normal": [
+          -0.9167843449883337,
+          0.3993826045088994
+        ],
+        "raw": 1,
+        "hold": 49,
+        "earliest_s": 3.840000000000003,
+        "latest_s": 3.860000000000003,
+        "linear_interpolated_s": 3.851288680188803,
+        "interpolated_COM_speed_m_s": 79.40600518474697
+      },
+      {
+        "station_m": 300.0,
+        "center": [
+          92.53488106827177,
+          87.0401086477452
+        ],
+        "forward_normal": [
+          -0.8971068207710153,
+          0.4418137074900704
+        ],
+        "raw": 4,
+        "hold": 62,
+        "earliest_s": 4.939999999999983,
+        "latest_s": 4.959999999999982,
+        "linear_interpolated_s": 4.946815240723051,
+        "interpolated_COM_speed_m_s": 94.7040656958983
+      }
+    ],
+    "plane_rule": "Same fixed world plane for every offset. Forward sign crossing negative to nonnegative, within +/-10m of fixed station progress and inside original path corridor. Record raw before/after time bracket; linear interpolation of COM velocity for speed. Entire crossing hold must remain strict-safe. StageB begins at completed actual stageA hold checkpoint; all times remain absolute from original source start.",
+    "A": {
+      "max_holds": 28,
+      "station_m": 200,
+      "gain_definition": "baseline earliest_s - candidate latest_s",
+      "minimum_conservative_total_gain_s": 0.1,
+      "minimum_interpolated_COM_speed_m_s": 79.25600518474697
+    },
+    "B": {
+      "max_additional_holds": 20,
+      "station_m": 300,
+      "gain_definition": "original baseline earliest_s - candidate latest_s; total retained gain, not an additional80ms after A",
+      "minimum_conservative_total_gain_s": 0.08,
+      "minimum_interpolated_COM_speed_m_s": 94.55406569589829
+    },
+    "no_crossing": "Depth cap does not guarantee reachability. Missing crossing or no gate-passing terminal closes this finite pilot without increasing depth,width,actions,steps or retrying another A terminal."
+  },
+  "safety": {
+    "source_contract": "All original577/551 force, launch/tracking prefix clipping, frozen reference+4.85, projection/progress, footprint>=0.5,path<=3,body<100,action-domain and official tracker checks unchanged; use original exact predicate implementations and hashes, not rounded report values.",
+    "prune": "Force/prefix clipping/reference/path/footprint/progress rejection prunes child immediately; no unsafe child becomes an incumbent.",
+    "hard_stop": "Body/domain/integrity/cost/IO/hash failure stops entire pilot. No implicit safety relaxation, alternate face, automatic repair/restart, or count reset.",
+    "native_observation": "Native constructor/reset/step prohibited in this pilot. Source full-state diagnostic controller is not a claimed deployable pixel policy or permission to use hidden state in native evaluation."
+  },
+  "verification": {
+    "only_if_A_and_B_pass": true,
+    "max_independent_initial_source_replays": 1,
+    "max_raw": 288,
+    "rule": "Replay selected exact action tape from original source initial state, including96raw prefix and all completed holds. Compare every before/after state, force, histories, visited/tracker, clocks, plane brackets and final full checkpoint. Any mismatch invalidates pilot promotion. Do not replay old incumbent if no new passing candidate."
+  },
+  "budgets": {
+    "attempted_raw_formula": "96 prefix +4 identity +4*13*4*(28+20) search +288 final replay =10372 maximum attempted raw; early preforce failures consume attempt slots even if no completed integration tick.",
+    "maximum_planned_attempted_raw": 10372,
+    "aggregate": {
+      "attempted_raw": 11000,
+      "completed_model_ticks": 11000,
+      "force_evaluations": 44000,
+      "geometry_checks": 11000,
+      "CPU_s": 400,
+      "wall_s": 540
+    },
+    "stage_caps": {
+      "preparation": {
+        "CPU_s": 10,
+        "wall_s": 15
+      },
+      "prefix_identity": {
+        "attempted_raw": 100,
+        "CPU_s": 10,
+        "wall_s": 20
+      },
+      "search": {
+        "attempted_raw": 9984,
+        "CPU_s": 330,
+        "wall_s": 450
+      },
+      "verification": {
+        "attempted_raw": 288,
+        "CPU_s": 20,
+        "wall_s": 30
+      },
+      "audit": {
+        "CPU_s": 10,
+        "wall_s": 15
+      }
+    },
+    "native": {
+      "actions": 0,
+      "resets": 0,
+      "CPU_s": 0
+    },
+    "LP": 0,
+    "nonlinear_solves": 0,
+    "new_FD": 0,
+    "new_calibration": 0,
+    "reserves": "Before expansion reserve a whole4raw child and final288raw verification/20CPU/30wall plus audit10CPU/15wall. Atomic cost journal includes failed raw force calls and preparation. Stop before deadline; no automatic extension."
+  },
+  "decisions": {
+    "A_fails": "Close this finite reachable beam representation at this resolution; no claim of global physical impossibility. Preserve577.",
+    "B_fails": "First-corner gain does not survive this continuation; close without A restart. Preserve577.",
+    "both_pass_and_replay_exact": "Permit proposing a separately contracted whole-lap retention test; no automatic whole-lap/native execution or incumbent replacement.",
+    "technical_error": "Preserve failing record, charge all calls, stop without repeating search."
+  },
+  "method_evidence": [
+    "541 actual560ms knownDEV policy change",
+    "551 source440ms speed/path retiming",
+    "552 source state-dependent braking distance reduced12.5668m, not lap gain",
+    "553 greedy pedal/reference backup coupling failure",
+    "555 continuous11.506991s not reachable validation; same-reference clamp12.900702s is diagnostic",
+    "562 altered terminal pose could be safely continued but produced no whole gain",
+    "566 and577 show downstream repayment of early gains"
+  ],
+  "current_stage_execution": {
+    "source_ticks": 0,
+    "force_evaluations": 0,
+    "native_actions": 0,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "LP_solves": 0,
+    "nonlinear_solves": 0
+  },
+  "remaining_budgets": {
+    "research": 22758,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "paid_compute": 0
+  },
+  "input_sha256": {
+    "current": "bc432812cdd71702ec030edda72a9aa63ca79e61dceb1f970891a659f20cd5a6",
+    "seed573": "4ebde7a580dd052de3da7a8bbd493c12c24e533ec7c193bb6f696c26cd54a875",
+    "551": "5e28759abfbc2455599c9f3bd4143ff7b8cf644deae63a86c7c290608e466ac8",
+    "paths": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "static": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "555branches": "5096c207ec9be8f58faadf18f925c0cdca911bb7474093906749ab67098bd316",
+    "577basis": "19ef51dc6d4dfb3d619819832ef96689001a62be5c442af1457eab65b8a9157e",
+    "574linear": "06b2607338c269415c66ad98de9f560faff64c6a0e2a935df499d869f2813762"
+  },
+  "strict_source_hashes": {
+    "retry/direct577_model.py": "1254db5387ddf28e242ac3d67524c2a6d6b1a308739cc7ba4eb036f5669d1012",
+    "retry/direct577_math.py": "d141834abe32ee94a0e9b17e97154f7411fe0e9a6141e4b47be6e26714f360ce",
+    "tests/test_direct577.py": "995d498daff704115148d498ded85d5dd9281b51ff6970856a0518d004778175",
+    "retry/face576_model.py": "e299ca8e7094aec90fe2df5bbad94b9ad116207689abf3e8845bbf5e346c7a52",
+    "retry/late568_model.py": "0e71a9e08552040b7da4d2b111a04f67bd361db1954cb156ea6b33a3d7f409b2",
+    "retry/wide574_math.py": "932b69bc86d1e90d91cfb497715f44d965053f00121e265e6f8a00dacd08028d",
+    "retry/checkpoints574.py": "f7a14a8d69abdc869d143413fafdac2961ebae28775a0ef95cea3739e101e6bf",
+    "retry/durable568.py": "43ed7c3f2bfe06ee575691b7d3b6f20414f06303e6c1fb09789deffe62d27a39",
+    "retry/handoff562_model.py": "e7addc1dabf391149cb10827316a6e9405069f4a8809a9ef4ada805cbe9d0b0b",
+    "retry/clip561_core.py": "d0f60f7741c4605a3c3b6a515977ee5c978efd633665d3e807afef6b816a531b",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "retry/preview527_control.py": "8049458f5f302fd194a2e0fde5a833ac4a2241f498055df1dc84203017da2717",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131",
+    "core/finish_line.py": "7c16dda1378dcd65aed46d9da96608aa055124c2f27d8fb00c309078361d4204",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363"
+  },
+  "privacy": "Public technical analysis and proposed contract only; raw states, plans, journals and private original manuscript stay outside repository. Preserve main dfb7a2de2178825ca5c5ce20bab01ba67052ba31, Participants, user changes and backups. No restart of discarded experiments."
+}
