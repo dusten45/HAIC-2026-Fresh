@@ -1,0 +1,102 @@
+{
+  "status": "FINAL_POST_FAILURE_PHASE_FIX_CACHED_ADMITS_RESET_RUN_OF_PREVIOUS_VARIANT_STOPPED_AT41",
+  "base_commit": "c0e177f6d2b0de1609f038e36e49feb9777e55f0",
+  "authorization_and_environment": {
+    "continued_same_environment": true,
+    "no_reinitialization": true,
+    "disconnect_check_UTC": "2026-10-19T21:46:34Z",
+    "files_and_uncommitted_changes_preserved": true,
+    "no_live_duplicate_evaluation_worker_at_check": true
+  },
+  "pre_reset_evidence": {
+    "c0_initial_reset_check_pass": true,
+    "external_budget_accumulates_across_resets": true,
+    "prior38_reconstruction_steer_error": 0.0,
+    "prior38_reconstruction_length_error_m": -4.973799150320701e-14,
+    "row69_fix_alone_changes_prior38_reference": false,
+    "late_failure_observed_margin_m": 0.49213566193945724,
+    "late_failure_external_margin_same_predicted_vehicle_m": 2.266707721354256,
+    "external_query_count": 1,
+    "interpretation": "The late veto is observed-map underestimation for the same forecast state, not demonstrated physical road departure. Repeating the same reset without another input change was avoided."
+  },
+  "source_error_and_fix": {
+    "error": "Flat-support erosion moved the inversion anchor inside the visible road, excluding its exterior plateau and leaving an unnecessarily inset boundary.",
+    "fix": "When the existing inversion fails at the flat interior, retry the enclosing actual observed asphalt-run edge. Keep all two-colour monotonicity, blocked/visible-plateau guards and the original0.35m flank inset.",
+    "paint_guard": "A first unguarded trial failed4 of144 public scenes, adding support outside red curbs. It was rejected. The existing3x9 red/white paint-evidence halo now vetoes this plain-edge retry.",
+    "post_failure_phase_fix": "At the next actual failure the raw threshold edge itself put an antialiased sample in the exterior plateau pair. Try exactly one exterior pixel phase inside the same existing paint halo/profile support; keep every acceptance tolerance unchanged."
+  },
+  "public_validation": {
+    "unguarded_cases": 144,
+    "unguarded_failed_cases": 4,
+    "guarded_cases": 144,
+    "guarded_failures": 0,
+    "guarded_nonvacuum_raw_edge_measurements": 2392,
+    "final_phase_cases": 144,
+    "final_phase_failures": 0,
+    "final_phase_nonvacuum_raw_edge_measurements": 3764,
+    "scope": "Finite full-mesh vertices, edge midpoints and centroids on public road/curb rasters; no universal safety certificate."
+  },
+  "cached_old39_before_reset": {
+    "admitted": true,
+    "whole_act_s": 1.5656727339955978,
+    "model_ticks": 526,
+    "old_saved_forecast_observed_margin_m": 0.49213566193945724,
+    "new_observed_map_margin_same_saved_forecast_state_m": 1.1452010004802835
+  },
+  "actual_reset_test": {
+    "source_sha256": "f90c5284e2e91b0b8e5c16935d2b060f275a38c23eccb224ae3b894671360cb1",
+    "exact_source_preserved": true,
+    "resets": 1,
+    "planned_maximum_actions": 60,
+    "valid_actions": 40,
+    "first_failed_call": 41,
+    "progress": 0.127208480565371,
+    "damage": 0.0,
+    "finish": false,
+    "max_whole_act_s": 1.8700159169966355,
+    "max_RSS_KiB": 67652,
+    "model_ticks": 25760,
+    "CPU_s": 47.47244046400001,
+    "wall_s": 46.96951664201333,
+    "previous38_actual_actions_identical": true,
+    "old39_stop_passed": true,
+    "new_failure_reasons": {
+      "FORECAST_FOOTPRINT_MARGIN": 2,
+      "FORCE_PEAK": 19
+    },
+    "exact_failure_replay": true
+  },
+  "final_post_failure_source": {
+    "source_sha256": "afebf52c42819828b0841c5484441a1ad2bc4965d0d32014143bb31450423306",
+    "initial_pixels_check_pass": true,
+    "initial_whole_act_s": 0.6897125669929665,
+    "cached_failed41_admitted": true,
+    "cached_whole_act_s": 0.6033132059965283,
+    "cached_model_ticks": 358,
+    "reset_from_initial_observation_tested": false,
+    "limits": "Final one-pixel phase fix is public/initial/cached validated only. The actual40-action reset run used the immediately preceding source. No second native reset occurred."
+  },
+  "resources": {
+    "model_ticks": 30898,
+    "native_actions": 40,
+    "DEV_resets": 1,
+    "raw_physics_ticks": 211,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve_used": 0,
+    "research_remaining": 19885,
+    "recorded_CPU_s_lower_bound": 92.739005515,
+    "unmetered": "Interpreter/import, process setup and administrative overhead. The system-Python cv2 diagnostic import failed before model/native execution. All model evaluations, including initial/reset checks, are charged."
+  },
+  "constraints": {
+    "core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+    "original_core_chooser_physics_horizon_thresholds_preserved": true,
+    "Agent_inputs": "public pixels and own reset-local memory only",
+    "true_map_in_Agent": false,
+    "known_map_not_used_for_parameter_fit": true,
+    "research_quota_external_cumulative": true,
+    "lap_time_search": false
+  },
+  "decision": "Not promoted to a completed/safe native candidate. Preserve the final bounded phase correction and its admitted cached checkpoint. Any next native reset must be a separately bounded verification of this exact final source, not a claim that40actions already validate it.",
+  "finished_UTC": "2026-10-19T21:49:53.129397+00:00"
+}

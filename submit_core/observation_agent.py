@@ -1353,7 +1353,10 @@ class Agent:
         self.uncertainty.update(painted_info)
         # Geometry has its own topology. Do not join one selected run across
         # a split/merge; retain every supported interval and every empty row.
-        geometry_rows=[];refined=unresolved=curb_refined=band_refined=0
+        geometry_rows=[];refined=unresolved=curb_refined=band_refined=raw_anchor_refined=0
+        # Existing paint evidence/halo: a red curb blurred into road shades
+        # must not be interpreted as a newly exposed plain road boundary.
+        paint_near=cv2.dilate(((image<.35)|(image>.75)).astype(np.uint8),np.ones((3,9),np.uint8))>0
         reach=math.ceil(((8./6.)+math.hypot(1/1.3608,1/1.701))*1.3608)
         for sy in range(pixels[0][0],pixels[-1][0]-1,-1):
             edges=np.diff(np.pad(geometry_asphalt[sy,1:83],(1,1)).astype(np.int16))
@@ -1363,6 +1366,30 @@ class Agent:
                 if se-ss<3:continue
                 a=recover_pixel_edge(image,sy,ss,1,blocked) if se-ss>=8 else None
                 b=recover_pixel_edge(image,sy,se-1,-1,blocked) if se-ss>=8 else None
+                # Flat interior support can start several pixels inside a
+                # perfectly visible edge. Inversion at that eroded anchor
+                # misses its exterior plateau. Re-anchor to the enclosing
+                # observed run, retaining the same monotone two-colour test
+                # and flank inset; no unseen/material-filled pixels are added.
+                if (a is None or b is None) and se-ss>=8 and sy<54:
+                    raw=observed_run(sy,(ss+se-1)*.5,asphalt)
+                    if raw is not None and raw[0]<=ss and raw[1]>=se:
+                        for side,index,direction in ((0,raw[0],1),(1,raw[1]-1,-1)):
+                            if (a if side==0 else b) is not None:continue
+                            if paint_near[sy,index]:continue
+                            measured=None
+                            # A raster transition can occupy the first nominal
+                            # exterior sample. One exterior pixel phase stays
+                            # inside the same paint halo/profile support.
+                            for anchor in (index,index-direction):
+                                ids=anchor+direction*np.arange(-3,5)
+                                if min(ids)<0 or max(ids)>=84:continue
+                                if not 156/255.<=float(np.mean(image[sy,ids[:2]]))<=184/255.:continue
+                                measured=recover_pixel_edge(image,sy,anchor,direction,blocked)
+                                if measured is not None:break
+                            raw_anchor_refined+=int(measured is not None)
+                            if side==0:a=measured
+                            else:b=measured
                 if (a is None or b is None) and se-ss>=8 and 2<=sy<54:
                     before=observed_run(sy-1,(ss+se-1)*.5,geometry_asphalt)
                     after=observed_run(sy+1,(ss+se-1)*.5,geometry_asphalt)
@@ -1481,6 +1508,7 @@ class Agent:
         self.uncertainty.update(map='finite visible boundaries + explicitly conditioned local road inference',
             observation_support_m=[float(arc[0]),float(arc[-1])],global_map_available=False,
             raster_edges_refined=refined,raster_edges_unresolved=unresolved,
+            raster_raw_anchor_edges_refined=raw_anchor_refined,
             raster_curb_edges_refined=curb_refined,
             raster_band_edges_refined=band_refined,
             subpixel_bound_universally_validated=False,obstacle_pixels_filled=False,
