@@ -9,6 +9,10 @@ import numpy as np
 import cv2
 import runtime598 as core
 
+# Pixel centres after public 1000x800 -> 96x96 -> 84x84 rendering,
+# including the vertical flip about WINDOW_H-1. No fitted camera offset.
+IMAGE_ORIGIN_X=(500.+.5)*84./1000.-.5
+IMAGE_ORIGIN_Y=(799.-200.+.5)*84./800.-.5
 
 class _TickCounter(list):
     def __init__(self):super().__init__([0]);self.limit=50000
@@ -50,6 +54,7 @@ class Agent:
         self.speed=0.;self.yaw=0.;self.joint=0.;self.previous_joint=0.
         self.distance=0.;self.previous_action=np.zeros(3,np.float32)
         self.predicted_wheels=None;self.predicted_hull_speed=None;self.calls=0
+        self.predicted_hull_velocity_body=None
         self.history=[0,0];self.last_root=None;self.last_path=None
         self.grip_prior=1.;self.engine_prior=1.;self.steering_prior=1.
         self.uncertainty={};self.diagnostics={}
@@ -59,9 +64,13 @@ class Agent:
         area=float(np.sum(image[76:83,10:14]))
         speed=max(0.,area/.091728-2.5) if area>.02 else 0.
         yaw=(float(np.sum(image[75:81,54:63]))-float(np.sum(image[75:81,63:72])))/2.109744
-        joint=(float(np.sum(image[76:80,32:42]))-float(np.sum(image[76:80,42:52])))/51.7734
+        # Include the full raster support of the public green indicator.
+        joint=(float(np.sum(image[75:81,32:42]))-float(np.sum(image[75:81,42:52])))/51.7734
         self.previous_joint=self.joint;self.joint=float(np.clip(joint,-.4,.4))
-        lateral_speed=0.;flow_confidence=0.
+        # Missing optical flow is not evidence of zero side slip in a turn.
+        lateral_speed=(0. if self.predicted_hull_velocity_body is None else
+                       float(np.clip(self.predicted_hull_velocity_body[0],-10.,10.)))
+        flow_confidence=0.
         a=np.rint(obs[-2]*255).astype(np.uint8);b=np.rint(image*255).astype(np.uint8)
         mask=np.zeros((84,84),np.uint8);mask[8:69,2:82]=255;mask[54:69,35:49]=0
         points=cv2.goodFeaturesToTrack(a,64,.02,4,mask=mask)
@@ -71,12 +80,12 @@ class Agent:
                 valid=status.ravel().astype(bool)&(errors.ravel()<20.)
                 if np.sum(valid)>=8:
                     p=points[valid,0,:].astype(np.float64);q=next_points[valid,0,:].astype(np.float64)
-                    for z in (p,q):z[:,0]=(z[:,0]-42.)/1.3608;z[:,1]=(63.-z[:,1])/1.701
+                    for z in (p,q):z[:,0]=(z[:,0]-IMAGE_ORIGIN_X)/1.3608;z[:,1]=(IMAGE_ORIGIN_Y-z[:,1])/1.701
                     affine,inliers=cv2.estimateAffinePartial2D(p,q,method=cv2.RANSAC,ransacReprojThreshold=.4,maxIters=100,confidence=.95)
                     if affine is not None and inliers is not None:
                         scale=math.hypot(affine[0,0],affine[1,0]);flow_confidence=float(np.mean(inliers))
                         if .97<scale<1.03 and flow_confidence>.6:
-                            visual_speed=-float(affine[1,2])/.08
+                            visual_speed=math.hypot(float(affine[0,2]),float(affine[1,2]))/.08
                             visual_yaw=math.atan2(affine[0,1],affine[0,0])/.08
                             lateral_speed=float(np.clip(-affine[0,2]/.08,-10.,10.))
                             if abs(visual_speed-speed)<8.:speed=.7*speed+.3*max(0.,visual_speed)
@@ -88,7 +97,7 @@ class Agent:
         self.distance+=self.speed*.08 if self.last_root is not None else 0.
         self.uncertainty=dict(speed_interval_m_s=[max(0.,self.speed-3.),self.speed+3.],
             intervals_are_unvalidated_engineering_priors=True,
-            visual_motion_confidence=flow_confidence,lateral_speed_assumption='visual estimate or zero-mean prior',
+            visual_motion_confidence=flow_confidence,lateral_speed_assumption='visual estimate or own-action prediction; initial zero prior',
             wheel_contact_frictions_and_clip_history='model-estimated, NOT observed',
             damage='not observed; multiplier priors may reduce after motion residual',
             wheel_omega=('rolling-speed initial prior' if self.predicted_wheels is None else
@@ -104,9 +113,9 @@ class Agent:
             x,y,w,h,area=stats[i];cx,cy=centers[i];ix,iy=int(round(cx)),int(round(cy))
             patch=asphalt[max(0,iy-4):min(69,iy+5),max(0,ix-4):min(84,ix+5)]
             if 3<=area<=30 and min(w,h)>=2 and max(w,h)<=3*min(w,h) and patch.size and np.mean(patch)>.42:
-                obstacles.append((((cx-42.)/1.3608,(63.-cy)/1.701),1.6))
+                obstacles.append((((cx-IMAGE_ORIGIN_X)/1.3608,(IMAGE_ORIGIN_Y-cy)/1.701),1.6))
                 asphalt[labels==i]=1
-        rows=[];anchor=42.
+        rows=[];anchor=IMAGE_ORIGIN_X
         for y in range(69,4,-2):
             edges=np.diff(np.pad(asphalt[y,1:83],(1,1)).astype(np.int16));starts=np.flatnonzero(edges==1)+1;ends=np.flatnonzero(edges==-1)+1
             good=ends-starts>=3;starts=starts[good];ends=ends[good]
@@ -125,10 +134,10 @@ class Agent:
             if outside[j]>8:
                 if len(rows)<3:continue
                 break
-            left=(float(starts[j])-42.)/1.3608+.35
-            right=(float(ends[j]-1)-42.)/1.3608-.35
+            left=(float(starts[j])-IMAGE_ORIGIN_X)/1.3608+.35
+            right=(float(ends[j]-1)-IMAGE_ORIGIN_X)/1.3608-.35
             if right-left<2.5:break
-            anchor=float(center[j]);rows.append((left,right,(63.-y)/1.701))
+            anchor=float(center[j]);rows.append((left,right,(IMAGE_ORIGIN_Y-y)/1.701))
         if len(rows)<8:raise RuntimeError('OBSERVED_ROAD_SUPPORT_INSUFFICIENT')
         left=[(a,y) for a,b,y in rows];right=[(b,y) for a,b,y in rows]
         roads=[((left[i],right[i],right[i+1],left[i+1]),self.grip_prior) for i in range(len(rows)-1)]
@@ -161,7 +170,10 @@ class Agent:
         yaw=self.yaw;rate=float(np.clip((self.joint-self.previous_joint)/.08,-3.,3.))
         center=tuple(float(x) for x in self.com)
         delta=self.com-self.hull_com
-        velocity=(lateral_speed-yaw*float(delta[1]),self.speed+yaw*float(delta[0]))
+        lateral_speed=float(np.clip(lateral_speed,-self.speed,self.speed))
+        # HUD speed is hull velocity magnitude, not its forward component.
+        forward_speed=math.sqrt(max(0.,self.speed**2-lateral_speed**2))
+        velocity=(lateral_speed-yaw*float(delta[1]),forward_speed+yaw*float(delta[0]))
         joints=(self.joint,self.joint,0.,0.);rates=(rate,rate,0.,0.)
         contacts=tuple(core.indexed_contacts(core.rectangle((center[0]+r[0],center[1]+r[1]),q),scene.roads,scene.index,.02) for r,q in zip(self.levers,joints))
         wheels=[]
@@ -209,6 +221,9 @@ class Agent:
             self.history[0]+=sum(f['clipped'] for f in forces);self.history[1]+=4
             r=core.tick(r,float(action[1]),float(action[2]),scene.index,self.counter)
         self.predicted_wheels=tuple((w.omega,w.gas) for w in r.planar.linear.wheels)
-        self.predicted_hull_speed=math.hypot(*core.hull_pose(r)[1])
+        velocity=core.hull_pose(r)[1];angle=r.planar.angle
+        self.predicted_hull_speed=math.hypot(*velocity)
+        self.predicted_hull_velocity_body=(math.cos(angle)*velocity[0]+math.sin(angle)*velocity[1],
+            -math.sin(angle)*velocity[0]+math.cos(angle)*velocity[1])
         self.diagnostics['model_ticks_total']=self.counter[0]
         return action

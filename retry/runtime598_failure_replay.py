@@ -10,11 +10,16 @@ import time
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('private_directory')
     parser.add_argument('--full-agent',action='store_true')
+    parser.add_argument('--geometry',action='store_true')
     args=parser.parse_args();directory=Path(args.private_directory)
     output=directory/'single-replay-private.json'
     assert not output.exists(),'NO_REPEAT_REPLAY'
     sys.path.insert(0,str(directory/'package'))
     import runtime598 as core
+    geometry=[]
+    if args.geometry:
+        from retry.runtime598_diagnostic import instrument_geometry
+        instrument_geometry(core,geometry)
     if args.full_agent:
         # Trusted, locally generated private checkpoint; no external truth read.
         import agent as participant
@@ -39,6 +44,7 @@ def main():
             wall_s=time.perf_counter()-start,native_actions=0,
             inputs='Full pre-act reset-local memory and pixels; persistent counter restored and replay delta charged separately; no true state read.')
         output.write_text(json.dumps(result,indent=2)+'\n')
+        if args.geometry:(directory/'geometry-probe-private.json').write_text(json.dumps(geometry,indent=2)+'\n')
         assert all(result[k] for k in ('error_identical','full_report_identical','diagnostics_identical','counter_identical'))
         print(json.dumps(result));return
     checkpoint=json.loads((directory/'checkpoint-private.json').read_text())

@@ -128,7 +128,10 @@ def main():
     parser.add_argument('--continuous-runtime',action='store_true')
     parser.add_argument('--force-diagnostic',action='store_true')
     parser.add_argument('--rolling-checkpoint',action='store_true')
+    parser.add_argument('--cpu-budget',type=float,default=1800.)
+    parser.add_argument('--wall-budget',type=float,default=3600.)
     args=parser.parse_args();assert 0<args.steps<=2000
+    assert 6.<args.cpu_budget<=1800. and 6.<args.wall_budget<=3600.
     if args.force_diagnostic:assert args.continuous_runtime and args.steps<=36 and args.model_tick_budget<=30000
     if args.rolling_checkpoint:assert args.continuous_runtime and not args.force_diagnostic and args.model_tick_budget<=200000
     if args.continuous_runtime:assert args.runtime_core and args.steps<=1000,'CONTINUOUS_RUNTIME_CAP'
@@ -164,8 +167,8 @@ def main():
             for i in range(args.steps):
                 if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:status='AUTHORIZATION_CENSORED';break
                 if args.continuous_runtime:
-                    if time.perf_counter()-START>=(1794. if args.force_diagnostic else 3594.):status='WALL_BUDGET_CENSORED';break
-                    if time.process_time()-CPU+worker_cpu+client.startup>=(594. if args.force_diagnostic else 1794.):status='CPU_BUDGET_CENSORED';break
+                    if time.perf_counter()-START>=min(args.wall_budget-6.,1794. if args.force_diagnostic else 3594.):status='WALL_BUDGET_CENSORED';break
+                    if time.process_time()-CPU+worker_cpu+client.startup>=min(args.cpu_budget-6.,594. if args.force_diagnostic else 1794.):status='CPU_BUDGET_CENSORED';break
                 if args.rolling_checkpoint or (args.force_diagnostic and i==35):
                     from retry.runtime598_diagnostic import external_truth
                     dump(out/'external-truth-private.json',external_truth(raw))

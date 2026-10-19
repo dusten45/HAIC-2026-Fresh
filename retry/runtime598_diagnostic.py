@@ -119,3 +119,27 @@ def external_truth(raw):
             road_frictions=[float(t.road_friction) for t in w.tiles],
             friction=max([400.*car.grass_friction_multiplier,*[400.*t.road_friction for t in w.tiles]])*car.grip_multiplier)
             for w in car.wheels])
+
+
+def instrument_geometry(core,events):
+    """Observe failed margins without changing the core return or threshold."""
+    margin=core.Scene.margin
+    def observe(scene,root,*args):
+        value=margin(scene,root,*args)
+        if value<core.FOOTPRINT_ADMISSION:
+            parts=[];n=(len(scene.boundary)-2)//2
+            for i,poly in enumerate(core.polygons(root)):
+                distances=[core.polygon_distance(poly,(a,b)) for a,b in scene.boundary]
+                edge=min(range(len(distances)),key=distances.__getitem__)
+                covered=all(any(core.inside(v,road) for road,coefficient in scene.roads) for v in poly)
+                road=distances[edge] if covered else -distances[edge]
+                obstacle=core.obstacle_margin([poly],scene.obstacles)
+                parts.append(dict(part=i,road_margin=road,edge=edge,
+                    edge_kind='left' if edge<n else 'right' if edge<2*n else 'near_cap' if edge==2*n else 'far_cap',
+                    edge_segment=scene.boundary[edge],polygon=poly,
+                    obstacle_margin=obstacle if math.isfinite(obstacle) else None,
+                    minimum=min(road,obstacle)))
+            worst=min(parts,key=lambda p:p['minimum'])
+            events.append(dict(margin=value,center=root.center,angle=root.planar.angle,**worst))
+        return value
+    core.Scene.margin=observe
