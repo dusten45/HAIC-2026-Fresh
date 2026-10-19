@@ -1,0 +1,50 @@
+{
+  "study": 608,
+  "status": "READ_ONLY_AUDIT_PASS",
+  "checks": {
+    "frozen_source": true,
+    "registered_contract": true,
+    "closed_result": true,
+    "aggregate_only_publication": true,
+    "private_hashes": true,
+    "pure_stubs": true,
+    "original_first_decision_and_grid_exact607": true,
+    "primitive_costs": true,
+    "force_totals": true,
+    "one_original_per_decision": true,
+    "fixed_grid_unique_order_and_selected_safe": true,
+    "fresh_FINAL_per_batch": true,
+    "durable_journal_chain": true,
+    "remaining_grid_and_FINAL_reservations": true,
+    "candidate_raw_count": true,
+    "completed_rows_strict": true,
+    "positive_safe_only_replay": true,
+    "caps_and_kernel": true,
+    "no_forbidden_work": true,
+    "local_scope_ledger": true,
+    "whole_task_time_cleanup_reserved": true
+  },
+  "certificates": 1070,
+  "primitive_counts": {
+    "model_attempted": 25623,
+    "model_completed": 25256,
+    "external_force": 102492,
+    "internal_force": 101024
+  },
+  "durable_events": {
+    "DECISION_RESERVE": 38,
+    "PAIR_REMAINDER_RESERVE": 476,
+    "APPLIED_INPUT": 148,
+    "BEFORE_FORCE": 148,
+    "FORCE_VERDICT": 148,
+    "APPLIED_TICK_START": 148,
+    "APPLIED_TICK_END": 148,
+    "APPLIED_RESULT": 148,
+    "STUDY_END": 1
+  },
+  "pairs": 464,
+  "new_evaluations": 0,
+  "audit_CPU_s": 4.8558237239999995,
+  "whole_task_wall_s": 1088.6907584667206,
+  "result_sha256": "f89a84bd3c726b1eeb52ff32d18a3e898859d7685f34b2d9f30c9c531a1c7b59"
+}

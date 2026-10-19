@@ -1,0 +1,72 @@
+{
+  "study": 608,
+  "status": "FROZEN_BEFORE_TESTS_AND_SOURCE",
+  "task_start": {
+    "study": 608,
+    "start_utc": "2026-10-19T12:44:23.123813+00:00",
+    "start_epoch": 1792413863.1238296,
+    "CPU_cap_s": 3000,
+    "wall_cap_s": 4500,
+    "cleanup_CPU_s": 60,
+    "cleanup_wall_s": 120
+  },
+  "caps": {
+    "model_attempted": 100000,
+    "model_completed": 100000,
+    "external_force": 400000,
+    "internal_force": 400000,
+    "total_force": 800000,
+    "geometry": 300000
+  },
+  "replay_reserve": {
+    "model_attempted": 1174,
+    "model_completed": 1174,
+    "external_force": 4696,
+    "internal_force": 4696,
+    "total_force": 9392,
+    "geometry": 7200
+  },
+  "time_caps": {
+    "CPU_s": 3000,
+    "wall_s": 4500,
+    "cleanup_CPU_s": 60,
+    "cleanup_wall_s": 120
+  },
+  "source_sha256": {
+    "retry/corner608.py": "884618ae5bdf3cb60a88747ecd20b8acdd449e8b7c00f6470d8ac33f8578ea96",
+    "retry/corner608_core.py": "6b9a498a7ce49f0683588e6b9edc7b2ee9decf3aed45ad61f9f71866a99263c5",
+    "retry/residual604_math.py": "9e852341758270b8622596569d7347c0566f540a1de6b3750206641d93e38a22",
+    "retry/residual605.py": "deafcf5f7f66cb754804ddd16c289827344fda5a5d73858107d0601a191f9dda",
+    "retry/pairs607.py": "7cc175eb149f5d82fced4d6cf2edeefa8c9604ddb3314f2e35817e33a0692120",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771"
+  },
+  "runtime603_manifest_sha256": "2dca472012ad4ab52e826f401379ee6d1e022d17a9bb30717d345f206f0348c3",
+  "binary_sha256": "dc97aff751da9e3cc35d83f66c2718efb19481e1ecf65968dcca6a8a2ce929eb",
+  "input_packet_sha256": "61c488f634fe87cb8a8af124ce827044f4be024c92c8234515e83d13c2ab0406",
+  "checkpoint_sha256": "00b1f0dbfe89187191cdd068b0f7a4e92144846e6fffcfd3fd196bfe79fd6a03",
+  "source605_result_sha256": "b273b011902b3a6a9132454a0ca8621a0480f54257f94e9aaf407380d19ceb2b",
+  "source607_result_sha256": "3b9736e99647fbbd2de3988353120f05e74061da74e65ebbff8a7960975614c4",
+  "preserved_initial_checkpoint_sha256": "dec25030cca7c5fa1635035bef809e6d6a625d1124300c3931c32ba6f9e8d0e6",
+  "prefix160_provenance_only_before_conditional_replay": true,
+  "H1_coefficients": [
+    -0.2,
+    0.2,
+    -0.2,
+    0.2,
+    -0.025,
+    0.025
+  ],
+  "spatial_windows_and_PP_formula": "EXACT residual604_math.py;currentstate/progress;no tuning",
+  "grid": "AtEACHdecision: currentoriginal537base and H1modifiedsteers;17dyadicpedals+twooriginal537brakelocklevels+CURRENTbase/modnetpedal,float32canonicalzero,dedup.21max. Rowsascendingsteer,thenpedaldescending. Ifsteerscoincide,physicallyidenticalpaircertifiedonceandbothrowmembershipsretained;no addedcandidate. FirstsignatureMUSTequal607beforeanynewchoose/tick.",
+  "selection": "Allfixedpairscheckedbeforeselection. Shiftedfeasibleclosesttomodifiedpedal,tiehigherpedal,thenindex. Originalbaseactionmustbenewlybase-rowcertifiedsafe. Ifnoshiftedfeasible,ONLYthatnewlycertifiedbaseactionfallback. FreshFINALexactselectedpaironce;no originalFINALreuseformodifiedpair. OriginalNOaction/baseunsafe=>stop.",
+  "zero": "SkipjointONLYrequestedoffset==0ANDpedalresidual==0;modifiedbytesmustexactoriginalbytes. Original537freshFINALvalidforsameunmodifiedaction. Everyactualfirst4rawmustmatchselectedfreshFINAL.",
+  "horizon": "Selectedcurrentaction+11originalbackupholdsisadmissionwitness,NOTfuturejoint/residualpolicyguarantee.",
+  "endpoint": "Readsame605fixedold551s200/300/400worldplanes;firsteligibleforwardCOMchordcross+wholeholdsafe.200/300diagnosticonly,noprogressprune. Baseline400time6.054387012453384onoriginalclock. Stopfirstsafe400hold;no wholelap/native.",
+  "replay": "ONLYs400strictsafeANDcontinuousgain>0:ONEindependentcommandreplayfromPRESERVED597initialcheckpoint,usingstored605prefix1..96+H1safe97..160+thissuffix. Compareallfullrows/root/history/visited/tracker/clock/checkpoint/planes. No selector inreplay. Otherwiseno replay.",
+  "reservations": "RollingworstNEXTjoint3892models/15600geometry orzero1540/6200,PLUSentire1174model/7200geometryreplayandcleanup. Maxgrid48+freshFINAL1,original32cert,48raw/cert. Worstgeometrycoversalllogicalqueries+everyoriginalPythonhelpercomparison+planes/residualpacks. Atleast18consecutiveworstjointdecisions(h41..58)fitbutwhole400notguaranteed. Ifnextreservefails,endcurrentcandidateasCOST_CENSORED,no extrapolation/capraise.",
+  "helper": "Pinned603segmentkernel with exact originalPython fullmargin comparison at EVERYnew601memo miss. Allnewcomparisons/project/target/worldplanepacks charged. Freshcontextperoriginal/gridphase, sourcegatesunchanged1.059/.10/.50/path3/reference4.85/body100/projectionoriginal.",
+  "errors": "Firsttechnical/IO/integrity/domain error stopsALL,no retry. Firstactualstrictviolation stopscandidate;no otherpolicy. Budget/time=>uncompletedendpoint/replaycensored. No native/world/reset/seed/carry/HOLDOUT/SEALED.",
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0
+}
