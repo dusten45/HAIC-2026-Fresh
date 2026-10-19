@@ -1,0 +1,1308 @@
+{
+  "checks": {
+    "source_hashes_match": true,
+    "all_accepted_safe": true,
+    "safe_cases_objective_match": true,
+    "independent_full_tape_exact": true,
+    "existing_whole_not_replayed": true
+  },
+  "actual_source_candidates": [
+    {
+      "label": "proposal-0-0",
+      "safe_finish": true,
+      "failure": null,
+      "working_accept": true,
+      "strict_safety": {
+        "min_footprint": 0.501542828502513,
+        "footprint_slack": 0.0015428285025129718,
+        "max_path": 1.4827949194596253,
+        "path_slack": 1.5172050805403747,
+        "max_force": 1.0560968883430266,
+        "force_slack": 0.002903111656973323,
+        "max_reference_overspeed": 4.849999408860114,
+        "reference_slack": 5.911398854863137e-07,
+        "max_body": 96.92925893450622,
+        "body_slack": 3.0707410654937775,
+        "tracking_fraction_max": 0.04105839416058394,
+        "tracking_history": [
+          90,
+          2260
+        ]
+      },
+      "local_model_reference_duals": [
+        {
+          "label": "reference",
+          "raw": 539,
+          "seed_physical_slack": 1.4480529895166683e-06,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.0008314391751269318
+        },
+        {
+          "label": "reference",
+          "raw": 532,
+          "seed_physical_slack": 5.965826570530908e-07,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.0001622459772298355
+        },
+        {
+          "label": "reference",
+          "raw": 535,
+          "seed_physical_slack": 9.619648775327505e-07,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -3.7107030917444585e-05
+        },
+        {
+          "label": "reference",
+          "raw": 531,
+          "seed_physical_slack": 0.0004382936594478082,
+          "linear_residual": 0.0004129161441027105,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "reference",
+          "raw": 534,
+          "seed_physical_slack": 0.000678640865706015,
+          "linear_residual": 0.0006758462297924324,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "reference",
+          "raw": 540,
+          "seed_physical_slack": 0.0009610003883349094,
+          "linear_residual": 0.0009473021057824256,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        }
+      ],
+      "local_model_dominant_physical": [
+        {
+          "label": "force",
+          "raw": 642,
+          "seed_physical_slack": 0.003990169951679334,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.20196977473939365
+        },
+        {
+          "label": "reference",
+          "raw": 539,
+          "seed_physical_slack": 1.4480529895166683e-06,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.0008314391751269318
+        },
+        {
+          "label": "reference",
+          "raw": 532,
+          "seed_physical_slack": 5.965826570530908e-07,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.0001622459772298355
+        },
+        {
+          "label": "reference",
+          "raw": 535,
+          "seed_physical_slack": 9.619648775327505e-07,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -3.7107030917444585e-05
+        },
+        {
+          "label": "footprint",
+          "raw": 529,
+          "seed_physical_slack": 0.6817795273060068,
+          "linear_residual": 0.6817088332994982,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "reference",
+          "raw": 529,
+          "seed_physical_slack": 0.01203628485767716,
+          "linear_residual": 0.012140192858203808,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "force",
+          "raw": 529,
+          "seed_physical_slack": 0.2559751991649053,
+          "linear_residual": 0.2559751991649053,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "force",
+          "raw": 529,
+          "seed_physical_slack": 0.3330082254233021,
+          "linear_residual": 0.3330082254233021,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        }
+      ],
+      "local_model_dominant_signed_support": [
+        {
+          "feature": "103:road:7:553:34",
+          "seed_support_slack": 0.007895904257551933,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.009898472653826216
+        },
+        {
+          "feature": "48:road:6:250:31",
+          "seed_support_slack": 0.0017232356849490316,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.00750821691546763
+        },
+        {
+          "feature": "44:road:4:250:20",
+          "seed_support_slack": 0.33554027248419516,
+          "linear_residual": 0.32668540088734466,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0
+        },
+        {
+          "feature": "44:road:4:250:21",
+          "seed_support_slack": 0.8934647624836458,
+          "linear_residual": 0.8845371637868571,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0
+        },
+        {
+          "feature": "44:road:4:250:22",
+          "seed_support_slack": 0.8005671871789843,
+          "linear_residual": 0.7906109946625994,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0
+        },
+        {
+          "feature": "44:road:4:250:23",
+          "seed_support_slack": 0.24264269717953368,
+          "linear_residual": 0.23275923473824692,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0
+        }
+      ],
+      "actual_times": {
+        "hull_finish": 13.19632021108868,
+        "center_finish": 13.197280242443187,
+        "s900": 12.102636158276821
+      },
+      "gain_step_ms": 1.009858916024342,
+      "cumulative_hull_gain_ms": 1.009858916024342,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661,
+      "official_finish_s": 13.199999999999807,
+      "strict_diagnostic_prefix_exact": true,
+      "objective_same_command_time_exact": true
+    },
+    {
+      "label": "proposal-1-0",
+      "safe_finish": true,
+      "failure": null,
+      "working_accept": true,
+      "strict_safety": {
+        "min_footprint": 0.5013905947818021,
+        "footprint_slack": 0.0013905947818021458,
+        "max_path": 1.4923473740165214,
+        "path_slack": 1.5076526259834786,
+        "max_force": 1.057572111584481,
+        "force_slack": 0.0014278884155189964,
+        "max_reference_overspeed": 4.8499994073366395,
+        "reference_slack": 5.926633601660569e-07,
+        "max_body": 96.92916347665171,
+        "body_slack": 3.070836523348291,
+        "tracking_fraction_max": 0.04105839416058394,
+        "tracking_history": [
+          90,
+          2260
+        ]
+      },
+      "local_model_reference_duals": [
+        {
+          "label": "reference",
+          "raw": 539,
+          "seed_physical_slack": 1.4449379985848054e-06,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.0005875338780892683
+        },
+        {
+          "label": "reference",
+          "raw": 532,
+          "seed_physical_slack": 5.911398854863137e-07,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.00018163692721039667
+        },
+        {
+          "label": "reference",
+          "raw": 535,
+          "seed_physical_slack": 9.592375160849542e-07,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.00012088174467953308
+        },
+        {
+          "label": "reference",
+          "raw": 531,
+          "seed_physical_slack": 0.00041347016889936583,
+          "linear_residual": 0.000388245033089382,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "reference",
+          "raw": 534,
+          "seed_physical_slack": 0.0006766777401505664,
+          "linear_residual": 0.00067388673648541,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "reference",
+          "raw": 540,
+          "seed_physical_slack": 0.0009488799042340901,
+          "linear_residual": 0.0009351929584440598,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        }
+      ],
+      "local_model_dominant_physical": [
+        {
+          "label": "force",
+          "raw": 638,
+          "seed_physical_slack": 0.003371936664968711,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.10552446523462913
+        },
+        {
+          "label": "force",
+          "raw": 585,
+          "seed_physical_slack": 0.002903111656973323,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.020649238754368852
+        },
+        {
+          "label": "reference",
+          "raw": 539,
+          "seed_physical_slack": 1.4449379985848054e-06,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.0005875338780892683
+        },
+        {
+          "label": "reference",
+          "raw": 532,
+          "seed_physical_slack": 5.911398854863137e-07,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.00018163692721039667
+        },
+        {
+          "label": "reference",
+          "raw": 535,
+          "seed_physical_slack": 9.592375160849542e-07,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -0.00012088174467953308
+        },
+        {
+          "label": "footprint",
+          "raw": 529,
+          "seed_physical_slack": 0.6817089112210095,
+          "linear_residual": 0.6816382292480168,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "reference",
+          "raw": 529,
+          "seed_physical_slack": 0.012140093565610854,
+          "linear_residual": 0.012243698223786828,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "force",
+          "raw": 529,
+          "seed_physical_slack": 0.2559751991649053,
+          "linear_residual": 0.2559751991649053,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        }
+      ],
+      "local_model_dominant_signed_support": [
+        {
+          "feature": "103:road:7:553:34",
+          "seed_support_slack": 0.002208695005919026,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.008605078790324055
+        },
+        {
+          "feature": "48:road:6:250:28",
+          "seed_support_slack": 0.0015428285025080868,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.00612886733046312
+        },
+        {
+          "feature": "44:road:4:250:20",
+          "seed_support_slack": 0.29548665286868925,
+          "linear_residual": 0.2900640508925403,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0
+        },
+        {
+          "feature": "44:road:4:250:21",
+          "seed_support_slack": 0.8545791114824368,
+          "linear_residual": 0.8491423090594302,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0
+        },
+        {
+          "feature": "44:road:4:250:22",
+          "seed_support_slack": 0.793117784510244,
+          "linear_residual": 0.7881048256067076,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0
+        },
+        {
+          "feature": "44:road:4:250:23",
+          "seed_support_slack": 0.23402532589649638,
+          "linear_residual": 0.22902636007669286,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0
+        }
+      ],
+      "actual_times": {
+        "hull_finish": 13.19466106636993,
+        "center_finish": 13.19562020077064,
+        "s900": 12.102006615579407
+      },
+      "gain_step_ms": 1.659144718750838,
+      "cumulative_hull_gain_ms": 2.66900363477518,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661,
+      "official_finish_s": 13.199999999999807,
+      "strict_diagnostic_prefix_exact": true,
+      "objective_same_command_time_exact": true
+    },
+    {
+      "label": "proposal-2-0",
+      "safe_finish": true,
+      "failure": null,
+      "working_accept": true,
+      "strict_safety": {
+        "min_footprint": 0.5000594856486725,
+        "footprint_slack": 5.948564867253037e-05,
+        "max_path": 1.4937456925755273,
+        "path_slack": 1.5062543074244727,
+        "max_force": 1.0575515529618331,
+        "force_slack": 0.0014484470381668224,
+        "max_reference_overspeed": 4.8499234513198815,
+        "reference_slack": 7.65486801181936e-05,
+        "max_body": 96.92913954824408,
+        "body_slack": 3.0708604517559195,
+        "tracking_fraction_max": 0.04105839416058394,
+        "tracking_history": [
+          90,
+          2260
+        ]
+      },
+      "local_model_reference_duals": [
+        {
+          "label": "reference",
+          "raw": 532,
+          "seed_physical_slack": 5.926633601660569e-07,
+          "linear_residual": 7.654817667270878e-05,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "reference",
+          "raw": 535,
+          "seed_physical_slack": 9.59755771745563e-07,
+          "linear_residual": 0.00013417019691116565,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "reference",
+          "raw": 539,
+          "seed_physical_slack": 1.4454238677075182e-06,
+          "linear_residual": 0.00021277937431552282,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "reference",
+          "raw": 531,
+          "seed_physical_slack": 0.00038880007283204066,
+          "linear_residual": 0.00044596898867000864,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "reference",
+          "raw": 534,
+          "seed_physical_slack": 0.000674719067736973,
+          "linear_residual": 0.0007888369837134355,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "reference",
+          "raw": 540,
+          "seed_physical_slack": 0.0009367713016725787,
+          "linear_residual": 0.0011674804197979644,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        }
+      ],
+      "local_model_dominant_physical": [
+        {
+          "label": "projection",
+          "raw": 638,
+          "seed_physical_slack": 2.0225429885606445,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds": -2.0881809127665157e-05
+        },
+        {
+          "label": "footprint",
+          "raw": 529,
+          "seed_physical_slack": 0.6816383071557233,
+          "linear_residual": 0.6816364600180861,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "reference",
+          "raw": 529,
+          "seed_physical_slack": 0.01224359968616362,
+          "linear_residual": 0.012267955737552067,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "force",
+          "raw": 529,
+          "seed_physical_slack": 0.2559751991649053,
+          "linear_residual": 0.2559751991649053,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "force",
+          "raw": 529,
+          "seed_physical_slack": 0.3330082254233021,
+          "linear_residual": 0.3330082254233021,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "force",
+          "raw": 529,
+          "seed_physical_slack": 0.2659233684349491,
+          "linear_residual": 0.26592351059689523,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "force",
+          "raw": 529,
+          "seed_physical_slack": 0.29226456612665674,
+          "linear_residual": 0.2922654586985976,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        },
+        {
+          "label": "body",
+          "raw": 529,
+          "seed_physical_slack": 3.070836523348291,
+          "linear_residual": 3.0708604520229015,
+          "conditional_rhs_sensitivity_seconds": -0.0
+        }
+      ],
+      "local_model_dominant_signed_support": [
+        {
+          "feature": "103:road:7:553:34",
+          "seed_support_slack": 0.002471175147775284,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0066696830209690815
+        },
+        {
+          "feature": "48:road:6:250:28",
+          "seed_support_slack": 0.0013905947818102504,
+          "linear_residual": 0.0,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0014086560859291372
+        },
+        {
+          "feature": "44:road:4:250:20",
+          "seed_support_slack": 0.2366422959380401,
+          "linear_residual": 0.2352559295537656,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0
+        },
+        {
+          "feature": "44:road:4:250:21",
+          "seed_support_slack": 0.7966344945605925,
+          "linear_residual": 0.7952475794668741,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0
+        },
+        {
+          "feature": "44:road:4:250:22",
+          "seed_support_slack": 0.7909337855631406,
+          "linear_residual": 0.7895840233630453,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0
+        },
+        {
+          "feature": "44:road:4:250:23",
+          "seed_support_slack": 0.2309415869405882,
+          "linear_residual": 0.22959236193258814,
+          "conditional_rhs_sensitivity_seconds_per_meter": -0.0
+        }
+      ],
+      "actual_times": {
+        "hull_finish": 13.194600470167673,
+        "center_finish": 13.195559588623189,
+        "s900": 12.101996800157835
+      },
+      "gain_step_ms": 0.060596202256846254,
+      "cumulative_hull_gain_ms": 2.7295998370320262,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661,
+      "official_finish_s": 13.199999999999807,
+      "strict_diagnostic_prefix_exact": true,
+      "objective_same_command_time_exact": true
+    }
+  ],
+  "fresh_center_sensitivity_summaries": [
+    {
+      "linearization": 1,
+      "center_label": "571final-safe-working",
+      "reference": [
+        {
+          "raw": 532,
+          "actual_slack": 5.965826570530908e-07,
+          "slack_change_on_L2_time_descent": 0.002218585115404183,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06999430421864786
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.007234532519708625
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 535,
+          "actual_slack": 9.619648775327505e-07,
+          "slack_change_on_L2_time_descent": 0.003920441758582901,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06711210369479803
+            },
+            {
+              "hold": 134,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.0532616812247533
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.006025993847456135
+            },
+            {
+              "hold": 134,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.004275124427636228
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 539,
+          "actual_slack": 1.4480529895166683e-06,
+          "slack_change_on_L2_time_descent": 0.00617438264886714,
+          "dominant_controls": [
+            {
+              "hold": 134,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06721864695521211
+            },
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06707314112711923
+            },
+            {
+              "hold": 135,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.05328115464926614
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.006489055345026463
+            },
+            {
+              "hold": 134,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.004512152542478103
+            },
+            {
+              "hold": 135,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.0019412995990505208
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 531,
+          "actual_slack": 0.0004382936594478082,
+          "slack_change_on_L2_time_descent": 0.001704255696565868,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.05323131335823703
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.006000380064087369
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 534,
+          "actual_slack": 0.000678640865706015,
+          "slack_change_on_L2_time_descent": 0.0033560422861306804,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06726634004310703
+            },
+            {
+              "hold": 134,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.036314864979575076
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.0063738603705620804
+            },
+            {
+              "hold": 134,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.002911792948420108
+            }
+          ],
+          "future_control_derivatives_zero": true
+        }
+      ],
+      "dominant_time_controls_ms": [
+        {
+          "hold": 138,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.481333669891299
+        },
+        {
+          "hold": 137,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.450737856361798
+        },
+        {
+          "hold": 139,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.291675627675746
+        },
+        {
+          "hold": 136,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.236512177569677
+        },
+        {
+          "hold": 140,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 9.85690678871513
+        },
+        {
+          "hold": 141,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 9.150145349089033
+        },
+        {
+          "hold": 142,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 8.135262128227142
+        },
+        {
+          "hold": 143,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 6.972686621457485
+        },
+        {
+          "hold": 144,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 5.559840226844853
+        },
+        {
+          "hold": 139,
+          "control": "steer",
+          "slope_ms_per_normalized_unit": -2.779830467150215
+        }
+      ],
+      "scope": "Fresh exact-center FD,local only;not global/physical optimum bounds"
+    },
+    {
+      "linearization": 2,
+      "center_label": "proposal-0-0-diagnostic",
+      "reference": [
+        {
+          "raw": 532,
+          "actual_slack": 5.911398854863137e-07,
+          "slack_change_on_L2_time_descent": 0.0022189076615009642,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06999486328172748
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.007213396002745309
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 535,
+          "actual_slack": 9.592375160849542e-07,
+          "slack_change_on_L2_time_descent": 0.003920061574659055,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06711323633737003
+            },
+            {
+              "hold": 134,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.05326188283875488
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.006008712522674424
+            },
+            {
+              "hold": 134,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.00425821402957649
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 539,
+          "actual_slack": 1.4449379985848054e-06,
+          "slack_change_on_L2_time_descent": 0.006172406928668353,
+          "dominant_controls": [
+            {
+              "hold": 134,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06721935400469979
+            },
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06707478233441283
+            },
+            {
+              "hold": 135,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.053281156593314366
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.0064703673946875226
+            },
+            {
+              "hold": 134,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.004496142863516658
+            },
+            {
+              "hold": 135,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.0019240350579389491
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 531,
+          "actual_slack": 0.00041347016889936583,
+          "slack_change_on_L2_time_descent": 0.0017045053031142917,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.053231622824282614
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.0059813289855524965
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 534,
+          "actual_slack": 0.0006766777401505664,
+          "slack_change_on_L2_time_descent": 0.003355901280137373,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06726729666831242
+            },
+            {
+              "hold": 134,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.03631496745138033
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.006354976975260478
+            },
+            {
+              "hold": 134,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.0029008659769277105
+            }
+          ],
+          "future_control_derivatives_zero": true
+        }
+      ],
+      "dominant_time_controls_ms": [
+        {
+          "hold": 138,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.486792254909851
+        },
+        {
+          "hold": 137,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.455447584079735
+        },
+        {
+          "hold": 139,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.298170703001064
+        },
+        {
+          "hold": 136,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.24152184101224
+        },
+        {
+          "hold": 140,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 9.864024357184567
+        },
+        {
+          "hold": 141,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 9.157387854853644
+        },
+        {
+          "hold": 142,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 8.142133074569871
+        },
+        {
+          "hold": 143,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 6.979367842245805
+        },
+        {
+          "hold": 144,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 5.564402013577464
+        },
+        {
+          "hold": 139,
+          "control": "steer",
+          "slope_ms_per_normalized_unit": -2.790777865003367
+        }
+      ],
+      "scope": "Fresh exact-center FD,local only;not global/physical optimum bounds"
+    },
+    {
+      "linearization": 3,
+      "center_label": "proposal-1-0-diagnostic",
+      "reference": [
+        {
+          "raw": 532,
+          "actual_slack": 5.926633601660569e-07,
+          "slack_change_on_L2_time_descent": 0.0022178107930974464,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06999542074181997
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.00719225961369658
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 535,
+          "actual_slack": 9.59755771745563e-07,
+          "slack_change_on_L2_time_descent": 0.003917638688203511,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06711436547127603
+            },
+            {
+              "hold": 134,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.053262083463679305
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.0059914311808374355
+            },
+            {
+              "hold": 134,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.004241303648572032
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 539,
+          "actual_slack": 1.4454238677075182e-06,
+          "slack_change_on_L2_time_descent": 0.006167797936745185,
+          "dominant_controls": [
+            {
+              "hold": 134,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06722005732383177
+            },
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06707641751345163
+            },
+            {
+              "hold": 135,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.053281157812607775
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.006451678698180152
+            },
+            {
+              "hold": 134,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.004480133222929589
+            },
+            {
+              "hold": 135,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.0019067705424055306
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 531,
+          "actual_slack": 0.00038880007283204066,
+          "slack_change_on_L2_time_descent": 0.0017036081930661817,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.05323193142488567
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.005962277770575397
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 534,
+          "actual_slack": 0.000674719067736973,
+          "slack_change_on_L2_time_descent": 0.0033539260659095045,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.0672682504243414
+            },
+            {
+              "hold": 134,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.03631506940733068
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.006336093660971447
+            },
+            {
+              "hold": 134,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.0028899390096991323
+            }
+          ],
+          "future_control_derivatives_zero": true
+        }
+      ],
+      "dominant_time_controls_ms": [
+        {
+          "hold": 138,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.475656073779179
+        },
+        {
+          "hold": 137,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.4427972630488
+        },
+        {
+          "hold": 139,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.288693867745947
+        },
+        {
+          "hold": 136,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.228522824814707
+        },
+        {
+          "hold": 140,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 9.856236993289384
+        },
+        {
+          "hold": 141,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 9.151339877861442
+        },
+        {
+          "hold": 142,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 8.13786568948612
+        },
+        {
+          "hold": 143,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 6.976263239067156
+        },
+        {
+          "hold": 144,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 5.5630817123433545
+        },
+        {
+          "hold": 139,
+          "control": "steer",
+          "slope_ms_per_normalized_unit": -2.7917700739446945
+        }
+      ],
+      "scope": "Fresh exact-center FD,local only;not global/physical optimum bounds"
+    },
+    {
+      "linearization": 4,
+      "center_label": "proposal-2-0-diagnostic",
+      "reference": [
+        {
+          "raw": 532,
+          "actual_slack": 7.65486801181936e-05,
+          "slack_change_on_L2_time_descent": 0.0022176628609017384,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06999550512886078
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.007191743022105733
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 535,
+          "actual_slack": 0.00013417269297200107,
+          "slack_change_on_L2_time_descent": 0.003917423786568215,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06711451732446423
+            },
+            {
+              "hold": 134,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.053262184733244206
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.005991009301471284
+            },
+            {
+              "hold": 134,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.004240887427294485
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 539,
+          "actual_slack": 0.00021278343878883277,
+          "slack_change_on_L2_time_descent": 0.006167504849506194,
+          "dominant_controls": [
+            {
+              "hold": 134,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06722027303644626
+            },
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.067076641923124
+            },
+            {
+              "hold": 135,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.05328130205160707
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.006451229470675109
+            },
+            {
+              "hold": 134,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.004479733106098658
+            },
+            {
+              "hold": 135,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.0019063464140043865
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 531,
+          "actual_slack": 0.0004459695011345133,
+          "slack_change_on_L2_time_descent": 0.0017034892287856734,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.05323197687980277
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.00596181368365906
+            }
+          ],
+          "future_control_derivatives_zero": true
+        },
+        {
+          "raw": 534,
+          "actual_slack": 0.0007888386626060395,
+          "slack_change_on_L2_time_descent": 0.003353733805137427,
+          "dominant_controls": [
+            {
+              "hold": 133,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.06726838143443356
+            },
+            {
+              "hold": 134,
+              "control": "pedal",
+              "slack_slope_per_normalized_unit": -0.03631512714044712
+            },
+            {
+              "hold": 133,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.006335630925685922
+            },
+            {
+              "hold": 134,
+              "control": "steer",
+              "slack_slope_per_normalized_unit": 0.0028896714933938313
+            }
+          ],
+          "future_control_derivatives_zero": true
+        }
+      ],
+      "dominant_time_controls_ms": [
+        {
+          "hold": 138,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.47329421352523
+        },
+        {
+          "hold": 137,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.440415271170625
+        },
+        {
+          "hold": 139,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.28638649484262
+        },
+        {
+          "hold": 136,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 10.226110715446813
+        },
+        {
+          "hold": 140,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 9.854071291121924
+        },
+        {
+          "hold": 141,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 9.149355736490758
+        },
+        {
+          "hold": 142,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 8.136098477048538
+        },
+        {
+          "hold": 143,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 6.974715661618876
+        },
+        {
+          "hold": 144,
+          "control": "pedal",
+          "slope_ms_per_normalized_unit": 5.5617933556817185
+        },
+        {
+          "hold": 139,
+          "control": "steer",
+          "slope_ms_per_normalized_unit": -2.7912716227743206
+        }
+      ],
+      "scope": "Fresh exact-center FD,local only;not global/physical optimum bounds"
+    }
+  ],
+  "accepted_step_gains_ms": [
+    1.009858916024342,
+    1.659144718750838,
+    0.060596202256846254
+  ],
+  "last_three_gain_sum_ms": 2.7295998370320262,
+  "observed_small_progress_window_met": false,
+  "stop_reason": "NO_FLOAT32_MODEL_FEASIBLE_STEP",
+  "termination_interpretation": "Only an observed small-gain window or measured failed-repair/safe-nonimprovement criterion is local stagnation evidence. A linearization/acceptance/resource cap alone is bounded termination,not convergence. Neither is a global/physical optimum proof.",
+  "dual_interpretation": "Duals differentiate conditional RHS of one unrounded local LP with fixed Jacobian/rank/support/error/trust assumptions. Reference is a fixed design condition in this study,not a physical limit. Differing units prevent naive cross-constraint ranking. All actual source thresholds were unchanged.",
+  "scope": "Source openloop660/13.20baseline;Native13.66 remains separate. No Native/feedbacktransition/robustness evidence added.",
+  "model_ticks": 0,
+  "CPU_s": 0.15038502600000003,
+  "wall_s": 0.030096329006482847
+}

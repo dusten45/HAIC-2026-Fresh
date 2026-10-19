@@ -1,0 +1,133 @@
+{
+  "status": "RECOVERED_SAME_572",
+  "deadline_KST": "2026-10-20T19:01:55+09:00",
+  "authorization": "Explicit user extension transcript supplied in latest delegation; supersedes closeout authorization interpretation. Historical failure records preserved.",
+  "checks": {
+    "original_input_hashes_match": true,
+    "original_source_hashes_match": true,
+    "recovery_source_hash_matches": true,
+    "both_journal_chains_valid": true,
+    "no_duplicate_source_ticks": true,
+    "source_tick_cost_exact": true,
+    "source_force_cost_exact": true,
+    "aggregate_charges_within_original_caps": true,
+    "bucket_charges_within_original_caps": true,
+    "independent_exact": true
+  },
+  "old_journal": {
+    "events": 93698,
+    "head": "907a1af4ac1e97514bb4d60dffb630e32233bc1f9e858ac93407bd5c9585914c",
+    "kinds": {
+      "CASE_STARTED": 115,
+      "BEFORE_FORCE": 15660,
+      "FORCE_VERDICT": 15660,
+      "BEFORE_TICK": 15660,
+      "AFTER_TICK": 15660,
+      "RAW_VERDICT": 15659,
+      "SOURCE_PATH_RECHECK": 15170,
+      "CASE_FINISHED": 114
+    },
+    "valid": true
+  },
+  "recovery_journal": {
+    "events": 140241,
+    "head": "4c34019232840f74a1c9ea853dbaa13a7dd8c53fb4e3f48b78054eeeea9ba3e2",
+    "kinds": {
+      "CASE_STARTED": 174,
+      "BEFORE_FORCE": 23322,
+      "FORCE_VERDICT": 23322,
+      "BEFORE_TICK": 23322,
+      "AFTER_TICK": 23322,
+      "RAW_VERDICT": 23322,
+      "SOURCE_PATH_RECHECK": 23283,
+      "CASE_FINISHED": 174
+    },
+    "valid": true
+  },
+  "combined_event_counts": {
+    "SOURCE_PATH_RECHECK": 38453,
+    "CASE_FINISHED": 288,
+    "RAW_VERDICT": 38981,
+    "BEFORE_FORCE": 38982,
+    "CASE_STARTED": 289,
+    "AFTER_TICK": 38982,
+    "FORCE_VERDICT": 38982,
+    "BEFORE_TICK": 38982
+  },
+  "duplicate_ticks": [],
+  "cost": {
+    "exact_source_ticks": 38982,
+    "exact_force_rows": 155928,
+    "old_exact_ticks": 15660,
+    "new_exact_ticks": 23322,
+    "old_measured_CPU_lower_s": 396.682209993,
+    "old_CPU_wall_exact_lost": true,
+    "historical_aggregate_budget_charge_s": 500.0,
+    "historical_verification_budget_charge_s": 25.0,
+    "historical_charge_interpretation": "Conservative accounting reservations, not measured CPU recovery. The stopped process last verification journal write was 13.923s after its error record; the 25s verification reservation includes a termination allowance. Aggregate500s exceeds the original registered-to-closeout wall interval. Exact historical CPU and strict CPU-cap certification cannot be reconstructed.",
+    "new_metered_CPU_after_recovery_marker_s": 598.383586362,
+    "new_metered_wall_after_recovery_marker_s": 647.6783319980022,
+    "aggregate_charged": {
+      "ticks": 38982,
+      "force": 155928,
+      "geometry": 38983,
+      "body_checks": 38982,
+      "CPU_s": 1098.383586362,
+      "wall_s": 1147.6783319980022
+    },
+    "bucket_charged": {
+      "local": {
+        "ticks": 37922,
+        "force": 151688,
+        "geometry": 37923,
+        "CPU_s": 959.5893788249995,
+        "wall_s": 1036.9948517559533
+      },
+      "evaluation": {
+        "ticks": 399,
+        "force": 1596,
+        "geometry": 399,
+        "CPU_s": 9.450747318000026,
+        "wall_s": 10.280162884024321
+      },
+      "verification": {
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 29.16324482099992,
+        "wall_s": 29.510262595998938
+      }
+    }
+  },
+  "reused_completed_FD_columns": 109,
+  "resumed_partial_FD_prefix_ticks": 30,
+  "reused_independent_prefix_ticks": 489,
+  "independent_remaining_ticks": 172,
+  "native_actions_and_resets_zero": true,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "paid_compute": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "original_failure_sha256": "e520359727802d123d707e04f7a649dec17b4195e289302f4107bb236b970f3c",
+  "closeout_records_preserved": true,
+  "files_transferred_this_recovery": false,
+  "CPU_s": 12.660737058,
+  "wall_s": 12.661756330009666,
+  "full_independent_safety": {
+    "raw_count": 661,
+    "minimum_footprint": 0.5000594856486725,
+    "maximum_path": 2.9999427983802525,
+    "maximum_body": 96.92913954824408,
+    "maximum_tracking_force": 1.058989978340987,
+    "maximum_launch_force": 2.403901474800934,
+    "maximum_tracking_reference_overspeed": 4.8499234513198815,
+    "maximum_tracking_clip_fraction": 0.1,
+    "maximum_checked_launch_clip_fraction": 0.1478494623655914,
+    "all_original_failure_flags_clear": true
+  },
+  "partial_FD_recovery_payload_sha256": "3fb4ea854c18a3f441c4361247e66bfc0464f5b2b4cb9f697bdefe49c320c633",
+  "interrupted_FD_last_tick_validation": "Original AFTER_TICK raw558 existed; missing post-tick geometry/verdict was reconstructed without reintegration, and full recovered FD rows were saved privately. One extra geometry check is charged.",
+  "supersedes_authorization_interpretation_only": "delegation_closeout_20261019.md/json; all failure evidence retained"
+}

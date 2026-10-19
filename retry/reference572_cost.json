@@ -1,0 +1,118 @@
+{
+  "total": {
+    "ticks": 38982,
+    "force": 155928,
+    "geometry": 38983,
+    "body_checks": 38982,
+    "CPU_s": 1098.383586362,
+    "wall_s": 1147.6783319980022
+  },
+  "phases": [
+    {
+      "bucket": "local",
+      "label": "FD-2-41",
+      "ticks": 15038,
+      "force": 60152,
+      "geometry": 15038,
+      "CPU_s": 391.6395039619997,
+      "wall_s": 420.08395928396203,
+      "body_checks": 15038,
+      "max_body": 96.93035785400215
+    },
+    {
+      "bucket": "evaluation",
+      "label": "proposal-0-0-strict-finish",
+      "ticks": 133,
+      "force": 532,
+      "geometry": 133,
+      "CPU_s": 3.1948176620000197,
+      "wall_s": 3.4295757860090816,
+      "body_checks": 133,
+      "max_body": 96.92925893450622
+    },
+    {
+      "bucket": "verification",
+      "label": "interrupted-independent-prefix",
+      "ticks": 489,
+      "force": 1956,
+      "geometry": 489,
+      "CPU_s": 25.0,
+      "wall_s": 25.0,
+      "body_checks": 489,
+      "max_body": 0
+    },
+    {
+      "bucket": "local",
+      "label": "cal-4-1",
+      "ticks": 22884,
+      "force": 91536,
+      "geometry": 22885,
+      "CPU_s": 567.9498748629998,
+      "wall_s": 616.9108924719912,
+      "body_checks": 22884,
+      "max_body": 96.9302620967672
+    },
+    {
+      "bucket": "evaluation",
+      "label": "proposal-1-0-strict-finish",
+      "ticks": 133,
+      "force": 532,
+      "geometry": 133,
+      "CPU_s": 3.0983628049999936,
+      "wall_s": 3.412672777005355,
+      "body_checks": 133,
+      "max_body": 96.92916347665171
+    },
+    {
+      "bucket": "evaluation",
+      "label": "proposal-2-0-strict-finish",
+      "ticks": 133,
+      "force": 532,
+      "geometry": 133,
+      "CPU_s": 3.1575668510000128,
+      "wall_s": 3.4379143210098846,
+      "body_checks": 133,
+      "max_body": 96.92913954824408
+    },
+    {
+      "bucket": "verification",
+      "label": "final-independent-full-tape-resume",
+      "ticks": 172,
+      "force": 688,
+      "geometry": 172,
+      "CPU_s": 4.163244820999921,
+      "wall_s": 4.510262595998938,
+      "body_checks": 172,
+      "max_body": 96.92913954824408
+    }
+  ],
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "prior571_separate": {
+    "ticks": 39993,
+    "CPU_s": 1040.234367377
+  },
+  "saved_only_diagnosis": {
+    "ticks": 0,
+    "CPU_s": 2.502391826,
+    "wall_s": 2.501839132994064
+  },
+  "primitive_geometry_queries": 54,
+  "CPU_wall_are_budget_charges": true,
+  "historical_CPU_wall_charge": 500.0,
+  "historical_measured_CPU_lower": 396.682209993,
+  "finally_first_total": {
+    "ticks": 38982,
+    "force": 155928,
+    "geometry": 38983,
+    "body_checks": 38982,
+    "CPU_s": 1091.224209376,
+    "wall_s": 1140.5156306099962
+  },
+  "read_only_analysis": {
+    "ticks": 0,
+    "CPU_s": 0.15038502600000003,
+    "wall_s": 0.030096329006482847
+  }
+}

@@ -1,0 +1,447 @@
+{
+  "stage": "saved-data-only diagnosis before572source",
+  "same_center_FD_available": false,
+  "stored_FD_center": "571proposal3-0,one acceptedstep before finalproposal4-0",
+  "center_offset_normalized_inf": 0.04995117584864299,
+  "actual_active_reference": [
+    {
+      "raw": 532,
+      "hold": 133,
+      "raw_in_hold": 4,
+      "reference_overspeed": 4.849999403417343,
+      "actual_slack": 5.965826570530908e-07,
+      "causal_control_count": 2,
+      "future_controls_zero_stored_derivative": true,
+      "dominant_slack_sensitivities": [
+        {
+          "hold": 133,
+          "control": "pedal",
+          "per_normalized_unit": -0.06999374568847619
+        },
+        {
+          "hold": 133,
+          "control": "steer",
+          "per_normalized_unit": 0.007255669028144302
+        },
+        {
+          "hold": 162,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 162,
+          "control": "pedal",
+          "per_normalized_unit": -0.0
+        },
+        {
+          "hold": 163,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 163,
+          "control": "pedal",
+          "per_normalized_unit": -0.0
+        }
+      ],
+      "dominant_speed_sensitivities": [
+        {
+          "hold": 133,
+          "control": "pedal",
+          "per_normalized_unit": 0.06999374568847619
+        },
+        {
+          "hold": 133,
+          "control": "steer",
+          "per_normalized_unit": -0.007255669028144302
+        },
+        {
+          "hold": 162,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 162,
+          "control": "pedal",
+          "per_normalized_unit": -0.0
+        },
+        {
+          "hold": 163,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 163,
+          "control": "pedal",
+          "per_normalized_unit": -0.0
+        }
+      ],
+      "dominant_profile_sensitivities": [
+        {
+          "hold": 161,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 161,
+          "control": "pedal",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 162,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 162,
+          "control": "pedal",
+          "per_normalized_unit": -0.0
+        },
+        {
+          "hold": 163,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 163,
+          "control": "pedal",
+          "per_normalized_unit": -0.0
+        }
+      ],
+      "speed_profile_decomposition_error_max": 0.0,
+      "slack_rate_on_unconstrained_L2_time_descent": 0.0022192507491743765,
+      "slack_gradient_norm": 0.07036880820753647,
+      "last_accepted_global_step": 0.04995117584864299,
+      "last_accepted_causal_prefix_step": 0.04995117584864298
+    },
+    {
+      "raw": 535,
+      "hold": 134,
+      "raw_in_hold": 3,
+      "reference_overspeed": 4.849999038035122,
+      "actual_slack": 9.619648775327505e-07,
+      "causal_control_count": 4,
+      "future_controls_zero_stored_derivative": true,
+      "dominant_slack_sensitivities": [
+        {
+          "hold": 133,
+          "control": "pedal",
+          "per_normalized_unit": -0.06711096729629076
+        },
+        {
+          "hold": 134,
+          "control": "pedal",
+          "per_normalized_unit": -0.05326147885615404
+        },
+        {
+          "hold": 133,
+          "control": "steer",
+          "per_normalized_unit": 0.006043274626468937
+        },
+        {
+          "hold": 134,
+          "control": "steer",
+          "per_normalized_unit": 0.004292034778793949
+        },
+        {
+          "hold": 163,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 163,
+          "control": "pedal",
+          "per_normalized_unit": -0.0
+        }
+      ],
+      "dominant_speed_sensitivities": [
+        {
+          "hold": 133,
+          "control": "pedal",
+          "per_normalized_unit": 0.06711096729629076
+        },
+        {
+          "hold": 134,
+          "control": "pedal",
+          "per_normalized_unit": 0.05326147885615404
+        },
+        {
+          "hold": 133,
+          "control": "steer",
+          "per_normalized_unit": -0.006043274626468937
+        },
+        {
+          "hold": 134,
+          "control": "steer",
+          "per_normalized_unit": -0.004292034778793949
+        },
+        {
+          "hold": 163,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 163,
+          "control": "pedal",
+          "per_normalized_unit": -0.0
+        }
+      ],
+      "dominant_profile_sensitivities": [
+        {
+          "hold": 161,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 161,
+          "control": "pedal",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 162,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 162,
+          "control": "pedal",
+          "per_normalized_unit": -0.0
+        },
+        {
+          "hold": 163,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 163,
+          "control": "pedal",
+          "per_normalized_unit": -0.0
+        }
+      ],
+      "speed_profile_decomposition_error_max": 0.0,
+      "slack_rate_on_unconstrained_L2_time_descent": 0.003922343354610511,
+      "slack_gradient_norm": 0.08599773131973687,
+      "last_accepted_global_step": 0.04995117584864299,
+      "last_accepted_causal_prefix_step": 0.04995117584864298
+    },
+    {
+      "raw": 539,
+      "hold": 135,
+      "raw_in_hold": 3,
+      "reference_overspeed": 4.84999855194701,
+      "actual_slack": 1.4480529895166683e-06,
+      "causal_control_count": 6,
+      "future_controls_zero_stored_derivative": true,
+      "dominant_slack_sensitivities": [
+        {
+          "hold": 134,
+          "control": "pedal",
+          "per_normalized_unit": -0.0672179362862136
+        },
+        {
+          "hold": 133,
+          "control": "pedal",
+          "per_normalized_unit": -0.06707149361019542
+        },
+        {
+          "hold": 135,
+          "control": "pedal",
+          "per_normalized_unit": -0.05328115146460819
+        },
+        {
+          "hold": 133,
+          "control": "steer",
+          "per_normalized_unit": 0.006507742007691886
+        },
+        {
+          "hold": 134,
+          "control": "steer",
+          "per_normalized_unit": 0.004528162285396843
+        },
+        {
+          "hold": 135,
+          "control": "steer",
+          "per_normalized_unit": 0.0019585641572141942
+        }
+      ],
+      "dominant_speed_sensitivities": [
+        {
+          "hold": 134,
+          "control": "pedal",
+          "per_normalized_unit": 0.0672179362862136
+        },
+        {
+          "hold": 133,
+          "control": "pedal",
+          "per_normalized_unit": 0.06707149361019542
+        },
+        {
+          "hold": 135,
+          "control": "pedal",
+          "per_normalized_unit": 0.05328115146460819
+        },
+        {
+          "hold": 133,
+          "control": "steer",
+          "per_normalized_unit": -0.006507742007691886
+        },
+        {
+          "hold": 134,
+          "control": "steer",
+          "per_normalized_unit": -0.004528162285396843
+        },
+        {
+          "hold": 135,
+          "control": "steer",
+          "per_normalized_unit": -0.0019585641572141942
+        }
+      ],
+      "dominant_profile_sensitivities": [
+        {
+          "hold": 161,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 161,
+          "control": "pedal",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 162,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 162,
+          "control": "pedal",
+          "per_normalized_unit": -0.0
+        },
+        {
+          "hold": 163,
+          "control": "steer",
+          "per_normalized_unit": 0.0
+        },
+        {
+          "hold": 163,
+          "control": "pedal",
+          "per_normalized_unit": -0.0
+        }
+      ],
+      "speed_profile_decomposition_error_max": 0.0,
+      "slack_rate_on_unconstrained_L2_time_descent": 0.006178296383158525,
+      "slack_gradient_norm": 0.10918978087877074,
+      "last_accepted_global_step": 0.04995117584864299,
+      "last_accepted_causal_prefix_step": 0.04995117584864298
+    }
+  ],
+  "time_sensitivities_ms_per_normalized_unit": [
+    {
+      "hold": 138,
+      "control": "pedal",
+      "per_normalized_unit": 10.469231615301037
+    },
+    {
+      "hold": 137,
+      "control": "pedal",
+      "per_normalized_unit": 10.440114173022184
+    },
+    {
+      "hold": 139,
+      "control": "pedal",
+      "per_normalized_unit": 10.277996503471794
+    },
+    {
+      "hold": 136,
+      "control": "pedal",
+      "per_normalized_unit": 10.226805163744487
+    },
+    {
+      "hold": 140,
+      "control": "pedal",
+      "per_normalized_unit": 9.841576506235207
+    },
+    {
+      "hold": 141,
+      "control": "pedal",
+      "per_normalized_unit": 9.133069548800846
+    },
+    {
+      "hold": 142,
+      "control": "pedal",
+      "per_normalized_unit": 8.116377034675452
+    },
+    {
+      "hold": 143,
+      "control": "pedal",
+      "per_normalized_unit": 6.952568682166259
+    },
+    {
+      "hold": 144,
+      "control": "pedal",
+      "per_normalized_unit": 5.537825538262651
+    },
+    {
+      "hold": 139,
+      "control": "steer",
+      "per_normalized_unit": -2.7813982869402665
+    },
+    {
+      "hold": 138,
+      "control": "steer",
+      "per_normalized_unit": -2.775052240104505
+    },
+    {
+      "hold": 140,
+      "control": "steer",
+      "per_normalized_unit": -2.6998664277498836
+    }
+  ],
+  "early_control_time_sensitivities_ms": [
+    {
+      "hold": 133,
+      "control": "steer",
+      "slope": -1.0068913891844884
+    },
+    {
+      "hold": 133,
+      "control": "pedal",
+      "slope": 0.8321963565024992
+    },
+    {
+      "hold": 134,
+      "control": "steer",
+      "slope": -1.5582017450858514
+    },
+    {
+      "hold": 134,
+      "control": "pedal",
+      "slope": 0.8869337207355712
+    },
+    {
+      "hold": 135,
+      "control": "steer",
+      "slope": -2.1008610619715324
+    },
+    {
+      "hold": 135,
+      "control": "pedal",
+      "slope": 0.9260775645166851
+    }
+  ],
+  "conditional_linear_time_response": {
+    "reference3_only_gain_ms": 7.179624168539709,
+    "first3holds_fixed_reference3_only_gain_ms": 6.814066076639879,
+    "scope": "Approximate stored previous-center gradients with current final zero-order slacks. Omits force/footprint/path/rank/error margins and is NOT a source candidate or prediction of feasible gain."
+  },
+  "interpretation": "The reference is an unchanged design condition,not a physical optimum bound. Near-zero slack identifies a potential local restriction;causal gradients and any later LPdual are conditional local information only. Fresh68FD at the exact final571point are required before optimization;no off-centerFD reuse as an exact model.",
+  "source_ticks": 0,
+  "CPU_s": 2.502391826,
+  "wall_s": 2.501839132994064,
+  "input_sha256": {
+    "/workspace/haic-response571-private/linear-5-private.json": "d9a1381f4cc9928615ef93e721c393075c2cfe7c80ad3cfffaf2861a1c994880",
+    "/workspace/haic-response571-private/proposal-3-0-diagnostic-private.json": "a0f76f45c3cc4232ecc4e23466d509f8360dc8e64c7da33c61a3fce04889dc13",
+    "/workspace/haic-response571-private/proposal-4-0-diagnostic-private.json": "72801931e1fb4a356de7c89fb4852aa614dbaa27a0f0c55a4017c6b894c67394",
+    "/workspace/haic-response571-private/raw-journal-private.jsonl": "e28e88049d61e49d7c57f75e5650b5d2571b200f5ea2aae8a874dad9abadeed9"
+  }
+}
