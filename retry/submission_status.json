@@ -53,7 +53,7 @@
     "site_submission": false
   },
   "bounded_adapter": {
-    "source_sha256": "8484523814b0a4e161d504aff7060ab6a01349cc30ccd40c1658a4d30c0aef71",
+    "source_sha256": "891e383c13ad3712b55f48873f151ce9be6abc8f8480639720f8bb7e2f1ad1ae",
     "estimated_state": [
       "HUD speed",
       "yaw",
@@ -65,7 +65,10 @@
     "planner": "18or fewer steer candidates x28estimatedkinematicsteps; NumPy/OpenCV only, no privileged-state force certificate",
     "actual_DEV": "405actions,69.61%progress,damage0; stopped then offtrackDNF",
     "not_promoted": true,
-    "blocker": "Estimated local predictor rejected every candidate near an obstacle; repeated braking caused deadlock. Full invisible map, true wheel/contact/slip states and true clipping history are unavailable; runtime optimization cannot by itself restore598semantics."
+    "blocker": "Surrogate kinematic shield predicts acceleration toward positive target for every steering candidate; no actual braking/stop candidate. At cached terminal observation observed-road clearance rejects all; no original598 true-state inputs available. Not solved by unsafe throttle escape or deleting risk guards.",
+    "last_DEV_source_sha256": "8484523814b0a4e161d504aff7060ab6a01349cc30ccd40c1658a4d30c0aef71",
+    "post_DEV_changes": "Diagnostic rejection categories/streak only; removed unrecertified throttle escape. Risk checks/kinematic candidate set unchanged. No new DEV driving.",
+    "is_faithful_598_adapter": false
   },
   "implementation_checks": {
     "ZIP_root_shape_and_limits": true,
@@ -173,5 +176,73 @@
     "paid_compute": 0
   },
   "privacy": "No caseIDs/seeds,observations,coordinates,actions,tapes,reports or images published. Those outputs and submissionZIPs private.",
-  "next_issue": "Repair uncertainty/deadlock handling in the bounded observation adapter and validate actual closed-loop completion; no more privileged lap-time search and no claim that3.94s core constitutes participant compliance."
+  "next_issue": "Repair uncertainty/deadlock handling in the bounded observation adapter and validate actual closed-loop completion; no more privileged lap-time search and no claim that3.94s core constitutes participant compliance.",
+  "followup06": {
+    "status": "CAUSE_IDENTIFIED_UNSAFE_ESCAPE_REMOVED_ORIGINAL598_INPUT_PATH_BLOCKED",
+    "new_DEV_actions": 0,
+    "DEV_action_cap": 2000,
+    "wall_cap_s": 3600,
+    "wall_elapsed_through_result_s": 274.40137696266174,
+    "remaining": 20745,
+    "reserve_used": 0,
+    "trace_evidence": {
+      "terminal_99_decisions_all_rejected": true,
+      "terminal_99_gas0_brake_at_least_quarter": true,
+      "terminal_99_stall_counter0": true,
+      "cached_terminal_image_exact_saved_margin": -0.23357141017913818,
+      "cached_observed_obstacle_margin": 1.4875489737514989,
+      "cached_observed_road_margin": -0.23357141017913818,
+      "cached_out_of_view_unknown_margin": 10.0,
+      "scope": "Reproduces terminal stationary observation rejection, not full prior state/history or initial297decision."
+    },
+    "code_delta": [
+      "Independent rejected_streak counts braking/rejection path.",
+      "Removed gas=.7/brake=0 escape; no rejection can authorize uncertified acceleration.",
+      "Separate observed obstacle/observed road/out-of-view unknown diagnostic causes; admission constraints unchanged.",
+      "Package helper accepts explicit standalone candidate source for isolated checks."
+    ],
+    "checks": {
+      "cached_observation_only": true,
+      "28_rejections_no_throttle_escape": true,
+      "reset_repeat_exact": true,
+      "static_single_file_package": true,
+      "cold_start_s": 0.0941334170056507,
+      "reset_s": 0.00019022199558094144,
+      "max_whole_cached_act_s": 0.00560197900631465,
+      "peak_RSS_KiB": 51236,
+      "new_native_or_source_experiments": 0,
+      "new_completion_or_safety_claim": false
+    },
+    "598_connection": {
+      "maintained_formulas": [
+        "purepursuit atan(3.24*curvature), lookahead max7/.3speed",
+        "source acceleration-to-gas/brake map",
+        "bounded adapter:3.8m/sigma16 arc-normal obstacle offset and backward45 envelope idea"
+      ],
+      "replaced_not_equivalent": [
+        "stored first39commands/prefixcertificate",
+        "full primary+backup map/reference/progress",
+        "original537 finite-pedal chooser and12hold/48raw certifier",
+        "source rigid/wheel/contact/force dynamics+true cliphistory"
+      ],
+      "required_unavailable_inputs": [
+        {
+          "input": "episode-specific prefix39 commands; true visited/tracker/clock and high/backup references",
+          "evidence": "retry/cold598_support.py:127..136; official local_runner.py:24 passes only observation",
+          "consequence": "Cannot keep actual598 initial decision path while excluding known episode tape and hidden environment data."
+        },
+        {
+          "input": "full roads,obstacles,contact membership; physical root/wheel latent state and real running cliphistory",
+          "evidence": "retry/brake509_adapter.py:22..40; retry/structure537_control.py:29..52",
+          "consequence": "Cannot claim original537 admission/force-history certificate from uncertain local visual proxies."
+        },
+        {
+          "input": "wheel gas/friction and exact contact/actuator-dependent future state",
+          "evidence": "retry/speed516_control.py:18..25; retry/plan512_control.py:37..48; official HUD only quantized speed/omega/steer/yaw cues",
+          "consequence": "Observer reconstruction needs validated uncertainty; computational optimization alone does not supply missing inputs."
+        }
+      ],
+      "scope": "Current structural blocker is faithful runtime598 input construction/certification, not a proof that any legal observation policy cannot achieve13.22s. No substitute controller or student tuning continued."
+    }
+  }
 }

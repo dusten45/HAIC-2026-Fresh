@@ -28,8 +28,9 @@ CALLS={'compile','eval','exec','__import__'}
 def dump(p,q):p.write_text(json.dumps(q,indent=2,allow_nan=False)+'\n')
 
 
-def package(out):
-    source=ROOT/'submit_agent/agent.py';code=source.read_text();tree=ast.parse(code)
+def package(out, source=None):
+    source=Path(source) if source is not None else ROOT/'submit_agent/agent.py'
+    code=source.read_text();tree=ast.parse(code)
     for node in ast.walk(tree):
         if isinstance(node,(ast.Import,ast.ImportFrom)):
             names=[a.name for a in node.names] if isinstance(node,ast.Import) else [node.module]

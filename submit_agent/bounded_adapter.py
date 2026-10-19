@@ -1,7 +1,8 @@
-"""Observation-only local form of the 598 steering/speed-control architecture.
+"""Experimental observation-only controller sharing some 598 control formulas.
 
 No global map, simulator state, stored episode commands or custom native code.
-The local references and latent estimates are uncertain, not 598 certificates.
+Its kinematic shield is NOT the 598 chooser/dynamics/horizon or a faithful
+input adapter. Local references/latent estimates are uncertain, not certificates.
 """
 import math
 import numpy as np
@@ -15,7 +16,8 @@ class Agent:
         self.previous_action = np.zeros(3, dtype=np.float32)
         self.obstacles = []
         self.steer_estimate = 0.0
-        self.stall = 0
+        self.rejected_streak = 0
+        self.shield_causes = {}
         self.road_distance = None
         self.diagnostics = {}
 
@@ -25,7 +27,8 @@ class Agent:
         self.previous_action[:] = 0.0
         self.obstacles = []
         self.steer_estimate = 0.0
-        self.stall = 0
+        self.rejected_streak = 0
+        self.shield_causes = {}
         self.road_distance = None
         self.diagnostics = {}
 
@@ -121,6 +124,9 @@ class Agent:
         x=np.zeros(n);y=np.zeros(n);heading=np.zeros(n)
         yaw=np.full(n,-self.yaw);joint=np.full(n,self.steer_estimate)
         clearance=np.full(n,10.);tracking=np.zeros(n)
+        obstacle_clearance=np.full(n,10.)
+        observed_road_clearance=np.full(n,10.)
+        unknown_clearance=np.full(n,10.)
         speed=self.speed
         for tick in range(28):
             distance=(x[:,None]-path[None,:,0])**2+(y[:,None]-path[None,:,1])**2
@@ -145,6 +151,7 @@ class Agent:
                 u=dx*np.cos(heading)-dy*np.sin(heading)
                 v=dx*np.sin(heading)+dy*np.cos(heading)
                 gap=np.hypot(np.maximum(np.abs(u)-1.3,0.),np.maximum(np.abs(v)-2.5,0.))-1.6
+                obstacle_clearance=np.minimum(obstacle_clearance,gap)
                 clearance=np.minimum(clearance,gap)
             # Current vehicle pixels occlude the near road. Apply the raster
             # road check once a predicted center enters visible forward support.
@@ -154,11 +161,17 @@ class Agent:
             road=np.full(n,2.)
             road[visible]=self.road_distance[iy[visible],ix[visible]]/1.701-1.6
             road[(y>3.)&~visible]=-2.
+            observed_road_clearance=np.minimum(observed_road_clearance,np.where(visible,road,10.))
+            unknown_clearance=np.minimum(unknown_clearance,np.where((y>3.)&~visible,-2.,10.))
             clearance=np.minimum(clearance,road)
         cost=tracking/28+3*(commands-desired)**2+.5*(commands-float(self.previous_action[0]))**2
         safe=clearance>=0.
         score=np.where(safe,cost,1e4+1e3*np.maximum(-clearance,0.)+cost)
         j=int(np.argmin(score))
+        self.shield_causes=dict(observed_obstacle=float(obstacle_clearance[j]),
+            observed_road=float(observed_road_clearance[j]),out_of_view_unknown=float(unknown_clearance[j]),
+            longitudinal_target_speed=float(target_speed),
+            braking_or_stationary_candidate=False)
         return float(commands[j]),bool(safe[j]),float(clearance[j])
 
     def act(self, observation):
@@ -230,17 +243,15 @@ class Agent:
             brake = min(1., max(0., 29.249793766661764*max(-accel,0.)/(4*1.6*15/(.02*.54))))
             if not admitted:
                 gas=0.;brake=max(brake,.25)
-            self.stall = self.stall+1 if self.speed<4. and self.previous_action[1]>.025 else 0
-            if self.stall>15:
-                near=[q for q in self.obstacles if -3.<q[1]<8.]
-                if near:
-                    closest=min(near,key=lambda q:q[0]*q[0]+q[1]*q[1])
-                    steer=-math.copysign(.4,closest[0] if abs(closest[0])>.2 else 1.)
-                gas=.7;brake=0.
+            # Count rejection independently of previous gas. This is diagnostic,
+            # not permission to accelerate through a failed risk check. The old
+            # unrecertified gas=.7 escape has deliberately been removed.
+            self.rejected_streak = 0 if admitted else self.rejected_streak+1
             action = np.asarray([steer, gas, brake], dtype=np.float32)
             self.diagnostics = dict(speed=self.speed, yaw=self.yaw, path_points=len(path),
                 target_speed=target_speed, lookahead=lookahead, visible_m=float(y[-1]),
                 obstacle_tracks=len(self.obstacles), local_model_admitted=admitted,
-                estimated_margin=predicted_margin, stall_count=self.stall, lost=False)
+                estimated_margin=predicted_margin, rejected_streak=self.rejected_streak,
+                rejection_causes=dict(self.shield_causes), lost=False)
         self.previous_action = action.copy()
         return action
