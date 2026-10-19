@@ -1,0 +1,106 @@
+{
+  "status": "FAILURE_CAUSES_SEPARATED_NO_SUPPORTED_AGENT_REPAIR",
+  "base_commit": "2ef6142b64269f24f1770f67febf714689c74974",
+  "agent_changed": false,
+  "final_agent_sha256": "38e96b02e52e1ce17d982a90262a6602d6900f0f2a0e64855e1d5df2bcf52114",
+  "unchanged_core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "force": {
+    "high_first_failure": {
+      "raw": 5,
+      "wheel": 1,
+      "ratio": 1.0695617550593304,
+      "stage": "first backup tick after four initial ticks"
+    },
+    "quarter_brake_first_failure": {
+      "raw": 1,
+      "wheel": 1,
+      "estimated_ratio": 1.125039353714418,
+      "direct_measured_current_ratio": 1.1277851185787233
+    },
+    "own_action_memory_consistent": true,
+    "stale_action_or_spin_error_found": false,
+    "fixed_existing_high_command_external_counterfactual_peaks": {
+      "estimated": 1.0695617550593304,
+      "measured_spin_only": 1.0713871242266064,
+      "measured_hull_velocity_only": 1.0702557152299388,
+      "measured_yaw_only": 1.0695254285701823,
+      "measured_observables_nominal_time_level": 1.072026486132127
+    },
+    "limit": "External measured-observable forecasts retain estimated joint rates and nominal time-level geometry; actual joint rates were not recorded. These are not measured future trajectories or Agent inputs."
+  },
+  "footprint": {
+    "first_raws": [
+      39,
+      39,
+      40,
+      40,
+      41,
+      42
+    ],
+    "part": "front wheel0",
+    "boundary_source": "observed road-support hole beside the visible orange object, not a physical road flank or the obstacle clearance test",
+    "estimated_road_margin_range_m": [
+      0.4662792610228984,
+      0.4889894218225168
+    ],
+    "estimated_obstacle_margin_range_m": [
+      1.1712664443069838,
+      1.2337745128143123
+    ],
+    "external_same_forecast_polygon_physical_road_margin_range_m": [
+      3.860122071159134,
+      3.8931000776599967
+    ],
+    "external_same_forecast_polygon_physical_obstacle_margin_range_m": [
+      1.5142788297247998,
+      1.5805282545886665
+    ],
+    "limit": "Stored map identity checked against initial observation. Same estimated forecast polygons transformed at current measured camera pose; no physical future simulation or truth-fed Agent. Known physical pavement under an opaque object does not supply pixel evidence."
+  },
+  "recent_history": {
+    "object_support_first_executed_action_change": {
+      "decision": 44,
+      "unchanged_action_prefix": 43,
+      "changed_field": "gas",
+      "actual_trajectory_changed": true
+    },
+    "steep_edge_unchanged_prefix": 45,
+    "steep_edge_newly_executed_decision": 46,
+    "reference_restore_unchanged_prefix": 46,
+    "reference_restore_changed_executed_actions": 0,
+    "restored47_input_pixels_identical": true
+  },
+  "rejected_candidate": {
+    "method": "Half-level straight edge inversion or free-radius algebraic circle fit to that contour",
+    "public_configurations": 96,
+    "max_half_level_boundary_error_m": 0.3741383972761022,
+    "circle_undercoverage_cases": 96,
+    "max_circle_undercoverage_m": 0.09662966029522813,
+    "exact_equal_full_images": 0,
+    "decision": "Reject simple best-fit hole shrinking. Keep the0.35m geometry inset and all admission gates.",
+    "limit": "Does not establish impossibility of exact fixed-radius16-gon raster inversion. Near-equal quantized images do not prove non-identifiability."
+  },
+  "diagnostic_fix": "Remove invalid left/right/near/far labels derived from union edge index; union boundaries may include object holes and split/merge edges. Report road_union_segment and explicit hull/wheel part. Model-free public check preserves margin exactly.",
+  "exact_source_validation": {
+    "previous_reset_valid_actions": 46,
+    "previous_reset_progress": 0.14487632508833923,
+    "previous_reset_damage": 0.0,
+    "previous_failed_call": 47,
+    "current_phase_full_checkpoint_replay_identical": true,
+    "new_native_reset": false,
+    "reason": "No substantiated Agent correction passed the public gate; same-code same-run repetition prohibited."
+  },
+  "phase_usage": {
+    "DEV_actions": 0,
+    "resets": 0,
+    "model_ticks": 476,
+    "raw_physics": 0,
+    "measured_CPU_s": 1.6918496600000001,
+    "unmetered_diagnostic_CPU_allowance_s": 10,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0,
+    "research_remaining": 19507
+  },
+  "next_gate": "A current-pixel bounded16-gon raster inverse, including road shade, raster phase and orientation nuisance parameters, must first establish safe exterior support on public scenes. Only a supported input repair may justify another cached gate and reset. Force observations currently provide no basis for lowering state estimates or changing controller constants."
+}

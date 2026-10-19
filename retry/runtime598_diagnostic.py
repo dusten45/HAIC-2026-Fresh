@@ -127,7 +127,7 @@ def instrument_geometry(core,events):
     def observe(scene,root,*args):
         value=margin(scene,root,*args)
         if value<core.FOOTPRINT_ADMISSION:
-            parts=[];n=(len(scene.boundary)-2)//2
+            parts=[]
             for i,poly in enumerate(core.polygons(root)):
                 distances=[core.polygon_distance(poly,(a,b)) for a,b in scene.boundary]
                 edge=min(range(len(distances)),key=distances.__getitem__)
@@ -135,7 +135,10 @@ def instrument_geometry(core,events):
                 road=distances[edge] if covered else -distances[edge]
                 obstacle=core.obstacle_margin([poly],scene.obstacles)
                 parts.append(dict(part=i,road_margin=road,edge=edge,
-                    edge_kind='left' if edge<n else 'right' if edge<2*n else 'near_cap' if edge==2*n else 'far_cap',
+                    part_name=('hull'+str(i)) if i<4 else ('wheel'+str(i-4)),
+                    # A union can contain holes, split/merge interfaces and
+                    # multiple flanks. Its edge order is not two row chains.
+                    edge_kind='road_union_segment',
                     edge_segment=scene.boundary[edge],polygon=poly,
                     obstacle_margin=obstacle if math.isfinite(obstacle) else None,
                     minimum=min(road,obstacle)))
