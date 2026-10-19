@@ -1,0 +1,116 @@
+{
+  "status": "STORED_ANALYSIS_COMPLETE_SOURCE0",
+  "checks": {
+    "analysis_checks_all_pass": true,
+    "analysis_implementation_hash_exact": true,
+    "source_references_unchanged": true,
+    "only_stdlib_analysis_imports": true,
+    "no_dynamics_evaluator_calls_in_AST": true,
+    "proposal_unexecuted": true,
+    "proposal_cost_arithmetic": true,
+    "clock_deadline_preserved": true,
+    "main_requested_incumbent_preserved": true
+  },
+  "extra_input_sha256": {
+    "journal584_private": "53e7aa349389d51d1c4357df3387a575a54e2abdbffadce3983b40572c4f4fc4",
+    "planes579_contract": "4a36258b5ea0d4cc7851941ad01d6b2e8bd67df1be516b522d9ee42a7935ad39"
+  },
+  "common_s132_plane": {
+    "plane": {
+      "station_m": 132.0,
+      "center": [
+        237.15953942351618,
+        10.897312953790415
+      ],
+      "forward_normal": [
+        0.14689863679546006,
+        0.9891515508291111
+      ]
+    },
+    "observations": {
+      "factual577": {
+        "before_raw": 135,
+        "after_raw": 136,
+        "fraction": 0.6472473132823529,
+        "COM_speed_m_s": 41.910134428132054,
+        "COM_velocity_world_m_s": [
+          10.599815585415946,
+          40.547543419290804
+        ],
+        "velocity_heading_rad": 1.3151014870646942,
+        "body_forward_heading_rad": 1.2620393368804683,
+        "velocity_path_heading_deficit_rad": 0.10826267958985714,
+        "yaw_rad_s": 3.178653828166588,
+        "margin_after_raw_m": 4.158307821538035,
+        "path_error_after_raw_m": 1.325266986494288,
+        "crossing_full_hold_safe": true,
+        "meaning": "Firstsavedforwardcentrechordcrossing;velocityvectorinterpolation,margin/pathreportedafterraw. No counterfactualintegrationorwholetimegain."
+      },
+      "escape_then584": {
+        "before_raw": 134,
+        "after_raw": 135,
+        "fraction": 0.9594204916371312,
+        "COM_speed_m_s": 46.84017585683334,
+        "COM_velocity_world_m_s": [
+          25.999620135025683,
+          38.96179958797386
+        ],
+        "velocity_heading_rad": 0.9823480863642015,
+        "body_forward_heading_rad": 0.9560550572064977,
+        "velocity_path_heading_deficit_rad": 0.4410160802903499,
+        "yaw_rad_s": 1.7906193386379827,
+        "margin_after_raw_m": 2.5885818013779254,
+        "path_error_after_raw_m": 0.9726304471711038,
+        "crossing_full_hold_safe": true,
+        "meaning": "Firstsavedforwardcentrechordcrossing;velocityvectorinterpolation,margin/pathreportedafterraw. No counterfactualintegrationorwholetimegain."
+      }
+    },
+    "interpretation": "Sameworldplanecomparisoncomplementssameclockdiagnostics.Fastcrossesearlierbutlessaligned/smallermargin;notwholegainorvalidrecovery."
+  },
+  "recovery_information": {
+    "source_linear_mass_kg": 7.3019199669361115,
+    "optimistic_all_direction_COM_acceleration_ceiling_m_s2": 219.1204515038475,
+    "formula": "sum_i(maxstoredroad/floorfriction_i)/actualsource_linear_mass=1600/7.3019199669361115;forcevectorsclippedat400N;no engine/speed-basedgenericmassassumption.",
+    "conditional_required_path_normal_acceleration_proxy_m_s2": {
+      "124": 129.91220273057314,
+      "132": 145.3168455374707,
+      "135": 184.13213152635868,
+      "136": 185.1281751780779,
+      "139": 174.77353984206442,
+      "140": 175.5129526124955
+    },
+    "ceiling_does_not_exclude_recovery": true,
+    "critical_point_first_order_time_to_margin_floor_s_raw132": 0.1333549270077191,
+    "critical_point_first_order_time_to_margin_floor_s_raw139": 0.0007027643230818726,
+    "observed_time_raw132_to_first_contract_failure_s": 0.16,
+    "raw132_remaining_margin_above_floor_m": 3.433513048234408,
+    "raw139_remaining_margin_above_floor_m": 0.01764730975864015,
+    "interpretation": "Observed584cannotmakeupheadingdebtbeforemarginfloor. Broadnormceilingdoesnotproveothercontrolsimpossible;criticalpointlinearization/freepointstoppinglimitsareconditionaldiagnostics,notreachabilitycertificates."
+  },
+  "identified_vs_unidentified": {
+    "identified": [
+      "Sameparent21/steer,oneholdpedaldifferencecauseddifferentrecordedraw124states.",
+      "Recorded581turnlessandendswithlargerheadingdebtthanfeasiblefactual.",
+      "584force-safecontrolconsumedfinite-bodymarginbeforematchingpathdirection."
+    ],
+    "unidentified": [
+      "Futureviabilityofprunedsibling275.",
+      "Whetheranyadmissiblejointcontrolcanrecoverparent25.",
+      "Purecausaleffectofalignmentversusdifferentinitialstate/speed.",
+      "A certifiedreachable-setboundaryforfullnativevehicle."
+    ]
+  },
+  "source_ticks_added": 0,
+  "force_kernel_calls_added": 0,
+  "new_law_executed": 0,
+  "native_actions": 0,
+  "new_FD": 0,
+  "new_optimizer": 0,
+  "proposal_only": true,
+  "read_only_CPU_s": 0.062023286999999996,
+  "read_only_wall_s": 0.062023614009376615,
+  "auxiliary_reads_CPU_wall_charge_s": 3.0,
+  "final_writer_validation_CPU_wall_charge_s": 0.5,
+  "aggregate_CPU_s": 6.510804746,
+  "aggregate_wall_s": 6.5151190840115305
+}

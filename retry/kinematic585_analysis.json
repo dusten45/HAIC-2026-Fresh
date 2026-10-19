@@ -1,0 +1,3042 @@
+{
+  "study": 585,
+  "status": "STORED_ANALYSIS_COMPLETE_SOURCE0",
+  "checks": {
+    "matched_parent_and_steering_exact": true,
+    "all_available_raw124_nodes14": true,
+    "common_raw124_exact": true,
+    "all_reproduced_road_margins_match": true,
+    "all_581_prefix_rows_match_584": true,
+    "original_583_nominal_first_failure_attempt136": true,
+    "source_yaw_sums_match_observed_body_turn": true,
+    "all_input_hashes_unchanged": true,
+    "no_dynamics_imports": true
+  },
+  "common_raw124": {
+    "fast_parent25": {
+      "progress_m": 121.24748858400757,
+      "COM_speed_m_s": 53.60113302855027,
+      "COM_velocity_world_m_s": [
+        42.283958525927076,
+        32.94158941705791
+      ],
+      "COM_velocity_path_tangent_m_s": 53.595296222925796,
+      "COM_velocity_path_left_normal_m_s": -0.7910023521955836,
+      "signed_path_position_left_m": 1.2133786842518464,
+      "path_distance_m": 1.2133786842518464,
+      "path_tangent_world": [
+        0.7797079329748614,
+        0.62614338554046
+      ],
+      "path_heading_rad": 0.6765970990287087,
+      "body_forward_heading_rad": 0.6432452596125336,
+      "velocity_heading_rad": 0.6618393687275519,
+      "velocity_path_heading_deficit_rad": 0.014757730301156789,
+      "body_path_heading_deficit_rad": 0.03335183941617504,
+      "sideslip_heading_rad": 0.018594109115018242,
+      "yaw_rad_s": 2.158043941337698,
+      "front_joints_rad": [
+        0.13730208575725555,
+        0.13730208575725555
+      ],
+      "front_rates_rad_s": [
+        0.0,
+        0.0
+      ],
+      "wheels": [
+        {
+          "forward_heading_rad": 0.7805473453697892,
+          "velocity_heading_rad": 0.7349002476828027,
+          "slip_heading_rad": -0.04564709768698649,
+          "lateral_speed_m_s": 2.3542647661374154,
+          "rolling_slip_m_s": 0.5214605573524267,
+          "frozen_lateral_component_ratio": 0.4826242770581702,
+          "friction_N": 400.0
+        },
+        {
+          "forward_heading_rad": 0.7805473453697892,
+          "velocity_heading_rad": 0.7235658077053505,
+          "slip_heading_rad": -0.0569815376644387,
+          "lateral_speed_m_s": 3.2064098768006914,
+          "rolling_slip_m_s": -0.21881088065207877,
+          "frozen_lateral_component_ratio": 0.6573140247441418,
+          "friction_N": 400.0
+        },
+        {
+          "forward_heading_rad": 0.6432452596125336,
+          "velocity_heading_rad": 0.5989590847662631,
+          "slip_heading_rad": -0.0442861748462704,
+          "lateral_speed_m_s": 2.263396847159015,
+          "rolling_slip_m_s": 0.683044404123514,
+          "frozen_lateral_component_ratio": 0.4639963536675981,
+          "friction_N": 400.0
+        },
+        {
+          "forward_heading_rad": 0.6432452596125336,
+          "velocity_heading_rad": 0.5990549310594813,
+          "slip_heading_rad": -0.04419032855305227,
+          "lateral_speed_m_s": 2.4682354957811405,
+          "rolling_slip_m_s": -0.07837678297038764,
+          "frozen_lateral_component_ratio": 0.5059882766351338,
+          "friction_N": 400.0
+        }
+      ],
+      "geometry": {
+        "gap_m": 4.344402572455496,
+        "body_index": 4,
+        "edge_index": 34,
+        "boundary_tangent": [
+          0.8432620816201912,
+          0.5375026155299917
+        ],
+        "inward_normal": [
+          0.5375026155299917,
+          -0.8432620816201912
+        ],
+        "COM_normal_closing_m_s": 5.05065496105842,
+        "critical_point_normal_closing_m_s": 8.785081552727068,
+        "COM_signed_line_distance_m": 5.775462484753425,
+        "frozen_first_order_floor_time_s": 0.4376057922037292,
+        "body_point_velocity_world_m_s": [
+          37.62077330219354,
+          34.39778241325163
+        ]
+      },
+      "logged_margin_m": 4.344402572455489,
+      "road_margin_reproduction_abs_error_m": 7.105427357601002e-15,
+      "path_node_curvature_proxy_rad_m": 0.04521702724107786,
+      "constant_speed_path_normal_acceleration_proxy_m_s2": 129.91220273057314,
+      "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+      "linear_mass_kg": 7.3019199669361115,
+      "straight_flat_point_normal_stop_time_lower_s": 0.02304967394141088,
+      "straight_flat_point_normal_stop_distance_lower_m": 0.05820797502148292,
+      "tracking_history": [
+        0,
+        112
+      ]
+    },
+    "matched_slow_pruned275": {
+      "progress_m": 121.08580215566477,
+      "COM_speed_m_s": 50.44833864411817,
+      "COM_velocity_world_m_s": [
+        39.90147222820301,
+        30.869198013125803
+      ],
+      "COM_velocity_path_tangent_m_s": 50.44003858656344,
+      "COM_velocity_path_left_normal_m_s": -0.9150843336096592,
+      "signed_path_position_left_m": 1.2169843934303497,
+      "path_distance_m": 1.2169843934303495,
+      "path_tangent_world": [
+        0.7797079329748614,
+        0.62614338554046
+      ],
+      "path_heading_rad": 0.6765970990287087,
+      "body_forward_heading_rad": 0.6375525300678118,
+      "velocity_heading_rad": 0.6584570661450058,
+      "velocity_path_heading_deficit_rad": 0.018140032883702917,
+      "body_path_heading_deficit_rad": 0.03904456896089692,
+      "sideslip_heading_rad": 0.020904536077194003,
+      "yaw_rad_s": 2.0457904707784995,
+      "front_joints_rad": [
+        0.13730208575725555,
+        0.13730208575725555
+      ],
+      "front_rates_rad_s": [
+        0.0,
+        0.0
+      ],
+      "wheels": [
+        {
+          "forward_heading_rad": 0.7748546158250673,
+          "velocity_heading_rad": 0.7320686446832921,
+          "slip_heading_rad": -0.04278597114177529,
+          "lateral_speed_m_s": 2.076459625815154,
+          "rolling_slip_m_s": 0.6083850328924569,
+          "frozen_lateral_component_ratio": 0.4256742232921066,
+          "friction_N": 400.0
+        },
+        {
+          "forward_heading_rad": 0.7748546158250673,
+          "velocity_heading_rad": 0.7206045896174378,
+          "slip_heading_rad": -0.05425002620762953,
+          "lateral_speed_m_s": 2.874336884994431,
+          "rolling_slip_m_s": 0.019415592083340982,
+          "frozen_lateral_component_ratio": 0.5892390614238584,
+          "friction_N": 400.0
+        },
+        {
+          "forward_heading_rad": 0.6375525300678118,
+          "velocity_heading_rad": 0.5951034499597131,
+          "slip_heading_rad": -0.04244908010809878,
+          "lateral_speed_m_s": 2.041257828769215,
+          "rolling_slip_m_s": 0.7561612169555119,
+          "frozen_lateral_component_ratio": 0.41845785489768905,
+          "friction_N": 400.0
+        },
+        {
+          "forward_heading_rad": 0.6375525300678118,
+          "velocity_heading_rad": 0.5952348666726227,
+          "slip_heading_rad": -0.042317663395189165,
+          "lateral_speed_m_s": 2.2253459780789058,
+          "rolling_slip_m_s": 0.14932020464300422,
+          "frozen_lateral_component_ratio": 0.45619592550617566,
+          "friction_N": 400.0
+        }
+      ],
+      "geometry": {
+        "gap_m": 4.336047684747617,
+        "body_index": 4,
+        "edge_index": 34,
+        "boundary_tangent": [
+          0.8432620816201912,
+          0.5375026155299917
+        ],
+        "inward_normal": [
+          0.5375026155299917,
+          -0.8432620816201912
+        ],
+        "COM_normal_closing_m_s": 4.583678488337892,
+        "critical_point_normal_closing_m_s": 8.394383857056923,
+        "COM_signed_line_distance_m": 5.789487155725611,
+        "frozen_first_order_floor_time_s": 0.45697787354848673,
+        "body_point_velocity_world_m_s": [
+          35.30015835022262,
+          32.45528513073977
+        ]
+      },
+      "logged_margin_m": 4.336047684747611,
+      "road_margin_reproduction_abs_error_m": 5.329070518200751e-15,
+      "path_node_curvature_proxy_rad_m": 0.04521702724107786,
+      "constant_speed_path_normal_acceleration_proxy_m_s2": 115.07891113452979,
+      "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+      "linear_mass_kg": 7.3019199669361115,
+      "straight_flat_point_normal_stop_time_lower_s": 0.02091853342250624,
+      "straight_flat_point_normal_stop_distance_lower_m": 0.047941915828159536,
+      "tracking_history": [
+        0,
+        112
+      ]
+    },
+    "factual577": {
+      "progress_m": 120.57336797764847,
+      "COM_speed_m_s": 49.53186906255362,
+      "COM_velocity_world_m_s": [
+        39.370741390410004,
+        30.0557943697952
+      ],
+      "COM_velocity_path_tangent_m_s": 49.51691623101587,
+      "COM_velocity_path_left_normal_m_s": -1.2169880034387468,
+      "signed_path_position_left_m": 1.4490775498365347,
+      "path_distance_m": 1.4490775498365345,
+      "path_tangent_world": [
+        0.7797079329748614,
+        0.62614338554046
+      ],
+      "path_heading_rad": 0.6765970990287087,
+      "body_forward_heading_rad": 0.6293722245819195,
+      "velocity_heading_rad": 0.6520248286107804,
+      "velocity_path_heading_deficit_rad": 0.02457227041792831,
+      "body_path_heading_deficit_rad": 0.047224874446789245,
+      "sideslip_heading_rad": 0.02265260402886093,
+      "yaw_rad_s": 2.0555129592387424,
+      "front_joints_rad": [
+        0.14115916192531586,
+        0.14115916192531586
+      ],
+      "front_rates_rad_s": [
+        0.0,
+        0.0
+      ],
+      "wheels": [
+        {
+          "forward_heading_rad": 0.7705313865072353,
+          "velocity_heading_rad": 0.7274938812148277,
+          "slip_heading_rad": -0.04303750529240746,
+          "lateral_speed_m_s": 2.049290012936698,
+          "rolling_slip_m_s": 0.5673028756735548,
+          "frozen_lateral_component_ratio": 0.42010445265202306,
+          "friction_N": 400.0
+        },
+        {
+          "forward_heading_rad": 0.7705313865072353,
+          "velocity_heading_rad": 0.7154506465017565,
+          "slip_heading_rad": -0.05508074000547891,
+          "lateral_speed_m_s": 2.868983838083114,
+          "rolling_slip_m_s": -0.08417677832474624,
+          "frozen_lateral_component_ratio": 0.5881416868070384,
+          "friction_N": 400.0
+        },
+        {
+          "forward_heading_rad": 0.6293722245819195,
+          "velocity_heading_rad": 0.5872123832343836,
+          "slip_heading_rad": -0.04215984134753592,
+          "lateral_speed_m_s": 1.9880979214851244,
+          "rolling_slip_m_s": 0.7259737118689387,
+          "frozen_lateral_component_ratio": 0.4075600739044505,
+          "friction_N": 400.0
+        },
+        {
+          "forward_heading_rad": 0.6293722245819195,
+          "velocity_heading_rad": 0.5873044353348323,
+          "slip_heading_rad": -0.042067789247087095,
+          "lateral_speed_m_s": 2.1739395260128376,
+          "rolling_slip_m_s": 0.054407157527499805,
+          "frozen_lateral_component_ratio": 0.4456576028326317,
+          "friction_N": 400.0
+        }
+      ],
+      "geometry": {
+        "gap_m": 4.077833111155099,
+        "body_index": 4,
+        "edge_index": 34,
+        "boundary_tangent": [
+          0.8432620816201912,
+          0.5375026155299917
+        ],
+        "inward_normal": [
+          0.5375026155299917,
+          -0.8432620816201912
+        ],
+        "COM_normal_closing_m_s": 4.183035252321648,
+        "critical_point_normal_closing_m_s": 8.560596731666518,
+        "COM_signed_line_distance_m": 5.614582667236572,
+        "frozen_first_order_floor_time_s": 0.4179420224200412,
+        "body_point_velocity_world_m_s": [
+          34.38685886064911,
+          32.070247078068725
+        ]
+      },
+      "logged_margin_m": 4.077833111155099,
+      "road_margin_reproduction_abs_error_m": 0.0,
+      "path_node_curvature_proxy_rad_m": 0.04521702724107786,
+      "constant_speed_path_normal_acceleration_proxy_m_s2": 110.93572832423743,
+      "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+      "linear_mass_kg": 7.3019199669361115,
+      "straight_flat_point_normal_stop_time_lower_s": 0.019090117894578176,
+      "straight_flat_point_normal_stop_distance_lower_m": 0.03992731806199841,
+      "tracking_history": [
+        0,
+        112
+      ]
+    }
+  },
+  "raw124_cohort": {
+    "total": 14,
+    "width_pruned": 10,
+    "slower_than_parent25_and_pruned": 8,
+    "same_immediate_parent_safe_children": 3,
+    "matched_slow_minus_fast": {
+      "progress_m": -0.16168642834280433,
+      "COM_speed_m_s": -3.152794384432106,
+      "yaw_rad_s": -0.11225347055919865,
+      "signed_path_position_left_m": 0.0036057091785033357,
+      "COM_velocity_path_left_normal_m_s": -0.12408198141407567,
+      "velocity_path_heading_deficit_rad": 0.003382302582546128
+    },
+    "future_of_discarded_state_observed": false
+  },
+  "direction_changes": {
+    "factual577": {
+      "body_turn_rad": 0.4079379072169029,
+      "velocity_turn_rad": 0.4310175831079135,
+      "sideslip_change_rad": 0.023079675891010676,
+      "raws": [
+        124,
+        132
+      ],
+      "duration_s": 0.16,
+      "progress_change_m": 7.894093372622393,
+      "path_polyline_tangent_turn_rad": 0.43958490893271884,
+      "velocity_turn_shortfall_vs_path_rad": 0.00856732582480535,
+      "sum_source_yaw_dt_rad": 0.40793790721690304
+    },
+    "escape581": {
+      "body_turn_rad": 0.22315451423203703,
+      "velocity_turn_rad": 0.20942222652082476,
+      "sideslip_change_rad": -0.013732287711212265,
+      "raws": [
+        124,
+        132
+      ],
+      "duration_s": 0.16,
+      "progress_change_m": 8.232155573849056,
+      "path_polyline_tangent_turn_rad": 0.43958490893271884,
+      "velocity_turn_shortfall_vs_path_rad": 0.23016268241189408,
+      "sum_source_yaw_dt_rad": 0.22315451423203714
+    },
+    "cone584_to_first_failure": {
+      "body_turn_rad": 0.3130945581983695,
+      "velocity_turn_rad": 0.3417115683828438,
+      "sideslip_change_rad": 0.028617010184474153,
+      "raws": [
+        132,
+        140
+      ],
+      "duration_s": 0.16,
+      "path_polyline_tangent_turn_rad": 0.6020700031873758
+    }
+  },
+  "escape_minus_factual_turns_rad": {
+    "body_turn_rad": -0.18478339298486585,
+    "velocity_turn_rad": -0.22159535658708873,
+    "velocity_turn_shortfall_vs_path_rad": 0.22159535658708873
+  },
+  "selected_snapshots": {
+    "factual577": [
+      {
+        "raw": 112,
+        "feature": {
+          "progress_m": 106.20506713871721,
+          "COM_speed_m_s": 68.57336853399265,
+          "COM_velocity_world_m_s": [
+            66.02500161532019,
+            18.5204220739091
+          ],
+          "COM_velocity_path_tangent_m_s": 68.40055305334442,
+          "COM_velocity_path_left_normal_m_s": 4.865307194349363,
+          "signed_path_position_left_m": 0.6049286785817608,
+          "path_distance_m": 0.6049286785817608,
+          "path_tangent_world": [
+            0.9795732804946723,
+            0.20108751363748573
+          ],
+          "path_heading_rad": 0.20246798574209232,
+          "body_forward_heading_rad": 0.27031827901974914,
+          "velocity_heading_rad": 0.27347803718782915,
+          "velocity_path_heading_deficit_rad": -0.07101005144573683,
+          "body_path_heading_deficit_rad": -0.06785029327765683,
+          "sideslip_heading_rad": 0.0031597581680800073,
+          "yaw_rad_s": 0.739310616051725,
+          "front_joints_rad": [
+            0.040164608508348465,
+            0.040164608508348465
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.3104828875280976,
+              "velocity_heading_rad": 0.2920171903188025,
+              "slip_heading_rad": -0.01846569720929514,
+              "lateral_speed_m_s": 1.2517960634768208,
+              "rolling_slip_m_s": 0.6248958369912714,
+              "frozen_lateral_component_ratio": 0.25661819301274824,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.3104828875280976,
+              "velocity_heading_rad": 0.29116252158236117,
+              "slip_heading_rad": -0.019320365945736384,
+              "lateral_speed_m_s": 1.3411291946931385,
+              "rolling_slip_m_s": 0.011584565131585123,
+              "frozen_lateral_component_ratio": 0.2749314849120934,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.27031827901974914,
+              "velocity_heading_rad": 0.25667690966250933,
+              "slip_heading_rad": -0.013641369357239697,
+              "lateral_speed_m_s": 0.924162227028237,
+              "rolling_slip_m_s": 0.8005975913888648,
+              "frozen_lateral_component_ratio": 0.18945325654078857,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.27031827901974914,
+              "velocity_heading_rad": 0.2566501316750316,
+              "slip_heading_rad": -0.013668147344717552,
+              "lateral_speed_m_s": 0.9482065650701017,
+              "rolling_slip_m_s": 0.1867241409276943,
+              "frozen_lateral_component_ratio": 0.19438234583937086,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.00365791962947,
+            "body_index": 7,
+            "edge_index": 312,
+            "boundary_tangent": [
+              0.9670366035169752,
+              0.25463740388708134
+            ],
+            "inward_normal": [
+              -0.25463740388708134,
+              0.9670366035169752
+            ],
+            "COM_normal_closing_m_s": -1.0974910550883834,
+            "critical_point_normal_closing_m_s": 0.45360391923889765,
+            "COM_signed_line_distance_m": 5.41051386944572,
+            "frozen_first_order_floor_time_s": 7.724046841368258,
+            "body_point_velocity_world_m_s": [
+              67.40936411833725,
+              17.280981399004638
+            ]
+          },
+          "logged_margin_m": 4.003657919629474,
+          "road_margin_reproduction_abs_error_m": 4.440892098500626e-15,
+          "path_node_curvature_proxy_rad_m": 0.008366658129755003,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 39.34259402004802,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.0,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.0,
+          "tracking_history": [
+            0,
+            64
+          ]
+        }
+      },
+      {
+        "raw": 120,
+        "feature": {
+          "progress_m": 116.22126752987313,
+          "COM_speed_m_s": 54.41595395366787,
+          "COM_velocity_world_m_s": [
+            48.06952209159435,
+            25.50327607530891
+          ],
+          "COM_velocity_path_tangent_m_s": 54.402347442984,
+          "COM_velocity_path_left_normal_m_s": -1.2168144396550495,
+          "signed_path_position_left_m": 1.3256604493927457,
+          "path_distance_m": 1.325660449392746,
+          "path_tangent_world": [
+            0.8726708113011241,
+            0.48830897503838466
+          ],
+          "path_heading_rad": 0.5101509419033936,
+          "body_forward_heading_rad": 0.4744039296158673,
+          "velocity_heading_rad": 0.48778772337304566,
+          "velocity_path_heading_deficit_rad": 0.02236321853034795,
+          "body_path_heading_deficit_rad": 0.0357470122875263,
+          "sideslip_heading_rad": 0.013383793757178353,
+          "yaw_rad_s": 1.594508571698251,
+          "front_joints_rad": [
+            0.10095666348934174,
+            0.10095666348934174
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.5753605931052092,
+              "velocity_heading_rad": 0.5399547995766166,
+              "slip_heading_rad": -0.03540579352859252,
+              "lateral_speed_m_s": 1.871051904499776,
+              "rolling_slip_m_s": 0.6718081250058034,
+              "frozen_lateral_component_ratio": 0.3835656404224541,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.5753605931052092,
+              "velocity_heading_rad": 0.5338982891274523,
+              "slip_heading_rad": -0.04146230397775685,
+              "lateral_speed_m_s": 2.3357016460163464,
+              "rolling_slip_m_s": 0.056205113633602366,
+              "frozen_lateral_component_ratio": 0.478818837433351,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.4744039296158673,
+              "velocity_heading_rad": 0.44205902222725724,
+              "slip_heading_rad": -0.03234490738861018,
+              "lateral_speed_m_s": 1.7012472704582642,
+              "rolling_slip_m_s": 0.7777828814965417,
+              "frozen_lateral_component_ratio": 0.34875569044394417,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.4744039296158673,
+              "velocity_heading_rad": 0.44208761599888347,
+              "slip_heading_rad": -0.03231631361698372,
+              "lateral_speed_m_s": 1.8130871815192577,
+              "rolling_slip_m_s": 0.15315852396957297,
+              "frozen_lateral_component_ratio": 0.3716828722114478,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.774237693815133,
+            "body_index": 7,
+            "edge_index": 315,
+            "boundary_tangent": [
+              0.9670366035169751,
+              0.25463740388708156
+            ],
+            "inward_normal": [
+              -0.25463740388708156,
+              0.9670366035169751
+            ],
+            "COM_normal_closing_m_s": -12.422303162926159,
+            "critical_point_normal_closing_m_s": -9.556002575759287,
+            "COM_signed_line_distance_m": 6.573786345155705,
+            "frozen_first_order_floor_time_s": null,
+            "body_point_velocity_world_m_s": [
+              51.50985777769849,
+              23.44517151926736
+            ]
+          },
+          "logged_margin_m": 4.774237693815133,
+          "road_margin_reproduction_abs_error_m": 0.0,
+          "path_node_curvature_proxy_rad_m": 0.03756182694350527,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 111.22417719365741,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.0,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.0,
+          "tracking_history": [
+            0,
+            96
+          ]
+        }
+      },
+      {
+        "raw": 124,
+        "feature": {
+          "progress_m": 120.57336797764847,
+          "COM_speed_m_s": 49.53186906255362,
+          "COM_velocity_world_m_s": [
+            39.370741390410004,
+            30.0557943697952
+          ],
+          "COM_velocity_path_tangent_m_s": 49.51691623101587,
+          "COM_velocity_path_left_normal_m_s": -1.2169880034387468,
+          "signed_path_position_left_m": 1.4490775498365347,
+          "path_distance_m": 1.4490775498365345,
+          "path_tangent_world": [
+            0.7797079329748614,
+            0.62614338554046
+          ],
+          "path_heading_rad": 0.6765970990287087,
+          "body_forward_heading_rad": 0.6293722245819195,
+          "velocity_heading_rad": 0.6520248286107804,
+          "velocity_path_heading_deficit_rad": 0.02457227041792831,
+          "body_path_heading_deficit_rad": 0.047224874446789245,
+          "sideslip_heading_rad": 0.02265260402886093,
+          "yaw_rad_s": 2.0555129592387424,
+          "front_joints_rad": [
+            0.14115916192531586,
+            0.14115916192531586
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.7705313865072353,
+              "velocity_heading_rad": 0.7274938812148277,
+              "slip_heading_rad": -0.04303750529240746,
+              "lateral_speed_m_s": 2.049290012936698,
+              "rolling_slip_m_s": 0.5673028756735548,
+              "frozen_lateral_component_ratio": 0.42010445265202306,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.7705313865072353,
+              "velocity_heading_rad": 0.7154506465017565,
+              "slip_heading_rad": -0.05508074000547891,
+              "lateral_speed_m_s": 2.868983838083114,
+              "rolling_slip_m_s": -0.08417677832474624,
+              "frozen_lateral_component_ratio": 0.5881416868070384,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.6293722245819195,
+              "velocity_heading_rad": 0.5872123832343836,
+              "slip_heading_rad": -0.04215984134753592,
+              "lateral_speed_m_s": 1.9880979214851244,
+              "rolling_slip_m_s": 0.7259737118689387,
+              "frozen_lateral_component_ratio": 0.4075600739044505,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.6293722245819195,
+              "velocity_heading_rad": 0.5873044353348323,
+              "slip_heading_rad": -0.042067789247087095,
+              "lateral_speed_m_s": 2.1739395260128376,
+              "rolling_slip_m_s": 0.054407157527499805,
+              "frozen_lateral_component_ratio": 0.4456576028326317,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.077833111155099,
+            "body_index": 4,
+            "edge_index": 34,
+            "boundary_tangent": [
+              0.8432620816201912,
+              0.5375026155299917
+            ],
+            "inward_normal": [
+              0.5375026155299917,
+              -0.8432620816201912
+            ],
+            "COM_normal_closing_m_s": 4.183035252321648,
+            "critical_point_normal_closing_m_s": 8.560596731666518,
+            "COM_signed_line_distance_m": 5.614582667236572,
+            "frozen_first_order_floor_time_s": 0.4179420224200412,
+            "body_point_velocity_world_m_s": [
+              34.38685886064911,
+              32.070247078068725
+            ]
+          },
+          "logged_margin_m": 4.077833111155099,
+          "road_margin_reproduction_abs_error_m": 0.0,
+          "path_node_curvature_proxy_rad_m": 0.04521702724107786,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 110.93572832423743,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.019090117894578176,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.03992731806199841,
+          "tracking_history": [
+            0,
+            112
+          ]
+        }
+      },
+      {
+        "raw": 128,
+        "feature": {
+          "progress_m": 124.62466022573382,
+          "COM_speed_m_s": 45.199408595166496,
+          "COM_velocity_world_m_s": [
+            29.70690220825204,
+            34.065914027692855
+          ],
+          "COM_velocity_path_tangent_m_s": 45.190133729558426,
+          "COM_velocity_path_left_normal_m_s": -0.9156150159521275,
+          "signed_path_position_left_m": 1.5144032078521459,
+          "path_distance_m": 1.514403207852146,
+          "path_tangent_world": [
+            0.641838601034054,
+            0.7668397552439808
+          ],
+          "path_heading_rad": 0.873902825898047,
+          "body_forward_heading_rad": 0.8190734633792265,
+          "velocity_heading_rad": 0.8536442057686693,
+          "velocity_path_heading_deficit_rad": 0.020258620129377736,
+          "body_path_heading_deficit_rad": 0.054829362518820535,
+          "sideslip_heading_rad": 0.0345707423894428,
+          "yaw_rad_s": 2.4814596559293536,
+          "front_joints_rad": [
+            0.18520696461200714,
+            0.18520696461200714
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 1.0042804279912336,
+              "velocity_heading_rad": 0.9556647532309142,
+              "slip_heading_rad": -0.04861567476031947,
+              "lateral_speed_m_s": 2.0922764614522364,
+              "rolling_slip_m_s": 0.5030774810798206,
+              "frozen_lateral_component_ratio": 0.42891667459770844,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.0042804279912336,
+              "velocity_heading_rad": 0.9347925169214488,
+              "slip_heading_rad": -0.0694879110697848,
+              "lateral_speed_m_s": 3.3625509655629244,
+              "rolling_slip_m_s": -0.11165653254904839,
+              "frozen_lateral_component_ratio": 0.6893229479403995,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.8190734633792265,
+              "velocity_heading_rad": 0.7678216219070351,
+              "slip_heading_rad": -0.05125184147219142,
+              "lateral_speed_m_s": 2.1675022859864903,
+              "rolling_slip_m_s": 0.7203318417271447,
+              "frozen_lateral_component_ratio": 0.4443379686272305,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.8190734633792265,
+              "velocity_heading_rad": 0.7680073684260152,
+              "slip_heading_rad": -0.051066094953211134,
+              "lateral_speed_m_s": 2.438312983932075,
+              "rolling_slip_m_s": 0.07996512355835961,
+              "frozen_lateral_component_ratio": 0.49985416170607544,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 3.863905453765944,
+            "body_index": 6,
+            "edge_index": 34,
+            "boundary_tangent": [
+              0.8432620816201912,
+              0.5375026155299917
+            ],
+            "inward_normal": [
+              0.5375026155299917,
+              -0.8432620816201912
+            ],
+            "COM_normal_closing_m_s": 12.758955939057593,
+            "critical_point_normal_closing_m_s": 9.544935295194513,
+            "COM_signed_line_distance_m": 4.846765424993608,
+            "frozen_first_order_floor_time_s": 0.3524283140462496,
+            "body_point_velocity_world_m_s": [
+              28.985330642573768,
+              29.794564317782005
+            ]
+          },
+          "logged_margin_m": 3.863905453765944,
+          "road_margin_reproduction_abs_error_m": 0.0,
+          "path_node_curvature_proxy_rad_m": 0.05467892523915371,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 111.70830814051185,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.0582280469554142,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.3714645427607532,
+          "tracking_history": [
+            1,
+            128
+          ]
+        }
+      },
+      {
+        "raw": 132,
+        "feature": {
+          "progress_m": 128.46746135027087,
+          "COM_speed_m_s": 42.014598371836065,
+          "COM_velocity_world_m_s": [
+            19.689843566857782,
+            37.11517932947864
+          ],
+          "COM_velocity_path_tangent_m_s": 41.99152957736687,
+          "COM_velocity_path_left_normal_m_s": -1.3920919868359576,
+          "signed_path_position_left_m": 1.5031962371019523,
+          "path_distance_m": 1.5031962371019523,
+          "path_tangent_world": [
+            0.4391158387682441,
+            0.898430453704048
+          ],
+          "path_heading_rad": 1.1161820079614275,
+          "body_forward_heading_rad": 1.0373101317988223,
+          "velocity_heading_rad": 1.0830424117186939,
+          "velocity_path_heading_deficit_rad": 0.03313959624273366,
+          "body_path_heading_deficit_rad": 0.07887187616260527,
+          "sideslip_heading_rad": 0.0457322799198716,
+          "yaw_rad_s": 2.8119233125793386,
+          "front_joints_rad": [
+            0.22287246584892273,
+            0.22287246584892273
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 1.260182597647745,
+              "velocity_heading_rad": 1.209602862208103,
+              "slip_heading_rad": -0.050579735439642004,
+              "lateral_speed_m_s": 2.0089983876172806,
+              "rolling_slip_m_s": 0.38615920953920835,
+              "frozen_lateral_component_ratio": 0.4118446694615425,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.260182597647745,
+              "velocity_heading_rad": 1.1789868835721091,
+              "slip_heading_rad": -0.08119571407563586,
+              "lateral_speed_m_s": 3.713317987569191,
+              "rolling_slip_m_s": -0.10066748688696237,
+              "frozen_lateral_component_ratio": 0.7612301874516841,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.0373101317988223,
+              "velocity_heading_rad": 0.9782688269141102,
+              "slip_heading_rad": -0.05904130488471204,
+              "lateral_speed_m_s": 2.28377115411714,
+              "rolling_slip_m_s": 0.6182890503529279,
+              "frozen_lateral_component_ratio": 0.46817308659401374,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.0373101317988223,
+              "velocity_heading_rad": 0.9786554523903078,
+              "slip_heading_rad": -0.05865467940851454,
+              "lateral_speed_m_s": 2.6314757312980106,
+              "rolling_slip_m_s": 0.0963073110111452,
+              "frozen_lateral_component_ratio": 0.5394525249160922,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 3.8593903916877257,
+            "body_index": 6,
+            "edge_index": 35,
+            "boundary_tangent": [
+              0.6390969735602442,
+              0.7691261654541058
+            ],
+            "inward_normal": [
+              0.7691261654541058,
+              -0.6390969735602442
+            ],
+            "COM_normal_closing_m_s": 8.576224901647013,
+            "critical_point_normal_closing_m_s": 3.117790996413607,
+            "COM_signed_line_distance_m": 4.887043360414688,
+            "frozen_first_order_floor_time_s": 1.0774905680181994,
+            "body_point_velocity_world_m_s": [
+              21.7820437744654,
+              31.09219981081405
+            ]
+          },
+          "logged_margin_m": 3.85939039168772,
+          "road_margin_reproduction_abs_error_m": 5.773159728050814e-15,
+          "path_node_curvature_proxy_rad_m": 0.06742594165726255,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 119.02205740600705,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.039139317406419384,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.16783379428720016,
+          "tracking_history": [
+            2,
+            144
+          ]
+        }
+      },
+      {
+        "raw": 135,
+        "feature": {
+          "progress_m": 131.45938130995813,
+          "COM_speed_m_s": 41.95014153653303,
+          "COM_velocity_world_m_s": [
+            12.25832004729323,
+            40.119172032250155
+          ],
+          "COM_velocity_path_tangent_m_s": 41.48467173802998,
+          "COM_velocity_path_left_normal_m_s": -6.231884604439587,
+          "signed_path_position_left_m": 1.3972682473962754,
+          "path_distance_m": 1.3972682473962754,
+          "path_tangent_world": [
+            0.14689863679546006,
+            0.9891515508291111
+          ],
+          "path_heading_rad": 1.4233641666545513,
+          "body_forward_heading_rad": 1.2205423036173588,
+          "velocity_heading_rad": 1.2742577182975718,
+          "velocity_path_heading_deficit_rad": 0.14910644835697953,
+          "body_path_heading_deficit_rad": 0.20282186303719252,
+          "sideslip_heading_rad": 0.05371541468021301,
+          "yaw_rad_s": 3.129110582493231,
+          "front_joints_rad": [
+            0.25403711199760437,
+            0.25403711199760437
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 1.4745794156149632,
+              "velocity_heading_rad": 1.41692020080401,
+              "slip_heading_rad": -0.05765921481095315,
+              "lateral_speed_m_s": 2.2787693315816324,
+              "rolling_slip_m_s": 0.28324185213779884,
+              "frozen_lateral_component_ratio": 0.4671477129742347,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.4745794156149632,
+              "velocity_heading_rad": 1.378780109692614,
+              "slip_heading_rad": -0.0957993059223492,
+              "lateral_speed_m_s": 4.422162347939016,
+              "rolling_slip_m_s": -0.2629317041910326,
+              "frozen_lateral_component_ratio": 0.9065432813274984,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.2205423036173588,
+              "velocity_heading_rad": 1.1576389885433063,
+              "slip_heading_rad": -0.06290331507405256,
+              "lateral_speed_m_s": 2.402878067351905,
+              "rolling_slip_m_s": 0.5645519635074052,
+              "frozen_lateral_component_ratio": 0.49259000380714046,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.2205423036173588,
+              "velocity_heading_rad": 1.1576883983256703,
+              "slip_heading_rad": -0.06285390529168855,
+              "lateral_speed_m_s": 2.833397539982675,
+              "rolling_slip_m_s": -0.047106366305285974,
+              "frozen_lateral_component_ratio": 0.5808464956964484,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.0840769214635015,
+            "body_index": 6,
+            "edge_index": 36,
+            "boundary_tangent": [
+              0.3740049230473694,
+              0.9274267181488418
+            ],
+            "inward_normal": [
+              0.9274267181488418,
+              -0.3740049230473694
+            ],
+            "COM_normal_closing_m_s": 3.6360743171665764,
+            "critical_point_normal_closing_m_s": -2.1912229324059744,
+            "COM_signed_line_distance_m": 5.398720764009345,
+            "frozen_first_order_floor_time_s": null,
+            "body_point_velocity_world_m_s": [
+              16.00722098969019,
+              33.83458536759135
+            ]
+          },
+          "logged_margin_m": 4.084076921463494,
+          "road_margin_reproduction_abs_error_m": 7.105427357601002e-15,
+          "path_node_curvature_proxy_rad_m": 0.08390595780326082,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 147.65891068488085,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.01659395228611388,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.03016842186391314,
+          "tracking_history": [
+            3,
+            156
+          ]
+        }
+      },
+      {
+        "raw": 136,
+        "feature": {
+          "progress_m": 132.2946396091394,
+          "COM_speed_m_s": 41.9177947870195,
+          "COM_velocity_world_m_s": [
+            9.695923220234045,
+            40.781007745199304
+          ],
+          "COM_velocity_path_tangent_m_s": 41.76291495906371,
+          "COM_velocity_path_left_normal_m_s": -3.600063045099618,
+          "signed_path_position_left_m": 1.3252669864942883,
+          "path_distance_m": 1.325266986494288,
+          "path_tangent_world": [
+            0.14689863679546006,
+            0.9891515508291111
+          ],
+          "path_heading_rad": 1.4233641666545513,
+          "body_forward_heading_rad": 1.2846554059996116,
+          "velocity_heading_rad": 1.3373743496667656,
+          "velocity_path_heading_deficit_rad": 0.08598981698778574,
+          "body_path_heading_deficit_rad": 0.13870876065493976,
+          "sideslip_heading_rad": 0.052718943667154024,
+          "yaw_rad_s": 3.2056551191126426,
+          "front_joints_rad": [
+            0.25403711199760437,
+            0.25403711199760437
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 1.538692517997216,
+              "velocity_heading_rad": 1.4838777091457664,
+              "slip_heading_rad": -0.05481480885144951,
+              "lateral_speed_m_s": 2.162256233011427,
+              "rolling_slip_m_s": 0.26905998023387667,
+              "frozen_lateral_component_ratio": 0.4432625277673426,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.538692517997216,
+              "velocity_heading_rad": 1.4442280855247245,
+              "slip_heading_rad": -0.09446443247249148,
+              "lateral_speed_m_s": 4.368338372686806,
+              "rolling_slip_m_s": -0.2705258572447846,
+              "frozen_lateral_component_ratio": 0.8955093664007953,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.2846554059996116,
+              "velocity_heading_rad": 1.2175728869027538,
+              "slip_heading_rad": -0.06708251909685782,
+              "lateral_speed_m_s": 2.554328510183094,
+              "rolling_slip_m_s": 0.5246877337879425,
+              "frozen_lateral_component_ratio": 0.5236373445875343,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.2846554059996116,
+              "velocity_heading_rad": 1.2180370395760227,
+              "slip_heading_rad": -0.06661836642358888,
+              "lateral_speed_m_s": 3.0061542512601083,
+              "rolling_slip_m_s": -0.07153704363292945,
+              "frozen_lateral_component_ratio": 0.6162616215083222,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.158307821538035,
+            "body_index": 6,
+            "edge_index": 36,
+            "boundary_tangent": [
+              0.3740049230473694,
+              0.9274267181488418
+            ],
+            "inward_normal": [
+              0.9274267181488418,
+              -0.3740049230473694
+            ],
+            "COM_normal_closing_m_s": 6.260039411972631,
+            "critical_point_normal_closing_m_s": -0.6631551669654208,
+            "COM_signed_line_distance_m": 5.2735199757698865,
+            "frozen_first_order_floor_time_s": null,
+            "body_point_velocity_world_m_s": [
+              14.589099757238108,
+              34.40373361076399
+            ]
+          },
+          "logged_margin_m": 4.158307821538035,
+          "road_margin_reproduction_abs_error_m": 0.0,
+          "path_node_curvature_proxy_rad_m": 0.08390595780326082,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 147.4312859769447,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.028568941735056218,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.08942135060990085,
+          "tracking_history": [
+            3,
+            160
+          ]
+        }
+      },
+      {
+        "raw": 139,
+        "feature": {
+          "progress_m": 135.18707427593785,
+          "COM_speed_m_s": 42.05854442946643,
+          "COM_velocity_world_m_s": [
+            1.2941058535494916,
+            42.038630443500544
+          ],
+          "COM_velocity_path_tangent_m_s": 41.39229871630668,
+          "COM_velocity_path_left_normal_m_s": -7.456458040211734,
+          "signed_path_position_left_m": 1.0995936776290776,
+          "path_distance_m": 1.0995936776290776,
+          "path_tangent_world": [
+            -0.14692190576713815,
+            0.9891480948805148
+          ],
+          "path_heading_rad": 1.7182520111488033,
+          "body_forward_heading_rad": 1.4845574371725176,
+          "velocity_heading_rad": 1.5400223151094814,
+          "velocity_path_heading_deficit_rad": 0.17822969603932193,
+          "body_path_heading_deficit_rad": 0.23369457397628568,
+          "sideslip_heading_rad": 0.05546487793696376,
+          "yaw_rad_s": 3.38639271684012,
+          "front_joints_rad": [
+            0.2699156105518341,
+            0.2699156105518341
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 1.7544730477243518,
+              "velocity_heading_rad": 1.6950695546654369,
+              "slip_heading_rad": -0.0594034930589149,
+              "lateral_speed_m_s": 2.347152565430939,
+              "rolling_slip_m_s": 0.041794271383089665,
+              "frozen_lateral_component_ratio": 0.4811662759133425,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.7544730477243518,
+              "velocity_heading_rad": 1.6512791159578881,
+              "slip_heading_rad": -0.10319393176646363,
+              "lateral_speed_m_s": 4.815101935559751,
+              "rolling_slip_m_s": -0.3765515201238898,
+              "frozen_lateral_component_ratio": 0.987095896789749,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.4845574371725176,
+              "velocity_heading_rad": 1.4138566039605283,
+              "slip_heading_rad": -0.07070083321198939,
+              "lateral_speed_m_s": 2.6854488290442333,
+              "rolling_slip_m_s": 0.6828785347260578,
+              "frozen_lateral_component_ratio": 0.5505170099540678,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.4845574371725176,
+              "velocity_heading_rad": 1.414344203415624,
+              "slip_heading_rad": -0.0702132337568937,
+              "lateral_speed_m_s": 3.18962054370852,
+              "rolling_slip_m_s": 0.15076991149165764,
+              "frozen_lateral_component_ratio": 0.6538722114602465,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.567874835602075,
+            "body_index": 6,
+            "edge_index": 37,
+            "boundary_tangent": [
+              0.0732579134808345,
+              0.9973130291500429
+            ],
+            "inward_normal": [
+              0.9973130291500429,
+              -0.0732579134808345
+            ],
+            "COM_normal_closing_m_s": 1.7890337230384932,
+            "critical_point_normal_closing_m_s": -4.991212342527378,
+            "COM_signed_line_distance_m": 5.972681199943782,
+            "frozen_first_order_floor_time_s": null,
+            "body_point_velocity_world_m_s": [
+              7.68177912593883,
+              36.44556526337243
+            ]
+          },
+          "logged_margin_m": 4.567874835602075,
+          "road_margin_reproduction_abs_error_m": 0.0,
+          "path_node_curvature_proxy_rad_m": 0.07856430573134564,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 138.9740627916001,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.008164613164860514,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.0073033841437497495,
+          "tracking_history": [
+            4,
+            172
+          ]
+        }
+      },
+      {
+        "raw": 140,
+        "feature": {
+          "progress_m": 136.0242845720703,
+          "COM_speed_m_s": 42.116713530975346,
+          "COM_velocity_world_m_s": [
+            -1.562150976500797,
+            42.08773268990454
+          ],
+          "COM_velocity_path_tangent_m_s": 41.86051480662294,
+          "COM_velocity_path_left_normal_m_s": -4.6384112338971555,
+          "signed_path_position_left_m": 1.0068254529511667,
+          "path_distance_m": 1.0068254529511669,
+          "path_tangent_world": [
+            -0.14692190576713815,
+            0.9891480948805148
+          ],
+          "path_heading_rad": 1.7182520111488033,
+          "body_forward_heading_rad": 1.5531249298731546,
+          "velocity_heading_rad": 1.6078958356027555,
+          "velocity_path_heading_deficit_rad": 0.11035617554604782,
+          "body_path_heading_deficit_rad": 0.16512708127564868,
+          "sideslip_heading_rad": 0.05477090572960086,
+          "yaw_rad_s": 3.4283746350318465,
+          "front_joints_rad": [
+            0.2699156105518341,
+            0.2699156105518341
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 1.8230405404249885,
+              "velocity_heading_rad": 1.7647585091641762,
+              "slip_heading_rad": -0.05828203126081232,
+              "lateral_speed_m_s": 2.3048414526583816,
+              "rolling_slip_m_s": -0.006715751104721335,
+              "frozen_lateral_component_ratio": 0.4724924977949682,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.8230405404249885,
+              "velocity_heading_rad": 1.72023456928879,
+              "slip_heading_rad": -0.1028059711361986,
+              "lateral_speed_m_s": 4.809361038436339,
+              "rolling_slip_m_s": -0.38506716495007254,
+              "frozen_lateral_component_ratio": 0.9859190128794496,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.5531249298731546,
+              "velocity_heading_rad": 1.4802116046417255,
+              "slip_heading_rad": -0.07291332523142913,
+              "lateral_speed_m_s": 2.770140034248154,
+              "rolling_slip_m_s": 0.670669680476955,
+              "frozen_lateral_component_ratio": 0.5678787070208716,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.5531249298731546,
+              "velocity_heading_rad": 1.4809313620029296,
+              "slip_heading_rad": -0.07219356787022502,
+              "lateral_speed_m_s": 3.286880299914891,
+              "rolling_slip_m_s": 0.17770905737429388,
+              "frozen_lateral_component_ratio": 0.6738104614825526,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.602003654188696,
+            "body_index": 0,
+            "edge_index": 322,
+            "boundary_tangent": [
+              -0.5198508984360407,
+              0.8542570124940393
+            ],
+            "inward_normal": [
+              -0.8542570124940393,
+              -0.5198508984360407
+            ],
+            "COM_normal_closing_m_s": 20.544867225732578,
+            "critical_point_normal_closing_m_s": 14.980675065470201,
+            "COM_signed_line_distance_m": 7.049611912478381,
+            "frozen_first_order_floor_time_s": 0.27381968010531343,
+            "body_point_velocity_world_m_s": [
+              -10.677635385613202,
+              46.36352470101608
+            ]
+          },
+          "logged_margin_m": 4.60200365418869,
+          "road_margin_reproduction_abs_error_m": 6.217248937900877e-15,
+          "path_node_curvature_proxy_rad_m": 0.07856430573134564,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 139.35874498942673,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.09376061013351751,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.9631496430983969,
+          "tracking_history": [
+            4,
+            176
+          ]
+        }
+      }
+    ],
+    "fast_escape581": [
+      {
+        "raw": 112,
+        "feature": {
+          "progress_m": 106.36283804147162,
+          "COM_speed_m_s": 69.7732248137496,
+          "COM_velocity_world_m_s": [
+            67.07997036905459,
+            19.198449838380196
+          ],
+          "COM_velocity_path_tangent_m_s": 69.57031517359408,
+          "COM_velocity_path_left_normal_m_s": 5.317344032205096,
+          "signed_path_position_left_m": 0.46546724251859445,
+          "path_distance_m": 0.46546724251859445,
+          "path_tangent_world": [
+            0.9795732804946723,
+            0.20108751363748573
+          ],
+          "path_heading_rad": 0.20246798574209232,
+          "body_forward_heading_rad": 0.27657665133818155,
+          "velocity_heading_rad": 0.27875089455036167,
+          "velocity_path_heading_deficit_rad": -0.07628290880826936,
+          "body_path_heading_deficit_rad": -0.07410866559608922,
+          "sideslip_heading_rad": 0.002174243212180127,
+          "yaw_rad_s": 0.7769654261161381,
+          "front_joints_rad": [
+            0.040164608508348465,
+            0.040164608508348465
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.31674125984653,
+              "velocity_heading_rad": 0.2979037228123679,
+              "slip_heading_rad": -0.01883753703416202,
+              "lateral_speed_m_s": 1.298855561884377,
+              "rolling_slip_m_s": 0.5522149914868493,
+              "frozen_lateral_component_ratio": 0.2662653901862973,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.31674125984653,
+              "velocity_heading_rad": 0.29701210772397746,
+              "slip_heading_rad": -0.019729152122552662,
+              "lateral_speed_m_s": 1.3940239533951626,
+              "rolling_slip_m_s": 0.09214709604349025,
+              "frozen_lateral_component_ratio": 0.28577491044600833,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.27657665133818155,
+              "velocity_heading_rad": 0.2613878869462228,
+              "slip_heading_rad": -0.01518876439195882,
+              "lateral_speed_m_s": 1.0465813715283545,
+              "rolling_slip_m_s": 0.7219455859308823,
+              "frozen_lateral_component_ratio": 0.21454918116331267,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.27657665133818155,
+              "velocity_heading_rad": 0.2613794662505962,
+              "slip_heading_rad": -0.015197185087585385,
+              "lateral_speed_m_s": 1.0731374818801207,
+              "rolling_slip_m_s": 0.26179415485535174,
+              "frozen_lateral_component_ratio": 0.21999318378542476,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 3.8427335962594764,
+            "body_index": 7,
+            "edge_index": 312,
+            "boundary_tangent": [
+              0.9670366035169752,
+              0.25463740388708134
+            ],
+            "inward_normal": [
+              -0.25463740388708134,
+              0.9670366035169752
+            ],
+            "COM_normal_closing_m_s": -1.484534216899803,
+            "critical_point_normal_closing_m_s": 0.1394477921378794,
+            "COM_signed_line_distance_m": 5.262589579365712,
+            "frozen_first_order_floor_time_s": 23.97121922844314,
+            "body_point_velocity_world_m_s": [
+              68.54224990634043,
+              17.904154524889467
+            ]
+          },
+          "logged_margin_m": 3.84273359625948,
+          "road_margin_reproduction_abs_error_m": 3.552713678800501e-15,
+          "path_node_curvature_proxy_rad_m": 0.008366658129755003,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 40.73142604400886,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.0,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.0,
+          "tracking_history": [
+            0,
+            64
+          ]
+        }
+      },
+      {
+        "raw": 120,
+        "feature": {
+          "progress_m": 116.65752511878192,
+          "COM_speed_m_s": 56.61431555882363,
+          "COM_velocity_world_m_s": [
+            49.84889591906413,
+            26.837814774015616
+          ],
+          "COM_velocity_path_tangent_m_s": 56.60682226872457,
+          "COM_velocity_path_left_normal_m_s": -0.9210856806438166,
+          "signed_path_position_left_m": 1.1467696310880373,
+          "path_distance_m": 1.1467696310880373,
+          "path_tangent_world": [
+            0.8726708113011241,
+            0.48830897503838466
+          ],
+          "path_heading_rad": 0.5101509419033936,
+          "body_forward_heading_rad": 0.4817493667572601,
+          "velocity_heading_rad": 0.4938807404353826,
+          "velocity_path_heading_deficit_rad": 0.016270201468011,
+          "body_path_heading_deficit_rad": 0.028401575146133506,
+          "sideslip_heading_rad": 0.012131373678122503,
+          "yaw_rad_s": 1.6537041312401055,
+          "front_joints_rad": [
+            0.10095666348934174,
+            0.10095666348934174
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.5827060302466018,
+              "velocity_heading_rad": 0.5458769547990732,
+              "slip_heading_rad": -0.03682907544752867,
+              "lateral_speed_m_s": 2.0250311385895117,
+              "rolling_slip_m_s": 0.7110850755125284,
+              "frozen_lateral_component_ratio": 0.4151313834108499,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.5827060302466018,
+              "velocity_heading_rad": 0.5398536034319703,
+              "slip_heading_rad": -0.04285242681463153,
+              "lateral_speed_m_s": 2.5111997913988304,
+              "rolling_slip_m_s": 0.01211097061806754,
+              "frozen_lateral_component_ratio": 0.5147959572367603,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.4817493667572601,
+              "velocity_heading_rad": 0.4482985746697105,
+              "slip_heading_rad": -0.03345079208754953,
+              "lateral_speed_m_s": 1.830668176755026,
+              "rolling_slip_m_s": 0.8289079381829367,
+              "frozen_lateral_component_ratio": 0.3752869762347803,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.4817493667572601,
+              "velocity_heading_rad": 0.4483222183044861,
+              "slip_heading_rad": -0.03342714845277395,
+              "lateral_speed_m_s": 1.950965080647702,
+              "rolling_slip_m_s": 0.11958124369765244,
+              "frozen_lateral_component_ratio": 0.3999478415327789,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.697260699391685,
+            "body_index": 7,
+            "edge_index": 315,
+            "boundary_tangent": [
+              0.9670366035169751,
+              0.25463740388708156
+            ],
+            "inward_normal": [
+              -0.25463740388708156,
+              0.9670366035169751
+            ],
+            "COM_normal_closing_m_s": -13.25975580141393,
+            "critical_point_normal_closing_m_s": -10.305781238089677,
+            "COM_signed_line_distance_m": 6.509639498492416,
+            "frozen_first_order_floor_time_s": null,
+            "body_point_velocity_world_m_s": [
+              53.43072035411512,
+              24.726304123252834
+            ]
+          },
+          "logged_margin_m": 4.697260699391684,
+          "road_margin_reproduction_abs_error_m": 8.881784197001252e-16,
+          "path_node_curvature_proxy_rad_m": 0.03756182694350527,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 120.3924437599598,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.0,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.0,
+          "tracking_history": [
+            0,
+            96
+          ]
+        }
+      },
+      {
+        "raw": 124,
+        "feature": {
+          "progress_m": 121.24748858400757,
+          "COM_speed_m_s": 53.60113302855027,
+          "COM_velocity_world_m_s": [
+            42.283958525927076,
+            32.94158941705791
+          ],
+          "COM_velocity_path_tangent_m_s": 53.595296222925796,
+          "COM_velocity_path_left_normal_m_s": -0.7910023521955836,
+          "signed_path_position_left_m": 1.2133786842518464,
+          "path_distance_m": 1.2133786842518464,
+          "path_tangent_world": [
+            0.7797079329748614,
+            0.62614338554046
+          ],
+          "path_heading_rad": 0.6765970990287087,
+          "body_forward_heading_rad": 0.6432452596125336,
+          "velocity_heading_rad": 0.6618393687275519,
+          "velocity_path_heading_deficit_rad": 0.014757730301156789,
+          "body_path_heading_deficit_rad": 0.03335183941617504,
+          "sideslip_heading_rad": 0.018594109115018242,
+          "yaw_rad_s": 2.158043941337698,
+          "front_joints_rad": [
+            0.13730208575725555,
+            0.13730208575725555
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.7805473453697892,
+              "velocity_heading_rad": 0.7349002476828027,
+              "slip_heading_rad": -0.04564709768698649,
+              "lateral_speed_m_s": 2.3542647661374154,
+              "rolling_slip_m_s": 0.5214605573524267,
+              "frozen_lateral_component_ratio": 0.4826242770581702,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.7805473453697892,
+              "velocity_heading_rad": 0.7235658077053505,
+              "slip_heading_rad": -0.0569815376644387,
+              "lateral_speed_m_s": 3.2064098768006914,
+              "rolling_slip_m_s": -0.21881088065207877,
+              "frozen_lateral_component_ratio": 0.6573140247441418,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.6432452596125336,
+              "velocity_heading_rad": 0.5989590847662631,
+              "slip_heading_rad": -0.0442861748462704,
+              "lateral_speed_m_s": 2.263396847159015,
+              "rolling_slip_m_s": 0.683044404123514,
+              "frozen_lateral_component_ratio": 0.4639963536675981,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.6432452596125336,
+              "velocity_heading_rad": 0.5990549310594813,
+              "slip_heading_rad": -0.04419032855305227,
+              "lateral_speed_m_s": 2.4682354957811405,
+              "rolling_slip_m_s": -0.07837678297038764,
+              "frozen_lateral_component_ratio": 0.5059882766351338,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.344402572455496,
+            "body_index": 4,
+            "edge_index": 34,
+            "boundary_tangent": [
+              0.8432620816201912,
+              0.5375026155299917
+            ],
+            "inward_normal": [
+              0.5375026155299917,
+              -0.8432620816201912
+            ],
+            "COM_normal_closing_m_s": 5.05065496105842,
+            "critical_point_normal_closing_m_s": 8.785081552727068,
+            "COM_signed_line_distance_m": 5.775462484753425,
+            "frozen_first_order_floor_time_s": 0.4376057922037292,
+            "body_point_velocity_world_m_s": [
+              37.62077330219354,
+              34.39778241325163
+            ]
+          },
+          "logged_margin_m": 4.344402572455489,
+          "road_margin_reproduction_abs_error_m": 7.105427357601002e-15,
+          "path_node_curvature_proxy_rad_m": 0.04521702724107786,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 129.91220273057314,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.02304967394141088,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.05820797502148292,
+          "tracking_history": [
+            0,
+            112
+          ]
+        }
+      },
+      {
+        "raw": 128,
+        "feature": {
+          "progress_m": 125.55667036235725,
+          "COM_speed_m_s": 49.39776239441393,
+          "COM_velocity_world_m_s": [
+            35.01251197275653,
+            34.84627576847425
+          ],
+          "COM_velocity_path_tangent_m_s": 49.193891284743174,
+          "COM_velocity_path_left_normal_m_s": -4.483301221181197,
+          "signed_path_position_left_m": 0.9797140502091812,
+          "path_distance_m": 0.9797140502091812,
+          "path_tangent_world": [
+            0.641838601034054,
+            0.7668397552439808
+          ],
+          "path_heading_rad": 0.873902825898047,
+          "body_forward_heading_rad": 0.7744781686437855,
+          "velocity_heading_rad": 0.7830185645540271,
+          "velocity_path_heading_deficit_rad": 0.09088426134401995,
+          "body_path_heading_deficit_rad": 0.09942465725426142,
+          "sideslip_heading_rad": 0.008540395910241472,
+          "yaw_rad_s": 1.448005727980858,
+          "front_joints_rad": [
+            0.08598776906728745,
+            0.08598776906728745
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.860465937711073,
+              "velocity_heading_rad": 0.8349855428719186,
+              "slip_heading_rad": -0.02548039483915443,
+              "lateral_speed_m_s": 1.2219597845885204,
+              "rolling_slip_m_s": -0.018490543165555096,
+              "frozen_lateral_component_ratio": 0.25050175584064666,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.860465937711073,
+              "velocity_heading_rad": 0.829419313008302,
+              "slip_heading_rad": -0.031046624702771197,
+              "lateral_speed_m_s": 1.5873363751805591,
+              "rolling_slip_m_s": 0.6139427716990085,
+              "frozen_lateral_component_ratio": 0.3254039569120146,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.7744781686437855,
+              "velocity_heading_rad": 0.7370146021494238,
+              "slip_heading_rad": -0.03746356649436188,
+              "lateral_speed_m_s": 1.7892891096492392,
+              "rolling_slip_m_s": -0.1209007725296587,
+              "frozen_lateral_component_ratio": 0.3668042674780941,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.7744781686437855,
+              "velocity_heading_rad": 0.737546356977426,
+              "slip_heading_rad": -0.036931811666359504,
+              "lateral_speed_m_s": 1.8815235024949786,
+              "rolling_slip_m_s": 0.5275333622242755,
+              "frozen_lateral_component_ratio": 0.38571231801147066,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.255980905459257,
+            "body_index": 6,
+            "edge_index": 34,
+            "boundary_tangent": [
+              0.8432620816201912,
+              0.5375026155299917
+            ],
+            "inward_normal": [
+              0.5375026155299917,
+              -0.8432620816201912
+            ],
+            "COM_normal_closing_m_s": 10.565226279603042,
+            "critical_point_normal_closing_m_s": 7.212040088411094,
+            "COM_signed_line_distance_m": 5.0753995598432535,
+            "frozen_first_order_floor_time_s": 0.5207931264129659,
+            "body_point_velocity_world_m_s": [
+              35.63112209278872,
+              31.264137190776587
+            ]
+          },
+          "logged_margin_m": 4.255980905459257,
+          "road_margin_reproduction_abs_error_m": 0.0,
+          "path_node_curvature_proxy_rad_m": 0.05467892523915371,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 133.42417410337862,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.04821652295389474,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.254709237711786,
+          "tracking_history": [
+            0,
+            128
+          ]
+        }
+      },
+      {
+        "raw": 132,
+        "feature": {
+          "progress_m": 129.47964415785663,
+          "COM_speed_m_s": 46.424204507224154,
+          "COM_velocity_world_m_s": [
+            29.89077004756918,
+            35.52110119480972
+          ],
+          "COM_velocity_path_tangent_m_s": 45.038749623387346,
+          "COM_velocity_path_left_normal_m_s": -11.256899950270398,
+          "signed_path_position_left_m": 0.14405881187629477,
+          "path_distance_m": 0.14405881187629477,
+          "path_tangent_world": [
+            0.4391158387682441,
+            0.898430453704048
+          ],
+          "path_heading_rad": 1.1161820079614275,
+          "body_forward_heading_rad": 0.8663997738445707,
+          "velocity_heading_rad": 0.8712615952483767,
+          "velocity_path_heading_deficit_rad": 0.2449204127130509,
+          "body_path_heading_deficit_rad": 0.24978223411685685,
+          "sideslip_heading_rad": 0.004861821403805977,
+          "yaw_rad_s": 1.0033646956778033,
+          "front_joints_rad": [
+            0.05772425979375839,
+            0.05772425979375839
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.924124033638329,
+              "velocity_heading_rad": 0.9090080471980834,
+              "slip_heading_rad": -0.015115986440245699,
+              "lateral_speed_m_s": 0.6861672500974656,
+              "rolling_slip_m_s": -0.14174501329859623,
+              "frozen_lateral_component_ratio": 0.14066428626998045,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.924124033638329,
+              "velocity_heading_rad": 0.9061032930654362,
+              "slip_heading_rad": -0.018020740572892713,
+              "lateral_speed_m_s": 0.857713433637791,
+              "rolling_slip_m_s": 0.5705473473719778,
+              "frozen_lateral_component_ratio": 0.17583125389574714,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.8663997738445707,
+              "velocity_heading_rad": 0.8373362035820939,
+              "slip_heading_rad": -0.029063570262476635,
+              "lateral_speed_m_s": 1.3166242956506728,
+              "rolling_slip_m_s": -0.22845661708806375,
+              "frozen_lateral_component_ratio": 0.26990798060838794,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.8663997738445707,
+              "velocity_heading_rad": 0.8377542594820896,
+              "slip_heading_rad": -0.028645514362481084,
+              "lateral_speed_m_s": 1.3609120673378037,
+              "rolling_slip_m_s": 0.49333736489343494,
+              "frozen_lateral_component_ratio": 0.27898697380424975,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 3.933513048234408,
+            "body_index": 0,
+            "edge_index": 320,
+            "boundary_tangent": [
+              0.07325791348083449,
+              0.997313029150043
+            ],
+            "inward_normal": [
+              -0.997313029150043,
+              0.07325791348083449
+            ],
+            "COM_normal_closing_m_s": 27.20825266169526,
+            "critical_point_normal_closing_m_s": 25.747178040415882,
+            "COM_signed_line_distance_m": 6.483888072636866,
+            "frozen_first_order_floor_time_s": 0.1333549270077191,
+            "body_point_velocity_world_m_s": [
+              28.62108508751951,
+              38.18021689235075
+            ]
+          },
+          "logged_margin_m": 3.9335130482344116,
+          "road_margin_reproduction_abs_error_m": 3.552713678800501e-15,
+          "path_node_curvature_proxy_rad_m": 0.06742594165726255,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 145.3168455374707,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.12417030210992201,
+          "straight_flat_point_normal_stop_distance_lower_m": 1.6892284764428949,
+          "tracking_history": [
+            0,
+            144
+          ]
+        }
+      }
+    ],
+    "fast_escape_then584": [
+      {
+        "raw": 112,
+        "feature": {
+          "progress_m": 106.36283804147162,
+          "COM_speed_m_s": 69.7732248137496,
+          "COM_velocity_world_m_s": [
+            67.07997036905459,
+            19.198449838380196
+          ],
+          "COM_velocity_path_tangent_m_s": 69.57031517359408,
+          "COM_velocity_path_left_normal_m_s": 5.317344032205096,
+          "signed_path_position_left_m": 0.46546724251859445,
+          "path_distance_m": 0.46546724251859445,
+          "path_tangent_world": [
+            0.9795732804946723,
+            0.20108751363748573
+          ],
+          "path_heading_rad": 0.20246798574209232,
+          "body_forward_heading_rad": 0.27657665133818155,
+          "velocity_heading_rad": 0.27875089455036167,
+          "velocity_path_heading_deficit_rad": -0.07628290880826936,
+          "body_path_heading_deficit_rad": -0.07410866559608922,
+          "sideslip_heading_rad": 0.002174243212180127,
+          "yaw_rad_s": 0.7769654261161381,
+          "front_joints_rad": [
+            0.040164608508348465,
+            0.040164608508348465
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.31674125984653,
+              "velocity_heading_rad": 0.2979037228123679,
+              "slip_heading_rad": -0.01883753703416202,
+              "lateral_speed_m_s": 1.298855561884377,
+              "rolling_slip_m_s": 0.5522149914868493,
+              "frozen_lateral_component_ratio": 0.2662653901862973,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.31674125984653,
+              "velocity_heading_rad": 0.29701210772397746,
+              "slip_heading_rad": -0.019729152122552662,
+              "lateral_speed_m_s": 1.3940239533951626,
+              "rolling_slip_m_s": 0.09214709604349025,
+              "frozen_lateral_component_ratio": 0.28577491044600833,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.27657665133818155,
+              "velocity_heading_rad": 0.2613878869462228,
+              "slip_heading_rad": -0.01518876439195882,
+              "lateral_speed_m_s": 1.0465813715283545,
+              "rolling_slip_m_s": 0.7219455859308823,
+              "frozen_lateral_component_ratio": 0.21454918116331267,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.27657665133818155,
+              "velocity_heading_rad": 0.2613794662505962,
+              "slip_heading_rad": -0.015197185087585385,
+              "lateral_speed_m_s": 1.0731374818801207,
+              "rolling_slip_m_s": 0.26179415485535174,
+              "frozen_lateral_component_ratio": 0.21999318378542476,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 3.8427335962594764,
+            "body_index": 7,
+            "edge_index": 312,
+            "boundary_tangent": [
+              0.9670366035169752,
+              0.25463740388708134
+            ],
+            "inward_normal": [
+              -0.25463740388708134,
+              0.9670366035169752
+            ],
+            "COM_normal_closing_m_s": -1.484534216899803,
+            "critical_point_normal_closing_m_s": 0.1394477921378794,
+            "COM_signed_line_distance_m": 5.262589579365712,
+            "frozen_first_order_floor_time_s": 23.97121922844314,
+            "body_point_velocity_world_m_s": [
+              68.54224990634043,
+              17.904154524889467
+            ]
+          },
+          "logged_margin_m": 3.84273359625948,
+          "road_margin_reproduction_abs_error_m": 3.552713678800501e-15,
+          "path_node_curvature_proxy_rad_m": 0.008366658129755003,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 40.73142604400886,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.0,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.0,
+          "tracking_history": [
+            0,
+            64
+          ]
+        }
+      },
+      {
+        "raw": 120,
+        "feature": {
+          "progress_m": 116.65752511878192,
+          "COM_speed_m_s": 56.61431555882363,
+          "COM_velocity_world_m_s": [
+            49.84889591906413,
+            26.837814774015616
+          ],
+          "COM_velocity_path_tangent_m_s": 56.60682226872457,
+          "COM_velocity_path_left_normal_m_s": -0.9210856806438166,
+          "signed_path_position_left_m": 1.1467696310880373,
+          "path_distance_m": 1.1467696310880373,
+          "path_tangent_world": [
+            0.8726708113011241,
+            0.48830897503838466
+          ],
+          "path_heading_rad": 0.5101509419033936,
+          "body_forward_heading_rad": 0.4817493667572601,
+          "velocity_heading_rad": 0.4938807404353826,
+          "velocity_path_heading_deficit_rad": 0.016270201468011,
+          "body_path_heading_deficit_rad": 0.028401575146133506,
+          "sideslip_heading_rad": 0.012131373678122503,
+          "yaw_rad_s": 1.6537041312401055,
+          "front_joints_rad": [
+            0.10095666348934174,
+            0.10095666348934174
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.5827060302466018,
+              "velocity_heading_rad": 0.5458769547990732,
+              "slip_heading_rad": -0.03682907544752867,
+              "lateral_speed_m_s": 2.0250311385895117,
+              "rolling_slip_m_s": 0.7110850755125284,
+              "frozen_lateral_component_ratio": 0.4151313834108499,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.5827060302466018,
+              "velocity_heading_rad": 0.5398536034319703,
+              "slip_heading_rad": -0.04285242681463153,
+              "lateral_speed_m_s": 2.5111997913988304,
+              "rolling_slip_m_s": 0.01211097061806754,
+              "frozen_lateral_component_ratio": 0.5147959572367603,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.4817493667572601,
+              "velocity_heading_rad": 0.4482985746697105,
+              "slip_heading_rad": -0.03345079208754953,
+              "lateral_speed_m_s": 1.830668176755026,
+              "rolling_slip_m_s": 0.8289079381829367,
+              "frozen_lateral_component_ratio": 0.3752869762347803,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.4817493667572601,
+              "velocity_heading_rad": 0.4483222183044861,
+              "slip_heading_rad": -0.03342714845277395,
+              "lateral_speed_m_s": 1.950965080647702,
+              "rolling_slip_m_s": 0.11958124369765244,
+              "frozen_lateral_component_ratio": 0.3999478415327789,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.697260699391685,
+            "body_index": 7,
+            "edge_index": 315,
+            "boundary_tangent": [
+              0.9670366035169751,
+              0.25463740388708156
+            ],
+            "inward_normal": [
+              -0.25463740388708156,
+              0.9670366035169751
+            ],
+            "COM_normal_closing_m_s": -13.25975580141393,
+            "critical_point_normal_closing_m_s": -10.305781238089677,
+            "COM_signed_line_distance_m": 6.509639498492416,
+            "frozen_first_order_floor_time_s": null,
+            "body_point_velocity_world_m_s": [
+              53.43072035411512,
+              24.726304123252834
+            ]
+          },
+          "logged_margin_m": 4.697260699391684,
+          "road_margin_reproduction_abs_error_m": 8.881784197001252e-16,
+          "path_node_curvature_proxy_rad_m": 0.03756182694350527,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 120.3924437599598,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.0,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.0,
+          "tracking_history": [
+            0,
+            96
+          ]
+        }
+      },
+      {
+        "raw": 124,
+        "feature": {
+          "progress_m": 121.24748858400757,
+          "COM_speed_m_s": 53.60113302855027,
+          "COM_velocity_world_m_s": [
+            42.283958525927076,
+            32.94158941705791
+          ],
+          "COM_velocity_path_tangent_m_s": 53.595296222925796,
+          "COM_velocity_path_left_normal_m_s": -0.7910023521955836,
+          "signed_path_position_left_m": 1.2133786842518464,
+          "path_distance_m": 1.2133786842518464,
+          "path_tangent_world": [
+            0.7797079329748614,
+            0.62614338554046
+          ],
+          "path_heading_rad": 0.6765970990287087,
+          "body_forward_heading_rad": 0.6432452596125336,
+          "velocity_heading_rad": 0.6618393687275519,
+          "velocity_path_heading_deficit_rad": 0.014757730301156789,
+          "body_path_heading_deficit_rad": 0.03335183941617504,
+          "sideslip_heading_rad": 0.018594109115018242,
+          "yaw_rad_s": 2.158043941337698,
+          "front_joints_rad": [
+            0.13730208575725555,
+            0.13730208575725555
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.7805473453697892,
+              "velocity_heading_rad": 0.7349002476828027,
+              "slip_heading_rad": -0.04564709768698649,
+              "lateral_speed_m_s": 2.3542647661374154,
+              "rolling_slip_m_s": 0.5214605573524267,
+              "frozen_lateral_component_ratio": 0.4826242770581702,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.7805473453697892,
+              "velocity_heading_rad": 0.7235658077053505,
+              "slip_heading_rad": -0.0569815376644387,
+              "lateral_speed_m_s": 3.2064098768006914,
+              "rolling_slip_m_s": -0.21881088065207877,
+              "frozen_lateral_component_ratio": 0.6573140247441418,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.6432452596125336,
+              "velocity_heading_rad": 0.5989590847662631,
+              "slip_heading_rad": -0.0442861748462704,
+              "lateral_speed_m_s": 2.263396847159015,
+              "rolling_slip_m_s": 0.683044404123514,
+              "frozen_lateral_component_ratio": 0.4639963536675981,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.6432452596125336,
+              "velocity_heading_rad": 0.5990549310594813,
+              "slip_heading_rad": -0.04419032855305227,
+              "lateral_speed_m_s": 2.4682354957811405,
+              "rolling_slip_m_s": -0.07837678297038764,
+              "frozen_lateral_component_ratio": 0.5059882766351338,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.344402572455496,
+            "body_index": 4,
+            "edge_index": 34,
+            "boundary_tangent": [
+              0.8432620816201912,
+              0.5375026155299917
+            ],
+            "inward_normal": [
+              0.5375026155299917,
+              -0.8432620816201912
+            ],
+            "COM_normal_closing_m_s": 5.05065496105842,
+            "critical_point_normal_closing_m_s": 8.785081552727068,
+            "COM_signed_line_distance_m": 5.775462484753425,
+            "frozen_first_order_floor_time_s": 0.4376057922037292,
+            "body_point_velocity_world_m_s": [
+              37.62077330219354,
+              34.39778241325163
+            ]
+          },
+          "logged_margin_m": 4.344402572455489,
+          "road_margin_reproduction_abs_error_m": 7.105427357601002e-15,
+          "path_node_curvature_proxy_rad_m": 0.04521702724107786,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 129.91220273057314,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.02304967394141088,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.05820797502148292,
+          "tracking_history": [
+            0,
+            112
+          ]
+        }
+      },
+      {
+        "raw": 128,
+        "feature": {
+          "progress_m": 125.55667036235725,
+          "COM_speed_m_s": 49.39776239441393,
+          "COM_velocity_world_m_s": [
+            35.01251197275653,
+            34.84627576847425
+          ],
+          "COM_velocity_path_tangent_m_s": 49.193891284743174,
+          "COM_velocity_path_left_normal_m_s": -4.483301221181197,
+          "signed_path_position_left_m": 0.9797140502091812,
+          "path_distance_m": 0.9797140502091812,
+          "path_tangent_world": [
+            0.641838601034054,
+            0.7668397552439808
+          ],
+          "path_heading_rad": 0.873902825898047,
+          "body_forward_heading_rad": 0.7744781686437855,
+          "velocity_heading_rad": 0.7830185645540271,
+          "velocity_path_heading_deficit_rad": 0.09088426134401995,
+          "body_path_heading_deficit_rad": 0.09942465725426142,
+          "sideslip_heading_rad": 0.008540395910241472,
+          "yaw_rad_s": 1.448005727980858,
+          "front_joints_rad": [
+            0.08598776906728745,
+            0.08598776906728745
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.860465937711073,
+              "velocity_heading_rad": 0.8349855428719186,
+              "slip_heading_rad": -0.02548039483915443,
+              "lateral_speed_m_s": 1.2219597845885204,
+              "rolling_slip_m_s": -0.018490543165555096,
+              "frozen_lateral_component_ratio": 0.25050175584064666,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.860465937711073,
+              "velocity_heading_rad": 0.829419313008302,
+              "slip_heading_rad": -0.031046624702771197,
+              "lateral_speed_m_s": 1.5873363751805591,
+              "rolling_slip_m_s": 0.6139427716990085,
+              "frozen_lateral_component_ratio": 0.3254039569120146,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.7744781686437855,
+              "velocity_heading_rad": 0.7370146021494238,
+              "slip_heading_rad": -0.03746356649436188,
+              "lateral_speed_m_s": 1.7892891096492392,
+              "rolling_slip_m_s": -0.1209007725296587,
+              "frozen_lateral_component_ratio": 0.3668042674780941,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.7744781686437855,
+              "velocity_heading_rad": 0.737546356977426,
+              "slip_heading_rad": -0.036931811666359504,
+              "lateral_speed_m_s": 1.8815235024949786,
+              "rolling_slip_m_s": 0.5275333622242755,
+              "frozen_lateral_component_ratio": 0.38571231801147066,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 4.255980905459257,
+            "body_index": 6,
+            "edge_index": 34,
+            "boundary_tangent": [
+              0.8432620816201912,
+              0.5375026155299917
+            ],
+            "inward_normal": [
+              0.5375026155299917,
+              -0.8432620816201912
+            ],
+            "COM_normal_closing_m_s": 10.565226279603042,
+            "critical_point_normal_closing_m_s": 7.212040088411094,
+            "COM_signed_line_distance_m": 5.0753995598432535,
+            "frozen_first_order_floor_time_s": 0.5207931264129659,
+            "body_point_velocity_world_m_s": [
+              35.63112209278872,
+              31.264137190776587
+            ]
+          },
+          "logged_margin_m": 4.255980905459257,
+          "road_margin_reproduction_abs_error_m": 0.0,
+          "path_node_curvature_proxy_rad_m": 0.05467892523915371,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 133.42417410337862,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.04821652295389474,
+          "straight_flat_point_normal_stop_distance_lower_m": 0.254709237711786,
+          "tracking_history": [
+            0,
+            128
+          ]
+        }
+      },
+      {
+        "raw": 132,
+        "feature": {
+          "progress_m": 129.47964415785663,
+          "COM_speed_m_s": 46.424204507224154,
+          "COM_velocity_world_m_s": [
+            29.89077004756918,
+            35.52110119480972
+          ],
+          "COM_velocity_path_tangent_m_s": 45.038749623387346,
+          "COM_velocity_path_left_normal_m_s": -11.256899950270398,
+          "signed_path_position_left_m": 0.14405881187629477,
+          "path_distance_m": 0.14405881187629477,
+          "path_tangent_world": [
+            0.4391158387682441,
+            0.898430453704048
+          ],
+          "path_heading_rad": 1.1161820079614275,
+          "body_forward_heading_rad": 0.8663997738445707,
+          "velocity_heading_rad": 0.8712615952483767,
+          "velocity_path_heading_deficit_rad": 0.2449204127130509,
+          "body_path_heading_deficit_rad": 0.24978223411685685,
+          "sideslip_heading_rad": 0.004861821403805977,
+          "yaw_rad_s": 1.0033646956778033,
+          "front_joints_rad": [
+            0.05772425979375839,
+            0.05772425979375839
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 0.924124033638329,
+              "velocity_heading_rad": 0.9090080471980834,
+              "slip_heading_rad": -0.015115986440245699,
+              "lateral_speed_m_s": 0.6861672500974656,
+              "rolling_slip_m_s": -0.14174501329859623,
+              "frozen_lateral_component_ratio": 0.14066428626998045,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.924124033638329,
+              "velocity_heading_rad": 0.9061032930654362,
+              "slip_heading_rad": -0.018020740572892713,
+              "lateral_speed_m_s": 0.857713433637791,
+              "rolling_slip_m_s": 0.5705473473719778,
+              "frozen_lateral_component_ratio": 0.17583125389574714,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.8663997738445707,
+              "velocity_heading_rad": 0.8373362035820939,
+              "slip_heading_rad": -0.029063570262476635,
+              "lateral_speed_m_s": 1.3166242956506728,
+              "rolling_slip_m_s": -0.22845661708806375,
+              "frozen_lateral_component_ratio": 0.26990798060838794,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.8663997738445707,
+              "velocity_heading_rad": 0.8377542594820896,
+              "slip_heading_rad": -0.028645514362481084,
+              "lateral_speed_m_s": 1.3609120673378037,
+              "rolling_slip_m_s": 0.49333736489343494,
+              "frozen_lateral_component_ratio": 0.27898697380424975,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 3.933513048234408,
+            "body_index": 0,
+            "edge_index": 320,
+            "boundary_tangent": [
+              0.07325791348083449,
+              0.997313029150043
+            ],
+            "inward_normal": [
+              -0.997313029150043,
+              0.07325791348083449
+            ],
+            "COM_normal_closing_m_s": 27.20825266169526,
+            "critical_point_normal_closing_m_s": 25.747178040415882,
+            "COM_signed_line_distance_m": 6.483888072636866,
+            "frozen_first_order_floor_time_s": 0.1333549270077191,
+            "body_point_velocity_world_m_s": [
+              28.62108508751951,
+              38.18021689235075
+            ]
+          },
+          "logged_margin_m": 3.9335130482344116,
+          "road_margin_reproduction_abs_error_m": 3.552713678800501e-15,
+          "path_node_curvature_proxy_rad_m": 0.06742594165726255,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 145.3168455374707,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.12417030210992201,
+          "straight_flat_point_normal_stop_distance_lower_m": 1.6892284764428949,
+          "tracking_history": [
+            0,
+            144
+          ]
+        }
+      },
+      {
+        "raw": 135,
+        "feature": {
+          "progress_m": 132.03441165245792,
+          "COM_speed_m_s": 46.845555221322414,
+          "COM_velocity_world_m_s": [
+            25.930348949326618,
+            39.01439538632021
+          ],
+          "COM_velocity_path_tangent_m_s": 42.40028261332542,
+          "COM_velocity_path_left_normal_m_s": -19.91788337911691,
+          "signed_path_position_left_m": -0.9726304471711038,
+          "path_distance_m": 0.9726304471711038,
+          "path_tangent_world": [
+            0.14689863679546006,
+            0.9891515508291111
+          ],
+          "path_heading_rad": 1.4233641666545513,
+          "body_forward_heading_rad": 0.9575092723043366,
+          "velocity_heading_rad": 0.9842012916343859,
+          "velocity_path_heading_deficit_rad": 0.4391628750201655,
+          "body_path_heading_deficit_rad": 0.46585489435021477,
+          "sideslip_heading_rad": 0.026692019330049273,
+          "yaw_rad_s": 1.7918096553007015,
+          "front_joints_rad": [
+            0.1409490555524826,
+            0.1409490555524826
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 1.0984583278568192,
+              "velocity_heading_rad": 1.0535061271738906,
+              "slip_heading_rad": -0.04495220068292861,
+              "lateral_speed_m_s": 2.0300325878717054,
+              "rolling_slip_m_s": 0.13228570773662085,
+              "frozen_lateral_component_ratio": 0.4161566805136996,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.0984583278568192,
+              "velocity_heading_rad": 1.04294919189964,
+              "slip_heading_rad": -0.0555091359571791,
+              "lateral_speed_m_s": 2.72329624007509,
+              "rolling_slip_m_s": -0.8228140681132743,
+              "frozen_lateral_component_ratio": 0.5582757292153935,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.9575092723043366,
+              "velocity_heading_rad": 0.9246396934197707,
+              "slip_heading_rad": -0.032869578884565875,
+              "lateral_speed_m_s": 1.4717402933951185,
+              "rolling_slip_m_s": 0.9128023279693736,
+              "frozen_lateral_component_ratio": 0.3017067601459993,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.9575092723043366,
+              "velocity_heading_rad": 0.9243999029302266,
+              "slip_heading_rad": -0.03310936937411001,
+              "lateral_speed_m_s": 1.6129652628139688,
+              "rolling_slip_m_s": -0.1033690592704275,
+              "frozen_lateral_component_ratio": 0.3306578788768636,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 2.588581801377933,
+            "body_index": 0,
+            "edge_index": 320,
+            "boundary_tangent": [
+              0.07325791348083449,
+              0.997313029150043
+            ],
+            "inward_normal": [
+              -0.997313029150043,
+              0.07325791348083449
+            ],
+            "COM_normal_closing_m_s": 23.00256165585245,
+            "critical_point_normal_closing_m_s": 19.988419851774474,
+            "COM_signed_line_distance_m": 4.995890986345562,
+            "frozen_first_order_floor_time_s": 0.10448959031609088,
+            "body_point_velocity_world_m_s": [
+              23.24029965908467,
+              43.537054879625785
+            ]
+          },
+          "logged_margin_m": 2.5885818013779254,
+          "road_margin_reproduction_abs_error_m": 7.549516567451064e-15,
+          "path_node_curvature_proxy_rad_m": 0.08390595780326082,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 184.13213152635868,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.10497679015346749,
+          "straight_flat_point_normal_stop_distance_lower_m": 1.2073675439693101,
+          "tracking_history": [
+            0,
+            156
+          ]
+        }
+      },
+      {
+        "raw": 136,
+        "feature": {
+          "progress_m": 132.89881179900365,
+          "COM_speed_m_s": 46.97208742049907,
+          "COM_velocity_world_m_s": [
+            24.54526162173977,
+            40.048809327611174
+          ],
+          "COM_velocity_path_tangent_m_s": 43.220007327287455,
+          "COM_velocity_path_left_normal_m_s": -18.395868103142767,
+          "signed_path_position_left_m": -1.3405478092339511,
+          "path_distance_m": 1.3405478092339511,
+          "path_tangent_world": [
+            0.14689863679546006,
+            0.9891515508291111
+          ],
+          "path_heading_rad": 1.4233641666545513,
+          "body_forward_heading_rad": 0.9944494058346303,
+          "velocity_heading_rad": 1.0209573529908833,
+          "velocity_path_heading_deficit_rad": 0.4024068136636681,
+          "body_path_heading_deficit_rad": 0.4289147608199211,
+          "sideslip_heading_rad": 0.026507947156253042,
+          "yaw_rad_s": 1.8470066765146862,
+          "front_joints_rad": [
+            0.1409490555524826,
+            0.1409490555524826
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 1.1353984613871129,
+              "velocity_heading_rad": 1.0923093353345916,
+              "slip_heading_rad": -0.04308912605252124,
+              "lateral_speed_m_s": 1.9494562061658947,
+              "rolling_slip_m_s": 0.007715592725531906,
+              "frozen_lateral_component_ratio": 0.39963852226400837,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.1353984613871129,
+              "velocity_heading_rad": 1.081228982623473,
+              "slip_heading_rad": -0.05416947876363998,
+              "lateral_speed_m_s": 2.6684913888211597,
+              "rolling_slip_m_s": -0.7806639091255079,
+              "frozen_lateral_component_ratio": 0.5470407347083378,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.9944494058346303,
+              "velocity_heading_rad": 0.959690099946953,
+              "slip_heading_rad": -0.03475930588767718,
+              "lateral_speed_m_s": 1.5585009325387453,
+              "rolling_slip_m_s": 0.8539397274143354,
+              "frozen_lateral_component_ratio": 0.3194926911704428,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.9944494058346303,
+              "velocity_heading_rad": 0.959509136918356,
+              "slip_heading_rad": -0.03494026891627433,
+              "lateral_speed_m_s": 1.7085591640403024,
+              "rolling_slip_m_s": 0.004694339353406463,
+              "frozen_lateral_component_ratio": 0.350254628628262,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 2.169464271556357,
+            "body_index": 0,
+            "edge_index": 321,
+            "boundary_tangent": [
+              -0.2344729825122078,
+              0.9721226365391508
+            ],
+            "inward_normal": [
+              -0.9721226365391508,
+              -0.2344729825122078
+            ],
+            "COM_normal_closing_m_s": 33.251368211376615,
+            "critical_point_normal_closing_m_s": 31.45856756982091,
+            "COM_signed_line_distance_m": 4.941231448117307,
+            "frozen_first_order_floor_time_s": 0.05306866779140704,
+            "body_point_velocity_world_m_s": [
+              21.602061553806937,
+              44.60520109991161
+            ]
+          },
+          "logged_margin_m": 2.169464271556364,
+          "road_margin_reproduction_abs_error_m": 7.105427357601002e-15,
+          "path_node_curvature_proxy_rad_m": 0.08390595780326082,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 185.1281751780779,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.15174926841912226,
+          "straight_flat_point_normal_stop_distance_lower_m": 2.5229354000056294,
+          "tracking_history": [
+            0,
+            160
+          ]
+        }
+      },
+      {
+        "raw": 139,
+        "feature": {
+          "progress_m": 134.87164747732336,
+          "COM_speed_m_s": 47.1655825363192,
+          "COM_velocity_world_m_s": [
+            18.602524723334238,
+            43.34210712353608
+          ],
+          "COM_velocity_path_tangent_m_s": 40.138644304920334,
+          "COM_velocity_path_left_normal_m_s": -24.768556868607114,
+          "signed_path_position_left_m": -2.6170137898028845,
+          "path_distance_m": 2.617013789802885,
+          "path_tangent_world": [
+            -0.14692190576713815,
+            0.9891480948805148
+          ],
+          "path_heading_rad": 1.7182520111488033,
+          "body_forward_heading_rad": 1.1294157089254182,
+          "velocity_heading_rad": 1.1653718277130771,
+          "velocity_path_heading_deficit_rad": 0.5528801834357263,
+          "body_path_heading_deficit_rad": 0.5888363022233851,
+          "sideslip_heading_rad": 0.03595611878765892,
+          "yaw_rad_s": 2.3488508273166437,
+          "front_joints_rad": [
+            0.18512307107448578,
+            0.18512307107448578
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 1.314538779999904,
+              "velocity_heading_rad": 1.257448808747126,
+              "slip_heading_rad": -0.05708997125277792,
+              "lateral_speed_m_s": 2.5738605334573066,
+              "rolling_slip_m_s": 0.057605155305545,
+              "frozen_lateral_component_ratio": 0.5276414093587478,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.314538779999904,
+              "velocity_heading_rad": 1.2395263587424505,
+              "slip_heading_rad": -0.07501242125745344,
+              "lateral_speed_m_s": 3.762496777436299,
+              "rolling_slip_m_s": -0.8220252456659054,
+              "frozen_lateral_component_ratio": 0.7713118393744414,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.1294157089254182,
+              "velocity_heading_rad": 1.0879310343583228,
+              "slip_heading_rad": -0.04148467456709538,
+              "lateral_speed_m_s": 1.8422376566381793,
+              "rolling_slip_m_s": 1.0450960642906963,
+              "frozen_lateral_component_ratio": 0.37765871961082675,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.1294157089254182,
+              "velocity_heading_rad": 1.0873589654927125,
+              "slip_heading_rad": -0.04205674343270571,
+              "lateral_speed_m_s": 2.084887202892503,
+              "rolling_slip_m_s": 0.07153739612540022,
+              "frozen_lateral_component_ratio": 0.4274018765929631,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 0.5176473097586402,
+            "body_index": 0,
+            "edge_index": 321,
+            "boundary_tangent": [
+              -0.2344729825122078,
+              0.9721226365391508
+            ],
+            "inward_normal": [
+              -0.9721226365391508,
+              -0.2344729825122078
+            ],
+            "COM_normal_closing_m_s": 28.24648850595153,
+            "critical_point_normal_closing_m_s": 25.11127725045915,
+            "COM_signed_line_distance_m": 3.1335997259113544,
+            "frozen_first_order_floor_time_s": 0.0007027643230818726,
+            "body_point_velocity_world_m_s": [
+              14.113999871731757,
+              48.58017482864996
+            ]
+          },
+          "logged_margin_m": 0.5176473097586374,
+          "road_margin_reproduction_abs_error_m": 2.7755575615628914e-15,
+          "path_node_curvature_proxy_rad_m": 0.07856430573134564,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 174.77353984206442,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.12890849901089926,
+          "straight_flat_point_normal_stop_distance_lower_m": 1.8206062178154152,
+          "tracking_history": [
+            0,
+            172
+          ]
+        }
+      },
+      {
+        "raw": 140,
+        "feature": {
+          "progress_m": 135.69882669973782,
+          "COM_speed_m_s": 47.26524872648404,
+          "COM_velocity_world_m_s": [
+            16.553996642147347,
+            44.27153636760504
+          ],
+          "COM_velocity_path_tangent_m_s": 41.35896112072285,
+          "COM_velocity_path_left_normal_m_s": -22.878812735606182,
+          "signed_path_position_left_m": -3.074590044515009,
+          "path_distance_m": 3.074590044515009,
+          "path_tangent_world": [
+            -0.14692190576713815,
+            0.9891480948805148
+          ],
+          "path_heading_rad": 1.7182520111488033,
+          "body_forward_heading_rad": 1.1794943320429403,
+          "velocity_heading_rad": 1.2129731636312204,
+          "velocity_path_heading_deficit_rad": 0.5052788475175829,
+          "body_path_heading_deficit_rad": 0.538757679105863,
+          "sideslip_heading_rad": 0.033478831588280134,
+          "yaw_rad_s": 2.5039311558760975,
+          "front_joints_rad": [
+            0.18512307107448578,
+            0.18512307107448578
+          ],
+          "front_rates_rad_s": [
+            0.0,
+            0.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 1.364617403117426,
+              "velocity_heading_rad": 1.311224592114458,
+              "slip_heading_rad": -0.05339281100296799,
+              "lateral_speed_m_s": 2.4062937518481124,
+              "rolling_slip_m_s": 0.050767736664681706,
+              "frozen_lateral_component_ratio": 0.49329021912886306,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.364617403117426,
+              "velocity_heading_rad": 1.2915067585185416,
+              "slip_heading_rad": -0.07311064459888429,
+              "lateral_speed_m_s": 3.690029813344564,
+              "rolling_slip_m_s": -0.8940223615080782,
+              "frozen_lateral_component_ratio": 0.7564561117356357,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.1794943320429403,
+              "velocity_heading_rad": 1.1303127185909352,
+              "slip_heading_rad": -0.04918161345200511,
+              "lateral_speed_m_s": 2.1801305296162905,
+              "rolling_slip_m_s": 1.0585183328005598,
+              "frozen_lateral_component_ratio": 0.44692675857133957,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.1794943320429403,
+              "velocity_heading_rad": 1.1302138983941488,
+              "slip_heading_rad": -0.04928043364879154,
+              "lateral_speed_m_s": 2.4558663016875606,
+              "rolling_slip_m_s": 0.017080057404029958,
+              "frozen_lateral_component_ratio": 0.5034525918459499,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 0.05828324359648252,
+            "body_index": 0,
+            "edge_index": 321,
+            "boundary_tangent": [
+              -0.2344729825122078,
+              0.9721226365391508
+            ],
+            "inward_normal": [
+              -0.9721226365391508,
+              -0.2344729825122078
+            ],
+            "COM_normal_closing_m_s": 26.472994033534555,
+            "critical_point_normal_closing_m_s": 22.807087748138535,
+            "COM_signed_line_distance_m": 2.604139845240656,
+            "frozen_first_order_floor_time_s": -0.019367521240828717,
+            "body_point_velocity_world_m_s": [
+              11.495603039670126,
+              49.608921624909684
+            ]
+          },
+          "logged_margin_m": 0.05828324359648025,
+          "road_margin_reproduction_abs_error_m": 2.2690183065776637e-15,
+          "path_node_curvature_proxy_rad_m": 0.07856430573134564,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 175.5129526124955,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.12081480232377907,
+          "straight_flat_point_normal_stop_distance_lower_m": 1.5991647705400298,
+          "tracking_history": [
+            0,
+            176
+          ]
+        }
+      }
+    ],
+    "stored583_nominal_forecast": [
+      {
+        "raw": 135,
+        "feature": {
+          "progress_m": 132.03942927976954,
+          "COM_speed_m_s": 46.787884853457776,
+          "COM_velocity_world_m_s": [
+            25.29170620738582,
+            39.362872941132046
+          ],
+          "COM_velocity_path_tangent_m_s": 42.65116397890627,
+          "COM_velocity_path_left_normal_m_s": -19.23497804274474,
+          "signed_path_position_left_m": -0.9589723404436948,
+          "path_distance_m": 0.958972340443695,
+          "path_tangent_world": [
+            0.14689863679546006,
+            0.9891515508291111
+          ],
+          "path_heading_rad": 1.4233641666545513,
+          "body_forward_heading_rad": 0.9667813622356326,
+          "velocity_heading_rad": 0.9996925290727628,
+          "velocity_path_heading_deficit_rad": 0.4236716375817885,
+          "body_path_heading_deficit_rad": 0.4565828044189188,
+          "sideslip_heading_rad": 0.032911166837130246,
+          "yaw_rad_s": 2.2568450563630438,
+          "front_joints_rad": [
+            0.23772425979375839,
+            0.23772425979375839
+          ],
+          "front_rates_rad_s": [
+            3.0,
+            3.0
+          ],
+          "wheels": [
+            {
+              "forward_heading_rad": 1.204505622029391,
+              "velocity_heading_rad": 1.0885561778500665,
+              "slip_heading_rad": -0.11594944417932451,
+              "lateral_speed_m_s": 5.181205571330237,
+              "rolling_slip_m_s": 0.7404371467126651,
+              "frozen_lateral_component_ratio": 1.0621471421226985,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 1.204505622029391,
+              "velocity_heading_rad": 1.071954125692226,
+              "slip_heading_rad": -0.132551496337165,
+              "lateral_speed_m_s": 6.566979563132078,
+              "rolling_slip_m_s": -1.1194998762870654,
+              "frozen_lateral_component_ratio": 1.346230810442076,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.9667813622356326,
+              "velocity_heading_rad": 0.9245507007468251,
+              "slip_heading_rad": -0.0422306614888075,
+              "lateral_speed_m_s": 1.8644829796116653,
+              "rolling_slip_m_s": 1.5486013001366814,
+              "frozen_lateral_component_ratio": 0.3822190108203914,
+              "friction_N": 400.0
+            },
+            {
+              "forward_heading_rad": 0.9667813622356326,
+              "velocity_heading_rad": 0.9242572554687293,
+              "slip_heading_rad": -0.042524106766903325,
+              "lateral_speed_m_s": 2.088501211469879,
+              "rolling_slip_m_s": -0.4890620279105633,
+              "frozen_lateral_component_ratio": 0.42814274835132515,
+              "friction_N": 400.0
+            }
+          ],
+          "geometry": {
+            "gap_m": 2.6175314672789995,
+            "body_index": 0,
+            "edge_index": 320,
+            "boundary_tangent": [
+              0.07325791348083449,
+              0.997313029150043
+            ],
+            "inward_normal": [
+              -0.997313029150043,
+              0.07325791348083449
+            ],
+            "COM_normal_closing_m_s": 22.340106189782365,
+            "critical_point_normal_closing_m_s": 18.493481672945858,
+            "COM_signed_line_distance_m": 5.009140095666931,
+            "frozen_first_order_floor_time_s": 0.11450150408274605,
+            "body_point_velocity_world_m_s": [
+              21.850826321969226,
+              45.027655838324435
+            ]
+          },
+          "logged_margin_m": 2.617531467279009,
+          "road_margin_reproduction_abs_error_m": 9.325873406851315e-15,
+          "path_node_curvature_proxy_rad_m": 0.08390595780326082,
+          "constant_speed_path_normal_acceleration_proxy_m_s2": 183.67904984804184,
+          "source_force_norm_acceleration_ceiling_m_s2": 219.1204515038475,
+          "linear_mass_kg": 7.3019199669361115,
+          "straight_flat_point_normal_stop_time_lower_s": 0.10195354215665305,
+          "straight_flat_point_normal_stop_distance_lower_m": 1.1388264791020408,
+          "tracking_history": [
+            1,
+            156
+          ]
+        }
+      }
+    ]
+  },
+  "fixed_failure_boundary_line": {
+    "edge_index": 321,
+    "inward_normal": [
+      -0.9721226365391508,
+      -0.2344729825122078
+    ],
+    "normal_heading_rad": -2.9049162516324056,
+    "comparison": {
+      "factual577": [
+        {
+          "raw": 124,
+          "COM_line_distance_m": 15.160170067257898,
+          "finite_body_support_line_gap_m": 12.224529346093973,
+          "COM_line_closing_speed_m_s": 45.32046067060595
+        },
+        {
+          "raw": 132,
+          "COM_line_distance_m": 9.440836270545539,
+          "finite_body_support_line_gap_m": 6.713204741311035,
+          "COM_line_closing_speed_m_s": 27.843449435115524
+        },
+        {
+          "raw": 136,
+          "COM_line_distance_m": 7.639199061710256,
+          "finite_body_support_line_gap_m": 5.2610851566638335,
+          "COM_line_closing_speed_m_s": 18.98767096040542
+        },
+        {
+          "raw": 139,
+          "COM_line_distance_m": 6.807318997967405,
+          "finite_body_support_line_gap_m": 4.8187451370242815,
+          "COM_line_closing_speed_m_s": 11.114952655129349
+        },
+        {
+          "raw": 140,
+          "COM_line_distance_m": 6.640322320266806,
+          "finite_body_support_line_gap_m": 4.804487649437595,
+          "COM_line_closing_speed_m_s": 8.3498338850303
+        }
+      ],
+      "escape_then584": [
+        {
+          "raw": 124,
+          "COM_line_distance_m": 14.44985902160656,
+          "finite_body_support_line_gap_m": 11.51335078621138,
+          "COM_line_closing_speed_m_s": 48.829105964846484
+        },
+        {
+          "raw": 132,
+          "COM_line_distance_m": 7.748425430404876,
+          "finite_body_support_line_gap_m": 4.875398908136595,
+          "COM_line_closing_speed_m_s": 37.38623272609341
+        },
+        {
+          "raw": 136,
+          "COM_line_distance_m": 4.941231448117314,
+          "finite_body_support_line_gap_m": 2.169464271556364,
+          "COM_line_closing_speed_m_s": 33.251368211376615
+        },
+        {
+          "raw": 139,
+          "COM_line_distance_m": 3.1335997259113517,
+          "finite_body_support_line_gap_m": 0.5176473097586374,
+          "COM_line_closing_speed_m_s": 28.24648850595153
+        },
+        {
+          "raw": 140,
+          "COM_line_distance_m": 2.6041398452406543,
+          "finite_body_support_line_gap_m": 0.05828324359648018,
+          "COM_line_closing_speed_m_s": 26.472994033534555
+        }
+      ]
+    },
+    "meaning": "Actual584failedroadsegmentextendedasaninfinitestraightline;coordinatecomparisononly,notglobalroadbarrier."
+  },
+  "maximum_road_margin_reproduction_error_m": 1.4210854715202004e-14,
+  "assumptions": [
+    "Onlysavedstatesandstaticgeometry/arithmetic;nointegratedcounterfactual.",
+    "Polylineheadingchangesatvertices;nodecurvatureisageometricproxy,notaninstantaneousrequiredsteering/yawbound.",
+    "v/yawisnotvelocityturnradiuswhensideslipchanges;servo3rad/sisnotbodyyawcap.",
+    "Forceceilingusesactualsource-linearmassandfourclippedwheelvectors,globalmaxroadfriction400N;itignoresforce-direction,longitudinal,yaw/contactcouplinganddoesnotcertifynativerecoverability.",
+    "Straightflatpointnormalstoptime/distanceassumesavailablefullnormalaccelerationandfixedboundarynormal;finitebodyshape/orientation,futurecurvature,servo,history/referenceconstraintsinvalidateitasa reachabilitycertificate.",
+    "Frozenfirst-ordercritical-pointfloor-timeusesinstantaneousrigidvelocityandfixedlocaledge;notanexacttimetoexit.",
+    "Sibling275futureunobserved;factualvs581initialstatesandspeedsdiffer;directiondifferencesarenotwholealignmentcausaleffects.",
+    "Positivefootprintgapbelow.5iscontractmarginfailure,notobservedcollision."
+  ],
+  "source_ticks": 0,
+  "force_kernel_calls": 0,
+  "forecast_ticks": 0,
+  "native_actions": 0,
+  "new_FD": 0,
+  "new_optimizer": 0,
+  "new_law_executed": 0,
+  "new_learning": 0,
+  "whole": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "actual_incumbent_s": 13.66,
+  "source_incumbent_s": 13.2,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "paid_compute": 0,
+  "static_arithmetic_counts": {
+    "static_state_features": 99
+  },
+  "input_sha256": {
+    "graph580": "f87675e081fe8dee5c1fb8cd3b8d0e28616a8cbd54c4e3d709ef080f94c46165",
+    "prefix580": "c472ffd05611dac79bcce3d8c0e0392849891b49831ddf7467f3799e2bd64232",
+    "factual577": "bc432812cdd71702ec030edda72a9aa63ca79e61dceb1f970891a659f20cd5a6",
+    "escape581": "97d39c846e374263b9370836df390f91bf7824669841e0b428084b263cac26ac",
+    "journal583": "011bd9b0bc4f55937b9aa88dc99f6a4a6ab41dfc9c28d6280c00c6421f9fa0aa",
+    "checkpoint583": "8d954f83b55db8af8850d9916ec8fc3eef249d4d9e4e9ee6f857a4cc059b5a49",
+    "actual584": "789b710716ac45118fe1695dc890c00ab53fdd398e7770d8c2824ee4d345a76b",
+    "paths": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "static": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "result584": "6ddac923601743841bc960d42cd13e4378c272ef988b81bf52d300e0df58cd4b"
+  },
+  "CPU_s": 0.987393381,
+  "wall_s": 0.9894425930106081,
+  "final_writer_validation_CPU_wall_charge_s": 1.0,
+  "prior_read_only_failure": {
+    "error": "KeyError:'normal'",
+    "CPU_s": 0.961388078,
+    "wall_s": 0.9636528769915458
+  },
+  "aggregate_CPU_s": 2.948781459,
+  "aggregate_wall_s": 2.953095470002154
+}
