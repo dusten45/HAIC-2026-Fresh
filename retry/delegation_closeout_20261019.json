@@ -1,0 +1,69 @@
+{
+  "status": "STOPPED_AUTHORIZATION_CONFLICT_NO_PROMOTION",
+  "recorded_utc": "2026-10-19T01:38:47.044044+00:00",
+  "current_delegation_deadline_KST": "2026-10-16T19:01:55+09:00",
+  "stored_extension_KST": "2026-10-20T19:01:55+09:00",
+  "authorization_resolution": "Current delegation explicitly ends Oct16. Prior workspace record asserts Oct20 extension; original approval could not be retrieved (personal context unavailable). No restart or automatic extension.",
+  "process_exit_code": 143,
+  "new_run_started_this_closeout": false,
+  "source_candidate": {
+    "strict_safe_finish": true,
+    "hull_gain_ms": 1.009858916024342,
+    "official_candidate_raw": 660,
+    "official_finish_s": 13.199999999999807,
+    "confirmation_raw": 661,
+    "safety": {
+      "min_footprint": 0.501542828502513,
+      "footprint_slack": 0.0015428285025129718,
+      "max_path": 1.4827949194596253,
+      "path_slack": 1.5172050805403747,
+      "max_force": 1.0560968883430266,
+      "force_slack": 0.002903111656973323,
+      "max_reference_overspeed": 4.849999408860114,
+      "reference_slack": 5.911398854863137e-07,
+      "max_body": 96.92925893450622,
+      "body_slack": 3.0707410654937775,
+      "tracking_fraction_max": 0.04105839416058394,
+      "tracking_history": [
+        90,
+        2260
+      ]
+    },
+    "promotion": false,
+    "independent_replay": "INTERRUPTED_AFTER_489_TICKS_NO_CERTIFICATE"
+  },
+  "journal": {
+    "events": 93698,
+    "head": "907a1af4ac1e97514bb4d60dffb630e32233bc1f9e858ac93407bd5c9585914c",
+    "kinds": {
+      "CASE_STARTED": 115,
+      "BEFORE_FORCE": 15660,
+      "FORCE_VERDICT": 15660,
+      "BEFORE_TICK": 15660,
+      "AFTER_TICK": 15660,
+      "RAW_VERDICT": 15659,
+      "SOURCE_PATH_RECHECK": 15170,
+      "CASE_FINISHED": 114
+    },
+    "valid": true
+  },
+  "cost": {
+    "source_ticks_completed": 15660,
+    "force_rows_evaluated": 62640,
+    "last_durable_ledger": {
+      "ticks": 15171,
+      "force": 60684,
+      "geometry": 15171,
+      "body_checks": 15171,
+      "CPU_s": 396.682209993,
+      "wall_s": 425.48390843901143
+    },
+    "final_CPU_wall": "Unknown; durable ledger is a lower bound because termination interrupted final verification cost save."
+  },
+  "native_actions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "paid_compute": 0,
+  "private_raw_uploaded": false,
+  "uncommitted_preexisting_572_files_preserved": true
+}
