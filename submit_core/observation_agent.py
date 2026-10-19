@@ -498,7 +498,7 @@ def recover_pixel_edge(image,y,index,direction,blocked,max_row=55):
     return float(index+direction*edge)
 
 
-def recover_plain_run_edge(image,y,index,direction,blocked,paint_near):
+def recover_plain_run_edge(image,y,index,direction,blocked,paint_near,road_interval=None):
     """Place the same8-sample inversion on a visible road/grass transition."""
     # Inner plateau offsets are3,4. At most3 exterior shifts keep BOTH
     # samples in the original enclosing road run, including a steep raster.
@@ -506,12 +506,57 @@ def recover_plain_run_edge(image,y,index,direction,blocked,paint_near):
         anchor=index-direction*exterior
         ids=anchor+direction*np.arange(-3,5)
         if min(ids)<0 or max(ids)>=84 or paint_near[y,anchor]:continue
+        if road_interval is not None and not all(road_interval[0]<=anchor+direction*k<road_interval[1] for k in (3,4)):continue
         if not 156/255.<=float(np.mean(image[y,ids[:2]]))<=184/255.:continue
         measured=recover_pixel_edge(image,y,anchor,direction,blocked)
         # Keep the original inversion-domain scale relative to the RAW run,
         # rather than silently expanding it with each search-window shift.
+        if measured is not None and abs(measured-index)<=2.5:
+            palette=recover_shaded_run_edge(image,y,anchor,direction,blocked)
+            # A single-colour fit may overstate coverage at a shade seam.
+            # Where the palette also explains the samples, keep the more
+            # inward edge; the existing estimate is never expanded.
+            if palette is not None:measured+=direction*max(0.,direction*(palette-measured))
+            return measured
+    # A public road-tile shade seam is not a reversed road/grass transition.
+    # Only after every original constant-colour window fails, test the same
+    # windows against the bounded public asphalt palette.
+    for exterior in range(4):
+        anchor=index-direction*exterior
+        ids=anchor+direction*np.arange(-3,5)
+        if min(ids)<0 or max(ids)>=84 or paint_near[y,anchor]:continue
+        if road_interval is not None and not all(road_interval[0]<=anchor+direction*k<road_interval[1] for k in (3,4)):continue
+        measured=recover_shaded_run_edge(image,y,anchor,direction,blocked)
         if measured is not None and abs(measured-index)<=2.5:return measured
     return None
+
+
+def recover_shaded_run_edge(image,y,index,direction,blocked):
+    """Conservative area edge from monotone COVERAGE, not constant road gray.
+
+    Public asphalt tiles span102..107.1 before the raster arithmetic. Their
+    existing two-gray allowance gives100..109.1 in pixels. Keep the original
+    grass plateau, visibility, quantization and eight-sample support guards.
+    """
+    ids=index+direction*np.arange(-3,5);q=1/255.
+    if y>=54 or min(ids)<0 or max(ids)>=84 or np.any(blocked[y,ids]):return None
+    values=image[y,ids].astype(np.float64);grass=float(np.mean(values[:2]))
+    low=100/255.;high=109.1/255.
+    if np.ptp(values[:2])>2*q or not 156*q<=grass<=184*q:return None
+    if min(values[-2:])<low or max(values[-2:])>high or np.ptp(values[-2:])>2*q:return None
+    if grass-high<24*q:return None
+    lower=np.clip((grass-values-q)/(grass-low),0.,1.)
+    upper=np.clip((grass-values+q)/(grass-high),0.,1.)
+    # A monotone coverage must explain EVERY observed sample. This retains
+    # material contradictions instead of smoothing them into a passing edge.
+    if np.any(values<low-q) or np.any(values>grass+q):return None
+    lower=np.maximum.accumulate(lower);upper=np.minimum.accumulate(upper[::-1])[::-1]
+    if np.any(lower>upper):return None
+    # Minimum compatible road coverage puts the edge furthest into the road;
+    # the ordinary0.35m flank inset is still applied by the caller.
+    edge=4.5-float(np.sum(lower))
+    if not -2.5<=edge<=2.5:return None
+    return float(index+direction*edge)
 
 
 def _raster_halfplane(ids,row,edges,slope):
@@ -895,13 +940,15 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
             painted=bool(np.any(patch>.75) or np.any(patch<.35))
             limits.append(1.+extra if painted else 1.)
         allowances.append(np.asarray(limits))
-    if np.any(abs(matrix@lc-left)>allowances[0]) or np.any(abs(matrix@rc-right)>allowances[1]):return support,info
+    interval_fit_failed=bool(np.any(abs(matrix@lc-left)>allowances[0]) or np.any(abs(matrix@rc-right)>allowances[1]))
+    if initializing and interval_fit_failed:return support,info
     info['painted_flank_interval_rows']=int(np.sum((allowances[0]>1.)|(allowances[1]>1.)))
-    if abs(lc[0]-rc[0])*(max(y)-min(y))>2.:
+    if interval_fit_failed or abs(lc[0]-rc[0])*(max(y)-min(y))>2.:
         if initializing:return support,info
         # Painted flanks are intervals, not exact point samples. Determine
         # whether a common direction can satisfy all existing flank intervals
-        # before discarding the whole observed vehicle corridor.
+        # before discarding the whole observed vehicle corridor. Failure of
+        # one least-squares line is not infeasibility of those intervals.
         lower=-float('inf');upper=float('inf')
         for values,limits in ((left,allowances[0]),(right,allowances[1])):
             for i in range(len(y)):
@@ -1786,12 +1833,15 @@ class Agent:
                 # misses its exterior plateau. Re-anchor to the enclosing
                 # observed run, retaining the same monotone two-colour test
                 # and flank inset; no unseen/material-filled pixels are added.
-                if (a is None or b is None) and se-ss>=8 and sy<54:
+                # Flatness erosion and an object's hole can make this geometry
+                # fragment narrow while the RAW observed plateau is complete.
+                # Test the actual raw ray support, not the eroded run's width.
+                if (a is None or b is None) and sy<54:
                     raw=observed_run(sy,(ss+se-1)*.5,asphalt)
                     if raw is not None and raw[0]<=ss and raw[1]>=se:
                         for side,index,direction in ((0,raw[0],1),(1,raw[1]-1,-1)):
                             if (a if side==0 else b) is not None:continue
-                            measured=recover_plain_run_edge(image,sy,index,direction,blocked,paint_near)
+                            measured=recover_plain_run_edge(image,sy,index,direction,blocked,paint_near,raw)
                             raw_anchor_refined+=int(measured is not None)
                             if side==0:a=measured
                             else:b=measured

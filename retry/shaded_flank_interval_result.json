@@ -1,0 +1,100 @@
+{
+  "status": "INPUT_CONNECTION_REPAIRS_VERIFIED_NOT_PROMOTED",
+  "base_commit": "bcaf78c0711d8d9dddc63f83c56fa528843201a3",
+  "final_agent_sha256": "32ff5ab9557e4f5435b88e8c0444fd5c32d9453221b55f2b7c50c296e384fa8f",
+  "unchanged_core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "implementation": [
+    "Use bounded public asphalt palette and monotone coverage intervals after existing constant-colour edge windows fail; where both fit, retain inward edge. Existing0.35m inset and material/visibility guards retained.",
+    "Use actual raw-run inner plateau containment for eight-sample recovery when flatness/object holes narrow geometry fragments; keep blocked and paint checks.",
+    "When an OLS flank fit misses existing intervals after initialization, run the existing common-slope interval feasibility test before rejecting all vehicle corridor support. Keep spawn policy, tolerances, width checks and visible vetoes."
+  ],
+  "public_gates": {
+    "shaded_profiles": {
+      "cases": 1238,
+      "new_recoveries": 29,
+      "existing_recoveries_tightened": 1172,
+      "legacy_outside_profiles": 5,
+      "new_outside_after_existing_inset": 0,
+      "negative_guards": 4
+    },
+    "narrow_fragments": {
+      "cases": 24,
+      "new_edges": 156,
+      "outside_samples": 0,
+      "negative_guards": 2
+    },
+    "flank_intervals": {
+      "cases": 5,
+      "failed_OLS_feasible_counterexample": true,
+      "spawn_and_infeasible_and_obstacle_and_grass_guards": true
+    },
+    "final_source_regressions": {
+      "local_support": "PASS",
+      "fov_support": "PASS",
+      "full_mesh_cases": 144,
+      "full_mesh_outside_samples": 0
+    }
+  },
+  "cached_gates": {
+    "saved_baseline_call48_admitted": true,
+    "call48_model_ticks": 311,
+    "saved_regression_call43_admitted": true,
+    "call43_model_ticks": 583,
+    "same_polygon_call43_road_margin_before_m": -1.8911522633744844,
+    "same_polygon_call43_road_margin_after_m": 2.052145796590242,
+    "existing_collision_exclusion_unchanged": true,
+    "motion_state_unchanged_except_reconstructed_road_contacts_and_friction": true,
+    "reference_near_edge_continuation": "Existing observed continuation becomes eligible after support restoration; no unseen suffix."
+  },
+  "final_source_native": {
+    "status": "INPUT_OR_ADMISSION_STOP",
+    "valid_actions": 46,
+    "first_failed_call": 47,
+    "unchanged_action_prefix_vs_base": 41,
+    "unchanged_action_prefix_vs_initial_candidate": 42,
+    "progress": 0.14487632508833923,
+    "damage": 0,
+    "max_whole_act_wall_s": 1.909567318012705,
+    "model_ticks": 26959,
+    "CPU_s": 50.416933963999995,
+    "wall_s": 49.89941735297907,
+    "first_failure_reasons": {
+      "FORECAST_FOOTPRINT_MARGIN": 1,
+      "REFERENCE_WITH_NUMERIC_RESERVE": 9,
+      "FORCE_PEAK": 11
+    },
+    "exact_first_failure_replay": true,
+    "official_server_runtime_parity": false
+  },
+  "remaining_blockers": {
+    "geometry": "A current visible asphalt seam remains between the inferred object-road patch and independently inset road mesh. A connector requires its own observed-support counterexample and unchanged collision exclusion.",
+    "reference": "Near-join lattice association rejects phase correspondence; four consistent matches and one ambiguous near match require ordered association analysis. No threshold or guessed phase change.",
+    "next_gate": "Public synthetic seam/association counterexample with unchanged ambiguity/material/collision guards before any new cached or native work."
+  },
+  "promotion": {
+    "promoted": false,
+    "base_valid_actions": 47,
+    "final_valid_actions": 46,
+    "reason": "Cached input repairs and finite public tests pass, but sameDEV outcome does not improve. No finish, lap-time or safety claim."
+  },
+  "phase_usage": {
+    "phase_DEV_actions": 88,
+    "phase_DEV_attempts": 90,
+    "resets": 2,
+    "phase_model_ticks": 53166,
+    "phase_raw_physics": 454,
+    "measured_CPU_s": 158.120868596,
+    "phase_wall_s": 1091.275814,
+    "additional_unmetered_CPU_allowance_s": 30,
+    "research_remaining": 19372,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve_used": 0
+  },
+  "reproduction": [
+    "python -m retry.shaded_road_edge_check /tmp/shaded.json",
+    "python -m retry.narrow_fragment_edge_check /tmp/narrow.json",
+    "python -m retry.flank_interval_check /tmp/flanks.json"
+  ],
+  "limits": "Finite synthetic pixels and two sameDEV resets. Bounded palette/monotone coverage and occluded connected-road support are conditional engineering models, not universal physical guarantees. The direct geometry-run inversion is unchanged. Controller/chooser/physics/horizon/thresholds/speed coefficients unchanged; pixels and reset-local own memory only. No private case state, images or action traces published."
+}
