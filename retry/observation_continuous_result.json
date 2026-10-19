@@ -1,0 +1,83 @@
+{
+  "status": "INPUT_OR_ADMISSION_STOP",
+  "scope": "One live closed-loop integration episode of unchanged 7c4b8f7 observation Agent/runtime598; no candidate search or rerun.",
+  "source_sha256": {
+    "submit_core/observation_agent.py": "1c153f5978fb42dd8b466748b67d5a122628a5afd3fc5004e917225e3de7c481",
+    "submit_core/runtime598.py": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8"
+  },
+  "caps": {
+    "episodes": 1,
+    "DEV_actions": 1000,
+    "model_ticks": 500000,
+    "CPU_s": 1800,
+    "wall_s": 3600
+  },
+  "existing_limits": {
+    "application": "All share persistent Agent counter across chooser calls and own-action propagation; reset does not clear cost counter.",
+    "adapter": 50000,
+    "chooser": 180000,
+    "kernel": 200000,
+    "limits_changed": false,
+    "limit_reached": false
+  },
+  "outcome": {
+    "successfully_applied_actions": 35,
+    "first_failure_call": 36,
+    "progress": 0.10600706713780919,
+    "damage": 0.0,
+    "finish_event": false,
+    "finish_time_s": null,
+    "original_13_22_s_reproduced": false,
+    "stop_error": "WorkerError:RuntimeError:NO_ESTIMATED_INPUT_ADMISSIBLE_ACTION",
+    "chooser_reason": "NO_ADMISSIBLE_ACTION",
+    "rejection_counts": {
+      "FORCE_PEAK": 21
+    }
+  },
+  "cost": {
+    "DEV_actions": 35,
+    "model_ticks_including_failed_call": 24029,
+    "CPU_s": 32.653338014,
+    "wall_s": 32.58258437100449,
+    "drive_raw_ticks": 140,
+    "reset_physics_raw_ticks": 51,
+    "previous_phase_DEV_actions": 28,
+    "previous_phase_model_ticks": 22346,
+    "combined_DEV_actions": 63,
+    "combined_model_ticks": 46375,
+    "research_actions_remaining": 20682,
+    "reserve_used": 0,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0
+  },
+  "timing": {
+    "definition": "Parent request wall: pixel IPC + observation processing + state/map estimates + original chooser + own-action propagation + action return. Environment.step excluded.",
+    "max_whole_act_s": 1.5539837989927037,
+    "failed_whole_act_s": 0.4042938789934851,
+    "startup_s": 0.11108080900157802,
+    "reset_s": 0.0005601209995802492,
+    "max_RSS_KiB": 54376,
+    "official_server_parity": false
+  },
+  "external_diagnostics": {
+    "Agent_received_truth": false,
+    "successful_call_speed_RMSE_m_s": 0.8699947925384199,
+    "successful_call_speed_max_abs_m_s": 2.3760521415764444,
+    "successful_call_wheel_omega_RMSE_rad_s": 0.9376666517226966,
+    "successful_call_wheel_omega_max_abs_rad_s": 1.8736568330340333,
+    "failed_call_speed_error_m_s": -0.6671220532421316,
+    "failed_call_optical_flow_confidence": 0.0,
+    "successful_call_finite_path_length_range_m": [
+      37.6413747523505,
+      45.25502170286754
+    ],
+    "failed_call_finite_path_length_m": 45.2563532069895,
+    "calls_with_truth_obstacle_in_approx_camera_frustum": 5,
+    "obstacle_detection_or_coverage_certified": false,
+    "full_corner_coverage_certified": false
+  },
+  "diagnosis": "Original chooser rejected all21 candidates for FORCE_PEAK on estimated inputs. Current logs do not preserve rejected forecast peak/tick or failed-input true wheel snapshot; estimation vs forecast-demand cause remains unresolved.",
+  "minimum_next_change_direction": "Add rejection peak/first-failing-tick and same-instant external failed-input snapshot; leave policy/constants/admission thresholds unchanged. No patch to Agent and no extra episode in this stage.",
+  "privacy": "Raw imagery/actions/state/coordinates/case identifiers stay outside public repository.",
+  "promotion": "None; completion, corner/obstacle validity, and safety not established."
+}

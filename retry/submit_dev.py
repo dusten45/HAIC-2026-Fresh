@@ -122,11 +122,13 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--label',required=True);parser.add_argument('--steps',type=int,default=120)
     parser.add_argument('--agent-source');parser.add_argument('--runtime-core',action='store_true')
     parser.add_argument('--model-tick-budget',type=int,default=50000)
+    parser.add_argument('--continuous-runtime',action='store_true')
     args=parser.parse_args();assert 0<args.steps<=2000
-    if args.runtime_core:assert args.steps<=20,'INITIAL_RUNTIME_LINK_SMOKE_CAP'
+    if args.continuous_runtime:assert args.runtime_core and args.steps<=1000,'CONTINUOUS_RUNTIME_CAP'
+    elif args.runtime_core:assert args.steps<=20,'INITIAL_RUNTIME_LINK_SMOKE_CAP'
     if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:raise RuntimeError('AUTHORIZATION_EXPIRED')
     PRIVATE.mkdir(mode=0o700,exist_ok=True);out=PRIVATE/args.label;out.mkdir(mode=0o700,exist_ok=False)
-    source,source_hash=package(out,args.agent_source,ROOT/'submit_core/runtime598.py' if args.runtime_core else None);client=None;env=None;rows=[];status='TECHNICAL_FAILURE';error=None;reset=None;summary={};failure_payload=None
+    source,source_hash=package(out,args.agent_source,ROOT/'submit_core/runtime598.py' if args.runtime_core else None);client=None;env=None;rows=[];status='TECHNICAL_FAILURE';error=None;reset=None;summary={};failure_payload=None;worker_cpu=0.
     try:
         client=Client(source,out,args.model_tick_budget)
         import numpy as np
@@ -148,18 +150,36 @@ def main():
         ledger_charge('resets');obs,info=env.reset(seed=case['seed'],options={'track_id':case['track_id']})
         assert obs.shape==(4,84,84) and obs.dtype==np.float32 and np.isfinite(obs).all()
         reset=client.request(b'R',obs);epoch=raw.t
+        worker_cpu=reset['CPU_s']
         cv2.imwrite(str(out/'initial-private.png'),np.rint(obs[-1]*255).astype(np.uint8))
         status='ACTION_LIMIT_CENSORED'
         with (out/'decisions-private.jsonl').open('w') as log:
             for i in range(args.steps):
                 if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:status='AUTHORIZATION_CENSORED';break
+                if args.continuous_runtime:
+                    if time.perf_counter()-START>=3594.:status='WALL_BUDGET_CENSORED';break
+                    if time.process_time()-CPU+worker_cpu+client.startup>=1794.:status='CPU_BUDGET_CENSORED';break
                 q=client.request(b'A',obs);a=np.asarray(q['action'],np.float32)
+                worker_cpu+=q['CPU_s']
                 # Same-instant pre-action truth is diagnostic only, outside IPC.
                 diagnostic=q.get('diagnostics',{})
                 estimate_error={}
                 if args.runtime_core:
                     estimate_error=dict(speed_m_s=float(diagnostic['estimated_speed']-np.linalg.norm(raw.car.hull.linearVelocity)),
                         wheel_omega_rad_s=(np.asarray(diagnostic['estimated_wheel_omega'])-np.asarray([w.omega for w in raw.car.wheels])).tolist())
+                    # Camera-frustum membership is not a visibility certificate:
+                    # occlusion and raster detection still remain unresolved.
+                    angle=float(raw.car.hull.angle);co=np.cos(angle);si=np.sin(angle)
+                    obstacle_local=[]
+                    for body in raw.obstacles:
+                        dx=float(body.position[0]-raw.car.hull.position[0]);dy=float(body.position[1]-raw.car.hull.position[1])
+                        obstacle_local.append((co*dx+si*dy,-si*dx+co*dy))
+                    estimate_error['observed_scope']=dict(
+                        finite_path_arc_m=diagnostic['uncertainty']['observation_support_m'],
+                        estimated_global_map=False,
+                        truth_obstacle_centers_in_approx_camera_frustum=int(sum(abs(x)<=42/1.3608 and -6/1.701<=y<=58/1.701 for x,y in obstacle_local)),
+                        nearest_truth_obstacle_distance_m=min((float(np.hypot(x,y)) for x,y in obstacle_local),default=None),
+                        visibility_or_detection_certified=False)
                 before=raw.t;ledger_charge('actions');obs,reward,terminated,truncated,info=env.step(a)
                 ticks=round((raw.t-before)/.02)
                 row=dict(index=i+1,action=q['action'],diagnostics=q.get('diagnostics'),whole_act_wall_s=q['whole_request_wall_s'],worker_wall_s=q['wall_s'],worker_CPU_s=q['CPU_s'],max_RSS_KiB=q['max_RSS_KiB'],model_ticks_total=q.get('resource_model_ticks',0),raw=ticks,progress=info['progress'],damage=info['damage'],true_hull_speed=float(np.linalg.norm(raw.car.hull.linearVelocity)))
@@ -177,10 +197,15 @@ def main():
         if isinstance(exc,WorkerError):
             failure_payload=exc.payload
             if any(s in str(exc) for s in ['NO_ESTIMATED_INPUT','OBSERVED_ROAD_SUPPORT','OBSERVED_PATH_SUPPORT']):status='INPUT_OR_ADMISSION_STOP'
+            elif 'TICK_BUDGET' in str(exc) or 'MODEL_TICK_CAP' in str(exc):status='MODEL_BUDGET_CENSORED'
         error=type(exc).__name__+':'+str(exc)
         import traceback
         (out/'error-private.txt').write_text(traceback.format_exc())
     finally:
+        if env is not None and reset is not None:
+            summary=dict(progress=info.get('progress'),damage=info.get('damage'),finish_time_s=raw.finish_time_s,
+                lap_time_s=(raw.finish_time_s-epoch) if raw.finish_time_s is not None else None,
+                drive_raw=round((raw.t-epoch)/.02),reset_physics_raw=round(epoch/.02),retire_reason=info.get('retire_reason'))
         if env is not None:env.close()
         if client is not None:client.close()
         usage=json.loads((PRIVATE/'usage-private.json').read_text()) if (PRIVATE/'usage-private.json').exists() else {}
