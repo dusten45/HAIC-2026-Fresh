@@ -1,0 +1,136 @@
+{
+  "status": "LOCAL_VARIABLE_CURVATURE_AND_MATERIAL_FIXES_ADVANCE_LIVE_STOP_FROM_DECISION40_TO45",
+  "implementation": {
+    "boundary": "Clean observed outer contour -> local quadratic tangents -> public fixed-width offset -> piecewise inner boundary. Coarse circle guides observation sampling only.",
+    "support": "Red OR white curb evidence; coherent2x2 grass veto; painted flank samples treated as intervals spanning public curb width. Known vehicle-only gaps may be inferred conditionally.",
+    "guards": "No extrapolation across missing local fits or clipped frame boundaries; observed obstacles and grass patches veto additions; atan2 branch-cut rotation checked.",
+    "original_controller_physics_horizon_candidates_gates_unchanged": true,
+    "inset_m": 0.35,
+    "true_state_or_seed_or_global_map_in_Agent": false,
+    "true_state_certificate": false,
+    "universal_observation_uncertainty_bound": false
+  },
+  "public_checks": {
+    "curve_scenes": 144,
+    "continuous_boundary_updates": 775,
+    "outside_road_edges_or_added_pixels": 0,
+    "material_and_occlusion_guards": 8,
+    "rotation_equivariance_max_error_m": 9.558136922729522e-14,
+    "local_support_cases": 10,
+    "local_support_outside_or_forbidden_pixels": 0,
+    "scope": "Finite public synthetic falsification checks; not universal bounds or a safety certificate."
+  },
+  "cached_gates": [
+    {
+      "failure_decision": 40,
+      "fix": "Local contour offset plus grass/curb material disambiguation",
+      "admitted": true,
+      "whole_act_s": 1.3153244639979675
+    },
+    {
+      "failure_decision": 42,
+      "fix": "A public curb tile can be red OR white; both colours are not required in the local patch",
+      "admitted": true,
+      "whole_act_s": 0.7588758169731591
+    },
+    {
+      "failure_decision": 44,
+      "fix": "Visible curb-width intervals prevent a painted flank from invalidating all current-vehicle road support",
+      "admitted": true,
+      "whole_act_s": 0.3613157290092204
+    }
+  ],
+  "live_runs": [
+    {
+      "applied_actions": 41,
+      "failure_decision": 42,
+      "progress": 0.12014134275618374,
+      "damage": 0.0,
+      "max_whole_act_s": 2.1087425390142016,
+      "model_ticks": 28801,
+      "CPU_s": 54.401542422,
+      "full_checkpoint_saved_private": true
+    },
+    {
+      "applied_actions": 43,
+      "failure_decision": 44,
+      "progress": 0.12367491166077739,
+      "damage": 0.0,
+      "max_whole_act_s": 2.242765764007345,
+      "model_ticks": 29599,
+      "CPU_s": 56.889445687,
+      "full_checkpoint_saved_private": true
+    },
+    {
+      "applied_actions": 44,
+      "failure_decision": 45,
+      "progress": 0.127208480565371,
+      "damage": 0.0,
+      "max_whole_act_s": 2.268529107008362,
+      "model_ticks": 30169,
+      "CPU_s": 56.951995515,
+      "full_checkpoint_saved_private": true
+    }
+  ],
+  "latest_failure": {
+    "decision": 45,
+    "finished": false,
+    "lap_time_s": null,
+    "original13_22s_reproduced": false,
+    "rejections": {
+      "FORCE_PEAK": 9,
+      "FORECAST_FOOTPRINT_MARGIN": 12
+    },
+    "estimated_kinematics_history_reference_fixed_actual_map_admits": true,
+    "actual_map_contact_frictions_identical_to_observed": true,
+    "failed_predicted_polygons": 12,
+    "observed_margin_range_m": [
+      0.3853976553272143,
+      0.4909934717340389
+    ],
+    "actual_map_margin_range_m": [
+      0.5948120165167147,
+      0.8006182211576314
+    ],
+    "remaining_blocker": "Estimated boundary still understates forecast margin near the inner bend. Actual-map margins are only0.595..0.801m; the fixed inset plus observation uncertainty leaves estimates below0.5m. Current clean contour support does not justify a further expansion."
+  },
+  "rejected_extension": {
+    "method": "Local cubic tangent fit",
+    "public_falsification_passed": true,
+    "full_saved_Agent_admitted": false,
+    "model_ticks": 289,
+    "new_live_runs": 0,
+    "source_restored_to_exact_live_validated_quadratic_version": true
+  },
+  "diagnostic_recovery": {
+    "full_measured_state_conversion_precision_guard_preserved": true,
+    "raw_measured_rigid_representation_position_error_m": 1.060904830328419e-05,
+    "raw_measured_rigid_representation_velocity_error_m_s": 0.000122955472432924,
+    "recovery": "Use a separate map-only external comparison, rebuilding contacts and contact friction from the changed map; leave estimated kinematics/history/reference fixed. No rigid-state tolerance or core gate weakened."
+  },
+  "cost": {
+    "caps": {
+      "DEV_actions": 400,
+      "model_ticks": 250000,
+      "CPU_s": 1800,
+      "wall_s": 3600
+    },
+    "new_DEV_actions": 128,
+    "new_model_ticks": 94758,
+    "measured_recorded_CPU_s": 184.328423203,
+    "additional_setup_and_unrecorded_probe_CPU_reservation_s": 120,
+    "stage_wall_s_at_closeout": 1073.758614,
+    "research_actions_remaining": 20321,
+    "integration_actions_total": 424,
+    "integration_model_ticks_total": 318071,
+    "reserve_used": 0,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0
+  },
+  "next_gate": "A more accurate observable boundary/reference reconstruction must pass physical-road overstatement checks and the saved complete decision45 Agent input before another reset. No lower inset, controller gate change or unsupported replay.",
+  "privacy": "Code, public synthetic tests and aggregates only. Raw pixels, reset identity, actual geometry/state and complete checkpoints remain private.",
+  "source_sha256": {
+    "submit_core/observation_agent.py": "a73f44a9c69f46fabd55be763890518ad097cd61663eafbc43bc4583045a9140",
+    "submit_core/runtime598.py": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8"
+  }
+}

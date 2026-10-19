@@ -196,7 +196,23 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
     y=np.array([r[0] for r in candidates],float);matrix=np.column_stack((y-IMAGE_ORIGIN_Y,np.ones(len(y))))
     left=np.array([r[1] for r in candidates],float);right=np.array([r[2] for r in candidates],float)
     lc=np.linalg.lstsq(matrix,left,rcond=None)[0];rc=np.linalg.lstsq(matrix,right,rcond=None)[0]
-    if max(np.max(abs(matrix@lc-left)),np.max(abs(matrix@rc-right)))>1.:return support,info
+    # A red/white curb mixture can cross the asphalt brightness threshold
+    # outside the physical edge. Treat that visible flank as a pixel interval
+    # spanning the public curb width, rather than as an exact boundary sample.
+    allowances=[]
+    for side,coefficient in ((1,lc),(2,rc)):
+        extra=(8./6.)*1.3608*math.sqrt(1+(coefficient[0]*1.701/1.3608)**2)
+        limits=[]
+        for row in candidates:
+            sy,index=row[0],row[side]
+            ys=slice(max(0,sy-1),min(84,sy+2));xs=slice(max(0,index-3),min(84,index+4))
+            visible=(cover[ys,xs]==0)&~obstacle_mask[ys,xs]
+            patch=image[ys,xs][visible]
+            painted=bool(np.any(patch>.75) or np.any(patch<.35))
+            limits.append(1.+extra if painted else 1.)
+        allowances.append(np.asarray(limits))
+    if np.any(abs(matrix@lc-left)>allowances[0]) or np.any(abs(matrix@rc-right)>allowances[1]):return support,info
+    info['painted_flank_interval_rows']=int(np.sum((allowances[0]>1.)|(allowances[1]>1.)))
     if abs(lc[0]-rc[0])*(max(y)-min(y))>2.:return support,info
     slope=(lc[0]+rc[0])*.5
     normal_width=(right-left)/1.3608/math.sqrt(1+(slope*1.701/1.3608)**2)
@@ -212,11 +228,63 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
     return support,info
 
 
-def infer_painted_road_band(image,asphalt,blocked):
-    """Constant-width turning-road hypothesis from a clean opposite contour.
+def coherent_grass_mask(image):
+    """Grass-coloured plateaus, including a one-output-pixel raster fringe.
 
-    Only mixed paint near the existing contour is added; visible grass,
-    obstacles, clipped support and extrapolated angular sectors stay excluded.
+    A lone grey sample can also be a red/white paint mixture. Only a visible
+    flat2x2 grass-colour patch supplies material evidence here. Thin unseen
+    grass and overlapping road branches remain an unresolved ambiguity.
+    """
+    grass=(image>=156/255.)&(image<=184/255.)
+    plateau=np.zeros((84,84),np.uint8)
+    low=np.minimum.reduce((image[:-1,:-1],image[1:,:-1],image[:-1,1:],image[1:,1:]))
+    high=np.maximum.reduce((image[:-1,:-1],image[1:,:-1],image[:-1,1:],image[1:,1:]))
+    flat=(low>=156/255.)&(high<=184/255.)&(high-low<=3/255.)
+    for dy in (0,1):
+        for dx in (0,1):plateau[dy:83+dy,dx:83+dx]|=flat
+    return grass&(cv2.dilate(plateau,np.ones((3,3),np.uint8))>0)
+
+
+def offset_observed_contour(points,center,radius):
+    """Local quadratic tangents, then the public width offset; no circle offset.
+
+    The coarse circle supplies only a monotone parameter and observed-edge
+    search rays. Every local fit uses actual visible contour samples on both
+    sides. Residual/chord/raster allowances are engineering priors, not bounds.
+    """
+    points=np.asarray(points,np.float64);center=np.asarray(center,np.float64)
+    angles=np.arctan2(points[:,1]-center[1],points[:,0]-center[0])
+    anchor=math.atan2(float(np.mean(np.sin(angles))),float(np.mean(np.cos(angles))))
+    angles=anchor+(angles-anchor+math.pi)%(2*math.pi)-math.pi
+    order=np.argsort(angles);angles=angles[order];points=points[order]
+    step=21./6.;half_window=2*step;nominal=2*(40./6.)
+    contour=[];residuals=[]
+    for angle in np.arange(float(min(angles)),float(max(angles)),.05):
+        distance=(angles-angle)*radius;selected=abs(distance)<=half_window
+        if int(np.sum(selected))<7:continue
+        q=distance[selected]
+        if min(q)>-step or max(q)<step:continue
+        z=q/half_window;matrix=np.column_stack((np.ones(len(z)),z,z*z))
+        if np.linalg.cond(matrix)>100.:continue
+        coefficients=np.linalg.lstsq(matrix,points[selected],rcond=None)[0]
+        residual=float(np.max(np.linalg.norm(matrix@coefficients-points[selected],axis=1)))
+        if residual>.35:continue
+        tangent=coefficients[1];length=float(np.linalg.norm(tangent))
+        if length<1.:continue
+        normal=np.array([tangent[1],-tangent[0]])/length
+        if float(normal@(coefficients[0]-center))<0:normal=-normal
+        uncertainty=residual+nominal*(1-math.cos(.31/2))+1/(2.7*6.)
+        inner=coefficients[0]-(nominal-uncertainty)*normal
+        contour.append((float(inner[0]),float(inner[1]),float(angle)));residuals.append(residual)
+    return contour,residuals
+
+
+def infer_painted_road_band(image,asphalt,blocked):
+    """Piecewise fixed-width road hypothesis from a clean opposite contour.
+
+    Coarse circles guide visible contour sampling only. Local tangents allow
+    variable curvature. Visible grass, blocked pixels and unseen sectors veto
+    support; the reference path and existing inset are unchanged.
     """
     contours=[[],[]];rows=[];anchor=IMAGE_ORIGIN_X
     for y in range(54,4,-1):
@@ -284,40 +352,40 @@ def infer_painted_road_band(image,asphalt,blocked):
                 center,radius,residual=new_center,new_radius,new_residual
                 low,high=float(min(angles)),float(max(angles));observed_points=candidate
                 verified+=1
-        # Public per-node turn chord discrepancy and one source raster pixel.
-        uncertainty=residual+nominal*(1-math.cos(.31/2))+1/(2.7*6.)
-        inner=radius-nominal+uncertainty
-        yy,xx=np.indices((84,84));x=(xx-IMAGE_ORIGIN_X)/1.3608;y=(IMAGE_ORIGIN_Y-yy)/1.701
-        rho=np.hypot(x-center[0],y-center[1]);theta=np.arctan2(y-center[1],x-center[0])
-        midpoint=(low+high)/2;theta=midpoint+(theta-midpoint+math.pi)%(2*math.pi)-math.pi
-        eligible=(rho>=inner)&(rho<=radius)&(theta>=low)&(theta<=high)&(yy>=5)&(yy<55)&~blocked
-        # Require actual mixed red/white paint, never plain observed grass.
+        inner_points,local_residuals=offset_observed_contour(observed_points,center,radius)
+        if len(inner_points)<2:continue
         white=cv2.dilate((image>.75).astype(np.uint8),np.ones((3,9),np.uint8))>0
         red=cv2.dilate((image<.35).astype(np.uint8),np.ones((3,9),np.uint8))>0
-        eligible &= white&red&~((image>=156/255.)&(image<=184/255.))
+        grass=coherent_grass_mask(image)
         reach=math.ceil(((8./6.)+math.hypot(1/1.3608,1/1.701))*1.3608)
-        local=np.zeros((84,84),bool)
+        added_before=int(support.sum());edge_count=0
         for row,a,b in rows:
-            if side==1:local[row,max(1,a-reach):a]=True
-            else:local[row,b+1:min(83,b+reach+1)]=True
-            if row>=55:continue
-            world_y=(IMAGE_ORIGIN_Y-row)/1.701;vertical=world_y-center[1]
-            if abs(vertical)>=inner:continue
-            world_x=center[0]+(1 if side==1 else -1)*math.sqrt(inner*inner-vertical*vertical)
-            pixel_x=IMAGE_ORIGIN_X+1.3608*world_x
-            if not (a-reach<=pixel_x<a if side==1 else b<pixel_x<=b+reach):continue
-            theta_point=math.atan2(vertical,world_x-center[0]);mid=(low+high)/2
-            theta_point=mid+(theta_point-mid+math.pi)%(2*math.pi)-math.pi
-            lo=max(0,int(math.floor(pixel_x)));hi=min(83,int(math.ceil(pixel_x)))
-            if not low<=theta_point<=high or np.any(blocked[row,lo:hi+1]):continue
-            if np.any((image[row,lo:hi+1]>=156/255.)&(image[row,lo:hi+1]<=184/255.)):continue
-            if not (white[row,lo] and red[row,lo]):continue
-            updates[(side,row)]=float(pixel_x)
-        selected=eligible&local&~asphalt.astype(bool);support[selected]=1
+            world_y=(IMAGE_ORIGIN_Y-row)/1.701;candidates=[]
+            for first,last in zip(inner_points,inner_points[1:]):
+                if last[2]-first[2]>.051:continue
+                if first[1]==last[1] or (first[1]-world_y)*(last[1]-world_y)>0:continue
+                weight=(world_y-first[1])/(last[1]-first[1])
+                world_x=first[0]+weight*(last[0]-first[0]);pixel_x=IMAGE_ORIGIN_X+1.3608*world_x
+                eligible=(a-reach<=pixel_x<a) if side==1 else (b<pixel_x<=b+reach)
+                if eligible and 1.<=pixel_x<=82.:
+                    candidates.append(float(pixel_x))
+            if not candidates:continue
+            pixel_x=max(candidates) if side==1 else min(candidates)
+            lo=max(0,int(math.floor(pixel_x if side==1 else b)))
+            hi=min(83,int(math.ceil(a if side==1 else pixel_x)))
+            if np.any(blocked[row,lo:hi+1]) or np.any(grass[row,lo:hi+1]):continue
+            index=max(0,min(83,int(round(pixel_x))))
+            # Each public curb tile is red OR white; a junction is optional.
+            if not (white[row,index] or red[row,index]):continue
+            updates[(side,row)]=pixel_x;edge_count+=1
+            if side==1:support[row,int(math.ceil(pixel_x)):a]=1
+            else:support[row,b+1:int(math.floor(pixel_x))+1]=1
+        support[asphalt.astype(bool)]=0
         fits.append(dict(outer_side=side,observations=len(points),radial_residual_m=residual,
-            inferred_uncertainty_m=uncertainty,angular_support_rad=high-low,added_pixels=int(np.sum(selected)),
-            estimated_center_m=[float(center[0]),float(center[1])],estimated_radius_m=float(radius),
-            estimated_inner_radius_m=float(inner),verified_2D_extensions=verified))
+            angular_support_rad=high-low,added_pixels=int(support.sum())-added_before,
+            verified_2D_extensions=verified,local_offset_points=len(inner_points),
+            local_offset_edges=edge_count,local_max_residual_m=max(local_residuals),
+            offset_method='local quadratic tangent + public width; circle used only for observed sampling'))
     return support,dict(painted_band_added_pixels=int(support.sum()),painted_band_fits=fits,
         painted_band_bound_universally_validated=False),updates
 

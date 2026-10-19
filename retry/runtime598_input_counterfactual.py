@@ -16,6 +16,7 @@ def load(path):return json.loads(Path(path).read_text())
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('checkpoint_directory')
     parser.add_argument('fixture');parser.add_argument('output_directory')
+    parser.add_argument('--map-only',action='store_true',help='Hold estimated kinematics/history; rebuild map contacts/friction; skip measured-state conversion.')
     args=parser.parse_args();directory=Path(args.checkpoint_directory);out=Path(args.output_directory)
     out.mkdir(exist_ok=False);start=time.perf_counter();cpu=time.process_time()
     sys.path.insert(0,str(directory/'package'));import runtime598 as core
@@ -35,6 +36,31 @@ def main():
     observed=core.Scene(checkpoint['roads'],checkpoint['boundary'],checkpoint['obstacles'])
     exact=core.Scene(roads,boundary,obstacles)
     estimated=core.load_required_root(checkpoint['root'])
+
+    if args.map_only:
+        # A map-only comparison does not require a measured rigid-state fit.
+        # Box2D joint deflection can make that separate conversion fail its
+        # precision assertion. Preserve that assertion and all core gates.
+        contacts=tuple(core.indexed_contacts(core.rectangle(tuple(estimated.center[j]+r[j] for j in range(2)),w.heading),
+            exact.roads,exact.index,estimated.skin) for r,w in zip(estimated.planar.levers,estimated.planar.linear.wheels))
+        wheels=tuple(dataclasses.replace(w,friction=max([estimated.floor,*[400.*exact.roads[j][1] for j in ids]]))
+            for w,ids in zip(estimated.planar.linear.wheels,contacts))
+        changed=dataclasses.replace(estimated,roads=exact.roads,current_contacts=contacts,
+            planar=dataclasses.replace(estimated.planar,linear=dataclasses.replace(estimated.planar.linear,wheels=wheels)))
+        controller=core.Controller(checkpoint['high'],checkpoint['low'],exact)
+        controller.model[0]=checkpoint['counter_before'];before=controller.model[0]
+        action,report=controller.select(changed,checkpoint['progress'],checkpoint['hold'],checkpoint['launch_history'],checkpoint['running_history'])
+        dump(out/'inputs-private.json',dict(estimated=estimated,roads=roads,boundary=boundary,obstacles=obstacles))
+        dump(out/'estimated_vehicle_true_map-private.json',dict(action=action,report=report,root=changed))
+        summary=dict(world_identity_match=True,estimated_kinematics_and_history_fixed=True,contact_friction_rebuilt_from_changed_map=True,
+            old_contact_frictions=[w.friction for w in estimated.planar.linear.wheels],new_contact_frictions=[w.friction for w in wheels],admitted=action is not None,
+            mode=report['mode'],observed_current_margin_m=observed.margin(estimated),
+            true_map_current_margin_m=exact.margin(changed),model_ticks=controller.model[0]-before,native_actions=0,
+            CPU_s=time.process_time()-cpu,wall_s=time.perf_counter()-start,
+            limits='Map-only external counterfactual. Estimated kinematics, reference paths and history held fixed; contacts/friction rebuilt from changed map; no measured-state conversion and no Agent truth input.')
+        dump(out/'result-private.json',summary)
+        assert summary['model_ticks']<=100000 and summary['wall_s']<5.,'DIAGNOSTIC_LIMIT'
+        print(json.dumps(summary,indent=2));return
 
     # Measured rigid state in the camera frame. Unrecorded relative wheel rates
     # and clip history stay estimated; this is not a full true-state certificate.
