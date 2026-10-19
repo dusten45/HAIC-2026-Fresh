@@ -1,0 +1,102 @@
+{
+  "study": 577,
+  "registered_utc": "2026-10-19T03:39:12.887051+00:00",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "method": "One bounded6dimensional coordinate pattern search;source evaluations alone decide safety/acceptance. No roundingtube gate,LP,largeFD,calibration,envelopemodification,oradditionalstudy.",
+  "basis_rule": "Six disjoint22hold windows35..56,57..78,79..100,101..122,123..144,145..166. Each264control normalized basis is projected negative stored574 timegradient in its44coordinates,orthogonal to atmost8independent mostcritical storedphysical/rank/signedsupport rows selected byslack/rowL2norm. Ifprojectedgradient<1e-10relativerawnorm,useunprojectedgradient;ifrawgradientzero,use deterministic smoothsteer/pedal sinusoid. Normalizeinfinitynorm1;orienttimepredictiondownhill. Basisfrozenbeforefirstsource;diagnosticonly,notuniversalconstraintbound.",
+  "poll_rule": "Atmost2rounds,6bases/round,two signs/basis fromsameprebasisactualsafeincumbent. Plusbeforeminus;afterboth choosebeststrictsafe>=1usactualwholegain andcandidate raw<=current. Step.004 normalizedinitial;round2.002onlyifround1accepts0,otherwisekeep.004. Nothirdroundorothersteps. Atmost24sourcecandidates;duplicate/quantizedzero slots skipwithoutreplacement. Fullroundnoprogress counts asstagnation;2suchroundsstop. Maxround2alwaysstops.",
+  "proposal": "Float32signedpedal/steer,domainclippedagainstexactrepresentablephysicalboundsandglobalnormalizedinfinityradius.012around573seed. All264controls mayparticipate;noendpointface. Fixedholds1..34. Predictedgain/physicalresidualsfromoldJacobianarediagnosticsandnevervetootherwisevalidcandidate.",
+  "acceptance": "Everycandidateinitial-sourcefullstrictfinishthroughraw662. Original551reference,exactprefixclipping,launch/trackingforce,footprint,path,projection,body,andofficialtrackerallunchanged. Unsafeorunfinishedneverincumbent. Actualsafehullgain>=1us andcandidate raw<=working. Officialpromotiononlyraw<660andfinalindependentexactreplay. Samecommandwholefinishobjective.",
+  "verification": "OnlyselectedNEWsafeimprovedplan:oneindependentinitial-sourcefullreplay,allroots/forces/histories/visited/tracker/clocks/finalCPexact. None:noexistingseedreplay.",
+  "caps": {
+    "basis_count": 6,
+    "rounds": 2,
+    "source_candidates": 24,
+    "independent_replays": 1,
+    "model_ticks": 16550,
+    "force": 66200,
+    "geometry": 16550,
+    "CPU_s": 600,
+    "wall_s": 720,
+    "LP_solves": 0,
+    "new_FD": 0,
+    "new_calibration": 0
+  },
+  "budgets": {
+    "preparation": {
+      "CPU_s": 10,
+      "wall_s": 15
+    },
+    "evaluation": {
+      "ticks": 15888,
+      "force": 63552,
+      "geometry": 15888,
+      "CPU_s": 480,
+      "wall_s": 600
+    },
+    "verification": {
+      "ticks": 662,
+      "force": 2648,
+      "geometry": 662,
+      "CPU_s": 30,
+      "wall_s": 45
+    },
+    "audit": {
+      "CPU_s": 15,
+      "wall_s": 20
+    }
+  },
+  "per_source_case": {
+    "ticks": 662,
+    "CPU_s": 25,
+    "wall_s": 35
+  },
+  "preflight_test_CPU_wall_charge_s": 5,
+  "reserves": "Beforeeachcase requirewholecase25CPU/35wall andfinalreplay30CPU/45wall+audit15CPU/20wall withinallcaps. Otherwiseboundedstopandverifyselected. Technical/domain/integrity/IOerrorstopswithoutnewcandidateorrecoverychain;preserve573ifnewverificationcannotcomplete.",
+  "actual_actions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "paid_compute": 0,
+  "source_kernel_cap_unchanged": 200000,
+  "privacy": "Rawplans,bases,states,failures,journalprivate;publictechnicalcodeandaggregatesonly. Preservealloldresults/main/Participants/userchanges/backups. Atomiccostandcase/decisionrecords. Noautomaticextension.",
+  "implementation_frozen_utc": "2026-10-19T03:42:13.551987+00:00",
+  "source_sha256": {
+    "retry/direct577_model.py": "1254db5387ddf28e242ac3d67524c2a6d6b1a308739cc7ba4eb036f5669d1012",
+    "retry/direct577_math.py": "d141834abe32ee94a0e9b17e97154f7411fe0e9a6141e4b47be6e26714f360ce",
+    "tests/test_direct577.py": "995d498daff704115148d498ded85d5dd9281b51ff6970856a0518d004778175",
+    "retry/face576_model.py": "e299ca8e7094aec90fe2df5bbad94b9ad116207689abf3e8845bbf5e346c7a52",
+    "retry/late568_model.py": "0e71a9e08552040b7da4d2b111a04f67bd361db1954cb156ea6b33a3d7f409b2",
+    "retry/wide574_math.py": "932b69bc86d1e90d91cfb497715f44d965053f00121e265e6f8a00dacd08028d",
+    "retry/checkpoints574.py": "f7a14a8d69abdc869d143413fafdac2961ebae28775a0ef95cea3739e101e6bf",
+    "retry/durable568.py": "43ed7c3f2bfe06ee575691b7d3b6f20414f06303e6c1fb09789deffe62d27a39",
+    "retry/handoff562_model.py": "e7addc1dabf391149cb10827316a6e9405069f4a8809a9ef4ada805cbe9d0b0b",
+    "retry/clip561_core.py": "d0f60f7741c4605a3c3b6a515977ee5c978efd633665d3e807afef6b816a531b",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "retry/preview527_control.py": "8049458f5f302fd194a2e0fde5a833ac4a2241f498055df1dc84203017da2717",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131",
+    "core/finish_line.py": "7c16dda1378dcd65aed46d9da96608aa055124c2f27d8fb00c309078361d4204",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363"
+  },
+  "input_sha256": {
+    "/workspace/haic-response575-private/model-private.npz": "6faf354a0fdd818509fd985d17115b4581388c58b45836731eb20081f7994e10",
+    "/workspace/haic-response574-private/initial-center-private.json": "286c4a90deb4aedced8b27ca54364432c5fd5885a1ebaf19bfab50c064d4710d",
+    "/workspace/haic-response574-private/linear-1-private.npz": "06b2607338c269415c66ad98de9f560faff64c6a0e2a935df499d869f2813762",
+    "/workspace/haic-response574-private/initial-checkpoints-private.json": "164649ce12e532865840761e4681479da626c860efd0caa145def77cbdba7f34",
+    "/workspace/haic-response573-private/final-independent-tape-private.json": "4ebde7a580dd052de3da7a8bbd493c12c24e533ec7c193bb6f696c26cd54a875",
+    "/workspace/HAIC-2026-Fresh/retry/quant573_result.json": "12d06991c5e2cf6d8a41c0a7a05b1fade3bc5f528c630f441f61e06c1f5ca436",
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response551-private/frozen-paths-private.json": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "/workspace/haic-response519-private/model-ledger-private.json": "28ff0ff7ffec9784e4817b4b55500c40ecd3730e9d09977294ad1dfd9b70763f"
+  },
+  "tests_sha256": "47da101555ff112c69b31e2ace2e33886f03e752e33b1a9f62932253646e173c"
+}

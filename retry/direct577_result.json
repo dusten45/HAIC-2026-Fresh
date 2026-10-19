@@ -1,0 +1,1179 @@
+{
+  "completed": true,
+  "error": null,
+  "stop_reason": "TWO_ROUNDS_COMPLETE",
+  "method": "bounded6basisfullsourcepatternsearch",
+  "source_candidates": 24,
+  "independent_replays": 1,
+  "safe_working_accepts": 4,
+  "seed_hull_s": 13.19360251036074,
+  "final_working_hull_s": 13.193588066798018,
+  "actual_gain_ms": 0.014443562722732395,
+  "new_plan_independently_verified": true,
+  "independent_verification": {
+    "exact": true,
+    "checkpoint_exact": true,
+    "raw": 661,
+    "official_candidate_raw": 660
+  },
+  "official_promotion": false,
+  "official_incumbent_raw": 660,
+  "official_incumbent_s": 13.199999999999807,
+  "events": [
+    {
+      "label": "round-1-basis-0-plus",
+      "evaluation": 1,
+      "basis": 0,
+      "round": 1,
+      "sign": 1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 4,
+        "normalized_seed_displacement": 0.003999471664428711,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.003874086388261773,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0710411211340873,
+        "footprint": 0.0010675073267465722,
+        "force": -9.882614813982557e-05,
+        "path": 5.382388248739722e-05,
+        "projection": 1.3278415758977915,
+        "reference": 0.00010501998220840168
+      },
+      "strict_safe_finish": false,
+      "strict_failure": "FORCE",
+      "source_ticks": 154,
+      "selected_incumbent": false,
+      "first_failure_raw": 155,
+      "first_failure_values": {}
+    },
+    {
+      "label": "round-1-basis-0-minus",
+      "evaluation": 2,
+      "basis": 0,
+      "round": 1,
+      "sign": -1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 5,
+        "normalized_seed_displacement": 0.003999471664428711,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.008815765763585434,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0711152194147027,
+        "footprint": 0.000527657703382485,
+        "force": 1.0001156290524774e-05,
+        "path": 5.738134016766331e-05,
+        "projection": 1.3278503727545128,
+        "reference": 0.000177302083792918
+      },
+      "strict_safe_finish": false,
+      "strict_failure": "FORCE",
+      "source_ticks": 158,
+      "selected_incumbent": false,
+      "first_failure_raw": 159,
+      "first_failure_values": {}
+    },
+    {
+      "label": "round-1-basis-1-plus",
+      "evaluation": 3,
+      "basis": 1,
+      "round": 1,
+      "sign": 1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 2,
+        "normalized_seed_displacement": 0.00399996836980184,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.001636272398896763,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0709596268822024,
+        "footprint": 0.0018978729284736765,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 2.5523187102543134e-05
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": false,
+      "actual_times": {
+        "hull_finish": 13.193604147689223,
+        "center_finish": 13.194563021843786,
+        "progress_s300": 4.946704426426682,
+        "progress_s600": 8.228717449758324,
+        "progress_s900": 12.101305988255264
+      },
+      "actual_gain_over_anchor_ms": -0.0016373284825732526,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-1-basis-1-minus",
+      "evaluation": 4,
+      "basis": 1,
+      "round": 1,
+      "sign": -1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 1,
+        "normalized_seed_displacement": 0.00399996836980184,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.00010914648084336655,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0709357955115553,
+        "footprint": 0.0017021547394798229,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 2.2759348972205737e-06
+      },
+      "strict_safe_finish": false,
+      "strict_failure": "FOOTPRINT",
+      "source_ticks": 632,
+      "selected_incumbent": false,
+      "first_failure_raw": 632,
+      "first_failure_values": {
+        "margin": 0.49066597969057624,
+        "path_error": 1.118557160607617,
+        "reference_overspeed": -2.8676523059246506,
+        "body": 71.43565630587561
+      }
+    },
+    {
+      "label": "round-1-basis-2-plus",
+      "evaluation": 5,
+      "basis": 2,
+      "round": 1,
+      "sign": 1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 3,
+        "normalized_seed_displacement": 0.00399996836980184,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.004629745802135702,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0710381442515273,
+        "footprint": 0.0015938077256999012,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 0.00010211605909289636
+      },
+      "strict_safe_finish": false,
+      "strict_failure": "FOOTPRINT",
+      "source_ticks": 632,
+      "selected_incumbent": false,
+      "first_failure_raw": 632,
+      "first_failure_values": {
+        "margin": 0.49630151201242473,
+        "path_error": 1.1123579884530337,
+        "reference_overspeed": -2.8672820894958164,
+        "body": 71.43603883746603
+      }
+    },
+    {
+      "label": "round-1-basis-2-minus",
+      "evaluation": 6,
+      "basis": 2,
+      "round": 1,
+      "sign": -1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 0,
+        "normalized_seed_displacement": 0.00399996836980184,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -6.2679967927599454e-06,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.070934168191898,
+        "footprint": 0.0016889212582155417,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 6.885059731595605e-07
+      },
+      "strict_safe_finish": false,
+      "strict_failure": "FOOTPRINT",
+      "source_ticks": 632,
+      "selected_incumbent": false,
+      "first_failure_raw": 632,
+      "first_failure_values": {
+        "margin": 0.49881228975005065,
+        "path_error": 1.1096270959600887,
+        "reference_overspeed": -2.8670116054043575,
+        "body": 71.43631831909278
+      }
+    },
+    {
+      "label": "round-1-basis-3-plus",
+      "evaluation": 7,
+      "basis": 3,
+      "round": 1,
+      "sign": 1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 3,
+        "normalized_seed_displacement": 0.004000961780548096,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.0019719029282877125,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0710123639038684,
+        "footprint": 0.0019265141730954562,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 7.696843046102461e-05
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": false,
+      "actual_times": {
+        "hull_finish": 13.193604481342625,
+        "center_finish": 13.194563355799351,
+        "progress_s300": 4.946704908930668,
+        "progress_s600": 8.228716336539598,
+        "progress_s900": 12.101307840714483
+      },
+      "actual_gain_over_anchor_ms": -0.001970981884369394,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-1-basis-3-minus",
+      "evaluation": 8,
+      "basis": 3,
+      "round": 1,
+      "sign": -1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 5,
+        "normalized_seed_displacement": 0.004000961780548096,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": 0.0001374235844650454,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0709911350111065,
+        "footprint": 0.0016000142784302418,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 5.625821867274206e-05
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": false,
+      "actual_times": {
+        "hull_finish": 13.193602368607149,
+        "center_finish": 13.194561242915553,
+        "progress_s300": 4.946704908930668,
+        "progress_s600": 8.228716796870641,
+        "progress_s900": 12.101300661759069
+      },
+      "actual_gain_over_anchor_ms": 0.0001417535919756574,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-1-basis-4-plus",
+      "evaluation": 9,
+      "basis": 4,
+      "round": 1,
+      "sign": 1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 0,
+        "normalized_seed_displacement": 0.003998478253682454,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": 0.002957886707785698,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.070933159758495,
+        "footprint": 0.0016883196900268809,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 4.879399063723389e-07
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": true,
+      "actual_times": {
+        "hull_finish": 13.19359955266207,
+        "center_finish": 13.194558425321162,
+        "progress_s300": 4.946704908930668,
+        "progress_s600": 8.228716564065294,
+        "progress_s900": 12.101300191244276
+      },
+      "actual_gain_over_anchor_ms": 0.0029576986708690356,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-1-basis-4-minus",
+      "evaluation": 10,
+      "basis": 4,
+      "round": 1,
+      "sign": -1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 3,
+        "normalized_seed_displacement": 0.003998478253682454,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.002770886147800595,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0709752586151096,
+        "footprint": 0.001635415383881826,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 3.99890213031724e-05
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": false,
+      "actual_times": {
+        "hull_finish": 13.193605281377367,
+        "center_finish": 13.194564156917519,
+        "progress_s300": 4.946704908930668,
+        "progress_s600": 8.228716564065294,
+        "progress_s900": 12.10130228410111
+      },
+      "actual_gain_over_anchor_ms": -0.0027710166268235525,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-1-basis-5-plus",
+      "evaluation": 11,
+      "basis": 5,
+      "round": 1,
+      "sign": 1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 4,
+        "normalized_seed_displacement": 0.003999471664428711,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": 0.0042655451713646715,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.070933159758495,
+        "footprint": 0.001688319722629478,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 4.879399063723389e-07
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": true,
+      "actual_times": {
+        "hull_finish": 13.19359528759599,
+        "center_finish": 13.19455415072885,
+        "progress_s300": 4.946704908930668,
+        "progress_s600": 8.228716564065294,
+        "progress_s900": 12.101300063479162
+      },
+      "actual_gain_over_anchor_ms": 0.004265066079867097,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-1-basis-5-minus",
+      "evaluation": 12,
+      "basis": 5,
+      "round": 1,
+      "sign": -1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 0,
+        "normalized_seed_displacement": 0.003999471664428711,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.005068596741390587,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.070933159758495,
+        "footprint": 0.001688319657424284,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 4.879399063723389e-07
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": false,
+      "actual_times": {
+        "hull_finish": 13.19360462146797,
+        "center_finish": 13.194563507845176,
+        "progress_s300": 4.946704908930668,
+        "progress_s600": 8.228716564065294,
+        "progress_s900": 12.101300319009885
+      },
+      "actual_gain_over_anchor_ms": -0.005068805899455242,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-2-basis-0-plus",
+      "evaluation": 13,
+      "basis": 0,
+      "round": 2,
+      "sign": 1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 4,
+        "normalized_seed_displacement": 0.003999471664428711,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.003874086388261773,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0710402083473687,
+        "footprint": 0.0010680649959906824,
+        "force": -9.882614813982557e-05,
+        "path": 5.382388248739722e-05,
+        "projection": 1.3278415758977915,
+        "reference": 0.00010491272383655469
+      },
+      "strict_safe_finish": false,
+      "strict_failure": "FORCE",
+      "source_ticks": 154,
+      "selected_incumbent": false,
+      "first_failure_raw": 155,
+      "first_failure_values": {}
+    },
+    {
+      "label": "round-2-basis-0-minus",
+      "evaluation": 14,
+      "basis": 0,
+      "round": 2,
+      "sign": -1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 5,
+        "normalized_seed_displacement": 0.003999471664428711,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.008815765763585434,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0711143066279836,
+        "footprint": 0.0005282153726265948,
+        "force": 1.0001156290524774e-05,
+        "path": 5.738134016766331e-05,
+        "projection": 1.3278503727545128,
+        "reference": 0.00017719482542107102
+      },
+      "strict_safe_finish": false,
+      "strict_failure": "FORCE",
+      "source_ticks": 158,
+      "selected_incumbent": false,
+      "first_failure_raw": 159,
+      "first_failure_values": {}
+    },
+    {
+      "label": "round-2-basis-1-plus",
+      "evaluation": 15,
+      "basis": 1,
+      "round": 2,
+      "sign": 1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 2,
+        "normalized_seed_displacement": 0.00399996836980184,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.001636272398896763,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0709587140954833,
+        "footprint": 0.0018981163049073217,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 2.541592873069615e-05
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": false,
+      "actual_times": {
+        "hull_finish": 13.193596924860124,
+        "center_finish": 13.194555788160358,
+        "progress_s300": 4.946704426426682,
+        "progress_s600": 8.228717449758324,
+        "progress_s900": 12.101304634780645
+      },
+      "actual_gain_over_anchor_ms": -0.0016372641340467453,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-2-basis-1-minus",
+      "evaluation": 16,
+      "basis": 1,
+      "round": 2,
+      "sign": -1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 1,
+        "normalized_seed_displacement": 0.00399996836980184,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.00010914648084336655,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.070934882724836,
+        "footprint": 0.0017023981159134676,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 2.1686765253735876e-06
+      },
+      "strict_safe_finish": false,
+      "strict_failure": "FOOTPRINT",
+      "source_ticks": 632,
+      "selected_incumbent": false,
+      "first_failure_raw": 632,
+      "first_failure_values": {
+        "margin": 0.4906665643101231,
+        "path_error": 1.1185463426431048,
+        "reference_overspeed": -2.8675027110171243,
+        "body": 71.4357419316338
+      }
+    },
+    {
+      "label": "round-2-basis-2-plus",
+      "evaluation": 17,
+      "basis": 2,
+      "round": 2,
+      "sign": 1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 3,
+        "normalized_seed_displacement": 0.00399996836980184,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.004629745802135702,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0710372314648087,
+        "footprint": 0.0015943653949440106,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 0.00010200880072104961
+      },
+      "strict_safe_finish": false,
+      "strict_failure": "FOOTPRINT",
+      "source_ticks": 632,
+      "selected_incumbent": false,
+      "first_failure_raw": 632,
+      "first_failure_values": {
+        "margin": 0.4963020916337181,
+        "path_error": 1.1123471502549465,
+        "reference_overspeed": -2.867132493690846,
+        "body": 71.43612446373645
+      }
+    },
+    {
+      "label": "round-2-basis-2-minus",
+      "evaluation": 18,
+      "basis": 2,
+      "round": 2,
+      "sign": -1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 0,
+        "normalized_seed_displacement": 0.00399996836980184,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -6.2679967927599454e-06,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.070933255405179,
+        "footprint": 0.0016891646346491873,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 5.812476013124728e-07
+      },
+      "strict_safe_finish": false,
+      "strict_failure": "FOOTPRINT",
+      "source_ticks": 632,
+      "selected_incumbent": false,
+      "first_failure_raw": 632,
+      "first_failure_values": {
+        "margin": 0.4988128657528565,
+        "path_error": 1.1096162530796791,
+        "reference_overspeed": -2.8668620089437695,
+        "body": 71.43640394573742
+      }
+    },
+    {
+      "label": "round-2-basis-3-plus",
+      "evaluation": 19,
+      "basis": 3,
+      "round": 2,
+      "sign": 1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 3,
+        "normalized_seed_displacement": 0.004000961780548096,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.0019719029282877125,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.07101145111715,
+        "footprint": 0.0019270718423395642,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 7.686117208917762e-05
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": false,
+      "actual_times": {
+        "hull_finish": 13.193597258481676,
+        "center_finish": 13.194556122084059,
+        "progress_s300": 4.946704908930668,
+        "progress_s600": 8.228716336539598,
+        "progress_s900": 12.101306487512025
+      },
+      "actual_gain_over_anchor_ms": -0.001970885685764756,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-2-basis-3-minus",
+      "evaluation": 20,
+      "basis": 3,
+      "round": 2,
+      "sign": -1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 5,
+        "normalized_seed_displacement": 0.004000961780548096,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": 0.0001374235844650454,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.070990222224388,
+        "footprint": 0.0016002576548638883,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 5.615096030089507e-05
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": false,
+      "actual_times": {
+        "hull_finish": 13.193595145831349,
+        "center_finish": 13.19455400928544,
+        "progress_s300": 4.946704908930668,
+        "progress_s600": 8.228716796870641,
+        "progress_s900": 12.101299307508626
+      },
+      "actual_gain_over_anchor_ms": 0.00014176464091519847,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-2-basis-4-plus",
+      "evaluation": 21,
+      "basis": 4,
+      "round": 2,
+      "sign": 1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 0,
+        "normalized_seed_displacement": 0.007996956507364908,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": 0.002957886707785698,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.070932246971776,
+        "footprint": 0.0016885630664605262,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 3.8068153452537785e-07
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": true,
+      "actual_times": {
+        "hull_finish": 13.19359233024654,
+        "center_finish": 13.19455119205142,
+        "progress_s300": 4.946704908930668,
+        "progress_s600": 8.228716564065294,
+        "progress_s900": 12.101298836633658
+      },
+      "actual_gain_over_anchor_ms": 0.0029573494497725505,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-2-basis-4-minus",
+      "evaluation": 22,
+      "basis": 4,
+      "round": 2,
+      "sign": -1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 3,
+        "normalized_seed_displacement": 0.003999471664428711,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.002957886707785698,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.0709340725452137,
+        "footprint": 0.0016880763787984294,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 5.951982782192999e-07
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": false,
+      "actual_times": {
+        "hull_finish": 13.193598245271238,
+        "center_finish": 13.194557109732107,
+        "progress_s300": 4.946704908930668,
+        "progress_s600": 8.228716564065294,
+        "progress_s900": 12.10130128987417
+      },
+      "actual_gain_over_anchor_ms": -0.0029576752478277513,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-2-basis-5-plus",
+      "evaluation": 23,
+      "basis": 5,
+      "round": 2,
+      "sign": 1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 4,
+        "normalized_seed_displacement": 0.007998943328857422,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": 0.004264615380230902,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.070932246971776,
+        "footprint": 0.001688563099063123,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 3.8068153452537785e-07
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": true,
+      "actual_times": {
+        "hull_finish": 13.193588066798018,
+        "center_finish": 13.19454691908308,
+        "progress_s300": 4.946704908930668,
+        "progress_s600": 8.228716564065294,
+        "progress_s900": 12.101298708851354
+      },
+      "actual_gain_over_anchor_ms": 0.004263448522223712,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    },
+    {
+      "label": "round-2-basis-5-minus",
+      "evaluation": 24,
+      "basis": 5,
+      "round": 2,
+      "sign": -1,
+      "step": 0.004,
+      "proposal": {
+        "domain_or_global_clipped_coordinates": 0,
+        "normalized_seed_displacement": 0.007996956507364908,
+        "exact_float32": true
+      },
+      "predicted_gain_over_anchor_ms": -0.005068596741390587,
+      "predicted_minimum_slack_by_group": {
+        "body": 3.070932246971776,
+        "footprint": 0.0016885630338579294,
+        "force": 1.0021659012870998e-05,
+        "path": 5.720161974753779e-05,
+        "projection": 1.3278459743261521,
+        "reference": 3.8068153452537785e-07
+      },
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "source_ticks": 661,
+      "selected_incumbent": false,
+      "actual_times": {
+        "hull_finish": 13.19359739831288,
+        "center_finish": 13.194556273835229,
+        "progress_s300": 4.946704908930668,
+        "progress_s600": 8.228716564065294,
+        "progress_s900": 12.101298964416456
+      },
+      "actual_gain_over_anchor_ms": -0.00506806633993051,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "complete": true,
+      "step": 0.004,
+      "accepts": 2,
+      "consecutive_no_gain_rounds": 0
+    },
+    {
+      "round": 2,
+      "complete": true,
+      "step": 0.004,
+      "accepts": 2,
+      "consecutive_no_gain_rounds": 0
+    }
+  ],
+  "skips": [],
+  "cost": {
+    "total": {
+      "ticks": 14331,
+      "force": 57340,
+      "geometry": 14331,
+      "body_checks": 14331,
+      "CPU_s": 386.448370659,
+      "wall_s": 409.24367415600864
+    },
+    "phases": [
+      {
+        "bucket": "evaluation",
+        "label": "round-1-basis-0-plus",
+        "ticks": 154,
+        "force": 620,
+        "geometry": 154,
+        "CPU_s": 3.24502031,
+        "wall_s": 3.486231023998698,
+        "body_checks": 154,
+        "max_body": 83.54803078778195
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-1-basis-0-minus",
+        "ticks": 158,
+        "force": 636,
+        "geometry": 158,
+        "CPU_s": 3.372845011,
+        "wall_s": 3.641836017006426,
+        "body_checks": 158,
+        "max_body": 83.54803078778195
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-1-basis-1-plus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.235707228,
+        "wall_s": 18.41002448600193,
+        "body_checks": 661,
+        "max_body": 96.92904036571781
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-1-basis-1-minus",
+        "ticks": 632,
+        "force": 2528,
+        "geometry": 632,
+        "CPU_s": 16.537100997000003,
+        "wall_s": 17.60101721699175,
+        "body_checks": 632,
+        "max_body": 96.92743800082042
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-1-basis-2-plus",
+        "ticks": 632,
+        "force": 2528,
+        "geometry": 632,
+        "CPU_s": 16.383941426,
+        "wall_s": 17.298561627001618,
+        "body_checks": 632,
+        "max_body": 96.92802179425985
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-1-basis-2-minus",
+        "ticks": 632,
+        "force": 2528,
+        "geometry": 632,
+        "CPU_s": 16.719193613999998,
+        "wall_s": 17.659581052997964,
+        "body_checks": 632,
+        "max_body": 96.92844831872512
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-1-basis-3-plus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.216640654000003,
+        "wall_s": 18.168539448000956,
+        "body_checks": 661,
+        "max_body": 96.9289876344094
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-1-basis-3-minus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.033765691,
+        "wall_s": 18.04140859200561,
+        "body_checks": 661,
+        "max_body": 96.92900885027144
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-1-basis-4-plus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.081260431000004,
+        "wall_s": 18.071937073007575,
+        "body_checks": 661,
+        "max_body": 96.92906684090836
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-1-basis-4-minus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.205223050000015,
+        "wall_s": 18.177455295008258,
+        "body_checks": 661,
+        "max_body": 96.92902474071516
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-1-basis-5-plus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.059414215000004,
+        "wall_s": 18.120786610990763,
+        "body_checks": 661,
+        "max_body": 96.92906684090836
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-1-basis-5-minus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.519770228999988,
+        "wall_s": 18.59731530499994,
+        "body_checks": 661,
+        "max_body": 96.92906684090836
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-2-basis-0-plus",
+        "ticks": 154,
+        "force": 620,
+        "geometry": 154,
+        "CPU_s": 3.460133939000002,
+        "wall_s": 3.7259284029860282,
+        "body_checks": 154,
+        "max_body": 83.54803078778195
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-2-basis-0-minus",
+        "ticks": 158,
+        "force": 636,
+        "geometry": 158,
+        "CPU_s": 3.3942000400000154,
+        "wall_s": 3.65706122899428,
+        "body_checks": 158,
+        "max_body": 83.54803078778195
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-2-basis-1-plus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.433275667999993,
+        "wall_s": 18.531735081996885,
+        "body_checks": 661,
+        "max_body": 96.92904127917267
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-2-basis-1-minus",
+        "ticks": 632,
+        "force": 2528,
+        "geometry": 632,
+        "CPU_s": 16.747549416,
+        "wall_s": 17.81937067200488,
+        "body_checks": 632,
+        "max_body": 96.92743891435585
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-2-basis-2-plus",
+        "ticks": 632,
+        "force": 2528,
+        "geometry": 632,
+        "CPU_s": 16.593016051999996,
+        "wall_s": 17.671722533006687,
+        "body_checks": 632,
+        "max_body": 96.92802270776598
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-2-basis-2-minus",
+        "ticks": 632,
+        "force": 2528,
+        "geometry": 632,
+        "CPU_s": 16.539843888000007,
+        "wall_s": 17.573903319993406,
+        "body_checks": 632,
+        "max_body": 96.92844923220977
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-2-basis-3-plus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.23450118499997,
+        "wall_s": 18.233160085001145,
+        "body_checks": 661,
+        "max_body": 96.92898854786634
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-2-basis-3-minus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 16.86523816099998,
+        "wall_s": 17.843581584995263,
+        "body_checks": 661,
+        "max_body": 96.92900976372611
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-2-basis-4-plus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.14925980999999,
+        "wall_s": 18.175421971987817,
+        "body_checks": 661,
+        "max_body": 96.9290677543087
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-2-basis-4-minus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.20410173700003,
+        "wall_s": 18.28044105200388,
+        "body_checks": 661,
+        "max_body": 96.92906592745479
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-2-basis-5-plus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.062479897000003,
+        "wall_s": 18.109771567003918,
+        "body_checks": 661,
+        "max_body": 96.9290677543087
+      },
+      {
+        "bucket": "evaluation",
+        "label": "round-2-basis-5-minus",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.24694377899999,
+        "wall_s": 18.285140709995176,
+        "body_checks": 661,
+        "max_body": 96.9290677543087
+      },
+      {
+        "bucket": "verification",
+        "label": "final-independent-new-full-tape",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 17.340958166999997,
+        "wall_s": 18.40366195900424,
+        "body_checks": 661,
+        "max_body": 96.9290677543087
+      }
+    ],
+    "research_remaining": 22758,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "preflight_test_CPU_wall_charge_s": 5.0,
+    "source_candidates": 24,
+    "independent_replays": 1,
+    "round": 2
+  },
+  "journal": {
+    "events": 71713,
+    "head": "9ca80490f84883d52841beec9d1a885e0bf3b91bb1c77a894c9ebb9f246e7946",
+    "kinds": {
+      "CASE_STARTED": 25,
+      "BEFORE_FORCE": 14335,
+      "FORCE_VERDICT": 14335,
+      "BEFORE_TICK": 14331,
+      "AFTER_TICK": 14331,
+      "RAW_VERDICT": 14331,
+      "CASE_FINISHED": 25
+    },
+    "valid": true
+  },
+  "source_hashes_match": true,
+  "input_hashes_match": true,
+  "actual_actions": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "new_seeds": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "paid_compute": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_FD": 0,
+  "new_calibrations": 0,
+  "LP_solves": 0,
+  "scope": "Actualwholecommand-sourceonly;Native/pixel/feedback/robustnessnotproven. Surrogatepredictionsdiagnosticonly."
+}

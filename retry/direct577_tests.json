@@ -1,0 +1,14 @@
+{
+  "passed": 3,
+  "failed": 0,
+  "source_ticks": 0,
+  "actual_actions": 0,
+  "real_LP_calls": 0,
+  "runner_wall_s": 0.023,
+  "preflight_test_CPU_wall_charge_s": 5,
+  "command": "OPENBLAS_NUM_THREADS=1 ./.venv/bin/python -m unittest tests.test_direct577",
+  "source_sha256": {
+    "retry/direct577_math.py": "d141834abe32ee94a0e9b17e97154f7411fe0e9a6141e4b47be6e26714f360ce",
+    "tests/test_direct577.py": "995d498daff704115148d498ded85d5dd9281b51ff6970856a0518d004778175"
+  }
+}
