@@ -1,0 +1,10 @@
+{
+  "stage": "before_STARTED_or_model_solve",
+  "source_ticks": 0,
+  "LP_solves": 0,
+  "reason": "atomic_write default create-only rejected existing preregistered contract",
+  "fix": "Use atomic replacement only to freeze implementation hashes in the existing preregistered contract before STARTED. Mathematical method,caps and tolerances unchanged.",
+  "private_failure_preserved": true,
+  "failed_start_tool_wall_s": 0.242534824,
+  "combined_tests_and_prestart_CPU_wall_budget_charge_s": 2.0
+}

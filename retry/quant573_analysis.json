@@ -1,0 +1,52 @@
+{
+  "checks": {
+    "transitive_572_dependencies_match": true,
+    "source_bucket_caps": true,
+    "all_post_tick_verdicts_present": true,
+    "source_hashes_match": true,
+    "input_hashes_match": true,
+    "tests_hash_match": true,
+    "seed_exact_feasible": true,
+    "joint_quantized_check": true,
+    "journal_valid": true,
+    "ticks_match": true,
+    "forces_match": true,
+    "at_most_one_candidate": true,
+    "at_most_one_replay": true,
+    "original_aggregate_caps": true,
+    "independent_exact": true
+  },
+  "all_checks_pass": true,
+  "full_tape_safety": {
+    "raw": 661,
+    "minimum_footprint": 0.5016880763461958,
+    "maximum_path": 2.9999427983802525,
+    "maximum_body": 96.92906592745479,
+    "maximum_tracking_force": 1.058989978340987,
+    "maximum_tracking_reference_overspeed": 4.849999404801721,
+    "maximum_tracking_clip_fraction": 0.1,
+    "maximum_launch_force": 2.403901474800934,
+    "maximum_checked_launch_clip_fraction": 0.1478494623655914,
+    "all_failure_flags_clear": true
+  },
+  "journal": {
+    "events": 4240,
+    "head": "738046040775cc06cb52d5098e27e830fe5d1e288810a0e0cbf5430d5c144dbe",
+    "kinds": {
+      "CASE_STARTED": 2,
+      "BEFORE_FORCE": 794,
+      "FORCE_VERDICT": 794,
+      "BEFORE_TICK": 794,
+      "AFTER_TICK": 794,
+      "RAW_VERDICT": 794,
+      "SOURCE_PATH_RECHECK": 266,
+      "CASE_FINISHED": 2
+    },
+    "valid": true
+  },
+  "source_ticks": 0,
+  "CPU_s": 0.4692906359999999,
+  "wall_s": 0.2701496049994603,
+  "scope": "Exact source-model single-plan evidence only. Rounding enclosure certifies this frozen algebra; empirical model envelopes and native robustness are not universal certificates.",
+  "private_raw_uploaded": false
+}

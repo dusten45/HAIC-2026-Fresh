@@ -1,0 +1,33 @@
+{
+  "seed_exact_feasible": true,
+  "seed_fallback_preserved": true,
+  "method": "row_rounding_tube_union_exact_seed",
+  "rounding_radius_max": 2.4835269896605434e-06,
+  "LP_solves": 1,
+  "accepted": true,
+  "verdict": {
+    "pass_all": true,
+    "linear_violation": 0.0,
+    "bound_violation": 0.0,
+    "path_violation": 0.0,
+    "predicted_gain_s": 0.000996600457571486,
+    "normalized_step": 0.04999997715155284,
+    "worst_row": 4277,
+    "residual": 0.0
+  },
+  "maximum_row_rounding_allowance": 2.0251400464188645e-05,
+  "maximum_numerical_allowance": 1.5505308759580666e-12,
+  "worst_tightened_residual": 3.178491134571762e-18,
+  "stop": "CERTIFIED_QUANTIZED_POINT",
+  "CPU_s": 0.468952665,
+  "wall_s": 0.38573755300603807,
+  "source_ticks": 0,
+  "old_precheck_exact": true,
+  "joint_group_violations": {
+    "force": 0.0,
+    "reference": 0.0,
+    "signed_road_support": 0.0,
+    "trust_bounds": 0.0,
+    "capsule": 0.0
+  }
+}

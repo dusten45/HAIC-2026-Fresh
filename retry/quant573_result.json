@@ -1,0 +1,124 @@
+{
+  "completed": true,
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "new_seeds": 0,
+  "paid_compute": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "source_proposals": 1,
+  "independent_replays": 1,
+  "algebra": {
+    "seed_exact_feasible": true,
+    "seed_fallback_preserved": true,
+    "method": "row_rounding_tube_union_exact_seed",
+    "rounding_radius_max": 2.4835269896605434e-06,
+    "LP_solves": 1,
+    "accepted": true,
+    "verdict": {
+      "pass_all": true,
+      "linear_violation": 0.0,
+      "bound_violation": 0.0,
+      "path_violation": 0.0,
+      "predicted_gain_s": 0.000996600457571486,
+      "normalized_step": 0.04999997715155284,
+      "worst_row": 4277,
+      "residual": 0.0
+    },
+    "maximum_row_rounding_allowance": 2.0251400464188645e-05,
+    "maximum_numerical_allowance": 1.5505308759580666e-12,
+    "worst_tightened_residual": 3.178491134571762e-18,
+    "stop": "CERTIFIED_QUANTIZED_POINT",
+    "CPU_s": 0.468952665,
+    "wall_s": 0.38573755300603807,
+    "source_ticks": 0,
+    "old_precheck_exact": true,
+    "joint_group_violations": {
+      "force": 0.0,
+      "reference": 0.0,
+      "signed_road_support": 0.0,
+      "trust_bounds": 0.0,
+      "capsule": 0.0
+    }
+  },
+  "strict_safe_finish": true,
+  "strict_failure": null,
+  "strict_raw_count": 133,
+  "safe_working_accept": true,
+  "actual_times": {
+    "hull_finish": 13.19360251036074,
+    "center_finish": 13.194561384347903,
+    "s900": 12.101292248987233
+  },
+  "actual_gain_ms": 0.9979598069325135,
+  "official_candidate_raw": 660,
+  "official_finish_s": 13.199999999999807,
+  "confirmation_raw": 661,
+  "independent_verification": {
+    "raw": 661,
+    "fullstate_force_history_tracker_exact": true,
+    "checkpoint_exact": true,
+    "official_candidate_raw": 660,
+    "confirmation_raw": 661
+  },
+  "stop_reason": "ONE_SOURCE_CANDIDATE_DONE",
+  "official_promotion": false,
+  "cost": {
+    "total": {
+      "ticks": 794,
+      "force": 3176,
+      "geometry": 794,
+      "body_checks": 794,
+      "CPU_s": 23.296427774999998,
+      "wall_s": 24.171059788001003
+    },
+    "phases": [
+      {
+        "bucket": "evaluation",
+        "label": "one-quantized-strict-finish",
+        "ticks": 133,
+        "force": 532,
+        "geometry": 133,
+        "CPU_s": 3.4207510979999998,
+        "wall_s": 3.3026889039902017,
+        "body_checks": 133,
+        "max_body": 96.92906592745479
+      },
+      {
+        "bucket": "verification",
+        "label": "final-independent-full-tape",
+        "ticks": 661,
+        "force": 2644,
+        "geometry": 661,
+        "CPU_s": 16.770110969,
+        "wall_s": 17.872087320996798,
+        "body_checks": 661,
+        "max_body": 96.92906592745479
+      }
+    ],
+    "research_remaining": 22758,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "test_and_prestart_CPU_wall_budget_charge_s": 2.0
+  },
+  "journal": {
+    "events": 4240,
+    "head": "738046040775cc06cb52d5098e27e830fe5d1e288810a0e0cbf5430d5c144dbe",
+    "kinds": {
+      "CASE_STARTED": 2,
+      "BEFORE_FORCE": 794,
+      "FORCE_VERDICT": 794,
+      "BEFORE_TICK": 794,
+      "AFTER_TICK": 794,
+      "RAW_VERDICT": 794,
+      "SOURCE_PATH_RECHECK": 266,
+      "CASE_FINISHED": 2
+    },
+    "valid": true
+  },
+  "source_hashes_match": true
+}

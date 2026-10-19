@@ -1,0 +1,99 @@
+{
+  "registered_utc": "2026-10-19T02:04:28.209851+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "method": "Row-wise worst-case float32 rounding enclosure over the unchanged control box. Candidate branch uses inward bounds and |A_z|q tightening with continuous norm epigraph. Exact zero-step seed is retained as an explicit disjunct and independently rechecked without rounding margins. No seed infeasibility is inferred from candidate-branch failure. Joint force/road/trust/original model/capsule check after rounding is mandatory.",
+  "caps": {
+    "source_candidates": 1,
+    "independent_replays": 1,
+    "LP_solves": 8,
+    "additional_FD": 0,
+    "additional_calibration": 0,
+    "alpha_sweeps": 0,
+    "model_recovery": 0
+  },
+  "budgets": {
+    "tests": {
+      "CPU_s": 10,
+      "wall_s": 20
+    },
+    "algebra": {
+      "CPU_s": 15,
+      "wall_s": 25
+    },
+    "evaluation": {
+      "ticks": 134,
+      "force": 536,
+      "geometry": 134,
+      "CPU_s": 10,
+      "wall_s": 20
+    },
+    "verification": {
+      "ticks": 662,
+      "force": 2648,
+      "geometry": 662,
+      "CPU_s": 30,
+      "wall_s": 45
+    }
+  },
+  "aggregate": {
+    "ticks": 796,
+    "force": 3184,
+    "geometry": 796,
+    "CPU_s": 65,
+    "wall_s": 110
+  },
+  "gates": "Tests and exact seed inclusion pass before model solve. At most8 robust LP/capsule cuts, no parameter sweep. One rounded candidate must satisfy all original rows,bounds,capsule <=1e-8 AND predicted gain>=1us before source. Source strict all original gates to official confirmation; safe working acceptance actualgain>=1us andcandidate raw<=660. Only new accepted safeplan gets one full independent initialsource replay. Otherwise stop with explicit obstacle; no second source proposal.",
+  "tests": [
+    "float32 binade/subnormal/tie/boundary enclosure",
+    "joint force/road/trust restoration",
+    "exact seed retained when robust branch infeasible",
+    "injected rounding outside certificate rejected",
+    "injected dishonest solver rejected",
+    "nonfinite/malformed inputs rejected",
+    "unchanged1e-8 acceptance boundary"
+  ],
+  "reference_and_physical_thresholds": "All existing thresholds/reference/prefix histories/source kernel200000 unchanged. Rounding safety margins are row-wise numerical enclosures,not relaxed physical limits.",
+  "source_baseline": "572finalsafe proposal2-0:660/13.20, hull13.194600470167673. Reuse linear4/envelope4/signedsupport3 and full565prefix528; no new seed replay/FD/calibration.",
+  "reconstructed572_failure_caveat": "572 per-repair residuals were reconstructed after the run,not directly recorded historical residuals.",
+  "actual_actions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "new_paid_resources": 0,
+  "input_sha256": {
+    "/workspace/haic-response572-private/proposal-2-0-diagnostic-private.json": "3bf172f8f91fe55c515f14b04211cb1995cca4cfe46b4c897cd59670d826c081",
+    "/workspace/haic-response572-private/linear-4-private.json": "4f8c0f52d404303a48457a1cbf3384fc0b8df12940975d438ca2c89f1008d2ad",
+    "/workspace/haic-response572-private/envelope-4-private.json": "463486bcf86a49beab09f45debff9f1779c67bb0362fc39ba6ab1518b8cd5302",
+    "/workspace/haic-response572-private/proposal-3-0-support-private.json": "478fc777ffc1a7f746d0ce09370ca34c64b49a7acdb34388213330466fc72ea2",
+    "/workspace/HAIC-2026-Fresh/retry/reference572_contract.json": "aa438fa3ee097dd3814c84a7dbb7c0af85df20702100ee187121f440947a31a8",
+    "/workspace/HAIC-2026-Fresh/retry/reference572_result.json": "22fe86f385893ed5163e4f94693431c2a64dff9437ffb09d6820d6ffb6989b6a"
+  },
+  "implementation_frozen_utc": "2026-10-19T02:08:53.811202+00:00",
+  "source_sha256": {
+    "retry/rounding573.py": "f3d8181bdf7cf50bed4d9014ecfb88e48f116d54183308a2154134a70d07acf3",
+    "retry/quant573_model.py": "e45aaedd941085c4dc514d7c30c5d9cdf5f2af08f7e99757a3341b780f46d336",
+    "tests/test_rounding573.py": "91ee060f4ab215d75459cb05f9b223db9de8f6c24dde94ef5a9ddb5cd92ffcd8",
+    "retry/reference572_model.py": "e768ddae4c7d68d309d8c56374254516c724dd8ce2be6c29a661e46eb0e35d42",
+    "retry/repair571_model.py": "cee1b63092e1deb8be8e53e7a042d906091c6e7d9114f218d1723783e2549f94",
+    "retry/tail570_model.py": "933ba571370637a8431f6cba2f6e3f8959e7955f35828b232cdb98950ed95b32",
+    "retry/late568_model.py": "0e71a9e08552040b7da4d2b111a04f67bd361db1954cb156ea6b33a3d7f409b2",
+    "retry/durable568.py": "43ed7c3f2bfe06ee575691b7d3b6f20414f06303e6c1fb09789deffe62d27a39",
+    "retry/handoff562_model.py": "e7addc1dabf391149cb10827316a6e9405069f4a8809a9ef4ada805cbe9d0b0b",
+    "retry/clip561_core.py": "d0f60f7741c4605a3c3b6a515977ee5c978efd633665d3e807afef6b816a531b",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "retry/preview527_control.py": "8049458f5f302fd194a2e0fde5a833ac4a2241f498055df1dc84203017da2717",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131",
+    "core/finish_line.py": "7c16dda1378dcd65aed46d9da96608aa055124c2f27d8fb00c309078361d4204",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363"
+  },
+  "tests_sha256": "4079ca1155b9b6b2bf53ab287d2614c8be4d2270d1258bfacbb48cd9cb02f3ef"
+}
