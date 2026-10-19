@@ -2,6 +2,7 @@
 import dataclasses
 import json
 import math
+import pickle
 from pathlib import Path
 import sys
 from collections.abc import Mapping
@@ -24,15 +25,17 @@ def dump(path,value):
 class Recorder:
     def __init__(self,agent,directory,target=36):
         self.agent=agent;self.directory=Path(directory);self.target=target
-        self.calls=0;self.active=None;self.trials=[]
+        self.calls=0;self.active=None;self.active_count=0;self.trials=[]
         self.core=sys.modules['runtime598']
         self.original_select=self.core.Controller.select
         self.original_certifier=self.core.certifier
         self.original_forces=self.core.force_rows
         recorder=self
 
+        def enabled():return recorder.target is None or recorder.calls==recorder.target
+
         def select(controller,*args,**kwargs):
-            if recorder.calls!=recorder.target:return recorder.original_select(controller,*args,**kwargs)
+            if not enabled():return recorder.original_select(controller,*args,**kwargs)
             root,progress,hold,launch,running=args[:5]
             names=('speed','yaw','joint','previous_joint','distance','previous_action',
                    'predicted_wheels','history','grip_prior','engine_prior','steering_prior','calls')
@@ -40,20 +43,29 @@ class Recorder:
                 hold=hold,launch_history=launch,running_history=running,high=controller.high,
                 low=controller.candidate_backup,roads=controller.scene.roads,
                 boundary=controller.scene.boundary,obstacles=controller.scene.obstacles,
-                counter_before=controller.model[0],memory={n:getattr(agent,n) for n in names}))
-            action,report=recorder.original_select(controller,*args,**kwargs)
+                call=recorder.calls,counter_before=controller.model[0],memory={n:getattr(agent,n) for n in names}))
+            try:action,report=recorder.original_select(controller,*args,**kwargs)
+            except BaseException as exc:
+                dump(recorder.directory/'original-report-private.json',dict(error=str(exc),
+                    counter_after=controller.model[0],trials=recorder.trials))
+                raise
             dump(recorder.directory/'original-report-private.json',dict(action=action,report=report,
                  counter_after=controller.model[0],trials=recorder.trials))
             return action,report
 
         def certifier(*args,**kwargs):
             certify=recorder.original_certifier(*args,**kwargs)
-            if recorder.calls!=recorder.target:return certify
+            if not enabled():return certify
             def wrapped(action):
-                force_steps=[];recorder.active=force_steps
+                force_steps=[];recorder.active=force_steps;recorder.active_count=0
                 try:report=certify(action)
-                finally:recorder.active=None
-                recorder.trials.append(dict(action=plain(action),report=report,force_steps=force_steps))
+                except BaseException as exc:
+                    recorder.trials.append(dict(action=plain(action),error=str(exc),force_steps=force_steps))
+                    raise
+                else:recorder.trials.append(dict(action=plain(action),report=report,force_steps=force_steps))
+                finally:
+                    recorder.active=None
+                    if recorder.target is None:dump(recorder.directory/'forecasts-private.json',recorder.trials)
                 return report
             return wrapped
 
@@ -72,16 +84,27 @@ class Recorder:
                         longitudinal_velocity=vf,lateral_velocity=vs,
                         longitudinal_force_raw=core.STIFFNESS*(d['omega_braked']*core.RADIUS-vf),
                         lateral_force_raw=-core.STIFFNESS*vs,**d,ratio=rows[i]['ratio']))
-                recorder.active.append(dict(raw_from_root=len(recorder.active)+1,
+                recorder.active_count+=1
+                step=dict(raw_from_root=recorder.active_count,
                     body_velocity=root.planar.linear.velocity,yaw=root.planar.yaw,
-                    action=plain(action),wheels=details))
+                    action=plain(action),wheels=details)
+                if recorder.target is None:recorder.active[:]=[step]
+                else:recorder.active.append(step)
             return rows
 
         self.core.Controller.select=select;self.core.certifier=certifier;self.core.force_rows=force_rows
 
     def before_action(self,observation):
         self.calls+=1
-        if self.calls==self.target:np.save(self.directory/'input-private.npy',observation)
+        if self.target is None or self.calls==self.target:
+            np.save(self.directory/'input-private.npy',observation)
+            (self.directory/'agent-before-private.pkl').write_bytes(pickle.dumps(self.agent.__dict__,protocol=pickle.HIGHEST_PROTOCOL))
+            dump(self.directory/'agent-before-private.json',dict(call=self.calls,
+                counter_limit=self.agent.counter.limit,memory=self.agent.__dict__))
+            self.trials=[]
+            if self.target is None:
+                for name in ('checkpoint-private.json','original-report-private.json','forecasts-private.json'):
+                    (self.directory/name).unlink(missing_ok=True)
 
 
 def external_truth(raw):

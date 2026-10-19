@@ -1,0 +1,127 @@
+{
+  "status": "OLD_INPUT_BUG_RESOLVED_NEW_ADMISSION_STOP",
+  "scope": "One reset-origin live DEV episode of fixed332b014 Agent/core, plus one native0 full-checkpoint replay. No sweep or post-failure policy change.",
+  "old_cached_history": {
+    "complete_fixed_rule_history": false,
+    "grip_overwritten": false,
+    "old_cached_chooser_calls": 0,
+    "reason": "Old checkpoint is after mistaken multiplier update and has incomplete pre-act history; fixed-rule judgment deferred to actual reset."
+  },
+  "fixed_rule_at_old_failure": {
+    "decision": 36,
+    "original_chooser_returned_valid_action": true,
+    "predicted_own_action_speed_m_s": 34.87775409254752,
+    "observed_speed_m_s": 35.54940682898095,
+    "prediction_minus_observation_m_s": -0.6716527364334297,
+    "multipliers": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "multipliers_stayed_one_throughout_episode": true,
+    "no_true_friction_injected": true
+  },
+  "episode": {
+    "applied_actions": 39,
+    "failure_decision": 40,
+    "progress": 0.1166077738515901,
+    "damage": 0.0,
+    "finish_event": false,
+    "finish_time_s": null,
+    "original_13_22_s_reproduced": false,
+    "error": "WorkerError:RuntimeError:NO_ESTIMATED_INPUT_ADMISSIBLE_ACTION",
+    "rejections": {
+      "FORECAST_FOOTPRINT_MARGIN": 14,
+      "FORCE_PEAK": 7
+    },
+    "footprint_failure_raw_range": [
+      31,
+      40
+    ],
+    "predicted_footprint_margin_range_m": [
+      0.23374133923572052,
+      0.4598749762592418
+    ],
+    "gate_unchanged_m": 0.5,
+    "current_estimated_frictions": [
+      400.0,
+      400.0,
+      400.0,
+      400.0
+    ],
+    "current_external_true_frictions": [
+      400.0,
+      400.0,
+      400.0,
+      400.0
+    ],
+    "interpretation": "New stop is future original-model admission on estimated geometry/state, not proof of actual collision or a newly localized adapter bug."
+  },
+  "timing": {
+    "max_whole_observation_to_action_s": 1.6403969409875572,
+    "failed_call_s": 0.5238275660085492,
+    "max_RSS_KiB": 55216,
+    "startup_s": 0.10699883100460283,
+    "reset_s": 0.0004300279833842069,
+    "environment_step_excluded": true,
+    "private_recorder_overhead_included": true,
+    "official_server_parity": false
+  },
+  "checkpoint": {
+    "full_pre_act_memory_and_observation": true,
+    "external_true_state_private": true,
+    "call_matches": true,
+    "all21_forecast_reports_and_first_failure_force_rows_private": true,
+    "accepted_call_raw_history_retained": false,
+    "pickle_roundtrip_checked": true,
+    "full_Agent_replay": {
+      "error_identical": true,
+      "full_report_identical": true,
+      "diagnostics_identical": true,
+      "counter_identical": true,
+      "model_ticks": 462,
+      "CPU_s": 0.519257837,
+      "wall_s": 0.5167002989910543,
+      "native_actions": 0,
+      "inputs": "Full pre-act reset-local memory and pixels; persistent counter restored and replay delta charged separately; no true state read."
+    }
+  },
+  "cost": {
+    "caps": {
+      "episodes": 1,
+      "DEV_actions": 1000,
+      "model_ticks": 200000,
+      "CPU_s": 1800,
+      "wall_s": 3600
+    },
+    "DEV_actions": 39,
+    "native_model_ticks": 28432,
+    "cached_replay_model_ticks": 462,
+    "new_model_ticks": 28894,
+    "measured_component_CPU_s": 41.088023944999996,
+    "additional_setup_CPU_reservation_s": 60,
+    "native_wall_s": 40.51406073698308,
+    "stage_wall_s_at_closeout": 167.514178,
+    "prior_DEV_actions": 98,
+    "prior_model_ticks": 70771,
+    "combined_DEV_actions": 137,
+    "combined_model_ticks": 99665,
+    "research_actions_remaining": 20608,
+    "reserve_used": 0,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0
+  },
+  "resource_limits": {
+    "external_run_allowance": 200000,
+    "original_chooser_cumulative": 180000,
+    "original_kernel_cumulative": 200000,
+    "original_limits_changed": false,
+    "replay_cost": "Restored control memory retains its counter; extra replay delta is charged separately above, never erased by reset."
+  },
+  "source_sha256": {
+    "submit_core/observation_agent.py": "9823e4866a84dca43661a39b6a45299a59f20331fec7bc8afaaaf2e565f8753c",
+    "submit_core/runtime598.py": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8"
+  },
+  "privacy": "Full observation/memory/scene/forecasts/external state remain outside repository; only code and aggregates committed.",
+  "next": "Stopped at first new failure. No further episode or tuning scheduled; complete failing checkpoint is available for native0 diagnosis."
+}

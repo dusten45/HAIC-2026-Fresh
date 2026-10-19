@@ -12,14 +12,15 @@ import numpy as np
 sys.path.insert(0,sys.argv[1].rsplit('/',1)[0])
 spec=importlib.util.spec_from_file_location('agent',sys.argv[1])
 module=importlib.util.module_from_spec(spec)
+sys.modules[spec.name]=module
 spec.loader.exec_module(module)
 agent=module.Agent()
 if len(sys.argv)>2 and hasattr(agent,'counter'):
-    agent.counter.limit=min(50000,max(0,int(sys.argv[2])))
+    agent.counter.limit=min(200000,max(0,int(sys.argv[2])))
 recorder=None
 if len(sys.argv)>3:
     from runtime598_diagnostic import Recorder
-    recorder=Recorder(agent,sys.argv[3])
+    recorder=Recorder(agent,sys.argv[3],target=None if len(sys.argv)>4 and sys.argv[4]=='all' else 36)
 
 
 def send(value):
@@ -43,12 +44,17 @@ while True:
         if command==b'R':
             agent.reset(observation);result=dict(reset=True)
         elif command==b'A':
+            prediction_before=getattr(agent,'predicted_hull_speed',None)
             if recorder is not None:recorder.before_action(observation)
             action=np.asarray(agent.act(observation),dtype=np.float32)
             if action.shape!=(3,) or not np.isfinite(action).all():raise ValueError('ACTION_SHAPE_OR_FINITE')
             if not (-1<=action[0]<=1 and 0<=action[1]<=1 and 0<=action[2]<=1):raise ValueError('ACTION_RANGE')
             if observation.tobytes()!=data:raise ValueError('OBSERVATION_MUTATED')
             result=dict(action=action.tolist(),diagnostics=getattr(agent,'diagnostics',{}))
+            if recorder is not None:
+                result['external_estimator_transition']=dict(predicted_speed_before=prediction_before,
+                    observed_speed=getattr(agent,'speed',None),grip_prior=getattr(agent,'grip_prior',None),
+                    engine_prior=getattr(agent,'engine_prior',None),steering_prior=getattr(agent,'steering_prior',None))
         else:raise ValueError('BAD_PROTOCOL')
         result.update(wall_s=time.perf_counter()-begin,CPU_s=time.process_time()-cpu,
                       max_RSS_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,

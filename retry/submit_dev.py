@@ -67,11 +67,12 @@ class WorkerError(RuntimeError):
 
 
 class Client:
-    def __init__(self,source,out,model_tick_budget=50000,force_diagnostic=False):
+    def __init__(self,source,out,model_tick_budget=50000,force_diagnostic=False,rolling_checkpoint=False):
         env=dict(os.environ,OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',MKL_NUM_THREADS='1')
         self.err=(out/'worker-stderr-private.log').open('wb');begin=time.perf_counter()
         argv=[sys.executable,'-u',str(ROOT/'retry/submit_worker.py'),str(source),str(model_tick_budget)]
-        if force_diagnostic:argv.append(str(out))
+        if force_diagnostic or rolling_checkpoint:argv.append(str(out))
+        if rolling_checkpoint:argv.append('all')
         self.p=subprocess.Popen(argv,
             cwd=source.parent,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=self.err,env=env)
         try:
@@ -126,15 +127,17 @@ def main():
     parser.add_argument('--model-tick-budget',type=int,default=50000)
     parser.add_argument('--continuous-runtime',action='store_true')
     parser.add_argument('--force-diagnostic',action='store_true')
+    parser.add_argument('--rolling-checkpoint',action='store_true')
     args=parser.parse_args();assert 0<args.steps<=2000
     if args.force_diagnostic:assert args.continuous_runtime and args.steps<=36 and args.model_tick_budget<=30000
+    if args.rolling_checkpoint:assert args.continuous_runtime and not args.force_diagnostic and args.model_tick_budget<=200000
     if args.continuous_runtime:assert args.runtime_core and args.steps<=1000,'CONTINUOUS_RUNTIME_CAP'
     elif args.runtime_core:assert args.steps<=20,'INITIAL_RUNTIME_LINK_SMOKE_CAP'
     if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:raise RuntimeError('AUTHORIZATION_EXPIRED')
     PRIVATE.mkdir(mode=0o700,exist_ok=True);out=PRIVATE/args.label;out.mkdir(mode=0o700,exist_ok=False)
     source,source_hash=package(out,args.agent_source,ROOT/'submit_core/runtime598.py' if args.runtime_core else None);client=None;env=None;rows=[];status='TECHNICAL_FAILURE';error=None;reset=None;summary={};failure_payload=None;worker_cpu=0.
     try:
-        client=Client(source,out,args.model_tick_budget,args.force_diagnostic)
+        client=Client(source,out,args.model_tick_budget,args.force_diagnostic,args.rolling_checkpoint)
         import numpy as np
         # Mandatory reset/action/shape/memory checks use the exact packaged Agent
         # before any environment creation. No privileged input enters its process.
@@ -163,7 +166,7 @@ def main():
                 if args.continuous_runtime:
                     if time.perf_counter()-START>=(1794. if args.force_diagnostic else 3594.):status='WALL_BUDGET_CENSORED';break
                     if time.process_time()-CPU+worker_cpu+client.startup>=(594. if args.force_diagnostic else 1794.):status='CPU_BUDGET_CENSORED';break
-                if args.force_diagnostic and i==35:
+                if args.rolling_checkpoint or (args.force_diagnostic and i==35):
                     from retry.runtime598_diagnostic import external_truth
                     dump(out/'external-truth-private.json',external_truth(raw))
                 q=client.request(b'A',obs);a=np.asarray(q['action'],np.float32)
@@ -191,6 +194,7 @@ def main():
                 ticks=round((raw.t-before)/.02)
                 row=dict(index=i+1,action=q['action'],diagnostics=q.get('diagnostics'),whole_act_wall_s=q['whole_request_wall_s'],worker_wall_s=q['wall_s'],worker_CPU_s=q['CPU_s'],max_RSS_KiB=q['max_RSS_KiB'],model_ticks_total=q.get('resource_model_ticks',0),raw=ticks,progress=info['progress'],damage=info['damage'],true_hull_speed=float(np.linalg.norm(raw.car.hull.linearVelocity)))
                 row['external_estimate_error']=estimate_error
+                if args.rolling_checkpoint:row['external_estimator_transition']=q['external_estimator_transition']
                 rows.append(row);log.write(json.dumps(row)+'\n');log.flush()
                 if i%20==0:cv2.imwrite(str(out/f'frame-{i+1:04d}-private.png'),np.rint(obs[-1]*255).astype(np.uint8))
                 if terminated or truncated:
