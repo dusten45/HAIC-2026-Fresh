@@ -56,9 +56,17 @@ def _raster_halfplane(ids,row,edges,slope):
     return result
 
 
-def observe_outer_edge(image,point,radial,blocked):
+def observe_outer_edge(image,point,radial,blocked,reference=False):
     """Observe a plain contour along its2D normal, allowing public tile shades."""
-    step=1/(2.7*6.);distance=np.arange(-16,17)*step
+    step=1/(2.7*6.);extent=16
+    if reference:
+        # Area96 support + linear96->84 support + remap84 support + source
+        # antialias pixel. Add five source samples for actual flat plateaus.
+        nx,ny=abs(radial[0]),abs(radial[1])
+        pixel96=(nx*1000/96.+ny*800/96.)/(2.7*6.)
+        pixel84=nx/1.3608+ny/1.701
+        extent=int(math.ceil((1.5*pixel96+pixel84+step)/step))+5
+    distance=np.arange(-extent,extent+1)*step
     world=np.asarray(point)[None,:]+distance[:,None]*np.asarray(radial)[None,:]
     xs=IMAGE_ORIGIN_X+1.3608*world[:,0];ys=IMAGE_ORIGIN_Y-1.701*world[:,1]
     if min(xs)<1 or max(xs)>82 or min(ys)<5 or max(ys)>=54:return None
@@ -245,6 +253,47 @@ def coherent_grass_mask(image):
     return grass&(cv2.dilate(plateau,np.ones((3,3),np.uint8))>0)
 
 
+def extend_reference_contour(image,points,center,blocked):
+    """Follow actual plain edge pixels with a local predictor, for reference only.
+
+    A coarse circle may miss an otherwise visible variable-curvature edge.
+    Local predictions are search locations only; only successful road/grass
+    pixel observations are retained. Geometry allowances remain untouched.
+    """
+    points=np.asarray(points,np.float64);center=np.asarray(center,np.float64)
+    angles=np.arctan2(points[:,1]-center[1],points[:,0]-center[0])
+    anchor=math.atan2(float(np.mean(np.sin(angles))),float(np.mean(np.cos(angles))))
+    angles=anchor+(angles-anchor+math.pi)%(2*math.pi)-math.pi
+    chain=points[np.argsort(angles)]
+    keep=np.r_[True,np.linalg.norm(np.diff(chain,axis=0),axis=1)>1/(2.7*6.)]
+    chain=chain[keep];step=(21./6.)/4;window=2*(21./6.)
+    limit=int(math.ceil(math.hypot(84/1.3608,84/1.701)/step));added=0
+    for direction in (-1,1):
+        sequence=chain[::-1].copy() if direction<0 else chain.copy()
+        for _ in range(limit):
+            arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(sequence,axis=0),axis=1))]
+            distance=arc-arc[-1];selected=distance>=-window
+            if int(np.sum(selected))<7 or -min(distance[selected])<21./6.:break
+            z=distance[selected]/window;matrix=np.column_stack((np.ones(len(z)),z,z*z))
+            if np.linalg.cond(matrix)>100.:break
+            coef=np.linalg.lstsq(matrix,sequence[selected],rcond=None)[0]
+            if np.max(np.linalg.norm(matrix@coef-sequence[selected],axis=1))>.35:break
+            length=float(np.linalg.norm(coef[1]))
+            if length<1.:break
+            normal=np.array([coef[1,1],-coef[1,0]])/length
+            if float(normal@(sequence[-1]-center))<0:normal=-normal
+            advance=step/window;guess=sequence[-1]+advance*coef[1]+advance*advance*coef[2]
+            observed=observe_outer_edge(image,guess,normal,blocked,reference=True)
+            if observed is None:break
+            if min(np.linalg.norm(sequence-observed,axis=1))<.5*step:break
+            candidate=np.vstack((sequence,observed));theta=np.arctan2(candidate[:,1]-center[1],candidate[:,0]-center[0])
+            theta=anchor+(theta-anchor+math.pi)%(2*math.pi)-math.pi
+            if max(theta)-min(theta)>math.pi:break
+            sequence=candidate;added+=1
+        chain=sequence[::-1].copy() if direction<0 else sequence
+    return chain,added
+
+
 def offset_observed_contour(points,center,radius):
     """Local quadratic tangents, then the public width offset; no circle offset.
 
@@ -258,12 +307,12 @@ def offset_observed_contour(points,center,radius):
     angles=anchor+(angles-anchor+math.pi)%(2*math.pi)-math.pi
     order=np.argsort(angles);angles=angles[order];points=points[order]
     step=21./6.;half_window=2*step;nominal=2*(40./6.)
-    contour=[];residuals=[]
+    contour=[];residuals=[];centres=[]
     for angle in np.arange(float(min(angles)),float(max(angles)),.05):
         distance=(angles-angle)*radius;selected=abs(distance)<=half_window
         if int(np.sum(selected))<7:continue
         q=distance[selected]
-        if min(q)>-step or max(q)<step:continue
+        both_sides=min(q)<=-step and max(q)>=step
         z=q/half_window;matrix=np.column_stack((np.ones(len(z)),z,z*z))
         if np.linalg.cond(matrix)>100.:continue
         coefficients=np.linalg.lstsq(matrix,points[selected],rcond=None)[0]
@@ -273,10 +322,16 @@ def offset_observed_contour(points,center,radius):
         if length<1.:continue
         normal=np.array([tangent[1],-tangent[0]])/length
         if float(normal@(coefficients[0]-center))<0:normal=-normal
+        # Reference targets are physical half-width estimates on the observed
+        # angular sector. One-sided interpolation is allowed for a proposal;
+        # robust map boundaries still require support on both sides.
+        centre=coefficients[0]-.5*nominal*normal
+        centres.append((float(centre[0]),float(centre[1]),float(angle)))
+        if not both_sides:continue
         uncertainty=residual+nominal*(1-math.cos(.31/2))+1/(2.7*6.)
         inner=coefficients[0]-(nominal-uncertainty)*normal
         contour.append((float(inner[0]),float(inner[1]),float(angle)));residuals.append(residual)
-    return contour,residuals
+    return contour,residuals,centres
 
 
 def infer_painted_road_band(image,asphalt,blocked):
@@ -305,7 +360,7 @@ def infer_painted_road_band(image,asphalt,blocked):
             if not 156/255.<=float(np.mean(image[y,ids[:2]]))<=184/255.:continue
             edge=recover_pixel_edge(image,y,index,direction,blocked)
             if edge is not None:contours[side].append(((edge-IMAGE_ORIGIN_X)/1.3608,(IMAGE_ORIGIN_Y-y)/1.701))
-    support=np.zeros((84,84),np.uint8);fits=[];updates={};nominal=2*(40./6.)
+    support=np.zeros((84,84),np.uint8);fits=[];updates={};reference_curves=[];nominal=2*(40./6.)
     for side,points in enumerate(contours):
         if len(points)<8:continue
         p=np.asarray(points,np.float64)
@@ -352,7 +407,10 @@ def infer_painted_road_band(image,asphalt,blocked):
                 center,radius,residual=new_center,new_radius,new_residual
                 low,high=float(min(angles)),float(max(angles));observed_points=candidate
                 verified+=1
-        inner_points,local_residuals=offset_observed_contour(observed_points,center,radius)
+        inner_points,local_residuals,_=offset_observed_contour(observed_points,center,radius)
+        reference_observations,reference_extensions=extend_reference_contour(image,observed_points,center,blocked)
+        _,_,centres=offset_observed_contour(reference_observations,center,radius)
+        if len(centres)>=3:reference_curves.append(dict(outer_side=side,points=centres))
         if len(inner_points)<2:continue
         white=cv2.dilate((image>.75).astype(np.uint8),np.ones((3,9),np.uint8))>0
         red=cv2.dilate((image<.35).astype(np.uint8),np.ones((3,9),np.uint8))>0
@@ -384,10 +442,53 @@ def infer_painted_road_band(image,asphalt,blocked):
         fits.append(dict(outer_side=side,observations=len(points),radial_residual_m=residual,
             angular_support_rad=high-low,added_pixels=int(support.sum())-added_before,
             verified_2D_extensions=verified,local_offset_points=len(inner_points),
-            local_offset_edges=edge_count,local_max_residual_m=max(local_residuals),
+            local_offset_edges=edge_count,reference_observed_edge_extensions=reference_extensions,local_max_residual_m=max(local_residuals),
             offset_method='local quadratic tangent + public width; circle used only for observed sampling'))
     return support,dict(painted_band_added_pixels=int(support.sum()),painted_band_fits=fits,
-        painted_band_bound_universally_validated=False),updates
+        painted_band_bound_universally_validated=False),updates,reference_curves
+
+
+def reference_from_observed_width(raw_points,curves,asphalt,blocked):
+    """Visible outer contour plus public half-width, with an observed join.
+
+    This estimates a reference, not a new planner or a geometry certificate.
+    Do not continue a row-midpoint path through merged branches beyond the
+    end of the observed centreline. Original control/certification is retained.
+    """
+    raw=np.asarray(raw_points,np.float64);best=None
+    def supported(point):
+        x=IMAGE_ORIGIN_X+1.3608*point[0];y=IMAGE_ORIGIN_Y-1.701*point[1]
+        if not 1<=x<=82 or not 5<=y<69:return False
+        ix=int(round(x));iy=int(round(y))
+        return bool(asphalt[iy,ix]) and not bool(blocked[iy,ix])
+    for curve in curves:
+        runs=[];run=[]
+        for point in curve['points']:
+            if not supported(point) or (run and point[2]-run[-1][2]>.051):
+                if len(run)>=3:runs.append(run)
+                run=[]
+            if supported(point):run.append(point)
+        if len(run)>=3:runs.append(run)
+        for run in runs:
+            points=np.asarray(run,np.float64)[:,:2]
+            if np.linalg.norm(points[-1])<np.linalg.norm(points[0]):points=points[::-1]
+            j=int(np.argmin(np.linalg.norm(raw-points[0],axis=1)))
+            gap=float(np.linalg.norm(raw[j]-points[0]))
+            # Only a short, visibly supported connection to the retained prefix.
+            if gap>21./6.:continue
+            n=max(2,int(math.ceil(gap*1.701))+1)
+            if not all(supported((1-t)*raw[j]+t*points[0]) for t in np.linspace(0.,1.,n)):continue
+            candidate=np.vstack((raw[:j+1],points));ds=np.linalg.norm(np.diff(candidate,axis=0),axis=1)
+            candidate=candidate[np.r_[True,ds>1e-6]]
+            length=float(np.sum(np.linalg.norm(np.diff(candidate,axis=0),axis=1)))
+            score=length-gap
+            if best is None or score>best[0]:best=(score,candidate,len(points),gap)
+    if best is None:return raw,dict(reference_source='visible row midpoints',observed_width_reference_used=False)
+    _,points,count,gap=best
+    return points,dict(reference_source='observed clean outer contour + public half-width',
+        observed_width_reference_used=True,observed_centerline_points=count,
+        observed_reference_join_m=gap,reference_unseen_suffix_extrapolated=False,
+        reference_is_an_estimate_not_a_certificate=True)
 
 
 def transport_road_evidence(frames):
@@ -550,7 +651,7 @@ class Agent:
             if right-left<2.5:break
             anchor=(start+end-1)*.5;rows.append((left,right,(IMAGE_ORIGIN_Y-y)/1.701));pixels.append((y,start,end))
         if len(rows)<8:raise RuntimeError('OBSERVED_ROAD_SUPPORT_INSUFFICIENT')
-        painted,painted_info,band_edges=infer_painted_road_band(image,asphalt,blocked)
+        painted,painted_info,band_edges,reference_curves=infer_painted_road_band(image,asphalt,blocked)
         geometry_asphalt=asphalt|painted
         self.uncertainty.update(painted_info)
         # Keep the reference samples unchanged. Geometry uses each actually
@@ -592,7 +693,19 @@ class Agent:
         roads=[((left[i],right[i],right[i+1],left[i+1]),self.grip_prior) for i in range(len(dense)-1)]
         boundary=list(zip(left,left[1:]))+list(zip(right,right[1:]))+[(left[0],right[0]),(left[-1],right[-1])]
         points=np.asarray([((a+b)*.5,y) for a,b,y in rows],np.float64)
-        points[:,0]=cv2.GaussianBlur(points[:,0].reshape(1,-1),(5,1),1.).ravel()
+        points,reference_info=reference_from_observed_width(points,reference_curves,asphalt,obstacle_blocked)
+        self.uncertainty.update(reference_info)
+        if reference_info['observed_width_reference_used']:
+            # Public centreline nodes are generated at21/6m. Pixel-dense fits
+            # and coarser row samples must not enter curvature derivatives on
+            # different spatial scales. Resample the estimated geometry only;
+            # keep the original speed-profile formula and certification gates.
+            support_arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
+            count=max(3,int(math.ceil(float(support_arc[-1])/(21./6.)))+1)
+            sample=np.linspace(0.,float(support_arc[-1]),count)
+            points=np.column_stack([np.interp(sample,support_arc,points[:,j]) for j in range(2)])
+            self.uncertainty['reference_geometry_sample_step_m']=float(sample[1]-sample[0])
+        else:points[:,0]=cv2.GaussianBlur(points[:,0].reshape(1,-1),(5,1),1.).ravel()
         arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
         tangent=np.gradient(points,arc,axis=0);normal=np.column_stack((tangent[:,1],-tangent[:,0]));normal/=np.maximum(np.linalg.norm(normal,axis=1,keepdims=True),1e-6)
         for center,radius in obstacles:

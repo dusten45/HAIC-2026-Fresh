@@ -1,0 +1,196 @@
+{
+  "status": "PHYSICAL_REFERENCE_ESTIMATE_IMPROVED_ORIGINAL45_CACHE_FIXED_LIVE_FORCE_BARRIER_NOT_PROMOTED",
+  "margin_separation": {
+    "original_physical_clearance_m": 0.5,
+    "original_clearance_role": "Required physical footprint clearance in the original controller, not a perception-error estimate.",
+    "adapter_uniform_x_allowance_m": 0.35,
+    "uniform_allowance_role": "Adapter engineering erosion, not an official rule.",
+    "band_observation_normal_allowance_range_m": [
+      0.31915120413560366,
+      0.36029051405347995
+    ],
+    "band_observation_components": "Local observed contour residual + public tile chord discrepancy + source raster pixel.",
+    "already_adjusted_band_then_extra_uniform_allowance": true,
+    "deduplication_only_public_cases": 144,
+    "deduplication_only_full_Agent_admitted": false,
+    "deduplication_only_live_runs": 0,
+    "final_allowances_unchanged": true
+  },
+  "reference_evidence": {
+    "saved45_raw_midpoint_inward_x_bias_range_m": [
+      6.3034864321934645,
+      10.280010054358272
+    ],
+    "comparison": "Actual pixels: existing row midpoints versus visible clean outer contour offset by public half-width. No true-map offset fit.",
+    "improvement": "Use supported2D half-width centreline with an observed join; remove unsupported midpoint suffix; resample geometry at no more than public21/6m spacing before the original curvature/speed-profile formulas.",
+    "mask_correction": "Vehicle bounding box is a subpixel-recovery veto; reference joins veto actual obstacles rather than visible road in that box.",
+    "filter_support_correction": "Reference-only contour search window derives from1000x800->96 area filter,96->84 linear filter,84 bilinear sampling and source antialias support. Existing geometry observation allowance and legacy geometry reader are unchanged.",
+    "local_extensions_are_actual_edge_pixels": true
+  },
+  "public_checks": {
+    "scenes": 144,
+    "applied_scenes": 114,
+    "matched_baseline_MAE_m": 0.8171675154549242,
+    "new_MAE_m": 0.14113842066613225,
+    "outside_physical_road_cases": 0,
+    "blocked_and_unknown_fallback": true,
+    "all_scene_meshes_unchanged": true,
+    "local_support_negative_cases": 10,
+    "scope": "Finite synthetic public tile/raster tests only; no universal error bound or safety certificate."
+  },
+  "cached_gates": [
+    {
+      "saved_failure": 45,
+      "final_source": true,
+      "admitted": true,
+      "whole_act_s": 0.12334975801059045,
+      "model_ticks": 100
+    },
+    {
+      "saved_failure": 36,
+      "fix": "Physical source spacing for curvature estimation",
+      "admitted": true,
+      "whole_act_s": 1.1497291800042149
+    },
+    {
+      "saved_failure": 39,
+      "fix": "Visible-road versus vehicle-box mask",
+      "admitted": true,
+      "whole_act_s": 0.5629499089845922
+    },
+    {
+      "saved_failure": 40,
+      "fix": "Full public raster filter support for reference contour tracing",
+      "admitted": true,
+      "whole_act_s": 0.6026707530254498,
+      "observed_path_length_before_m": 21.6215734883501,
+      "observed_path_length_after_m": 41.77963575840741,
+      "actual_edge_extensions": 23
+    }
+  ],
+  "live_runs": [
+    {
+      "variant": "half_width_reference",
+      "applied_actions": 35,
+      "failure_decision": 36,
+      "progress": 0.10954063604240283,
+      "damage": 0.0,
+      "rejections": {
+        "REFERENCE_WITH_NUMERIC_RESERVE": 15,
+        "FORCE_PEAK": 6
+      },
+      "model_ticks": 22591,
+      "CPU_s": 44.032217705,
+      "max_whole_act_s": 2.1783228570129722,
+      "full_checkpoint_saved_private": true
+    },
+    {
+      "variant": "source_spaced_reference",
+      "applied_actions": 38,
+      "failure_decision": 39,
+      "progress": 0.12014134275618374,
+      "damage": 0.0,
+      "rejections": {
+        "REFERENCE_WITH_NUMERIC_RESERVE": 13,
+        "FORCE_PEAK": 7
+      },
+      "model_ticks": 23397,
+      "CPU_s": 46.072570025000005,
+      "max_whole_act_s": 2.184532567014685,
+      "full_checkpoint_saved_private": true
+    },
+    {
+      "variant": "visible_join_reference",
+      "applied_actions": 39,
+      "failure_decision": 40,
+      "progress": 0.12367491166077739,
+      "damage": 0.0,
+      "rejections": {
+        "FORCE_PEAK": 7,
+        "REFERENCE_WITH_NUMERIC_RESERVE": 14
+      },
+      "model_ticks": 23775,
+      "CPU_s": 46.095257151,
+      "max_whole_act_s": 2.112049602990737,
+      "full_checkpoint_saved_private": true
+    },
+    {
+      "variant": "filter_supported_reference",
+      "applied_actions": 39,
+      "failure_decision": 40,
+      "progress": 0.12367491166077739,
+      "damage": 0.0,
+      "rejections": {
+        "FORCE_PEAK": 21
+      },
+      "model_ticks": 23661,
+      "CPU_s": 46.408963082,
+      "max_whole_act_s": 2.1687556820106693,
+      "full_checkpoint_saved_private": true
+    }
+  ],
+  "latest_blocker": {
+    "decision": 40,
+    "finished": false,
+    "lap_time_s": null,
+    "official_server_runtime_parity": false,
+    "all_candidates": "FORCE_PEAK",
+    "actual_map_counterfactual_admitted": false,
+    "old_and_new_contact_frictions_equal": true,
+    "first_rejected_force_raw_from_root": 2,
+    "first_rejected_force_ratio": 1.0657467211985372,
+    "original_force_admission": 1.0590000000000002,
+    "full_measured_state_controller_comparison": "Not evaluated: original frame precision assertion failed; assertion preserved.",
+    "raw_measured_rigid_position_residual_m": 9.458799410284286e-06,
+    "raw_measured_rigid_velocity_residual_m_s": 7.985565332370949e-05,
+    "force_only_hull_velocity_error_m_s": [
+      -0.006615283291323326,
+      -0.5596721051220825
+    ],
+    "force_only_yaw_error_rad_s": 0.04349685272243686,
+    "force_only_wheel_omega_error_range_rad_s": [
+      -2.2789336818668886,
+      -2.155467568190872
+    ],
+    "limits": "Instantaneous measured-force diagnostic is not a controller admission result. Joint rates and clip history remain partly unobserved; no causal claim that state estimation alone explains the force barrier."
+  },
+  "promotion": {
+    "live_progress_improved_over_previous_candidate": false,
+    "previous_best_progress": 0.127208480565371,
+    "latest_progress": 0.12367491166077739,
+    "promoted": false,
+    "reason": "Public/cached reference estimation improved, but full continuous live admission still fails earlier; retain as a research candidate, not a verified improvement in live performance."
+  },
+  "invariants": {
+    "controller_physics_horizon_candidates_thresholds_unchanged": true,
+    "physical_map_root_unchanged_on_saved_reference_interventions": true,
+    "adapter_uniform_inset_unchanged": true,
+    "true_state_seed_global_map_in_Agent": false,
+    "true_state_certificate": false
+  },
+  "cost": {
+    "caps": {
+      "DEV_actions": 400,
+      "model_ticks": 250000,
+      "CPU_s": 1800,
+      "wall_s": 3600
+    },
+    "new_DEV_actions": 151,
+    "new_model_ticks": 95584,
+    "measured_recorded_CPU_s": 231.01945960599997,
+    "additional_setup_and_unrecorded_probe_CPU_reservation_s": 120,
+    "wall_s_at_closeout": 1492.15745,
+    "research_actions_remaining": 20170,
+    "integration_actions_total": 575,
+    "integration_model_ticks_total": 413655,
+    "reserve_used": 0,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0
+  },
+  "next_gate": "Before another live reset, construct an equivalent measured rigid-state representation that passes the existing precision guard, then separate same-candidate first1..2tick force sensitivity to hull velocity/yaw, wheel spin and joint rates. Validate any observable-state correction publicly and on the saved complete Agent input. Do not reduce original clearance/force thresholds or tune a new speed planner.",
+  "privacy": "Only code/public synthetic tests/aggregate results committed. Raw images, full checkpoints, reset identity and actual state/map remain private.",
+  "source_sha256": {
+    "submit_core/observation_agent.py": "2c4b7958a36858239fa6c1609a69db1fe36d457679bd850e12cea5767b34058e",
+    "submit_core/runtime598.py": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8"
+  }
+}
