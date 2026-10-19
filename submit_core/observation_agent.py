@@ -153,6 +153,76 @@ def object_adjacent_asphalt(image,asphalt,flat,visible_obstacles):
     return candidate
 
 
+OBJECT_SX=1.3608
+OBJECT_SY=1.701
+OBJECT_RADIUS=1.2
+OBJECT_SOURCE_ERROR_M=3*math.hypot(84/1000/OBJECT_SX,84/800/OBJECT_SY)
+OBJECT_QUANTIZATION_GRAY=3.0
+
+def _object_raster_samples(bounds,subdivisions):
+    x0,y0,x1,y1=bounds
+    yy,xx=np.mgrid[y0:y1+1,x0:x1+1]
+    u=(xx.ravel()+.5)*96/84-.5;v=(yy.ravel()+.5)*96/84-.5
+    j=np.floor(u);k=np.floor(v);wx=u-j;wy=v-k
+    side=84/96
+    offsets=(np.arange(subdivisions)+.5)*side/subdivisions
+    ax,ay=np.meshgrid(offsets,offsets)
+    pts=[];weights=[]
+    for dx in (0,1):
+      for dy in (0,1):
+        px=(j+dx)*side-.5;py=(k+dy)*side-.5
+        pts.append(np.stack(((px[:,None]+ax.ravel())/OBJECT_SX,(py[:,None]+ay.ravel())/OBJECT_SY),axis=-1))
+        w=((1-wx) if dx==0 else wx)*((1-wy) if dy==0 else wy)
+        weights.append(np.broadcast_to(w[:,None]/subdivisions**2,(len(w),subdivisions**2)))
+    sample_radius=.5*math.hypot(side/subdivisions/OBJECT_SX,side/subdivisions/OBJECT_SY)
+    return np.concatenate(pts,axis=1),np.concatenate(weights,axis=1),sample_radius
+
+def compatible_object_envelope(image,bounds,road_interval,cell_m=.15,subdivisions=4):
+    """Return union of all surviving center cells, or reject.
+
+    bounds is a fully observed, externally checked rectangular ROI in pixels.
+    image is uint8 grayscale. road_interval is current enclosing-ring min/max.
+    The caller must reject grass/paint/opaque/crop and keep collision disks.
+    """
+    x0,y0,x1,y1=map(int,bounds);roi=np.asarray(image)[y0:y1+1,x0:x1+1].astype(float)
+    if roi.size==0 or x0<1 or x1>82 or y0<5 or y1>53:return dict(accepted=False,reason='ROI_VISIBILITY')
+    bright=np.argwhere((roi>164)&(roi<176))
+    if not len(bright):return dict(accepted=False,reason='NO_CURRENT_BRIGHT_CORE')
+    lowroad,highroad=map(float,road_interval)
+    if not 98<=lowroad<=highroad<=110 or highroad-lowroad>7.1:return dict(accepted=False,reason='ROAD_PLATEAU')
+    points,weights,integration_error=_object_raster_samples((x0,y0,x1,y1),subdivisions)
+    # Every bright pixel must receive some object contribution. A source point
+    # of its positive four-box kernel is within this radius of its pixel center.
+    side=84/96
+    kernel_error=math.hypot(1.5*side/OBJECT_SX,1.5*side/OBJECT_SY)
+    reach=OBJECT_RADIUS+OBJECT_SOURCE_ERROR_M+kernel_error
+    bx=(bright[:,1]+x0)/OBJECT_SX;by=(bright[:,0]+y0)/OBJECT_SY
+    left=max(bx-reach);right=min(bx+reach);bottom=max(by-reach);top=min(by+reach)
+    if left>right or bottom>top:return dict(accepted=False,reason='NO_CENTER_DOMAIN')
+    xs=np.arange(left,right+cell_m,cell_m);ys=np.arange(bottom,top+cell_m,cell_m)
+    centers=np.stack(np.meshgrid(xs,ys),axis=-1).reshape(-1,2)
+    halfcell=cell_m/math.sqrt(2)
+    lower=max(0,OBJECT_RADIUS*math.cos(math.pi/16)-OBJECT_SOURCE_ERROR_M-integration_error-halfcell)
+    upper=OBJECT_RADIUS+OBJECT_SOURCE_ERROR_M+integration_error+halfcell
+    observed=roi.ravel();kept=[];best_violation=float('inf')
+    for start in range(0,len(centers),32):
+        c=centers[start:start+32]
+        distance=np.linalg.norm(points[None,:,:,:]-c[:,None,None,:],axis=-1)
+        fmin=np.sum((distance<=lower)*weights[None,:,:],axis=-1)
+        fmax=np.sum((distance<=upper)*weights[None,:,:],axis=-1)
+        predicted_low=lowroad+(173.1-lowroad)*fmin-OBJECT_QUANTIZATION_GRAY
+        predicted_high=highroad+(173.1-highroad)*fmax+OBJECT_QUANTIZATION_GRAY
+        violation=np.max(np.maximum(predicted_low-observed,observed-predicted_high),axis=1)
+        best_violation=min(best_violation,float(violation.min()))
+        kept.extend(c[violation<=0].tolist())
+    if not kept:return dict(accepted=False,reason='NO_COMPATIBLE_CENTER',tested_center_cells=len(centers),best_violation_gray=best_violation)
+    kept=np.array(kept);envelope_radius=OBJECT_RADIUS+halfcell
+    return dict(accepted=True,compatible_center_cells=len(kept),tested_center_cells=len(centers),centers_world_pixel_origin=kept.tolist(),center_cell_half_diagonal_m=halfcell,
+        silhouette_union_box_world_pixel_origin=[*(kept.min(axis=0)-envelope_radius),*(kept.max(axis=0)+envelope_radius)],
+        source_raster_envelope_m=OBJECT_SOURCE_ERROR_M,quantization_gray=OBJECT_QUANTIZATION_GRAY,orientation='all, inscribed/circumscribed16gon',
+        engineering_assumptions='Three source-pixel diagonals bound polygon/AA and integer-area resampling deviations; final arithmetic ±3gray. Caller validates full current road ring. Not a universal safety certificate.')
+
+
 def detect_observed_obstacles(image,mixed=False):
     asphalt=((image>.36)&(image<.47)).astype(np.uint8)
     # For rechecking an ALREADY observed disk, a half-covered public orange
@@ -171,6 +241,65 @@ def detect_observed_obstacles(image,mixed=False):
             obstacles.append((((cx-IMAGE_ORIGIN_X)/1.3608,(IMAGE_ORIGIN_Y-cy)/1.701),1.6))
             blocked[max(0,y-2):min(84,y+h+2),max(0,x-2):min(84,x+w+2)]=True
     return obstacles,blocked
+
+
+def observed_object_road_patch(image,center,joint):
+    """Infer pavement under a CURRENT fully surrounded public object.
+
+    The closed two-pixel asphalt ring is observed. Its interior is a local
+    road-continuity hypothesis, not observed pixels. A compatible16-gon raster
+    must explain the whole ROI. Return its collision envelope separately.
+    """
+    px=IMAGE_ORIGIN_X+OBJECT_SX*center[0];py=IMAGE_ORIGIN_Y-OBJECT_SY*center[1]
+    # Register the ROI to the CURRENT connected orange/road transition. A
+    # fixed large crop can include an unrelated flank's grass even when a
+    # smaller complete material contour has a closed pavement ring.
+    foreground=((image>(107.1+2.)/255.)&(image<176/255.)).astype(np.uint8)
+    count,labels,stats,centers=cv2.connectedComponentsWithStats(foreground)
+    candidates=[]
+    for i in range(1,count):
+        x,y,w,h,area=stats[i]
+        if not (3<=area<=30 and min(w,h)>=2 and max(w,h)<=3*min(w,h)):continue
+        if not np.any((labels==i)&(image>164/255.)):continue
+        distance=math.hypot((centers[i,0]-px)/OBJECT_SX,(centers[i,1]-py)/OBJECT_SY)
+        if distance<=math.hypot(1/OBJECT_SX,1/OBJECT_SY):candidates.append((distance,x,y,w,h))
+    if not candidates:return None
+    _,x,y,w,h=min(candidates)
+    # Three surrounding output pixels retain a two-pixel verified ring and
+    # overlap its existing inset mesh; no fixed road crop is searched.
+    x0=int(x)-3;x1=int(x+w-1)+3;y0=int(y)-3;y1=int(y+h-1)+3
+    if x0<1 or x1>82 or y0<5 or y1>53:return None
+    if np.any(vehicle_projection_mask(joint)[y0:y1+1,x0:x1+1]):return None
+    roi=np.rint(image[y0:y1+1,x0:x1+1]*255.).astype(np.uint8)
+    ring=np.ones(roi.shape,bool);ring[2:-2,2:-2]=False
+    values=roi[ring].astype(float)
+    if min(values)<100. or max(values)>109.1 or np.ptp(values)>7.1:return None
+    # Source filters truncate positive RGB mixtures. Enumerating every final
+    # channel-rounding breakpoint on grey<=109.1 -> orange(255,165,0) gives
+    # RGB2GRAY<=173, including final resize rounding. The wider coverage
+    # interval below must not excuse a different bright material.
+    if min(roi.ravel())<100 or max(roi.ravel())>173:return None
+    envelope=compatible_object_envelope(np.rint(image*255.).astype(np.uint8),
+        (x0,y0,x1,y1),(float(min(values)),float(max(values))))
+    if not envelope['accepted']:return None
+    cells=np.asarray(envelope['centers_world_pixel_origin'])
+    midpoint=(cells.min(axis=0)+cells.max(axis=0))*.5
+    collision_center=(float(midpoint[0]-IMAGE_ORIGIN_X/OBJECT_SX),
+        float(IMAGE_ORIGIN_Y/OBJECT_SY-midpoint[1]))
+    collision_radius=OBJECT_RADIUS+envelope['center_cell_half_diagonal_m']+float(np.max(np.linalg.norm(cells-midpoint,axis=1)))
+    # Boundaries lie inside the CURRENT enclosing road plateau. Retain the
+    # existing0.35m inward allowance on every edge of this inferred patch.
+    left=(x0+1-IMAGE_ORIGIN_X)/OBJECT_SX+.35;right=(x1-1-IMAGE_ORIGIN_X)/OBJECT_SX-.35
+    near=(IMAGE_ORIGIN_Y-(y1-1))/OBJECT_SY+.35;far=(IMAGE_ORIGIN_Y-(y0+1))/OBJECT_SY-.35
+    if left>=right or near>=far:return None
+    patch=np.array([[left,near],[right,near],[right,far],[left,far]])
+    return patch,(collision_center,collision_radius),dict(
+        compatible_center_cells=envelope['compatible_center_cells'],
+        collision_envelope_radius_m=collision_radius,
+        source_raster_envelope_m=OBJECT_SOURCE_ERROR_M,
+        quantization_gray=OBJECT_QUANTIZATION_GRAY,
+        inferred_road_under_object=True,closed_current_asphalt_ring=True,
+        universal_bound=False)
 
 
 def update_observed_obstacles(image,detections,previous,joint):
@@ -1566,6 +1695,12 @@ class Agent:
         asphalt=((image>.36)&(image<.47)).astype(np.uint8)
         obstacles,obstacle_blocked=detect_observed_obstacles(image)
         visible_obstacles=obstacles.copy()
+        object_road_patches=[];object_collision_envelopes=[];object_road_records=[]
+        for center,radius in visible_obstacles:
+            recovered=observed_object_road_patch(image,center,self.joint)
+            if recovered is not None:
+                patch,collision,record=recovered
+                object_road_patches.append(patch);object_collision_envelopes.append(collision);object_road_records.append(record)
         blocked=obstacle_blocked.copy()
         blocked[55:70,34:51]=True
         self.obstacle_tracks,obstacle_counts=update_observed_obstacles(image,obstacles,self.obstacle_tracks,self.joint)
@@ -1741,6 +1876,18 @@ class Agent:
             signs=np.asarray(signs);inside=np.all(signs>=0,axis=0)|np.all(signs<=0,axis=0)
             if not np.any(inside) or np.any(geometry_veto[yy[inside],xx[inside]]):continue
             roads.append((tuple(tuple(float(v) for v in point) for point in patch),self.grip_prior));accepted_patches+=1
+        # Pavement inference and collision exclusion are independent. Existing
+        # obstacle disks remain; compatible silhouette envelopes can only add
+        # collision exclusion. These patches never enter the reference pixels.
+        for patch in object_road_patches:
+            roads.append((tuple(tuple(float(v) for v in point) for point in patch),self.grip_prior))
+        collision_obstacles=obstacles.copy()
+        for center,radius in object_collision_envelopes:
+            if not any(np.linalg.norm(np.asarray(center)-p)+radius<=r for p,r in obstacles):
+                collision_obstacles.append((center,radius))
+        self.uncertainty['object_road_support_inference']=object_road_records
+        self.uncertainty['existing_collision_obstacles_preserved']=True
+        self.uncertainty['object_collision_envelopes_added']=len(collision_obstacles)-len(obstacles)
         boundary=road_union_boundary(roads)
         self.uncertainty['continuous_observed_curb_patches']=accepted_patches
         self.uncertainty['mesh_source']='union of all supported row intervals; shared interfaces excluded'
@@ -1780,7 +1927,7 @@ class Agent:
             raster_band_edges_refined=band_refined,
             subpixel_bound_universally_validated=False,obstacle_pixels_filled=False,
             obstacles='visible grayscale detections with0.4m radius inflation; unseen obstacles unknown')
-        return core.Scene(roads,boundary,obstacles),reference(153.,90.),reference(100.,80.),current
+        return core.Scene(roads,boundary,collision_obstacles),reference(153.,90.),reference(100.,80.),current
 
     def _root(self,scene,lateral_speed):
         yaw=self.yaw;rate=self.joint_rate

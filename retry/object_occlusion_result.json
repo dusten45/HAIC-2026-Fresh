@@ -1,0 +1,128 @@
+{
+  "status": "CURRENT_OBJECT_OCCLUSION_REPAIRED_RESET_ADVANCED_ONE_ACTION",
+  "base_commit": "d021199900d09ddd05655a2349d83b98bf760712",
+  "final_agent_sha256": "acda763b6985fc9d1e134fae9f346f59abcc32ed0fbfc3986c994d68cddd3655",
+  "unchanged_core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "implementation": [
+    "Reobserve the CURRENT connected orange/road transition and require a complete two-pixel road-colour ring around its ROI. Reject crop, vehicle, paint, grass contradiction and unsupported colour/shape.",
+    "Explain the complete ROI by public radius1.2m16-gon rendering. Retain ALL compatible center grid CELLS and ALL polygon orientations using inscribed/circumscribed envelopes, finite area integration and declared raster/quantization allowances. No best-circle fit.",
+    "Infer pavement only inside the currently enclosed road ring, with existing0.35m inward allowance. This is a conditional continuity hypothesis beneath the object, not observed hidden pixels.",
+    "Keep every original collision disk and add a disk enclosing the compatible silhouette union. Road support, collision exclusion and reference pixels remain separate. Reference/high/low/progress and estimated state apart from roads are unchanged."
+  ],
+  "public_gates": {
+    "objects": {
+      "status": "PASS",
+      "cases": 64,
+      "physical16gon_vertices_enclosed": 1024,
+      "max_silhouette_undercoverage_m": 0.0,
+      "negative_guards": 19,
+      "reference_and_old_collision_preservation_pairs": 2
+    },
+    "curves": {
+      "status": "PASS",
+      "cases": 24,
+      "accepted": 24,
+      "outside_samples": 0
+    },
+    "full_mesh": {
+      "status": "PASS",
+      "cases": 144,
+      "outside_samples": 0
+    },
+    "color_endpoint": {
+      "rounding_breakpoints": 313,
+      "evaluated_tuples": 938,
+      "max_final_grayscale": 173
+    }
+  },
+  "development_gates": {
+    "initial_fixed_crop_cached_admissible": false,
+    "correction": "Register ROI to current connected object support rather than an unrelated large crop. Public curved acceptance increases12/24 to24/24 with0outside samples.",
+    "bright_grass_counterexample": "Wide coverage tolerance admitted a bright-grass material. Independent positive RGB-mixture rounding enumeration derives the173 colour endpoint; all eight bright-grass phase/orientation guards now reject."
+  },
+  "cached_gate": {
+    "admissible": true,
+    "model_ticks": 560,
+    "CPU_s": 1.019771087,
+    "input_invariants": {
+      "high": true,
+      "low": true,
+      "progress": true,
+      "root_without_roads": true,
+      "old_collision_disks_preserved": true
+    },
+    "same_polygon_road_margin_before_range_m": [
+      0.4662792610228984,
+      0.4889894218225168
+    ],
+    "same_polygon_road_margin_after_range_m": [
+      3.6695192540910986,
+      3.702443590422679
+    ],
+    "same_polygon_collision_margin_after_range_m": [
+      0.925162525033723,
+      0.9899666267619422
+    ],
+    "collision_exclusion_increased_not_removed": true,
+    "external_fixed_patch_samples": 1089,
+    "external_fixed_patch_outside_samples": 0,
+    "external_scoring_only": true
+  },
+  "final_source_native": {
+    "status": "INPUT_OR_ADMISSION_STOP",
+    "valid_actions": 47,
+    "unchanged_native_action_prefix": 46,
+    "cached47_action_equals_reset47_action": true,
+    "progress": 0.14840989399293286,
+    "damage": 0.0,
+    "first_failed_call": 48,
+    "max_whole_act_wall_s": 1.9944518219854217,
+    "max_RSS_KiB": 77260,
+    "model_ticks": 28077,
+    "CPU_s": 52.575522376,
+    "wall_s": 52.01429394600564,
+    "failure_reasons": {
+      "FORECAST_FOOTPRINT_MARGIN": 1,
+      "FORCE_PEAK": 10,
+      "REFERENCE_WITH_NUMERIC_RESERVE": 9
+    },
+    "exact_first_failure_replay_identical": true,
+    "official_server_runtime_parity": false
+  },
+  "remaining_blocker": {
+    "call": 48,
+    "reference_width_still_used": true,
+    "current_edge_matches": 22,
+    "lattice_matches": 6,
+    "first_footprint_failure_raw": 10,
+    "part": "front wheel1",
+    "road_margin_m": 0.4553898040199541,
+    "obstacle_margin_m": 8.70088761032792,
+    "interpretation": "The next failure is distinct from the repaired object support hole: most candidates hit reference/force constraints and one encounters a different nearby observed road-union boundary. First failure saved; no identical reset repeat."
+  },
+  "phase_usage": {
+    "DEV_actions": 47,
+    "DEV_act_attempts": 48,
+    "resets": 1,
+    "model_ticks": 28927,
+    "raw_physics": 239,
+    "measured_CPU_s": 192.747019097,
+    "unmetered_initial_public_attempt_and_probes_CPU_allowance_s": 120,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0,
+    "research_remaining": 19460
+  },
+  "connection": {
+    "same_environment_verified": true,
+    "checkpoint_preserved": true,
+    "observed_loss": false,
+    "new_environment_or_duplicate_run": false
+  },
+  "reproduction": [
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m retry.orange_endpoint_check /tmp/orange-endpoint.json",
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m retry.object_occlusion_check /tmp/object-occlusion.json",
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m retry.object_occlusion_curve_check /tmp/object-curves.json"
+  ],
+  "limits": "Finite public rasters and one sameDEV reset. Three source-pixel diagonals (0.2618914m) and \u00b13gray are explicit engineering coverage envelopes, not universally proved backend bounds. Closed-ring road continuity beneath an object is an inference. Existing controller/physics/horizon/thresholds/speed coefficients unchanged. No finish, safety certificate, or lap-time improvement claimed."
+}
