@@ -1,0 +1,155 @@
+{
+  "pure_tests": {
+    "count": 4,
+    "passed": true
+  },
+  "cold_read_only": {
+    "checks": {
+      "tape_pin": true,
+      "rows": true,
+      "commands": true,
+      "exact": true,
+      "fullCP": true,
+      "storedsafe": true,
+      "old_audit": true,
+      "old_source_pins": true,
+      "old_input_pins": true,
+      "journal_registered": true,
+      "fullCP_from_stored_rows_exact": true,
+      "command_rows_identity": true,
+      "journal_exact": true
+    },
+    "journal": {
+      "events": 71713,
+      "head": "9ca80490f84883d52841beec9d1a885e0bf3b91bb1c77a894c9ebb9f246e7946",
+      "kinds": {
+        "CASE_STARTED": 25,
+        "BEFORE_FORCE": 14335,
+        "FORCE_VERDICT": 14335,
+        "BEFORE_TICK": 14331,
+        "AFTER_TICK": 14331,
+        "RAW_VERDICT": 14331,
+        "CASE_FINISHED": 25
+      },
+      "valid": true
+    },
+    "new_cold_ticks": 0
+  },
+  "handoff": {
+    "checks": {
+      "actual_raw_pin": true,
+      "root_exact": true,
+      "raw_last": true,
+      "completed": true,
+      "tracking": true,
+      "visited": true,
+      "tracker_live_unfinished": true,
+      "clock": true,
+      "checkpoint_pin": true
+    },
+    "checkpoint_sha256": "bb557b163aac370e78e4b9c42d01c64d5bcbf2dcb0ac116cc6b3b051c648f0fd",
+    "global_raw": 184,
+    "next_hold": 47,
+    "tracking": [
+      0,
+      352
+    ],
+    "launch": [
+      46,
+      384
+    ],
+    "visited_count": 43,
+    "clock_s": 4.699999999999988,
+    "elapsed_s": 3.6799999999999877,
+    "tracker": "Actualstoredlegacy518raw1384allfields;not541tracker_for reconstructeddeparture"
+  },
+  "initial_root": {
+    "margin_m": 2.9653007643500877,
+    "path_error_m": 0.299295978647474,
+    "reference_excess_m_s": -16.551677086416404,
+    "body_speed_m_s": 38.843039001725785
+  },
+  "carry": {
+    "safe_official_finish": false,
+    "finish_episode_s": null,
+    "eligible": false,
+    "reason": "FORCE",
+    "attempt_rows": 8,
+    "completed_rows": 7,
+    "global_raw": 191,
+    "elapsed_s": 3.819999999999988,
+    "tracking": [
+      1,
+      380
+    ],
+    "visited_count": 44,
+    "minimum_margin_m": 1.6758989286492911,
+    "maximum_force_ratio": 1.1031319203087173,
+    "maximum_path_error_m": 0.4862583740327406,
+    "maximum_reference_excess_m_s": -13.503722960867492,
+    "maximum_body_speed_m_s": 40.44872073381051,
+    "first_failure_global_raw": 192,
+    "counts": {
+      "geometry": 8,
+      "attempted_raw": 8,
+      "external_force": 32,
+      "tick_attempts": 7,
+      "internal_force": 28,
+      "completed_ticks": 7
+    }
+  },
+  "study": 592,
+  "status": "SOURCE_CARRY_FAILED",
+  "error": null,
+  "cost": {
+    "geometry": 8,
+    "attempted_raw": 8,
+    "external_force": 32,
+    "tick_attempts": 7,
+    "internal_force": 28,
+    "completed_ticks": 7
+  },
+  "time": {
+    "source_CPU_s": 0.21730204600000036,
+    "source_wall_s": 0.24104181199800223,
+    "preparation_audit_CPU_s": 15.260317192999999,
+    "preparation_audit_wall_s": 14.750839340995299,
+    "total_CPU_s": 15.477619239,
+    "total_wall_s": 14.991881152993301
+  },
+  "journal": {
+    "events": 63,
+    "head": "e8e7a0ad49324f2ab29eda14496c9b6dea8ec2e1ea5d7911e2eb9e0ab3bc8e24",
+    "kinds": {
+      "CASE_STARTED": 1,
+      "BEFORE_GEOMETRY": 8,
+      "GEOMETRY_VERDICT": 8,
+      "RAW_ATTEMPT": 8,
+      "BEFORE_FORCE": 8,
+      "FORCE_VERDICT": 8,
+      "BEFORE_TICK": 7,
+      "AFTER_TICK": 7,
+      "RAW_VERDICT": 7,
+      "CASE_FINISHED": 1
+    },
+    "valid": true
+  },
+  "new_cold_ticks": 0,
+  "new_FD": 0,
+  "new_profiles": 0,
+  "new_feedback": 0,
+  "native_actions": 0,
+  "native_resets": 0,
+  "native_worlds": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "paid_compute": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "source_cold_incumbent_s": 13.2,
+  "actual_cold_incumbent_s": 13.66,
+  "incumbents_changed": false,
+  "combined_source_gate": false,
+  "native_promotion": false
+}
