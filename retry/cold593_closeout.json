@@ -1,0 +1,73 @@
+{
+  "study": 593,
+  "status": "TECHNICAL_STOP_PRESERVED_READ_ONLY_AUDIT",
+  "checks": {
+    "original_contract_registered": true,
+    "native_started_marker": true,
+    "original_code_dependency_pins": true,
+    "all_input_pins": true,
+    "journal_exact": true,
+    "technical_stop": true,
+    "root_cause_trace": true,
+    "pure_regression": true,
+    "no_raw_call_or_kernel": true,
+    "precharge_preserved": true,
+    "no_actions_or_candidate": true,
+    "cleanup": true,
+    "ledger_preserved": true,
+    "no_retry": true,
+    "combined_carry_closed": true,
+    "no_claimed_performance": true,
+    "protected_zero": true,
+    "time_caps": true
+  },
+  "cause": "plain() rejects dataclass State; before_state must first be converted using asdict. Frozen failed runner was not edited or rerun.",
+  "recovery_allowed_in_this_run": false,
+  "recovery_reason": "NATIVE_STARTED exists and world/reset began, so import-only zero-world exception does not apply.",
+  "source0_regression": {
+    "input": "Synthetic State with zero velocity,emptywheels,mass1;no world/force/tick",
+    "observed_error": "UNSUPPORTED_JSON:State",
+    "asdict_then_plain_json_roundtrip": true,
+    "proposed_serialization_change_only": "before_state=plain(asdict(before))",
+    "applied_to_frozen_runner": false
+  },
+  "operation_counts": {
+    "world_attempted": 1,
+    "world_closed": 1,
+    "reset_attempted": 1,
+    "reset_completed": 0,
+    "native_raw_precharged": 1,
+    "native_raw_original_step_invocations": 0,
+    "native_raw_completed": 0,
+    "native_wheel_reserved": 4,
+    "native_wheel_observed": 0,
+    "env_step_attempts": 0,
+    "model_attempted": 0,
+    "model_completed": 0,
+    "external_model_force": 0,
+    "internal_model_force": 0,
+    "geometry": 0
+  },
+  "new_audit_source_ticks": 0,
+  "new_audit_native_calls": 0,
+  "new_audit_force_calls": 0,
+  "new_audit_geometry_queries": 0,
+  "sha256": {
+    "result": "fb70d056445ac4c18110218bcca36a12547afa538b4d721b660ec8ef5fc13f86",
+    "contract": "59bac1cb555d189e7e901c14992079041a8f5011226ce7cb59eaeba469826686",
+    "journal_private": "1a678912085dbd90cb3a7c9ed0e02524796f2bb78b25a59ccbf4c48fa8241cbf",
+    "failure_private": "9f3188328277c8ea946228b5312865b02e302d0d9eceb90bb8a9517bc9424f80",
+    "audit_code": "50d7e250def47be26e974dad19349c47a0069ca2e5b3ad46a6340b5622e4ab23"
+  },
+  "read_only_CPU_s": 0.7048158290000001,
+  "read_only_wall_s": 0.2910242900106823,
+  "auxiliary_CPU_wall_charge_s": 2.0,
+  "aggregate_time": {
+    "science_CPU_s": 0.013936423999999725,
+    "science_wall_s": 0.015443958996911533,
+    "preparation_audit_CPU_s": 18.740957169,
+    "preparation_audit_wall_s": 17.578320447020815,
+    "total_CPU_s": 18.754893593000002,
+    "total_wall_s": 17.593764406017726
+  }
+}

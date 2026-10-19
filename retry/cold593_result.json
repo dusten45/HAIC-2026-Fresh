@@ -1,0 +1,119 @@
+{
+  "pure_tests": {
+    "count": 4,
+    "passed": true
+  },
+  "preflight": {
+    "cold_661raw_166commands_exact": true,
+    "cold_journal_chain_exact": true,
+    "cold_input_source_pins": true,
+    "baseline_case_paths_pins": true,
+    "carry_combined_closed": true,
+    "cold_source_ticks": 0
+  },
+  "study": 593,
+  "status": "BASELINE_TECHNICAL_FAILURE_CANDIDATE_NOT_STARTED",
+  "error": null,
+  "arms": [
+    {
+      "label": "baseline",
+      "stop": "TECHNICAL_FAILURE",
+      "error": "TypeError:UNSUPPORTED_JSON:State",
+      "initial_identity": false,
+      "official_finish_raw": null,
+      "official_finish_episode_s": null,
+      "confirmation_episode_s": null,
+      "counts": {
+        "worlds": 1,
+        "resets": 1,
+        "raw_attempts": 1,
+        "native_wheel_reserved": 4,
+        "closed": 1
+      },
+      "cleanup": {
+        "body": 0,
+        "joint": 0
+      },
+      "mode_counts": {},
+      "force_groups": {
+        "launch": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        },
+        "running": {
+          "peak": 0.0,
+          "samples": 0,
+          "clipped": 0
+        }
+      },
+      "minimum_margin_m": null,
+      "maximum_body_speed_m_s": 0.0,
+      "maximum_path_error_m": 0.0,
+      "maximum_reference_excess_m_s": 0.0,
+      "force_oracle_max_N": 0.0,
+      "COM_impulse_max_m_s": 0.0,
+      "reference_arc_diagnostic": null,
+      "flags": [],
+      "CPU_s": 0.014219382999999475,
+      "wall_s": 0.015991451000445522,
+      "max_prediction_errors": {
+        "position_m": 0.0,
+        "speed_m_s": 0.0,
+        "angle_rad": 0.0,
+        "yaw_rad_s": 0.0,
+        "max_force_ratio_error": 0.0
+      }
+    }
+  ],
+  "cost": {
+    "worlds": 1,
+    "resets": 1,
+    "raw_attempts": 1,
+    "native_wheel_reserved": 4,
+    "closed": 1
+  },
+  "time": {
+    "science_CPU_s": 0.013936423999999725,
+    "science_wall_s": 0.015443958996911533,
+    "preparation_audit_CPU_s": 16.03614134,
+    "preparation_audit_wall_s": 15.287296157010132,
+    "total_CPU_s": 16.050077764,
+    "total_wall_s": 15.302740116007044
+  },
+  "journal": {
+    "events": 4,
+    "head": "a885c2b8f7b683af9a8ec80e87256168876d083a21fd3581402779bb2dda8f2f",
+    "kinds": {
+      "WORLD_RESERVE": 1,
+      "WORLD_CHARGED": 1,
+      "RESET_CHARGED": 1,
+      "WORLD_CLOSED": 1
+    },
+    "valid": true
+  },
+  "planner_cost": {
+    "force_evaluations": 0,
+    "forecast_calls": 0,
+    "forecast_ticks": 0,
+    "geometry_checks": 0
+  },
+  "cold_native_gain_raw": null,
+  "cold_native_gain_s": null,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "combined_promotion": false,
+  "general_policy_promotion": false,
+  "incumbents_changed": false,
+  "carry_actions": 0,
+  "new_conditions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "new_profiles": 0,
+  "new_FD": 0,
+  "new_solver": 0,
+  "paid_compute": 0,
+  "source_cold_s": 13.2,
+  "prior_actual_cold_s": 13.66
+}
