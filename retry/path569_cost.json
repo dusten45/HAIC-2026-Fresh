@@ -1,0 +1,73 @@
+{
+  "total": {
+    "ticks": 11605,
+    "force": 47792,
+    "geometry": 12154,
+    "body_checks": 11605,
+    "CPU_s": 206.30458459000002,
+    "wall_s": 221.0143093689985
+  },
+  "phases": [
+    {
+      "bucket": "local",
+      "label": "proposal-0-1-strict-program",
+      "ticks": 428,
+      "force": 1712,
+      "geometry": 428,
+      "CPU_s": 11.089115090000016,
+      "wall_s": 11.029149456007872,
+      "body_checks": 428,
+      "max_body": 96.92740890003414
+    },
+    {
+      "bucket": "feedback",
+      "label": "proposal-0-0-feedback",
+      "ticks": 5414,
+      "force": 22388,
+      "geometry": 5703,
+      "CPU_s": 89.625622705,
+      "wall_s": 96.64995999800158,
+      "body_checks": 5414,
+      "max_body": 88.59103975322517
+    },
+    {
+      "bucket": "feedback",
+      "label": "proposal-0-1-feedback",
+      "ticks": 5101,
+      "force": 21044,
+      "geometry": 5361,
+      "CPU_s": 84.853060307,
+      "wall_s": 91.36281818700081,
+      "body_checks": 5101,
+      "max_body": 88.75714548035812
+    },
+    {
+      "bucket": "verification",
+      "label": "independent-full-tape",
+      "ticks": 662,
+      "force": 2648,
+      "geometry": 662,
+      "CPU_s": 16.934508650999998,
+      "wall_s": 18.190075057005743,
+      "body_checks": 662,
+      "max_body": 96.92740890003414
+    }
+  ],
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "prior568_separate": {
+    "ticks": 11256,
+    "CPU_s": 267.501622644
+  },
+  "saved_only_design": {
+    "ticks": 0,
+    "CPU_s": 1.329262612,
+    "wall_s": 1.0810449010023149
+  },
+  "read_only_analysis": {
+    "ticks": 0,
+    "CPU_s": 1.417492297,
+    "wall_s": 0.7215072710096138
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "completed": true,
+  "stop_reason": "TWO_POLICY_NONIMPROVEMENTS",
+  "seed_times": {
+    "hull_finish": 13.213614425619536,
+    "center_finish": 13.214570028322514,
+    "s900": 12.101783201819112
+  },
+  "final_working_times": {
+    "hull_finish": 13.213614425619536,
+    "center_finish": 13.214570028322514,
+    "s900": 12.101783201819112
+  },
+  "safe_working_accepts": 0,
+  "official_whole_promotion": false,
+  "official_incumbent_candidate_raw": 661,
+  "official_incumbent_finish_s": 13.219999999999807,
+  "independent_verification": {
+    "raw": 662,
+    "fullstate_force_history_tracker_exact": true,
+    "checkpoint_exact": true,
+    "official_candidate_raw": 661,
+    "confirmation_raw": 662,
+    "selected_new_safe_candidate": "proposal-0-1",
+    "policy_promoted": false,
+    "user_required_validation": true
+  },
+  "existing_whole_replay_repeated": false,
+  "events": [
+    {
+      "label": "proposal-0-0",
+      "source_evaluated": true,
+      "model": {
+        "cut_round": 1,
+        "repair": 1,
+        "normalized_step": 0.03781914710998535,
+        "predicted_gain_ms": 5.190718284771973,
+        "linear_model_violation": 0.0,
+        "capsule_model_violation": 0.0,
+        "bound_violation": 0.0,
+        "precheck": {
+          "exact_seed_included": true,
+          "all_targets_zero_at_zero_step": true,
+          "minimum_model_origin_slack": 0.0,
+          "local_scalar_upper_min": 0.008770520261492457,
+          "local_scalar_upper_max": 49.50628296215714,
+          "capsule_radius_upper": 3.0,
+          "finite_coefficients": true,
+          "rho": 0.05
+        },
+        "reason": null
+      },
+      "surrogate_physical_safe": true,
+      "surrogate_violations": {
+        "FORCE": 0,
+        "CLIP_HISTORY": 0,
+        "FOOTPRINT": 0,
+        "PATH": 0,
+        "REFERENCE": 0,
+        "PROJECTION": 0
+      },
+      "feedback_called": true,
+      "working_accept": false,
+      "whole_promotion": false,
+      "strict_program_safe": true,
+      "safe_finish": true,
+      "feedback_failure": null,
+      "official_candidate_raw": 661,
+      "confirmation_raw": 662,
+      "official_finish_s": 13.219999999999807,
+      "actual_times": {
+        "hull_finish": 13.219434281795568,
+        "center_finish": 13.22039453770022,
+        "s900": 12.106385496487283
+      },
+      "diagnostic_gain_ms": -5.81985617603209
+    },
+    {
+      "label": "proposal-0-1",
+      "source_evaluated": true,
+      "model": {
+        "cut_round": 1,
+        "repair": 1,
+        "normalized_step": 0.024994214375813804,
+        "predicted_gain_ms": 3.4305202247949973,
+        "linear_model_violation": 0.0,
+        "capsule_model_violation": 0.0,
+        "bound_violation": 0.0,
+        "precheck": {
+          "exact_seed_included": true,
+          "all_targets_zero_at_zero_step": true,
+          "minimum_model_origin_slack": 0.0,
+          "local_scalar_upper_min": 0.0059287371018785645,
+          "local_scalar_upper_max": 49.32618155264445,
+          "capsule_radius_upper": 3.0,
+          "finite_coefficients": true,
+          "rho": 0.025
+        },
+        "reason": null
+      },
+      "surrogate_physical_safe": true,
+      "surrogate_violations": {
+        "FORCE": 0,
+        "CLIP_HISTORY": 0,
+        "FOOTPRINT": 0,
+        "PATH": 0,
+        "REFERENCE": 0,
+        "PROJECTION": 0
+      },
+      "feedback_called": true,
+      "working_accept": false,
+      "whole_promotion": false,
+      "strict_program_safe": true,
+      "safe_finish": true,
+      "feedback_failure": null,
+      "official_candidate_raw": 661,
+      "confirmation_raw": 662,
+      "official_finish_s": 13.219999999999807,
+      "actual_times": {
+        "hull_finish": 13.21750552418322,
+        "center_finish": 13.218466498554804,
+        "s900": 12.104819742439643
+      },
+      "diagnostic_gain_ms": -3.8910985636846362
+    }
+  ],
+  "error": null,
+  "cost": {
+    "total": {
+      "ticks": 11605,
+      "force": 47792,
+      "geometry": 12154,
+      "body_checks": 11605,
+      "CPU_s": 206.30400810400002,
+      "wall_s": 221.01331336099247
+    },
+    "phases": [
+      {
+        "bucket": "local",
+        "label": "proposal-0-1-strict-program",
+        "ticks": 428,
+        "force": 1712,
+        "geometry": 428,
+        "CPU_s": 11.089115090000016,
+        "wall_s": 11.029149456007872,
+        "body_checks": 428,
+        "max_body": 96.92740890003414
+      },
+      {
+        "bucket": "feedback",
+        "label": "proposal-0-0-feedback",
+        "ticks": 5414,
+        "force": 22388,
+        "geometry": 5703,
+        "CPU_s": 89.625622705,
+        "wall_s": 96.64995999800158,
+        "body_checks": 5414,
+        "max_body": 88.59103975322517
+      },
+      {
+        "bucket": "feedback",
+        "label": "proposal-0-1-feedback",
+        "ticks": 5101,
+        "force": 21044,
+        "geometry": 5361,
+        "CPU_s": 84.853060307,
+        "wall_s": 91.36281818700081,
+        "body_checks": 5101,
+        "max_body": 88.75714548035812
+      },
+      {
+        "bucket": "verification",
+        "label": "independent-full-tape",
+        "ticks": 662,
+        "force": 2648,
+        "geometry": 662,
+        "CPU_s": 16.934508650999998,
+        "wall_s": 18.190075057005743,
+        "body_checks": 662,
+        "max_body": 96.92740890003414
+      }
+    ],
+    "research_remaining": 22758,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "prior568_separate": {
+      "ticks": 11256,
+      "CPU_s": 267.501622644
+    },
+    "saved_only_design": {
+      "ticks": 0,
+      "CPU_s": 1.329262612,
+      "wall_s": 1.0810449010023149
+    }
+  },
+  "linearizations": 1,
+  "reused_FD_columns": 40,
+  "new_FD_columns": 0,
+  "new_calibration_checks": 0,
+  "source_proposals": 2,
+  "bounded_backtracks": 2,
+  "actual_feedback_calls": 2,
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "new_seeds": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "paid_compute": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "journal_valid": true
+}

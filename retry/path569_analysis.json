@@ -1,0 +1,117 @@
+{
+  "checks": {
+    "source_hashes_match": true,
+    "verification_source_matches": true,
+    "all_model_zero_steps_seed_feasible": true,
+    "all_new_candidates_safe_finish": true,
+    "new_safe_candidate_full_replay_exact": true,
+    "existing_seed_whole_not_repeated": true
+  },
+  "candidates": [
+    {
+      "label": "proposal-0-0",
+      "zero_step_seed_included": true,
+      "model_capsule_residual": 0.0,
+      "predicted_hull_gain_ms": 5.190718284771973,
+      "actual_saved_tail_gain_ms": 5.1188962387964665,
+      "fresh_feedback_gain_ms": -5.81985617603209,
+      "feedback_minus_saved_tail_ms": 10.938752414828556,
+      "position_envelope_excess_max_m": -3.786215809941504e-11,
+      "scalar_envelope_exceedances": {
+        "force": 1,
+        "body": 30,
+        "projection": 0,
+        "reference": 7,
+        "footprint": 1
+      },
+      "closed_loop_commands_changed": {
+        "steering": 14,
+        "pedal": 9,
+        "max_abs_steer_delta": 0.008672455325722694,
+        "max_abs_pedal_delta": 0.515625
+      },
+      "exact_safety": {
+        "min_footprint_margin": 0.5618715704938068,
+        "max_path_distance": 1.3427182982486499,
+        "max_force_ratio": 1.0577204123943347,
+        "max_reference_overspeed": 4.842357224590813,
+        "max_body": 96.92715159774318,
+        "final_tracking_history": [
+          92,
+          2264
+        ]
+      },
+      "official_candidate_raw": 661,
+      "confirmation_raw": 662,
+      "scalar_envelope_excess_max_by_label": {
+        "projection": 0.0,
+        "force": 5.367466272139866e-06,
+        "body": 7.241548543478893e-05,
+        "footprint": 6.668269814726938e-05,
+        "reference": 0.008297709699499575
+      }
+    },
+    {
+      "label": "proposal-0-1",
+      "zero_step_seed_included": true,
+      "model_capsule_residual": 0.0,
+      "predicted_hull_gain_ms": 3.4305202247949973,
+      "actual_saved_tail_gain_ms": 3.399066970358078,
+      "fresh_feedback_gain_ms": -3.8910985636846362,
+      "feedback_minus_saved_tail_ms": 7.290165534042714,
+      "position_envelope_excess_max_m": -2.5025196036776727e-11,
+      "scalar_envelope_exceedances": {
+        "force": 1,
+        "body": 16,
+        "projection": 4,
+        "reference": 4,
+        "footprint": 1
+      },
+      "closed_loop_commands_changed": {
+        "steering": 14,
+        "pedal": 7,
+        "max_abs_steer_delta": 0.005729785189032555,
+        "max_abs_pedal_delta": 0.10544824600219727
+      },
+      "exact_safety": {
+        "min_footprint_margin": 0.5537521011542738,
+        "max_path_distance": 1.3582839952146708,
+        "max_force_ratio": 1.0586267881558915,
+        "max_reference_overspeed": 4.844035675203116,
+        "max_body": 96.92740890003414,
+        "final_tracking_history": [
+          89,
+          2264
+        ]
+      },
+      "official_candidate_raw": 661,
+      "confirmation_raw": 662,
+      "scalar_envelope_excess_max_by_label": {
+        "projection": 0.0043981882569034125,
+        "force": 2.350573179938551e-06,
+        "body": 1.6775610333584224e-05,
+        "footprint": 2.5150842959170946e-05,
+        "reference": 0.019431112068222987
+      }
+    }
+  ],
+  "source_projection_rechecks": {
+    "diagnostic": {
+      "raws": 268,
+      "active_segment_changes": 16,
+      "frozen_ineligible": 0,
+      "path_failures": 0
+    },
+    "strict_candidate": {
+      "raws": 268,
+      "active_segment_changes": 18,
+      "frozen_ineligible": 0,
+      "path_failures": 0
+    }
+  },
+  "inference": "Finite-segment/vector path repair admitted two globally safe programs and safe actual existing-feedback finishes. The frozen-tail diagnostic gains did not transfer to the recomputed feedback controls from the same altered handoff. No source official raw improvement or working acceptance. This isolates frozen-policy-to-feedback value mismatch as the next issue; it is not a proof of control-direction infeasibility.",
+  "empirical_error_note": "Displacement envelopes preserve the exact seed and avoid impossible fixed margins. They remain empirical, not certified bounds; any exceedances are recorded above and exact source safety remains authoritative.",
+  "model_ticks": 0,
+  "CPU_s": 1.417492297,
+  "wall_s": 0.7215072710096138
+}

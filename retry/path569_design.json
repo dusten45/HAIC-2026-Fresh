@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "checks": {
+    "exact_source_distance_match": true,
+    "signed_equals_distance_for_interior": true,
+    "frozen_capsule_upperbounds_source_when_eligible": true,
+    "exact_feasible_seed_included": true,
+    "all_envelope_coefficients_finite_nonnegative": true,
+    "path_radius_nonnegative_at_seed": true,
+    "endpoint_signed_only_counterexample_detected": true
+  },
+  "stats": {
+    "raws": 11256,
+    "nearest_segment_changes": 32,
+    "frozen_ineligible": 0,
+    "interior": 11228,
+    "endpoints": 28,
+    "signed_underestimates_endpoint": 28,
+    "centerline_side_changes": 53,
+    "curved_seed_segments": 120
+  },
+  "representation": "Exact distance to frozen finite seed segment (capsule), evaluated through 2D affine position, with cutting-plane LP and exact convex-model capsule recheck. Signed lateral is only equivalent when projection is interior.",
+  "equivalence": "For any eligible fixed segment, capsule distance bounds the minimum eligible polyline distance from above. Equality holds when it is an actual minimizer. Segment changes may make the model conservative. If the fixed segment becomes ineligible under previous-progress window, this implication is not asserted; exact original source projection and gates recheck every proposal.",
+  "curve_and_endpoint": "Curved polyline is a union of segment capsules, not one infinite strip. Fixed capsule supports endpoints and centerline crossing. Infinite-line signed lateral alone underestimates endpoint distance; stored segment endpoint+3.1 tangent is a counterexample.",
+  "error_rule": "Step-dependent empirical first-order error envelope L*t; t>=normalized infinity displacement, radius<=.05. No fixed positive target at zero step, no clipping of coefficients. Not a universal error bound.",
+  "universal_upper_bounds": {
+    "path_radius": 3.0,
+    "force_slack": 1.059,
+    "body_slack": 100.0,
+    "reference_slack": 84.85,
+    "clipping_rank_slack": 1.0
+  },
+  "other_constraints": "All scalar physical/force/rank tightenings also use L*t, never a fixed positive margin. Zero-step seed is feasible exactly. LP explicitly bounds attainable tightenings and model predictions for known universal limits; finite local-box attainable upper bounds are recorded for every row. Footprint scalar errors remain large and are separately tracked, not clipped or asserted smooth.",
+  "position_calibration_error_max_m": 0.022549851017185825,
+  "footprint_coefficient_max": 96.58378223552248,
+  "model_ticks": 0,
+  "CPU_s": 1.329262612,
+  "wall_s": 1.0810449010023149,
+  "inputs_sha256": {
+    "/workspace/haic-response568-private/raw-journal-private.jsonl": "1e3908b7e8df594e3b678ee3c9b265c580809dfdac241f2a33ae69e5a69d27a2",
+    "/workspace/haic-response568-private/linearization-01-private.json": "cf5118c45b34398ec6bc01a43b028877a7caa5a0c7f471bff89151df97c15d35",
+    "/workspace/haic-response568-private/calibration-0-private.json": "e0d143098f024dbf12d4b4b6cbd0e0ef038dddbf3532df5d6663a71969362ddb",
+    "/workspace/haic-response568-private/calibration-1-private.json": "20c18c916b4bb837125f03e733995d396d588575f754994e18ec3d6b97ebc9ee"
+  }
+}
