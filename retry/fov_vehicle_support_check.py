@@ -8,7 +8,7 @@ import observation_agent as a
 import runtime598 as c
 
 
-def scene(junction,joint,paint=False):
+def scene(junction,joint,paint=False,branch_left=-10.,branch_right=None):
     surface=pygame.Surface((1000,800));surface.fill((102,204,102))
     half=(40./6.)*1.3608;left=a.IMAGE_ORIGIN_X-half;right=a.IMAGE_ORIGIN_X+half
     def point(x,y):return ((x+.5)*1000/84-.5,799.-((y+.5)*800/84-.5))
@@ -21,7 +21,8 @@ def scene(junction,joint,paint=False):
         step=(21./6.)*1.701;curb=(8./6.)*1.3608
         for i,y in enumerate(np.arange(junction,90,step)):
             draw([(left,y),(left-curb,y),(left-curb,y+step),(left,y+step)],(255,)*3 if i%2==0 else (255,0,0))
-    draw([(-10,-10),(right,-10),(right,junction),(-10,junction)],(102,)*3)
+    branch_right=right if branch_right is None else branch_right
+    draw([(branch_left,-10),(branch_right,-10),(branch_right,junction),(branch_left,junction)],(102,)*3)
     polygons=[[(x*c.SIZE,y*c.SIZE) for x,y in p] for p in (c.HULL_POLY1,c.HULL_POLY2,c.HULL_POLY3,c.HULL_POLY4)]
     for i,(x,y) in enumerate(c.WHEELPOS):polygons.append(c.rectangle((x*c.SIZE,y*c.SIZE),joint if i<2 else 0.))
     for i,p in enumerate(polygons):

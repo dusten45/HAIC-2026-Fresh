@@ -1,0 +1,67 @@
+{
+  "status": "PUBLIC_GEOMETRY_PASS_CACHED_FORCE_GATE_FAIL_NO_NATIVE_PROMOTION",
+  "base_commit": "bdc02121c05f78eaef4a6278efcb2b505743c875",
+  "change": [
+    "Treat visibly broader merge pavement as an inclusion observation, retaining adjacent compact local corridor anchors and the full observed road union.",
+    "Use existing painted-edge uncertainty intervals consistently in the local-width test.",
+    "Join adjacent samples of the same reference contour only within one public tile and across visibly supported pavement; this does not add geometry support."
+  ],
+  "predeclared_gates": {
+    "public_counterexamples_first": true,
+    "cached_whole_agent_under_5s_required": true,
+    "native_only_after_cached_admission": true,
+    "first_native_failure_or_act_ge_5s_stops": true
+  },
+  "verification": {
+    "merge_raster_cases": 12,
+    "fov_regression_cases": 12,
+    "fov_negative_guards": 5,
+    "local_regression_cases": 10,
+    "reference_join_cases": 5,
+    "inferred_pixels_outside_public_test_road": 0,
+    "observed_broad_union_preserved": true
+  },
+  "cached_checkpoint45": {
+    "before_current_margin_m": -2.079277727866387,
+    "after_current_margin_m": 1.452145796590242,
+    "vehicle_occluded_pixels_restored": 42,
+    "reference_observed_support_m_before_join": 8.069601868040321,
+    "reference_observed_support_m_after_join": 14.81570585353299,
+    "final_error": "NO_ESTIMATED_INPUT_ADMISSIBLE_ACTION",
+    "final_report_reasons": {
+      "FORCE_PEAK": 20
+    },
+    "final_whole_act_s": 0.03944936199695803,
+    "final_model_ticks": 11,
+    "example_existing_brake_trial": 0.25,
+    "example_initial_force_ratio": 1.1059539921824229,
+    "original_force_admission": 1.0590000000000002,
+    "all_estimated_root_wheel_frictions": 400.0
+  },
+  "resources": {
+    "model_ticks": 21,
+    "native_actions": 0,
+    "DEV_resets": 0,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0,
+    "research_remaining": 20004,
+    "recorded_compute_CPU_s_lower_bound": 1.9277857160000003,
+    "CPU_accounting_limit": "Recorded probes only; Python startup, one failed test assertion and administrative read/commit overhead were not individually metered. No claim of exact total CPU.",
+    "failed_test": "Initial positive-test assertion expected 9 points; existing deduplication correctly returned 8. Assertion corrected, all five cases then passed. No model/native ticks.",
+    "deadline_interruption": {
+      "new_model_ticks": 0,
+      "new_native_actions": 0,
+      "reason": "Stale expiry interpretation corrected by later explicit user extension. Its wall time remains within the original bundle clock."
+    }
+  },
+  "constraints": {
+    "core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+    "original_core_chooser_physics_horizon_thresholds_preserved": true,
+    "Agent_inputs": "public image and reset-local own memory only",
+    "true_map_in_Agent": false,
+    "lap_time_search": false
+  },
+  "decision": "Do not run same-DEV continuation: cached admission gate failed. Do not relax force thresholds or tune the input model to force admission. Next diagnosis must distinguish estimated state error from genuinely inadmissible dynamics before another bounded candidate.",
+  "finished_UTC": "2026-10-19T20:56:55.182654+00:00"
+}

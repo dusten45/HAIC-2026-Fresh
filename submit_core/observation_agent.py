@@ -476,7 +476,7 @@ def vehicle_projection_mask(joint):
 
 def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,speed):
     """Conditioned connected-road hypothesis, never obstacle-clearance proof."""
-    cover=vehicle_projection_mask(joint);candidates=[];clipped_candidates={}
+    cover=vehicle_projection_mask(joint);candidates=[];continuation_candidates={};wide_union_rows=set();fov_rows=set()
     flatness_halo=cv2.dilate(cover,np.ones((3,3),np.uint8))
     visible_grass=coherent_grass_mask(image)
     # Output-pixel quantization plus public per-node normal change. This is a
@@ -498,7 +498,7 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
         clipped=starts[l]==0 or ends[r]>=84
         if (starts[l]>0 and cover[y,starts[l]-1]) or (ends[r]<84 and cover[y,ends[r]]):continue
         entry=(int(y),int(starts[l]),int(ends[r]-1),a,b)
-        if clipped:clipped_candidates[int(y)]=entry
+        if clipped:continuation_candidates[int(y)]=entry;fov_rows.add(int(y))
         else:candidates.append(entry)
     support=np.zeros((84,84),np.uint8)
     info=dict(road_support_inference_mode='spawn_conditioned' if initializing else 'visible_boundary_continuity',
@@ -508,6 +508,25 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
     y=np.array([r[0] for r in candidates],float);matrix=np.column_stack((y-IMAGE_ORIGIN_Y,np.ones(len(y))))
     left=np.array([r[1] for r in candidates],float);right=np.array([r[2] for r in candidates],float)
     lc=np.linalg.lstsq(matrix,left,rcond=None)[0];rc=np.linalg.lstsq(matrix,right,rcond=None)[0]
+    if not initializing:
+        # The pavement union can be wider than a lane at a merge. Use the
+        # more consistent observed flank only to seed a direction estimate;
+        # wide rows constrain containment, not an exact local lane boundary.
+        residuals=(max(abs(matrix@lc-left)),max(abs(matrix@rc-right)))
+        direction_seed=lc[0] if residuals[0]<=residuals[1] else rc[0]
+        projection=1.3608*math.sqrt(1+(direction_seed*1.701/1.3608)**2)
+        broad=(right-left)/projection>nominal+tolerance
+        if np.any(broad):
+            anchors=[]
+            for entry,is_broad in zip(candidates,broad):
+                if is_broad:continuation_candidates[entry[0]]=entry;wide_union_rows.add(entry[0])
+                else:anchors.append(entry)
+            candidates=anchors
+            if len(candidates)<3:return support,info
+            y=np.array([r[0] for r in candidates],float);matrix=np.column_stack((y-IMAGE_ORIGIN_Y,np.ones(len(y))))
+            left=np.array([r[1] for r in candidates],float);right=np.array([r[2] for r in candidates],float)
+            lc=np.linalg.lstsq(matrix,left,rcond=None)[0];rc=np.linalg.lstsq(matrix,right,rcond=None)[0]
+    info['road_support_wide_union_rows']=len(wide_union_rows)
     # A red/white curb mixture can cross the asphalt brightness threshold
     # outside the physical edge. Treat that visible flank as a pixel interval
     # spanning the public curb width, rather than as an exact boundary sample.
@@ -549,30 +568,41 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
         info['road_support_common_slope']=common
     slope=(lc[0]+rc[0])*.5
     normal_width=(right-left)/1.3608/math.sqrt(1+(slope*1.701/1.3608)**2)
-    if np.max(abs(normal_width-nominal))>tolerance:return support,info
+    if initializing:
+        if np.max(abs(normal_width-nominal))>tolerance:return support,info
+    else:
+        # Carry the already established paint-edge intervals through the
+        # width test too. One common width must satisfy all anchor rows.
+        spread=(allowances[0]+allowances[1])/1.3608/math.sqrt(1+(slope*1.701/1.3608)**2)
+        lower=max(nominal-tolerance,float(max(normal_width-spread)))
+        upper=min(nominal+tolerance,float(min(normal_width+spread)))
+        if lower>upper:return support,info
+        info['road_support_width_interval_used']=bool(np.max(abs(normal_width-nominal))>tolerance)
     if initializing:
         # Spawn centering/orientation is never assumed after the first action.
         if abs((lc[1]+rc[1])*.5-IMAGE_ORIGIN_X)>1. or abs(slope*1.701/1.3608)>math.tan(.31):return support,info
         info['spawn_prior_used']=True
     inference_rows=list(candidates);extension_rows=[]
     if not initializing:
-        # A boundary clipped by the image is not evidence of a road break.
+        # Crop-limited or broader pavement gives an inclusion constraint.
         # Extend only a consecutive end of an already validated corridor,
         # within one public tile step and with real asphalt beside the car.
         limits=(float(max(allowances[0])),float(max(allowances[1])))
         for edge_row,direction in ((int(min(y)),-1),(int(max(y)),1)):
             sy=edge_row+direction
-            while sy in clipped_candidates:
+            while sy in continuation_candidates:
                 distance=abs(sy-edge_row)/1.701*math.sqrt(1+(slope*1.701/1.3608)**2)
                 if distance>21./6.:break
-                entry=clipped_candidates[sy];_,l,r,a,b=entry
+                entry=continuation_candidates[sy];_,l,r,a,b=entry
                 left_safe=lc[0]*(sy-IMAGE_ORIGIN_Y)+lc[1]+limits[0]
                 right_safe=rc[0]*(sy-IMAGE_ORIGIN_Y)+rc[1]-limits[1]
-                if left_safe>a or right_safe<b-1:break
+                if left_safe>a or right_safe<b-1 or l>left_safe or r<right_safe:break
                 plateaus=(image[sy,a-3:a],image[sy,b:b+3])
                 if any(len(v)!=3 or min(v)<=.36 or max(v)>=.47 or np.ptp(v)>7.1/255. for v in plateaus):break
                 inference_rows.append(entry);extension_rows.append(sy);sy+=direction
-    info['road_support_fov_extension_rows']=len(extension_rows)
+    info['road_support_fov_extension_rows']=sum(sy in fov_rows for sy in extension_rows)
+    info['road_support_union_extension_rows']=len(extension_rows)
+    info['road_support_merge_extension_rows']=sum(sy in wide_union_rows for sy in extension_rows)
     for sy,l,r,a,b in inference_rows:
         support[sy,a:b]=cover[sy,a:b]
         # The 3x3 flatness test loses one pixel beside an opaque object. Within
@@ -896,8 +926,9 @@ def reference_from_observed_width(raw_points,curves,asphalt,blocked):
     """Visible outer contour plus public half-width, with an observed join.
 
     This estimates a reference, not a new planner or a geometry certificate.
-    Do not continue a row-midpoint path through merged branches beyond the
-    end of the observed centreline. Original control/certification is retained.
+    A short gap between samples of the same contour may be joined only on
+    visible pavement. This changes the reference proposal, never road support.
+    Do not continue a row-midpoint path beyond the observed centreline.
     """
     raw=np.asarray(raw_points,np.float64);best=None
     def supported(point):
@@ -905,10 +936,16 @@ def reference_from_observed_width(raw_points,curves,asphalt,blocked):
         if not 1<=x<=82 or not 5<=y<69:return False
         ix=int(round(x));iy=int(round(y))
         return bool(asphalt[iy,ix]) and not bool(blocked[iy,ix])
+    def visible_join(first,last):
+        first=np.asarray(first[:2]);last=np.asarray(last[:2])
+        gap=float(np.linalg.norm(last-first))
+        if gap>21./6.:return False
+        n=max(2,int(math.ceil(gap*1.701))+1)
+        return all(supported((1-t)*first+t*last) for t in np.linspace(0.,1.,n))
     for curve in curves:
         runs=[];run=[]
         for point in curve['points']:
-            if not supported(point) or (run and point[2]-run[-1][2]>.051):
+            if not supported(point) or (run and point[2]-run[-1][2]>.051 and not visible_join(run[-1],point)):
                 if len(run)>=3:runs.append(run)
                 run=[]
             if supported(point):run.append(point)
