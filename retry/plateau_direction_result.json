@@ -1,0 +1,101 @@
+{
+  "status": "TWO_INPUT_CONNECTION_REPAIRS_VERIFIED_NOT_PROMOTED",
+  "base_commit": "bcf835cadb7b99434a03c9f9919e638ae7fdbb8f",
+  "final_agent_sha256": "8b79cfc1388df8d7ec5bf4f36a4cb084d706e7029e9f283ac1b94ec6642a70a5",
+  "unchanged_core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "implementation": [
+    "Reuse the current explained object ROI. Add only current road-colour plateau rectangles inside it, with the original0.35m inset on all four sides and positive-area overlap with both the original patch and the pre-object-patch mesh. Keep all original collision exclusions.",
+    "Orient current reference observations using position/tangent correspondence to own-action transported prior observation memory. Reject contradictory branch correspondence and backward prefix joins; preserve original lattice ambiguity rejection. Only current points enter the reference."
+  ],
+  "public_gates": {
+    "object_union": {
+      "cases": 32,
+      "connectors": 11,
+      "recovered_current_pixel_witnesses": 24,
+      "material_occlusion_and_real_gap_guards": true,
+      "reference_progress_and_collision_preserved": true,
+      "anisotropic_coordinate_roundtrip": true
+    },
+    "reference_direction": {
+      "rigid_transform_and_reversed_order_cases": 8,
+      "negative_cases": 5,
+      "existing_join_boundary_lattice_and_edge_regressions": "PASS"
+    },
+    "full_mesh": {
+      "cases": 144,
+      "outside_samples": 0
+    },
+    "curved_object_observation": {
+      "cases": 24,
+      "new_connectors": 0,
+      "interpretation": "Inactive connector branch; not positive curved-road connector evidence."
+    }
+  },
+  "cached_gates": {
+    "saved_former_call": 47,
+    "reference_only": {
+      "admitted": false,
+      "model_ticks": 168,
+      "root_roads_boundary_obstacles_identical": true,
+      "lattice_correspondence_restored": true,
+      "reference_failure_removed": true
+    },
+    "combined": {
+      "admitted": true,
+      "model_ticks": 472,
+      "wall_s": 0.9891221330035478,
+      "geometry_change_preserves_reference_progress_motion_state_and_collision": true,
+      "same_polygon_road_margin_before_m": 0.45441048083890045,
+      "same_polygon_road_margin_after_m": 1.5024902163060674,
+      "same_polygon_collision_margin_unchanged_m": 1.9861634834781512
+    }
+  },
+  "final_source_native": {
+    "valid_actions": 40,
+    "first_failed_call": 41,
+    "unchanged_action_prefix_vs_base": 34,
+    "progress": 0.12367491166077739,
+    "damage": 0,
+    "max_whole_act_wall_s": 1.910928244004026,
+    "model_ticks": 24663,
+    "CPU_s": 45.661815630999996,
+    "wall_s": 45.15311847499106,
+    "failure_reasons": {
+      "FORCE_PEAK": 21
+    },
+    "exact_failure_replay_identical": true,
+    "official_server_runtime_parity": false
+  },
+  "remaining_blocker": {
+    "reason": "All21 candidates hit original wheel1 force limits",
+    "own_action_time_levels_and_history": "Match saved memory; no new stale-input evidence",
+    "scope": "Actual future physical force safety not established. No original physics/core/threshold/speed change or optimistic input substitution."
+  },
+  "promotion": {
+    "promoted": false,
+    "base_valid_actions": 46,
+    "final_valid_actions": 40,
+    "reason": "Saved input connections are repaired, but the final-source closed-loop reset stops earlier. No finish, lap-time or safety improvement claimed."
+  },
+  "phase_usage": {
+    "DEV_actions": 40,
+    "DEV_attempts": 41,
+    "resets": 1,
+    "model_ticks": 25342,
+    "raw_physics": 211,
+    "measured_CPU_s": 99.423791322,
+    "unmetered_geometry_CPU_charge_s": 30.166154632999998,
+    "other_unmetered_setup_admin_CPU_allowance_s": 10.0,
+    "conservative_CPU_charge_s": 139.589945955,
+    "wall_s": 563.788772,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve_used": 0,
+    "research_remaining": 19332
+  },
+  "reproduction": [
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m retry.object_plateau_connector_check /tmp/object-plateau.json",
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m retry.reference_direction_join_check /tmp/reference-direction.json"
+  ],
+  "limits": "Finite public pixel/union/direction counterexamples and one sameDEV reset. Road-colour and closed-ring support remain conditional engineering models. Agent inputs are official pixels and reset-local own memory only; true state is external diagnostic only. No private images, state, case coordinates or action traces are published. Controller/chooser/physics/horizon/thresholds/speed coefficients and cumulative research ledger preserved."
+}

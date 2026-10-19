@@ -299,7 +299,58 @@ def observed_object_road_patch(image,center,joint):
         source_raster_envelope_m=OBJECT_SOURCE_ERROR_M,
         quantization_gray=OBJECT_QUANTIZATION_GRAY,
         inferred_road_under_object=True,closed_current_asphalt_ring=True,
-        universal_bound=False)
+        observed_roi_pixels=[x0,y0,x1,y1],universal_bound=False)
+
+
+def observed_object_plateau_connectors(image,patch,roi,roads,opaque):
+    """Current plateau strips join independently inset representations.
+
+    Only the ALREADY explained object's ROI is inspected. No new object fit,
+    hidden road support, collision change, or expansion of that ROI occurs.
+    """
+    sx,sy=OBJECT_SX,OBJECT_SY;ox,oy=IMAGE_ORIGIN_X,IMAGE_ORIGIN_Y
+    x0,y0,x1,y1=map(int,roi)
+    if x0<1 or x1>82 or y0<5 or y1>53 or x1-x0<4 or y1-y0<4:return []
+    view=image[y0:y1+1,x0:x1+1]
+    ring=np.ones(view.shape,bool);ring[2:-2,2:-2]=False
+    if not view.size or min(view[ring])<100/255. or max(view[ring])>109.1/255. or np.ptp(view[ring])>7.1/255.:return []
+    paint=cv2.dilate(((image<.35)|(image>.75)).astype(np.uint8),np.ones((3,9),np.uint8))>0
+    clear=(image>=100/255.)&(image<=109.1/255.)&~opaque.astype(bool)&~paint
+    inset=.35
+    # Existing patch begins one sample inside the outer ring. A connector's
+    # inset footprint must extend strictly beyond that independently inset
+    # line; derive the necessary strip depth from the unchanged metric inset.
+    nx=int(math.floor(1+2*inset*sx))+1
+    ny=int(math.floor(1+2*inset*sy))+1
+    strips=[(x0,y0,x0+nx,y1,'vertical'),(x1-nx,y0,x1,y1,'vertical'),
+            (x0,y0,x1,y0+ny,'horizontal'),(x0,y1-ny,x1,y1,'horizontal')]
+    def overlap(p,q):
+        return cv2.intersectConvexConvex(np.asarray(p,np.float32),np.asarray(q,np.float32))[0]>1e-9
+    connectors=[]
+    for l,t,r,b,axis in strips:
+        if l<x0 or r>x1 or t<y0 or b>y1:continue
+        good=np.all(clear[t:b+1,l:r+1],axis=1 if axis=='vertical' else 0)
+        ends=np.diff(np.pad(good,(1,1)).astype(np.int16));starts=np.flatnonzero(ends==1);stops=np.flatnonzero(ends==-1)
+        for start,stop in zip(starts,stops):
+            a,c,d,e=(l,t+start,r,t+stop-1) if axis=='vertical' else (l+start,t,l+stop-1,b)
+            values=image[c:e+1,a:d+1]
+            if np.ptp(values)>7.1/255.:continue
+            left=(a-ox)/sx+inset;right=(d-ox)/sx-inset
+            near=(oy-e)/sy+inset;far=(oy-c)/sy-inset
+            if left>=right or near>=far:continue
+            candidate=np.array([[left,near],[right,near],[right,far],[left,far]])
+            if not overlap(candidate,patch) or not any(overlap(candidate,p) for p,g in roads):continue
+            # Existing sampled geometry must actually have omitted part of
+            # this current plateau; redundant strips add nothing to the map.
+            old=[patch]+[np.asarray(p) for p,g in roads]
+            iy,ix=np.mgrid[c:e+1,a:d+1]
+            samples=np.column_stack(((ix.ravel()-ox)/sx,(oy-iy.ravel())/sy))
+            samples=samples[(samples[:,0]>=left)&(samples[:,0]<=right)&(samples[:,1]>=near)&(samples[:,1]<=far)]
+            if not len(samples):continue
+            covered=lambda point:any(cv2.pointPolygonTest(np.asarray(p,np.float32),tuple(point),False)>=0 for p in old)
+            if all(covered(point) for point in samples):continue
+            connectors.append(candidate)
+    return connectors
 
 
 def update_observed_obstacles(image,detections,previous,joint):
@@ -1443,7 +1494,44 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
         painted_band_bound_universally_validated=False),updates,reference_curves
 
 
-def reference_from_observed_width(raw_points,curves,asphalt,blocked):
+def observed_reference_run_direction(points,previous):
+    """Direction correspondence to own-motion transported observation memory.
+
+    Return None when there are too few correspondences, zero for contradictory
+    ones, or the current run's signed direction along the previous observation.
+    Memory never contributes coordinates to the returned reference.
+    """
+    if previous is None or len(previous)<3:return None
+    previous=np.asarray(previous,np.float64);points=np.asarray(points,np.float64)
+    delta=np.diff(previous,axis=0);squared=np.sum(delta*delta,axis=1)
+    valid=np.flatnonzero(squared>1e-12)
+    arc=np.r_[0.,np.cumsum(np.sqrt(squared))];matches=[]
+    for i,point in enumerate(points):
+        tangent=points[min(i+1,len(points)-1)]-points[max(0,i-1)]
+        length=float(np.linalg.norm(tangent))
+        if length<1e-6:continue
+        tangent/=length
+        fraction=np.clip(np.sum((point-previous[:-1])*delta,axis=1)/np.maximum(squared,1e-12),0.,1.)
+        projected=previous[:-1]+fraction[:,None]*delta
+        candidates=[j for j in valid
+            if abs(float(delta[j]@tangent))/math.sqrt(float(squared[j]))>=math.cos(.31)
+            and float(np.linalg.norm(projected[j]-point))<=math.hypot(1/1.3608,1/1.701)]
+        if not candidates:continue
+        if any(float(delta[j]@tangent)*float(delta[k]@tangent)<0.
+               for j in candidates for k in candidates):return 0
+        j=min(candidates,key=lambda k:float(np.linalg.norm(projected[k]-point)))
+        if (j==valid[0] and fraction[j]==0.) or (j==valid[-1] and fraction[j]==1.):continue
+        station=float(arc[j]+fraction[j]*math.sqrt(float(squared[j])))
+        direction=1 if float(delta[j]@tangent)>0. else -1
+        matches.append((station,direction))
+    if len(matches)<3:return None
+    direction=matches[0][1]
+    if any(sign!=direction for _,sign in matches):return 0
+    if not all(direction*(b[0]-a[0])>0. for a,b in zip(matches,matches[1:])):return 0
+    return direction
+
+
+def reference_from_observed_width(raw_points,curves,asphalt,blocked,previous=None):
     """Visible outer contour plus public half-width, with an observed join.
 
     This estimates a reference, not a new planner or a geometry certificate.
@@ -1451,7 +1539,7 @@ def reference_from_observed_width(raw_points,curves,asphalt,blocked):
     visible pavement. This changes the reference proposal, never road support.
     Do not continue a row-midpoint path beyond the observed centreline.
     """
-    raw=np.asarray(raw_points,np.float64);best=None
+    raw=np.asarray(raw_points,np.float64);best=None;backward_joins=0;ambiguous_runs=0
     def supported(point):
         x=IMAGE_ORIGIN_X+1.3608*point[0];y=IMAGE_ORIGIN_Y-1.701*point[1]
         # _map includes row69. Values just below69 already round to that
@@ -1475,23 +1563,36 @@ def reference_from_observed_width(raw_points,curves,asphalt,blocked):
         if len(run)>=3:runs.append(run)
         for run in runs:
             points=np.asarray(run,np.float64)[:,:2]
-            if np.linalg.norm(points[-1])<np.linalg.norm(points[0]):points=points[::-1]
-            j=int(np.argmin(np.linalg.norm(raw-points[0],axis=1)))
-            gap=float(np.linalg.norm(raw[j]-points[0]))
-            # Only a short, visibly supported connection to the retained prefix.
-            if gap>21./6.:continue
-            n=max(2,int(math.ceil(gap*1.701))+1)
-            if not all(supported((1-t)*raw[j]+t*points[0]) for t in np.linspace(0.,1.,n)):continue
+            direction=observed_reference_run_direction(points,previous)
+            if direction==0:ambiguous_runs+=1;continue
+            if direction==-1 or (direction is None and np.linalg.norm(points[-1])<np.linalg.norm(points[0])):
+                points=points[::-1]
+            outgoing=points[1]-points[0];joins=[]
+            for j in range(len(raw)):
+                join=points[0]-raw[j];gap=float(np.linalg.norm(join))
+                if gap>21./6.:continue
+                if not all(supported(point) for point in raw[:j+1]):continue
+                incoming=raw[j]-raw[j-1] if j else raw[1]-raw[0]
+                # Nearest position is not enough: a prefix that has already
+                # passed this contour start would introduce a backward chord.
+                if float(incoming@outgoing)<0. or (gap>1e-6 and
+                    (float(incoming@join)<0. or float(join@outgoing)<0.)):
+                    backward_joins+=1;continue
+                if visible_join(raw[j],points[0]):joins.append((gap,j))
+            if not joins:continue
+            gap,j=min(joins)
             candidate=np.vstack((raw[:j+1],points));ds=np.linalg.norm(np.diff(candidate,axis=0),axis=1)
             candidate=candidate[np.r_[True,ds>1e-6]]
             length=float(np.sum(np.linalg.norm(np.diff(candidate,axis=0),axis=1)))
             score=length-gap
             if best is None or score>best[0]:best=(score,candidate,len(points),gap)
-    if best is None:return raw,dict(reference_source='visible row midpoints',observed_width_reference_used=False)
+    if best is None:return raw,dict(reference_source='visible row midpoints',observed_width_reference_used=False,
+        reference_backward_joins_rejected=backward_joins,reference_ambiguous_direction_runs=ambiguous_runs)
     _,points,count,gap=best
     return points,dict(reference_source='observed clean outer contour + public half-width',
         observed_width_reference_used=True,observed_centerline_points=count,
         observed_reference_join_m=gap,reference_unseen_suffix_extrapolated=False,
+        reference_backward_joins_rejected=backward_joins,reference_ambiguous_direction_runs=ambiguous_runs,
         reference_is_an_estimate_not_a_certificate=True)
 
 
@@ -1929,8 +2030,18 @@ class Agent:
         # Pavement inference and collision exclusion are independent. Existing
         # obstacle disks remain; compatible silhouette envelopes can only add
         # collision exclusion. These patches never enter the reference pixels.
-        for patch in object_road_patches:
+        # A separate four-flank inset can leave a visible plateau seam
+        # between this inferred patch and the row mesh. Reuse its CURRENT
+        # explained ROI; no object fit or hidden-pixel inference is repeated.
+        connector_mesh=tuple(roads);object_plateau_connectors=[]
+        connector_opaque=vehicle_projection_mask(self.joint).astype(bool)
+        for patch,record in zip(object_road_patches,object_road_records):
+            object_plateau_connectors.extend(observed_object_plateau_connectors(
+                image,patch,record['observed_roi_pixels'],connector_mesh,connector_opaque))
             roads.append((tuple(tuple(float(v) for v in point) for point in patch),self.grip_prior))
+        for patch in object_plateau_connectors:
+            roads.append((tuple(tuple(float(v) for v in point) for point in patch),self.grip_prior))
+        self.uncertainty['object_current_plateau_connectors']=len(object_plateau_connectors)
         collision_obstacles=obstacles.copy()
         for center,radius in object_collision_envelopes:
             if not any(np.linalg.norm(np.asarray(center)-p)+radius<=r for p,r in obstacles):
@@ -1942,7 +2053,7 @@ class Agent:
         self.uncertainty['continuous_observed_curb_patches']=accepted_patches
         self.uncertainty['mesh_source']='union of all supported row intervals; shared interfaces excluded'
         points=np.asarray([((a+b)*.5,y) for a,b,y in rows],np.float64)
-        points,reference_info=reference_from_observed_width(points,reference_curves,asphalt,obstacle_blocked)
+        points,reference_info=reference_from_observed_width(points,reference_curves,asphalt,obstacle_blocked,self.reference_lattice)
         self.uncertainty.update(reference_info)
         observed_reference=points.copy();source_stations=None
         if reference_info['observed_width_reference_used']:
