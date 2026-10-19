@@ -1,0 +1,133 @@
+{
+  "study": 580,
+  "status": "PROPOSED_NOT_EXECUTED",
+  "method_family": "Mechanical wheel-slip-regulating steering feedback: one parameter-free law, two holds, one reachable state. No pursuit target or action search in intervention.",
+  "changed_assumption": "Pure-pursuit geometric target is required to steer through the first force wall. Replace steering construction alone; launch24, original551path/reference and all safety predicates stay fixed.",
+  "evidence": "579fastparent25 at prehold32 has a fully safe124raw recorded prefix; all13pursuit/pedalchildren failed FORCE on raw2/frontwheel1. Stored raw2lateral-component ratios alone exceeded1.059. This does not prove all possible steering commands fail.",
+  "novelty": "Different from543 COM-velocity-frame pursuit: no path target,lookahead,wheelbase or heading-error pursuit calculation. Uses each frontwheel v+offset including rotational contribution. Different source reachable parent, not rerunning old543. No offset/width/step/gain increase.",
+  "selection": {
+    "changed_assumption": "Pursuit target required for short-horizon steering; replace it by full-state wheel-slip alignment feedback only for two holds.",
+    "method_family": "Mechanical slip-regulating steering feedback, not a larger pursuit beam or a velocity-frame pursuit.",
+    "selected_parent_instance": 25,
+    "selection_rule": "Largest progress among the three first hold32competitiveparents whose13children allfailedraw2; tie lower instance. Fixed using stored579only.",
+    "prefix_raw": 124,
+    "current_parent_progress_m": 121.24748858400757,
+    "current_parent_speed_m_s": 53.60113302855027,
+    "first_alignment_action_is_duplicate_of_old13": false,
+    "first_alignment_steer_outside_old13_steer_range": true,
+    "steering_distance_to_nearest_old_steer_rad": 0.0992191955447197,
+    "private_prefix_sha256": "c472ffd05611dac79bcce3d8c0e0392849891b49831ddf7467f3799e2bd64232",
+    "hypothesis_limits": "No next trajectory simulated. Common two-wheel heading target is not exact simultaneous alignment or guaranteed force reduction; servo/joint/yaw reaction and corridor may invalidate it."
+  },
+  "prefix": {
+    "private_file": "/workspace/haic-response580-private/selected-prefix-private.json",
+    "sha256": "c472ffd05611dac79bcce3d8c0e0392849891b49831ddf7467f3799e2bd64232",
+    "raw": 124,
+    "holds": 31,
+    "rule": "Build fresh original initial-source state with original ledger initial_visited/tracker/clock and follow this exact stored safe prefix. Verify all96originallaunch rows plus28storedbranch rows in all available roots,forces,history,progress/action/raw fields. Construct full tracker/visited from actual source lineage; branch full checkpoint was not logged, so never claim equality to an invented old full tracker checkpoint. No state transplant from failed child and no history/clock reset."
+  },
+  "intervention": {
+    "first_hold": 32,
+    "maximum_holds": 2,
+    "raw_per_action": 4,
+    "steering_formula": "At hold start actual state: vi=(COMvelocity+wheel_i.offset), front i=0,1. theta_i=atan2(-vi_x,vi_y). theta=atan2(sum sin(theta_i),sum cos(theta_i)). q=atan2(sin(theta-body_angle),cos(theta-body_angle)). steer=float32(-clip(q,-0.4,+0.4)). One shared front target, recomputed once at next hold if first hold fully safe; hold action fixed4raw.",
+    "pedals": "Exact original577factual gas/brake for absoluteholds32,33, float32. Do not select/rank/optimize/clip-adapt pedals. This isolates steering expression on the same retained fast source state.",
+    "domain": "Nonfinite values, either front vi norm<=1e-12, or circular resultant norm<=1e-12 =>domain hard stop, no fallback law or retuning. Original physical control domain unchanged.",
+    "interpretation": "The common mean cannot align both wheels exactly. Command affects future servo/joint/yaw, not current force. Wheel rates and yaw reaction may invalidate the proposal; no predicted-force or linear-gain veto before strict source evaluation."
+  },
+  "stages": {
+    "preflight": "Freeze implementation/tests/actualimportdependencyclosure and all input hashes, including brake506/508/510/drive519, originalstaticroot and ledger initial_visited, linked to579commit662835aa9406ad5c88361e6f4067e14965659667 and this proposed contract. Pure/mock tests for coordinate sign,shared-wheel averaging,degenerate heading,4raw action hold,history lineage/force counters. Exact action duplicate check against stored13; it is false now. No AD/FD/optimizer or predicted100ms/500ms gate.",
+    "A": "One complete hold32 strict-safe from fresh reachable parent25. Any ordinary source safety rejection ends this exact law trial; do not try a second law/action/gain. Passing4raw is only one-step escape observation relative to old13logged failures.",
+    "B": "Only afterA, same actual completed state continues hold33 with same law andfactualabsolute-indexpedals,4rawstrictsafe. No startingstatecopy or alternative continuation. Success means8raw local viability, not s200 or lap/time performance.",
+    "verification": "Only afterbothholds safe, ONE initial-source independent command-tape replay of124prefix+8intervention=132raw. Compare every recorded full state/force/history/visited/tracker/clock and final whole checkpoint by contents, not object IDs. Replay exact commands, not law reselection."
+  },
+  "safety": {
+    "unchanged": "All original551/579 source predicates/implementations: launchpeak2.5,originalhold24raw15%launchclip;trackingpeak1.059,prefixclip10%,frozen551referenceoverspeed4.85,footprint>=0.5,path<=3,body<100,projection/progress,actiondomain,officialtrackerandabsoluteclock. No modifiedpath/reference or changedbuffer.",
+    "ordinary_failure": "FORCE/CLIP_HISTORY/REFERENCE/FOOTPRINT/PATH/PROJECTION prunes this sole trial and stops; no continuation after unsafe raw.",
+    "hard_stop": "Body/domain/integrity/IO/dependency mismatch terminate technical run. Cost/time/deadline=>budget-censored, not scientific falsification."
+  },
+  "criteria": {
+    "no_time_gain_gate": "No100ms/500ms or one-second requirement before exploring a new mechanical law. Primary witness isstrict8rawviability+exactreplay; progress/speed/yaw/omega/lateralutilization/slip/clip/geometry differences are diagnostics.",
+    "success": "Bothholdsstrictsafe+exactinitialreplay => this law escapes this one13-actionpursuit deadend for8raw. Keep13.20incumbent. Only propose a separately contracted longer-return/whole retention test; do not execute it.",
+    "first_hold_fails": "Close this one mechanically defined law at this selected state. No global physical impossibility, no newlaunch/path/reference conclusions.",
+    "second_hold_fails": "First-hold escape not retained through secondhold; preserve both observations, no fresh law or restart.",
+    "technical_or_budget_stop": "Report separately with measured partial counts and records; no scientific failure claim."
+  },
+  "budgets": {
+    "planned_attempted_raw": "124prefix+8intervention+132independentreplay=264max; failedpre-forceattemptsconsume slots. Firstfailurestops.",
+    "caps": {
+      "attempted_raw": 300,
+      "completed_model_ticks": 300,
+      "external_force": 1200,
+      "internal_force": 1200,
+      "total_force": 2400,
+      "geometry_checks": 300,
+      "CPU_s": 25,
+      "wall_s": 35
+    },
+    "stage_caps": {
+      "preparation": {
+        "CPU_s": 5,
+        "wall_s": 7
+      },
+      "prefix": {
+        "attempted_raw": 124,
+        "CPU_s": 5,
+        "wall_s": 8
+      },
+      "intervention": {
+        "attempted_raw": 8,
+        "CPU_s": 2,
+        "wall_s": 3
+      },
+      "verification": {
+        "attempted_raw": 132,
+        "CPU_s": 6,
+        "wall_s": 8
+      },
+      "audit": {
+        "CPU_s": 3,
+        "wall_s": 5
+      }
+    },
+    "instrumentation": "Separate actual externalforce_rows wheel_response calls and internalintegrationwheel_response calls; totalcap2400. Allpreparation,failedtests/attempts,verification,auditcostscharged. Reserveentire132rawreplay+auditbeforeintervention. No hidden rollouts, optimizer, FD, extra laws, gains, offsets, width/depth expansion, or automatic restart.",
+    "native_actions": 0,
+    "HOLDOUT": 0,
+    "SEALED": 0
+  },
+  "current_stage_calls": {
+    "source_ticks": 0,
+    "native_actions": 0,
+    "FD": 0,
+    "optimizer": 0,
+    "force_rows_calls": 0,
+    "wheel_response_calls": 0
+  },
+  "baseline": {
+    "actual_s": 13.66,
+    "source_s": 13.2,
+    "one_second_recoverable_gain_verified": false,
+    "DEV": "Reused579diagnosticparent; not independent cohort",
+    "research_remaining": 22758,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "paid_compute": 0,
+  "environment": "Designatedcloudonly; proposaldoesnotextenddeadline or start an experiment.",
+  "input_sha256": {
+    "journal": "536be0785d321969046da340da8e598096f7bc8c1279862f9e25ff34c95fc015",
+    "prefix": "d8ea4053f82923e7222476b5708b011d35c2976a94ccfc209b6ae041672f2af7",
+    "terminals": "2520e6ac6f16d354ad6e95e18f47bae1794757d98a96d613812eca15f7f4ef09",
+    "baseline": "bc432812cdd71702ec030edda72a9aa63ca79e61dceb1f970891a659f20cd5a6",
+    "path": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "result579": "ed80cd6ad768ff349e5e3786dad6a5c4ba4a7ed6db12dcb5b156e7a2e12de8f5",
+    "contract579": "4a36258b5ea0d4cc7851941ad01d6b2e8bd67df1be516b522d9ee42a7935ad39",
+    "selected_private_prefix": "c472ffd05611dac79bcce3d8c0e0392849891b49831ddf7467f3799e2bd64232",
+    "ledger": "28ff0ff7ffec9784e4817b4b55500c40ecd3730e9d09977294ad1dfd9b70763f",
+    "static": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f"
+  },
+  "initial_visited_sha256": "463f2998327eb3a694145e6014444480b2235be84aa6cfd57871cc64f1cd816c",
+  "frozen_safety_dependency_manifest_reference": "retry/beam579_contract.json#dependency_file_sha256; execution must refresh full actual closure and pin new code/test hashes before first source call.",
+  "privacy": "Rawstate/commands/journal/privateoriginalmanuscriptremainoutsidepublicrepository. Publishtechnicalcode,contract,aggregatesonly. Preserve578/579 andmain dfb7a2de2178825ca5c5ce20bab01ba67052ba31,Participants,userchanges,backups. No new experiment now."
+}
