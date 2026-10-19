@@ -1,0 +1,84 @@
+{
+  "study": 601,
+  "status": "READ_ONLY_AUDIT_PASS",
+  "checks": {
+    "runner_frozen": true,
+    "one_candidate_frozen": true,
+    "profile_precedes_candidate_freeze": true,
+    "candidate_freeze_links_main_contract": true,
+    "all_pure_checks_pass": true,
+    "tests_pinned": true,
+    "same_input_pinned": true,
+    "source600_pinned": true,
+    "profile_closed_result_pinned": true,
+    "profile_one_call": true,
+    "profile_private_evidence_pinned": true,
+    "profile_all_parity": true,
+    "profile_no_forbidden_work": true,
+    "profile_ledger_and_promotion": true,
+    "profile_registered_before_call": true,
+    "optimized_closed_result_pinned": true,
+    "optimized_one_call": true,
+    "optimized_private_evidence_pinned": true,
+    "optimized_all_parity": true,
+    "optimized_no_forbidden_work": true,
+    "optimized_ledger_and_promotion": true,
+    "optimized_registered_before_call": true,
+    "byte_identical600_all_raw_diagnostics": true,
+    "byte_identical_full_raw_force_outputs": true,
+    "two_closed_chooser_calls_only": true,
+    "aggregate_work_caps": true,
+    "logical_geometry_fully_charged": true,
+    "memo_accounting": true,
+    "valid_optimization_scoped_above5s": true,
+    "total_time_caps_with5s_summary_reserve": true
+  },
+  "chooser_calls": 2,
+  "aggregate_cost": {
+    "model_attempted": 1812,
+    "model_completed": 1776,
+    "external_force": 7248,
+    "internal_force": 7104,
+    "total_force": 14352,
+    "geometry": 5282
+  },
+  "time_through_read_only_audit": {
+    "CPU_s": 44.808500801,
+    "wall_s": 43.251329164006165
+  },
+  "audit_CPU_s": 0.052483899,
+  "audit_wall_s": 0.05248361399571877,
+  "summary_write_reserve_CPU_s": 5,
+  "summary_write_reserve_wall_s": 5,
+  "profiled_function_details": [
+    {
+      "file": "brake502_response.py",
+      "name": "wheel_response",
+      "calls": 7176,
+      "self_s": 0.033630416,
+      "cumulative_s": 0.076087634
+    },
+    {
+      "file": "structure537_control.py",
+      "name": "result",
+      "calls": 31,
+      "self_s": 5.9526000000000006e-05,
+      "cumulative_s": 5.9526000000000006e-05
+    },
+    {
+      "file": "dataclasses.py",
+      "name": "asdict",
+      "calls": 6283,
+      "self_s": 0.006237811,
+      "cumulative_s": 1.441473511
+    }
+  ],
+  "profiled_unallocated_self_time_gap_s": 1.924393139010359,
+  "comparison": {
+    "normal_wall_reduction_s": 1.0290039499959676,
+    "normal_wall_reduction_fraction": 0.1292256149044797,
+    "reused_margin_fraction": 0.15778019586507072,
+    "scope": "One600normal vs one601normal saved-input sample.601also retains raw kernel returns and has aggregate guard bookkeeping; no repeated paired latency estimate. Profiled21.46s is excluded from speedup comparison."
+  },
+  "scientific_evaluations_in_audit": 0
+}

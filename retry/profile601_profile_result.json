@@ -1,0 +1,455 @@
+{
+  "study": 601,
+  "phase": "profile",
+  "chooser_calls": 1,
+  "status": "EXACT_PROFILE_COMPLETED",
+  "native": 0,
+  "worlds": 0,
+  "resets": 0,
+  "actions": 0,
+  "solver": 0,
+  "FD": 0,
+  "new_seed": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "lap_gain_claim": false,
+  "pixel_act_promotion": false,
+  "optimization_adopted": false,
+  "core": {
+    "CPU_s": 21.440596648,
+    "wall_s": 21.45984190001036
+  },
+  "parity": {
+    "action_bytes": true,
+    "full_report": true,
+    "all600_raw_events": true,
+    "model_attempts": true,
+    "model_completed": true,
+    "force_external": true,
+    "force_internal": true,
+    "geometry": true,
+    "kernel_return_count": true,
+    "passive_trial_reports": true
+  },
+  "profile": {
+    "exclusive_self_seconds_by_category": {
+      "other_including_builtins": 5.080866993,
+      "instrumentation_identity_and_budget": 0.7619087630000003,
+      "state_copy_and_dataclass_allocation": 1.2413627160000003,
+      "policy_reports_and_admission": 0.08038977000000001,
+      "geometry_and_path_queries": 12.203043320000003,
+      "physics_and_body": 0.167877199
+    },
+    "categories_sum_s": 19.535448761,
+    "top_self": [
+      {
+        "file": "brake506_geometry.py",
+        "line": 12,
+        "name": "point_segment",
+        "primitive_calls": 4485256,
+        "total_calls": 4485256,
+        "self_s": 3.6137216480000003,
+        "cumulative_s": 4.974136846
+      },
+      {
+        "file": "plan513_model.py",
+        "line": 41,
+        "name": "margin",
+        "primitive_calls": 919,
+        "total_calls": 919,
+        "self_s": 2.069078385,
+        "cumulative_s": 15.770086525000002
+      },
+      {
+        "file": "brake506_geometry.py",
+        "line": 18,
+        "name": "polygon_distance",
+        "primitive_calls": 241173,
+        "total_calls": 241173,
+        "self_s": 1.953344178,
+        "cumulative_s": 10.341727476
+      },
+      {
+        "file": "plan513_model.py",
+        "line": 49,
+        "name": "<genexpr>",
+        "primitive_calls": 8757199,
+        "total_calls": 8757199,
+        "self_s": 1.65076394,
+        "cumulative_s": 1.756187576
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "name": "<built-in method builtins.max>",
+        "primitive_calls": 15821037,
+        "total_calls": 15821037,
+        "self_s": 1.6073874670000001,
+        "cumulative_s": 1.621801652
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "name": "<built-in method builtins.min>",
+        "primitive_calls": 7901829,
+        "total_calls": 8100333,
+        "self_s": 1.303037479,
+        "cumulative_s": 1.579425542
+      },
+      {
+        "file": "lap518_control.py",
+        "line": 9,
+        "name": "raw_projection",
+        "primitive_calls": 1722,
+        "total_calls": 1722,
+        "self_s": 1.033389949,
+        "cumulative_s": 1.657423577
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "name": "<built-in method math.hypot>",
+        "primitive_calls": 8664338,
+        "total_calls": 8664338,
+        "self_s": 0.8766695950000001,
+        "cumulative_s": 0.8766695950000001
+      },
+      {
+        "file": "brake506_geometry.py",
+        "line": 25,
+        "name": "<listcomp>",
+        "primitive_calls": 236385,
+        "total_calls": 236385,
+        "self_s": 0.6321921140000001,
+        "cumulative_s": 2.990362364
+      },
+      {
+        "file": "dataclasses.py",
+        "line": 1289,
+        "name": "_asdict_inner",
+        "primitive_calls": 6283,
+        "total_calls": 464942,
+        "self_s": 0.6070496000000001,
+        "cumulative_s": 1.43138088
+      },
+      {
+        "file": "brake506_geometry.py",
+        "line": 22,
+        "name": "<listcomp>",
+        "primitive_calls": 1578792,
+        "total_calls": 1578792,
+        "self_s": 0.526920662,
+        "cumulative_s": 0.526920662
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "name": "<built-in method builtins.any>",
+        "primitive_calls": 33991,
+        "total_calls": 33991,
+        "self_s": 0.489151449,
+        "cumulative_s": 2.244868468
+      },
+      {
+        "file": "timing600.py",
+        "line": 45,
+        "name": "exact_key",
+        "primitive_calls": 4489,
+        "total_calls": 405960,
+        "self_s": 0.356523105,
+        "cumulative_s": 0.6065316040000001
+      },
+      {
+        "file": "copy.py",
+        "line": 128,
+        "name": "deepcopy",
+        "primitive_calls": 339282,
+        "total_calls": 339282,
+        "self_s": 0.24930674800000002,
+        "cumulative_s": 0.339534343
+      },
+      {
+        "file": "brake508_corridor.py",
+        "line": 35,
+        "name": "indexed_contacts",
+        "primitive_calls": 3552,
+        "total_calls": 3552,
+        "self_s": 0.15143978900000002,
+        "cumulative_s": 0.440887976
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "name": "<built-in method builtins.isinstance>",
+        "primitive_calls": 2285195,
+        "total_calls": 2285195,
+        "self_s": 0.145201257,
+        "cumulative_s": 0.145201257
+      },
+      {
+        "file": "lap518_control.py",
+        "line": 17,
+        "name": "project",
+        "primitive_calls": 1722,
+        "total_calls": 1722,
+        "self_s": 0.142473276,
+        "cumulative_s": 1.848984506
+      },
+      {
+        "file": "brake508_corridor.py",
+        "line": 63,
+        "name": "<listcomp>",
+        "primitive_calls": 87072,
+        "total_calls": 87072,
+        "self_s": 0.11023310200000001,
+        "cumulative_s": 0.11023310200000001
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "name": "<built-in method builtins.hasattr>",
+        "primitive_calls": 589927,
+        "total_calls": 589927,
+        "self_s": 0.108588444,
+        "cumulative_s": 0.108588444
+      },
+      {
+        "file": "dataclasses.py",
+        "line": 1253,
+        "name": "_is_dataclass_instance",
+        "primitive_calls": 501965,
+        "total_calls": 501965,
+        "self_s": 0.10240183600000001,
+        "cumulative_s": 0.20417606300000002
+      }
+    ],
+    "top_cumulative": [
+      {
+        "file": "structure537_control.py",
+        "line": 57,
+        "name": "choose",
+        "primitive_calls": 1,
+        "total_calls": 1,
+        "self_s": 0.00034962000000000003,
+        "cumulative_s": 21.459712058
+      },
+      {
+        "file": "cold598_support.py",
+        "line": 107,
+        "name": "wrapped",
+        "primitive_calls": 31,
+        "total_calls": 31,
+        "self_s": 0.00048495000000000005,
+        "cumulative_s": 21.451858042
+      },
+      {
+        "file": "structure537_control.py",
+        "line": 34,
+        "name": "certify",
+        "primitive_calls": 31,
+        "total_calls": 31,
+        "self_s": 0.012977602000000001,
+        "cumulative_s": 21.439616535000003
+      },
+      {
+        "file": "structure537_control.py",
+        "line": 63,
+        "name": "evaluate",
+        "primitive_calls": 31,
+        "total_calls": 31,
+        "self_s": 0.00036792300000000003,
+        "cumulative_s": 20.339867847
+      },
+      {
+        "file": "structure537_control.py",
+        "line": 30,
+        "name": "check",
+        "primitive_calls": 919,
+        "total_calls": 919,
+        "self_s": 0.0019380240000000002,
+        "cumulative_s": 16.67955078
+      },
+      {
+        "file": "cold598_support.py",
+        "line": 81,
+        "name": "source_geometry",
+        "primitive_calls": 919,
+        "total_calls": 919,
+        "self_s": 0.016361554,
+        "cumulative_s": 16.677612756000002
+      },
+      {
+        "file": "corner515_model.py",
+        "line": 17,
+        "name": "margin",
+        "primitive_calls": 919,
+        "total_calls": 919,
+        "self_s": 0.0036985980000000004,
+        "cumulative_s": 16.288270598
+      },
+      {
+        "file": "plan513_model.py",
+        "line": 41,
+        "name": "margin",
+        "primitive_calls": 919,
+        "total_calls": 919,
+        "self_s": 2.069078385,
+        "cumulative_s": 15.770086525000002
+      },
+      {
+        "file": "brake506_geometry.py",
+        "line": 18,
+        "name": "polygon_distance",
+        "primitive_calls": 241173,
+        "total_calls": 241173,
+        "self_s": 1.953344178,
+        "cumulative_s": 10.341727476
+      },
+      {
+        "file": "structure537_control.py",
+        "line": 79,
+        "name": "<listcomp>",
+        "primitive_calls": 1,
+        "total_calls": 1,
+        "self_s": 3.5302e-05,
+        "cumulative_s": 9.333830153000001
+      },
+      {
+        "file": "brake506_geometry.py",
+        "line": 12,
+        "name": "point_segment",
+        "primitive_calls": 4485256,
+        "total_calls": 4485256,
+        "self_s": 3.6137216480000003,
+        "cumulative_s": 4.974136846
+      },
+      {
+        "file": "brake506_geometry.py",
+        "line": 25,
+        "name": "<listcomp>",
+        "primitive_calls": 236385,
+        "total_calls": 236385,
+        "self_s": 0.6321921140000001,
+        "cumulative_s": 2.990362364
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "name": "<built-in method builtins.all>",
+        "primitive_calls": 7383,
+        "total_calls": 7383,
+        "self_s": 0.007900148000000001,
+        "cumulative_s": 2.2852248420000003
+      },
+      {
+        "file": "cold598_support.py",
+        "line": 116,
+        "name": "<lambda>",
+        "primitive_calls": 1722,
+        "total_calls": 1722,
+        "self_s": 0.002260652,
+        "cumulative_s": 2.282073822
+      },
+      {
+        "file": "cold598_support.py",
+        "line": 76,
+        "name": "project",
+        "primitive_calls": 1722,
+        "total_calls": 1722,
+        "self_s": 0.038339312,
+        "cumulative_s": 2.27981317
+      },
+      {
+        "file": "~",
+        "line": 0,
+        "name": "<built-in method builtins.any>",
+        "primitive_calls": 33991,
+        "total_calls": 33991,
+        "self_s": 0.489151449,
+        "cumulative_s": 2.244868468
+      },
+      {
+        "file": "lap518_control.py",
+        "line": 17,
+        "name": "project",
+        "primitive_calls": 1722,
+        "total_calls": 1722,
+        "self_s": 0.142473276,
+        "cumulative_s": 1.848984506
+      },
+      {
+        "file": "plan513_model.py",
+        "line": 49,
+        "name": "<genexpr>",
+        "primitive_calls": 8757199,
+        "total_calls": 8757199,
+        "self_s": 1.65076394,
+        "cumulative_s": 1.756187576
+      },
+      {
+        "file": "cold598_support.py",
+        "line": 97,
+        "name": "model_tick",
+        "primitive_calls": 888,
+        "total_calls": 888,
+        "self_s": 0.014578033,
+        "cumulative_s": 1.672174489
+      },
+      {
+        "file": "lap518_control.py",
+        "line": 9,
+        "name": "raw_projection",
+        "primitive_calls": 1722,
+        "total_calls": 1722,
+        "self_s": 1.033389949,
+        "cumulative_s": 1.657423577
+      }
+    ],
+    "scope": "Single cProfile instrumented call. Times include profiler overhead and are not normal latency. Categories use function self time; builtins remain other, cumulative rows overlap."
+  },
+  "cost": {
+    "geometry": 2641,
+    "geometry_internal_nominal_steering": 834,
+    "geometry_source_footprint": 919,
+    "model_attempted": 906,
+    "external_force": 3624,
+    "total_force": 7176,
+    "model_tick_attempts": 888,
+    "internal_force": 3552,
+    "model_completed": 888,
+    "geometry_tracking_forecast": 888
+  },
+  "planner_cost": {
+    "force_evaluations": 3624,
+    "forecast_calls": 31,
+    "forecast_ticks": 888,
+    "geometry_checks": 919
+  },
+  "time": {
+    "CPU_s": 29.437803743,
+    "wall_s": 28.65493627000251
+  },
+  "aggregate_cost": {
+    "model_attempted": 906,
+    "model_completed": 888,
+    "external_force": 3624,
+    "internal_force": 3552,
+    "total_force": 7176,
+    "geometry": 2641
+  },
+  "aggregate_time": {
+    "CPU_s": 29.437803743,
+    "wall_s": 28.65493627000251
+  },
+  "private_sha256": {
+    "profile-diagnostics-private.json": "60041bcf3bdaad9e5cb21adcb33f7ae2949c625370d38a3e9cd8c30a1968b8a1",
+    "profile-STARTED-private.json": "95dd50d9d59aed4fe1b3a50f7a8bfb5574cf7eb6186029cdeb861d807d593bdf",
+    "profile-REGISTERED-private.json": "408ae3b8110e7edf33cb04c894b1f2e54250a0487be1319af7976f169734a970",
+    "profile-CALL-private.json": "01c0b95ee42bf296eeced6f3d83af1ab754f6c86f3f073dee8a8faebe1bdb11e",
+    "profile-raw-kernels-private.json": "37de65232a3d738f04b74ff6b535d42e91e98d8994186678730bcb97d9e2a093",
+    "profile-output-private.json": "e5f13924725d69f25a37e8ebea1cc6e96771278cbd34467be1c960dc55c03a38"
+  }
+}

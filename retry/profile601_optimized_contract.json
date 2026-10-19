@@ -1,0 +1,15 @@
+{
+  "study": 601,
+  "status": "ONE_CANDIDATE_FROZEN_BEFORE_NORMAL_CHOOSE",
+  "main_contract_sha256": "ae5938c622abba53bccec3f6ed97ce0950bf77b56a0ea4a091f099a6d6f4f0ad",
+  "profile_result_sha256": "06eb29eeee7ff60741656fe4ff137a185309653d55455440f3b9c74b5738c24f",
+  "candidate_sha256": "d637dee060a5f041eff0724fc111ffd89c0324d2e62d9f323a221cc1752470fc",
+  "tests_sha256": "5a83309ea5367142675943702cb53a76d3928a30d8aa9f6e0b3ac4acdbe98361",
+  "chosen_cost": {
+    "target": "Repeated full body/road/obstacle margin; dominant instrumented geometry family",
+    "evidence": "919 corner515.margin calls cumulative16.288s, road margin15.770s; point_segment4485256 calls cumulative4.974s. These are overlapping profiled times, not normal latency.",
+    "change": "One fresh per-choose memo of exact full margin. Key contains every input used by plan513.polygons: center, planar.angle, levers and each wheel.heading, preserving finite binary64 type/signedzero. Geometry context is recursively immutable and privately owned. All other root fields are unused by polygons/margin. On miss call the original margin with unchanged arithmetic/control-flow order; on hit reuse that exact immutable float. All original logical query counters/admission/body/force gates execute.",
+    "boundaries": "Cache only one choose, maximum5000 keys, no history/action/report/control state in entries, clear on exit. Other geometry projection/contact/physics functions unchanged. Geometry budget counts logical queries including cache hits."
+  },
+  "registered_utc": "2026-10-19T11:19:40.922230+00:00"
+}

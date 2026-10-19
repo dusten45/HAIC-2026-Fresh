@@ -1,0 +1,102 @@
+{
+  "study": 601,
+  "phase": "optimized",
+  "chooser_calls": 1,
+  "status": "EXACT_OPTIMIZATION_VALIDATED",
+  "native": 0,
+  "worlds": 0,
+  "resets": 0,
+  "actions": 0,
+  "solver": 0,
+  "FD": 0,
+  "new_seed": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "lap_gain_claim": false,
+  "pixel_act_promotion": false,
+  "optimization_adopted": true,
+  "pure_geometry_queries": 0,
+  "core": {
+    "CPU_s": 6.931312417000001,
+    "wall_s": 6.933844211001997
+  },
+  "cache_work": {
+    "hits": 145,
+    "misses": 774,
+    "entries": 774,
+    "logical_queries": 919,
+    "cache_lifetime": "ONE_CHOOSE_ONLY",
+    "result_values": "IMMUTABLE_FLOAT",
+    "geometry_context": "OWNED_RECURSIVE_TUPLES"
+  },
+  "parity": {
+    "action_bytes": true,
+    "full_report": true,
+    "all600_raw_events": true,
+    "model_attempts": true,
+    "model_completed": true,
+    "force_external": true,
+    "force_internal": true,
+    "geometry": true,
+    "kernel_return_count": true,
+    "passive_trial_reports": true,
+    "all_profiled_full_raw_forces": true
+  },
+  "single_sample_vs600": {
+    "CPU_s": {
+      "baseline": 7.956916586,
+      "optimized": 6.931312417000001,
+      "speedup": 1.1479668073371738
+    },
+    "wall_s": {
+      "baseline": 7.962848160997964,
+      "optimized": 6.933844211001997,
+      "speedup": 1.1484030962742482
+    }
+  },
+  "cost": {
+    "geometry": 2641,
+    "geometry_internal_nominal_steering": 834,
+    "geometry_source_footprint": 919,
+    "model_attempted": 906,
+    "external_force": 3624,
+    "total_force": 7176,
+    "model_tick_attempts": 888,
+    "internal_force": 3552,
+    "model_completed": 888,
+    "geometry_tracking_forecast": 888
+  },
+  "planner_cost": {
+    "force_evaluations": 3624,
+    "forecast_calls": 31,
+    "forecast_ticks": 888,
+    "geometry_checks": 919
+  },
+  "time": {
+    "CPU_s": 15.298772064,
+    "wall_s": 14.525891843004501
+  },
+  "aggregate_cost": {
+    "model_attempted": 1812,
+    "model_completed": 1776,
+    "external_force": 7248,
+    "internal_force": 7104,
+    "total_force": 14352,
+    "geometry": 5282
+  },
+  "aggregate_time": {
+    "CPU_s": 44.736575807,
+    "wall_s": 43.18082811300701
+  },
+  "private_sha256": {
+    "optimized-REGISTERED-private.json": "408ae3b8110e7edf33cb04c894b1f2e54250a0487be1319af7976f169734a970",
+    "optimized-output-private.json": "e5f13924725d69f25a37e8ebea1cc6e96771278cbd34467be1c960dc55c03a38",
+    "optimized-diagnostics-private.json": "60041bcf3bdaad9e5cb21adcb33f7ae2949c625370d38a3e9cd8c30a1968b8a1",
+    "optimized-CALL-private.json": "01c0b95ee42bf296eeced6f3d83af1ab754f6c86f3f073dee8a8faebe1bdb11e",
+    "optimized-STARTED-private.json": "c3d1a71b58801f464fc5e8d781adc6ec95786b7df1de2e5a3dd7d8810cce04a3",
+    "optimized-raw-kernels-private.json": "37de65232a3d738f04b74ff6b535d42e91e98d8994186678730bcb97d9e2a093"
+  }
+}

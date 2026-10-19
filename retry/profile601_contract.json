@@ -1,0 +1,36 @@
+{
+  "study": 601,
+  "status": "FROZEN_BEFORE_PROFILE",
+  "caps": {
+    "model_attempted": 3072,
+    "model_completed": 3072,
+    "external_force": 12288,
+    "internal_force": 12288,
+    "total_force": 24576,
+    "geometry": 10000
+  },
+  "time_caps": {
+    "total_CPU_s": 240,
+    "total_wall_s": 300,
+    "final_audit_reserve_s": 5
+  },
+  "input_sha256": "a0905322d069bad0b515620aae64856c8c8394d789722db27917486819e0e23e",
+  "runner_sha256": "6822569c2576279bb6a7d59c5260a2134a0d5f35c912a4c1f11f511d511819b3",
+  "baseline600_contract_sha256": "98827a1e9e41e51bfedd5b08a713edf58a8062aad27ba0d309e22fb6b968cfc7",
+  "baseline600_raw_sha256": "60041bcf3bdaad9e5cb21adcb33f7ae2949c625370d38a3e9cd8c30a1968b8a1",
+  "pure_tests_sha256": "ae6dcd248d74bd6a782cfbae660043849a69c01986282784042fdef1346ad261",
+  "registered_utc": "2026-10-19T11:16:42.763527+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "chooser_calls_max": 2,
+  "selection_rule": "After ONE profiled original chooser, select ONE largest repeated cost identified from source and exclusive/cumulative profile. One semantic-preserving reuse/deduplication implementation only. Pure immutable/no-history-leak tests before ONE normal optimized chooser. No tuning/retry/extra candidate or extra choose.",
+  "boundary": "Same600 core: original537choose with all original numeric/body/budget/Trial gates, deferred diagnostics. Both601calls additionally retain all external/internal wheel_response results in memory for exact comparison; no extra force evaluation. Profiler on only first call. Import/restore/JSON/fsync/audit outside core.",
+  "parity": "Same600 actionbytes/fullreport/trials/FINAL/model906/888/geometry2641 and all4538 materialized raw diagnostic events exact. Optimized additionally all7176 full wheel_response return tuples exact vs profiled original. Any mismatch=>reject optimization and stop.",
+  "immutable_rule": "No mutable cache entries, no trial/history leakage; fresh per-call cache context; all logical gates/query costs still charged even if a pure subcalculation is reused.",
+  "kernel_hardcap": 200000,
+  "choose_max_ticks": 180000,
+  "native_world_reset_actions_solver_FD_seed_HOLDOUT_SEALED": 0,
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "parent_commit": "285ec4349447692f890e6dd66f00dbb502602b3e"
+}
