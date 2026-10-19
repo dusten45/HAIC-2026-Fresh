@@ -1,0 +1,196 @@
+{
+  "status": "ACTUAL_SAFETY_FAILURE",
+  "checks": {
+    "status_first_safety_failure": true,
+    "prefix_full132_rows_exact": true,
+    "prefix_full_checkpoint_exact": true,
+    "prefix_commands_exact": true,
+    "contract_hash_exact": true,
+    "journal_head_exact": true,
+    "attempts_completed140": true,
+    "external_internal560": true,
+    "geometry140": true,
+    "two_law_calls_only": true,
+    "all_actual_forces_unclipped": true,
+    "first_failure_raw140": true,
+    "seven_strict_safe_raw": true,
+    "replay0": true,
+    "forecast0": true,
+    "all_dependencies_exact": true,
+    "all_implementation_exact": true,
+    "all_inputs_exact": true,
+    "all_stage_caps": true,
+    "pure_and_force_budget": true,
+    "old_same_pedals": true,
+    "first_two_physical_inputs_equal": true,
+    "first_two_force_vectors_exact": true
+  },
+  "journal_events": 984,
+  "stored583_comparison": {
+    "comparison_source": "Stored583same581parentandbyteidenticalnominalpedals;notanewbaseline",
+    "first_two_physical_inputs_and_full_forces_exact": true,
+    "old_nominal_failure_raw_in_hold": 4,
+    "old_nominal_failure_peak": 1.3656524030107873,
+    "new_first_hold_peak": 0.7661612862309068,
+    "new_first_hold_whole_safe": true,
+    "interpretation": "Changingservo targetdoesnotaltercurrentfirstforce. Firsttwoinput/forcesareexact;boundedtargetchangesjoint/rateaftersecondtickandavoidsstorednominalraw4forcewall. Thisdoesnotestablish48rawtracking."
+  },
+  "safe_interval": {
+    "additional_strict_safe_raw": 7,
+    "last_safe_global_raw": 139,
+    "start_progress_m": 129.47964415785663,
+    "last_safe_progress_m": 134.87164747732336,
+    "progress_gain_m": 5.392003319466738,
+    "start_speed_m_s": 46.424204507224154,
+    "last_safe_speed_m_s": 47.1655825363192,
+    "start_yaw_rad_s": 1.0033646956778033,
+    "last_safe_yaw_rad_s": 2.3488508273166437,
+    "start_front_joints_rad": [
+      0.05772425979375839,
+      0.05772425979375839
+    ],
+    "last_safe_front_joints_rad": [
+      0.18512307107448578,
+      0.18512307107448578
+    ],
+    "minimum_footprint_margin_m": 0.5176473097586374,
+    "maximum_path_error_m": 2.617013789802885,
+    "maximum_reference_overspeed_m_s": -2.8657510186150574,
+    "maximum_body_m_s": 50.35544876468141,
+    "maximum_force_ratio": 0.9985421415298578,
+    "clipped_samples": 0,
+    "tracking_history_before": [
+      0,
+      144
+    ],
+    "tracking_history_after": [
+      0,
+      172
+    ]
+  },
+  "first_failure": {
+    "global_raw": 140,
+    "hold": 35,
+    "raw": 4,
+    "primary": "FOOTPRINT",
+    "all_failures": [
+      "FOOTPRINT",
+      "PATH"
+    ],
+    "footprint_margin_m": 0.05828324359648025,
+    "path_error_m": 3.074590044515009,
+    "force_ratios": [
+      0.5277735411078129,
+      0.7895057427823465,
+      0.4720795653624998,
+      0.43448797593732386
+    ],
+    "applied_vector_norms_N": [
+      211.10941644312518,
+      315.8022971129386,
+      188.83182614499992,
+      173.79519037492958
+    ],
+    "clipped_samples": 0,
+    "speed_m_s": 47.26524872648404,
+    "yaw_rad_s": 2.5039311558760975,
+    "front_joints_rad": [
+      0.18512307107448578,
+      0.18512307107448578
+    ],
+    "tracking_history_after": [
+      0,
+      176
+    ]
+  },
+  "interpretation": "Singlecurrentforce-coneprojectedpath-targetlawfailed48rawlocalviability/pathmaintenance. Forcewallavoidedforthese8rawbutgeometryconstraintfailed;statictyre-targetfeasibilitydoesnotimplytrackcorridorviabilityunderinheritedCOMmotion/yaw. Noretryorwhole/nativefollowup.",
+  "runtime_cost": {
+    "total": {
+      "attempted_raw": 140,
+      "external_force": 560,
+      "internal_force": 560,
+      "completed_model_ticks": 140,
+      "geometry_checks": 140,
+      "CPU_s": 8.860325513,
+      "wall_s": 6.79512280599738
+    },
+    "phases": {
+      "preparation": {
+        "CPU_s": 5.2398325429999995,
+        "wall_s": 2.8290341520041693
+      },
+      "prefix": {
+        "attempted_raw": 132,
+        "external_force": 528,
+        "internal_force": 528,
+        "completed_model_ticks": 132,
+        "geometry_checks": 132,
+        "CPU_s": 3.145189194,
+        "wall_s": 3.465831296998658
+      },
+      "intervention": {
+        "attempted_raw": 8,
+        "external_force": 32,
+        "internal_force": 32,
+        "completed_model_ticks": 8,
+        "geometry_checks": 8,
+        "CPU_s": 0.308125285,
+        "wall_s": 0.3304132800112711
+      },
+      "audit": {
+        "CPU_s": 0.1671784909999996,
+        "wall_s": 0.16985133799607866
+      }
+    },
+    "modes": {
+      "prefix": {
+        "attempted_raw": 132,
+        "external_force": 528,
+        "internal_force": 528,
+        "completed_model_ticks": 132,
+        "geometry_checks": 132
+      },
+      "actual": {
+        "attempted_raw": 8,
+        "external_force": 32,
+        "internal_force": 32,
+        "completed_model_ticks": 8,
+        "geometry_checks": 8
+      }
+    },
+    "pure_arithmetic_prior": {
+      "pure_wheel_formula": 336,
+      "pure_law_decisions": 15,
+      "pure_cone_coefficients": 34
+    },
+    "pure_arithmetic_runtime": {
+      "pure_law_decisions": 2,
+      "pure_wheel_formula": 12,
+      "pure_cone_coefficients": 4
+    },
+    "all_external_including_pure": 946,
+    "all_force_including_pure": 1506,
+    "forecast_attempts": 0,
+    "forecast_ticks": 0
+  },
+  "source_ticks_added": 0,
+  "force_kernel_calls_added": 0,
+  "pure_force_formula_added": 0,
+  "native_actions": 0,
+  "new_FD": 0,
+  "new_optimizer": 0,
+  "new_learning": 0,
+  "input_sha256": {
+    "result": "6ddac923601743841bc960d42cd13e4378c272ef988b81bf52d300e0df58cd4b",
+    "contract": "669d009e464b42af3b9707f6b230073100065b9d2552a2532e39b0d343d7d584",
+    "journal_private": "53e7aa349389d51d1c4357df3387a575a54e2abdbffadce3983b40572c4f4fc4",
+    "run_tape_private": "789b710716ac45118fe1695dc890c00ab53fdd398e7770d8c2824ee4d345a76b"
+  },
+  "read_only_CPU_s": 0.14964001500000002,
+  "read_only_wall_s": 0.15103158600686584,
+  "final_writer_and_validation_CPU_wall_charge_s": 0.5,
+  "aggregate_CPU_s": 9.509965527999999,
+  "aggregate_wall_s": 7.446154392004246,
+  "aggregate_audit_CPU_s": 0.8168185059999996,
+  "aggregate_audit_wall_s": 0.8208829240029445
+}

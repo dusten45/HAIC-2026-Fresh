@@ -1,0 +1,69 @@
+{
+  "total": {
+    "attempted_raw": 140,
+    "external_force": 560,
+    "internal_force": 560,
+    "completed_model_ticks": 140,
+    "geometry_checks": 140,
+    "CPU_s": 8.860325513,
+    "wall_s": 6.795154634004575
+  },
+  "phases": {
+    "preparation": {
+      "CPU_s": 5.2398325429999995,
+      "wall_s": 2.8290341520041693
+    },
+    "prefix": {
+      "attempted_raw": 132,
+      "external_force": 528,
+      "internal_force": 528,
+      "completed_model_ticks": 132,
+      "geometry_checks": 132,
+      "CPU_s": 3.145189194,
+      "wall_s": 3.465831296998658
+    },
+    "intervention": {
+      "attempted_raw": 8,
+      "external_force": 32,
+      "internal_force": 32,
+      "completed_model_ticks": 8,
+      "geometry_checks": 8,
+      "CPU_s": 0.308125285,
+      "wall_s": 0.3304132800112711
+    },
+    "audit": {
+      "CPU_s": 0.1671784909999996,
+      "wall_s": 0.16988038099952973
+    }
+  },
+  "modes": {
+    "prefix": {
+      "attempted_raw": 132,
+      "external_force": 528,
+      "internal_force": 528,
+      "completed_model_ticks": 132,
+      "geometry_checks": 132
+    },
+    "actual": {
+      "attempted_raw": 8,
+      "external_force": 32,
+      "internal_force": 32,
+      "completed_model_ticks": 8,
+      "geometry_checks": 8
+    }
+  },
+  "pure_arithmetic_prior": {
+    "pure_wheel_formula": 336,
+    "pure_law_decisions": 15,
+    "pure_cone_coefficients": 34
+  },
+  "pure_arithmetic_runtime": {
+    "pure_law_decisions": 2,
+    "pure_wheel_formula": 12,
+    "pure_cone_coefficients": 4
+  },
+  "all_external_including_pure": 946,
+  "all_force_including_pure": 1506,
+  "forecast_attempts": 0,
+  "forecast_ticks": 0
+}

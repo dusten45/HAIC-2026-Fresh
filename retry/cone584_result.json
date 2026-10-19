@@ -1,0 +1,231 @@
+{
+  "holds": [
+    {
+      "hold": 34,
+      "attempted_raw": 4,
+      "completed_raw": 4,
+      "strict_safe_raw": 4,
+      "safe": true,
+      "failure": null,
+      "start": {
+        "COM_speed_m_s": 46.424204507224154,
+        "yaw_rad_s": 1.0033646956778033,
+        "front_joints_rad": [
+          0.05772425979375839,
+          0.05772425979375839
+        ],
+        "front_rates_rad_s": [
+          0.0,
+          0.0
+        ]
+      },
+      "end": {
+        "COM_speed_m_s": 46.97208742049907,
+        "yaw_rad_s": 1.8470066765146862,
+        "front_joints_rad": [
+          0.1409490555524826,
+          0.1409490555524826
+        ],
+        "front_rates_rad_s": [
+          0.0,
+          0.0
+        ]
+      },
+      "last_strict_safe_progress_m": 132.89881179900365,
+      "progress_end_m": 132.89881179900365,
+      "minimum_footprint_margin_m": 2.169464271556364,
+      "maximum_path_error_m": 1.3405478092339511,
+      "maximum_reference_overspeed_m_s": -3.0592461344351847,
+      "maximum_body_m_s": 49.28599899421601,
+      "maximum_force_ratio": 0.7661612862309068,
+      "maximum_front_force_ratio": 0.7661612862309068,
+      "maximum_rear_force_ratio": 0.4780006711309306,
+      "maximum_applied_vector_norm_N": 306.4645144923628,
+      "proposed_clipped_samples": 0,
+      "tracking_before": [
+        0,
+        144
+      ],
+      "tracking_proposed": [
+        0,
+        160
+      ],
+      "peak_last_wheel": 1,
+      "peak_last_ratio": 0.5832012354363811,
+      "path_target_joint_rad": 0.3630639314651489,
+      "selected_target_joint_rad": 0.1409490555524826,
+      "proxy_virtual_target_max_ratio": 0.9999999169343796
+    },
+    {
+      "hold": 35,
+      "attempted_raw": 4,
+      "completed_raw": 4,
+      "strict_safe_raw": 3,
+      "safe": false,
+      "failure": "FOOTPRINT",
+      "start": {
+        "COM_speed_m_s": 46.97208742049907,
+        "yaw_rad_s": 1.8470066765146862,
+        "front_joints_rad": [
+          0.1409490555524826,
+          0.1409490555524826
+        ],
+        "front_rates_rad_s": [
+          0.0,
+          0.0
+        ]
+      },
+      "end": {
+        "COM_speed_m_s": 47.26524872648404,
+        "yaw_rad_s": 2.5039311558760975,
+        "front_joints_rad": [
+          0.18512307107448578,
+          0.18512307107448578
+        ],
+        "front_rates_rad_s": [
+          0.0,
+          0.0
+        ]
+      },
+      "last_strict_safe_progress_m": 134.87164747732336,
+      "progress_end_m": 135.69882669973782,
+      "minimum_footprint_margin_m": 0.05828324359648025,
+      "maximum_path_error_m": 3.074590044515009,
+      "maximum_reference_overspeed_m_s": -2.766084828450218,
+      "maximum_body_m_s": 50.516845920350235,
+      "maximum_force_ratio": 0.9985421415298578,
+      "maximum_front_force_ratio": 0.9985421415298578,
+      "maximum_rear_force_ratio": 0.5988699749448043,
+      "maximum_applied_vector_norm_N": 399.4168566119431,
+      "proposed_clipped_samples": 0,
+      "tracking_before": [
+        0,
+        160
+      ],
+      "tracking_proposed": [
+        0,
+        176
+      ],
+      "peak_last_wheel": 1,
+      "peak_last_ratio": 0.7895057427823465,
+      "path_target_joint_rad": 0.3807690441608429,
+      "selected_target_joint_rad": 0.18512307107448578,
+      "proxy_virtual_target_max_ratio": 0.9999998858381168
+    }
+  ],
+  "prefix": {
+    "raw": 132,
+    "all_full_rows_and_checkpoint_exact": true,
+    "checkpoint_sha256": "494752de0826e94ee67bb5f72d80d534ea530204916fce960830364640fb2109"
+  },
+  "status": "ACTUAL_SAFETY_FAILURE",
+  "error": null,
+  "failure": {
+    "index": 35,
+    "raw": 4,
+    "attempted_global_raw": 140,
+    "reason": "FOOTPRINT"
+  },
+  "law_calls": 2,
+  "independent_replay": null,
+  "journal": {
+    "events": 984,
+    "head": "5361a4f258fd650cb8f03da370854f326f613a07c9718e9c3aa48ce04119cfd3",
+    "kinds": {
+      "BEFORE_FORCE": 140,
+      "FORCE_VERDICT": 140,
+      "BEFORE_TICK": 140,
+      "AFTER_TICK": 140,
+      "BEFORE_GEOMETRY": 140,
+      "GEOMETRY_VERDICT": 140,
+      "RAW_VERDICT": 140,
+      "BEFORE_LAW": 2,
+      "LAW_COMMAND": 2
+    },
+    "valid": true
+  },
+  "cost": {
+    "total": {
+      "attempted_raw": 140,
+      "external_force": 560,
+      "internal_force": 560,
+      "completed_model_ticks": 140,
+      "geometry_checks": 140,
+      "CPU_s": 8.860325513,
+      "wall_s": 6.79512280599738
+    },
+    "phases": {
+      "preparation": {
+        "CPU_s": 5.2398325429999995,
+        "wall_s": 2.8290341520041693
+      },
+      "prefix": {
+        "attempted_raw": 132,
+        "external_force": 528,
+        "internal_force": 528,
+        "completed_model_ticks": 132,
+        "geometry_checks": 132,
+        "CPU_s": 3.145189194,
+        "wall_s": 3.465831296998658
+      },
+      "intervention": {
+        "attempted_raw": 8,
+        "external_force": 32,
+        "internal_force": 32,
+        "completed_model_ticks": 8,
+        "geometry_checks": 8,
+        "CPU_s": 0.308125285,
+        "wall_s": 0.3304132800112711
+      },
+      "audit": {
+        "CPU_s": 0.1671784909999996,
+        "wall_s": 0.16985133799607866
+      }
+    },
+    "modes": {
+      "prefix": {
+        "attempted_raw": 132,
+        "external_force": 528,
+        "internal_force": 528,
+        "completed_model_ticks": 132,
+        "geometry_checks": 132
+      },
+      "actual": {
+        "attempted_raw": 8,
+        "external_force": 32,
+        "internal_force": 32,
+        "completed_model_ticks": 8,
+        "geometry_checks": 8
+      }
+    },
+    "pure_arithmetic_prior": {
+      "pure_wheel_formula": 336,
+      "pure_law_decisions": 15,
+      "pure_cone_coefficients": 34
+    },
+    "pure_arithmetic_runtime": {
+      "pure_law_decisions": 2,
+      "pure_wheel_formula": 12,
+      "pure_cone_coefficients": 4
+    },
+    "all_external_including_pure": 946,
+    "all_force_including_pure": 1506,
+    "forecast_attempts": 0,
+    "forecast_ticks": 0
+  },
+  "actual_incumbent_s": 13.66,
+  "source_incumbent_s": 13.2,
+  "incumbent_changed": false,
+  "native_actions": 0,
+  "whole_executed": false,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "new_FD": 0,
+  "new_optimizer": 0,
+  "new_learning": 0,
+  "new_world": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "paid_compute": 0
+}
