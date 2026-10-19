@@ -56,6 +56,28 @@ def _raster_halfplane(ids,row,edges,slope):
     return result
 
 
+def observe_outer_edge(image,point,radial,blocked):
+    """Observe a plain contour along its2D normal, allowing public tile shades."""
+    step=1/(2.7*6.);distance=np.arange(-16,17)*step
+    world=np.asarray(point)[None,:]+distance[:,None]*np.asarray(radial)[None,:]
+    xs=IMAGE_ORIGIN_X+1.3608*world[:,0];ys=IMAGE_ORIGIN_Y-1.701*world[:,1]
+    if min(xs)<1 or max(xs)>82 or min(ys)<5 or max(ys)>=54:return None
+    ix=np.rint(xs).astype(int);iy=np.rint(ys).astype(int)
+    if np.any(blocked[iy,ix]):return None
+    values=cv2.remap(image,xs.astype(np.float32)[None,:],ys.astype(np.float32)[None,:],cv2.INTER_LINEAR)[0].astype(float)
+    inside=values[:5];outside=values[-5:];q=1/255.
+    if min(inside)<=.36 or max(inside)>=.47 or np.ptp(inside)>(5.1+2)*q:return None
+    if min(outside)<156*q or max(outside)>184*q or np.ptp(outside)>(26*.587+2)*q:return None
+    road=float(np.median(inside));grass=float(np.median(outside))
+    if grass-road<24*q:return None
+    fraction=(values-road)/(grass-road);cross=np.flatnonzero((fraction[:-1]<.5)&(fraction[1:]>=.5))
+    if len(cross)!=1:return None
+    transition=fraction[(fraction>.1)&(fraction<.9)]
+    if len(transition)<2 or min(np.diff(transition))<-2*q/(grass-road):return None
+    i=int(cross[0]);delta=distance[i]+(.5-fraction[i])/(fraction[i+1]-fraction[i])*step
+    return np.asarray(point)+delta*np.asarray(radial)
+
+
 def recover_curb_edge(image,y,index,direction,slope,blocked):
     """Fit visible road/paint/grass layers; mixed-paint junctions stay unknown."""
     ids=index+direction*np.arange(-7,5)
@@ -188,6 +210,116 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
     support[obstacle_mask]=0
     info['road_support_inferred_pixels']=int(np.sum(support))
     return support,info
+
+
+def infer_painted_road_band(image,asphalt,blocked):
+    """Constant-width turning-road hypothesis from a clean opposite contour.
+
+    Only mixed paint near the existing contour is added; visible grass,
+    obstacles, clipped support and extrapolated angular sectors stay excluded.
+    """
+    contours=[[],[]];rows=[];anchor=IMAGE_ORIGIN_X
+    for y in range(54,4,-1):
+        d=np.diff(np.pad(asphalt[y],(1,1)).astype(np.int16));s=np.flatnonzero(d==1);e=np.flatnonzero(d==-1)
+        good=e-s>=8;s=s[good];e=e[good]
+        if not len(s):
+            if rows:break
+            continue
+        outside=np.maximum(s-anchor,0)+np.maximum(anchor-e,0)
+        j=int(np.argmin(3*outside+.1*abs((s+e-1)*.5-anchor)))
+        if outside[j]>8:break
+        a,b=int(s[j]),int(e[j]-1);anchor=(a+b)*.5;rows.append((y,a,b))
+        if y>=55:continue
+        for side,index,direction in [(0,a,1),(1,b,-1)]:
+            ids=index+direction*np.arange(-3,5)
+            if min(ids)<0 or max(ids)>=84:continue
+            # Curb-free exterior observations, not a second painted contour.
+            if not 156/255.<=float(np.mean(image[y,ids[:2]]))<=184/255.:continue
+            edge=recover_pixel_edge(image,y,index,direction,blocked)
+            if edge is not None:contours[side].append(((edge-IMAGE_ORIGIN_X)/1.3608,(IMAGE_ORIGIN_Y-y)/1.701))
+    support=np.zeros((84,84),np.uint8);fits=[];updates={};nominal=2*(40./6.)
+    for side,points in enumerate(contours):
+        if len(points)<8:continue
+        p=np.asarray(points,np.float64)
+        best=None
+        for first in range(len(p)-7):
+            sample=p[first:];mean=sample.mean(axis=0);scale=float(np.sqrt(np.mean(np.sum((sample-mean)**2,axis=1))))
+            if scale<1.:continue
+            z=(sample-mean)/scale;matrix=np.column_stack((2*z,np.ones(len(z))))
+            if np.linalg.cond(matrix)>100.:continue
+            answer=np.linalg.lstsq(matrix,np.sum(z*z,axis=1),rcond=None)[0]
+            rad2=answer[2]+float(answer[:2]@answer[:2])
+            if rad2<=0:continue
+            center=mean+scale*answer[:2];radius=scale*math.sqrt(rad2)
+            if radius<=nominal or radius>1000.:continue
+            # The centre must be on the inward side of this outer contour.
+            if (side==1 and center[0]>=sample[:,0].mean()) or (side==0 and center[0]<=sample[:,0].mean()):continue
+            residual=float(np.max(abs(np.linalg.norm(sample-center,axis=1)-radius)))
+            angles=np.unwrap(np.arctan2(sample[:,1]-center[1],sample[:,0]-center[0]));span=float(max(angles)-min(angles))
+            if residual>.35 or span<.4 or span>math.pi:continue
+            score=span/max(residual,1/(2.7*6.))
+            if best is None or score>best[0]:best=(score,center,radius,residual,float(min(angles)),float(max(angles)),sample.copy())
+        if best is None:continue
+        _,center,radius,residual,low,high,observed_points=best
+        # Extend only when actual2D edge pixels confirm the next angular sector;
+        # a fitted circle alone is never evidence for an unseen continuation.
+        verified=0
+        for direction in (-1,1):
+            for step in range(1,math.ceil(math.pi/.05)+1):
+                angle=(low if direction<0 else high)+direction*.05;radial=np.array([math.cos(angle),math.sin(angle)])
+                point=center+radius*radial;observed=observe_outer_edge(image,point,radial,blocked)
+                if observed is None:break
+                candidate=np.vstack((observed_points,observed));mean=candidate.mean(axis=0)
+                scale=float(np.sqrt(np.mean(np.sum((candidate-mean)**2,axis=1))));z=(candidate-mean)/scale
+                matrix=np.column_stack((2*z,np.ones(len(z))))
+                if np.linalg.cond(matrix)>100.:break
+                answer=np.linalg.lstsq(matrix,np.sum(z*z,axis=1),rcond=None)[0];rad2=answer[2]+float(answer[:2]@answer[:2])
+                if rad2<=0:break
+                new_center=mean+scale*answer[:2];new_radius=scale*math.sqrt(rad2)
+                new_residual=float(np.max(abs(np.linalg.norm(candidate-new_center,axis=1)-new_radius)))
+                if new_radius<=nominal or new_residual>.35:break
+                midpoint=(low+high)/2;angles=np.arctan2(candidate[:,1]-new_center[1],candidate[:,0]-new_center[0])
+                angles=midpoint+(angles-midpoint+math.pi)%(2*math.pi)-math.pi
+                if max(angles)-min(angles)>math.pi:break
+                center,radius,residual=new_center,new_radius,new_residual
+                low,high=float(min(angles)),float(max(angles));observed_points=candidate
+                verified+=1
+        # Public per-node turn chord discrepancy and one source raster pixel.
+        uncertainty=residual+nominal*(1-math.cos(.31/2))+1/(2.7*6.)
+        inner=radius-nominal+uncertainty
+        yy,xx=np.indices((84,84));x=(xx-IMAGE_ORIGIN_X)/1.3608;y=(IMAGE_ORIGIN_Y-yy)/1.701
+        rho=np.hypot(x-center[0],y-center[1]);theta=np.arctan2(y-center[1],x-center[0])
+        midpoint=(low+high)/2;theta=midpoint+(theta-midpoint+math.pi)%(2*math.pi)-math.pi
+        eligible=(rho>=inner)&(rho<=radius)&(theta>=low)&(theta<=high)&(yy>=5)&(yy<55)&~blocked
+        # Require actual mixed red/white paint, never plain observed grass.
+        white=cv2.dilate((image>.75).astype(np.uint8),np.ones((3,9),np.uint8))>0
+        red=cv2.dilate((image<.35).astype(np.uint8),np.ones((3,9),np.uint8))>0
+        eligible &= white&red&~((image>=156/255.)&(image<=184/255.))
+        reach=math.ceil(((8./6.)+math.hypot(1/1.3608,1/1.701))*1.3608)
+        local=np.zeros((84,84),bool)
+        for row,a,b in rows:
+            if side==1:local[row,max(1,a-reach):a]=True
+            else:local[row,b+1:min(83,b+reach+1)]=True
+            if row>=55:continue
+            world_y=(IMAGE_ORIGIN_Y-row)/1.701;vertical=world_y-center[1]
+            if abs(vertical)>=inner:continue
+            world_x=center[0]+(1 if side==1 else -1)*math.sqrt(inner*inner-vertical*vertical)
+            pixel_x=IMAGE_ORIGIN_X+1.3608*world_x
+            if not (a-reach<=pixel_x<a if side==1 else b<pixel_x<=b+reach):continue
+            theta_point=math.atan2(vertical,world_x-center[0]);mid=(low+high)/2
+            theta_point=mid+(theta_point-mid+math.pi)%(2*math.pi)-math.pi
+            lo=max(0,int(math.floor(pixel_x)));hi=min(83,int(math.ceil(pixel_x)))
+            if not low<=theta_point<=high or np.any(blocked[row,lo:hi+1]):continue
+            if np.any((image[row,lo:hi+1]>=156/255.)&(image[row,lo:hi+1]<=184/255.)):continue
+            if not (white[row,lo] and red[row,lo]):continue
+            updates[(side,row)]=float(pixel_x)
+        selected=eligible&local&~asphalt.astype(bool);support[selected]=1
+        fits.append(dict(outer_side=side,observations=len(points),radial_residual_m=residual,
+            inferred_uncertainty_m=uncertainty,angular_support_rad=high-low,added_pixels=int(np.sum(selected)),
+            estimated_center_m=[float(center[0]),float(center[1])],estimated_radius_m=float(radius),
+            estimated_inner_radius_m=float(inner),verified_2D_extensions=verified))
+    return support,dict(painted_band_added_pixels=int(support.sum()),painted_band_fits=fits,
+        painted_band_bound_universally_validated=False),updates
 
 
 def transport_road_evidence(frames):
@@ -328,8 +460,9 @@ class Agent:
             self.calls==0 and self.last_root is None,self.speed)
         asphalt|=inferred
         self.uncertainty.update(support_info)
-        def observed_run(y,anchor):
-            edges=np.diff(np.pad(asphalt[y,1:83],(1,1)).astype(np.int16));starts=np.flatnonzero(edges==1)+1;ends=np.flatnonzero(edges==-1)+1
+        def observed_run(y,anchor,data=None):
+            data=asphalt if data is None else data
+            edges=np.diff(np.pad(data[y,1:83],(1,1)).astype(np.int16));starts=np.flatnonzero(edges==1)+1;ends=np.flatnonzero(edges==-1)+1
             good=ends-starts>=3;starts=starts[good];ends=ends[good]
             if not len(starts):return None
             center=(starts+ends-1)*.5
@@ -349,16 +482,22 @@ class Agent:
             if right-left<2.5:break
             anchor=(start+end-1)*.5;rows.append((left,right,(IMAGE_ORIGIN_Y-y)/1.701));pixels.append((y,start,end))
         if len(rows)<8:raise RuntimeError('OBSERVED_ROAD_SUPPORT_INSUFFICIENT')
+        painted,painted_info,band_edges=infer_painted_road_band(image,asphalt,blocked)
+        geometry_asphalt=asphalt|painted
+        self.uncertainty.update(painted_info)
         # Keep the reference samples unchanged. Geometry uses each actually
         # observed intermediate row, not an assumed diagonal across a missing row.
-        dense=[];refined=unresolved=curb_refined=0
+        dense=[];refined=unresolved=curb_refined=band_refined=0
         for k,(y,start,end) in enumerate(pixels):
-            samples=[(y,start,end)]
+            geometry_run=observed_run(y,(start+end-1)*.5,geometry_asphalt)
+            if geometry_run is None:raise RuntimeError('OBSERVED_GEOMETRY_SUPPORT_LOST')
+            samples=[(y,*geometry_run)]
             if k+1<len(pixels):
                 ny,ns,ne=pixels[k+1]
                 if y-ny!=2:raise RuntimeError('OBSERVED_ROAD_ROW_GAP')
-                mid=observed_run(y-1,(start+end+ns+ne-2)*.25)
-                if mid is None or max(start,ns,mid[0])>=min(end,ne,mid[1]):
+                mid=observed_run(y-1,(start+end+ns+ne-2)*.25,geometry_asphalt)
+                next_run=observed_run(ny,(ns+ne-1)*.5,geometry_asphalt)
+                if mid is None or next_run is None or max(geometry_run[0],next_run[0],mid[0])>=min(geometry_run[1],next_run[1],mid[1]):
                     raise RuntimeError('OBSERVED_ROAD_MIDROW_UNSUPPORTED')
                 samples.append((y-1,*mid))
             for sy,ss,se in samples:
@@ -373,6 +512,10 @@ class Agent:
                         if b is None:
                             b=recover_curb_edge(image,sy,se-1,-1,(after[1]-before[1])*.5,blocked)
                             curb_refined+=int(b is not None)
+                if a is None and (1,sy) in band_edges and band_edges[(1,sy)]<ss:
+                    a=band_edges[(1,sy)];band_refined+=1
+                if b is None and (0,sy) in band_edges and band_edges[(0,sy)]>se-1:
+                    b=band_edges[(0,sy)];band_refined+=1
                 refined+=int(a is not None)+int(b is not None)
                 unresolved+=int(a is None)+int(b is None)
                 a=float(ss) if a is None else a;b=float(se-1) if b is None else b
@@ -403,6 +546,7 @@ class Agent:
             observation_support_m=[float(arc[0]),float(arc[-1])],global_map_available=False,
             raster_edges_refined=refined,raster_edges_unresolved=unresolved,
             raster_curb_edges_refined=curb_refined,
+            raster_band_edges_refined=band_refined,
             subpixel_bound_universally_validated=False,obstacle_pixels_filled=False,
             obstacles='visible grayscale detections with0.4m radius inflation; unseen obstacles unknown')
         return core.Scene(roads,boundary,obstacles),reference(153.,90.),reference(100.,80.),current
