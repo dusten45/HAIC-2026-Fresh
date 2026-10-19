@@ -1,0 +1,114 @@
+{
+  "status": "CURB_INVERSE_AND_PIXEL_HISTORY_IMPLEMENTED_INITIAL_SUPPORT_BLOCK",
+  "implementation": [
+    "Fit public asphalt/paint/grass layers through area downsampling and linear resize; retain public curb width and0.35m inset. Reject mixed-paint junctions or poor residuals.",
+    "Retain at most8 genuine observed frames in reset-local memory. Fit image motion in physical coordinates with forward/backward/inlier checks; erode/expire transported road evidence. Failed registration discards older support.",
+    "Transport only previously observed asphalt into current opaque hull interior, never its whole bounding box, current obstacles or unseen frame support. Tiled reset copies contribute only1 unique observation."
+  ],
+  "public_checks": {
+    "status": "PASS",
+    "edge_tests": 36,
+    "curb_refined": 26,
+    "old_MAE_px": 0.9333333333333348,
+    "new_MAE_px": 0.38506944444444396,
+    "max_outward_after_inset_m": 0.0,
+    "paint_junction": [
+      {
+        "refined": false,
+        "outward_after_inset_m": 0.0
+      },
+      {
+        "refined": false,
+        "outward_after_inset_m": 0.0
+      },
+      {
+        "refined": false,
+        "outward_after_inset_m": 0.0
+      }
+    ],
+    "transport": {
+      "registered_pairs": 7,
+      "rejected_pairs": 0,
+      "transported_vehicle_pixels": 6,
+      "unique_frames": 8,
+      "registration_bounds_universally_validated": false
+    },
+    "transport_outside_known_road_pixels": 0,
+    "tiled_reset_pixels": 0,
+    "tiled_unique_frames": 1,
+    "failed_registration_pixels": 0,
+    "CPU_s": 0.08638298500000001,
+    "wall_s": 0.07243088900577277,
+    "native_actions": 0,
+    "model_ticks": 0,
+    "scope": "Finite practical tests, not universal observation-error or safety bounds."
+  },
+  "actual_cached": {
+    "registered_pairs": 3,
+    "unique_actual_frames": 4,
+    "valid_opaque_hull_pixels_transported": 0,
+    "missing_older_history_not_recovered": true,
+    "curb_unique_vertex_evaluated": 1,
+    "curb_signed_inside_error_m": [
+      {
+        "before_signed_inside_m": 1.3715500968453842,
+        "after_signed_inside_m": 0.3612896260455778
+      }
+    ],
+    "rejections": {
+      "CURRENT_FOOTPRINT_MARGIN": 21
+    },
+    "act_s": 0.01958610099973157,
+    "new_memory_buffer_bootstrapped_empty_then_actual_stack": true,
+    "complete_checkpoint_and_current_package_saved_private": true
+  },
+  "initial": {
+    "status": "INITIAL_SUPPORT_STOP",
+    "native_world_or_env_reset": false,
+    "unique_frames": 1,
+    "transported_vehicle_pixels": 0,
+    "rejections": {
+      "CURRENT_FOOTPRINT_MARGIN": 19
+    },
+    "cold_startup_s": 0.11967650699079968,
+    "Agent_reset_s": 0.00021229498088359833,
+    "whole_observation_to_return_or_error_s": 0.022853058006148785,
+    "RSS_KiB": 57780,
+    "complete_checkpoint_and_current_package_saved_private": true
+  },
+  "structural_limit": "Under the evidence-only support rule, the tiled initial observation has no actual past underneath the car. The unchanged current-footprint gate rejects before a first action; no-op motion to obtain history would bypass the requested first-failure stop. This is an initialization information gap for this adapter/constraint, not physical off-road or a universal impossibility claim.",
+  "correction": "An early rectangular vehicle ROI counted102 transported pixels in the real stack. That box included visible terrain and was not adopted. The final opaque-hull-interior mask yields0 valid transported pixels for this4-frame stack; no102-pixel occlusion-recovery claim remains.",
+  "limits": [
+    "Finite renderer/motion tests are not universal uncertainty or true-state safety bounds.",
+    "The actual cached curb vertex remains0.361m inside the true boundary after the unchanged0.35m inset; true geometry was evaluation-only.",
+    "Real stored4-frame history is insufficient for the full current footprint. Synthetic8-frame transport demonstrates the mechanism conditionally, not available real history."
+  ],
+  "unchanged": "Original chooser/candidates/physics/horizon/gates; no lap-time search, different controller, or native rollout.",
+  "cost": {
+    "caps": {
+      "DEV_actions": 150,
+      "model_ticks": 100000,
+      "CPU_s": 1200,
+      "wall_s": 2700
+    },
+    "new_DEV_actions": 0,
+    "new_model_ticks": 0,
+    "measured_component_CPU_s": 0.656059823,
+    "additional_setup_CPU_reservation_s": 60,
+    "stage_wall_s_at_closeout": 1025.456625,
+    "research_actions_remaining": 20526,
+    "prior_combined_DEV_actions": 219,
+    "prior_combined_model_ticks": 161199,
+    "combined_DEV_actions": 219,
+    "combined_model_ticks": 161199,
+    "reserve_used": 0,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0
+  },
+  "privacy": "Raw images/memories/maps/true geometry/reports stay outside public repository; Agent consumes only pixels and own reset-local memory.",
+  "source_sha256": {
+    "submit_core/observation_agent.py": "1b444afe83cc33db4f557bf05a969c0161deb17b382bf46419277973aec51f81",
+    "submit_core/runtime598.py": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8"
+  },
+  "next": "Stopped at unsupported initial current-footprint support. No native/no-op bootstrap or extra run scheduled."
+}

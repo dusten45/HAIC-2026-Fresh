@@ -21,6 +21,9 @@ def main():
     import runtime598 as core
     from retry.runtime598_diagnostic import dump
     agent=module.Agent();memory=pickle.loads((directory/'agent-before-private.pkl').read_bytes())
+    # Earlier code did not retain pixels. An empty new buffer is honest; the
+    # actual incoming stack may bootstrap it, but no older images are invented.
+    if 'road_frames' not in memory:memory['road_frames']=[]
     backfill_ticks=0;backfill_cpu=0.;backfill_wall=0.
     if 'predicted_hull_velocity_body' in agent.__dict__ and 'predicted_hull_velocity_body' not in memory:
         # Derive a missing new field from the exact recorded own-action model

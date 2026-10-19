@@ -36,6 +36,126 @@ def recover_pixel_edge(image,y,index,direction,blocked):
     if not -2.5<=edge<=2.5:return None
     return float(index+direction*edge)
 
+
+def _raster_halfplane(ids,row,edges,slope):
+    """Continuous-area 1000x800->96 filter followed by public84 linear resize."""
+    u=(ids+.5)*96./84.-.5;j=np.floor(u);wx=u-j
+    v=(row+.5)*96./84.-.5;k=math.floor(v);wy=v-k
+    width=84./96.;result=np.zeros((len(edges),len(ids)),np.float64)
+    for dx in (0,1):
+        right=(j+dx+1)*width-.5
+        for dy in (0,1):
+            low=(k+dy)*width-.5;high=low+width
+            t0=right[None,:]-edges[:,None]-slope*(low-row)
+            if abs(slope)<1e-9:area=np.clip(t0,0.,width)/width
+            else:
+                t1=right[None,:]-edges[:,None]-slope*(high-row)
+                primitive=lambda t:.5*(np.maximum(t,0.)**2-np.maximum(t-width,0.)**2)
+                area=np.clip((primitive(t1)-primitive(t0))/(-slope*width*width),0.,1.)
+            result+=area*((1-wx) if dx==0 else wx)[None,:]*((1-wy) if dy==0 else wy)
+    return result
+
+
+def recover_curb_edge(image,y,index,direction,slope,blocked):
+    """Fit visible road/paint/grass layers; mixed-paint junctions stay unknown."""
+    ids=index+direction*np.arange(-7,5)
+    if y<2 or y>=54 or abs(slope)>1. or min(ids)<0 or max(ids)>=84:return None
+    if np.any(blocked[y-1:y+2,ids]):return None
+    patch=image[y-1:y+2,ids].astype(np.float64);q=1./255.
+    if np.ptp(patch[:,:3])>3*q or np.ptp(patch[:,-2:])>3*q:return None
+    grass=float(np.median(patch[:,:3]));road=float(np.median(patch[:,-2:]))
+    if not .36<road<.47 or not 156*q<=grass<=184*q:return None
+    white=np.max(patch)>grass+8*q;red=np.min(patch)<road-8*q
+    if white==red:return None
+    paint=1. if white else 76./255.
+    edges=index+direction*np.linspace(-2.5,.5,49)
+    # Public BORDER=8/6 metres; anisotropic84 projection of a normal offset.
+    curb_width=(8./6.)*1.3608*math.sqrt(1.+(slope*1.701/1.3608)**2)
+    predictions=[]
+    for row in (y-1,y,y+1):
+        edge=edges+slope*(row-y)
+        inner=_raster_halfplane(ids,row,edge,slope)
+        outer=_raster_halfplane(ids,row,edge-direction*curb_width,slope)
+        if direction<0:inner=1-inner;outer=1-outer
+        predictions.append(grass+(paint-grass)*outer+(road-paint)*inner)
+    model=np.stack(predictions,axis=1);residual=model-patch[None,:,:]
+    score=np.mean(residual**2,axis=(1,2));best=int(np.argmin(score))
+    # One public high-resolution pixel of raster phase plus gray quantization.
+    tolerance=2*q+(84./1000.)*max(abs(paint-road),abs(paint-grass))
+    if math.sqrt(float(score[best]))>tolerance/2 or np.max(abs(residual[best]))>tolerance:return None
+    return float(edges[best])
+
+
+def visible_road_evidence(image):
+    """Interior asphalt pixels actually seen, excluding opaque/HUD support."""
+    mask=((image>.36)&(image<.47)).astype(np.uint8)
+    mask[70:]=0;mask[55:70,34:51]=0
+    return cv2.erode(mask,np.ones((3,3),np.uint8),iterations=1)
+
+
+def register_road_frames(previous,current):
+    """Observed rigid camera motion, with forward/backward pixel checks."""
+    a=np.rint(previous*255).astype(np.uint8);b=np.rint(current*255).astype(np.uint8)
+    mask=np.zeros((84,84),np.uint8);mask[5:70,2:82]=255;mask[54:70,33:52]=0
+    points=cv2.goodFeaturesToTrack(a,128,.01,3,mask=mask)
+    if points is None or len(points)<8:return None
+    q,status,_=cv2.calcOpticalFlowPyrLK(a,b,points,None,winSize=(15,15),maxLevel=3)
+    if q is None:return None
+    back,reverse,_=cv2.calcOpticalFlowPyrLK(b,a,q,None,winSize=(15,15),maxLevel=3)
+    if back is None:return None
+    valid=status.ravel().astype(bool)&reverse.ravel().astype(bool)
+    valid&=np.linalg.norm(back[:,0]-points[:,0],axis=1)<=.5
+    if np.sum(valid)<8:return None
+    p=points[valid,0].astype(np.float64);q=q[valid,0].astype(np.float64)
+    for v in (p,q):v[:,0]=(v[:,0]-IMAGE_ORIGIN_X)/1.3608;v[:,1]=(IMAGE_ORIGIN_Y-v[:,1])/1.701
+    transform,inliers=cv2.estimateAffinePartial2D(p,q,method=cv2.RANSAC,ransacReprojThreshold=.25,maxIters=200,confidence=.99)
+    if transform is None or inliers is None:return None
+    keep=inliers.ravel().astype(bool);scale=math.hypot(transform[0,0],transform[1,0])
+    if np.mean(keep)<.8 or not .98<=scale<=1.02:return None
+    residual=np.linalg.norm(p@transform[:,:2].T+transform[:,2]-q,axis=1)
+    if max(residual[keep])>.25:return None
+    # Physical rigid transform -> anisotropic pixel transform.
+    D=np.diag([1.3608,-1.701]);origin=np.array([IMAGE_ORIGIN_X,IMAGE_ORIGIN_Y])
+    linear=D@transform[:,:2]@np.linalg.inv(D)
+    translation=origin+D@transform[:,2]-linear@origin
+    return np.column_stack((linear,translation))
+
+
+def vehicle_occluded_pixels(image):
+    """Non-asphalt interior of the known opaque hull, not its whole box."""
+    mask=np.zeros((84,84),np.uint8)
+    for poly in (core.HULL_POLY1,core.HULL_POLY2,core.HULL_POLY3,core.HULL_POLY4):
+        points=np.array([(IMAGE_ORIGIN_X+1.3608*x*core.SIZE,
+                          IMAGE_ORIGIN_Y-1.701*y*core.SIZE) for x,y in poly])
+        cv2.fillPoly(mask,[np.rint(points).astype(np.int32)],1)
+    mask=cv2.erode(mask,np.ones((3,3),np.uint8),iterations=1)
+    return mask&(((image<=.36)|(image>=.47)).astype(np.uint8))
+
+
+def transport_road_evidence(frames):
+    """Carry only actual visible road; no registration means no old evidence."""
+    unique=[]
+    for frame in frames:
+        if not unique or not np.array_equal(frame,unique[-1]):unique.append(frame)
+    frames=unique
+    road=visible_road_evidence(frames[0]);age=np.zeros((84,84),np.uint8)
+    accepted=0;rejected=0
+    for previous,current in zip(frames,frames[1:]):
+        if np.array_equal(previous,current):continue
+        transform=register_road_frames(previous,current)
+        if transform is None:
+            road=np.zeros((84,84),np.uint8);age[:]=0;rejected+=1
+        else:
+            road=cv2.warpAffine(road,transform,(84,84),flags=cv2.INTER_NEAREST,borderValue=0)
+            age=cv2.warpAffine(age,transform,(84,84),flags=cv2.INTER_NEAREST,borderValue=0)+1
+            road=cv2.erode(road,np.ones((3,3),np.uint8),iterations=1)
+            road[age>7]=0;accepted+=1
+        seen=visible_road_evidence(current);age[seen>0]=0;road|=seen
+    vehicle=vehicle_occluded_pixels(frames[-1])
+    return road&vehicle,dict(registered_pairs=accepted,rejected_pairs=rejected,
+        transported_vehicle_pixels=int(np.sum(road&vehicle)),unique_frames=len(frames),
+        registration_bounds_universally_validated=False)
+
 class _TickCounter(list):
     def __init__(self):super().__init__([0]);self.limit=50000
     def __setitem__(self,index,value):
@@ -77,6 +197,7 @@ class Agent:
         self.distance=0.;self.previous_action=np.zeros(3,np.float32)
         self.predicted_wheels=None;self.predicted_hull_speed=None;self.calls=0
         self.predicted_hull_velocity_body=None
+        self.road_frames=[]
         self.history=[0,0];self.last_root=None;self.last_path=None
         self.grip_prior=1.;self.engine_prior=1.;self.steering_prior=1.
         self.uncertainty={};self.diagnostics={}
@@ -126,11 +247,11 @@ class Agent:
                          'own-action model propagation; wheel slip error unresolved'))
         return lateral_speed
 
-    def _map(self,image):
+    def _map(self,image,transported=None):
         asphalt=((image>.36)&(image<.47)).astype(np.uint8)
         bright=((image>164/255.)&(image<176/255.)).astype(np.uint8);bright[69:]=0
         count,labels,stats,centers=cv2.connectedComponentsWithStats(bright)
-        obstacles=[];blocked=np.zeros((84,84),bool)
+        obstacles=[];blocked=np.zeros((84,84),bool);obstacle_blocked=blocked.copy()
         blocked[55:70,34:51]=True
         for i in range(1,count):
             x,y,w,h,area=stats[i];cx,cy=centers[i];ix,iy=int(round(cx)),int(round(cy))
@@ -138,8 +259,13 @@ class Agent:
             if 3<=area<=30 and min(w,h)>=2 and max(w,h)<=3*min(w,h) and patch.size and np.mean(patch)>.42:
                 obstacles.append((((cx-IMAGE_ORIGIN_X)/1.3608,(IMAGE_ORIGIN_Y-cy)/1.701),1.6))
                 blocked[max(0,y-2):min(84,y+h+2),max(0,x-2):min(84,x+w+2)]=True
+                obstacle_blocked[max(0,y-2):min(84,y+h+2),max(0,x-2):min(84,x+w+2)]=True
         # Never fill opaque pixels. The wider blocked window is only a veto on
         # subpixel recovery, not a reason to erase directly visible asphalt.
+        if transported is not None:
+            # Provenance is observed earlier pixels, never an inferred hole fill.
+            transported=transported.copy();transported[obstacle_blocked]=0
+            asphalt|=transported.astype(np.uint8)
         def observed_run(y,anchor):
             edges=np.diff(np.pad(asphalt[y,1:83],(1,1)).astype(np.int16));starts=np.flatnonzero(edges==1)+1;ends=np.flatnonzero(edges==-1)+1
             good=ends-starts>=3;starts=starts[good];ends=ends[good]
@@ -163,7 +289,7 @@ class Agent:
         if len(rows)<8:raise RuntimeError('OBSERVED_ROAD_SUPPORT_INSUFFICIENT')
         # Keep the reference samples unchanged. Geometry uses each actually
         # observed intermediate row, not an assumed diagonal across a missing row.
-        dense=[];refined=unresolved=0
+        dense=[];refined=unresolved=curb_refined=0
         for k,(y,start,end) in enumerate(pixels):
             samples=[(y,start,end)]
             if k+1<len(pixels):
@@ -176,6 +302,15 @@ class Agent:
             for sy,ss,se in samples:
                 a=recover_pixel_edge(image,sy,ss,1,blocked) if se-ss>=8 else None
                 b=recover_pixel_edge(image,sy,se-1,-1,blocked) if se-ss>=8 else None
+                if (a is None or b is None) and se-ss>=8 and 2<=sy<54:
+                    before=observed_run(sy-1,(ss+se-1)*.5);after=observed_run(sy+1,(ss+se-1)*.5)
+                    if before is not None and after is not None:
+                        if a is None:
+                            a=recover_curb_edge(image,sy,ss,1,(after[0]-before[0])*.5,blocked)
+                            curb_refined+=int(a is not None)
+                        if b is None:
+                            b=recover_curb_edge(image,sy,se-1,-1,(after[1]-before[1])*.5,blocked)
+                            curb_refined+=int(b is not None)
                 refined+=int(a is not None)+int(b is not None)
                 unresolved+=int(a is None)+int(b is None)
                 a=float(ss) if a is None else a;b=float(se-1) if b is None else b
@@ -205,6 +340,7 @@ class Agent:
         self.uncertainty.update(map='finite visible road runs; occluded support remains unknown',
             observation_support_m=[float(arc[0]),float(arc[-1])],global_map_available=False,
             raster_edges_refined=refined,raster_edges_unresolved=unresolved,
+            raster_curb_edges_refined=curb_refined,
             subpixel_bound_universally_validated=False,obstacle_pixels_filled=False,
             obstacles='visible grayscale detections with0.4m radius inflation; unseen obstacles unknown')
         return core.Scene(roads,boundary,obstacles),reference(153.,90.),reference(100.,80.),current
@@ -236,7 +372,20 @@ class Agent:
         obs=np.asarray(observation,np.float32)
         if obs.shape!=(4,84,84) or not np.isfinite(obs).all():raise ValueError('OBSERVATION_CONTRACT')
         lateral=self._state_estimates(obs)
-        scene,high,low,progress=self._map(obs[-1])
+        # The stack is actual history only where consecutive images differ.
+        # At reset tiled copies contribute exactly one observation.
+        frames=[]
+        for frame in obs:
+            if not frames or not np.array_equal(frame,frames[-1]):frames.append(frame.copy())
+        if self.road_frames:
+            matches=[i for i,frame in enumerate(frames) if np.array_equal(frame,self.road_frames[-1])]
+            if matches:self.road_frames.extend(frames[matches[-1]+1:])
+            else:self.road_frames=frames
+        else:self.road_frames=frames
+        self.road_frames=self.road_frames[-8:]
+        transported,temporal=transport_road_evidence(self.road_frames)
+        self.uncertainty.update(temporal)
+        scene,high,low,progress=self._map(obs[-1],transported)
         root=self._root(scene,lateral)
         controller=core.Controller(high,low,scene)
         controller.model=self.counter
