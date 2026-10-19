@@ -40,6 +40,155 @@ def observed_obstacle_coordinates(points,arc,normal,center):
     return station,float(residual@n)
 
 
+def observed_reference_lattice(points,previous):
+    """Reobserve a fixed spatial lattice on the CURRENT finite centreline."""
+    points=np.asarray(points,np.float64);step=21./6.
+    arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
+    delta=np.diff(points,axis=0);squared=np.sum(delta*delta,axis=1)
+    valid=np.flatnonzero(squared>1e-12);matches=[]
+    if previous is not None and len(previous)>=3:
+        previous=np.asarray(previous,np.float64)
+        for i,point in enumerate(previous):
+            f=np.clip(np.sum((point-points[:-1])*delta,axis=1)/np.maximum(squared,1e-12),0.,1.)
+            projected=points[:-1]+f[:,None]*delta
+            old_t=previous[min(i+1,len(previous)-1)]-previous[max(0,i-1)]
+            old_t/=max(float(np.linalg.norm(old_t)),1e-6)
+            candidates=[j for j in valid if float(delta[j]@old_t)/math.sqrt(float(squared[j]))>=math.cos(.31)
+                and float(np.linalg.norm(projected[j]-point))<=math.hypot(1/1.3608,1/1.701)]
+            if candidates:
+                j=min(candidates,key=lambda k:float(np.linalg.norm(projected[k]-point)))
+                s=float(arc[j]+f[j]*(arc[j+1]-arc[j]))
+                # An endpoint clamp is not a correspondence to an old node
+                # outside current support. It cannot anchor the lattice.
+                if (j==valid[0] and f[j]==0.) or (j==valid[-1] and f[j]==1.):continue
+                matches.append((i,s))
+    phase=0.;accepted=False
+    if len(matches)>=3 and all(b[1]>a[1] for a,b in zip(matches,matches[1:])):
+        offsets=np.array([s-i*step for i,s in matches])
+        # Same pixel localization bound as correspondence, not a force fit.
+        if float(np.ptp(offsets))<=2*math.hypot(1/1.3608,1/1.701):
+            phase=float(np.median(offsets)%step);accepted=True
+            if min(phase,step-phase)<1e-9:phase=0.
+    sample=np.arange(phase,float(arc[-1])+1e-9,step)
+    if len(sample)<3:
+        # The row collector normally supplies >=7m. Do not claim a uniform
+        # derivative grid where the current support is actually shorter.
+        return points,dict(reference_lattice_used=False,reference_lattice_matches=len(matches))
+    result=np.column_stack([np.interp(sample,arc,points[:,j]) for j in range(2)])
+    return result,dict(reference_lattice_used=True,reference_lattice_matches=len(matches),
+        reference_lattice_correspondence=accepted,reference_geometry_sample_step_m=step,
+        reference_lattice_phase_m=float(sample[0]),
+        reference_lattice_unrepresented_suffix_m=float(arc[-1]-sample[-1]))
+
+
+def deform_observed_reference(points,observed,source_stations,obstacles):
+    """Object correspondence uses all observed support, before grid sampling."""
+    points=points.copy()
+    arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
+    tangent=np.gradient(points,arc,axis=0)
+    normal=np.column_stack((tangent[:,1],-tangent[:,0]));normal/=np.maximum(np.linalg.norm(normal,axis=1,keepdims=True),1e-6)
+    dense_arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(observed,axis=0),axis=1))]
+    dense_tangent=np.gradient(observed,dense_arc,axis=0)
+    dense_normal=np.column_stack((dense_tangent[:,1],-dense_tangent[:,0]));dense_normal/=np.maximum(np.linalg.norm(dense_normal,axis=1,keepdims=True),1e-6)
+    for center,radius in obstacles:
+        station,signed=observed_obstacle_coordinates(observed,dense_arc,dense_normal,center)
+        # Evaluate the unchanged16m physical offset on dense observed arc
+        # coordinates. The final sparse chord must not reanchor the field.
+        amplitude=-math.copysign(max(0.,3.8-abs(signed)),signed if signed else 1.)
+        points+=(amplitude*np.exp(-.5*((source_stations-station)/16.)**2))[:,None]*normal
+    return points
+
+
+def observed_reference_progress(points,arc,center):
+    # Initial progress must use the SAME continuous projection as the original
+    # certifier. A nearest-node value can start ahead and fake a backward step.
+    return float(core.project(tuple(center),dict(points=points.tolist(),arcs=arc.tolist(),
+        length=float(arc[-1]),observed_open=True))['s'])
+
+
+def observed_reference_curvature(points):
+    """Three observed points define local geometric curvature, including ends.
+
+    Two successive one-sided gradients halve a circular boundary's curvature;
+    moving the crop then changes a fixed physical point's speed input.
+    """
+    delta=np.diff(points,axis=0)
+    cross=np.abs(delta[:-1,0]*delta[1:,1]-delta[:-1,1]*delta[1:,0])
+    denominator=np.linalg.norm(delta[:-1],axis=1)*np.linalg.norm(delta[1:],axis=1)*np.linalg.norm(points[2:]-points[:-2],axis=1)
+    interior=2*cross/np.maximum(denominator,1e-12)
+    return np.r_[interior[0],interior,interior[-1]]
+
+
+def detect_observed_obstacles(image,mixed=False):
+    asphalt=((image>.36)&(image<.47)).astype(np.uint8)
+    # For rechecking an ALREADY observed disk, a half-covered public orange
+    # pixel can be below164: max road107.1, orange .299*255+.587*165=173.1.
+    # New tracks still require the original164 threshold. The relaxed core
+    # requires the same component/road guards AND an original bright pixel.
+    lower=((107.1+(.299*255+.587*165))*.5)/255. if mixed else 164/255.
+    bright=((image>lower)&(image<176/255.)).astype(np.uint8);bright[69:]=0
+    count,labels,stats,centers=cv2.connectedComponentsWithStats(bright)
+    obstacles=[];blocked=np.zeros((84,84),bool)
+    for i in range(1,count):
+        x,y,w,h,area=stats[i];cx,cy=centers[i];ix,iy=int(round(cx)),int(round(cy))
+        patch=asphalt[max(0,iy-4):min(69,iy+5),max(0,ix-4):min(84,ix+5)]
+        if mixed and not np.any((labels==i)&(image>164/255.)):continue
+        if 3<=area<=30 and min(w,h)>=2 and max(w,h)<=3*min(w,h) and patch.size and np.mean(patch)>.42:
+            obstacles.append((((cx-IMAGE_ORIGIN_X)/1.3608,(IMAGE_ORIGIN_Y-cy)/1.701),1.6))
+            blocked[max(0,y-2):min(84,y+h+2),max(0,x-2):min(84,x+w+2)]=True
+    return obstacles,blocked
+
+
+def update_observed_obstacles(image,detections,previous,joint):
+    """Associate static observed disks; distinguish negative from hidden pixels.
+
+    Memory is own-action transported. Partial/cropped centroids cannot overwrite
+    a previously observed centre. Hidden objects remain estimates, not fresh
+    observations, and never supply road pixels.
+    """
+    opaque=vehicle_projection_mask(joint).astype(bool);opaque[69:]=True
+    bright=(image>164/255.)&(image<176/255.)
+    yy,xx=np.indices(image.shape);tracks=[];used=set();counts=dict(observed=0,partial=0,hidden=0,negative=0)
+    pixel_bound=math.hypot(1/1.3608,1/1.701)
+    mixed,_=detect_observed_obstacles(image,mixed=True) if previous else ([],None)
+    mixed_used=set()
+    for old in previous:
+        center=np.asarray(old['center'],np.float64)
+        px=IMAGE_ORIGIN_X+1.3608*center[0];py=IMAGE_ORIGIN_Y-1.701*center[1]
+        # Public radius1.2 plus a pixel's support covers a mixed edge sample.
+        footprint=((xx-px)/1.3608)**2+((yy-py)/1.701)**2<=(1.2+pixel_bound)**2
+        clipped=px-(1.2+pixel_bound)*1.3608<0 or px+(1.2+pixel_bound)*1.3608>83 or py-(1.2+pixel_bound)*1.701<0 or py+(1.2+pixel_bound)*1.701>68
+        hidden=bool(clipped or np.any(footprint&opaque))
+        visible=footprint&~opaque
+        evidence=bool(np.any(visible&bright))
+        candidates=[i for i,(p,r) in enumerate(detections) if i not in used and np.linalg.norm(np.asarray(p)-center)<=1.2+pixel_bound]
+        match=min(candidates,key=lambda i:float(np.linalg.norm(np.asarray(detections[i][0])-center))) if candidates else None
+        if match is not None:
+            used.add(match)
+            nearby=[i for i,(p,r) in enumerate(mixed) if i not in mixed_used and np.linalg.norm(np.asarray(p)-np.asarray(detections[match][0]))<=1.2+pixel_bound]
+            if nearby:mixed_used.add(min(nearby,key=lambda i:float(np.linalg.norm(np.asarray(mixed[i][0])-np.asarray(detections[match][0])))))
+            if hidden:status='partial'
+            else:
+                # A threshold-component centroid is a pixel-localized
+                # measurement, not an exact physical disk centre. Preserve
+                # an own-action prior still consistent with that CURRENT
+                # measurement; otherwise project it into the observed box.
+                measured=np.asarray(detections[match][0])
+                pixel=np.array([1/1.3608,1/1.701])
+                center=np.clip(center,measured-pixel,measured+pixel)
+                status='observed'
+        elif hidden:status='partial' if evidence else 'hidden'
+        else:
+            nearby=[i for i,(p,r) in enumerate(mixed) if i not in mixed_used and np.linalg.norm(np.asarray(p)-center)<=1.2+pixel_bound]
+            if not nearby:counts['negative']+=1;continue
+            mixed_used.add(min(nearby,key=lambda i:float(np.linalg.norm(np.asarray(mixed[i][0])-center))))
+            status='partial'
+        tracks.append(dict(center=center.tolist(),radius=old['radius'],status=status));counts[status]+=1
+    for i,(center,radius) in enumerate(detections):
+        if i not in used:tracks.append(dict(center=list(center),radius=radius,status='observed'));counts['observed']+=1
+    return tracks,counts
+
+
 # Public green HUD templates for integer polygon endpoints x400..600.
 # Generated by retry.hud_joint_check from the public renderer; no case data.
 JOINT_HUD_FEATURES=np.array([
@@ -1246,7 +1395,7 @@ class Agent:
         self.predicted_wheels=None;self.predicted_hull_speed=None;self.calls=0
         self.predicted_hull_velocity_body=None
         self.predicted_joints=None;self.predicted_joint_rates=None;self.predicted_yaw=None;self.predicted_average_hull_velocity_body=None;self.predicted_average_yaw=None;self.joint_rate=0.
-        self.road_frames=[];self.reference_seeds=[]
+        self.road_frames=[];self.reference_seeds=[];self.reference_lattice=[];self.obstacle_tracks=[]
         self.history=[0,0];self.last_root=None;self.last_path=None
         self.grip_prior=1.;self.engine_prior=1.;self.steering_prior=1.
         self.uncertainty={};self.diagnostics={}
@@ -1316,17 +1465,20 @@ class Agent:
 
     def _map(self,image,transported=None):
         asphalt=((image>.36)&(image<.47)).astype(np.uint8)
-        bright=((image>164/255.)&(image<176/255.)).astype(np.uint8);bright[69:]=0
-        count,labels,stats,centers=cv2.connectedComponentsWithStats(bright)
-        obstacles=[];blocked=np.zeros((84,84),bool);obstacle_blocked=blocked.copy()
+        obstacles,obstacle_blocked=detect_observed_obstacles(image)
+        blocked=obstacle_blocked.copy()
         blocked[55:70,34:51]=True
-        for i in range(1,count):
-            x,y,w,h,area=stats[i];cx,cy=centers[i];ix,iy=int(round(cx)),int(round(cy))
-            patch=asphalt[max(0,iy-4):min(69,iy+5),max(0,ix-4):min(84,ix+5)]
-            if 3<=area<=30 and min(w,h)>=2 and max(w,h)<=3*min(w,h) and patch.size and np.mean(patch)>.42:
-                obstacles.append((((cx-IMAGE_ORIGIN_X)/1.3608,(IMAGE_ORIGIN_Y-cy)/1.701),1.6))
-                blocked[max(0,y-2):min(84,y+h+2),max(0,x-2):min(84,x+w+2)]=True
-                obstacle_blocked[max(0,y-2):min(84,y+h+2),max(0,x-2):min(84,x+w+2)]=True
+        self.obstacle_tracks,obstacle_counts=update_observed_obstacles(image,obstacles,self.obstacle_tracks,self.joint)
+        obstacles=[(tuple(track['center']),track['radius']) for track in self.obstacle_tracks]
+        self.uncertainty['obstacle_correspondence']=obstacle_counts
+        self.uncertainty['hidden_obstacles_are_own_action_estimates']=True
+        # Known object footprints veto inference even during a partial crop;
+        # memory never fills any unseen or opaque road support.
+        yy,xx=np.indices(image.shape)
+        for center,radius in obstacles:
+            px=IMAGE_ORIGIN_X+1.3608*center[0];py=IMAGE_ORIGIN_Y-1.701*center[1]
+            footprint=((xx-px)/1.3608)**2+((yy-py)/1.701)**2<=radius**2
+            blocked[footprint]=True;obstacle_blocked[footprint]=True
         # Never fill opaque pixels. The wider blocked window is only a veto on
         # subpixel recovery, not a reason to erase directly visible asphalt.
         if transported is not None:
@@ -1502,28 +1654,25 @@ class Agent:
         points=np.asarray([((a+b)*.5,y) for a,b,y in rows],np.float64)
         points,reference_info=reference_from_observed_width(points,reference_curves,asphalt,obstacle_blocked)
         self.uncertainty.update(reference_info)
+        observed_reference=points.copy();source_stations=None
         if reference_info['observed_width_reference_used']:
             # Public centreline nodes are generated at21/6m. Pixel-dense fits
             # and coarser row samples must not enter curvature derivatives on
             # different spatial scales. Resample the estimated geometry only;
             # keep the original speed-profile formula and certification gates.
-            support_arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
-            count=max(3,int(math.ceil(float(support_arc[-1])/(21./6.)))+1)
-            sample=np.linspace(0.,float(support_arc[-1]),count)
-            points=np.column_stack([np.interp(sample,support_arc,points[:,j]) for j in range(2)])
-            self.uncertainty['reference_geometry_sample_step_m']=float(sample[1]-sample[0])
-        else:points[:,0]=cv2.GaussianBlur(points[:,0].reshape(1,-1),(5,1),1.).ravel()
+            points,lattice_info=observed_reference_lattice(points,self.reference_lattice)
+            self.uncertainty.update(lattice_info)
+            if lattice_info['reference_lattice_used']:
+                source_stations=lattice_info['reference_lattice_phase_m']+(21./6.)*np.arange(len(points))
+        else:
+            points[:,0]=cv2.GaussianBlur(points[:,0].reshape(1,-1),(5,1),1.).ravel()
+            observed_reference=points.copy()
+        self.reference_lattice=points.copy() if source_stations is not None else []
+        if source_stations is None:source_stations=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
+        points=deform_observed_reference(points,observed_reference,source_stations,obstacles)
         arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
-        tangent=np.gradient(points,arc,axis=0);normal=np.column_stack((tangent[:,1],-tangent[:,0]));normal/=np.maximum(np.linalg.norm(normal,axis=1,keepdims=True),1e-6)
-        observed_reference=points.copy()
-        for center,radius in obstacles:
-            station,signed=observed_obstacle_coordinates(observed_reference,arc,normal,center)
-            amplitude=-math.copysign(max(0.,3.8-abs(signed)),signed if signed else 1.)
-            points+=(amplitude*np.exp(-.5*((arc-station)/16.)**2))[:,None]*normal
-        arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
-        tangent=np.gradient(points,arc,axis=0);second=np.gradient(tangent,arc,axis=0)
-        curvature=np.abs(tangent[:,0]*second[:,1]-tangent[:,1]*second[:,0])/np.maximum(np.linalg.norm(tangent,axis=1)**3,1e-6)
-        current=float(arc[np.argmin(np.linalg.norm(points-self.com,axis=1))])
+        curvature=observed_reference_curvature(points)
+        current=observed_reference_progress(points,arc,self.com)
         def reference(budget,max_speed):
             q=np.minimum(max_speed**2,budget/np.maximum(curvature,1e-6));q[-1]=0.
             for i in range(len(q)-2,-1,-1):q[i]=min(q[i],q[i+1]+2*45.*(arc[i+1]-arc[i]))
@@ -1648,5 +1797,8 @@ class Agent:
         self.reference_seeds=[dict(outer_side=seed['outer_side'],
             edge_points=(seed['edge_points']-np.asarray(after_origin))@rotation.T,
             edge_normals=seed['edge_normals']@rotation.T) for seed in self.reference_seeds]
+        self.reference_lattice=(np.asarray(self.reference_lattice)-np.asarray(after_origin))@rotation.T if len(self.reference_lattice) else []
+        for track in self.obstacle_tracks:
+            track['center']=((np.asarray(track['center'])-np.asarray(after_origin))@rotation.T).tolist()
         self.diagnostics['model_ticks_total']=self.counter[0]
         return action

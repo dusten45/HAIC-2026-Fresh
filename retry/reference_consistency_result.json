@@ -1,0 +1,248 @@
+{
+  "status": "STOPPED_AT_ADMISSION_GATE",
+  "base_commit": "c50a2a74471ed25a25316dd44dd9325398332539",
+  "final_source_sha256": "2a149ecd1e1d8e137ce5532d08e751a570d7637c0e01722b868a004ad0fe3628",
+  "core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "changes": [
+    "Fixed3.5m lattice reobserved on current supported centreline using own-action correspondence; no short final interval or added unseen future reference.",
+    "Obstacle correspondence and unchanged16m displacement use dense observed geometry before grid sampling.",
+    "Reset-local static-object memory distinguishes current visible negatives from crop/vehicle/HUD occlusion; current half-covered public-orange components recheck existing tracks only.",
+    "Current pixel localization constrains an associated object centre instead of blindly overwriting an own-action prior with a quantized centroid.",
+    "Initialize reference progress with original core.project, eliminating nearest-node false backward transitions.",
+    "Estimate input curvature geometrically from3observed points instead of twice-one-sided-gradient circular endpoint bias. Original speed formula/coefficients remain unchanged."
+  ],
+  "public_checks": {
+    "lattice": {
+      "status": "PASS",
+      "legacy_crop_speed_jump_m_s": 0.63647130035136,
+      "fixed_crop_speed_jump_m_s": 1.4452439245360438e-11,
+      "fixed_crop_object_field_jump_m": 4.706013733996929e-07,
+      "variable_curve_crop_object_field_jump_m": 0.0,
+      "current_curve_lattice_error_m": 6.249689759331755e-08,
+      "matches": 9
+    },
+    "obstacles": {
+      "status": "PASS",
+      "full_visible_phase_cases": 1200,
+      "mixed_core_recoveries": 11,
+      "max_public_centroid_bias_px": 0.5000000000000006,
+      "consistent_observation_center_shift_m": 0.0,
+      "inconsistent_prior_corrected": true,
+      "visible_negative_removed": true,
+      "no_history_no_invention": true,
+      "reset_clears_memory": true
+    },
+    "progress": {
+      "status": "PASS",
+      "nearest_node_false_backward_delta_m": -0.5999999999999996,
+      "continuous_forward_delta_m": 0.9800000000000002,
+      "rigid_transform_max_error_m": 8.881784197001252e-16,
+      "node_boundary_progress_change_m": 2.0000000000575113e-06,
+      "model_ticks": 0,
+      "native_actions": 0,
+      "CPU_s": 0.0003685670000000002,
+      "scope": "Original core.project, observed finite polyline only; no force threshold/chooser/controller change."
+    },
+    "curvature": {
+      "status": "PASS",
+      "circle_cases": 6,
+      "max_geometric_curvature_error_per_m": 5.689893001203927e-16,
+      "legacy_same_point_near_crop_curvature_jumps_per_m": [
+        0.020383904801943464,
+        0.020383904801943464,
+        0.0137567771760237,
+        0.0137567771760237,
+        0.008893603168845795,
+        0.008893603168845795
+      ],
+      "geometric_same_point_near_crop_jump_per_m": 0.0,
+      "model_ticks": 0,
+      "native_actions": 0,
+      "CPU_s": 0.0019023230000000113,
+      "limitation": "Local3point geometry estimator; exact for finite circular samples, not a universal bound for noisy pixels or variable curvature."
+    }
+  },
+  "native_runs": [
+    {
+      "label": "runtime598-reference-consistency01",
+      "source_sha256": "8bd4b6a6f9d388f17b163eb6d2012693538317700f92e23eaabf9f285ea2d670",
+      "valid_actions": 40,
+      "failed_call": 41,
+      "progress": 0.127208480565371,
+      "damage": 0.0,
+      "max_whole_act_s": 2.099439423996955,
+      "CPU_s": 48.451025136999995,
+      "wall_s": 47.9776938460127,
+      "model_ticks": 25932,
+      "reasons": {
+        "FORCE_PEAK": 21
+      }
+    },
+    {
+      "label": "runtime598-reference-mixedcore01",
+      "source_sha256": "2818b722eb2b2641744324fcbe06fe37f945ce52bee7a23533315ed22ce8c811",
+      "valid_actions": 41,
+      "failed_call": 42,
+      "progress": 0.13074204946996468,
+      "damage": 0.0,
+      "max_whole_act_s": 2.088041679991875,
+      "CPU_s": 49.151259761000006,
+      "wall_s": 48.70016012599808,
+      "model_ticks": 26281,
+      "reasons": {
+        "FORCE_PEAK": 21
+      }
+    },
+    {
+      "label": "runtime598-reference-centroid01",
+      "source_sha256": "faa96712d5f45133271be085ab270656d16d77d00cba1421eafbfb2c85bc2664",
+      "valid_actions": 38,
+      "failed_call": 39,
+      "progress": 0.1166077738515901,
+      "damage": 0.0,
+      "max_whole_act_s": 1.988732183992397,
+      "CPU_s": 45.777113193999995,
+      "wall_s": 45.30921219600714,
+      "model_ticks": 24431,
+      "reasons": {
+        "PROJECTION_OR_PATH": 15,
+        "FORCE_PEAK": 6
+      }
+    },
+    {
+      "label": "runtime598-reference-progress01",
+      "source_sha256": "927cf2bc67ff82af4ff7e4f401500e2071f408e7d1686a3875c5cc6f04fa7f06",
+      "valid_actions": 38,
+      "failed_call": 39,
+      "progress": 0.12014134275618374,
+      "damage": 0.0,
+      "max_whole_act_s": 1.9589021829888225,
+      "CPU_s": 46.703482623,
+      "wall_s": 46.26140604200191,
+      "model_ticks": 25052,
+      "reasons": {
+        "FORCE_PEAK": 12,
+        "REFERENCE_WITH_NUMERIC_RESERVE": 9
+      }
+    },
+    {
+      "label": "runtime598-reference-curvature01",
+      "source_sha256": "2a149ecd1e1d8e137ce5532d08e751a570d7637c0e01722b868a004ad0fe3628",
+      "valid_actions": 44,
+      "failed_call": 45,
+      "progress": 0.1413427561837456,
+      "damage": 0.0,
+      "max_whole_act_s": 1.91545042899088,
+      "CPU_s": 50.347759931999995,
+      "wall_s": 49.8049086050014,
+      "model_ticks": 27243,
+      "reasons": {
+        "FORECAST_FOOTPRINT_MARGIN": 13,
+        "FORCE_PEAK": 8
+      }
+    }
+  ],
+  "cached_validations": [
+    {
+      "label": "phasec50-final-cached",
+      "status": "FAIL",
+      "model_ticks": 14,
+      "CPU_s": 0.096261163
+    },
+    {
+      "label": "phasec50-mixed-core-cached",
+      "status": "PASS",
+      "model_ticks": 363,
+      "CPU_s": 0.559528403
+    },
+    {
+      "label": "phasec50-mixed-core-final-cached",
+      "status": "PASS",
+      "model_ticks": 363,
+      "CPU_s": 0.557054532
+    },
+    {
+      "label": "phasec50-centroid-interval-cached",
+      "status": "FAIL",
+      "model_ticks": 14,
+      "CPU_s": 0.104205206
+    },
+    {
+      "label": "phasec50-progress-cached",
+      "status": "PASS",
+      "model_ticks": 100,
+      "CPU_s": 0.483777
+    },
+    {
+      "label": "phasec50-curvature-cached",
+      "status": "FAIL",
+      "model_ticks": 12,
+      "CPU_s": 0.34748722000000004
+    }
+  ],
+  "final_source_validation": {
+    "reset_run": true,
+    "valid_actions": 44,
+    "failed_call": 45,
+    "progress": 0.1413427561837456,
+    "damage": 0,
+    "whole_act_max_s": 1.91545042899088,
+    "full_course_pass": false,
+    "failure_replay": {
+      "error_identical": true,
+      "full_report_identical": true,
+      "diagnostics_identical": true,
+      "counter_identical": true
+    },
+    "first_forecast_footprint_failure": {
+      "raw_from_root": 42,
+      "hold": 11,
+      "margin_m": 0.4167558858941117,
+      "obstacle_margin_m": 2.2559027269421947,
+      "admission_margin_m": 0.5
+    },
+    "remaining_blocker": "Forecast footprint margin on the conservative observed-road mesh near an observed obstacle, plus force-rejected candidates. This is an estimated-scene rejection; physical future unsafety is not established. No road support was widened to pass it."
+  },
+  "phase_usage": {
+    "DEV_actions": 201,
+    "resets": 5,
+    "model_ticks": 130361,
+    "recorded_CPU_s": 268.28414260799997,
+    "additional_setup_probe_CPU_allowance_s": 30.0,
+    "conservative_CPU_charge_s": 298.28414260799997,
+    "wall_elapsed_s": 1448.223986,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0,
+    "research_remaining_start": 19845,
+    "research_remaining_end": 19644,
+    "actual_physics_raw_ticks": 1059,
+    "drive_raw_ticks": 804,
+    "reset_physics_raw_ticks": 255
+  },
+  "limits": {
+    "DEV_actions": 400,
+    "model_ticks": 250000,
+    "CPU_s": 1800,
+    "wall_s": 3600
+  },
+  "preserved": {
+    "core": true,
+    "chooser": true,
+    "physics": true,
+    "horizon": true,
+    "force_projection_reference_admission_thresholds": true,
+    "speed_profile_formula_and_coefficients": true,
+    "external_cumulative_research_ledger": true,
+    "main_pin": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+    "Participants": true,
+    "backups": true
+  },
+  "limitations": [
+    "Finite public renderer/geometry counterexamples are not universal observation or safety bounds.",
+    "Remembered hidden obstacle positions depend on own-action state prediction; no true map/state enters Agent and no hidden road pixels are filled.",
+    "The fixed grid omits at most3.5m of current far support, preserving uniform geometry differences; terminal-stop behavior can legitimately change with newly visible support.",
+    "No full-course or official-server runtime parity claim; no controller, action smoothing, planner, lap-time search, or other-model comparison."
+  ],
+  "next_action": "A separate falsifiable public-raster gate would be needed to establish whether conservative road mesh support near the observed obstacle can be improved. No further native run or automatic continuation in this bundle."
+}
