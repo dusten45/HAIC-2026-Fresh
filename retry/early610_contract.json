@@ -1,0 +1,133 @@
+{
+  "study": 610,
+  "status": "PURE_TESTS_PASSED_FROZEN_BEFORE_SOURCE",
+  "task": {
+    "study": 610,
+    "start_epoch": 1792415663.166707,
+    "start_utc": "2026-10-19T13:14:23.166714+00:00",
+    "CPU_cap_s": 5400,
+    "wall_cap_s": 6600,
+    "prior_preparation_CPU_s": 10,
+    "prior_preparation_wall_s": 60
+  },
+  "deadline": "2026-10-20T10:01:55+00:00",
+  "caps": {
+    "model_attempted": 180000,
+    "model_completed": 180000,
+    "external_force": 720000,
+    "internal_force": 720000,
+    "total_force": 1440000,
+    "geometry": 600000
+  },
+  "time_caps": {
+    "CPU_s": 5400,
+    "wall_s": 6600,
+    "cleanup_CPU_s": 90,
+    "cleanup_wall_s": 120
+  },
+  "kernel": 200000,
+  "source_sha256": {
+    "retry/early610.py": "bef8548081965adbebd3dea991ce2bef63cad410db6e9cc47227c738a2903511",
+    "retry/early610_preflight.py": "2d151dc1c1e85d436a96a0a9f1f87336eeec22e7428b0e5f145669cce15739ff",
+    "retry/early609_core.py": "e13dde68f8be0248a463aa9a0362033b7da87772ae199cb14353c8fb2d22e818",
+    "retry/corner608.py": "884618ae5bdf3cb60a88747ecd20b8acdd449e8b7c00f6470d8ac33f8578ea96",
+    "retry/corner608_core.py": "6b9a498a7ce49f0683588e6b9edc7b2ee9decf3aed45ad61f9f71866a99263c5",
+    "retry/residual605.py": "deafcf5f7f66cb754804ddd16c289827344fda5a5d73858107d0601a191f9dda",
+    "retry/residual604_math.py": "9e852341758270b8622596569d7347c0566f540a1de6b3750206641d93e38a22",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "retry/profile601.py": "6822569c2576279bb6a7d59c5260a2134a0d5f35c912a4c1f11f511d511819b3",
+    "retry/cold598_support.py": "7b0517303110a83e369c950b97d7ba8b649fcdb607249c5ff19325dc4a9b87d9"
+  },
+  "tests_sha256": "68fc13d40100aca5d1bb0a6933a9a130a44e1c7819101651c897ddee9a958ffa",
+  "input_sha256": {
+    "checkpoint96": "136a068d241bda3cbdd6379472f8cd5a759fed00f4bee07ac531c268dd83df6f",
+    "source605": "b273b011902b3a6a9132454a0ca8621a0480f54257f94e9aaf407380d19ceb2b",
+    "zero": "bfacd4af040ca67e92a9dcdf13b5dc5d867ff400d35f8482603761f54666e538",
+    "prefix_journal": "3fbe02f5925bacfcd6c92cac384557fbb604c643393ff24172b71ff450a58428",
+    "initial": "dec25030cca7c5fa1635035bef809e6d6a625d1124300c3931c32ba6f9e8d0e6",
+    "planes": "a054d162155a20ddf99379fceb8ba417fba4d6c2fd623c9ce57876640d4efe44",
+    "binary603": "dc97aff751da9e3cc35d83f66c2718efb19481e1ecf65968dcca6a8a2ce929eb",
+    "runtime603": "2dca472012ad4ab52e826f401379ee6d1e022d17a9bb30717d345f206f0348c3"
+  },
+  "checkpoint96_full_digest": "929623680a4a2e58db53aa8ebd494b2596322dfd19615346e2c30d2b1aaa38bf",
+  "prefix96_provenance_not_newly_run": true,
+  "arms": {
+    "A": "Fixed577holds25..39 then original537from40. ALLraw/fullcp/commands/reports/planes exact605zero before B or C.",
+    "B": "Original537everyholdfrom25,unchangedrules.",
+    "C": "Original537nominal function directly ONCE(currentroot,high,progress); NO originalchoose or admissible-base precondition. H1 modification unchanged604sixcoeff/formula/windows. Bothnominal/H1shiftedsteers paired BEFORE certification."
+  },
+  "coefficients": [
+    -0.2,
+    0.2,
+    -0.2,
+    0.2,
+    -0.025,
+    0.025
+  ],
+  "grid": "EXACT608make_pairs:17dyadic[-1,1]+2brakelockfloat32+.CURRENTnominalandH1modifiednetpedal;float32canonicalzero,dedup,21pedalsmax42pairs;ascendingsteerthenpedaldescending. Ifsteersbyteidentical,physicalpairsdedupandbothrowmemberships. NominalH1clampsoriginal. ZeroresidualpreservesnominalbytesBUTcontinuesSAMEtimegridselection;no chooserfallback.",
+  "selection": "ALLfixedpairscertified original12hold/48raw. Safehighestend48progress,thenhighestfirst4progress,thenlowestfixedindex. Progress from alreadychargedtracking_forecastprojectionreturns;no newquery. FreshFINAL once selected;scoreexactandactualfirst4root/force/history/marginexact. No-safe=>scientificarmstop. No nearestpedal/fallback/rowsteeringtuning.",
+  "nominal_parity": "Original537 AST firstassignment calls SAME nominal function. Actual nominal_proposal/choose_joint/certify_scored/project/reserve/compare/error-handler exercised with evaluation dependencies stubbed, NO chooser or physical kernel in purepreflight. EveryA/B originalchoose interceptsnominal returnandcomparesbyteexact toseparatechargedproposal onsamefullcurrentstate;A actions/fullreports alsoexact605storedcalls. No newsteeringrule.",
+  "gate": "Samefixed605worldplanes/originalclock. s200/s300diagnosticonly,noprune. Endpointfirsteligibles400crossandwholeholdsafe. Strict537gates unchanged1.059force/.10clip/.50footprint/4.85reference/path3/body100/projectionbounds. Next11holds originalbackupwitness,NOTfutureCpolicyproof.",
+  "replay": "AfterALLfixedarms,earlieststrictsafeB/C withtime<A (tieBfirst):ONEcommandreplayfromsaved597initial usingstoredprefix96+winnercommands. Compareallfullrows/cp/history/visited/tracker/clock/planes. No gain=>no replay. No full-lap/native.",
+  "cost_derivation": {
+    "A_full_known_endpoint_worst": {
+      "holds": 52,
+      "fixed_holds": 15,
+      "feedback_holds": 37,
+      "model": 57040,
+      "geometry": 230000
+    },
+    "B_per_hold": {
+      "model": 1540,
+      "geometry": 6200
+    },
+    "C_per_hold": {
+      "model": 2068,
+      "geometry": 8300
+    },
+    "replay": {
+      "model_attempted": 1174,
+      "model_completed": 1174,
+      "external_force": 4696,
+      "internal_force": 4696,
+      "total_force": 9392,
+      "geometry": 7200
+    },
+    "formula": "C43cert*48+4=2068;43*(49margin+48postproject+44backupnominal+49originalhelpercompare)+80=8250, use conservative8300geometry in reservation;originalnominal2+H1residual2+actualplanes included80. A/B1540model6200geometry PLUSnominalparity2geometry accounted in6200 envelope. Allreportedcounts global, originalhelperEVERYnewmiss charged.",
+    "entire_three_arms_not_guaranteed": true,
+    "B_worst_270holds_model": 415800,
+    "C_worst_270holds_model": 558360,
+    "reservation": "Eachhold worstnextcall PLUS onefullcallforeachremainingmandatoryarm PLUSentire1174rawreplay/7200geometry PLUSCPU/wallcleanup. Pairremainingreserves worstallremaining+FINAL+actual+mandatory+replay. Currentarmcensoredwhenreservationfails;not scientificfailure. No reduction/capraise."
+  },
+  "errors": "Aidentity/scientificfailure=>ALLstop;B/Cscientific=>nextfixedarm;budget=>armcensored;technical/IO/identity/nonfinite=>ALLstopNOretry.",
+  "preserve609": {
+    "code": "523c0929568872b07b9743881f8932bc80691308754a35c790011e87b38b9f3f",
+    "closeout": "94dd5221483fe9d0a70de32527924ada7695744866329a19d3ace5a41314cab1",
+    "failure_cost": {
+      "study": 609,
+      "closed_utc": "2026-10-19T13:12:34.250214+00:00",
+      "actual_wall_since_task_marker_s": 351.0694668292999,
+      "conservative_prior_preparation_wall_s": 120,
+      "whole_task_accounted_wall_s": 471.06944608688354,
+      "CPU_accounted_s": 101.292556183,
+      "reader_CPU_includes_preparation10s": 11.291510371,
+      "audit_CPU_s": 0.0010458120000000001,
+      "conservative_cleanup_diagnosis_Git_CPU_s": 90,
+      "remote_verified_commit": "dad5a0b39804089af4868f8a5a3f90fe01f73b84",
+      "decision": "TECHNICAL_PREPARATION_STOP_NO_RETRY",
+      "source_model": 0,
+      "force": 0,
+      "geometry": 0,
+      "native": 0,
+      "automatic_retry": false,
+      "paid_resources": 0
+    },
+    "recovery_scope": "Fix phase history guard and implement actual-object preflight; extract unchanged arm dispatcher and technical error handler for testing. Policies/selection/limits unchanged. 609 CPU/wall INCLUDEDat610caps."
+  },
+  "preserve608": "4134c1e5efd24425eb3a723a6f2bc8377cab011e0c9d11bbcc1733ff88ca2c44",
+  "native_world_reset_seed_carry_HOLDOUT_SEALED": 0,
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0
+}

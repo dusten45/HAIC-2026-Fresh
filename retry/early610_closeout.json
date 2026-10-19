@@ -1,0 +1,99 @@
+{
+  "study": 610,
+  "decision": "NO_PROMOTION_END_EARLY_FEEDBACK_TWO_STEERING_COMPARISON",
+  "source_status": "NO_FASTER_SAFE_ARM",
+  "A": {
+    "s400_s": 6.054387012453384,
+    "full_saved_zero_identity": true,
+    "new_actual_raw": 208
+  },
+  "B": {
+    "s400_s": 6.063580649410837,
+    "gain_vs_A_s": -0.009193636957452789,
+    "safe": true,
+    "new_actual_raw": 208
+  },
+  "C": {
+    "s400_s": null,
+    "stop": "NO_SAFE_PAIR",
+    "hold": 32,
+    "checkpoint_raw": 124,
+    "new_actual_raw": 28,
+    "all_actual_applied_raw_strict_safe": true,
+    "last_pairs": 42,
+    "last_base_safe": 0,
+    "last_shifted_safe": 0,
+    "last_reasons": {
+      "base": {
+        "FORCE_PEAK": 21
+      },
+      "shifted": {
+        "FORCE_PEAK": 21
+      }
+    },
+    "scope": "Finite frozen grid rejection, not continuous-action impossibility. No midpoint slow-progress pruning."
+  },
+  "actual_object_preflight_checks": 10,
+  "preflight_real_kernel_and_chooser_calls": 0,
+  "preflight_stub_projection_queries_charged": 2064,
+  "audit_checks": 24,
+  "audit_status": "READ_ONLY_AUDIT_PASS",
+  "independent_initial_replay": 0,
+  "full_lap": 0,
+  "native": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "cost": {
+    "geometry": 143159,
+    "nominal_proposals": 102,
+    "geometry_tracking_forecast": 38440,
+    "model_attempted": 37564,
+    "external_force": 150256,
+    "total_force": 297536,
+    "model_tick_attempts": 36820,
+    "internal_force": 147280,
+    "model_completed": 36820,
+    "geometry_native_or_initial": 444,
+    "geometry_source_footprint": 38814,
+    "helper_original_comparisons": 31383,
+    "chooser_calls": 89,
+    "geometry_internal_nominal_steering": 33064,
+    "geometry_residual_projection": 8
+  },
+  "C_pairs_total": 336,
+  "C_fresh_FINAL": 7,
+  "C_real_zero_residual_grids": 0,
+  "C_zero_region_validated_only_in_actual_path_stub_preflight": true,
+  "future11holds_scope": "Original backup witness, not future C policy proof.",
+  "kernel_hardcap": 200000,
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "time_includes_preserved609_failure": true,
+  "execution_end_utc": "2026-10-19T13:26:36.081872+00:00",
+  "lap_time_hard_cutoff_utc": "2026-10-19T14:24:00+00:00",
+  "finished_before_new_cutoff": true,
+  "further_lap_time_candidates": 0,
+  "combined609_610_wall_through_audit_s": 1285.0666291713715,
+  "combined_CPU_at_reader_close_s": 614.2702323809999,
+  "audit_CPU_s": 5.3949566639999995,
+  "cleanup_CPU_reserve_s": 90,
+  "preserved609_code_sha256": "523c0929568872b07b9743881f8932bc80691308754a35c790011e87b38b9f3f",
+  "preserved608_closeout_sha256": "4134c1e5efd24425eb3a723a6f2bc8377cab011e0c9d11bbcc1733ff88ca2c44",
+  "official_distribution_check": {
+    "official_repo": "https://github.com/2026-HAIC/Participants",
+    "observed_remote_HEAD": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+    "local_main_matches": true,
+    "local_runner_and_env_wrapper_match_main": true,
+    "local_runner_sha256": "48eedfb0c32a8e1f4dd724e65ac69eb678105ee434ac797ce2c9f442461fd398",
+    "env_wrapper_sha256": "8687215412da0a1f34534623d5050030d85c629a70cb922e9d2199c513a3941e",
+    "actual_official_server_isolation_wrapper_runtime_unverified": true
+  },
+  "submission_handoff_unresolved": [
+    "agent.py remains straight-gas template; 598 verified13.22s controller is privileged full-state single-initialization DEV, not observation-only Agent. Pixel->state/map/history/controller adapter and its accuracy are not implemented or verified.",
+    "603 helper custom .so/importlib/GCC pathway violates current submission static/ZIP rules. Need allowed NumPy/Torch CPU/OpenCV operations and permitted binary-wheel dependencies; research instrumentation imports/dynamic execution cannot enter package.",
+    "Need full observation-to-action timing for EVERY actual decision, cold import+construction<=10s/reset<=5s/act<=5s, valid finite(3,) return and process memory<=1024MB in isolated compatible environment. One saved-state603core3.94s proves none of these end-to-end requirements.",
+    "Official public wrapper version confirmed at remote main; actual server isolation/import/memory/installation runtime remains unverified. No competition submission authorized."
+  ],
+  "privacy": "Only technical code/hash/aggregate publication. Full states/maps/coordinates/actions/reports/prefix and preflight artifacts remain private."
+}

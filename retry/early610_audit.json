@@ -1,0 +1,60 @@
+{
+  "study": 610,
+  "status": "READ_ONLY_AUDIT_PASS",
+  "checks": {
+    "frozen_source": true,
+    "frozen_tests": true,
+    "registered_contract": true,
+    "closed_results": true,
+    "private_pins": true,
+    "actual_object_preflight": true,
+    "preflight_private_pins": true,
+    "stub_queries_charged": true,
+    "prefix_both_histories": true,
+    "A_runtime_gate": true,
+    "nominal_source_calls": true,
+    "A_independent_full_saved_identity": true,
+    "all_primitive_model_force_counts": true,
+    "force_sum": true,
+    "C_exact_current_grid_and_zero_policy": true,
+    "C_end48_first4_index_selection_fresh_FINAL": true,
+    "durable_journal_chain": true,
+    "global_caps_and_kernel": true,
+    "public_crossings_aggregate_only": true,
+    "no_positive_no_replay": true,
+    "zero_forbidden_work": true,
+    "prior609_preserved": true,
+    "main_Participants_ledger": true,
+    "combined609_610_time_cleanup_reserved": true
+  },
+  "primitive_counts": {
+    "model_attempted": 37564,
+    "model_completed": 36820,
+    "external_force": 150256,
+    "internal_force": 147280
+  },
+  "certificates": 1994,
+  "C_pairs": 336,
+  "C_fresh_FINAL": 7,
+  "C_zero_residual_grids": 0,
+  "durable_events": {
+    "RESERVE": 563,
+    "ACTUAL_OBJECT_PREFLIGHT_PASS": 1,
+    "APPLIED_INPUT": 444,
+    "BEFORE_FORCE": 444,
+    "FORCE_VERDICT": 444,
+    "APPLIED_TICK_START": 444,
+    "APPLIED_TICK_END": 444,
+    "APPLIED_RESULT": 444,
+    "STUDY_END": 1
+  },
+  "reservations_by_arm": {
+    "C": 459,
+    "A": 52,
+    "B": 52
+  },
+  "new_evaluations": 0,
+  "audit_CPU_s": 5.3949566639999995,
+  "combined609_610_wall_through_audit_s": 1285.0666291713715,
+  "result_sha256": "3fb7c114e2c3ff0b7a18fff23e95141e0694814922a8179988a3e5361aee2fef"
+}
