@@ -132,6 +132,64 @@ def vehicle_occluded_pixels(image):
     return mask&(((image<=.36)|(image>=.47)).astype(np.uint8))
 
 
+def vehicle_projection_mask(joint):
+    """Public vehicle silhouette plus one output-pixel raster fringe."""
+    mask=np.zeros((84,84),np.uint8)
+    polys=[[(x*core.SIZE,y*core.SIZE) for x,y in p] for p in
+           (core.HULL_POLY1,core.HULL_POLY2,core.HULL_POLY3,core.HULL_POLY4)]
+    for i,(x,y) in enumerate(core.WHEELPOS):
+        polys.append(core.rectangle((x*core.SIZE,y*core.SIZE),joint if i<2 else 0.))
+    for poly in polys:
+        pixels=np.array([(IMAGE_ORIGIN_X+1.3608*x,IMAGE_ORIGIN_Y-1.701*y) for x,y in poly])
+        cv2.fillPoly(mask,[np.rint(pixels).astype(np.int32)],1)
+    return cv2.dilate(mask,np.ones((3,3),np.uint8),iterations=1)
+
+
+def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,speed):
+    """Conditioned connected-road hypothesis, never obstacle-clearance proof."""
+    cover=vehicle_projection_mask(joint);candidates=[]
+    # Output-pixel quantization plus public per-node normal change. This is a
+    # conditioning tolerance, not a universal geometric uncertainty bound.
+    nominal=2*(40./6.)
+    tolerance=2/1.3608+nominal*(1/math.cos(.31)-1)
+    for y in np.flatnonzero(np.any(cover,axis=1)):
+        row=asphalt[y].astype(bool)&~cover[y].astype(bool)
+        d=np.diff(np.pad(row,(1,1)).astype(np.int16));starts=np.flatnonzero(d==1);ends=np.flatnonzero(d==-1)
+        good=ends-starts>=3;starts=starts[good];ends=ends[good]
+        left=[i for i in range(len(starts)) if ends[i]<=math.ceil(IMAGE_ORIGIN_X)]
+        right=[i for i in range(len(starts)) if starts[i]>=math.floor(IMAGE_ORIGIN_X)]
+        if not left or not right:continue
+        l=max(left,key=lambda i:ends[i]);r=min(right,key=lambda i:starts[i])
+        a,b=int(ends[l]),int(starts[r])
+        if a>=b or starts[l]==0 or ends[r]>=84:continue
+        missing=~asphalt[y,a:b].astype(bool)
+        if np.any(missing & ~cover[y,a:b].astype(bool)) or np.any(obstacle_mask[y,a:b]):continue
+        if cover[y,starts[l]-1] or cover[y,ends[r]]:continue
+        candidates.append((int(y),int(starts[l]),int(ends[r]-1),a,b))
+    support=np.zeros((84,84),np.uint8)
+    info=dict(road_support_inference_mode='spawn_conditioned' if initializing else 'visible_boundary_continuity',
+        road_support_inferred_pixels=0,spawn_prior_used=False,occluded_obstacle_clearance_proved=False,
+        local_connected_road_hypothesis=True)
+    if len(candidates)<3 or (initializing and speed>3.):return support,info
+    y=np.array([r[0] for r in candidates],float);matrix=np.column_stack((y-IMAGE_ORIGIN_Y,np.ones(len(y))))
+    left=np.array([r[1] for r in candidates],float);right=np.array([r[2] for r in candidates],float)
+    lc=np.linalg.lstsq(matrix,left,rcond=None)[0];rc=np.linalg.lstsq(matrix,right,rcond=None)[0]
+    if max(np.max(abs(matrix@lc-left)),np.max(abs(matrix@rc-right)))>1.:return support,info
+    if abs(lc[0]-rc[0])*(max(y)-min(y))>2.:return support,info
+    slope=(lc[0]+rc[0])*.5
+    normal_width=(right-left)/1.3608/math.sqrt(1+(slope*1.701/1.3608)**2)
+    if np.max(abs(normal_width-nominal))>tolerance:return support,info
+    if initializing:
+        # Spawn centering/orientation is never assumed after the first action.
+        if abs((lc[1]+rc[1])*.5-IMAGE_ORIGIN_X)>1. or abs(slope*1.701/1.3608)>math.tan(.31):return support,info
+        info['spawn_prior_used']=True
+    for sy,l,r,a,b in candidates:
+        support[sy,a:b]=cover[sy,a:b]&(~asphalt[sy,a:b].astype(bool)).astype(np.uint8)
+    support[obstacle_mask]=0
+    info['road_support_inferred_pixels']=int(np.sum(support))
+    return support,info
+
+
 def transport_road_evidence(frames):
     """Carry only actual visible road; no registration means no old evidence."""
     unique=[]
@@ -266,6 +324,10 @@ class Agent:
             # Provenance is observed earlier pixels, never an inferred hole fill.
             transported=transported.copy();transported[obstacle_blocked]=0
             asphalt|=transported.astype(np.uint8)
+        inferred,support_info=infer_local_road_support(image,asphalt,obstacle_blocked,self.joint,
+            self.calls==0 and self.last_root is None,self.speed)
+        asphalt|=inferred
+        self.uncertainty.update(support_info)
         def observed_run(y,anchor):
             edges=np.diff(np.pad(asphalt[y,1:83],(1,1)).astype(np.int16));starts=np.flatnonzero(edges==1)+1;ends=np.flatnonzero(edges==-1)+1
             good=ends-starts>=3;starts=starts[good];ends=ends[good]
@@ -337,7 +399,7 @@ class Agent:
             q=np.minimum(q,2*core.REAR*np.maximum(0.,self.distance+arc-current))
             return dict(points=points.tolist(),arcs=arc.tolist(),ds=np.diff(arc).tolist(),length=float(arc[-1]),
                 launch_squared=q.tolist(),periodic_squared=q[:-1].tolist(),observed_open=True)
-        self.uncertainty.update(map='finite visible road runs; occluded support remains unknown',
+        self.uncertainty.update(map='finite visible boundaries + explicitly conditioned local road inference',
             observation_support_m=[float(arc[0]),float(arc[-1])],global_map_available=False,
             raster_edges_refined=refined,raster_edges_unresolved=unresolved,
             raster_curb_edges_refined=curb_refined,

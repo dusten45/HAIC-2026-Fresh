@@ -1,0 +1,90 @@
+{
+  "status": "SPAWN_BOOTSTRAP_AND_LIVE_INPUT_CONNECTION_WORKING_FORECAST_STOP",
+  "public_contract": {
+    "constructor": "Car is created at track[0] position and stored beta, before wrapper warmup.",
+    "road": "Tile half-width40/6 m and nominal generated step21/6 m. Per-generation turn update capped0.31; this is not a universal closing-seam or topology guarantee.",
+    "warmup": "Wrapper performs50 no-op steps and tiles the final image4 times. Collisions/termination may affect pose, so exact constructor pose is not assumed after warmup.",
+    "obstacles": "Centers exclude first10% and last5% of track indices, not a Euclidean ball. No spatial absence or hidden-obstacle clearance is inferred.",
+    "sources": [
+      "core/vendor/car_racing.py",
+      "core/track_variables.py",
+      "env_wrapper.py"
+    ]
+  },
+  "implementation": {
+    "initial_only": "Low observed speed, visible paired flanks, nominal spawn centering/orientation and public road width condition local support.",
+    "after_initial": "No spawn position/direction prior. Only paired visible boundary continuity, observed normal width and actual temporal evidence support the local connected-road hypothesis.",
+    "rejected_support": "No bridging across non-vehicle visible grass gaps, missing flanks, abrupt/over-wide geometry or observed obstacles. Clear rows outside a bad band can remain supported.",
+    "collision_separate": true,
+    "hidden_obstacle_clearance_proved": false,
+    "original_chooser_physics_horizon_gates_unchanged": true,
+    "inset_m": 0.35,
+    "true_state_certificate": false
+  },
+  "public_checks": {
+    "status": "PASS",
+    "cases": 8,
+    "outside_true_road_pixels": 0,
+    "in_forbidden_or_obstacle_pixels": 0,
+    "tilted_drive_without_spawn_prior": true,
+    "scope": "Finite practical conditioning tests, not a universal uncertainty bound."
+  },
+  "initial_cached": {
+    "status": "ACTION_RETURNED",
+    "unique_frames": 1,
+    "transported_pixels": 0,
+    "inferred_support_pixels": 44,
+    "whole_act_s": 0.9250618609949015,
+    "model_ticks": 820,
+    "native_actions": 0
+  },
+  "live_episode": {
+    "applied_actions": 38,
+    "failure_decision": 39,
+    "progress": 0.1166077738515901,
+    "damage": 0.0,
+    "finish_event": false,
+    "finish_time_s": null,
+    "original13_22s_reproduced": false,
+    "rejections": {
+      "FORCE_PEAK": 7,
+      "FORECAST_FOOTPRINT_MARGIN": 14
+    },
+    "max_whole_act_s": 2.1410507439868525,
+    "max_RSS_KiB": 62724,
+    "initial_action_identical_to_cache": true,
+    "spawn_prior_only_first_call": true,
+    "failure_support_mode": "visible_boundary_continuity",
+    "failure_inferred_pixels": 38,
+    "failure_transported_pixels": 6,
+    "complete_pre_act_observation_memory_external_state_and_forecasts_saved_private": true
+  },
+  "cost": {
+    "caps": {
+      "DEV_actions": 150,
+      "model_ticks": 100000,
+      "CPU_s": 1200,
+      "wall_s": 2700
+    },
+    "new_DEV_actions": 38,
+    "cached_model_ticks": 820,
+    "native_model_ticks": 27203,
+    "new_model_ticks": 28023,
+    "measured_component_CPU_s": 52.279396955,
+    "additional_setup_CPU_reservation_s": 60,
+    "stage_wall_s_at_closeout": 895.019002,
+    "research_actions_remaining": 20488,
+    "research_ledger_actions": 1723,
+    "integration_actions_total": 257,
+    "integration_model_ticks_total": 189222,
+    "reserve_used": 0,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0
+  },
+  "privacy": "Only code and aggregates are committed. No seed, true map or external state enters Agent; raw checkpoints remain private.",
+  "source_sha256": {
+    "submit_core/observation_agent.py": "28f3592c63e8e8ca8320d68d39ad859aa65e412d82b19bac57fc383267150cd2",
+    "submit_core/runtime598.py": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8"
+  },
+  "remaining_blocker": "Initialization is no longer the blocker. The original estimated-input forecast still finds no admissible candidate near the first bend. Stopped at that first failure; no gate change, retry, or further rollout."
+}
