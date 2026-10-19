@@ -1,0 +1,51 @@
+{
+  "study": 596,
+  "status": "READ_ONLY_AUDIT_PASS",
+  "checks": {
+    "chain_valid": true,
+    "pins_inputs": true,
+    "code_runtime_pins": true,
+    "private_artifacts_pinned": true,
+    "tests_before_source": true,
+    "original537_summary_exact": true,
+    "all_trial_summaries_stored_exact": true,
+    "full_attempt_completion_accounting": true,
+    "both_force_oracles_accounted": true,
+    "journal_primitive_counts": true,
+    "all_geometry_including_internal_nominal": true,
+    "original537_cost_matches": true,
+    "applied_safety_or_recorded_terminal_failure": true,
+    "fresh_FINAL_first4_exact": true,
+    "applied_split_telemetry": true,
+    "actual_histories_preserved": true,
+    "declared_local_scope_and_first_stop": true,
+    "no_extra_applied_raw": true,
+    "caps": true,
+    "native_holdout_sealed_zero": true,
+    "ledger_reserve_preserved": true,
+    "no_unearned_promotion": true,
+    "aggregate_time_caps": true
+  },
+  "geometry_expected": 9551,
+  "events": 16585,
+  "source_ticks": 0,
+  "force_calls": 0,
+  "geometry_queries": 0,
+  "native_calls": 0,
+  "input_sha256": {
+    "result": "6435f703c35c513f280e12058285f5f34c62352f4b7c75e036b8575eb89534ef",
+    "contract": "b30832d4964faf9b70b7d9bf6e3143074eb6f11dbba37e0f0f931b50f2b1613e",
+    "audit_code": "287f3e3c6098370653894ec6699cd028b95aaed0ffd10b7823d9d5c04ac9bd98"
+  },
+  "CPU_s": 1.230461719,
+  "wall_s": 1.2305404259968782,
+  "auxiliary_CPU_wall_charge_s": 2.0,
+  "aggregate_time": {
+    "source_CPU_s": 39.774887722,
+    "source_wall_s": 44.88089601301181,
+    "preparation_audit_CPU_s": 16.246868544999995,
+    "preparation_audit_wall_s": 15.450112987979082,
+    "total_CPU_s": 56.021756266999994,
+    "total_wall_s": 60.33100900099089
+  }
+}
