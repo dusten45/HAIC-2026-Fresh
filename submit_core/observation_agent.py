@@ -14,6 +14,28 @@ import runtime598 as core
 IMAGE_ORIGIN_X=(500.+.5)*84./1000.-.5
 IMAGE_ORIGIN_Y=(799.-200.+.5)*84./800.-.5
 
+
+def recover_pixel_edge(image,y,index,direction,blocked):
+    """Invert a fully visible, monotone two-colour raster edge by area.
+
+    Flat-step area gives a location estimate; resizing still has phase error.
+    Plateau and monotonicity checks reject mixed materials, occlusion and
+    clipped support. This is not a verified uncertainty bound.
+    """
+    ids=index+direction*np.arange(-3,5)
+    if y>=55 or min(ids)<0 or max(ids)>=84 or np.any(blocked[y,ids]):return None
+    values=image[y,ids].astype(np.float64)
+    quantum=1./255.
+    if np.ptp(values[:2])>2*quantum or np.ptp(values[-2:])>2*quantum:return None
+    outside=float(np.mean(values[:2]));inside=float(np.mean(values[-2:]))
+    if not .36<inside<.47 or abs(inside-outside)<24*quantum:return None
+    fraction=(values-outside)/(inside-outside)
+    tolerance=quantum/abs(inside-outside)
+    if min(fraction)<-tolerance or max(fraction)>1+tolerance or min(np.diff(fraction))<-tolerance:return None
+    edge=4.5-float(np.sum(np.clip(fraction,0.,1.)))
+    if not -2.5<=edge<=2.5:return None
+    return float(index+direction*edge)
+
 class _TickCounter(list):
     def __init__(self):super().__init__([0]);self.limit=50000
     def __setitem__(self,index,value):
@@ -108,39 +130,58 @@ class Agent:
         asphalt=((image>.36)&(image<.47)).astype(np.uint8)
         bright=((image>164/255.)&(image<176/255.)).astype(np.uint8);bright[69:]=0
         count,labels,stats,centers=cv2.connectedComponentsWithStats(bright)
-        obstacles=[]
+        obstacles=[];blocked=np.zeros((84,84),bool)
+        blocked[55:70,34:51]=True
         for i in range(1,count):
             x,y,w,h,area=stats[i];cx,cy=centers[i];ix,iy=int(round(cx)),int(round(cy))
             patch=asphalt[max(0,iy-4):min(69,iy+5),max(0,ix-4):min(84,ix+5)]
             if 3<=area<=30 and min(w,h)>=2 and max(w,h)<=3*min(w,h) and patch.size and np.mean(patch)>.42:
                 obstacles.append((((cx-IMAGE_ORIGIN_X)/1.3608,(IMAGE_ORIGIN_Y-cy)/1.701),1.6))
-                asphalt[labels==i]=1
-        rows=[];anchor=IMAGE_ORIGIN_X
-        for y in range(69,4,-2):
+                blocked[max(0,y-2):min(84,y+h+2),max(0,x-2):min(84,x+w+2)]=True
+        # Never fill opaque pixels. The wider blocked window is only a veto on
+        # subpixel recovery, not a reason to erase directly visible asphalt.
+        def observed_run(y,anchor):
             edges=np.diff(np.pad(asphalt[y,1:83],(1,1)).astype(np.int16));starts=np.flatnonzero(edges==1)+1;ends=np.flatnonzero(edges==-1)+1
             good=ends-starts>=3;starts=starts[good];ends=ends[good]
-            if not len(starts):
-                if len(rows)<3:continue
-                break
-            # Bridge the known vehicle occlusion between visible flanking road
-            # runs. This is an interpolation assumption, not seen hidden asphalt.
-            if 55<=y<=69:
-                near=(starts<50)&(ends>34)
-                if np.sum(near)>1:
-                    starts=np.asarray([starts[near].min()]);ends=np.asarray([ends[near].max()])
+            if not len(starts):return None
             center=(starts+ends-1)*.5
             outside=np.maximum(starts-anchor,0)+np.maximum(anchor-ends,0)
             j=int(np.argmin(3*outside+.1*np.abs(center-anchor)))
-            if outside[j]>8:
+            if outside[j]>8:return None
+            return int(starts[j]),int(ends[j])
+        rows=[];pixels=[];anchor=IMAGE_ORIGIN_X
+        for y in range(69,4,-2):
+            run=observed_run(y,anchor)
+            if run is None:
                 if len(rows)<3:continue
                 break
-            left=(float(starts[j])-IMAGE_ORIGIN_X)/1.3608+.35
-            right=(float(ends[j]-1)-IMAGE_ORIGIN_X)/1.3608-.35
+            start,end=run
+            left=(float(start)-IMAGE_ORIGIN_X)/1.3608+.35
+            right=(float(end-1)-IMAGE_ORIGIN_X)/1.3608-.35
             if right-left<2.5:break
-            anchor=float(center[j]);rows.append((left,right,(IMAGE_ORIGIN_Y-y)/1.701))
+            anchor=(start+end-1)*.5;rows.append((left,right,(IMAGE_ORIGIN_Y-y)/1.701));pixels.append((y,start,end))
         if len(rows)<8:raise RuntimeError('OBSERVED_ROAD_SUPPORT_INSUFFICIENT')
-        left=[(a,y) for a,b,y in rows];right=[(b,y) for a,b,y in rows]
-        roads=[((left[i],right[i],right[i+1],left[i+1]),self.grip_prior) for i in range(len(rows)-1)]
+        # Keep the reference samples unchanged. Geometry uses each actually
+        # observed intermediate row, not an assumed diagonal across a missing row.
+        dense=[];refined=unresolved=0
+        for k,(y,start,end) in enumerate(pixels):
+            samples=[(y,start,end)]
+            if k+1<len(pixels):
+                ny,ns,ne=pixels[k+1]
+                if y-ny!=2:raise RuntimeError('OBSERVED_ROAD_ROW_GAP')
+                mid=observed_run(y-1,(start+end+ns+ne-2)*.25)
+                if mid is None or max(start,ns,mid[0])>=min(end,ne,mid[1]):
+                    raise RuntimeError('OBSERVED_ROAD_MIDROW_UNSUPPORTED')
+                samples.append((y-1,*mid))
+            for sy,ss,se in samples:
+                a=recover_pixel_edge(image,sy,ss,1,blocked) if se-ss>=8 else None
+                b=recover_pixel_edge(image,sy,se-1,-1,blocked) if se-ss>=8 else None
+                refined+=int(a is not None)+int(b is not None)
+                unresolved+=int(a is None)+int(b is None)
+                a=float(ss) if a is None else a;b=float(se-1) if b is None else b
+                dense.append(((a-IMAGE_ORIGIN_X)/1.3608+.35,(b-IMAGE_ORIGIN_X)/1.3608-.35,(IMAGE_ORIGIN_Y-sy)/1.701))
+        left=[(a,y) for a,b,y in dense];right=[(b,y) for a,b,y in dense]
+        roads=[((left[i],right[i],right[i+1],left[i+1]),self.grip_prior) for i in range(len(dense)-1)]
         boundary=list(zip(left,left[1:]))+list(zip(right,right[1:]))+[(left[0],right[0]),(left[-1],right[-1])]
         points=np.asarray([((a+b)*.5,y) for a,b,y in rows],np.float64)
         points[:,0]=cv2.GaussianBlur(points[:,0].reshape(1,-1),(5,1),1.).ravel()
@@ -161,8 +202,10 @@ class Agent:
             q=np.minimum(q,2*core.REAR*np.maximum(0.,self.distance+arc-current))
             return dict(points=points.tolist(),arcs=arc.tolist(),ds=np.diff(arc).tolist(),length=float(arc[-1]),
                 launch_squared=q.tolist(),periodic_squared=q[:-1].tolist(),observed_open=True)
-        self.uncertainty.update(map='finite observed corridor + explicit vehicle occlusion interpolation',
+        self.uncertainty.update(map='finite visible road runs; occluded support remains unknown',
             observation_support_m=[float(arc[0]),float(arc[-1])],global_map_available=False,
+            raster_edges_refined=refined,raster_edges_unresolved=unresolved,
+            subpixel_bound_universally_validated=False,obstacle_pixels_filled=False,
             obstacles='visible grayscale detections with0.4m radius inflation; unseen obstacles unknown')
         return core.Scene(roads,boundary,obstacles),reference(153.,90.),reference(100.,80.),current
 

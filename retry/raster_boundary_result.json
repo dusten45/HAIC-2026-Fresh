@@ -1,0 +1,147 @@
+{
+  "status": "SUBPIXEL_AND_MESH_IMPROVED_CACHED_OCCLUSION_SUPPORT_BLOCK",
+  "implementation": [
+    "Recover subpixel edge position from monotone, stable two-colour raster profiles; reject mixed, blocked and clipped support. No true-map fitted offset.",
+    "Use every observed intermediate row for road mesh with overlap checks; keep original coarse reference sampling for this change.",
+    "Keep0.35m inset and original force/footprint gates. Remove obstacle asphalt filling and vehicle-flank bridging; opaque road support remains unknown."
+  ],
+  "decomposition": {
+    "row_mesh_error": {
+      "min_m": -0.16966987363798647,
+      "max_m": -0.07691199003688154,
+      "mean_m": -0.12634535834992705
+    },
+    "resampling_and_pixel_center_error": {
+      "min_m": -0.11373926764937892,
+      "max_m": 0.07909410457465915,
+      "mean_m": -0.018131354607345745
+    },
+    "color_classification_error": {
+      "min_m": 0.458482467692257,
+      "max_m": 0.9499660095069872,
+      "mean_m": 0.7389786432463732
+    },
+    "inset_effect": {
+      "min_m": 0.10464418718643598,
+      "max_m": 0.3407660503024112,
+      "mean_m": 0.21821475010342123
+    }
+  },
+  "decomposition_scope": "Signed telescoping contribution on16 fixed former-failure polygons, order-specific. Negative terms indicate locally optimistic approximation. Binary0.5 threshold and no-inset ablations exist only in external evaluation.",
+  "public_renderer_tests": {
+    "status": "PASS",
+    "scenes": 8,
+    "edges": 48,
+    "refined_edges": 41,
+    "old_MAE_px": 0.6875,
+    "new_MAE_px": 0.16500404901145163,
+    "max_outward_after_existing_inset_m": 0.0,
+    "occluded_or_clipped_not_refined": true,
+    "CPU_s": 0.038809681999999984,
+    "wall_s": 0.03884085500612855,
+    "native_actions": 0,
+    "model_ticks": 0,
+    "scope": "Finite deterministic raster tests, not a validated universal uncertainty bound."
+  },
+  "public_mesh_tests": {
+    "status": "PASS",
+    "records": [
+      {
+        "scene": 0,
+        "status": "PASS",
+        "mesh_samples": 1600,
+        "outside_true_road": 0,
+        "road_cells": 64
+      },
+      {
+        "scene": 1,
+        "status": "PASS",
+        "mesh_samples": 1600,
+        "outside_true_road": 0,
+        "road_cells": 64
+      },
+      {
+        "scene": 2,
+        "status": "PASS",
+        "mesh_samples": 1200,
+        "outside_true_road": 0,
+        "road_cells": 48
+      },
+      {
+        "scene": 3,
+        "status": "PASS",
+        "mesh_samples": 1300,
+        "outside_true_road": 0,
+        "road_cells": 52
+      }
+    ],
+    "CPU_s": 0.089531925,
+    "wall_s": 0.08565733901923522,
+    "native_actions": 0,
+    "model_ticks": 0,
+    "scope": "Finite synthetic risk checks only; no universal safety bound."
+  },
+  "actual_cached_visible_boundary": {
+    "eligible_refinements": 33,
+    "unresolved": 65,
+    "old_reference_paths_unchanged_before_occlusion_fill_removal": true,
+    "mixed_curbs_not_refined": true,
+    "old_critical_polygon_subpixel_effect_m": {
+      "min_m": 0.0,
+      "max_m": 0.0,
+      "mean_m": 0.0
+    },
+    "old_critical_polygon_mesh_effect_m": {
+      "min_m": 0.0,
+      "max_m": 0.0,
+      "mean_m": 0.0
+    },
+    "pre_no_fill_gate_still_rejected": true
+  },
+  "final_cached": {
+    "native_actions": 0,
+    "model_ticks": 0,
+    "error": "RuntimeError:NO_ESTIMATED_INPUT_ADMISSIBLE_ACTION",
+    "rejections": {
+      "CURRENT_FOOTPRINT_MARGIN": 21
+    },
+    "estimated_current_footprint_margin_m": -0.7154241302645458,
+    "act_wall_s": 0.011304515996016562,
+    "entire_checkpoint_and_current_package_saved_private": true,
+    "existing_memory_not_normalized": true
+  },
+  "blockers": [
+    "Mixed curb/grass/asphalt at the important inner boundary violates the two-colour inversion conditions. No inferred outward correction was applied there.",
+    "Without the former vehicle-occlusion fill, the current footprint contains unknown road support. Original margin gate rejects it; this is unknown support, not measured physical off-road.",
+    "Finite public tests do not validate a universal uncertainty bound or safety certificate."
+  ],
+  "reset_run": "Not started: cached admission prerequisite failed. No new native collection.",
+  "cost": {
+    "caps": {
+      "DEV_actions": 150,
+      "model_ticks": 100000,
+      "CPU_s": 1200,
+      "wall_s": 2700
+    },
+    "new_DEV_actions": 0,
+    "new_model_ticks": 890,
+    "measured_component_CPU_s": 1.6444240179999996,
+    "additional_setup_CPU_reservation_s": 120,
+    "stage_wall_s_at_closeout": 800.913355,
+    "research_actions_remaining": 20526,
+    "prior_combined_DEV_actions": 219,
+    "prior_combined_model_ticks": 160309,
+    "combined_DEV_actions": 219,
+    "combined_model_ticks": 161199,
+    "reserve_used": 0,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0
+  },
+  "recovery_notes": "First mesh integration accidentally used coarse cell count; retained288-tick failing record and corrected range to dense rows. A temporary wide mask erased visible asphalt; removed it. All attempted calculations are counted.",
+  "privacy": "True geometry used only by external error evaluation; raw observations/states/full maps/checkpoints never enter public repository or Agent input.",
+  "source_sha256": {
+    "submit_core/observation_agent.py": "7c184f7494652c1993cb86612398706e2d1d1bd898aeb220990d3762ac09b610",
+    "submit_core/runtime598.py": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8"
+  },
+  "next": "Stopped at cached current-support failure. A validated way to carry actually observed road through vehicle occlusion and handle mixed paint would be needed before reset testing; no gate relaxation or unseen fill."
+}
