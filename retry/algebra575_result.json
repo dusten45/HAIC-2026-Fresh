@@ -1,0 +1,103 @@
+{
+  "completed": true,
+  "source_ticks": 0,
+  "force_evaluations": 0,
+  "new_FD": 0,
+  "new_calibrations": 0,
+  "candidates_executed": 0,
+  "actual_actions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "paid_compute": 0,
+  "implementation_corrections": 1,
+  "unit_tests_passed": 6,
+  "unit_tests_failed": 0,
+  "unit_tests_real_LP_calls": 0,
+  "tests_included_in_preflight_charge_s": 5,
+  "exact_seed_passes_both_original_branches": true,
+  "new_rounded_candidate_count": 0,
+  "new_predicted_gain": null,
+  "seed_predicted_gain_s": 0.0,
+  "official_incumbent_raw": 660,
+  "official_incumbent_s": 13.2,
+  "seed_hull_s": 13.19360251036074,
+  "tail_old_constant_contradiction_count": 489,
+  "tail_old_one_row_certificate": {
+    "row": 21202,
+    "exact_fixed_LHS": 0.0,
+    "tightened_RHS": -4.4408920985010206e-15,
+    "original_RHS": 0.0,
+    "rounding_margin": 0.0,
+    "numerical_margin": 4.4408920985010206e-15,
+    "verified_contradiction": true
+  },
+  "expanded_negative_constant_rows": 0,
+  "zero_direction_excluded_by_inward_control_bounds": 40,
+  "inward_empty": false,
+  "expanded_single_physical_row_relaxations": [
+    {
+      "row": 2426,
+      "causal_group": 67,
+      "causal_controls": 136,
+      "minimum_LHS": 0.00010897794330886029,
+      "original_RHS": 0.000658891084794222,
+      "minimizing_aux": 1.986821551813734e-06,
+      "strict_gap": -0.0005499131414853617,
+      "conservative_arithmetic_allowance": 1.4425773123953408e-12,
+      "verified_contradiction": false,
+      "breakpoint_count": 100
+    },
+    {
+      "row": 2893,
+      "causal_group": 80,
+      "causal_controls": 162,
+      "minimum_LHS": 0.0020258410669030916,
+      "original_RHS": 0.0001151640120615749,
+      "minimizing_aux": 1.986821551813734e-06,
+      "strict_gap": 0.0019106770548415167,
+      "conservative_arithmetic_allowance": 3.0821337313429817e-11,
+      "verified_contradiction": true,
+      "breakpoint_count": 122
+    }
+  ],
+  "old_sources_unchanged": true,
+  "source_sha256": {
+    "retry/algebra575_diagnose.py": "ac4833d07cb6b633fa6155e457b5bae01ae4127da19f5dfbf974c6fbf3231c34",
+    "retry/algebra575_isolate.py": "83f325608dfe51fb2dde83fb39f705f852df947b1aba9c1312e9844767e1cbb7",
+    "retry/algebra575_recheck.py": "f1a4e8ccfe0323014820022e7ddb2cfed095306815ee28a2e06150bb6324768f",
+    "retry/algebra575_summary.py": "b5cf3e5b97d1c88fd93ee423598074350747a1f47ac0ab57b277b7c5148b0efc",
+    "retry/causal575_rounding.py": "3d29df2ddb768405d9a8e4dee513bc49aba39ad7b71d1877747f421f0640b2a1",
+    "tests/test_algebra575.py": "0f36a56f27c87750e6695586421989f77c4adfc55a9a515d4d848729777c5eac"
+  },
+  "saved_input_hashes_unchanged": true,
+  "solve_count": 18,
+  "corrected_branches": {
+    "tail": {
+      "status": 2,
+      "seed_pass": true,
+      "negative_constant_rows": 0,
+      "certificate_rows": 29,
+      "certificate_gap": 2.0848966485327824e-07,
+      "certificate_error": 1.1545403036311714e-13,
+      "certificate_verified": true
+    },
+    "expanded": {
+      "status": 2,
+      "seed_pass": true,
+      "negative_constant_rows": 0,
+      "certificate_rows": 116,
+      "certificate_gap": 2.5203433840828937e-08,
+      "certificate_error": 1.6169159721949957e-13,
+      "certificate_verified": true
+    }
+  },
+  "all_certificates_verified": true,
+  "private_model_sha256": "6faf354a0fdd818509fd985d17115b4581388c58b45836731eb20081f7994e10",
+  "contract_sha256": "386d896b8f943192f2021748ddbe1e92dfed2ae80b60bd08a12800f7b693e48b",
+  "test_command": "OPENBLAS_NUM_THREADS=1 ./.venv/bin/python -m unittest tests.test_algebra575",
+  "test_runner_wall_s": 0.002,
+  "source_hashes_verified_at_close": true
+}

@@ -1,0 +1,141 @@
+{
+  "reconstruction": {
+    "exact_summary_reconstructed": true,
+    "rows": 23965,
+    "columns": 396,
+    "inputs": {
+      "/workspace/haic-response574-private/initial-center-private.json": "286c4a90deb4aedced8b27ca54364432c5fd5885a1ebaf19bfab50c064d4710d",
+      "/workspace/haic-response574-private/linear-1-private.npz": "06b2607338c269415c66ad98de9f560faff64c6a0e2a935df499d869f2813762",
+      "/workspace/haic-response574-private/envelope-1-private.json": "68db7b6aec3fa0617a7d03becbbb82139472eddddc986e05e062283f3912d9a6",
+      "/workspace/haic-response574-private/cal-1-0-private.json": "b98aacd6fa40ee4cb4b8ad3ae90857d223d02245b23c5d1c1d57dd15bb57f708",
+      "/workspace/haic-response574-private/cal-1-1-private.json": "dead6376653009baece29bedaf0f93912afa5a4cdfb772df06f6a1c986ba3f27",
+      "/workspace/haic-response574-private/center-1-conditional-matrix-summary-private.json": "9d5a5d0518eb1964b633a54a0212d94ec99363e7d43c8ca92f675a13651260d3"
+    }
+  },
+  "branches": {
+    "tail": {
+      "seed": {
+        "pass_all": true,
+        "linear_violation": 0.0,
+        "bound_violation": 0.0,
+        "path_violation": 0.0,
+        "exact_ratio_branch_upper_pass": true,
+        "predicted_gain_s": -0.0,
+        "normalized_step": 0.0,
+        "worst_row": 21202,
+        "maximum_residual": 0.0
+      },
+      "zero_direction_max_original": -0.0,
+      "zero_direction_max_tube": 2.483526998453513e-06,
+      "constant_rows": 17901,
+      "negative_constant_rows": [
+        {
+          "row": 21202,
+          "violation": 4.4408920985010206e-15,
+          "original_rhs": 0.0,
+          "rounding": 0.0,
+          "numerical": 4.4408920985010206e-15
+        }
+      ],
+      "single_row_box_contradictions": [],
+      "norm_start": 21202,
+      "inward_empty": false,
+      "rounding_max": 2.4835269895717286e-06,
+      "negative_constant_row_count": 489
+    },
+    "expanded": {
+      "seed": {
+        "pass_all": true,
+        "linear_violation": 0.0,
+        "bound_violation": 0.0,
+        "path_violation": 0.0,
+        "exact_ratio_branch_upper_pass": true,
+        "predicted_gain_s": -0.0,
+        "normalized_step": 0.0,
+        "worst_row": 21202,
+        "maximum_residual": 0.0
+      },
+      "zero_direction_max_original": -0.0,
+      "zero_direction_max_tube": 4.9670539000753016e-06,
+      "constant_rows": 2,
+      "negative_constant_rows": [],
+      "single_row_box_contradictions": [],
+      "norm_start": 21202,
+      "inward_empty": false,
+      "rounding_max": 4.967053891193517e-06,
+      "negative_constant_row_count": 0
+    }
+  },
+  "solves": [
+    {
+      "label": "tail-original-tube",
+      "status": 2,
+      "success": false,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is At lower/fixed bound)",
+      "CPU_s": 0.32470589400000005,
+      "wall_s": 0.3089737270056503
+    },
+    {
+      "label": "tail-original-algebra",
+      "status": 0,
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "CPU_s": 0.42945026299999967,
+      "wall_s": 0.4294380990031641,
+      "objective": 0.0,
+      "max_residual": 2.7755575615628914e-17
+    },
+    {
+      "label": "tail-no-numerical",
+      "status": 2,
+      "success": false,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is At lower/fixed bound)",
+      "CPU_s": 0.29997149599999995,
+      "wall_s": 0.30049974098801613
+    },
+    {
+      "label": "tail-no-rounding",
+      "status": 0,
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "CPU_s": 0.3759701569999998,
+      "wall_s": 0.37721019399759825,
+      "objective": 0.0,
+      "max_residual": 8.8817842499416e-15
+    },
+    {
+      "label": "expanded-original-tube",
+      "status": 2,
+      "success": false,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is At lower/fixed bound)",
+      "CPU_s": 0.8663506559999998,
+      "wall_s": 0.8694017929956317
+    },
+    {
+      "label": "expanded-original-algebra",
+      "status": 0,
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "CPU_s": 0.8374289800000003,
+      "wall_s": 0.8377463499928126,
+      "objective": 0.0,
+      "max_residual": 6.071532165918825e-18
+    },
+    {
+      "label": "expanded-no-numerical",
+      "status": 2,
+      "success": false,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is At lower/fixed bound)",
+      "CPU_s": 0.6359736909999993,
+      "wall_s": 0.6355316900007892
+    },
+    {
+      "label": "expanded-no-rounding",
+      "status": 2,
+      "success": false,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is At lower/fixed bound)",
+      "CPU_s": 0.6313308200000005,
+      "wall_s": 0.6294537289941218
+    }
+  ]
+}

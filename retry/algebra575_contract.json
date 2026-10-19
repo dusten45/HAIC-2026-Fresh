@@ -1,0 +1,19 @@
+{
+  "study": 575,
+  "registered_utc": "2026-10-19T03:17:00Z",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "scope": "Reconstruct frozen574 algebra from saved264 FD,2calibration tapes,and seed. No simulator integration,force evaluation,new FD,calibration,candidate execution,or protected evaluation.",
+  "limits": {"LP_solves": 24, "CPU_s": 240, "wall_s": 360, "LP_wall_s_each": 10, "implementation_corrections": 1, "corrected_candidate_cut_solves": 8},
+  "plan": ["Reproduce both original tube branches and exact-seed/zero-direction algebra", "Inspect fixed/causal uncertainty,constant rows,inward box,rank/scaling/margin interactions", "Use bounded LP ablations and at most a small independently checked contradiction/Farkas witness", "One evidence-based rounding implementation correction only,if justified;retest same saved model and all original rounded rows/capsule/counts without source"],
+  "preserved": {"original_row_tolerance": 1e-8, "exact_clip_ratio": 1, "physical_policy_thresholds_unchanged": true, "old574_sources_immutable": true, "seed_separate_disjunct": true},
+  "stop": "Caps,domain/integrity error,or completion of one correction and bounded recheck. No repair chain or automatic source transition. Keep573 incumbent.",
+  "source_ticks": 0,
+  "actual_actions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "paid_compute": 0,
+  "preflight_test_charge_CPU_wall_s": 5
+}
