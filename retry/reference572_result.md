@@ -14,7 +14,16 @@
 
 기존 contract의 68변수, 최대4중심/272 FD/8보정/10제안/10 strict완주/3복원/4수락, 중심당3시도, primitive64회, LP cut8회, float32 보정4회를 유지했다. steer .003/pedal .03 척도, 중심 반경 .05→등록된 .025 및 누적변위 .20, signed primitive와 관측 오차의 L*t, 원래551 reference 및 모든 정확 안전 한계도 유지했다. 새 실험·상한 확대·완화·추가 buffer sweep은 없다.
 
-실제는 **4중심, FD272열, 보정8회, source 제안3개/strict완주3개/안전수락3개, 오류복원0회, primitive54회**다. 마지막 LP는 seed 포함과 유한 계수 검사를 통과했으나 등록된 네 float32 보정 모두 모델 제약을 통과하지 못했다. 해당 점은 source로 평가하지 않았다. 종료 코드 `NO_FLOAT32_MODEL_FEASIBLE_STEP`는 이 네 보정의 실패를 뜻하며, 모든 float32 점의 불가능성이나 수렴 증명이 아니다. 보정별 실패 잔차는 원래 코드에 저장되지 않아 어느 행 때문이라고 확정하지 않는다.
+실제는 **4중심, FD272열, 보정8회, source 제안3개/strict완주3개/안전수락3개, 오류복원0회, primitive54회**다. 마지막 LP는 seed 포함과 유한 계수 검사를 통과했으나 등록된 네 float32 보정 모두 모델 제약을 통과하지 못했다. 해당 점은 source로 평가하지 않았다. 종료 코드 `NO_FLOAT32_MODEL_FEASIBLE_STEP`는 이 네 보정의 실패를 뜻하며, 모든 float32 점의 불가능성이나 수렴 증명이 아니다. 보정별 잔차는 원래 실행에 저장되지 않았다. 이후 저장 모델만 재구성해 동일 precheck와 종료 코드를 재현했으며, 아래 값은 원래 직접 로그가 아닌 **재구성 LP의 잔차**다. source/native 실행은0이다.
+
+| 보정 α | 실패 모델 제약 | 양의 잔차 (허용1e-8) |
+|---|---|---:|
+| 1 | raw638 wheel2 force; trust bound | 1.588731774e-7 ratio; 최대8.463859558e-7 정규화 단위 |
+| 1−2⁻¹² | raw632 road polygon7 / edge553 / vertex34 | 2.833217727e-6 m |
+| 1−2⁻¹⁰ | raw577 road polygon6 / edge250 / vertex31 | 3.558191523e-7 m |
+| 1−2⁻⁸ | raw632 road polygon7 / edge553 / vertex34 | 1.209332238e-7 m |
+
+네 보정의 capsule path 위반은0이고 마지막 게이트는 reference 위반으로 실패하지 않았다. 이는 source에서 실제 위반이 발생했다는 뜻이 아니라 오차 envelope를 포함한 모델 행의 실패다. 재구성 CPU0.544667초이며, `reference572_float32_diagnose.py/json`에 코드·입력 해시와 집계를 남겼다. 실험·양자화 보정·제약 한계는 변경하지 않았다.
 
 최근3수락 개선 합계는 2.729600ms다. 등록한 합계0.10ms 미만 및 마지막2회 각각0.05ms 미만 조건은 **미충족**이다. 세 번째 개선이 작아졌다는 관측과 의미 있는 정체 판정, 수락 수 상한을 구분한다.
 
@@ -28,7 +37,7 @@
 
 시작점의 reference overspeed 최고는 raw532/535/539, hold133..135에 있었다. raw532의4.849999403은4.85와 매우 가까웠다. 기존 저장 FD는 마지막 안전점보다 한 중심 이전이므로 사전 진단에만 쓰고 현재 중심의 정확한 FD로 재사용하지 않았다. 현재 중심의 새 FD에서도 미래 제어의 인과 미분은0이었다. reference profile은 해당 구간에서 평평하며, 초기 pedal133..135가 주요 여유 민감도다. 첫 현재 중심의 정규화 L2 시간 감소 방향은 세 reference 여유를 각각 약 .002219/.003920/.006174 늘렸다. 가까운 제약 하나만으로 모든 시간 감소 방향이 막혔다고 볼 수 없다. 최종 reference 여유도 시작보다 커졌다. **4.85는 고정 설계 조건이며 물리적 최적 하한이 아니다.**
 
-첫 국소 LP의 활성 조건에는 reference raw532/535/539 외에 force raw642와 road signed support raw577/633도 있었다. RHS 조건부 민감도는 force642 −0.201970초/ratio, reference539 −0.000831439초/(m/s), support633 −0.00989847초/m, support577 −0.00750822초/m였다. 다음 중심에서는 활성 force가638/585로 바뀌었다. 서로 단위가 달라 값 크기로 직접 순위를 매기지 않는다. 이 값은 고정 Jacobian·rank·support·오차 envelope·trust 범위의 반올림 전 LP에 한정된다. 전체 source 반응·전역 최적·물리 하한·한계 변경 허가가 아니다. 다른 제약을 뺀 사전 reference-only LP도 source 후보나 실행 가능한 개선 약속으로 채택하지 않았다.
+첫 국소 LP의 활성 조건에는 reference raw532/535/539 외에 force raw642와 road signed support raw577/632도 있었다. RHS 조건부 민감도는 force642 −0.201970초/ratio, reference539 −0.000831439초/(m/s), support632 −0.00989847초/m, support577 −0.00750822초/m였다. 다음 중심에서는 활성 force가638/585로 바뀌었다. 서로 단위가 달라 값 크기로 직접 순위를 매기지 않는다. 이 값은 고정 Jacobian·rank·support·오차 envelope·trust 범위의 반올림 전 LP에 한정된다. 전체 source 반응·전역 최적·물리 하한·한계 변경 허가가 아니다. 다른 제약을 뺀 사전 reference-only LP도 source 후보나 실행 가능한 개선 약속으로 채택하지 않았다.
 
 ## 최종 전체 source 안전 여유
 
@@ -54,6 +63,6 @@ signed support는 해당 polygon/component의 국소 조건이며 모든 도로 
 - 예산 관리에는 과거 전체500초, 과거 독립 검증25초를 보수적으로 차감했다. 이에 따른 합계는 CPU **1098.383586/1400초**, wall **1147.678332/1850초**이며 모든 bucket 차감값도 원래 상한 이하다. 이 차감값은 복구된 실측치나 엄밀한 과거 CPU 상한 인증이 아니다. 과거 검증 로그의 마지막 기록은 오류 기록13.923초 후였으나, 종료 후 rusage를 복구할 수 없어 과거 CPU cap의 엄밀한 인증은 남은 한계다.
 - 사전 읽기 전용 진단 CPU2.502392초, 최종 통합 감사 CPU12.660737초는 별도 기록했다. 감사에서 시뮬레이터는 실행하지 않았다.
 - 실제 행동·Native reset/world·새 seed·HOLDOUT·SEALED·별도 유료 계산0. 연구22,758 / 예비84,000 및 예비 사용0을 유지했다. `main`은 dfb7a2de2178825ca5c5ce20bab01ba67052ba31이다. Participants·기존 사용자 변경·백업·과거 실패를 보존했다.
-- 이번 복구의 파일 전송 금지에 따라 원시 자료와 산출물을 외부로 전송하지 않는다. 변경은 로컬 연구 브랜치에 커밋한다.
+- 비공개 원시 자료는 외부로 전송하지 않는다. 이후 위임에서 연구 저장소의 일반 Git push 허용을 명시적으로 확인했고, 기존1a7ea5edfcf54c7e0b3beda24be587ce0f1a795c를 push한 뒤 원격 브랜치 SHA 일치를 검증했다. 이번 후속 변경은 읽기 전용 잔차 진단과 보고서 정정뿐이다.
 
 재현 근거는 `reference572_contract.json`, `reference572_result.json`, `reference572_analysis.json`, `reference572_recovery.json`, `reference572_cost.json`, `reference572_audit.json`과 실행·복구·분석 코드다. 원시 테이프와 로그는 저장소 밖에 남겼다. 이번572의 남은 범위를 완료했으며 추가 source 후보·Native 시험·보호 분할 평가는 시작하지 않았다.

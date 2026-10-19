@@ -1,0 +1,125 @@
+{
+  "scope": "Stored-model LP reconstruction only. Original per-repair residuals were not saved; these values reproduce the gate but are not direct historical residual logs.",
+  "source_ticks": 0,
+  "native_actions": 0,
+  "source_model_hashes": {
+    "/workspace/haic-response572-private/proposal-2-0-diagnostic-private.json": "3bf172f8f91fe55c515f14b04211cb1995cca4cfe46b4c897cd59670d826c081",
+    "/workspace/haic-response572-private/linear-4-private.json": "4f8c0f52d404303a48457a1cbf3384fc0b8df12940975d438ca2c89f1008d2ad",
+    "/workspace/haic-response572-private/envelope-4-private.json": "463486bcf86a49beab09f45debff9f1779c67bb0362fc39ba6ab1518b8cd5302",
+    "/workspace/haic-response572-private/proposal-3-0-support-private.json": "478fc777ffc1a7f746d0ce09370ca34c64b49a7acdb34388213330466fc72ea2",
+    "/workspace/HAIC-2026-Fresh/retry/reference572_model.py": "e768ddae4c7d68d309d8c56374254516c724dd8ce2be6c29a661e46eb0e35d42"
+  },
+  "same_precheck": true,
+  "same_stop_reason": true,
+  "source_candidate_produced": false,
+  "CPU_s": 0.5446670210000001,
+  "wall_s": 0.4569364799972391,
+  "repairs": [
+    {
+      "alpha": 1.0,
+      "linear_violation": 1.5887317738575053e-07,
+      "path_violation": 0.0,
+      "bound_violation": 8.463859558077713e-07,
+      "accept_tolerance": 1e-08,
+      "failing_linear_rows": [
+        {
+          "block": "physical",
+          "row_in_block": 985,
+          "condition": "force",
+          "raw": 638,
+          "force_wheel": 2,
+          "lhs": 0.0015007565523504848,
+          "rhs": 0.001500597679173099,
+          "residual": 1.5887317738575053e-07,
+          "exceeds_gate": true
+        }
+      ],
+      "violated_bound_count": 33,
+      "maximum_bound_example": {
+        "variable": 12,
+        "hold": 139,
+        "control": "steer",
+        "value": 0.05000084638595581,
+        "lower": -0.05,
+        "upper": 0.05,
+        "residual": 8.463859558077713e-07
+      }
+    },
+    {
+      "alpha": 0.999755859375,
+      "linear_violation": 2.8332177269785276e-06,
+      "path_violation": 0.0,
+      "bound_violation": 0.0,
+      "accept_tolerance": 1e-08,
+      "failing_linear_rows": [
+        {
+          "block": "signed_support",
+          "row_in_block": 38,
+          "raw": 632,
+          "kind": "road",
+          "polygon": 7,
+          "feature": 553,
+          "vertex": 34,
+          "support_key": "103:road:7:553:34",
+          "lhs": 9.300536043254759e-05,
+          "rhs": 9.017214270556906e-05,
+          "residual": 2.8332177269785276e-06,
+          "exceeds_gate": true
+        }
+      ],
+      "violated_bound_count": 0,
+      "maximum_bound_example": null
+    },
+    {
+      "alpha": 0.9990234375,
+      "linear_violation": 3.558191522515155e-07,
+      "path_violation": 0.0,
+      "bound_violation": 0.0,
+      "accept_tolerance": 1e-08,
+      "failing_linear_rows": [
+        {
+          "block": "signed_support",
+          "row_in_block": 19,
+          "raw": 577,
+          "kind": "road",
+          "polygon": 6,
+          "feature": 250,
+          "vertex": 31,
+          "support_key": "48:road:6:250:31",
+          "lhs": 5.98414678293338e-05,
+          "rhs": 5.948564867708228e-05,
+          "residual": 3.558191522515155e-07,
+          "exceeds_gate": true
+        }
+      ],
+      "violated_bound_count": 0,
+      "maximum_bound_example": null
+    },
+    {
+      "alpha": 0.99609375,
+      "linear_violation": 1.2093322380909424e-07,
+      "path_violation": 0.0,
+      "bound_violation": 0.0,
+      "accept_tolerance": 1e-08,
+      "failing_linear_rows": [
+        {
+          "block": "signed_support",
+          "row_in_block": 38,
+          "raw": 632,
+          "kind": "road",
+          "polygon": 7,
+          "feature": 553,
+          "vertex": 34,
+          "support_key": "103:road:7:553:34",
+          "lhs": 9.029307592937815e-05,
+          "rhs": 9.017214270556906e-05,
+          "residual": 1.2093322380909424e-07,
+          "exceeds_gate": true
+        }
+      ],
+      "violated_bound_count": 0,
+      "maximum_bound_example": null
+    }
+  ],
+  "reconstruction_code_sha256": "b6ad1a0fe8aa1c43da6e98111a9aa0164fd8d69e4d8db46f5b6567473433100a"
+}
