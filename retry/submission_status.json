@@ -1,0 +1,177 @@
+{
+  "status": "LEGAL_OBSERVATION_PROTOTYPE_COMPLETE_ORIGINAL598_PERFORMANCE_UNRESOLVED",
+  "updated_utc": "2026-10-19T13:58:56.413005+00:00",
+  "lap_time_research610_ended": "2026-10-19T13:26:36.081872+00:00",
+  "new_lap_time_search": false,
+  "official_ref": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+  "official_rules_review": "README378lines,Agent,wrapper,runner,tests,requirements,LICENSE read. Separate external rules/server implementation unavailable. Rule inventory and full review private.",
+  "rule_review_cost": {
+    "task": "rules611_read_only_review",
+    "review_finished_utc": "2026-10-19T13:37:43.831795+00:00",
+    "actual_wall_s": 473.6747992038727,
+    "measured_CPU_s": 0.042842845,
+    "earlier_read_network_CPU_unmetered": true,
+    "conservative_CPU_allowance_s": 30,
+    "accounted_CPU_s": 30.042842845,
+    "new_source_native_learning_in_this_review": 0,
+    "later_implementation_and_DEV_costs_accounted_separately": true
+  },
+  "files": {
+    "completed_baseline": "submit_agent/agent.py",
+    "experimental_bounded_adapter": "submit_agent/bounded_adapter.py",
+    "isolated_worker": "retry/submit_worker.py",
+    "package_DEV_validator": "retry/submit_dev.py"
+  },
+  "deployable_baseline": {
+    "source_sha256": "d302a237df52c77f489b3cb97a29d445533ec2fc543d2e215d6aeec8cfc7b1c3",
+    "static_imports": [
+      "math",
+      "numpy",
+      "cv2"
+    ],
+    "package_files": [
+      "agent.py"
+    ],
+    "custom_native_or_compile_helper": false,
+    "only_runtime_input": "float32(4,84,84) grayscale observation; own reset-local memory",
+    "no_teacher_or_env_or_map_or_seed_or_tape_in_Agent": true,
+    "package_and_final_cold_check": {
+      "source_sha256": "d302a237df52c77f489b3cb97a29d445533ec2fc543d2e215d6aeec8cfc7b1c3",
+      "startup_wall_s": 0.09716875599406194,
+      "reset_wall_s": 0.0004978090000804514,
+      "first_nonblank_act_wall_s": 0.0023234779946506023,
+      "max_RSS_KiB": 50240,
+      "shape_finite_range": true,
+      "new_worlds_resets_actions": 0,
+      "official_server_parity": false
+    },
+    "DEV": "one existing approved598 DEV case; 475actual decisions, variables6 officialfinish37.90s, damage60%; no safety/equivalence promotion",
+    "original598_13_22s_reproduced": false,
+    "original537_true_state_certification_preserved": false,
+    "official_server_parity": false,
+    "private_package_directory": "/workspace/haic-submission-private/final-cold-check",
+    "site_submission": false
+  },
+  "bounded_adapter": {
+    "source_sha256": "8484523814b0a4e161d504aff7060ab6a01349cc30ccd40c1658a4d30c0aef71",
+    "estimated_state": [
+      "HUD speed",
+      "yaw",
+      "front steer proxy",
+      "visible local asphalt/obstacle geometry",
+      "bounded action-conditioned local obstacle memory"
+    ],
+    "memory_reset": true,
+    "planner": "18or fewer steer candidates x28estimatedkinematicsteps; NumPy/OpenCV only, no privileged-state force certificate",
+    "actual_DEV": "405actions,69.61%progress,damage0; stopped then offtrackDNF",
+    "not_promoted": true,
+    "blocker": "Estimated local predictor rejected every candidate near an obstacle; repeated braking caused deadlock. Full invisible map, true wheel/contact/slip states and true clipping history are unavailable; runtime optimization cannot by itself restore598semantics."
+  },
+  "implementation_checks": {
+    "ZIP_root_shape_and_limits": true,
+    "all_submitted_py_static_rules": true,
+    "exact_package_source_identity": true,
+    "isolated_pixel_only_IPC": true,
+    "finite_float32_shape3_actions_and_reset": true,
+    "cold_import_construct_under10s": true,
+    "reset_under5s": true,
+    "all_measured_actual_decisions_whole_act_under5s": true,
+    "all_measured_participant_peak_RSS_under1024MB": true,
+    "local_worker_address_space_cap_MiB": 1024,
+    "variables6_one_DEV_completion": true,
+    "all_case_safety_or_generalization": false,
+    "official_server_runtime_or_install_parity": false
+  },
+  "DEV_runs": [
+    {
+      "label": "legal-input-smoke01",
+      "source_sha256": "10b3c8359f1b0f66cd56e57b7f368a2ee86b75c49d60238360a17f472e218cd9",
+      "status": "ACTION_LIMIT_CENSORED",
+      "actions": 120,
+      "progress": 0.12367491166077739,
+      "damage": 0.0,
+      "lap_time_s": null,
+      "retire_reason": null,
+      "max_whole_act_wall_s": 0.0028010469977743924,
+      "max_RSS_KiB": 49588,
+      "CPU_s": 3.214034091,
+      "wall_s": 3.237687838001875
+    },
+    {
+      "label": "legal-full02",
+      "source_sha256": "d302a237df52c77f489b3cb97a29d445533ec2fc543d2e215d6aeec8cfc7b1c3",
+      "status": "FINISHED",
+      "actions": 475,
+      "progress": 1.0,
+      "damage": 0.6000000000000001,
+      "lap_time_s": 37.90000000000048,
+      "retire_reason": null,
+      "max_whole_act_wall_s": 0.004449742002179846,
+      "max_RSS_KiB": 49464,
+      "CPU_s": 11.742217401999998,
+      "wall_s": 11.770441229004064
+    },
+    {
+      "label": "legal-obstacles03",
+      "source_sha256": "28a32a496752bb5cec58b0047fbfc540f378e4d3eefcb62860072102dc63837f",
+      "status": "DNF",
+      "actions": 75,
+      "progress": 0.16607773851590105,
+      "damage": 1.0,
+      "lap_time_s": null,
+      "retire_reason": "crash",
+      "max_whole_act_wall_s": 0.0036710179992951453,
+      "max_RSS_KiB": 49624,
+      "CPU_s": 2.400726243,
+      "wall_s": 2.349504765996244
+    },
+    {
+      "label": "legal-geometry04",
+      "source_sha256": "a53c7a3316d6a4828096aca957b432c25942bdbcaeff8cf37d1dcd2b25004602",
+      "status": "DNF",
+      "actions": 391,
+      "progress": 0.696113074204947,
+      "damage": 0.2,
+      "lap_time_s": null,
+      "retire_reason": "off_track",
+      "max_whole_act_wall_s": 0.0049217710038647056,
+      "max_RSS_KiB": 49656,
+      "CPU_s": 10.021560696000002,
+      "wall_s": 9.713525059996755
+    },
+    {
+      "label": "legal-localshield05",
+      "source_sha256": "8484523814b0a4e161d504aff7060ab6a01349cc30ccd40c1658a4d30c0aef71",
+      "status": "DNF",
+      "actions": 405,
+      "progress": 0.696113074204947,
+      "damage": 0.0,
+      "lap_time_s": null,
+      "retire_reason": "off_track",
+      "max_whole_act_wall_s": 0.010747914013336413,
+      "max_RSS_KiB": 50188,
+      "CPU_s": 11.352311066,
+      "wall_s": 11.008990143003757
+    }
+  ],
+  "resource_accounting": {
+    "DEV_actions": 1466,
+    "worlds": 5,
+    "resets": 5,
+    "raw_including_reset": 6116,
+    "measured_DEV_CPU_s": 38.730849498,
+    "measured_DEV_wall_s": 38.080149036002695,
+    "whole_implementation_elapsed_wall_s": 1272.5812044143677,
+    "other_preparation_debug_final_cold_check_CPU_not_fully_metered": true,
+    "conservative_other_CPU_charge_s": 60,
+    "research_remaining": 20745,
+    "reserve": 84000,
+    "reserve_used": 0,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "training": 0,
+    "paid_compute": 0
+  },
+  "privacy": "No caseIDs/seeds,observations,coordinates,actions,tapes,reports or images published. Those outputs and submissionZIPs private.",
+  "next_issue": "Repair uncertainty/deadlock handling in the bounded observation adapter and validate actual closed-loop completion; no more privileged lap-time search and no claim that3.94s core constitutes participant compliance."
+}
