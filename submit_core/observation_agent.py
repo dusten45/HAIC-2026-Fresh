@@ -722,7 +722,27 @@ def offset_observed_contour(points,center,radius):
     return contour,residuals,centres
 
 
-def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_curb_bands=None,near_blocked=None,forward_band_ids=None):
+def observed_reference_edge_normals(points,center):
+    """Local normals of actual observations, retained for next-frame matching."""
+    points=np.asarray(points,np.float64)
+    arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
+    kept=[];normals=[];window=2*(21./6.)
+    for i,point in enumerate(points):
+        distance=arc-arc[i];selected=abs(distance)<=window
+        if int(sum(selected))<7:continue
+        z=distance[selected]/window;matrix=np.column_stack((np.ones(len(z)),z,z*z))
+        if np.linalg.cond(matrix)>100.:continue
+        coef=np.linalg.lstsq(matrix,points[selected],rcond=None)[0]
+        if max(np.linalg.norm(matrix@coef-points[selected],axis=1))>.35:continue
+        tangent=coef[1];length=float(np.linalg.norm(tangent))
+        if length<1.:continue
+        normal=np.array([tangent[1],-tangent[0]])/length
+        if normal@(point-center)<0:normal=-normal
+        kept.append(point);normals.append(normal)
+    return np.asarray(kept).reshape(-1,2),np.asarray(normals).reshape(-1,2)
+
+
+def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_curb_bands=None,near_blocked=None,forward_band_ids=None,reference_seeds=None):
     """Piecewise fixed-width road hypothesis from a clean opposite contour.
 
     Coarse circles guide visible contour sampling only. Local tangents allow
@@ -851,8 +871,33 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
             corrected.append((float(safe[0]),float(safe[1]),angle,ox,oy));mixed_updates+=1;mixed_records.append(fit);mixed_angles.add(angle)
         curb_inner_points=corrected;inner_points=baseline_inner_points
         _,_,centres=offset_observed_contour(reference_observations,center,radius)
+        # A changing vertical row crop can lose an otherwise visible outer
+        # contour. Prior observations supply correspondence search locations
+        # only. Every added point must be observed again in CURRENT pixels;
+        # these matches never enter road support or safety geometry above.
+        matched=0;novel=0
+        if reference_seeds is not None:
+            observed=list(reference_observations)
+            for seed in reference_seeds:
+                if seed['outer_side']!=side:continue
+                for point,normal in zip(seed['edge_points'],seed['edge_normals']):
+                    current=observe_outer_edge(image,point,normal,blocked,reference=True)
+                    if current is None:continue
+                    matched+=1
+                    if min(np.linalg.norm(np.asarray(observed)-current,axis=1))<.5*(21./6.)/4:continue
+                    observed.append(current);novel+=1
+            if novel:
+                observed=np.asarray(observed)
+                theta=np.arctan2(observed[:,1]-center[1],observed[:,0]-center[0])
+                anchor=math.atan2(float(np.mean(np.sin(theta))),float(np.mean(np.cos(theta))))
+                theta=anchor+(theta-anchor+math.pi)%(2*math.pi)-math.pi
+                if max(theta)-min(theta)<=math.pi:
+                    reference_observations=observed[np.argsort(theta)]
+                    _,_,centres=offset_observed_contour(reference_observations,center,radius)
+        edge_points,edge_normals=observed_reference_edge_normals(reference_observations,center)
         if len(centres)>=3:
-            reference_curves.append(dict(outer_side=side,points=centres))
+            reference_curves.append(dict(outer_side=side,points=centres,edge_points=edge_points,edge_normals=edge_normals,
+                current_edge_matches=matched,current_edge_new_observations=novel))
             if near_counts[side]:near_reference_curves+=1
         if len(inner_points)<2:continue
         white=cv2.dilate((image>.75).astype(np.uint8),np.ones((3,9),np.uint8))>0
@@ -1147,7 +1192,7 @@ class Agent:
         self.predicted_wheels=None;self.predicted_hull_speed=None;self.calls=0
         self.predicted_hull_velocity_body=None
         self.predicted_joints=None;self.predicted_joint_rates=None;self.predicted_yaw=None;self.predicted_average_hull_velocity_body=None;self.predicted_average_yaw=None;self.joint_rate=0.
-        self.road_frames=[]
+        self.road_frames=[];self.reference_seeds=[]
         self.history=[0,0];self.last_root=None;self.last_path=None
         self.grip_prior=1.;self.engine_prior=1.;self.steering_prior=1.
         self.uncertainty={};self.diagnostics={}
@@ -1262,7 +1307,10 @@ class Agent:
         if len(rows)<8:raise RuntimeError('OBSERVED_ROAD_SUPPORT_INSUFFICIENT')
         geometry_bands=[];observed_curb_bands=[];forward_band_ids=set()
         painted,painted_info,band_edges,reference_curves=infer_painted_road_band(image,asphalt,blocked,geometry_bands,observed_curb_bands,
-            obstacle_blocked|vehicle_projection_mask(self.joint).astype(bool),forward_band_ids)
+            obstacle_blocked|vehicle_projection_mask(self.joint).astype(bool),forward_band_ids,self.reference_seeds)
+        self.reference_seeds=[dict(outer_side=curve['outer_side'],edge_points=curve['edge_points'],edge_normals=curve['edge_normals']) for curve in reference_curves]
+        self.uncertainty['reference_current_edge_matches']=sum(curve['current_edge_matches'] for curve in reference_curves)
+        self.uncertainty['reference_current_edge_new_observations']=sum(curve['current_edge_new_observations'] for curve in reference_curves)
         geometry_veto=coherent_grass_mask(image)|blocked.astype(bool)
         # A lone asphalt-grey sample may be a red/white curb mixture. Flat
         # public road shades, registered evidence, conditioned vehicle gaps,
@@ -1511,5 +1559,11 @@ class Agent:
         dx,dy=((after_origin[j]-before_origin[j])/.08 for j in range(2))
         self.predicted_average_hull_velocity_body=(math.cos(angle)*dx+math.sin(angle)*dy,-math.sin(angle)*dx+math.cos(angle)*dy)
         self.predicted_average_yaw=(r.planar.angle-root.planar.angle)/.08
+        # Correspondence seeds, not retained road support: exact own-action
+        # endpoint pose takes current observed edges into the next camera.
+        rotation=np.array([[math.cos(angle),math.sin(angle)],[-math.sin(angle),math.cos(angle)]])
+        self.reference_seeds=[dict(outer_side=seed['outer_side'],
+            edge_points=(seed['edge_points']-np.asarray(after_origin))@rotation.T,
+            edge_normals=seed['edge_normals']@rotation.T) for seed in self.reference_seeds]
         self.diagnostics['model_ticks_total']=self.counter[0]
         return action

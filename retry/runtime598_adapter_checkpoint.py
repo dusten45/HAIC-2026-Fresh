@@ -24,6 +24,9 @@ def main():
     # Earlier code did not retain pixels. An empty new buffer is honest; the
     # actual incoming stack may bootstrap it, but no older images are invented.
     if 'road_frames' not in memory:memory['road_frames']=[]
+    # A pre-feature checkpoint has no earlier edge-correspondence history.
+    # Empty is honest; do not synthesize observed edge seeds here.
+    if 'reference_seeds' not in memory:memory['reference_seeds']=[]
     backfill_ticks=0;backfill_cpu=0.;backfill_wall=0.
     needed=('predicted_hull_velocity_body','predicted_joints','predicted_joint_rates','predicted_yaw','predicted_average_hull_velocity_body','predicted_average_yaw')
     if any(key in agent.__dict__ and key not in memory for key in needed):
