@@ -1,0 +1,65 @@
+{
+  "status": "CACHED_GATE_FAILED_NOT_PROMOTED_NO_NATIVE",
+  "base_commit": "64d37cbd79dc759b05b62a8c21d13367d6fe3de1",
+  "changes": [
+    "Preserve disjoint observed row intervals instead of connecting one selected interval across a branch merge.",
+    "Remove shared interfaces from the geometric boundary; interpolate one-to-one observed flanks.",
+    "Preserve continuous conditioned painted-road bands and existing asphalt next to the vehicle flatness halo."
+  ],
+  "public_checks": {
+    "status": "PASS",
+    "cases": 144,
+    "physical_outside_cases": 0,
+    "outside_samples": 0,
+    "max_outside_m": 0.0,
+    "logical_topology_cases": 4,
+    "all_internal_interfaces_excluded": true,
+    "U_fixture_full_car_margin_m": 2.620000000000001,
+    "callback_equals_brute": true,
+    "model_ticks": 0,
+    "native_actions": 0,
+    "scope": "Finite public geometry/raster cases; not a universal observation bound."
+  },
+  "painted_band_cases": 144,
+  "painted_band_updates": 775,
+  "local_support_cases": 10,
+  "actual_mesh_internal_interfaces_excluded": true,
+  "current_margin_callback_equals_brute": true,
+  "unchanged": {
+    "original_core_SHA256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+    "original_core_bytes": true,
+    "original_reference_high_low": true,
+    "Agent_methods_except_map": true,
+    "resource_counter_lifecycle": true,
+    "clearance_and_force_thresholds": true,
+    "horizon": true
+  },
+  "cached_gate": {
+    "action_admitted": false,
+    "reasons": {
+      "FORECAST_FOOTPRINT_MARGIN": 6,
+      "FORCE_PEAK": 15
+    },
+    "model_ticks": 317,
+    "whole_act_wall_s": 0.579098794987658,
+    "whole_act_limit_s": 5,
+    "first_remaining_footprint_failure_raw_ticks": [
+      41,
+      48
+    ],
+    "geometry_replay_report_identical": true
+  },
+  "cost": {
+    "model_ticks": 1791,
+    "cached_variant_count": 7,
+    "single_geometry_replay_model_ticks": 317,
+    "recorded_CPU_s": 59.675008661,
+    "native_DEV_actions": 0,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0
+  },
+  "limits": "Finite public geometry/raster counterexamples only; no universal observation bound, no passing cached action and no new driving result.",
+  "next_blocker": "Split/merge cap remains too conservative after topology correction. Candidate remains research-only; no native promotion.",
+  "privacy": "Only code and aggregate results committed. Pixels, vehicle/map truth, checkpoints and private evidence remain outside repository."
+}

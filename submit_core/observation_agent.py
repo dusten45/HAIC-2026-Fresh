@@ -302,6 +302,8 @@ def vehicle_projection_mask(joint):
 def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,speed):
     """Conditioned connected-road hypothesis, never obstacle-clearance proof."""
     cover=vehicle_projection_mask(joint);candidates=[]
+    flatness_halo=cv2.dilate(cover,np.ones((3,3),np.uint8))
+    visible_grass=coherent_grass_mask(image)
     # Output-pixel quantization plus public per-node normal change. This is a
     # conditioning tolerance, not a universal geometric uncertainty bound.
     nominal=2*(40./6.)
@@ -317,7 +319,7 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
         a,b=int(ends[l]),int(starts[r])
         if a>=b or starts[l]==0 or ends[r]>=84:continue
         missing=~asphalt[y,a:b].astype(bool)
-        if np.any(missing & ~cover[y,a:b].astype(bool)) or np.any(obstacle_mask[y,a:b]):continue
+        if np.any(missing & ~cover[y,a:b].astype(bool)) or np.any(obstacle_mask[y,a:b]) or np.any(visible_grass[y,a:b]):continue
         if cover[y,starts[l]-1] or cover[y,ends[r]]:continue
         candidates.append((int(y),int(starts[l]),int(ends[r]-1),a,b))
     support=np.zeros((84,84),np.uint8)
@@ -354,9 +356,13 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
         if abs((lc[1]+rc[1])*.5-IMAGE_ORIGIN_X)>1. or abs(slope*1.701/1.3608)>math.tan(.31):return support,info
         info['spawn_prior_used']=True
     for sy,l,r,a,b in candidates:
-        support[sy,a:b]=cover[sy,a:b]&(~asphalt[sy,a:b].astype(bool)).astype(np.uint8)
+        support[sy,a:b]=cover[sy,a:b]
+        # The 3x3 flatness test loses one pixel beside an opaque object. Within
+        # the already conditioned corridor, preserve actual asphalt samples in
+        # that operator's halo; do not infer any additional hidden pixels.
+        support[sy,l:r+1]|=asphalt[sy,l:r+1]&flatness_halo[sy,l:r+1]
     support[obstacle_mask]=0
-    info['road_support_inferred_pixels']=int(np.sum(support))
+    info['road_support_inferred_pixels']=int(np.sum(support&~asphalt.astype(bool)))
     return support,info
 
 
@@ -454,11 +460,12 @@ def offset_observed_contour(points,center,radius):
         if not both_sides:continue
         uncertainty=residual+nominal*(1-math.cos(.31/2))+1/(2.7*6.)
         inner=coefficients[0]-(nominal-uncertainty)*normal
-        contour.append((float(inner[0]),float(inner[1]),float(angle)));residuals.append(residual)
+        outer_safe=coefficients[0]-uncertainty*normal
+        contour.append((float(inner[0]),float(inner[1]),float(angle),float(outer_safe[0]),float(outer_safe[1])));residuals.append(residual)
     return contour,residuals,centres
 
 
-def infer_painted_road_band(image,asphalt,blocked):
+def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None):
     """Piecewise fixed-width road hypothesis from a clean opposite contour.
 
     Coarse circles guide visible contour sampling only. Local tangents allow
@@ -562,13 +569,32 @@ def infer_painted_road_band(image,asphalt,blocked):
             updates[(side,row)]=pixel_x;edge_count+=1
             if side==1:support[row,int(math.ceil(pixel_x)):a]=1
             else:support[row,b+1:int(math.floor(pixel_x))+1]=1
-        support[asphalt.astype(bool)]=0
+        # Paint can occlude a whole inner cap between two row intervals.
+        # Restrict recovery to the conservative observed2D road band rather
+        # than a selected row's left/right prefix. No unseen curve is added.
+        for first,last in zip(inner_points,inner_points[1:]):
+            if last[2]-first[2]>.051:continue
+            polygon=np.asarray([[first[0],first[1]],[first[3],first[4]],
+                                [last[3],last[4]],[last[0],last[1]]])
+            if geometry_bands is not None:geometry_bands.append(polygon)
+            px=IMAGE_ORIGIN_X+1.3608*polygon[:,0];py=IMAGE_ORIGIN_Y-1.701*polygon[:,1]
+            x0=max(1,int(math.ceil(min(px))));x1=min(82,int(math.floor(max(px))))
+            y0=max(5,int(math.ceil(min(py))));y1=min(54,int(math.floor(max(py))))
+            if x0>x1 or y0>y1:continue
+            yy,xx=np.indices((y1-y0+1,x1-x0+1));xx=xx+x0;yy=yy+y0
+            wx=(xx-IMAGE_ORIGIN_X)/1.3608;wy=(IMAGE_ORIGIN_Y-yy)/1.701
+            cross=[]
+            for a,b in zip(polygon,np.roll(polygon,-1,axis=0)):
+                cross.append((b[0]-a[0])*(wy-a[1])-(b[1]-a[1])*(wx-a[0]))
+            cross=np.asarray(cross);inside=np.all(cross>=0,axis=0)|np.all(cross<=0,axis=0)
+            eligible=inside&(white[yy,xx]|red[yy,xx]|asphalt[yy,xx].astype(bool))&~grass[yy,xx]&~blocked[yy,xx]
+            support[yy[eligible],xx[eligible]]=1
         fits.append(dict(outer_side=side,observations=len(points),radial_residual_m=residual,
             angular_support_rad=high-low,added_pixels=int(support.sum())-added_before,
             verified_2D_extensions=verified,local_offset_points=len(inner_points),
             local_offset_edges=edge_count,reference_observed_edge_extensions=reference_extensions,local_max_residual_m=max(local_residuals),
             offset_method='local quadratic tangent + public width; circle used only for observed sampling'))
-    return support,dict(painted_band_added_pixels=int(support.sum()),painted_band_fits=fits,
+    return support,dict(painted_band_added_pixels=int(np.sum(support&~asphalt.astype(bool))),painted_band_fits=fits,
         painted_band_bound_universally_validated=False),updates,reference_curves
 
 
@@ -613,6 +639,56 @@ def reference_from_observed_width(raw_points,curves,asphalt,blocked):
         observed_width_reference_used=True,observed_centerline_points=count,
         observed_reference_join_m=gap,reference_unseen_suffix_extrapolated=False,
         reference_is_an_estimate_not_a_certificate=True)
+
+
+def strip_union_mesh(rows,grip):
+    """Union of observed row strips, with only exposed interval boundaries.
+
+    Preserve disjoint branches and holes. Horizontal shared interfaces are
+    cancelled by interval difference, never passed as physical road borders.
+    FOV caps stay at the existing first/last observed row centres.
+    """
+    def difference(intervals,other):
+        result=[]
+        for left,right in intervals:
+            pieces=[(left,right)]
+            for a,b in other:
+                next_pieces=[]
+                for x,y in pieces:
+                    if b<=x or a>=y:next_pieces.append((x,y));continue
+                    if x<a:next_pieces.append((x,min(y,a)))
+                    if b<y:next_pieces.append((max(x,b),y))
+                pieces=next_pieces
+            result.extend(pieces)
+        return result
+    normalized=[]
+    for y,intervals in rows:
+        merged=[]
+        for a,b in sorted((a,b) for a,b in intervals if b>a):
+            if merged and a<=merged[-1][1]:merged[-1]=(merged[-1][0],max(merged[-1][1],b))
+            else:merged.append((a,b))
+        normalized.append((y,merged))
+    # Follow one-to-one observed flanks continuously. At a split/merge,
+    # intersect actual intervals instead of drawing a cross-branch chord.
+    roads=[];boundary=[];slabs=[]
+    for (y,intervals),(z,following) in zip(normalized,normalized[1:]):
+        bottom=[];top=[]
+        for a,b in intervals:
+            matches=[(c,d) for c,d in following if max(a,c)<min(b,d)]
+            for c,d in matches:
+                unique=len(matches)==1 and sum(max(c,x)<min(d,w) for x,w in intervals)==1
+                if unique:lo,hi,up_lo,up_hi=a,b,c,d
+                else:lo=up_lo=max(a,c);hi=up_hi=min(b,d)
+                roads.append((((lo,y),(hi,y),(up_hi,z),(up_lo,z)),grip))
+                boundary.extend([((lo,y),(up_lo,z)),((hi,y),(up_hi,z))])
+                bottom.append((lo,hi));top.append((up_lo,up_hi))
+        slabs.append((y,z,bottom,top))
+    for i,(y,z,bottom,top) in enumerate(slabs):
+        previous=slabs[i-1][3] if i else []
+        following=slabs[i+1][2] if i+1<len(slabs) else []
+        for a,b in difference(bottom,previous):boundary.append(((a,y),(b,y)))
+        for a,b in difference(top,following):boundary.append(((a,z),(b,z)))
+    return roads,boundary
 
 
 def transport_road_evidence(frames):
@@ -796,47 +872,73 @@ class Agent:
             if right-left<2.5:break
             anchor=(start+end-1)*.5;rows.append((left,right,(IMAGE_ORIGIN_Y-y)/1.701));pixels.append((y,start,end))
         if len(rows)<8:raise RuntimeError('OBSERVED_ROAD_SUPPORT_INSUFFICIENT')
-        painted,painted_info,band_edges,reference_curves=infer_painted_road_band(image,asphalt,blocked)
-        geometry_asphalt=asphalt|painted
+        geometry_bands=[]
+        painted,painted_info,band_edges,reference_curves=infer_painted_road_band(image,asphalt,blocked,geometry_bands)
+        geometry_veto=coherent_grass_mask(image)|blocked.astype(bool)
+        # A lone asphalt-grey sample may be a red/white curb mixture. Flat
+        # public road shades, registered evidence, conditioned vehicle gaps,
+        # and the conservative fixed-width band supply geometric support.
+        high=cv2.dilate(image,np.ones((3,3),np.uint8));low=cv2.erode(image,np.ones((3,3),np.uint8))
+        flat=high-low<=(5.1+2)/255.
+        geometry_asphalt=(asphalt.astype(bool)&flat)|painted.astype(bool)|inferred.astype(bool)
+        if transported is not None:geometry_asphalt|=transported.astype(bool)
+        geometry_asphalt=geometry_asphalt.astype(np.uint8)
         self.uncertainty.update(painted_info)
-        # Keep the reference samples unchanged. Geometry uses each actually
-        # observed intermediate row, not an assumed diagonal across a missing row.
-        dense=[];refined=unresolved=curb_refined=band_refined=0
-        for k,(y,start,end) in enumerate(pixels):
-            geometry_run=observed_run(y,(start+end-1)*.5,geometry_asphalt)
-            if geometry_run is None:raise RuntimeError('OBSERVED_GEOMETRY_SUPPORT_LOST')
-            samples=[(y,*geometry_run)]
-            if k+1<len(pixels):
-                ny,ns,ne=pixels[k+1]
-                if y-ny!=2:raise RuntimeError('OBSERVED_ROAD_ROW_GAP')
-                mid=observed_run(y-1,(start+end+ns+ne-2)*.25,geometry_asphalt)
-                next_run=observed_run(ny,(ns+ne-1)*.5,geometry_asphalt)
-                if mid is None or next_run is None or max(geometry_run[0],next_run[0],mid[0])>=min(geometry_run[1],next_run[1],mid[1]):
-                    raise RuntimeError('OBSERVED_ROAD_MIDROW_UNSUPPORTED')
-                samples.append((y-1,*mid))
-            for sy,ss,se in samples:
+        # Geometry has its own topology. Do not join one selected run across
+        # a split/merge; retain every supported interval and every empty row.
+        geometry_rows=[];refined=unresolved=curb_refined=band_refined=0
+        reach=math.ceil(((8./6.)+math.hypot(1/1.3608,1/1.701))*1.3608)
+        for sy in range(pixels[0][0],pixels[-1][0]-1,-1):
+            edges=np.diff(np.pad(geometry_asphalt[sy,1:83],(1,1)).astype(np.int16))
+            starts=np.flatnonzero(edges==1)+1;ends=np.flatnonzero(edges==-1)+1;intervals=[]
+            for ss,se in zip(starts,ends):
+                ss,se=int(ss),int(se)
+                if se-ss<3:continue
                 a=recover_pixel_edge(image,sy,ss,1,blocked) if se-ss>=8 else None
                 b=recover_pixel_edge(image,sy,se-1,-1,blocked) if se-ss>=8 else None
                 if (a is None or b is None) and se-ss>=8 and 2<=sy<54:
-                    before=observed_run(sy-1,(ss+se-1)*.5);after=observed_run(sy+1,(ss+se-1)*.5)
-                    if before is not None and after is not None:
+                    before=observed_run(sy-1,(ss+se-1)*.5,geometry_asphalt)
+                    after=observed_run(sy+1,(ss+se-1)*.5,geometry_asphalt)
+                    if before is not None and after is not None and max(ss,before[0],after[0])<min(se,before[1],after[1]):
                         if a is None:
-                            a=recover_curb_edge(image,sy,ss,1,(after[0]-before[0])*.5,blocked)
-                            curb_refined+=int(a is not None)
+                            a=recover_curb_edge(image,sy,ss,1,(after[0]-before[0])*.5,blocked);curb_refined+=int(a is not None)
                         if b is None:
-                            b=recover_curb_edge(image,sy,se-1,-1,(after[1]-before[1])*.5,blocked)
-                            curb_refined+=int(b is not None)
-                if a is None and (1,sy) in band_edges and band_edges[(1,sy)]<ss:
+                            b=recover_curb_edge(image,sy,se-1,-1,(after[1]-before[1])*.5,blocked);curb_refined+=int(b is not None)
+                if a is None and (1,sy) in band_edges and 0<ss-band_edges[(1,sy)]<=reach:
                     a=band_edges[(1,sy)];band_refined+=1
-                if b is None and (0,sy) in band_edges and band_edges[(0,sy)]>se-1:
+                if b is None and (0,sy) in band_edges and 0<band_edges[(0,sy)]-(se-1)<=reach:
                     b=band_edges[(0,sy)];band_refined+=1
-                refined+=int(a is not None)+int(b is not None)
-                unresolved+=int(a is None)+int(b is None)
+                refined+=int(a is not None)+int(b is not None);unresolved+=int(a is None)+int(b is None)
                 a=float(ss) if a is None else a;b=float(se-1) if b is None else b
-                dense.append(((a-IMAGE_ORIGIN_X)/1.3608+.35,(b-IMAGE_ORIGIN_X)/1.3608-.35,(IMAGE_ORIGIN_Y-sy)/1.701))
-        left=[(a,y) for a,b,y in dense];right=[(b,y) for a,b,y in dense]
-        roads=[((left[i],right[i],right[i+1],left[i+1]),self.grip_prior) for i in range(len(dense)-1)]
-        boundary=list(zip(left,left[1:]))+list(zip(right,right[1:]))+[(left[0],right[0]),(left[-1],right[-1])]
+                left=(a-IMAGE_ORIGIN_X)/1.3608+.35;right=(b-IMAGE_ORIGIN_X)/1.3608-.35
+                if right>left:intervals.append((left,right))
+            world_y=(IMAGE_ORIGIN_Y-sy)/1.701
+            # Retain the continuous observed band instead of quantizing it to
+            # pixel centres a second time. Same flank inset, visible vetoes,
+            # and topology-aware strip construction still apply.
+            band_intervals=[]
+            for polygon in geometry_bands:
+                crossings=[]
+                for first,last in zip(polygon,np.roll(polygon,-1,axis=0)):
+                    if first[1]==last[1] or (first[1]-world_y)*(last[1]-world_y)>0:continue
+                    weight=(world_y-first[1])/(last[1]-first[1])
+                    crossings.append(float(first[0]+weight*(last[0]-first[0])))
+                if len(crossings)<2:continue
+                band_intervals.append((min(crossings),max(crossings)))
+            merged_bands=[]
+            for left,right in sorted(band_intervals):
+                if merged_bands and left<=merged_bands[-1][1]+1e-9:
+                    merged_bands[-1]=(merged_bands[-1][0],max(merged_bands[-1][1],right))
+                else:merged_bands.append((left,right))
+            for left,right in merged_bands:
+                lo=max(1,int(math.ceil(IMAGE_ORIGIN_X+1.3608*left)))
+                hi=min(82,int(math.floor(IMAGE_ORIGIN_X+1.3608*right)))
+                if lo>hi or np.any(geometry_veto[sy,lo:hi+1]):continue
+                left+=.35;right-=.35
+                if right>left:intervals.append((left,right))
+            geometry_rows.append((world_y,intervals))
+        roads,boundary=strip_union_mesh(geometry_rows,self.grip_prior)
+        self.uncertainty['mesh_source']='union of all supported row intervals; shared interfaces excluded'
         points=np.asarray([((a+b)*.5,y) for a,b,y in rows],np.float64)
         points,reference_info=reference_from_observed_width(points,reference_curves,asphalt,obstacle_blocked)
         self.uncertainty.update(reference_info)
