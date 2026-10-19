@@ -1,0 +1,111 @@
+{
+  "status": "BLOCKED_PREFLIGHT_NOT_EXECUTED",
+  "scientific_outcome": "Notobserved;neitherbudget-censoredsource-runnorscientificfailure",
+  "checks": {
+    "AST_HORIZON12": true,
+    "AST_range4": true,
+    "two_fresh_FINAL_branches": true,
+    "existing_source_closure_unchanged": true,
+    "s300_minimum_cost_exceeds_hard_cap": true,
+    "contract_registered_before_any_source": true
+  },
+  "source_annotations": {
+    "certifier_definition_line": 27,
+    "choose_definition_line": 57,
+    "fresh_FINAL_call_lines": [
+      72,
+      96
+    ]
+  },
+  "cost_per_successful_feedback_decision": {
+    "minimum_forecast_ticks": 96,
+    "minimum_forecast_external_force": 384,
+    "minimum_forecast_internal_force": 384,
+    "minimum_forecast_geometry": 98,
+    "maximum_certifications": 32,
+    "maximum_forecast_attempts": 1536,
+    "maximum_forecast_external_force": 6144,
+    "maximum_forecast_internal_force": 6144,
+    "maximum_forecast_geometry": 1568,
+    "actual_action_raw_additional": 4
+  },
+  "cost_formula_for_D_completed_holds": {
+    "minimum_ticks": "264+104D",
+    "minimum_geometry": "264+106D",
+    "minimum_external_internal_force_each": "1056+416D",
+    "D_max_at600ticks": 3
+  },
+  "conditional40hold_bounds": {
+    "minimum_ticks": 4424,
+    "minimum_geometry": 4504,
+    "minimum_external_internal_force_each": 17696,
+    "maximum_attempted_ticks": 62024,
+    "maximum_geometry": 63304,
+    "maximum_external_internal_force_each": 248096
+  },
+  "plane_necessary_cost_bounds": [
+    {
+      "station_m": 200.0,
+      "signed_start_distance_m": -63.35434256010893,
+      "maximum_forward_plane_displacement_per_safe_raw_m": 1.897,
+      "necessary_actual_raw_at_least": 34,
+      "necessary_completed_holds_at_least": 9,
+      "minimum_ticks_including_prefix_forecasts_actual_and_exact_replay": 1200,
+      "minimum_geometry": 1218,
+      "minimum_external_force": 4800,
+      "minimum_internal_force": 4800,
+      "source582_crossing_observed": false
+    },
+    {
+      "station_m": 300.0,
+      "signed_start_distance_m": -163.8120600182511,
+      "maximum_forward_plane_displacement_per_safe_raw_m": 1.897,
+      "necessary_actual_raw_at_least": 87,
+      "necessary_completed_holds_at_least": 22,
+      "minimum_ticks_including_prefix_forecasts_actual_and_exact_replay": 2552,
+      "minimum_geometry": 2596,
+      "minimum_external_force": 10208,
+      "minimum_internal_force": 10208,
+      "source582_crossing_observed": false
+    }
+  ],
+  "bounds_assumptions": "Originalposttickreference<=90+4.85,sourcecenteradvancesDT.02timesCOMvelocity,andunchangedunitplanes. Signeddistanceboundisnecessaryonly;curvedpath,turning,accelerationandprogresswindowmayincreaserequiredwork.",
+  "first_feedback_reservation": {
+    "after132prefix_and292replay_reserve_remaining_ticks": 176,
+    "minimum_one_feedback_with_actual_raw": 100,
+    "maximum_one_feedback_with_actual_raw": 1540,
+    "interpretation": "Somepartialcallsfit,butfulloriginalchoosercannotbeworstcasereservedandthetargetscientificquestioncannotcompleteat600. No partialsourceexperimentstarted."
+  },
+  "source_ticks": 0,
+  "forecast_ticks": 0,
+  "force_rows_calls": 0,
+  "wheel_response_calls": 0,
+  "native_actions": 0,
+  "FD": 0,
+  "optimizer": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "new_prefix_reconstructions": 0,
+  "feedback_choices": 0,
+  "continuation_holds": 0,
+  "replays": 0,
+  "s200_s300_brackets_speeds_yaw_wheel_clip_margin": "Notobservedunder582;581endpointretainedprivatelywithoutnewsource.",
+  "incumbents_unchanged": true,
+  "next_requirement": "Anewexplicitcontractmustaccountfororiginalfeedbackforecastsbeforethisreturnexperimentcanexecute. No budgetorpolicychangeauthorizedorappliedhere.",
+  "contract_sha256": "685a015ba6035dfce2d374096d6f25193593c13528cf3ac8adfaa9d23ae5220f",
+  "input_sha256": {
+    "verified581": "97d39c846e374263b9370836df390f91bf7824669841e0b428084b263cac26ac",
+    "contract581": "c861f3693bc1c2f8b13957de661b8b2cd1a18501f9cdeb3955b913187f6b3342",
+    "planes579": "4a36258b5ea0d4cc7851941ad01d6b2e8bd67df1be516b522d9ee42a7935ad39",
+    "paths551": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "feedback537": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "backup527": "8049458f5f302fd194a2e0fde5a833ac4a2241f498055df1dc84203017da2717",
+    "source_step512": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "source_closure524": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c"
+  },
+  "preflight_CPU_s": 0.0784238,
+  "preflight_wall_s": 0.08082295699568931,
+  "final_writer_validation_conservative_CPU_wall_charge_s": 0.5,
+  "preparation_CPU_including_charge_s": 0.5784238,
+  "preparation_wall_including_charge_s": 0.5808229569956893
+}
