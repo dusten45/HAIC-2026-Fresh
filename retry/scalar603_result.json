@@ -1,0 +1,161 @@
+{
+  "study": 603,
+  "status": "EXACT_SCALAR_COMPILED_VALIDATED",
+  "chooser_calls": 1,
+  "compilation_attempts": 1,
+  "native": 0,
+  "worlds": 0,
+  "resets": 0,
+  "actions": 0,
+  "solver": 0,
+  "FD": 0,
+  "new_seed": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "optimization_adopted": true,
+  "pixel_act_promotion": false,
+  "lap_gain_claim": false,
+  "stages": {
+    "imports": {
+      "CPU_s": 1.073452058,
+      "wall_s": 0.3031168690067716
+    },
+    "input_restore_runtime_and_tool_pins": {
+      "CPU_s": 0.6325259980000002,
+      "wall_s": 0.6322322570049437
+    },
+    "one_compilation_and_load": {
+      "CPU_s": 0.25411858099999995,
+      "wall_s": 0.25728891500330064
+    },
+    "assembly_and_runtime_audit": {
+      "CPU_s": 0.07571086500000002,
+      "wall_s": 0.076805542994407
+    },
+    "same602_synthetic_compiled_checks": {
+      "CPU_s": 0.003988890000000023,
+      "wall_s": 0.003028655002708547
+    },
+    "saved_context_preparation": {
+      "CPU_s": 0.0,
+      "wall_s": 0.003111277997959405
+    },
+    "saved774_compiled_evaluations": {
+      "CPU_s": 2.075264486,
+      "wall_s": 2.0758378470054595
+    },
+    "saved_comparison_JSON_fsync": {
+      "CPU_s": 0.008018660999999483,
+      "wall_s": 0.005251171998679638
+    },
+    "normal_context_preparation": {
+      "CPU_s": 0.003068835000000547,
+      "wall_s": 0.004881995002506301
+    },
+    "normal_core": {
+      "CPU_s": 3.9368152259999984,
+      "wall_s": 3.940054210004746
+    },
+    "result_materialization_JSON_fsync": {
+      "CPU_s": 1.3321772469999988,
+      "wall_s": 1.3383699519908987
+    },
+    "exact_parity_audit": {
+      "CPU_s": 0.011999239000001438,
+      "wall_s": 0.008550999002181925
+    }
+  },
+  "conservative_preparation_charge_s": 5,
+  "compiled_environment": {
+    "FLT_EVAL_METHOD": 0,
+    "DBL_MANT_DIG": 53,
+    "rounding_mode": 0,
+    "FE_TONEAREST": 0
+  },
+  "binary_sha256": "dc97aff751da9e3cc35d83f66c2718efb19481e1ecf65968dcca6a8a2ce929eb",
+  "assembly_audit": {
+    "FMA_instructions": 0,
+    "disassembly_sha256": "897e86e6eb9cd09de8c10c120ee0251bbd87e23e047e38bbd6585ffcbb29874d"
+  },
+  "saved_comparison": {
+    "inputs": 774,
+    "exact": true,
+    "new_compiled_queries": 774,
+    "new_baseline_queries": 0
+  },
+  "pre_choose_geometry": 852,
+  "memo": {
+    "hits": 145,
+    "misses": 774,
+    "entries": 774,
+    "logical_queries": 919,
+    "cache_lifetime": "ONE_CHOOSE_ONLY",
+    "result_values": "IMMUTABLE_FLOAT",
+    "geometry_context": "OWNED_RECURSIVE_TUPLES"
+  },
+  "prepared_road": {
+    "margin_calls": 774,
+    "polygon_segment_pairs": 196667
+  },
+  "parity": {
+    "action_bytes": true,
+    "full_report": true,
+    "all_raw_diagnostics": true,
+    "all_wheel_results": true,
+    "model_attempted": true,
+    "model_completed": true,
+    "external_force": true,
+    "internal_force": true,
+    "normal_geometry": true,
+    "memo_unchanged": true,
+    "passive_reports": true,
+    "saved774": true,
+    "binary_pin": true,
+    "source_pins": true
+  },
+  "single_sample_comparison": {
+    "baseline602": {
+      "CPU_s": 6.183473181999999,
+      "wall_s": 6.1870870199927595
+    },
+    "compiled603": {
+      "CPU_s": 3.9368152259999984,
+      "wall_s": 3.940054210004746
+    }
+  },
+  "cost": {
+    "geometry": 3493,
+    "geometry_internal_nominal_steering": 834,
+    "geometry_source_footprint": 919,
+    "model_attempted": 906,
+    "external_force": 3624,
+    "total_force": 7176,
+    "model_tick_attempts": 888,
+    "internal_force": 3552,
+    "model_completed": 888,
+    "geometry_tracking_forecast": 888
+  },
+  "planner_cost": {
+    "force_evaluations": 3624,
+    "forecast_calls": 31,
+    "forecast_ticks": 888,
+    "geometry_checks": 919
+  },
+  "child_CPU_s": 0.27334499999999995,
+  "time": {
+    "CPU_s": 14.418286193,
+    "wall_s": 13.658153426003992
+  },
+  "private_sha256": {
+    "diagnostics-private.json": "60041bcf3bdaad9e5cb21adcb33f7ae2949c625370d38a3e9cd8c30a1968b8a1",
+    "output-private.json": "e5f13924725d69f25a37e8ebea1cc6e96771278cbd34467be1c960dc55c03a38",
+    "saved774-private.json": "4c1d7ba5e82cc0f88ec3e48b2ae68b7e682bea549ee5d8595ed605143c9296bc",
+    "CALL-private.json": "1821d2af2ac7da79bccf4535a6d34830ee379e14ae574e6401e30b246ab484da",
+    "REGISTERED-private.json": "73747e0ecee08ed3d7a42456449ddabb2d74ab0171f93e01e0cee65fa0d6a07d",
+    "compiler-private.json": "88033cf63e71c6229c122bb834234a3afcbd0522d4ee247dc8b682f257b0253f",
+    "wheel-private.json": "37de65232a3d738f04b74ff6b535d42e91e98d8994186678730bcb97d9e2a093"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "checks": [
+    "point_query_bits_or_exception_exact_boundary_endpoint_degenerate_extreme_nonfinite_signedzero",
+    "polygon_SAT_and_min_sequence_bits_or_exception_exact_including_ties_and_nonfinite",
+    "full_road_inside_outside_signed_min_boundary_degenerate_NaN_inf_and_polygon_order_exact",
+    "prepared_context_owned_immutable_and_no_alias_to_mutable_source",
+    "existing_lower_bound_skip_ties_and_segment_visit_order_unchanged_no_new_pruning",
+    "outside_negativezero_and_first_equal_signedzero_min_plus_empty_boundary_infinities_exact"
+  ],
+  "synthetic_comparisons": 39,
+  "model": 0,
+  "force": 0,
+  "chooser": 0,
+  "native": 0,
+  "unchanged601memo_tests": {
+    "passed": true,
+    "checks": [
+      "identical_geometry_reuses_exact_original_float",
+      "context_owned_and_nested_immutable_no_source_alias",
+      "signedzero_and_exact_float_bits_preserved",
+      "distinct_root_and_return_to_prior_trial_do_not_leak_result",
+      "fresh_call_has_separate_empty_cache_no_history_state",
+      "cache_contains_only_structural_keys_and_immutable_scalar_results",
+      "foreign_geometry_context_is_rejected",
+      "restore_clears_all_entries_and_restores_owner"
+    ],
+    "chooser": 0,
+    "geometry_evaluator": 0,
+    "model": 0,
+    "force": 0,
+    "native": 0
+  },
+  "charged_geometry": 78
+}
