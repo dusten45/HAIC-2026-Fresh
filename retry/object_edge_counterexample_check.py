@@ -39,7 +39,6 @@ for shade in (102,104,107):
 exact=[];near=[]
 for i in range(96):
  for j in range(i):
-  if records[i]['shade']!=records[j]['shade'] or records[i]['phase']!=records[j]['phase']:continue
   delta=int(np.max(abs(images[i].astype(int)-images[j].astype(int))))
   if delta==0:exact.append([j,i])
   elif delta<=1:near.append([j,i])

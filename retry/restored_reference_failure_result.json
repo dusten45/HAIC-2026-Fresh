@@ -78,7 +78,8 @@
     "max_circle_undercoverage_m": 0.09662966029522813,
     "exact_equal_full_images": 0,
     "decision": "Reject simple best-fit hole shrinking. Keep the0.35m geometry inset and all admission gates.",
-    "limit": "Does not establish impossibility of exact fixed-radius16-gon raster inversion. Near-equal quantized images do not prove non-identifiability."
+    "limit": "Does not establish impossibility of exact fixed-radius16-gon raster inversion. Near-equal quantized images do not prove non-identifiability.",
+    "full_image_pair_comparisons": 4560
   },
   "diagnostic_fix": "Remove invalid left/right/near/far labels derived from union edge index; union boundaries may include object holes and split/merge edges. Report road_union_segment and explicit hull/wheel part. Model-free public check preserves margin exactly.",
   "exact_source_validation": {
@@ -95,7 +96,7 @@
     "resets": 0,
     "model_ticks": 476,
     "raw_physics": 0,
-    "measured_CPU_s": 1.6918496600000001,
+    "measured_CPU_s": 2.03150737,
     "unmetered_diagnostic_CPU_allowance_s": 10,
     "HOLDOUT": 0,
     "SEALED": 0,
