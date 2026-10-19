@@ -1,0 +1,193 @@
+{
+  "study": 605,
+  "scope": "Fixed eight Hadamard amplitude points only; no continuous-family/global feasibility or native conclusion.",
+  "nonzero_safe_endpoints": 0,
+  "uncompleted": 0,
+  "failures": [
+    {
+      "label": "H0",
+      "kind": "FORCE",
+      "attempt_raw": 126,
+      "completed_bad_raw": null,
+      "max_force_ratio": 1.169363842848166,
+      "force_limit": 1.059,
+      "clip_fraction": 0.016666666666666666,
+      "footprint_m": null,
+      "footprint_limit_m": 0.5,
+      "tick_executed": false
+    },
+    {
+      "label": "H1",
+      "kind": "FORCE",
+      "attempt_raw": 161,
+      "completed_bad_raw": null,
+      "max_force_ratio": 1.059621185688024,
+      "force_limit": 1.059,
+      "clip_fraction": 0.07692307692307693,
+      "footprint_m": null,
+      "footprint_limit_m": 0.5,
+      "tick_executed": false
+    },
+    {
+      "label": "H2",
+      "kind": "FORCE",
+      "attempt_raw": 126,
+      "completed_bad_raw": null,
+      "max_force_ratio": 1.0957886221556994,
+      "force_limit": 1.059,
+      "clip_fraction": 0.008333333333333333,
+      "footprint_m": null,
+      "footprint_limit_m": 0.5,
+      "tick_executed": false
+    },
+    {
+      "label": "H3",
+      "kind": "FOOTPRINT",
+      "attempt_raw": 156,
+      "completed_bad_raw": 156,
+      "max_force_ratio": 1.021125020805715,
+      "force_limit": 1.059,
+      "clip_fraction": 0.020833333333333332,
+      "footprint_m": 0.40673808028662745,
+      "footprint_limit_m": 0.5,
+      "tick_executed": true
+    },
+    {
+      "label": "H4",
+      "kind": "FORCE",
+      "attempt_raw": 154,
+      "completed_bad_raw": null,
+      "max_force_ratio": 1.0748830306502302,
+      "force_limit": 1.059,
+      "clip_fraction": 0.03879310344827586,
+      "footprint_m": null,
+      "footprint_limit_m": 0.5,
+      "tick_executed": false
+    },
+    {
+      "label": "H5",
+      "kind": "FORCE",
+      "attempt_raw": 126,
+      "completed_bad_raw": null,
+      "max_force_ratio": 1.164373076359649,
+      "force_limit": 1.059,
+      "clip_fraction": 0.016666666666666666,
+      "footprint_m": null,
+      "footprint_limit_m": 0.5,
+      "tick_executed": false
+    },
+    {
+      "label": "H6",
+      "kind": "INCUMBENT_POLICY_REJECTED",
+      "next_global_raw": 157,
+      "finite_trial_reasons": {
+        "FORECAST_FOOTPRINT_MARGIN": 12,
+        "FORCE_PEAK": 8
+      },
+      "interpretation": "No modified action applied at this decision. Original537finitegrid/backupwitness returnednone; not an observed future applied collision/forcefailure."
+    },
+    {
+      "label": "H7",
+      "kind": "FORCE",
+      "attempt_raw": 126,
+      "completed_bad_raw": null,
+      "max_force_ratio": 1.0942386235486226,
+      "force_limit": 1.059,
+      "clip_fraction": 0.008333333333333333,
+      "footprint_m": null,
+      "footprint_limit_m": 0.5,
+      "tick_executed": false
+    }
+  ],
+  "zero_diagnostic_crossings": {
+    "200": {
+      "before_raw": 192,
+      "after_raw": 193,
+      "fraction": 0.7237029511042126,
+      "time_s": 3.8544740590220874,
+      "COM_speed_m_s": 79.29052920116008,
+      "yaw_rad_s": -0.3769688246130733,
+      "hold": 49,
+      "eligible": true,
+      "whole_hold_safe": true,
+      "force_peak": 0.7813310406956399,
+      "tracking_clip_history": [
+        31,
+        388
+      ],
+      "margin_m": 5.149814539717583,
+      "new_progress": 200.4391517491665,
+      "old_progress": 200.4391517491665,
+      "new_path_error": 0.40488813834162535,
+      "old_path_error": 0.40488813834162535,
+      "new_reference_excess": -0.5245513428268254,
+      "old_reference_excess": -0.5245513428268254,
+      "body_speed": 79.89462063669284
+    },
+    "300": {
+      "before_raw": 247,
+      "after_raw": 248,
+      "fraction": 0.4458642316736674,
+      "time_s": 4.948917284633456,
+      "COM_speed_m_s": 94.8414626741602,
+      "yaw_rad_s": -0.2320636167397921,
+      "hold": 62,
+      "eligible": true,
+      "whole_hold_safe": true,
+      "force_peak": 0.1084631231751379,
+      "tracking_clip_history": [
+        31,
+        608
+      ],
+      "margin_m": 4.975512347025916,
+      "new_progress": 301.0553539911695,
+      "old_progress": 301.0553539911695,
+      "new_path_error": 0.21034030720798672,
+      "old_path_error": 0.21034030720798672,
+      "new_reference_excess": 4.841520572619459,
+      "old_reference_excess": 4.841520572619459,
+      "body_speed": 95.1074005737639
+    },
+    "400": {
+      "before_raw": 302,
+      "after_raw": 303,
+      "fraction": 0.7193506226712343,
+      "time_s": 6.054387012453384,
+      "COM_speed_m_s": 94.73519957209078,
+      "yaw_rad_s": -0.03600028928286646,
+      "hold": 76,
+      "eligible": true,
+      "whole_hold_safe": true,
+      "force_peak": 0.32455484709031973,
+      "tracking_clip_history": [
+        31,
+        828
+      ],
+      "margin_m": 5.236034893647634,
+      "new_progress": 400.53160083448205,
+      "old_progress": 400.53160083448205,
+      "new_path_error": 0.12639341523263475,
+      "old_path_error": 0.12639341523263475,
+      "new_reference_excess": 4.758490960822144,
+      "old_reference_excess": 4.758490960822144,
+      "body_speed": 94.78443681423781
+    }
+  },
+  "zero_crossing_hold_safe_through_raw": 304,
+  "geometry_decomposition": {
+    "named_margin_projection": 43267,
+    "helper_original_comparisons": 12677,
+    "world_plane_queries": 1980,
+    "residual_virtual_target_queries": 94,
+    "frozen_world_planes": 3,
+    "initial_finish_tracker_geometry": 1
+  },
+  "geometry_total": 58022,
+  "every_new_geometry_query_accounted": true,
+  "helper_compared_bitwise_queries": 12677,
+  "bracket_resolution_s": 0.02,
+  "interpolated_time_is_official_lap": false,
+  "read_only_CPU_s": 0.041007585,
+  "read_only_wall_s": 0.04100804899644572,
+  "new_evaluations": 0
+}

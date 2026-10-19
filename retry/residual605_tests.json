@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "checks": [
+    "Hadamard8_columns2to7_fixed_order",
+    "amplitudes_and_smoothstep_knots",
+    "two_fixed_C1_midpoint_windows",
+    "zero_and_outside_preserve_all_float32_bytes",
+    "no_mutation_or_forecast_history",
+    "actuator_saturation_and_exclusive_pedals"
+  ],
+  "chooser": 0,
+  "model": 0,
+  "force": 0,
+  "geometry_evaluator": 0,
+  "clone_memo_checks": {
+    "passed": true,
+    "checks": [
+      "identical_geometry_reuses_exact_original_float",
+      "context_owned_and_nested_immutable_no_source_alias",
+      "signedzero_and_exact_float_bits_preserved",
+      "distinct_root_and_return_to_prior_trial_do_not_leak_result",
+      "fresh_call_has_separate_empty_cache_no_history_state",
+      "cache_contains_only_structural_keys_and_immutable_scalar_results",
+      "foreign_geometry_context_is_rejected",
+      "restore_clears_all_entries_and_restores_owner"
+    ],
+    "chooser": 0,
+    "geometry_evaluator": 0,
+    "model": 0,
+    "force": 0,
+    "native": 0
+  },
+  "context_transition_stubs": {
+    "passed": true,
+    "checks": [
+      "production_constructor_creates_private_instance_geometry_context_before_source",
+      "real_evaluate_fixed25to39_then_feedback40_passes_all_original537_args_budget_history_context",
+      "zero_and_nonzero_real_residual_paths_exercised_with_stub_raw_and_selector",
+      "outside_support_residual_zero_bytes_and_no_geometry_dispatch",
+      "candidate_mutable_state_history_visited_tracker_isolation_and_frozen_shared_root",
+      "real_cache_preparedRoad_compiled_distance_original_comparison_wiring_and_cleanup",
+      "production_top_level_integrity_failure_aborts_all_candidates_and_replay_without_retry"
+    ],
+    "stub_original_selector_calls": 2,
+    "actual_choose": 0,
+    "physics_ticks": 0,
+    "force_evaluator": 0,
+    "geometry_evaluator": 0,
+    "native": 0
+  }
+}
