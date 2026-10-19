@@ -240,6 +240,180 @@ def recover_curb_edge(image,y,index,direction,slope,blocked):
     return float(edges[best])
 
 
+def observe_mixed_curb_edge(image,point,outward,blocked):
+    """Visible road/curb/grass inverse with a paint mixture per tangent ray.
+
+    The public red/white tile junction can produce any effective gray between
+    the two paint colors. Fit that nuisance color, not an asphalt threshold.
+    All rays need visible road and grass plateaus; no hidden continuation.
+    """
+    nx,ny=float(outward[0]),float(outward[1])
+    axis=0 if abs(nx/1.3608)>=abs(ny/1.701) else 1
+    normal_axis=nx if axis==0 else ny;normal_other=ny if axis==0 else nx
+    scale=1.3608 if axis==0 else -1.701;other_scale=-1.701 if axis==0 else 1.3608
+    coordinate=IMAGE_ORIGIN_X+1.3608*point[0] if axis==0 else IMAGE_ORIGIN_Y-1.701*point[1]
+    tangent=IMAGE_ORIGIN_Y-1.701*point[1] if axis==0 else IMAGE_ORIGIN_X+1.3608*point[0]
+    index=int(round(coordinate));row=int(round(tangent));direction=-1 if normal_axis*scale>0 else 1
+    slope=-(normal_other/other_scale)/(normal_axis/scale)
+    if abs(slope)>1.000001:return None
+    width=(8./6.)*abs(scale/normal_axis);rays=np.arange(row-1,row+2)
+    if min(rays)<2 or max(rays)>81:return None
+    # The coarse width-offset location is only a search anchor. A white tile
+    # junction can hide the first grass plateau beyond the old fixed window.
+    # Search to the public curb-width plus raster-support reach, accepting
+    # only actual coherent grass and actual road plateaus on two rays.
+    max_context=int(math.ceil(2*width+2*84./96.+3));q=1./255.;patch=None
+    grass_pixels=coherent_grass_mask(image)
+    for extent in range(7,max_context+1):
+        ids=index+direction*np.arange(-extent,5)
+        if min(ids)<2 or max(ids)>81:break
+        yy,xx=np.meshgrid(ids,rays) if axis==1 else np.meshgrid(rays,ids,indexing='ij')
+        if np.any(yy<5) or np.any(yy>=54) or np.any(blocked[yy,xx]):continue
+        candidate=image[yy,xx].astype(np.float64)
+        ray_grass=np.median(candidate[:,:3],axis=1);ray_road=np.median(candidate[:,-2:],axis=1)
+        valid=(np.ptp(candidate[:,:3],axis=1)<=3*q)&(np.ptp(candidate[:,-2:],axis=1)<=7.1*q)
+        valid&=(ray_road>.36)&(ray_road<.47)&(ray_grass>=156*q)&(ray_grass<=184*q)
+        valid&=np.all(grass_pixels[yy[:,:3],xx[:,:3]],axis=1)
+        if int(valid.sum())>=2:patch=candidate;break
+    if patch is None:return None
+    grass=float(np.median(ray_grass[valid]));road=float(np.median(ray_road[valid]))
+    reach=int(math.ceil(width+1.));edges=index+direction*np.arange(-16*reach,9)/16.
+    def predict(slope,width):
+        models=[];paints=[]
+        for ray in rays:
+            edge=edges+slope*(ray-row)
+            inner=_raster_halfplane(ids,int(ray),edge,slope)
+            outer=_raster_halfplane(ids,int(ray),edge-direction*width,slope)
+            if direction<0:inner=1-inner;outer=1-outer
+            alpha=outer-inner;constant=ray_grass[int(ray-row+1)]*(1-outer)+ray_road[int(ray-row+1)]*inner
+            target=patch[int(ray-row+1)]
+            denominator=np.sum(alpha*alpha,axis=1)
+            paint=np.sum(alpha*(target[None,:]-constant),axis=1)/np.maximum(denominator,1e-12)
+            paint=np.clip(paint,76./255.,1.)
+            models.append(constant+paint[:,None]*alpha);paints.append(paint)
+        return np.stack(models,axis=1),paints
+    model,paints=predict(slope,width)
+    residual=model-patch[None,:,:]
+    # Infer the local curb direction from individually visible material rays,
+    # rather than imposing the opposite road contour's smoothed normal.
+    tolerance=2*q+(84./1000.)*max(1.-road,1.-grass)
+    located=[]
+    for k,ray in enumerate(rays):
+        if not valid[k]:continue
+        scores=np.mean(residual[:,k,:]**2,axis=1)
+        fits=np.flatnonzero((scores<=(tolerance/2)**2)&(np.max(abs(residual[:,k,:]),axis=1)<=tolerance))
+        if not len(fits) or np.ptp(edges[fits])>1.:continue
+        best=int(fits[np.argmin(scores[fits])])
+        located.append((float(ray-row),float(edges[best]+slope*(ray-row))))
+    if len(located)<2:return None
+    positions=np.asarray(located);design=np.column_stack((np.ones(len(positions)),positions[:,0]))
+    intercept,fitted_slope=np.linalg.lstsq(design,positions[:,1],rcond=None)[0]
+    gradient=np.array([1.3608,-fitted_slope*(-1.701)]) if axis==0 else np.array([-fitted_slope*1.3608,-1.701])
+    if float(gradient@np.asarray(outward))<0:gradient=-gradient
+    gradient/=np.linalg.norm(gradient)
+    if float(gradient@np.asarray(outward))<math.cos(.31):return None
+    slope=float(fitted_slope)
+    width=(8./6.)*math.hypot(abs(scale),slope*abs(other_scale))
+    model,paints=predict(slope,width);residual=model-patch[None,:,:]
+    # A junction can cut one ray along the normal. Two actual neighbouring
+    # material rays must agree on the same edge; the third is an outlier,
+    # never invented material support. Keep the original residual tolerance.
+    ray_score=np.mean(residual**2,axis=2);ray_score[:,~valid]=float('inf')
+    selected=np.argsort(ray_score,axis=1)[:,:2]
+    chosen=np.take_along_axis(residual,selected[:,:,None],axis=1)
+    score=np.mean(chosen**2,axis=(1,2));best=int(np.argmin(score))
+    tolerance=2*q+(84./1000.)*max(1.-road,1.-grass)
+    acceptable=(score<=(tolerance/2)**2)&(np.max(abs(chosen),axis=(1,2))<=tolerance)
+    plausible=np.flatnonzero(acceptable)
+    if not len(plausible) or np.ptp(edges[plausible])>1.:return None
+    # Take the road-side plausible edge. The later map still uses its .35m
+    # flank inset, plus the existing source-pixel/node-chord allowance below.
+    edge=float(edges[plausible[np.argmax(direction*edges[plausible])]])
+    edge+=direction*(84./1000.)
+    denominator=normal_axis*scale-slope*normal_other*other_scale
+    if abs(denominator)<1e-8:return None
+    along=(edge+slope*(tangent-row)-coordinate)/denominator
+    observed=np.asarray(point)+along*np.asarray(outward)
+    return observed,dict(rms=float(math.sqrt(score[best])),paint_gray=[float(p[best]*255) for p in paints])
+
+
+def observe_white_curb_inner(image,point,outward,blocked):
+    """Direct road/near-pure-white transition, independent of the outer curb.
+
+    Actual material rays bracket the query within one public tile. A near-
+    white ray anchors the material; a mixed neighbour uses its observed peak
+    as a conservative paint level. Outer-curb pixels beyond the peak are not
+    used. Corner and raster uncertainty are charged towards the road.
+    """
+    nx,ny=outward;axis=0 if abs(nx/1.3608)>=abs(ny/1.701) else 1
+    scale=1.3608 if axis==0 else -1.701;other_scale=-1.701 if axis==0 else 1.3608
+    normal_axis=nx if axis==0 else ny;normal_other=ny if axis==0 else nx
+    coordinate=IMAGE_ORIGIN_X+1.3608*point[0] if axis==0 else IMAGE_ORIGIN_Y-1.701*point[1]
+    tangent=IMAGE_ORIGIN_Y-1.701*point[1] if axis==0 else IMAGE_ORIGIN_X+1.3608*point[0]
+    index=int(round(coordinate));row=int(round(tangent));direction=-1 if normal_axis*scale>0 else 1
+    slope=-(normal_other/other_scale)/(normal_axis/scale);q=1./255.
+    reach=int(math.ceil((8./6.)*abs(scale/normal_axis)+2*84./96.+2))
+    ids=index+direction*np.arange(-reach,6);tangent_reach=int(math.ceil((21./6.)*abs(other_scale)/2))
+    rays=range(row-tangent_reach,row+tangent_reach+1)
+    if min(ids)<2 or max(ids)>81 or row<3 or row>80:return None
+    evidence=[]
+    for ray in rays:
+        yy,xx=(ids,np.full_like(ids,ray)) if axis==1 else (np.full_like(ids,ray),ids)
+        if np.any(yy<5) or np.any(yy>=54) or np.any(blocked[yy,xx]):continue
+        values=image[yy,xx].astype(np.float64);road=float(np.median(values[-3:]))
+        if not .36<road<.47 or np.ptp(values[-3:])>7.1*q:continue
+        peak=int(np.argmax(values[:-3]));paint=float(values[peak])
+        if paint<=186*q or peak+4>=len(ids):continue
+        neighbours=np.delete(values[max(0,peak-1):peak+2],peak-max(0,peak-1))
+        if not len(neighbours):continue
+        sample_ids=ids[peak:];samples=values[peak:]
+        if np.any(coherent_grass_mask(image)[yy[peak:],xx[peak:]]):continue
+        pure=paint>=253*q and max(neighbours)>=250*q
+        evidence.append((ray,sample_ids,samples,road,paint,pure))
+    # One near-pure white ray identifies the material. A neighbouring mixed
+    # white/red ray may support its inner transition too. Its observed peak
+    # is a conservative lower paint level, not an assumed pure255 plateau.
+    if len(evidence)<2 or not any(e[-1] for e in evidence):return None
+    # For an actually bracketed, monotone paint/road transition, integrated
+    # edge area survives the public symmetric raster filters. A single
+    # half-plane likelihood would be false at a rendered road-tile corner.
+    locations=[]
+    for ray,sample_ids,samples,road,paint,pure in evidence:
+        if np.max(np.diff(samples))>7.1*q:continue
+        fraction=np.clip((paint-samples)/(paint-road),0.,1.)
+        edge=float(sample_ids[0]+direction*(len(samples)-.5-float(np.sum(fraction))))
+        locations.append((ray,edge,len(samples)/(paint-road),pure))
+    candidates=[]
+    for i,first in enumerate(locations):
+        for second in locations[i+1:]:
+            if not min(first[0],second[0])<=row<=max(first[0],second[0]):continue
+            span=abs(second[0]-first[0])/abs(other_scale)
+            if span>21./6.:continue
+            candidates.append((span,first,second))
+    if not candidates:return None
+    span,first,last=min(candidates,key=lambda x:x[0])
+    slope=(last[1]-first[1])/(last[0]-first[0])
+    edge=first[1]+slope*(row-first[0])
+    gradient=np.array([1.3608,slope*1.701]) if axis==0 else np.array([-slope*1.3608,-1.701])
+    magnitude=float(np.linalg.norm(gradient));normal=gradient/magnitude
+    tangent_world=np.array([-normal[1],normal[0]])
+    raster_support=(1.5*84./96.)*(abs(tangent_world[0])/1.3608+abs(tangent_world[1])/1.701)+1/(2.7*6.)
+    # Engineering corner envelope from public node turn/spacing and actual
+    # observed bracket. Its uncertainty is charged towards the road, never
+    # used to fill past the observed material rays.
+    slack=max(raster_support,span*.5)*math.tan(.31)*magnitude
+    phase=84./(1000. if axis==0 else 800.)
+    quantization=2*q*max(first[2],last[2])
+    edge+=direction*(slack+phase+quantization)
+    denominator=normal_axis*scale-slope*normal_other*other_scale
+    if abs(denominator)<1e-8:return None
+    along=(edge+slope*(tangent-row)-coordinate)/denominator
+    observed=np.asarray(point)+along*np.asarray(outward)
+    return observed,dict(rms=None,paint_gray=[255.],method='bracketed visible paint/road area centroid',
+        engineering_edge_uncertainty_m=(slack+phase+quantization)/magnitude,
+        universal_bound=False)
+
+
 def visible_road_evidence(image):
     """Interior asphalt pixels actually seen, excluding opaque/HUD support."""
     mask=((image>.36)&(image<.47)).astype(np.uint8)
@@ -465,7 +639,7 @@ def offset_observed_contour(points,center,radius):
     return contour,residuals,centres
 
 
-def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None):
+def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_curb_bands=None):
     """Piecewise fixed-width road hypothesis from a clean opposite contour.
 
     Coarse circles guide visible contour sampling only. Local tangents allow
@@ -539,6 +713,23 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None):
                 low,high=float(min(angles)),float(max(angles));observed_points=candidate
                 verified+=1
         inner_points,local_residuals,_=offset_observed_contour(observed_points,center,radius)
+        baseline_inner_points=inner_points
+        mixed_updates=0;mixed_records=[];corrected=[];mixed_angles=set()
+        for x,y,angle,ox,oy in inner_points:
+            outward=np.asarray([ox-x,oy-y]);length=float(np.linalg.norm(outward))
+            if length<1.:corrected.append((x,y,angle,ox,oy));continue
+            outward/=length;old_allowance=(nominal-length)*.5
+            physical=np.asarray([x,y])-old_allowance*outward
+            observed=observe_mixed_curb_edge(image,physical,-outward,blocked)
+            if observed is None:observed=observe_white_curb_inner(image,physical,-outward,blocked)
+            if observed is None:corrected.append((x,y,angle,ox,oy));continue
+            measured,fit=observed
+            allowance=(21./6.)*(1-math.cos(.31/2))+1/(2.7*6.)
+            safe=measured+allowance*outward
+            if float(np.linalg.norm(safe-physical))>(8./6.)+math.hypot(1/1.3608,1/1.701):
+                corrected.append((x,y,angle,ox,oy));continue
+            corrected.append((float(safe[0]),float(safe[1]),angle,ox,oy));mixed_updates+=1;mixed_records.append(fit);mixed_angles.add(angle)
+        curb_inner_points=corrected;inner_points=baseline_inner_points
         reference_observations,reference_extensions=extend_reference_contour(image,observed_points,center,blocked)
         _,_,centres=offset_observed_contour(reference_observations,center,radius)
         if len(centres)>=3:reference_curves.append(dict(outer_side=side,points=centres))
@@ -569,6 +760,15 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None):
             updates[(side,row)]=pixel_x;edge_count+=1
             if side==1:support[row,int(math.ceil(pixel_x)):a]=1
             else:support[row,b+1:int(math.floor(pixel_x))+1]=1
+        if observed_curb_bands is not None:
+            for first,last in zip(curb_inner_points,curb_inner_points[1:]):
+                if last[2]-first[2]>.051 or first[2] not in mixed_angles or last[2] not in mixed_angles:continue
+                patch=np.asarray([[first[0],first[1]],[first[3],first[4]],
+                                  [last[3],last[4]],[last[0],last[1]]])
+                for inner,outer in ((0,1),(3,2)):
+                    normal=patch[outer]-patch[inner];normal/=np.linalg.norm(normal)
+                    inset=.35*abs(float(normal[0]));patch[inner]+=inset*normal;patch[outer]-=inset*normal
+                observed_curb_bands.append(patch)
         # Paint can occlude a whole inner cap between two row intervals.
         # Restrict recovery to the conservative observed2D road band rather
         # than a selected row's left/right prefix. No unseen curve is added.
@@ -590,6 +790,7 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None):
             eligible=inside&(white[yy,xx]|red[yy,xx]|asphalt[yy,xx].astype(bool))&~grass[yy,xx]&~blocked[yy,xx]
             support[yy[eligible],xx[eligible]]=1
         fits.append(dict(outer_side=side,observations=len(points),radial_residual_m=residual,
+            mixed_curb_updates=mixed_updates,mixed_curb_fit_records=mixed_records,
             angular_support_rad=high-low,added_pixels=int(support.sum())-added_before,
             verified_2D_extensions=verified,local_offset_points=len(inner_points),
             local_offset_edges=edge_count,reference_observed_edge_extensions=reference_extensions,local_max_residual_m=max(local_residuals),
@@ -929,8 +1130,8 @@ class Agent:
             if right-left<2.5:break
             anchor=(start+end-1)*.5;rows.append((left,right,(IMAGE_ORIGIN_Y-y)/1.701));pixels.append((y,start,end))
         if len(rows)<8:raise RuntimeError('OBSERVED_ROAD_SUPPORT_INSUFFICIENT')
-        geometry_bands=[]
-        painted,painted_info,band_edges,reference_curves=infer_painted_road_band(image,asphalt,blocked,geometry_bands)
+        geometry_bands=[];observed_curb_bands=[]
+        painted,painted_info,band_edges,reference_curves=infer_painted_road_band(image,asphalt,blocked,geometry_bands,observed_curb_bands)
         geometry_veto=coherent_grass_mask(image)|blocked.astype(bool)
         # A lone asphalt-grey sample may be a red/white curb mixture. Flat
         # public road shades, registered evidence, conditioned vehicle gaps,
@@ -995,7 +1196,28 @@ class Agent:
                 if right>left:intervals.append((left,right))
             geometry_rows.append((world_y,intervals))
         roads,boundary=strip_union_mesh(geometry_rows,self.grip_prior)
+        accepted_patches=0
+        for patch in observed_curb_bands:
+            # Every patch has two adjacent direct curb fits and a visible
+            # opposite contour. Coherent grass, obstacles and opaque support
+            # veto the whole patch; no observation gap is bridged.
+            turns=[]
+            for aa,bb,cc in zip(patch,np.roll(patch,-1,axis=0),np.roll(patch,-2,axis=0)):
+                turns.append(float(np.cross(bb-aa,cc-bb)))
+            if not (min(turns)>0 or max(turns)<0):continue
+            px=IMAGE_ORIGIN_X+1.3608*patch[:,0];py=IMAGE_ORIGIN_Y-1.701*patch[:,1]
+            x0,x1=int(math.ceil(min(px))),int(math.floor(max(px)))
+            y0,y1=int(math.ceil(min(py))),int(math.floor(max(py)))
+            if x0<1 or x1>82 or y0<5 or y1>54 or x0>x1 or y0>y1:continue
+            yy,xx=np.indices((y1-y0+1,x1-x0+1));xx+=x0;yy+=y0
+            wx=(xx-IMAGE_ORIGIN_X)/1.3608;wy=(IMAGE_ORIGIN_Y-yy)/1.701;signs=[]
+            for aa,bb in zip(patch,np.roll(patch,-1,axis=0)):
+                signs.append((bb[0]-aa[0])*(wy-aa[1])-(bb[1]-aa[1])*(wx-aa[0]))
+            signs=np.asarray(signs);inside=np.all(signs>=0,axis=0)|np.all(signs<=0,axis=0)
+            if not np.any(inside) or np.any(geometry_veto[yy[inside],xx[inside]]):continue
+            roads.append((tuple(tuple(float(v) for v in point) for point in patch),self.grip_prior));accepted_patches+=1
         boundary=road_union_boundary(roads)
+        self.uncertainty['continuous_observed_curb_patches']=accepted_patches
         self.uncertainty['mesh_source']='union of all supported row intervals; shared interfaces excluded'
         points=np.asarray([((a+b)*.5,y) for a,b,y in rows],np.float64)
         points,reference_info=reference_from_observed_width(points,reference_curves,asphalt,obstacle_blocked)

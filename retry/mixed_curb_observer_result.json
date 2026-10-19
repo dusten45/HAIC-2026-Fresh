@@ -1,0 +1,67 @@
+{
+  "status": "CLASSIFIER_IMPLEMENTED_PUBLIC_GATES_PASS_REMAINING_CACHED_CAUSE_UNRESOLVED_NOT_PROMOTED",
+  "base_commit": "88f1209cae43a63d11a6074e20e9682766ea2ae6",
+  "implementation": [
+    "Fit visible road/curb/grass with bounded red/white mixture per material ray and two-ray agreement.",
+    "Infer local curb direction from visible rays instead of assuming the opposite contour normal.",
+    "Use an observed near-white anchor with bracketed paint/road area transitions; charge explicit raster, quantization and corner uncertainty towards the road.",
+    "Keep existing width-derived road evidence; add convex observed curb patches independently and exclude coherent grass, obstacles, opaque pixels and FOV gaps.",
+    "Retain the existing .35m horizontal-flank inset as its normal displacement; union removes internal patch seams."
+  ],
+  "validation": {
+    "public_raster_cases": 144,
+    "physical_outside_cases": 0,
+    "outside_samples": 0,
+    "new_patch_nonvacuum_public_cases": 69,
+    "baseline_painted_band_cases": 144,
+    "baseline_painted_band_guards": 8,
+    "baseline_painted_band_updates": 775,
+    "saved_observation_continuous_patches": 32,
+    "saved_observation_accepted_material_fits": {
+      "bounded mixed-curb material-ray inverse": 19,
+      "bracketed visible paint/road area centroid": 18
+    },
+    "reference_high_low_unchanged": true,
+    "only_Agent_map_method_changed": true
+  },
+  "falsifications": [
+    "Unrestricted affine paint variation produced public source-road violations and was discarded.",
+    "Dropping the local-direction guard produced public source-road violations and was discarded.",
+    "Replacing existing road support with a new material estimate regressed saved clearances; corrected to preserve existing evidence and union separate new patches."
+  ],
+  "remaining": {
+    "saved_rejection_sites": 6,
+    "raw_tick_range": [
+      41,
+      48
+    ],
+    "margins_unchanged": true,
+    "margin_range_m": [
+      0.38093702240267113,
+      0.4754339146580193
+    ],
+    "cause": "At the tight mixed-tile cap, the retained conservative material evidence still does not extend the observation union enough. No unsupported cap removal or true-map offset was used.",
+    "final_candidate_cached_full_Agent_repeated": false,
+    "DEV_promoted": false
+  },
+  "cost": {
+    "model_ticks": 951,
+    "recorded_CPU_s": 116.646753428,
+    "earlier_changed_classifier_cached_calls": 3,
+    "max_measured_whole_act_s": 0.6668973810155876,
+    "final_candidate_whole_act_gate": "Not run: the saved six rejection sites remain unresolved.",
+    "native_DEV_actions": 0,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0
+  },
+  "preserved": {
+    "original_core_SHA256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+    "chooser_physics_horizon_gates": true,
+    "runtime_and_external_research_budget_lifecycle_64d37cb": true,
+    "research_actions_remaining": 20133
+  },
+  "limits": "Finite public checks; engineering observation uncertainty is not a universal reconstruction bound. No finish, native progress improvement or final whole-act pass claimed.",
+  "environment_connection": "Selected cloud filesystem and Python execution normal; no new compute resource used.",
+  "privacy": "Source code and aggregate results only. Private images, map/state error diagnostics, checkpoints and discarded prototypes remain outside the repository."
+}
