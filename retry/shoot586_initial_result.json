@@ -1,0 +1,166 @@
+{
+  "runtime_pure_warm_solver": {
+    "minimize_calls": 1,
+    "pure_numerical": true,
+    "source_ticks": 0,
+    "status": 9
+  },
+  "positive": {
+    "raw": 252,
+    "all_full_rows_exact": true,
+    "all_available_checkpoint_fields_exact": true,
+    "raw96_full_checkpoint_sha256": "bfd7dd13f8e071b12cd49770003e33ea591a73a015c9d1738c0b92acbcd64b32",
+    "baseline_planes": {
+      "200": {
+        "before_raw": 192,
+        "after_raw": 193,
+        "before_s": 3.840000000000003,
+        "after_s": 3.860000000000003,
+        "fraction": 0.5644340094399982,
+        "COM_speed_m_s": 79.40600518474697,
+        "eligible": true,
+        "time_s": 3.851288680188803,
+        "hold": 49,
+        "whole_hold_safe": true
+      },
+      "300": {
+        "before_raw": 247,
+        "after_raw": 248,
+        "before_s": 4.939999999999983,
+        "after_s": 4.959999999999982,
+        "fraction": 0.3407620361534251,
+        "COM_speed_m_s": 94.7040656958983,
+        "eligible": true,
+        "time_s": 4.946815240723051,
+        "hold": 62,
+        "whole_hold_safe": true
+      }
+    },
+    "seed_minimum_constraint": 0.0,
+    "representable_incumbent_explicitly_retained": true
+  },
+  "status": "TECHNICAL_FAILURE",
+  "error": "TypeError:Journal.append() got multiple values for argument 'kind'",
+  "optimization_stop": null,
+  "optimization_censored": false,
+  "optimizer": null,
+  "suffix_calls": 1,
+  "best_case_id": 0,
+  "best_local_time_s": 4.946815240723051,
+  "baseline_local_time_s": 4.946815240723051,
+  "best_local_planes": {
+    "200": {
+      "before_raw": 192,
+      "after_raw": 193,
+      "before_s": 3.840000000000003,
+      "after_s": 3.860000000000003,
+      "fraction": 0.5644340094399982,
+      "COM_speed_m_s": 79.40600518474697,
+      "eligible": true,
+      "time_s": 3.851288680188803,
+      "hold": 49,
+      "whole_hold_safe": true
+    },
+    "300": {
+      "before_raw": 247,
+      "after_raw": 248,
+      "before_s": 4.939999999999983,
+      "after_s": 4.959999999999982,
+      "fraction": 0.3407620361534251,
+      "COM_speed_m_s": 94.7040656958983,
+      "eligible": true,
+      "time_s": 4.946815240723051,
+      "hold": 62,
+      "whole_hold_safe": true
+    }
+  },
+  "coordinate_change_summary": {
+    "total_coordinates": 50,
+    "changed_coordinates": 0,
+    "changed_holds": 0,
+    "max_abs_steering_delta": 0.0,
+    "max_abs_signed_pedal_delta": 0.0,
+    "normalized_Linf": 0.0,
+    "full50_vector_private": true,
+    "private_sha256": "ceb06d2abe0fe40b8df2c8a69de14df7b989547236636af01578268dabd59a4a"
+  },
+  "whole": null,
+  "independent_replay": null,
+  "events": [],
+  "journal": {
+    "events": 1766,
+    "head": "4a31ce42f7b9f39ff96c605a3b76df489d09462ce06825381a79479745e9cf55",
+    "kinds": {
+      "BEFORE_GEOMETRY": 253,
+      "GEOMETRY_VERDICT": 253,
+      "BEFORE_FORCE": 252,
+      "FORCE_VERDICT": 252,
+      "BEFORE_TICK": 252,
+      "AFTER_TICK": 252,
+      "RAW_VERDICT": 252
+    },
+    "valid": true
+  },
+  "cost": {
+    "total": {
+      "geometry_checks": 253,
+      "attempted_raw": 252,
+      "external_force": 1008,
+      "internal_force": 1008,
+      "completed_model_ticks": 252,
+      "CPU_s": 12.857432392,
+      "wall_s": 10.847870603989577
+    },
+    "phases": {
+      "preparation": {
+        "CPU_s": 5.997120579,
+        "wall_s": 3.4717129049968207
+      },
+      "positive": {
+        "geometry_checks": 253,
+        "attempted_raw": 252,
+        "external_force": 1008,
+        "internal_force": 1008,
+        "completed_model_ticks": 252,
+        "CPU_s": 6.649799193,
+        "wall_s": 7.166089203994488
+      },
+      "optimization": {
+        "CPU_s": 0.008005523000000458,
+        "wall_s": 0.00667904999863822
+      },
+      "audit": {
+        "CPU_s": 0.2025070969999998,
+        "wall_s": 0.20340001898875926
+      }
+    },
+    "modes": {
+      "positive": {
+        "geometry_checks": 253,
+        "attempted_raw": 252,
+        "external_force": 1008,
+        "internal_force": 1008,
+        "completed_model_ticks": 252
+      }
+    },
+    "suffix_cache_misses": 1,
+    "cache_requests": 4,
+    "cache_hits": 3,
+    "FD_columns": 0,
+    "FD_batches": 1,
+    "minimize_calls_runtime": 2,
+    "forecast_ticks": 0
+  },
+  "actual_incumbent_s": 13.66,
+  "source_incumbent_s": 13.2,
+  "incumbent_changed": false,
+  "native_actions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "new_learning": 0,
+  "new_world": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "paid_compute": 0
+}

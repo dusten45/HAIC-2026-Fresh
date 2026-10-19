@@ -1,0 +1,4397 @@
+{
+  "status": "FASTER_S300_FIXED_REMAINDER_WHOLE_FAILED",
+  "error": null,
+  "publication_technical_error": "FileExistsError:[Errno 17] File exists: '/workspace/HAIC-2026-Fresh/retry/.shoot586_result.json.l0edmsmv' -> '/workspace/HAIC-2026-Fresh/retry/shoot586_result.json'",
+  "final_aggregate_reconstructed_source0": true,
+  "reconstruction_evidence": "Exactpositive/source96checkpoint,candidate23fullsuffix,whole312trajectory,events127,costandtwojournalchainsallpreserved. Failedaggregate-onlytempwascleanedbyatomicwriter;no source/FD/solverreexecution.",
+  "recovery": {
+    "same_scientific_contract_sha256": "c9351952343c2fcd48a44524b3a82b07482f21967378e3b3ea85e1af9e9b8ac4",
+    "instrumentation_only_two_metadata_keys": true,
+    "positive252_reused_without_source": true,
+    "raw96_full_checkpoint_sha256": "bfd7dd13f8e071b12cd49770003e33ea591a73a015c9d1738c0b92acbcd64b32",
+    "first_pending_FD_command_sha256": "47efc59e744f257a756ae13690120868033188507639eefa51e2d3c63b6d1737",
+    "first_pending_FD_coordinate": 0,
+    "first_pending_FD_actual_normalized_delta": 0.00100000761449337,
+    "initial_SLSQP_QP_calls": 0,
+    "initial_FD_source_columns": 0,
+    "initial_source_attempts": 252,
+    "consumed_unexecuted_candidate_slot": 1,
+    "remaining_actual_suffix_slots": 127,
+    "initial_journal": {
+      "events": 1766,
+      "head": "4a31ce42f7b9f39ff96c605a3b76df489d09462ce06825381a79479745e9cf55",
+      "kinds": {
+        "BEFORE_GEOMETRY": 253,
+        "GEOMETRY_VERDICT": 253,
+        "BEFORE_FORCE": 252,
+        "FORCE_VERDICT": 252,
+        "BEFORE_TICK": 252,
+        "AFTER_TICK": 252,
+        "RAW_VERDICT": 252
+      },
+      "valid": true
+    },
+    "extra_test_CPU_s": 1.2287519999999996,
+    "extra_test_wall_s": 0.5903474950027885,
+    "recovery_auxiliary_registration_and_old_final_writer_CPU_wall_charge_s": 3.0,
+    "solver_reentry": "SameScalarFunctioninitialgradient,whichfailedbeforefirstFortranSLSQPcall. Samezeroanchor/seed/options/residuals/FDinput;nooptimizationiterationorresearchrestart. Pythoninitializationandcachequeriesarerepeatedandcharged,no source/FDcandidate duplicated."
+  },
+  "positive": {
+    "raw": 252,
+    "all_full_rows_exact": true,
+    "all_available_checkpoint_fields_exact": true,
+    "raw96_full_checkpoint_sha256": "bfd7dd13f8e071b12cd49770003e33ea591a73a015c9d1738c0b92acbcd64b32",
+    "baseline_planes": {
+      "200": {
+        "before_raw": 192,
+        "after_raw": 193,
+        "before_s": 3.840000000000003,
+        "after_s": 3.860000000000003,
+        "fraction": 0.5644340094399982,
+        "COM_speed_m_s": 79.40600518474697,
+        "eligible": true,
+        "time_s": 3.851288680188803,
+        "hold": 49,
+        "whole_hold_safe": true
+      },
+      "300": {
+        "before_raw": 247,
+        "after_raw": 248,
+        "before_s": 4.939999999999983,
+        "after_s": 4.959999999999982,
+        "fraction": 0.3407620361534251,
+        "COM_speed_m_s": 94.7040656958983,
+        "eligible": true,
+        "time_s": 4.946815240723051,
+        "hold": 62,
+        "whole_hold_safe": true
+      }
+    },
+    "seed_minimum_constraint": 0.0,
+    "representable_incumbent_explicitly_retained": true
+  },
+  "optimization_stop": "OptimizationStop:SUFFIX_CALL_CAP",
+  "optimization_censored": true,
+  "optimizer": null,
+  "suffix_calls": 128,
+  "best_case_id": 23,
+  "best_local_time_s": 4.946802458348053,
+  "baseline_local_time_s": 4.946815240723051,
+  "best_local_planes": {
+    "200": {
+      "before_raw": 192,
+      "after_raw": 193,
+      "before_s": 3.840000000000003,
+      "after_s": 3.860000000000003,
+      "fraction": 0.5639719212947433,
+      "COM_speed_m_s": 79.40627100588657,
+      "eligible": true,
+      "time_s": 3.8512794384258977,
+      "hold": 49,
+      "whole_hold_safe": true
+    },
+    "300": {
+      "before_raw": 247,
+      "after_raw": 248,
+      "before_s": 4.939999999999983,
+      "after_s": 4.959999999999982,
+      "fraction": 0.34012291740353107,
+      "COM_speed_m_s": 94.70454712430656,
+      "eligible": true,
+      "time_s": 4.946802458348053,
+      "hold": 62,
+      "whole_hold_safe": true
+    }
+  },
+  "coordinate_change_summary": {
+    "total_coordinates": 50,
+    "changed_coordinates": 1,
+    "changed_holds": 1,
+    "max_abs_steering_delta": 0.0,
+    "max_abs_signed_pedal_delta": 0.00010000169277191162,
+    "normalized_Linf": 0.0010000169277191162,
+    "full50_vector_private": true,
+    "private_sha256": "41c1515ca8d9661a3f14f46501f79de4ac70a0437d4e9adf9c80327aee4a2e56"
+  },
+  "whole": {
+    "safe": false,
+    "finished": false,
+    "failure": "REFERENCE",
+    "raw": 312,
+    "official_candidate_time_s": null,
+    "official_candidate_raw": null,
+    "planes": {
+      "200": {
+        "before_raw": 192,
+        "after_raw": 193,
+        "before_s": 3.840000000000003,
+        "after_s": 3.860000000000003,
+        "fraction": 0.5639719212947433,
+        "COM_speed_m_s": 79.40627100588657,
+        "eligible": true,
+        "time_s": 3.8512794384258977,
+        "hold": 49,
+        "whole_hold_safe": true
+      },
+      "300": {
+        "before_raw": 247,
+        "after_raw": 248,
+        "before_s": 4.939999999999983,
+        "after_s": 4.959999999999982,
+        "fraction": 0.34012291740353107,
+        "COM_speed_m_s": 94.70454712430656,
+        "eligible": true,
+        "time_s": 4.946802458348053,
+        "hold": 62,
+        "whole_hold_safe": true
+      }
+    }
+  },
+  "independent_replay": null,
+  "events": [
+    {
+      "id": 2,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5655332719158744,
+          "COM_speed_m_s": 79.40672033303272,
+          "eligible": true,
+          "time_s": 3.8513106654383207,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 3,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.564560185962209,
+          "COM_speed_m_s": 79.4059587072067,
+          "eligible": true,
+          "time_s": 3.851291203719247,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 4,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5654626955491475,
+          "COM_speed_m_s": 79.406675113823,
+          "eligible": true,
+          "time_s": 3.851309253910986,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 5,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.946812270703614,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5642964848001092,
+          "COM_speed_m_s": 79.40604561576855,
+          "eligible": true,
+          "time_s": 3.8512859296960054,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.34061353518157267,
+          "COM_speed_m_s": 94.70417616066521,
+          "eligible": true,
+          "time_s": 4.946812270703614,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": true
+    },
+    {
+      "id": 6,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5653055114057909,
+          "COM_speed_m_s": 79.4065771885133,
+          "eligible": true,
+          "time_s": 3.8513061102281188,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 7,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 63,
+      "first_failure_raw": 159,
+      "objective_s": 6.542969086876897,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 8,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.565144671738432,
+          "COM_speed_m_s": 79.4064748945917,
+          "eligible": true,
+          "time_s": 3.8513028934347715,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 9,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 63,
+      "first_failure_raw": 159,
+      "objective_s": 6.542969086876897,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 10,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5650005808306124,
+          "COM_speed_m_s": 79.4063825929313,
+          "eligible": true,
+          "time_s": 3.8513000116166154,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 11,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 63,
+      "first_failure_raw": 159,
+      "objective_s": 6.542969086876897,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 12,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5648765600774787,
+          "COM_speed_m_s": 79.40630220579806,
+          "eligible": true,
+          "time_s": 3.8512975312015527,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 13,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 63,
+      "first_failure_raw": 159,
+      "objective_s": 6.542969086876897,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 14,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5647947315473986,
+          "COM_speed_m_s": 79.40624951143538,
+          "eligible": true,
+          "time_s": 3.851295894630951,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 15,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 63,
+      "first_failure_raw": 159,
+      "objective_s": 6.542969086876897,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 16,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.564676200693819,
+          "COM_speed_m_s": 79.40617375766702,
+          "eligible": true,
+          "time_s": 3.8512935240138795,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 17,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 63,
+      "first_failure_raw": 159,
+      "objective_s": 6.542969086876897,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 18,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5646172687842055,
+          "COM_speed_m_s": 79.4061354511495,
+          "eligible": true,
+          "time_s": 3.851292345375687,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 19,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 63,
+      "first_failure_raw": 159,
+      "objective_s": 6.542969086876897,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 20,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5645714288417749,
+          "COM_speed_m_s": 79.40610649482052,
+          "eligible": true,
+          "time_s": 3.8512914285768383,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 21,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.946809343161374,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5642031348267474,
+          "COM_speed_m_s": 79.40610833947188,
+          "eligible": true,
+          "time_s": 3.851284062696538,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3404671580695774,
+          "COM_speed_m_s": 94.70428107732856,
+          "eligible": true,
+          "time_s": 4.946809343161374,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": true
+    },
+    {
+      "id": 22,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.56452616993334,
+          "COM_speed_m_s": 79.40607872543954,
+          "eligible": true,
+          "time_s": 3.85129052339867,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 23,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.946802458348053,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5639719212947433,
+          "COM_speed_m_s": 79.40627100588657,
+          "eligible": true,
+          "time_s": 3.8512794384258977,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.34012291740353107,
+          "COM_speed_m_s": 94.70454712430656,
+          "eligible": true,
+          "time_s": 4.946802458348053,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": true
+    },
+    {
+      "id": 24,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5645016467673162,
+          "COM_speed_m_s": 79.40606411399284,
+          "eligible": true,
+          "time_s": 3.851290032935349,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 25,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.946815240723051,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644340094399982,
+          "COM_speed_m_s": 79.40600518474697,
+          "eligible": true,
+          "time_s": 3.851288680188803,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3407620361534251,
+          "COM_speed_m_s": 94.7040656958983,
+          "eligible": true,
+          "time_s": 4.946815240723051,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 26,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644665951933808,
+          "COM_speed_m_s": 79.40604947850521,
+          "eligible": true,
+          "time_s": 3.8512893319038706,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 27,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.9468114175651845,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5643018333781341,
+          "COM_speed_m_s": 79.40610132251098,
+          "eligible": true,
+          "time_s": 3.851286036667566,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3405708782601066,
+          "COM_speed_m_s": 94.70422044987902,
+          "eligible": true,
+          "time_s": 4.9468114175651845,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 28,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644436060034366,
+          "COM_speed_m_s": 79.40603668771219,
+          "eligible": true,
+          "time_s": 3.8512888721200715,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 29,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 59,
+      "first_failure_raw": 155,
+      "objective_s": 6.5686101125179235,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 30,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644333765361939,
+          "COM_speed_m_s": 79.40602231342814,
+          "eligible": true,
+          "time_s": 3.851288667530727,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 31,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 59,
+      "first_failure_raw": 155,
+      "objective_s": 6.5686101125179235,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 32,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 63,
+      "first_failure_raw": 159,
+      "objective_s": 6.542969086876897,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 33,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 63,
+      "first_failure_raw": 159,
+      "objective_s": 6.542969086876897,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 34,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644246836339991,
+          "COM_speed_m_s": 79.40600538010855,
+          "eligible": true,
+          "time_s": 3.851288493672683,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 35,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.94681002160514,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5643044984389873,
+          "COM_speed_m_s": 79.40622741956292,
+          "eligible": true,
+          "time_s": 3.8512860899687826,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3405010802578612,
+          "COM_speed_m_s": 94.70432590994457,
+          "eligible": true,
+          "time_s": 4.94681002160514,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 36,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644256900449351,
+          "COM_speed_m_s": 79.40600244672304,
+          "eligible": true,
+          "time_s": 3.8512885138009016,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 37,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.946818221991736,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5645005063332001,
+          "COM_speed_m_s": 79.40586367891454,
+          "eligible": true,
+          "time_s": 3.851290010126667,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3409110995876537,
+          "COM_speed_m_s": 94.70390885402067,
+          "eligible": true,
+          "time_s": 4.946818221991736,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 38,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644272364969987,
+          "COM_speed_m_s": 79.40600245326601,
+          "eligible": true,
+          "time_s": 3.8512885447299428,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 39,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.946819166746262,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5645143554970335,
+          "COM_speed_m_s": 79.4058057701088,
+          "eligible": true,
+          "time_s": 3.8512902871099435,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3409583373139727,
+          "COM_speed_m_s": 94.70385207363553,
+          "eligible": true,
+          "time_s": 4.946819166746262,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 40,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644319096324365,
+          "COM_speed_m_s": 79.40600038223283,
+          "eligible": true,
+          "time_s": 3.851288638192652,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 41,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.946818957642969,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5645006373590195,
+          "COM_speed_m_s": 79.40579481961338,
+          "eligible": true,
+          "time_s": 3.8512900127471834,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.34094788214933314,
+          "COM_speed_m_s": 94.70385039461137,
+          "eligible": true,
+          "time_s": 4.946818957642969,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 42,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644362983548639,
+          "COM_speed_m_s": 79.40599972632657,
+          "eligible": true,
+          "time_s": 3.8512887259671,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 43,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.9468187096341785,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644859496107046,
+          "COM_speed_m_s": 79.40578469560232,
+          "eligible": true,
+          "time_s": 3.8512897189922173,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3409354817097773,
+          "COM_speed_m_s": 94.70384997475023,
+          "eligible": true,
+          "time_s": 4.9468187096341785,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 44,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644378180780042,
+          "COM_speed_m_s": 79.40600243952562,
+          "eligible": true,
+          "time_s": 3.851288756361563,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 45,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.94681847191137,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644717784003495,
+          "COM_speed_m_s": 79.40577480572787,
+          "eligible": true,
+          "time_s": 3.85128943556801,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3409235955693633,
+          "COM_speed_m_s": 94.70384955344986,
+          "eligible": true,
+          "time_s": 4.94681847191137,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 46,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644374736343114,
+          "COM_speed_m_s": 79.40600353961028,
+          "eligible": true,
+          "time_s": 3.851288749472689,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 47,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.946818243314077,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644580357798009,
+          "COM_speed_m_s": 79.40576482730809,
+          "eligible": true,
+          "time_s": 3.851289160715599,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3409121657047078,
+          "COM_speed_m_s": 94.70384918518013,
+          "eligible": true,
+          "time_s": 4.946818243314077,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 48,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644355105953711,
+          "COM_speed_m_s": 79.40600382824566,
+          "eligible": true,
+          "time_s": 3.8512887102119104,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 49,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.9468180224365925,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644446597566554,
+          "COM_speed_m_s": 79.40574981968584,
+          "eligible": true,
+          "time_s": 3.851288893195136,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.34090112183049365,
+          "COM_speed_m_s": 94.70384886754265,
+          "eligible": true,
+          "time_s": 4.9468180224365925,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 50,
+      "candidate_kind": "FD",
+      "safe": false,
+      "admissible": false,
+      "failure": "PATH",
+      "attempted_rows": 110,
+      "first_failure_raw": 206,
+      "objective_s": 6.241687035594846,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644340094399982,
+          "COM_speed_m_s": 79.40600518474697,
+          "eligible": true,
+          "time_s": 3.851288680188803,
+          "hold": 49,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": -1.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 51,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.946817808273656,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5644345638206136,
+          "COM_speed_m_s": 79.4059613691043,
+          "eligible": true,
+          "time_s": 3.851288691276415,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.34089041368369805,
+          "COM_speed_m_s": 94.7038485607479,
+          "eligible": true,
+          "time_s": 4.946817808273656,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 1,
+      "selected_local_best": false
+    },
+    {
+      "id": 52,
+      "candidate_kind": "proposal",
+      "safe": false,
+      "admissible": false,
+      "failure": "CLIP_HISTORY",
+      "attempted_rows": 2,
+      "first_failure_raw": 98,
+      "objective_s": 6.9339947279025385,
+      "planes": {},
+      "minimum_residual": -1.4999999999999998,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 53,
+      "candidate_kind": "proposal",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 47,
+      "first_failure_raw": 143,
+      "objective_s": 6.645533189441,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 54,
+      "candidate_kind": "proposal",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 52,
+      "first_failure_raw": 148,
+      "objective_s": 6.613481907389718,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 55,
+      "candidate_kind": "proposal",
+      "safe": false,
+      "admissible": false,
+      "failure": "FOOTPRINT",
+      "attempted_rows": 63,
+      "first_failure_raw": 159,
+      "objective_s": 6.542969086876897,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 56,
+      "candidate_kind": "proposal",
+      "safe": false,
+      "admissible": false,
+      "failure": "FOOTPRINT",
+      "attempted_rows": 63,
+      "first_failure_raw": 159,
+      "objective_s": 6.542969086876897,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 57,
+      "candidate_kind": "proposal",
+      "safe": false,
+      "admissible": false,
+      "failure": "FOOTPRINT",
+      "attempted_rows": 64,
+      "first_failure_raw": 160,
+      "objective_s": 6.536558830466641,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 58,
+      "candidate_kind": "proposal",
+      "safe": false,
+      "admissible": false,
+      "failure": "FOOTPRINT",
+      "attempted_rows": 65,
+      "first_failure_raw": 161,
+      "objective_s": 6.530148574056384,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 59,
+      "candidate_kind": "proposal",
+      "safe": false,
+      "admissible": false,
+      "failure": "FOOTPRINT",
+      "attempted_rows": 66,
+      "first_failure_raw": 162,
+      "objective_s": 6.523738317646128,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 60,
+      "candidate_kind": "proposal",
+      "safe": false,
+      "admissible": false,
+      "failure": "FOOTPRINT",
+      "attempted_rows": 67,
+      "first_failure_raw": 163,
+      "objective_s": 6.5173280612358715,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 61,
+      "candidate_kind": "proposal",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.948478764804687,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.6194059748261544,
+          "COM_speed_m_s": 79.39162054890282,
+          "eligible": true,
+          "time_s": 3.852388119496526,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.4239382402352319,
+          "COM_speed_m_s": 94.6614133772229,
+          "eligible": true,
+          "time_s": 4.948478764804687,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0027517212235423916,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 62,
+      "candidate_kind": "proposal",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947641992473247,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918966581088576,
+          "COM_speed_m_s": 79.39879413105291,
+          "eligible": true,
+          "time_s": 3.85183793316218,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.382099623663201,
+          "COM_speed_m_s": 94.6827391642636,
+          "eligible": true,
+          "time_s": 4.947641992473247,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 63,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947658352310299,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5929956421573238,
+          "COM_speed_m_s": 79.3995093355014,
+          "eligible": true,
+          "time_s": 3.8518599128431497,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38291761551581005,
+          "COM_speed_m_s": 94.6827366848414,
+          "eligible": true,
+          "time_s": 4.947658352310299,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002114740969128004,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 64,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947644729414082,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5920227370592143,
+          "COM_speed_m_s": 79.39874764238698,
+          "eligible": true,
+          "time_s": 3.851840454741187,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3822364707050155,
+          "COM_speed_m_s": 94.6826298800837,
+          "eligible": true,
+          "time_s": 4.947644729414082,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002117033085252684,
+      "changed_coordinates": 41,
+      "selected_local_best": false
+    },
+    {
+      "id": 65,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947656998459495,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5929250189281344,
+          "COM_speed_m_s": 79.39946407506771,
+          "eligible": true,
+          "time_s": 3.8518585003785657,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3828499229756423,
+          "COM_speed_m_s": 94.68273744598287,
+          "eligible": true,
+          "time_s": 4.947656998459495,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002114727886863399,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 66,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947639063168786,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5917592338508033,
+          "COM_speed_m_s": 79.39883457243386,
+          "eligible": true,
+          "time_s": 3.851835184677019,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3819531584401868,
+          "COM_speed_m_s": 94.68284960728573,
+          "eligible": true,
+          "time_s": 4.947639063168786,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021123332505863512,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 67,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.94765438508989,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5927678897958799,
+          "COM_speed_m_s": 79.39936610018404,
+          "eligible": true,
+          "time_s": 3.8518553577959205,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38271925449535993,
+          "COM_speed_m_s": 94.6827414387679,
+          "eligible": true,
+          "time_s": 4.94765438508989,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146486760026395,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 68,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947611752449887,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5904523352588964,
+          "COM_speed_m_s": 79.39912066578654,
+          "eligible": true,
+          "time_s": 3.851809046705181,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3805876224951901,
+          "COM_speed_m_s": 94.68381638278939,
+          "eligible": true,
+          "time_s": 4.947611752449887,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0020916499048448944,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 69,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947651802447253,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.592607032150559,
+          "COM_speed_m_s": 79.3992637886156,
+          "eligible": true,
+          "time_s": 3.851852140643014,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38259012236352136,
+          "COM_speed_m_s": 94.68274381814854,
+          "eligible": true,
+          "time_s": 4.947651802447253,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146087648349354,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 70,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947610513426198,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.590379503923186,
+          "COM_speed_m_s": 79.39907334476337,
+          "eligible": true,
+          "time_s": 3.8518075900784665,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38052567131075465,
+          "COM_speed_m_s": 94.68381661586267,
+          "eligible": true,
+          "time_s": 4.947610513426198,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0020916459754172223,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 71,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947649537695248,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5924629494047385,
+          "COM_speed_m_s": 79.39917147102797,
+          "eligible": true,
+          "time_s": 3.8518492589880977,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3824768847632768,
+          "COM_speed_m_s": 94.68274537541234,
+          "eligible": true,
+          "time_s": 4.947649537695248,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021145959232089506,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 72,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947609677477767,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5903360685389767,
+          "COM_speed_m_s": 79.39904577031804,
+          "eligible": true,
+          "time_s": 3.8518067213707825,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38048387388922716,
+          "COM_speed_m_s": 94.68381730604644,
+          "eligible": true,
+          "time_s": 4.947609677477767,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002091633313550112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 73,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.94764763024953,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5923389559325153,
+          "COM_speed_m_s": 79.39909107240679,
+          "eligible": true,
+          "time_s": 3.8518467791186533,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38238151247734714,
+          "COM_speed_m_s": 94.68274590668204,
+          "eligible": true,
+          "time_s": 4.94764763024953,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146241767975305,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 74,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947609251341209,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5903237875403988,
+          "COM_speed_m_s": 79.39903945524239,
+          "eligible": true,
+          "time_s": 3.851806475750811,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3804625670613475,
+          "COM_speed_m_s": 94.68381876226047,
+          "eligible": true,
+          "time_s": 4.947609251341209,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0020916084199593676,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 75,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.94764631705798,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5922570910782465,
+          "COM_speed_m_s": 79.39903831768927,
+          "eligible": true,
+          "time_s": 3.851845141821568,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38231585289984005,
+          "COM_speed_m_s": 94.68274653637893,
+          "eligible": true,
+          "time_s": 4.94764631705798,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002114707174700081,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 76,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.9476092144553325,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5903428004096812,
+          "COM_speed_m_s": 79.39905505808258,
+          "eligible": true,
+          "time_s": 3.8518068560081966,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3804607227674948,
+          "COM_speed_m_s": 94.6838214661633,
+          "eligible": true,
+          "time_s": 4.9476092144553325,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0020915701372277162,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 77,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.9476446219708565,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5921385615412493,
+          "COM_speed_m_s": 79.39896254408745,
+          "eligible": true,
+          "time_s": 3.851842771230828,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38223109854372445,
+          "COM_speed_m_s": 94.68274795824169,
+          "eligible": true,
+          "time_s": 4.9476446219708565,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021148201569050062,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 78,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947609408664953,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5903815268847762,
+          "COM_speed_m_s": 79.3990853250211,
+          "eligible": true,
+          "time_s": 3.8518076305376985,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3804704332485245,
+          "COM_speed_m_s": 94.6838256829003,
+          "eligible": true,
+          "time_s": 4.947609408664953,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0020915250227673265,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 79,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947643720212935,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5920796209101268,
+          "COM_speed_m_s": 79.39892422289296,
+          "eligible": true,
+          "time_s": 3.8518415924182055,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3821860106476352,
+          "COM_speed_m_s": 94.68274812291901,
+          "eligible": true,
+          "time_s": 4.947643720212935,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002115154683042908,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 80,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947609968318913,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5904530651539271,
+          "COM_speed_m_s": 79.39913898056925,
+          "eligible": true,
+          "time_s": 3.8518090613030815,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38049841594651024,
+          "COM_speed_m_s": 94.68383155453694,
+          "eligible": true,
+          "time_s": 4.947609968318913,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0020915466611730604,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 81,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947642976431898,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5920338176745668,
+          "COM_speed_m_s": 79.39889528953711,
+          "eligible": true,
+          "time_s": 3.8518406763534943,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.382148821595769,
+          "COM_speed_m_s": 94.68274896959991,
+          "eligible": true,
+          "time_s": 4.947642976431898,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021159381735769145,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 82,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947636121815299,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.591665579593456,
+          "COM_speed_m_s": 79.39889725779254,
+          "eligible": true,
+          "time_s": 3.851833311591872,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38180609076584093,
+          "COM_speed_m_s": 94.68295467829402,
+          "eligible": true,
+          "time_s": 4.947636121815299,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002110624438381281,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 83,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947642285977576,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5919886094283137,
+          "COM_speed_m_s": 79.39886755695532,
+          "eligible": true,
+          "time_s": 3.851839772188569,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3821142988796756,
+          "COM_speed_m_s": 94.68275050348278,
+          "eligible": true,
+          "time_s": 4.947642285977576,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002117415949858481,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 84,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947629209544839,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5914335085169785,
+          "COM_speed_m_s": 79.39906007984588,
+          "eligible": true,
+          "time_s": 3.8518286701703426,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3814604772428222,
+          "COM_speed_m_s": 94.683221379581,
+          "eligible": true,
+          "time_s": 4.947629209544839,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002105746511733786,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 85,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.9476417673797215,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5919640493572799,
+          "COM_speed_m_s": 79.39885295978142,
+          "eligible": true,
+          "time_s": 3.8518392809871487,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3820883689869413,
+          "COM_speed_m_s": 94.68275173827794,
+          "eligible": true,
+          "time_s": 4.9476417673797215,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002121475226135816,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 86,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947641992473247,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918966581088576,
+          "COM_speed_m_s": 79.39879413105291,
+          "eligible": true,
+          "time_s": 3.85183793316218,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.382099623663201,
+          "COM_speed_m_s": 94.6827391642636,
+          "eligible": true,
+          "time_s": 4.947641992473247,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 41,
+      "selected_local_best": false
+    },
+    {
+      "id": 87,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947641045088142,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5919291022815654,
+          "COM_speed_m_s": 79.39883826195478,
+          "eligible": true,
+          "time_s": 3.8518385820456342,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38205225440798385,
+          "COM_speed_m_s": 94.6827586434583,
+          "eligible": true,
+          "time_s": 4.947641045088142,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021321912295355627,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 88,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947638111167991,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5917630542474922,
+          "COM_speed_m_s": 79.39889076331696,
+          "eligible": true,
+          "time_s": 3.8518352610849527,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38190555840040913,
+          "COM_speed_m_s": 94.68289515706785,
+          "eligible": true,
+          "time_s": 4.947638111167991,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002106685175957246,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 89,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947640404026076,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5919066547091473,
+          "COM_speed_m_s": 79.39882514739473,
+          "eligible": true,
+          "time_s": 3.8518381330941858,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38202020130468334,
+          "COM_speed_m_s": 94.68275996912318,
+          "eligible": true,
+          "time_s": 4.947640404026076,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002157926798138199,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 90,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947636090297777,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5917035813313356,
+          "COM_speed_m_s": 79.39897022308325,
+          "eligible": true,
+          "time_s": 3.8518340716266297,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3818045148897528,
+          "COM_speed_m_s": 94.68299550196026,
+          "eligible": true,
+          "time_s": 4.947636090297777,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002040753193059075,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 91,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.94764031384535,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918957080938674,
+          "COM_speed_m_s": 79.39881104262861,
+          "eligible": true,
+          "time_s": 3.85183791416188,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38201569226840604,
+          "COM_speed_m_s": 94.6827540734542,
+          "eligible": true,
+          "time_s": 4.94764031384535,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002102706458618986,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 92,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947638916004323,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918025423582808,
+          "COM_speed_m_s": 79.39890851216911,
+          "eligible": true,
+          "time_s": 3.8518360508471687,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3819458002169936,
+          "COM_speed_m_s": 94.68288832234465,
+          "eligible": true,
+          "time_s": 4.947638916004323,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.002029316062100328,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 93,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947640403466498,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918924960049048,
+          "COM_speed_m_s": 79.39879917289316,
+          "eligible": true,
+          "time_s": 3.851837849920101,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3820201733257722,
+          "COM_speed_m_s": 94.68274578596737,
+          "eligible": true,
+          "time_s": 4.947640403466498,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 94,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947637856956744,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5917814553874124,
+          "COM_speed_m_s": 79.3989581366355,
+          "eligible": true,
+          "time_s": 3.851835629107751,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3818928478380851,
+          "COM_speed_m_s": 94.68294209643436,
+          "eligible": true,
+          "time_s": 4.947637856956744,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 95,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947640299466095,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918868918296578,
+          "COM_speed_m_s": 79.39879405717797,
+          "eligible": true,
+          "time_s": 3.851837737836596,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3820149733056234,
+          "COM_speed_m_s": 94.68274455408721,
+          "eligible": true,
+          "time_s": 4.947640299466095,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 96,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.9476367761328826,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5917669945311126,
+          "COM_speed_m_s": 79.39901626481422,
+          "eligible": true,
+          "time_s": 3.8518353398906253,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38183880664502423,
+          "COM_speed_m_s": 94.68299941225115,
+          "eligible": true,
+          "time_s": 4.9476367761328826,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 97,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.9476403409689915,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918878243435205,
+          "COM_speed_m_s": 79.39879109581028,
+          "eligible": true,
+          "time_s": 3.8518377564868733,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3820170484504738,
+          "COM_speed_m_s": 94.68274152591222,
+          "eligible": true,
+          "time_s": 4.9476403409689915,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 98,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.94764497414685,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5919632487098679,
+          "COM_speed_m_s": 79.3986526898639,
+          "eligible": true,
+          "time_s": 3.8518392649742004,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3822487073433537,
+          "COM_speed_m_s": 94.68258230540549,
+          "eligible": true,
+          "time_s": 4.94764497414685,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 41,
+      "selected_local_best": false
+    },
+    {
+      "id": 99,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947640356952534,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918893093816667,
+          "COM_speed_m_s": 79.39879107784299,
+          "eligible": true,
+          "time_s": 3.8518377861876365,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3820178476275642,
+          "COM_speed_m_s": 94.68274068802558,
+          "eligible": true,
+          "time_s": 4.947640356952534,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 100,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947645922553377,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5919771439758238,
+          "COM_speed_m_s": 79.39859480592084,
+          "eligible": true,
+          "time_s": 3.8518395428795196,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38229612766975735,
+          "COM_speed_m_s": 94.68252551449217,
+          "eligible": true,
+          "time_s": 4.947645922553377,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 41,
+      "selected_local_best": false
+    },
+    {
+      "id": 101,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947640487711574,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918939594371594,
+          "COM_speed_m_s": 79.39878901378721,
+          "eligible": true,
+          "time_s": 3.851837879188746,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3820243855795573,
+          "COM_speed_m_s": 94.68273636083711,
+          "eligible": true,
+          "time_s": 4.947640487711574,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 102,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947645713725707,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.591963418761338,
+          "COM_speed_m_s": 79.39858384584792,
+          "eligible": true,
+          "time_s": 3.8518392683752296,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38228568628622445,
+          "COM_speed_m_s": 94.68252383251597,
+          "eligible": true,
+          "time_s": 4.947645713725707,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 41,
+      "selected_local_best": false
+    },
+    {
+      "id": 103,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947640614538104,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918983760155129,
+          "COM_speed_m_s": 79.39878839590892,
+          "eligible": true,
+          "time_s": 3.8518379675203134,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3820307269060837,
+          "COM_speed_m_s": 94.68273339012644,
+          "eligible": true,
+          "time_s": 4.947640614538104,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 104,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.94764546508281,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5919487189095062,
+          "COM_speed_m_s": 79.39857371148804,
+          "eligible": true,
+          "time_s": 3.851838974378193,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3822732541413678,
+          "COM_speed_m_s": 94.68252341182536,
+          "eligible": true,
+          "time_s": 4.94764546508281,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 41,
+      "selected_local_best": false
+    },
+    {
+      "id": 105,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947640654091688,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918999851713334,
+          "COM_speed_m_s": 79.39879117933737,
+          "eligible": true,
+          "time_s": 3.8518379997034295,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3820327045852932,
+          "COM_speed_m_s": 94.68273486156015,
+          "eligible": true,
+          "time_s": 4.947640654091688,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 106,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.94764522683924,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.591934537383865,
+          "COM_speed_m_s": 79.3985638142794,
+          "eligible": true,
+          "time_s": 3.8518386907476803,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3822613419628992,
+          "COM_speed_m_s": 94.68252299036133,
+          "eligible": true,
+          "time_s": 4.94764522683924,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 41,
+      "selected_local_best": false
+    },
+    {
+      "id": 107,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947640678829236,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918997926023243,
+          "COM_speed_m_s": 79.39879239190414,
+          "eligible": true,
+          "time_s": 3.8518379958520494,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38203394146269604,
+          "COM_speed_m_s": 94.6827359936415,
+          "eligible": true,
+          "time_s": 4.947640678829236,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 108,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947644997949024,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5919207864456343,
+          "COM_speed_m_s": 79.39855383436768,
+          "eligible": true,
+          "time_s": 3.8518384157289156,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.382249897452104,
+          "COM_speed_m_s": 94.68252262172746,
+          "eligible": true,
+          "time_s": 4.947644997949024,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 41,
+      "selected_local_best": false
+    },
+    {
+      "id": 109,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.9476406675740305,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918980336144156,
+          "COM_speed_m_s": 79.39879291271835,
+          "eligible": true,
+          "time_s": 3.8518379606722912,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3820333787024128,
+          "COM_speed_m_s": 94.6827384962847,
+          "eligible": true,
+          "time_s": 4.9476406675740305,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 110,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947644776940394,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5919074027202611,
+          "COM_speed_m_s": 79.3985392011104,
+          "eligible": true,
+          "time_s": 3.851838148054408,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38223884702058797,
+          "COM_speed_m_s": 94.68252230339054,
+          "eligible": true,
+          "time_s": 4.947644776940394,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 41,
+      "selected_local_best": false
+    },
+    {
+      "id": 111,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947640692771671,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918966581088576,
+          "COM_speed_m_s": 79.39879413105291,
+          "eligible": true,
+          "time_s": 3.85183793316218,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3820346385844062,
+          "COM_speed_m_s": 94.68273734778039,
+          "eligible": true,
+          "time_s": 4.947640692771671,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 112,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947644562700625,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5918972398137101,
+          "COM_speed_m_s": 79.39874817029364,
+          "eligible": true,
+          "time_s": 3.8518379447962774,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.38222813503214587,
+          "COM_speed_m_s": 94.68252199555334,
+          "eligible": true,
+          "time_s": 4.947644562700625,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0021146955607798112,
+      "changed_coordinates": 41,
+      "selected_local_best": false
+    },
+    {
+      "id": 113,
+      "candidate_kind": "proposal",
+      "safe": false,
+      "admissible": false,
+      "failure": "FORCE",
+      "attempted_rows": 30,
+      "first_failure_raw": 126,
+      "objective_s": 6.754507548415359,
+      "planes": {},
+      "minimum_residual": -1.0,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 114,
+      "candidate_kind": "proposal",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947291276779136,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5728881552628988,
+          "COM_speed_m_s": 79.3958613185453,
+          "eligible": true,
+          "time_s": 3.851457763105261,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3645638389576815,
+          "COM_speed_m_s": 94.6907844036656,
+          "eligible": true,
+          "time_s": 4.947291276779136,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0019558524572855784,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 115,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947307563483902,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5739856225832655,
+          "COM_speed_m_s": 79.3965754577418,
+          "eligible": true,
+          "time_s": 3.851479712451668,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3653781741959608,
+          "COM_speed_m_s": 94.69078190928091,
+          "eligible": true,
+          "time_s": 4.947307563483902,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0019558978020857154,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 116,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.9472939912694525,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5730137915770529,
+          "COM_speed_m_s": 79.39581449309244,
+          "eligible": true,
+          "time_s": 3.851460275831544,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3646995634735183,
+          "COM_speed_m_s": 94.69067509596172,
+          "eligible": true,
+          "time_s": 4.9472939912694525,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0019581984340977243,
+      "changed_coordinates": 41,
+      "selected_local_best": false
+    },
+    {
+      "id": 117,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.9473062078387855,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5739149669988345,
+          "COM_speed_m_s": 79.39653018021556,
+          "eligible": true,
+          "time_s": 3.8514782993399796,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.365310391940164,
+          "COM_speed_m_s": 94.69078267133574,
+          "eligible": true,
+          "time_s": 4.9473062078387855,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.001955884697871779,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 118,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947288370246617,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5727511864999872,
+          "COM_speed_m_s": 79.39590210633888,
+          "eligible": true,
+          "time_s": 3.851455023730003,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3644185123317346,
+          "COM_speed_m_s": 94.69089487067508,
+          "eligible": true,
+          "time_s": 4.947288370246617,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0019534816066117955,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 119,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947303599999899,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5737579619848681,
+          "COM_speed_m_s": 79.39643229843924,
+          "eligible": true,
+          "time_s": 3.8514751592397003,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.36517999999583556,
+          "COM_speed_m_s": 94.69078666758526,
+          "eligible": true,
+          "time_s": 4.947303599999899,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0019558052172301554,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 120,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.94726125928447,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5714482883895357,
+          "COM_speed_m_s": 79.39619124967858,
+          "eligible": true,
+          "time_s": 3.8514289657677936,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.36306296422435086,
+          "COM_speed_m_s": 94.69186185958769,
+          "eligible": true,
+          "time_s": 4.94726125928447,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0019327234857418052,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 121,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947301024381173,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.573597257951381,
+          "COM_speed_m_s": 79.39633009817524,
+          "eligible": true,
+          "time_s": 3.8514719451590307,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.36505121905953014,
+          "COM_speed_m_s": 94.69078904937396,
+          "eligible": true,
+          "time_s": 4.947301024381173,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.001955765179584512,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 122,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947260019102915,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5713754851672411,
+          "COM_speed_m_s": 79.39614395345038,
+          "eligible": true,
+          "time_s": 3.8514275097033477,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3630009551466289,
+          "COM_speed_m_s": 94.69186209531897,
+          "eligible": true,
+          "time_s": 4.947260019102915,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0019327195300240518,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 123,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947298766551642,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5734533229494966,
+          "COM_speed_m_s": 79.39623788811896,
+          "eligible": true,
+          "time_s": 3.851469066458993,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3649383275829823,
+          "COM_speed_m_s": 94.6907906097842,
+          "eligible": true,
+          "time_s": 4.947298766551642,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.001955752252992049,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 124,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947259179289543,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5713320158119604,
+          "COM_speed_m_s": 79.39611636158726,
+          "eligible": true,
+          "time_s": 3.8514266403162423,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3629589644780404,
+          "COM_speed_m_s": 94.69186278805765,
+          "eligible": true,
+          "time_s": 4.947259179289543,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0019327067983994084,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 125,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947296865487987,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5733294631089495,
+          "COM_speed_m_s": 79.39615758688275,
+          "eligible": true,
+          "time_s": 3.851466589262182,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.36484327440019737,
+          "COM_speed_m_s": 94.69079114429081,
+          "eligible": true,
+          "time_s": 4.947296865487987,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0019557805011320983,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 126,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947258746104663,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5713196297291702,
+          "COM_speed_m_s": 79.39610998097056,
+          "eligible": true,
+          "time_s": 3.851426392594586,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3629373052340141,
+          "COM_speed_m_s": 94.69186424679489,
+          "eligible": true,
+          "time_s": 4.947258746104663,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0019326817700160426,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 127,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947295554887169,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5732476524376148,
+          "COM_speed_m_s": 79.3961048771686,
+          "eligible": true,
+          "time_s": 3.8514649530487555,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.36477774435930715,
+          "COM_speed_m_s": 94.69079177871616,
+          "eligible": true,
+          "time_s": 4.947295554887169,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.001955863489117693,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    },
+    {
+      "id": 128,
+      "candidate_kind": "FD",
+      "safe": true,
+      "admissible": true,
+      "failure": null,
+      "attempted_rows": 156,
+      "first_failure_raw": null,
+      "objective_s": 4.947258698569253,
+      "planes": {
+        "200": {
+          "before_raw": 192,
+          "after_raw": 193,
+          "before_s": 3.840000000000003,
+          "after_s": 3.860000000000003,
+          "fraction": 0.5713384603331181,
+          "COM_speed_m_s": 79.3961254666526,
+          "eligible": true,
+          "time_s": 3.8514267692066655,
+          "hold": 49,
+          "whole_hold_safe": true
+        },
+        "300": {
+          "before_raw": 247,
+          "after_raw": 248,
+          "before_s": 4.939999999999983,
+          "after_s": 4.959999999999982,
+          "fraction": 0.3629349284635279,
+          "COM_speed_m_s": 94.69186695358623,
+          "eligible": true,
+          "time_s": 4.947258698569253,
+          "hold": 62,
+          "whole_hold_safe": true
+        }
+      },
+      "minimum_residual": 0.0,
+      "changed_coordinates": 40,
+      "selected_local_best": false
+    }
+  ],
+  "journal": {
+    "events": 118752,
+    "head": "81bfa42062ff2131ba2a5138c1e93a6d7ee70cbc4545b92cc4815555096667a7",
+    "kinds": {
+      "RESUME_FROM_CLOSED_SEGMENT": 1,
+      "POSITIVE_AND_CHECKPOINT_RESTORED_SOURCE0": 1,
+      "FIRST_RESTORED_FD_IDENTITY": 1,
+      "CANDIDATE_STARTED": 127,
+      "BEFORE_GEOMETRY": 17015,
+      "GEOMETRY_VERDICT": 17015,
+      "BEFORE_FORCE": 16902,
+      "FORCE_VERDICT": 16902,
+      "BEFORE_TICK": 16887,
+      "AFTER_TICK": 16887,
+      "RAW_VERDICT": 16887,
+      "CANDIDATE_FINISHED": 127
+    },
+    "valid": true
+  },
+  "cost": {
+    "total": {
+      "geometry_checks": 17268,
+      "attempted_raw": 17154,
+      "external_force": 68616,
+      "internal_force": 68556,
+      "completed_model_ticks": 17139,
+      "CPU_s": 491.647537834,
+      "wall_s": 530.900503375
+    },
+    "phases": {
+      "preparation": {
+        "CPU_s": 10.917389637,
+        "wall_s": 7.22216696900432
+      },
+      "positive": {
+        "geometry_checks": 253,
+        "attempted_raw": 252,
+        "external_force": 1008,
+        "internal_force": 1008,
+        "completed_model_ticks": 252,
+        "CPU_s": 6.649799193,
+        "wall_s": 7.166089203994488
+      },
+      "optimization": {
+        "geometry_checks": 16702,
+        "attempted_raw": 16590,
+        "external_force": 66360,
+        "internal_force": 66300,
+        "completed_model_ticks": 16575,
+        "CPU_s": 460.582198692,
+        "wall_s": 502.2563075389917
+      },
+      "audit": {
+        "CPU_s": 5.267443637999975,
+        "wall_s": 5.269633074000012
+      },
+      "verification": {
+        "geometry_checks": 313,
+        "attempted_raw": 312,
+        "external_force": 1248,
+        "internal_force": 1248,
+        "completed_model_ticks": 312,
+        "CPU_s": 8.230706674000032,
+        "wall_s": 8.9863154009945
+      }
+    },
+    "modes": {
+      "positive": {
+        "geometry_checks": 253,
+        "attempted_raw": 252,
+        "external_force": 1008,
+        "internal_force": 1008,
+        "completed_model_ticks": 252
+      },
+      "suffix_FD": {
+        "geometry_checks": 15706,
+        "attempted_raw": 15603,
+        "external_force": 62412,
+        "internal_force": 62368,
+        "completed_model_ticks": 15592
+      },
+      "suffix_proposal": {
+        "geometry_checks": 996,
+        "attempted_raw": 987,
+        "external_force": 3948,
+        "internal_force": 3932,
+        "completed_model_ticks": 983
+      },
+      "whole-validation": {
+        "geometry_checks": 313,
+        "attempted_raw": 312,
+        "external_force": 1248,
+        "internal_force": 1248,
+        "completed_model_ticks": 312
+      }
+    },
+    "suffix_cache_misses": 128,
+    "cache_requests": 151,
+    "cache_hits": 22,
+    "FD_columns": 114,
+    "FD_batches": 4,
+    "minimize_calls_runtime": 4,
+    "forecast_ticks": 0
+  },
+  "actual_incumbent_s": 13.66,
+  "source_incumbent_s": 13.2,
+  "incumbent_changed": false,
+  "native_actions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "new_learning": 0,
+  "new_world": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "paid_compute": 0
+}

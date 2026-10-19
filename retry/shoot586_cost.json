@@ -1,0 +1,85 @@
+{
+  "total": {
+    "geometry_checks": 17268,
+    "attempted_raw": 17154,
+    "external_force": 68616,
+    "internal_force": 68556,
+    "completed_model_ticks": 17139,
+    "CPU_s": 491.647537834,
+    "wall_s": 530.900503375
+  },
+  "phases": {
+    "preparation": {
+      "CPU_s": 10.917389637,
+      "wall_s": 7.22216696900432
+    },
+    "positive": {
+      "geometry_checks": 253,
+      "attempted_raw": 252,
+      "external_force": 1008,
+      "internal_force": 1008,
+      "completed_model_ticks": 252,
+      "CPU_s": 6.649799193,
+      "wall_s": 7.166089203994488
+    },
+    "optimization": {
+      "geometry_checks": 16702,
+      "attempted_raw": 16590,
+      "external_force": 66360,
+      "internal_force": 66300,
+      "completed_model_ticks": 16575,
+      "CPU_s": 460.582198692,
+      "wall_s": 502.2563075389917
+    },
+    "audit": {
+      "CPU_s": 5.267443637999975,
+      "wall_s": 5.269633074000012
+    },
+    "verification": {
+      "geometry_checks": 313,
+      "attempted_raw": 312,
+      "external_force": 1248,
+      "internal_force": 1248,
+      "completed_model_ticks": 312,
+      "CPU_s": 8.230706674000032,
+      "wall_s": 8.9863154009945
+    }
+  },
+  "modes": {
+    "positive": {
+      "geometry_checks": 253,
+      "attempted_raw": 252,
+      "external_force": 1008,
+      "internal_force": 1008,
+      "completed_model_ticks": 252
+    },
+    "suffix_FD": {
+      "geometry_checks": 15706,
+      "attempted_raw": 15603,
+      "external_force": 62412,
+      "internal_force": 62368,
+      "completed_model_ticks": 15592
+    },
+    "suffix_proposal": {
+      "geometry_checks": 996,
+      "attempted_raw": 987,
+      "external_force": 3948,
+      "internal_force": 3932,
+      "completed_model_ticks": 983
+    },
+    "whole-validation": {
+      "geometry_checks": 313,
+      "attempted_raw": 312,
+      "external_force": 1248,
+      "internal_force": 1248,
+      "completed_model_ticks": 312
+    }
+  },
+  "suffix_cache_misses": 128,
+  "cache_requests": 151,
+  "cache_hits": 22,
+  "FD_columns": 114,
+  "FD_batches": 4,
+  "minimize_calls_runtime": 4,
+  "forecast_ticks": 0
+}

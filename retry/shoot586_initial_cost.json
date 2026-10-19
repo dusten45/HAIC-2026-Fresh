@@ -1,0 +1,50 @@
+{
+  "total": {
+    "geometry_checks": 253,
+    "attempted_raw": 252,
+    "external_force": 1008,
+    "internal_force": 1008,
+    "completed_model_ticks": 252,
+    "CPU_s": 12.857432392,
+    "wall_s": 10.847902691995841
+  },
+  "phases": {
+    "preparation": {
+      "CPU_s": 5.997120579,
+      "wall_s": 3.4717129049968207
+    },
+    "positive": {
+      "geometry_checks": 253,
+      "attempted_raw": 252,
+      "external_force": 1008,
+      "internal_force": 1008,
+      "completed_model_ticks": 252,
+      "CPU_s": 6.649799193,
+      "wall_s": 7.166089203994488
+    },
+    "optimization": {
+      "CPU_s": 0.008005523000000458,
+      "wall_s": 0.00667904999863822
+    },
+    "audit": {
+      "CPU_s": 0.2025070969999998,
+      "wall_s": 0.20342593800160103
+    }
+  },
+  "modes": {
+    "positive": {
+      "geometry_checks": 253,
+      "attempted_raw": 252,
+      "external_force": 1008,
+      "internal_force": 1008,
+      "completed_model_ticks": 252
+    }
+  },
+  "suffix_cache_misses": 1,
+  "cache_requests": 4,
+  "cache_hits": 3,
+  "FD_columns": 0,
+  "FD_batches": 1,
+  "minimize_calls_runtime": 2,
+  "forecast_ticks": 0
+}
