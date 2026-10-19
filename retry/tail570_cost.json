@@ -1,0 +1,109 @@
+{
+  "total": {
+    "ticks": 33988,
+    "force": 135952,
+    "geometry": 33988,
+    "body_checks": 33988,
+    "CPU_s": 867.390746793,
+    "wall_s": 938.2599774539995
+  },
+  "phases": [
+    {
+      "bucket": "local",
+      "label": "proposal-3-1-diagnostic",
+      "ticks": 32830,
+      "force": 131320,
+      "geometry": 32830,
+      "CPU_s": 824.2920659169996,
+      "wall_s": 893.0211390408804,
+      "body_checks": 32830,
+      "max_body": 96.92891352137549
+    },
+    {
+      "bucket": "evaluation",
+      "label": "proposal-0-0-strict-finish",
+      "ticks": 133,
+      "force": 532,
+      "geometry": 133,
+      "CPU_s": 3.123420593000006,
+      "wall_s": 3.390724559998489,
+      "body_checks": 133,
+      "max_body": 96.92719523667853
+    },
+    {
+      "bucket": "evaluation",
+      "label": "proposal-1-0-strict-finish",
+      "ticks": 133,
+      "force": 532,
+      "geometry": 133,
+      "CPU_s": 3.3012250470000026,
+      "wall_s": 3.622131829004502,
+      "body_checks": 133,
+      "max_body": 96.92620661929374
+    },
+    {
+      "bucket": "evaluation",
+      "label": "proposal-2-0-strict-finish",
+      "ticks": 133,
+      "force": 532,
+      "geometry": 133,
+      "CPU_s": 3.1658959300000333,
+      "wall_s": 3.525386195993633,
+      "body_checks": 133,
+      "max_body": 96.92720880240145
+    },
+    {
+      "bucket": "evaluation",
+      "label": "proposal-3-0-strict-finish",
+      "ticks": 49,
+      "force": 196,
+      "geometry": 49,
+      "CPU_s": 1.1930110039999136,
+      "wall_s": 1.2951114679890452,
+      "body_checks": 49,
+      "max_body": 96.92821098554532
+    },
+    {
+      "bucket": "evaluation",
+      "label": "proposal-3-1-strict-finish",
+      "ticks": 49,
+      "force": 196,
+      "geometry": 49,
+      "CPU_s": 1.2015822079999907,
+      "wall_s": 1.3048663590016076,
+      "body_checks": 49,
+      "max_body": 96.92770989396888
+    },
+    {
+      "bucket": "verification",
+      "label": "final-independent-full-tape",
+      "ticks": 661,
+      "force": 2644,
+      "geometry": 661,
+      "CPU_s": 17.425154676000034,
+      "wall_s": 18.697332044001087,
+      "body_checks": 661,
+      "max_body": 96.92720880240145
+    }
+  ],
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "prior569_separate": {
+    "ticks": 11605,
+    "CPU_s": 206.30458459
+  },
+  "finally_first_total": {
+    "ticks": 33988,
+    "force": 135952,
+    "geometry": 33988,
+    "body_checks": 33988,
+    "CPU_s": 857.45366441,
+    "wall_s": 928.3189439480047
+  },
+  "read_only_analysis": {
+    "ticks": 0,
+    "CPU_s": 0.39400102700000006,
+    "wall_s": 0.17882918698887806
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "checks": {
+    "source_hashes_match_contract": true,
+    "all_remaining_34_holds_are_variables": true,
+    "tail_FD_has_no_earlier_state_effect": true,
+    "maximum_premature_derivative": 0.0,
+    "strict_objective_matches_diagnostic_command_trajectory": true,
+    "independent_full_tape_exact": true,
+    "no_feedback_method1_evaluations": true,
+    "no_existing_seed_whole_replay": true
+  },
+  "candidates": [
+    {
+      "label": "proposal-0-0",
+      "strict_safe_finish": true,
+      "working_accept": true,
+      "changed_holds_before153": 20,
+      "changed_holds153_to166": 14,
+      "actual_evaluated_raws": 133,
+      "exact_safety": {
+        "min_footprint": 0.5604459037300399,
+        "max_path": 1.3453541716042836,
+        "max_force": 1.0518621260202372,
+        "max_reference_overspeed": 4.842641900150241,
+        "max_body": 96.92719523667853,
+        "tracking_history": [
+          89,
+          2260
+        ]
+      },
+      "predicted_gain_ms": 5.246871041627692,
+      "candidate_raw": 661,
+      "confirmation_raw": 661,
+      "official_finish_s": 13.219999999999807,
+      "actual_times": {
+        "hull_finish": 13.208434694176265,
+        "center_finish": 13.209391192640574,
+        "s900": 12.106119592221908
+      },
+      "whole_cumulative_hull_gain_ms": 5.179731443270441,
+      "accepted_step_gain_ms": 5.179731443270441,
+      "objective_same_command_time_exact": true,
+      "diagnostic_strict_prefix_exact": true,
+      "prediction_error_ms": 0.06713959835725092
+    },
+    {
+      "label": "proposal-1-0",
+      "strict_safe_finish": true,
+      "working_accept": true,
+      "changed_holds_before153": 20,
+      "changed_holds153_to166": 14,
+      "actual_evaluated_raws": 133,
+      "exact_safety": {
+        "min_footprint": 0.5010169263603738,
+        "max_path": 1.5803790047389745,
+        "max_force": 1.054141689649005,
+        "max_reference_overspeed": 4.8398637070481385,
+        "max_body": 96.92620661929374,
+        "tracking_history": [
+          89,
+          2260
+        ]
+      },
+      "predicted_gain_ms": 3.7841142199017095,
+      "candidate_raw": 661,
+      "confirmation_raw": 661,
+      "official_finish_s": 13.219999999999807,
+      "actual_times": {
+        "hull_finish": 13.204672617755444,
+        "center_finish": 13.205628775781022,
+        "s900": 12.106812147532912
+      },
+      "whole_cumulative_hull_gain_ms": 8.941807864092155,
+      "accepted_step_gain_ms": 3.762076420821714,
+      "objective_same_command_time_exact": true,
+      "diagnostic_strict_prefix_exact": true,
+      "prediction_error_ms": 0.02203779907999559
+    },
+    {
+      "label": "proposal-2-0",
+      "strict_safe_finish": true,
+      "working_accept": true,
+      "changed_holds_before153": 20,
+      "changed_holds153_to166": 14,
+      "actual_evaluated_raws": 133,
+      "exact_safety": {
+        "min_footprint": 0.5001229558186351,
+        "max_path": 1.5740324598369657,
+        "max_force": 1.055931510078688,
+        "max_reference_overspeed": 4.843686022853646,
+        "max_body": 96.92720880240145,
+        "tracking_history": [
+          89,
+          2260
+        ]
+      },
+      "predicted_gain_ms": 1.7566356171344975,
+      "candidate_raw": 661,
+      "confirmation_raw": 661,
+      "official_finish_s": 13.219999999999807,
+      "actual_times": {
+        "hull_finish": 13.202916506252937,
+        "center_finish": 13.203871858764987,
+        "s900": 12.106114223495691
+      },
+      "whole_cumulative_hull_gain_ms": 10.697919366599251,
+      "accepted_step_gain_ms": 1.7561115025070961,
+      "objective_same_command_time_exact": true,
+      "diagnostic_strict_prefix_exact": true,
+      "prediction_error_ms": 0.0005241146274013175
+    },
+    {
+      "label": "proposal-3-0",
+      "strict_safe_finish": false,
+      "working_accept": false,
+      "changed_holds_before153": 20,
+      "changed_holds153_to166": 14,
+      "actual_evaluated_raws": 49,
+      "exact_safety": {
+        "min_footprint": 0.499999588807011,
+        "max_path": 1.4342730897645486,
+        "max_force": 1.0291270136264279,
+        "max_reference_overspeed": 4.849992681522167,
+        "max_body": 96.92821098554532,
+        "tracking_history": [
+          66,
+          1924
+        ]
+      },
+      "predicted_gain_ms": 1.4144394313375015,
+      "rejection": {
+        "gate": "FOOTPRINT",
+        "global_raw": 577,
+        "actual_footprint": 0.499999588807011,
+        "required_footprint": 0.5,
+        "shortfall_m": 4.111929889916155e-07,
+        "linear_predicted_footprint_slack": 5.578488108087809e-06,
+        "empirical_error_target": 4.923935393749083e-06,
+        "predicted_tightened_slack": 6.545527143387258e-07,
+        "not_incumbent": true
+      }
+    },
+    {
+      "label": "proposal-3-1",
+      "strict_safe_finish": false,
+      "working_accept": false,
+      "changed_holds_before153": 20,
+      "changed_holds153_to166": 14,
+      "actual_evaluated_raws": 49,
+      "exact_safety": {
+        "min_footprint": 0.4999967777770936,
+        "max_path": 1.4201985110180626,
+        "max_force": 1.0302704890339391,
+        "max_reference_overspeed": 4.846952929730534,
+        "max_body": 96.92770989396888,
+        "tracking_history": [
+          66,
+          1924
+        ]
+      },
+      "predicted_gain_ms": 0.922996227530029,
+      "rejection": {
+        "gate": "FOOTPRINT",
+        "global_raw": 577,
+        "actual_footprint": 0.4999967777770936,
+        "required_footprint": 0.5,
+        "shortfall_m": 3.222222906384964e-06,
+        "linear_predicted_footprint_slack": 3.287310897903163e-06,
+        "empirical_error_target": 2.4620411409464416e-06,
+        "predicted_tightened_slack": 8.252697569567215e-07,
+        "not_incumbent": true
+      }
+    }
+  ],
+  "scope": "A deterministic source-model open-loop command trajectory from exact565raw528 to unchanged official finish. No native driving, pixel/latency/disturbance robustness, or safe switch/recovery guarantee to existing feedback. Whole prediction and evaluation use identical command sequences; interpolation guides search while official raw/time decide whole promotion.",
+  "model_ticks": 0,
+  "CPU_s": 0.39400102700000006,
+  "wall_s": 0.17882918698887806
+}

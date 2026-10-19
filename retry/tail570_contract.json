@@ -1,0 +1,80 @@
+{
+  "registered_utc": "2026-10-19T00:22:52.753315+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "chosen_method": 2,
+  "reason": "Remaining134raw source rollout is far cheaper than actualfeedback~5000modelticks. OptimizeALL34remainingholds133..166,68float32steer/signedpedal variables,including last partialhold. Derivative,calibration,objective and strictfinalexecution use the SAME complete command trajectory. Nofeedback method1calls or mixed policy at153.",
+  "scope": "Proves only exact source-model safety/officialtracker finish of commandtape. No native/pixel/walllatency/disturbance guarantee and no switch/recovery tofeedback certificate. Nativecap0. This is a new source open-loop plan,not a real driving record.",
+  "start": "Exact565raw528/root/visited/tracker/clock,launch55/384,tracking64/1728. Savedseed baseline reused without integration. Initial first40FD columns reuse568samefullcommandtape,28newtailcolumns;fresh68FD after accepted centers. First568calibrations not reused for expandedcontrolspace;two fixed opposite all68patterns percenter.",
+  "horizon": "Fixed134raw diagnostic horizon529..662. ALL commands including153..166 variable. Any changed stored tail is integrated and checked at every raw. Strictcandidate stops only at actualunchangedtracker confirmation;must finish withinregistered134raw horizon. Diagnostic postfinish rows remain bodyguarded and never replace strictproof.",
+  "model": "Preserve569finite-segment affine2Dcapsule,exactconvexmodel recheck/max8supportcutLPs. Same moving L*t empiricalerror budgets forphysical/force/prefix/pathvector,seedzero inclusion andupperbounds checked beforeLP;no coefficient clipping or physicalthresholdrelaxation. Existing551reference,exact ratio>1counts,prefixrank branch and initialhistory unchanged. Empirical two-pattern errors are not universal bounds;strict source decides safety.",
+  "bounds": "Scales steer.003/pedal.03;percenter radius.05 then.025 only,max2proposals;totalnormalized displacement<=.2fromoriginalseed. Fouralgebraicfloat32repairs1,1-2^-12,1-2^-10,1-2^-8. Max4linearizations,reused40/new232FD,8calibrationpatterns,8proposals,8strictfullcandidatecases,4safeaccepts,4backtracks;two consecutive nonimprovements stop. No arbitrarytiny scalarpolls.",
+  "objective": "Whole arrival interpolated at tracker hull-origin centerplane. Workingadoption requires exactglobalsafe strictfinish,>=1microsecond continuouswholegain,no laterofficialcandidate raw. Officialwholepromotion ONLY strictlyearlierofficialcandidate raw/time. Record confirmationraw separately. No localstationgain orlinear prediction used foradoption.",
+  "verification": "Any new safe whole-improving accepted candidate:one independent fullsource initial-state commandtape replay,original565prefix528+allmodifiedremainingcommands,compare everyroot/force/history/tracker andfinalcheckpoint. If no acceptedcandidate,no oldwhole replay. Allrawforceinputs/verdicts/bodypathchecks durable;finallycostFIRST. Domain/IO/integrity/cap errors stop.",
+  "budgets": {
+    "local": {
+      "ticks": 45000,
+      "force": 190000,
+      "geometry": 50000,
+      "CPU_s": 1100,
+      "wall_s": 1400
+    },
+    "evaluation": {
+      "ticks": 3000,
+      "force": 13000,
+      "geometry": 3500,
+      "CPU_s": 80,
+      "wall_s": 120
+    },
+    "verification": {
+      "ticks": 1200,
+      "force": 5000,
+      "geometry": 1300,
+      "CPU_s": 35,
+      "wall_s": 50
+    }
+  },
+  "aggregate": {
+    "ticks": 49200,
+    "force": 208000,
+    "geometry": 54800,
+    "CPU_s": 1300,
+    "wall_s": 1700
+  },
+  "actual_cap": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "new_seed_paid_other_environment": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "source_kernel_cap_unchanged": 200000,
+  "source_sha256": {
+    "retry/tail570_model.py": "933ba571370637a8431f6cba2f6e3f8959e7955f35828b232cdb98950ed95b32",
+    "retry/path569_model.py": "7616c46b7240ed60c36b0a3101cb35c9c74103fe5c14142cbbb1d9992ee60337",
+    "retry/path569_design.py": "98a2c78eab4fa86a03e6e4934f1019a80e8d6117a9d224594bdd25783297736d",
+    "retry/late568_model.py": "0e71a9e08552040b7da4d2b111a04f67bd361db1954cb156ea6b33a3d7f409b2",
+    "retry/durable568.py": "43ed7c3f2bfe06ee575691b7d3b6f20414f06303e6c1fb09789deffe62d27a39",
+    "retry/handoff562_model.py": "e7addc1dabf391149cb10827316a6e9405069f4a8809a9ef4ada805cbe9d0b0b",
+    "retry/clip561_core.py": "d0f60f7741c4605a3c3b6a515977ee5c978efd633665d3e807afef6b816a531b",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "retry/preview527_control.py": "8049458f5f302fd194a2e0fde5a833ac4a2241f498055df1dc84203017da2717",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131",
+    "core/finish_line.py": "7c16dda1378dcd65aed46d9da96608aa055124c2f27d8fb00c309078361d4204",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363"
+  },
+  "input_sha256": {
+    "/workspace/haic-response565-private/final-tape-private.json": "92b9dac8f02c1f3f76f087d531470b755d6122ee13f5ad36c66e516d91de461e",
+    "/workspace/haic-response515-private/collected-map-state-private.json": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "/workspace/haic-response551-private/frozen-paths-private.json": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "/workspace/haic-response519-private/model-ledger-private.json": "28ff0ff7ffec9784e4817b4b55500c40ecd3730e9d09977294ad1dfd9b70763f",
+    "/workspace/haic-response569-private/stored-model-private.json": "2afd1a930a045bed7c20ea8cf65530ea0c1a6993f96843d53a07d641cd8a77cd",
+    "/workspace/HAIC-2026-Fresh/retry/path569_analysis.json": "a7852ab458f3e6c72603996f36378d46c933012de7b25fc4f1fdaaef5ff1e699"
+  }
+}
