@@ -1,0 +1,119 @@
+{
+  "status": "RECENT_HISTORY_CAUSE_IS_REFERENCE_CONFIRMED_NEAR_PIXELS_AND_JOIN_BOUNDARY_FIXED_NOT_PROMOTED",
+  "base_commit": "cf883c13dc564fa318aa401d68ea5b3fc347de67",
+  "recent_history": {
+    "prior_reference_reconstruction_steer_error": 0.0,
+    "prior_reference_reconstruction_length_error_m": 1.4210854715202004e-14,
+    "current_state_vs_own_action_endpoint": {
+      "hull_velocity_m_s": 3.3306690738754696e-16,
+      "yaw_rad_s": 0.0,
+      "max_spin_rad_s": 0.0
+    },
+    "factorial_cells": 16,
+    "prior_reference_fixed_commands": "All8 state/map/command cells stayed within the force limit until late forecast footprint failure at45\u201347ticks; none passed the full gate.",
+    "current_reference_fixed_commands": "All8 cells failed FORCE_PEAK at9ticks, independent of changed observed map or exact-own vs reconstructed state.",
+    "interpretation": "The recent reference update, not state time/speed replacement or map change, causes the early force rejection. This does not imply the older reference is a full-horizon safe policy."
+  },
+  "rejected": {
+    "near_edges_from_forward_union_anchor": "Rejected after it selected a remote road leg and did not resolve cached admission. Retained privately only.",
+    "sampling_phase_only": "Current geometry/root/obstacles fixed: prior sampling phase and an additional past prefix still failed force at9ticks. No sampling-lattice implementation retained.",
+    "continuous_obstacle_coordinates": "Fixed current observed geometry diagnostic failed force at6ticks rather than9. No obstacle rule/planner change retained."
+  },
+  "verified_input_errors": [
+    "Forward contour sufficiency suppressed actual near-car edge observations, retaining a quantized row-midpoint prefix. Reference-only near edges now follow the vehicle corridor from rear to front with existing actual pixel/plateau/occlusion guards; safety geometry is unchanged.",
+    "The row collector includes row69, and rounded coordinates already read pixel69, but exact y=69 was rejected by the reference join. A newly valid near curve therefore fell back to raw midpoint reference. The inclusive pixel-centre boundary now matches the collector."
+  ],
+  "public_validation": {
+    "merge_branch_cases": 3,
+    "join_boundary_positive_case": true,
+    "join_boundary_negative_cases": 3,
+    "existing_join_regression_cases": 5,
+    "synthetic_curved_road_cases": 8,
+    "synthetic_point_sample_errors_improved_cases": 7,
+    "mean_of_case_centerline_errors_before_m": 0.22890090337300908,
+    "mean_of_case_centerline_errors_after_m": 0.06292043464804083,
+    "case_worsening_limit": "One finite case increased by approximately0.011m; no universal improvement claim.",
+    "safety_geometry_identical_all8_cases": true
+  },
+  "external_read_only_check": {
+    "world_identity_match": true,
+    "query_points": 16,
+    "pre_obstacle_centerline_errors": [
+      {
+        "label": "original_midpoint_prefix",
+        "mean_error_m": 0.1301697210683948,
+        "max_error_m": 0.3549163630261587
+      },
+      {
+        "label": "current_near_edge_reference",
+        "mean_error_m": 0.0495144421417762,
+        "max_error_m": 0.14285950051751875
+      }
+    ],
+    "true_state_or_map_in_Agent": false,
+    "scope": "Measured geometry is external error attribution only, never parameters, Agent input or action fitting."
+  },
+  "cached_original42": {
+    "near_correct_actual_points": 14,
+    "geometry_and_state_identical": true,
+    "admitted": false,
+    "reasons": {
+      "FORCE_PEAK": 20,
+      "FORECAST_FOOTPRINT_MARGIN": 1
+    },
+    "whole_act_s": 0.26060752500779927
+  },
+  "reset_run_before_final_boundary_fix": {
+    "source_sha256": "1ac37c208f57fb37618c036f5c7d21a5165f90aede7aca71a138ed36001265a8",
+    "valid_actions": 38,
+    "first_failed_call": 39,
+    "progress": 0.12014134275618374,
+    "damage": 0.0,
+    "max_whole_act_s": 2.2804638620000333,
+    "model_ticks": 24506,
+    "CPU_s": 49.35909640300001,
+    "wall_s": 48.88447581601213,
+    "full_agent_failure_replay_identical": true,
+    "reference_fallback": true,
+    "root_cause": "Valid near run had63 points and a0.508m join, but its nearest raw anchor lay at the excluded exact row69 centre.",
+    "same_failed_input_near_disabled_admitted": true,
+    "same_failed_input_near_disabled_model_ticks": 526
+  },
+  "final_boundary_fixed_cached": {
+    "source_sha256": "73c0371e69931a0402d93705bdfc29d420036da72f5b7ecce96ae29873da848a",
+    "reference_source": "observed clean outer contour + public half-width",
+    "observed_centerline_points": 63,
+    "reference_length_m": 45.25498716237992,
+    "state_and_geometry_identical": true,
+    "admitted": false,
+    "reasons": {
+      "FORECAST_FOOTPRINT_MARGIN": 4,
+      "FORCE_PEAK": 17
+    },
+    "whole_act_s": 0.7951363050087821,
+    "model_ticks": 232,
+    "remaining_failure": "Four trials preserve force limits to47\u201348ticks, then fail forecast footprint clearance. Other trials fail force. No threshold/state reduction."
+  },
+  "resources": {
+    "model_ticks": 25971,
+    "native_actions": 38,
+    "DEV_resets": 1,
+    "raw_physics_ticks": 203,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve_used": 0,
+    "research_remaining": 19925,
+    "recorded_CPU_s_lower_bound": 59.12424081000001,
+    "additional_charged_failed_reconstruction_model_ticks": 4,
+    "unmetered": "Startup/import/administrative overhead and repaired diagnostic/test assertion failures. The initial reconstruction assertion had already executed4ticks, included above; remaining failed tests had0model/native ticks."
+  },
+  "constraints": {
+    "core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+    "original_core_chooser_physics_horizon_thresholds_preserved": true,
+    "Agent_inputs": "public pixels and own reset-local memory only",
+    "research_quota_external_cumulative": true,
+    "lap_time_search": false
+  },
+  "decision": "NOT PROMOTED. One reset run stopped on its first failure. The final row-boundary fix has public/cached validation only and has not been reset-tested. No second native run in this bundle. Preserve both confirmed input fixes and the new late-footprint checkpoint evidence; any next run needs a new bounded gate decision.",
+  "finished_UTC": "2026-10-19T21:35:05.110497+00:00"
+}

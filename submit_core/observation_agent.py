@@ -742,6 +742,30 @@ def observed_reference_edge_normals(points,center):
     return np.asarray(kept).reshape(-1,2),np.asarray(normals).reshape(-1,2)
 
 
+def near_vehicle_reference_edges(image,asphalt,blocked):
+    """Follow the vehicle's near corridor forward, not a merge's far midpoint.
+
+    Actual near-car exterior pixels constrain the reference only. Starting
+    from the forward road union's midpoint can select the other leg of a bend.
+    """
+    contours=[[],[]];anchor=IMAGE_ORIGIN_X
+    for y in range(68,54,-1):
+        d=np.diff(np.pad(asphalt[y],(1,1)).astype(np.int16));starts=np.flatnonzero(d==1);ends=np.flatnonzero(d==-1)
+        good=ends-starts>=8;starts=starts[good];ends=ends[good]
+        if not len(starts):continue
+        outside=np.maximum(starts-anchor,0)+np.maximum(anchor-ends,0)
+        j=int(np.argmin(3*outside+.1*abs((starts+ends-1)*.5-anchor)))
+        if outside[j]>8:break
+        left,right=int(starts[j]),int(ends[j]-1);anchor=(left+right)*.5
+        for side,index,direction in ((0,left,1),(1,right,-1)):
+            ids=index+direction*np.arange(-3,5)
+            if min(ids)<0 or max(ids)>=84 or np.any(blocked[y,ids]):continue
+            if not 156/255.<=float(np.mean(image[y,ids[:2]]))<=184/255.:continue
+            edge=recover_pixel_edge(image,y,index,direction,blocked,max_row=69)
+            if edge is not None:contours[side].append(((edge-IMAGE_ORIGIN_X)/1.3608,(IMAGE_ORIGIN_Y-y)/1.701))
+    return contours
+
+
 def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_curb_bands=None,near_blocked=None,forward_band_ids=None,reference_seeds=None):
     """Piecewise fixed-width road hypothesis from a clean opposite contour.
 
@@ -870,14 +894,18 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
                 corrected.append((x,y,angle,ox,oy));continue
             corrected.append((float(safe[0]),float(safe[1]),angle,ox,oy));mixed_updates+=1;mixed_records.append(fit);mixed_angles.add(angle)
         curb_inner_points=corrected;inner_points=baseline_inner_points
-        _,_,centres=offset_observed_contour(reference_observations,center,radius)
         # A changing vertical row crop can lose an otherwise visible outer
         # contour. Prior observations supply correspondence search locations
         # only. Every added point must be observed again in CURRENT pixels;
         # these matches never enter road support or safety geometry above.
-        matched=0;novel=0
+        matched=0;novel=0;near_novel=0;observed=list(reference_observations)
+        # Supplement the reference even when enough forward samples exist.
+        # The original geometry sampling above is deliberately unchanged.
+        if near_blocked is not None:
+            for point in near_vehicle_reference_edges(image,asphalt,near_blocked)[side]:
+                if min(np.linalg.norm(np.asarray(observed)-point,axis=1))<.5*(21./6.)/4:continue
+                observed.append(point);near_novel+=1
         if reference_seeds is not None:
-            observed=list(reference_observations)
             for seed in reference_seeds:
                 if seed['outer_side']!=side:continue
                 for point,normal in zip(seed['edge_points'],seed['edge_normals']):
@@ -886,18 +914,17 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
                     matched+=1
                     if min(np.linalg.norm(np.asarray(observed)-current,axis=1))<.5*(21./6.)/4:continue
                     observed.append(current);novel+=1
-            if novel:
-                observed=np.asarray(observed)
-                theta=np.arctan2(observed[:,1]-center[1],observed[:,0]-center[0])
-                anchor=math.atan2(float(np.mean(np.sin(theta))),float(np.mean(np.cos(theta))))
-                theta=anchor+(theta-anchor+math.pi)%(2*math.pi)-math.pi
-                if max(theta)-min(theta)<=math.pi:
-                    reference_observations=observed[np.argsort(theta)]
-                    _,_,centres=offset_observed_contour(reference_observations,center,radius)
+        if novel or near_novel:
+            observed=np.asarray(observed)
+            theta=np.arctan2(observed[:,1]-center[1],observed[:,0]-center[0])
+            anchor=math.atan2(float(np.mean(np.sin(theta))),float(np.mean(np.cos(theta))))
+            theta=anchor+(theta-anchor+math.pi)%(2*math.pi)-math.pi
+            if max(theta)-min(theta)<=math.pi:reference_observations=observed[np.argsort(theta)]
+        _,_,centres=offset_observed_contour(reference_observations,center,radius)
         edge_points,edge_normals=observed_reference_edge_normals(reference_observations,center)
         if len(centres)>=3:
             reference_curves.append(dict(outer_side=side,points=centres,edge_points=edge_points,edge_normals=edge_normals,
-                current_edge_matches=matched,current_edge_new_observations=novel))
+                current_edge_matches=matched,current_edge_new_observations=novel,current_near_edge_observations=near_novel))
             if near_counts[side]:near_reference_curves+=1
         if len(inner_points)<2:continue
         white=cv2.dilate((image>.75).astype(np.uint8),np.ones((3,9),np.uint8))>0
@@ -978,7 +1005,9 @@ def reference_from_observed_width(raw_points,curves,asphalt,blocked):
     raw=np.asarray(raw_points,np.float64);best=None
     def supported(point):
         x=IMAGE_ORIGIN_X+1.3608*point[0];y=IMAGE_ORIGIN_Y-1.701*point[1]
-        if not 1<=x<=82 or not 5<=y<69:return False
+        # _map includes row69. Values just below69 already round to that
+        # pixel, so rejecting its exact centre breaks a valid near-edge join.
+        if not 1<=x<=82 or not 5<=y<=69:return False
         ix=int(round(x));iy=int(round(y))
         return bool(asphalt[iy,ix]) and not bool(blocked[iy,ix])
     def visible_join(first,last):
@@ -1311,6 +1340,7 @@ class Agent:
         self.reference_seeds=[dict(outer_side=curve['outer_side'],edge_points=curve['edge_points'],edge_normals=curve['edge_normals']) for curve in reference_curves]
         self.uncertainty['reference_current_edge_matches']=sum(curve['current_edge_matches'] for curve in reference_curves)
         self.uncertainty['reference_current_edge_new_observations']=sum(curve['current_edge_new_observations'] for curve in reference_curves)
+        self.uncertainty['reference_current_near_edge_observations']=sum(curve['current_near_edge_observations'] for curve in reference_curves)
         geometry_veto=coherent_grass_mask(image)|blocked.astype(bool)
         # A lone asphalt-grey sample may be a red/white curb mixture. Flat
         # public road shades, registered evidence, conditioned vehicle gaps,
