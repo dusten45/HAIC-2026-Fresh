@@ -1,0 +1,248 @@
+{
+  "checks": {
+    "source_hashes_match_contract": true,
+    "all_model_seeds_included": true,
+    "all_accepted_cases_safe": true,
+    "all_safe_cases_objective_and_execution_match": true,
+    "final_independent_full_tape_exact": true,
+    "existing_whole_not_replayed": true,
+    "actual_and_protected_zero": true
+  },
+  "candidates": [
+    {
+      "label": "proposal-0-0",
+      "strict_safe_finish": false,
+      "strict_failure": "FOOTPRINT",
+      "working_accept": false,
+      "signed_support_rows": 32,
+      "minimum_seed_support_slack": 0.0010746461276482933,
+      "maximum_support_error_coefficient": 0.03340516685047142,
+      "zero_step_seed_included": true,
+      "min_evaluated_footprint": 0.49999817376870964,
+      "max_path": 1.4336253269160886,
+      "max_force": 1.0508172765256347,
+      "max_reference_overspeed": 4.849992681522167,
+      "max_body": 96.92821098554532,
+      "final_history": [
+        74,
+        2148
+      ],
+      "rejected_raw": 633,
+      "rejected_margin": 0.49999817376870964,
+      "not_incumbent": true
+    },
+    {
+      "label": "proposal-0-1",
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "working_accept": true,
+      "signed_support_rows": 36,
+      "minimum_seed_support_slack": 0.00012295581862531435,
+      "maximum_support_error_coefficient": 0.13762889695061886,
+      "zero_step_seed_included": true,
+      "min_evaluated_footprint": 0.5012966128927859,
+      "max_path": 1.5086611284923368,
+      "max_force": 1.055520645769562,
+      "max_reference_overspeed": 4.849992681522167,
+      "max_body": 96.92821098554532,
+      "final_history": [
+        89,
+        2260
+      ],
+      "objective_same_command_time_exact": true,
+      "strict_diagnostic_prefix_exact": true,
+      "actual_times": {
+        "hull_finish": 13.201575459568655,
+        "center_finish": 13.202530327146153,
+        "s900": 12.105443085993022
+      },
+      "gain_this_step_ms": 1.3410466842813662,
+      "cumulative_gain_vs570working_ms": 1.3410466842813662,
+      "cumulative_gain_vs565_ms": 12.038966050880617,
+      "official_candidate_raw": 661,
+      "confirmation_raw": 661,
+      "official_finish_s": 13.219999999999807
+    },
+    {
+      "label": "proposal-1-0",
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "working_accept": true,
+      "signed_support_rows": 32,
+      "minimum_seed_support_slack": 0.0012966128927871523,
+      "maximum_support_error_coefficient": 0.03340525672818721,
+      "zero_step_seed_included": true,
+      "min_evaluated_footprint": 0.5000034350375939,
+      "max_path": 1.519161731589046,
+      "max_force": 1.0555840985113025,
+      "max_reference_overspeed": 4.849999994616525,
+      "max_body": 96.92823092099711,
+      "final_history": [
+        89,
+        2260
+      ],
+      "objective_same_command_time_exact": true,
+      "strict_diagnostic_prefix_exact": true,
+      "actual_times": {
+        "hull_finish": 13.201484548576015,
+        "center_finish": 13.202439414034684,
+        "s900": 12.105468903346265
+      },
+      "gain_this_step_ms": 0.09091099263969227,
+      "cumulative_gain_vs570working_ms": 1.4319576769210585,
+      "cumulative_gain_vs565_ms": 12.12987704352031,
+      "official_candidate_raw": 661,
+      "confirmation_raw": 661,
+      "official_finish_s": 13.219999999999807
+    },
+    {
+      "label": "proposal-2-0",
+      "strict_safe_finish": false,
+      "strict_failure": "FOOTPRINT",
+      "working_accept": false,
+      "signed_support_rows": 32,
+      "minimum_seed_support_slack": 0.00012715021156850526,
+      "maximum_support_error_coefficient": 0.03340525672818721,
+      "zero_step_seed_included": true,
+      "min_evaluated_footprint": 0.499889077551964,
+      "max_path": 1.4476164628462829,
+      "max_force": 1.0527946370507821,
+      "max_reference_overspeed": 4.849999088534275,
+      "max_body": 96.9288715900504,
+      "final_history": [
+        73,
+        2144
+      ],
+      "rejected_raw": 632,
+      "rejected_margin": 0.499889077551964,
+      "not_incumbent": true
+    },
+    {
+      "label": "proposal-2-1",
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "working_accept": true,
+      "signed_support_rows": 36,
+      "minimum_seed_support_slack": 0.00012715021156850526,
+      "maximum_support_error_coefficient": 0.04935058430973832,
+      "zero_step_seed_included": true,
+      "min_evaluated_footprint": 0.5014626894841916,
+      "max_path": 1.4699254149464451,
+      "max_force": 1.0571941603728547,
+      "max_reference_overspeed": 4.849999088534275,
+      "max_body": 96.9288715900504,
+      "final_history": [
+        89,
+        2260
+      ],
+      "objective_same_command_time_exact": true,
+      "strict_diagnostic_prefix_exact": true,
+      "actual_times": {
+        "hull_finish": 13.20005197523563,
+        "center_finish": 13.201006063133764,
+        "s900": 12.104733224229967
+      },
+      "gain_this_step_ms": 1.4325733403861562,
+      "cumulative_gain_vs570working_ms": 2.8645310173072147,
+      "cumulative_gain_vs565_ms": 13.562450383906466,
+      "official_candidate_raw": 661,
+      "confirmation_raw": 661,
+      "official_finish_s": 13.219999999999807
+    },
+    {
+      "label": "proposal-3-0",
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "working_accept": true,
+      "signed_support_rows": 32,
+      "minimum_seed_support_slack": 0.0014626894841853755,
+      "maximum_support_error_coefficient": 0.03340525672818721,
+      "zero_step_seed_included": true,
+      "min_evaluated_footprint": 0.5013762504176721,
+      "max_path": 1.4641157712028885,
+      "max_force": 1.0562394782661026,
+      "max_reference_overspeed": 4.84999907963693,
+      "max_body": 96.92945008897547,
+      "final_history": [
+        89,
+        2260
+      ],
+      "objective_same_command_time_exact": true,
+      "strict_diagnostic_prefix_exact": true,
+      "actual_times": {
+        "hull_finish": 13.198949604886586,
+        "center_finish": 13.199910658815854,
+        "s900": 12.103944287587833
+      },
+      "gain_this_step_ms": 1.102370349043369,
+      "cumulative_gain_vs570working_ms": 3.9669013663505837,
+      "cumulative_gain_vs565_ms": 14.664820732949835,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661,
+      "official_finish_s": 13.199999999999807
+    },
+    {
+      "label": "proposal-4-0",
+      "strict_safe_finish": true,
+      "strict_failure": null,
+      "working_accept": true,
+      "signed_support_rows": 32,
+      "minimum_seed_support_slack": 0.0013762504176639823,
+      "maximum_support_error_coefficient": 0.03340525672818721,
+      "zero_step_seed_included": true,
+      "min_evaluated_footprint": 0.5017232356849423,
+      "max_path": 1.4723935264932293,
+      "max_force": 1.0582489914441273,
+      "max_reference_overspeed": 4.849999403417343,
+      "max_body": 96.92935469173109,
+      "final_history": [
+        90,
+        2260
+      ],
+      "objective_same_command_time_exact": true,
+      "strict_diagnostic_prefix_exact": true,
+      "actual_times": {
+        "hull_finish": 13.197330070004705,
+        "center_finish": 13.19829021148399,
+        "s900": 12.103307698713607
+      },
+      "gain_this_step_ms": 1.6195348818808242,
+      "cumulative_gain_vs570working_ms": 5.586436248231408,
+      "cumulative_gain_vs565_ms": 16.28435561483066,
+      "official_candidate_raw": 660,
+      "confirmation_raw": 661,
+      "official_finish_s": 13.199999999999807
+    }
+  ],
+  "observed_component_recoveries": [
+    {
+      "label": "proposal-0-0",
+      "recovery": 1,
+      "normalized_displacement": 0.04995117584864299,
+      "source_failure": "FOOTPRINT",
+      "added_component": true,
+      "raw": 633,
+      "kind": "road",
+      "polygon": 7,
+      "feature": 553,
+      "exact_gap": 0.49999817376870964
+    },
+    {
+      "label": "proposal-2-0",
+      "recovery": 2,
+      "normalized_displacement": 0.049805641174316406,
+      "source_failure": "FOOTPRINT",
+      "added_component": true,
+      "raw": 632,
+      "kind": "road",
+      "polygon": 7,
+      "feature": 553,
+      "exact_gap": 0.499889077551964
+    }
+  ],
+  "scope": "Signed support certifies only its fixed polygon/component separation;coverage and other components remain exact-validator checks. Per-center base support set covers573..580,with observed additional components introduced within that center and perfeature coefficient floors retained. No universal empirical-error,feedback/native/robustness claim.",
+  "termination": "A bounded direction/recovery/acceptance/stagnation rule terminates this run;not a convergence or directional/global infeasibility proof.",
+  "model_ticks": 0,
+  "CPU_s": 0.30319303799999997,
+  "wall_s": 0.06963036599336192
+}

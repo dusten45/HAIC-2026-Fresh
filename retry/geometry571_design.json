@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "method": "Keep all68full-command objective. Add frozen signed separating support for each vertex of the active polygon,for each raw in failinghold145andprecedinghold144. Original full exactgeometry validator unchanged.",
+  "evidence": [
+    {
+      "label": "proposal-3-0-diagnostic",
+      "global_raw": 577,
+      "kind": "road",
+      "polygon": 6,
+      "feature": 250,
+      "exact_gap": 0.499999588807011,
+      "component_gap": 0.4999995888070158
+    },
+    {
+      "label": "proposal-3-1-diagnostic",
+      "global_raw": 577,
+      "kind": "road",
+      "polygon": 6,
+      "feature": 250,
+      "exact_gap": 0.4999967777770936,
+      "component_gap": 0.49999677777709023
+    }
+  ],
+  "seed_component": {
+    "kind": "road",
+    "polygon": 6,
+    "feature": 250,
+    "gap": 0.5010746461276516
+  },
+  "support_constraints": 32,
+  "minimum_seed_support_slack": 0.0010746461276482933,
+  "seed_included": true,
+  "critical_raw577_error_profiles": [
+    {
+      "label": "cal-4-0",
+      "normalized_displacement": 0.05000084638595581,
+      "support_slack_min": 0.023163357443593213,
+      "positive_support_optimism_max": 0.0006644015272954107,
+      "derived_error_allowance_max": 0.001333732078402714
+    },
+    {
+      "label": "cal-4-1",
+      "normalized_displacement": 0.05000084638595581,
+      "support_slack_min": -0.0313677115626092,
+      "positive_support_optimism_max": 0.0006631087347298559,
+      "derived_error_allowance_max": 0.001333732078402714
+    },
+    {
+      "label": "proposal-3-0-diagnostic",
+      "normalized_displacement": 0.04995117584864299,
+      "support_slack_min": -1.451300636290398e-05,
+      "positive_support_optimism_max": 2.022741610208101e-05,
+      "derived_error_allowance_max": 0.0013324071570512983
+    },
+    {
+      "label": "proposal-3-1-diagnostic",
+      "normalized_displacement": 0.024976332982381187,
+      "support_slack_min": -0.0004676554228808527,
+      "positive_support_optimism_max": 3.1765424425289623e-06,
+      "derived_error_allowance_max": 0.0006662234523459205
+    }
+  ],
+  "critical_coefficient_max_m_per_normalized_step": 0.026674190034857718,
+  "coefficient_rule": "Twice max positive signed-vertex prediction optimism divided by ACTUAL normalized displacement across savedcal2+savedreject2,plus propagatedfloat32ULP and fourbinary64eps per .05. Zero-step L*t=0. No fixedbuffer grid,epsilon rounding or coefficient clipping. Historical measured coefficient floor retained;new rejected directions update by same rule only within registered restoration cap.",
+  "scope": "A signed support halfspace is sufficient for separating that polygon from that roadsegment/circle;all vertices,not just the previous minimizer. It is not a certificate for other components or road-union coverage. Source exactwholevehicle validator always rechecks. Empirical errors are not universalbounds.",
+  "source_ticks": 0,
+  "CPU_s": 4.111271964,
+  "wall_s": 4.112996368989116,
+  "input_sha256": {
+    "/workspace/haic-response570-private/raw-journal-private.jsonl": "56a4a13bf615962e7cdfc1a7e672b936a45ef7a16c788f22e8bfb9f9da0d64d3",
+    "/workspace/haic-response570-private/linear-4-private.json": "8353399e797d07f9f7affb1e7e2d1ae79b015ee8f7b044ff60083a61ad882d9e",
+    "/workspace/haic-response570-private/proposal-2-0-diagnostic-private.json": "bdeafcce72354cfcfa07893dddbde384054f10d884c47ce328afc56c3658dfe6",
+    "/workspace/haic-response570-private/proposal-3-0-diagnostic-private.json": "73d256c62de45bf8de182a01f57048701dbe52c6533b95c9e826a4aa9186fa35",
+    "/workspace/haic-response570-private/proposal-3-1-diagnostic-private.json": "8e7ef09acaf6047bc4b09bc5fdc04666c677786ad3a2f1a4142fb90354dd1a81"
+  },
+  "private_cache_sha256": "7057e4c8e6751033e544d334261d8f09dc1f491b6ac24861f46690e517520129"
+}
