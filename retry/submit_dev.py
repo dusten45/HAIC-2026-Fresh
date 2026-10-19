@@ -29,35 +29,48 @@ CALLS={'compile','eval','exec','__import__'}
 def dump(p,q):p.write_text(json.dumps(q,indent=2,allow_nan=False)+'\n')
 
 
-def package(out, source=None):
+def package(out, source=None, core_source=None):
     source=Path(source) if source is not None else ROOT/'submit_agent/agent.py'
-    code=source.read_text();tree=ast.parse(code)
-    for node in ast.walk(tree):
+    files={'agent.py':source.read_text()}
+    if core_source is not None:
+        files['runtime598.py']=Path(core_source).read_text()
+        files['LICENSE']=(ROOT/'submit_core/LICENSE').read_text()
+    allowed={'numpy','cv2','math'}|({'runtime598','dataclasses','struct','types'} if core_source is not None else set())
+    for filename,code in files.items():
+      if not filename.endswith('.py'):continue
+      tree=ast.parse(code)
+      for node in ast.walk(tree):
         if isinstance(node,(ast.Import,ast.ImportFrom)):
             names=[a.name for a in node.names] if isinstance(node,ast.Import) else [node.module]
             assert all(n.split('.')[0] not in BANNED for n in names),'BANNED_IMPORT'
-            assert all(n.split('.')[0] in {'numpy','cv2','math'} for n in names),'UNEXPECTED_DEPENDENCY'
+            assert all(n.split('.')[0] in allowed for n in names),'UNEXPECTED_DEPENDENCY'
         if isinstance(node,ast.Call):
             name=node.func.id if isinstance(node.func,ast.Name) else node.func.attr if isinstance(node.func,ast.Attribute) else ''
             assert name not in CALLS,'BANNED_DYNAMIC_CALL'
         if isinstance(node,ast.Name):assert node.id not in {'open','globals','locals','getattr','setattr','vars'},'UNEXPECTED_SIDE_CHANNEL'
-    target=out/'package';target.mkdir();(target/'agent.py').write_text(code)
+    target=out/'package';target.mkdir()
+    for name,code in files.items():(target/name).write_text(code)
     archive=out/'submission.zip'
-    with zipfile.ZipFile(archive,'x',zipfile.ZIP_DEFLATED) as z:z.write(target/'agent.py','agent.py')
+    with zipfile.ZipFile(archive,'x',zipfile.ZIP_DEFLATED) as z:
+        for name in files:z.write(target/name,name)
     with zipfile.ZipFile(archive) as z:
-        assert z.namelist()==['agent.py'] and len(z.infolist())<=1000
+        assert set(z.namelist())==set(files) and len(z.infolist())<=1000
         assert sum(i.file_size for i in z.infolist())<=2*1024**3
         assert all(i.file_size<=500*1024**2 and i.file_size/max(1,i.compress_size)<=100 for i in z.infolist())
         assert archive.stat().st_size<=500*1024**2
-        assert z.read('agent.py')==(target/'agent.py').read_bytes()
+        assert all(z.read(name)==(target/name).read_bytes() for name in files)
     return target/'agent.py',hashlib.sha256(source.read_bytes()).hexdigest()
 
 
+class WorkerError(RuntimeError):
+    def __init__(self,value):super().__init__(value['error']);self.payload=value
+
+
 class Client:
-    def __init__(self,source,out):
+    def __init__(self,source,out,model_tick_budget=50000):
         env=dict(os.environ,OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',MKL_NUM_THREADS='1')
         self.err=(out/'worker-stderr-private.log').open('wb');begin=time.perf_counter()
-        self.p=subprocess.Popen([sys.executable,'-u',str(ROOT/'retry/submit_worker.py'),str(source)],
+        self.p=subprocess.Popen([sys.executable,'-u',str(ROOT/'retry/submit_worker.py'),str(source),str(model_tick_budget)],
             cwd=source.parent,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=self.err,env=env)
         try:
             self.ready=self.receive(10.);self.startup=time.perf_counter()-begin
@@ -69,11 +82,14 @@ class Client:
         line=self.p.stdout.readline()
         if not line:raise RuntimeError('WORKER_EXIT')
         value=json.loads(line)
-        if 'error' in value:raise RuntimeError(value['error'])
+        if 'error' in value:raise WorkerError(value)
         return value
     def request(self,command,obs):
         begin=time.perf_counter();self.p.stdin.write(command+obs.tobytes(order='C'));self.p.stdin.flush()
-        q=self.receive(5.)
+        try:q=self.receive(5.)
+        except WorkerError as exc:
+            exc.payload['whole_request_wall_s']=time.perf_counter()-begin
+            raise
         if command==b'A':
             import numpy as np
             a=np.asarray(q['action'],dtype=np.float32)
@@ -104,19 +120,23 @@ def ledger_charge(kind):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--label',required=True);parser.add_argument('--steps',type=int,default=120)
+    parser.add_argument('--agent-source');parser.add_argument('--runtime-core',action='store_true')
+    parser.add_argument('--model-tick-budget',type=int,default=50000)
     args=parser.parse_args();assert 0<args.steps<=2000
+    if args.runtime_core:assert args.steps<=20,'INITIAL_RUNTIME_LINK_SMOKE_CAP'
     if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:raise RuntimeError('AUTHORIZATION_EXPIRED')
     PRIVATE.mkdir(mode=0o700,exist_ok=True);out=PRIVATE/args.label;out.mkdir(mode=0o700,exist_ok=False)
-    source,source_hash=package(out);client=None;env=None;rows=[];status='TECHNICAL_FAILURE';error=None;reset=None;summary={}
+    source,source_hash=package(out,args.agent_source,ROOT/'submit_core/runtime598.py' if args.runtime_core else None);client=None;env=None;rows=[];status='TECHNICAL_FAILURE';error=None;reset=None;summary={};failure_payload=None
     try:
-        client=Client(source,out)
+        client=Client(source,out,args.model_tick_budget)
         import numpy as np
         # Mandatory reset/action/shape/memory checks use the exact packaged Agent
         # before any environment creation. No privileged input enters its process.
-        blank=np.zeros((4,84,84),np.float32)
-        client.request(b'R',blank);one=client.request(b'A',blank)
-        client.request(b'R',blank);two=client.request(b'A',blank)
-        assert one['action']==two['action'],'RESET_LEAK'
+        if not args.runtime_core:
+            blank=np.zeros((4,84,84),np.float32)
+            client.request(b'R',blank);one=client.request(b'A',blank)
+            client.request(b'R',blank);two=client.request(b'A',blank)
+            assert one['action']==two['action'],'RESET_LEAK'
         os.environ.setdefault('SDL_VIDEODRIVER','dummy');os.environ.setdefault('SDL_AUDIODRIVER','dummy')
         import cv2
         from gymnasium.wrappers import TimeLimit
@@ -134,9 +154,16 @@ def main():
             for i in range(args.steps):
                 if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:status='AUTHORIZATION_CENSORED';break
                 q=client.request(b'A',obs);a=np.asarray(q['action'],np.float32)
+                # Same-instant pre-action truth is diagnostic only, outside IPC.
+                diagnostic=q.get('diagnostics',{})
+                estimate_error={}
+                if args.runtime_core:
+                    estimate_error=dict(speed_m_s=float(diagnostic['estimated_speed']-np.linalg.norm(raw.car.hull.linearVelocity)),
+                        wheel_omega_rad_s=(np.asarray(diagnostic['estimated_wheel_omega'])-np.asarray([w.omega for w in raw.car.wheels])).tolist())
                 before=raw.t;ledger_charge('actions');obs,reward,terminated,truncated,info=env.step(a)
                 ticks=round((raw.t-before)/.02)
-                row=dict(index=i+1,action=q['action'],diagnostics=q.get('diagnostics'),whole_act_wall_s=q['whole_request_wall_s'],worker_wall_s=q['wall_s'],worker_CPU_s=q['CPU_s'],max_RSS_KiB=q['max_RSS_KiB'],raw=ticks,progress=info['progress'],damage=info['damage'],true_hull_speed=float(np.linalg.norm(raw.car.hull.linearVelocity)))
+                row=dict(index=i+1,action=q['action'],diagnostics=q.get('diagnostics'),whole_act_wall_s=q['whole_request_wall_s'],worker_wall_s=q['wall_s'],worker_CPU_s=q['CPU_s'],max_RSS_KiB=q['max_RSS_KiB'],model_ticks_total=q.get('resource_model_ticks',0),raw=ticks,progress=info['progress'],damage=info['damage'],true_hull_speed=float(np.linalg.norm(raw.car.hull.linearVelocity)))
+                row['external_estimate_error']=estimate_error
                 rows.append(row);log.write(json.dumps(row)+'\n');log.flush()
                 if i%20==0:cv2.imwrite(str(out/f'frame-{i+1:04d}-private.png'),np.rint(obs[-1]*255).astype(np.uint8))
                 if terminated or truncated:
@@ -147,6 +174,9 @@ def main():
             drive_raw=round((raw.t-epoch)/.02),reset_physics_raw=round(epoch/.02),retire_reason=info.get('retire_reason'))
     except BaseException as exc:
         status='TECHNICAL_FAILURE'
+        if isinstance(exc,WorkerError):
+            failure_payload=exc.payload
+            if any(s in str(exc) for s in ['NO_ESTIMATED_INPUT','OBSERVED_ROAD_SUPPORT','OBSERVED_PATH_SUPPORT']):status='INPUT_OR_ADMISSION_STOP'
         error=type(exc).__name__+':'+str(exc)
         import traceback
         (out/'error-private.txt').write_text(traceback.format_exc())
@@ -165,6 +195,7 @@ def main():
             max_whole_act_wall_s=max((r['whole_act_wall_s'] for r in rows),default=None),
             max_worker_RSS_KiB=max((r['max_RSS_KiB'] for r in rows),default=None),
             summary=summary,usage=usage,wall_s=time.perf_counter()-START,CPU_s=total_cpu,
+            worker_failure=failure_payload,model_ticks_total=max([q.get('model_ticks_total',0) for q in rows]+[failure_payload.get('resource_model_ticks',0) if failure_payload else 0]),
             official_server_runtime_parity=False,inputs='Only binaryfloat32 observation transmitted; no metadata/state/reward/case in worker',archive='submission.zip')
         dump(out/'result-private.json',result);print(json.dumps(result,indent=2))
 

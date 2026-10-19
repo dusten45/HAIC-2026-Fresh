@@ -9,10 +9,13 @@ import sys
 # A conservative local address-space bound in addition to reported peak RSS.
 resource.setrlimit(resource.RLIMIT_AS,(1024*1024**2,1024*1024**2))
 import numpy as np
+sys.path.insert(0,sys.argv[1].rsplit('/',1)[0])
 spec=importlib.util.spec_from_file_location('agent',sys.argv[1])
 module=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 agent=module.Agent()
+if len(sys.argv)>2 and hasattr(agent,'counter'):
+    agent.counter.limit=min(50000,max(0,int(sys.argv[2])))
 
 
 def send(value):
@@ -43,7 +46,12 @@ while True:
             result=dict(action=action.tolist(),diagnostics=getattr(agent,'diagnostics',{}))
         else:raise ValueError('BAD_PROTOCOL')
         result.update(wall_s=time.perf_counter()-begin,CPU_s=time.process_time()-cpu,
-                      max_RSS_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
+                      max_RSS_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+                      resource_model_ticks=getattr(agent,'counter',[0])[0])
     except BaseException as exc:
-        result=dict(error=type(exc).__name__+':'+str(exc))
+        result=dict(error=type(exc).__name__+':'+str(exc),
+                    diagnostics=getattr(agent,'diagnostics',{}),
+                    wall_s=time.perf_counter()-begin,CPU_s=time.process_time()-cpu,
+                    max_RSS_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
+        result['resource_model_ticks']=getattr(agent,'counter',[0])[0]
     send(result)

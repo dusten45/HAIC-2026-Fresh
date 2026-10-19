@@ -269,7 +269,9 @@ def raw_projection(position, path):
     points = path['points']
     arcs = path['arcs']
     out = []
-    for i, a in enumerate(points):
+    count=len(points)-1 if path.get('observed_open',False) else len(points)
+    for i in range(count):
+        a=points[i]
         b = points[(i + 1) % len(points)]
         dx, dy = (b[0] - a[0], b[1] - a[1])
         d = dx * dx + dy * dy
@@ -282,6 +284,11 @@ def raw_projection(position, path):
 def project(position, path, previous=None):
     L = path['length']
     rows = raw_projection(position, path)
+    if path.get('observed_open',False):
+        if previous is None:return min(rows,key=lambda q:q['distance'])
+        valid=[q for q in rows if previous-5.<=q['s']<=previous+30.]
+        if not valid:raise ValueError('OBSERVED_PATH_SUPPORT_EXHAUSTED')
+        return min(valid,key=lambda q:q['distance'])
     if previous is None:
         q = min(rows, key=lambda x: x['distance'])
         q['s'] = q['s'] if q['s'] <= L / 2 else q['s'] - L
@@ -298,7 +305,7 @@ def project(position, path, previous=None):
 
 def reference(s, path):
     L = path['length']
-    first = 0 <= s <= L
+    first = path.get('observed_open',False) or 0 <= s <= L
     u = min(max(s, 0.0), L) if first or s < 0 else s % L
     i = next((i for i in range(len(path['ds'])) if path['arcs'][i + 1] >= u), len(path['ds']) - 1)
     d = path['ds'][i]
@@ -309,7 +316,7 @@ def reference(s, path):
 
 
 def point_at(s, path):
-    u = s % path['length']
+    u = min(max(s,0.),path['length']) if path.get('observed_open',False) else s % path['length']
     i = next((i for i in range(len(path['ds'])) if path['arcs'][i + 1] >= u), len(path['ds']) - 1)
     f = (u - path['arcs'][i]) / path['ds'][i]
     return tuple((path['points'][i][j] + f * (path['points'][(i + 1) % len(path['points'])][j] - path['points'][i][j]) for j in range(2)))

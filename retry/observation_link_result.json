@@ -1,0 +1,94 @@
+{
+  "status": "MINIMAL_INTEGRATION_RECHECK_COMPLETE",
+  "authorization_end_UTC": "2026-10-20T14:59:00Z",
+  "authorization_source": "Explicit user extension on 2026-10-19 14:24:03 UTC supersedes October16 end; earlier closeout interpretation corrected.",
+  "scope": "Observation adapter calls original runtime598 chooser/dynamics/12hold. Neither full lap nor true-state safety certificate nor official server runtime parity.",
+  "fix": "Retain own-action four-tick predicted wheel omega/gas across observations; reset clears episode state/history, resource counter survives. Observable body/geometry estimates remain pixel-derived.",
+  "cached_state_check": {
+    "status": "PASS",
+    "wheel_spin_and_gas_retained": true,
+    "reset_local_state_cleared": true,
+    "resource_counter_preserved": true,
+    "model_ticks": 820,
+    "wall_s": 0.6094317950046388,
+    "CPU_s": 0.61329271,
+    "native_actions": 0
+  },
+  "previous_DEV_closed_loop": {
+    "status": "ACTION_LIMIT_CENSORED",
+    "steps": 20,
+    "startup_wall_s": 0.11187353399873246,
+    "reset_wall_s": 0.0004065140092279762,
+    "max_whole_act_wall_s": 1.5807620450068498,
+    "max_worker_RSS_KiB": 54160,
+    "wall_s": 21.064200086999335,
+    "CPU_s": 21.094319213,
+    "model_ticks_total": 15555,
+    "worker_failure": null
+  },
+  "updated_DEV_closed_loop": {
+    "status": "ACTION_LIMIT_CENSORED",
+    "steps": 8,
+    "startup_wall_s": 0.11050105300091673,
+    "reset_wall_s": 0.0005517090030480176,
+    "max_whole_act_wall_s": 1.0530131150007946,
+    "max_worker_RSS_KiB": 53856,
+    "wall_s": 7.156974950004951,
+    "CPU_s": 7.156919269,
+    "model_ticks_total": 5151,
+    "worker_failure": null
+  },
+  "timing_definition": "whole_act includes pixel IPC, preprocessing, estimation, chooser, four model propagation ticks, and action return; excludes subsequent environment.step. Both DEV runs are live closed-loop simulation, not cached replay.",
+  "external_diagnostic": {
+    "scope": "Eight pre-action estimates compared to same-instant true state exclusively in external harness; no true state enters Agent.",
+    "wheel_omega_RMSE_rad_s": 0.24279554084108707,
+    "wheel_omega_max_abs_rad_s": 0.5335380129893537,
+    "speed_RMSE_m_s": 0.5122785418429018,
+    "speed_max_abs_m_s": 0.9464358600437652,
+    "propagated_wheel_state_calls": 7
+  },
+  "budget": {
+    "caps": {
+      "DEV_actions": 1000,
+      "model_ticks": 50000,
+      "CPU_s": 1800,
+      "wall_s": 3600
+    },
+    "used_DEV_actions": 28,
+    "used_model_ticks": 22346,
+    "measured_run_CPU_s": 29.466082522999997,
+    "additional_unmetered_setup_CPU_reservation_s": 120,
+    "remaining_CPU_after_reservation_s": 1650.533917477,
+    "remaining_DEV_actions": 972,
+    "remaining_model_ticks": 27654,
+    "stage_elapsed_wall_s_at_closeout": 780.8290696144104,
+    "remaining_wall_s_at_closeout": 2819.1709303855896,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0,
+    "reserve_used": 0,
+    "research_actions_remaining": 20717
+  },
+  "predeclared_gates": {
+    "stop": "First unsupported input/admission failure or whole act >=5s; never repeat timeout/noop.",
+    "promotion": "No promotion based on this short connection check. No lap-time search."
+  },
+  "policy_differences": [
+    "Unavailable saved prefix39 replaced by original feedback chooser from first decision.",
+    "Finite observed path uses no wrapping or synthetic closing chord; global references unavailable."
+  ],
+  "limitations": [
+    "Only short initial motion checked; wheel slip/contact/friction and clipping history remain estimates.",
+    "Engineering uncertainty intervals unvalidated; unseen map/obstacles unknown.",
+    "Model state propagation fixes continuity, not observability or full-state parity."
+  ],
+  "source_sha256": {
+    "submit_core/observation_agent.py": "1c153f5978fb42dd8b466748b67d5a122628a5afd3fc5004e917225e3de7c481",
+    "submit_core/runtime598.py": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8"
+  },
+  "preservation": {
+    "main": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+    "Participants_diff_detected": false
+  },
+  "privacy": "Raw imagery/actions/states/case identifiers remain outside repository.",
+  "next_action": "Stop this stage; no further run scheduled."
+}
