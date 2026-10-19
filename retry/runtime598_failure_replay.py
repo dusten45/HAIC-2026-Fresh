@@ -23,6 +23,7 @@ def main():
     if args.full_agent:
         # Trusted, locally generated private checkpoint; no external truth read.
         import agent as participant
+        from retry.runtime598_diagnostic import plain
         import numpy as np
         agent=participant.Agent()
         agent.__dict__=pickle.loads((directory/'agent-before-private.pkl').read_bytes())
@@ -38,7 +39,7 @@ def main():
         except BaseException as exc:error=type(exc).__name__+':'+str(exc)
         result=dict(error_identical=error==native['worker_failure']['error'],
             full_report_identical=captured.get('report')==expected.get('report'),
-            diagnostics_identical=agent.diagnostics==native['worker_failure']['diagnostics'],
+            diagnostics_identical=plain(agent.diagnostics)==native['worker_failure']['diagnostics'],
             counter_identical=agent.counter[0]==native['worker_failure']['resource_model_ticks'],
             model_ticks=agent.counter[0]-before,CPU_s=time.process_time()-cpu,
             wall_s=time.perf_counter()-start,native_actions=0,

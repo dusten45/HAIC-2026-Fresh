@@ -25,7 +25,8 @@ def main():
     # actual incoming stack may bootstrap it, but no older images are invented.
     if 'road_frames' not in memory:memory['road_frames']=[]
     backfill_ticks=0;backfill_cpu=0.;backfill_wall=0.
-    if 'predicted_hull_velocity_body' in agent.__dict__ and 'predicted_hull_velocity_body' not in memory:
+    needed=('predicted_hull_velocity_body','predicted_joints','predicted_joint_rates','predicted_yaw','predicted_average_hull_velocity_body','predicted_average_yaw')
+    if any(key in agent.__dict__ and key not in memory for key in needed):
         # Derive a missing new field from the exact recorded own-action model
         # transition. Never replace old spin/history/grip with external truth.
         cpu=time.process_time();start=time.perf_counter();root=memory['last_root'];counter=[0]
@@ -36,8 +37,18 @@ def main():
         velocity=core.hull_pose(root)[1];angle=root.planar.angle
         assert tuple((w.omega,w.gas) for w in root.planar.linear.wheels)==memory['predicted_wheels']
         assert math.hypot(*velocity)==memory['predicted_hull_speed']
-        memory['predicted_hull_velocity_body']=(math.cos(angle)*velocity[0]+math.sin(angle)*velocity[1],
-            -math.sin(angle)*velocity[0]+math.cos(angle)*velocity[1])
+        if 'predicted_hull_velocity_body' not in memory:
+            memory['predicted_hull_velocity_body']=(math.cos(angle)*velocity[0]+math.sin(angle)*velocity[1],
+                -math.sin(angle)*velocity[0]+math.cos(angle)*velocity[1])
+        if 'predicted_joints' not in memory:
+            memory['predicted_joints']=root.planar.joints
+            memory['predicted_joint_rates']=root.planar.rates
+        if 'predicted_yaw' not in memory:memory['predicted_yaw']=root.planar.yaw
+        if 'predicted_average_hull_velocity_body' not in memory:
+            before_origin=core.hull_pose(memory['last_root'])[0];after_origin=core.hull_pose(root)[0]
+            dx,dy=((after_origin[j]-before_origin[j])/.08 for j in range(2))
+            memory['predicted_average_hull_velocity_body']=(math.cos(angle)*dx+math.sin(angle)*dy,-math.sin(angle)*dx+math.cos(angle)*dy)
+            memory['predicted_average_yaw']=(root.planar.angle-memory['last_root'].planar.angle)/.08
         backfill_ticks=counter[0];backfill_cpu=time.process_time()-cpu;backfill_wall=time.perf_counter()-start
     agent.__dict__=memory
     observation=np.load(directory/'input-private.npy');observation.flags.writeable=False

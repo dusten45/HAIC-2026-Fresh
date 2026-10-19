@@ -1,0 +1,170 @@
+{
+  "status": "OBSERVABLE_STATE_ERRORS_REDUCED_NEW_LIVE_FAILURE_ATTRIBUTED_TO_MAP",
+  "representation_separation": {
+    "raw_old_measured_hull_origin_residual_m": 9.458799410180784e-06,
+    "raw_old_measured_hull_velocity_residual_m_s": 7.985566345744413e-05,
+    "nominal_end_orientation_wheel_velocity_MAE_m_s": 0.07282954503641717,
+    "source_constraint_one_raw_tick_back_wheel_velocity_MAE_m_s": 1.2232005141490555e-06,
+    "interpretation": "Velocity-constraint time level versus end geometry is a representation effect, not an observer error. Canonical nominal rigid projections are not full measured-state certificates. No physics correction or true-state offset was inserted into Agent."
+  },
+  "fixed_short_diagnostic": {
+    "cells": 14,
+    "actions_per_cell": 21,
+    "raw_ticks_per_action": 2,
+    "body_pose_and_velocity_canonicalization_exact": true,
+    "actual_joint_rates_recorded": false,
+    "rate_alternatives": "Decision-average, own-action endpoint, zero assumption and public motor-target assumption are distinguished.",
+    "stack_frame_dt_s": 0.08,
+    "own_action_prediction_raw_ticks": 4,
+    "stored_own_prediction_wheelspin_exact": true,
+    "old_first2tick_force_pass_counts": {
+      "estimated": 1,
+      "canonical_identity": 1,
+      "hull_velocity": 1,
+      "speed_norm_only": 2,
+      "yaw": 1,
+      "wheelspin": 0,
+      "joint_angle": 11,
+      "joint_rate_zero_assumption": 1,
+      "joint_rate_predicted_end": 1,
+      "joint_rate_motor_target_assumption": 1,
+      "wheelspin_stale_previous_decision": 0,
+      "all_measured_observables_rate_average": 0,
+      "all_measured_observables_rate_predicted": 0,
+      "all_measured_observables_rate_motor_assumption": 0
+    },
+    "limits": "Canonical nominal rigid projection; raw measured representation residual reported separately. No measured-state admission certificate, and unrecorded joint rates are assumptions. Fixed recorded candidate actions only; no controller/threshold changes."
+  },
+  "implemented_observer": {
+    "joint": "Public integer-polygon endpoint templates yield joint bins of at most0.004rad; same-time own-action prior is conditioned on the observed bin.",
+    "speed_and_yaw": "Source-pixel speed2.5m/s and yaw0.05rad/s bins replace biased point inversions; known renderer deadzones are retained; nonmatching HUD patterns retain explicitly unvalidated legacy fallback without a fabricated bin.",
+    "end_state": "Persist joint angle, endpoint joint rate and yaw from the original4tick own-action propagation. A decision-average angle difference is not labelled an instantaneous joint rate.",
+    "flow": "Transport the0.08s optical displacement/yaw-average innovation to the endpoint using own predicted average and endpoint motion; keep speed/yaw inside matching HUD bins.",
+    "wheelspin": "Still propagated using original dynamics and own actions. No measured wheelspin is injected; better kinematic observations reduce propagation drift.",
+    "public_templates_only": true,
+    "true_state_map_seed_in_Agent": false
+  },
+  "public_checks": {
+    "joint_cases": 104,
+    "joint_template_endpoints": 201,
+    "joint_old_MAE_rad": 0.004306498877821101,
+    "joint_new_MAE_rad": 0.0018023076923076738,
+    "joint_all_truth_inside_public_bins": true,
+    "motion_cases": 91,
+    "motion_template_bins": 241,
+    "motion_all_truth_inside_public_bins": true,
+    "static_speed_old_MAE_m_s": 1.7982481465360476,
+    "static_speed_new_MAE_m_s": 0.6394236874236874,
+    "static_yaw_old_MAE_rad_s": 0.08355486429992198,
+    "static_yaw_new_MAE_rad_s": 0.012429792429792344,
+    "fixed_independent_Box2D_actions": 12,
+    "public_dynamics_before": {
+      "speed_error": 0.6433366961671889,
+      "yaw_error": 0.015118963379907584,
+      "joint_error": 0.0015334157685850322,
+      "rate_error": 0.2595847736701189,
+      "spin_MAE": 0.3477570452203212
+    },
+    "public_dynamics_after": {
+      "speed_error": 8.8958778427628e-05,
+      "yaw_error": 0.0027969048687173912,
+      "joint_error": 1.5248879485507683e-08,
+      "rate_error": 8.298112723015861e-07,
+      "spin_MAE": 0.0008645056393425943
+    },
+    "flow_average_as_endpoint_MAE_m_s": 1.2195177970260465,
+    "flow_aligned_MAE_m_s": 0.00048423905205248523,
+    "scope": "Small fixed public HUD/Box2D fixtures, not a universal observer or safety guarantee."
+  },
+  "prospective_gate": {
+    "last_old_terminal_full_Agent_still_rejected": true,
+    "no_claim_old_terminal_state_unblocked": true,
+    "initial_full_Agent_admitted": true,
+    "initial_whole_act_s": 0.8791878290066961,
+    "rationale": "A preventive reset trial was predeclared after independent public dynamics error reductions and the admitted initial full-Agent cache. Terminal canonical projections with measured observables were explicitly not interpreted as proof of physical infeasibility."
+  },
+  "live": {
+    "applied_actions": 37,
+    "failure_decision": 38,
+    "progress": 0.11307420494699646,
+    "damage": 0.0,
+    "finished": false,
+    "lap_time_s": null,
+    "original13_22s_reproduced": false,
+    "max_whole_act_s": 1.9961044599767774,
+    "max_RSS_KiB": 63800,
+    "rejections": {
+      "FORCE_PEAK": 15,
+      "FORECAST_FOOTPRINT_MARGIN": 6
+    },
+    "complete_checkpoint_saved_private": true,
+    "official_server_runtime_parity": false
+  },
+  "new_failure_evidence": {
+    "measured_hull_representation_position_residual_m": 2.5155287393149307e-06,
+    "measured_hull_representation_velocity_residual_m_s": 1.4869184388883744e-06,
+    "original_frame_precision_guard_passed": true,
+    "hull_velocity_error_m_s": [
+      -0.00013916469620989247,
+      -0.0445411989775053
+    ],
+    "yaw_error_rad_s": 1.767177284897614e-05,
+    "wheel_joint_angle_errors_rad": [
+      -1.862645149230957e-08,
+      -1.862645149230957e-08,
+      0.0,
+      0.0
+    ],
+    "wheelspin_error_range_rad_s": [
+      -0.08462254368002675,
+      -0.08067670743163546
+    ],
+    "measured_vehicle_observed_map_admitted": false,
+    "estimated_vehicle_actual_map_admitted": true,
+    "measured_vehicle_actual_map_admitted": true,
+    "observed_reference_and_history_fixed": true,
+    "actual_joint_rates_and_actual_clip_history_unrecorded": true,
+    "conclusion": "Measured-vehicle substitution does not change rejection; actual map admits with either estimated or measured observable state. Further state-value adjustment is not justified by this checkpoint; remaining blocker is map geometry.",
+    "comparisons_to_old_live_failure_are_unmatched_states": true
+  },
+  "verification_recovery": {
+    "native_error_full_report_and_counter_replayed_identically": true,
+    "diagnostic_tuple_list_transport_normalization_verified_without_model_rerun": true,
+    "future_replay_tool_compares_JSON_normalized_diagnostics": true
+  },
+  "invariants": {
+    "original_chooser_physics_horizon_candidates_force_and_clearance_thresholds_unchanged": true,
+    "adapter_inset_unchanged": true,
+    "separate_planner_or_lap_time_search": false,
+    "true_state_certificate": false,
+    "live_performance_promoted": false
+  },
+  "cost": {
+    "caps": {
+      "DEV_actions": 400,
+      "model_ticks": 250000,
+      "CPU_s": 1800,
+      "wall_s": 3600
+    },
+    "new_DEV_actions": 37,
+    "new_core_model_ticks": 28809,
+    "public_Box2D_physics_ticks": 196,
+    "budget_charged_ticks": 29005,
+    "failed_setup_core_ticks_included": 4,
+    "measured_recorded_CPU_s": 53.309880963999994,
+    "additional_setup_and_unrecorded_probe_CPU_reservation_s": 120,
+    "wall_s_at_closeout": 1522.465749,
+    "research_actions_remaining": 20133,
+    "integration_actions_total": 612,
+    "integration_core_model_ticks_total": 442464,
+    "reserve_used": 0,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0
+  },
+  "next_gate": "Do not repeat the same rollout for another state tweak. Diagnose the six forecast footprint rejections against observed-map uncertainty/geometry with the new accurate observer held fixed, before any further reset; no original-threshold/physics/chooser change.",
+  "privacy": "Code, public synthetic tables/tests and aggregate results only. No actual map, seed, raw pixels or measured state snapshot is committed.",
+  "source_sha256": {
+    "submit_core/observation_agent.py": "1d58a427f7ef2bc19f8c31926aa6be14402064e75bf220d08b8341d0b12c0580",
+    "submit_core/runtime598.py": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8"
+  }
+}
