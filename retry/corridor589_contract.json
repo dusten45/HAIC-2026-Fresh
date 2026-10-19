@@ -1,0 +1,64 @@
+{
+  "study": 589,
+  "status": "FROZEN_BEFORE_TESTS_SEED_SCREEN_AND_SOLVER",
+  "registered_utc": "2026-10-19T06:44:10.320849+00:00",
+  "parent_commit": "144fcd8eb571da36f8618177f75266f3c767bb5e",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "input_sha256": {
+    "paths": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "static": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "problem533": "a4b5650212c6cfbb4904b86e371c7eac29eeee4167a1c37485c0ef42f27420ad",
+    "result533": "810f6bb5aff7caddb42f27f66645d0565ce24b8a9413de2449b23907a814c197",
+    "failure588": "6a7e4d18504aa5632e59d5fb06223e5ec9a0cfaf614e43d57395ad073712f3b6"
+  },
+  "implementation_sha256": {
+    "core/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "core/vendor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "retry/__init__.py": "2c8d65a47493cc692aeef3f3bd4440438713e1cc5a160fbf7beb56c4e1164e2e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake506_geometry.py": "4f69de71c0e1ad0d7707c9c9681f4e504367ccbce5c33ae6c0f369e7c6ed4392",
+    "retry/brake508_corridor.py": "10c2a4e021cce37b81a08ac0eb00e4040b0bb4dabdf5eac6989e18472b061407",
+    "retry/brake510_common.py": "28b84e6dbd7aab3ce123c153abdb9acfa1867172f35257ea6b8fea92b5cd1eb0",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/corridor589_design.py": "0f3424f782f792a39e4bafd44ea6ea1cd4ed886fad77a21edac4a3301c4d5251",
+    "retry/corridor589_math.py": "3f9bf5d3934e6798a600126bd4f6fa25930070fedbd51c6d4ef6c36a7495a223",
+    "retry/envelope500.py": "1b5b027bd6a0e1631fc11165fc131ab67394e3908f926adb33605e3f7bdab964",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/smoother588_design.py": "a0bebb865290e4bdb26599981d449fe6fe74c81021b70ef97fc64eb3128c1f81",
+    "retry/smoother588_math.py": "367fb167f6da8eed32d0b2420a07755679f01b5158af54ecc0e811bb20a70a10",
+    "tests/test_corridor589.py": "ead409bf4936a4fc9e0cd13fd71e70a1f3e4f0513064f39b36dcf85c42d111a0"
+  },
+  "spec": {
+    "seed": "Exact551candidatepoints,zero displacement;not533warm solver restart. No reparameterization/projection of seed points. First full-body seed screen failing =>technical mismatch, no repair/solver.",
+    "representation": "Onlyoldnodeswith90<oldsigma<220,exceptfirstandlastinsidefrozen tokeepbothboundarysegments/endpoints/tangents. Eachfreepoint=exactseed+offset*seedcenteredunitnormal;othersbit-identical. Bounds\u00b14m borrow533numericsearchscaleonly;533usedabsoluteoriginalroadnormaloffset,589usesrelative551seednormaloffsetandisNOTthesamefeasibleenvelopeorvalidateddynamicdomain.Linearroad/obstacleguides additionallyrestrict. No globalchord-forward condition.",
+    "geometry": "Truepolyline ds/arcs recomputed. Signednodecurvature=atan2(adjacentcross,dot)/meanadjacentds. Oldstation labels retained bynodeidentity independentlyofnewtruearc. Zero/nonfinite ds technicalfailure. Roadorderguide=edge dot seedunitsegment>=0;finalstrictpositive andsampledclosedchainnonadjacentintersectioncheck. Notphysicalreverseclaim.",
+    "objective": "J=.5*(L/Lseed+C/Cseed),seedJ1. LocalL usesfixedoverlapfractionofoldsegmentswith[90,220]. C=R\u00b2sum(kappa_i\u00b2*dual_ds_i) onendnodesofthoseoverlappingsegments +R\u2074sum((kappa_next-kappa_i)\u00b2/ds_i) onoverlappingsegments;R3.24m=sourcewheelbase. dual_ds=(previous+nextds)/2. BothC terms dimensionlength;equalrelativebaselineweight is a fixedgeometricpolicy,not time/force law. RequireCseed>0;no weightsweep.",
+    "provenance": "533normal searchscale4m andgeometricJacobianEPS1e-5m reused asdesignscales only. Unlike533839Dpath/speedNLP/trust-constr,589onecornergeometryonlySLSQP,no speedvariable/profile/clockobjective. R derives(80-(-82))*.02=3.24fromsourceWHEELPOS/SIZE. Relative normalization gives eachseedcomponent1/2.",
+    "guides": "Fixedlinear supportplanes atfreeoriginalroadnodeindices. Roadnormal=centeredtracknormal,left/rightfromcorrespondingboundaryvertices. Freezeactual8fixtureverticesatseedcenteredtangent,joint0. Centeredtranslation projectedontoactualroadnormal mustkeepmin/maxsupport>=.50frombothroadsideplanes. For eachobstacle fixradialoutwardseedCOMnormal andminfinitebodysupport>=radius+.50. Costonegeometrysupportpackpernode;notfullroadsafety. Seedmustsatisfyallguides>=0elseTECHNICAL_SEED_GUIDE_MISMATCH,no epsilon/planeadjustment.",
+    "solver": "Exactlyone scipy SLSQP minimize,initialzeros,maxiter20,ftol1e-9,dispFalse,bounds[-4,4]. Fixedlinearconstraintjacobian. ManualforwardgeometryobjectiveJacobianh1e-5m(minusifplusbeyond+4),actualsign denominator. AllgeometryobjectiveevalschargedincludingFDandcachequeries;constraintquerieschargedseparately,sum<=10000. No dynamicsFD,solverrestart,toysolve ormethodswitch.",
+    "iterations": "Persistallcallbacks<=20withxprivate/objective/components/proxyresidual/cost. Resultx iffinite;onbudgetstoplastcompletedcallbackmajoriterate(notphysicalcertificate). No bestiteratesweep. Seedretainedindependently.",
+    "line_search": "Atmost12 finalfull-bodyshapesalongonefinalsolverdirection,alpha=2^-k fork0..11. Cheapguide/objective/endpoint/order/selfintersection gatesfirst. RequireL<=Lseed+32ULPandC<=Cseed+32ULP,J<1-32ULP. Firstfull-body-safequalifyingalpha selected;otherwiseexactseedreturned. Thesearestaticdesignacceptance,notphysicalnecessity. No amplitude adaptation oranotheroptimizer.",
+    "static": "Exactexistingplan513/corner515finitehull4+wheel4 roadunion/finiteboundary/obstacledisks,staticjoint0/bodyforward(-sin a,cos a). Eachsegmentceil(ds/.5)equalintervals inclbothendpoints,headingsegmenttangent,soverticescheckedbothadjacentheadings. Initialseedwholeloop;line_searchonlyaffectedsegmentsj-1/jforfreej,unchangedsegmentposesinheritseed. Selectedonefinalindependentwholeloopaudit. Sampledgap<=.5,notcontinuum/reachabilityproof. No5311.252buffer/nolegacymin1mds.",
+    "caps": "max20iterations/12fullbodylinesearchshapes/15000fullbodypacks/10000objective+constraintqueries/CPU600wall800 includeimports,prep10charge,tests,failures,solver,screen,audit. Beforeeachscreenreserveremainingfinalfullauditpackscomputedfromcandidate+60CPU/80wall;signalsbeforeaggregatecap. Ifreserveunavailablebudgetcensored,keepseed. No budgetextension.",
+    "source_boundary": "No actualsource/native/world/force/dynamicsFD/learning/newprofile/newfeedback. Staticpathidentitychangeonly;future549retiming+fixeds400trialseparateproposedcontract. Keeporiginalforce/clipping/body/path3/ref4.85numericlimitswithfutureprefrozennewreferenceobject;old551deviationsdiagnostic,notretroactive588success.",
+    "privacy": "Offsets,points,fulliterations/journalandstaticposesprivate. Publictechnicalcode/contracts/aggregatesonly."
+  },
+  "caps": {
+    "iterations": 20,
+    "line_search_fullbody_shapes": 12,
+    "geometry_checks": 15000,
+    "pure_objective_plus_constraint_evaluations": 10000,
+    "CPU_s": 600,
+    "wall_s": 800
+  },
+  "prior_preparation_CPU_wall_charge_s": 10.0,
+  "incumbents": {
+    "actual_s": 13.66,
+    "source_s": 13.2,
+    "research_remaining": 22758,
+    "reserve": 84000,
+    "reserve_used": 0
+  }
+}
