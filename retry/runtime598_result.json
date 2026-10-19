@@ -1,0 +1,143 @@
+{
+  "status": "PASS",
+  "error": null,
+  "phase": "optimized",
+  "scope": "Research-only saved privileged598 unit inputs. NOT Agent/observation/native/complete decision coverage or official submission admission.",
+  "source_sha256": "43bba86581dd67a5d54eb6cfc92531051002bf6958b22d27a4790877e870c516",
+  "static_import_scan": true,
+  "original_kernel_hardcap": 200000,
+  "horizon": 12,
+  "array_geometry_checks": 0,
+  "array_geometry_mismatches": 0,
+  "scalar_fullmargin_checks": 3,
+  "array_geometry_used": false,
+  "cases": [
+    {
+      "case": "39",
+      "hold": 39,
+      "parity": {
+        "action_bytes": true,
+        "full_safety_selection_report_without_passive_hashes": true
+      },
+      "model_ticks": 770,
+      "CPU_s": 1.551032086,
+      "wall_s": 1.5510076219943585,
+      "cache_hits": 123,
+      "cache_misses": 679
+    },
+    {
+      "case": "40",
+      "hold": 40,
+      "parity": {
+        "action_bytes": true,
+        "full_safety_selection_report_without_passive_hashes": true
+      },
+      "model_ticks": 722,
+      "CPU_s": 1.470959263,
+      "wall_s": 1.4756764379999368,
+      "cache_hits": 78,
+      "cache_misses": 675
+    },
+    {
+      "case": "maximum",
+      "hold": 148,
+      "parity": {
+        "action_bytes": true,
+        "full_safety_selection_report_without_passive_hashes": true
+      },
+      "model_ticks": 888,
+      "CPU_s": 1.7149009990000001,
+      "wall_s": 1.7141679850028595,
+      "cache_hits": 145,
+      "cache_misses": 774
+    }
+  ],
+  "total_model_attempted": 2380,
+  "total_model_completed": 2380,
+  "cumulative_model_attempted": 4760,
+  "import_wall_s": 0.05844836599135306,
+  "total_CPU_s": 91.56009658299999,
+  "total_wall_s": 587.4376277923584,
+  "external_harness_peak_RSS_KiB": 41988,
+  "immutable_cache_max_entries": 5000,
+  "inputs_unchanged": true,
+  "native": 0,
+  "DEV_actions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 20745,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "observation_connection_complete": false,
+  "original13_22s_maintained": false,
+  "whole_Agent_act_pass": false,
+  "first_port_before_exact_bound_preparation": {
+    "cases": [
+      {
+        "case": "39",
+        "hold": 39,
+        "parity": {
+          "action_bytes": true,
+          "full_safety_selection_report_without_passive_hashes": true
+        },
+        "model_ticks": 770,
+        "CPU_s": 23.686304281,
+        "wall_s": 23.68877041299129,
+        "cache_hits": 123,
+        "cache_misses": 679
+      },
+      {
+        "case": "40",
+        "hold": 40,
+        "parity": {
+          "action_bytes": true,
+          "full_safety_selection_report_without_passive_hashes": true
+        },
+        "model_ticks": 722,
+        "CPU_s": 24.027860331000003,
+        "wall_s": 24.039116175001254,
+        "cache_hits": 78,
+        "cache_misses": 675
+      },
+      {
+        "case": "maximum",
+        "hold": 148,
+        "parity": {
+          "action_bytes": true,
+          "full_safety_selection_report_without_passive_hashes": true
+        },
+        "model_ticks": 888,
+        "CPU_s": 18.683616129999997,
+        "wall_s": 18.68738932799897,
+        "cache_hits": 145,
+        "cache_misses": 774
+      }
+    ],
+    "total_model_attempted": 2380,
+    "total_CPU_s": 76.683622808,
+    "source_sha256": "5093c7027506e4386858ec84b43a06997aa819c7f6bd85d606cffacdb71ad528",
+    "array_geometry_checks": 312,
+    "array_geometry_mismatches": 0
+  },
+  "per_pass_force_attempt_groups_derived_from_full_reports": 2430,
+  "cumulative_model_force_attempt_groups": 4860,
+  "post_case_source_change": "Availability metadata; preparation freeze now owns NumPy inputs and makes command copies read-only. Original JSON-fixture numerical functions unchanged; array ownership test passed without model calls.",
+  "missing_input_rejection_no_model_calls": true,
+  "case_selection": "598candidate hold39 transition,hold40 normal,and maximum saved completed-model-tick certificate (hold148,888); not worst runtime proof across all states.",
+  "optimizations": "Passive driver/logging removed. Owned immutable scene and exact binary64geometry-key boundedcache5000. Conservative vector AABB broadphase with an exact scalar seed-distance upperbound; original-order remainder checks. Original scalar polygon/SAT/point-distance/math.hypot preserved for final runtime because tiny-array version was slower. Paths frozen; original first39/40transition and537chooser/dynamics/horizon/selection unchanged.",
+  "interface_availability": {
+    "observation_estimate_possible_not_exact": [
+      "speed/yaw/front-steer from quantized HUD and temporal pixels",
+      "visible local road/obstacle geometry; reset-local action/observation memory"
+    ],
+    "required_but_not_supplied_here": [
+      "full global primary/backup path and road/material/obstacle geometry",
+      "full hull/wheel/joint/contact state, including true wheel gas/friction",
+      "actual clipped-wheel sample history and prefix tracker/visited/clock",
+      "original fixed39 prefix commands, excluded from observation submission"
+    ],
+    "scope": "Numerical kernel only. Estimates do not inherit true-state safety claims."
+  },
+  "private_geometry_root_commands_or_case_data_in_module": false,
+  "numpy_input_ownership_test": true
+}
