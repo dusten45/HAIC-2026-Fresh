@@ -640,7 +640,7 @@ def transport_road_evidence(frames):
         registration_bounds_universally_validated=False)
 
 class _TickCounter(list):
-    def __init__(self):super().__init__([0]);self.limit=50000
+    def __init__(self):super().__init__([0]);self.limit=core.MAX_MODEL_TICKS
     def __setitem__(self,index,value):
         if value>self.limit:raise RuntimeError('ADAPTER_MODEL_TICK_BUDGET')
         super().__setitem__(index,value)
@@ -675,7 +675,9 @@ class Agent:
         self.reset(None)
 
     def reset(self,observation):
-        # Resource counter intentionally survives reset; episode state does not.
+        # Submission execution counts belong to this episode. Research quotas
+        # are accumulated independently by the external evaluation worker.
+        self.counter[0]=0
         self.speed=0.;self.yaw=0.;self.joint=0.;self.previous_joint=0.
         self.distance=0.;self.previous_action=np.zeros(3,np.float32)
         self.predicted_wheels=None;self.predicted_hull_speed=None;self.calls=0

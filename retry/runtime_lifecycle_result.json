@@ -1,0 +1,72 @@
+{
+  "status": "RUNTIME_BUDGET_LIFECYCLE_CONFIGURATION_FIXED_NO_NATIVE",
+  "diagnosis": {
+    "official_local_runner": "Creates a fresh Agent per episode, then calls reset. README has time/RSS limits, not a50k model-tick rule.",
+    "old_adapter_default": 50000,
+    "existing_core_hardcap": 200000,
+    "existing_chooser_limit": 180000,
+    "prior_DEV_override": 200000,
+    "error": "Research/smoke execution quota had remained in the submission default and persisted across resets, unlike a fresh official-local episode."
+  },
+  "changes": {
+    "candidate_default": "Uses existing core.MAX_MODEL_TICKS=200000; no core limit increase.",
+    "candidate_reset": "Zero the episode execution count while preserving any explicitly supplied lower limit.",
+    "external_research_worker": "Accumulate consumed model ticks outside Agent across resets; apply remaining quota to each episode; report lifetime research and episode counts separately.",
+    "original_chooser_physics_horizon_inputs_gates_candidates_unchanged": true,
+    "only_resource_default_and_reset_AST_changed": true,
+    "core_source_bytes_unchanged": true,
+    "new_algorithmic_shortcuts": false
+  },
+  "checks": {
+    "initial_action_bytes_and_complete_reports_identical": true,
+    "reset_actions_and_reports_match_fresh": true,
+    "cross50k_matches_previous_DEV_configuration": true,
+    "original200k_guard_preserved": true,
+    "original180k_chooser_guard_preserved": true,
+    "explicit_smaller_limit_survives_reset": true,
+    "external1640_tick_quota_survives_three_resets": true,
+    "external_consumption_after_episodes": [
+      820,
+      1640,
+      1640
+    ],
+    "saved_failure_preserved": true,
+    "raw_successful_actions_float32_shape3_finite_in_range": true,
+    "observation_unchanged_all": true,
+    "synthetic_boundary_offsets_are_not_executed_model_ticks": true
+  },
+  "sampled_runtime": {
+    "max_direct_whole_act_s": 0.901694164989749,
+    "max_worker_whole_request_s": 0.9350214790028986,
+    "cold_worker_import_constructor_s": 0.10278963801101781,
+    "max_worker_RSS_KiB": 67336,
+    "scope": "Existing saved initial/failure observations only. No full-episode or official-server certification."
+  },
+  "cost": {
+    "CPU_cap_s": 600,
+    "model_tick_cap": 50000,
+    "executed_model_ticks": 7155,
+    "remaining_model_tick_budget": 42845,
+    "measured_component_CPU_s": 8.248701913,
+    "extra_worker_setup_CPU_reservation_s": 5,
+    "new_native_actions": 0,
+    "research_actions_remaining": 20133,
+    "research_ledger_unchanged": true,
+    "reserve_used": 0,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0
+  },
+  "paused_scope": "Boundary/state-estimator changes and new native runs remain pending user approval after automatic approval review scope block.",
+  "delivery": {
+    "research_source_commit_only": true,
+    "existing_submission_archives_unmodified": true,
+    "new_archive_created": false,
+    "deployment_or_actual_submission_or_file_attachment": false,
+    "submission_readiness_or_finish_claim": false
+  },
+  "source_sha256": {
+    "submit_core/observation_agent.py": "1f41a331d53bae7a99d9ae850490ba9eb64208980e188d3fd668ea7b8e9edfc6",
+    "submit_core/runtime598.py": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+    "retry/submit_worker.py": "cc323da156ffb544919e33ebfb0010e5c67ce29d186282d2a44050bb180ec0fc"
+  }
+}

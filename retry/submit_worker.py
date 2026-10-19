@@ -15,8 +15,11 @@ module=importlib.util.module_from_spec(spec)
 sys.modules[spec.name]=module
 spec.loader.exec_module(module)
 agent=module.Agent()
+research_model_limit=None
+research_model_ticks=0
 if len(sys.argv)>2 and hasattr(agent,'counter'):
-    agent.counter.limit=min(200000,max(0,int(sys.argv[2])))
+    research_model_limit=min(200000,max(0,int(sys.argv[2])))
+    agent.counter.limit=research_model_limit
 recorder=None
 if len(sys.argv)>3:
     from runtime598_diagnostic import Recorder
@@ -40,9 +43,14 @@ while True:
         data+=part
     observation=np.frombuffer(data,dtype=np.float32).reshape(4,84,84)
     begin=time.perf_counter();cpu=time.process_time()
+    episode_before=getattr(agent,'counter',[0])[0]
     try:
         if command==b'R':
-            agent.reset(observation);result=dict(reset=True)
+            agent.reset(observation)
+            if research_model_limit is not None:
+                remaining=max(0,research_model_limit-research_model_ticks)
+                agent.counter.limit=min(200000,agent.counter[0]+remaining)
+            result=dict(reset=True)
         elif command==b'A':
             prediction_before=getattr(agent,'predicted_hull_speed',None)
             if recorder is not None:recorder.before_action(observation)
@@ -57,12 +65,14 @@ while True:
                     engine_prior=getattr(agent,'engine_prior',None),steering_prior=getattr(agent,'steering_prior',None))
         else:raise ValueError('BAD_PROTOCOL')
         result.update(wall_s=time.perf_counter()-begin,CPU_s=time.process_time()-cpu,
-                      max_RSS_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
-                      resource_model_ticks=getattr(agent,'counter',[0])[0])
+                      max_RSS_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
     except BaseException as exc:
         result=dict(error=type(exc).__name__+':'+str(exc),
                     diagnostics=getattr(agent,'diagnostics',{}),
                     wall_s=time.perf_counter()-begin,CPU_s=time.process_time()-cpu,
                     max_RSS_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
-        result['resource_model_ticks']=getattr(agent,'counter',[0])[0]
+    episode_after=getattr(agent,'counter',[0])[0]
+    if command==b'A':research_model_ticks+=max(0,episode_after-episode_before)
+    result['episode_model_ticks']=episode_after
+    result['resource_model_ticks']=research_model_ticks
     send(result)
