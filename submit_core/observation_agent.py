@@ -139,7 +139,7 @@ def decode_joint_hud(image,predicted):
     return estimate,(low,high)
 
 
-def recover_pixel_edge(image,y,index,direction,blocked):
+def recover_pixel_edge(image,y,index,direction,blocked,max_row=55):
     """Invert a fully visible, monotone two-colour raster edge by area.
 
     Flat-step area gives a location estimate; resizing still has phase error.
@@ -147,7 +147,7 @@ def recover_pixel_edge(image,y,index,direction,blocked):
     clipped support. This is not a verified uncertainty bound.
     """
     ids=index+direction*np.arange(-3,5)
-    if y>=55 or min(ids)<0 or max(ids)>=84 or np.any(blocked[y,ids]):return None
+    if y>=max_row or min(ids)<0 or max(ids)>=84 or np.any(blocked[y,ids]):return None
     values=image[y,ids].astype(np.float64)
     quantum=1./255.
     if np.ptp(values[:2])>2*quantum or np.ptp(values[-2:])>2*quantum:return None
@@ -240,7 +240,7 @@ def recover_curb_edge(image,y,index,direction,slope,blocked):
     return float(edges[best])
 
 
-def observe_mixed_curb_edge(image,point,outward,blocked):
+def observe_mixed_curb_edge(image,point,outward,blocked,grass_pixels=None):
     """Visible road/curb/grass inverse with a paint mixture per tangent ray.
 
     The public red/white tile junction can produce any effective gray between
@@ -263,7 +263,7 @@ def observe_mixed_curb_edge(image,point,outward,blocked):
     # Search to the public curb-width plus raster-support reach, accepting
     # only actual coherent grass and actual road plateaus on two rays.
     max_context=int(math.ceil(2*width+2*84./96.+3));q=1./255.;patch=None
-    grass_pixels=coherent_grass_mask(image)
+    if grass_pixels is None:grass_pixels=coherent_grass_mask(image)
     for extent in range(7,max_context+1):
         ids=index+direction*np.arange(-extent,5)
         if min(ids)<2 or max(ids)>81:break
@@ -337,7 +337,7 @@ def observe_mixed_curb_edge(image,point,outward,blocked):
     return observed,dict(rms=float(math.sqrt(score[best])),paint_gray=[float(p[best]*255) for p in paints])
 
 
-def observe_white_curb_inner(image,point,outward,blocked):
+def observe_white_curb_inner(image,point,outward,blocked,grass_pixels=None):
     """Direct road/near-pure-white transition, independent of the outer curb.
 
     Actual material rays bracket the query within one public tile. A near-
@@ -345,6 +345,7 @@ def observe_white_curb_inner(image,point,outward,blocked):
     as a conservative paint level. Outer-curb pixels beyond the peak are not
     used. Corner and raster uncertainty are charged towards the road.
     """
+    if grass_pixels is None:grass_pixels=coherent_grass_mask(image)
     nx,ny=outward;axis=0 if abs(nx/1.3608)>=abs(ny/1.701) else 1
     scale=1.3608 if axis==0 else -1.701;other_scale=-1.701 if axis==0 else 1.3608
     normal_axis=nx if axis==0 else ny;normal_other=ny if axis==0 else nx
@@ -367,7 +368,7 @@ def observe_white_curb_inner(image,point,outward,blocked):
         neighbours=np.delete(values[max(0,peak-1):peak+2],peak-max(0,peak-1))
         if not len(neighbours):continue
         sample_ids=ids[peak:];samples=values[peak:]
-        if np.any(coherent_grass_mask(image)[yy[peak:],xx[peak:]]):continue
+        if np.any(grass_pixels[yy[peak:],xx[peak:]]):continue
         pure=paint>=253*q and max(neighbours)>=250*q
         evidence.append((ray,sample_ids,samples,road,paint,pure))
     # One near-pure white ray identifies the material. A neighbouring mixed
@@ -521,7 +522,28 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
         allowances.append(np.asarray(limits))
     if np.any(abs(matrix@lc-left)>allowances[0]) or np.any(abs(matrix@rc-right)>allowances[1]):return support,info
     info['painted_flank_interval_rows']=int(np.sum((allowances[0]>1.)|(allowances[1]>1.)))
-    if abs(lc[0]-rc[0])*(max(y)-min(y))>2.:return support,info
+    if abs(lc[0]-rc[0])*(max(y)-min(y))>2.:
+        if initializing:return support,info
+        # Painted flanks are intervals, not exact point samples. Determine
+        # whether a common direction can satisfy all existing flank intervals
+        # before discarding the whole observed vehicle corridor.
+        lower=-float('inf');upper=float('inf')
+        for values,limits in ((left,allowances[0]),(right,allowances[1])):
+            for i in range(len(y)):
+                for j in range(i+1,len(y)):
+                    gap=y[j]-y[i]
+                    lower=max(lower,(values[j]-limits[j]-values[i]-limits[i])/gap)
+                    upper=min(upper,(values[j]+limits[j]-values[i]+limits[i])/gap)
+        if lower>upper:return support,info
+        common=float(np.clip((lc[0]+rc[0])*.5,lower,upper));offsets=[]
+        for values,limits in ((left,allowances[0]),(right,allowances[1])):
+            lo=float(np.max(values-limits-common*(y-IMAGE_ORIGIN_Y)))
+            hi=float(np.min(values+limits-common*(y-IMAGE_ORIGIN_Y)))
+            if lo>hi+1e-10:return support,info
+            offsets.append(float(np.clip(np.mean(values-common*(y-IMAGE_ORIGIN_Y)),lo,hi)))
+        lc=np.asarray([common,offsets[0]]);rc=np.asarray([common,offsets[1]])
+        info['road_support_interval_parallel_used']=True
+        info['road_support_common_slope']=common
     slope=(lc[0]+rc[0])*.5
     normal_width=(right-left)/1.3608/math.sqrt(1+(slope*1.701/1.3608)**2)
     if np.max(abs(normal_width-nominal))>tolerance:return support,info
@@ -535,6 +557,15 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
         # the already conditioned corridor, preserve actual asphalt samples in
         # that operator's halo; do not infer any additional hidden pixels.
         support[sy,l:r+1]|=asphalt[sy,l:r+1]&flatness_halo[sy,l:r+1]
+    # Flatness is a2D operator: accepted car support also conditions its
+    # vertical halo. Preserve only already visible asphalt there; no extra
+    # opaque pixel is inferred outside the accepted corridor.
+    conditioned=cv2.dilate(support&cover,np.ones((3,3),np.uint8))
+    accepted_rows=np.zeros(84,bool);accepted_rows[[r[0] for r in candidates]]=True
+    accepted_rows[max(0,min(r[0] for r in candidates)-1)]=True
+    accepted_rows[min(83,max(r[0] for r in candidates)+1)]=True
+    conditioned[~accepted_rows]=0  # Never carry support across an internal rejected row.
+    support|=asphalt&conditioned&flatness_halo
     support[obstacle_mask]=0
     info['road_support_inferred_pixels']=int(np.sum(support&~asphalt.astype(bool)))
     return support,info
@@ -639,13 +670,14 @@ def offset_observed_contour(points,center,radius):
     return contour,residuals,centres
 
 
-def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_curb_bands=None):
+def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_curb_bands=None,near_blocked=None,forward_band_ids=None):
     """Piecewise fixed-width road hypothesis from a clean opposite contour.
 
     Coarse circles guide visible contour sampling only. Local tangents allow
     variable curvature. Visible grass, blocked pixels and unseen sectors veto
     support; the reference path and existing inset are unchanged.
     """
+    grass_evidence=coherent_grass_mask(image)
     contours=[[],[]];rows=[];anchor=IMAGE_ORIGIN_X
     for y in range(54,4,-1):
         d=np.diff(np.pad(asphalt[y],(1,1)).astype(np.int16));s=np.flatnonzero(d==1);e=np.flatnonzero(d==-1)
@@ -665,7 +697,31 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
             if not 156/255.<=float(np.mean(image[y,ids[:2]]))<=184/255.:continue
             edge=recover_pixel_edge(image,y,index,direction,blocked)
             if edge is not None:contours[side].append(((edge-IMAGE_ORIGIN_X)/1.3608,(IMAGE_ORIGIN_Y-y)/1.701))
-    support=np.zeros((84,84),np.uint8);fits=[];updates={};reference_curves=[];nominal=2*(40./6.)
+    near_counts=[0,0]
+    if near_blocked is not None and any(len(points)<8 for points in contours):
+        # The old blanket crop hid visible road outside the actual vehicle.
+        # Supplement only a deficient contour, using the public silhouette
+        # plus obstacle veto and the unchanged measured road/grass edge test.
+        deficient=[len(points)<8 for points in contours]
+        near_anchor=(rows[0][1]+rows[0][2])*.5 if rows else IMAGE_ORIGIN_X
+        for y in range(55,69):
+            d=np.diff(np.pad(asphalt[y],(1,1)).astype(np.int16));ss=np.flatnonzero(d==1);ee=np.flatnonzero(d==-1)
+            good=ee-ss>=8;ss=ss[good];ee=ee[good]
+            if not len(ss):continue
+            outside=np.maximum(ss-near_anchor,0)+np.maximum(near_anchor-ee,0)
+            j=int(np.argmin(3*outside+.1*abs((ss+ee-1)*.5-near_anchor)))
+            if outside[j]>8:continue
+            a,b=int(ss[j]),int(ee[j]-1);near_anchor=(a+b)*.5
+            for side,index,direction in ((0,a,1),(1,b,-1)):
+                if not deficient[side]:continue
+                ids=index+direction*np.arange(-3,5)
+                if min(ids)<0 or max(ids)>=84 or np.any(near_blocked[y,ids]):continue
+                if not 156/255.<=float(np.mean(image[y,ids[:2]]))<=184/255.:continue
+                edge=recover_pixel_edge(image,y,index,direction,near_blocked,max_row=69)
+                if edge is not None:
+                    contours[side].append(((edge-IMAGE_ORIGIN_X)/1.3608,(IMAGE_ORIGIN_Y-y)/1.701));near_counts[side]+=1
+        contours=[sorted(points,key=lambda p:p[1]) if deficient[side] else points for side,points in enumerate(contours)]
+    support=np.zeros((84,84),np.uint8);fits=[];updates={};reference_curves=[];near_reference_curves=0;nominal=2*(40./6.)
     for side,points in enumerate(contours):
         if len(points)<8:continue
         p=np.asarray(points,np.float64)
@@ -716,7 +772,15 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
         # and reference must consume the same observed support; all original
         # two-sided fit guards, uncertainty and material vetoes still apply.
         reference_observations,reference_extensions=extend_reference_contour(image,observed_points,center,blocked)
-        inner_points,local_residuals,_=offset_observed_contour(reference_observations,center,radius)
+        # Near-car observations may seed the proposal, but safety offsets
+        # still use only the existing forward, unoccluded sampling region.
+        # The unchanged local quadratic requires7 actual samples and support
+        # on both sides; no near-car width extrapolation is promoted.
+        geometry_observations=reference_observations
+        if near_counts[side]:
+            geometry_observations=np.asarray([p for p in reference_observations
+                if IMAGE_ORIGIN_Y-1.701*p[1]<=54.])
+        inner_points,local_residuals,_=offset_observed_contour(geometry_observations,center,radius) if len(geometry_observations)>=7 else ([],[],[])
         baseline_inner_points=inner_points
         mixed_updates=0;mixed_records=[];corrected=[];mixed_angles=set()
         for x,y,angle,ox,oy in inner_points:
@@ -724,8 +788,8 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
             if length<1.:corrected.append((x,y,angle,ox,oy));continue
             outward/=length;old_allowance=(nominal-length)*.5
             physical=np.asarray([x,y])-old_allowance*outward
-            observed=observe_mixed_curb_edge(image,physical,-outward,blocked)
-            if observed is None:observed=observe_white_curb_inner(image,physical,-outward,blocked)
+            observed=observe_mixed_curb_edge(image,physical,-outward,blocked,grass_evidence)
+            if observed is None:observed=observe_white_curb_inner(image,physical,-outward,blocked,grass_evidence)
             if observed is None:corrected.append((x,y,angle,ox,oy));continue
             measured,fit=observed
             allowance=(21./6.)*(1-math.cos(.31/2))+1/(2.7*6.)
@@ -735,11 +799,13 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
             corrected.append((float(safe[0]),float(safe[1]),angle,ox,oy));mixed_updates+=1;mixed_records.append(fit);mixed_angles.add(angle)
         curb_inner_points=corrected;inner_points=baseline_inner_points
         _,_,centres=offset_observed_contour(reference_observations,center,radius)
-        if len(centres)>=3:reference_curves.append(dict(outer_side=side,points=centres))
+        if len(centres)>=3:
+            reference_curves.append(dict(outer_side=side,points=centres))
+            if near_counts[side]:near_reference_curves+=1
         if len(inner_points)<2:continue
         white=cv2.dilate((image>.75).astype(np.uint8),np.ones((3,9),np.uint8))>0
         red=cv2.dilate((image<.35).astype(np.uint8),np.ones((3,9),np.uint8))>0
-        grass=coherent_grass_mask(image)
+        grass=grass_evidence
         reach=math.ceil(((8./6.)+math.hypot(1/1.3608,1/1.701))*1.3608)
         added_before=int(support.sum());edge_count=0
         for row,a,b in rows:
@@ -779,7 +845,9 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
             if last[2]-first[2]>.051:continue
             polygon=np.asarray([[first[0],first[1]],[first[3],first[4]],
                                 [last[3],last[4]],[last[0],last[1]]])
-            if geometry_bands is not None:geometry_bands.append(polygon)
+            if geometry_bands is not None:
+                geometry_bands.append(polygon)
+                if near_counts[side] and forward_band_ids is not None:forward_band_ids.add(id(polygon))
             px=IMAGE_ORIGIN_X+1.3608*polygon[:,0];py=IMAGE_ORIGIN_Y-1.701*polygon[:,1]
             x0=max(1,int(math.ceil(min(px))));x1=min(82,int(math.floor(max(px))))
             y0=max(5,int(math.ceil(min(py))));y1=min(54,int(math.floor(max(py))))
@@ -792,13 +860,13 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
             cross=np.asarray(cross);inside=np.all(cross>=0,axis=0)|np.all(cross<=0,axis=0)
             eligible=inside&(white[yy,xx]|red[yy,xx]|asphalt[yy,xx].astype(bool))&~grass[yy,xx]&~blocked[yy,xx]
             support[yy[eligible],xx[eligible]]=1
-        fits.append(dict(outer_side=side,observations=len(points),radial_residual_m=residual,
+        fits.append(dict(outer_side=side,observations=len(points),forward_safety_observations=len(geometry_observations),radial_residual_m=residual,
             mixed_curb_updates=mixed_updates,mixed_curb_fit_records=mixed_records,
             angular_support_rad=high-low,added_pixels=int(support.sum())-added_before,
             verified_2D_extensions=verified,local_offset_points=len(inner_points),
             local_offset_edges=edge_count,reference_observed_edge_extensions=reference_extensions,local_max_residual_m=max(local_residuals),
             offset_method='local quadratic tangent + public width; circle used only for observed sampling'))
-    return support,dict(painted_band_added_pixels=int(np.sum(support&~asphalt.astype(bool))),painted_band_fits=fits,
+    return support,dict(near_vehicle_contour_samples=near_counts,near_vehicle_reference_curves=near_reference_curves,painted_band_added_pixels=int(np.sum(support&~asphalt.astype(bool))),painted_band_fits=fits,
         painted_band_bound_universally_validated=False),updates,reference_curves
 
 
@@ -1133,8 +1201,9 @@ class Agent:
             if right-left<2.5:break
             anchor=(start+end-1)*.5;rows.append((left,right,(IMAGE_ORIGIN_Y-y)/1.701));pixels.append((y,start,end))
         if len(rows)<8:raise RuntimeError('OBSERVED_ROAD_SUPPORT_INSUFFICIENT')
-        geometry_bands=[];observed_curb_bands=[]
-        painted,painted_info,band_edges,reference_curves=infer_painted_road_band(image,asphalt,blocked,geometry_bands,observed_curb_bands)
+        geometry_bands=[];observed_curb_bands=[];forward_band_ids=set()
+        painted,painted_info,band_edges,reference_curves=infer_painted_road_band(image,asphalt,blocked,geometry_bands,observed_curb_bands,
+            obstacle_blocked|vehicle_projection_mask(self.joint).astype(bool),forward_band_ids)
         geometry_veto=coherent_grass_mask(image)|blocked.astype(bool)
         # A lone asphalt-grey sample may be a red/white curb mixture. Flat
         # public road shades, registered evidence, conditioned vehicle gaps,
@@ -1179,6 +1248,10 @@ class Agent:
             # and topology-aware strip construction still apply.
             band_intervals=[]
             for polygon in geometry_bands:
+                # Newly seeded geometry is supported only in the original
+                # forward observation domain. Do not project it behind that
+                # domain into a vehicle-adjacent unobserved opposite flank.
+                if id(polygon) in forward_band_ids and sy>54:continue
                 crossings=[]
                 for first,last in zip(polygon,np.roll(polygon,-1,axis=0)):
                     if first[1]==last[1] or (first[1]-world_y)*(last[1]-world_y)>0:continue
@@ -1329,7 +1402,27 @@ class Agent:
             uncertainty=dict(self.uncertainty),estimated_speed=self.speed,
             estimated_wheel_omega=[w.omega for w in root.planar.linear.wheels],
             wheel_state_propagated=self.predicted_wheels is not None)
-        action,report=controller.select(root,progress,40,self.history,self.history)
+        # Exact per-act memoization of the unchanged static contact function.
+        # Forecast branches often repeat identical wheel polygons. Physics,
+        # force evaluation and every model tick still execute normally.
+        contact_function=core.indexed_contacts;contact_cache={};contact_hits=0;contact_misses=0
+        contact_indices={id(scene.index):scene.index}
+        def contacts(footprint,roads,index,skin):
+            nonlocal contact_hits,contact_misses
+            if roads is not scene.roads:return contact_function(footprint,roads,index,skin)
+            if id(index) not in contact_indices:
+                if index!=scene.index:return contact_function(footprint,roads,index,skin)
+                contact_indices[id(index)]=index
+            key=(tuple(tuple(v) for v in footprint),skin)
+            if key in contact_cache:contact_hits+=1;return contact_cache[key]
+            contact_misses+=1;value=contact_function(footprint,roads,index,skin)
+            if len(contact_cache)<5000:contact_cache[key]=value
+            return value
+        core.indexed_contacts=contacts
+        try:action,report=controller.select(root,progress,40,self.history,self.history)
+        finally:core.indexed_contacts=contact_function
+        self.diagnostics.update(geometry_contact_cache_hits=contact_hits,
+            geometry_contact_cache_misses=contact_misses,geometry_contact_cache_entries=len(contact_cache))
         self.diagnostics.update(model_ticks_total=self.counter[0],decision_model_ticks=self.counter[0]-before,
             original_chooser_reason=report['mode'],estimated_admission=action is not None)
         trial_reports=report.get('trials',report.get('reports',[]))

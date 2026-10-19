@@ -1,0 +1,101 @@
+{
+  "status": "CURRENT_SUPPORT_FIXED_CACHED_PASS_NATIVE_FIRST_NEW_FAILURE_STOP",
+  "base_commit": "ae2ff62efc03f481dbbd1e07e41a0e0a195f0736",
+  "diagnosis": [
+    "Painted flanks already had uncertainty intervals, but a point-regression parallel check discarded the full vehicle corridor.",
+    "The 3x3 flatness operator removed observed asphalt ahead of the hull, while its preservation halo was applied horizontally only.",
+    "A blanket vehicle crop excluded three actually visible contour samples needed to recover the reference.",
+    "New near-car width geometry failed public counterexamples; retained safety geometry is restricted to the original forward observed domain."
+  ],
+  "implementation": [
+    "Check common-slope feasibility inside existing painted-flank intervals; retain width/material/obstacle conditions.",
+    "Restore only already visible asphalt in the conditioned2D flatness halo; do not cross internally rejected rows.",
+    "Supplement deficient contours outside the public vehicle silhouette and obstacle mask; keep original sample/residual gates.",
+    "Use near-car observations to seed actual contour search, and restrict their safety offsets and row projection to the original forward observation domain.",
+    "Reuse one immutable grass-material mask per image and memoize the unchanged static contact function within each act, capped at5000 entries. Restore the original callback in finally; no tick or force evaluation is skipped."
+  ],
+  "causal_checks": {
+    "initial_current_margin_m": -1.8911522633744844,
+    "interval_fix_only_margin_m": 0.014638447971779822,
+    "conditioned_2D_halo_margin_m": 1.452145796590242,
+    "actual_added_near_vehicle_samples": [
+      0,
+      3
+    ],
+    "forward_actual_observations": 41,
+    "seven_forecast_witnesses_before_range_m": [
+      0.42316905323024406,
+      0.4945109985965758
+    ],
+    "seven_forecast_witnesses_after_range_m": [
+      1.7289035627489653,
+      1.791278382567864
+    ]
+  },
+  "checks": {
+    "local_conditioning_cases": 10,
+    "local_outside_or_forbidden_or_obstacle_pixels": 0,
+    "public_geometry_cases": 144,
+    "public_geometry_outside_samples": 0,
+    "cache_exact_inputs_reports_actions_and_ticks": true,
+    "cache_benchmark_model_ticks": 663,
+    "cache_restore_on_exception": true,
+    "core_source_SHA256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+    "reset_counter_and_external_budget_lifecycle_64d37cb_preserved": true,
+    "temporal_transport_unchanged": true
+  },
+  "performance": {
+    "unprofiled_complex_checkpoint_before_s": 2.208538792008767,
+    "unprofiled_complex_checkpoint_after_s": 2.1198654329928104,
+    "same_native_action39_before_s": 3.252314376004506,
+    "same_native_action39_after_s": 3.029315088002477,
+    "first42_native_actions_identical": true,
+    "max_native_whole_act_s": 3.029315088002477,
+    "profiling_note": "Instrumented cProfile wall times are not runtime-limit measurements. Point-distance caching was slower and discarded; comparisons above are unprofiled paired measurements, not an official-server latency guarantee."
+  },
+  "cached_full_Agent": {
+    "admitted": true,
+    "model_ticks": 620,
+    "whole_act_s": 0.8658536900184117
+  },
+  "native_same_DEV": {
+    "resets": 1,
+    "identical_initial_observation_image": true,
+    "valid_actions": 43,
+    "failed_call": 44,
+    "progress": 0.13427561837455831,
+    "previous_progress": 0.13074204946996468,
+    "damage": 0.0,
+    "status": "INPUT_OR_ADMISSION_STOP",
+    "finish": false,
+    "max_RSS_KiB": 66500
+  },
+  "new_blocker": {
+    "reasons": {
+      "CURRENT_FOOTPRINT_MARGIN": 20
+    },
+    "estimated_current_margin_m": -0.1732510288065856,
+    "affected_part": 0,
+    "interpretation": "A new vehicle-front observation/mesh support gap remains at call44. This is an estimated geometry rejection, not a true-map off-road certificate. Stopped without another native run or post-failure repair."
+  },
+  "failure_replay": {
+    "error_identical": true,
+    "report_identical": true,
+    "diagnostics_identical": true,
+    "counter_identical": true,
+    "model_ticks": 0
+  },
+  "cost": {
+    "model_ticks": 32989,
+    "recorded_CPU_s": 125.46810239099999,
+    "native_actions": 43,
+    "native_raw_ticks_including_reset": 223,
+    "research_actions_remaining": 20048,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve_used": 0
+  },
+  "scope": "One same-DEV partial validation. No finish or generalization claim; stopped at first new failure. No true-map, seed or command tape enters Agent. Finite raster checks and engineering priors are not a universal observation bound.",
+  "privacy": "Only source and aggregate measurements committed. Pixels, row/patch witnesses, private checkpoints, failed prototypes and profiling archives remain outside repository.",
+  "environment_connection": "Selected cloud, Python execution and filesystem operational; no extra compute resource used."
+}
