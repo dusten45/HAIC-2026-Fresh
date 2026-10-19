@@ -1,0 +1,128 @@
+{
+  "record_audit": {
+    "valid_chain": true,
+    "complete_inputs_before_every_force": true,
+    "exact_force_clip_verdicts": true,
+    "all_tick_inputs_durable": true,
+    "all_recorded_bodies_below100": true,
+    "unsafe_probes_never_policy_eligible": true,
+    "events": 56448,
+    "head": "031bd2180f9b952be9d6c5369be83c9190dcb3204adf3af3ea4a3ca17c2633b6",
+    "raws": 11256,
+    "unsafe_raws": 56,
+    "strict_policy_raws": 0,
+    "FD01_column7_force_rejections": [
+      {
+        "gate": "FORCE",
+        "global_raw_before": 584,
+        "index": 147,
+        "raw": 1,
+        "peak": 1.0590661122637497,
+        "peak_limit": 1.059,
+        "history_before": [
+          68,
+          1952
+        ],
+        "history_after": [
+          69,
+          1956
+        ]
+      }
+    ],
+    "source_hashes_match_contract": true
+  },
+  "dominant_geometry_interiors": [
+    {
+      "label": "footprint",
+      "raw": 659,
+      "seed_slack": 4.625987932297666,
+      "frozen_interior": 4.829189111776126,
+      "seed_deficit": 0.20320117947845961,
+      "calibration": [
+        {
+          "pattern": 0,
+          "predicted_slack": 3.338376334544758,
+          "actual_slack": 3.336487603750923,
+          "positive_slack_optimism": 0.0018887307938348918,
+          "hull_time_prediction_error_ms": -0.12820448446682065
+        },
+        {
+          "pattern": 1,
+          "predicted_slack": 5.913600114241851,
+          "actual_slack": 3.499037181145595,
+          "positive_slack_optimism": 2.4145629330962564,
+          "hull_time_prediction_error_ms": -0.14085026784016463
+        }
+      ]
+    },
+    {
+      "label": "path",
+      "raw": 659,
+      "seed_slack": 2.952000003382059,
+      "frozen_interior": 4.822258931317919,
+      "seed_deficit": 1.8702589279358603,
+      "calibration": [
+        {
+          "pattern": 0,
+          "predicted_slack": 1.690843209355529,
+          "actual_slack": 1.6887354139646218,
+          "positive_slack_optimism": 0.002107795390907219,
+          "hull_time_prediction_error_ms": -0.12820448446682065
+        },
+        {
+          "pattern": 1,
+          "predicted_slack": 4.213157372477009,
+          "actual_slack": 1.8020587059529327,
+          "positive_slack_optimism": 2.4110986665240763,
+          "hull_time_prediction_error_ms": -0.14085026784016463
+        }
+      ]
+    }
+  ],
+  "restoration_progress": [
+    {
+      "iteration": 0,
+      "relative_interior_reduction_percent": 0.5689052372976968,
+      "exact_policy_gate_passed": false
+    },
+    {
+      "iteration": 1,
+      "relative_interior_reduction_percent": 0.7778844521367195,
+      "exact_policy_gate_passed": false
+    }
+  ],
+  "stop_interpretation": "Original stop code TWO_NONDECREASING_RESTORATIONS denotes two reductions below the preregistered 10% required progress. Both measured residuals decreased slightly; this is not literal monotonic nondecrease or proof of directional/global infeasibility.",
+  "inference": "The fixed two-pattern numerical interior was too demanding for this local restoration and trust region. This bounded run does not establish that the late-control direction, safe policies, or official raw improvement are impossible.",
+  "zero_model_ticks": true,
+  "CPU_s": 3.9895135029999995,
+  "wall_s": 3.802546249004081,
+  "path_interior_feasibility_proof": {
+    "maximum_possible_path_slack": 3.0,
+    "maximum_frozen_target": 4.822258931317919,
+    "targets_above_universal_bound": 19,
+    "internal_target_inconsistent": true,
+    "physical_direction_infeasibility_established": false
+  },
+  "read_only_signed_geometry_at659": {
+    "seed": {
+      "raw": 659,
+      "signed_lateral_m": -0.047999996617940924,
+      "path_distance_m": 0.04799999661794092
+    },
+    "calibration0": {
+      "raw": 659,
+      "signed_lateral_m": -1.3112645860353782,
+      "path_distance_m": 1.3112645860353782
+    },
+    "calibration1": {
+      "raw": 659,
+      "signed_lateral_m": 1.1979412940470673,
+      "path_distance_m": 1.1979412940470673
+    }
+  },
+  "supplemental_read_only_cost": {
+    "ticks": 0,
+    "CPU_s": 0.07407116800000002,
+    "wall_s": 0.07416044001001865
+  }
+}

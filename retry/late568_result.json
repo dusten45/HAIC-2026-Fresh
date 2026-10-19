@@ -1,0 +1,178 @@
+{
+  "completed": true,
+  "stop_reason": "TWO_NONDECREASING_RESTORATIONS",
+  "calibration": {
+    "details": [
+      {
+        "label": "calibration-0",
+        "physical_safe": false,
+        "violations": {
+          "FORCE": 0,
+          "CLIP_HISTORY": 0,
+          "FOOTPRINT": 1,
+          "PATH": 0,
+          "REFERENCE": 0,
+          "PROJECTION": 0
+        },
+        "times": {
+          "hull_finish": 13.207351968565362,
+          "center_finish": 13.208309653250367,
+          "s900": 12.108104149930405
+        }
+      },
+      {
+        "label": "calibration-1",
+        "physical_safe": false,
+        "violations": {
+          "FORCE": 4,
+          "CLIP_HISTORY": 0,
+          "FOOTPRINT": 0,
+          "PATH": 0,
+          "REFERENCE": 6,
+          "PROJECTION": 0
+        },
+        "times": {
+          "hull_finish": 13.22014594002182,
+          "center_finish": 13.221092403776774,
+          "s900": 12.09550610996804
+        }
+      }
+    ],
+    "physical_max_by_label": {
+      "force": 0.014086417595501088,
+      "path": 4.822258931317919,
+      "projection": 0.48065383003422973,
+      "body": 0.005236045792965924,
+      "reference": 0.6553517864422365,
+      "footprint": 4.829189111776126
+    },
+    "prefix_max": 0.017267409838124834,
+    "ratio_max": 0.014086417595501085,
+    "sha256": "17162be74b92766235f3d513c360a4a2c894bb1bcb67ed0ea114f0b96152aa7a"
+  },
+  "seed_times": {
+    "hull_finish": 13.213614425619536,
+    "center_finish": 13.214570028322514,
+    "s900": 12.101783201819112
+  },
+  "final_working_times": {
+    "hull_finish": 13.213614425619536,
+    "center_finish": 13.214570028322514,
+    "s900": 12.101783201819112
+  },
+  "safe_working_accepts": 0,
+  "official_whole_promotion": false,
+  "official_incumbent_candidate_raw": 661,
+  "official_incumbent_finish_s": 13.219999999999807,
+  "independent_verification": null,
+  "existing_whole_replay_repeated": false,
+  "events": [
+    {
+      "iteration": 0,
+      "LP": {
+        "eta": 18.49503543101762,
+        "restoration": true,
+        "rank_constrained_samples": 375,
+        "elastic_diagnostic_only": true,
+        "predicted_hull_finish": 13.218885075847826,
+        "normalized_step": 0.2500017484029134
+      },
+      "old_interior_violation": 18.7025892793586,
+      "new_interior_violation": 18.596189269438053,
+      "local_physical_safe": false,
+      "local_times": {
+        "hull_finish": 13.218893483822972,
+        "center_finish": 13.219854427419515,
+        "s900": 12.102633824116603
+      },
+      "probe_violations": {
+        "FORCE": 0,
+        "CLIP_HISTORY": 0,
+        "FOOTPRINT": 4,
+        "PATH": 0,
+        "REFERENCE": 11,
+        "PROJECTION": 0
+      },
+      "feedback_called": false,
+      "working_accept": false,
+      "whole_promotion": false
+    },
+    {
+      "iteration": 1,
+      "LP": {
+        "eta": 18.551483907756985,
+        "restoration": true,
+        "rank_constrained_samples": 375,
+        "elastic_diagnostic_only": true,
+        "predicted_hull_finish": 13.216274009284394,
+        "normalized_step": 0.12500087420145672
+      },
+      "old_interior_violation": 18.7025892793586,
+      "new_interior_violation": 18.557104745207482,
+      "local_physical_safe": false,
+      "local_times": {
+        "hull_finish": 13.216279896089075,
+        "center_finish": 13.217238153846434,
+        "s900": 12.10217870420511
+      },
+      "probe_violations": {
+        "FORCE": 0,
+        "CLIP_HISTORY": 0,
+        "FOOTPRINT": 1,
+        "PATH": 0,
+        "REFERENCE": 9,
+        "PROJECTION": 0
+      },
+      "feedback_called": false,
+      "working_accept": false,
+      "whole_promotion": false
+    }
+  ],
+  "error": null,
+  "cost": {
+    "total": {
+      "ticks": 11256,
+      "force": 45024,
+      "geometry": 11256,
+      "body_checks": 11256,
+      "CPU_s": 267.501622644,
+      "wall_s": 285.0498739189934
+    },
+    "phases": [
+      {
+        "bucket": "local",
+        "label": "proposal-01",
+        "ticks": 11256,
+        "force": 45024,
+        "geometry": 11256,
+        "CPU_s": 263.8407570820001,
+        "wall_s": 281.2882062028948,
+        "body_checks": 11256,
+        "max_body": 96.93285663700962
+      }
+    ],
+    "prior567_separate": {
+      "ticks": 1224,
+      "CPU_s": 14.497968429
+    },
+    "research_remaining": 22758,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "linearizations": 2,
+  "FD_columns": 80,
+  "source_proposals": 2,
+  "restoration_steps": 2,
+  "actual_feedback_calls": 0,
+  "new_native_actions": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "new_seeds": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "paid_compute": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "journal_valid": true
+}
