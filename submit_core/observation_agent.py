@@ -1426,7 +1426,12 @@ class Agent:
             # retain wheel spin/throttle integrated from our own previous action;
             # camera-frame geometry and observable body estimates are rebuilt.
             omega,gas=((self.speed/.54,0.) if self.predicted_wheels is None else self.predicted_wheels[i])
-            wheels.append(core.Wheel(omega,gas,q,friction,(-yaw*float(r[1]),yaw*float(r[0]))))
+            # Original _dynamics_tick stores the new yaw with the PREVIOUS
+            # raw-tick lever. Rebase that velocity level into the current
+            # camera frame; current geometric levers remain unchanged.
+            angle=-core.DT*yaw;co,si=math.cos(angle),math.sin(angle)
+            old_x=co*float(r[0])-si*float(r[1]);old_y=si*float(r[0])+co*float(r[1])
+            wheels.append(core.Wheel(omega,gas,q,friction,(-yaw*old_y,yaw*old_x)))
         linear=core.State(velocity,tuple(wheels),self.mass,self.engine_prior)
         momentum=self.inertia*yaw+sum(self.wheel_inertia*r for r in rates)
         planar=core.Planar(linear,tuple(tuple(float(v) for v in r) for r in self.levers),self.inertia,momentum,yaw,0.,joints,rates,(self.wheel_inertia,)*4,-float(self.previous_action[0]),self.steering_prior)
