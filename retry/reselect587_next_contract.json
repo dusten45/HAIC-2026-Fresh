@@ -1,0 +1,90 @@
+{
+  "study": 587,
+  "status": "PROPOSED_NOT_EXECUTED_NOT_A_LAUNCH_AUTHORIZATION",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "research_lines": 1,
+  "question": "Can one new corner line plus its pre-frozen force-coupled speed plan reduce the first-corner direction-transition burden while reaching a common downstream plane sooner with strict physical safety?",
+  "baseline": "Stored feasible577; official source13.20, actual incumbent13.66 unchanged. 586 not promoted.",
+  "not_selected": [
+    "micro action repair",
+    "586 SLSQP rerun or new FD",
+    "repair only raw312 reference violation",
+    "555 trim graph restart",
+    "578 optimistic proxy as measured performance"
+  ],
+  "geometry": {
+    "number_of_new_candidates": 1,
+    "old_path": "Frozen551 candidate geometry",
+    "replace_station_interval_m": [
+      90,
+      220
+    ],
+    "construction": "Unique quintic Hermite curve. Endpoints are old551 p(90),p(220); let L=Euclidean chord length, endpoint first derivatives L*tangent, second derivatives L^2*stored_signed_curvature*left_normal. Solve the polynomial coefficients by the fixed closed-form Hermite basis, no numerical optimizer, fit or search. Sample u=k/512 for k=0..512; outside interval preserve old points. Join endpoint duplication removed deterministically.",
+    "static_screen": "Reject without another design if derivative vanishes, self-intersection/reversed station, sampled peak curvature is not strictly lower than old replaced interval, or static finite-body road/obstacle >=.50m screen fails. Static screen is not continuous or dynamic safety proof. Actual source raw/forecast hull checks remain mandatory.",
+    "precision": "Before any future source, freeze exact coordinate/frame/curvature/interpolation and endpoint indexing implementation plus all hashes; missing ambiguity is a registration blocker, not permission to adapt after outcomes.",
+    "arc_coordinates": "Recompute true candidate ds/arcs from sampled new geometry; never reuse old130m as the new arc length. Store u-to-oldstation sigma=90+130*u on replaced segment, and oldstation labels on unchanged points. Common-plane oldprogress is independently projected on frozen old551 geometry with pre-pinned deterministic projection/tie rules; not candidate arc or sigma."
+  },
+  "speed_plan": {
+    "method": "One fixed549-style axle longitudinal/lateral force-coupled forward/backward retiming on the candidate geometry, cap90 retained, nominal wheel design .999*400N; no cap/gas/gain sweep or optimizer.",
+    "explicit_change": "Candidate curvature replaces fixed551 geometry and its old541-observed-curvature max support. Old observed curvature is recorded as diagnostic, not re-used as reachability evidence on the new line. This changes the surrogate design assumption; exact source force/clipping certification retains authority.",
+    "freeze": "Generate before trajectory outcomes and pin candidate path, full speed profile, backup and controller hashes. No reference fitting to candidate actual speeds. Rejection stops this one design.",
+    "backup": "No original-geometry backup on mismatched new arcs. On candidate geometry, define squared backup reference at each vertex as min(new candidate squared reference, old frozen backup squared reference interpolated at oldstation sigma), separately for periodic/launch arrays; preserve old cap80 and controller code, no data-driven retuning. Freeze interpolation/wrap/tie details before source. This conservatism is not a dynamic safety certificate."
+  },
+  "controller": "Existing537 feedback/540 launch code unchanged. Both primary and backup inputs use the same new geometry/true arcs. Backup input is explicitly regenerated as described below; original backup input identity is not claimed. All forecast/FINAL work charged, backup never exempts candidate global path/reference safety.",
+  "contract_changes": {
+    "frozen551_identity": "Explicitly removed as a design restriction for this candidate only.",
+    "path_tube": "Keep numerical <=3m, evaluated against the pre-frozen new path; old551 deviation separately reported. This is a changed admissible set, not a success under old586 contract.",
+    "reference": "Keep internal +4.85/external +5m/s, measured against pre-frozen candidate profile. Old551 reference excess separately reported. No retrospective reference editing.",
+    "cap90": "Retained as a design bound, not physical maximum.",
+    "unchanged": "Actual vehicle/road/obstacles, finite footprint model>=.50/native>=.25, body<100 original source domain including forecasts, physical actions, wheel force physical1.25/uncertainty.19/buffer.001 -> source internal1.059, tracking cumulative clips<=.10, launchpeak<=2.5/clips<=.15, tracking/clock/visited/official finish logic, observation privileges and privacy.",
+    "backup": "Explicitly change backup geometry/profile inputs with primary; old backup bytes preserved for comparison, not claimed unchanged. Same new geometry avoids inconsistent progress coordinates.",
+    "progress": "Candidate dynamic progress/projection tests use actual new arcs; fixed s300/s400 eligibility uses separate old551 projection. Clock/visited/official tracker retain original meaning."
+  },
+  "execution_proposal": {
+    "positive": "One initial fixed577 positive control until whole hold of fixed world s400 plane, max416raw. All saved full rows/state/history/tracker/visited/clock exact, save independent raw96 checkpoint. No new baseline feedback/forecast. Positive failure stops.",
+    "candidate": "Exactly one from full raw96 checkpoint, holds25..104 max320raw. First raw safety/domain/IO/integrity failure stops. New path rejoins old geometry at s220; continue without teleport/replacement through fixed world s400 crossing hold. Both s300 and s400 planes are fixed from old path before design, first forward crossing locked, old progress +/-10 and old corridor3 at those unchanged downstream planes; report integer brackets and continuous times, crossing hold fully safe.",
+    "replay": "Only if one fully safe complete candidate beats baseline continuous s400 time by >32ULP, run one initial exact frozen-command replay max416raw, no online controller/forecast rerun. Full rows/checkpoints/forces/history/clock/visited/tracker and crossings exact.",
+    "pilot_promotion": "Require positive identity, full strict safety through s400, earlier s400 continuous crossing and exact replay. Report s200/s300 and all gains/losses, no100/500ms gate, no progress-to-time extrapolation. This promotes only a separate whole-lap validation proposal; no whole/native/incumbent promotion here.",
+    "failure": "Static design fail, first strict dynamic fail, missing s400 by cap, non-improvement, or exact-replay mismatch closes this one candidate. Budget exhaustion is censored and not infeasibility. No alternate geometry/step/profile/controller/seed/cap recovery; purely instrumentation recovery only with identity/cost proof."
+  },
+  "worst_case_caps": {
+    "executed_raw_including_control_candidate_replay": 1152,
+    "attempted_raw_including_all_internal_forecasts": 60000,
+    "completed_model_ticks_including_forecasts": 60000,
+    "external_force_calls": 260000,
+    "internal_force_calls": 240000,
+    "total_force_calls": 500000,
+    "geometry_checks": 65000,
+    "analytic_profile_bound_evaluations": 100000,
+    "CPU_s": 900,
+    "wall_s": 1100,
+    "native_actions": 0,
+    "resets": 0,
+    "new_worlds": 0,
+    "HOLDOUT": 0,
+    "SEALED": 0
+  },
+  "reservation": "Before each candidate/forecast group reserve all remaining fixed tape replay <=416 plus auditCPU15/wall25. Stop before deadline; do not begin future execution unless 1100s+30s remain. Global wrappers must stop within caps, including unsuccessful internal trial force and current-root geometry. Unknown 537 forecast work can censor the pilot; do not expand caps.",
+  "cost_basis": "551 measured73065ticks/CPU748.556 for166holds including forecasts. 80hold window suggests order35k model ticks, not a bound; exact hard60k caps dominate. 586 executed-only per-tick cost is not used to hide 537 forecasts.",
+  "current_step": {
+    "new_source": 0,
+    "new_force_calls": 0,
+    "new_FD": 0,
+    "new_solver": 0,
+    "new_profile_generated": 0,
+    "new_trajectory_generated": 0,
+    "whole": 0,
+    "native": 0,
+    "authorization": "Current587 is proposal/date correction only. Future experiment requires separate concrete registration/review; this file does not execute it.",
+    "new_backup_generated": 0
+  },
+  "input_sha256": {
+    "retry/shoot586_analysis.json": "2b1f569c3445f675dfa16db9a5386456e1101daa56786326bdfcfb7b07ba1a0e",
+    "retry/reselect587_analysis.json": "5abd2d65be8a12898d4ac1faf8072f67247c7fe430fb3f6a6456d1ad9f20c490",
+    "retry/joint541_result.md": "6881b3347584112448ad6cc95d23c315b794eb8a37d313e2074c4d97ca50b8ec",
+    "retry/whole551_result.md": "6a289a83add979e5ef87c6adf827f8dfb041c2628987cd5e9e2edc0c861dd9bf",
+    "retry/reframe578_analysis.json": "97791297774adf1b17e229f130470b7fb76d63717fc6587b37637d023a8e0238",
+    "retry/profile539_result.md": "9da7edfc15f015bd9d0542c08c0fb4673fd865f017aa68293c82f4f6697b6096",
+    "retry/retime549_result.md": "4f2951328cfe9e426aff89658d33be536bbec333d71b77e51c970b1fa2401b0c"
+  }
+}
