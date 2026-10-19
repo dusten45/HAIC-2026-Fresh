@@ -1,0 +1,49 @@
+{
+  "completed": false,
+  "source_candidates": 0,
+  "independent_replays": 0,
+  "safe_working_accept": false,
+  "official_promotion": false,
+  "official_incumbent_candidate_raw": 660,
+  "official_incumbent_finish_s": 13.2,
+  "actual_actions": 0,
+  "new_resets": 0,
+  "new_worlds": 0,
+  "new_seeds": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "paid_compute": 0,
+  "new_FD": 0,
+  "new_calibrations": 0,
+  "active_face_count": 1,
+  "error": "ValueError:UNEXPECTED_ENDPOINT_COUNT",
+  "stop_reason": "ERROR",
+  "cost": {
+    "total": {
+      "ticks": 0,
+      "force": 0,
+      "geometry": 0,
+      "CPU_s": 5.0439101619999995,
+      "wall_s": 5.044816333000199
+    },
+    "preflight_test_CPU_wall_charge_s": 5.0
+  },
+  "LP_solves": 0,
+  "source_hashes_match": true,
+  "input_hashes_match": true,
+  "scope": "One fixed40endpointface of saved574 model;not wholefeasible-set search,not physicalrobustness/globaloptimum. Native/pixel/feedback untested.",
+  "preserved_file_sha256": {
+    "retry/face576_math.py": "63a2777d6ed7fdc4f786595337e75d46e0a540c19058f7b8b2230d75b693e712",
+    "retry/face576_model.py": "89d97d0283d07cadbdbf19b35b0fffcae68a5ce0e508f80c1d10c4014cc65da6",
+    "tests/test_face576.py": "dd400b89a4089e860f5eaa92562f2157e794775c812074ba3c1061333a5db082",
+    "retry/face576_contract.json": "c4f50610bd88ef8263a3ba434e6172d48a7ccd188cd666293d17cefe9ffb415d",
+    "retry/face576_tests.json": "723652ecf227d834fbb3a9f53d592e515715de6c690355e23486af7879ab6980",
+    "retry/face576_cost.json": "6935ebd805d5b84ca3449b6724d6612889c7867c272f8a88228faf83c1917596",
+    "retry/face576_result.json": "79298a96b58e52d50a6f9ebe00eddbd65024d9b77096644142936c03e320c877"
+  },
+  "classification": "575 zero-excluded set has33 exactdomain endpoints plus7 adjacentfloat32 values;physicalendpoint-only predicate rejectedcount before LP/source.",
+  "read_only_classification_probe_CPU_wall_charge_s": 1
+}

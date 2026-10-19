@@ -1,0 +1,22 @@
+{
+  "row": 2893,
+  "global_raw": 458,
+  "force_wheel_index": 2,
+  "causal_controls": 162,
+  "fixed_contribution": 0.0,
+  "error_coefficient": 1020.1381513836959,
+  "free_J_L1": 0.4708941552203626,
+  "positive_slope": 1019.6672572284756,
+  "aux_lower_from_free_rounding": 4.967053891193517e-06,
+  "original_rhs": 0.0001151640120615749,
+  "row_rounding_margin": 2.472239841792147e-07,
+  "numerical_margin": 4.532424874611465e-12,
+  "tightened_rhs": 0.0001149167835449708,
+  "relaxed_lhs_lower": 0.0050649894417235,
+  "strict_gap": 0.004950072658178529,
+  "conservative_arithmetic_allowance": 3.1312883079525355e-15,
+  "verified_contradiction": true,
+  "formula": "L*t+a*z >= (L-sum_free(abs(a)))*max_free(q)+sum_free(abs(a)*q) > b-margin-numerical. Fixedz=q=0;futureJacobian0. Numeric monotonic tightening only strengthens this relaxed proof.",
+  "LP_solves": 0,
+  "source_ticks": 0
+}

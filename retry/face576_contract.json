@@ -1,0 +1,93 @@
+{
+  "study": 576,
+  "registered_utc": "2026-10-19T03:27:27.975537+00:00",
+  "deadline_utc": "2026-10-20T10:01:55Z",
+  "branch": "Exactlyonepredetermined575zero-excluded40coordinateface:33exactphysicalendpoints+7adjacentfloat32seedvalues. Freezeall40attheirexactseedvalues. Neverchooseanothercombination. Thisisarestrictedface,notthewholefeasibleset.",
+  "reuse": "Saved575 reconstruction of574 FD/calibration/matrix and unchanged575 corrected rounding. No newFD,calibration,envelope reduction,endpoint combinations,or model repair.",
+  "limits": {
+    "LP_solves": 8,
+    "LP_wall_s_each": 5,
+    "source_candidates": 1,
+    "independent_replays": 1,
+    "model_ticks": 1324,
+    "force": 5296,
+    "geometry": 1324,
+    "CPU_s": 120,
+    "wall_s": 180
+  },
+  "budgets": {
+    "algebra": {
+      "CPU_s": 35,
+      "wall_s": 50
+    },
+    "evaluation": {
+      "ticks": 662,
+      "force": 2648,
+      "geometry": 662,
+      "CPU_s": 30,
+      "wall_s": 45
+    },
+    "verification": {
+      "ticks": 662,
+      "force": 2648,
+      "geometry": 662,
+      "CPU_s": 30,
+      "wall_s": 45
+    },
+    "final_audit": {
+      "CPU_s": 10,
+      "wall_s": 15
+    }
+  },
+  "preflight_test_CPU_wall_charge_s": 7,
+  "algebra_gate": "Exact seed remains a separate disjunct. Fixed40 coordinate rounding/norm displacement0;verify everyfreecoordinate enclosure without source. Candidate must preserveface exactly,originalallrows/bounds/capsule<=1e-8,exactnonexemptratio<=1 and predictedprefixcounts. Predictedwholegain>=1us. Noalgebrapoint:source0stop,noadditionalface/repair.",
+  "source_gate": "Atmostoneinitial-source fullcommand strictfinish throughraw662,includingfixedholds1..34 andallnewholds35..166. Original launch/trackingforce/history,footprint,path,reference,body,projection andfinishtracker authoritative. No diagnosticcontinuation ofunsafe candidate.",
+  "acceptance": "Safe originalstrictfinish,actualwholehullgain>=1us,andcandidate raw<=660. Onlynewacceptedplan getsone fullindependent initial-source replay;comparefullroots/forces/history/visited/tracker/clock/finalCP. Officialpromotiononlyraw<660. No candidateorfailedcandidate:neverreplayoldseed.",
+  "stopping": "Noopportunity,LP/cutcap,quantization/integrity/domain/IO/budgeterror,oronecandidatecomplete. Norepairchain,newFD/calibration,orautomaticnextstudy.",
+  "actual_actions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "paid_compute": 0,
+  "source_kernel_cap_unchanged": 200000,
+  "implementation_frozen_utc": "2026-10-19T03:31:58.962246+00:00",
+  "source_sha256": {
+    "retry/face576_model.py": "e299ca8e7094aec90fe2df5bbad94b9ad116207689abf3e8845bbf5e346c7a52",
+    "retry/face576_math.py": "990278ceaffeb0dc64caaf3918611bb7cd614cdf61c47190436addabe49c833a",
+    "tests/test_face576.py": "a4eb1f02d0242f913444e332b9d786177b981ba77402e586e414a2d0d1497d76",
+    "retry/causal575_rounding.py": "3d29df2ddb768405d9a8e4dee513bc49aba39ad7b71d1877747f421f0640b2a1",
+    "retry/rounding573.py": "f3d8181bdf7cf50bed4d9014ecfb88e48f116d54183308a2154134a70d07acf3",
+    "retry/wide574_math.py": "932b69bc86d1e90d91cfb497715f44d965053f00121e265e6f8a00dacd08028d",
+    "retry/checkpoints574.py": "f7a14a8d69abdc869d143413fafdac2961ebae28775a0ef95cea3739e101e6bf",
+    "retry/late568_model.py": "0e71a9e08552040b7da4d2b111a04f67bd361db1954cb156ea6b33a3d7f409b2",
+    "retry/durable568.py": "43ed7c3f2bfe06ee575691b7d3b6f20414f06303e6c1fb09789deffe62d27a39",
+    "retry/handoff562_model.py": "e7addc1dabf391149cb10827316a6e9405069f4a8809a9ef4ada805cbe9d0b0b",
+    "retry/clip561_core.py": "d0f60f7741c4605a3c3b6a515977ee5c978efd633665d3e807afef6b816a531b",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "retry/preview527_control.py": "8049458f5f302fd194a2e0fde5a833ac4a2241f498055df1dc84203017da2717",
+    "retry/lap518_finish.py": "8aac9bb21f7d1fce4d48b7bb85f35a461c89d3307f96f91b14433ce87ce6b131",
+    "core/finish_line.py": "7c16dda1378dcd65aed46d9da96608aa055124c2f27d8fb00c309078361d4204",
+    "retry/closure524_control.py": "d3ba1baaf66cf022c0b1900d3a7b2d705b6d08b0ed2fbf27a5967e8610a8da5c",
+    "retry/plan512_control.py": "b0c9ec7dc762fa502816f55cbc1df0a39e00f9aca3c3de20b513a713747825c3",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "retry/speed516_control.py": "42f76de814108dea49371e29b6580be82abde571a8deb54780b29f2230227363"
+  },
+  "input_sha256": {
+    "/workspace/haic-response575-private/model-private.npz": "6faf354a0fdd818509fd985d17115b4581388c58b45836731eb20081f7994e10",
+    "/workspace/HAIC-2026-Fresh/retry/algebra575_result.json": "b9ca2ee0a9c5e90b1435d7b50d65617401de0b163b1d7b05144292342bce7275",
+    "/workspace/haic-response574-private/initial-center-private.json": "286c4a90deb4aedced8b27ca54364432c5fd5885a1ebaf19bfab50c064d4710d",
+    "/workspace/haic-response574-private/initial-checkpoints-private.json": "164649ce12e532865840761e4681479da626c860efd0caa145def77cbdba7f34",
+    "/workspace/haic-response574-private/linear-1-private.npz": "06b2607338c269415c66ad98de9f560faff64c6a0e2a935df499d869f2813762",
+    "/workspace/haic-response573-private/final-independent-tape-private.json": "4ebde7a580dd052de3da7a8bbd493c12c24e533ec7c193bb6f696c26cd54a875",
+    "/workspace/haic-response575-private/expanded-tube-private.npz": "334e287a3736428fd4bc8540906df0204af52ea059becc9c42aad56c6d65fb8c"
+  },
+  "tests_sha256": "bee2157d2c1fee0d16c17fb603d7cf30251e2124000b5b9c40db5a954fcead5f",
+  "classification_correction_utc": "2026-10-19T03:31:58.741198+00:00",
+  "classification_gate_failure": "Originalphysicalendpoint-onlypredicatefound33andstoppedLP0/source0. Fullfailedcode/contract/resultsprivatelypreservedandpublicaggregateface576_classification_failure.json. TechnicalidentificationcorrectionusesEXACTsame575stored40mask,notnewface."
+}

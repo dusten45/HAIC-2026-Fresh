@@ -1,0 +1,16 @@
+{
+  "passed": 4,
+  "failed": 0,
+  "source_ticks": 0,
+  "actual_actions": 0,
+  "real_LP_calls": 0,
+  "command": "OPENBLAS_NUM_THREADS=1 ./.venv/bin/python -m unittest tests.test_face576",
+  "runner_wall_s": 0.002,
+  "preflight_test_CPU_wall_charge_s": 7,
+  "source_sha256": {
+    "retry/face576_math.py": "990278ceaffeb0dc64caaf3918611bb7cd614cdf61c47190436addabe49c833a",
+    "tests/test_face576.py": "a4eb1f02d0242f913444e332b9d786177b981ba77402e586e414a2d0d1497d76",
+    "retry/causal575_rounding.py": "3d29df2ddb768405d9a8e4dee513bc49aba39ad7b71d1877747f421f0640b2a1",
+    "retry/rounding573.py": "f3d8181bdf7cf50bed4d9014ecfb88e48f116d54183308a2154134a70d07acf3"
+  }
+}
