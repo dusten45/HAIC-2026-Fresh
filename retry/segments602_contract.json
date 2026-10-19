@@ -1,0 +1,40 @@
+{
+  "study": 602,
+  "status": "ONE_IMPLEMENTATION_FROZEN_BEFORE_ALL_EVALUATORS",
+  "registered_utc": "2026-10-19T11:29:15.329826+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "implementation_sha256": {
+    "retry/verify602.py": "89bb1e205a9cfec4e79114ac4b9f8adc9b7111d2e21540e85baa89b13bff1610",
+    "retry/segments602.py": "6d5dbe2795f936892d39a03535657657ff6f03cb2698f17c5e5fc642d3228e02"
+  },
+  "input_sha256": "a0905322d069bad0b515620aae64856c8c8394d789722db27917486819e0e23e",
+  "source601_sha256": "43b5520491aaef7a01d9d1aebe2ac62601ac195c60ca0b4a451566d84471b66e",
+  "baseline_raw_sha256": "60041bcf3bdaad9e5cb21adcb33f7ae2949c625370d38a3e9cd8c30a1968b8a1",
+  "baseline_wheel_sha256": "37de65232a3d738f04b74ff6b535d42e91e98d8994186678730bcb97d9e2a093",
+  "caps": {
+    "model_attempted": 1536,
+    "model_completed": 1536,
+    "external_force": 6144,
+    "internal_force": 6144,
+    "total_force": 12288,
+    "geometry": 15000
+  },
+  "time_caps": {
+    "CPU_s": 240,
+    "wall_s": 300,
+    "final_audit_reserve_s": 5
+  },
+  "chooser_calls": 1,
+  "kernel_hardcap": 200000,
+  "choose_max_ticks": 180000,
+  "candidate": "Prepare directed segment dx/dy/d with original arithmetic once per immutable road edge and once per current vehicle polygon edge. Reuse these operands and edge sequences in original SAT/point-segment/min order. No new prune, approximation or point query omission. Keep601exactmarginmemo unchanged.",
+  "semantics": "Same original SAT positive0 for no separation; exact original ordered point-distance min otherwise. Preserve both directions, d==0 branch, t=max(0,min(1,dot/d)), hypot subtraction order. Road covered=all(any(inclusiveAABB and inside(mincross>=0 or maxcross<=0))). Signed distance positive inside, negative outside including -0. Ordered min begins+inf and keeps first equal value. Original lower>=distance skip and segment order unchanged; no new segment exclusions.",
+  "saved_comparison": "774distinctgeometryinputs;773fromsavedpostfootprints,initial1fromninezero-tickreports. No new old-baseline query. Every new candidate fullmargin and both synthetic evaluators charged to geometry before dispatch; nested point-segment is included in its geometry pack as601.",
+  "parity": "Exact binary64margin774; same600/601actionbytes/fullreports/trials/FINAL/all4538rawdiagnostics/all7176wheelreturns/model906/888 and logicalgeometry2641. Mismatch=>reject and stop without implementation change or choose retry.",
+  "boundary": "ONE normal choose only after pure+saved gates. Start/end core immediately around original537choose with601meter/fullwheelcapture and unchanged601memo. All numeric/body/cost gates retained. Imports/input restoration/context preparation/tests/saved comparisons/JSON/fsync/audit separately measured outside core.",
+  "stop": "First mismatch/domain/integrity/IO/cost/deadline failure ends study. No extra candidate or retry. No native/world/reset/action/solver/FD/newseed/HOLDOUT/SEALED.",
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "parent_commit": "0a85da15a82cb2308112004678c34bd11e4a6eff"
+}

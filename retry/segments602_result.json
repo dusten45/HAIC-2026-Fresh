@@ -1,0 +1,144 @@
+{
+  "study": 602,
+  "chooser_calls": 1,
+  "status": "EXACT_PREPARED_SEGMENTS_VALIDATED",
+  "native": 0,
+  "worlds": 0,
+  "resets": 0,
+  "actions": 0,
+  "solver": 0,
+  "FD": 0,
+  "new_seed": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "optimization_adopted": true,
+  "lap_gain_claim": false,
+  "pixel_act_promotion": false,
+  "stages": {
+    "imports": {
+      "CPU_s": 1.061951358,
+      "wall_s": 0.28662645698932465
+    },
+    "input_restore_saved_cases_and_pins": {
+      "CPU_s": 0.6214509859999999,
+      "wall_s": 0.5787400179979159
+    },
+    "pure_synthetic_tests": {
+      "CPU_s": 0.0022638600000000064,
+      "wall_s": 0.0028906599909532815
+    },
+    "saved_comparison_context_preparation": {
+      "CPU_s": 0.001297035000000113,
+      "wall_s": 0.0035746649955399334
+    },
+    "saved774_candidate_evaluations": {
+      "CPU_s": 4.458901762,
+      "wall_s": 4.4610394579940476
+    },
+    "saved_comparison_JSON_fsync": {
+      "CPU_s": 0.10868758800000045,
+      "wall_s": 0.10717537699383684
+    },
+    "normal_context_preparation": {
+      "CPU_s": 0.0014990749999999053,
+      "wall_s": 0.004968423992977478
+    },
+    "normal_core": {
+      "CPU_s": 6.183473181999999,
+      "wall_s": 6.1870870199927595
+    },
+    "result_materialization_JSON_fsync": {
+      "CPU_s": 1.4345981040000009,
+      "wall_s": 1.436404191001202
+    },
+    "exact_parity_audit": {
+      "CPU_s": 0.005723154000000008,
+      "wall_s": 0.008704589010449126
+    }
+  },
+  "conservative_preparation_charge_s": 5,
+  "saved_comparison": {
+    "distinct_inputs": 774,
+    "exact": true,
+    "baseline_reused": 774,
+    "new_baseline_queries": 0,
+    "new_candidate_queries": 774,
+    "initial_baseline": "CONSISTENT_ZERO_TICK_REPORTS",
+    "prepared_road_calls": 774,
+    "polygon_segment_pairs": 196667
+  },
+  "pre_choose_geometry": 852,
+  "memo": {
+    "hits": 145,
+    "misses": 774,
+    "entries": 774,
+    "logical_queries": 919,
+    "cache_lifetime": "ONE_CHOOSE_ONLY",
+    "result_values": "IMMUTABLE_FLOAT",
+    "geometry_context": "OWNED_RECURSIVE_TUPLES"
+  },
+  "prepared_road": {
+    "margin_calls": 774,
+    "polygon_segment_pairs": 196667,
+    "immutable_prepared_boundary_segments": 566
+  },
+  "parity": {
+    "action_bytes": true,
+    "whole_report": true,
+    "all600_601_raw": true,
+    "all601_wheels": true,
+    "model_attempted": true,
+    "model_completed": true,
+    "external_force": true,
+    "internal_force": true,
+    "normal_geometry": true,
+    "memo_unchanged": true,
+    "passive_trial_reports": true,
+    "all_saved_margins": true,
+    "code_pins": true
+  },
+  "single_sample_comparison": {
+    "baseline601": {
+      "CPU_s": 6.931312417000001,
+      "wall_s": 6.933844211001997
+    },
+    "normal602": {
+      "CPU_s": 6.183473181999999,
+      "wall_s": 6.1870870199927595
+    },
+    "scope": "One normal sample each; no repeated paired estimate and no end-to-end Agent.act claim."
+  },
+  "cost": {
+    "geometry": 3493,
+    "geometry_internal_nominal_steering": 834,
+    "geometry_source_footprint": 919,
+    "model_attempted": 906,
+    "external_force": 3624,
+    "total_force": 7176,
+    "model_tick_attempts": 888,
+    "internal_force": 3552,
+    "model_completed": 888,
+    "geometry_tracking_forecast": 888
+  },
+  "planner_cost": {
+    "force_evaluations": 3624,
+    "forecast_calls": 31,
+    "forecast_ticks": 888,
+    "geometry_checks": 919
+  },
+  "time": {
+    "CPU_s": 18.896020870999997,
+    "wall_s": 18.093254730993067
+  },
+  "private_sha256": {
+    "diagnostics-private.json": "60041bcf3bdaad9e5cb21adcb33f7ae2949c625370d38a3e9cd8c30a1968b8a1",
+    "output-private.json": "e5f13924725d69f25a37e8ebea1cc6e96771278cbd34467be1c960dc55c03a38",
+    "CALL-private.json": "6b2a26094f9c2f4cdc300cae191060d038379af5c87e408331657eaa2b1e6c22",
+    "REGISTERED-private.json": "fcada02c246ff3cb735bea59a0505c9c1612ac82a9de41f51b923e12642ba958",
+    "wheel-private.json": "37de65232a3d738f04b74ff6b535d42e91e98d8994186678730bcb97d9e2a093",
+    "saved774-comparison-private.json": "888f394fb51956ca77b5969dfd14dd3b2f51113bafc6b2082242edaf5fd7d33e"
+  }
+}
