@@ -1,0 +1,42 @@
+{
+  "status": "ROAD_UNION_SEMANTICS_VERIFIED_CAP_UNRESOLVED_NO_REPEAT_NO_NATIVE",
+  "base_commit": "0130ab71130e4c2fb447ea84d0f4821a1fa57134",
+  "changes": [
+    "Clip convex observed-patch edges against the union; remove shared and overlapped interfaces, retain one coincident exterior edge.",
+    "Preserve holes, disconnected observation gaps and FOV boundaries; do not infer new road.",
+    "Use the unchanged original Scene.margin vertex-coverage sign, scalar edge distance and obstacle minimum."
+  ],
+  "checks": {
+    "analytic_shapes": 6,
+    "analytic_polygon_comparisons": 72,
+    "analytic_full_vehicle_callback_comparisons": 36,
+    "public_raster_cases": 144,
+    "public_raster_outside_samples": 0,
+    "six_previous_rejection_margins_unchanged": true
+  },
+  "diagnosis": {
+    "horizontal_split_merge_closure_events": 5,
+    "other_observed_flank_event": 1,
+    "physical_road_exterior_proven": false,
+    "internal_union_interface": false,
+    "adjacent_outside_direct_or_registered_road_support_for_cap": false,
+    "remaining_rejection": "Closure of supported observation union, not a directly identified physical road edge. Removing it would certify unsupported continuation. The sixth flank also remains conservative."
+  },
+  "cached_policy": "No repeat: representation-only exact union has no support extension at the six rejection sites. Known cached failure persists; no DEV promotion.",
+  "cost": {
+    "model_ticks": 0,
+    "native_DEV_actions": 0,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0,
+    "recorded_CPU_s": 6.1839213929999985
+  },
+  "preserved": {
+    "original_core_SHA256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+    "chooser_physics_horizon_thresholds": true,
+    "runtime_budget_lifecycle_64d37cb": true,
+    "research_actions_remaining": 20133
+  },
+  "environment_connection": "Selected cloud filesystem, Python and git commands available.",
+  "scope": "Finite analytic/raster checks, not a universal reconstruction guarantee; private pixels, maps and checkpoints remain outside repository."
+}

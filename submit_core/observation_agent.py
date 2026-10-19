@@ -641,6 +641,63 @@ def reference_from_observed_width(raw_points,curves,asphalt,blocked):
         reference_is_an_estimate_not_a_certificate=True)
 
 
+def road_union_boundary(roads):
+    """Exterior of convex observed patches; no closing edges across gaps.
+
+    Clip every patch edge by the other patches. Shared interfaces cancel;
+    coincident exterior edges retain one copy. Unobserved holes remain holes.
+    This changes only the representation, never the core margin semantics.
+    """
+    def cross(a,b):return a[0]*b[1]-a[1]*b[0]
+    patches=[]
+    for polygon,_ in roads:
+        polygon=[tuple(p) for p in polygon]
+        area=sum(cross(a,b) for a,b in zip(polygon,polygon[1:]+polygon[:1]))
+        if area<0:polygon.reverse()
+        patches.append(polygon)
+    boxes=[(min(p[0] for p in poly),max(p[0] for p in poly),
+            min(p[1] for p in poly),max(p[1] for p in poly)) for poly in patches]
+    boundary=[];tol=1e-10
+    for i,polygon in enumerate(patches):
+        for first,last in zip(polygon,polygon[1:]+polygon[:1]):
+            delta=(last[0]-first[0],last[1]-first[1])
+            if delta==(0.,0.):continue
+            pieces=[(0.,1.)]
+            x0,x1=sorted((first[0],last[0]));y0,y1=sorted((first[1],last[1]))
+            for j,other in enumerate(patches):
+                if i==j:continue
+                bx0,bx1,by0,by1=boxes[j]
+                if x1<bx0-tol or x0>bx1+tol or y1<by0-tol or y0>by1+tol:continue
+                lo,hi=0.,1.;valid=True
+                for a,b in zip(other,other[1:]+other[:1]):
+                    edge=(b[0]-a[0],b[1]-a[1])
+                    value=cross(edge,(first[0]-a[0],first[1]-a[1]));slope=cross(edge,delta)
+                    if abs(slope)<tol:
+                        if value< -tol:valid=False;break
+                    elif slope>0:lo=max(lo,-value/slope)
+                    else:hi=min(hi,-value/slope)
+                    if hi<=lo+tol:valid=False;break
+                if not valid:continue
+                mid=(lo+hi)*.5;point=(first[0]+mid*delta[0],first[1]+mid*delta[1])
+                interior=all(cross((b[0]-a[0],b[1]-a[1]),(point[0]-a[0],point[1]-a[1]))>tol
+                    for a,b in zip(other,other[1:]+other[:1]))
+                outward=any(cross(delta,(p[0]-first[0],p[1]-first[1]))< -tol for p in other)
+                if not (interior or outward or j<i):continue
+                kept=[]
+                for a,b in pieces:
+                    if hi<=a or lo>=b:kept.append((a,b));continue
+                    if a<lo:kept.append((a,lo))
+                    if hi<b:kept.append((hi,b))
+                pieces=kept
+                if not pieces:break
+            for a,b in pieces:
+                if b-a>tol:
+                    start=first if a==0. else (first[0]+a*delta[0],first[1]+a*delta[1])
+                    end=last if b==1. else (first[0]+b*delta[0],first[1]+b*delta[1])
+                    boundary.append((start,end))
+    return boundary
+
+
 def strip_union_mesh(rows,grip):
     """Union of observed row strips, with only exposed interval boundaries.
 
@@ -938,6 +995,7 @@ class Agent:
                 if right>left:intervals.append((left,right))
             geometry_rows.append((world_y,intervals))
         roads,boundary=strip_union_mesh(geometry_rows,self.grip_prior)
+        boundary=road_union_boundary(roads)
         self.uncertainty['mesh_source']='union of all supported row intervals; shared interfaces excluded'
         points=np.asarray([((a+b)*.5,y) for a,b,y in rows],np.float64)
         points,reference_info=reference_from_observed_width(points,reference_curves,asphalt,obstacle_blocked)
