@@ -49,7 +49,7 @@ class Agent:
         # Resource counter intentionally survives reset; episode state does not.
         self.speed=0.;self.yaw=0.;self.joint=0.;self.previous_joint=0.
         self.distance=0.;self.previous_action=np.zeros(3,np.float32)
-        self.predicted_wheels=None;self.calls=0
+        self.predicted_wheels=None;self.predicted_hull_speed=None;self.calls=0
         self.history=[0,0];self.last_root=None;self.last_path=None
         self.grip_prior=1.;self.engine_prior=1.;self.steering_prior=1.
         self.uncertainty={};self.diagnostics={}
@@ -81,7 +81,7 @@ class Agent:
                             lateral_speed=float(np.clip(-affine[0,2]/.08,-10.,10.))
                             if abs(visual_speed-speed)<8.:speed=.7*speed+.3*max(0.,visual_speed)
                             if abs(visual_yaw-yaw)<1.:yaw=.7*yaw+.3*visual_yaw
-        if self.last_root is not None and self.speed-speed>8.:
+        if self.predicted_hull_speed is not None and self.predicted_hull_speed-speed>8.:
             # A possible impact or loss of traction, not observed damage truth.
             self.grip_prior=.6;self.engine_prior=.8;self.steering_prior=.8
         self.speed=float(np.clip(speed,0.,100.));self.yaw=float(np.clip(yaw,-5.,5.))
@@ -209,5 +209,6 @@ class Agent:
             self.history[0]+=sum(f['clipped'] for f in forces);self.history[1]+=4
             r=core.tick(r,float(action[1]),float(action[2]),scene.index,self.counter)
         self.predicted_wheels=tuple((w.omega,w.gas) for w in r.planar.linear.wheels)
+        self.predicted_hull_speed=math.hypot(*core.hull_pose(r)[1])
         self.diagnostics['model_ticks_total']=self.counter[0]
         return action

@@ -1,0 +1,138 @@
+{
+  "status": "INPUT_BUG_FIXED_WITHOUT_ADDITIONAL_DRIVE",
+  "missing_original_checkpoint": [
+    "failing full observation stack",
+    "episode memory",
+    "matching external wheel/contact state"
+  ],
+  "diagnostic_collection": {
+    "episodes": 1,
+    "DEV_actions": 35,
+    "decisions": 36,
+    "first35_action_float32_bytes_identical": true,
+    "same_original_stop": "NO_ESTIMATED_INPUT_ADMISSIBLE_ACTION / all21 FORCE_PEAK",
+    "old_full_report_available": false
+  },
+  "cached_failure_replay": {
+    "action_identical": true,
+    "full_report_identical": true,
+    "counter_identical": true,
+    "model_ticks": 363,
+    "CPU_s": 0.402651198,
+    "wall_s": 0.40301498799817637,
+    "native_actions": 0,
+    "inputs": "Saved estimated root/history/finite scene only; no external truth supplied."
+  },
+  "force_diagnostics": {
+    "trials": 21,
+    "peak_ratio_range": [
+      1.0721799187335868,
+      12.146047333235156
+    ],
+    "first_failure_raw_range": [
+      1,
+      33
+    ],
+    "immediate_longitudinal_rejections": 8,
+    "forecast_lateral_rejections": 13,
+    "forecast_failure_raw_range": [
+      28,
+      33
+    ],
+    "forecast_failure_speed_range_m_s": [
+      19.414201604565836,
+      22.00978415215989
+    ],
+    "worst_wheel_predicted_omega_range_rad_s": [
+      38.78103350249695,
+      65.37696200441326
+    ],
+    "all_predicted_friction": 240.0,
+    "full_per_trial_forces_and_contact_assumptions_saved_privately": true
+  },
+  "external_comparison": {
+    "Agent_received_true_state": false,
+    "estimated_friction_per_wheel": [
+      240.0,
+      240.0,
+      240.0,
+      240.0
+    ],
+    "true_friction_per_wheel": [
+      400.0,
+      400.0,
+      400.0,
+      400.0
+    ],
+    "estimated_multipliers": {
+      "grip": 0.6,
+      "engine": 0.8,
+      "steering": 0.8
+    },
+    "true_multipliers": {
+      "grip": 1.0,
+      "engine": 1.0,
+      "steering": 1.0
+    },
+    "root_speed_error_m_s": -0.6671220532421316,
+    "root_wheel_omega_error_range_rad_s": [
+      -2.489123515762145,
+      -2.4616485460450974
+    ],
+    "estimated_wheel_heading_all_zero": true,
+    "true_relative_wheel_heading_all_zero": true,
+    "root_lateral_velocity_error_m_s": -0.006409967094070268,
+    "estimated_yaw_rad_s": 0.0,
+    "true_yaw_rad_s": 0.006911983247846365
+  },
+  "cause": "Raw inter-observation speed decrease after own braking was mislabeled as possible impact, persistently lowering grip/engine/steering priors. This is an input-estimator error. Later FORCE_PEAK events are original-model forecasts under those incorrect priors, not measured future forces.",
+  "fix": "Persist predicted hull speed after the existing four own-action model ticks. Compare next observed speed against that prediction, not against previous observed speed. Clear prediction on reset. Keep original eight m/s residual rule and all chooser/force gates unchanged.",
+  "cached_fix_check": {
+    "status": "PASS",
+    "cached_observation_only": true,
+    "no_new_chooser_or_native_run": true,
+    "own_braking_does_not_reduce_multipliers": true,
+    "estimated_contact_frictions": [
+      400.0,
+      400.0,
+      400.0,
+      400.0
+    ],
+    "unexplained_residual_gate_preserved": true,
+    "reset_prediction_cleared": true,
+    "predicted_speed_reconstruction_exact": false,
+    "previous_wheel_reconstruction_max_error_rad_s": 2.2626470851605518e-05,
+    "model_ticks": 0,
+    "CPU_s": 0.006399372,
+    "wall_s": 0.004816597007447854
+  },
+  "verification_limit": "Previous own-action reconstruction is approximate (max wheel omega difference 2.263e-5 rad/s), not an exact additional checkpoint. No post-fix chooser evaluation, native rollout, full-lap, or true-state certificate claim. Fixing this input bug has not been shown sufficient to remove every rejection.",
+  "cost": {
+    "caps": {
+      "DEV_actions": 36,
+      "model_ticks": 30000,
+      "CPU_s": 600,
+      "wall_s": 1800
+    },
+    "new_DEV_actions": 35,
+    "new_model_ticks": 24396,
+    "measured_component_CPU_s": 33.28628890499999,
+    "additional_setup_CPU_reservation_s": 60,
+    "native_wall_s": 32.80965500100865,
+    "prior_DEV_actions": 63,
+    "prior_model_ticks": 46375,
+    "combined_DEV_actions": 98,
+    "combined_model_ticks": 70771,
+    "research_actions_remaining": 20647,
+    "reserve_used": 0,
+    "HOLDOUT_actions": 0,
+    "SEALED_actions": 0,
+    "stage_elapsed_wall_s_at_closeout": 289.809629
+  },
+  "privacy": "Observation/checkpoint/history/full trial traces and external true state remain private outside repository.",
+  "source_sha256": {
+    "submit_core/observation_agent.py": "9823e4866a84dca43661a39b6a45299a59f20331fec7bc8afaaaf2e565f8753c",
+    "submit_core/runtime598.py": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8"
+  },
+  "next": "No further run or sweep scheduled."
+}

@@ -67,10 +67,12 @@ class WorkerError(RuntimeError):
 
 
 class Client:
-    def __init__(self,source,out,model_tick_budget=50000):
+    def __init__(self,source,out,model_tick_budget=50000,force_diagnostic=False):
         env=dict(os.environ,OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',MKL_NUM_THREADS='1')
         self.err=(out/'worker-stderr-private.log').open('wb');begin=time.perf_counter()
-        self.p=subprocess.Popen([sys.executable,'-u',str(ROOT/'retry/submit_worker.py'),str(source),str(model_tick_budget)],
+        argv=[sys.executable,'-u',str(ROOT/'retry/submit_worker.py'),str(source),str(model_tick_budget)]
+        if force_diagnostic:argv.append(str(out))
+        self.p=subprocess.Popen(argv,
             cwd=source.parent,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=self.err,env=env)
         try:
             self.ready=self.receive(10.);self.startup=time.perf_counter()-begin
@@ -123,14 +125,16 @@ def main():
     parser.add_argument('--agent-source');parser.add_argument('--runtime-core',action='store_true')
     parser.add_argument('--model-tick-budget',type=int,default=50000)
     parser.add_argument('--continuous-runtime',action='store_true')
+    parser.add_argument('--force-diagnostic',action='store_true')
     args=parser.parse_args();assert 0<args.steps<=2000
+    if args.force_diagnostic:assert args.continuous_runtime and args.steps<=36 and args.model_tick_budget<=30000
     if args.continuous_runtime:assert args.runtime_core and args.steps<=1000,'CONTINUOUS_RUNTIME_CAP'
     elif args.runtime_core:assert args.steps<=20,'INITIAL_RUNTIME_LINK_SMOKE_CAP'
     if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:raise RuntimeError('AUTHORIZATION_EXPIRED')
     PRIVATE.mkdir(mode=0o700,exist_ok=True);out=PRIVATE/args.label;out.mkdir(mode=0o700,exist_ok=False)
     source,source_hash=package(out,args.agent_source,ROOT/'submit_core/runtime598.py' if args.runtime_core else None);client=None;env=None;rows=[];status='TECHNICAL_FAILURE';error=None;reset=None;summary={};failure_payload=None;worker_cpu=0.
     try:
-        client=Client(source,out,args.model_tick_budget)
+        client=Client(source,out,args.model_tick_budget,args.force_diagnostic)
         import numpy as np
         # Mandatory reset/action/shape/memory checks use the exact packaged Agent
         # before any environment creation. No privileged input enters its process.
@@ -157,8 +161,11 @@ def main():
             for i in range(args.steps):
                 if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:status='AUTHORIZATION_CENSORED';break
                 if args.continuous_runtime:
-                    if time.perf_counter()-START>=3594.:status='WALL_BUDGET_CENSORED';break
-                    if time.process_time()-CPU+worker_cpu+client.startup>=1794.:status='CPU_BUDGET_CENSORED';break
+                    if time.perf_counter()-START>=(1794. if args.force_diagnostic else 3594.):status='WALL_BUDGET_CENSORED';break
+                    if time.process_time()-CPU+worker_cpu+client.startup>=(594. if args.force_diagnostic else 1794.):status='CPU_BUDGET_CENSORED';break
+                if args.force_diagnostic and i==35:
+                    from retry.runtime598_diagnostic import external_truth
+                    dump(out/'external-truth-private.json',external_truth(raw))
                 q=client.request(b'A',obs);a=np.asarray(q['action'],np.float32)
                 worker_cpu+=q['CPU_s']
                 # Same-instant pre-action truth is diagnostic only, outside IPC.

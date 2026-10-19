@@ -16,6 +16,10 @@ spec.loader.exec_module(module)
 agent=module.Agent()
 if len(sys.argv)>2 and hasattr(agent,'counter'):
     agent.counter.limit=min(50000,max(0,int(sys.argv[2])))
+recorder=None
+if len(sys.argv)>3:
+    from runtime598_diagnostic import Recorder
+    recorder=Recorder(agent,sys.argv[3])
 
 
 def send(value):
@@ -39,6 +43,7 @@ while True:
         if command==b'R':
             agent.reset(observation);result=dict(reset=True)
         elif command==b'A':
+            if recorder is not None:recorder.before_action(observation)
             action=np.asarray(agent.act(observation),dtype=np.float32)
             if action.shape!=(3,) or not np.isfinite(action).all():raise ValueError('ACTION_SHAPE_OR_FINITE')
             if not (-1<=action[0]<=1 and 0<=action[1]<=1 and 0<=action[2]<=1):raise ValueError('ACTION_RANGE')
