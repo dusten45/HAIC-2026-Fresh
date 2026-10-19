@@ -1,0 +1,63 @@
+{
+  "study": 588,
+  "status": "FROZEN_BEFORE_PURE_TESTS_AND_SINGLE_STATIC_DESIGN",
+  "parent_commit": "338d8dfd064f9c81f4fb9a24c336e2b958ecbc63",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "proposal_sha256": "120d3df04c49a781792ff18357f57811b8c94b7150c0a0085d7541be5e6d81d3",
+  "scope": "Exactly587singleline/profile. All gates run once for static diagnostics; if any static gate fails, no profile/source/positive/candidate/replay. If all pass, frozen profile generation then source registration required with these unchanged scientific settings. No automatic shape/numeric/endpoint/sample/profile/backup retry.",
+  "specification": {
+    "frame": "Worldxy,CCWsignedcurvature;leftnormal=(-ty,tx),sourcebodyforward=(-sin(a),cos(a));bodyangle=atan2(-tx,ty).",
+    "endpoints": "At90/220 choosefirstsegmentwhoseend_arc>=s(bisect_left),linearposition and signedstorednodecurvature interpolation,segmentunit tangent. No closedpathwrap for these firstlap endpoints.",
+    "hermite": "L=Euclideanchord. pprime=L*t,psecond=L\u00b2*k*n;fixedclosedformcoefficients in pinnedmath;u=k/512 exactly513samples. Exact endpoint positions assigned from original interpolation,interiorHornerbinary64.",
+    "joins": "Preserveoutsideoldvertices strictoldarc<90/>220,insert513once. Recomputeactualpositivepolyline ds,truearcs and signedatan2turn/meanadjacentds forwholeloop,includingjoinneighbours. Oldpolyline is not a C2curve.",
+    "peak": "new=max(absanalytic513curvature,absdiscretenodesreplacedandoneoutsideeachjoin));old=max(absrecomputedoldnodecurvature in[90,220]andoneoutsideeachjoin).Requirestrictnew<old. This is a design gate,notphysicalnecessity.",
+    "reverse": "Requireall513derivativenorms>0 and pprime dot unitendchord>0 (chord-monotone). oldstation sigma90+130u strictlyincreasing separately. Sampled tests notcontinuumcertificates.",
+    "intersection": "Allnonadjacentclosedpolylinepairs includingnew-oldoutside. Excludeadjacent and first-last seam sharedendpoint. Exactbinary64orientation/collinearbounding;AABBbroadphasecountseparate,notepsilonrelaxed.",
+    "staticbody": "Everycandidatepathvertex inclunchangedoutsideonce.513newvertexheading usesanalyticd1;outsideheadingleftoutgoingsegment. RotateoriginalsourceCOM-relativeleversrigidlyfromtemplateangle;bodyoriginshiftderivedbyunchangedplan513polygons/HULL1..4*SIZE. Wheelsrectangles(+/-.28,+/-.54),alljoint0 andwheelheading=bodyangle. No futurepose/jointreachability claim.",
+    "staticmargin": "Exactexistingcorner515.margin/plan513.margin:everyfinitehull/wheelpolygonboundarydistance signedbyallverticescoveredbysavedconvexroadunion;obstaclecirclepolygonclearance. No centerline-only substitute,no531filters/extra1.252floor/min1mds. Requiremargin>=.50 atallvertices;all513evaluatedevenafterfirstbadforregisteredstaticdiagnostics.",
+    "curvature_profile": "Onlynewdiscretegeometricnodecurvature;segmentmaxadjacent,capmaxadjacentsegments.No oldobservedcurvature.",
+    "retiming": "549formula:four400N,wheellimit.999*400,rootmass/lever-derivedaxleweights,effectiveMASS/REAR fromenvelope500. cap90. Forpass0..2n-1:descendingbackwardthenascendingforward;restrictreturnsifcurrent<=other,thenoneaccboundtest,else40binarymidpointupdates. Stopwhenlistsidenticalelsefail. Launchforwardfrom0once. Validatebothperiodicandlaunchallsegmentsinorder. Chargecapvertex/accpack/finalsegmentpackeachoneanalyticboundevaluation;fourwheeloutputsperpack,notphysicalforcekernel.",
+    "backup": "Samenewgeometry/arcs;periodic/launchQ=min(newcandidateQ,80\u00b2,oldbackupQinterpolatedatsigma),firstlaplaunchclamp,periodicmodulo;leftsegmenttie. Sigmaofclosingnode=oldlength. Noactualspeedfitting.",
+    "projection": "Pinnedm.project matcheslap518:allsegments,float64clippedprojection,firstsegmentmin-distance ties,Pythonroundbankerswrapnearestprevious;admitprevious-5..previous+30;initials>L/2subtractL. Newdynamicprogress separateold551projectionforcommonplanes. No state movement at raw96;switchgeometryonlyafteroriginalfirst96raw.",
+    "dynamic": "Original577positiveinitialtos400wholehold<=416rawandfullidentity. Candidateonlyfromfullraw96throughnewplan<=320raw;commonold551fixeds300/s400plane+oldprojection\u00b110/corridor3/firstforwardcross/fullholdsafe. Alloriginalprefixcontractthrough96;newcontractfrom97includingreplay. Strictpath3/reference4.85numericunchanged,newreferenceobjectexplicit. Old551deviationsdiagnostic. no-safe-actionstops. Successfullwindows400>32ULPthenoneexactinitialfixedtapereplay<=416;no100/500msgate/whole/native.",
+    "budget": "Allpuretests/design/profile/imports/failures/auditandfuturephysicsaggregate;reserve416replay+auditCPU15/wall25beforeeveryforecastgroup. Executedraw<=1152/allforecastsattemptandcompleted<=60000/ext260000/int240000/total500000/geometry65000/analyticprofile100000/CPU900/wall1100. Native/world/HOLDOUT/SEALED0."
+  },
+  "input_sha256": {
+    "paths": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "static": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "tape": "bc432812cdd71702ec030edda72a9aa63ca79e61dceb1f970891a659f20cd5a6",
+    "ledger": "28ff0ff7ffec9784e4817b4b55500c40ecd3730e9d09977294ad1dfd9b70763f",
+    "proposal": "120d3df04c49a781792ff18357f57811b8c94b7150c0a0085d7541be5e6d81d3"
+  },
+  "implementation_sha256": {
+    "core/vendor/car_dynamics.py": "8c5bc529d6dd60f5f1affeafadc9036f9cb53db98da658a80db77cdc5c26fece",
+    "retry/__init__.py": "2c8d65a47493cc692aeef3f3bd4440438713e1cc5a160fbf7beb56c4e1164e2e",
+    "retry/brake502_response.py": "cfa49e11fd95fef8a8ca2a8653120653320afa150c6ddea226803a6deddc3992",
+    "retry/brake504_planar.py": "ac1802417ef906d061c5daa233516acc5892f8d63fc09dfdbcd80b373001c52e",
+    "retry/brake506_geometry.py": "4f69de71c0e1ad0d7707c9c9681f4e504367ccbce5c33ae6c0f369e7c6ed4392",
+    "retry/brake508_corridor.py": "10c2a4e021cce37b81a08ac0eb00e4040b0bb4dabdf5eac6989e18472b061407",
+    "retry/brake510_common.py": "28b84e6dbd7aab3ce123c153abdb9acfa1867172f35257ea6b8fea92b5cd1eb0",
+    "retry/corner515_model.py": "28701ad3ee618d8020b2b879b694dafbe3e3b70f8b3eb7af87b1c9b5068fafaf",
+    "retry/drive519_control.py": "2f9da23cda79683f03735f6fc5f1875e90eb1f5b6762c31494175a2594d5a7da",
+    "retry/envelope500.py": "1b5b027bd6a0e1631fc11165fc131ab67394e3908f926adb33605e3f7bdab964",
+    "retry/lap518_control.py": "76411054545cafbfcfbf9c54dcf50b1c6e56f42f6e20f7714543064ad661543a",
+    "retry/launch540_control.py": "dd298e2093fcff1fc54b36fdb5d15b4e007fef35ef13c4a435eca71dabc47a84",
+    "retry/plan513_model.py": "0acef198e8e771128f4341a29ddb1a50e711263aaf5b706d3aa7b5f8a072a672",
+    "retry/retime549_design.py": "24cc2b671ab124de34a799f70028d4abbc2db7d3101b9909890fe7b213f7009e",
+    "retry/smoother588_design.py": "a0bebb865290e4bdb26599981d449fe6fe74c81021b70ef97fc64eb3128c1f81",
+    "retry/smoother588_math.py": "367fb167f6da8eed32d0b2420a07755679f01b5158af54ecc0e811bb20a70a10",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "tests/test_smoother588.py": "badaf07fdd9b5ef5322462210fa748092dddefce578030cb7d87e17b1cb654f6"
+  },
+  "preparation_prior_CPU_wall_charge_s": 10.0,
+  "prior_meaning": "Conservative10s for source0 preliminary file reads/metadata/registration scaffolding; measured process imports/tests/design/profile/audit additionally included. Conversation/editing idle not scientific runtime.",
+  "counts_semantics": "geometry_checks=onefullfinitebodypose/staticorforecast/currentrootcheck;bbox/exactsegmenttestsandfixture/polygonqueriesseparatecounters.Nophysicalforce/tickcountforpuregeometry.",
+  "incumbents": {
+    "actual_s": 13.66,
+    "source_s": 13.2,
+    "research_remaining": 22758,
+    "reserve": 84000,
+    "reserve_used": 0
+  },
+  "privacy": "Rawgeometry/state/staticevents/coefficients/paths/privateevidenceoutsideGit;publictechnicalcode/contracts/aggregatesonly."
+}

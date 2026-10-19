@@ -1,0 +1,73 @@
+{
+  "status": "STATIC_DESIGN_GATE_FAILED_SOURCE0",
+  "checks": {
+    "contract_pin_exact": true,
+    "all_input_pins_exact": true,
+    "all_code_pins_exact": true,
+    "private_geometry_pin_exact": true,
+    "private_events_pin_exact": true,
+    "six_pure_tests_pass": true,
+    "exactly513_samples": true,
+    "pose_count_exact": true,
+    "geometry_counter_includes_tests": true,
+    "all_static_verdicts_saved": true,
+    "peak_failure_unchanged": true,
+    "footprint_failure_unchanged": true,
+    "margin_recheck_exact": true,
+    "original_endpoint_data_matched": true,
+    "switch_mapping_before90": true,
+    "no_candidate_profile_file": true,
+    "no_source_runs": true,
+    "incumbents_and_ledger_unchanged": true,
+    "main_preserved": true,
+    "aggregate_caps": true,
+    "audit_reservation": true
+  },
+  "endpoint_max_component_error": 2.064126647383091e-12,
+  "endpoint_signed_curvature_max_error": 1.0430024899310553e-16,
+  "worst_static_components": {
+    "road_margin_m": -9.964292813761283,
+    "obstacle_margin_m": 12.879832274218593,
+    "combined_m": -9.964292813761283,
+    "oldstation": 147.63671875,
+    "sample": 227
+  },
+  "chord_projection": {
+    "start_derivative_dot": -24.202250361225456,
+    "end_derivative_dot": 58.97346678568455,
+    "minimum": -24.230602574423905,
+    "meaning": "Design chord monotonicity only; not physical reverse driving or trajectory reachability."
+  },
+  "prefix_transition": {
+    "old_progress": 81.08792499028122,
+    "new_progress": 81.08792499028122,
+    "position_moved": false,
+    "history_or_clock_changed": false,
+    "evaluated_on_stored_checkpoint_only": true
+  },
+  "audit_work": {
+    "geometry_checks": 1,
+    "fullbody_components": 2,
+    "projection_queries": 2,
+    "polynomial_evaluations": 6,
+    "new_candidate_generation": 0,
+    "candidate_profiles": 0,
+    "source_ticks": 0,
+    "force_kernel_calls": 0,
+    "FD": 0,
+    "solver": 0
+  },
+  "pure_toy_profile_evaluations": 88,
+  "actual_candidate_profile_evaluations": 0,
+  "aggregate_geometry_checks": 762,
+  "source0_audit_CPU_s": 0.603798325,
+  "source0_audit_wall_s": 0.23710584299988113,
+  "post_design_auxiliary_CPU_wall_charge_s": 2.0,
+  "inputs_sha256": {
+    "contract": "bc468bab148c6125205ccb7dfcbe16f362c2eac6388e11749f6d999ab2f321ef",
+    "result": "6a7e4d18504aa5632e59d5fb06223e5ec9a0cfaf614e43d57395ad073712f3b6",
+    "audit_code": "4ac1ace5ffbb9096212e50cffef7d17cb0e6dc34238d000e7023638535667063"
+  },
+  "aggregate_CPU_s": 24.242166616,
+  "aggregate_wall_s": 23.468979875993682
+}
