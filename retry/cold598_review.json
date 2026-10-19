@@ -1,0 +1,101 @@
+{
+  "study": 598,
+  "status": "POST_EXECUTION_READ_ONLY_ARITHMETIC_NO_GATE_CHANGE",
+  "native_numeric_summary": {
+    "baseline": {
+      "all_saved_numeric_native_gates": true,
+      "drive_raw": 683,
+      "tracking_clip_prefix_max": 0.1,
+      "launch_clip_at_end24": 0.14322916666666666,
+      "force_groups_exact": true,
+      "final_groups": {
+        "launch": {
+          "clipped": 55,
+          "samples": 384,
+          "peak": 2.403901738164386
+        },
+        "running": {
+          "clipped": 65,
+          "samples": 2348,
+          "peak": 1.0588991224139637
+        }
+      }
+    },
+    "candidate": {
+      "all_saved_numeric_native_gates": true,
+      "drive_raw": 662,
+      "tracking_clip_prefix_max": 0.09868421052631579,
+      "launch_clip_at_end24": 0.14322916666666666,
+      "force_groups_exact": true,
+      "final_groups": {
+        "launch": {
+          "clipped": 55,
+          "samples": 384,
+          "peak": 2.403901738164386
+        },
+        "running": {
+          "clipped": 87,
+          "samples": 2264,
+          "peak": 1.058950659845942
+        }
+      }
+    }
+  },
+  "geometry_unit_note": "Frozenprimarycountercountsapplicationmargin/projectionpacks;integratorandnativephysicscontactinternalsarechargedbytick/raw. Thisseparatesadditionalexplicitnativeinput-sensorcontactqueries;primarycontract/resultunchanged. Fourqueriesperrawverifiedbyfrozenstepcomprehensionandall1447successfuldispatches;noqueriesexecutedbythisreview.",
+  "geometry": {
+    "baseline": {
+      "primary_margin_projection_packs": 197377,
+      "explicit_native_sensor_contact_queries": 2936,
+      "conservative_sum": 200313,
+      "arm_cap": 300000,
+      "under_arm_cap": true
+    },
+    "candidate": {
+      "primary_margin_projection_packs": 186029,
+      "explicit_native_sensor_contact_queries": 2852,
+      "conservative_sum": 188881,
+      "arm_cap": 300000,
+      "under_arm_cap": true
+    }
+  },
+  "primary_geometry": 383406,
+  "explicit_native_sensor_contact_queries": 5788,
+  "conservative_application_geometry_sum": 389194,
+  "geometry_cap": 600000,
+  "conservative_under_cap": true,
+  "per_hold_conservative_bounds_including_sensors": {
+    "ordinary_feedback_with_sensors": 4550,
+    "transition_anchor_with_outer_and_sensors": 4687,
+    "cheap_prefix_with_sensors": 129
+  },
+  "monitor_recovery": {
+    "existing_process_pid": 36837,
+    "original_run_retained": true,
+    "interrupt_signals_sent": 0,
+    "duplicate_science_executions": 0,
+    "only_original_two_authorized_worlds": true,
+    "private_evidence_sha256": "32913f27660950a4332dd624922978d2bf0717cd653f155a038fc0d89b529e66"
+  },
+  "limits": {
+    "cold_only_privileged_DEV": true,
+    "pixel_policy_validated": false,
+    "Agent_act_5s_validated": false,
+    "other_initialization_validated": false,
+    "carry_combined_general_promotion": false,
+    "eleven_second_target_achieved": false,
+    "whole_policy_bundle_comparison_not_component_causality": true
+  },
+  "next_action": "Preserveonecold-onlynativepositivebenchmarkandclosedcarry/combined/generalstatus. Anyfurtherexperimentneedsseparatescopeandpredeclaredgates. Firstreviewpixel-observation/5sdeploymentboundaryand11secondbottleneckusingstoredtraces;noadditionalnativeornewseedstarted.",
+  "source_ticks": 0,
+  "native_calls": 0,
+  "force_calls": 0,
+  "geometry_queries": 0,
+  "input_sha256": {
+    "result": "7d267385d02ac2219f3d537765e4acd4d0bbaad0c13a5b79ae9b19ac92cb6d03",
+    "audit": "3106ea767e66612680071968d702c21d2c8e7392bf97da286dceecbb91a57548",
+    "review_code": "a0dc8fcfebc27f9138696402784a85cfdfd5560968b242d61a7292d3df3c3ab2"
+  },
+  "CPU_s": 0.097377321,
+  "wall_s": 0.09752953000133857,
+  "time_accounting": "Coveredbyaudit5CPU/wallauxiliarycharge;noextraexperiment."
+}

@@ -1,0 +1,53 @@
+{
+  "study": 598,
+  "status": "READ_ONLY_AUDIT_PASS",
+  "checks": {
+    "journal_chain_exact": true,
+    "private_files_pinned": true,
+    "input_and_old_result_pins": true,
+    "code_runtime_pins": true,
+    "tests_frozen_before_worlds": true,
+    "world_reset_reserved_vs_called": true,
+    "raw_reserved_called_completed": true,
+    "native_wheel_separate": true,
+    "model_attempt_completed": true,
+    "force_all_oracles": true,
+    "all_geometry_including_internal": true,
+    "passive537_summary_exact": true,
+    "action_ledger_no_refunds": true,
+    "caps": true,
+    "finally_all_closed_body_joint0": true,
+    "baseline_before_candidate": true,
+    "actual_candidate_prefix_bytes": true,
+    "no_candidate_fixed_tape_after39": true,
+    "actual_candidate_feedback_dispatch_count": true,
+    "at_most11_future_transition_anchors": true,
+    "native_detailed_geometry_flags": true,
+    "actual_native_safety_or_first_recorded_failure": true,
+    "integer_gain_only": true,
+    "carry_combined_general_closed": true,
+    "main_Participants_preserved": true,
+    "prep_execution_total_time_caps": true
+  },
+  "events": 675921,
+  "CPU_s": 19.261584447,
+  "wall_s": 19.278513842000393,
+  "auxiliary_CPU_wall_charge_s": 5,
+  "aggregate_time": {
+    "science_CPU_s": 2792.694044061,
+    "science_wall_s": 3013.7394980890094,
+    "preparation_audit_CPU_s": 67.94374834999995,
+    "preparation_audit_wall_s": 67.18266552699788,
+    "total_CPU_s": 2860.637792411,
+    "total_wall_s": 3080.9221636160073
+  },
+  "source_ticks": 0,
+  "native_calls": 0,
+  "force_calls": 0,
+  "geometry_queries": 0,
+  "input_sha256": {
+    "result": "7d267385d02ac2219f3d537765e4acd4d0bbaad0c13a5b79ae9b19ac92cb6d03",
+    "contract": "2b18c540e7b2f739b6201e4bdd6766ae1bba71a264a9fb2062a3c7a68913bd6a",
+    "audit": "95a1f312450d2bb30cc16298931339a99d18eeecd4451f04d78df1bd54549312"
+  }
+}
