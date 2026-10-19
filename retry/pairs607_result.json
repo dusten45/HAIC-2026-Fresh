@@ -1,0 +1,104 @@
+{
+  "study": 607,
+  "status": "LOCAL_SHIFTED_PAIR_SAFE_EXACT_REPLAY",
+  "zero_pass": true,
+  "grid_evaluated": 42,
+  "shifted_feasible": 9,
+  "fresh_FINAL": 1,
+  "applied_raw": 12,
+  "original_choose_calls": 1,
+  "independent_replay": true,
+  "zero_work_delta": {
+    "model_attempted": 737,
+    "model_completed": 721,
+    "external_force": 2948,
+    "internal_force": 2884,
+    "total_force": 5832,
+    "geometry": 2813,
+    "geometry_source_footprint": 752,
+    "helper_original_comparisons": 674,
+    "geometry_internal_nominal_steering": 666,
+    "geometry_tracking_forecast": 721,
+    "chooser_calls": 1
+  },
+  "zero_full_report_primitive_FINAL_first4_exact": true,
+  "row_results": {
+    "base": {
+      "evaluated": 21,
+      "feasible": 9,
+      "reasons": {
+        "FORCE_PEAK": 12,
+        "CERTIFIED_12HOLD_FLOAT32": 9
+      }
+    },
+    "shifted": {
+      "evaluated": 21,
+      "feasible": 9,
+      "reasons": {
+        "FORCE_PEAK": 12,
+        "CERTIFIED_12HOLD_FLOAT32": 9
+      }
+    }
+  },
+  "selected": {
+    "index": 24,
+    "netpedal_change_vs_recorded_modified": -0.006554722785949707,
+    "netpedal_change_vs_original_base": 0.0,
+    "original_FINAL_reused": false,
+    "progress_gain_diagnostic": 4.308888197291083,
+    "min_margin": 0.8508573331702325,
+    "force_peak": 1.058989692811882
+  },
+  "error": null,
+  "cost": {
+    "chooser_calls": 1,
+    "geometry": 6409,
+    "geometry_internal_nominal_steering": 1502,
+    "geometry_source_footprint": 1719,
+    "helper_original_comparisons": 1543,
+    "model_attempted": 1685,
+    "external_force": 6740,
+    "total_force": 13320,
+    "model_tick_attempts": 1645,
+    "internal_force": 6580,
+    "model_completed": 1645,
+    "geometry_tracking_forecast": 1633,
+    "geometry_native_or_initial": 12
+  },
+  "time": {
+    "CPU_s": 36.916829176,
+    "wall_s": 495.45601987838745
+  },
+  "model_counter": 1645,
+  "kernel_hardcap": 200000,
+  "native": 0,
+  "worlds": 0,
+  "resets": 0,
+  "actions": 0,
+  "new_seed": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "carry": 0,
+  "FD": 0,
+  "solver": 0,
+  "scope": "ONE_STORED_STATE_LOCAL_FEASIBILITY_ONLY",
+  "native_admission": false,
+  "whole_lap_claim": false,
+  "native_incumbent_s": 13.22,
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "private_sha256": {
+    "zero-apply-rows-private.json": "41369c78c157ddcdb85b6f054fedcba08d7f64b811bcbdd8f5c79492a809b14e",
+    "TASK_STARTED-private.json": "cb623f3040d7c36cde0763c9a42df2cd63b2934f4d22e8306c90d9d524f6482a",
+    "shifted-apply-rows-private.json": "e613917504b4d6a69734f1d0454ec1b232fb2c01e25ef24711f779767ea9e3fa",
+    "all-pairs-private.json": "82382bfadc76fd45e4aa03f047fdf41c75d39fe9e0be9165f808a66d842c32e7",
+    "joint-telemetry-private.json": "72d17e40506844389d1892afe0667e0c6eefacbfa7ee0b0a96a7f30781d6feab",
+    "shifted-replay-rows-private.json": "e613917504b4d6a69734f1d0454ec1b232fb2c01e25ef24711f779767ea9e3fa",
+    "REGISTERED-private.json": "35cd687ce06f57bed6ed0706eba3f983496033edfb068d763b6edea5bd42e4b0",
+    "applied-journal-private.jsonl": "8163dc84c46a46969780600a382f575e9e0a217e3ac89de19ae6d549af6ba9f8",
+    "final-telemetry-private.json": "624d75fff6c1535d128b8b68aa4012908ac0854e0b2cddb6957f4789df16dd53",
+    "PROCESS_STARTED-private.json": "ab9a77d0d374846d10578883c910945d107a550c08112adafdf1fb0c987c54ea",
+    "zero-telemetry-private.json": "dbe19f831a0164992a4eb026ab8802403c2d82d3ef715ddf526b0d7af2641308"
+  }
+}

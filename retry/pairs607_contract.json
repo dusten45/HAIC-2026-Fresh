@@ -1,0 +1,72 @@
+{
+  "study": 607,
+  "status": "FROZEN_BEFORE_PURE_TESTS_AND_ANY_EVALUATOR",
+  "task_start": {
+    "study": 607,
+    "start_utc": "2026-10-19T12:29:57.044501+00:00",
+    "start_epoch": 1792412997.044517,
+    "wall_cap_s": 900,
+    "CPU_cap_s": 600,
+    "cleanup_reserve_wall_s": 90,
+    "model": 0,
+    "chooser": 0
+  },
+  "caps": {
+    "model_attempted": 4096,
+    "model_completed": 4096,
+    "external_force": 16384,
+    "internal_force": 16384,
+    "total_force": 32768,
+    "geometry": 20000
+  },
+  "full_reserve": {
+    "model_attempted": 3900,
+    "model_completed": 3900,
+    "external_force": 15600,
+    "internal_force": 15600,
+    "total_force": 31200,
+    "geometry": 15518
+  },
+  "time_caps": {
+    "total_CPU_s": 600,
+    "total_wall_s": 900,
+    "cleanup_CPU_s": 60,
+    "cleanup_wall_s": 90
+  },
+  "input_packet_sha256": "61c488f634fe87cb8a8af124ce827044f4be024c92c8234515e83d13c2ab0406",
+  "checkpoint_sha256": "00b1f0dbfe89187191cdd068b0f7a4e92144846e6fffcfd3fd196bfe79fd6a03",
+  "source_sha256": {
+    "retry/pairs607.py": "7cc175eb149f5d82fced4d6cf2edeefa8c9604ddb3314f2e35817e33a0692120",
+    "retry/pairs607_core.py": "b57dd06b0d7381fbddf180e6cbd6df26a1ee658684d02d1ed9e626254081e9dc",
+    "retry/residual605.py": "deafcf5f7f66cb754804ddd16c289827344fda5a5d73858107d0601a191f9dda",
+    "retry/structure537_control.py": "c5a3f3206979085150e8ecda4f96da4b76f74ff4e9064bc3f5b9e3eb8d62c771",
+    "retry/cold598_support.py": "7b0517303110a83e369c950b97d7ba8b649fcdb607249c5ff19325dc4a9b87d9"
+  },
+  "runtime_manifest603_sha256": "2dca472012ad4ab52e826f401379ee6d1e022d17a9bb30717d345f206f0348c3",
+  "binary_sha256": "dc97aff751da9e3cc35d83f66c2718efb19481e1ecf65968dcca6a8a2ce929eb",
+  "expected_zero_work_delta": {
+    "model_attempted": 737,
+    "model_completed": 721,
+    "external_force": 2948,
+    "internal_force": 2884,
+    "total_force": 5832,
+    "geometry": 2813,
+    "geometry_source_footprint": 752,
+    "helper_original_comparisons": 674,
+    "geometry_internal_nominal_steering": 666,
+    "geometry_tracking_forecast": 721,
+    "chooser_calls": 1
+  },
+  "grid_points": 21,
+  "pairs": 42,
+  "ordering": "Steering rows ascending storedfloat32steer,then netpedal descending. Same fixedgrid for both rows;all pairs beforeselection. Min abs(u-recordedmodifiedu),tiehigheru,thenindex.",
+  "certificate": "Original537certifier12holds,current ACTUALfinalpair followedby11unchangedbackupholds. OriginalpositiveFINAL not reused. Atmost48grid+ONEfreshselectedFINAL. No residualaftercertification.",
+  "applied": "Zero base4raw matchesstoredFINALfirst4,then selectedshifted4rawmatchesfreshFINAL,thenoneindependent4rawcommandreplay fromSAMEsavedraw160checkpoint. Allstrictnumeric gates inherited605;no fullcold/prefix/newroot/s400/lap/native.",
+  "budget": "Onlyper-calloriginal537workdeltaandprimitivevaluesmatch605;neverabsoluteoldglobalcounter. Global4096strongerthanoriginalkernel200000;choosemax_ticks180000unchanged. Every603memo miss extra originalPythonmargin charged. Fullreservationbeforezero andremainingbeforeeachcert;allprep/audit/cleanupwall measuredsinceTASK_STARTED.",
+  "physics_domain": "Strictpreforce1.059/clip.10;footprint.50/path3/reference4.85/body<100/projection[-.5,max(5,2COMstep)];finitefloat32control/exclusivepedals. No gate relaxations.",
+  "stops": "Firsttechnical/IO/integrity/domain/budget/deadline failure endsALL,no retry. Ordinarygridcertificate failures retained;nofeasiblenonzero=>FINITE_GRID_ONLY_FAILURE. No slowerprogresspruning.",
+  "prior606_overtime_preserved": "46ac9fa0e63ccd019d5ca569e4b1892580fbcd04c97b595d6ba748f3c7bf63c9",
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0
+}

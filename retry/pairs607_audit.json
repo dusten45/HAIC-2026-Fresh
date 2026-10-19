@@ -1,0 +1,63 @@
+{
+  "study": 607,
+  "status": "READ_ONLY_AUDIT_PASS",
+  "checks": {
+    "source_frozen": true,
+    "input_checkpoint_and_runtime_pins": true,
+    "registered_contract_and_closed_result": true,
+    "all_private_outputs_pinned": true,
+    "pure_stubs_pass": true,
+    "exactly_one_original_choose": true,
+    "zero_before_grid_pass": true,
+    "all_fixed_pairs_evaluated": true,
+    "dedup_and_order": true,
+    "identical_fixed_descending_grid": true,
+    "row_result_counts": true,
+    "selection_rule_and_no_original_FINAL_reuse": true,
+    "all_model_force_primitive_costs_counted": true,
+    "exact_certificate_count": true,
+    "durable_journal_chain": true,
+    "whole_reservation_precedes_any_application": true,
+    "per_certificate_remainder_reservations": true,
+    "strict_12raw_and_independent_replay": true,
+    "only_saved_raw160_to164": true,
+    "all_work_caps_and_original_kernel": true,
+    "zero_forbidden_work_original_ledger": true,
+    "local_scope_only": true,
+    "606_overtime_preserved": true,
+    "actual_whole_task_time_with_cleanup_reserve": true
+  },
+  "certificates": 74,
+  "counts_from_primitive_results": {
+    "model_attempted": 1685,
+    "model_completed": 1645,
+    "external_force": 6740,
+    "internal_force": 6580
+  },
+  "durable_events": {
+    "FULL_STUDY_RESERVE": 1,
+    "APPLIED_INPUT": 12,
+    "BEFORE_FORCE": 12,
+    "FORCE_VERDICT": 12,
+    "APPLIED_TICK_START": 12,
+    "APPLIED_TICK_END": 12,
+    "APPLIED_RESULT": 12,
+    "REMAINING_RESERVE": 43,
+    "PAIR_VERDICT": 42,
+    "STUDY_END": 1
+  },
+  "task_start_utc": "2026-10-19T12:29:57.044501+00:00",
+  "audit_utc": "2026-10-19T12:40:00Z",
+  "total_through_audit": {
+    "CPU_s": 37.182804216,
+    "wall_s": 603.8368468284607
+  },
+  "CPU_prior_preparation_charge_s": 10,
+  "cleanup_reserve": {
+    "CPU_s": 30,
+    "wall_s": 60
+  },
+  "new_evaluations": 0,
+  "selected_vs_zero_progress_delta_diagnostic": -0.00017380329546767825,
+  "result_sha256": "3b9736e99647fbbd2de3988353120f05e74061da74e65ebbff8a7960975614c4"
+}
