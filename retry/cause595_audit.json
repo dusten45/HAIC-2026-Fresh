@@ -1,0 +1,70 @@
+{
+  "study": 595,
+  "status": "EXACT594_FIRST_FAILURE_IDENTIFIED",
+  "checks": {
+    "checkpoint_gate": true,
+    "input_pins": true,
+    "implementation_dependency_pins": true,
+    "source_start_frozen": true,
+    "all594_events_exact": true,
+    "original_summary_exact": true,
+    "all48_raw": true,
+    "all192_eachforce": true,
+    "geometry196": true,
+    "geometry_parts": true,
+    "counter_journal": true,
+    "chain_valid": true,
+    "first_failure_at204": true,
+    "only_path_failed": true,
+    "old_order_tracker_not_updated": true,
+    "safe_other_gates": true,
+    "stored_source_projection_exact": true,
+    "alternatehint_same": true,
+    "metadata_not_copy_error": true,
+    "no_extra_science": true,
+    "ledger": true,
+    "no_promotions": true,
+    "main_preserved": true,
+    "all_caps": true
+  },
+  "metadata_diagnosis": {
+    "actual_tracker_differs_from_stored_source_keys": [
+      "previous_longitudinal",
+      "previous_lateral"
+    ],
+    "tracker_geometry_and_discrete_flags_same": true,
+    "maximum_forecast_clip_fraction": 0.09666666666666666,
+    "maximum_clip_fraction_if_initial_stored577_clip_offset_used": 0.1,
+    "no_tracker_or_history_change_used_in_actual_reproduction": true,
+    "all49_projection_segments_same_as_stored577": true,
+    "all49_alternate_source_hints_return_same_projection": true,
+    "all49_frictions_mass_engine_same": true,
+    "contact_membership_difference_rows": 0,
+    "path_distance_difference_at_failure_m": 0.02571891730336029,
+    "path_distance_difference_to_COM_position_difference_ratio": 0.9957779916854697
+  },
+  "contract_status_label_note": "Frozen contract retains a legacy BEFORE_PURE_TESTS label;actual4puretests completed before registration andtheirresults/inputhasheswerefrozen. No contractrewritingafterexecution.",
+  "audit_source_ticks": 0,
+  "audit_force_calls": 0,
+  "audit_geometry_queries": 0,
+  "audit_native_calls": 0,
+  "input_sha256": {
+    "result": "a9b42d3996aa08d2f41bfabab518b7949de54a525ca8dce3b8db0f2e4c0597d2",
+    "contract": "c464dbe20801524edc276f2a5fc9022688100176ab85e9b9ac2ae6d35a29954d",
+    "private_journal": "4a8ff775a0c23e433af620c6e04cfaa0b0e7bd74a7d78f0a7d88009dbe9686ff",
+    "private_rows": "a2f910c4ddfa3bd31467736a2575c8012819faad3812aea26942bc1eaddad366",
+    "private_comparison": "9a5d4b63560fd8c3e29eadb01d66bca2fcd54da0f5927bbf94ef3b8a7c1655a8",
+    "audit_code": "1094da5ff07e6f05e9ef228a5e450e9b852785abff4f0180da667114a537f55a"
+  },
+  "read_only_CPU_s": 0.24101336799999998,
+  "read_only_wall_s": 0.24314468100783415,
+  "auxiliary_CPU_wall_charge_s": 2.0,
+  "aggregate_time": {
+    "source_CPU_s": 0.5799543870000001,
+    "source_wall_s": 0.6453993780014571,
+    "preparation_audit_CPU_s": 14.183956838,
+    "preparation_audit_wall_s": 13.382678594018216,
+    "total_CPU_s": 14.763911225000001,
+    "total_wall_s": 14.028077972019673
+  }
+}
