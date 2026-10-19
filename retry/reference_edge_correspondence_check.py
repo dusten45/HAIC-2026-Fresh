@@ -10,7 +10,7 @@ def main():
     D=np.diag([1.3608,-1.701]);origin=np.array([a.IMAGE_ORIGIN_X,a.IMAGE_ORIGIN_Y])
     for radius in (12.,18.,28.):
       for mirror in (-1,1):
-        previous,_=scene(radius,-.2,mirror,False)
+        previous,truth=scene(radius,-.2,mirror,False)
         road=((previous>.36)&(previous<.47)).astype(np.uint8);blocked=np.zeros((84,84),bool)
         _,_,_,curves=a.infer_painted_road_band(previous,road,blocked)
         assert curves,'NO_PUBLIC_EDGE_SEEDS'
@@ -26,9 +26,20 @@ def main():
         assert np.array_equal(baseline[0],tracked[0]) and baseline[2]==tracked[2]
         assert len(bands0)==len(bands1) and all(np.array_equal(x,y) for x,y in zip(bands0,bands1))
         matched=sum(c['current_edge_matches'] for c in tracked[3]);novel=sum(c['current_edge_new_observations'] for c in tracked[3])
+        assert matched>0,'NO_CURRENT_EDGE_MATCHES'
+        # A circle eligibility failure need not erase an observed edge chain.
+        # Check new proposals against the physical public road, independently
+        # of eligibility, and require every retained edge to be observed now.
+        physical=[(poly@rotation.T+translation).astype(np.float32) for poly in truth]
+        restored=[c for c in tracked[3] if c.get('reference_parameter')]
+        for curve in restored:
+            for point in curve['points']:
+                assert max(cv2.pointPolygonTest(poly,tuple(point[:2]),True) for poly in physical)>=0,'REFERENCE_OUTSIDE_PUBLIC_ROAD'
+            for point,normal in zip(curve['edge_points'],curve['edge_normals']):
+                seen=a.observe_outer_edge(current,point,normal,blocked,reference=True)
+                assert seen is not None and np.linalg.norm(seen-point)<.15,'HISTORY_WITHOUT_CURRENT_EDGE'
         if radius==12.:
-            assert not tracked[3],'UNSUPPORTED_TIGHT_VIEW_PROMOTED'
-        else:assert matched>0,'NO_CURRENT_EDGE_MATCHES'
+            assert not baseline[3] and restored,'NONVACUOUS_CIRCLE_ELIGIBILITY_COUNTEREXAMPLE'
         wrong=[dict(s,edge_normals=-s['edge_normals']) for s in seeds]
         rejected=a.infer_painted_road_band(current,road,blocked,reference_seeds=wrong)
         assert sum(c['current_edge_matches'] for c in rejected[3])==0,'REVERSED_MATERIAL_ORDER_ACCEPTED'
@@ -40,7 +51,7 @@ def main():
         grass=np.full((84,84),162/255.,np.float32)
         forbidden=a.infer_painted_road_band(grass,np.zeros((84,84),np.uint8),blocked,reference_seeds=seeds)
         assert not forbidden[3],'GRASS_CONTRADICTION_IGNORED'
-        records.append(dict(radius=radius,mirror=mirror,matches=matched,new_actual_observations=novel,geometry_unchanged=True))
+        records.append(dict(radius=radius,mirror=mirror,matches=matched,new_actual_observations=novel,restored_current_chains=len(restored),geometry_unchanged=True))
     observer=a.Agent();observer.reference_seeds=seeds;observer.reset(None);assert not observer.reference_seeds
     result=dict(status='PASS',records=records,cases=len(records),guards=['wrong material normal','offscreen prior','current obstacle veto','current grass contradiction','reset clears correspondence'],CPU_s=time.process_time()-cpu,model_ticks=0,native_actions=0,
         scope='Finite publicly rendered roads under known camera transforms. Correspondence is reobserved in current pixels and does not change safety geometry. No universal registration or hidden-obstacle claim.')

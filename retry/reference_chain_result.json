@@ -1,0 +1,125 @@
+{
+  "status": "CURRENT_PIXEL_REFERENCE_ELIGIBILITY_REPAIRED_NATIVE_PROMOTION_FAILED",
+  "base_commit": "9fa7002d71836cb6144859ed3b5cfd03a9d6371f",
+  "final_source_sha256": "38e96b02e52e1ce17d982a90262a6602d6900f0f2a0e64855e1d5df2bcf52114",
+  "core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "diagnosis": "A valid ordered observed edge was discarded before current seed correspondence because the row contour failed a global circle bootstrap. The row-midpoint fallback changes centreline and sample spacing; both branches already share the same three-point curvature function.",
+  "change": "Only when a side has no usable circle-derived reference, reobserve its own-action transported edge seeds in CURRENT pixels. Split at failed observations. Fit current ordered edge arc with unchanged7-sample/7m-window/condition100/residual0.35/tangent-length1 local checks and offset by public half-width. No road support or physical state changes.",
+  "public_gate": {
+    "status": "PASS",
+    "records": [
+      {
+        "radius": 12.0,
+        "mirror": -1,
+        "matches": 39,
+        "new_actual_observations": 0,
+        "restored_current_chains": 1,
+        "geometry_unchanged": true
+      },
+      {
+        "radius": 12.0,
+        "mirror": 1,
+        "matches": 39,
+        "new_actual_observations": 0,
+        "restored_current_chains": 1,
+        "geometry_unchanged": true
+      },
+      {
+        "radius": 18.0,
+        "mirror": -1,
+        "matches": 36,
+        "new_actual_observations": 29,
+        "restored_current_chains": 0,
+        "geometry_unchanged": true
+      },
+      {
+        "radius": 18.0,
+        "mirror": 1,
+        "matches": 36,
+        "new_actual_observations": 4,
+        "restored_current_chains": 0,
+        "geometry_unchanged": true
+      },
+      {
+        "radius": 28.0,
+        "mirror": -1,
+        "matches": 29,
+        "new_actual_observations": 13,
+        "restored_current_chains": 0,
+        "geometry_unchanged": true
+      },
+      {
+        "radius": 28.0,
+        "mirror": 1,
+        "matches": 29,
+        "new_actual_observations": 13,
+        "restored_current_chains": 0,
+        "geometry_unchanged": true
+      }
+    ],
+    "cases": 6,
+    "guards": [
+      "wrong material normal",
+      "offscreen prior",
+      "current obstacle veto",
+      "current grass contradiction",
+      "reset clears correspondence"
+    ],
+    "CPU_s": 1.012986105,
+    "model_ticks": 0,
+    "native_actions": 0,
+    "scope": "Finite publicly rendered roads under known camera transforms. Correspondence is reobserved in current pixels and does not change safety geometry. No universal registration or hidden-obstacle claim."
+  },
+  "same_history_attribution": {
+    "estimated_root_roads_boundary_obstacles_identical": true,
+    "current_edge_matches": 27,
+    "width_reference_before": false,
+    "width_reference_after": true,
+    "current_lattice_matches": 5,
+    "reference_speed_here_before_m_s": 31.422997599803008,
+    "reference_speed_here_after_m_s": 39.46285284482918,
+    "old_reference_support_m": 43.87066540585744,
+    "new_reference_support_m": 21.885497060635323,
+    "model_ticks": 0
+  },
+  "cached_full_gate": {
+    "admissible": false,
+    "model_ticks": 261,
+    "CPU_s": 0.419949985
+  },
+  "final_source_native": {
+    "status": "INPUT_OR_ADMISSION_STOP",
+    "valid_actions": 46,
+    "unchanged_action_prefix": 46,
+    "failed_input_pixels_identical": true,
+    "failed_call": 47,
+    "progress": 0.14487632508833923,
+    "damage": 0.0,
+    "max_whole_act_wall_s": 1.9796789390093181,
+    "model_ticks": 27749,
+    "CPU_s": 51.781593655,
+    "wall_s": 51.252010705997236,
+    "current_width_reference_used": true,
+    "failure_reasons": {
+      "FORECAST_FOOTPRINT_MARGIN": 6,
+      "FORCE_PEAK": 14
+    },
+    "first_failure_stop": true,
+    "official_server_runtime_parity": false
+  },
+  "phase_usage": {
+    "DEV_actions": 46,
+    "DEV_act_attempts": 47,
+    "resets": 1,
+    "model_ticks": 28010,
+    "raw_physics": 235,
+    "measured_CPU_s": 53.395647409,
+    "unmetered_diagnostic_CPU_allowance_s": 10,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0,
+    "research_remaining": 19507
+  },
+  "disposition": "Commit as a substantiated observation-input repair, not a performance promotion. Stop additional native experiments: the first46 actions and reached state are unchanged, and the restored reference alone does not resolve force/footprint admission. Next work requires a separate supported attribution of those first failures, not chooser or threshold relaxation.",
+  "limitation": "Finite public raster checks and one sameDEV reset. Search locations and outward signs depend on own-action motion estimates. Current matches may run out under a later crop. No universal registration, safety certificate, finish or lap-time improvement is claimed."
+}

@@ -966,6 +966,50 @@ def observed_reference_edge_normals(points,center):
     return np.asarray(kept).reshape(-1,2),np.asarray(normals).reshape(-1,2)
 
 
+def reobserve_reference_chain(image,seed,blocked):
+    """Current edge correspondence can supply order without a global circle.
+
+    History supplies search locations and outward signs only. Fit actual current
+    observations in measured arc length with the existing local-fit guards.
+    This reference-only path contributes no road or footprint support.
+    """
+    points=[];signs=[];runs=[]
+    for point,normal in zip(seed['edge_points'],seed['edge_normals']):
+        current=observe_outer_edge(image,point,normal,blocked,reference=True)
+        if current is None:
+            if points:runs.append((points,signs));points=[];signs=[]
+            continue
+        if points and np.linalg.norm(current-points[-1])<1/(2.7*6.):continue
+        points.append(current);signs.append(normal)
+    if points:runs.append((points,signs))
+    curves=[];window=2*(21./6.)
+    for points,signs in runs:
+        if len(points)<7:continue
+        points=np.asarray(points);signs=np.asarray(signs)
+        arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
+        centres=[];kept=[];normals=[]
+        for i,point in enumerate(points):
+            distance=arc-arc[i];selected=abs(distance)<=window
+            if int(sum(selected))<7:continue
+            z=distance[selected]/window;matrix=np.column_stack((np.ones(len(z)),z,z*z))
+            if np.linalg.cond(matrix)>100.:continue
+            coef=np.linalg.lstsq(matrix,points[selected],rcond=None)[0]
+            if max(np.linalg.norm(matrix@coef-points[selected],axis=1))>.35:continue
+            length=float(np.linalg.norm(coef[1]))
+            if length<1.:continue
+            normal=np.array([coef[1,1],-coef[1,0]])/length
+            if normal@signs[i]<0:normal=-normal
+            centre=coef[0]-(40./6.)*normal
+            centres.append((float(centre[0]),float(centre[1]),float(arc[i])))
+            kept.append(point);normals.append(normal)
+        if len(centres)>=3:
+            curves.append(dict(outer_side=seed['outer_side'],points=centres,
+                edge_points=np.asarray(kept),edge_normals=np.asarray(normals),
+                current_edge_matches=len(points),current_edge_new_observations=0,
+                current_near_edge_observations=0,reference_parameter='current observed edge arc'))
+    return curves
+
+
 def near_vehicle_reference_edges(image,asphalt,blocked):
     """Follow the vehicle's near corridor forward, not a merge's far midpoint.
 
@@ -1214,6 +1258,11 @@ def infer_painted_road_band(image,asphalt,blocked,geometry_bands=None,observed_c
             verified_2D_extensions=verified,local_offset_points=len(inner_points),
             local_offset_edges=edge_count,reference_observed_edge_extensions=reference_extensions,local_max_residual_m=max(local_residuals),
             offset_method='local quadratic tangent + public width; circle used only for observed sampling'))
+    if reference_seeds is not None:
+        represented={curve['outer_side'] for curve in reference_curves}
+        for seed in reference_seeds:
+            if seed['outer_side'] not in represented:
+                reference_curves.extend(reobserve_reference_chain(image,seed,blocked))
     return support,dict(near_vehicle_contour_samples=near_counts,near_vehicle_reference_curves=near_reference_curves,painted_band_added_pixels=int(np.sum(support&~asphalt.astype(bool))),painted_band_fits=fits,
         painted_band_bound_universally_validated=False),updates,reference_curves
 
