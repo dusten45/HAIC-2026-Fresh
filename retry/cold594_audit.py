@@ -1,0 +1,42 @@
+"""Audit stored594 records without model/native/force/geometry execution."""
+import time
+CPU=time.process_time();WALL=time.perf_counter()
+import ast,hashlib,json,subprocess
+from collections import Counter,defaultdict
+from pathlib import Path
+G=Path(__file__).resolve().parents[1];D=Path('/workspace/haic-response594-private')
+def read(p):return json.loads(p.read_text())
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def run():
+ r=read(G/'retry/cold594_result.json');c=read(G/'retry/cold594_contract.json');cost=r['cost'];kinds=Counter();bylabel=defaultdict(Counter);charges=[];native=[];closed=[];last=None
+ with (D/'journal-private.jsonl').open() as f:
+  for line in f:
+   q=json.loads(line);last=q;k=q['kind'];kinds[k]+=1
+   if 'label' in q:bylabel[q['label']][k]+=1
+   if k=='ACTION_CHARGED':charges.append(q)
+   if k=='AFTER_NATIVE_RAW':native.append(q['record'])
+   if k=='WORLD_CLOSED':closed.append(q['summary'])
+ tree=ast.parse((G/'retry/cold594_native.py').read_text());inputs={}
+ for node in tree.body:
+  if isinstance(node,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='INPUTS' for t in node.targets):
+   for kw in node.value.keywords:inputs[kw.arg]=Path(kw.value.args[0].value) if isinstance(kw.value,ast.Call) else G/kw.value.right.value
+ normal=all(a['stop'] not in ['TECHNICAL_FAILURE','COST_CENSORED','MODEL_DOMAIN_STOP'] for a in r['arms']);get=lambda k:cost.get(k,0);frozen=read(D/'frozen-candidate-command-bytes-private.json');candidate_charges=[q for q in charges if q['label']=='candidate'];armgroups={a['label']:{g:dict(peak=0.,samples=0,clipped=0) for g in ['launch','running']} for a in r['arms']};raw_flags=Counter();actual_safe=True;clip_safe=True;running_prefix_max=defaultdict(float)
+ for q in native:
+  raw_flags.update(q['errors']);actual_safe&=q['body_speed_max']<100 and q['margin']>=.25 and not q['errors']
+  if q['phase']=='action':
+   group='launch' if q['action']<=24 else 'running';v=armgroups[q['label']][group];v['peak']=max(v['peak'],max(z['ratio'] for z in q['forces']));v['samples']+=4;v['clipped']+=sum(z['ratio']>1 for z in q['forces'])
+   if group=='running':running_prefix_max[q['label']]=max(running_prefix_max[q['label']],v['clipped']/v['samples']);clip_safe&=v['clipped']/v['samples']<=.10 and v['peak']<=1.25 and q['speed']-q['reference_speed']<=5
+   else:clip_safe&=v['peak']<=2.5
+ # Runtime already validated every chain hash. This read audits counters/head and records once.
+ checks=dict(registration_marker=read(D/'NATIVE_STARTED-private.json')['contract_sha256']==sha(G/'retry/cold594_contract.json'),no_duplicate_arms=[a['label'] for a in r['arms']] in [['baseline'],['baseline','candidate']] and all(bylabel[a['label']]['WORLD_CHARGED']==1 for a in r['arms']),runtime_chain=r['journal']['valid'],journal_event_kinds=dict(kinds)==r['journal']['kinds'],closed_head=last['sha256']==r['journal']['head'],all_implementation_dependency_pins=all(sha(Path(p) if Path(p).is_absolute() else G/p)==h for p,h in {**c['implementation_sha256'],**c['dependency_sha256']}.items()),all_input_pins=set(inputs)==set(c['input_sha256']) and all(sha(p)==c['input_sha256'][k] for k,p in inputs.items()),original593_preserved=all(sha(G/('retry/'+{'result_sha256':'cold593_result.json','contract_sha256':'cold593_contract.json','runner_sha256':'cold593_native.py','closeout_sha256':'cold593_closeout.json'}[k]))==v for k,v in c['prior593'].items()),serialization_only_change=read(G/'retry/cold594_change_review.json')['arm_only_serialization_change'] and read(G/'retry/cold594_change_review.json')['policy_physics_safety_meter_reservations_unchanged'],regressions_pass=read(G/'retry/cold594_tests.json')['passed'] and read(G/'retry/cold594_tests.json')['tests']==9,model_attempt_counter=kinds['BEFORE_MODEL_FORCE']==get('model_attempted'),model_completed_counter=kinds['AFTER_MODEL_TICK']==get('model_completed'),model_tick_attempt_counter=kinds['BEFORE_MODEL_TICK']==get('model_tick_attempts'),raw_precharges=kinds['BEFORE_NATIVE_RAW']==get('raw_attempts'),raw_completion_records=len(native)==get('raw_completed'),world_reset_precharges=kinds['WORLD_CHARGED']==get('worlds') and kinds['RESET_CHARGED']==get('resets'),all_worlds_closed=get('worlds')==get('closed')==len(closed) and all(a['cleanup']==dict(body=0,joint=0) for a in r['arms']),action_precharges=len(charges)==get('actions') and all(q['counts']['actions']==i and q['research_remaining']==22758-i for i,q in enumerate(charges,1)),unrefunded_attempted_actions=0<=len(charges)-kinds['ACTION_COMPLETED']<=1,ledger=r['research_remaining']==22758-len(charges) and r['reserve']==84000 and r['reserve_used']==0,candidate_bytes=all(q['payload_bits']==frozen[str(q['index'])] for q in candidate_charges),candidate_only_after_safe_baseline=not candidate_charges or r['arms'][0]['stop']=='OFFICIAL_FINISH' and r['arms'][0]['official_finish_raw']==683 and r['arms'][0]['initial_identity'],no_combined_promotion=not r['combined_promotion'] and not r['general_policy_promotion'] and not r['incumbents_changed'] and not read(G/'retry/carry592_result.json')['combined_source_gate'],protected_zero=all(r[k]==0 for k in ['carry_actions','new_conditions','HOLDOUT','SEALED','new_profiles','new_FD','new_solver','paid_compute']),main_unchanged=subprocess.check_output(['git','rev-parse','main'],cwd=G,text=True).strip()=='dfb7a2de2178825ca5c5ce20bab01ba67052ba31')
+ if normal:
+  checks.update(geometry_roots_posts_native=get('geometry')==get('model_completed')-4*get('actions')+r['planner_cost']['forecast_calls']+get('fixed_tape_certificates')+get('raw_completed'),full_force_groups=get('external_force')==4*(get('model_attempted')+get('native_oracle_groups')),internal_four_each_tick=get('internal_force')==4*get('model_completed'),actual_native_wheel=get('native_wheel_observed')==get('native_wheel_reserved')==4*get('raw_completed'),actual_safe_or_first_failure_stopped=(actual_safe and clip_safe) or bool(native and native[-1]['errors'] and any(a['label']==native[-1]['label'] and a['stop']=='ACTUAL_SAFETY_FAILURE' for a in r['arms'])),actual_histories_match=all(armgroups[a['label']]==a['force_groups'] for a in r['arms']))
+ else:checks['partial_call_bounds']=get('external_force')<=4*(get('model_attempted')+get('native_oracle_groups')+1) and get('internal_force')<=4*(get('model_tick_attempts')+1) and get('native_wheel_observed')<=get('native_wheel_reserved')
+ for a in r['arms']:
+  for g,v in a['force_groups'].items():
+   if g=='launch' and v['samples']>=384:checks['launch_clip_'+a['label']]=v['clipped']/v['samples']<=.15
+ out=dict(study=594,status=r['status'],checks=checks,normal_complete_call_groups=normal,event_kind_counts=dict(kinds),event_counts_by_label={k:dict(v) for k,v in bylabel.items()},raw_flags=dict(raw_flags),maximum_actual_running_prefix_clip_fraction=dict(running_prefix_max),all_actual_records_safe=actual_safe and clip_safe,candidate_attempted_actions=len(candidate_charges),candidate_last_action=candidate_charges[-1]['index'] if candidate_charges else None,completed_native_raw=len(native),native_drive_raw=sum(q['phase']=='action' for q in native),native_reset_raw=sum(q['phase']=='reset' for q in native),no_new_source_or_native_or_force_or_geometry_calls=True,input_sha256=dict(result=sha(G/'retry/cold594_result.json'),contract=sha(G/'retry/cold594_contract.json'),private_journal=sha(D/'journal-private.jsonl'),audit_code=sha(Path(__file__))))
+ out['read_only_CPU_s']=time.process_time()-CPU;out['read_only_wall_s']=time.perf_counter()-WALL;out['auxiliary_CPU_wall_charge_s']=2.;out['aggregate_time']={k:v+out['read_only_CPU_s']+2 if 'CPU' in k and not k.startswith('science') else v+out['read_only_wall_s']+2 if 'wall' in k and not k.startswith('science') else v for k,v in r['time'].items()};checks['all_caps']=all(get(k)<=cap for k,cap in c['caps'].items() if k in ['model_attempted','model_completed','external_force','internal_force','geometry','actions','raw_attempts','native_wheel_reserved','worlds','resets']) and get('external_force')+get('internal_force')<=850000 and get('native_wheel_observed')<=9800 and all(out['aggregate_time'][k]<cap for k,cap in dict(science_CPU_s=3000,science_wall_s=3300,preparation_audit_CPU_s=120,preparation_audit_wall_s=180,total_CPU_s=3120,total_wall_s=3480).items())
+ with (G/'retry/cold594_audit.json').open('x') as f:json.dump(out,f,indent=2)
+ assert all(checks.values()),[k for k,v in checks.items() if not v];print(json.dumps(out,indent=2))
+if __name__=='__main__':run()

@@ -1,0 +1,46 @@
+{
+  "study": 594,
+  "actual_attempted_actions": 39,
+  "actual_completed_drive_raw": 156,
+  "actual_next_hold_not_executed": 40,
+  "last_actual_episode_s": 3.119999999999999,
+  "rejection": {
+    "reason": "GEOMETRY_PATH_PROJECTION",
+    "forecast_start_hold": 40,
+    "forecast_ticks": 48,
+    "forecast_command_indices": [
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "derived_failing_forecast_global_raw": 204,
+    "forecast_minimum_footprint_m": 0.5128995910765006,
+    "footprint_threshold_m": 0.5,
+    "footprint_violation_excluded": true,
+    "forecast_tracking_peak": 1.0588225427267013,
+    "forecast_tracking_history": [
+      29,
+      432
+    ],
+    "actual_tracking_history": [
+      15,
+      240
+    ]
+  },
+  "interpretation": "Combinedreasonandregisteredcode imply patherror>3 OR projectiondelta outside[-.5,max(5,2*COMstepdistance)]. Exactdistance/delta were not retained in rejection summary. No new physics/geometry/replay is used to disambiguate. This is a forecast admission failure,not an observedactualphysicalfailure or nativefinish measurement.",
+  "source0_only": true,
+  "new_source_ticks": 0,
+  "new_force_calls": 0,
+  "new_geometry_queries": 0,
+  "new_native_calls": 0,
+  "private_rejection_sha256": "c4ba5480d3be5bb319cfbaf301c2d648e0fea8a720c8d6cb5bc617f87e9df09c"
+}

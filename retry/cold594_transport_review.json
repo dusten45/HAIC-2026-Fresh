@@ -1,0 +1,112 @@
+{
+  "study": 594,
+  "event": "MONITORING_TRANSPORT_DISCONNECT_AND_READ_ONLY_RECOVERY",
+  "observed_utc": "2026-10-19T07:59:14.550122+00:00",
+  "parent_disconnect_notice_utc": "2026-10-19 07:57 UTC (minute precision from parent)",
+  "exec_tool_error": "exec-server transport disconnected",
+  "existing_process_ids": [
+    34847
+  ],
+  "same_native_started_contract_sha256": "09227d05be56d876fc6272f4f6b9d4d7a43e1e1d8d5a6b97bb6a8127b9a6903b",
+  "current_contract_sha256": "09227d05be56d876fc6272f4f6b9d4d7a43e1e1d8d5a6b97bb6a8127b9a6903b",
+  "last_completed_hold_snapshot": {
+    "label": "baseline",
+    "actions": 75,
+    "drive_raw": 300,
+    "progress": 383.5753451058894,
+    "counts": {
+      "worlds": 1,
+      "resets": 1,
+      "raw_attempts": 351,
+      "native_wheel_reserved": 1404,
+      "native_wheel_observed": 1404,
+      "raw_completed": 351,
+      "geometry": 35707,
+      "model_attempted": 34640,
+      "external_force": 139760,
+      "model_tick_attempts": 34018,
+      "internal_force": 136072,
+      "model_completed": 34018,
+      "actions": 75,
+      "native_oracle_groups": 300
+    },
+    "time": {
+      "science_CPU_s": 537.743927917,
+      "science_wall_s": 572.6153223510046,
+      "preparation_audit_CPU_s": 15.702617830000008,
+      "preparation_audit_wall_s": 14.948327067002538,
+      "total_CPU_s": 553.446545747,
+      "total_wall_s": 587.5636494180071
+    }
+  },
+  "experiment_failure_file_present": false,
+  "new_run_or_world_or_science_call_issued_for_recovery": false,
+  "snapshot_is_lower_bound_not_final": true,
+  "science_not_restarted": true,
+  "files_transferred_to_other_task": false,
+  "existing_session_stdin_interrupt_attempted": true,
+  "process_still_alive_after_session_control": true,
+  "no_explicit_os_kill_or_new_trial_issued": true,
+  "original_command_session_returned_exit_code": 130,
+  "native_process_still_alive_after_session_exit": 34847,
+  "session_control_delivery_semantics": "Existing-session control character was sent during disconnect; later command session returned130, while original native PythonPID34847 remained alive. No OS kill API or replacement execution used.",
+  "post_session_exit_snapshot": {
+    "label": "baseline",
+    "actions": 83,
+    "drive_raw": 332,
+    "progress": 441.0858798633429,
+    "counts": {
+      "worlds": 1,
+      "resets": 1,
+      "raw_attempts": 383,
+      "native_wheel_reserved": 1532,
+      "native_wheel_observed": 1532,
+      "raw_completed": 383,
+      "geometry": 38237,
+      "model_attempted": 37098,
+      "external_force": 149720,
+      "model_tick_attempts": 36445,
+      "internal_force": 145780,
+      "model_completed": 36445,
+      "actions": 83,
+      "native_oracle_groups": 332
+    },
+    "time": {
+      "science_CPU_s": 598.968476873,
+      "science_wall_s": 636.8595283549948,
+      "preparation_audit_CPU_s": 15.702617830000008,
+      "preparation_audit_wall_s": 14.948327087011421,
+      "total_CPU_s": 614.671094703,
+      "total_wall_s": 651.8078554420063
+    }
+  },
+  "post_session_exit_observed_utc": "2026-10-19T08:00:29.545908+00:00",
+  "final_recovered_utc": "2026-10-19T08:16:29.752510+00:00",
+  "final_result_status": "CANDIDATE_CERTIFICATE_REJECTED",
+  "final_result_sha256": "9987b6daf5b95e7c51e3702ce3c6ce8ba5efb13dc63064f3913207d2c6d71a73",
+  "final_journal_chain": {
+    "events": 286804,
+    "head": "528078602c6fbdbc0e2ad3436b6c09a121cb0a0438a197fe2ae5a3e6e3b2e60c",
+    "kinds": {
+      "WORLD_RESERVE": 2,
+      "WORLD_CHARGED": 2,
+      "RESET_CHARGED": 2,
+      "BEFORE_NATIVE_RAW": 941,
+      "AFTER_NATIVE_RAW": 941,
+      "HOLD_RESERVE": 211,
+      "BEFORE_MODEL_FORCE": 71538,
+      "MODEL_FORCE_VERDICT": 71538,
+      "BEFORE_MODEL_TICK": 70184,
+      "AFTER_MODEL_TICK": 70184,
+      "ACTION_CHARGED": 210,
+      "BEFORE_NATIVE_ORACLE": 839,
+      "ACTION_COMPLETED": 210,
+      "WORLD_CLOSED": 2
+    },
+    "valid": true
+  },
+  "final_worlds_closed": 2,
+  "final_research_remaining": 22548,
+  "native_PID_exists_after_completion": false,
+  "final_state_and_cost_recovered_without_restart": true
+}

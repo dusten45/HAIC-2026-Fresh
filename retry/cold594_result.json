@@ -1,0 +1,228 @@
+{
+  "pure_tests": {
+    "count": 9,
+    "passed": true,
+    "world_free_regression_before_registration": true,
+    "tests_sha256": "c6b62a99c1afff7c655f9746d07f15bb156f574215016ca09ee941908ed13e43"
+  },
+  "preflight": {
+    "cold_661raw_166commands_exact": true,
+    "cold_journal_chain_exact": true,
+    "cold_input_source_pins": true,
+    "baseline_case_paths_pins": true,
+    "carry_combined_closed": true,
+    "cold_source_ticks": 0
+  },
+  "study": 594,
+  "status": "CANDIDATE_CERTIFICATE_REJECTED",
+  "error": null,
+  "arms": [
+    {
+      "label": "baseline",
+      "stop": "OFFICIAL_FINISH",
+      "error": null,
+      "initial_identity": true,
+      "official_finish_raw": 683,
+      "official_finish_episode_s": 13.659999999999776,
+      "confirmation_episode_s": 13.659999999999776,
+      "counts": {
+        "worlds": 1,
+        "resets": 1,
+        "raw_attempts": 734,
+        "native_wheel_reserved": 2936,
+        "native_wheel_observed": 2936,
+        "raw_completed": 734,
+        "geometry": 71433,
+        "model_attempted": 69462,
+        "external_force": 280580,
+        "model_tick_attempts": 68108,
+        "internal_force": 272432,
+        "model_completed": 68108,
+        "actions": 171,
+        "native_oracle_groups": 683,
+        "closed": 1
+      },
+      "cleanup": {
+        "body": 0,
+        "joint": 0
+      },
+      "mode_counts": {
+        "SOURCE_LAUNCH": 24,
+        "SOURCE_RESPONSE": 72,
+        "BACKUP": 10,
+        "SOURCE_FULL": 64,
+        "NOMINAL": 1
+      },
+      "force_groups": {
+        "launch": {
+          "peak": 2.403901738164386,
+          "samples": 384,
+          "clipped": 55
+        },
+        "running": {
+          "peak": 1.0588991224139637,
+          "samples": 2348,
+          "clipped": 65
+        }
+      },
+      "minimum_margin_m": 0.5271545833699623,
+      "maximum_body_speed_m_s": 95.75630529539026,
+      "maximum_path_error_m": 1.5093407620851094,
+      "maximum_reference_excess_m_s": 4.848802621239244,
+      "force_oracle_max_N": 0.00031449383200822767,
+      "COM_impulse_max_m_s": 2.4549949150689192e-05,
+      "reference_arc_diagnostic": {
+        "lower": 13.639999999999777,
+        "upper": 13.659999999999776,
+        "time": 13.648734120507738
+      },
+      "flags": [],
+      "CPU_s": 1297.13395056,
+      "wall_s": 1374.4315152909985,
+      "max_prediction_errors": {
+        "position_m": 4.022107951640826e-05,
+        "speed_m_s": 0.00011010291106572367,
+        "angle_rad": 2.848674186778366e-05,
+        "yaw_rad_s": 0.00024356089978994078,
+        "max_force_ratio_error": 0.0001790663416635363
+      }
+    },
+    {
+      "label": "candidate",
+      "stop": "CERTIFICATE_REJECTED",
+      "error": "CertificateStop:CANDIDATE_GEOMETRY_PATH_PROJECTION",
+      "initial_identity": true,
+      "official_finish_raw": null,
+      "official_finish_episode_s": null,
+      "confirmation_episode_s": 3.119999999999999,
+      "counts": {
+        "worlds": 1,
+        "resets": 1,
+        "raw_attempts": 207,
+        "native_wheel_reserved": 828,
+        "native_wheel_observed": 828,
+        "raw_completed": 207,
+        "geometry": 2167,
+        "model_attempted": 2076,
+        "external_force": 8928,
+        "model_tick_attempts": 2076,
+        "internal_force": 8304,
+        "model_completed": 2076,
+        "fixed_tape_certificates": 40,
+        "actions": 39,
+        "native_oracle_groups": 156,
+        "closed": 1
+      },
+      "cleanup": {
+        "body": 0,
+        "joint": 0
+      },
+      "mode_counts": {
+        "FIXED_FUTURE_TAPE": 39
+      },
+      "force_groups": {
+        "launch": {
+          "peak": 2.403901738164386,
+          "samples": 384,
+          "clipped": 55
+        },
+        "running": {
+          "peak": 1.0587667318976204,
+          "samples": 240,
+          "clipped": 15
+        }
+      },
+      "minimum_margin_m": 0.9530290384928397,
+      "maximum_body_speed_m_s": 83.54801795234239,
+      "maximum_path_error_m": 1.6067469419429137,
+      "maximum_reference_excess_m_s": 4.59644607370592,
+      "force_oracle_max_N": 0.00018848715014569767,
+      "COM_impulse_max_m_s": 1.7251606315691665e-05,
+      "reference_arc_diagnostic": null,
+      "flags": [],
+      "CPU_s": 29.891217767999933,
+      "wall_s": 32.52716661099112,
+      "max_prediction_errors": {
+        "position_m": 3.687608190912076e-05,
+        "speed_m_s": 6.26464356301426e-05,
+        "angle_rad": 3.202668793791941e-05,
+        "yaw_rad_s": 0.0002647025319046925,
+        "max_force_ratio_error": 0.00022042490087792466
+      }
+    }
+  ],
+  "cost": {
+    "worlds": 2,
+    "resets": 2,
+    "raw_attempts": 941,
+    "native_wheel_reserved": 3764,
+    "native_wheel_observed": 3764,
+    "raw_completed": 941,
+    "geometry": 73600,
+    "model_attempted": 71538,
+    "external_force": 289508,
+    "model_tick_attempts": 70184,
+    "internal_force": 280736,
+    "model_completed": 70184,
+    "actions": 210,
+    "native_oracle_groups": 839,
+    "closed": 2,
+    "fixed_tape_certificates": 40
+  },
+  "time": {
+    "science_CPU_s": 1327.024302633,
+    "science_wall_s": 1406.9576137980184,
+    "preparation_audit_CPU_s": 19.27944189300024,
+    "preparation_audit_wall_s": 18.529120979990694,
+    "total_CPU_s": 1346.3037445260002,
+    "total_wall_s": 1425.4867347780091
+  },
+  "journal": {
+    "events": 286804,
+    "head": "528078602c6fbdbc0e2ad3436b6c09a121cb0a0438a197fe2ae5a3e6e3b2e60c",
+    "kinds": {
+      "WORLD_RESERVE": 2,
+      "WORLD_CHARGED": 2,
+      "RESET_CHARGED": 2,
+      "BEFORE_NATIVE_RAW": 941,
+      "AFTER_NATIVE_RAW": 941,
+      "HOLD_RESERVE": 211,
+      "BEFORE_MODEL_FORCE": 71538,
+      "MODEL_FORCE_VERDICT": 71538,
+      "BEFORE_MODEL_TICK": 70184,
+      "AFTER_MODEL_TICK": 70184,
+      "ACTION_CHARGED": 210,
+      "BEFORE_NATIVE_ORACLE": 839,
+      "ACTION_COMPLETED": 210,
+      "WORLD_CLOSED": 2
+    },
+    "valid": true
+  },
+  "planner_cost": {
+    "force_evaluations": 275112,
+    "forecast_calls": 3275,
+    "forecast_ticks": 67424,
+    "geometry_checks": 70699,
+    "analytic_wheel_bounds": 96,
+    "launch_full_calls": 139,
+    "launch_filter_calls": 443
+  },
+  "cold_native_gain_raw": null,
+  "cold_native_gain_s": null,
+  "research_remaining": 22548,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "combined_promotion": false,
+  "general_policy_promotion": false,
+  "incumbents_changed": false,
+  "carry_actions": 0,
+  "new_conditions": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "new_profiles": 0,
+  "new_FD": 0,
+  "new_solver": 0,
+  "paid_compute": 0,
+  "source_cold_s": 13.2,
+  "prior_actual_cold_s": 13.66
+}

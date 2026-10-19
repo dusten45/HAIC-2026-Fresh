@@ -1,0 +1,50 @@
+{
+  "study": 594,
+  "scope": "Approved serialization recovery only; registration/test orchestration/newpaths differ. Original593unchanged.",
+  "policy_physics_safety_meter_reservations_unchanged": true,
+  "identical_methods": [
+    "__init__",
+    "short",
+    "hash",
+    "times",
+    "guard",
+    "add",
+    "capacity",
+    "reserve_hold",
+    "pins",
+    "model_force",
+    "model_tick",
+    "kernel",
+    "source_geometry",
+    "install_meters",
+    "restore",
+    "world_reserve"
+  ],
+  "arm_only_serialization_change": true,
+  "certificate_reused_unchanged": true,
+  "certificate_sha256": "bbce5fcbb7c9beb851dc3e5183896a4b4dbd62b71033a9d904a54058af0edbe4",
+  "old_runner_sha256": "f2e91b5358a2b08081093e2614902c6376387cd1c9a7dd355958c10431eb7564",
+  "new_runner_sha256": "6d846edd07aa8de355bc8f341c90238212f86d58fcf56422b6fedfc80a134465",
+  "tests_sha256": "c6b62a99c1afff7c655f9746d07f15bb156f574215016ca09ee941908ed13e43",
+  "prior593_preserved": {
+    "status": "BASELINE_TECHNICAL_FAILURE_CANDIDATE_NOT_STARTED",
+    "cost": {
+      "worlds": 1,
+      "resets": 1,
+      "raw_attempts": 1,
+      "native_wheel_reserved": 4,
+      "closed": 1
+    },
+    "aggregate_time": {
+      "science_CPU_s": 0.013936423999999725,
+      "science_wall_s": 0.015443958996911533,
+      "preparation_audit_CPU_s": 18.740957169,
+      "preparation_audit_wall_s": 17.578320447020815,
+      "total_CPU_s": 18.754893593000002,
+      "total_wall_s": 17.593764406017726
+    },
+    "research_remaining": 22758,
+    "not_refunded_or_relabelled": true
+  },
+  "new_source_or_native_calls": 0
+}
