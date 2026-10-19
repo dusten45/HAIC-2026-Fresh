@@ -1,0 +1,66 @@
+{
+  "study": 604,
+  "status": "READ_ONLY_AUDIT_PASS_TECHNICAL_STOP_PRESERVED",
+  "checks": {
+    "as_executed_sources_frozen": true,
+    "contract_pinned": true,
+    "result_closed_hash": true,
+    "private_evidence_pinned": true,
+    "exact_expected_technical_stop": true,
+    "durable_journal_chain_valid": true,
+    "156applied_no_forecast_ticks": true,
+    "all156fullrows_exact597": true,
+    "all156strict_safe": true,
+    "raw96_full_checkpoint_exact597": true,
+    "final_raw156_full_checkpoint_exact597": true,
+    "hold40_no_policy_primitive_dispatch": true,
+    "no_nonzero_candidate_or_replay_started": true,
+    "no_repeated_prefix": true,
+    "helper157comparisons_exact": true,
+    "force_and_model_accounting": true,
+    "all_work_caps": true,
+    "zero_not_completed": true,
+    "zero_forbidden_work": true,
+    "ledger_unchanged": true,
+    "no_lap_native_or_general_promotion": true,
+    "time_caps_with30_45cleanup_reserve": true
+  },
+  "journal_events": {
+    "HOLD_RESERVE": 40,
+    "APPLIED_INPUT": 156,
+    "BEFORE_FORCE": 156,
+    "FORCE_VERDICT": 156,
+    "APPLIED_TICK_START": 156,
+    "APPLIED_TICK_END": 156,
+    "APPLIED_RESULT": 156,
+    "STUDY_END": 1
+  },
+  "journal_head": "691ee6d7a487f860086273a95cf3e8f550c4af2555e029154cc623766b78737e",
+  "actual_progress": {
+    "prefix_raw": 96,
+    "zero_additional_raw": 60,
+    "final_global_raw": 156,
+    "zero_status": "PARTIALLY_EXECUTED_TECHNICAL_STOP",
+    "nonzero_policies_started": 0,
+    "full_s400_evaluations_completed": 0,
+    "actual537choose_invocations": 0,
+    "pre_dispatch_choose_intent_counter": 1,
+    "explanation": "chooser_calls increment precedes evaluation of missing geometry_context argument; original537function is never invoked. Frozen result uncompleted list denotes no completed result, not zero unstarted."
+  },
+  "audit_time": {
+    "CPU_s": 0.15885792199999998,
+    "wall_s": 0.1588580469979206
+  },
+  "total_through_audit": {
+    "CPU_s": 14.356800726,
+    "wall_s": 14.013030337999226
+  },
+  "fix_patch_applied": false,
+  "retry_executed": false,
+  "result_sha256": "8b0e6833c4c4a66f8ed333468bebcc8cd851fde8ef499c7e498ca6cab82af3f8",
+  "source": 0,
+  "model": 0,
+  "force": 0,
+  "geometry": 0,
+  "native": 0
+}

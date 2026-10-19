@@ -1,0 +1,11 @@
+diff --git a/retry/residual604.py b/retry/residual604.py
+--- a/retry/residual604.py
++++ b/retry/residual604.py
+@@ -75,6 +75,7 @@ class Study(prior.Meter):
+         super().__init__(static, {})
+         self.index = self.source_index; self.edge = self.source_edges
+         self.paths = json.loads(base.old.INPUTS['candidate_paths'].read_text())
++        self.geometry_context = base.old.tracking.geometry_context(self.static, CAPS['geometry'])
+         self.ledger = json.loads(base.old.INPUTS['ledger'].read_text())
+         self.applied_journal = Journal(D / 'applied-journal-private.jsonl')
+         self.state = None; self.results = []; self.prefix_rows = []; self.records = {}

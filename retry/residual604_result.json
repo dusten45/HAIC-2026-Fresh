@@ -1,0 +1,135 @@
+{
+  "study": 604,
+  "status": "TECHNICAL_OR_POSITIVE_CONTROL_STOP",
+  "error": "AttributeError:'Study' object has no attribute 'geometry_context'",
+  "checks": {
+    "raw96_initial_prefix_all_rows_and_full_checkpoint_exact597": true
+  },
+  "candidates": [],
+  "uncompleted": [
+    {
+      "label": "zero",
+      "status": "NOT_EXECUTED_AFTER_GLOBAL_STOP"
+    },
+    {
+      "label": "H0",
+      "status": "NOT_EXECUTED_AFTER_GLOBAL_STOP"
+    },
+    {
+      "label": "H1",
+      "status": "NOT_EXECUTED_AFTER_GLOBAL_STOP"
+    },
+    {
+      "label": "H2",
+      "status": "NOT_EXECUTED_AFTER_GLOBAL_STOP"
+    },
+    {
+      "label": "H3",
+      "status": "NOT_EXECUTED_AFTER_GLOBAL_STOP"
+    },
+    {
+      "label": "H4",
+      "status": "NOT_EXECUTED_AFTER_GLOBAL_STOP"
+    },
+    {
+      "label": "H5",
+      "status": "NOT_EXECUTED_AFTER_GLOBAL_STOP"
+    },
+    {
+      "label": "H6",
+      "status": "NOT_EXECUTED_AFTER_GLOBAL_STOP"
+    },
+    {
+      "label": "H7",
+      "status": "NOT_EXECUTED_AFTER_GLOBAL_STOP"
+    }
+  ],
+  "best_evaluated_label": null,
+  "replay": null,
+  "cost": {
+    "geometry": 655,
+    "geometry_initial_projection": 1,
+    "geometry_source_footprint": 157,
+    "helper_original_comparisons": 157,
+    "model_attempted": 156,
+    "external_force": 624,
+    "total_force": 1248,
+    "model_tick_attempts": 156,
+    "internal_force": 624,
+    "model_completed": 156,
+    "geometry_native_or_initial": 156,
+    "chooser_calls": 1
+  },
+  "time": {
+    "CPU_s": 14.193437657,
+    "wall_s": 13.849126985995099
+  },
+  "kernel_hardcap": 200000,
+  "model_counter": 156,
+  "native": 0,
+  "worlds": 0,
+  "resets": 0,
+  "actions": 0,
+  "new_seed": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "carry": 0,
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "native_incumbent_s": 13.22,
+  "whole_lap_claim": false,
+  "native_admission": false,
+  "general_promotion": false,
+  "contract_sha256": "214f63f13b54ac356b034e84132e3ab8cc7aa06a521fd2bf655ff18e2072d3bf",
+  "private_sha256": {
+    "zero-hold-031-private.json": "f6868453695a3297a40760a32911253904e8c34a06c1b69e49f8f66bac2c4197",
+    "prefix-hold-022-private.json": "7923d831a5ace265136deb6ab82b7f9096339610eb8e43a165c054bfbc81d92f",
+    "raw96-checkpoint-private.json": "136a068d241bda3cbdd6379472f8cd5a759fed00f4bee07ac531c268dd83df6f",
+    "zero-hold-029-private.json": "f3ac14219eca343c2036431ee78ac3acb8fbf53f5f545edcc795fbe0e50285af",
+    "prefix-hold-011-private.json": "58384b3d00613cd44a6ca83098b66dba55e41dd51fd26b8df3aa82b6c08357d2",
+    "prefix-hold-013-private.json": "24c2331fa49c89179ffa820382bd42048d134133f12e19e7ed7a801ff26e2d4a",
+    "prefix-hold-017-private.json": "6d78aa93da51ac372d553bf26eedb74f2302b59b7b2ff8ad9b4470c45885e183",
+    "zero-hold-040-private.json": "0c12d9edfc65109dbc4997333fceca1531b00e86c74661e109ffab3b590ee339",
+    "prefix-hold-018-private.json": "9d122685338cf6c3f4c83c0c438f9743d3117f608d37f84eff1ca2574f8e64fa",
+    "prefix-hold-003-private.json": "63b30589ce374d115edb0ddced232c5ba7f27211db1ad7f7b16113ea600dcdb4",
+    "error-private.json": "cea4839f05f75fa99ba0c87a82cf497f9af53170a0c55baf14c1699061a0da0d",
+    "zero-hold-038-private.json": "7309b4a32ccc73e95b16198a756171d14664dd649aff2421e9f767696f608a26",
+    "prefix-hold-024-private.json": "66549e17289ac0acd025f4091f3bf51d77b41d97777099c81ca3a93f23e0413f",
+    "prefix-hold-019-private.json": "3e541f12d3c4fad3023a8a42a177698f7f390fabc195a204a745e3889dc5e77b",
+    "zero-hold-035-private.json": "a2cfdce718824a2b08a1dc89189faf8fb94b945085503c686cbb1cd228c058a9",
+    "zero-STARTED-private.json": "d4c2cfac4fbb6dafa0b014fecd8258dd757b6d6c5984a2fe143182fdbc8adce1",
+    "zero-hold-025-private.json": "070a3b21c3c786456eb6ebb12b666979e24b542a237b9444f7e2aab18badf7de",
+    "prefix-hold-010-private.json": "6f004730c2fd5df2033f75e008803b0080b107dcc5f395ddeb61748bd9cfc128",
+    "prefix-hold-020-private.json": "813876b833dff6d5a969b7df51be93ebb13f82bc25850679bfd09d5f453d21dd",
+    "zero-hold-036-private.json": "f0d4397867bd55c6dea2dc17461789d0c3161464006b4107e55f502362f1d4cb",
+    "zero-hold-039-private.json": "7505b042e29d6cec3c20c1db893781600fffc512a10efbbbbe6c400854ee2301",
+    "fixed-planes-private.json": "a054d162155a20ddf99379fceb8ba417fba4d6c2fd623c9ce57876640d4efe44",
+    "zero-hold-026-private.json": "3dc64da256170e1cc1aaada8841979086ace5c4fc4c273b4cc3a3cf73e2d64ba",
+    "prefix-hold-014-private.json": "bb002c161263b8ca45ee76a38008e01157ab3093b428fcab3948493a5249a33c",
+    "prefix-hold-016-private.json": "f074a6b48dbe0122f0c0eef3deeba8d723171870b2a1b281b96b54823b819f4d",
+    "zero-hold-032-private.json": "845cc2e0ea549d9af81525eaf0738d8a9af12cb19cfe226e0ccdbe0fbe932a24",
+    "zero-latest-private.json": "78a7ffabda8a26aa84c239009faac18b14e1a0876ea4da8e2d4af6e6da702be2",
+    "prefix-hold-012-private.json": "4115595446765b335fd16440be5476e13eef0a0b9475a79e76decdc13a1be992",
+    "prefix-hold-006-private.json": "b035f2749c495b13eb05009ddf94eae1ff5e870eba11ab446a0fbd77a7e92509",
+    "zero-hold-030-private.json": "023c5f20b7885f33a8f58d5c87258a363d43e5cc5360b9cd39ac2dd71b436597",
+    "prefix-hold-002-private.json": "b653e2cd243dbddf4f3ba677e62d82f3c47e538613e5818a7740ae79d9ae1136",
+    "zero-hold-027-private.json": "61758ea1285691bb3108c03f8c3aaf4c57f9587f8d104964ca97293e5931116f",
+    "final-checkpoint-private.json": "b56ef29ed85c222fb3e87fdd259275daee423419eca9f4ca63daf2bb52e627e5",
+    "prefix-hold-005-private.json": "fed1913695ccf1f0d8e0fd1ab70fed331789ec39e0ddd8f73e64dde73a5c262e",
+    "prefix-hold-023-private.json": "748f40040056b4e9bdef08b260462f1e16da52dea5cd5e27b5af5a901a140ae0",
+    "prefix-hold-021-private.json": "897fdf2d3f01a6abd3412614b8a73c88780ece75741361d9fc50cef4ac6d7d03",
+    "prefix-hold-007-private.json": "1d94d506f1087b1a2f382ed47a66d445015dbf3c6af2868f46810d643ebc9b66",
+    "prefix-hold-008-private.json": "7296ae650f71b06c050496267c568644542a3959ce9cbf0ed08a72a7b1eee6b6",
+    "zero-hold-033-private.json": "2cb7c26ccb3d96efbe2666a41737f440d5e11fad09234315a0fc44fc1d344ab6",
+    "REGISTERED-private.json": "77c8d9f6465347df0742622ec5cc8ccaae02460afa8aca60ce996c454890242d",
+    "prefix-hold-015-private.json": "f543cdcbebe3e5c083b1e7114b6722d956f10aa83a0b0d0beba5f63b3a3b4f0c",
+    "applied-journal-private.jsonl": "037151a9a966bad6fc5cecdfc8da6acbb4e6188f344d4a959228fb4dc64189b9",
+    "prefix-hold-004-private.json": "77fbda8bb0047759e2ec270032b0a41d7b69c173a5f25404007b9730ca2bf0c4",
+    "zero-hold-037-private.json": "3ba59469c3b88516cf74ea4711118b71d42989010c32506435cf235e830e6c7d",
+    "zero-hold-028-private.json": "8a8d9899be7fdf98502945ace9eb0ecef6c200f0e9601ab9fca6a668ca34e082",
+    "zero-hold-034-private.json": "9b18d6906bb04591bab879d550ae8d5ae3bd1cfabf3f4d843d097a3fb4654932",
+    "prefix-hold-009-private.json": "dee9d2365a52826db96993b974725a4fbdae0609a2227290267e51d61dfa3c18",
+    "prefix-hold-001-private.json": "eb7addc79a81f60145012c393e6fafbcf70cb38e8b5cb97928d2312e10866e3e"
+  }
+}

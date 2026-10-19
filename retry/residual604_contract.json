@@ -1,0 +1,200 @@
+{
+  "study": 604,
+  "status": "FROZEN_BEFORE_TESTS_OR_SOURCE",
+  "registered_utc": "2026-10-19T11:51:57.869195+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "source_sha256": {
+    "retry/residual604.py": "f460316a6db96abc880c28c47b1af93b3bc2eefac8f73245c13d6aef53b4b0fe",
+    "retry/residual604_math.py": "9e852341758270b8622596569d7347c0566f540a1de6b3750206641d93e38a22",
+    "retry/reuse601.py": "d637dee060a5f041eff0724fc111ffd89c0324d2e62d9f323a221cc1752470fc",
+    "retry/segments602.py": "6d5dbe2795f936892d39a03535657657ff6f03cb2698f17c5e5fc642d3228e02",
+    "retry/scalar603.c": "6175f46c3c2bd3906f49f1b73ef42598f34912291597c1bb0af328160c19ec35",
+    "retry/timing600.py": "9910a29606b4f61fdbe4212d31dc1661813f485d25d7c91b393f75a036ec22ea",
+    "retry/profile601.py": "6822569c2576279bb6a7d59c5260a2134a0d5f35c912a4c1f11f511d511819b3",
+    "retry/cold598_support.py": "7b0517303110a83e369c950b97d7ba8b649fcdb607249c5ff19325dc4a9b87d9"
+  },
+  "source597_contract_sha256": "c88314a4a652a96a8d061a2d8dbc572ee285677da618dc84424d93176776647e",
+  "source603_contract_sha256": "2dca472012ad4ab52e826f401379ee6d1e022d17a9bb30717d345f206f0348c3",
+  "binary_sha256": "dc97aff751da9e3cc35d83f66c2718efb19481e1ecf65968dcca6a8a2ce929eb",
+  "input_sha256": {
+    "static": "e3a36640efba4a2abdf6b02bac6d90e12f97a81ac73ebd7dafc98b7551e1ab3f",
+    "paths": "a013d2b40cae8c29f53da5405ca51de3e0fb7a74da5ddbfb3d4f4360566f89ef",
+    "ledger": "28ff0ff7ffec9784e4817b4b55500c40ecd3730e9d09977294ad1dfd9b70763f",
+    "source597_tape": "f9782353974f2b60fff133704203ed9f6e3f4c78bc8086855c27cdf1e47e4a90",
+    "source597_choices": "6fc8e491cb32c23e9a439e0f0a7d4c2c6a9d69a0940355dad4865bb7f66ad012",
+    "fixed577": "bc432812cdd71702ec030edda72a9aa63ca79e61dceb1f970891a659f20cd5a6"
+  },
+  "caps": {
+    "model_attempted": 180000,
+    "model_completed": 180000,
+    "external_force": 720000,
+    "internal_force": 720000,
+    "total_force": 1440000,
+    "geometry": 600000
+  },
+  "time_caps": {
+    "CPU_s": 5400,
+    "wall_s": 6600,
+    "cleanup_CPU_s": 30,
+    "cleanup_wall_s": 45
+  },
+  "replay_reserve": {
+    "model_attempted": 1174,
+    "model_completed": 1174,
+    "external_force": 4696,
+    "internal_force": 4696,
+    "total_force": 9392,
+    "geometry": 7200
+  },
+  "replay_time_reserve": {
+    "CPU_s": 90,
+    "wall_s": 120
+  },
+  "hold_time_reserve": {
+    "CPU_s": 60,
+    "wall_s": 75
+  },
+  "hold_cost_reserve": {
+    "feedback_model": 1540,
+    "feedback_geometry": 6200,
+    "fixed_model": 4,
+    "fixed_geometry": 40
+  },
+  "kernel_hardcap": 200000,
+  "stronger_global_choose_cap": 180000,
+  "family": [
+    [
+      "zero",
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      "H0",
+      [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.025,
+        0.025
+      ]
+    ],
+    [
+      "H1",
+      [
+        -0.2,
+        0.2,
+        -0.2,
+        0.2,
+        -0.025,
+        0.025
+      ]
+    ],
+    [
+      "H2",
+      [
+        0.2,
+        -0.2,
+        -0.2,
+        0.2,
+        0.025,
+        -0.025
+      ]
+    ],
+    [
+      "H3",
+      [
+        -0.2,
+        -0.2,
+        0.2,
+        0.2,
+        -0.025,
+        -0.025
+      ]
+    ],
+    [
+      "H4",
+      [
+        0.2,
+        0.2,
+        0.2,
+        -0.2,
+        -0.025,
+        -0.025
+      ]
+    ],
+    [
+      "H5",
+      [
+        -0.2,
+        0.2,
+        -0.2,
+        -0.2,
+        0.025,
+        -0.025
+      ]
+    ],
+    [
+      "H6",
+      [
+        0.2,
+        -0.2,
+        -0.2,
+        -0.2,
+        -0.025,
+        0.025
+      ]
+    ],
+    [
+      "H7",
+      [
+        -0.2,
+        -0.2,
+        0.2,
+        -0.2,
+        0.025,
+        0.025
+      ]
+    ]
+  ],
+  "knots": [
+    80.0,
+    100.0,
+    130.0,
+    160.0,
+    190.0,
+    220.0
+  ],
+  "residual_spec": "Offset(current actual old551 progress) piecewise cubic smoothstep80/100/130/160/190/220,ends0,amplitude.20. Pedal two C1 smoothstep bumps80..140peak110 and140..220peak180,amplitude.025. Shift virtualPPtarget along left normal atlookahead station. Delta=shifted-targetPPfloat32 minus original-targetPPfloat32 on SAME state,addedtoincumbent. Saturate steering tofloat32(.4),netpedal[-1,1],castfloat32/exclusivegasbrake. Zero coefficients/outside80..220 short-circuit exactbytes; zero individual residual preserves corresponding original bytes.",
+  "incumbent": "Exact577fixedcommands1..39;40+unchanged537replansonACTUALcandidate root/progress/running history withalloriginal trials and freshFINAL. No action if incumbent returnsnone. FreshFINAL certifies original incumbent action with its backup witness,NOTmodified action/fullresidualfuture.",
+  "protocol": "NEW SOURCE-ONLY DIRECT APPLIED VALIDATION. Afteroriginalincumbentselection, residual-modifiedcommandsappliedWITHOUTfutureadmissioncertificate. Strictactual preforce1.059/clip.10 andpostfootprint.50/path3/reference4.85/body<100/projection[-.5,max(5,2COMstep)]/finitefullstate eachraw. Launch1..24unchangedforce2.5/clip.15by24 andnoreferenceveto. Control float32 domain unchanged. No native authorization or retroactive pass of old failures.",
+  "start": "Oneoriginalsourceinitial->raw96 strictreconstruction,allrows/fullcheckpoint against597includingvisited/tracker/clock/launch/tracking exact. Clone fullstate independently nineways; no actual598root. Zero first mustexactmatch597rawrowsandall537choices/reportstothefixeds400plane endpoint,otherwisewhole stop.",
+  "endpoint": "Frozenold551s200/300/400 worldplanes fromsame590leftsegment endpoint rule. FirstELIGIBLEforwardCOMchordcross (a<0<=b,postprogress within10m,patherror<=3) withENTIREcrossingholdsafe.200/300diagnosticsonly,no preparatory pruning. OriginalTimeLimit50+raw<=1224only hard horizon;missingendpoint atthatlimit is censored,notfamilynegative;unexpectedwholefinish stops beforeanycontinuation. Stopatfirsts400wholehold,neverwholelapresearch.",
+  "gain": "ComparecontinuouslinearCOMchordcross time withzero;record20msbefore/afterrawbracket/fraction/ULP. Anystrictpositivegain,NO100/500msgate. Selectbestevaluatedstrictsafes400 byearliesttime,fixedfamilyorderontie. AtmostONEindependentfrozencommandreplayfromoriginalinitial,fullrawrows/checkpoint/worldplanesexact;nocontrollerevaluationinreplay. Ifcostcensoredremaining candidatesor replaymarkedcensored,nocapexpansion.",
+  "helper": "Reusepinned603binary ONLYsegment/SAT/min,originalmath.hypot,601memo+602preparedcontext. FreshmemoPERHOLDcoverschooserandapplied4raw,geometryonlykey,immutablevalue/context. EVERYmemoMISSfullcompiledmargincomparedbitwisewithoriginalPythonroad+obstaclemargin;originalcomparisonisEXTRAchargedgeometrybeforecall. Firstmismatchwholetechnicalstop. Alllogicalmargin/projectionand3worldplanepacksandresidualproject/targetpackscharged;physicsbody/hull/contactinternalsincludedmodeltickpack.",
+  "reservation_derivation": "32cert*(49margin+48postprojection+44internalprojection)+6=4518;plus32*49originalmargincomparisons=1568;plus24appliedgeometry/planes+2residualpacks+2initialmargin=6114<6200. Feedback1536forecast+4appliedraw=1540. Replay1174*6+64<7200. Beforeeachholdreservefullhold+entirereplay+cleanup;forecast/rejected/FINAL/prefix/applied/replayallglobalcharged.",
+  "errors": "Ordinaryappliedstrictfailure,incumbentNO_SAFE,orfinitebodydomain>=100 stopTHATcandidateandcontinuefixednext;zero/prefixfailurestopsALL. Nonfinite,identity,numeric helper mismatch,unexpectedIO/technical=>ALLstop,noreplay. Budget/deadline=>current/unstartedcostcensored,attemptonlyreservedconditionalbestreplayifitstillfits. No retry/alteredamplitude/othercandidate.",
+  "recording": "Durablecompleteinputandreservebeforeeachappliedforce/tick;forecastinputdurablebeforehold,primitiveforecasttelemetrydeferredtoexclusiveperholdfilesasin603. No model/evaluatorvalueshidden;allwheelreturnsandmodelrootskeptprivateperhold. Currentcheckpointfsyncedafterhold. prior10CPU/wallprepchargeincluded.",
+  "scope": {
+    "native": 0,
+    "worlds": 0,
+    "resets": 0,
+    "actions": 0,
+    "new_seed": 0,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "carry": 0,
+    "FD": 0,
+    "solver": 0
+  },
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "parent_commit": "587a9ef9ec82d318593107edc1e21364745b07c9"
+}

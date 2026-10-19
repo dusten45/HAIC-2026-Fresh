@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "checks": [
+    "Hadamard8_columns2to7_fixed_order",
+    "amplitudes_and_smoothstep_knots",
+    "two_fixed_C1_midpoint_windows",
+    "zero_and_outside_preserve_all_float32_bytes",
+    "no_mutation_or_forecast_history",
+    "actuator_saturation_and_exclusive_pedals"
+  ],
+  "chooser": 0,
+  "model": 0,
+  "force": 0,
+  "geometry_evaluator": 0,
+  "clone_memo_checks": {
+    "passed": true,
+    "checks": [
+      "identical_geometry_reuses_exact_original_float",
+      "context_owned_and_nested_immutable_no_source_alias",
+      "signedzero_and_exact_float_bits_preserved",
+      "distinct_root_and_return_to_prior_trial_do_not_leak_result",
+      "fresh_call_has_separate_empty_cache_no_history_state",
+      "cache_contains_only_structural_keys_and_immutable_scalar_results",
+      "foreign_geometry_context_is_rejected",
+      "restore_clears_all_entries_and_restores_owner"
+    ],
+    "chooser": 0,
+    "geometry_evaluator": 0,
+    "model": 0,
+    "force": 0,
+    "native": 0
+  }
+}
