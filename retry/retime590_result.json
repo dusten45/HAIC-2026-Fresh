@@ -1,0 +1,316 @@
+{
+  "pure_tests": {
+    "tests": 6,
+    "passed": true,
+    "errors": 0,
+    "failures": 0
+  },
+  "association": {
+    "checks": {
+      "geometry_hash": true,
+      "original_same_points": true,
+      "node_counts_equal": true,
+      "oldstation_labels_exact": true,
+      "old_roadnormal_association": true,
+      "result589_hash": true,
+      "not_seed": true
+    },
+    "maximum_original_tangent_offset_m": 1.2927159342979166e-14,
+    "nodes": 283
+  },
+  "profile": {
+    "nominal_peak_wheel_force_ratio": 0.9990000000000001,
+    "body_mass_kg": 7.3019199669361115,
+    "longitudinal_effective_mass_kg": 29.249793766661764,
+    "axle_coefficients": [
+      1.7573527880591258,
+      1.7573527880591258,
+      1.89360719540893,
+      1.89360719540893
+    ],
+    "cap90": true,
+    "old_observed_curvature_used": false
+  },
+  "profile_sha256": "b8c975fa5eae12f6c09e70e7852ffa4ac3cad3952f86d5a85ece1e89de80a61f",
+  "positive": {
+    "raw": 304,
+    "all_full_rows_exact": true,
+    "raw96_complete_checkpoint_exact": true,
+    "end_complete_checkpoint_exact": true,
+    "checkpoint_reference": "Reconstructedfromfrozen577fullrows+ledgerinitialvisited,includingfullvisitedsetandbothhistories.",
+    "crossings": {
+      "200": {
+        "before_raw": 192,
+        "after_raw": 193,
+        "fraction": 0.5644340094399982,
+        "time_s": 3.851288680188803,
+        "COM_speed_m_s": 79.40600518474697,
+        "yaw_rad_s": -0.10704723566124785,
+        "hold": 49,
+        "eligible": true,
+        "whole_hold_safe": true,
+        "force_peak": 0.7718699616449404,
+        "tracking_clip_history": [
+          30,
+          388
+        ],
+        "margin_m": 2.2839568476616687,
+        "new_progress": 200.69399799018743,
+        "old_progress": 200.69399799018743,
+        "new_path_error": 2.511305320527968,
+        "old_path_error": 2.511305320527968,
+        "new_reference_excess": -0.41012099764452614,
+        "old_reference_excess": -0.41012099764452614,
+        "body_speed": 79.80944736291741
+      },
+      "300": {
+        "before_raw": 247,
+        "after_raw": 248,
+        "fraction": 0.3407620361534251,
+        "time_s": 4.946815240723051,
+        "COM_speed_m_s": 94.7040656958983,
+        "yaw_rad_s": -0.22674797780565348,
+        "hold": 62,
+        "eligible": true,
+        "whole_hold_safe": true,
+        "force_peak": 0.10837365372275679,
+        "tracking_clip_history": [
+          30,
+          608
+        ],
+        "margin_m": 3.712954866128287,
+        "new_progress": 301.2797731720887,
+        "old_progress": 301.2797731720887,
+        "new_path_error": 1.5229494503916277,
+        "old_path_error": 1.5229494503916277,
+        "new_reference_excess": 4.704065861814186,
+        "old_reference_excess": 4.704065861814186,
+        "body_speed": 94.96768542361718
+      },
+      "400": {
+        "before_raw": 302,
+        "after_raw": 303,
+        "fraction": 0.5717518577250459,
+        "time_s": 6.0514350371544605,
+        "COM_speed_m_s": 94.71067181269585,
+        "yaw_rad_s": -0.042989299628390376,
+        "hold": 76,
+        "eligible": true,
+        "whole_hold_safe": true,
+        "force_peak": 0.33123420753404387,
+        "tracking_clip_history": [
+          30,
+          828
+        ],
+        "margin_m": 5.234747013370474,
+        "new_progress": 400.81114131275353,
+        "old_progress": 400.81114131275353,
+        "new_path_error": 0.12287861786530745,
+        "old_path_error": 0.12287861786530745,
+        "new_reference_excess": 4.750905734362462,
+        "old_reference_excess": 4.750905734362462,
+        "body_speed": 94.77795354814249
+      }
+    },
+    "raw96_checkpoint_sha256": "bfd7dd13f8e071b12cd49770003e33ea591a73a015c9d1738c0b92acbcd64b32"
+  },
+  "candidate": {
+    "safe_to_s400": true,
+    "failure": null,
+    "actual_attempt_rows": 212,
+    "completed_rows": 212,
+    "global_raw": 308,
+    "elapsed_s": 6.159999999999957,
+    "new_progress": 407.3060978496387,
+    "old_progress": 407.53604771312274,
+    "COM_speed_m_s": 94.8468975444287,
+    "yaw_rad_s": -0.1579845079174348,
+    "maximum_abs_joint_rad": 0.007798216305673122,
+    "tracking_history": [
+      31,
+      848
+    ],
+    "launch_history": [
+      55,
+      384
+    ],
+    "crossings": {
+      "200": {
+        "before_raw": 193,
+        "after_raw": 194,
+        "fraction": 0.9495598369075694,
+        "time_s": 3.8789911967381543,
+        "COM_speed_m_s": 79.09509951036814,
+        "yaw_rad_s": -0.24769485087471763,
+        "hold": 49,
+        "eligible": true,
+        "whole_hold_safe": true,
+        "force_peak": 0.781724073366714,
+        "tracking_clip_history": [
+          31,
+          392
+        ],
+        "margin_m": 5.075264384232724,
+        "new_progress": 199.84682466335707,
+        "old_progress": 200.0798249158966,
+        "new_path_error": 0.21138609527523436,
+        "old_path_error": 0.3522169999176694,
+        "new_reference_excess": -4.697130620020232,
+        "old_reference_excess": -0.7205715969170541,
+        "body_speed": 79.39510546843321
+      },
+      "300": {
+        "before_raw": 248,
+        "after_raw": 249,
+        "fraction": 0.7110769846798174,
+        "time_s": 4.974221539693579,
+        "COM_speed_m_s": 94.84257108681656,
+        "yaw_rad_s": -0.23346552458345834,
+        "hold": 63,
+        "eligible": true,
+        "whole_hold_safe": true,
+        "force_peak": 0.10730815489700136,
+        "tracking_clip_history": [
+          31,
+          612
+        ],
+        "margin_m": 4.995935552929218,
+        "new_progress": 300.32235943717654,
+        "old_progress": 300.55230930066057,
+        "new_path_error": 0.21159478279038546,
+        "old_path_error": 0.21159478279038546,
+        "new_reference_excess": 4.842667580314284,
+        "old_reference_excess": 4.842667580314284,
+        "body_speed": 95.10229431877717
+      },
+      "400": {
+        "before_raw": 304,
+        "after_raw": 305,
+        "fraction": 0.025178997407802817,
+        "time_s": 6.080503579948115,
+        "COM_speed_m_s": 94.84833074610461,
+        "yaw_rad_s": 0.0018431260646038505,
+        "hold": 77,
+        "eligible": true,
+        "whole_hold_safe": true,
+        "force_peak": 0.20046677418610126,
+        "tracking_clip_history": [
+          31,
+          836
+        ],
+        "margin_m": 5.211075919150623,
+        "new_progress": 401.6178904061013,
+        "old_progress": 401.84784026958533,
+        "new_path_error": 0.11674139726391924,
+        "old_path_error": 0.11674139726391924,
+        "new_reference_excess": 4.831369332726538,
+        "old_reference_excess": 4.831369332726538,
+        "body_speed": 94.83876399201617
+      }
+    },
+    "minimum_margin_m": 0.5591126203666243,
+    "maximum_new_path_error": 1.5152586836799946,
+    "maximum_new_reference_excess": 4.84876889511213,
+    "maximum_old_path_error": 1.633329250233277,
+    "maximum_old_reference_excess": 4.84876889511213,
+    "maximum_force_ratio": 1.0589914739101234,
+    "first_failure_raw": null,
+    "mapping": {
+      "old_progress": 81.08792499028122,
+      "new_progress": 81.08792499028122,
+      "difference_m": 0.0,
+      "no_physical_history_change": true
+    }
+  },
+  "s400_continuous_gain_s": -0.029068542793654117,
+  "status": "SAFE_S400_NOT_IMPROVED",
+  "error": null,
+  "cost": {
+    "total": {
+      "synthetic_backup_minimum_evaluations": 5,
+      "profile_bound_evaluations": 8068,
+      "profile_generations": 1,
+      "profile_bisection_updates": 6120,
+      "profile_periodic_passes": 3,
+      "backup_node_minimum_evaluations": 567,
+      "geometry_checks": 21517,
+      "actual_raw_attempts": 516,
+      "attempted_raw": 20953,
+      "external_force": 83812,
+      "internal_force": 81936,
+      "completed_model_ticks": 20484,
+      "chooser_calls": 53,
+      "forecast_groups": 1031,
+      "CPU_s": 510.69081287,
+      "wall_s": 554.9960048009962
+    },
+    "modes": {
+      "preparation": {
+        "synthetic_backup_minimum_evaluations": 5,
+        "profile_bound_evaluations": 5
+      },
+      "profile": {
+        "profile_generations": 1,
+        "profile_bound_evaluations": 8063,
+        "profile_bisection_updates": 6120,
+        "profile_periodic_passes": 3,
+        "backup_node_minimum_evaluations": 567
+      },
+      "positive": {
+        "geometry_checks": 305,
+        "actual_raw_attempts": 304,
+        "attempted_raw": 304,
+        "external_force": 1216,
+        "internal_force": 1216,
+        "completed_model_ticks": 304
+      },
+      "candidate": {
+        "geometry_checks": 213,
+        "actual_raw_attempts": 212,
+        "attempted_raw": 212,
+        "external_force": 848,
+        "internal_force": 848,
+        "completed_model_ticks": 212
+      },
+      "forecast": {
+        "chooser_calls": 53,
+        "forecast_groups": 1031,
+        "geometry_checks": 20999,
+        "attempted_raw": 20437,
+        "external_force": 81748,
+        "internal_force": 79872,
+        "completed_model_ticks": 19968
+      }
+    }
+  },
+  "journal": {
+    "events": 126425,
+    "head": "b34d1500943b4c1527beb7c4a19cca4d040a7a2042919b0119d244134bad9264",
+    "kinds": {
+      "PROFILE_FROZEN_BEFORE_SOURCE": 1,
+      "BEFORE_GEOMETRY": 21517,
+      "GEOMETRY_VERDICT": 21517,
+      "BEFORE_FORCE": 20953,
+      "FORCE_VERDICT": 20953,
+      "BEFORE_TICK": 20484,
+      "AFTER_TICK": 20484,
+      "RAW_VERDICT": 516
+    },
+    "valid": true
+  },
+  "replay": null,
+  "actual_incumbent_s": 13.66,
+  "source_incumbent_s": 13.2,
+  "incumbent_changed": false,
+  "research_remaining": 22758,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "native_actions": 0,
+  "new_world": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "new_FD": 0,
+  "new_solver": 0,
+  "learning": 0,
+  "paid_compute": 0
+}
