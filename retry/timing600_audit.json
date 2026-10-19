@@ -1,0 +1,53 @@
+{
+  "study": 600,
+  "status": "READ_ONLY_AUDIT_PASS",
+  "checks": {
+    "input_pinned": true,
+    "implementation_frozen": true,
+    "original_contract_pinned": true,
+    "pure_tests_before_freeze": true,
+    "registration_and_start_same_contract": true,
+    "closed_result_pinned": true,
+    "all_private_outputs_pinned": true,
+    "single_call_closed": true,
+    "independent_action_parity": true,
+    "independent_full_report_parity": true,
+    "all_reported_parity_pass": true,
+    "primitive_counts": true,
+    "fresh_trial_reports_exact": true,
+    "all_body_checks_valid": true,
+    "all_work_caps": true,
+    "force_accounting": true,
+    "geometry_accounting": true,
+    "zero_forbidden_work": true,
+    "ledger_unchanged": true,
+    "core_limits_and_scoped_conclusion": true,
+    "total_and_preparation_audit_caps": true
+  },
+  "diagnostic_event_counts": {
+    "TRACKING_TRIAL_START": 31,
+    "BEFORE_MODEL_FORCE": 906,
+    "MODEL_FORCE_VERDICT": 906,
+    "BEFORE_MODEL_TICK": 888,
+    "AFTER_MODEL_TICK": 888,
+    "SOURCE_GEOMETRY_DIAGNOSTIC": 888,
+    "TRACKING_TRIAL_END": 31
+  },
+  "audit_CPU_s": 0.061716061,
+  "audit_wall_s": 0.061716764990706,
+  "total_through_audit_before_summary": {
+    "CPU_s": 15.053059081,
+    "wall_s": 14.268623761992785
+  },
+  "preparation_audit": {
+    "CPU_s": 7.0961424950000005,
+    "wall_s": 6.305775600994821
+  },
+  "final_summary_write_reserve_CPU_s": 1,
+  "final_summary_write_reserve_wall_s": 1,
+  "result_sha256": "cea19fb9e324fd878ad277fede0050759e2afae3ccceff6ea697ac278a6789ba",
+  "closed_sha256": "c67736db2355fef3c53e06a18158da75cfe6a8f602fb60005013b788ac9c3a55",
+  "chooser": 0,
+  "model": 0,
+  "native": 0
+}

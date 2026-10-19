@@ -1,0 +1,77 @@
+{
+  "study": 600,
+  "status": "PARITY_VALID_COMPONENT_EXCEEDS5S",
+  "chooser_calls": 1,
+  "native": 0,
+  "worlds": 0,
+  "resets": 0,
+  "actions": 0,
+  "solver": 0,
+  "FD": 0,
+  "new_seed": 0,
+  "HOLDOUT": 0,
+  "SEALED": 0,
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0,
+  "general_promotion": false,
+  "pixel_act_promotion": false,
+  "preparation_before_call": {
+    "CPU_s": 6.213048844,
+    "wall_s": 5.419584307994228
+  },
+  "core": {
+    "CPU_s": 7.956916586,
+    "wall_s": 7.962848160997964
+  },
+  "parity": {
+    "action_bytes": true,
+    "full_certificate": true,
+    "attempted": true,
+    "completed": true,
+    "external_force": true,
+    "internal_force": true,
+    "geometry": true,
+    "tick_counter": true,
+    "passive_reports": true,
+    "fresh_FINAL": true
+  },
+  "output_materialization_JSON_fsync_and_parity": {
+    "CPU_s": 0.8133544439999998,
+    "wall_s": 0.8165924509958131
+  },
+  "cost": {
+    "geometry": 2641,
+    "geometry_internal_nominal_steering": 834,
+    "geometry_source_footprint": 919,
+    "model_attempted": 906,
+    "external_force": 3624,
+    "total_force": 7176,
+    "model_tick_attempts": 888,
+    "internal_force": 3552,
+    "model_completed": 888,
+    "geometry_tracking_forecast": 888
+  },
+  "planner_cost": {
+    "force_evaluations": 3624,
+    "forecast_calls": 31,
+    "forecast_ticks": 888,
+    "geometry_checks": 919
+  },
+  "diagnostic_events": 4538,
+  "total_pre_result": {
+    "CPU_s": 14.983601,
+    "wall_s": 14.1999549799948
+  },
+  "preparation_audit_pre_result": {
+    "CPU_s": 7.026684414,
+    "wall_s": 6.2371068189968355
+  },
+  "scope": "One privileged saved-state chooser component only; not full Agent.act, pixel, all inputs, native simulation or lap improvement.",
+  "private_sha256": {
+    "CALL_STARTED-private.json": "26aa471935c6070865be58d73d9a95b5150fb359b4aa91580be5708b9cf44787",
+    "output-private.json": "e5f13924725d69f25a37e8ebea1cc6e96771278cbd34467be1c960dc55c03a38",
+    "deferred-diagnostics-private.json": "60041bcf3bdaad9e5cb21adcb33f7ae2949c625370d38a3e9cd8c30a1968b8a1",
+    "REGISTERED-private.json": "9cb3a4865f17d3b25f427d4a9ca03b2f5eada3fff1964f4120c1c658048ed2a2"
+  }
+}

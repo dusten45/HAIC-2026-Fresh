@@ -1,0 +1,43 @@
+{
+  "study": 600,
+  "status": "FROZEN_BEFORE_SINGLE_CHOOSE",
+  "registered_utc": "2026-10-19T11:10:58.493677+00:00",
+  "deadline_utc": "2026-10-20T10:01:55+00:00",
+  "input_sha256": "a0905322d069bad0b515620aae64856c8c8394d789722db27917486819e0e23e",
+  "implementation_sha256": "9910a29606b4f61fdbe4212d31dc1661813f485d25d7c91b393f75a036ec22ea",
+  "original_contract_sha256": "2b18c540e7b2f739b6201e4bdd6766ae1bba71a264a9fb2062a3c7a68913bd6a",
+  "tests_sha256": "ae6dcd248d74bd6a782cfbae660043849a69c01986282784042fdef1346ad261",
+  "caps": {
+    "model_attempted": 1536,
+    "model_completed": 1536,
+    "external_force": 6144,
+    "internal_force": 6144,
+    "total_force": 12288,
+    "geometry": 5000
+  },
+  "kernel_hardcap": 200000,
+  "chooser_calls": 1,
+  "time_caps": {
+    "core_CPU_s": 30,
+    "core_wall_s": 45,
+    "preparation_audit_CPU_s": 60,
+    "preparation_audit_wall_s": 75,
+    "total_CPU_s": 90,
+    "total_wall_s": 120
+  },
+  "boundary": "Start clocks immediately before ONE original tracking.choose; end clocks in finally immediately after return/exception. Includes nominal/backup/trials/freshFINAL/report/action plus unchanged inherited598 numeric/body/cost/passiveTrial meters, finite structural root identity and in-memory diagnostics. No import/restore/context setup/JSON/SHA/fsync/4raw preview/native/pixel/thread/marshalling inside core.",
+  "diagnostic_change": "Inherited598 short/asdict retained. Original diagnostic SHA replaced inside core by typed finite structural keys including signedzero; SHA and JSON/fsync deferred until afterward. Pure synthetic eager/deferred payload and identity checks before call. This is an explicit offline diagnostic IO protocol change, not original durable-before-every-primitive protocol.",
+  "parity": "Exact float32 action bytes, entire certificate report/trials/FINAL via JSON-domain digest; attempts906/completed888, forces3624/3552 and geometry2641. Mismatch=>timing interpretation withheld, no retry.",
+  "decision": "Only if parity valid: core wall>=5 means this implementation/input component exceeded5s; otherwise report one sample only. Neither implies fullact/pixel/allinput eligibility or universal impossibility. No lap improvement claim.",
+  "stop": "First cap/domain/identity/IO/error stops. No rerun/warmup/other input or follow-up experiment.",
+  "parent_commit": "6dc7bb07be69c238169c01194db8dfff5683a6ca",
+  "runtime": {
+    "python": "3.11.16 (main, Sep 24 2026, 17:56:40) [Clang 22.1.3 ]",
+    "numpy": "1.26.0",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41"
+  },
+  "privacy": "Raw roots/commands/reports and deferred journal private outside Git. Technical code/hash/aggregates only.",
+  "research_remaining": 22211,
+  "reserve": 84000,
+  "reserve_used": 0
+}
