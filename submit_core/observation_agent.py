@@ -476,7 +476,7 @@ def vehicle_projection_mask(joint):
 
 def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,speed):
     """Conditioned connected-road hypothesis, never obstacle-clearance proof."""
-    cover=vehicle_projection_mask(joint);candidates=[]
+    cover=vehicle_projection_mask(joint);candidates=[];clipped_candidates={}
     flatness_halo=cv2.dilate(cover,np.ones((3,3),np.uint8))
     visible_grass=coherent_grass_mask(image)
     # Output-pixel quantization plus public per-node normal change. This is a
@@ -492,11 +492,14 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
         if not left or not right:continue
         l=max(left,key=lambda i:ends[i]);r=min(right,key=lambda i:starts[i])
         a,b=int(ends[l]),int(starts[r])
-        if a>=b or starts[l]==0 or ends[r]>=84:continue
+        if a>=b:continue
         missing=~asphalt[y,a:b].astype(bool)
         if np.any(missing & ~cover[y,a:b].astype(bool)) or np.any(obstacle_mask[y,a:b]) or np.any(visible_grass[y,a:b]):continue
-        if cover[y,starts[l]-1] or cover[y,ends[r]]:continue
-        candidates.append((int(y),int(starts[l]),int(ends[r]-1),a,b))
+        clipped=starts[l]==0 or ends[r]>=84
+        if (starts[l]>0 and cover[y,starts[l]-1]) or (ends[r]<84 and cover[y,ends[r]]):continue
+        entry=(int(y),int(starts[l]),int(ends[r]-1),a,b)
+        if clipped:clipped_candidates[int(y)]=entry
+        else:candidates.append(entry)
     support=np.zeros((84,84),np.uint8)
     info=dict(road_support_inference_mode='spawn_conditioned' if initializing else 'visible_boundary_continuity',
         road_support_inferred_pixels=0,spawn_prior_used=False,occluded_obstacle_clearance_proved=False,
@@ -551,7 +554,26 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
         # Spawn centering/orientation is never assumed after the first action.
         if abs((lc[1]+rc[1])*.5-IMAGE_ORIGIN_X)>1. or abs(slope*1.701/1.3608)>math.tan(.31):return support,info
         info['spawn_prior_used']=True
-    for sy,l,r,a,b in candidates:
+    inference_rows=list(candidates);extension_rows=[]
+    if not initializing:
+        # A boundary clipped by the image is not evidence of a road break.
+        # Extend only a consecutive end of an already validated corridor,
+        # within one public tile step and with real asphalt beside the car.
+        limits=(float(max(allowances[0])),float(max(allowances[1])))
+        for edge_row,direction in ((int(min(y)),-1),(int(max(y)),1)):
+            sy=edge_row+direction
+            while sy in clipped_candidates:
+                distance=abs(sy-edge_row)/1.701*math.sqrt(1+(slope*1.701/1.3608)**2)
+                if distance>21./6.:break
+                entry=clipped_candidates[sy];_,l,r,a,b=entry
+                left_safe=lc[0]*(sy-IMAGE_ORIGIN_Y)+lc[1]+limits[0]
+                right_safe=rc[0]*(sy-IMAGE_ORIGIN_Y)+rc[1]-limits[1]
+                if left_safe>a or right_safe<b-1:break
+                plateaus=(image[sy,a-3:a],image[sy,b:b+3])
+                if any(len(v)!=3 or min(v)<=.36 or max(v)>=.47 or np.ptp(v)>7.1/255. for v in plateaus):break
+                inference_rows.append(entry);extension_rows.append(sy);sy+=direction
+    info['road_support_fov_extension_rows']=len(extension_rows)
+    for sy,l,r,a,b in inference_rows:
         support[sy,a:b]=cover[sy,a:b]
         # The 3x3 flatness test loses one pixel beside an opaque object. Within
         # the already conditioned corridor, preserve actual asphalt samples in
@@ -561,9 +583,9 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
     # vertical halo. Preserve only already visible asphalt there; no extra
     # opaque pixel is inferred outside the accepted corridor.
     conditioned=cv2.dilate(support&cover,np.ones((3,3),np.uint8))
-    accepted_rows=np.zeros(84,bool);accepted_rows[[r[0] for r in candidates]]=True
-    accepted_rows[max(0,min(r[0] for r in candidates)-1)]=True
-    accepted_rows[min(83,max(r[0] for r in candidates)+1)]=True
+    accepted_rows=np.zeros(84,bool);accepted_rows[[r[0] for r in inference_rows]]=True
+    accepted_rows[max(0,min(r[0] for r in inference_rows)-1)]=True
+    accepted_rows[min(83,max(r[0] for r in inference_rows)+1)]=True
     conditioned[~accepted_rows]=0  # Never carry support across an internal rejected row.
     support|=asphalt&conditioned&flatness_halo
     support[obstacle_mask]=0

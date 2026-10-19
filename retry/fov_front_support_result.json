@@ -1,0 +1,95 @@
+{
+  "status": "FOV_CLIPPED_FRONT_SUPPORT_RESTORED_NATIVE_NEXT_MERGE_MODEL_LIMIT_STOP",
+  "base_commit": "580e1d5ceb51f09ff52243eccc14e14128343dd4",
+  "diagnosis": [
+    "The vehicle mask covered the missing pixels. Two front rows were rejected because their left asphalt extent reached the image edge, so a visible outer boundary was unavailable.",
+    "Adjacent rows already supported a bounded local corridor; both sides of the car gap were actual visible asphalt. Treating the image crop as a road break removed legitimate vehicle support."
+  ],
+  "change": [
+    "Collect crop-limited rows separately from measured boundary rows; do not regress an unknown image-edge boundary as a measured lane flank.",
+    "Restore only consecutive ends of an already validated corridor, within one public tile step, inside conservative fitted corridor limits, with actual asphalt plateaus on both sides.",
+    "Infer only missing pixels inside the public vehicle mask. Keep grass, obstacles, internal unsupported rows, width constraints, spawn conditions, core thresholds and temporal registration unchanged."
+  ],
+  "causal_checks": {
+    "mask_complete_for_missing_pixels": true,
+    "current_margin_before_m": -0.1732510288065856,
+    "current_margin_after_m": 1.452145796590242,
+    "restored_front_rows": 2,
+    "reference_observed_support_before_m": 5.892034124442451,
+    "reference_observed_support_after_m": 36.81198127959003
+  },
+  "public_checks": {
+    "public_vehicle_renderer_and_road_union_cases": 12,
+    "outside_samples": 0,
+    "positive_cases_exercising_new_extension": 10,
+    "negative_guards": {
+      "visible_grass": true,
+      "internal_break": true,
+      "obstacle": true,
+      "one_tile_reach": true,
+      "no_unanchored_fill": true
+    },
+    "existing_local_regression_cases": 10
+  },
+  "cached_full_Agent": {
+    "admitted": true,
+    "model_ticks": 100,
+    "whole_act_s": 0.1279179200064391,
+    "mode": "SOURCE_FULL"
+  },
+  "native_same_DEV": {
+    "resets": 1,
+    "valid_actions": 44,
+    "previous_valid_actions": 43,
+    "failed_call": 45,
+    "progress": 0.13427561837455831,
+    "previous_progress": 0.13427561837455831,
+    "damage": 0.0,
+    "max_whole_act_s": 3.0839733500033617,
+    "max_RSS_KiB": 66632,
+    "first43_actions_identical": true,
+    "identical_initial_image": true,
+    "finish": false,
+    "target_action44_matches_cached": true
+  },
+  "new_blocker": {
+    "reasons": {
+      "CURRENT_FOOTPRINT_MARGIN": 21
+    },
+    "estimated_margin_m": -2.079277727866387,
+    "local_inferred_pixels": 0,
+    "read_only_world_identity_match": true,
+    "known_map_margin_for_estimated_vehicle_m": 4.365695725417581,
+    "cause": "The broad pavement outer edge reappears inside view. Front apparent widths are about29-30m while body-row widths are about12-15m. Global point regression treats the union exterior as a local lane boundary and rejects all support. The clipped-boundary subcase is fixed, but the broader merged-pavement corridor model remains unresolved.",
+    "oracle_scope": "External geometry error attribution only; no true map/state passed to Agent, no controller rollout or parameter fitting.",
+    "post_failure_native_repeats": 0
+  },
+  "failure_replay": {
+    "error_identical": true,
+    "report_identical": true,
+    "diagnostics_identical": true,
+    "counter_identical": true,
+    "model_ticks": 0
+  },
+  "cost": {
+    "model_ticks": 27624,
+    "recorded_CPU_s": 59.318903715,
+    "native_actions": 44,
+    "native_raw_ticks_including_reset": 227,
+    "research_actions_remaining": 20004,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve_used": 0
+  },
+  "preserved": {
+    "core_SHA256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+    "original_controller_physics_horizon_safety_gates": true,
+    "external_research_quota_and_reset_lifecycle_64d37cb": true,
+    "vehicle_projection_mask_unchanged": true,
+    "temporal_transport_unchanged": true,
+    "exact_geometry_cache_unchanged": true
+  },
+  "scope": "One same-DEV partial validation, stopped at first new failure. Finite raster conditioning checks; no hidden-obstacle, finish, generalization or universal reconstruction claim.",
+  "privacy": "Only code and aggregate results committed. Actual images, pose/map diagnostics, observation history and full checkpoints remain private outside the repository.",
+  "environment_connection": "Selected cloud filesystem, Python and git operational; no additional compute resource used."
+}
