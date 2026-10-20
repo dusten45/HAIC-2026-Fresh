@@ -1,0 +1,100 @@
+diff --git a/submit_core/observation_agent.py b/submit_core/observation_agent.py
+index 100a6d8..b34f729 100644
+--- a/submit_core/observation_agent.py
++++ b/submit_core/observation_agent.py
+@@ -86,6 +86,46 @@ def choose_with_joint_feasibility(root,high,low,progress,counter,cost,max_ticks=
+     return joint_feasibility_fallback(root,high,low,progress,counter,cost,max_ticks,history,geometry,report)
+ 
+ 
++_choose_without_observation_guard=choose_with_joint_feasibility
++
++
++class _ObservationFallbackCost:
++    """Charge all work globally; keep the original primary-candidate cap."""
++    def __init__(self,cost):self.cost=cost
++    def __getitem__(self,key):
++        if key=='forecast_calls':return self.cost.get('observation_fallback_forecast_calls',0)
++        return self.cost[key]
++    def __setitem__(self,key,value):
++        self.cost['observation_fallback_forecast_calls' if key=='forecast_calls' else key]=value
++    def setdefault(self,key,value):
++        return self.cost.setdefault('observation_fallback_forecast_calls' if key=='forecast_calls' else key,value)
++
++
++def choose_with_joint_feasibility(root,high,low,progress,counter,cost,max_ticks=60000,history=(0,0),geometry=None):
++    alternate=high.get('observation_fallback')
++    if alternate is None:
++        return _choose_without_observation_guard(root,high,low,progress,counter,cost,max_ticks,history,geometry)
++    original_certifier=core.certifier
++    def guarded_certifier(r,path,backup_path,s,count,planner,context,limit=60000,history=(0,0)):
++        primary=original_certifier(r,path,backup_path,s,count,planner,context,limit,history)
++        shadow=original_certifier(r,alternate['high'],alternate['low'],alternate['progress'],count,_ObservationFallbackCost(planner),context,limit,history)
++        def certify(action):
++            other=shadow(action)
++            if not other['ok']:
++                return dict(other,reason='OBSERVATION_FALLBACK_'+other['reason'],observation_fallback=other)
++            report=primary(action)
++            if not report['ok']:return dict(report,observation_fallback=other)
++            combined=dict(report,observation_fallback=other,
++                peak=max(report['peak'],other['peak']),
++                max_reference_overspeed=max(report['max_reference_overspeed'],other['max_reference_overspeed']),
++                min_footprint_margin_m=min(report['min_footprint_margin_m'],other['min_footprint_margin_m']))
++            return combined
++        return certify
++    core.certifier=guarded_certifier
++    try:return _choose_without_observation_guard(root,high,low,progress,counter,cost,max_ticks,history,geometry)
++    finally:core.certifier=original_certifier
++
++
+ core.choose=choose_with_joint_feasibility
+ 
+ # Pixel centres after public 1000x800 -> 96x96 -> 84x84 rendering,
+@@ -247,6 +287,27 @@ def deform_reference_with_derivative_support(points,observed,source_stations,obs
+     return deformed[1:],observed_reference_curvature(deformed)[1:]
+ 
+ 
++def observed_row_fallback_reference(raw_points,obstacles,com,distance):
++    """The existing row-reference branch, as a current-observation contingency.
++
++    It adds certification constraints only, never road support or unseen path.
++    """
++    points=np.asarray(raw_points,np.float64).copy()
++    points[:,0]=cv2.GaussianBlur(points[:,0].reshape(1,-1),(5,1),1.).ravel()
++    source=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
++    points=deform_observed_reference(points,points.copy(),source,obstacles)
++    curvature=observed_reference_curvature(points)
++    arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
++    current=observed_reference_progress(points,arc,com)
++    def profile(budget,max_speed):
++        q=np.minimum(max_speed**2,budget/np.maximum(curvature,1e-6));q[-1]=0.
++        for i in range(len(q)-2,-1,-1):q[i]=min(q[i],q[i+1]+2*45.*(arc[i+1]-arc[i]))
++        q=np.minimum(q,2*core.REAR*np.maximum(0.,distance+arc-current))
++        return dict(points=points.tolist(),arcs=arc.tolist(),ds=np.diff(arc).tolist(),length=float(arc[-1]),
++            launch_squared=q.tolist(),periodic_squared=q[:-1].tolist(),observed_open=True)
++    return dict(high=profile(153.,90.),low=profile(100.,80.),progress=current)
++
++
+ def object_adjacent_asphalt(image,asphalt,flat,visible_obstacles):
+     """Keep CURRENT road-colour plateaus beside a confirmed orange object.
+ 
+@@ -2181,6 +2242,7 @@ class Agent:
+         self.uncertainty['continuous_observed_curb_patches']=accepted_patches
+         self.uncertainty['mesh_source']='union of all supported row intervals; shared interfaces excluded'
+         points=np.asarray([((a+b)*.5,y) for a,b,y in rows],np.float64)
++        raw_reference=points.copy()
+         points,reference_info=reference_from_observed_width(points,reference_curves,asphalt,obstacle_blocked,self.reference_lattice)
+         self.uncertainty.update(reference_info)
+         observed_reference=points.copy();source_stations=None;lattice_info={}
+@@ -2218,7 +2280,11 @@ class Agent:
+             raster_band_edges_refined=band_refined,
+             subpixel_bound_universally_validated=False,obstacle_pixels_filled=False,
+             obstacles='visible grayscale detections with0.4m radius inflation; unseen obstacles unknown')
+-        return core.Scene(roads,boundary,collision_obstacles),reference(153.,90.),reference(100.,80.),current
++        high=reference(153.,90.);low=reference(100.,80.)
++        if reference_info['observed_width_reference_used']:
++            high['observation_fallback']=observed_row_fallback_reference(raw_reference,obstacles,self.com,self.distance)
++        self.uncertainty['observation_switch_guard']=reference_info['observed_width_reference_used']
++        return core.Scene(roads,boundary,collision_obstacles),high,low,current
+ 
+     def _root(self,scene,lateral_speed):
+         yaw=self.yaw;rate=self.joint_rate

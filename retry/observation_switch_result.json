@@ -1,0 +1,220 @@
+{
+  "status": "RISK_OBSERVABLE_MINIMAL_CONJUNCTION_GUARD_REJECTED_DEFAULT_RESTORED",
+  "base_commit": "7da189b31f1e5f618a1cd3bfc5bba9eb586771c8",
+  "retained_default_agent_sha256": "b5a9c09b4c4d8a8315e1b82bce09d271204d0e975b8d7aa7c88ad66fe27d0041",
+  "unchanged_core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "trial_agent_sha256": "0c2a61da83acf8ef2eea5550313a00cfe4cd4dda59c94de421be8141d22af392",
+  "default_participant_source_changed": false,
+  "observation_provenance": {
+    "saved_41_bytes_match": true,
+    "official41_42_43_44_stack_overlap_exact": true,
+    "offline41_42_43_commands_match_actual": true,
+    "offline_model_ticks": 1756,
+    "inputs": "Only official observations and reset-local own history. No true state or future44data used for pre43 risk decision."
+  },
+  "pre_failure_risk": {
+    "cells": [
+      {
+        "call": 41,
+        "exact_primary_inputs_reconstructed": true,
+        "future44_data_accessed": false,
+        "current_near_reference_disagreement_m": 4.935338637477423,
+        "existing_pixel_diagonal_m": 0.9410823394228173,
+        "same_existing_action_admitted_by_shadow": false,
+        "shadow_reason": "REFERENCE_WITH_NUMERIC_RESERVE",
+        "model_ticks": 1
+      },
+      {
+        "call": 42,
+        "exact_primary_inputs_reconstructed": true,
+        "future44_data_accessed": false,
+        "current_near_reference_disagreement_m": 5.132642194917049,
+        "existing_pixel_diagonal_m": 0.9410823394228173,
+        "same_existing_action_admitted_by_shadow": false,
+        "shadow_reason": "REFERENCE_WITH_NUMERIC_RESERVE",
+        "model_ticks": 1
+      },
+      {
+        "call": 43,
+        "exact_primary_inputs_reconstructed": true,
+        "future44_data_accessed": false,
+        "current_near_reference_disagreement_m": 4.728839909439611,
+        "existing_pixel_diagonal_m": 0.9410823394228173,
+        "same_existing_action_admitted_by_shadow": false,
+        "shadow_reason": "REFERENCE_WITH_NUMERIC_RESERVE",
+        "model_ticks": 1
+      }
+    ],
+    "conclusion": "Current raw-row and width-reference disagreement is observable before the failure. The same selected action fails on the current raw alternative. This is not proof that raw is a true lane or that it predicts all future observations.",
+    "earlier_limit": "At41/42 the raw alternative already demands substantially lower speed, so those states do not establish a feasible late rescue."
+  },
+  "minimal_trial": {
+    "candidate_pool_unchanged": true,
+    "new_reference": "Exact existing raw-reference branch from the CURRENT image, own current objects and existing Gaussian/deformation/curvature/stop/launch formulas. Independent COM projection.",
+    "admission": "Require existing firstcommand to pass complete original12hold certification on selected and rawfallback references. SameScene/state/history/limits, respective existing feedback continuations; score remains PRIMARYfirstholdprogress thenpedal.",
+    "activation": "Every width-reference observation, beginning at its first use; no caseindex or fitted riskthreshold. Raw-reference mode remains unchanged.",
+    "cost_accounting": "One shared model counter and geometry/force/tick budget. Total certificates are forecast_calls plus observation_fallback_forecast_calls. Existingcandidatecardinality is unchanged.",
+    "ordering_optimization": {
+      "same_action": true,
+      "model_ticks_before": 2212,
+      "model_ticks_after": 1732,
+      "cached_wall_before_s": 3.3314108820050023,
+      "cached_wall_after_s": 2.7254857000079937,
+      "limit": "Conjunction/action equivalence is conditional on not hitting resource caps; resource order was explicitly tested."
+    }
+  },
+  "public_gates": {
+    "dual_reference": {
+      "status": "PASS",
+      "checks": [
+        "independent_alternate_progress",
+        "primary_objective_preserved",
+        "both_certificates_required",
+        "all_model_work_charged",
+        "unsafe_alternate_veto",
+        "raw_branch_exact_equivalence",
+        "exception_restores_certifier"
+      ],
+      "model_ticks": 2077,
+      "native_actions": 0,
+      "CPU_s": 0.7592707519999999
+    },
+    "existing_joint_regression": {
+      "status": "PASS",
+      "checks": [
+        "successful_baseline_unchanged",
+        "original_backup_identity",
+        "probe_cost_and_state_immutability",
+        "unsafe_road_rejected",
+        "exception_restores_backup",
+        "action_domain",
+        "probe_budget_enforced",
+        "original_safety_constants"
+      ],
+      "model_ticks": 1398,
+      "deterministic_prefix_before_exception_ticks": 1396,
+      "native_actions": 0,
+      "CPU_s": 0.618385054
+    }
+  },
+  "actual_reset_results": {
+    "trial": {
+      "source_sha256": "0c2a61da83acf8ef2eea5550313a00cfe4cd4dda59c94de421be8141d22af392",
+      "valid_actions": 50,
+      "first_failed_call": 51,
+      "progress": 0.127208480565371,
+      "damage": 0.0,
+      "max_whole_act_wall_s": 2.796694254997419,
+      "CPU_s": 81.06556065900001,
+      "wall_s": 80.39803257898893,
+      "model_ticks": 45232,
+      "max_RSS_KiB": 70420,
+      "finished": false,
+      "lap_time_s": null,
+      "official_server_runtime_parity": false
+    },
+    "final_restored_default": {
+      "source_sha256": "b5a9c09b4c4d8a8315e1b82bce09d271204d0e975b8d7aa7c88ad66fe27d0041",
+      "valid_actions": 43,
+      "first_failed_call": 44,
+      "progress": 0.13427561837455831,
+      "damage": 0.0,
+      "max_whole_act_wall_s": 1.8428972190013155,
+      "CPU_s": 48.488866732999995,
+      "wall_s": 47.91696382500231,
+      "model_ticks": 26447,
+      "max_RSS_KiB": 69328,
+      "finished": false,
+      "lap_time_s": null,
+      "official_server_runtime_parity": false
+    },
+    "first32_actions_unchanged_before_trial_activation": true,
+    "final_default_all43_commands_equal_prior7da": true,
+    "comparison_limit": "More admitted actions did not mean more route progress. Different-length singleDEV runs are not an isolated throughput estimate."
+  },
+  "guard_failure_attribution": {
+    "same51input_primary_only_admits": true,
+    "all_primary_input_fields_identical": true,
+    "model_ticks": 652,
+    "trial_failure_replay": {
+      "error_identical": true,
+      "full_report_identical": true,
+      "diagnostics_identical": true,
+      "counter_identical": true,
+      "model_ticks": 960,
+      "CPU_s": 1.174970295,
+      "wall_s": 1.1590569379914086,
+      "native_actions": 0,
+      "inputs": "Full pre-act reset-local memory and pixels; persistent counter restored and replay delta charged separately; no true state read."
+    },
+    "decision": "The additional conjunction caused a deadlock at51 and routeprogress was lower than the retained default. Do notpromote."
+  },
+  "historical_reference_probe": {
+    "new_production_rule_implemented": false,
+    "current_FOV_and_fresh_Scene_supported": true,
+    "same_existing_controller_admits": true,
+    "model_ticks": 612,
+    "speed_reference_comparison": {
+      "fresh": {
+        "target_m_s": 24.462917266423077,
+        "feedforward_m_s2": 42.618736210923586,
+        "speed_m_s": 31.391307864010468,
+        "overspeed_m_s": 6.928390597587391
+      },
+      "retained": {
+        "target_m_s": 37.561650716093965,
+        "feedforward_m_s2": -45.00000000000001,
+        "speed_m_s": 31.391307864010468,
+        "overspeed_m_s": -6.170342852083497
+      }
+    },
+    "decision": "Rejected: fresh-road/FOV support alone does not justify raising the speed reference from24.46 to37.56m/s to recover admission. No optimistic reference substitution was implemented."
+  },
+  "remaining_blocker_and_scope": {
+    "finding": "Both present reference hypotheses are not automatically interchangeable controllable trajectories. Conjoining them can empty the action set, while choosing the older more permissive speed reference lacks validity evidence.",
+    "needed_before_implementation": "Define an evidence-based reference availability/adoption/transition rule: what current pixel/own-history evidence makes a reference eligible, when a newreference may replace it, and what supported contingency remains when it becomes unavailable. This requires new reference-validity or observation-transition assumptions beyond this candidate/certifier-only filter; no such rule or broadplanner has been implemented.",
+    "limits": "No claim that every possible smallrepair is impossible. No input-error assumption, unseenroad, safety relaxation, model/objective/horizon change, lap-time search, HOLDOUT/SEALED/reserve or new paid environment."
+  },
+  "environment_notice": {
+    "same_environment_accessible": true,
+    "numeric_jobs_running_at_check": 0,
+    "completed_checkpoints_and_archives_preserved": true,
+    "actual_numerical_interruption_or_loss_observed": false,
+    "duplicate_job_started": false,
+    "new_environment_or_repository_initialization": false
+  },
+  "phase_usage": {
+    "DEV": 93,
+    "DEV_attempts": 95,
+    "resets": 2,
+    "worlds": 2,
+    "raw_physics": 474,
+    "model_ticks": 85487,
+    "measured_CPU_s": 144.865188053,
+    "unmetered_setup_static_admin_CPU_allowance_s": 15.0,
+    "conservative_CPU_charge_s": 159.865188053,
+    "wall_s_through_closeout": 1555.714305,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve_used": 0,
+    "research_remaining": 19115
+  },
+  "decision": {
+    "trial_promoted": false,
+    "default": "Unchanged7da participant source, freshly reset-tested afterrollback",
+    "submission_ready": false,
+    "13_22_second_performance_preserved": "NOT_VERIFIED"
+  },
+  "deliverables": {
+    "trial_patch": "retry/observation_switch_trial.patch",
+    "trial_tests": "retry/observation_switch_check.py",
+    "replay_tool": "retry/runtime598_candidate_replay.py",
+    "private": "Raw images/state/coordinate arrays/action traces/checkpoints/approval material remain outside repository."
+  },
+  "reproduction": [
+    "In an isolated checkout at this commit: git apply retry/observation_switch_trial.patch",
+    "Then: python -m retry.observation_switch_check NEW_OUTPUT_JSON",
+    "Trialsource hash must equal0c2a61da83acf8ef2eea5550313a00cfe4cd4dda59c94de421be8141d22af392. Revert the patch aftertesting; it is deliberately not the default Agent.",
+    "The retained default was actually packaged and reset-tested withsourcehashb5a9c09b4c4d8a8315e1b82bce09d271204d0e975b8d7aa7c88ad66fe27d0041; exact native artifacts remainprivate."
+  ]
+}
