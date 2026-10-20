@@ -1,0 +1,159 @@
+{
+  "status": "LOCAL_JOINT_FEASIBILITY_REPAIR_VALIDATED_NATIVE_STILL_BLOCKED_AT44",
+  "base_commit": "dce783782c312f7814c4ca6477a15726dd10e667",
+  "agent_sha256": "b5a9c09b4c4d8a8315e1b82bce09d271204d0e975b8d7aa7c88ad66fe27d0041",
+  "unchanged_core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "implementation": [
+    "Original choose is retained and called first. An originally admitted action/report is returned unchanged.",
+    "Only after original no-admissible-action: current-front-joint hold and midpoint-to-nominal steering, each with original17 coarse pedal values. Rank admitted actions by original first-hold progress gain then pedal; only exact ties prefer closer nominal steering.",
+    "During this supplemental certification only, retain original backup when its4raw force probe passes. Otherwise test midpoint and current-joint hold steering with EXACT original backup pedals. Restore original backup on all exits.",
+    "Every selected action must pass the original complete12hold certifier again, including original force,clip history,road/obstacle footprint,reference overspeed and projection gates. All speculative ticks are charged; probes never change execution history or physical environment."
+  ],
+  "unchanged": [
+    "physics/model",
+    "12hold horizon",
+    "original objective",
+    "force/clip/footprint/reference/projection limits",
+    "speed coefficients",
+    "pixel input/state/reference observer",
+    "baseline source preserved in git and frozen private package",
+    "main and Participants"
+  ],
+  "cached_falsifications": [
+    {
+      "variant": "Firsthold joint steering only; original backup",
+      "model_ticks": 147,
+      "first_hold_survivors": 12,
+      "full_admission": false,
+      "decision": "Minimum backup repair justified by later force failures."
+    },
+    {
+      "variant": "Same-pedal force-feasible backup steering repair, retained source",
+      "model_ticks": 901,
+      "full_admitted_candidates": 2,
+      "final_recertified": true,
+      "final_peak": 1.0247475845975502,
+      "final_min_footprint_margin_m": 1.024953887537378,
+      "whole_act_wall_s": 0.9684163260099012,
+      "all_nonpolicy_inputs_identical": true
+    },
+    {
+      "variant": "Private later44 prototype: original road/reference/projection guards added to backup filter",
+      "model_ticks": 79,
+      "full_admission": false,
+      "promoted": false
+    },
+    {
+      "variant": "Private later44 prototype: add neutral firsthold steering",
+      "model_ticks": 98,
+      "full_admission": false,
+      "promoted": false
+    },
+    {
+      "variant": "Private later44 prototype: guarded failed-backup repair with old pedal grid no greater than original pedal",
+      "model_ticks": 283,
+      "full_admission": false,
+      "promoted": false
+    }
+  ],
+  "public_gates": {
+    "status": "PASS",
+    "checks": [
+      "successful_baseline_unchanged",
+      "original_backup_identity",
+      "probe_cost_and_state_immutability",
+      "unsafe_road_rejected",
+      "exception_restores_backup",
+      "action_domain",
+      "probe_budget_enforced",
+      "original_safety_constants"
+    ],
+    "successful_model_ticks": 1398,
+    "failed_harness_prefix_model_ticks": [
+      1396,
+      1398
+    ],
+    "failed_harness_counting_scope": "Determined from identical deterministic synthetic prefixes after correcting test fixtures; first failure was a zero-steering fixture, second a binary64 literal comparison. Neither was a participant failure. Failed-run CPU is conservatively charged in the15s allowance."
+  },
+  "final_native": {
+    "source_actually_reset_tested": true,
+    "valid_actions": 43,
+    "first_failed_call": 44,
+    "status": "INPUT_OR_ADMISSION_STOP",
+    "damage": 0.0,
+    "progress": 0.13427561837455831,
+    "finish": false,
+    "lap_time_s": null,
+    "max_whole_act_wall_s_including_failed_call": 1.9728156760102138,
+    "startup_wall_s": 0.13181641598930582,
+    "reset_wall_s": 0.0005643970216624439,
+    "max_worker_RSS_KiB": 69404,
+    "model_ticks": 26447,
+    "CPU_s": 48.902004004999995,
+    "wall_s": 48.38894108697423,
+    "unchanged_first40_actions_and_model_counter": true,
+    "repair_call41_wall_s": 1.0876745730056427,
+    "failure_reasons": {
+      "REFERENCE_WITH_NUMERIC_RESERVE": 32,
+      "FORCE_PEAK": 20,
+      "PROJECTION_OR_PATH": 3
+    },
+    "exact_final_failure_replay": {
+      "error_identical": true,
+      "full_report_identical": true,
+      "diagnostics_identical": true,
+      "counter_identical": true,
+      "model_ticks": 67,
+      "CPU_s": 0.104416089,
+      "wall_s": 0.09109904599608853,
+      "native_actions": 0,
+      "inputs": "Full pre-act reset-local memory and pixels; persistent counter restored and replay delta charged separately; no true state read."
+    },
+    "official_server_runtime_parity": false
+  },
+  "comparison": {
+    "baseline_valid_actions": 40,
+    "new_valid_actions": 43,
+    "baseline_first_failed_call": 41,
+    "new_first_failed_call": 44,
+    "baseline_progress": 0.12367491166077739,
+    "new_progress": 0.13427561837455831,
+    "baseline_max_whole_act_wall_s": 1.8712049790192395,
+    "cost_scope": "Different-length singleDEV runs; wall-time difference is not an isolated performance regression estimate. First40 actions and cumulative model counter match exactly."
+  },
+  "remaining_blocker": {
+    "current44_reference_overspeed_m_s": 6.928390597587391,
+    "description": "Some strongly braking joint candidates pass firsthold, then fail original projection guards at forecast raw6/7. Weaker braking fails reference overspeed, stronger braking may fail force. All tested full continuations remain inadmissible.",
+    "next_design_needed": "Earlier decisions must preserve feasibility across refreshed finite observation/reference conditions, or a broader multistep coupled continuation must be evaluated. The local repair and three bounded prototypes do not establish that guarantee.",
+    "limits": "No whole-plant infeasibility proof, no assumed new input error, no unseen road, no optimistic state substitution, no safety relaxation. Force certification uses estimated state, not an actual-state safety certificate."
+  },
+  "phase_usage": {
+    "DEV": 43,
+    "normal_DEV_attempts": 44,
+    "resets": 1,
+    "worlds": 1,
+    "raw_physics": 223,
+    "model_ticks": 32214,
+    "measured_CPU_s": 51.59873600799999,
+    "unmetered_failed_test_and_setup_admin_CPU_allowance_s": 15.0,
+    "conservative_CPU_charge_s": 66.59873600799999,
+    "wall_s_through_closeout": 714.522837,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve_used": 0,
+    "research_remaining": 19208
+  },
+  "decision": {
+    "retained_source": "Actual-tested minimal local repair only",
+    "submission_ready": false,
+    "performance_promoted": false,
+    "13_22_second_performance_preserved": "NOT_VERIFIED",
+    "reason": "Original41 blocker passed, but native still stops44. Failed later prototypes stay private and unpromoted."
+  },
+  "reproduction": [
+    "python -m retry.joint_feasibility_check OUTPUT_JSON",
+    "python -m retry.runtime598_candidate_replay PRIVATE_CHECKPOINT submit_core/observation_agent.py PRIVATE_OUTPUT --model-cap 10000",
+    "Native: retry.submit_dev with exact source, runtime-core,continuous-runtime,rolling-checkpoint,steps400,model-tick-budget190000,CPU1300s,wall2200s; stop first failure.",
+    "Final package is privately retained with exact source/core hashes; private pixels,coordinates,state,action traces and approvals are excluded from repository."
+  ]
+}

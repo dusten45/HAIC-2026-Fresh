@@ -9,6 +9,85 @@ import numpy as np
 import cv2
 import runtime598 as core
 
+
+_BASELINE_CHOOSE=core.choose
+_BASELINE_BACKUP=core.backup
+
+
+def force_feasible_backup(counter,cost,max_ticks):
+    """Keep a force-feasible original backup; otherwise reduce steering only.
+
+    These four-raw probes are filters, not safety certificates. The unchanged
+    outer certifier still checks every original constraint over all12 holds.
+    """
+    def command(root,high,low,progress):
+        original=_BASELINE_BACKUP(root,high,low,progress)
+        index=core.bounds(root.roads)
+        def force_safe(action):
+            state=core.replace(root,planar=core.replace(root.planar,steer=-float(action[0])))
+            cost['joint_backup_checks']=cost.get('joint_backup_checks',0)+1
+            for _ in range(4):
+                rows=core.force_rows(state,action);cost['force_evaluations']+=4
+                if max(row['ratio'] for row in rows)>core.ADMISSION:return False
+                if counter[0]>=max_ticks:raise RuntimeError('JOINT_BACKUP_MODEL_CAP')
+                state=core.tick(state,float(action[1]),float(action[2]),index,counter)
+                cost['forecast_ticks']+=1
+            return True
+        if force_safe(original):return original
+        hold=float(np.float32(-sum(root.planar.joints[:2])/2.))
+        for steer in (float(np.float32((hold+float(original[0]))/2.)),hold):
+            adjusted=original.copy();adjusted[0]=steer
+            if force_safe(adjusted):return adjusted
+        return original
+    return command
+
+
+def joint_feasibility_fallback(root,high,low,progress,counter,cost,max_ticks,history,geometry,baseline):
+    """Bounded original-certifier repair after the original pedal search fails.
+
+    The original backup's pedals remain unchanged; its steering is projected
+    only when it fails a force probe. Full certification remains mandatory.
+    """
+    initial=core.nominal(root,high,progress)
+    hold=float(np.float32(-sum(root.planar.joints[:2])/2.))
+    steers=[]
+    for value in (hold,float(np.float32((hold+float(initial[0]))/2.))):
+        if value!=float(initial[0]) and value not in steers:steers.append(value)
+    certify=core.certifier(root,high,low,progress,counter,cost,geometry,max_ticks,history)
+    trials=[];feasible=[];before=cost['forecast_calls']
+    original_backup=core.backup
+    core.backup=force_feasible_backup(counter,cost,max_ticks)
+    try:
+        for steer in steers:
+            for i in range(16,-1,-1):
+                u=float(np.float32(-1.+i/8.))
+                action=np.array([steer,max(0.,u),max(0.,-u)],np.float32)
+                report=certify(action)
+                trials.append(dict(steer=steer,u=u,joint_fallback=True,**report))
+                if report['ok']:feasible.append((action,report,u))
+        if feasible:
+            action,_,u=max(feasible,key=lambda row:(row[1]['first_hold']['progress_gain'],row[2],
+                -abs(float(row[0][0])-float(initial[0]))))
+            final=certify(action)
+    finally:core.backup=original_backup
+    combined=dict(baseline,joint_fallback=True,joint_fallback_trials=len(trials),
+        baseline_mode=baseline['mode'],trials=list(baseline.get('trials',[]))+trials)
+    if not feasible:return None,combined
+    if cost['forecast_calls']-before>35:raise RuntimeError('JOINT_FALLBACK_FORECAST_CAP')
+    if not final['ok']:
+        return None,dict(combined,mode='FINAL_CERTIFICATION_FAILED',final_recertified=False)
+    return action,dict(combined,mode='JOINT_FEASIBILITY_REPAIR',final_recertified=True,
+        reports=[*baseline.get('reports',[]),dict(mode='FINAL',**final)])
+
+
+def choose_with_joint_feasibility(root,high,low,progress,counter,cost,max_ticks=60000,history=(0,0),geometry=None):
+    action,report=_BASELINE_CHOOSE(root,high,low,progress,counter,cost,max_ticks,history,geometry)
+    if action is not None or report['mode']!='NO_ADMISSIBLE_ACTION':return action,report
+    return joint_feasibility_fallback(root,high,low,progress,counter,cost,max_ticks,history,geometry,report)
+
+
+core.choose=choose_with_joint_feasibility
+
 # Pixel centres after public 1000x800 -> 96x96 -> 84x84 rendering,
 # including the vertical flip about WINDOW_H-1. No fitted camera offset.
 IMAGE_ORIGIN_X=(500.+.5)*84./1000.-.5
