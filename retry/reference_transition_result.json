@@ -1,0 +1,279 @@
+{
+  "status": "NARROW_INTERNAL_VERTEX_CORRESPONDENCE_REPAIR_VERIFIED_COMPLETION_UNRESOLVED",
+  "base_commit": "a12b27de193f89496369ce6fa628e504fc90cf9c",
+  "agent_sha256": "b7477ac214c556a95c4ca47877eafffd3b155c7a7778a94528ac7c4815c395c1",
+  "unchanged_core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "public_counterexamples": {
+    "result": {
+      "status": "PUBLIC_COUNTEREXAMPLES_CONFIRMED",
+      "cases": [
+        {
+          "case": "circular_asphalt_midpoint_is_not_centerline",
+          "all_midpoints_on_actual_asphalt": true,
+          "max_same_y_centerline_error_m": 2.5858417587754463,
+          "max_nearest_circle_centerline_distance_m": 1.6178033513720287,
+          "max_curvature_error_per_m": 0.04996617457266576,
+          "partial_crosssection_max_error_m": 5.821768202840845
+        },
+        {
+          "case": "S_normal_corridor_scanline_bias",
+          "max_row_parameter_centerline_error_m": 0.17318174699700029,
+          "scope": "At same y station; reference may remain inside physical corridor."
+        },
+        {
+          "case": "localization_order_vs_real_backtrack",
+          "mirror": -1,
+          "rotation": 0.0,
+          "clean_direction": 1,
+          "jitter_direction": 0,
+          "actual_backtrack_direction": 0,
+          "max_localization_error_m": 0.4,
+          "min_measured_station_step_m": -0.3000000000000007,
+          "jitter_forward_interval_feasible": true,
+          "backtrack_forward_interval_feasible": false
+        },
+        {
+          "case": "localization_order_vs_real_backtrack",
+          "mirror": -1,
+          "rotation": 0.7,
+          "clean_direction": 1,
+          "jitter_direction": 0,
+          "actual_backtrack_direction": 0,
+          "max_localization_error_m": 0.4,
+          "min_measured_station_step_m": -0.3000000000000007,
+          "jitter_forward_interval_feasible": true,
+          "backtrack_forward_interval_feasible": false
+        },
+        {
+          "case": "localization_order_vs_real_backtrack",
+          "mirror": 1,
+          "rotation": 0.0,
+          "clean_direction": 1,
+          "jitter_direction": 0,
+          "actual_backtrack_direction": 0,
+          "max_localization_error_m": 0.4,
+          "min_measured_station_step_m": -0.3000000000000007,
+          "jitter_forward_interval_feasible": true,
+          "backtrack_forward_interval_feasible": false
+        },
+        {
+          "case": "localization_order_vs_real_backtrack",
+          "mirror": 1,
+          "rotation": 0.7,
+          "clean_direction": 1,
+          "jitter_direction": 0,
+          "actual_backtrack_direction": 0,
+          "max_localization_error_m": 0.4,
+          "min_measured_station_step_m": -0.3000000000000007,
+          "jitter_forward_interval_feasible": true,
+          "backtrack_forward_interval_feasible": false
+        },
+        {
+          "case": "exact_internal_vertex_clamp",
+          "mirror": -1,
+          "rotation": 0.0,
+          "outcomes": {
+            "internal_vertex_forward": 1,
+            "internal_vertex_reverse": -1,
+            "zero_duplicate": 0,
+            "actual_negative_station": 0,
+            "all_clamped_no_net_progress": 0,
+            "opposite_parallel_ambiguity": 0
+          },
+          "scope": "Only canonical internal-vertex equality with physically forward displacement is accepted. Negative station steps, stationary duplicates, opposite parallel matches and no net advance remain rejected."
+        },
+        {
+          "case": "exact_internal_vertex_clamp",
+          "mirror": -1,
+          "rotation": 0.7,
+          "outcomes": {
+            "internal_vertex_forward": 1,
+            "internal_vertex_reverse": -1,
+            "zero_duplicate": 0,
+            "actual_negative_station": 0,
+            "all_clamped_no_net_progress": 0,
+            "opposite_parallel_ambiguity": 0
+          },
+          "scope": "Only canonical internal-vertex equality with physically forward displacement is accepted. Negative station steps, stationary duplicates, opposite parallel matches and no net advance remain rejected."
+        },
+        {
+          "case": "exact_internal_vertex_clamp",
+          "mirror": 1,
+          "rotation": 0.0,
+          "outcomes": {
+            "internal_vertex_forward": 1,
+            "internal_vertex_reverse": -1,
+            "zero_duplicate": 0,
+            "actual_negative_station": 0,
+            "all_clamped_no_net_progress": 0,
+            "opposite_parallel_ambiguity": 0
+          },
+          "scope": "Only canonical internal-vertex equality with physically forward displacement is accepted. Negative station steps, stationary duplicates, opposite parallel matches and no net advance remain rejected."
+        },
+        {
+          "case": "exact_internal_vertex_clamp",
+          "mirror": 1,
+          "rotation": 0.7,
+          "outcomes": {
+            "internal_vertex_forward": 1,
+            "internal_vertex_reverse": -1,
+            "zero_duplicate": 0,
+            "actual_negative_station": 0,
+            "all_clamped_no_net_progress": 0,
+            "opposite_parallel_ambiguity": 0
+          },
+          "scope": "Only canonical internal-vertex equality with physically forward displacement is accepted. Negative station steps, stationary duplicates, opposite parallel matches and no net advance remain rejected."
+        },
+        {
+          "case": "visible_asphalt",
+          "width_reference_used": true
+        },
+        {
+          "case": "current_grass",
+          "width_reference_used": false
+        },
+        {
+          "case": "current_object",
+          "width_reference_used": false
+        }
+      ],
+      "model_ticks": 0,
+      "native_actions": 0,
+      "CPU_s": 0.20287509399999998,
+      "conclusion": "Asphalt containment and forward local direction do not establish lane centerline or stable curvature. Exact station monotonicity can reject bounded localization jitter; monotone station-interval feasibility separates this example from large real backtrack. This test file does not modify production. Narrow internal-vertex equality is tested separately; bounded negative jitter remains rejected.",
+      "limitations": "Analytic/synthetic finite cases, not a true-lane certificate. Station intervals alone cannot resolve parallel branches, mixed tangent signs, or direction ambiguities. Material veto tests do not assert fallback validity."
+    },
+    "conclusion": "Current asphalt containment and coherent direction alone do not prove a true centerline or curvature. Interval jitter relaxation was examined only diagnostically and was NOT implemented."
+  },
+  "actual_causal_evidence": {
+    "exact_original_observation_pipeline_reproduced": true,
+    "geometry_only_classification": true,
+    "negative_station_steps": 0,
+    "opposite_candidate_directions": 0,
+    "equal_station_pairs": 1,
+    "cause": "Two distinct forward current samples project to the same internal vertex of a coarser own-motion-transported lattice. The strict station>0 test rejected equality and switched to the row-midpoint alternative.",
+    "current_evidence": "The tied samples are vehicle-occluded, not fresh asphalt evidence; all35 outside-vehicle run points are current asphalt and41 outer-edge points are reobserved. No coherent current grass/object contradiction was found.",
+    "speed_or_admission_used_for_direction": false,
+    "private_coordinates_and_images_committed": false
+  },
+  "minimal_rule": {
+    "accept": "Only exact station equality at the same canonical INTERNAL vertex, with strictly positive actual displacement along BOTH matched directed segments and positive net station progress.",
+    "reject": "All negative station changes, stationary duplicates, no-net-progress clamping, mixed signs and opposite branch ambiguity remain rejected. Existing current pavement/object and join checks remain mandatory.",
+    "scope": "Only direction correspondence changes. Output reference coordinates still come from the current observer. No old reference is restored, no speed envelope is selected by admission or higher speed, and no road/obstacle/state is substituted.",
+    "unchanged": [
+      "physics",
+      "force and footprint limits",
+      "objective",
+      "12-hold horizon",
+      "model",
+      "candidate set",
+      "current contradiction vetoes"
+    ],
+    "old_dual_reference_guard_default": false
+  },
+  "cached_gate": {
+    "model_ticks": 100,
+    "whole_act_wall_s": 0.12723273198935203,
+    "CPU_s": 0.138587083,
+    "admitted": true,
+    "unchanged_inputs": {
+      "root": true,
+      "roads": true,
+      "boundary": true,
+      "obstacles": true,
+      "running_history": true
+    },
+    "intentional_changes": "Current reference, derived curvature/speed bounds and its arc projection. No numeric speed target was an eligibility criterion."
+  },
+  "regression": {
+    "status": "PASS",
+    "checks": [
+      "successful_baseline_unchanged",
+      "original_backup_identity",
+      "probe_cost_and_state_immutability",
+      "unsafe_road_rejected",
+      "exception_restores_backup",
+      "action_domain",
+      "probe_budget_enforced",
+      "original_safety_constants"
+    ],
+    "model_ticks": 1398,
+    "deterministic_prefix_before_exception_ticks": 1396,
+    "native_actions": 0,
+    "CPU_s": 0.5938945170000001
+  },
+  "actual_final_source_reset": {
+    "valid_actions": 46,
+    "first_failed_call": 47,
+    "progress": 0.1413427561837456,
+    "previous_progress": 0.13427561837455831,
+    "previous_valid_actions": 43,
+    "first43_commands_identical": true,
+    "damage": 0.0,
+    "max_whole_act_wall_s": 1.924052757996833,
+    "CPU_s": 50.895019469,
+    "wall_s": 50.36818206301541,
+    "model_ticks": 27754,
+    "max_RSS_KiB": 78176,
+    "official_server_runtime_parity": false,
+    "finished": false,
+    "lap_time_s": null,
+    "comparison_limit": "One DEV prefix only; this is causal local regression evidence, not broad performance or safety validation."
+  },
+  "remaining_blocker": {
+    "reason": "NO_ESTIMATED_INPUT_ADMISSIBLE_ACTION",
+    "report_reasons": {
+      "FORECAST_FOOTPRINT_MARGIN": 6,
+      "FORCE_PEAK": 49
+    },
+    "reference_mode_at_failure": "Current width observation remained selected; no new ambiguous-direction fallback was reported.",
+    "uncertainty": "Current-centerline accuracy, occluded road support, dynamics/state uncertainty and global route safety are not proved. This fix resolves one correspondence alias only.",
+    "conservative_response": "Retain unchanged full certification and stop the DEV run when no action passes. This is fail-closed experiment termination, not a proved emergency-braking controller.",
+    "next_step": "A separately bounded causal diagnosis of the new force/footprint rejection is needed before any further controller or observation change; no new experiment is launched by this closeout."
+  },
+  "exact_failure_replay": {
+    "error_identical": true,
+    "full_report_identical": true,
+    "diagnostics_identical": true,
+    "counter_identical": true,
+    "model_ticks": 379,
+    "CPU_s": 0.7452714549999999,
+    "wall_s": 0.7347668520233128,
+    "native_actions": 0,
+    "inputs": "Full pre-act reset-local memory and pixels; persistent counter restored and replay delta charged separately; no true state read."
+  },
+  "phase_usage": {
+    "DEV": 46,
+    "DEV_attempts": 47,
+    "worlds": 1,
+    "resets": 1,
+    "raw_physics": 235,
+    "model_ticks": 29631,
+    "measured_CPU_s": 53.105346896,
+    "unmetered_setup_static_admin_CPU_allowance_s": 15.0,
+    "conservative_CPU_charge_s": 68.105346896,
+    "wall_s_through_closeout": 365.788696,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0,
+    "research_remaining": 19069
+  },
+  "decision": {
+    "minimal_correspondence_correction_retained": true,
+    "old_guard_reintroduced": false,
+    "submission_ready": false,
+    "performance_13_22_seconds": "NOT_VERIFIED",
+    "no_more_experiments_in_this_bundle": true
+  },
+  "preservation": {
+    "main_required": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+    "participants_and_backups_edited": false,
+    "private_artifacts": "Raw observations, states, case coordinates, action traces, approval material and native checkpoints remain outside the repository."
+  },
+  "reproduction": [
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python retry/reference_transition_counterexample.py NEW_OUTPUT_JSON",
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python retry/joint_feasibility_check.py NEW_OUTPUT_JSON",
+    "The final source was actually packaged and reset-tested, with exact failure replay. Native observations and memory needed to reproduce the private case remain private.",
+    "The older rejected dual-reference patch/report is historical at base commit a12b27de193f89496369ce6fa628e504fc90cf9c; it is not part of this default."
+  ]
+}

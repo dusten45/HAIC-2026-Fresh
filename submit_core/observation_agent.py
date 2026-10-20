@@ -1651,11 +1651,28 @@ def observed_reference_run_direction(points,previous):
         if (j==valid[0] and fraction[j]==0.) or (j==valid[-1] and fraction[j]==1.):continue
         station=float(arc[j]+fraction[j]*math.sqrt(float(squared[j])))
         direction=1 if float(delta[j]@tangent)>0. else -1
-        matches.append((station,direction))
+        matches.append((station,direction,j,float(fraction[j]),point))
     if len(matches)<3:return None
     direction=matches[0][1]
-    if any(sign!=direction for _,sign in matches):return 0
-    if not all(direction*(b[0]-a[0])>0. for a,b in zip(matches,matches[1:])):return 0
+    if any(match[1]!=direction for match in matches):return 0
+    def internal_vertex(match):
+        _,_,j,fraction,_=match
+        vertex=j if fraction==0. else j+1 if fraction==1. else -1
+        return vertex if 0<vertex<len(previous)-1 else -1
+    for first,second in zip(matches,matches[1:]):
+        advance=direction*(second[0]-first[0])
+        if advance>0.:continue
+        if advance<0.:return 0
+        # Dense current samples can both clamp to one coarse internal vertex.
+        # That equality is not a reversal when the actual current displacement
+        # advances along both matched directed segments. No localization slack
+        # or old coordinates are inserted into the current reference.
+        vertex=internal_vertex(first)
+        displacement=second[4]-first[4]
+        if (vertex<0 or vertex!=internal_vertex(second) or
+            any(direction*float(displacement@delta[match[2]])<=0.
+                for match in (first,second))):return 0
+    if direction*(matches[-1][0]-matches[0][0])<=0.:return 0
     return direction
 
 
