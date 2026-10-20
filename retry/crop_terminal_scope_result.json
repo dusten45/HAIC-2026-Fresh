@@ -1,0 +1,142 @@
+{
+  "status": "NO_ADDITIONAL_SUPPORTED_INPUT_REPAIR_WITHIN_TESTED_HYPOTHESES",
+  "base_commit": "d226ab0a2aa6d51c66de70363cc5e39bdf4f622f",
+  "agent_sha256": "406e96160fda710b96d71227f917ec8440c385b2cb77de7f0a36c96ad8350aa5",
+  "core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "participant_source_changed": false,
+  "predeclared_caps": {
+    "DEV": 200,
+    "model_ticks": 150000,
+    "CPU_s": 1200,
+    "wall_s": 2700
+  },
+  "gates": {
+    "saved_evidence_first": true,
+    "missing_bootstrap_single_offline_replay": true,
+    "correction_requires_observed_error": true,
+    "no_candidate_promoted": true
+  },
+  "terminal_attribution": {
+    "method": "Pure decoding/map/reference reconstruction and algebra; no terminal-modified Agent action or rollout.",
+    "earlier_call35_terminal_stop_active": true,
+    "earlier_call35_target_with_stop_m_s": 49.71823022050154,
+    "earlier_call35_without_stop_HIGH_LOW_m_s": [
+      63.89608805831444,
+      58.44911185584078
+    ],
+    "earlier_call40_terminal_stop_inactive_at_COM": true,
+    "actual_final_call41_reconstruction_exact": true,
+    "actual_final_call41_profiles": {
+      "high": {
+        "with_stop": {
+          "target_m_s": 45.516495372401884,
+          "feedforward_m_s2": -45.0
+        },
+        "without_stop_external_counterfactual": {
+          "target_m_s": 45.516495372401884,
+          "feedforward_m_s2": -45.0
+        },
+        "equal_through_arc": 14.368141082969403,
+        "equal_ahead_of_COM_m": 12.528581549865203,
+        "terminal_target_m_s": 56.635460513122176
+      },
+      "low": {
+        "with_stop": {
+          "target_m_s": 37.502481427759086,
+          "feedforward_m_s2": -45.0
+        },
+        "without_stop_external_counterfactual": {
+          "target_m_s": 37.502481427759086,
+          "feedforward_m_s2": -45.0
+        },
+        "equal_through_arc": 22.020071028093845,
+        "equal_ahead_of_COM_m": 20.180511494989645,
+        "terminal_target_m_s": 56.635460513122176
+      }
+    },
+    "conclusion": "The crop terminal affects earlier acceleration, but removing terminal stop leaves the immediate final speed targets/feedforward unchanged. Local curvature envelope is active. This is not a full trajectory causal necessity/sufficiency proof.",
+    "scope": "Call35/40 reconstructed with current source on earlier frozen-source memories; final41 reconstructed directly from the actual final-source checkpoint. Comparing targets across40 and41 includes vehicle progress and profile update; the whole target fall is not attributed solely to observation change."
+  },
+  "pre_difference_correspondence": {
+    "hypothesis": "First width-reference bootstrap can use endpoint-distance fallback without previous lattice and might reverse a current run.",
+    "offline_comparison_call": 33,
+    "observations": "Existing official pixel prefix only; reset-local own memory, no actual simulator dispatch.",
+    "commands1_through33_identical_to_saved_trace": true,
+    "exact_high_low_progress": true,
+    "previous_lattice_count": 0,
+    "selected_run_points": 14,
+    "all_selected_points_current_plain_asphalt": true,
+    "selected_run_strictly_forward_in_vehicle_frame": true,
+    "incoming_outgoing_cosine": 0.9999854763538395,
+    "conclusion": "Specific bootstrap33 reversed/backward-join hypothesis not observed; no additional input correction justified.",
+    "limits": "No actual33 external pose retained. Local observed direction is not a global route or universal branch certificate."
+  },
+  "actual_final_failure_timing": {
+    "source": "Previously completed actual d226 final-source reset, not a new rollout.",
+    "candidate_count": 21,
+    "first_failing_raw_counts": {
+      "2": 6,
+      "3": 2,
+      "6": 5,
+      "1": 8
+    },
+    "reason": "FORCE_PEAK"
+  },
+  "required_controller_scope_for_further_progress": [
+    {
+      "change": "Permit jointly force-feasible steering and pedal candidate generation, including the backup continuation.",
+      "reason": "Original chooser fixes HIGH steering and searches pedals only. Eight candidates fail before a model tick; thirteen fail after1,2,or5 ticks. Stronger braking does not by itself remove lateral/combined force failure.",
+      "status": "Concrete design change to evaluate, not a tested remedy or authorization to implement."
+    },
+    {
+      "change": "Require next-decision feasibility under observation/state uncertainty and refreshed local reference, rather than certification only on one frozen estimated path/state.",
+      "reason": "A certified preceding command reaches a subsequent observed state with no admitted candidate. Current finite-path certification alone does not establish recursive feasibility after re-observation.",
+      "status": "Needs robust reachability/observation semantics; no bound tuned to pass this case."
+    }
+  ],
+  "terminal_policy_limit": "Treating a visibility crop as a physical stop is a partial-observation controller design issue. Blindly removing the stop assumes unsupported continuation, and current evidence does not support it as this failure repair.",
+  "final_code_validation": {
+    "new_native_reset": false,
+    "why": "Participant source remains byte-identical to the already actual-reset-tested final d226 source; repeated validation of established normal inputs was avoided.",
+    "retained_result": {
+      "valid_actions": 40,
+      "first_failed_call": 41,
+      "progress": 0.12367491166077739,
+      "damage": 0.0,
+      "max_whole_act_wall_s": 1.8712049790192395,
+      "CPU_s": 46.292796595000006,
+      "wall_s": 45.74380954698427,
+      "model_ticks": 24659,
+      "unchanged_action_prefix_vs_frozen9720": 36,
+      "final_pixels_and_hull_pose_equal_to_diagnostic_failure": true,
+      "reasons": {
+        "FORCE_PEAK": 21
+      },
+      "exact_first_failure_replay_identical": true,
+      "official_server_runtime_parity": false
+    },
+    "no_performance_promotion": true
+  },
+  "phase_usage": {
+    "DEV": 0,
+    "model_ticks": 21625,
+    "measured_CPU_s": 35.12548339199999,
+    "unmetered_read_setup_admin_allowance_s": 10,
+    "conservative_CPU_charge_s": 45.12548339199999,
+    "wall_s_through_diagnostic_closeout": 349.422968,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve_used": 0,
+    "research_remaining": 19251
+  },
+  "reproduction": {
+    "offline_prefix": "Use retry.runtime598_prefix_pair on the retained official prefix with frozen d226 source, call33 and model-cap40000; require commands1..32 match.",
+    "private_pure_scripts": [
+      "phase-d226-terminal-readonly.py",
+      "phase-d226-final41-terminal-readonly.py",
+      "phase-d226-bootstrap33-reproduce-private.py"
+    ],
+    "raw_inputs": "Retained privately; no pixels, coordinates, state arrays, action tapes or private approval quotations published."
+  },
+  "decision": "Stop this bounded diagnostic bundle because neither tested residual hypothesis supplies an input-repair gate. No source/control changes, optimistic state replacement, HOLDOUT/SEALED/reserve use or new paid resources."
+}
