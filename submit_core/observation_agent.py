@@ -1284,7 +1284,7 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
                              cover_override=None,connected_anchors=False):
     """Conditioned connected-road hypothesis, never obstacle-clearance proof."""
     cover=vehicle_projection_mask(joint)if cover_override is None else np.asarray(cover_override,np.uint8)
-    candidates=[];continuation_candidates={};wide_union_rows=set();fov_rows=set()
+    candidates=[];continuation_candidates={};wide_union_rows=set();fov_rows=set();deferred_rows=set()
     flatness_halo=cv2.dilate(cover,np.ones((3,3),np.uint8))
     visible_grass=coherent_grass_mask(image)
     # Output-pixel quantization plus public per-node normal change. This is a
@@ -1294,9 +1294,18 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
     for y in np.flatnonzero(np.any(cover,axis=1)):
         row=asphalt[y].astype(bool)&~cover[y].astype(bool)
         d=np.diff(np.pad(row,(1,1)).astype(np.int16));starts=np.flatnonzero(d==1);ends=np.flatnonzero(d==-1)
+        all_starts,all_ends=starts,ends
         good=ends-starts>=3;starts=starts[good];ends=ends[good]
         left=[i for i in range(len(starts)) if ends[i]<=math.ceil(IMAGE_ORIGIN_X)]
         right=[i for i in range(len(starts)) if starts[i]>=math.floor(IMAGE_ORIGIN_X)]
+        deferred=False
+        if (not left or not right) and connected_anchors and not initializing:
+            # A two-sample current flank is pending component evidence only.
+            # It never seeds a fit or supplies an independent strict bracket.
+            good=all_ends-all_starts>=2;starts=all_starts[good];ends=all_ends[good]
+            left=[i for i in range(len(starts)) if ends[i]<=math.ceil(IMAGE_ORIGIN_X)]
+            right=[i for i in range(len(starts)) if starts[i]>=math.floor(IMAGE_ORIGIN_X)]
+            deferred=True
         if not left or not right:continue
         l=max(left,key=lambda i:ends[i]);r=min(right,key=lambda i:starts[i])
         a,b=int(ends[l]),int(starts[r])
@@ -1306,7 +1315,9 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
         clipped=starts[l]==0 or ends[r]>=84
         if (starts[l]>0 and cover[y,starts[l]-1]) or (ends[r]<84 and cover[y,ends[r]]):continue
         entry=(int(y),int(starts[l]),int(ends[r]-1),a,b)
-        if clipped:continuation_candidates[int(y)]=entry;fov_rows.add(int(y))
+        if deferred:
+            continuation_candidates[int(y)]=entry;deferred_rows.add(int(y))
+        elif clipped:continuation_candidates[int(y)]=entry;fov_rows.add(int(y))
         else:candidates.append(entry)
     support=np.zeros((84,84),np.uint8)
     info=dict(road_support_inference_mode='spawn_conditioned' if initializing else 'visible_boundary_continuity',
@@ -1392,6 +1403,11 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
         # Spawn centering/orientation is never assumed after the first action.
         if abs((lc[1]+rc[1])*.5-IMAGE_ORIGIN_X)>1. or abs(slope*1.701/1.3608)>math.tan(.31):return support,info
         info['spawn_prior_used']=True
+    # Interior two-sample rows retain the original component recovery path.
+    # Deferred continuation must not hide them from that independent pass.
+    interior_deferred={sy for sy in deferred_rows if min(y)<=sy<=max(y)}
+    for sy in interior_deferred:continuation_candidates.pop(sy)
+    deferred_rows-=interior_deferred
     inference_rows=list(candidates);extension_rows=[]
     if not initializing:
         # Crop-limited or broader pavement gives an inclusion constraint.
@@ -1409,7 +1425,7 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
                 right_safe=rc[0]*(sy-IMAGE_ORIGIN_Y)+rc[1]-limits[1]
                 if left_safe>a or right_safe<b-1 or l>left_safe or r<right_safe:break
                 plateaus=(image[sy,a-3:a],image[sy,b:b+3])
-                if any(len(v)!=3 or min(v)<=.36 or max(v)>=.47 or np.ptp(v)>7.1/255. for v in plateaus):
+                if sy in deferred_rows or any(len(v)!=3 or min(v)<=.36 or max(v)>=.47 or np.ptp(v)>7.1/255. for v in plateaus):
                     if not connected_anchors:break
                     pending=[entry];probe=sy+direction;next_anchor=None
                     while probe in continuation_candidates:
@@ -1420,7 +1436,7 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
                         rs=rc[0]*(probe-IMAGE_ORIGIN_Y)+rc[1]-limits[1]
                         if ls>pa or rs<pb-1 or pl>ls or pr<rs:break
                         values=(image[probe,pa-3:pa],image[probe,pb:pb+3])
-                        if all(len(v)==3 and min(v)>.36 and max(v)<.47 and np.ptp(v)<=7.1/255. for v in values):
+                        if probe not in deferred_rows and all(len(v)==3 and min(v)>.36 and max(v)<.47 and np.ptp(v)<=7.1/255. for v in values):
                             next_anchor=following;break
                         pending.append(following);probe+=direction
                     if next_anchor is None or not observed_extension_flank_bridge(
@@ -1515,7 +1531,7 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
     support[obstacle_mask]=0
     info['road_support_inferred_pixels']=int(np.sum(support&~asphalt.astype(bool)))
     if connected_anchors:
-        info['current_two_flank_rows']=[list(v) for v in inference_rows]
+        info['current_two_flank_rows']=[list(v) for v in inference_rows if v[0] not in deferred_rows]
     return support,info
 
 

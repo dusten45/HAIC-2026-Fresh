@@ -116,6 +116,55 @@ def check(revision):
     refused=a.infer_local_road_support(bad,bad_asphalt,zero,.2,False,30.,cover_override=cover,connected_anchors=True)
     untouched=not bool(refused[0][37,41])
     cases.append(dict(name='whole_caller_visible_grass_gap_veto',expected=True,actual=untouched,ok=untouched))
+    # A genuinely two-pixel observed flank can be held as a deferred current
+    # component, but can never become an original fit/reference anchor.
+    weak=image.copy();weak[34:44,47:49]=160/255.;weak[37,47]=129/255.
+    weak_cover=cover.copy();weak_cover[:,44]=0;weak_cover[37,44]=1
+    weak[34:44,44]=100/255.;weak[37,44]=60/255.
+    weak_asphalt=((weak>.36)&(weak<.47)).astype(np.uint8)
+    captured={}
+    def trace(frame,event,arg):
+        if frame.f_code is a.infer_local_road_support.__code__ and event=='return':
+            captured['fit_rows']=[r[0]for r in frame.f_locals.get('candidates',[])]
+        return trace
+    sys.settrace(trace)
+    try:
+        answer=a.infer_local_road_support(weak,weak_asphalt,zero,.2,False,30.,cover_override=weak_cover,connected_anchors=True)
+    finally:sys.settrace(None)
+    accepted=bool(np.all(answer[0][37,39:45]))
+    cases.append(dict(name='weak_two_pixel_whole_caller_bridge',expected=True,actual=accepted,ok=accepted))
+    not_fit=37 not in captured['fit_rows']
+    cases.append(dict(name='weak_row_never_fit_anchor',expected=True,actual=not_fit,ok=not_fit))
+    not_reference=37 not in [r[0]for r in answer[1].get('current_two_flank_rows',[])]
+    cases.append(dict(name='weak_row_never_reference_anchor',expected=True,actual=not_reference,ok=not_reference))
+    old_weak=old(weak,weak_asphalt,zero,.2,False,30.,cover_override=weak_cover,connected_anchors=False)
+    new_weak=a.infer_local_road_support(weak,weak_asphalt,zero,.2,False,30.,cover_override=weak_cover,connected_anchors=False)
+    same=np.array_equal(old_weak[0],new_weak[0])and old_weak[1]==new_weak[1]
+    cases.append(dict(name='weak_other_mode_bit_identical',expected=True,actual=same,ok=same))
+    for name,variant in (
+        ('no_next_strict_three_anchor',weak.copy()),
+        ('singleton_flank',weak.copy()),
+        ('coherent_grass_gap',weak.copy()),
+        ('current_occluded_flank',weak.copy()),
+        ('only_weak_rows_never_seed_fit',weak.copy()),
+    ):
+        if name=='no_next_strict_three_anchor':variant[34:39,46:49]=129/255.
+        elif name=='singleton_flank':variant[37,46:48]=129/255.
+        elif name=='coherent_grass_gap':variant[36:38,40:42]=160/255.
+        elif name=='current_occluded_flank':variant[37,45:48]=60/255.
+        elif name=='only_weak_rows_never_seed_fit':variant[34:44,46:49]=129/255.
+        material=((variant>.36)&(variant<.47)).astype(np.uint8)
+        result=a.infer_local_road_support(variant,material,zero,.2,False,30.,cover_override=weak_cover,connected_anchors=True)
+        rejected=not bool(np.any(result[0][37,39:45]))
+        cases.append(dict(name=name,expected=True,actual=rejected,ok=rejected))
+    # Interior two-column components must keep their established path rather
+    # than being hidden in the new deferred extension bookkeeping.
+    interior=weak.copy();interior[34:44,20:28]=160/255.
+    interior_material=((interior>.36)&(interior<.47)).astype(np.uint8)
+    previous=old(interior,interior_material,zero,.2,False,30.,cover_override=weak_cover,connected_anchors=True)
+    latest=a.infer_local_road_support(interior,interior_material,zero,.2,False,30.,cover_override=weak_cover,connected_anchors=True)
+    preserved=bool(np.all(previous[0][37,39:45]))and np.array_equal(previous[0],latest[0])and previous[1]==latest[1]
+    cases.append(dict(name='original_interior_two_column_path_bit_preserved',expected=True,actual=preserved,ok=preserved))
     return dict(status='PASS'if all(q['ok']for q in cases)else'FAIL',cases=cases,
         passed=sum(q['ok']for q in cases),count=len(cases),CPU_s=time.process_time()-cpu,
         model_ticks=0,native_actions=0,legacy_revision=revision,
