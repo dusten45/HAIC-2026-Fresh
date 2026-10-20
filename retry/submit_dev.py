@@ -137,13 +137,19 @@ def main():
     parser.add_argument('--save-observations',action='store_true')
     parser.add_argument('--cpu-budget',type=float,default=1800.)
     parser.add_argument('--wall-budget',type=float,default=3600.)
+    parser.add_argument('--authorization-deadline-utc',help='Explicit approved UTC deadline; no automatic extension')
     args=parser.parse_args();assert 0<args.steps<=2000
+    deadline=DEADLINE
+    if args.authorization_deadline_utc:
+        deadline=datetime.datetime.fromisoformat(args.authorization_deadline_utc.replace('Z','+00:00'))
+        if deadline.tzinfo is None or deadline.utcoffset()!=datetime.timedelta(0):
+            raise ValueError('Explicit UTC authorization deadline required')
     assert 6.<args.cpu_budget<=1800. and 6.<args.wall_budget<=3600.
     if args.force_diagnostic:assert args.continuous_runtime and args.steps<=36 and args.model_tick_budget<=30000
     if args.rolling_checkpoint:assert args.continuous_runtime and not args.force_diagnostic and args.model_tick_budget<=200000
     if args.continuous_runtime:assert args.runtime_core and args.steps<=1000,'CONTINUOUS_RUNTIME_CAP'
     elif args.runtime_core:assert args.steps<=20,'INITIAL_RUNTIME_LINK_SMOKE_CAP'
-    if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:raise RuntimeError('AUTHORIZATION_EXPIRED')
+    if datetime.datetime.now(datetime.timezone.utc)>=deadline:raise RuntimeError('AUTHORIZATION_EXPIRED')
     PRIVATE.mkdir(mode=0o700,exist_ok=True);out=PRIVATE/args.label;out.mkdir(mode=0o700,exist_ok=False)
     source,source_hash=package(out,args.agent_source,ROOT/'submit_core/runtime598.py' if args.runtime_core else None);client=None;env=None;rows=[];status='TECHNICAL_FAILURE';error=None;reset=None;summary={};failure_payload=None;worker_cpu=0.
     try:
@@ -165,7 +171,7 @@ def main():
         from core.vendor.car_racing import CarRacing
         from env_wrapper import CarEnvironment
         case=json.loads(Path('/workspace/haic-response541-private/approved-case-private.json').read_text())
-        if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:raise RuntimeError('AUTHORIZATION_EXPIRED')
+        if datetime.datetime.now(datetime.timezone.utc)>=deadline:raise RuntimeError('AUTHORIZATION_EXPIRED')
         ledger_charge('worlds');raw=CarRacing(**case['base']);env=CarEnvironment(TimeLimit(raw,max_episode_steps=2000*4+200),**case['wrapper'])
         ledger_charge('resets');obs,info=env.reset(seed=case['seed'],options={'track_id':case['track_id']})
         assert obs.shape==(4,84,84) and obs.dtype==np.float32 and np.isfinite(obs).all()
@@ -175,7 +181,7 @@ def main():
         status='ACTION_LIMIT_CENSORED'
         with (out/'decisions-private.jsonl').open('w') as log:
             for i in range(args.steps):
-                if datetime.datetime.now(datetime.timezone.utc)>=DEADLINE:status='AUTHORIZATION_CENSORED';break
+                if datetime.datetime.now(datetime.timezone.utc)>=deadline:status='AUTHORIZATION_CENSORED';break
                 if args.continuous_runtime:
                     if time.perf_counter()-START>=min(args.wall_budget-6.,1794. if args.force_diagnostic else 3594.):status='WALL_BUDGET_CENSORED';break
                     if time.process_time()-CPU+worker_cpu+client.startup>=min(args.cpu_budget-6.,594. if args.force_diagnostic else 1794.):status='CPU_BUDGET_CENSORED';break
@@ -239,6 +245,7 @@ def main():
         child=resource.getrusage(resource.RUSAGE_CHILDREN)
         total_cpu=time.process_time()-CPU+child.ru_utime+child.ru_stime-CHILD_START.ru_utime-CHILD_START.ru_stime
         result=dict(label=args.label,status=status,error=error,source_sha256=source_hash,
+            authorization_deadline_utc=deadline.isoformat(),
             steps=len(rows),startup_wall_s=client.startup if client is not None else None,
             reset_wall_s=reset['whole_request_wall_s'] if reset else None,
             max_whole_act_wall_s=max((r['whole_act_wall_s'] for r in rows),default=None),
