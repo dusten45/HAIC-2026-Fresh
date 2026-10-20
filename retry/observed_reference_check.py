@@ -25,8 +25,10 @@ def main():
           image,truth=scene(radius,phase,mirror,variable,paint_mode=paint_mode)
           line=np.vstack((truth[0][:2].mean(axis=0),[poly[2:].mean(axis=0) for poly in truth]))
           before=a.Agent();before.calls=1;after=a.Agent();after.calls=1
+          # These constructed road images contain no measured vehicle HUD.
+          before.joint_observed_interval=None;after.joint_observed_interval=None
           try:
-            a.reference_from_observed_width=lambda raw,*args:(raw,dict(observed_width_reference_used=False))
+            a.reference_from_observed_width=lambda raw,*args,**kwargs:(raw,dict(observed_width_reference_used=False))
             old_scene,old,_,_=before._map(image)
             a.reference_from_observed_width=original
             new_scene,new,_,_=after._map(image)

@@ -1555,12 +1555,12 @@ def offset_observed_contour(points,center,radius):
         if length<1.:continue
         normal=np.array([tangent[1],-tangent[0]])/length
         if float(normal@(coefficients[0]-center))<0:normal=-normal
-        # Reference targets are physical half-width estimates on the observed
-        # angular sector. One-sided interpolation is allowed for a proposal;
-        # robust map boundaries still require support on both sides.
+        # A one-sided endpoint tangent can turn the offset reference backward
+        # even with a small fit residual. Require the same observed +/-step
+        # bracket for reference targets and robust contour geometry.
+        if not both_sides:continue
         centre=coefficients[0]-.5*nominal*normal
         centres.append((float(centre[0]),float(centre[1]),float(angle)))
-        if not both_sides:continue
         uncertainty=residual+nominal*(1-math.cos(.31/2))+1/(2.7*6.)
         inner=coefficients[0]-(nominal-uncertainty)*normal
         outer_safe=coefficients[0]-uncertainty*normal
