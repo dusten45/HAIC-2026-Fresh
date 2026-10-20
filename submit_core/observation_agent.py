@@ -283,8 +283,13 @@ def object_adjacent_asphalt(image,asphalt,flat,visible_obstacles):
 
 OBJECT_SX=1.3608
 OBJECT_SY=1.701
-OBJECT_RADIUS=1.2
-OBJECT_SOURCE_ERROR_M=3*math.hypot(84/1000/OBJECT_SX,84/800/OBJECT_SY)
+OBJECT_RADIUS=float(np.float32(1.2))
+OBJECT_OLD_SOURCE_ERROR_M=3*math.hypot(84/1000/OBJECT_SX,84/800/OBJECT_SY)
+# pygame2.6.1 SDL_gfx: vertex truncation sqrt(2), AA minor-axis support
+# <=1+1000/65536, then source-pixel cell half-diagonal sqrt(2)/2.
+# scale_mmx64.c 14-bit area steps shift X/Y edges by <=1/256,1/512.
+# This unshifted-center bound requires the complete source shape unclipped.
+OBJECT_SOURCE_ERROR_M=(1.5*math.sqrt(2)+1+1000/65536+math.hypot(1/256,1/512))/16.2
 OBJECT_QUANTIZATION_GRAY=3.0
 
 def _object_raster_samples(bounds,subdivisions):
@@ -305,7 +310,7 @@ def _object_raster_samples(bounds,subdivisions):
     sample_radius=.5*math.hypot(side/subdivisions/OBJECT_SX,side/subdivisions/OBJECT_SY)
     return np.concatenate(pts,axis=1),np.concatenate(weights,axis=1),sample_radius
 
-def compatible_object_envelope(image,bounds,road_interval,cell_m=.15,subdivisions=4):
+def compatible_object_envelope(image,bounds,road_interval,cell_m=.075,subdivisions=8,refinements=1):
     """Return union of all surviving center cells, or reject.
 
     bounds is a fully observed, externally checked rectangular ROI in pixels.
@@ -318,37 +323,66 @@ def compatible_object_envelope(image,bounds,road_interval,cell_m=.15,subdivision
     if not len(bright):return dict(accepted=False,reason='NO_CURRENT_BRIGHT_CORE')
     lowroad,highroad=map(float,road_interval)
     if not 98<=lowroad<=highroad<=110 or highroad-lowroad>7.1:return dict(accepted=False,reason='ROAD_PLATEAU')
-    points,weights,integration_error=_object_raster_samples((x0,y0,x1,y1),subdivisions)
     # Every bright pixel must receive some object contribution. A source point
     # of its positive four-box kernel is within this radius of its pixel center.
     side=84/96
     kernel_error=math.hypot(1.5*side/OBJECT_SX,1.5*side/OBJECT_SY)
     reach=OBJECT_RADIUS+OBJECT_SOURCE_ERROR_M+kernel_error
     bx=(bright[:,1]+x0)/OBJECT_SX;by=(bright[:,0]+y0)/OBJECT_SY
+    # Establish the no-clipping premise using the wider historical domain.
+    # Reject the entire inference when any possible full center cell might
+    # invoke SDL_gfx clipping; do not select only convenient interior aliases.
+    old_reach=OBJECT_RADIUS+OBJECT_OLD_SOURCE_ERROR_M+kernel_error
+    old_left=max(bx-old_reach);old_right=min(bx+old_reach)
+    old_bottom=max(by-old_reach);old_top=min(by+old_reach)
+    halo=(OBJECT_RADIUS+OBJECT_OLD_SOURCE_ERROR_M+cell_m/math.sqrt(2))*16.2
+    raw_left=old_left*16.2+.5*1000/84-.5-halo
+    raw_right=(old_right+cell_m)*16.2+.5*1000/84-.5+halo
+    raw_near=799.5-((old_top+cell_m)*OBJECT_SY+.5)*800/84-halo
+    raw_far=799.5-(old_bottom*OBJECT_SY+.5)*800/84+halo
+    if not (1<raw_left<=raw_right<998 and 1<raw_near<=raw_far<798):
+        return dict(accepted=False,reason='UNCERTAIN_SOURCE_CLIPPING')
     left=max(bx-reach);right=min(bx+reach);bottom=max(by-reach);top=min(by+reach)
     if left>right or bottom>top:return dict(accepted=False,reason='NO_CENTER_DOMAIN')
     xs=np.arange(left,right+cell_m,cell_m);ys=np.arange(bottom,top+cell_m,cell_m)
     centers=np.stack(np.meshgrid(xs,ys),axis=-1).reshape(-1,2)
     halfcell=cell_m/math.sqrt(2)
-    lower=max(0,OBJECT_RADIUS*math.cos(math.pi/16)-OBJECT_SOURCE_ERROR_M-integration_error-halfcell)
-    upper=OBJECT_RADIUS+OBJECT_SOURCE_ERROR_M+integration_error+halfcell
-    observed=roi.ravel();kept=[];best_violation=float('inf')
-    for start in range(0,len(centers),32):
-        c=centers[start:start+32]
-        distance=np.linalg.norm(points[None,:,:,:]-c[:,None,None,:],axis=-1)
-        fmin=np.sum((distance<=lower)*weights[None,:,:],axis=-1)
-        fmax=np.sum((distance<=upper)*weights[None,:,:],axis=-1)
-        predicted_low=lowroad+(173.1-lowroad)*fmin-OBJECT_QUANTIZATION_GRAY
-        predicted_high=highroad+(173.1-highroad)*fmax+OBJECT_QUANTIZATION_GRAY
-        violation=np.max(np.maximum(predicted_low-observed,observed-predicted_high),axis=1)
-        best_violation=min(best_violation,float(violation.min()))
-        kept.extend(c[violation<=0].tolist())
-    if not kept:return dict(accepted=False,reason='NO_COMPATIBLE_CENTER',tested_center_cells=len(centers),best_violation_gray=best_violation)
+    tested=len(centers);observed=roi.ravel();best_violation=float('inf')
+    # Each level is independently an outer enclosure. The inexpensive level
+    # rejects contradictions before finer quadrature; all its unknown cells
+    # reach the final level. No best-fit cell or orientation is selected.
+    levels=(4,subdivisions) if subdivisions>4 else (subdivisions,)
+    samples=[_object_raster_samples((x0,y0,x1,y1),level) for level in levels]
+    for refinement in range(refinements+1):
+        for points,weights,integration_error in samples:
+            lower=max(0,OBJECT_RADIUS*math.cos(math.pi/16)-OBJECT_SOURCE_ERROR_M-integration_error-halfcell)
+            upper=OBJECT_RADIUS+OBJECT_SOURCE_ERROR_M+integration_error+halfcell
+            kept=[]
+            for start in range(0,len(centers),32):
+                c=centers[start:start+32]
+                distance=np.linalg.norm(points[None,:,:,:]-c[:,None,None,:],axis=-1)
+                fmin=np.sum((distance<=lower)*weights[None,:,:],axis=-1)
+                fmax=np.sum((distance<=upper)*weights[None,:,:],axis=-1)
+                predicted_low=lowroad+(173.1-lowroad)*fmin-OBJECT_QUANTIZATION_GRAY
+                predicted_high=highroad+(173.1-highroad)*fmax+OBJECT_QUANTIZATION_GRAY
+                violation=np.max(np.maximum(predicted_low-observed,observed-predicted_high),axis=1)
+                best_violation=min(best_violation,float(violation.min()))
+                kept.extend(c[violation<=0].tolist())
+            if not kept:break
+            centers=np.asarray(kept)
+        if not kept:break
+        if refinement<refinements:
+            # Every parent square is partitioned into all four children.
+            # Only pixel contradictions remove children; no alias is sampled.
+            offsets=np.array([[-1,-1],[-1,1],[1,-1],[1,1]])*(cell_m/4)
+            centers=(centers[:,None,:]+offsets[None,:,:]).reshape(-1,2)
+            tested+=len(centers);cell_m*=.5;halfcell=cell_m/math.sqrt(2)
+    if not kept:return dict(accepted=False,reason='NO_COMPATIBLE_CENTER',tested_center_cells=tested,best_violation_gray=best_violation)
     kept=np.array(kept);envelope_radius=OBJECT_RADIUS+halfcell
-    return dict(accepted=True,compatible_center_cells=len(kept),tested_center_cells=len(centers),centers_world_pixel_origin=kept.tolist(),center_cell_half_diagonal_m=halfcell,
+    return dict(accepted=True,compatible_center_cells=len(kept),tested_center_cells=tested,centers_world_pixel_origin=kept.tolist(),center_cell_half_diagonal_m=halfcell,
         silhouette_union_box_world_pixel_origin=[*(kept.min(axis=0)-envelope_radius),*(kept.max(axis=0)+envelope_radius)],
         source_raster_envelope_m=OBJECT_SOURCE_ERROR_M,quantization_gray=OBJECT_QUANTIZATION_GRAY,orientation='all, inscribed/circumscribed16gon',
-        engineering_assumptions='Three source-pixel diagonals bound polygon/AA and integer-area resampling deviations; final arithmetic ±3gray. Caller validates full current road ring. Not a universal safety certificate.')
+        engineering_assumptions='Unclipped SDL_gfx quantization/AA, source-pixel cells and SSE area-edge drift are bounded separately; final arithmetic ±3gray unchanged. Caller validates full current road ring. Not a universal safety certificate.')
 
 
 def detect_observed_obstacles(image,mixed=False):
@@ -415,6 +449,9 @@ def observed_object_road_patch(image,center,joint):
     collision_center=(float(midpoint[0]-IMAGE_ORIGIN_X/OBJECT_SX),
         float(IMAGE_ORIGIN_Y/OBJECT_SY-midpoint[1]))
     collision_radius=OBJECT_RADIUS+envelope['center_cell_half_diagonal_m']+float(np.max(np.linalg.norm(cells-midpoint,axis=1)))
+    cell_radius=OBJECT_RADIUS+envelope['center_cell_half_diagonal_m']
+    cell_disks=[((float(p[0]-IMAGE_ORIGIN_X/OBJECT_SX),
+        float(IMAGE_ORIGIN_Y/OBJECT_SY-p[1])),cell_radius) for p in cells]
     # Boundaries lie inside the CURRENT enclosing road plateau. Retain the
     # existing0.35m inward allowance on every edge of this inferred patch.
     left=(x0+1-IMAGE_ORIGIN_X)/OBJECT_SX+.35;right=(x1-1-IMAGE_ORIGIN_X)/OBJECT_SX-.35
@@ -424,6 +461,7 @@ def observed_object_road_patch(image,center,joint):
     return patch,(collision_center,collision_radius),dict(
         compatible_center_cells=envelope['compatible_center_cells'],
         collision_envelope_radius_m=collision_radius,
+        collision_cell_disks=cell_disks,
         source_raster_envelope_m=OBJECT_SOURCE_ERROR_M,
         quantization_gray=OBJECT_QUANTIZATION_GRAY,
         inferred_road_under_object=True,closed_current_asphalt_ring=True,
@@ -2191,7 +2229,11 @@ class Agent:
             recovered=observed_object_road_patch(image,center,self.joint)
             if recovered is not None:
                 patch,collision,record=recovered
-                object_road_patches.append(patch);object_collision_envelopes.append(collision);object_road_records.append(record)
+                object_road_patches.append(patch)
+                # Union of full-cell covers retains every compatible center
+                # without adding the empty space of one global bounding ball.
+                object_collision_envelopes.extend(record['collision_cell_disks'])
+                object_road_records.append(record)
         blocked=obstacle_blocked.copy()
         blocked[55:70,34:51]=True
         self.obstacle_tracks,obstacle_counts=update_observed_obstacles(image,obstacles,self.obstacle_tracks,self.joint)
