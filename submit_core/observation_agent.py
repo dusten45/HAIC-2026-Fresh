@@ -1070,6 +1070,79 @@ def vehicle_projection_mask(joint):
     return cv2.dilate(mask,np.ones((3,3),np.uint8),iterations=1)
 
 
+def _rotated_extrema(dx,dy,lo,hi,axis):
+    def f(t):return dx*math.cos(t)-dy*math.sin(t)if axis==0 else dx*math.sin(t)+dy*math.cos(t)
+    phase=math.atan2(-dy,dx)if axis==0 else math.atan2(dx,dy)
+    angles=[lo,hi]+[phase+k*math.pi for k in range(-3,4)if lo<=phase+k*math.pi<=hi]
+    return min(map(f,angles)),max(map(f,angles))
+
+def source_bbox_vehicle_cover(joint_interval):
+    """Public part bounds through area/linear sampling, no output dilation.
+
+    One observed HUD joint bin; the other three retain full mechanical limits.
+    Assumes public kinematic wheel anchors and final zoom. This is an observer
+    engineering enclosure, not a bound on Box2D constraint-position residuals.
+    """
+    other_intervals=((-0.4,0.4),)*3
+    if joint_interval is None:return None,dict(reason='NO_CURRENT_JOINT_INTERVAL')
+    intervals=[tuple(joint_interval)]+list(other_intervals)
+    if len(intervals)!=4 or any(not all(map(math.isfinite,z))or z[0]>z[1]for z in intervals):return None,dict(reason='INVALID_JOINT_INTERVAL')
+    boxes=[]
+    def projected(xlo,ylo,xhi,yhi):
+        return(math.floor(math.nextafter(500+16.2*xlo,-math.inf)),math.floor(math.nextafter(200+16.2*ylo,-math.inf)),math.floor(math.nextafter(500+16.2*xhi,math.inf))+1,math.floor(math.nextafter(200+16.2*yhi,math.inf))+1)
+    for polygon in (core.HULL_POLY1,core.HULL_POLY2,core.HULL_POLY3,core.HULL_POLY4):
+        p=np.asarray(polygon)*core.SIZE;boxes.append(projected(p[:,0].min(),p[:,1].min(),p[:,0].max(),p[:,1].max()))
+    for (cx,cy),(lo,hi)in zip(core.WHEELPOS,intervals):
+        points=[(-.28,.54),(.28,.54),(.28,-.54),(-.28,-.54)]
+        xx=[_rotated_extrema(x,y,lo,hi,0)for x,y in points];yy=[_rotated_extrema(x,y,lo,hi,1)for x,y in points]
+        boxes.append(projected(cx*core.SIZE+min(z[0]for z in xx),cy*core.SIZE+min(z[0]for z in yy),cx*core.SIZE+max(z[1]for z in xx),cy*core.SIZE+max(z[1]for z in yy)))
+    # Union audited fixedpoint SSE and ideal area-shrink source dependencies.
+    i=np.arange(84,dtype=np.int64);j=(16*i+1)//14
+    sx=16384*1000//96;sy=16384*800//96
+    left=np.minimum(j*sx//16384,j*1000//96);right=np.maximum(((j+2)*sx+16383)//16384,((j+2)*1000+95)//96)
+    top=np.minimum(j*sy//16384,j*800//96);bottom=np.maximum(((j+2)*sy+16383)//16384,((j+2)*800+95)//96)
+    lowy=800-bottom;highy=800-top;cover=np.zeros((84,84),bool)
+    for x0,y0,x1,y1 in boxes:cover|=(left[None,:]<x1)&(right[None,:]>x0)&(lowy[:,None]<y1)&(highy[:,None]>y0)
+    return cover,dict(reason='PUBLIC_KINEMATIC_SOURCE_PART_AABB_AND_KERNEL',joint_intervals=intervals,source_boxes=boxes,cover_cells=int(cover.sum()),source_part_count=8,arbitrary_output_dilation=False,assumption='Body origin/camera and wheel anchors at public kinematic locations. All4 joints mechanically limited±.4; only left has currentHUD interval. Numerical position/limit residual and particles remain separate engineering uncertainty.')
+
+
+def observed_connected_flank_component(image,asphalt,cover,obstacle,grass,runs,base_rows,slope):
+    """Retain every connected current anchor window; fixed original gates."""
+    info=dict(anchor_windows=[],matching_window_pairs=[],accepted=False)
+    if not runs:return False,dict(info,reason='NO_RUNS')
+    first,last=runs[0][0]-1,runs[-1][0]+1
+    if not 0<=first<last<84 or first not in base_rows or last not in base_rows:return False,dict(info,reason='ORIGINAL_BRACKETS')
+    if(last-first)/1.701*math.sqrt(1+(slope*1.701/1.3608)**2)>21/6:return False,dict(info,reason='ORIGINAL_TILE_SPAN')
+    side=runs[0][1];samples=[];prev=None
+    for i,(y,which,lo,hi)in enumerate(runs):
+        if which!=side or side not in(0,1)or y!=first+1+i or y in base_rows or hi-lo!=2 or not 0<=lo<hi<=84:return False,dict(info,reason='RUN_STRUCTURE')
+        if prev is not None and max(prev[0],lo)>=min(prev[1],hi):return False,dict(info,reason='RUN_DISCONNECTED')
+        samples.extend((y,x)for x in range(lo,hi));prev=(lo,hi)
+    def values_for(cells):
+        yy=np.asarray([y for y,x in cells]);xx=np.asarray([x for y,x in cells]);values=image[yy,xx]
+        okay=bool(np.all(asphalt[yy,xx])and np.all((values>.36)&(values<.47))and not np.any(cover[yy,xx])and not np.any(obstacle[yy,xx])and not np.any(grass[yy,xx]))
+        return okay,values
+    okay,blockvalues=values_for(samples)
+    if not okay or np.ptp(blockvalues)>7.1/255:return False,dict(info,reason='CURRENT_BLOCK_MATERIAL')
+    choices=[]
+    for y,run in((first,runs[0]),(last,runs[-1])):
+        lo,hi=run[2:4];left,right,a,b=base_rows[y];start,end=(left,a)if side==0 else(b,right+1);available=[]
+        if end-start<3:return False,dict(info,reason='ORIGINAL_ANCHOR_LENGTH')
+        for x in range(max(start,lo-1),min(end-1,hi)):
+            # Strict overlap means4-connected; diagonal contact is insufficient.
+            if max(x,lo)>=min(x+2,hi):continue
+            okay,values=values_for([(y,x),(y,x+1)])
+            compatible=bool(okay and np.ptp(np.r_[blockvalues,values])<=7.1/255)
+            record=dict(row=y,lo=x,hi=x+2,gray=(values*255).tolist(),material_valid=okay,range_compatible=compatible)
+            info['anchor_windows'].append(record)
+            if compatible:available.append((x,values))
+        choices.append(available)
+    for x,firstvalues in choices[0]:
+        for z,lastvalues in choices[1]:
+            if np.ptp(np.r_[blockvalues,firstvalues,lastvalues])<=7.1/255:info['matching_window_pairs'].append(dict(first=[first,x,x+2],last=[last,z,z+2]))
+    info['accepted']=bool(info['matching_window_pairs']);return info['accepted'],dict(info,reason='CONNECTED_CURRENT_ANCHOR_WINDOWS'if info['accepted']else'NO_MATCHING_ANCHOR_PAIR')
+
+
 def observed_flank_component(image,asphalt,cover,obstacle_mask,grass,runs,base_rows,slope):
     """A current visible plateau bracketed by original corridor anchors.
 
@@ -1100,9 +1173,11 @@ def observed_flank_component(image,asphalt,cover,obstacle_mask,grass,runs,base_r
         and not np.any(grass[yy,xx]) and np.ptp(values)<=7.1/255.)
 
 
-def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,speed):
+def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,speed,
+                             cover_override=None,connected_anchors=False):
     """Conditioned connected-road hypothesis, never obstacle-clearance proof."""
-    cover=vehicle_projection_mask(joint);candidates=[];continuation_candidates={};wide_union_rows=set();fov_rows=set()
+    cover=vehicle_projection_mask(joint)if cover_override is None else np.asarray(cover_override,np.uint8)
+    candidates=[];continuation_candidates={};wide_union_rows=set();fov_rows=set()
     flatness_halo=cv2.dilate(cover,np.ones((3,3),np.uint8))
     visible_grass=coherent_grass_mask(image)
     # Output-pixel quantization plus public per-node normal change. This is a
@@ -1280,8 +1355,13 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
             groups[-1].append(proposal)
         for group in groups:
             runs=[proposal[1] for proposal in group]
-            if not observed_flank_component(image,asphalt,cover,obstacle_mask,visible_grass,
-                runs,base_rows,slope):continue
+            if connected_anchors:
+                accepted,_=observed_connected_flank_component(image,asphalt,cover,obstacle_mask,
+                    visible_grass,runs,base_rows,slope)
+            else:
+                accepted=observed_flank_component(image,asphalt,cover,obstacle_mask,visible_grass,
+                    runs,base_rows,slope)
+            if not accepted:continue
             lo=max(width_lower,max(proposal[2] for proposal in group))
             hi=min(width_upper,min(proposal[3] for proposal in group))
             if lo>hi:continue
@@ -2125,6 +2205,22 @@ class Agent:
             self.calls==0 and self.last_root is None,self.speed)
         asphalt|=inferred
         self.uncertainty.update(support_info)
+        # A separate geometry channel preserves raw reference/midpoint inputs.
+        # Only CURRENT visible samples validate this conditioned corridor. The
+        # old inference and all material/width/turn/distance gates stay intact.
+        joint_geometry=np.zeros_like(asphalt)
+        joint_cover,joint_cover_info=source_bbox_vehicle_cover(self.joint_observed_interval)
+        joint_info={}
+        if joint_cover is not None and not (self.calls==0 and self.last_root is None):
+            direct=((image>.36)&(image<.47)).astype(np.uint8)
+            refined,joint_info=infer_local_road_support(image,direct,obstacle_blocked,self.joint,
+                False,self.speed,cover_override=joint_cover,connected_anchors=True)
+            joint_geometry=refined&~inferred
+        self.uncertainty['raster_kernel_geometry_pixels']=int(joint_geometry.sum())
+        self.uncertainty['raster_kernel_geometry_cover_cells']=joint_cover_info.get('cover_cells',0)
+        self.uncertainty['raster_kernel_geometry_component_rows']=joint_info.get('road_support_flank_component_rows',0)
+        self.uncertainty['raster_kernel_geometry_reference_separate']=True
+        self.uncertainty['raster_kernel_geometry_kinematic_anchor_assumption']=True
         def observed_run(y,anchor,data=None):
             data=asphalt if data is None else data
             edges=np.diff(np.pad(data[y,1:83],(1,1)).astype(np.int16));starts=np.flatnonzero(edges==1)+1;ends=np.flatnonzero(edges==-1)+1
@@ -2165,6 +2261,7 @@ class Agent:
         geometry_asphalt|=adjacent
         self.uncertainty['raster_object_adjacent_asphalt_pixels']=int(np.sum(adjacent))
         if transported is not None:geometry_asphalt|=transported.astype(bool)
+        geometry_asphalt|=joint_geometry.astype(bool)
         geometry_asphalt=geometry_asphalt.astype(np.uint8)
         self.uncertainty.update(painted_info)
         # Geometry has its own topology. Do not join one selected run across
