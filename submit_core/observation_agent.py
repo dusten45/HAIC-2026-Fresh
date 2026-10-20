@@ -696,7 +696,7 @@ def recover_pixel_edge(image,y,index,direction,blocked,max_row=55):
     return float(index+direction*edge)
 
 
-def recover_plain_run_edge(image,y,index,direction,blocked,paint_near,road_interval=None):
+def recover_plain_run_edge(image,y,index,direction,blocked,paint_near,road_interval=None,max_row=55):
     """Place the same8-sample inversion on a visible road/grass transition."""
     # Inner plateau offsets are3,4. At most3 exterior shifts keep BOTH
     # samples in the original enclosing road run, including a steep raster.
@@ -706,7 +706,7 @@ def recover_plain_run_edge(image,y,index,direction,blocked,paint_near,road_inter
         if min(ids)<0 or max(ids)>=84 or paint_near[y,anchor]:continue
         if road_interval is not None and not all(road_interval[0]<=anchor+direction*k<road_interval[1] for k in (3,4)):continue
         if not 156/255.<=float(np.mean(image[y,ids[:2]]))<=184/255.:continue
-        measured=recover_pixel_edge(image,y,anchor,direction,blocked)
+        measured=recover_pixel_edge(image,y,anchor,direction,blocked,max_row=max_row)
         # Keep the original inversion-domain scale relative to the RAW run,
         # rather than silently expanding it with each search-window shift.
         if measured is not None and abs(measured-index)<=2.5:
@@ -1387,6 +1387,8 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
     support|=asphalt&conditioned&flatness_halo
     support[obstacle_mask]=0
     info['road_support_inferred_pixels']=int(np.sum(support&~asphalt.astype(bool)))
+    if connected_anchors:
+        info['current_two_flank_rows']=[list(v) for v in inference_rows]
     return support,info
 
 
@@ -1864,7 +1866,7 @@ def observed_reference_run_direction(points,previous):
     return direction
 
 
-def reference_from_observed_width(raw_points,curves,asphalt,blocked,previous=None):
+def reference_from_observed_width(raw_points,curves,asphalt,blocked,previous=None,road_occlusion_patches=()):
     """Visible outer contour plus public half-width, with an observed join.
 
     This estimates a reference, not a new planner or a geometry certificate.
@@ -1873,13 +1875,19 @@ def reference_from_observed_width(raw_points,curves,asphalt,blocked,previous=Non
     Do not continue a row-midpoint path beyond the observed centreline.
     """
     raw=np.asarray(raw_points,np.float64);best=None;backward_joins=0;ambiguous_runs=0
+    # These are the existing CURRENT closed-ring road patches, not collision
+    # clearance. Lane geometry may pass under an object before the unchanged
+    # obstacle deformation and hard collision checks are applied.
+    occlusion_patches=[tuple(tuple(float(v) for v in point) for point in patch)
+        for patch in road_occlusion_patches]
     def supported(point):
         x=IMAGE_ORIGIN_X+1.3608*point[0];y=IMAGE_ORIGIN_Y-1.701*point[1]
         # _map includes row69. Values just below69 already round to that
         # pixel, so rejecting its exact centre breaks a valid near-edge join.
         if not 1<=x<=82 or not 5<=y<=69:return False
         ix=int(round(x));iy=int(round(y))
-        return bool(asphalt[iy,ix]) and not bool(blocked[iy,ix])
+        return (bool(asphalt[iy,ix]) and not bool(blocked[iy,ix])) or any(
+            core.inside(tuple(point[:2]),patch) for patch in occlusion_patches)
     def visible_join(first,last):
         first=np.asarray(first[:2]);last=np.asarray(last[:2])
         gap=float(np.linalg.norm(last-first))
@@ -1920,13 +1928,15 @@ def reference_from_observed_width(raw_points,curves,asphalt,blocked,previous=Non
             score=length-gap
             if best is None or score>best[0]:best=(score,candidate,len(points),gap)
     if best is None:return raw,dict(reference_source='visible row midpoints',observed_width_reference_used=False,
-        reference_backward_joins_rejected=backward_joins,reference_ambiguous_direction_runs=ambiguous_runs)
+        reference_backward_joins_rejected=backward_joins,reference_ambiguous_direction_runs=ambiguous_runs,
+        reference_current_road_occlusion_patches=len(occlusion_patches))
     _,points,count,gap=best
     return points,dict(reference_source='observed clean outer contour + public half-width',
         observed_width_reference_used=True,observed_centerline_points=count,
         observed_reference_join_m=gap,reference_unseen_suffix_extrapolated=False,
         reference_backward_joins_rejected=backward_joins,reference_ambiguous_direction_runs=ambiguous_runs,
-        reference_is_an_estimate_not_a_certificate=True)
+        reference_is_an_estimate_not_a_certificate=True,
+        reference_current_road_occlusion_patches=len(occlusion_patches))
 
 
 def road_union_boundary(roads):
@@ -2205,7 +2215,7 @@ class Agent:
             self.calls==0 and self.last_root is None,self.speed)
         asphalt|=inferred
         self.uncertainty.update(support_info)
-        # A separate geometry channel preserves raw reference/midpoint inputs.
+        # Keep the pixel/reference-material inputs separate from geometry.
         # Only CURRENT visible samples validate this conditioned corridor. The
         # old inference and all material/width/turn/distance gates stay intact.
         joint_geometry=np.zeros_like(asphalt)
@@ -2232,6 +2242,8 @@ class Agent:
             if outside[j]>8:return None
             return int(starts[j]),int(ends[j])
         rows=[];pixels=[];anchor=IMAGE_ORIGIN_X
+        self.uncertainty['reference_current_two_flank_rows']=0
+        self.uncertainty['reference_current_two_flank_is_estimate']=True
         for y in range(69,4,-2):
             run=observed_run(y,anchor)
             if run is None:
@@ -2241,7 +2253,17 @@ class Agent:
             left=(float(start)-IMAGE_ORIGIN_X)/1.3608+.35
             right=(float(end-1)-IMAGE_ORIGIN_X)/1.3608-.35
             if right-left<2.5:break
-            anchor=(start+end-1)*.5;rows.append((left,right,(IMAGE_ORIGIN_Y-y)/1.701));pixels.append((y,start,end))
+            anchor=(start+end-1)*.5
+            # The selected raw run can be one visible fragment beside the car.
+            # A CURRENT two-flank validation supplies a reference midpoint
+            # estimate, without filling raw pixels or changing geometry runs.
+            current_flanks=[v for v in joint_info.get('current_two_flank_rows',[]) if v[0]==y]
+            if np.any(joint_geometry[y]) and len(current_flanks)==1:
+                _,flank_left,flank_right,_,_=current_flanks[0]
+                left=(float(flank_left)-IMAGE_ORIGIN_X)/1.3608+.35
+                right=(float(flank_right)-IMAGE_ORIGIN_X)/1.3608-.35
+                self.uncertainty['reference_current_two_flank_rows']=self.uncertainty.get('reference_current_two_flank_rows',0)+1
+            rows.append((left,right,(IMAGE_ORIGIN_Y-y)/1.701));pixels.append((y,start,end))
         if len(rows)<8:raise RuntimeError('OBSERVED_ROAD_SUPPORT_INSUFFICIENT')
         geometry_bands=[];observed_curb_bands=[];forward_band_ids=set()
         painted,painted_info,band_edges,reference_curves=infer_painted_road_band(image,asphalt,blocked,geometry_bands,observed_curb_bands,
@@ -2277,8 +2299,16 @@ class Agent:
             for ss,se in zip(starts,ends):
                 ss,se=int(ss),int(se)
                 if se-ss<3:continue
-                a=recover_pixel_edge(image,sy,ss,1,blocked) if se-ss>=8 else None
-                b=recover_pixel_edge(image,sy,se-1,-1,blocked) if se-ss>=8 else None
+                lane_rows=[v for v in joint_info.get('current_two_flank_rows',[]) if v[0]==sy]
+                lane=(lane_rows[0][1],lane_rows[0][2]+1) if len(lane_rows)==1 else observed_run(sy,IMAGE_ORIGIN_X,asphalt)
+                near_lane=(joint_cover is not None and 54<=sy<=68 and lane is not None
+                    and max(ss,lane[0])<min(se,lane[1]))
+                # Same eight CURRENT samples and material guards. A blanket
+                # near-car rectangle cannot veto an actually visible flank.
+                edge_blocked=(obstacle_blocked|joint_cover.astype(bool)) if near_lane else blocked
+                edge_max_row=69 if near_lane else 55
+                a=recover_pixel_edge(image,sy,ss,1,edge_blocked,max_row=edge_max_row) if se-ss>=8 and not (near_lane and paint_near[sy,ss]) else None
+                b=recover_pixel_edge(image,sy,se-1,-1,edge_blocked,max_row=edge_max_row) if se-ss>=8 and not (near_lane and paint_near[sy,se-1]) else None
                 # Flat interior support can start several pixels inside a
                 # perfectly visible edge. Inversion at that eroded anchor
                 # misses its exterior plateau. Re-anchor to the enclosing
@@ -2287,12 +2317,12 @@ class Agent:
                 # Flatness erosion and an object's hole can make this geometry
                 # fragment narrow while the RAW observed plateau is complete.
                 # Test the actual raw ray support, not the eroded run's width.
-                if (a is None or b is None) and sy<54:
+                if (a is None or b is None) and (sy<54 or near_lane):
                     raw=observed_run(sy,(ss+se-1)*.5,asphalt)
                     if raw is not None and raw[0]<=ss and raw[1]>=se:
                         for side,index,direction in ((0,raw[0],1),(1,raw[1]-1,-1)):
                             if (a if side==0 else b) is not None:continue
-                            measured=recover_plain_run_edge(image,sy,index,direction,blocked,paint_near,raw)
+                            measured=recover_plain_run_edge(image,sy,index,direction,edge_blocked,paint_near,raw,max_row=edge_max_row)
                             raw_anchor_refined+=int(measured is not None)
                             if side==0:a=measured
                             else:b=measured
@@ -2403,7 +2433,8 @@ class Agent:
         self.uncertainty['continuous_observed_curb_patches']=accepted_patches
         self.uncertainty['mesh_source']='union of all supported row intervals; shared interfaces excluded'
         points=np.asarray([((a+b)*.5,y) for a,b,y in rows],np.float64)
-        points,reference_info=reference_from_observed_width(points,reference_curves,asphalt,obstacle_blocked,self.reference_lattice)
+        points,reference_info=reference_from_observed_width(points,reference_curves,asphalt,obstacle_blocked,self.reference_lattice,
+            road_occlusion_patches=object_road_patches)
         self.uncertainty.update(reference_info)
         observed_reference=points.copy();source_stations=None;lattice_info={}
         if reference_info['observed_width_reference_used']:
