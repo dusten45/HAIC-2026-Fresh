@@ -1,0 +1,73 @@
+{
+  "status": "CONTINUOUS_POSE_SET_AND_SOURCE_LINEAGE_GATE_IMPLEMENTED_NO_PRODUCTION_PROMOTION",
+  "base_commit": "c7a639dfbcb4734b4623fbc7519265c71cb27fdc",
+  "production_source_changed": false,
+  "new_reset_performed": false,
+  "agent_sha256": "c742318b6ce619ddbd3caf62d886654f9858d858737ea37787643ca6c0cbdd09",
+  "unchanged_core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "implementation": {
+    "pose_candidates": "Point-localization sets plus every supplied association assignment produce continuous SE2 outer boxes. No residual ranking or nearest-own-prediction selection. Missing/hidden identity, localization or angle coverage remains an explicit unknown branch. Overflow/cap failure never prunes aliases to pass.",
+    "continuous_transport": "Exact rational Taylor remainders and Lipschitz bounds enclose sin/cos; outward interval arithmetic encloses inverse images of WHOLE target cells. Every touched source cell must be direct eligible across EVERY box. Current grass/object vetoes apply.",
+    "semantic_pruning": "Reject an entire box only if one old asphalt cell center is mapped into current grass for EVERY pose in the box. Unknown materials, cropped/opaque regions and invalid poses cannot be used as pruning evidence.",
+    "refinement": "Closed eight-way theta/tx/ty splits retain exact coverage. Capacity overflow preserves ALL coarse boxes. Two rounds tighten numerical enclosures without inventing tighter physical error bounds.",
+    "source_lineage": "Frame hash, original pixel coordinates/value, quantized gray, preprocessing sampling support and masks are retained. Conditional gray eligibility is separate from whole-cell material/certificate status. Private images, center sets, poses and coordinates remain outside repository."
+  },
+  "public_checks": {
+    "continuous_pose_pruning_and_split": 38,
+    "candidate_assignment_and_unknown_branch": 12,
+    "material_mixture_counterexample": 1,
+    "mixture_scope": "Official preprocessing and palette reproduced. Same output gray100 and threshold/erosion/flatness acceptance can occur with no source asphalt in a synthetic red/white patch. This is not an indistinguishable full image or a full HAIC-track counterexample."
+  },
+  "existing_checkpoint_results": {
+    "prior_frames": 8,
+    "source_lineage_records": 6669,
+    "conditional_direct_source_cells": 6323,
+    "certified_whole_source_cells": 0,
+    "object_center_conditional_pose_boxes_before_pruning": 1280,
+    "boxes_after_conditional_material_pruning": 186,
+    "boxes_after_two_round_refinement_and_pruning": 4080,
+    "last_pair_FB_features": 5,
+    "all_observed_single_pair_assignments_pose_boxes": 6400,
+    "conditional_support_before_pruning": 0,
+    "conditional_support_after_pruning": 17,
+    "conditional_support_after_two_round_refinement": 209,
+    "conditional_support_under_current_vehicle": 2,
+    "current_compatibility_filtered_support_cells": 209,
+    "admissible_support_cells": 0,
+    "static_estimated_current_margin_before_m": -0.8300256521253723,
+    "static_estimated_current_margin_with_conditional_support_m": -0.8300256521253723,
+    "static_road_derived_friction_unchanged": true,
+    "own_prediction_retained_in_last_pair_conditional_set": true,
+    "own_prediction_used_to_select_or_prune": false,
+    "latest_pair_surviving_angle_span_rad": 0.28125,
+    "older_frame_ambiguity": "Older conditional sets retain reversed-orientation/crop branches. The latest pair still spans approximately16.1degrees; no arbitrary short-time yaw bound was added.",
+    "fixed_FB_pairs_existing_0_25m_conditional_pose_boxes": 0,
+    "flow_bound_scope": "Coordinate-wise outer relaxation of the existing0.25m radial residual gate; this tolerance is not promoted to an absolute correspondence-error bound."
+  },
+  "decision": "NO PROMOTION: even the conditional common mask does not repair the failing static footprint margin. Actual material/localization/association coverage is also unproved. No Agent edit or unchanged-source repeat reset.",
+  "next_concrete_alternative": {
+    "raw_pixel_inverse": "Use the public forward preprocessing model on local road/paint/grass boundary hypotheses; retain every compatible geometry/material assignment and its source-cell provenance. Certify a road cell only if every compatible hypothesis supports it, instead of promoting eroded gray labels.",
+    "orientation_and_identity": "Feed the resulting independently observed boundary-orientation/localization intervals into this pose-box engine. Preserve reverse/crop/object aliases until they are contradicted; a second identified noncollinear landmark or a source-justified short-time reachable set could remove the remaining branches.",
+    "promotion_sequence": "First obtain a useful common region and pass the unchanged static footprint gate; only then perform cached original-controller admission and final-source reset with wholeact5s. No physics/objective/safety/horizon/planner change."
+  },
+  "bundle_cost": {
+    "DEV": 0,
+    "model_ticks": 0,
+    "measured_CPU_s": 58.558599363,
+    "unmetered_read_import_admin_allowance_CPU_s": 15,
+    "charged_CPU_s": 73.558599363,
+    "wall_s_at_record": 1079.979431,
+    "caps": {
+      "DEV": 600,
+      "model_ticks": 350000,
+      "CPU_s": 2400,
+      "wall_s": 4500
+    },
+    "research_remaining": 18872,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve_used": 0,
+    "new_paid_compute": 0
+  },
+  "scope": "Implemented observer diagnostics and falsification gates, not a new production observer, completed race, or true-state safety certificate."
+}
