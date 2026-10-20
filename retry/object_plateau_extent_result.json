@@ -1,0 +1,278 @@
+{
+  "status": "CURRENT_VISIBLE_PLATEAU_SEAM_CORRECTED_FINAL_RESET_VERIFIED_NEW_CURRENT_FOOTPRINT_BLOCKER",
+  "base_commit": "6a79e0d94250a1b4cd1f5e5f0f5731183435e95f",
+  "agent_sha256": "b0f91aabc007ba95770979d4dc1816b55a2f0d9e14a6bc5013f784689520381f",
+  "unchanged_core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "physical_vs_representation": {
+    "original_reasons": {
+      "FORCE_PEAK": 49,
+      "FORECAST_FOOTPRINT_MARGIN": 6
+    },
+    "first_HIGH_force_failure": "First-hold raw4, rear drive wheel; ratio1.067048622. Some intermediate-gas candidates pass their first hold and fail a backup force check. No new stale-input evidence was found.",
+    "force_limit_unchanged": true,
+    "force_uncertainty": "Small measured state errors do not prove actual future physical force safety. No oracle state, optimistic wheel state or force-limit relaxation was used.",
+    "six_footprint_failures": "All six failures share an artificial road-union seam next to the already explained object. Their obstacle margins exceed2m; they are not FOV caps or object collisions.",
+    "current_pixel_evidence": "The omitted new strip consists of current road-colour asphalt pixels, with no coherent grass, paint, vehicle opacity or current detector block. Fixed ROI connectors cannot span the gap left by independently inset representations.",
+    "old_same_estimated_geometry_margin_range_m": [
+      0.44885298264369117,
+      0.4883989433478135
+    ],
+    "known_saved_map_same_estimated_geometry_margin_range_m": [
+      1.996002066517703,
+      2.0220137794859916
+    ],
+    "known_map_limit": "External diagnostic only, using an already saved identity-matched fixture. No environment/world was recreated. These are the SAME estimated future geometries, not recorded actual future physics; the Agent never receives the map or true state."
+  },
+  "causal_replay": {
+    "error_identical": true,
+    "full_report_identical": true,
+    "diagnostics_identical": true,
+    "counter_identical": true,
+    "model_ticks": 379,
+    "CPU_s": 0.836563555
+  },
+  "public_counterexamples": {
+    "initial_ROI_omission": {
+      "status": "PUBLIC_OMISSION_CONFIRMED",
+      "records": [
+        {
+          "shade": 100.0,
+          "side": "left",
+          "connectors": 0,
+          "outside_ROI_material_vetoes": 0
+        },
+        {
+          "shade": 100.0,
+          "side": "right",
+          "connectors": 0,
+          "outside_ROI_material_vetoes": 0
+        },
+        {
+          "shade": 100.0,
+          "side": "top",
+          "connectors": 0,
+          "outside_ROI_material_vetoes": 0
+        },
+        {
+          "shade": 100.0,
+          "side": "bottom",
+          "connectors": 0,
+          "outside_ROI_material_vetoes": 0
+        },
+        {
+          "shade": 105.0,
+          "side": "left",
+          "connectors": 0,
+          "outside_ROI_material_vetoes": 0
+        },
+        {
+          "shade": 105.0,
+          "side": "right",
+          "connectors": 0,
+          "outside_ROI_material_vetoes": 0
+        },
+        {
+          "shade": 105.0,
+          "side": "top",
+          "connectors": 0,
+          "outside_ROI_material_vetoes": 0
+        },
+        {
+          "shade": 105.0,
+          "side": "bottom",
+          "connectors": 0,
+          "outside_ROI_material_vetoes": 0
+        }
+      ],
+      "model_ticks": 0,
+      "native_actions": 0,
+      "CPU_s": 0.002338772000000003,
+      "scope": "Synthetic current-visible road plateaus only; no native case, hidden road or object refit. A missing connector is an availability error, not authority to infer unseen pavement."
+    },
+    "final_gates": {
+      "status": "PASS",
+      "records": [
+        {
+          "shade": 100.0,
+          "side": "left",
+          "connectors": 1,
+          "outside_ROI_material_vetoes": 5
+        },
+        {
+          "shade": 100.0,
+          "side": "right",
+          "connectors": 1,
+          "outside_ROI_material_vetoes": 5
+        },
+        {
+          "shade": 100.0,
+          "side": "top",
+          "connectors": 1,
+          "outside_ROI_material_vetoes": 5
+        },
+        {
+          "shade": 100.0,
+          "side": "bottom",
+          "connectors": 1,
+          "outside_ROI_material_vetoes": 5
+        },
+        {
+          "shade": 105.0,
+          "side": "left",
+          "connectors": 1,
+          "outside_ROI_material_vetoes": 5
+        },
+        {
+          "shade": 105.0,
+          "side": "right",
+          "connectors": 1,
+          "outside_ROI_material_vetoes": 5
+        },
+        {
+          "shade": 105.0,
+          "side": "top",
+          "connectors": 1,
+          "outside_ROI_material_vetoes": 5
+        },
+        {
+          "shade": 105.0,
+          "side": "bottom",
+          "connectors": 1,
+          "outside_ROI_material_vetoes": 5
+        },
+        {
+          "case": "already_supported_patch_overlap_shade",
+          "connectors": 1,
+          "overlap_global_road_compatible": true,
+          "new_region_matches_ring": true
+        }
+      ],
+      "model_ticks": 0,
+      "native_actions": 0,
+      "CPU_s": 0.042174015999999995,
+      "scope": "Synthetic current-visible road plateaus only; no native case, hidden road or object refit. A missing connector is an availability error, not authority to infer unseen pavement."
+    },
+    "additional_overlap_vetoes": [
+      "grass",
+      "paint",
+      "dark",
+      "orange",
+      "vehicle opaque",
+      "same globally road-compatible shade outside metric patch"
+    ],
+    "limits": "Finite synthetic cases; public fixture coordinates only. Existing patch availability is an explicit premise. No general hidden-road or grayscale-material certificate is claimed."
+  },
+  "minimal_fix": {
+    "proposals": "Preserve the original four strip proposals; add four bounded continuations across their ROI flank. Reach is derived from the same0.35m inset and public pixel scale, not tuned to the private case.",
+    "new_area": "Every newly supported pixel outside the exact metric existing patch must be current visible road-colour pavement, satisfy the enclosing-ring level and existing plateau-range guards, and pass unchanged paint/vehicle-opaque vetoes.",
+    "overlap": "Existing-patch overlap keeps the original global road-colour/material/opaque guards. It need not repeat the ring shade. No new hidden-pixel or object-fit inference is made.",
+    "geometry": "Keep the0.35m inset, positive-area overlap with BOTH original patch and existing mesh, and a current uncovered-pixel witness. Recompute the exposed union boundary.",
+    "unchanged": [
+      "reference and derived speed limits",
+      "estimated physical state",
+      "collision obstacles and envelopes",
+      "force/footprint limits",
+      "physics and model",
+      "objective",
+      "candidate set and backup policy",
+      "12-hold horizon"
+    ],
+    "rejected_simple_extension": {
+      "source_sha256": "77c350bf1b7812ccaa99c833ebfa9c978bc5c64543b62c7ca2a8d060055a2239",
+      "admitted": false,
+      "model_ticks": 379,
+      "reason": "Strict ring-level test applied to an ALREADY supported overlap rejected a road-compatible shade; cached margins stayed unchanged. This incomplete trial was not promoted."
+    }
+  },
+  "cached_final_gate": {
+    "admitted": true,
+    "model_ticks": 465,
+    "whole_act_wall_s": 1.0083636619965546,
+    "CPU_s": 1.0234183739999998,
+    "unchanged_inputs": {
+      "high": true,
+      "low": true,
+      "progress": true,
+      "obstacles": true,
+      "running_history": true,
+      "physical_root_except_road_array": true
+    },
+    "only_geometry_support_changed": true,
+    "same_old_failed_roots_new_margin_range_m": [
+      1.748365580153176,
+      1.7657364449591306
+    ],
+    "action_equal_actual_reset_call47": true
+  },
+  "actual_final_source_reset": {
+    "valid_actions": 48,
+    "first_failed_call": 49,
+    "progress": 0.14840989399293286,
+    "previous_valid_actions": 46,
+    "previous_progress": 0.1413427561837456,
+    "first46_commands_identical": true,
+    "damage": 0.0,
+    "max_whole_act_wall_s": 1.8773631479998585,
+    "CPU_s": 52.741296105,
+    "wall_s": 52.12027924400172,
+    "model_ticks": 28209,
+    "max_RSS_KiB": 76704,
+    "official_server_runtime_parity": false,
+    "finished": false,
+    "lap_time_s": null,
+    "comparison_scope": "One DEV prefix. It demonstrates this local correction and does not establish global performance, actual future safety, completion or submission readiness."
+  },
+  "new_blocker": {
+    "reason": "CURRENT_FOOTPRINT_MARGIN",
+    "rejected_candidates": 55,
+    "decision_model_ticks": 0,
+    "reported_current_margin_m": -0.0,
+    "interpretation": "The next current observation cannot establish the unchanged footprint margin; this is not proof of an actual physical collision. It was reproduced exactly and no new repair line was opened.",
+    "next_step": "A separately bounded current-road/occlusion representation diagnosis is needed before further changes.",
+    "conservative_response": "The unchanged certifier rejects every action and the DEV run terminates. This is fail-closed evaluation termination, not a proved emergency controller."
+  },
+  "exact_failure_replay": {
+    "error_identical": true,
+    "full_report_identical": true,
+    "diagnostics_identical": true,
+    "counter_identical": true,
+    "model_ticks": 0,
+    "CPU_s": 0.32813404700000004,
+    "wall_s": 0.3179218959994614,
+    "native_actions": 0,
+    "inputs": "Full pre-act reset-local memory and pixels; persistent counter restored and replay delta charged separately; no true state read."
+  },
+  "phase_usage": {
+    "DEV": 48,
+    "DEV_attempts": 49,
+    "worlds": 1,
+    "resets": 1,
+    "raw_physics": 243,
+    "model_ticks": 29432,
+    "measured_CPU_s": 55.944493937000004,
+    "unmetered_setup_static_admin_CPU_allowance_s": 15.0,
+    "conservative_CPU_charge_s": 70.944493937,
+    "wall_s_through_closeout": 750.903647,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0,
+    "research_remaining": 19021
+  },
+  "decision": {
+    "correction_retained": true,
+    "old_dual_reference_guard_reintroduced": false,
+    "submission_ready": false,
+    "performance_13_22_seconds": "NOT_VERIFIED",
+    "no_more_experiments_in_this_bundle": true
+  },
+  "preservation": {
+    "main_required": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+    "participants_backups_or_user_files_changed": false,
+    "private_artifacts": "Case coordinates, raw images, state/action traces, approval material, checkpoints and saved map fixtures remain outside the repository."
+  },
+  "reproduction": [
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python retry/object_plateau_extent_check.py NEW_OUTPUT_JSON",
+    "The final source was actually packaged and reset-tested; exact failure replay uses private current observations and reset-local memory.",
+    "The public synthetic omission was recorded against unchanged6a79e0d before the production edit. All public support and veto gates then passed on the final source."
+  ]
+}

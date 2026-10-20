@@ -433,8 +433,9 @@ def observed_object_road_patch(image,center,joint):
 def observed_object_plateau_connectors(image,patch,roi,roads,opaque):
     """Current plateau strips join independently inset representations.
 
-    Only the ALREADY explained object's ROI is inspected. No new object fit,
-    hidden road support, collision change, or expansion of that ROI occurs.
+    The explained object's ROI anchors the strips. A bounded continuation
+    outside it needs current pixels at the same enclosing plateau levels;
+    the object fit, inferred patch and collision exclusion stay unchanged.
     """
     sx,sy=OBJECT_SX,OBJECT_SY;ox,oy=IMAGE_ORIGIN_X,IMAGE_ORIGIN_Y
     x0,y0,x1,y1=map(int,roi)
@@ -452,16 +453,34 @@ def observed_object_plateau_connectors(image,patch,roi,roads,opaque):
     ny=int(math.floor(1+2*inset*sy))+1
     strips=[(x0,y0,x0+nx,y1,'vertical'),(x1-nx,y0,x1,y1,'vertical'),
             (x0,y0,x1,y0+ny,'horizontal'),(x0,y1-ny,x1,y1,'horizontal')]
+    # Independent insets can leave the existing mesh just OUTSIDE the ROI.
+    # Keep the old proposals and add only one inset-derived strip across each
+    # flank. Every extra pixel must be visible and match the enclosing ring;
+    # this extends observed pavement, not the object's hidden-road inference.
+    strips.extend([(x0-nx,y0,x0+nx,y1,'vertical'),(x1-nx,y0,x1+nx,y1,'vertical'),
+                   (x0,y0-ny,x1,y0+ny,'horizontal'),(x0,y1-ny,x1,y1+ny,'horizontal')])
+    yy,xx=np.indices(image.shape)
+    wx=(xx-ox)/sx;wy=(oy-yy)/sy;signs=[]
+    for first,last in zip(patch,np.roll(patch,-1,axis=0)):
+        signs.append((last[0]-first[0])*(wy-first[1])-(last[1]-first[1])*(wx-first[0]))
+    signs=np.asarray(signs);in_patch=np.all(signs>=0.,axis=0)|np.all(signs<=0.,axis=0)
+    # An already-supported overlap need not repeat the ring's shade. Current
+    # grass/paint/object/opaque vetoes still apply throughout the whole strip.
+    same_level=clear&(in_patch|((image>=min(view[ring]))&(image<=max(view[ring]))))
     def overlap(p,q):
         return cv2.intersectConvexConvex(np.asarray(p,np.float32),np.asarray(q,np.float32))[0]>1e-9
     connectors=[]
     for l,t,r,b,axis in strips:
-        if l<x0 or r>x1 or t<y0 or b>y1:continue
-        good=np.all(clear[t:b+1,l:r+1],axis=1 if axis=='vertical' else 0)
+        if l<1 or r>82 or t<5 or b>53:continue
+        extended=l<x0 or r>x1 or t<y0 or b>y1
+        allowed=same_level if extended else clear
+        good=np.all(allowed[t:b+1,l:r+1],axis=1 if axis=='vertical' else 0)
         ends=np.diff(np.pad(good,(1,1)).astype(np.int16));starts=np.flatnonzero(ends==1);stops=np.flatnonzero(ends==-1)
         for start,stop in zip(starts,stops):
             a,c,d,e=(l,t+start,r,t+stop-1) if axis=='vertical' else (l+start,t,l+stop-1,b)
             values=image[c:e+1,a:d+1]
+            if extended:values=values[~in_patch[c:e+1,a:d+1]]
+            if not values.size:continue
             if np.ptp(values)>7.1/255.:continue
             left=(a-ox)/sx+inset;right=(d-ox)/sx-inset
             near=(oy-e)/sy+inset;far=(oy-c)/sy-inset
