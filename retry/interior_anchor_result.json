@@ -1,0 +1,201 @@
+{
+  "status": "CONDITIONAL_INTERIOR_ANCHOR_AVAILABILITY_REPAIR_VERIFIED_CURRENT50_BLOCKER",
+  "base_commit": "e4fae53aafe0f5748d7a914e4c11cd8de3c024d0",
+  "agent_sha256": "248148d5bfb8c9068da0d3e3e7687ad4a0c8fc11f96ac17aecd3639d2efa24fa",
+  "unchanged_core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "current49_cause": {
+    "original_reason": "CURRENT_FOOTPRINT_MARGIN",
+    "rejected_candidates": 55,
+    "model_ticks_at_failure": 0,
+    "reported_current_margin_m": -0.0,
+    "finding": "One interior row loses a flank anchor: conservative vehicle cover leaves exactly2 visible road samples; baseline requires3 horizontally. Its neighboring rows satisfy the original rule. The unrepresented row creates a road-union boundary through the current hull.",
+    "current_visible_evidence": "The same2 columns over3 rows provide6 current raw road-colour samples outside the conservative cover. The opposite flank and both neighboring original anchors are available.",
+    "occluded_evidence": "The center of the gap is opaque, not directly observed asphalt. Any added gap support has the SAME conditional connected-corridor status as baseline; it is not an unconditional observation or safety certificate.",
+    "existing_registered_history": "All7 frame registrations were rejected for insufficient reliable features; no past road mask was substituted.",
+    "external_diagnostic": {
+      "saved_fixture_identity_matches": true,
+      "same_estimated_current_geometry_known_map_margin_m": 3.2285071169049804,
+      "scope": "Existing saved map only, after the observation-only diagnosis. No new world and no true-state/map Agent input. It separates this observed geometry failure from a demonstrated actual boundary collision, without proving actual future safety."
+    }
+  },
+  "public_counterexamples": {
+    "baseline_full_infer": {
+      "CPU_s": 1.030883681,
+      "model_ticks": 0,
+      "native": 0,
+      "new_helper_present": false,
+      "road_width_m": 13.333333333333334,
+      "status": "BASELINE_INTERIOR_ANCHOR_OMISSION_REPRODUCED",
+      "turn_per_node_rad": 0.0
+    },
+    "final_helper_and_integration": {
+      "status": "MINIMAL_ANCHOR_CHECK_PASS",
+      "info": {
+        "local_connected_road_hypothesis": true,
+        "occluded_obstacle_clearance_proved": false,
+        "painted_flank_interval_rows": 0,
+        "road_support_fov_extension_rows": 0,
+        "road_support_inference_mode": "visible_boundary_continuity",
+        "road_support_inferred_pixels": 76,
+        "road_support_interior_two_sample_rows": 1,
+        "road_support_merge_extension_rows": 0,
+        "road_support_union_extension_rows": 0,
+        "road_support_wide_union_rows": 0,
+        "road_support_width_interval_used": false,
+        "spawn_prior_used": false
+      },
+      "helper_cases_passed": [
+        "positive_six_visible_raw_samples",
+        "not_exactly_two",
+        "original_neighbor_missing_58",
+        "original_neighbor_missing_60",
+        "endpoint",
+        "same_columns_missing",
+        "covered_sample",
+        "object_sample",
+        "grass_sample",
+        "raw_road_but_range_eight"
+      ],
+      "integration_cases_passed": [
+        "opposite_flank_below_three",
+        "no_recursive_neighbor_fill",
+        "visible_nonopaque_gap_missing",
+        "object_inside_opaque_gap",
+        "grass_inside_gap",
+        "frozen_line_and_width_mismatch"
+      ],
+      "CPU_accounting": {
+        "baseline_search_s": 1.030883681,
+        "prepared_deterministic_baseline_s": 0.003158308,
+        "first_helper_pass_s": 0.002786767,
+        "final_full_pass_s": 0.009057232999999998,
+        "measured_success_total_s": 1.0458859889999998,
+        "unmetered_failed_test_import_admin_allowance_s": 1.0
+      }
+    },
+    "visibility_vs_hidden_truth": {
+      "visible_images_identical": true,
+      "visible_raw_plateau_samples": 6,
+      "flat_3x3_samples": 3,
+      "negative_scope": "Pixel-observability counterexample only; not certified as a valid HAIC tile chain.",
+      "conclusion": "Raw plateau availability and hidden corridor validity are separate tests. A real-contract same-ribbon/topology inclusion bound remains unproved; this example proves neither universal impossibility nor a safe fill rule."
+    },
+    "scope": "Public synthetic fixed-width straight-road and material/anchor veto cases. The hidden-hole toy is explicitly NOT proved to be a valid HAIC track and is not a universal impossibility argument."
+  },
+  "minimal_rule": {
+    "activation": "Only one missing INTERIOR row between two ORIGINAL validated rows; exactly2 visible samples on one flank and original>=3 on the other. Recovered rows never become anchors, and existing continuation/endpoint rows are not reinterpreted.",
+    "support": "The SAME2 columns over3 current rows must all be raw road-colour asphalt, outside cover, outside grass/object masks, and within the existing7.1gray range.",
+    "geometry": "Retain all existing gap/material/obstacle/paint guards. Both new flank intervals must contain the FROZEN original fitted lines; its width interval must intersect the original common width interval. No original direction/width refit or endpoint extension.",
+    "assumption": "Baseline-relative repair under the existing local connected-road hypothesis. It adds5 occluded support pixels in this cached case; their road status is inferred conditionally, not directly seen.",
+    "thresholds": "No reduction of the original3-sample flank threshold; the new isolated-row alternative uses6 actual samples and original neighbors. No force, footprint, width, paint or horizon threshold is relaxed.",
+    "unchanged": [
+      "physical estimator and dynamics model",
+      "force and footprint admission limits",
+      "objective",
+      "candidate set and backup policy",
+      "12-hold horizon",
+      "collision objects/envelopes"
+    ],
+    "rejected_stronger_probe": "A proposed per-sample3x3flat requirement failed because its stencil crosses the visible road edge. That is stronger than the original RAW3-sample rule and was not implemented. The public comparison keeps this distinction explicit."
+  },
+  "cached_causal_gate": {
+    "admitted": true,
+    "model_ticks": 100,
+    "CPU_s": 0.43742812600000003,
+    "whole_act_wall_s": 0.42625207899254747,
+    "unchanged_inputs": {
+      "obstacles": true,
+      "running_history": true,
+      "physical_root_except_road_and_membership": true
+    },
+    "derived_reference_fields_equal": {
+      "high": false,
+      "low": false,
+      "progress": false
+    },
+    "new_current_margin_m": 1.1599235790758284,
+    "inferred_pixels_before": 37,
+    "inferred_pixels_after": 42,
+    "recovered_interior_rows": 1,
+    "reference_change": "Current support reconnects the observed prefix and makes the existing current width proposal eligible. Reference/curvature/speed/progress are recomputed by unchanged formulas. No retained reference or higher-speed/admission-based choice is introduced.",
+    "action_equal_native49": true
+  },
+  "static_review": {
+    "scope": "New helper and integration only; original validated base rows, nonrecursive recovery, current six-sample guards, opposite original flank, frozen line and common width intersection, initialization variable lifecycle.",
+    "blocking_findings": false,
+    "model_ticks": 0,
+    "native_actions": 0,
+    "CPU": "Unmetered static read, covered by phase15s administrative allowance."
+  },
+  "actual_final_source_reset": {
+    "valid_actions": 49,
+    "first_failed_call": 50,
+    "progress": 0.1519434628975265,
+    "previous_valid_actions": 48,
+    "previous_progress": 0.14840989399293286,
+    "first48_commands_identical": true,
+    "damage": 0.0,
+    "max_whole_act_wall_s": 1.871309194015339,
+    "CPU_s": 53.072051081,
+    "wall_s": 52.45004940201761,
+    "model_ticks": 28309,
+    "max_RSS_KiB": 76660,
+    "finished": false,
+    "lap_time_s": null,
+    "official_server_runtime_parity": false,
+    "comparison_scope": "One DEV prefix, not global performance/safety validation or submission readiness."
+  },
+  "new_blocker": {
+    "reason": "CURRENT_FOOTPRINT_MARGIN",
+    "rejected_candidates": 55,
+    "decision_model_ticks": 0,
+    "reported_current_margin_m": -0.2761011579732936,
+    "new_interior_rows_at_failure": 0,
+    "interpretation": "The new observation cannot establish the unchanged current footprint margin. The narrow alternative does not activate; no guard was widened. This does not by itself establish an actual physical collision.",
+    "next_step": "Separately diagnose the next current road/occlusion support failure before any new repair.",
+    "response": "Stop the DEV run when no candidate passes. This is fail-closed evaluation termination, not a proved emergency controller."
+  },
+  "exact_failure_replay": {
+    "error_identical": true,
+    "full_report_identical": true,
+    "diagnostics_identical": true,
+    "counter_identical": true,
+    "model_ticks": 0,
+    "CPU_s": 0.31236871,
+    "wall_s": 0.3037968809949234,
+    "native_actions": 0,
+    "inputs": "Full pre-act reset-local memory and pixels; persistent counter restored and replay delta charged separately; no true state read."
+  },
+  "phase_usage": {
+    "DEV": 49,
+    "DEV_attempts": 50,
+    "worlds": 1,
+    "resets": 1,
+    "raw_physics": 247,
+    "model_ticks": 28409,
+    "measured_CPU_s": 55.354975261,
+    "unmetered_setup_static_review_admin_CPU_allowance_s": 15.0,
+    "conservative_CPU_charge_s": 70.35497526099999,
+    "wall_s_through_closeout": 786.362269,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0,
+    "research_remaining": 18972
+  },
+  "decision": {
+    "correction_retained": true,
+    "submission_ready": false,
+    "old_dual_reference_guard_reintroduced": false,
+    "no_more_experiments_in_this_bundle": true
+  },
+  "preservation": {
+    "main_required": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+    "participants_backups_user_files_changed": false,
+    "private_artifacts": "Actual-case coordinates, images, state/action traces, saved map and approvals remain outside the repository."
+  },
+  "reproduction": [
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python retry/interior_anchor_check.py",
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python retry/occluded_corridor_counterexample.py",
+    "Final source was packaged, reset-tested and failed identically in a full-Agent pixels/own-memory replay. Private case checkpoints remain private."
+  ]
+}
