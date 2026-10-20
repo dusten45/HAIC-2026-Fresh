@@ -1,0 +1,243 @@
+{
+  "status": "GENERAL_CURRENT_FLANK_COMPONENT_VERIFIED_STOPPED_AT_OBSERVATION_SCOPE_LIMIT",
+  "base_commit": "7fd68aa565e131c8974f187f86ca8f995a62e3be",
+  "agent_sha256": "c742318b6ce619ddbd3caf62d886654f9858d858737ea37787643ca6c0cbdd09",
+  "unchanged_core_sha256": "3ce320975b1f004b374e2c9be4c1152d607542435b97438c65ae031a4d4140a8",
+  "current50_cause": {
+    "reason": "CURRENT_FOOTPRINT_MARGIN",
+    "finding": "The same currently visible narrow flank continues across4 missing rows. Per-row horizontal3-sample eligibility plus a single-row exception discards this coherent2D material component.",
+    "current_support": "12 current samples across the original bracketing anchors and narrow flank remain outside cover, within the existing7.1gray range. The opposite flank and original frozen corridor constraints remain available.",
+    "old_current_margin_m": -0.2761011579732936,
+    "same_estimated_current_geometry_saved_map_margin_m": 2.9533812869834555,
+    "truth_scope": "Saved-map/current-state comparison is external diagnosis only. No Agent map/state input or newly created world. It does not certify actual future physics."
+  },
+  "general_rule": {
+    "replaces": "Remove the live isolated-row helper/exception. One general observed_flank_component handles both single and multirow omissions.",
+    "material": "Consecutive exact2-sample runs must form one4-connected CURRENT visible flank component. Each row retains an original>=3 opposite flank. All component samples, including end-anchor samples, must be raw road colour, outside cover/object/grass and within the existing7.1gray range.",
+    "bounds": "Both ends are ORIGINAL validated corridor anchors. The whole bracket remains inside their existing Ydomain and within the existing one-public-tile21/6m continuation bound. No recovered row becomes an anchor; no inferred or historical pixel supplies material evidence.",
+    "geometry": "Each row must pass existing visible-gap, obstacle, grass, paint-interval and FROZEN original line checks. The WHOLE component must share a width interval intersecting the original one. Failure of any row rejects the component atomically.",
+    "coverage_change": "More missing opaque support is represented INSIDE the original anchor domain; current50 inferred pixels24->40. This remains conditional connected-road inference, not directly observed pavement. It does not extend the original endpoints, fit or continuation distance.",
+    "unchanged": [
+      "conditional connected-road hypothesis",
+      "physical equations and dynamics model",
+      "contact-to-friction mapping",
+      "force and footprint safety limits",
+      "objective",
+      "12-hold horizon",
+      "candidate/backup policy",
+      "collision obstacles/envelopes"
+    ],
+    "no_case_specific_row_or_call_threshold": true
+  },
+  "public_gates": {
+    "baseline_omission": {
+      "CPU_s": 1.048767773,
+      "model_ticks": 0,
+      "native": 0,
+      "road_width_m": 13.333333333333334,
+      "status": "BASELINE_MULTIROW_OMISSION_REPRODUCED",
+      "turn_per_node_rad": 0.0
+    },
+    "general_component": {
+      "status": "GENERAL_COMPONENT_CHECK_PASS",
+      "info": {
+        "local_connected_road_hypothesis": true,
+        "occluded_obstacle_clearance_proved": false,
+        "painted_flank_interval_rows": 0,
+        "road_support_flank_component_rows": 2,
+        "road_support_flank_components": 1,
+        "road_support_fov_extension_rows": 0,
+        "road_support_inference_mode": "visible_boundary_continuity",
+        "road_support_inferred_pixels": 70,
+        "road_support_merge_extension_rows": 0,
+        "road_support_union_extension_rows": 0,
+        "road_support_wide_union_rows": 0,
+        "road_support_width_interval_used": false,
+        "spawn_prior_used": false
+      },
+      "helper_cases_passed": [
+        "connected_current_component_positive",
+        "disconnected_columns",
+        "nonconsecutive_rows",
+        "mixed_sides",
+        "missing_original_anchor",
+        "existing_tile_span_cap",
+        "current_cell_vehicle_opaque",
+        "current_cell_obstacle",
+        "current_cell_grass",
+        "current_component_gray_range"
+      ],
+      "integration_cases_passed": [
+        "one_bad_shade_rejects_whole_component",
+        "missing_same_column_rejects_whole_component",
+        "missing_original_start_anchor",
+        "missing_original_end_anchor",
+        "one_bad_opposite_flank_atomic",
+        "one_gap_object_atomic",
+        "coherent_gap_grass",
+        "visible_nonopaque_gap_missing_atomic",
+        "one_frozen_line_width_mismatch_atomic"
+      ],
+      "road_width_m": 13.333333333333334,
+      "model_ticks": 0,
+      "native": 0,
+      "CPU_s": 0.013513616999999978
+    },
+    "single_row_regression": {
+      "status": "MINIMAL_ANCHOR_CHECK_PASS",
+      "info": {
+        "local_connected_road_hypothesis": true,
+        "occluded_obstacle_clearance_proved": false,
+        "painted_flank_interval_rows": 0,
+        "road_support_flank_component_rows": 1,
+        "road_support_flank_components": 1,
+        "road_support_fov_extension_rows": 0,
+        "road_support_inference_mode": "visible_boundary_continuity",
+        "road_support_inferred_pixels": 76,
+        "road_support_merge_extension_rows": 0,
+        "road_support_union_extension_rows": 0,
+        "road_support_wide_union_rows": 0,
+        "road_support_width_interval_used": false,
+        "spawn_prior_used": false
+      },
+      "helper_cases_passed": [
+        "positive_six_visible_raw_samples",
+        "not_exactly_two",
+        "original_neighbor_missing_58",
+        "original_neighbor_missing_60",
+        "endpoint",
+        "same_columns_missing",
+        "covered_sample",
+        "object_sample",
+        "grass_sample",
+        "raw_road_but_range_eight"
+      ],
+      "integration_cases_passed": [
+        "opposite_flank_below_three",
+        "no_recursive_neighbor_fill",
+        "visible_nonopaque_gap_missing",
+        "object_inside_opaque_gap",
+        "grass_inside_gap",
+        "frozen_line_and_width_mismatch"
+      ],
+      "road_width_m": 13.333333333333334,
+      "model_ticks": 0,
+      "native": 0,
+      "CPU_s": 0.009231351999999998
+    },
+    "cost": 1.074077939,
+    "scope": "Public synthetic fixed-width straight-road and material/topology veto cases; finite conditional-model checks, not a true-road safety theorem."
+  },
+  "cached50_causal_gate": {
+    "admitted": true,
+    "model_ticks": 456,
+    "whole_act_wall_s": 0.9838252520130482,
+    "CPU_s": 0.9926681679999999,
+    "unchanged_inputs": {
+      "obstacles": true,
+      "running_history": true,
+      "physical_state_except_road_derived_contacts_friction": true,
+      "unchanged_contact_to_friction_mapping": true
+    },
+    "derived_reference_equal": {
+      "high": false,
+      "low": false,
+      "progress": false
+    },
+    "road_derived_friction": {
+      "before": [
+        240.0,
+        240.0,
+        400.0,
+        400.0
+      ],
+      "after": [
+        400.0,
+        400.0,
+        400.0,
+        400.0
+      ],
+      "unchanged_mapping": true
+    },
+    "new_current_margin_m": 1.0896631735582247,
+    "recovered_rows": 4,
+    "recovered_components": 1,
+    "reference": "Geometry support and its reference are recomputed by the unchanged observer formulas; no old/higher-speed reference is chosen for admission.",
+    "friction": "Old front wheels were classified as grass240; supported road contacts produce400 through the UNCHANGED mapping. Other kinematics/spin/history are identical. External measured current friction is400 but never supplied to the Agent."
+  },
+  "actual_final_source_reset": {
+    "valid_actions": 50,
+    "first_failed_call": 51,
+    "progress": 0.1519434628975265,
+    "previous_valid_actions": 49,
+    "previous_progress": 0.1519434628975265,
+    "first49_commands_identical": true,
+    "call50_equals_cached": true,
+    "call50": "Existing controller selected a braking action; routeprogress did not increase over the previous49-action prefix.",
+    "damage": 0.0,
+    "max_whole_act_wall_s": 1.857327309990069,
+    "CPU_s": 53.636637187,
+    "wall_s": 53.0089291149925,
+    "model_ticks": 28765,
+    "max_RSS_KiB": 77148,
+    "finished": false,
+    "lap_time_s": null,
+    "official_server_runtime_parity": false
+  },
+  "continued_diagnosis_after_checkpoint": {
+    "first_failure_preserved": true,
+    "continued_within_same_bundle": true,
+    "next_failure_call": 51,
+    "models_or_native_for_next_static_diagnosis": 0,
+    "finding": "All original valid anchors are behind the missing front region. This is OUTSIDE the original anchor domain; there is no front original anchor to bracket it. Some rows also have only1 visible asphalt sample or exceed the existing material range.",
+    "reported_current_margin_m": -0.8300256521253723,
+    "same_estimated_current_geometry_known_map_margin_m": 2.5210786531376757,
+    "obstacle_collision_not_demonstrated": true,
+    "decision": "STOP: no same-domain implementation error is established. Continuing would require justifying endpoint support plus one-sample/photometric evidence beyond the current limits. No row exception, threshold relaxation, old-road substitution or larger planner is added.",
+    "next_requirement": "A separately justified observation/endpoint-support design is needed before changing these limits. External map knowledge cannot be used as an Agent fix."
+  },
+  "exact_final_failure_replay": {
+    "error_identical": true,
+    "full_report_identical": true,
+    "diagnostics_identical": true,
+    "counter_identical": true,
+    "model_ticks": 0,
+    "CPU_s": 0.347579651,
+    "wall_s": 0.3401589519926347,
+    "native_actions": 0,
+    "inputs": "Full pre-act reset-local memory and pixels; persistent counter restored and replay delta charged separately; no true state read."
+  },
+  "phase_usage": {
+    "DEV": 50,
+    "DEV_attempts": 51,
+    "worlds": 1,
+    "resets": 1,
+    "raw_physics": 251,
+    "model_ticks": 29221,
+    "measured_CPU_s": 57.037428733999995,
+    "unmetered_static_review_setup_admin_CPU_allowance_s": 15.0,
+    "conservative_CPU_charge_s": 72.037428734,
+    "wall_s_through_closeout": 694.002919,
+    "HOLDOUT": 0,
+    "SEALED": 0,
+    "reserve": 0,
+    "research_remaining": 18922
+  },
+  "decision": {
+    "general_component_rule_retained": true,
+    "submission_ready": false,
+    "no_more_experiments": true,
+    "stop_reason": "Observation support/assumption boundary reached, as requested."
+  },
+  "preservation": {
+    "main_required": "dfb7a2de2178825ca5c5ce20bab01ba67052ba31",
+    "participants_backups_user_changes_edited": false,
+    "private_artifacts": "Actual-case coordinates, raw observations, states/actions, map fixtures and approval material remain outside the repository."
+  },
+  "reproduction": [
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python retry/flank_component_check.py",
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python retry/interior_anchor_check.py",
+    "Native final source, firstfailure checkpoints and exact final failure replay are privately preserved. Public tests require no model/environment.",
+    "The earlier single-row report is historical at7fd68aa; its live exception is replaced, rather than accumulated."
+  ]
+}

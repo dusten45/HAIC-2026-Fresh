@@ -1070,19 +1070,34 @@ def vehicle_projection_mask(joint):
     return cv2.dilate(mask,np.ones((3,3),np.uint8),iterations=1)
 
 
-def interior_two_sample_anchor(image,asphalt,cover,obstacle_mask,grass,y,lo,hi,base_rows):
-    """Six CURRENT visible samples for one isolated interior flank anchor.
+def observed_flank_component(image,asphalt,cover,obstacle_mask,grass,runs,base_rows,slope):
+    """A current visible plateau bracketed by original corridor anchors.
 
-    This is availability within the existing conditional corridor hypothesis,
-    not independent evidence of pavement under an opaque vehicle.
+    Sample availability is two-dimensional. The conditional road hypothesis,
+    original anchor domain and existing one-tile continuation bound remain.
+    No inferred row or historical pixel supplies a material sample.
     """
-    if hi-lo!=2 or not 1<=y<83 or not 0<=lo<hi<=84:return False
-    if y in base_rows or y-1 not in base_rows or y+1 not in base_rows:return False
-    area=np.s_[y-1:y+2,lo:hi]
-    values=image[area]
-    return bool(np.all(asphalt[area]) and np.all((values>.36)&(values<.47))
-        and not np.any(cover[area]) and not np.any(obstacle_mask[area])
-        and not np.any(grass[area]) and np.ptp(values)<=7.1/255.)
+    if not runs:return False
+    first,last=runs[0][0]-1,runs[-1][0]+1
+    if not 0<=first<last<84 or first not in base_rows or last not in base_rows:return False
+    distance=(last-first)/1.701*math.sqrt(1+(slope*1.701/1.3608)**2)
+    if distance>21./6.:return False
+    side=runs[0][1];samples=[];previous=None
+    for i,(y,which,lo,hi) in enumerate(runs):
+        if (which!=side or side not in (0,1) or y!=first+1+i or y in base_rows
+            or hi-lo!=2 or not 0<=lo<hi<=84):return False
+        if previous is not None and max(previous[0],lo)>=min(previous[1],hi):return False
+        previous=(lo,hi);samples.extend((y,x) for x in range(lo,hi))
+    for y,run in ((first,runs[0]),(last,runs[-1])):
+        lo,hi=run[2:4];left,right,a,b=base_rows[y]
+        start,end=(left,a) if side==0 else (b,right+1)
+        if end-start<3 or lo<start or hi>end:return False
+        samples.extend((y,x) for x in range(lo,hi))
+    yy=np.asarray([p[0] for p in samples]);xx=np.asarray([p[1] for p in samples])
+    values=image[yy,xx]
+    return bool(np.all(asphalt[yy,xx]) and np.all((values>.36)&(values<.47))
+        and not np.any(cover[yy,xx]) and not np.any(obstacle_mask[yy,xx])
+        and not np.any(grass[yy,xx]) and np.ptp(values)<=7.1/255.)
 
 
 def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,speed):
@@ -1216,20 +1231,20 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
     info['road_support_fov_extension_rows']=sum(sy in fov_rows for sy in extension_rows)
     info['road_support_union_extension_rows']=len(extension_rows)
     info['road_support_merge_extension_rows']=sum(sy in wide_union_rows for sy in extension_rows)
-    # A conservative raster fringe can leave only TWO current samples on one
-    # flank of a single interior row. Use six visible samples in two columns
-    # over three rows, bounded by ORIGINAL accepted neighbours. Keep the
-    # already fitted corridor; never recursively use a recovered row as an
-    # anchor or expand its endpoint/width/direction hypotheses.
-    interior_rows=[]
+    # A conservative fringe can leave a narrow but continuously observed
+    # flank. Validate its CURRENT 2D component atomically, rather than treating
+    # every row as independent material evidence or adding isolated-row cases.
+    # Original fits and anchors never depend on these recovered rows.
+    interior_rows=[];component_count=0
     if not initializing:
-        base_rows={entry[0]:entry for entry in candidates}
+        base_rows={entry[0]:entry[1:] for entry in candidates}
         occupied={entry[0] for entry in inference_rows}|set(continuation_candidates)
         current=(image>.36)&(image<.47)
         width_lower,width_upper=lower,upper
         denominator=1.3608*math.sqrt(1+(slope*1.701/1.3608)**2)
+        proposals=[]
         for sy in range(min(base_rows)+1,max(base_rows)):
-            if sy in occupied or sy-1 not in base_rows or sy+1 not in base_rows:continue
+            if sy in occupied:continue
             row=current[sy]&~cover[sy].astype(bool)
             edges=np.diff(np.pad(row,(1,1)).astype(np.int16))
             starts=np.flatnonzero(edges==1);ends=np.flatnonzero(edges==-1)
@@ -1240,8 +1255,6 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
             lengths=(int(ends[l]-starts[l]),int(ends[r]-starts[r]))
             if not ((lengths[0]==2 and lengths[1]>=3) or (lengths[1]==2 and lengths[0]>=3)):continue
             short=l if lengths[0]==2 else r
-            if not interior_two_sample_anchor(image,asphalt,cover,obstacle_mask,visible_grass,
-                sy,int(starts[short]),int(ends[short]),base_rows):continue
             a,b=int(ends[l]),int(starts[r]);outer_left=int(starts[l]);outer_right=int(ends[r]-1)
             if a>=b or outer_left==0 or ends[r]>=84:continue
             if cover[sy,outer_left-1] or cover[sy,outer_right+1]:continue
@@ -1258,12 +1271,25 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
             if (abs(lc[0]*(sy-IMAGE_ORIGIN_Y)+lc[1]-outer_left)>limits[0] or
                 abs(rc[0]*(sy-IMAGE_ORIGIN_Y)+rc[1]-outer_right)>limits[1]):continue
             width=(outer_right-outer_left)/denominator;spread=sum(limits)/denominator
-            lo=max(width_lower,width-spread);hi=min(width_upper,width+spread)
+            proposals.append(((sy,outer_left,outer_right,a,b),
+                (sy,0 if short==l else 1,int(starts[short]),int(ends[short])),
+                width-spread,width+spread))
+        groups=[]
+        for proposal in proposals:
+            if not groups or proposal[0][0]!=groups[-1][-1][0][0]+1:groups.append([])
+            groups[-1].append(proposal)
+        for group in groups:
+            runs=[proposal[1] for proposal in group]
+            if not observed_flank_component(image,asphalt,cover,obstacle_mask,visible_grass,
+                runs,base_rows,slope):continue
+            lo=max(width_lower,max(proposal[2] for proposal in group))
+            hi=min(width_upper,min(proposal[3] for proposal in group))
             if lo>hi:continue
-            width_lower,width_upper=lo,hi
-            interior_rows.append((sy,outer_left,outer_right,a,b))
+            width_lower,width_upper=lo,hi;component_count+=1
+            interior_rows.extend(proposal[0] for proposal in group)
         inference_rows.extend(interior_rows)
-    info['road_support_interior_two_sample_rows']=len(interior_rows)
+    info['road_support_flank_component_rows']=len(interior_rows)
+    info['road_support_flank_components']=component_count
     for sy,l,r,a,b in inference_rows:
         support[sy,a:b]=cover[sy,a:b]
         # The 3x3 flatness test loses one pixel beside an opaque object. Within

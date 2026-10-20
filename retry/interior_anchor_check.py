@@ -42,10 +42,10 @@ def find_fixture():
 
 
 def helper_checks(fixture,image,asphalt,cover):
-    helper=a.interior_two_sample_anchor;sy,lo,hi=fixture['row'],fixture['lo'],fixture['hi']
+    helper=getattr(a,'interior_two_sample_anchor',None);sy,lo,hi=fixture['row'],fixture['lo'],fixture['hi']
     obstacle=np.zeros((84,84),bool);grass=a.coherent_grass_mask(image);base=fixture['base_rows']
     def call(im=image,raw=asphalt,cov=cover,obj=obstacle,gr=grass,y=sy,l=lo,h=hi,rows=base):
-        return bool(helper(im,raw,cov,obj,gr,y,l,h,rows))
+        return bool(helper(im,raw,cov,obj,gr,y,l,h,rows)) if helper is not None else bool(a.observed_flank_component(im,raw,cov,obj,gr,[(y,1,l,h)],rows,.32))
     assert call();passed=['positive_six_visible_raw_samples']
     assert not call(h=hi+1);passed.append('not_exactly_two')
     for missing in (sy-1,sy+1):
@@ -96,7 +96,7 @@ def check():
     cpu=time.process_time();fixture,image,asphalt,cover=find_fixture();sy=fixture['row'];lo,hi=fixture['lo'],fixture['hi']
     assert sy not in fixture['base_rows']and sy-1 in fixture['base_rows']and sy+1 in fixture['base_rows']
     assert hi-lo==2 and np.all(asphalt[sy-1:sy+2,lo:hi])and not np.any(cover[sy-1:sy+2,lo:hi])
-    helper_present=hasattr(a,'interior_two_sample_anchor')
+    helper_present=hasattr(a,'interior_two_sample_anchor') or hasattr(a,'observed_flank_component')
     support,info=a.infer_local_road_support(image,asphalt,np.zeros((84,84),bool),fixture['joint'],False,10.)
     if helper_present:
         negatives=helper_checks(fixture,image,asphalt,cover)
