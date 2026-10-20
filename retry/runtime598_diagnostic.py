@@ -3,6 +3,7 @@ import dataclasses
 import json
 import math
 import pickle
+import shutil
 from pathlib import Path
 import sys
 from collections.abc import Mapping
@@ -23,9 +24,10 @@ def dump(path,value):
 
 
 class Recorder:
-    def __init__(self,agent,directory,target=36):
+    def __init__(self,agent,directory,target=36,snapshot_calls=(),save_observations=False):
         self.agent=agent;self.directory=Path(directory);self.target=target
         self.calls=0;self.active=None;self.active_count=0;self.trials=[]
+        self.snapshot_calls=set(snapshot_calls);self.save_observations=save_observations
         self.core=sys.modules['runtime598']
         self.original_select=self.core.Controller.select
         self.original_certifier=self.core.certifier
@@ -51,6 +53,15 @@ class Recorder:
                 raise
             dump(recorder.directory/'original-report-private.json',dict(action=action,report=report,
                  counter_after=controller.model[0],trials=recorder.trials))
+            if recorder.calls in recorder.snapshot_calls:
+                destination=recorder.directory/f'call-{recorder.calls:04d}'
+                destination.mkdir(exist_ok=False)
+                for name in ('input-private.npy','agent-before-private.pkl','agent-before-private.json',
+                             'checkpoint-private.json','original-report-private.json','forecasts-private.json',
+                             'external-truth-private.json','initial-private.png'):
+                    source=recorder.directory/name
+                    if source.exists():shutil.copy2(source,destination/name)
+                shutil.copytree(recorder.directory/'package',destination/'package')
             return action,report
 
         def certifier(*args,**kwargs):
@@ -96,6 +107,10 @@ class Recorder:
 
     def before_action(self,observation):
         self.calls+=1
+        if self.save_observations:
+            directory=self.directory/'observation-prefix-private'
+            directory.mkdir(exist_ok=True)
+            np.save(directory/f'{self.calls:04d}.npy',observation)
         if self.target is None or self.calls==self.target:
             np.save(self.directory/'input-private.npy',observation)
             (self.directory/'agent-before-private.pkl').write_bytes(pickle.dumps(self.agent.__dict__,protocol=pickle.HIGHEST_PROTOCOL))
@@ -115,7 +130,9 @@ def external_truth(raw):
         engine_multiplier=car.engine_multiplier,steering_multiplier=car.steering_multiplier,
         grip_multiplier=car.grip_multiplier,grass_friction_multiplier=car.grass_friction_multiplier,
         wheels=[dict(position=list(w.position),velocity=list(w.linearVelocity),angle=float(w.angle),
-            joint_angle=float(w.joint.angle),omega=float(w.omega),gas=float(w.gas),
+            joint_angle=float(w.joint.angle),joint_speed=float(w.joint.speed),
+            angular_velocity=float(w.angularVelocity),mass=float(w.mass),inertia=float(w.inertia),
+            omega=float(w.omega),gas=float(w.gas),
             road_frictions=[float(t.road_friction) for t in w.tiles],
             friction=max([400.*car.grass_friction_multiplier,*[400.*t.road_friction for t in w.tiles]])*car.grip_multiplier)
             for w in car.wheels])

@@ -67,12 +67,17 @@ class WorkerError(RuntimeError):
 
 
 class Client:
-    def __init__(self,source,out,model_tick_budget=50000,force_diagnostic=False,rolling_checkpoint=False):
+    def __init__(self,source,out,model_tick_budget=50000,force_diagnostic=False,rolling_checkpoint=False,
+                 snapshot_calls=(),save_observations=False):
         env=dict(os.environ,OPENBLAS_NUM_THREADS='1',OMP_NUM_THREADS='1',MKL_NUM_THREADS='1')
         self.err=(out/'worker-stderr-private.log').open('wb');begin=time.perf_counter()
         argv=[sys.executable,'-u',str(ROOT/'retry/submit_worker.py'),str(source),str(model_tick_budget)]
         if force_diagnostic or rolling_checkpoint:argv.append(str(out))
         if rolling_checkpoint:argv.append('all')
+        if snapshot_calls or save_observations:
+            assert rolling_checkpoint
+            argv.append(','.join(map(str,snapshot_calls)))
+            if save_observations:argv.append('observations')
         self.p=subprocess.Popen(argv,
             cwd=source.parent,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=self.err,env=env)
         try:
@@ -128,6 +133,8 @@ def main():
     parser.add_argument('--continuous-runtime',action='store_true')
     parser.add_argument('--force-diagnostic',action='store_true')
     parser.add_argument('--rolling-checkpoint',action='store_true')
+    parser.add_argument('--snapshot-calls',default='')
+    parser.add_argument('--save-observations',action='store_true')
     parser.add_argument('--cpu-budget',type=float,default=1800.)
     parser.add_argument('--wall-budget',type=float,default=3600.)
     args=parser.parse_args();assert 0<args.steps<=2000
@@ -140,7 +147,10 @@ def main():
     PRIVATE.mkdir(mode=0o700,exist_ok=True);out=PRIVATE/args.label;out.mkdir(mode=0o700,exist_ok=False)
     source,source_hash=package(out,args.agent_source,ROOT/'submit_core/runtime598.py' if args.runtime_core else None);client=None;env=None;rows=[];status='TECHNICAL_FAILURE';error=None;reset=None;summary={};failure_payload=None;worker_cpu=0.
     try:
-        client=Client(source,out,args.model_tick_budget,args.force_diagnostic,args.rolling_checkpoint)
+        snapshot_calls=tuple(int(v) for v in args.snapshot_calls.split(',') if v)
+        assert all(1<=v<=args.steps for v in snapshot_calls)
+        client=Client(source,out,args.model_tick_budget,args.force_diagnostic,args.rolling_checkpoint,
+                      snapshot_calls,args.save_observations)
         import numpy as np
         # Mandatory reset/action/shape/memory checks use the exact packaged Agent
         # before any environment creation. No privileged input enters its process.

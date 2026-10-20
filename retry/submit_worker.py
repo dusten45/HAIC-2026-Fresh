@@ -23,7 +23,9 @@ if len(sys.argv)>2 and hasattr(agent,'counter'):
 recorder=None
 if len(sys.argv)>3:
     from runtime598_diagnostic import Recorder
-    recorder=Recorder(agent,sys.argv[3],target=None if len(sys.argv)>4 and sys.argv[4]=='all' else 36)
+    snapshot_calls=tuple(int(v) for v in sys.argv[5].split(',') if v) if len(sys.argv)>5 else ()
+    recorder=Recorder(agent,sys.argv[3],target=None if len(sys.argv)>4 and sys.argv[4]=='all' else 36,
+        snapshot_calls=snapshot_calls,save_observations=len(sys.argv)>6 and sys.argv[6]=='observations')
 
 
 def send(value):

@@ -119,6 +119,55 @@ def observed_reference_curvature(points):
     return np.r_[interior[0],interior,interior[-1]]
 
 
+def observed_reference_derivative_support(points,previous,lattice_info,image,blocked,opaque):
+    """At most one observed past base node; never current road or output."""
+    info=dict(reference_past_derivative_support_used=False)
+    def reject(reason):
+        return None,dict(info,reference_past_derivative_support_reason=reason)
+    if not (lattice_info.get('reference_lattice_used',False)
+        and lattice_info.get('reference_lattice_correspondence',False)
+        and lattice_info.get('reference_lattice_matches',0)>=3):return reject('CURRENT_LATTICE_NOT_ACCEPTED')
+    if previous is None or len(previous)<3:return reject('NO_PAST_OBSERVATION')
+    points=np.asarray(points,np.float64);previous=np.asarray(previous,np.float64)
+    if observed_reference_run_direction(points,previous)!=1:return reject('AMBIGUOUS_DIRECTION')
+    pixel=math.hypot(1/1.3608,1/1.701);step=21./6.
+    distances=np.linalg.norm(previous-points[0],axis=1);j=int(np.argmin(distances))
+    if distances[j]>pixel or j==0:return reject('NO_ADJACENT_PAST_NODE')
+    past=previous[j-1].copy();incoming=points[0]-past;outgoing=points[1]-points[0]
+    gap=float(np.linalg.norm(incoming));forward=float(np.linalg.norm(outgoing))
+    if not step-pixel<=gap<=step+pixel:return reject('PAST_NODE_SPACING')
+    if forward<1e-6 or float(incoming@outgoing)/(gap*forward)<math.cos(.31):return reject('PAST_NODE_DIRECTION')
+    # A visible contradiction vetoes the support. Vehicle occlusion or crop
+    # does not convert an earlier observation into current road evidence.
+    hidden=False
+    for fraction in np.linspace(0.,1.,max(2,int(math.ceil(gap*1.701))+1)):
+        point=(1.-fraction)*past+fraction*points[0]
+        x=IMAGE_ORIGIN_X+1.3608*point[0];y=IMAGE_ORIGIN_Y-1.701*point[1]
+        if not 1<=x<=82 or not 5<=y<=69:
+            hidden=True;continue
+        ix,iy=int(round(x)),int(round(y))
+        if blocked[iy,ix]:return reject('CURRENT_OBSTACLE_CONTRADICTION')
+        if opaque[iy,ix]:hidden=True;continue
+        if not .36<float(image[iy,ix])<.47:return reject('CURRENT_MATERIAL_CONTRADICTION')
+    return past,dict(info,reference_past_derivative_support_used=True,
+        reference_past_derivative_support_reason='ONE_ADJACENT_OBSERVED_NODE',
+        reference_past_derivative_current_hidden=hidden,
+        reference_past_derivative_is_current_road_evidence=False)
+
+
+def deform_reference_with_derivative_support(points,observed,source_stations,obstacles,past=None):
+    """Apply the same current-object field and curvature, then discard past."""
+    if past is None:
+        deformed=deform_observed_reference(points,observed,source_stations,obstacles)
+        return deformed,observed_reference_curvature(deformed)
+    # The past node has an observed spatial-grid identity, not a copied old
+    # obstacle deformation. Current dense/object coordinates define its field.
+    supported=np.vstack((past,points))
+    stations=np.r_[source_stations[0]-(21./6.),source_stations]
+    deformed=deform_observed_reference(supported,observed,stations,obstacles)
+    return deformed[1:],observed_reference_curvature(deformed)[1:]
+
+
 def object_adjacent_asphalt(image,asphalt,flat,visible_obstacles):
     """Keep CURRENT road-colour plateaus beside a confirmed orange object.
 
@@ -2055,7 +2104,7 @@ class Agent:
         points=np.asarray([((a+b)*.5,y) for a,b,y in rows],np.float64)
         points,reference_info=reference_from_observed_width(points,reference_curves,asphalt,obstacle_blocked,self.reference_lattice)
         self.uncertainty.update(reference_info)
-        observed_reference=points.copy();source_stations=None
+        observed_reference=points.copy();source_stations=None;lattice_info={}
         if reference_info['observed_width_reference_used']:
             # Public centreline nodes are generated at21/6m. Pixel-dense fits
             # and coarser row samples must not enter curvature derivatives on
@@ -2068,11 +2117,13 @@ class Agent:
         else:
             points[:,0]=cv2.GaussianBlur(points[:,0].reshape(1,-1),(5,1),1.).ravel()
             observed_reference=points.copy()
+        past,derivative_info=observed_reference_derivative_support(points,self.reference_lattice,
+            lattice_info,image,obstacle_blocked,vehicle_projection_mask(self.joint).astype(bool))
+        self.uncertainty.update(derivative_info)
         self.reference_lattice=points.copy() if source_stations is not None else []
         if source_stations is None:source_stations=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
-        points=deform_observed_reference(points,observed_reference,source_stations,obstacles)
+        points,curvature=deform_reference_with_derivative_support(points,observed_reference,source_stations,obstacles,past)
         arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(points,axis=0),axis=1))]
-        curvature=observed_reference_curvature(points)
         current=observed_reference_progress(points,arc,self.com)
         def reference(budget,max_speed):
             q=np.minimum(max_speed**2,budget/np.maximum(curvature,1e-6));q[-1]=0.
