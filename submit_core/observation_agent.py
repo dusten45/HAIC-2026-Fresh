@@ -360,7 +360,14 @@ def compatible_object_envelope(image,bounds,road_interval,cell_m=.075,subdivisio
             kept=[]
             for start in range(0,len(centers),32):
                 c=centers[start:start+32]
-                distance=np.linalg.norm(points[None,:,:,:]-c[:,None,None,:],axis=-1)
+                # Keep the original float64 x*x+y*y then sqrt arithmetic,
+                # without allocating two-coordinate differences and squares.
+                distance=points[None,:,:,0]-c[:,None,None,0]
+                np.square(distance,out=distance)
+                delta_y=points[None,:,:,1]-c[:,None,None,1]
+                np.square(delta_y,out=delta_y)
+                distance+=delta_y
+                np.sqrt(distance,out=distance)
                 fmin=np.sum((distance<=lower)*weights[None,:,:],axis=-1)
                 fmax=np.sum((distance<=upper)*weights[None,:,:],axis=-1)
                 predicted_low=lowroad+(173.1-lowroad)*fmin-OBJECT_QUANTIZATION_GRAY
