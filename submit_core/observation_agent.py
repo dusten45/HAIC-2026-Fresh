@@ -753,6 +753,9 @@ def recover_plain_run_edge(image,y,index,direction,blocked,paint_near,road_inter
             # Where the palette also explains the samples, keep the more
             # inward edge; the existing estimate is never expanded.
             if palette is not None:measured+=direction*max(0.,direction*(palette-measured))
+            grass_palette=recover_grass_palette_edge(image,y,anchor,direction,blocked)
+            if grass_palette is not None:measured+=direction*max(0.,direction*(grass_palette-measured))
+            if abs(measured-index)>2.5:return None
             return measured
     # A public road-tile shade seam is not a reversed road/grass transition.
     # Only after every original constant-colour window fails, test the same
@@ -763,6 +766,19 @@ def recover_plain_run_edge(image,y,index,direction,blocked,paint_near,road_inter
         if min(ids)<0 or max(ids)>=84 or paint_near[y,anchor]:continue
         if road_interval is not None and not all(road_interval[0]<=anchor+direction*k<road_interval[1] for k in (3,4)):continue
         measured=recover_shaded_run_edge(image,y,anchor,direction,blocked)
+        if measured is not None and abs(measured-index)<=2.5:
+            grass_palette=recover_grass_palette_edge(image,y,anchor,direction,blocked)
+            if grass_palette is not None:measured+=direction*max(0.,direction*(grass_palette-measured))
+            if abs(measured-index)<=2.5:return measured
+            return None
+    # A checker-grass seam can vary outside the road as well. Preserve all
+    # public grass shades only after both established inversions reject.
+    for exterior in range(4):
+        anchor=index-direction*exterior
+        ids=anchor+direction*np.arange(-3,5)
+        if min(ids)<0 or max(ids)>=84 or paint_near[y,anchor]:continue
+        if road_interval is not None and not all(road_interval[0]<=anchor+direction*k<road_interval[1] for k in (3,4)):continue
+        measured=recover_grass_palette_edge(image,y,anchor,direction,blocked)
         if measured is not None and abs(measured-index)<=2.5:return measured
     return None
 
@@ -790,6 +806,29 @@ def recover_shaded_run_edge(image,y,index,direction,blocked):
     if np.any(lower>upper):return None
     # Minimum compatible road coverage puts the edge furthest into the road;
     # the ordinary0.35m flank inset is still applied by the caller.
+    edge=4.5-float(np.sum(lower))
+    if not -2.5<=edge<=2.5:return None
+    return float(index+direction*edge)
+
+
+def recover_grass_palette_edge(image,y,index,direction,blocked):
+    """Inward area edge retaining both public checker-grass shade aliases.
+
+    The original pixel palettes, quantization and inner-plateau guards remain.
+    Gray can vary across the grass seam; road COVERAGE must be monotone and
+    explain every sample. No single grass shade or best-fit edge is selected.
+    """
+    ids=index+direction*np.arange(-3,5);q=1/255.
+    if y>=54 or min(ids)<0 or max(ids)>=84 or np.any(blocked[y,ids]):return None
+    values=image[y,ids].astype(np.float64)
+    low=100*q;high=109.1*q;grass_low=156*q;grass_high=184*q
+    if min(values[:2])<grass_low or max(values[:2])>grass_high:return None
+    if min(values[-2:])<low or max(values[-2:])>high or np.ptp(values[-2:])>2*q:return None
+    if np.any(values<low-q) or np.any(values>grass_high+q):return None
+    lower=np.clip((grass_low-values-q)/(grass_low-low),0.,1.)
+    upper=np.clip((grass_high-values+q)/(grass_high-high),0.,1.)
+    lower=np.maximum.accumulate(lower);upper=np.minimum.accumulate(upper[::-1])[::-1]
+    if np.any(lower>upper):return None
     edge=4.5-float(np.sum(lower))
     if not -2.5<=edge<=2.5:return None
     return float(index+direction*edge)
