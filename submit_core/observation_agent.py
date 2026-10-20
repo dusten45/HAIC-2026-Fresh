@@ -1250,6 +1250,36 @@ def observed_flank_component(image,asphalt,cover,obstacle_mask,grass,runs,base_r
         and not np.any(grass[yy,xx]) and np.ptp(values)<=7.1/255.)
 
 
+def observed_extension_flank_bridge(image,asphalt,cover,obstacle,grass,rows,first,last,slope):
+    """Bridge only between independently validated current plateau rows.
+
+    Reuse the original connected-component gates on every two-column window
+    of each original three-sample flank. Fits, width and tile-distance bounds
+    remain the caller's original ones. No inferred pixels supply a sample.
+    """
+    if not rows:return False
+    rows=sorted(rows,key=lambda r:r[0])
+    for sy,l,r,a,b in (first,last):
+        if not (0<=sy<84 and 3<=a and b+3<=84):return False
+        for xs in (np.arange(a-3,a),np.arange(b,b+3)):
+            values=image[sy,xs]
+            if (not np.all(asphalt[sy,xs]) or np.any(cover[sy,xs])
+                or np.any(obstacle[sy,xs]) or np.any(grass[sy,xs])
+                or min(values)<=.36 or max(values)>=.47 or np.ptp(values)>7.1/255.):return False
+    anchors={first[0]:first[1:],last[0]:last[1:]}
+    for side in (0,1):
+        paths=[[]]
+        for sy,l,r,a,b in rows:
+            start=a-3 if side==0 else b
+            paths=[path+[(sy,side,x,x+2)] for path in paths for x in (start,start+1)]
+        valid=0
+        for path in paths:
+            accepted,_=observed_connected_flank_component(image,asphalt,cover,obstacle,grass,path,anchors,slope)
+            valid+=int(accepted)
+        if not valid:return False
+    return True
+
+
 def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,speed,
                              cover_override=None,connected_anchors=False):
     """Conditioned connected-road hypothesis, never obstacle-clearance proof."""
@@ -1369,6 +1399,7 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
         # within one public tile step and with real asphalt beside the car.
         limits=(float(max(allowances[0])),float(max(allowances[1])))
         for edge_row,direction in ((int(min(y)),-1),(int(max(y)),1)):
+            anchor_entry=next(entry for entry in candidates if entry[0]==edge_row)
             sy=edge_row+direction
             while sy in continuation_candidates:
                 distance=abs(sy-edge_row)/1.701*math.sqrt(1+(slope*1.701/1.3608)**2)
@@ -1378,8 +1409,27 @@ def infer_local_road_support(image,asphalt,obstacle_mask,joint,initializing,spee
                 right_safe=rc[0]*(sy-IMAGE_ORIGIN_Y)+rc[1]-limits[1]
                 if left_safe>a or right_safe<b-1 or l>left_safe or r<right_safe:break
                 plateaus=(image[sy,a-3:a],image[sy,b:b+3])
-                if any(len(v)!=3 or min(v)<=.36 or max(v)>=.47 or np.ptp(v)>7.1/255. for v in plateaus):break
-                inference_rows.append(entry);extension_rows.append(sy);sy+=direction
+                if any(len(v)!=3 or min(v)<=.36 or max(v)>=.47 or np.ptp(v)>7.1/255. for v in plateaus):
+                    if not connected_anchors:break
+                    pending=[entry];probe=sy+direction;next_anchor=None
+                    while probe in continuation_candidates:
+                        distance=abs(probe-edge_row)/1.701*math.sqrt(1+(slope*1.701/1.3608)**2)
+                        if distance>21./6.:break
+                        following=continuation_candidates[probe];_,pl,pr,pa,pb=following
+                        ls=lc[0]*(probe-IMAGE_ORIGIN_Y)+lc[1]+limits[0]
+                        rs=rc[0]*(probe-IMAGE_ORIGIN_Y)+rc[1]-limits[1]
+                        if ls>pa or rs<pb-1 or pl>ls or pr<rs:break
+                        values=(image[probe,pa-3:pa],image[probe,pb:pb+3])
+                        if all(len(v)==3 and min(v)>.36 and max(v)<.47 and np.ptp(v)<=7.1/255. for v in values):
+                            next_anchor=following;break
+                        pending.append(following);probe+=direction
+                    if next_anchor is None or not observed_extension_flank_bridge(
+                        image,asphalt,cover,obstacle_mask,visible_grass,pending,anchor_entry,next_anchor,slope):break
+                    for added in pending+[next_anchor]:
+                        inference_rows.append(added);extension_rows.append(added[0])
+                    anchor_entry=next_anchor;sy=probe+direction
+                    continue
+                inference_rows.append(entry);extension_rows.append(sy);anchor_entry=entry;sy+=direction
     info['road_support_fov_extension_rows']=sum(sy in fov_rows for sy in extension_rows)
     info['road_support_union_extension_rows']=len(extension_rows)
     info['road_support_merge_extension_rows']=sum(sy in wide_union_rows for sy in extension_rows)
